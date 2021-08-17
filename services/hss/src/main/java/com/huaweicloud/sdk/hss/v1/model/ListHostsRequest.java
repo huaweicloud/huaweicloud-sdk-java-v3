@@ -234,7 +234,7 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 默认10 minimum: 0 maximum: 10000
+    /** 默认10 minimum: 0 maximum: 1000
      * 
      * @return limit */
     public Integer getLimit() {

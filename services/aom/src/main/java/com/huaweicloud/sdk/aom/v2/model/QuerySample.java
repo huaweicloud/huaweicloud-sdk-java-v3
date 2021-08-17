@@ -1,29 +1,41 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
+
+
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aom.v2.model.Dimension;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.Objects;
 
-/** 查询参数集 */
-public class QuerySample {
+/**
+ * 查询参数集
+ */
+public class QuerySample  {
+
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace")
-
+    @JsonProperty(value="namespace")
+    
     private String namespace;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dimensions")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dimensions")
+    
     private List<Dimension> dimensions = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "metric_name")
-
+    @JsonProperty(value="metric_name")
+    
     private String metricName;
 
     public QuerySample withNamespace(String namespace) {
@@ -31,9 +43,13 @@ public class QuerySample {
         return this;
     }
 
-    /** 时间序列的命名空间。 取值范围 PAAS.CONTAINER PAAS.NODE PAAS.SLA PAAS.AGGR CUSTOMMETRICS
-     * 
-     * @return namespace */
+    
+
+
+    /**
+     * 时间序列的命名空间。 取值范围  PAAS.CONTAINER PAAS.NODE PAAS.SLA PAAS.AGGR CUSTOMMETRICS 
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -42,13 +58,16 @@ public class QuerySample {
         this.namespace = namespace;
     }
 
+    
+
     public QuerySample withDimensions(List<Dimension> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
+    
     public QuerySample addDimensionsItem(Dimension dimensionsItem) {
-        if (this.dimensions == null) {
+        if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         this.dimensions.add(dimensionsItem);
@@ -56,16 +75,17 @@ public class QuerySample {
     }
 
     public QuerySample withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
-        if (this.dimensions == null) {
+        if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);
         return this;
     }
 
-    /** 时间序列维度列表。 取值范围： 数组不能为空，同时数组中任何一个dimension对象name和value属性的值也不能为空。
-     * 
-     * @return dimensions */
+    /**
+     * 时间序列维度列表。 取值范围： 数组不能为空，同时数组中任何一个dimension对象name和value属性的值也不能为空。 
+     * @return dimensions
+     */
     public List<Dimension> getDimensions() {
         return dimensions;
     }
@@ -74,14 +94,20 @@ public class QuerySample {
         this.dimensions = dimensions;
     }
 
+    
+
     public QuerySample withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
     }
 
-    /** 时间序列名称。 取值范围 名称长度为1~255个字符
-     * 
-     * @return metricName */
+    
+
+
+    /**
+     * 时间序列名称。 取值范围 名称长度为1~255个字符 
+     * @return metricName
+     */
     public String getMetricName() {
         return metricName;
     }
@@ -89,6 +115,8 @@ public class QuerySample {
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
+
+    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -99,16 +127,14 @@ public class QuerySample {
             return false;
         }
         QuerySample querySample = (QuerySample) o;
-        return Objects.equals(this.namespace, querySample.namespace)
-            && Objects.equals(this.dimensions, querySample.dimensions)
-            && Objects.equals(this.metricName, querySample.metricName);
+        return Objects.equals(this.namespace, querySample.namespace) &&
+            Objects.equals(this.dimensions, querySample.dimensions) &&
+            Objects.equals(this.metricName, querySample.metricName);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(namespace, dimensions, metricName);
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,13 +145,16 @@ public class QuerySample {
         sb.append("}");
         return sb.toString();
     }
-
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-
+    
 }
+

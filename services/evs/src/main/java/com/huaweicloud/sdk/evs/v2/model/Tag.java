@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Tag */
+/**
+ * 
+ */
 public class Tag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -27,11 +27,12 @@ import static com.huaweicloud.sdk.core.Constants.StatusCode.SERVER_ERROR_UPPER_L
 
 import java.util.Objects;
 
-/** Base Exception for HTTP Errors during Rest Operations
+/**
+ * Base Exception for HTTP Errors during Rest Operations
  *
- * @author HuaweiCloud_SDK */
+ * @author HuaweiCloud_SDK
+ */
 public class ServiceResponseException extends SdkException {
-
     private final int httpStatusCode;
 
     private String errorMsg;
@@ -58,24 +59,26 @@ public class ServiceResponseException extends SdkException {
         this.requestId = requestId;
     }
 
-    /** Maps an Exception based on the underlying status code
+    /**
+     * Maps an Exception based on the underlying status code
      *
      * @param httpStatusCode the Http Status Code
      * @param sdkErrorMessage the SdkErrorMessage
-     * @return the response exception */
+     * @return the response exception
+     */
     public static ServiceResponseException mapException(int httpStatusCode, SdkErrorMessage sdkErrorMessage) {
         if (Objects.isNull(sdkErrorMessage)) {
             return mapException(httpStatusCode, null, null, null);
         }
-        return mapException(httpStatusCode,
-            sdkErrorMessage.getErrorCode(),
-            sdkErrorMessage.getErrorMsg(),
+        return mapException(httpStatusCode, sdkErrorMessage.getErrorCode(), sdkErrorMessage.getErrorMsg(),
             sdkErrorMessage.getRequestId());
     }
 
-    /** Convert an Exception based on the underlying status code
+    /**
+     * Convert an Exception based on the underlying status code
      *
-     * @return the response exception */
+     * @return the response exception
+     */
     public static ServiceResponseException mapException(int httpStatusCode, String errorCode, String errorMsg,
         String requestId) {
         if (httpStatusCode >= CLIENT_ERROR && httpStatusCode < SERVER_ERROR) {
@@ -88,7 +91,9 @@ public class ServiceResponseException extends SdkException {
         return new ServiceResponseException(httpStatusCode, errorCode, errorMsg, requestId);
     }
 
-    /** @return return the raw status code */
+    /**
+     * @return return the raw status code
+     */
     public int getHttpStatusCode() {
         return httpStatusCode;
     }
@@ -118,7 +123,10 @@ public class ServiceResponseException extends SdkException {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

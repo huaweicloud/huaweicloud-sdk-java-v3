@@ -1,43 +1,64 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
+
+
 
 import java.util.Collections;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.mrs.v1.model.AutoScalingPolicy;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.Objects;
 
-/** TaskNodeGroups */
-public class TaskNodeGroups {
+/**
+ * TaskNodeGroups
+ */
+public class TaskNodeGroups  {
+
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "node_num")
-
+    @JsonProperty(value="node_num")
+    
     private Integer nodeNum;
 
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "node_size")
-
+    @JsonProperty(value="node_size")
+    
     private String nodeSize;
-
-    /** Task节点数据磁盘存储类别，目前支持SATA、SAS和SSD。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD */
+    /**
+     * Task节点数据磁盘存储类别，目前支持SATA、SAS和SSD。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
+     */
     public static final class DataVolumeTypeEnum {
 
-        /** Enum SATA for value: "SATA" */
+        
+        /**
+         * Enum SATA for value: "SATA"
+         */
         public static final DataVolumeTypeEnum SATA = new DataVolumeTypeEnum("SATA");
-
-        /** Enum SAS for value: "SAS" */
+        
+        /**
+         * Enum SAS for value: "SAS"
+         */
         public static final DataVolumeTypeEnum SAS = new DataVolumeTypeEnum("SAS");
-
-        /** Enum SSD for value: "SSD" */
+        
+        /**
+         * Enum SSD for value: "SSD"
+         */
         public static final DataVolumeTypeEnum SSD = new DataVolumeTypeEnum("SSD");
-
-        /** Enum GPSSD for value: "GPSSD" */
+        
+        /**
+         * Enum GPSSD for value: "GPSSD"
+         */
         public static final DataVolumeTypeEnum GPSSD = new DataVolumeTypeEnum("GPSSD");
+        
 
         private static final Map<String, DataVolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -68,7 +89,7 @@ public class TaskNodeGroups {
 
         @JsonCreator
         public static DataVolumeTypeEnum fromValue(String value) {
-            if (value == null) {
+            if( value == null ){
                 return null;
             }
             DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
@@ -79,7 +100,7 @@ public class TaskNodeGroups {
         }
 
         public static DataVolumeTypeEnum valueOf(String value) {
-            if (value == null) {
+            if( value == null ){
                 return null;
             }
             DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
@@ -103,24 +124,28 @@ public class TaskNodeGroups {
         }
     }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_volume_type")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="data_volume_type")
+    
     private DataVolumeTypeEnum dataVolumeType;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_volume_count")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="data_volume_count")
+    
     private Integer dataVolumeCount;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_volume_size")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="data_volume_size")
+    
     private Integer dataVolumeSize;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auto_scaling_policy")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="auto_scaling_policy")
+    
     private AutoScalingPolicy autoScalingPolicy;
 
     public TaskNodeGroups withNodeNum(Integer nodeNum) {
@@ -128,9 +153,15 @@ public class TaskNodeGroups {
         return this;
     }
 
-    /** Task节点节点数量，取值范围0～500，Core与Task节点总数最大为500个。 minimum: 0 maximum: 500
-     * 
-     * @return nodeNum */
+    
+
+
+    /**
+     * Task节点节点数量，取值范围0～500，Core与Task节点总数最大为500个。
+     * minimum: 0
+     * maximum: 500
+     * @return nodeNum
+     */
     public Integer getNodeNum() {
         return nodeNum;
     }
@@ -139,14 +170,20 @@ public class TaskNodeGroups {
         this.nodeNum = nodeNum;
     }
 
+    
+
     public TaskNodeGroups withNodeSize(String nodeSize) {
         this.nodeSize = nodeSize;
         return this;
     }
 
-    /** Task节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](mrs_01_9006.xml)和[MRS所使用的裸金属服务器规格](mrs_01_9001.xml)。
-     * 
-     * @return nodeSize */
+    
+
+
+    /**
+     * Task节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](mrs_01_9006.xml)和[MRS所使用的裸金属服务器规格](mrs_01_9001.xml)。
+     * @return nodeSize
+     */
     public String getNodeSize() {
         return nodeSize;
     }
@@ -155,14 +192,20 @@ public class TaskNodeGroups {
         this.nodeSize = nodeSize;
     }
 
+    
+
     public TaskNodeGroups withDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
     }
 
-    /** Task节点数据磁盘存储类别，目前支持SATA、SAS和SSD。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
-     * 
-     * @return dataVolumeType */
+    
+
+
+    /**
+     * Task节点数据磁盘存储类别，目前支持SATA、SAS和SSD。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
+     * @return dataVolumeType
+     */
     public DataVolumeTypeEnum getDataVolumeType() {
         return dataVolumeType;
     }
@@ -171,14 +214,22 @@ public class TaskNodeGroups {
         this.dataVolumeType = dataVolumeType;
     }
 
+    
+
     public TaskNodeGroups withDataVolumeCount(Integer dataVolumeCount) {
         this.dataVolumeCount = dataVolumeCount;
         return this;
     }
 
-    /** Task节点数据磁盘存储数目，取值范围：0～10。 minimum: 0 maximum: 10
-     * 
-     * @return dataVolumeCount */
+    
+
+
+    /**
+     * Task节点数据磁盘存储数目，取值范围：0～10。
+     * minimum: 0
+     * maximum: 10
+     * @return dataVolumeCount
+     */
     public Integer getDataVolumeCount() {
         return dataVolumeCount;
     }
@@ -187,14 +238,22 @@ public class TaskNodeGroups {
         this.dataVolumeCount = dataVolumeCount;
     }
 
+    
+
     public TaskNodeGroups withDataVolumeSize(Integer dataVolumeSize) {
         this.dataVolumeSize = dataVolumeSize;
         return this;
     }
 
-    /** Task节点数据磁盘存储大小。 取值范围：100GB～32000GB，传值只需填数字，不需要带单位GB。 minimum: 100 maximum: 32000
-     * 
-     * @return dataVolumeSize */
+    
+
+
+    /**
+     * Task节点数据磁盘存储大小。  取值范围：100GB～32000GB，传值只需填数字，不需要带单位GB。
+     * minimum: 100
+     * maximum: 32000
+     * @return dataVolumeSize
+     */
     public Integer getDataVolumeSize() {
         return dataVolumeSize;
     }
@@ -203,23 +262,27 @@ public class TaskNodeGroups {
         this.dataVolumeSize = dataVolumeSize;
     }
 
+    
+
     public TaskNodeGroups withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
         return this;
     }
 
     public TaskNodeGroups withAutoScalingPolicy(Consumer<AutoScalingPolicy> autoScalingPolicySetter) {
-        if (this.autoScalingPolicy == null) {
+        if(this.autoScalingPolicy == null ){
             this.autoScalingPolicy = new AutoScalingPolicy();
             autoScalingPolicySetter.accept(this.autoScalingPolicy);
         }
-
+        
         return this;
     }
 
-    /** Get autoScalingPolicy
-     * 
-     * @return autoScalingPolicy */
+
+    /**
+     * Get autoScalingPolicy
+     * @return autoScalingPolicy
+     */
     public AutoScalingPolicy getAutoScalingPolicy() {
         return autoScalingPolicy;
     }
@@ -227,6 +290,8 @@ public class TaskNodeGroups {
     public void setAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
     }
+
+    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -237,19 +302,17 @@ public class TaskNodeGroups {
             return false;
         }
         TaskNodeGroups taskNodeGroups = (TaskNodeGroups) o;
-        return Objects.equals(this.nodeNum, taskNodeGroups.nodeNum)
-            && Objects.equals(this.nodeSize, taskNodeGroups.nodeSize)
-            && Objects.equals(this.dataVolumeType, taskNodeGroups.dataVolumeType)
-            && Objects.equals(this.dataVolumeCount, taskNodeGroups.dataVolumeCount)
-            && Objects.equals(this.dataVolumeSize, taskNodeGroups.dataVolumeSize)
-            && Objects.equals(this.autoScalingPolicy, taskNodeGroups.autoScalingPolicy);
+        return Objects.equals(this.nodeNum, taskNodeGroups.nodeNum) &&
+            Objects.equals(this.nodeSize, taskNodeGroups.nodeSize) &&
+            Objects.equals(this.dataVolumeType, taskNodeGroups.dataVolumeType) &&
+            Objects.equals(this.dataVolumeCount, taskNodeGroups.dataVolumeCount) &&
+            Objects.equals(this.dataVolumeSize, taskNodeGroups.dataVolumeSize) &&
+            Objects.equals(this.autoScalingPolicy, taskNodeGroups.autoScalingPolicy);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(nodeNum, nodeSize, dataVolumeType, dataVolumeCount, dataVolumeSize, autoScalingPolicy);
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -263,13 +326,16 @@ public class TaskNodeGroups {
         sb.append("}");
         return sb.toString();
     }
-
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-
+    
 }
+

@@ -19,7 +19,7 @@ public class HssMeta {
         HttpRequestDef.Builder<ListEventsRequest, ListEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEventsRequest.class, ListEventsResponse.class)
                 .withName("ListEvents")
-                .withUri("/hss/v1/{project_id}/api/event-management/events")
+                .withUri("/v1/{project_id}/api/event-management/events")
                 .withContentType("application/json");
 
         // requests
@@ -85,7 +85,7 @@ public class HssMeta {
         HttpRequestDef.Builder<ListHostsRequest, ListHostsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHostsRequest.class, ListHostsResponse.class)
                 .withName("ListHosts")
-                .withUri("/hss/v1/{project_id}/api/host-management/hosts")
+                .withUri("/v1/{project_id}/api/host-management/hosts")
                 .withContentType("application/json");
 
         // requests

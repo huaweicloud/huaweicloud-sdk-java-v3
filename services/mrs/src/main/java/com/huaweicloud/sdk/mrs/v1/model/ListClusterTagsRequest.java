@@ -1,16 +1,26 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
+
+
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.function.Consumer;
 import java.util.Objects;
 
-/** Request Object */
-public class ListClusterTagsRequest {
+/**
+ * Request Object
+ */
+public class ListClusterTagsRequest  {
+
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_id")
-
+    @JsonProperty(value="cluster_id")
+    
     private String clusterId;
 
     public ListClusterTagsRequest withClusterId(String clusterId) {
@@ -18,9 +28,13 @@ public class ListClusterTagsRequest {
         return this;
     }
 
-    /** 集群ID。获取方法，请参见[获取集群ID](mrs_02_9001.xml)。
-     * 
-     * @return clusterId */
+    
+
+
+    /**
+     * 集群ID。获取方法，请参见[获取集群ID](mrs_02_9001.xml)。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -28,6 +42,8 @@ public class ListClusterTagsRequest {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -40,12 +56,10 @@ public class ListClusterTagsRequest {
         ListClusterTagsRequest listClusterTagsRequest = (ListClusterTagsRequest) o;
         return Objects.equals(this.clusterId, listClusterTagsRequest.clusterId);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(clusterId);
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -54,13 +68,16 @@ public class ListClusterTagsRequest {
         sb.append("}");
         return sb.toString();
     }
-
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-
+    
 }
+

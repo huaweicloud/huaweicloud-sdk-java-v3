@@ -54,6 +54,11 @@ public class ClusterExtendParam {
     private String kubernetesIoCpuManagerPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "orderID")
+
+    private String orderID;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodType")
 
     private String periodType;
@@ -72,6 +77,11 @@ public class ClusterExtendParam {
     @JsonProperty(value = "isAutoPay")
 
     private String isAutoPay;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upgradefrom")
+
+    private String upgradefrom;
 
     public ClusterExtendParam withClusterAZ(String clusterAZ) {
         this.clusterAZ = clusterAZ;
@@ -228,6 +238,22 @@ public class ClusterExtendParam {
         this.kubernetesIoCpuManagerPolicy = kubernetesIoCpuManagerPolicy;
     }
 
+    public ClusterExtendParam withOrderID(String orderID) {
+        this.orderID = orderID;
+        return this;
+    }
+
+    /** 订单ID，集群付费类型为自动付费包周期类型时，响应中会返回此字段。
+     * 
+     * @return orderID */
+    public String getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
+    }
+
     public ClusterExtendParam withPeriodType(String periodType) {
         this.periodType = periodType;
         return this;
@@ -292,6 +318,22 @@ public class ClusterExtendParam {
         this.isAutoPay = isAutoPay;
     }
 
+    public ClusterExtendParam withUpgradefrom(String upgradefrom) {
+        this.upgradefrom = upgradefrom;
+        return this;
+    }
+
+    /** 记录集群通过何种升级方式升级到当前版本。
+     * 
+     * @return upgradefrom */
+    public String getUpgradefrom() {
+        return upgradefrom;
+    }
+
+    public void setUpgradefrom(String upgradefrom) {
+        this.upgradefrom = upgradefrom;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -310,10 +352,12 @@ public class ClusterExtendParam {
             && Objects.equals(this.decMasterFlavor, clusterExtendParam.decMasterFlavor)
             && Objects.equals(this.dockerUmaskMode, clusterExtendParam.dockerUmaskMode)
             && Objects.equals(this.kubernetesIoCpuManagerPolicy, clusterExtendParam.kubernetesIoCpuManagerPolicy)
+            && Objects.equals(this.orderID, clusterExtendParam.orderID)
             && Objects.equals(this.periodType, clusterExtendParam.periodType)
             && Objects.equals(this.periodNum, clusterExtendParam.periodNum)
             && Objects.equals(this.isAutoRenew, clusterExtendParam.isAutoRenew)
-            && Objects.equals(this.isAutoPay, clusterExtendParam.isAutoPay);
+            && Objects.equals(this.isAutoPay, clusterExtendParam.isAutoPay)
+            && Objects.equals(this.upgradefrom, clusterExtendParam.upgradefrom);
     }
 
     @Override
@@ -327,10 +371,12 @@ public class ClusterExtendParam {
             decMasterFlavor,
             dockerUmaskMode,
             kubernetesIoCpuManagerPolicy,
+            orderID,
             periodType,
             periodNum,
             isAutoRenew,
-            isAutoPay);
+            isAutoPay,
+            upgradefrom);
     }
 
     @Override
@@ -348,10 +394,12 @@ public class ClusterExtendParam {
         sb.append("    kubernetesIoCpuManagerPolicy: ")
             .append(toIndentedString(kubernetesIoCpuManagerPolicy))
             .append("\n");
+        sb.append("    orderID: ").append(toIndentedString(orderID)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    upgradefrom: ").append(toIndentedString(upgradefrom)).append("\n");
         sb.append("}");
         return sb.toString();
     }

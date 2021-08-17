@@ -39,7 +39,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.TreeMap;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public interface HttpRequest {
 
     static HttpRequestBuilder newBuilder() {
@@ -47,7 +49,6 @@ public interface HttpRequest {
     }
 
     class HttpRequestBuilder {
-
         private Impl httpRequest;
 
         private HttpRequestBuilder() {
@@ -146,7 +147,6 @@ public interface HttpRequest {
     }
 
     class Impl implements HttpRequest, Cloneable {
-
         private static final Logger LOG = LoggerFactory.getLogger(Impl.class);
 
         private String endpoint;
@@ -280,10 +280,11 @@ public interface HttpRequest {
 
         private Impl buildPathParamsString() {
             this.pathParamsString = Objects.isNull(path) ? "" : path;
-            pathParams.forEach((key, value) -> pathParamsString =
-                pathParamsString.replace(String.format("{%s}", key), value.toString()));
-            autoFilledPathParams.forEach((key, value) -> pathParamsString =
-                pathParamsString.replace(String.format("{%s}", key), value.toString()));
+            pathParams.forEach((key, value) -> pathParamsString = pathParamsString.replace(String.format("{%s}", key),
+                value.toString()));
+            autoFilledPathParams.forEach(
+                (key, value) -> pathParamsString = pathParamsString.replace(String.format("{%s}", key),
+                    value.toString()));
             return this;
         }
 

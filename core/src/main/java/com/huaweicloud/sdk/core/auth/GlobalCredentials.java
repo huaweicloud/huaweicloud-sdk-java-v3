@@ -36,7 +36,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     private String domainId;
@@ -49,8 +51,10 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
         this.domainId = domainId;
     }
 
-    /** @param domainId id of the account
-     * @return GlobalCredentials */
+    /**
+     * @param domainId id of the account
+     * @return GlobalCredentials
+     */
     public GlobalCredentials withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -81,13 +85,13 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
         HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
 
         KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
-        KeystoneListAuthDomainsResponse response =
-            inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+        KeystoneListAuthDomainsResponse response = inner.syncInvokeHttp(request,
+            InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
         if (Objects.isNull(response) || Objects.isNull(response.getDomains()) || response.getDomains().size() == 0) {
             throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
-                + "1. Manually specify domain_id when initializing the credentials.\n\t"
-                + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
-                + "3. Use AK/SK of the domain account.");
+                    + "1. Manually specify domain_id when initializing the credentials.\n\t"
+                    + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
+                    + "3. Use AK/SK of the domain account.");
         }
         this.domainId = response.getDomains().get(0).getId();
         AuthCache.putAuth(akWithName, domainId);
@@ -107,8 +111,8 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
                 builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
             }
 
-            if (Objects.nonNull(httpRequest.getContentType())
-                && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+            if (Objects.nonNull(httpRequest.getContentType()) && !httpRequest.getContentType()
+                .startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
                 builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
             }
 

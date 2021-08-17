@@ -21,10 +21,11 @@
 
 package com.huaweicloud.sdk.core.http;
 
-/** @param <T>
- * @author HuaweiCloud_SDK */
+/**
+ * @param <T>
+ * @author HuaweiCloud_SDK
+ */
 public class FormDataPart<T> {
-
     private T value;
 
     public FormDataPart(T value) {

@@ -21,9 +21,10 @@
 
 package com.huaweicloud.sdk.core.exception;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class CallTimeoutException extends RequestTimeoutException {
-
     public CallTimeoutException(String message) {
         super(message);
     }

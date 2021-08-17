@@ -10,24 +10,24 @@ import java.util.Objects;
 public class CreateMigprojectResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "id")
 
-    private String body;
+    private String id;
 
-    public CreateMigprojectResponse withBody(String body) {
-        this.body = body;
+    public CreateMigprojectResponse withId(String id) {
+        this.id = id;
         return this;
     }
 
-    /** Get body
+    /** 创建迁移项目返回的新添加的迁移项目的id
      * 
-     * @return body */
-    public String getBody() {
-        return body;
+     * @return id */
+    public String getId() {
+        return id;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
@@ -39,19 +39,19 @@ public class CreateMigprojectResponse extends SdkResponse {
             return false;
         }
         CreateMigprojectResponse createMigprojectResponse = (CreateMigprojectResponse) o;
-        return Objects.equals(this.body, createMigprojectResponse.body);
+        return Objects.equals(this.id, createMigprojectResponse.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMigprojectResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

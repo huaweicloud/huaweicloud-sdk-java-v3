@@ -24,7 +24,6 @@ import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 public class MeetingCredentials implements ICredential {
-
     private String token;
 
     private String userName;
@@ -34,10 +33,11 @@ public class MeetingCredentials implements ICredential {
     private long lastTokenDate;
 
     private final static int EXPIRE_HOUR = 24;
-
     private final static int EXPIRE_HOUR_HALF = EXPIRE_HOUR / 2;
 
-    /** 客户端类型：API调用类型 */
+    /**
+     * 客户端类型：API调用类型
+     */
     private final static int CLIENT_TYPE_API = 72;
 
     @Override
@@ -56,15 +56,15 @@ public class MeetingCredentials implements ICredential {
 
         // 用户忘记密码重置接口需要上送X-Access-Token头域，但不是用户登陆的token，是校验验证码接口返回的token
         if (httpRequest.getPath().startsWith("/v1/usg/acs/password/reset")) {
-            return CompletableFuture
-                .supplyAsync(() -> httpRequest.builder().addHeader("X-Access-Token", this.token).build());
+            return CompletableFuture.supplyAsync(
+                () -> httpRequest.builder().addHeader("X-Access-Token", this.token).build());
         }
 
         // 新增获取页面免登陆跳转nonce信息接口也需上送X-Access-Token头域，但不是用户登陆的token，需用户自己上送
         // 如果用户自己上送了，则设置用户自带的token， 否则则设置通过用户名密码获取的token
         if (httpRequest.getPath().startsWith("/v1/usg/acs/auth/portal-ref-nonce") && !StringUtils.isEmpty(token)) {
-            return CompletableFuture
-                .supplyAsync(() -> httpRequest.builder().addHeader("X-Access-Token", this.token).build());
+            return CompletableFuture.supplyAsync(
+                () -> httpRequest.builder().addHeader("X-Access-Token", this.token).build());
         }
 
         if (Objects.isNull(userName) || Objects.isNull(userPassword)) {
@@ -90,14 +90,17 @@ public class MeetingCredentials implements ICredential {
 
     @Override
     public MeetingCredentials deepClone() {
-        return new MeetingCredentials().withToken(this.token)
-            .withUserName(this.userName)
-            .withUserPassword(this.userPassword);
+        return new MeetingCredentials()
+                .withToken(this.token)
+                .withUserName(this.userName)
+                .withUserPassword(this.userPassword);
     }
 
     private CompletableFuture<String> createToken(HttpRequest httpRequest, HttpClient httpClient) {
-        byte[] bytes = (userName + ":" + userPassword).getBytes(StandardCharsets.UTF_8);
-        String authorization = "Basic " + Base64.getEncoder().encodeToString(bytes);
+        byte[] bytes =
+            (userName + ":" + userPassword).getBytes(StandardCharsets.UTF_8);
+        String authorization =
+            "Basic " + Base64.getEncoder().encodeToString(bytes);
 
         String requestBody = JsonUtils.toJSON(new AuthReqDTOV1().withAccount(userName).withClientType(CLIENT_TYPE_API));
         HttpRequest createTokenRequest = HttpRequest.newBuilder()
@@ -106,18 +109,18 @@ public class MeetingCredentials implements ICredential {
             .withPath(CreatTokenMeta.URI)
             .withContentType(CreatTokenMeta.CONTENT_TYPE)
             .addHeader("Authorization", authorization)
-            .withBodyAsString(requestBody)
-            .build();
+            .withBodyAsString(requestBody).build();
         return httpClient.asyncInvokeHttp(createTokenRequest).handle((createTokenHttpResponse, e) -> {
             if (Objects.nonNull(e)) {
                 throw new SdkException(e);
             }
             if (createTokenHttpResponse.getStatusCode() != 200) {
-                throw ServiceResponseException.mapException(createTokenHttpResponse.getStatusCode(),
-                    extractErrorMessage(createTokenHttpResponse));
+                throw ServiceResponseException
+                    .mapException(createTokenHttpResponse.getStatusCode(),
+                        extractErrorMessage(createTokenHttpResponse));
             }
-            CreateTokenResponse createTokenResponse =
-                JsonUtils.toObject(createTokenHttpResponse.getBodyAsString(), CreateTokenResponse.class);
+            CreateTokenResponse createTokenResponse
+                = JsonUtils.toObject(createTokenHttpResponse.getBodyAsString(), CreateTokenResponse.class);
             this.token = createTokenResponse.getAccessToken();
             this.lastTokenDate = Instant.now().getEpochSecond();
             return this.token;
@@ -172,3 +175,5 @@ public class MeetingCredentials implements ICredential {
         return this;
     }
 }
+
+

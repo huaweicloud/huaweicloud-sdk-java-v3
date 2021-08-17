@@ -21,9 +21,11 @@
 
 package com.huaweicloud.sdk.core.http;
 
-/** 定义出来是用于表达没有有返回值，但是body体为空的场景，作为占位类型使用
+/**
+ * 定义出来是用于表达没有有返回值，但是body体为空的场景，作为占位类型使用
  *
- * @author HuaweiCloud_SDK */
+ * @author HuaweiCloud_SDK
+ */
 public class VoidBody {
 
 }

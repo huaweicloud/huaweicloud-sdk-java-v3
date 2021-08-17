@@ -21,7 +21,9 @@
 
 package com.huaweicloud.sdk.core.exception;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class SslHandShakeException extends ConnectionException {
 
     public SslHandShakeException(String message) {

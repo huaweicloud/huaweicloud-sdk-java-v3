@@ -378,7 +378,7 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 云服务器id
+    /** 云服务器id。
      * 
      * @return serverId */
     public String getServerId() {

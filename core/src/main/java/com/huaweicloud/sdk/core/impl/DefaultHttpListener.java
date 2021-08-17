@@ -42,9 +42,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class DefaultHttpListener implements Interceptor {
-
     private List<HttpListener> httpListeners;
 
     public DefaultHttpListener(HttpConfig httpConfig) {
@@ -78,14 +79,18 @@ public class DefaultHttpListener implements Interceptor {
     public void preRequest(Request request, SdkExchange sdkExchange) throws IOException {
 
         String reqBody;
-        if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType())
-            && (request.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)
-                || request.body().contentType().toString().startsWith(Constants.MEDIATYPE.TEXT))) {
+        if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType()) && (
+            request.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON) || request.body()
+                .contentType()
+                .toString()
+                .startsWith(Constants.MEDIATYPE.TEXT))) {
             Buffer buffer = new Buffer();
             request.body().writeTo(buffer);
             reqBody = buffer.readUtf8();
-        } else if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType())
-            && request.body().contentType().toString().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
+        } else if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType()) && request.body()
+            .contentType()
+            .toString()
+            .equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
             reqBody = request.body().contentLength() > 0 || request.body().contentLength() == -1 ? "******" : null;
         } else {
             reqBody = null;
@@ -128,13 +133,17 @@ public class DefaultHttpListener implements Interceptor {
         Request request = response.request();
         Response.Builder responseBuilder = response.newBuilder();
         String respBody;
-        if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType())
-            && (response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)
-                || response.body().contentType().toString().startsWith(Constants.MEDIATYPE.TEXT))) {
+        if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType()) && (
+            response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON) || response.body()
+                .contentType()
+                .toString()
+                .startsWith(Constants.MEDIATYPE.TEXT))) {
             respBody = response.body().string();
             responseBuilder.body(ResponseBody.create(response.body().contentType(), respBody));
-        } else if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType())
-            && response.body().contentType().toString().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
+        } else if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType()) && response.body()
+            .contentType()
+            .toString()
+            .equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
             respBody = response.body().contentLength() > 0 || response.body().contentLength() == -1 ? "******" : null;
         } else {
             respBody = null;
@@ -142,7 +151,6 @@ public class DefaultHttpListener implements Interceptor {
 
         String finalRespBody = respBody;
         HttpListener.ResponseListener responseListener = new HttpListener.ResponseListener() {
-
             @Override
             public String httpMethod() {
                 return request.method();

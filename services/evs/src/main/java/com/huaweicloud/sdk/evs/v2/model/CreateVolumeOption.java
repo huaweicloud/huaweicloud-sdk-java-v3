@@ -69,7 +69,7 @@ public class CreateVolumeOption {
 
     private String snapshotId;
 
-    /** 云硬盘类型。 目前支持“SSD”，“GPSSD”，“SAS”和“SATA”四种。 “SSD”为超高IO云硬盘 \"GPSSD\"为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
+    /** 云硬盘类型。 目前支持“SSD”，“GPSSD”，“SAS”和“SATA”四种 “SSD”为超高IO云硬盘 \"GPSSD\"为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
      * 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见
      * [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 */
     public static final class VolumeTypeEnum {
@@ -365,7 +365,7 @@ public class CreateVolumeOption {
         return this;
     }
 
-    /** 云硬盘类型。 目前支持“SSD”，“GPSSD”，“SAS”和“SATA”四种。 “SSD”为超高IO云硬盘 \"GPSSD\"为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
+    /** 云硬盘类型。 目前支持“SSD”，“GPSSD”，“SAS”和“SATA”四种 “SSD”为超高IO云硬盘 \"GPSSD\"为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
      * 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见
      * [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
      * 

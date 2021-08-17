@@ -21,9 +21,11 @@
 
 package com.huaweicloud.sdk.core.exception;
 
-/** Base Exception for all SDK Exceptions
+/**
+ * Base Exception for all SDK Exceptions
  *
- * @author HuaweiCloud_SDK */
+ * @author HuaweiCloud_SDK
+ */
 public class SdkException extends RuntimeException {
 
     static final long serialVersionUID = 8597459361213554455L;

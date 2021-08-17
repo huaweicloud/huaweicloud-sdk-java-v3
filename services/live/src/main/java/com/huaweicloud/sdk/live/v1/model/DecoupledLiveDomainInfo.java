@@ -299,6 +299,91 @@ public class DecoupledLiveDomainInfo {
 
     private OffsetDateTime createTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status_describe")
+
+    private String statusDescribe;
+
+    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 */
+    public static final class ServiceAreaEnum {
+
+        /** Enum MAINLAND_CHINA for value: "mainland_china" */
+        public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
+
+        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
+        public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
+
+        /** Enum GLOBAL for value: "global" */
+        public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
+
+        private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ServiceAreaEnum> createStaticFields() {
+            Map<String, ServiceAreaEnum> map = new HashMap<>();
+            map.put("mainland_china", MAINLAND_CHINA);
+            map.put("outside_mainland_china", OUTSIDE_MAINLAND_CHINA);
+            map.put("global", GLOBAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ServiceAreaEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ServiceAreaEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ServiceAreaEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ServiceAreaEnum(value);
+            }
+            return result;
+        }
+
+        public static ServiceAreaEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ServiceAreaEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ServiceAreaEnum) {
+                return this.value.equals(((ServiceAreaEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_area")
+
+    private ServiceAreaEnum serviceArea;
+
     public DecoupledLiveDomainInfo withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -427,6 +512,38 @@ public class DecoupledLiveDomainInfo {
         this.createTime = createTime;
     }
 
+    public DecoupledLiveDomainInfo withStatusDescribe(String statusDescribe) {
+        this.statusDescribe = statusDescribe;
+        return this;
+    }
+
+    /** 状态描述
+     * 
+     * @return statusDescribe */
+    public String getStatusDescribe() {
+        return statusDescribe;
+    }
+
+    public void setStatusDescribe(String statusDescribe) {
+        this.statusDescribe = statusDescribe;
+    }
+
+    public DecoupledLiveDomainInfo withServiceArea(ServiceAreaEnum serviceArea) {
+        this.serviceArea = serviceArea;
+        return this;
+    }
+
+    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域
+     * 
+     * @return serviceArea */
+    public ServiceAreaEnum getServiceArea() {
+        return serviceArea;
+    }
+
+    public void setServiceArea(ServiceAreaEnum serviceArea) {
+        this.serviceArea = serviceArea;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -443,12 +560,23 @@ public class DecoupledLiveDomainInfo {
             && Objects.equals(this.domainCname, decoupledLiveDomainInfo.domainCname)
             && Objects.equals(this.status, decoupledLiveDomainInfo.status)
             && Objects.equals(this.relatedDomain, decoupledLiveDomainInfo.relatedDomain)
-            && Objects.equals(this.createTime, decoupledLiveDomainInfo.createTime);
+            && Objects.equals(this.createTime, decoupledLiveDomainInfo.createTime)
+            && Objects.equals(this.statusDescribe, decoupledLiveDomainInfo.statusDescribe)
+            && Objects.equals(this.serviceArea, decoupledLiveDomainInfo.serviceArea);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, domainType, vendor, region, domainCname, status, relatedDomain, createTime);
+        return Objects.hash(domain,
+            domainType,
+            vendor,
+            region,
+            domainCname,
+            status,
+            relatedDomain,
+            createTime,
+            statusDescribe,
+            serviceArea);
     }
 
     @Override
@@ -463,6 +591,8 @@ public class DecoupledLiveDomainInfo {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    relatedDomain: ").append(toIndentedString(relatedDomain)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    statusDescribe: ").append(toIndentedString(statusDescribe)).append("\n");
+        sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
         sb.append("}");
         return sb.toString();
     }

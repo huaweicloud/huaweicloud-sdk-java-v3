@@ -21,9 +21,11 @@
 
 package com.huaweicloud.sdk.core.http;
 
-/** 并没有组合所有场景，是按照现在的web场景处理的
+/**
+ * 并没有组合所有场景，是按照现在的web场景处理的
  *
- * @author HuaweiCloud_SDK */
+ * @author HuaweiCloud_SDK
+ */
 public enum FieldExistence {
     // 必须存在，取值有效，不能为空。path变量归为此类
     NON_NULL_NON_EMPTY,

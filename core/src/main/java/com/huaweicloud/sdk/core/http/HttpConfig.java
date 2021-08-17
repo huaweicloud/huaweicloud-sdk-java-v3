@@ -27,9 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class HttpConfig {
-
     private static final int DEFAULT_CONNECTION_TIMEOUT = 60;
 
     private int timeout = DEFAULT_CONNECTION_TIMEOUT;

@@ -88,6 +88,16 @@ public class NodeExtendParam {
 
     private String nicThreshold;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chargingMode")
+
+    private Integer chargingMode;
+
     public NodeExtendParam withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
         return this;
@@ -356,6 +366,38 @@ public class NodeExtendParam {
         this.nicThreshold = nicThreshold;
     }
 
+    public NodeExtendParam withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 节点所属的企业项目id。
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public NodeExtendParam withChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
+        return this;
+    }
+
+    /** 节点的计费模式。已废弃，请使用NodeSpec中的billingMode字段。
+     * 
+     * @return chargingMode */
+    public Integer getChargingMode() {
+        return chargingMode;
+    }
+
+    public void setChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -380,7 +422,9 @@ public class NodeExtendParam {
             && Objects.equals(this.alphaCcePostInstall, nodeExtendParam.alphaCcePostInstall)
             && Objects.equals(this.alphaCceNodeImageID, nodeExtendParam.alphaCceNodeImageID)
             && Objects.equals(this.nicMultiqueue, nodeExtendParam.nicMultiqueue)
-            && Objects.equals(this.nicThreshold, nodeExtendParam.nicThreshold);
+            && Objects.equals(this.nicThreshold, nodeExtendParam.nicThreshold)
+            && Objects.equals(this.enterpriseProjectId, nodeExtendParam.enterpriseProjectId)
+            && Objects.equals(this.chargingMode, nodeExtendParam.chargingMode);
     }
 
     @Override
@@ -400,7 +444,9 @@ public class NodeExtendParam {
             alphaCcePostInstall,
             alphaCceNodeImageID,
             nicMultiqueue,
-            nicThreshold);
+            nicThreshold,
+            enterpriseProjectId,
+            chargingMode);
     }
 
     @Override
@@ -423,6 +469,8 @@ public class NodeExtendParam {
         sb.append("    alphaCceNodeImageID: ").append(toIndentedString(alphaCceNodeImageID)).append("\n");
         sb.append("    nicMultiqueue: ").append(toIndentedString(nicMultiqueue)).append("\n");
         sb.append("    nicThreshold: ").append(toIndentedString(nicThreshold)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

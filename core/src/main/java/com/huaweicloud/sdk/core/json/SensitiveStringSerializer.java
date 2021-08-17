@@ -28,9 +28,10 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.io.IOException;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class SensitiveStringSerializer extends JsonSerializer<String> {
-
     public static final String SENSITIVE_SWITCH = "JSON_SENSITIVE_SWITCH";
 
     @Override

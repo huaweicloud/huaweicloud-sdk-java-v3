@@ -25,19 +25,26 @@ import com.huaweicloud.sdk.core.exception.ConnectionException;
 
 import java.util.concurrent.CompletableFuture;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public interface HttpClient {
 
-    /** Send synchronous request
+    /**
+     * Send synchronous request
      *
      * @param request HttpRequest
      * @return HttpResponse
-     * @throws ConnectionException e */
+     * @throws ConnectionException e
+     */
     HttpResponse syncInvokeHttp(HttpRequest request) throws ConnectionException;
 
-    /** Send asynchronous request
+    /**
+     * Send asynchronous request
      *
      * @param request HttpRequest
-     * @return HttpResponse */
+     * @return HttpResponse
+     */
     CompletableFuture<HttpResponse> asyncInvokeHttp(HttpRequest request);
 }
+

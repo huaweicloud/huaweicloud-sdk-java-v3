@@ -57,17 +57,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/** The type Json utils.
+/**
+ * The type Json utils.
  *
- * @author HuaweiCloud_SDK */
+ * @author HuaweiCloud_SDK
+ */
 public final class JsonUtils {
-
     private static final Logger logger = LoggerFactory.getLogger(JsonUtils.class);
 
-    /** ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER: 是否允许JSON字符串包含非引号控制字符（值小于32的ASCII字符，包含制表符和换行符）
+    /**
+     * ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER:
+     * 是否允许JSON字符串包含非引号控制字符（值小于32的ASCII字符，包含制表符和换行符）
      * <p>
      * 其他类型解释说明参考：
-     * https://fasterxml.github.io/jackson-core/javadoc/2.7/com/fasterxml/jackson/core/JsonParser.Feature.html */
+     * https://fasterxml.github.io/jackson-core/javadoc/2.7/com/fasterxml/jackson/core/JsonParser.Feature.html
+     */
     private static ObjectMapper objectMapperIgnoreUnknown = initializeBaseMapper();
 
     private static ObjectMapper objectMapperHideSensitive = objectMapperIgnoreUnknown.copy()
@@ -76,7 +80,9 @@ public final class JsonUtils {
                 .getAttributes()
                 .withSharedAttribute(SensitiveStringSerializer.SENSITIVE_SWITCH, true)));
 
-    /** The utility class should hide the public constructor */
+    /**
+     * The utility class should hide the public constructor
+     */
     private JsonUtils() {
 
     }
@@ -117,10 +123,12 @@ public final class JsonUtils {
         return objectMapperHideSensitive;
     }
 
-    /** To json string.
+    /**
+     * To json string.
      *
      * @param object the object
-     * @return the string */
+     * @return the string
+     */
     public static String toJSON(Object object) {
         try {
             return objectMapperIgnoreUnknown.writeValueAsString(object);
@@ -130,11 +138,13 @@ public final class JsonUtils {
         }
     }
 
-    /** To json string
+    /**
+     * To json string
      *
      * @param mapper the mapper
      * @param object the object
-     * @return the string */
+     * @return the string
+     */
     public static String toJSON(ObjectMapper mapper, Object object) {
         try {
             return mapper.writeValueAsString(object);
@@ -144,12 +154,14 @@ public final class JsonUtils {
         }
     }
 
-    /** To json string.
+    /**
+     * To json string.
      *
      * @param mapperFilterName the mapper filter name
      * @param resultMapper the result mapper
      * @param exceptProperties the except properties
-     * @return the string */
+     * @return the string
+     */
     public static String toJSON(String mapperFilterName, Object resultMapper, Set<String> exceptProperties) {
         try {
             if (exceptProperties == null) {
@@ -158,8 +170,8 @@ public final class JsonUtils {
                 SimpleBeanPropertyFilter simpleBeanPropertyFilter = SimpleBeanPropertyFilter.serializeAllExcept(
                     // NOPMD
                     exceptProperties.toArray(new String[exceptProperties.size()]));
-                FilterProvider filterProvider =
-                    new SimpleFilterProvider().addFilter(mapperFilterName, simpleBeanPropertyFilter);
+                FilterProvider filterProvider = new SimpleFilterProvider().addFilter(mapperFilterName,
+                    simpleBeanPropertyFilter);
                 return objectMapperIgnoreUnknown.writer(filterProvider).writeValueAsString(resultMapper);
             }
         } catch (JsonProcessingException e) {
@@ -168,10 +180,12 @@ public final class JsonUtils {
         }
     }
 
-    /** Safe method, mask all fields annotated with @JsonSensitive
+    /**
+     * Safe method, mask all fields annotated with @JsonSensitive
      *
      * @param object the object
-     * @return the string */
+     * @return the string
+     */
     public static String toJsonWithoutSensitive(Object object) {
         try {
             return objectMapperHideSensitive.writeValueAsString(object);
@@ -181,12 +195,14 @@ public final class JsonUtils {
         }
     }
 
-    /** To object t.
+    /**
+     * To object t.
      *
      * @param <T> the type parameter
      * @param json the json
      * @param clazz the clazz
-     * @return the t */
+     * @return the t
+     */
     public static <T> T toObject(String json, Class<T> clazz) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, clazz);
@@ -196,12 +212,14 @@ public final class JsonUtils {
         }
     }
 
-    /** To object t.
+    /**
+     * To object t.
      *
      * @param <T> the type parameter
      * @param json the json
      * @param type the clazz
-     * @return the t */
+     * @return the t
+     */
     public static <T> T toObject(String json, TypeReference<T> type) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, type);
@@ -211,13 +229,16 @@ public final class JsonUtils {
         }
     }
 
-    /** @param json the json string
+    /**
+     * @param json the json string
      * @param clazz the clazz
      * @param <T> the type t
-     * @return the t */
+     * @return the t
+     */
     public static <T> Map<String, T> toMapObject(String json, Class<T> clazz) {
         try {
-            return StringUtils.isEmpty(json) ? null
+            return StringUtils.isEmpty(json)
+                ? null
                 : objectMapperIgnoreUnknown.readValue(json,
                     objectMapperIgnoreUnknown.getTypeFactory().constructMapType(Map.class, String.class, clazz));
         } catch (JsonProcessingException e) {
@@ -226,19 +247,23 @@ public final class JsonUtils {
         }
     }
 
-    /** 将一个对象转换成为一个通用的map对象结构
+    /**
+     * 将一个对象转换成为一个通用的map对象结构
      *
      * @param o the object
-     * @return the map */
+     * @return the map
+     */
     public static Map<String, Object> objectToMap(Object o) {
         return objectToMap(objectMapperIgnoreUnknown, o);
     }
 
-    /** 将一个对象转换成为一个通用的map对象结构
+    /**
+     * 将一个对象转换成为一个通用的map对象结构
      *
      * @param mapper the mapper
      * @param o the object
-     * @return the map */
+     * @return the map
+     */
     public static Map<String, Object> objectToMap(ObjectMapper mapper, Object o) {
         Objects.requireNonNull(o, "input of objectToMap cannot be null");
         try {
@@ -250,14 +275,17 @@ public final class JsonUtils {
         }
     }
 
-    /** @param json the json string
+    /**
+     * @param json the json string
      * @param clazz the clazz
      * @param <T> the type t
      * @return the t
-     * @throws SdkException JsonProcessingException */
+     * @throws SdkException JsonProcessingException
+     */
     public static <T> List<T> toListObject(String json, Class<T> clazz) {
         try {
-            return StringUtils.isEmpty(json) ? null
+            return StringUtils.isEmpty(json)
+                ? null
                 : objectMapperIgnoreUnknown.readValue(json,
                     objectMapperIgnoreUnknown.getTypeFactory().constructParametricType(List.class, clazz));
         } catch (JsonProcessingException e) {
@@ -266,12 +294,14 @@ public final class JsonUtils {
         }
     }
 
-    /** To object t.
+    /**
+     * To object t.
      *
      * @param <T> the type parameter
      * @param json the json
      * @param clazz the clazz
-     * @return the t */
+     * @return the t
+     */
     public static <T> T toObjectIgnoreUnknown(String json, Class<T> clazz) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, clazz);
@@ -281,12 +311,15 @@ public final class JsonUtils {
         }
     }
 
-    /** To object t. toListObjectIgnoreUnknownByStrict
+    /**
+     * To object t.
+     * toListObjectIgnoreUnknownByStrict
      *
      * @param <T> the type parameter
      * @param json the json
      * @param type the clazz
-     * @return the t */
+     * @return the t
+     */
     public static <T> T toObjectIgnoreUnknown(String json, TypeReference<T> type) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, type);
@@ -298,10 +331,12 @@ public final class JsonUtils {
 
     // ------------------below method is strict mode ------------------------
 
-    /** @param <T> the type parameter
+    /**
+     * @param <T> the type parameter
      * @param json the json
      * @param clazz the clazz
-     * @return the t */
+     * @return the t
+     */
     public static <T> T toObjectByStrict(String json, Class<T> clazz) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, clazz);
@@ -311,10 +346,12 @@ public final class JsonUtils {
         }
     }
 
-    /** @param json the json
+    /**
+     * @param json the json
      * @param type the type
      * @param <T> the type parameter
-     * @return the t */
+     * @return the t
+     */
     public static <T> T toObjectByStrict(String json, TypeReference<T> type) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, type);
@@ -324,12 +361,14 @@ public final class JsonUtils {
         }
     }
 
-    /** To object t.
+    /**
+     * To object t.
      *
      * @param <T> the type parameter
      * @param json the json
      * @param clazz the clazz
-     * @return the t */
+     * @return the t
+     */
     public static <T> T toObjectIgnoreUnknownByStrict(String json, Class<T> clazz) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, clazz);
@@ -339,12 +378,14 @@ public final class JsonUtils {
         }
     }
 
-    /** To object t.
+    /**
+     * To object t.
      *
      * @param <T> the type parameter
      * @param json the json
      * @param type the clazz
-     * @return the t */
+     * @return the t
+     */
     public static <T> T toObjectIgnoreUnknownByStrict(String json, TypeReference<T> type) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, type);
@@ -354,15 +395,18 @@ public final class JsonUtils {
         }
     }
 
-    /** To list object list.
+    /**
+     * To list object list.
      *
      * @param <T> the type parameter
      * @param json the json
      * @param clazz the clazz
-     * @return the list */
+     * @return the list
+     */
     public static <T> List<T> toListObjectIgnoreUnknownByStrict(String json, Class<T> clazz) {
         try {
-            return StringUtils.isEmpty(json) ? null
+            return StringUtils.isEmpty(json)
+                ? null
                 : objectMapperIgnoreUnknown.readValue(json,
                     objectMapperIgnoreUnknown.getTypeFactory().constructParametricType(List.class, clazz));
         } catch (JsonProcessingException e) {
@@ -371,16 +415,20 @@ public final class JsonUtils {
         }
     }
 
-    /** To the specified format map
+    /**
+     * To the specified format map
      *
      * @param json the json
-     * @return the map */
+     * @return the map
+     */
     public static Map<String, Map<String, Object>> toStrMapToStrObjMap(String json) {
-        return JsonUtils.toObjectIgnoreUnknown(json, new TypeReference<Map<String, Map<String, Object>>>() {});
+        return JsonUtils.toObjectIgnoreUnknown(json, new TypeReference<Map<String, Map<String, Object>>>() { });
     }
 
-    /** @param resultMapper the object
-     * @return the byte[] */
+    /**
+     * @param resultMapper the object
+     * @return the byte[]
+     */
     public static byte[] toJSONAsBytes(Object resultMapper) {
         try {
             return objectMapperIgnoreUnknown.writeValueAsBytes(resultMapper);
@@ -390,12 +438,14 @@ public final class JsonUtils {
         }
     }
 
-    /** To json as bytes byte [ ]. only used by the framework return http-response without Exception
+    /**
+     * To json as bytes byte [ ]. only used by the framework return http-response without Exception
      *
      * @param mapperFilterName the mapper filter name
      * @param resultMapper the result mapper
      * @param exceptProperties the except properties
-     * @return the byte [ ] */
+     * @return the byte [ ]
+     */
     public static byte[] toJSONAsBytes(String mapperFilterName, Object resultMapper, Set<String> exceptProperties) {
         try {
             if (exceptProperties == null) {
@@ -404,8 +454,8 @@ public final class JsonUtils {
                 SimpleBeanPropertyFilter simpleBeanPropertyFilter = SimpleBeanPropertyFilter.serializeAllExcept(
                     // NOPMD
                     exceptProperties.toArray(new String[exceptProperties.size()]));
-                FilterProvider filterProvider =
-                    new SimpleFilterProvider().addFilter(mapperFilterName, simpleBeanPropertyFilter);
+                FilterProvider filterProvider = new SimpleFilterProvider().addFilter(mapperFilterName,
+                    simpleBeanPropertyFilter);
                 return objectMapperIgnoreUnknown.writer(filterProvider).writeValueAsBytes(resultMapper);
             }
         } catch (JsonProcessingException e) {
@@ -414,10 +464,12 @@ public final class JsonUtils {
         }
     }
 
-    /** @param is input stream
+    /**
+     * @param is input stream
      * @param clazz class
      * @param <T> type
-     * @return the type */
+     * @return the type
+     */
     public static <T> T fromStream(InputStream is, Class<T> clazz) {
         try {
             return objectMapperIgnoreUnknown.readValue(is, clazz);

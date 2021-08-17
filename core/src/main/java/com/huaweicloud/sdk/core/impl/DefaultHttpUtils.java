@@ -28,18 +28,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public final class DefaultHttpUtils {
-
-    /** The utility class should hide the public constructor */
+    /**
+     * The utility class should hide the public constructor
+     */
     private DefaultHttpUtils() {
 
     }
 
-    /** Convert headers to map.
+    /**
+     * Convert headers to map.
      *
      * @param headers Headers
-     * @return Map */
+     * @return Map
+     */
     public static Map<String, List<String>> headersToMap(Headers headers) {
         if (Objects.isNull(headers)) {
             return null;

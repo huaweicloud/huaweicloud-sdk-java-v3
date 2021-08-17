@@ -38,7 +38,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.TemporalAccessor;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class OffsetDateTimeDeserializer extends JsonDeserializer<OffsetDateTime> {
 
     private static final DateTimeFormatter ISO_8601_FORMATTER = new DateTimeFormatterBuilder().parseCaseInsensitive()
@@ -56,14 +58,14 @@ public class OffsetDateTimeDeserializer extends JsonDeserializer<OffsetDateTime>
         .toFormatter();
 
     @Override
-    public OffsetDateTime deserialize(JsonParser jsonParser,
-        DeserializationContext deserializationContext) throws IOException {
+    public OffsetDateTime deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
+        throws IOException {
 
         if (StringUtils.isEmpty(jsonParser.getText())) {
             return null;
         }
-        TemporalAccessor temporalAccessor =
-            ISO_8601_FORMATTER.parseBest(jsonParser.getText(), ZonedDateTime::from, LocalDateTime::from);
+        TemporalAccessor temporalAccessor = ISO_8601_FORMATTER.parseBest(jsonParser.getText(), ZonedDateTime::from,
+            LocalDateTime::from);
         if (temporalAccessor instanceof ZonedDateTime) {
             return ((ZonedDateTime) temporalAccessor).toOffsetDateTime();
         } else if (temporalAccessor instanceof LocalDateTime) {

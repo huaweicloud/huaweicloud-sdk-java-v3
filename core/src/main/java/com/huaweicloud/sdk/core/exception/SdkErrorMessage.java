@@ -23,42 +23,51 @@ package com.huaweicloud.sdk.core.exception;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class SdkErrorMessage extends SdkResponse {
-
     private String errorMsg;
 
     private String errorCode;
 
     private String requestId;
 
-    /** Default constructor of class SdkErrorMessage */
+    /**
+     * Default constructor of class SdkErrorMessage
+     */
     public SdkErrorMessage() {
 
     }
 
-    /** Constructor with one parameter httpStatusCode
+    /**
+     * Constructor with one parameter httpStatusCode
      *
-     * @param httpStatusCode status code from response */
+     * @param httpStatusCode status code from response
+     */
     public SdkErrorMessage(int httpStatusCode) {
         super(httpStatusCode);
     }
 
-    /** Constructor with full error type
+    /**
+     * Constructor with full error type
      *
      * @param errorCode error code from response
      * @param errorMsg error message from response
-     * @param requestId requestId from response */
+     * @param requestId requestId from response
+     */
     public SdkErrorMessage(String errorCode, String errorMsg, String requestId) {
         this.errorMsg = errorMsg;
         this.errorCode = errorCode;
         this.requestId = requestId;
     }
 
-    /** Constructor with two parameter
+    /**
+     * Constructor with two parameter
      *
      * @param errorCode error code from response
-     * @param errorMsg error message from response */
+     * @param errorMsg error message from response
+     */
     public SdkErrorMessage(String errorCode, String errorMsg) {
         this.errorMsg = errorMsg;
         this.errorCode = errorCode;

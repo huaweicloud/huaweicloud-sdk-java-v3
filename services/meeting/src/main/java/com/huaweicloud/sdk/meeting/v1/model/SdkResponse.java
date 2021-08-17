@@ -1,13 +1,13 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-/** 功能描述
+/**
+ * 功能描述
  *
- * @since 2020-06-11 */
+ * @since 2020-06-11
+ */
 
 public class SdkResponse {
-
     @JsonIgnore
     private int httpStatusCode;
 

@@ -21,9 +21,10 @@
 
 package com.huaweicloud.sdk.core.exchange;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class ApiReference {
-
     private String name;
 
     private String method;

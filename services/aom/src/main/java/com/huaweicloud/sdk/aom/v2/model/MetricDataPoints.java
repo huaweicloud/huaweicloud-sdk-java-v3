@@ -1,39 +1,55 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
+
+
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aom.v2.model.StatisticValue;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.Objects;
 
-/** 查询结果要点。 */
-public class MetricDataPoints {
+/**
+ * 查询结果要点。
+ */
+public class MetricDataPoints  {
+
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "timestamp")
-
+    @JsonProperty(value="timestamp")
+    
     private Long timestamp;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "unit")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="unit")
+    
     private String unit;
 
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "statistics")
-
+    @JsonProperty(value="statistics")
+    
     private List<StatisticValue> statistics = null;
-
+    
     public MetricDataPoints withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    /** 时间戳。
-     * 
-     * @return timestamp */
+    
+
+
+    /**
+     * 时间戳。
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -42,14 +58,20 @@ public class MetricDataPoints {
         this.timestamp = timestamp;
     }
 
+    
+
     public MetricDataPoints withUnit(String unit) {
         this.unit = unit;
         return this;
     }
 
-    /** 时间序列单位。
-     * 
-     * @return unit */
+    
+
+
+    /**
+     * 时间序列单位。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -58,13 +80,16 @@ public class MetricDataPoints {
         this.unit = unit;
     }
 
+    
+
     public MetricDataPoints withStatistics(List<StatisticValue> statistics) {
         this.statistics = statistics;
         return this;
     }
 
+    
     public MetricDataPoints addStatisticsItem(StatisticValue statisticsItem) {
-        if (this.statistics == null) {
+        if(this.statistics == null) {
             this.statistics = new ArrayList<>();
         }
         this.statistics.add(statisticsItem);
@@ -72,16 +97,17 @@ public class MetricDataPoints {
     }
 
     public MetricDataPoints withStatistics(Consumer<List<StatisticValue>> statisticsSetter) {
-        if (this.statistics == null) {
+        if(this.statistics == null) {
             this.statistics = new ArrayList<>();
         }
         statisticsSetter.accept(this.statistics);
         return this;
     }
 
-    /** 统计方式。
-     * 
-     * @return statistics */
+    /**
+     * 统计方式。
+     * @return statistics
+     */
     public List<StatisticValue> getStatistics() {
         return statistics;
     }
@@ -89,6 +115,8 @@ public class MetricDataPoints {
     public void setStatistics(List<StatisticValue> statistics) {
         this.statistics = statistics;
     }
+
+    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -99,16 +127,14 @@ public class MetricDataPoints {
             return false;
         }
         MetricDataPoints metricDataPoints = (MetricDataPoints) o;
-        return Objects.equals(this.timestamp, metricDataPoints.timestamp)
-            && Objects.equals(this.unit, metricDataPoints.unit)
-            && Objects.equals(this.statistics, metricDataPoints.statistics);
+        return Objects.equals(this.timestamp, metricDataPoints.timestamp) &&
+            Objects.equals(this.unit, metricDataPoints.unit) &&
+            Objects.equals(this.statistics, metricDataPoints.statistics);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(timestamp, unit, statistics);
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,13 +145,16 @@ public class MetricDataPoints {
         sb.append("}");
         return sb.toString();
     }
-
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-
+    
 }
+

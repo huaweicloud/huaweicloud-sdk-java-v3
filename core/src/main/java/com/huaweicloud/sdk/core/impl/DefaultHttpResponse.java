@@ -35,7 +35,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class DefaultHttpResponse implements HttpResponse {
 
     private static final Logger logger = LoggerFactory.getLogger(DefaultHttpResponse.class);
@@ -46,9 +48,11 @@ public class DefaultHttpResponse implements HttpResponse {
 
     private DefaultHttpResponse(Response response) {
         this.response = response;
-        if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType())
-            && (response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)
-                || response.body().contentType().toString().startsWith(Constants.MEDIATYPE.TEXT))) {
+        if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType()) && (
+            response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON) || response.body()
+                .contentType()
+                .toString()
+                .startsWith(Constants.MEDIATYPE.TEXT))) {
             try {
                 strBody = response.body().string();
             } catch (IOException e) {
@@ -68,13 +72,15 @@ public class DefaultHttpResponse implements HttpResponse {
 
     @Override
     public String getContentType() {
-        return Objects.isNull(response.body()) || Objects.isNull(response.body().contentType()) ? null
+        return Objects.isNull(response.body()) || Objects.isNull(response.body().contentType())
+            ? null
             : response.body().contentType().toString();
     }
 
     @Override
     public long getContentLength() {
-        return Objects.isNull(this.response.body()) || this.response.body().contentLength() < 0 ? 0
+        return Objects.isNull(this.response.body()) || this.response.body().contentLength() < 0
+            ? 0
             : this.response.body().contentLength();
     }
 

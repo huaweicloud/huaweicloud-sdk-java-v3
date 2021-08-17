@@ -43,24 +43,34 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
-/** A helper for concurrent safe delay when retry.
+/**
+ * A helper for concurrent safe delay when retry.
  *
- * @author HuaweiCloud_SDK */
+ * @author HuaweiCloud_SDK
+ */
 public class RetryRecord<ResT> {
-
     private final ThreadFactory namedFactory = initNamedThreadFactory();
 
-    /** corePoolSize is set to 0 means that the thread will be exit when it's idle. */
+    /**
+     * corePoolSize is set to 0 means that the thread will be exit when it's idle.
+     */
     private final ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(0, namedFactory);
 
-    /** A CompletableFuture used to chain all results of the work supplier. Once the result of the work is done, this
-     * future will be returned. */
+    /**
+     * A CompletableFuture used to chain all results of the work supplier.
+     * Once the result of the work is done, this future will be returned.
+     */
     CompletableFuture<ResT> future;
 
-    /** Actual supplier needs to be retried. Whether the request should be retried depends on the result of the work. */
+    /**
+     * Actual supplier needs to be retried.
+     * Whether the request should be retried depends on the result of the work.
+     */
     Supplier<CompletableFuture<ResT>> workSupplier;
 
-    /** The times has been retried. */
+    /**
+     * The times has been retried.
+     */
     AtomicInteger retriesAttempted = new AtomicInteger(0);
 
     SdkException currException = null;
@@ -80,12 +90,15 @@ public class RetryRecord<ResT> {
         this.backoffStrategy = backoffStrategy;
     }
 
-    /** This method should be override cuz the handling process differs in synchronous and asynchronous situation.
+    /**
+     * This method should be override cuz the handling process differs in synchronous and asynchronous situation.
      * <p>
-     * Actual action to be preformed when one work is done. If a request needs to be retried, this method will call
-     * reschedule() method to delay for the backoff time and rerun this method.
+     * Actual action to be preformed when one work is done.
+     * If a request needs to be retried, this method will call reschedule() method
+     * to delay for the backoff time and rerun this method.
      *
-     * @param executor the ScheduledExecutorService thread that initialize the delay and retry */
+     * @param executor the ScheduledExecutorService thread that initialize the delay and retry
+     */
     public void perform(ScheduledExecutorService executor) {
         int currRetriesAttempted = retriesAttempted.incrementAndGet();
         workSupplier.get().whenComplete((resp, throwable) -> {
@@ -145,15 +158,19 @@ public class RetryRecord<ResT> {
         }
     }
 
-    /** The entry to send request and handle the result of the asynchronous request. */
+    /**
+     * The entry to send request and handle the result of the asynchronous request.
+     */
     public void schedule() {
         executorService.submit(() -> perform(executorService));
     }
 
-    /** The synchronous retry entry for the request.
+    /**
+     * The synchronous retry entry for the request.
      *
      * @param executor the thread executed for delay
-     * @param delay the duration waited before next retry */
+     * @param delay the duration waited before next retry
+     */
     public void reschedule(ScheduledExecutorService executor, long delay) {
         executor.schedule(() -> perform(executor), delay, TimeUnit.MILLISECONDS);
     }
@@ -166,13 +183,15 @@ public class RetryRecord<ResT> {
         };
     }
 
-    /** Build retry context to be used in determining backoff strategy and delay.
+    /**
+     * Build retry context to be used in determining backoff strategy and delay.
      *
      * @param resT response
      * @param e exception
      * @param statusCode status code
      * @param retriesAttempted retries has been attempted
-     * @return context */
+     * @return context
+     */
     RetryContext<ResT> buildContext(ResT resT, SdkException e, int statusCode, int retriesAttempted) {
         return (RetryContext<ResT>) RetryContext.builder()
             .withLastResponse(resT)
@@ -182,13 +201,15 @@ public class RetryRecord<ResT> {
             .build();
     }
 
-    /** Get the status code from response or exception. The default value of status code is 0, if response and exception
-     * are null, the return value is 0. If the exception is subclass of ServiceResponseException, the status code could
-     * be set.
+    /**
+     * Get the status code from response or exception.
+     * The default value of status code is 0, if response and exception are null, the return value is 0.
+     * If the exception is subclass of ServiceResponseException, the status code could be set.
      *
      * @param resT response
      * @param e sdk exception
-     * @return the value of status code */
+     * @return the value of status code
+     */
     public int getStatusCodeFromResult(ResT resT, SdkException e) {
         int statusCode = 0;
         if (Objects.nonNull(resT)) {
@@ -223,24 +244,31 @@ public class RetryRecord<ResT> {
         this.workSupplier = workSupplier;
     }
 
-    /** Log for retry. */
+    /**
+     * Log for retry.
+     */
     public static class RetryLog {
-
         private static final Logger logger = LoggerFactory.getLogger("HuaweiCloud-SDK-Retry");
 
-        /** Get the logger.
+        /**
+         * Get the logger.
          *
-         * @return Logger */
+         * @return Logger
+         */
         public static Logger get() {
             return logger;
         }
     }
 
-    /** print retry log. Notice: - in synchronous retry request, this log would be print before the request is sent - in
-     * asynchronous retry request, this log would be print after the request is sent
+    /**
+     * print retry log.
+     * Notice:
+     * - in synchronous retry request, this log would be print before the request is sent
+     * - in asynchronous retry request, this log would be print after the request is sent
      *
      * @param retriesAttempted the attempted times of retry
-     * @param waitBeforeNextRetry the wait duration before next retry */
+     * @param waitBeforeNextRetry the wait duration before next retry
+     */
     public void printRetryLog(int retriesAttempted, long waitBeforeNextRetry) {
         RetryLog.get()
             .info("After waiting for {} milliseconds, the request will retry for the {}th times, "

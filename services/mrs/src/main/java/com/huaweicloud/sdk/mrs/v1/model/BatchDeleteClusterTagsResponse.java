@@ -1,11 +1,19 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
+
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
+
+import java.util.function.Consumer;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class BatchDeleteClusterTagsResponse extends SdkResponse {
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -17,12 +25,10 @@ public class BatchDeleteClusterTagsResponse extends SdkResponse {
         }
         return true;
     }
-
     @Override
     public int hashCode() {
         return Objects.hash();
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -30,5 +36,6 @@ public class BatchDeleteClusterTagsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-
+    
 }
+

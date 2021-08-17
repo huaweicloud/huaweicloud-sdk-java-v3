@@ -44,7 +44,9 @@ import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     private String projectId;
@@ -57,8 +59,10 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         this.projectId = projectId;
     }
 
-    /** @param projectId id of project showed in console
-     * @return BasicCredentials */
+    /**
+     * @param projectId id of project showed in console
+     * @return BasicCredentials
+     */
     public BasicCredentials withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -115,9 +119,9 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         String domainId = getDomainId(client);
         if (StringUtils.isEmpty(domainId)) {
             throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
-                + "1. Manually specify domain_id when initializing the credentials.\n\t"
-                + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
-                + "3. Use AK/SK of the domain account.");
+                    + "1. Manually specify domain_id when initializing the credentials.\n\t"
+                    + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
+                    + "3. Use AK/SK of the domain account.");
         }
 
         return getCreateProjectId(client, regionId, domainId);
@@ -141,28 +145,29 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     private String getDomainId(HcClient hcClient) {
         KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
-        KeystoneListAuthDomainsResponse response =
-            hcClient.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+        KeystoneListAuthDomainsResponse response = hcClient.syncInvokeHttp(request,
+            InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
         if (Objects.isNull(response)) {
             throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
-                + "1. Manually specify domain_id when initializing the credentials.\n\t"
-                + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
-                + "3. Use AK/SK of the domain account.");
+                    + "1. Manually specify domain_id when initializing the credentials.\n\t"
+                    + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
+                    + "3. Use AK/SK of the domain account.");
         }
         return response.getDomains().get(0).getId();
     }
 
     private String getCreateProjectId(HcClient hcClient, String regionId, String domainId) {
-        GlobalCredentials globalCredentials =
-            new GlobalCredentials().withAk(getAk()).withSk(getSk()).withDomainId(domainId);
+        GlobalCredentials globalCredentials = new GlobalCredentials().withAk(getAk())
+            .withSk(getSk())
+            .withDomainId(domainId);
         HcClient innerGlobal = hcClient.overrideCredential(globalCredentials);
-        KeystoneCreateProjectRequest request =
-            new KeystoneCreateProjectRequest().withBody(body -> body.withProject(project -> {
+        KeystoneCreateProjectRequest request = new KeystoneCreateProjectRequest().withBody(
+            body -> body.withProject(project -> {
                 project.withName(regionId);
                 project.withDomainId(domainId);
             }));
-        KeystoneCreateProjectResponse response =
-            innerGlobal.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_CREATE_PROJECT);
+        KeystoneCreateProjectResponse response = innerGlobal.syncInvokeHttp(request,
+            InnerIamMeta.KEYSTONE_CREATE_PROJECT);
 
         if (Objects.isNull(response.getProject())) {
             throw new SdkException("failed to create project");
@@ -183,8 +188,8 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                 builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
             }
 
-            if (Objects.nonNull(httpRequest.getContentType())
-                && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+            if (Objects.nonNull(httpRequest.getContentType()) && !httpRequest.getContentType()
+                .startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
                 builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
             }
 

@@ -24,9 +24,10 @@ package com.huaweicloud.sdk.core.internal.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class Region {
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
     private String description;
@@ -48,9 +49,11 @@ public class Region {
         return this;
     }
 
-    /** 区域描述信息。
+    /**
+     * 区域描述信息。
      *
-     * @return description */
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -77,9 +80,11 @@ public class Region {
         return this;
     }
 
-    /** 区域ID。
+    /**
+     * 区域ID。
      *
-     * @return id */
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -93,9 +98,11 @@ public class Region {
         return this;
     }
 
-    /** 区域类型。
+    /**
+     * 区域类型。
      *
-     * @return type */
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -105,3 +112,4 @@ public class Region {
     }
 
 }
+

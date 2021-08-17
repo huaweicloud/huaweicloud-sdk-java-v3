@@ -21,9 +21,11 @@
 
 package com.huaweicloud.sdk.core.exception;
 
-/** Captures Server based Errors (Return Codes between 500 - 600)
+/**
+ * Captures Server based Errors (Return Codes between 500 - 600)
  *
- * @author HuaweiCloud_SDK */
+ * @author HuaweiCloud_SDK
+ */
 public class ServerResponseException extends ServiceResponseException {
 
     public ServerResponseException(int httpStatusCode, SdkErrorMessage sdkErrorMessage) {

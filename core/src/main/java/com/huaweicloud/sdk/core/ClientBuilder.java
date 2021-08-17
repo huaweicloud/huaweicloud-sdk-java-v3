@@ -38,9 +38,10 @@ import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class ClientBuilder<T> {
-
     private Function<HcClient, T> creator;
 
     private ICredential credential;
@@ -51,8 +52,8 @@ public class ClientBuilder<T> {
 
     private String endpoint;
 
-    private List<String> credentialType =
-        new ArrayList<>(Collections.singletonList(BasicCredentials.class.getSimpleName()));
+    private List<String> credentialType = new ArrayList<>(
+        Collections.singletonList(BasicCredentials.class.getSimpleName()));
 
     public ClientBuilder(Function<HcClient, T> creator) {
         this.creator = creator;

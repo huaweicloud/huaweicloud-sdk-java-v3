@@ -28,11 +28,12 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public interface HttpListener {
 
     interface RequestListener {
-
         String httpMethod();
 
         String uri();
@@ -45,7 +46,6 @@ public interface HttpListener {
     }
 
     interface ResponseListener {
-
         String httpMethod();
 
         String uri();
@@ -67,7 +67,6 @@ public interface HttpListener {
 
     static HttpListener forRequestListener(Consumer<RequestListener> func) {
         return new HttpListener() {
-
             @Override
             public void preRequest(RequestListener requestListener) {
                 func.accept(requestListener);
@@ -77,7 +76,6 @@ public interface HttpListener {
 
     static HttpListener forResponseListener(Consumer<ResponseListener> func) {
         return new HttpListener() {
-
             @Override
             public void postResponse(ResponseListener requestListener) {
                 func.accept(requestListener);

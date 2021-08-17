@@ -1,37 +1,54 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
+
+
 
 import java.util.Collections;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.mrs.v1.model.Trigger;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.Objects;
 
-/** Rules */
-public class Rules {
+/**
+ * Rules
+ */
+public class Rules  {
+
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
+    @JsonProperty(value="name")
+    
     private String name;
 
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
+    @JsonProperty(value="description")
+    
     private String description;
-
-    /** 弹性伸缩规则的调整类型，只允许以下类型： 枚举值： - scale_out：扩容 - scale_in：缩容 */
+    /**
+     * 弹性伸缩规则的调整类型，只允许以下类型：  枚举值： - scale_out：扩容 - scale_in：缩容
+     */
     public static final class AdjustmentTypeEnum {
 
-        /** Enum SCALE_OUT for value: "scale_out" */
+        
+        /**
+         * Enum SCALE_OUT for value: "scale_out"
+         */
         public static final AdjustmentTypeEnum SCALE_OUT = new AdjustmentTypeEnum("scale_out");
-
-        /** Enum SCALE_IN for value: "scale_in" */
+        
+        /**
+         * Enum SCALE_IN for value: "scale_in"
+         */
         public static final AdjustmentTypeEnum SCALE_IN = new AdjustmentTypeEnum("scale_in");
+        
 
         private static final Map<String, AdjustmentTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -60,7 +77,7 @@ public class Rules {
 
         @JsonCreator
         public static AdjustmentTypeEnum fromValue(String value) {
-            if (value == null) {
+            if( value == null ){
                 return null;
             }
             AdjustmentTypeEnum result = STATIC_FIELDS.get(value);
@@ -71,7 +88,7 @@ public class Rules {
         }
 
         public static AdjustmentTypeEnum valueOf(String value) {
-            if (value == null) {
+            if( value == null ){
                 return null;
             }
             AdjustmentTypeEnum result = STATIC_FIELDS.get(value);
@@ -95,24 +112,28 @@ public class Rules {
         }
     }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "adjustment_type")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="adjustment_type")
+    
     private AdjustmentTypeEnum adjustmentType;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cool_down_minutes")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cool_down_minutes")
+    
     private Integer coolDownMinutes;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scaling_adjustment")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="scaling_adjustment")
+    
     private Integer scalingAdjustment;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "trigger")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="trigger")
+    
     private Trigger trigger;
 
     public Rules withName(String name) {
@@ -120,9 +141,13 @@ public class Rules {
         return this;
     }
 
-    /** 弹性伸缩规则的名称。 只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。 在一个节点组范围内，不允许重名。
-     * 
-     * @return name */
+    
+
+
+    /**
+     * 弹性伸缩规则的名称。  只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。  在一个节点组范围内，不允许重名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -131,14 +156,20 @@ public class Rules {
         this.name = name;
     }
 
+    
+
     public Rules withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    /** 弹性伸缩规则的说明。 最大长度为1024字符。
-     * 
-     * @return description */
+    
+
+
+    /**
+     * 弹性伸缩规则的说明。  最大长度为1024字符。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -147,14 +178,20 @@ public class Rules {
         this.description = description;
     }
 
+    
+
     public Rules withAdjustmentType(AdjustmentTypeEnum adjustmentType) {
         this.adjustmentType = adjustmentType;
         return this;
     }
 
-    /** 弹性伸缩规则的调整类型，只允许以下类型： 枚举值： - scale_out：扩容 - scale_in：缩容
-     * 
-     * @return adjustmentType */
+    
+
+
+    /**
+     * 弹性伸缩规则的调整类型，只允许以下类型：  枚举值： - scale_out：扩容 - scale_in：缩容
+     * @return adjustmentType
+     */
     public AdjustmentTypeEnum getAdjustmentType() {
         return adjustmentType;
     }
@@ -163,14 +200,22 @@ public class Rules {
         this.adjustmentType = adjustmentType;
     }
 
+    
+
     public Rules withCoolDownMinutes(Integer coolDownMinutes) {
         this.coolDownMinutes = coolDownMinutes;
         return this;
     }
 
-    /** 触发弹性伸缩规则后，该集群处于冷却状态（不再执行弹性伸缩操作）的时长，单位为分钟。 取值范围[0～10080]，10080为一周的分钟数。 minimum: 0 maximum: 10080
-     * 
-     * @return coolDownMinutes */
+    
+
+
+    /**
+     * 触发弹性伸缩规则后，该集群处于冷却状态（不再执行弹性伸缩操作）的时长，单位为分钟。  取值范围[0～10080]，10080为一周的分钟数。
+     * minimum: 0
+     * maximum: 10080
+     * @return coolDownMinutes
+     */
     public Integer getCoolDownMinutes() {
         return coolDownMinutes;
     }
@@ -179,14 +224,22 @@ public class Rules {
         this.coolDownMinutes = coolDownMinutes;
     }
 
+    
+
     public Rules withScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
         return this;
     }
 
-    /** 单次调整集群节点的个数。 取值范围[1～100] minimum: 1 maximum: 100
-     * 
-     * @return scalingAdjustment */
+    
+
+
+    /**
+     * 单次调整集群节点的个数。  取值范围[1～100]
+     * minimum: 1
+     * maximum: 100
+     * @return scalingAdjustment
+     */
     public Integer getScalingAdjustment() {
         return scalingAdjustment;
     }
@@ -195,23 +248,27 @@ public class Rules {
         this.scalingAdjustment = scalingAdjustment;
     }
 
+    
+
     public Rules withTrigger(Trigger trigger) {
         this.trigger = trigger;
         return this;
     }
 
     public Rules withTrigger(Consumer<Trigger> triggerSetter) {
-        if (this.trigger == null) {
+        if(this.trigger == null ){
             this.trigger = new Trigger();
             triggerSetter.accept(this.trigger);
         }
-
+        
         return this;
     }
 
-    /** Get trigger
-     * 
-     * @return trigger */
+
+    /**
+     * Get trigger
+     * @return trigger
+     */
     public Trigger getTrigger() {
         return trigger;
     }
@@ -219,6 +276,8 @@ public class Rules {
     public void setTrigger(Trigger trigger) {
         this.trigger = trigger;
     }
+
+    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -229,18 +288,17 @@ public class Rules {
             return false;
         }
         Rules rules = (Rules) o;
-        return Objects.equals(this.name, rules.name) && Objects.equals(this.description, rules.description)
-            && Objects.equals(this.adjustmentType, rules.adjustmentType)
-            && Objects.equals(this.coolDownMinutes, rules.coolDownMinutes)
-            && Objects.equals(this.scalingAdjustment, rules.scalingAdjustment)
-            && Objects.equals(this.trigger, rules.trigger);
+        return Objects.equals(this.name, rules.name) &&
+            Objects.equals(this.description, rules.description) &&
+            Objects.equals(this.adjustmentType, rules.adjustmentType) &&
+            Objects.equals(this.coolDownMinutes, rules.coolDownMinutes) &&
+            Objects.equals(this.scalingAdjustment, rules.scalingAdjustment) &&
+            Objects.equals(this.trigger, rules.trigger);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(name, description, adjustmentType, coolDownMinutes, scalingAdjustment, trigger);
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -254,13 +312,16 @@ public class Rules {
         sb.append("}");
         return sb.toString();
     }
-
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-
+    
 }
+

@@ -27,9 +27,10 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.function.Consumer;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class KeystoneCreateProjectResponse extends SdkResponse {
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project")
     private Project project = null;
@@ -57,3 +58,4 @@ public class KeystoneCreateProjectResponse extends SdkResponse {
     }
 
 }
+

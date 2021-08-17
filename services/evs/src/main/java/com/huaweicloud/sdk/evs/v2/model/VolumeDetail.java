@@ -178,6 +178,11 @@ public class VolumeDetail {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serial_number")
+
+    private String serialNumber;
+
     public VolumeDetail withId(String id) {
         this.id = id;
         return this;
@@ -441,7 +446,7 @@ public class VolumeDetail {
         return this;
     }
 
-    /** 云硬盘类型。 目前支持“SSD”，“GPSSD”，“SAS”和“SATA”四种。 “SSD”为超高IO云硬盘 “GPSSD”为通用型云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
+    /** 云硬盘类型。 目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
      * 
      * @return volumeType */
     public String getVolumeType() {
@@ -782,6 +787,22 @@ public class VolumeDetail {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public VolumeDetail withSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+        return this;
+    }
+
+    /** 云硬盘序列号。 只有SCSI类型的非双活卷才会返回该字段，用于与虚拟机中的盘做对应关系。
+     * 
+     * @return serialNumber */
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -819,7 +840,8 @@ public class VolumeDetail {
             && Objects.equals(this.dedicatedStorageId, volumeDetail.dedicatedStorageId)
             && Objects.equals(this.dedicatedStorageName, volumeDetail.dedicatedStorageName)
             && Objects.equals(this.tags, volumeDetail.tags) && Objects.equals(this.wwn, volumeDetail.wwn)
-            && Objects.equals(this.enterpriseProjectId, volumeDetail.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, volumeDetail.enterpriseProjectId)
+            && Objects.equals(this.serialNumber, volumeDetail.serialNumber);
     }
 
     @Override
@@ -856,7 +878,8 @@ public class VolumeDetail {
             dedicatedStorageName,
             tags,
             wwn,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            serialNumber);
     }
 
     @Override
@@ -898,6 +921,7 @@ public class VolumeDetail {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    wwn: ").append(toIndentedString(wwn)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

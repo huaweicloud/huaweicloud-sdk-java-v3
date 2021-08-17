@@ -21,9 +21,10 @@
 
 package com.huaweicloud.sdk.core;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public final class Constants {
-
     public static final String LINE_SEPARATOR = "\n";
 
     public static final String SDK_SIGNING_ALGORITHM = "SDK-HMAC-SHA256";
@@ -56,9 +57,10 @@ public final class Constants {
 
     public static final String CUSTOMIZATION = "Customization";
 
-    /** Supported media type */
+    /**
+     * Supported media type
+     */
     public static class MEDIATYPE {
-
         public static final String APPLICATION_JSON = "application/json";
 
         public static final String APPLICATION_JSON_UTF8 = "application/json;charset=UTF-8";
@@ -92,9 +94,10 @@ public final class Constants {
 
     public static final String DEFAULT_IAM_ENDPOINT = "https://iam.myhuaweicloud.com";
 
-    /** some special status code */
+    /**
+     * some special status code
+     */
     public static class StatusCode {
-
         public static final int SUCCESS = 200;
 
         public static final int CLIENT_ERROR = 400;
@@ -106,7 +109,9 @@ public final class Constants {
         public static final int SERVER_ERROR_UPPER_LIMIT = 600;
     }
 
-    /** The utility class should hide the public constructor */
+    /**
+     * The utility class should hide the public constructor
+     */
     private Constants() {
 
     }

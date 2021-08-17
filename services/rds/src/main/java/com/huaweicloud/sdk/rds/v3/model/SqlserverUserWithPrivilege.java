@@ -13,6 +13,11 @@ public class SqlserverUserWithPrivilege {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "readonly")
+
+    private Boolean readonly;
+
     public SqlserverUserWithPrivilege withName(String name) {
         this.name = name;
         return this;
@@ -29,6 +34,22 @@ public class SqlserverUserWithPrivilege {
         this.name = name;
     }
 
+    public SqlserverUserWithPrivilege withReadonly(Boolean readonly) {
+        this.readonly = readonly;
+        return this;
+    }
+
+    /** 是否为只读权限。
+     * 
+     * @return readonly */
+    public Boolean getReadonly() {
+        return readonly;
+    }
+
+    public void setReadonly(Boolean readonly) {
+        this.readonly = readonly;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -38,12 +59,13 @@ public class SqlserverUserWithPrivilege {
             return false;
         }
         SqlserverUserWithPrivilege sqlserverUserWithPrivilege = (SqlserverUserWithPrivilege) o;
-        return Objects.equals(this.name, sqlserverUserWithPrivilege.name);
+        return Objects.equals(this.name, sqlserverUserWithPrivilege.name)
+            && Objects.equals(this.readonly, sqlserverUserWithPrivilege.readonly);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, readonly);
     }
 
     @Override
@@ -51,6 +73,7 @@ public class SqlserverUserWithPrivilege {
         StringBuilder sb = new StringBuilder();
         sb.append("class SqlserverUserWithPrivilege {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    readonly: ").append(toIndentedString(readonly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,36 +1,50 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
+
+
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.function.Consumer;
 import java.util.Objects;
 
-/** ResourcesPlan */
-public class ResourcesPlan {
+/**
+ * ResourcesPlan
+ */
+public class ResourcesPlan  {
+
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "period_type")
-
+    @JsonProperty(value="period_type")
+    
     private String periodType;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_time")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="start_time")
+    
     private String startTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="end_time")
+    
     private String endTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "min_capacity")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="min_capacity")
+    
     private Integer minCapacity;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "max_capacity")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="max_capacity")
+    
     private Integer maxCapacity;
 
     public ResourcesPlan withPeriodType(String periodType) {
@@ -38,9 +52,13 @@ public class ResourcesPlan {
         return this;
     }
 
-    /** 资源计划的周期类型，当前只允许以下类型： daily
-     * 
-     * @return periodType */
+    
+
+
+    /**
+     * 资源计划的周期类型，当前只允许以下类型：  daily
+     * @return periodType
+     */
     public String getPeriodType() {
         return periodType;
     }
@@ -49,14 +67,20 @@ public class ResourcesPlan {
         this.periodType = periodType;
     }
 
+    
+
     public ResourcesPlan withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    /** 资源计划的起始时间，格式为“hour:minute”，表示时间在0:00-23:59之间。
-     * 
-     * @return startTime */
+    
+
+
+    /**
+     * 资源计划的起始时间，格式为“hour:minute”，表示时间在0:00-23:59之间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -65,14 +89,20 @@ public class ResourcesPlan {
         this.startTime = startTime;
     }
 
+    
+
     public ResourcesPlan withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    /** 资源计划的结束时间，格式与“start_time”相同，不早于start_time表示的时间，且与start_time间隔不小于30min。
-     * 
-     * @return endTime */
+    
+
+
+    /**
+     * 资源计划的结束时间，格式与“start_time”相同，不早于start_time表示的时间，且与start_time间隔不小于30min。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -81,14 +111,22 @@ public class ResourcesPlan {
         this.endTime = endTime;
     }
 
+    
+
     public ResourcesPlan withMinCapacity(Integer minCapacity) {
         this.minCapacity = minCapacity;
         return this;
     }
 
-    /** 资源计划内该节点组的最小保留节点数。 取值范围：[0～500] minimum: 0 maximum: 500
-     * 
-     * @return minCapacity */
+    
+
+
+    /**
+     * 资源计划内该节点组的最小保留节点数。  取值范围：[0～500]
+     * minimum: 0
+     * maximum: 500
+     * @return minCapacity
+     */
     public Integer getMinCapacity() {
         return minCapacity;
     }
@@ -97,14 +135,22 @@ public class ResourcesPlan {
         this.minCapacity = minCapacity;
     }
 
+    
+
     public ResourcesPlan withMaxCapacity(Integer maxCapacity) {
         this.maxCapacity = maxCapacity;
         return this;
     }
 
-    /** 资源计划内该节点组的最大保留节点数。 取值范围：[0～500] minimum: 0 maximum: 500
-     * 
-     * @return maxCapacity */
+    
+
+
+    /**
+     * 资源计划内该节点组的最大保留节点数。  取值范围：[0～500]
+     * minimum: 0
+     * maximum: 500
+     * @return maxCapacity
+     */
     public Integer getMaxCapacity() {
         return maxCapacity;
     }
@@ -112,6 +158,8 @@ public class ResourcesPlan {
     public void setMaxCapacity(Integer maxCapacity) {
         this.maxCapacity = maxCapacity;
     }
+
+    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -122,18 +170,16 @@ public class ResourcesPlan {
             return false;
         }
         ResourcesPlan resourcesPlan = (ResourcesPlan) o;
-        return Objects.equals(this.periodType, resourcesPlan.periodType)
-            && Objects.equals(this.startTime, resourcesPlan.startTime)
-            && Objects.equals(this.endTime, resourcesPlan.endTime)
-            && Objects.equals(this.minCapacity, resourcesPlan.minCapacity)
-            && Objects.equals(this.maxCapacity, resourcesPlan.maxCapacity);
+        return Objects.equals(this.periodType, resourcesPlan.periodType) &&
+            Objects.equals(this.startTime, resourcesPlan.startTime) &&
+            Objects.equals(this.endTime, resourcesPlan.endTime) &&
+            Objects.equals(this.minCapacity, resourcesPlan.minCapacity) &&
+            Objects.equals(this.maxCapacity, resourcesPlan.maxCapacity);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(periodType, startTime, endTime, minCapacity, maxCapacity);
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -146,13 +192,16 @@ public class ResourcesPlan {
         sb.append("}");
         return sb.toString();
     }
-
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-
+    
 }
+

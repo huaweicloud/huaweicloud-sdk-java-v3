@@ -6,28 +6,24 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.util.Objects;
 
 public class AuthReqDTOV1 {
-
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("account")
     private String account;
-
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("clientType")
     private Integer clientType;
-
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("createTokenType")
     private Integer createTokenType;
-
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("HA2")
     private String ha2;
+
 
     public AuthReqDTOV1 withAccount(String account) {
         this.account = account;
@@ -85,7 +81,7 @@ public class AuthReqDTOV1 {
         if (this == o) {
             return true;
         } else if (o != null && this.getClass() == o.getClass()) {
-            AuthReqDTOV1 authReqDTOV1 = (AuthReqDTOV1) o;
+            AuthReqDTOV1 authReqDTOV1 = (AuthReqDTOV1)o;
             return Objects.equals(this.account, authReqDTOV1.account)
                 && Objects.equals(this.clientType, authReqDTOV1.clientType)
                 && Objects.equals(this.createTokenType, authReqDTOV1.createTokenType)
@@ -96,7 +92,7 @@ public class AuthReqDTOV1 {
     }
 
     public int hashCode() {
-        return Objects.hash(new Object[] {this.account, this.clientType, this.createTokenType, this.ha2});
+        return Objects.hash(new Object[]{this.account, this.clientType, this.createTokenType, this.ha2});
     }
 
     public String toString() {

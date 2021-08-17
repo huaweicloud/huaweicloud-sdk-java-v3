@@ -164,7 +164,7 @@ public class ListSnapshotsRequest {
         return this;
     }
 
-    /** 指定快照id进行过滤。
+    /** 指定快照id进行过滤。可以传入多个id过滤查询，格式：id=id1&id=id2&id=id3
      * 
      * @return id */
     public String getId() {

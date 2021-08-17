@@ -130,6 +130,82 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
 
     private String onDemandCallbackUrl;
 
+    /** 加密类型 */
+    public static final class SignTypeEnum {
+
+        /** Enum MD5 for value: "MD5" */
+        public static final SignTypeEnum MD5 = new SignTypeEnum("MD5");
+
+        /** Enum HMACSHA256 for value: "HMACSHA256" */
+        public static final SignTypeEnum HMACSHA256 = new SignTypeEnum("HMACSHA256");
+
+        private static final Map<String, SignTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SignTypeEnum> createStaticFields() {
+            Map<String, SignTypeEnum> map = new HashMap<>();
+            map.put("MD5", MD5);
+            map.put("HMACSHA256", HMACSHA256);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SignTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SignTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            SignTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new SignTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static SignTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            SignTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SignTypeEnum) {
+                return this.value.equals(((SignTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sign_type")
+
+    private SignTypeEnum signType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
@@ -255,6 +331,22 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
         this.onDemandCallbackUrl = onDemandCallbackUrl;
     }
 
+    public ShowRecordCallbackConfigResponse withSignType(SignTypeEnum signType) {
+        this.signType = signType;
+        return this;
+    }
+
+    /** 加密类型
+     * 
+     * @return signType */
+    public SignTypeEnum getSignType() {
+        return signType;
+    }
+
+    public void setSignType(SignTypeEnum signType) {
+        this.signType = signType;
+    }
+
     public ShowRecordCallbackConfigResponse withCreateTime(LocalDate createTime) {
         this.createTime = createTime;
         return this;
@@ -302,6 +394,7 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
             && Objects.equals(this.notifyCallbackUrl, showRecordCallbackConfigResponse.notifyCallbackUrl)
             && Objects.equals(this.notifyEventSubscription, showRecordCallbackConfigResponse.notifyEventSubscription)
             && Objects.equals(this.onDemandCallbackUrl, showRecordCallbackConfigResponse.onDemandCallbackUrl)
+            && Objects.equals(this.signType, showRecordCallbackConfigResponse.signType)
             && Objects.equals(this.createTime, showRecordCallbackConfigResponse.createTime)
             && Objects.equals(this.updateTime, showRecordCallbackConfigResponse.updateTime);
     }
@@ -314,6 +407,7 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
             notifyCallbackUrl,
             notifyEventSubscription,
             onDemandCallbackUrl,
+            signType,
             createTime,
             updateTime);
     }
@@ -328,6 +422,7 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
         sb.append("    notifyCallbackUrl: ").append(toIndentedString(notifyCallbackUrl)).append("\n");
         sb.append("    notifyEventSubscription: ").append(toIndentedString(notifyEventSubscription)).append("\n");
         sb.append("    onDemandCallbackUrl: ").append(toIndentedString(onDemandCallbackUrl)).append("\n");
+        sb.append("    signType: ").append(toIndentedString(signType)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

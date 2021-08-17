@@ -26,12 +26,16 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class SdkExchangeCache {
 
     private static Map<String, SdkExchange> exchangeMap = new ConcurrentHashMap<>();
 
-    /** The utility class should hide the public constructor */
+    /**
+     * The utility class should hide the public constructor
+     */
     private SdkExchangeCache() {
     }
 

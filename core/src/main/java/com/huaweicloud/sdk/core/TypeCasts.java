@@ -21,15 +21,18 @@
 
 package com.huaweicloud.sdk.core;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class TypeCasts {
-
-    /** Forced conversion. All calls are tracked, minimize this usage unless necessary. This is mainly involved in the
-     * framework.
+    /**
+     * Forced conversion. All calls are tracked, minimize this usage unless necessary.
+     * This is mainly involved in the framework.
      *
      * @param t actual type of input
      * @param <OutT> conversed type of input
-     * @return conversed instance */
+     * @return conversed instance
+     */
     @SuppressWarnings("unchecked")
     public static <OutT> OutT uncheckedConversion(Object t) {
         return (OutT) t;

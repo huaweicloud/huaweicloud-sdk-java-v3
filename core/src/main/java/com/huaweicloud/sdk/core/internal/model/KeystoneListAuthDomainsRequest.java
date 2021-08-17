@@ -21,7 +21,10 @@
 
 package com.huaweicloud.sdk.core.internal.model;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class KeystoneListAuthDomainsRequest {
 
 }
+

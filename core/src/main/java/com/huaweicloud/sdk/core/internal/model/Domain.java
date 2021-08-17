@@ -24,9 +24,10 @@ package com.huaweicloud.sdk.core.internal.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** @author HuaweiCloud_SDK */
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class Domain {
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -48,9 +49,11 @@ public class Domain {
         return this;
     }
 
-    /** 是否启用账号，true为启用，false为停用，默认为true。
+    /**
+     * 是否启用账号，true为启用，false为停用，默认为true。
      *
-     * @return enabled */
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -64,9 +67,11 @@ public class Domain {
         return this;
     }
 
-    /** 账号ID。
+    /**
+     * 账号ID。
      *
-     * @return id */
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -80,9 +85,11 @@ public class Domain {
         return this;
     }
 
-    /** 账号名。
+    /**
+     * 账号名。
      *
-     * @return name */
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -96,9 +103,11 @@ public class Domain {
         return this;
     }
 
-    /** 账号的描述信息。
+    /**
+     * 账号的描述信息。
      *
-     * @return description */
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -108,3 +117,4 @@ public class Domain {
     }
 
 }
+

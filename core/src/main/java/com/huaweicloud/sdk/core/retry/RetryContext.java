@@ -6,10 +6,12 @@ package com.huaweicloud.sdk.core.retry;
 
 import com.huaweicloud.sdk.core.exception.SdkException;
 
-/** Context used to build retry information.
+/**
+ * Context used to build retry information.
  *
  * @param <ResT>
- * @author HuaweiCloud_SDK */
+ * @author HuaweiCloud_SDK
+ */
 public final class RetryContext<ResT> {
 
     private final int retriesAttempted;

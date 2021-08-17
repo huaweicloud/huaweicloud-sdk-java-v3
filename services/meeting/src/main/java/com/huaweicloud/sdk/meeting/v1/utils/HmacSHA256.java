@@ -9,9 +9,12 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class HmacSHA256 {
 
-    /** 16进制0~F的字符数组 */
-    private final static char[] DIGEST_ARRAYS =
-        {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    /**
+     * 16进制0~F的字符数组
+     */
+    private final static char[] DIGEST_ARRAYS = {
+        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+    };
 
     public static String encode(String data, String key) {
         byte[] hashByte;
@@ -28,7 +31,9 @@ public class HmacSHA256 {
         return bytesToHex(hashByte);
     }
 
-    /** bytesToHex()，用来把一个byte类型数组转换成十六进制字符串 */
+    /**
+     * bytesToHex()，用来把一个byte类型数组转换成十六进制字符串
+     */
     private static String bytesToHex(byte[] bytes) {
         StringBuilder hexStr = new StringBuilder();
         for (byte b : bytes) {

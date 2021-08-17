@@ -168,6 +168,11 @@ public class FlavorExtraSpec {
 
     private String quotaGpu;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ecs:instance_architecture")
+
+    private String ecsInstanceArchitecture;
+
     public FlavorExtraSpec withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
         return this;
@@ -689,6 +694,22 @@ public class FlavorExtraSpec {
         this.quotaGpu = quotaGpu;
     }
 
+    public FlavorExtraSpec withEcsInstanceArchitecture(String ecsInstanceArchitecture) {
+        this.ecsInstanceArchitecture = ecsInstanceArchitecture;
+        return this;
+    }
+
+    /** 该规格对应的CPU架构，且仅鲲鹏实例架构规格返回该字段 - 取值为arm64表示CPU架构为鲲鹏计算。
+     * 
+     * @return ecsInstanceArchitecture */
+    public String getEcsInstanceArchitecture() {
+        return ecsInstanceArchitecture;
+    }
+
+    public void setEcsInstanceArchitecture(String ecsInstanceArchitecture) {
+        this.ecsInstanceArchitecture = ecsInstanceArchitecture;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -729,7 +750,8 @@ public class FlavorExtraSpec {
             && Objects.equals(this.condCompute, flavorExtraSpec.condCompute)
             && Objects.equals(this.infoGpuName, flavorExtraSpec.infoGpuName)
             && Objects.equals(this.infoCpuName, flavorExtraSpec.infoCpuName)
-            && Objects.equals(this.quotaGpu, flavorExtraSpec.quotaGpu);
+            && Objects.equals(this.quotaGpu, flavorExtraSpec.quotaGpu)
+            && Objects.equals(this.ecsInstanceArchitecture, flavorExtraSpec.ecsInstanceArchitecture);
     }
 
     @Override
@@ -765,7 +787,8 @@ public class FlavorExtraSpec {
             condCompute,
             infoGpuName,
             infoCpuName,
-            quotaGpu);
+            quotaGpu,
+            ecsInstanceArchitecture);
     }
 
     @Override
@@ -806,6 +829,7 @@ public class FlavorExtraSpec {
         sb.append("    infoGpuName: ").append(toIndentedString(infoGpuName)).append("\n");
         sb.append("    infoCpuName: ").append(toIndentedString(infoCpuName)).append("\n");
         sb.append("    quotaGpu: ").append(toIndentedString(quotaGpu)).append("\n");
+        sb.append("    ecsInstanceArchitecture: ").append(toIndentedString(ecsInstanceArchitecture)).append("\n");
         sb.append("}");
         return sb.toString();
     }

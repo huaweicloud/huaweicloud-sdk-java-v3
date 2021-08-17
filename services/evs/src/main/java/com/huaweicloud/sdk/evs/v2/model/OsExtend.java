@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OsExtend */
+/**
+ *  
+ */
 public class OsExtend {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

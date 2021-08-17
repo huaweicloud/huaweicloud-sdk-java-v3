@@ -333,7 +333,7 @@ public class LoadBalancer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deletion_protection_enable")
 
-    private String deletionProtectionEnable;
+    private Boolean deletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_scene")
@@ -971,7 +971,7 @@ public class LoadBalancer {
         this.ipTargetEnable = ipTargetEnable;
     }
 
-    public LoadBalancer withDeletionProtectionEnable(String deletionProtectionEnable) {
+    public LoadBalancer withDeletionProtectionEnable(Boolean deletionProtectionEnable) {
         this.deletionProtectionEnable = deletionProtectionEnable;
         return this;
     }
@@ -979,11 +979,11 @@ public class LoadBalancer {
     /** 是否开启删除保护
      * 
      * @return deletionProtectionEnable */
-    public String getDeletionProtectionEnable() {
+    public Boolean getDeletionProtectionEnable() {
         return deletionProtectionEnable;
     }
 
-    public void setDeletionProtectionEnable(String deletionProtectionEnable) {
+    public void setDeletionProtectionEnable(Boolean deletionProtectionEnable) {
         this.deletionProtectionEnable = deletionProtectionEnable;
     }
 

@@ -36,6 +36,16 @@ public class NovaCreateServersSchedulerHint {
 
     private String buildNearHostIp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenancy")
+
+    private String tenancy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dedicated_host_id")
+
+    private String dedicatedHostId;
+
     public NovaCreateServersSchedulerHint withGroup(String group) {
         this.group = group;
         return this;
@@ -148,6 +158,38 @@ public class NovaCreateServersSchedulerHint {
         this.buildNearHostIp = buildNearHostIp;
     }
 
+    public NovaCreateServersSchedulerHint withTenancy(String tenancy) {
+        this.tenancy = tenancy;
+        return this;
+    }
+
+    /** 在专属主机或共享池中创建弹性云服务器。默认为在共享池创建。 值为： shared 或dedicated。 shared：表示共享池。 dedicated:表示专属主机。 创建与查询此值均有效。
+     * 
+     * @return tenancy */
+    public String getTenancy() {
+        return tenancy;
+    }
+
+    public void setTenancy(String tenancy) {
+        this.tenancy = tenancy;
+    }
+
+    public NovaCreateServersSchedulerHint withDedicatedHostId(String dedicatedHostId) {
+        this.dedicatedHostId = dedicatedHostId;
+        return this;
+    }
+
+    /** 专属主机ID。 此属性仅在tenancy值为dedicated时有效。 不指定此属性，系统将自动分配租户可自动放置弹性云服务器的专属主机。 创建与查询此值均有效。
+     * 
+     * @return dedicatedHostId */
+    public String getDedicatedHostId() {
+        return dedicatedHostId;
+    }
+
+    public void setDedicatedHostId(String dedicatedHostId) {
+        this.dedicatedHostId = dedicatedHostId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -161,12 +203,14 @@ public class NovaCreateServersSchedulerHint {
             && Objects.equals(this.differentHost, novaCreateServersSchedulerHint.differentHost)
             && Objects.equals(this.sameHost, novaCreateServersSchedulerHint.sameHost)
             && Objects.equals(this.cidr, novaCreateServersSchedulerHint.cidr)
-            && Objects.equals(this.buildNearHostIp, novaCreateServersSchedulerHint.buildNearHostIp);
+            && Objects.equals(this.buildNearHostIp, novaCreateServersSchedulerHint.buildNearHostIp)
+            && Objects.equals(this.tenancy, novaCreateServersSchedulerHint.tenancy)
+            && Objects.equals(this.dedicatedHostId, novaCreateServersSchedulerHint.dedicatedHostId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(group, differentHost, sameHost, cidr, buildNearHostIp);
+        return Objects.hash(group, differentHost, sameHost, cidr, buildNearHostIp, tenancy, dedicatedHostId);
     }
 
     @Override
@@ -178,6 +222,8 @@ public class NovaCreateServersSchedulerHint {
         sb.append("    sameHost: ").append(toIndentedString(sameHost)).append("\n");
         sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
         sb.append("    buildNearHostIp: ").append(toIndentedString(buildNearHostIp)).append("\n");
+        sb.append("    tenancy: ").append(toIndentedString(tenancy)).append("\n");
+        sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

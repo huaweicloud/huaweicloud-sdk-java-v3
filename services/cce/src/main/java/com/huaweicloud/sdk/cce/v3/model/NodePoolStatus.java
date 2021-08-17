@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -19,6 +22,16 @@ public class NodePoolStatus {
     @JsonProperty(value = "currentNode")
 
     private Integer currentNode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creatingNode")
+
+    private Integer creatingNode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deletingNode")
+
+    private Integer deletingNode;
 
     /** 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 -
      * Error：错误 */
@@ -114,12 +127,17 @@ public class NodePoolStatus {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "conditions")
+
+    private List<NodePoolCondition> conditions = null;
+
     public NodePoolStatus withCurrentNode(Integer currentNode) {
         this.currentNode = currentNode;
         return this;
     }
 
-    /** 当前节点池中节点数量
+    /** 当前节点池中所有节点数量（不含删除中的节点）。
      * 
      * @return currentNode */
     public Integer getCurrentNode() {
@@ -128,6 +146,38 @@ public class NodePoolStatus {
 
     public void setCurrentNode(Integer currentNode) {
         this.currentNode = currentNode;
+    }
+
+    public NodePoolStatus withCreatingNode(Integer creatingNode) {
+        this.creatingNode = creatingNode;
+        return this;
+    }
+
+    /** 当前节点池中处于创建流程中的节点数量。
+     * 
+     * @return creatingNode */
+    public Integer getCreatingNode() {
+        return creatingNode;
+    }
+
+    public void setCreatingNode(Integer creatingNode) {
+        this.creatingNode = creatingNode;
+    }
+
+    public NodePoolStatus withDeletingNode(Integer deletingNode) {
+        this.deletingNode = deletingNode;
+        return this;
+    }
+
+    /** 当前节点池中删除中或者删除失败的节点数量。
+     * 
+     * @return deletingNode */
+    public Integer getDeletingNode() {
+        return deletingNode;
+    }
+
+    public void setDeletingNode(Integer deletingNode) {
+        this.deletingNode = deletingNode;
     }
 
     public NodePoolStatus withPhase(PhaseEnum phase) {
@@ -152,7 +202,7 @@ public class NodePoolStatus {
         return this;
     }
 
-    /** 节点池删除时的 JobID
+    /** 对节点池执行操作时的 JobID。
      * 
      * @return jobId */
     public String getJobId() {
@@ -161,6 +211,38 @@ public class NodePoolStatus {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public NodePoolStatus withConditions(List<NodePoolCondition> conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
+    public NodePoolStatus addConditionsItem(NodePoolCondition conditionsItem) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        this.conditions.add(conditionsItem);
+        return this;
+    }
+
+    public NodePoolStatus withConditions(Consumer<List<NodePoolCondition>> conditionsSetter) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        conditionsSetter.accept(this.conditions);
+        return this;
+    }
+
+    /** 节点池每次扩容的动作结果记录，用于确定节点池是否还能继续扩容。
+     * 
+     * @return conditions */
+    public List<NodePoolCondition> getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(List<NodePoolCondition> conditions) {
+        this.conditions = conditions;
     }
 
     @Override
@@ -173,12 +255,15 @@ public class NodePoolStatus {
         }
         NodePoolStatus nodePoolStatus = (NodePoolStatus) o;
         return Objects.equals(this.currentNode, nodePoolStatus.currentNode)
-            && Objects.equals(this.phase, nodePoolStatus.phase) && Objects.equals(this.jobId, nodePoolStatus.jobId);
+            && Objects.equals(this.creatingNode, nodePoolStatus.creatingNode)
+            && Objects.equals(this.deletingNode, nodePoolStatus.deletingNode)
+            && Objects.equals(this.phase, nodePoolStatus.phase) && Objects.equals(this.jobId, nodePoolStatus.jobId)
+            && Objects.equals(this.conditions, nodePoolStatus.conditions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(currentNode, phase, jobId);
+        return Objects.hash(currentNode, creatingNode, deletingNode, phase, jobId, conditions);
     }
 
     @Override
@@ -186,8 +271,11 @@ public class NodePoolStatus {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodePoolStatus {\n");
         sb.append("    currentNode: ").append(toIndentedString(currentNode)).append("\n");
+        sb.append("    creatingNode: ").append(toIndentedString(creatingNode)).append("\n");
+        sb.append("    deletingNode: ").append(toIndentedString(deletingNode)).append("\n");
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("}");
         return sb.toString();
     }
