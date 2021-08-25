@@ -38,7 +38,6 @@ public class DmsKafkaForwarding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
 
     private String password;
 
@@ -207,7 +206,7 @@ public class DmsKafkaForwarding {
         sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
-        sb.append("    password: ").append(toIndentedString("******")).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    mechanism: ").append(toIndentedString(mechanism)).append("\n");
         sb.append("}");
         return sb.toString();

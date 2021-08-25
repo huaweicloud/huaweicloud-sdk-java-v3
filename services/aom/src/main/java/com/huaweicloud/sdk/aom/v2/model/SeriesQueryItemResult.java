@@ -24,11 +24,13 @@ public class SeriesQueryItemResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="namespace")
     
+    
     private String namespace;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
+    
     
     private List<Dimension> dimensions = null;
     
@@ -36,17 +38,20 @@ public class SeriesQueryItemResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_name")
     
+    
     private String metricName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="unit")
     
+    
     private String unit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimension_value_hash")
+    
     
     private String dimensionValueHash;
 

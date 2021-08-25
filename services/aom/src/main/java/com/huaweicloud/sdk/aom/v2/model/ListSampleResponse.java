@@ -26,6 +26,7 @@ public class ListSampleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="samples")
     
+    
     private List<SampleDataValue> samples = null;
     
     public ListSampleResponse withSamples(List<SampleDataValue> samples) {

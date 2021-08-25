@@ -23,6 +23,7 @@ public class DeleteClusterResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
+    
     private String body;
 
     public DeleteClusterResponse withBody(String body) {

@@ -21,11 +21,13 @@ public class TagPlain  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
+    
     private String key;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
+    
     
     private String value;
 

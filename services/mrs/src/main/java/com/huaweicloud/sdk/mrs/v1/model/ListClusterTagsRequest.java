@@ -21,6 +21,7 @@ public class ListClusterTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
+    
     private String clusterId;
 
     public ListClusterTagsRequest withClusterId(String clusterId) {

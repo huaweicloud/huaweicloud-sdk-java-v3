@@ -2607,4 +2607,85 @@ public class MeetingAsyncClient {
             MeetingMeta.searchQosParticipants, hcClient);
     }
 
+    /** 查询企业级会议总体统计数据 * 查询企业级会议指定时间范围内总体统计数据，按日/按月统计。 * 查询企业级会议单日内总体统计数据，按小时统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticConferenceInfoRequest 请求对象
+     * @return CompletableFuture<SearchStatisticConferenceInfoResponse> */
+    public CompletableFuture<SearchStatisticConferenceInfoResponse> searchStatisticConferenceInfoAsync(
+        SearchStatisticConferenceInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchStatisticConferenceInfo);
+    }
+
+    /** 查询企业级会议总体统计数据 * 查询企业级会议指定时间范围内总体统计数据，按日/按月统计。 * 查询企业级会议单日内总体统计数据，按小时统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticConferenceInfoRequest 请求对象
+     * @return AsyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> */
+    public AsyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> searchStatisticConferenceInfoAsyncInvoker(
+        SearchStatisticConferenceInfoRequest request) {
+        return new AsyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse>(request,
+            MeetingMeta.searchStatisticConferenceInfo, hcClient);
+    }
+
+    /** 查询企业级会议与会统计数据 * 查询企业级会议与会用户统计数据，按日/按月统计。 * 查询企业级会议与会硬件终端统计数据，按日/按月统计。 * 查询企业级会议与会设备统计数据，按日/按月统计。 * 权限角色 &#x3D;
+     * 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticConferenceParticipantRequest 请求对象
+     * @return CompletableFuture<SearchStatisticConferenceParticipantResponse> */
+    public CompletableFuture<SearchStatisticConferenceParticipantResponse> searchStatisticConferenceParticipantAsync(
+        SearchStatisticConferenceParticipantRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchStatisticConferenceParticipant);
+    }
+
+    /** 查询企业级会议与会统计数据 * 查询企业级会议与会用户统计数据，按日/按月统计。 * 查询企业级会议与会硬件终端统计数据，按日/按月统计。 * 查询企业级会议与会设备统计数据，按日/按月统计。 * 权限角色 &#x3D;
+     * 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticConferenceParticipantRequest 请求对象
+     * @return AsyncInvoker<SearchStatisticConferenceParticipantRequest,
+     *         SearchStatisticConferenceParticipantResponse> */
+    public AsyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> searchStatisticConferenceParticipantAsyncInvoker(
+        SearchStatisticConferenceParticipantRequest request) {
+        return new AsyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse>(
+            request, MeetingMeta.searchStatisticConferenceParticipant, hcClient);
+    }
+
+    /** 查询企业级会议已购资源使用统计数据 * 查询企业级会议的已购资源使用状况，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticResourceInfoRequest 请求对象
+     * @return CompletableFuture<SearchStatisticResourceInfoResponse> */
+    public CompletableFuture<SearchStatisticResourceInfoResponse> searchStatisticResourceInfoAsync(
+        SearchStatisticResourceInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchStatisticResourceInfo);
+    }
+
+    /** 查询企业级会议已购资源使用统计数据 * 查询企业级会议的已购资源使用状况，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticResourceInfoRequest 请求对象
+     * @return AsyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> */
+    public AsyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> searchStatisticResourceInfoAsyncInvoker(
+        SearchStatisticResourceInfoRequest request) {
+        return new AsyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse>(request,
+            MeetingMeta.searchStatisticResourceInfo, hcClient);
+    }
+
+    /** 查询企业级会议的用户统计数据 * 查询企业级会议用户登录数据，按日/按月统计。 * 查询企业级会议用户激活数据，按日/按月统计。 * 查询企业级会议用户登录设备数据，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业
+     * + 管理员。
+     *
+     * @param SearchStatisticUserInfoRequest 请求对象
+     * @return CompletableFuture<SearchStatisticUserInfoResponse> */
+    public CompletableFuture<SearchStatisticUserInfoResponse> searchStatisticUserInfoAsync(
+        SearchStatisticUserInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchStatisticUserInfo);
+    }
+
+    /** 查询企业级会议的用户统计数据 * 查询企业级会议用户登录数据，按日/按月统计。 * 查询企业级会议用户激活数据，按日/按月统计。 * 查询企业级会议用户登录设备数据，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业
+     * + 管理员。
+     *
+     * @param SearchStatisticUserInfoRequest 请求对象
+     * @return AsyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> */
+    public AsyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> searchStatisticUserInfoAsyncInvoker(
+        SearchStatisticUserInfoRequest request) {
+        return new AsyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse>(request,
+            MeetingMeta.searchStatisticUserInfo, hcClient);
+    }
+
 }

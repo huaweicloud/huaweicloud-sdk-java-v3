@@ -147,6 +147,25 @@ public class GaussDBforNoSQLAsyncClient {
 
     /** 获取参数模板列表 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      *
+     * @param ListConfigurationTemplatesRequest 请求对象
+     * @return CompletableFuture<ListConfigurationTemplatesResponse> */
+    public CompletableFuture<ListConfigurationTemplatesResponse> listConfigurationTemplatesAsync(
+        ListConfigurationTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listConfigurationTemplates);
+    }
+
+    /** 获取参数模板列表 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
+     * @param ListConfigurationTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> */
+    public AsyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> listConfigurationTemplatesAsyncInvoker(
+        ListConfigurationTemplatesRequest request) {
+        return new AsyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse>(request,
+            GaussDBforNoSQLMeta.listConfigurationTemplates, hcClient);
+    }
+
+    /** 获取参数模板列表 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
      * @param ListConfigurationsRequest 请求对象
      * @return CompletableFuture<ListConfigurationsResponse> */
     public CompletableFuture<ListConfigurationsResponse> listConfigurationsAsync(ListConfigurationsRequest request) {
@@ -179,6 +198,43 @@ public class GaussDBforNoSQLAsyncClient {
         ListDatastoresRequest request) {
         return new AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request,
             GaussDBforNoSQLMeta.listDatastores, hcClient);
+    }
+
+    /** 查询专属资源列表 查询专属资源列表。
+     *
+     * @param ListDedicatedResourcesRequest 请求对象
+     * @return CompletableFuture<ListDedicatedResourcesResponse> */
+    public CompletableFuture<ListDedicatedResourcesResponse> listDedicatedResourcesAsync(
+        ListDedicatedResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listDedicatedResources);
+    }
+
+    /** 查询专属资源列表 查询专属资源列表。
+     *
+     * @param ListDedicatedResourcesRequest 请求对象
+     * @return AsyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> */
+    public AsyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> listDedicatedResourcesAsyncInvoker(
+        ListDedicatedResourcesRequest request) {
+        return new AsyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse>(request,
+            GaussDBforNoSQLMeta.listDedicatedResources, hcClient);
+    }
+
+    /** 查询数据库规格 查询指定条件下的实例规格信息。
+     *
+     * @param ListFlavorInfosRequest 请求对象
+     * @return CompletableFuture<ListFlavorInfosResponse> */
+    public CompletableFuture<ListFlavorInfosResponse> listFlavorInfosAsync(ListFlavorInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listFlavorInfos);
+    }
+
+    /** 查询数据库规格 查询指定条件下的实例规格信息。
+     *
+     * @param ListFlavorInfosRequest 请求对象
+     * @return AsyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse> */
+    public AsyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse> listFlavorInfosAsyncInvoker(
+        ListFlavorInfosRequest request) {
+        return new AsyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse>(request,
+            GaussDBforNoSQLMeta.listFlavorInfos, hcClient);
     }
 
     /** 查询指定条件下的所有实例规格信息 查询指定条件下的所有实例规格信息。
@@ -232,6 +288,25 @@ public class GaussDBforNoSQLAsyncClient {
         ListInstancesRequest request) {
         return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, GaussDBforNoSQLMeta.listInstances,
             hcClient);
+    }
+
+    /** 查询资源实例 根据标签查询指定的数据库实例。
+     *
+     * @param ListInstancesByResourceTagsRequest 请求对象
+     * @return CompletableFuture<ListInstancesByResourceTagsResponse> */
+    public CompletableFuture<ListInstancesByResourceTagsResponse> listInstancesByResourceTagsAsync(
+        ListInstancesByResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listInstancesByResourceTags);
+    }
+
+    /** 查询资源实例 根据标签查询指定的数据库实例。
+     *
+     * @param ListInstancesByResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> */
+    public AsyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> listInstancesByResourceTagsAsyncInvoker(
+        ListInstancesByResourceTagsRequest request) {
+        return new AsyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse>(request,
+            GaussDBforNoSQLMeta.listInstancesByResourceTags, hcClient);
     }
 
     /** 查询资源实例 根据标签查询指定的数据库实例。

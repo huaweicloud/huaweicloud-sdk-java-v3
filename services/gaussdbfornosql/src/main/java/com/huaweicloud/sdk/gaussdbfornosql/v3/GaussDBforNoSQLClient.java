@@ -145,6 +145,24 @@ public class GaussDBforNoSQLClient {
 
     /** 获取参数模板列表 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      *
+     * @param ListConfigurationTemplatesRequest 请求对象
+     * @return ListConfigurationTemplatesResponse */
+    public ListConfigurationTemplatesResponse listConfigurationTemplates(ListConfigurationTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listConfigurationTemplates);
+    }
+
+    /** 获取参数模板列表 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
+     * @param ListConfigurationTemplatesRequest 请求对象
+     * @return SyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> */
+    public SyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> listConfigurationTemplatesInvoker(
+        ListConfigurationTemplatesRequest request) {
+        return new SyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse>(request,
+            GaussDBforNoSQLMeta.listConfigurationTemplates, hcClient);
+    }
+
+    /** 获取参数模板列表 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
      * @param ListConfigurationsRequest 请求对象
      * @return ListConfigurationsResponse */
     public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
@@ -177,6 +195,42 @@ public class GaussDBforNoSQLClient {
         ListDatastoresRequest request) {
         return new SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request,
             GaussDBforNoSQLMeta.listDatastores, hcClient);
+    }
+
+    /** 查询专属资源列表 查询专属资源列表。
+     *
+     * @param ListDedicatedResourcesRequest 请求对象
+     * @return ListDedicatedResourcesResponse */
+    public ListDedicatedResourcesResponse listDedicatedResources(ListDedicatedResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listDedicatedResources);
+    }
+
+    /** 查询专属资源列表 查询专属资源列表。
+     *
+     * @param ListDedicatedResourcesRequest 请求对象
+     * @return SyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> */
+    public SyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> listDedicatedResourcesInvoker(
+        ListDedicatedResourcesRequest request) {
+        return new SyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse>(request,
+            GaussDBforNoSQLMeta.listDedicatedResources, hcClient);
+    }
+
+    /** 查询数据库规格 查询指定条件下的实例规格信息。
+     *
+     * @param ListFlavorInfosRequest 请求对象
+     * @return ListFlavorInfosResponse */
+    public ListFlavorInfosResponse listFlavorInfos(ListFlavorInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listFlavorInfos);
+    }
+
+    /** 查询数据库规格 查询指定条件下的实例规格信息。
+     *
+     * @param ListFlavorInfosRequest 请求对象
+     * @return SyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse> */
+    public SyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse> listFlavorInfosInvoker(
+        ListFlavorInfosRequest request) {
+        return new SyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse>(request,
+            GaussDBforNoSQLMeta.listFlavorInfos, hcClient);
     }
 
     /** 查询指定条件下的所有实例规格信息 查询指定条件下的所有实例规格信息。
@@ -229,6 +283,24 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
         return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, GaussDBforNoSQLMeta.listInstances,
             hcClient);
+    }
+
+    /** 查询资源实例 根据标签查询指定的数据库实例。
+     *
+     * @param ListInstancesByResourceTagsRequest 请求对象
+     * @return ListInstancesByResourceTagsResponse */
+    public ListInstancesByResourceTagsResponse listInstancesByResourceTags(ListInstancesByResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listInstancesByResourceTags);
+    }
+
+    /** 查询资源实例 根据标签查询指定的数据库实例。
+     *
+     * @param ListInstancesByResourceTagsRequest 请求对象
+     * @return SyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> */
+    public SyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> listInstancesByResourceTagsInvoker(
+        ListInstancesByResourceTagsRequest request) {
+        return new SyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse>(request,
+            GaussDBforNoSQLMeta.listInstancesByResourceTags, hcClient);
     }
 
     /** 查询资源实例 根据标签查询指定的数据库实例。

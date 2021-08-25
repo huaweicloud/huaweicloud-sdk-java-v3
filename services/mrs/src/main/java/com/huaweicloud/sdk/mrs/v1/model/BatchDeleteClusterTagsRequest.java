@@ -22,11 +22,13 @@ public class BatchDeleteClusterTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
+    
     private String clusterId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
+    
     
     private BatchDeleteClusterTagsReq body;
 

@@ -38,14 +38,12 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.json.OffsetDateTimeDeserializer;
-import com.huaweicloud.sdk.core.json.SensitiveStringSerializer;
 import com.huaweicloud.sdk.core.json.StrictBooleanDeserializer;
 import com.huaweicloud.sdk.core.json.StrictDoubleDeserializer;
 import com.huaweicloud.sdk.core.json.StrictFloatDeserializer;
 import com.huaweicloud.sdk.core.json.StrictIntegerDeserializer;
 import com.huaweicloud.sdk.core.json.StrictLongDeserializer;
 import com.huaweicloud.sdk.core.json.StrictStringDeserializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -73,12 +71,6 @@ public final class JsonUtils {
      * https://fasterxml.github.io/jackson-core/javadoc/2.7/com/fasterxml/jackson/core/JsonParser.Feature.html
      */
     private static ObjectMapper objectMapperIgnoreUnknown = initializeBaseMapper();
-
-    private static ObjectMapper objectMapperHideSensitive = objectMapperIgnoreUnknown.copy()
-        .setConfig(objectMapperIgnoreUnknown.getSerializationConfig()
-            .with(objectMapperIgnoreUnknown.getSerializationConfig()
-                .getAttributes()
-                .withSharedAttribute(SensitiveStringSerializer.SENSITIVE_SWITCH, true)));
 
     /**
      * The utility class should hide the public constructor
@@ -117,10 +109,6 @@ public final class JsonUtils {
 
     public static ObjectMapper getDefaultMapper() {
         return objectMapperIgnoreUnknown;
-    }
-
-    public static ObjectMapper getSecureMapperWithoutSensitive() {
-        return objectMapperHideSensitive;
     }
 
     /**
@@ -174,21 +162,6 @@ public final class JsonUtils {
                     simpleBeanPropertyFilter);
                 return objectMapperIgnoreUnknown.writer(filterProvider).writeValueAsString(resultMapper);
             }
-        } catch (JsonProcessingException e) {
-            logger.error("[Method toJSON] Internal Error occurs: ", e);
-            throw new SdkException(e);
-        }
-    }
-
-    /**
-     * Safe method, mask all fields annotated with @JsonSensitive
-     *
-     * @param object the object
-     * @return the string
-     */
-    public static String toJsonWithoutSensitive(Object object) {
-        try {
-            return objectMapperHideSensitive.writeValueAsString(object);
         } catch (JsonProcessingException e) {
             logger.error("[Method toJSON] Internal Error occurs: ", e);
             throw new SdkException(e);

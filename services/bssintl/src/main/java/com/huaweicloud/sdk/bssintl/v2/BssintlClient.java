@@ -221,6 +221,22 @@ public class BssintlClient {
             hcClient);
     }
 
+    /** 查询成本数据 功能描述：按照企业项目查询某个客户的成本消耗
+     *
+     * @param ListCostsRequest 请求对象
+     * @return ListCostsResponse */
+    public ListCostsResponse listCosts(ListCostsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listCosts);
+    }
+
+    /** 查询成本数据 功能描述：按照企业项目查询某个客户的成本消耗
+     *
+     * @param ListCostsRequest 请求对象
+     * @return SyncInvoker<ListCostsRequest, ListCostsResponse> */
+    public SyncInvoker<ListCostsRequest, ListCostsResponse> listCostsInvoker(ListCostsRequest request) {
+        return new SyncInvoker<ListCostsRequest, ListCostsResponse>(request, BssintlMeta.listCosts, hcClient);
+    }
+
     /** 查询客户按需资源列表 功能描述：客户在伙伴销售平台查询已开通的按需资源
      *
      * @param ListCustomerOnDemandResourcesRequest 请求对象

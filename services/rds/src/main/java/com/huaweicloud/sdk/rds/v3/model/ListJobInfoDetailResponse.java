@@ -15,6 +15,11 @@ public class ListJobInfoDetailResponse extends SdkResponse {
 
     private GetTaskDetailListRspJobs jobs;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public ListJobInfoDetailResponse withJobs(GetTaskDetailListRspJobs jobs) {
         this.jobs = jobs;
         return this;
@@ -40,6 +45,22 @@ public class ListJobInfoDetailResponse extends SdkResponse {
         this.jobs = jobs;
     }
 
+    public ListJobInfoDetailResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /** 任务数量。
+     * 
+     * @return count */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -49,12 +70,13 @@ public class ListJobInfoDetailResponse extends SdkResponse {
             return false;
         }
         ListJobInfoDetailResponse listJobInfoDetailResponse = (ListJobInfoDetailResponse) o;
-        return Objects.equals(this.jobs, listJobInfoDetailResponse.jobs);
+        return Objects.equals(this.jobs, listJobInfoDetailResponse.jobs)
+            && Objects.equals(this.count, listJobInfoDetailResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobs);
+        return Objects.hash(jobs, count);
     }
 
     @Override
@@ -62,6 +84,7 @@ public class ListJobInfoDetailResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListJobInfoDetailResponse {\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

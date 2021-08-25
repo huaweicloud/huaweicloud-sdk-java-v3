@@ -6816,4 +6816,253 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> searchStatisticConferenceInfo =
+        genForsearchStatisticConferenceInfo();
+
+    private static HttpRequestDef<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> genForsearchStatisticConferenceInfo() {
+        // basic
+        HttpRequestDef.Builder<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    SearchStatisticConferenceInfoRequest.class,
+                    SearchStatisticConferenceInfoResponse.class)
+                .withName("SearchStatisticConferenceInfo")
+                .withUri("/v1/metrics/dashboard/statistic/conference/info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<SearchStatisticConferenceInfoRequest.TimeUnitEnum>withRequestField("timeUnit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchStatisticConferenceInfoRequest.TimeUnitEnum.class),
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getTimeUnit, (req, v) -> {
+                req.setTimeUnit(v);
+            }));
+        builder.<String>withRequestField("startTime",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("endTime",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<SearchStatisticConferenceInfoRequest.CategoryEnum>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchStatisticConferenceInfoRequest.CategoryEnum.class),
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getCategory, (req, v) -> {
+                req.setCategory(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> searchStatisticConferenceParticipant =
+        genForsearchStatisticConferenceParticipant();
+
+    private static HttpRequestDef<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> genForsearchStatisticConferenceParticipant() {
+        // basic
+        HttpRequestDef.Builder<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    SearchStatisticConferenceParticipantRequest.class,
+                    SearchStatisticConferenceParticipantResponse.class)
+                .withName("SearchStatisticConferenceParticipant")
+                .withUri("/v1/metrics/dashboard/statistic/conference/participant")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<SearchStatisticConferenceParticipantRequest.TimeUnitEnum>withRequestField("timeUnit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchStatisticConferenceParticipantRequest.TimeUnitEnum.class),
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getTimeUnit, (req, v) -> {
+                req.setTimeUnit(v);
+            }));
+        builder.<String>withRequestField("startTime",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("endTime",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<SearchStatisticConferenceParticipantRequest.CategoryEnum>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchStatisticConferenceParticipantRequest.CategoryEnum.class),
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getCategory, (req, v) -> {
+                req.setCategory(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> searchStatisticResourceInfo =
+        genForsearchStatisticResourceInfo();
+
+    private static HttpRequestDef<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> genForsearchStatisticResourceInfo() {
+        // basic
+        HttpRequestDef.Builder<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    SearchStatisticResourceInfoRequest.class,
+                    SearchStatisticResourceInfoResponse.class)
+                .withName("SearchStatisticResourceInfo")
+                .withUri("/v1/metrics/dashboard/statistic/resource/info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<SearchStatisticResourceInfoRequest.TimeUnitEnum>withRequestField("timeUnit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchStatisticResourceInfoRequest.TimeUnitEnum.class),
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getTimeUnit, (req, v) -> {
+                req.setTimeUnit(v);
+            }));
+        builder.<String>withRequestField("startTime",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("endTime",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<SearchStatisticResourceInfoRequest.CategoryEnum>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchStatisticResourceInfoRequest.CategoryEnum.class),
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getCategory, (req, v) -> {
+                req.setCategory(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> searchStatisticUserInfo =
+        genForsearchStatisticUserInfo();
+
+    private static HttpRequestDef<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> genForsearchStatisticUserInfo() {
+        // basic
+        HttpRequestDef.Builder<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, SearchStatisticUserInfoRequest.class, SearchStatisticUserInfoResponse.class)
+            .withName("SearchStatisticUserInfo")
+            .withUri("/v1/metrics/dashboard/statistic/user/info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<SearchStatisticUserInfoRequest.TimeUnitEnum>withRequestField("timeUnit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchStatisticUserInfoRequest.TimeUnitEnum.class),
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getTimeUnit, (req, v) -> {
+                req.setTimeUnit(v);
+            }));
+        builder.<String>withRequestField("startTime",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("endTime",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<SearchStatisticUserInfoRequest.CategoryEnum>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchStatisticUserInfoRequest.CategoryEnum.class),
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getCategory, (req, v) -> {
+                req.setCategory(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
 }

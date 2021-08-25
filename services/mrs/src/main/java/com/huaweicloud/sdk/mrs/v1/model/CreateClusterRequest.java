@@ -22,6 +22,7 @@ public class CreateClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
+    
     private CreateClusterReq body;
 
     public CreateClusterRequest withBody(CreateClusterReq body) {

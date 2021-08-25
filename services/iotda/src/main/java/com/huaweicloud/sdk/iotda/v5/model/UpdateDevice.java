@@ -26,7 +26,6 @@ public class UpdateDevice {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_info")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
 
     private AuthInfoWithoutSecret authInfo;
 
@@ -130,7 +129,7 @@ public class UpdateDevice {
         sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    extensionInfo: ").append(toIndentedString(extensionInfo)).append("\n");
-        sb.append("    authInfo: ").append(toIndentedString("******")).append("\n");
+        sb.append("    authInfo: ").append(toIndentedString(authInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

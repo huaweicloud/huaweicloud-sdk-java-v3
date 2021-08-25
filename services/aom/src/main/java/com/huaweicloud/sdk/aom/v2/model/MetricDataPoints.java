@@ -24,17 +24,20 @@ public class MetricDataPoints  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timestamp")
     
+    
     private Long timestamp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="unit")
     
+    
     private String unit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistics")
+    
     
     private List<StatisticValue> statistics = null;
     

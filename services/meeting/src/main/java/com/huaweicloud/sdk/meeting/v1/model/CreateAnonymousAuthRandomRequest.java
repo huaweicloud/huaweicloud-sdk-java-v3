@@ -15,7 +15,6 @@ public class CreateAnonymousAuthRandomRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Password")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
 
     private String xPassword;
 
@@ -76,7 +75,7 @@ public class CreateAnonymousAuthRandomRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAnonymousAuthRandomRequest {\n");
         sb.append("    conferenceID: ").append(toIndentedString(conferenceID)).append("\n");
-        sb.append("    xPassword: ").append(toIndentedString("******")).append("\n");
+        sb.append("    xPassword: ").append(toIndentedString(xPassword)).append("\n");
         sb.append("}");
         return sb.toString();
     }

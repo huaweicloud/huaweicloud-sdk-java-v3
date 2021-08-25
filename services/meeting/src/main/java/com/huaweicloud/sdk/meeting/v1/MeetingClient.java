@@ -2555,4 +2555,82 @@ public class MeetingClient {
             MeetingMeta.searchQosParticipants, hcClient);
     }
 
+    /** 查询企业级会议总体统计数据 * 查询企业级会议指定时间范围内总体统计数据，按日/按月统计。 * 查询企业级会议单日内总体统计数据，按小时统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticConferenceInfoRequest 请求对象
+     * @return SearchStatisticConferenceInfoResponse */
+    public SearchStatisticConferenceInfoResponse searchStatisticConferenceInfo(
+        SearchStatisticConferenceInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchStatisticConferenceInfo);
+    }
+
+    /** 查询企业级会议总体统计数据 * 查询企业级会议指定时间范围内总体统计数据，按日/按月统计。 * 查询企业级会议单日内总体统计数据，按小时统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticConferenceInfoRequest 请求对象
+     * @return SyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> */
+    public SyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> searchStatisticConferenceInfoInvoker(
+        SearchStatisticConferenceInfoRequest request) {
+        return new SyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse>(request,
+            MeetingMeta.searchStatisticConferenceInfo, hcClient);
+    }
+
+    /** 查询企业级会议与会统计数据 * 查询企业级会议与会用户统计数据，按日/按月统计。 * 查询企业级会议与会硬件终端统计数据，按日/按月统计。 * 查询企业级会议与会设备统计数据，按日/按月统计。 * 权限角色 &#x3D;
+     * 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticConferenceParticipantRequest 请求对象
+     * @return SearchStatisticConferenceParticipantResponse */
+    public SearchStatisticConferenceParticipantResponse searchStatisticConferenceParticipant(
+        SearchStatisticConferenceParticipantRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchStatisticConferenceParticipant);
+    }
+
+    /** 查询企业级会议与会统计数据 * 查询企业级会议与会用户统计数据，按日/按月统计。 * 查询企业级会议与会硬件终端统计数据，按日/按月统计。 * 查询企业级会议与会设备统计数据，按日/按月统计。 * 权限角色 &#x3D;
+     * 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticConferenceParticipantRequest 请求对象
+     * @return SyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> */
+    public SyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> searchStatisticConferenceParticipantInvoker(
+        SearchStatisticConferenceParticipantRequest request) {
+        return new SyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse>(
+            request, MeetingMeta.searchStatisticConferenceParticipant, hcClient);
+    }
+
+    /** 查询企业级会议已购资源使用统计数据 * 查询企业级会议的已购资源使用状况，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticResourceInfoRequest 请求对象
+     * @return SearchStatisticResourceInfoResponse */
+    public SearchStatisticResourceInfoResponse searchStatisticResourceInfo(SearchStatisticResourceInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchStatisticResourceInfo);
+    }
+
+    /** 查询企业级会议已购资源使用统计数据 * 查询企业级会议的已购资源使用状况，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+     *
+     * @param SearchStatisticResourceInfoRequest 请求对象
+     * @return SyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> */
+    public SyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> searchStatisticResourceInfoInvoker(
+        SearchStatisticResourceInfoRequest request) {
+        return new SyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse>(request,
+            MeetingMeta.searchStatisticResourceInfo, hcClient);
+    }
+
+    /** 查询企业级会议的用户统计数据 * 查询企业级会议用户登录数据，按日/按月统计。 * 查询企业级会议用户激活数据，按日/按月统计。 * 查询企业级会议用户登录设备数据，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业
+     * + 管理员。
+     *
+     * @param SearchStatisticUserInfoRequest 请求对象
+     * @return SearchStatisticUserInfoResponse */
+    public SearchStatisticUserInfoResponse searchStatisticUserInfo(SearchStatisticUserInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchStatisticUserInfo);
+    }
+
+    /** 查询企业级会议的用户统计数据 * 查询企业级会议用户登录数据，按日/按月统计。 * 查询企业级会议用户激活数据，按日/按月统计。 * 查询企业级会议用户登录设备数据，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业
+     * + 管理员。
+     *
+     * @param SearchStatisticUserInfoRequest 请求对象
+     * @return SyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> */
+    public SyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> searchStatisticUserInfoInvoker(
+        SearchStatisticUserInfoRequest request) {
+        return new SyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse>(request,
+            MeetingMeta.searchStatisticUserInfo, hcClient);
+    }
+
 }

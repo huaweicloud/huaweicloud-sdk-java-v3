@@ -10,7 +10,6 @@ public class ResetDeviceSecret {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
 
     private String secret;
 
@@ -73,7 +72,7 @@ public class ResetDeviceSecret {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResetDeviceSecret {\n");
-        sb.append("    secret: ").append(toIndentedString("******")).append("\n");
+        sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
         sb.append("    forceDisconnect: ").append(toIndentedString(forceDisconnect)).append("\n");
         sb.append("}");
         return sb.toString();

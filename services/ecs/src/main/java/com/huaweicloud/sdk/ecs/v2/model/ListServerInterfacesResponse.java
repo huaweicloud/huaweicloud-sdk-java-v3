@@ -13,9 +13,40 @@ import java.util.function.Consumer;
 public class ListServerInterfacesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attachableQuantity")
+
+    private InterfaceAttachableQuantity attachableQuantity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interfaceAttachments")
 
     private List<InterfaceAttachment> interfaceAttachments = null;
+
+    public ListServerInterfacesResponse withAttachableQuantity(InterfaceAttachableQuantity attachableQuantity) {
+        this.attachableQuantity = attachableQuantity;
+        return this;
+    }
+
+    public ListServerInterfacesResponse withAttachableQuantity(
+        Consumer<InterfaceAttachableQuantity> attachableQuantitySetter) {
+        if (this.attachableQuantity == null) {
+            this.attachableQuantity = new InterfaceAttachableQuantity();
+            attachableQuantitySetter.accept(this.attachableQuantity);
+        }
+
+        return this;
+    }
+
+    /** Get attachableQuantity
+     * 
+     * @return attachableQuantity */
+    public InterfaceAttachableQuantity getAttachableQuantity() {
+        return attachableQuantity;
+    }
+
+    public void setAttachableQuantity(InterfaceAttachableQuantity attachableQuantity) {
+        this.attachableQuantity = attachableQuantity;
+    }
 
     public ListServerInterfacesResponse withInterfaceAttachments(List<InterfaceAttachment> interfaceAttachments) {
         this.interfaceAttachments = interfaceAttachments;
@@ -59,18 +90,20 @@ public class ListServerInterfacesResponse extends SdkResponse {
             return false;
         }
         ListServerInterfacesResponse listServerInterfacesResponse = (ListServerInterfacesResponse) o;
-        return Objects.equals(this.interfaceAttachments, listServerInterfacesResponse.interfaceAttachments);
+        return Objects.equals(this.attachableQuantity, listServerInterfacesResponse.attachableQuantity)
+            && Objects.equals(this.interfaceAttachments, listServerInterfacesResponse.interfaceAttachments);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(interfaceAttachments);
+        return Objects.hash(attachableQuantity, interfaceAttachments);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListServerInterfacesResponse {\n");
+        sb.append("    attachableQuantity: ").append(toIndentedString(attachableQuantity)).append("\n");
         sb.append("    interfaceAttachments: ").append(toIndentedString(interfaceAttachments)).append("\n");
         sb.append("}");
         return sb.toString();

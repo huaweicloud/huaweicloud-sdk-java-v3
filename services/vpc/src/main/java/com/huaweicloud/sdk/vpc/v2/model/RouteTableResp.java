@@ -31,7 +31,7 @@ public class RouteTableResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "routes")
 
-    private List<Route> routes = null;
+    private List<RouteTableRoute> routes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnets")
@@ -101,12 +101,12 @@ public class RouteTableResp {
         this._default = _default;
     }
 
-    public RouteTableResp withRoutes(List<Route> routes) {
+    public RouteTableResp withRoutes(List<RouteTableRoute> routes) {
         this.routes = routes;
         return this;
     }
 
-    public RouteTableResp addRoutesItem(Route routesItem) {
+    public RouteTableResp addRoutesItem(RouteTableRoute routesItem) {
         if (this.routes == null) {
             this.routes = new ArrayList<>();
         }
@@ -114,7 +114,7 @@ public class RouteTableResp {
         return this;
     }
 
-    public RouteTableResp withRoutes(Consumer<List<Route>> routesSetter) {
+    public RouteTableResp withRoutes(Consumer<List<RouteTableRoute>> routesSetter) {
         if (this.routes == null) {
             this.routes = new ArrayList<>();
         }
@@ -125,11 +125,11 @@ public class RouteTableResp {
     /** 功能说明：路由对象，参见route字段说明。 约束：每个路由表最大关联200条路由
      * 
      * @return routes */
-    public List<Route> getRoutes() {
+    public List<RouteTableRoute> getRoutes() {
         return routes;
     }
 
-    public void setRoutes(List<Route> routes) {
+    public void setRoutes(List<RouteTableRoute> routes) {
         this.routes = routes;
     }
 

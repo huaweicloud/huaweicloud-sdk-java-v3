@@ -27,11 +27,13 @@ public class ListSeriesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="series")
     
+    
     private List<SeriesQueryItemResult> series = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
+    
     
     private MetaData metaData;
 

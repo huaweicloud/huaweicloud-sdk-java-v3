@@ -49,11 +49,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_version")
     
+    
     private String clusterVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_name")
+    
     
     private String clusterName;
 
@@ -61,11 +63,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_node_num")
     
+    
     private Integer masterNodeNum;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_node_num")
+    
     
     private Integer coreNodeNum;
     /**
@@ -145,11 +149,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billing_type")
     
+    
     private BillingTypeEnum billingType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_center")
+    
     
     private String dataCenter;
 
@@ -157,11 +163,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc")
     
+    
     private String vpc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_node_size")
+    
     
     private String masterNodeSize;
 
@@ -169,11 +177,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_node_size")
     
+    
     private String coreNodeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="component_list")
+    
     
     private List<ComponentList> componentList = null;
     
@@ -181,11 +191,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="available_zone_id")
     
+    
     private String availableZoneId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
+    
     
     private String vpcId;
 
@@ -193,11 +205,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
+    
     private String subnetId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_name")
+    
     
     private String subnetName;
 
@@ -205,17 +219,20 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups_id")
     
+    
     private String securityGroupsId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="add_jobs")
     
+    
     private List<AddJobs> addJobs = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_size")
+    
     
     private Integer volumeSize;
     /**
@@ -313,6 +330,7 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_type")
     
+    
     private VolumeTypeEnum volumeType;
     /**
      * 该参数为多磁盘参数，表示Master节点数据磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。
@@ -409,11 +427,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_data_volume_type")
     
+    
     private MasterDataVolumeTypeEnum masterDataVolumeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_data_volume_size")
+    
     
     private Integer masterDataVolumeSize;
     /**
@@ -492,6 +512,7 @@ public class CreateClusterReq  {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_data_volume_count")
+    
     
     private MasterDataVolumeCountEnum masterDataVolumeCount;
     /**
@@ -589,11 +610,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_data_volume_type")
     
+    
     private CoreDataVolumeTypeEnum coreDataVolumeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_data_volume_size")
+    
     
     private Integer coreDataVolumeSize;
 
@@ -601,11 +624,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_data_volume_count")
     
+    
     private Integer coreDataVolumeCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_node_groups")
+    
     
     private List<TaskNodeGroups> taskNodeGroups = null;
     
@@ -613,11 +638,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bootstrap_scripts")
     
+    
     private List<BootstrapScript> bootstrapScripts = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_public_cert_name")
+    
     
     private String nodePublicCertName;
 
@@ -625,11 +652,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_admin_secret")
     
+    
     private String clusterAdminSecret;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_master_secret")
+    
     
     private String clusterMasterSecret;
     /**
@@ -715,6 +744,7 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="safe_mode")
     
+    
     private SafeModeEnum safeMode;
     /**
      * 集群类型。  默认值为0：分析集群。  说明：暂不支持通过接口方式创建混合集群。  枚举值： - 0：分析集群 - 1：流式集群
@@ -798,6 +828,7 @@ public class CreateClusterReq  {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_type")
+    
     
     private ClusterTypeEnum clusterType;
     /**
@@ -883,17 +914,20 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_collection")
     
+    
     private LogCollectionEnum logCollection;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
+    
     private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
+    
     
     private List<Tag> tags = null;
         /**
@@ -979,11 +1013,13 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login_mode")
     
+    
     private LoginModeEnum loginMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_groups")
+    
     
     private List<NodeGroupV11> nodeGroups = null;
     

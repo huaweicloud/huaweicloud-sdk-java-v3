@@ -23,11 +23,13 @@ public class TagWithMultiValue  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
+    
     private String key;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
+    
     
     private List<String> values = null;
     

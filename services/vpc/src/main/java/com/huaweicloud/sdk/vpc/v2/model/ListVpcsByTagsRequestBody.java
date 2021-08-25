@@ -95,12 +95,12 @@ public class ListVpcsByTagsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matches")
@@ -128,7 +128,7 @@ public class ListVpcsByTagsRequestBody {
         this.action = action;
     }
 
-    public ListVpcsByTagsRequestBody withLimit(String limit) {
+    public ListVpcsByTagsRequestBody withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -136,15 +136,15 @@ public class ListVpcsByTagsRequestBody {
     /** 功能说明：查询记录数 取值范围：1-1000 约束：action为count时此参数不生效；action为filter时默认为1000
      * 
      * @return limit */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
-    public ListVpcsByTagsRequestBody withOffset(String offset) {
+    public ListVpcsByTagsRequestBody withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -153,11 +153,11 @@ public class ListVpcsByTagsRequestBody {
      * 约束：action为count时无此参数；action为filter时默认为0；必须为数字，不能为负数
      * 
      * @return offset */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 

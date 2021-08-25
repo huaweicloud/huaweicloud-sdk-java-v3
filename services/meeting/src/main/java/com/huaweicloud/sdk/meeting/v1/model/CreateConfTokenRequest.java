@@ -20,7 +20,6 @@ public class CreateConfTokenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Password")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
 
     private String xPassword;
 
@@ -149,7 +148,7 @@ public class CreateConfTokenRequest {
         sb.append("class CreateConfTokenRequest {\n");
         sb.append("    conferenceID: ").append(toIndentedString(conferenceID)).append("\n");
         sb.append("    xConferenceAuthorization: ").append(toIndentedString(xConferenceAuthorization)).append("\n");
-        sb.append("    xPassword: ").append(toIndentedString("******")).append("\n");
+        sb.append("    xPassword: ").append(toIndentedString(xPassword)).append("\n");
         sb.append("    xLoginType: ").append(toIndentedString(xLoginType)).append("\n");
         sb.append("    xNonce: ").append(toIndentedString(xNonce)).append("\n");
         sb.append("}");

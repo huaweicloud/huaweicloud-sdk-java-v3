@@ -30,7 +30,6 @@ public class ListApplicationEndpointsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
 
     private String token;
 
@@ -165,7 +164,7 @@ public class ListApplicationEndpointsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-        sb.append("    token: ").append(toIndentedString("******")).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("}");
         return sb.toString();

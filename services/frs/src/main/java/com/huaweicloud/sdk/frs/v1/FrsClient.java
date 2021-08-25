@@ -69,25 +69,6 @@ public class FrsClient {
         return new SyncInvoker<AddFacesByUrlRequest, AddFacesByUrlResponse>(request, FrsMeta.addFacesByUrl, hcClient);
     }
 
-    /** 查询服务状态 用于查询服务的开通状态。
-     *
-     * @param AuthorizeFaceRecognitionServiceRequest 请求对象
-     * @return AuthorizeFaceRecognitionServiceResponse */
-    public AuthorizeFaceRecognitionServiceResponse authorizeFaceRecognitionService(
-        AuthorizeFaceRecognitionServiceRequest request) {
-        return hcClient.syncInvokeHttp(request, FrsMeta.authorizeFaceRecognitionService);
-    }
-
-    /** 查询服务状态 用于查询服务的开通状态。
-     *
-     * @param AuthorizeFaceRecognitionServiceRequest 请求对象
-     * @return SyncInvoker<AuthorizeFaceRecognitionServiceRequest, AuthorizeFaceRecognitionServiceResponse> */
-    public SyncInvoker<AuthorizeFaceRecognitionServiceRequest, AuthorizeFaceRecognitionServiceResponse> authorizeFaceRecognitionServiceInvoker(
-        AuthorizeFaceRecognitionServiceRequest request) {
-        return new SyncInvoker<AuthorizeFaceRecognitionServiceRequest, AuthorizeFaceRecognitionServiceResponse>(request,
-            FrsMeta.authorizeFaceRecognitionService, hcClient);
-    }
-
     /** 批量删除人脸 自定义筛选条件，批量删除人脸库中的符合指定条件的多张人脸。
      *
      * @param BatchDeleteFacesRequest 请求对象
@@ -535,6 +516,24 @@ public class FrsClient {
     public SyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse> showFacesByLimitInvoker(
         ShowFacesByLimitRequest request) {
         return new SyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse>(request, FrsMeta.showFacesByLimit,
+            hcClient);
+    }
+
+    /** 查询服务状态 用于查询服务的开通状态。
+     *
+     * @param ShowSubscribesRequest 请求对象
+     * @return ShowSubscribesResponse */
+    public ShowSubscribesResponse showSubscribes(ShowSubscribesRequest request) {
+        return hcClient.syncInvokeHttp(request, FrsMeta.showSubscribes);
+    }
+
+    /** 查询服务状态 用于查询服务的开通状态。
+     *
+     * @param ShowSubscribesRequest 请求对象
+     * @return SyncInvoker<ShowSubscribesRequest, ShowSubscribesResponse> */
+    public SyncInvoker<ShowSubscribesRequest, ShowSubscribesResponse> showSubscribesInvoker(
+        ShowSubscribesRequest request) {
+        return new SyncInvoker<ShowSubscribesRequest, ShowSubscribesResponse>(request, FrsMeta.showSubscribes,
             hcClient);
     }
 

@@ -943,6 +943,52 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFlavorInfosRequest, ListFlavorInfosResponse> listFlavorInfos =
+        genForlistFlavorInfos();
+
+    private static HttpRequestDef<ListFlavorInfosRequest, ListFlavorInfosResponse> genForlistFlavorInfos() {
+        // basic
+        HttpRequestDef.Builder<ListFlavorInfosRequest, ListFlavorInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlavorInfosRequest.class, ListFlavorInfosResponse.class)
+                .withName("ListFlavorInfos")
+                .withUri("/v3.1/{project_id}/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListFlavorInfosRequest.EngineNameEnum>withRequestField("engine_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlavorInfosRequest.EngineNameEnum.class),
+            f -> f.withMarshaller(ListFlavorInfosRequest::getEngineName, (req, v) -> {
+                req.setEngineName(v);
+            }));
+        builder.<String>withRequestField("engine_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorInfosRequest::getEngineVersion, (req, v) -> {
+                req.setEngineVersion(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorInfosRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorInfosRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
 
     private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
@@ -956,7 +1002,7 @@ public class DdsMeta {
         // requests
         builder.<String>withRequestField("region",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getRegion, (req, v) -> {
                 req.setRegion(v);
@@ -1940,6 +1986,31 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail =
+        genForshowJobDetail();
+
+    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
+                .withName("ShowJobDetail")
+                .withUri("/v3/{project_id}/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobDetailRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
 
     private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
@@ -1975,6 +2046,41 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowShardingBalancerRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> switchSlowlogDesensitization =
+        genForswitchSlowlogDesensitization();
+
+    private static HttpRequestDef<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> genForswitchSlowlogDesensitization() {
+        // basic
+        HttpRequestDef.Builder<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    SwitchSlowlogDesensitizationRequest.class,
+                    SwitchSlowlogDesensitizationResponse.class)
+                .withName("SwitchSlowlogDesensitization")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization/{status}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
             }));
 
         // response
@@ -2126,6 +2232,38 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePortRequestBody.class),
             f -> f.withMarshaller(UpdateInstancePortRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceRemarkRequest, UpdateInstanceRemarkResponse> updateInstanceRemark =
+        genForupdateInstanceRemark();
+
+    private static HttpRequestDef<UpdateInstanceRemarkRequest, UpdateInstanceRemarkResponse> genForupdateInstanceRemark() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceRemarkRequest, UpdateInstanceRemarkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateInstanceRemarkRequest.class, UpdateInstanceRemarkResponse.class)
+            .withName("UpdateInstanceRemark")
+            .withUri("/v3/{project_id}/instances/{instance_id}/remark")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceRemarkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateInstanceRemarkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstanceRemarkRequestBody.class),
+            f -> f.withMarshaller(UpdateInstanceRemarkRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

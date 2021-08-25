@@ -152,24 +152,9 @@ public class VideoParameters {
     private Integer height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "aspect_ratio")
-
-    private Integer aspectRatio;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "black_cut")
 
     private Integer blackCut;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "GOP_structure")
-
-    private Boolean goPStructure;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sr_factor")
-
-    private String srFactor;
 
     public VideoParameters withOutputPolicy(OutputPolicyEnum outputPolicy) {
         this.outputPolicy = outputPolicy;
@@ -372,22 +357,6 @@ public class VideoParameters {
         this.height = height;
     }
 
-    public VideoParameters withAspectRatio(Integer aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
-    /** 纵横比（保留，图像缩放方式） - 0：自适应（保持原有宽高比） - 1：补黑边（16:9） - 2：裁黑边（18:9） minimum: 0 maximum: 2
-     * 
-     * @return aspectRatio */
-    public Integer getAspectRatio() {
-        return aspectRatio;
-    }
-
-    public void setAspectRatio(Integer aspectRatio) {
-        this.aspectRatio = aspectRatio;
-    }
-
     public VideoParameters withBlackCut(Integer blackCut) {
         this.blackCut = blackCut;
         return this;
@@ -402,38 +371,6 @@ public class VideoParameters {
 
     public void setBlackCut(Integer blackCut) {
         this.blackCut = blackCut;
-    }
-
-    public VideoParameters withGoPStructure(Boolean goPStructure) {
-        this.goPStructure = goPStructure;
-        return this;
-    }
-
-    /** GOP类型（暂不开放） - 0: Closed (Default) - 1:Open
-     * 
-     * @return goPStructure */
-    public Boolean getGoPStructure() {
-        return goPStructure;
-    }
-
-    public void setGoPStructure(Boolean goPStructure) {
-        this.goPStructure = goPStructure;
-    }
-
-    public VideoParameters withSrFactor(String srFactor) {
-        this.srFactor = srFactor;
-        return this;
-    }
-
-    /** 超分倍数 取值如下： - 2：两倍超分
-     * 
-     * @return srFactor */
-    public String getSrFactor() {
-        return srFactor;
-    }
-
-    public void setSrFactor(String srFactor) {
-        this.srFactor = srFactor;
     }
 
     @Override
@@ -455,10 +392,7 @@ public class VideoParameters {
             && Objects.equals(this.bframesCount, videoParameters.bframesCount)
             && Objects.equals(this.frameRate, videoParameters.frameRate)
             && Objects.equals(this.width, videoParameters.width) && Objects.equals(this.height, videoParameters.height)
-            && Objects.equals(this.aspectRatio, videoParameters.aspectRatio)
-            && Objects.equals(this.blackCut, videoParameters.blackCut)
-            && Objects.equals(this.goPStructure, videoParameters.goPStructure)
-            && Objects.equals(this.srFactor, videoParameters.srFactor);
+            && Objects.equals(this.blackCut, videoParameters.blackCut);
     }
 
     @Override
@@ -475,10 +409,7 @@ public class VideoParameters {
             frameRate,
             width,
             height,
-            aspectRatio,
-            blackCut,
-            goPStructure,
-            srFactor);
+            blackCut);
     }
 
     @Override
@@ -497,10 +428,7 @@ public class VideoParameters {
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
-        sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
         sb.append("    blackCut: ").append(toIndentedString(blackCut)).append("\n");
-        sb.append("    goPStructure: ").append(toIndentedString(goPStructure)).append("\n");
-        sb.append("    srFactor: ").append(toIndentedString(srFactor)).append("\n");
         sb.append("}");
         return sb.toString();
     }

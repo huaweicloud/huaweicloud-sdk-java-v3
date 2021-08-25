@@ -29,11 +29,13 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    
     private String name;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="uri")
+    
     
     private String uri;
 
@@ -41,17 +43,20 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
+    
     private String parameters;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
+    
     private List<String> nodes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="active_master")
+    
     
     private Boolean activeMaster;
     /**
@@ -136,6 +141,7 @@ public class ScaleScript  {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_action")
+    
     
     private FailActionEnum failAction;
     /**
@@ -232,6 +238,7 @@ public class ScaleScript  {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_stage")
+    
     
     private ActionStageEnum actionStage;
 

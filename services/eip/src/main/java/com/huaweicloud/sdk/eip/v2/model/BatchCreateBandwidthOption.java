@@ -23,6 +23,11 @@ public class BatchCreateBandwidthOption {
 
     private Integer size;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public BatchCreateBandwidthOption withCount(Integer count) {
         this.count = count;
         return this;
@@ -73,6 +78,22 @@ public class BatchCreateBandwidthOption {
         this.size = size;
     }
 
+    public BatchCreateBandwidthOption withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /** 功能说明：表示中心站点资源或者边缘站点资源，对接了边缘站点的区域需传此字段 取值范围： center、边缘站点名称 上线区域：华北-乌兰察布一，华南-广州 约束：共享带宽只能插入与该字段相同的publicip
+     * 
+     * @return publicBorderGroup */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -84,12 +105,13 @@ public class BatchCreateBandwidthOption {
         BatchCreateBandwidthOption batchCreateBandwidthOption = (BatchCreateBandwidthOption) o;
         return Objects.equals(this.count, batchCreateBandwidthOption.count)
             && Objects.equals(this.name, batchCreateBandwidthOption.name)
-            && Objects.equals(this.size, batchCreateBandwidthOption.size);
+            && Objects.equals(this.size, batchCreateBandwidthOption.size)
+            && Objects.equals(this.publicBorderGroup, batchCreateBandwidthOption.publicBorderGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, name, size);
+        return Objects.hash(count, name, size, publicBorderGroup);
     }
 
     @Override
@@ -99,6 +121,7 @@ public class BatchCreateBandwidthOption {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

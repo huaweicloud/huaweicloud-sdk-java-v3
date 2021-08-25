@@ -72,25 +72,6 @@ public class FrsAsyncClient {
         return new AsyncInvoker<AddFacesByUrlRequest, AddFacesByUrlResponse>(request, FrsMeta.addFacesByUrl, hcClient);
     }
 
-    /** 查询服务状态 用于查询服务的开通状态。
-     *
-     * @param AuthorizeFaceRecognitionServiceRequest 请求对象
-     * @return CompletableFuture<AuthorizeFaceRecognitionServiceResponse> */
-    public CompletableFuture<AuthorizeFaceRecognitionServiceResponse> authorizeFaceRecognitionServiceAsync(
-        AuthorizeFaceRecognitionServiceRequest request) {
-        return hcClient.asyncInvokeHttp(request, FrsMeta.authorizeFaceRecognitionService);
-    }
-
-    /** 查询服务状态 用于查询服务的开通状态。
-     *
-     * @param AuthorizeFaceRecognitionServiceRequest 请求对象
-     * @return AsyncInvoker<AuthorizeFaceRecognitionServiceRequest, AuthorizeFaceRecognitionServiceResponse> */
-    public AsyncInvoker<AuthorizeFaceRecognitionServiceRequest, AuthorizeFaceRecognitionServiceResponse> authorizeFaceRecognitionServiceAsyncInvoker(
-        AuthorizeFaceRecognitionServiceRequest request) {
-        return new AsyncInvoker<AuthorizeFaceRecognitionServiceRequest, AuthorizeFaceRecognitionServiceResponse>(
-            request, FrsMeta.authorizeFaceRecognitionService, hcClient);
-    }
-
     /** 批量删除人脸 自定义筛选条件，批量删除人脸库中的符合指定条件的多张人脸。
      *
      * @param BatchDeleteFacesRequest 请求对象
@@ -543,6 +524,24 @@ public class FrsAsyncClient {
     public AsyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse> showFacesByLimitAsyncInvoker(
         ShowFacesByLimitRequest request) {
         return new AsyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse>(request, FrsMeta.showFacesByLimit,
+            hcClient);
+    }
+
+    /** 查询服务状态 用于查询服务的开通状态。
+     *
+     * @param ShowSubscribesRequest 请求对象
+     * @return CompletableFuture<ShowSubscribesResponse> */
+    public CompletableFuture<ShowSubscribesResponse> showSubscribesAsync(ShowSubscribesRequest request) {
+        return hcClient.asyncInvokeHttp(request, FrsMeta.showSubscribes);
+    }
+
+    /** 查询服务状态 用于查询服务的开通状态。
+     *
+     * @param ShowSubscribesRequest 请求对象
+     * @return AsyncInvoker<ShowSubscribesRequest, ShowSubscribesResponse> */
+    public AsyncInvoker<ShowSubscribesRequest, ShowSubscribesResponse> showSubscribesAsyncInvoker(
+        ShowSubscribesRequest request) {
+        return new AsyncInvoker<ShowSubscribesRequest, ShowSubscribesResponse>(request, FrsMeta.showSubscribes,
             hcClient);
     }
 

@@ -21,11 +21,13 @@ public class ComponentAmb  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="componentId")
     
+    
     private String componentId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="componentName")
+    
     
     private String componentName;
 
@@ -33,11 +35,13 @@ public class ComponentAmb  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="componentVersion")
     
+    
     private String componentVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="componentDesc")
+    
     
     private String componentDesc;
 

@@ -21,11 +21,13 @@ public class StatisticValue  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistic")
     
+    
     private String statistic;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
+    
     
     private Double value;
 

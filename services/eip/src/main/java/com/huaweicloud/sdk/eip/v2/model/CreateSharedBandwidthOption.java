@@ -105,6 +105,11 @@ public class CreateSharedBandwidthOption {
 
     private ChargeModeEnum chargeMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public CreateSharedBandwidthOption withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -172,6 +177,22 @@ public class CreateSharedBandwidthOption {
         this.chargeMode = chargeMode;
     }
 
+    public CreateSharedBandwidthOption withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /** 功能说明：表示中心站点资源或者边缘站点资源，对接了边缘站点的区域需传此字段 取值范围： center、边缘站点名称 上线区域：华北-乌兰察布一，华南-广州 约束：共享带宽只能插入与该字段相同的publicip
+     * 
+     * @return publicBorderGroup */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -184,12 +205,13 @@ public class CreateSharedBandwidthOption {
         return Objects.equals(this.enterpriseProjectId, createSharedBandwidthOption.enterpriseProjectId)
             && Objects.equals(this.name, createSharedBandwidthOption.name)
             && Objects.equals(this.size, createSharedBandwidthOption.size)
-            && Objects.equals(this.chargeMode, createSharedBandwidthOption.chargeMode);
+            && Objects.equals(this.chargeMode, createSharedBandwidthOption.chargeMode)
+            && Objects.equals(this.publicBorderGroup, createSharedBandwidthOption.publicBorderGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, name, size, chargeMode);
+        return Objects.hash(enterpriseProjectId, name, size, chargeMode, publicBorderGroup);
     }
 
     @Override
@@ -200,6 +222,7 @@ public class CreateSharedBandwidthOption {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -36,6 +36,31 @@ public class InterfaceAttachment {
 
     private String portState;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_on_termination")
+
+    private Boolean deleteOnTermination;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "driver_mode")
+
+    private String driverMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_rate")
+
+    private Integer minRate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "multiqueue_num")
+
+    private Integer multiqueueNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pci_address")
+
+    private String pciAddress;
+
     public InterfaceAttachment withFixedIps(List<ServerInterfaceFixedIp> fixedIps) {
         this.fixedIps = fixedIps;
         return this;
@@ -132,6 +157,86 @@ public class InterfaceAttachment {
         this.portState = portState;
     }
 
+    public InterfaceAttachment withDeleteOnTermination(Boolean deleteOnTermination) {
+        this.deleteOnTermination = deleteOnTermination;
+        return this;
+    }
+
+    /** 卸载网卡时，是否删除网卡。
+     * 
+     * @return deleteOnTermination */
+    public Boolean getDeleteOnTermination() {
+        return deleteOnTermination;
+    }
+
+    public void setDeleteOnTermination(Boolean deleteOnTermination) {
+        this.deleteOnTermination = deleteOnTermination;
+    }
+
+    public InterfaceAttachment withDriverMode(String driverMode) {
+        this.driverMode = driverMode;
+        return this;
+    }
+
+    /** 从guest os中，网卡的驱动类型。可选值为virtio和hinic，默认为virtio
+     * 
+     * @return driverMode */
+    public String getDriverMode() {
+        return driverMode;
+    }
+
+    public void setDriverMode(String driverMode) {
+        this.driverMode = driverMode;
+    }
+
+    public InterfaceAttachment withMinRate(Integer minRate) {
+        this.minRate = minRate;
+        return this;
+    }
+
+    /** 网卡带宽下限。
+     * 
+     * @return minRate */
+    public Integer getMinRate() {
+        return minRate;
+    }
+
+    public void setMinRate(Integer minRate) {
+        this.minRate = minRate;
+    }
+
+    public InterfaceAttachment withMultiqueueNum(Integer multiqueueNum) {
+        this.multiqueueNum = multiqueueNum;
+        return this;
+    }
+
+    /** 网卡多队列个数。
+     * 
+     * @return multiqueueNum */
+    public Integer getMultiqueueNum() {
+        return multiqueueNum;
+    }
+
+    public void setMultiqueueNum(Integer multiqueueNum) {
+        this.multiqueueNum = multiqueueNum;
+    }
+
+    public InterfaceAttachment withPciAddress(String pciAddress) {
+        this.pciAddress = pciAddress;
+        return this;
+    }
+
+    /** 弹性网卡在Linux GuestOS里的BDF号
+     * 
+     * @return pciAddress */
+    public String getPciAddress() {
+        return pciAddress;
+    }
+
+    public void setPciAddress(String pciAddress) {
+        this.pciAddress = pciAddress;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -145,12 +250,26 @@ public class InterfaceAttachment {
             && Objects.equals(this.macAddr, interfaceAttachment.macAddr)
             && Objects.equals(this.netId, interfaceAttachment.netId)
             && Objects.equals(this.portId, interfaceAttachment.portId)
-            && Objects.equals(this.portState, interfaceAttachment.portState);
+            && Objects.equals(this.portState, interfaceAttachment.portState)
+            && Objects.equals(this.deleteOnTermination, interfaceAttachment.deleteOnTermination)
+            && Objects.equals(this.driverMode, interfaceAttachment.driverMode)
+            && Objects.equals(this.minRate, interfaceAttachment.minRate)
+            && Objects.equals(this.multiqueueNum, interfaceAttachment.multiqueueNum)
+            && Objects.equals(this.pciAddress, interfaceAttachment.pciAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fixedIps, macAddr, netId, portId, portState);
+        return Objects.hash(fixedIps,
+            macAddr,
+            netId,
+            portId,
+            portState,
+            deleteOnTermination,
+            driverMode,
+            minRate,
+            multiqueueNum,
+            pciAddress);
     }
 
     @Override
@@ -162,6 +281,11 @@ public class InterfaceAttachment {
         sb.append("    netId: ").append(toIndentedString(netId)).append("\n");
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    portState: ").append(toIndentedString(portState)).append("\n");
+        sb.append("    deleteOnTermination: ").append(toIndentedString(deleteOnTermination)).append("\n");
+        sb.append("    driverMode: ").append(toIndentedString(driverMode)).append("\n");
+        sb.append("    minRate: ").append(toIndentedString(minRate)).append("\n");
+        sb.append("    multiqueueNum: ").append(toIndentedString(multiqueueNum)).append("\n");
+        sb.append("    pciAddress: ").append(toIndentedString(pciAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

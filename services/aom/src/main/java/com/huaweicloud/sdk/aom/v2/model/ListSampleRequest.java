@@ -22,11 +22,13 @@ public class ListSampleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fill_value")
     
+    
     private String fillValue;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
+    
     
     private QuerySampleParam body;
 

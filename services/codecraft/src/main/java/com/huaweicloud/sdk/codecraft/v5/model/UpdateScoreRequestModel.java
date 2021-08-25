@@ -21,7 +21,7 @@ public class UpdateScoreRequestModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "score")
 
-    private Double score;
+    private String score;
 
     /** 作品状态success|failed。判题时，需要对上传作品进行检查，当作品不符合要求时，应该返回failed，并将提示信息通过 message显示出来 */
     public static final class StatusEnum {
@@ -121,19 +121,19 @@ public class UpdateScoreRequestModel {
         this.worksId = worksId;
     }
 
-    public UpdateScoreRequestModel withScore(Double score) {
+    public UpdateScoreRequestModel withScore(String score) {
         this.score = score;
         return this;
     }
 
-    /** 作品分数，作品状态为failed时传-1 minimum: -1 maximum: 99999999999
+    /** 作品分数，作品状态为failed时传-1，计算长度时包括小数点，小数点后面最多保留四位
      * 
      * @return score */
-    public Double getScore() {
+    public String getScore() {
         return score;
     }
 
-    public void setScore(Double score) {
+    public void setScore(String score) {
         this.score = score;
     }
 

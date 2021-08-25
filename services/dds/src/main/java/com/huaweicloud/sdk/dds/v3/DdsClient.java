@@ -469,6 +469,24 @@ public class DdsClient {
         return new SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse>(request, DdsMeta.listErrorLogs, hcClient);
     }
 
+    /** 查询数据库规格 查询指定条件下的实例规格信息。
+     *
+     * @param ListFlavorInfosRequest 请求对象
+     * @return ListFlavorInfosResponse */
+    public ListFlavorInfosResponse listFlavorInfos(ListFlavorInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listFlavorInfos);
+    }
+
+    /** 查询数据库规格 查询指定条件下的实例规格信息。
+     *
+     * @param ListFlavorInfosRequest 请求对象
+     * @return SyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse> */
+    public SyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse> listFlavorInfosInvoker(
+        ListFlavorInfosRequest request) {
+        return new SyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse>(request, DdsMeta.listFlavorInfos,
+            hcClient);
+    }
+
     /** 查询所有实例规格信息 查询指定条件下的所有实例规格信息。
      *
      * @param ListFlavorsRequest 请求对象
@@ -944,6 +962,22 @@ public class DdsClient {
             DdsMeta.showConnectionStatistics, hcClient);
     }
 
+    /** 获取DDS任务中心指定ID的任务信息。 获取DDS任务中心指定ID的任务信息。
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return ShowJobDetailResponse */
+    public ShowJobDetailResponse showJobDetail(ShowJobDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showJobDetail);
+    }
+
+    /** 获取DDS任务中心指定ID的任务信息。 获取DDS任务中心指定ID的任务信息。
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> */
+    public SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailInvoker(ShowJobDetailRequest request) {
+        return new SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, DdsMeta.showJobDetail, hcClient);
+    }
+
     /** 查询配额 查询单租户在DDS服务下的资源配额，包括单节点实例配额、副本集实例配额、集群实例配额等。
      *
      * @param ShowQuotasRequest 请求对象
@@ -976,6 +1010,25 @@ public class DdsClient {
         ShowShardingBalancerRequest request) {
         return new SyncInvoker<ShowShardingBalancerRequest, ShowShardingBalancerResponse>(request,
             DdsMeta.showShardingBalancer, hcClient);
+    }
+
+    /** 设置慢日志明文开关 设置实例的慢日志明文开关。
+     *
+     * @param SwitchSlowlogDesensitizationRequest 请求对象
+     * @return SwitchSlowlogDesensitizationResponse */
+    public SwitchSlowlogDesensitizationResponse switchSlowlogDesensitization(
+        SwitchSlowlogDesensitizationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.switchSlowlogDesensitization);
+    }
+
+    /** 设置慢日志明文开关 设置实例的慢日志明文开关。
+     *
+     * @param SwitchSlowlogDesensitizationRequest 请求对象
+     * @return SyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> */
+    public SyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> switchSlowlogDesensitizationInvoker(
+        SwitchSlowlogDesensitizationRequest request) {
+        return new SyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse>(request,
+            DdsMeta.switchSlowlogDesensitization, hcClient);
     }
 
     /** 切换SSL开关 切换实例的SSL开关
@@ -1064,6 +1117,24 @@ public class DdsClient {
         UpdateInstancePortRequest request) {
         return new SyncInvoker<UpdateInstancePortRequest, UpdateInstancePortResponse>(request,
             DdsMeta.updateInstancePort, hcClient);
+    }
+
+    /** 修改实例备注 修改实例备注。
+     *
+     * @param UpdateInstanceRemarkRequest 请求对象
+     * @return UpdateInstanceRemarkResponse */
+    public UpdateInstanceRemarkResponse updateInstanceRemark(UpdateInstanceRemarkRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.updateInstanceRemark);
+    }
+
+    /** 修改实例备注 修改实例备注。
+     *
+     * @param UpdateInstanceRemarkRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceRemarkRequest, UpdateInstanceRemarkResponse> */
+    public SyncInvoker<UpdateInstanceRemarkRequest, UpdateInstanceRemarkResponse> updateInstanceRemarkInvoker(
+        UpdateInstanceRemarkRequest request) {
+        return new SyncInvoker<UpdateInstanceRemarkRequest, UpdateInstanceRemarkResponse>(request,
+            DdsMeta.updateInstanceRemark, hcClient);
     }
 
     /** 变更实例安全组 变更实例关联的安全组

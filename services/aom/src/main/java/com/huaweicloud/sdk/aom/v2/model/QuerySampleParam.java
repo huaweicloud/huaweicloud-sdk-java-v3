@@ -24,11 +24,13 @@ public class QuerySampleParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="samples")
     
+    
     private List<QuerySample> samples = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistics")
+    
     
     private List<String> statistics = null;
     
@@ -36,11 +38,13 @@ public class QuerySampleParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
+    
     private Integer period;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_range")
+    
     
     private String timeRange;
 

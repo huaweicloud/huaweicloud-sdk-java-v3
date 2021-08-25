@@ -26,11 +26,13 @@ public class AutoScalingPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_enable")
     
+    
     private Boolean autoScalingEnable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_capacity")
+    
     
     private Integer minCapacity;
 
@@ -38,11 +40,13 @@ public class AutoScalingPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_capacity")
     
+    
     private Integer maxCapacity;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources_plans")
+    
     
     private List<ResourcesPlan> resourcesPlans = null;
     
@@ -50,11 +54,13 @@ public class AutoScalingPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
+    
     private List<Rules> rules = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exec_scripts")
+    
     
     private List<ScaleScript> execScripts = null;
     

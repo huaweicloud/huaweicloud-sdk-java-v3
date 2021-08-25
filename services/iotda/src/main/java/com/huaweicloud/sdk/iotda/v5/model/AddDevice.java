@@ -33,7 +33,6 @@ public class AddDevice {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_info")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
 
     private AuthInfo authInfo;
 
@@ -291,7 +290,7 @@ public class AddDevice {
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-        sb.append("    authInfo: ").append(toIndentedString("******")).append("\n");
+        sb.append("    authInfo: ").append(toIndentedString(authInfo)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");

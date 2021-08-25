@@ -756,7 +756,8 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源的单价。
+    /** 产品的单价。 按需产品的单价，只有简单定价，不分档的场景会返回。 包周期产品的单价，只有包周期的如下场景会返回：包周期订购/续订/降配/升配/扩容简单定价，不分档
+     * 预留实例的单价，只有如下场景下会返回：订购/续订/降配/升配/扩容/按时计费简单定价，不分档
      * 
      * @return unitPrice */
     public Double getUnitPrice() {
@@ -788,7 +789,7 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 官网价。
+    /** 官网价，华为云商品在官网上未叠加应用商务折扣、促销折扣等优惠的销售价格。
      * 
      * @return officialAmount */
     public Double getOfficialAmount() {
@@ -804,7 +805,7 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 折扣金额。
+    /** 优惠金额，用户使用云服务享受折扣优惠如商务折扣、伙伴授予折扣以及促销优惠等减免的金额。
      * 
      * @return discountAmount */
     public Double getDiscountAmount() {
@@ -820,7 +821,7 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 消费金额，包括现金券和储值卡和代金券金额，精确到小数点后2位。 说明：
+    /** 应付金额，用户使用云服务享受折扣优惠后需要支付的费用金额，包括现金券和储值卡和代金券金额，精确到小数点后2位。 说明：
      * amount的值等于cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_card_amount，bonus_amount，debt_amount，adjustment_amount的总和。
      * 
      * @return amount */

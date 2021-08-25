@@ -27,7 +27,7 @@ public class UpdateRouteTableReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "routes")
 
-    private Map<String, List<Route>> routes = null;
+    private Map<String, List<RouteTableRoute>> routes = null;
 
     public UpdateRouteTableReq withName(String name) {
         this.name = name;
@@ -61,12 +61,12 @@ public class UpdateRouteTableReq {
         this.description = description;
     }
 
-    public UpdateRouteTableReq withRoutes(Map<String, List<Route>> routes) {
+    public UpdateRouteTableReq withRoutes(Map<String, List<RouteTableRoute>> routes) {
         this.routes = routes;
         return this;
     }
 
-    public UpdateRouteTableReq putRoutesItem(String key, List<Route> routesItem) {
+    public UpdateRouteTableReq putRoutesItem(String key, List<RouteTableRoute> routesItem) {
         if (this.routes == null) {
             this.routes = new HashMap<>();
         }
@@ -74,7 +74,7 @@ public class UpdateRouteTableReq {
         return this;
     }
 
-    public UpdateRouteTableReq withRoutes(Consumer<Map<String, List<Route>>> routesSetter) {
+    public UpdateRouteTableReq withRoutes(Consumer<Map<String, List<RouteTableRoute>>> routesSetter) {
         if (this.routes == null) {
             this.routes = new HashMap<>();
         }
@@ -87,11 +87,11 @@ public class UpdateRouteTableReq {
      * 不支持直接修改destination，如需修改，只能使用del先删除对应路由，然后使用add新增路由。
      * 
      * @return routes */
-    public Map<String, List<Route>> getRoutes() {
+    public Map<String, List<RouteTableRoute>> getRoutes() {
         return routes;
     }
 
-    public void setRoutes(Map<String, List<Route>> routes) {
+    public void setRoutes(Map<String, List<RouteTableRoute>> routes) {
         this.routes = routes;
     }
 

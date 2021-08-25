@@ -1,9 +1,19 @@
-package com.huaweicloud.sdk.frs.v1.model;
+package com.huaweicloud.sdk.cbs.v1.model;
 
+
+
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+
+import java.util.function.Consumer;
 import java.util.Objects;
 
-/** Request Object */
-public class AuthorizeFaceRecognitionServiceRequest {
+/**
+ * Response Object
+ */
+public class DeleteSessionResponse extends SdkResponse {
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -15,18 +25,17 @@ public class AuthorizeFaceRecognitionServiceRequest {
         }
         return true;
     }
-
     @Override
     public int hashCode() {
         return Objects.hash();
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AuthorizeFaceRecognitionServiceRequest {\n");
+        sb.append("class DeleteSessionResponse {\n");
         sb.append("}");
         return sb.toString();
     }
-
+    
 }
+

@@ -100,11 +100,13 @@ public class BatchCreateClusterTagsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
+    
     private ActionEnum action;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
+    
     
     private List<Tag> tags = null;
     

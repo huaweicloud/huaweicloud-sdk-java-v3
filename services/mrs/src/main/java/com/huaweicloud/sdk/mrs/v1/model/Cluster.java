@@ -26,11 +26,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterId")
     
+    
     private String clusterId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterName")
+    
     
     private String clusterName;
 
@@ -38,11 +40,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="totalNodeNum")
     
+    
     private String totalNodeNum;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterState")
+    
     
     private String clusterState;
 
@@ -50,11 +54,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stageDesc")
     
+    
     private String stageDesc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="createAt")
+    
     
     private String createAt;
 
@@ -62,11 +68,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updateAt")
     
+    
     private String updateAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chargingStartTime")
+    
     
     private String chargingStartTime;
 
@@ -74,11 +82,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billingType")
     
+    
     private String billingType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataCenter")
+    
     
     private String dataCenter;
 
@@ -86,11 +96,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc")
     
+    
     private String vpc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
+    
     
     private String duration;
 
@@ -98,11 +110,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fee")
     
+    
     private String fee;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hadoopVersion")
+    
     
     private String hadoopVersion;
 
@@ -110,11 +124,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="componentList")
     
+    
     private List<ComponentAmb> componentList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="externalIp")
+    
     
     private String externalIp;
 
@@ -122,11 +138,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="externalAlternateIp")
     
+    
     private String externalAlternateIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="internalIp")
+    
     
     private String internalIp;
 
@@ -134,11 +152,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploymentId")
     
+    
     private String deploymentId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remark")
+    
     
     private String remark;
 
@@ -146,11 +166,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="orderId")
     
+    
     private String orderId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="azId")
+    
     
     private String azId;
 
@@ -158,11 +180,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="azName")
     
+    
     private String azName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="azCode")
+    
     
     private String azCode;
 
@@ -170,11 +194,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instanceId")
     
+    
     private String instanceId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vnc")
+    
     
     private String vnc;
 
@@ -182,11 +208,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tenantId")
     
+    
     private String tenantId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumeSize")
+    
     
     private Integer volumeSize;
 
@@ -194,11 +222,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumeType")
     
+    
     private String volumeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnetId")
+    
     
     private String subnetId;
 
@@ -206,11 +236,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnetName")
     
+    
     private String subnetName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="securityGroupsId")
+    
     
     private String securityGroupsId;
 
@@ -218,11 +250,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slaveSecurityGroupsId")
     
+    
     private String slaveSecurityGroupsId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bootstrapScripts")
+    
     
     private List<BootstrapScriptResp> bootstrapScripts = null;
     
@@ -230,11 +264,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="safeMode")
     
+    
     private Integer safeMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterVersion")
+    
     
     private String clusterVersion;
 
@@ -242,11 +278,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodePublicCertName")
     
+    
     private String nodePublicCertName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeIp")
+    
     
     private String masterNodeIp;
 
@@ -254,11 +292,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="privateIpFirst")
     
+    
     private String privateIpFirst;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorInfo")
+    
     
     private String errorInfo;
 
@@ -266,11 +306,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    
     private String tags;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeNum")
+    
     
     private String masterNodeNum;
 
@@ -278,11 +320,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreNodeNum")
     
+    
     private String coreNodeNum;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeSize")
+    
     
     private String masterNodeSize;
 
@@ -290,11 +334,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreNodeSize")
     
+    
     private String coreNodeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeProductId")
+    
     
     private String masterNodeProductId;
 
@@ -302,11 +348,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeSpecId")
     
+    
     private String masterNodeSpecId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreNodeProductId")
+    
     
     private String coreNodeProductId;
 
@@ -314,11 +362,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreNodeSpecId")
     
+    
     private String coreNodeSpecId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterDataVolumeType")
+    
     
     private String masterDataVolumeType;
 
@@ -326,11 +376,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterDataVolumeSize")
     
+    
     private Integer masterDataVolumeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterDataVolumeCount")
+    
     
     private Integer masterDataVolumeCount;
 
@@ -338,11 +390,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreDataVolumeType")
     
+    
     private String coreDataVolumeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreDataVolumeSize")
+    
     
     private Integer coreDataVolumeSize;
 
@@ -350,11 +404,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreDataVolumeCount")
     
+    
     private Integer coreDataVolumeCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterpriseProjectId")
+    
     
     private String enterpriseProjectId;
 
@@ -362,11 +418,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isMrsManagerFinish")
     
+    
     private Boolean isMrsManagerFinish;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterType")
+    
     
     private Integer clusterType;
 
@@ -374,11 +432,13 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logCollection")
     
+    
     private Integer logCollection;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="periodType")
+    
     
     private Integer periodType;
 
@@ -386,17 +446,20 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scale")
     
+    
     private String scale;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodeGroups")
     
+    
     private List<NodeGroupV10> nodeGroups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="taskNodeGroups")
+    
     
     private List<NodeGroupV10> taskNodeGroups = null;
     

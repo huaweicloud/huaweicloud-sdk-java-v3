@@ -284,6 +284,11 @@ public class BatchBandwidthResp {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public BatchBandwidthResp withBandwidthType(String bandwidthType) {
         this.bandwidthType = bandwidthType;
         return this;
@@ -461,6 +466,22 @@ public class BatchBandwidthResp {
         this.status = status;
     }
 
+    public BatchBandwidthResp withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /** 功能说明：表示中心站点资源或者边缘站点资源，对接了边缘站点的区域会返回此字段 取值范围： center、边缘站点名称 上线区域：华北-乌兰察布一，华南-广州 约束：共享带宽只能插入与该字段相同的publicip
+     * 
+     * @return publicBorderGroup */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -478,13 +499,23 @@ public class BatchBandwidthResp {
             && Objects.equals(this.shareType, batchBandwidthResp.shareType)
             && Objects.equals(this.size, batchBandwidthResp.size)
             && Objects.equals(this.tenantId, batchBandwidthResp.tenantId)
-            && Objects.equals(this.status, batchBandwidthResp.status);
+            && Objects.equals(this.status, batchBandwidthResp.status)
+            && Objects.equals(this.publicBorderGroup, batchBandwidthResp.publicBorderGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(bandwidthType, billingInfo, chargeMode, id, name, publicipInfo, shareType, size, tenantId, status);
+        return Objects.hash(bandwidthType,
+            billingInfo,
+            chargeMode,
+            id,
+            name,
+            publicipInfo,
+            shareType,
+            size,
+            tenantId,
+            status,
+            publicBorderGroup);
     }
 
     @Override
@@ -501,6 +532,7 @@ public class BatchBandwidthResp {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

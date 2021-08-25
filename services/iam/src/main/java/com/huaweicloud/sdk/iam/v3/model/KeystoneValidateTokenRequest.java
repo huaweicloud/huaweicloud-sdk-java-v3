@@ -10,7 +10,6 @@ public class KeystoneValidateTokenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Subject-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
 
     private String xSubjectToken;
 
@@ -75,7 +74,7 @@ public class KeystoneValidateTokenRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneValidateTokenRequest {\n");
-        sb.append("    xSubjectToken: ").append(toIndentedString("******")).append("\n");
+        sb.append("    xSubjectToken: ").append(toIndentedString(xSubjectToken)).append("\n");
         sb.append("    nocatalog: ").append(toIndentedString(nocatalog)).append("\n");
         sb.append("}");
         return sb.toString();

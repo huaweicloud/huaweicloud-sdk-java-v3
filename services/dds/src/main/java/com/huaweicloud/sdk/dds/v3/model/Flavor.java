@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.dds.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 规格信息。 */
 public class Flavor {
@@ -32,6 +35,11 @@ public class Flavor {
     @JsonProperty(value = "spec_code")
 
     private String specCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private List<String> availabilityZone = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_status")
@@ -118,6 +126,38 @@ public class Flavor {
         this.specCode = specCode;
     }
 
+    public Flavor withAvailabilityZone(List<String> availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    public Flavor addAvailabilityZoneItem(String availabilityZoneItem) {
+        if (this.availabilityZone == null) {
+            this.availabilityZone = new ArrayList<>();
+        }
+        this.availabilityZone.add(availabilityZoneItem);
+        return this;
+    }
+
+    public Flavor withAvailabilityZone(Consumer<List<String>> availabilityZoneSetter) {
+        if (this.availabilityZone == null) {
+            this.availabilityZone = new ArrayList<>();
+        }
+        availabilityZoneSetter.accept(this.availabilityZone);
+        return this;
+    }
+
+    /** 支持该规格的可用区ID。
+     * 
+     * @return availabilityZone */
+    public List<String> getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(List<String> availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     public Flavor withAzStatus(Object azStatus) {
         this.azStatus = azStatus;
         return this;
@@ -145,12 +185,14 @@ public class Flavor {
         Flavor flavor = (Flavor) o;
         return Objects.equals(this.engineName, flavor.engineName) && Objects.equals(this.type, flavor.type)
             && Objects.equals(this.vcpus, flavor.vcpus) && Objects.equals(this.ram, flavor.ram)
-            && Objects.equals(this.specCode, flavor.specCode) && Objects.equals(this.azStatus, flavor.azStatus);
+            && Objects.equals(this.specCode, flavor.specCode)
+            && Objects.equals(this.availabilityZone, flavor.availabilityZone)
+            && Objects.equals(this.azStatus, flavor.azStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engineName, type, vcpus, ram, specCode, azStatus);
+        return Objects.hash(engineName, type, vcpus, ram, specCode, availabilityZone, azStatus);
     }
 
     @Override
@@ -162,6 +204,7 @@ public class Flavor {
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    azStatus: ").append(toIndentedString(azStatus)).append("\n");
         sb.append("}");
         return sb.toString();

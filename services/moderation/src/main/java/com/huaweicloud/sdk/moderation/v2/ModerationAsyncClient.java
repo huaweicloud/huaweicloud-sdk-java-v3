@@ -37,7 +37,7 @@ public class ModerationAsyncClient {
             hcClient);
     }
 
-    /** 任务列表查询 查询批量图像内容检测任务列表，可通过指定任务状态查询来对任务列表进行过滤。
+    /** 任务列表查询 查询批量图像内容审核任务列表，可通过指定任务状态查询来对任务列表进行过滤。
      *
      * @param RunCheckTaskJobsRequest 请求对象
      * @return CompletableFuture<RunCheckTaskJobsResponse> */
@@ -45,7 +45,7 @@ public class ModerationAsyncClient {
         return hcClient.asyncInvokeHttp(request, ModerationMeta.runCheckTaskJobs);
     }
 
-    /** 任务列表查询 查询批量图像内容检测任务列表，可通过指定任务状态查询来对任务列表进行过滤。
+    /** 任务列表查询 查询批量图像内容审核任务列表，可通过指定任务状态查询来对任务列表进行过滤。
      *
      * @param RunCheckTaskJobsRequest 请求对象
      * @return AsyncInvoker<RunCheckTaskJobsRequest, RunCheckTaskJobsResponse> */
@@ -55,7 +55,7 @@ public class ModerationAsyncClient {
             ModerationMeta.runCheckTaskJobs, hcClient);
     }
 
-    /** 图像内容检测（批量） 分析并识别用户上传的图像内容是否有敏感内容（如涉及政治人物、暴恐元素、涉黄内容等），并将识别结果返回给用户。
+    /** 图像内容审核（批量） 分析并识别用户上传的图像内容是否有敏感内容（如涉及政治人物、暴恐元素、涉黄内容等），并将识别结果返回给用户。
      *
      * @param RunImageBatchModerationRequest 请求对象
      * @return CompletableFuture<RunImageBatchModerationResponse> */
@@ -64,7 +64,7 @@ public class ModerationAsyncClient {
         return hcClient.asyncInvokeHttp(request, ModerationMeta.runImageBatchModeration);
     }
 
-    /** 图像内容检测（批量） 分析并识别用户上传的图像内容是否有敏感内容（如涉及政治人物、暴恐元素、涉黄内容等），并将识别结果返回给用户。
+    /** 图像内容审核（批量） 分析并识别用户上传的图像内容是否有敏感内容（如涉及政治人物、暴恐元素、涉黄内容等），并将识别结果返回给用户。
      *
      * @param RunImageBatchModerationRequest 请求对象
      * @return AsyncInvoker<RunImageBatchModerationRequest, RunImageBatchModerationResponse> */
@@ -74,7 +74,7 @@ public class ModerationAsyncClient {
             ModerationMeta.runImageBatchModeration, hcClient);
     }
 
-    /** 图像内容检测 分析并识别用户上传的图像内容是否有敏感内容（如涉及政治人物、暴恐元素、涉黄内容等），并将识别结果返回给用户。
+    /** 图像内容审核 分析并识别用户上传的图像内容是否有敏感内容（如涉及政治人物、暴恐元素、涉黄内容等），并将识别结果返回给用户。
      *
      * @param RunImageModerationRequest 请求对象
      * @return CompletableFuture<RunImageModerationResponse> */
@@ -82,7 +82,7 @@ public class ModerationAsyncClient {
         return hcClient.asyncInvokeHttp(request, ModerationMeta.runImageModeration);
     }
 
-    /** 图像内容检测 分析并识别用户上传的图像内容是否有敏感内容（如涉及政治人物、暴恐元素、涉黄内容等），并将识别结果返回给用户。
+    /** 图像内容审核 分析并识别用户上传的图像内容是否有敏感内容（如涉及政治人物、暴恐元素、涉黄内容等），并将识别结果返回给用户。
      *
      * @param RunImageModerationRequest 请求对象
      * @return AsyncInvoker<RunImageModerationRequest, RunImageModerationResponse> */
@@ -92,7 +92,7 @@ public class ModerationAsyncClient {
             ModerationMeta.runImageModeration, hcClient);
     }
 
-    /** 任务提交 提交批量图像内容检测任务，返回任务标识，任务标识可用于查询任务结果。此接口为异步接口，相对于批量接口，支持更大图片列表批次。
+    /** 任务提交 提交批量图像内容审核任务，返回任务标识，任务标识可用于查询任务结果。此接口为异步接口，相对于批量接口，支持更大图片列表批次。
      *
      * @param RunTaskSumbitRequest 请求对象
      * @return CompletableFuture<RunTaskSumbitResponse> */
@@ -100,7 +100,7 @@ public class ModerationAsyncClient {
         return hcClient.asyncInvokeHttp(request, ModerationMeta.runTaskSumbit);
     }
 
-    /** 任务提交 提交批量图像内容检测任务，返回任务标识，任务标识可用于查询任务结果。此接口为异步接口，相对于批量接口，支持更大图片列表批次。
+    /** 任务提交 提交批量图像内容审核任务，返回任务标识，任务标识可用于查询任务结果。此接口为异步接口，相对于批量接口，支持更大图片列表批次。
      *
      * @param RunTaskSumbitRequest 请求对象
      * @return AsyncInvoker<RunTaskSumbitRequest, RunTaskSumbitResponse> */
@@ -110,7 +110,7 @@ public class ModerationAsyncClient {
             hcClient);
     }
 
-    /** 文本内容检测 分析并识别用户上传的文本内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户。
+    /** 文本内容审核 分析并识别用户上传的文本内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户。
      *
      * @param RunTextModerationRequest 请求对象
      * @return CompletableFuture<RunTextModerationResponse> */
@@ -118,7 +118,7 @@ public class ModerationAsyncClient {
         return hcClient.asyncInvokeHttp(request, ModerationMeta.runTextModeration);
     }
 
-    /** 文本内容检测 分析并识别用户上传的文本内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户。
+    /** 文本内容审核 分析并识别用户上传的文本内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户。
      *
      * @param RunTextModerationRequest 请求对象
      * @return AsyncInvoker<RunTextModerationRequest, RunTextModerationResponse> */

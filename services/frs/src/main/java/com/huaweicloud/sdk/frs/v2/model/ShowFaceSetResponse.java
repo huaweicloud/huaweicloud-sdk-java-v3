@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,40 +11,33 @@ import java.util.function.Consumer;
 public class ShowFaceSetResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "face_sets_info")
+    @JsonProperty(value = "face_set_info")
 
-    private List<FaceSetInfo> faceSetsInfo = null;
+    private FaceSetInfo faceSetInfo;
 
-    public ShowFaceSetResponse withFaceSetsInfo(List<FaceSetInfo> faceSetsInfo) {
-        this.faceSetsInfo = faceSetsInfo;
+    public ShowFaceSetResponse withFaceSetInfo(FaceSetInfo faceSetInfo) {
+        this.faceSetInfo = faceSetInfo;
         return this;
     }
 
-    public ShowFaceSetResponse addFaceSetsInfoItem(FaceSetInfo faceSetsInfoItem) {
-        if (this.faceSetsInfo == null) {
-            this.faceSetsInfo = new ArrayList<>();
+    public ShowFaceSetResponse withFaceSetInfo(Consumer<FaceSetInfo> faceSetInfoSetter) {
+        if (this.faceSetInfo == null) {
+            this.faceSetInfo = new FaceSetInfo();
+            faceSetInfoSetter.accept(this.faceSetInfo);
         }
-        this.faceSetsInfo.add(faceSetsInfoItem);
+
         return this;
     }
 
-    public ShowFaceSetResponse withFaceSetsInfo(Consumer<List<FaceSetInfo>> faceSetsInfoSetter) {
-        if (this.faceSetsInfo == null) {
-            this.faceSetsInfo = new ArrayList<>();
-        }
-        faceSetsInfoSetter.accept(this.faceSetsInfo);
-        return this;
-    }
-
-    /** 人脸库信息集合，详见[FaceSetInfo](zh-cn_topic_0106912072.xml)。 调用失败时无此字段。
+    /** Get faceSetInfo
      * 
-     * @return faceSetsInfo */
-    public List<FaceSetInfo> getFaceSetsInfo() {
-        return faceSetsInfo;
+     * @return faceSetInfo */
+    public FaceSetInfo getFaceSetInfo() {
+        return faceSetInfo;
     }
 
-    public void setFaceSetsInfo(List<FaceSetInfo> faceSetsInfo) {
-        this.faceSetsInfo = faceSetsInfo;
+    public void setFaceSetInfo(FaceSetInfo faceSetInfo) {
+        this.faceSetInfo = faceSetInfo;
     }
 
     @Override
@@ -58,19 +49,19 @@ public class ShowFaceSetResponse extends SdkResponse {
             return false;
         }
         ShowFaceSetResponse showFaceSetResponse = (ShowFaceSetResponse) o;
-        return Objects.equals(this.faceSetsInfo, showFaceSetResponse.faceSetsInfo);
+        return Objects.equals(this.faceSetInfo, showFaceSetResponse.faceSetInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(faceSetsInfo);
+        return Objects.hash(faceSetInfo);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowFaceSetResponse {\n");
-        sb.append("    faceSetsInfo: ").append(toIndentedString(faceSetsInfo)).append("\n");
+        sb.append("    faceSetInfo: ").append(toIndentedString(faceSetInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

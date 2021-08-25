@@ -21,11 +21,13 @@ public class MetaData  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
+    
     private Integer count;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
+    
     
     private Integer offset;
 
@@ -33,11 +35,13 @@ public class MetaData  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
+    
     private Integer total;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nextToken")
+    
     
     private Integer nextToken;
 

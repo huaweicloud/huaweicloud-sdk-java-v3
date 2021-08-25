@@ -206,6 +206,41 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> listConfigurationTemplates =
+        genForlistConfigurationTemplates();
+
+    private static HttpRequestDef<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> genForlistConfigurationTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListConfigurationTemplatesRequest.class,
+                    ListConfigurationTemplatesResponse.class)
+                .withName("ListConfigurationTemplates")
+                .withUri("/v3.1/{project_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigurationTemplatesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigurationTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations =
         genForlistConfigurations();
 
@@ -249,6 +284,77 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> listDedicatedResources =
+        genForlistDedicatedResources();
+
+    private static HttpRequestDef<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> genForlistDedicatedResources() {
+        // basic
+        HttpRequestDef.Builder<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDedicatedResourcesRequest.class, ListDedicatedResourcesResponse.class)
+            .withName("ListDedicatedResources")
+            .withUri("/v3/{project_id}/dedicated-resources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDedicatedResourcesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDedicatedResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlavorInfosRequest, ListFlavorInfosResponse> listFlavorInfos =
+        genForlistFlavorInfos();
+
+    private static HttpRequestDef<ListFlavorInfosRequest, ListFlavorInfosResponse> genForlistFlavorInfos() {
+        // basic
+        HttpRequestDef.Builder<ListFlavorInfosRequest, ListFlavorInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlavorInfosRequest.class, ListFlavorInfosResponse.class)
+                .withName("ListFlavorInfos")
+                .withUri("/v3.1/{project_id}/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorInfosRequest::getEngineName, (req, v) -> {
+                req.setEngineName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorInfosRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorInfosRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
 
     private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
@@ -262,7 +368,7 @@ public class GaussDBforNoSQLMeta {
         // requests
         builder.<String>withRequestField("region",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getRegion, (req, v) -> {
                 req.setRegion(v);
@@ -372,6 +478,34 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> listInstancesByResourceTags =
+        genForlistInstancesByResourceTags();
+
+    private static HttpRequestDef<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> genForlistInstancesByResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListInstancesByResourceTagsRequest.class,
+                    ListInstancesByResourceTagsResponse.class)
+                .withName("ListInstancesByResourceTags")
+                .withUri("/v3/{project_id}/instances/resource-instances/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListInstancesByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstancesByTagsRequestBody.class),
+            f -> f.withMarshaller(ListInstancesByResourceTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

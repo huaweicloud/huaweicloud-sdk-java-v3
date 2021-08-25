@@ -21,11 +21,13 @@ public class DeleteClusterTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
+    
     private String clusterId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
+    
     
     private String key;
 

@@ -25,11 +25,13 @@ public class SampleDataValue  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sample")
     
+    
     private QuerySample sample;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_points")
+    
     
     private List<MetricDataPoints> dataPoints = null;
     

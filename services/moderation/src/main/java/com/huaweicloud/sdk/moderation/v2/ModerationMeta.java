@@ -54,6 +54,20 @@ public class ModerationMeta {
             f -> f.withMarshaller(RunCheckTaskJobsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
             }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(RunCheckTaskJobsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(RunCheckTaskJobsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 

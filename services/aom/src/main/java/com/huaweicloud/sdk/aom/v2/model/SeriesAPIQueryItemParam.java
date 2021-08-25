@@ -24,6 +24,7 @@ public class SeriesAPIQueryItemParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="series")
     
+    
     private List<QuerySeriesOptionParam> series = null;
     
     public SeriesAPIQueryItemParam withSeries(List<QuerySeriesOptionParam> series) {

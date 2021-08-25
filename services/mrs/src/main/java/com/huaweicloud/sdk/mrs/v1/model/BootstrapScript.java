@@ -29,11 +29,13 @@ public class BootstrapScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    
     private String name;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="uri")
+    
     
     private String uri;
 
@@ -41,17 +43,20 @@ public class BootstrapScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
+    
     private String parameters;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
+    
     private List<String> nodes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="active_master")
+    
     
     private Boolean activeMaster;
     /**
@@ -137,11 +142,13 @@ public class BootstrapScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_action")
     
+    
     private FailActionEnum failAction;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="before_component_start")
+    
     
     private Boolean beforeComponentStart;
     /**
@@ -250,6 +257,7 @@ public class BootstrapScript  {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_stages")
+    
     
     private List<ActionStagesEnum> actionStages = null;
     

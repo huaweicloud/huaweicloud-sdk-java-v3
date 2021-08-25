@@ -425,12 +425,19 @@ public class FunctionGraphMeta {
     private static HttpRequestDef<ExportFunctionRequest, ExportFunctionResponse> genForexportFunction() {
         // basic
         HttpRequestDef.Builder<ExportFunctionRequest, ExportFunctionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ExportFunctionRequest.class, ExportFunctionResponse.class)
+            HttpRequestDef.builder(HttpMethod.GET, ExportFunctionRequest.class, ExportFunctionResponse.class)
                 .withName("ExportFunction")
-                .withUri("/v2/{project_id}/fgs/functions/export")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/export")
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFunctionRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
         builder.<Boolean>withRequestField("config",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -444,6 +451,13 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ExportFunctionRequest::getCode, (req, v) -> {
                 req.setCode(v);
+            }));
+        builder.<ExportFunctionRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportFunctionRequest.TypeEnum.class),
+            f -> f.withMarshaller(ExportFunctionRequest::getType, (req, v) -> {
+                req.setType(v);
             }));
 
         // response
@@ -793,13 +807,6 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStatisticsRequest::getPeriod, (req, v) -> {
                 req.setPeriod(v);
-            }));
-        builder.<ListStatisticsRequest.MonthCodeEnum>withRequestField("month_code",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListStatisticsRequest.MonthCodeEnum.class),
-            f -> f.withMarshaller(ListStatisticsRequest::getMonthCode, (req, v) -> {
-                req.setMonthCode(v);
             }));
 
         // response

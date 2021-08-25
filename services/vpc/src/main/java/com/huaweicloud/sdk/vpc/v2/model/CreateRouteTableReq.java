@@ -21,7 +21,7 @@ public class CreateRouteTableReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "routes")
 
-    private List<Route> routes = null;
+    private List<RouteTableRoute> routes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -49,12 +49,12 @@ public class CreateRouteTableReq {
         this.name = name;
     }
 
-    public CreateRouteTableReq withRoutes(List<Route> routes) {
+    public CreateRouteTableReq withRoutes(List<RouteTableRoute> routes) {
         this.routes = routes;
         return this;
     }
 
-    public CreateRouteTableReq addRoutesItem(Route routesItem) {
+    public CreateRouteTableReq addRoutesItem(RouteTableRoute routesItem) {
         if (this.routes == null) {
             this.routes = new ArrayList<>();
         }
@@ -62,7 +62,7 @@ public class CreateRouteTableReq {
         return this;
     }
 
-    public CreateRouteTableReq withRoutes(Consumer<List<Route>> routesSetter) {
+    public CreateRouteTableReq withRoutes(Consumer<List<RouteTableRoute>> routesSetter) {
         if (this.routes == null) {
             this.routes = new ArrayList<>();
         }
@@ -73,11 +73,11 @@ public class CreateRouteTableReq {
     /** 功能说明：路由对象，参见route字段说明 约束：每个路由表最大关联200条路由
      * 
      * @return routes */
-    public List<Route> getRoutes() {
+    public List<RouteTableRoute> getRoutes() {
         return routes;
     }
 
-    public void setRoutes(List<Route> routes) {
+    public void setRoutes(List<RouteTableRoute> routes) {
         this.routes = routes;
     }
 

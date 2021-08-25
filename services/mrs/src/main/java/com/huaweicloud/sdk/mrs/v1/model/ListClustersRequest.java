@@ -21,11 +21,13 @@ public class ListClustersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    
     private String tags;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pageSize")
+    
     
     private String pageSize;
 
@@ -33,11 +35,13 @@ public class ListClustersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currentPage")
     
+    
     private String currentPage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterName")
+    
     
     private String clusterName;
 
@@ -45,11 +49,13 @@ public class ListClustersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterState")
     
+    
     private String clusterState;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterpriseProjectId")
+    
     
     private String enterpriseProjectId;
 

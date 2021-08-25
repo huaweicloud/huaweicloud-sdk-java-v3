@@ -23,17 +23,20 @@ public class CreateClusterResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
+    
     private Boolean result;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="msg")
     
+    
     private String msg;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
+    
     
     private String clusterId;
 

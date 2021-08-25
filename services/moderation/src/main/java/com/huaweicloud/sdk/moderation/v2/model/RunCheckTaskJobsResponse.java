@@ -17,6 +17,11 @@ public class RunCheckTaskJobsResponse extends SdkResponse {
 
     private List<CheckTaskJobsItemsBody> result = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public RunCheckTaskJobsResponse withResult(List<CheckTaskJobsItemsBody> result) {
         this.result = result;
         return this;
@@ -49,6 +54,22 @@ public class RunCheckTaskJobsResponse extends SdkResponse {
         this.result = result;
     }
 
+    public RunCheckTaskJobsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /** 符合查询条件的总任务数量。
+     * 
+     * @return count */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -58,12 +79,13 @@ public class RunCheckTaskJobsResponse extends SdkResponse {
             return false;
         }
         RunCheckTaskJobsResponse runCheckTaskJobsResponse = (RunCheckTaskJobsResponse) o;
-        return Objects.equals(this.result, runCheckTaskJobsResponse.result);
+        return Objects.equals(this.result, runCheckTaskJobsResponse.result)
+            && Objects.equals(this.count, runCheckTaskJobsResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result);
+        return Objects.hash(result, count);
     }
 
     @Override
@@ -71,6 +93,7 @@ public class RunCheckTaskJobsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class RunCheckTaskJobsResponse {\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

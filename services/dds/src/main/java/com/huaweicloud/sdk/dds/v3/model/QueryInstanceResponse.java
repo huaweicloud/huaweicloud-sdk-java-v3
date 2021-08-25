@@ -22,6 +22,11 @@ public class QueryInstanceResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remark")
+
+    private String remark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -161,6 +166,22 @@ public class QueryInstanceResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public QueryInstanceResponse withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    /** 实例备注。
+     * 
+     * @return remark */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public QueryInstanceResponse withStatus(String status) {
@@ -577,6 +598,7 @@ public class QueryInstanceResponse {
         QueryInstanceResponse queryInstanceResponse = (QueryInstanceResponse) o;
         return Objects.equals(this.id, queryInstanceResponse.id)
             && Objects.equals(this.name, queryInstanceResponse.name)
+            && Objects.equals(this.remark, queryInstanceResponse.remark)
             && Objects.equals(this.status, queryInstanceResponse.status)
             && Objects.equals(this.port, queryInstanceResponse.port)
             && Objects.equals(this.mode, queryInstanceResponse.mode)
@@ -605,6 +627,7 @@ public class QueryInstanceResponse {
     public int hashCode() {
         return Objects.hash(id,
             name,
+            remark,
             status,
             port,
             mode,
@@ -635,6 +658,7 @@ public class QueryInstanceResponse {
         sb.append("class QueryInstanceResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");

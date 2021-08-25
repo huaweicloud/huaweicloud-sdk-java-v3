@@ -288,6 +288,82 @@ public class CreateFunctionRequestBody {
 
     private String enterpriseProjectId;
 
+    /** 函数版本。 */
+    public static final class TypeEnum {
+
+        /** Enum V1 for value: "v1" */
+        public static final TypeEnum V1 = new TypeEnum("v1");
+
+        /** Enum V2 for value: "v2" */
+        public static final TypeEnum V2 = new TypeEnum("v2");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("v1", V1);
+            map.put("v2", V2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
     public CreateFunctionRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -572,6 +648,22 @@ public class CreateFunctionRequestBody {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateFunctionRequestBody withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /** 函数版本。
+     * 
+     * @return type */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -597,7 +689,8 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.funcCode, createFunctionRequestBody.funcCode)
             && Objects.equals(this.initializerHandler, createFunctionRequestBody.initializerHandler)
             && Objects.equals(this.initializerTimeout, createFunctionRequestBody.initializerTimeout)
-            && Objects.equals(this.enterpriseProjectId, createFunctionRequestBody.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, createFunctionRequestBody.enterpriseProjectId)
+            && Objects.equals(this.type, createFunctionRequestBody.type);
     }
 
     @Override
@@ -618,7 +711,8 @@ public class CreateFunctionRequestBody {
             funcCode,
             initializerHandler,
             initializerTimeout,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            type);
     }
 
     @Override
@@ -642,6 +736,7 @@ public class CreateFunctionRequestBody {
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

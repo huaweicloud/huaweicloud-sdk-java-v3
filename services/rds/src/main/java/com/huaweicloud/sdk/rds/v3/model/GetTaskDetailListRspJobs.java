@@ -120,7 +120,7 @@ public class GetTaskDetailListRspJobs {
     private String process;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "taskDetail")
+    @JsonProperty(value = "task_detail")
 
     private String taskDetail;
 

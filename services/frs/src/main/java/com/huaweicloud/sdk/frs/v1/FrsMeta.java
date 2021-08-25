@@ -63,7 +63,7 @@ public class FrsMeta {
             }));
         builder.<AddFacesByFileRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddFacesByFileRequestBody.class),
             f -> f.withMarshaller(AddFacesByFileRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -100,27 +100,6 @@ public class FrsMeta {
             f -> f.withMarshaller(AddFacesByUrlRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<AuthorizeFaceRecognitionServiceRequest, AuthorizeFaceRecognitionServiceResponse> authorizeFaceRecognitionService =
-        genForauthorizeFaceRecognitionService();
-
-    private static HttpRequestDef<AuthorizeFaceRecognitionServiceRequest, AuthorizeFaceRecognitionServiceResponse> genForauthorizeFaceRecognitionService() {
-        // basic
-        HttpRequestDef.Builder<AuthorizeFaceRecognitionServiceRequest, AuthorizeFaceRecognitionServiceResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    AuthorizeFaceRecognitionServiceRequest.class,
-                    AuthorizeFaceRecognitionServiceResponse.class)
-                .withName("AuthorizeFaceRecognitionService")
-                .withUri("/v1/{project_id}/subscribe")
-                .withContentType("application/json");
-
-        // requests
 
         // response
 
@@ -661,7 +640,7 @@ public class FrsMeta {
             }));
         builder.<SearchFaceByFileRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchFaceByFileRequestBody.class),
             f -> f.withMarshaller(SearchFaceByFileRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -811,6 +790,24 @@ public class FrsMeta {
             f -> f.withMarshaller(ShowFacesByLimitRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubscribesRequest, ShowSubscribesResponse> showSubscribes =
+        genForshowSubscribes();
+
+    private static HttpRequestDef<ShowSubscribesRequest, ShowSubscribesResponse> genForshowSubscribes() {
+        // basic
+        HttpRequestDef.Builder<ShowSubscribesRequest, ShowSubscribesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSubscribesRequest.class, ShowSubscribesResponse.class)
+                .withName("ShowSubscribes")
+                .withUri("/v1/{project_id}/subscribe")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

@@ -102,7 +102,7 @@ public class TopUrlSummary {
         return this;
     }
 
-    /** 参数类型支持：flux(流量)，bw(带宽),req_num(请求总数)。
+    /** 参数类型支持：flux(流量)，req_num(请求总数)。
      * 
      * @return statType */
     public String getStatType() {

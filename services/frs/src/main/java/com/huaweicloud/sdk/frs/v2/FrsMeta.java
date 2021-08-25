@@ -490,7 +490,7 @@ public class FrsMeta {
             }));
         builder.<SearchFaceByFileRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchFaceByFileRequestBody.class),
             f -> f.withMarshaller(SearchFaceByFileRequest::getBody, (req, v) -> {
                 req.setBody(v);

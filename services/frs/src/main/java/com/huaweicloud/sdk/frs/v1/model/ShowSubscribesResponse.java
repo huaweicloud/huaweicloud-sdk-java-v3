@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /** Response Object */
-public class AuthorizeFaceRecognitionServiceResponse extends SdkResponse {
+public class ShowSubscribesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_face_set_number")
@@ -35,7 +35,7 @@ public class AuthorizeFaceRecognitionServiceResponse extends SdkResponse {
 
     private ServiceInfo searchService;
 
-    public AuthorizeFaceRecognitionServiceResponse withMaxFaceSetNumber(Integer maxFaceSetNumber) {
+    public ShowSubscribesResponse withMaxFaceSetNumber(Integer maxFaceSetNumber) {
         this.maxFaceSetNumber = maxFaceSetNumber;
         return this;
     }
@@ -51,12 +51,12 @@ public class AuthorizeFaceRecognitionServiceResponse extends SdkResponse {
         this.maxFaceSetNumber = maxFaceSetNumber;
     }
 
-    public AuthorizeFaceRecognitionServiceResponse withDetectService(ServiceInfo detectService) {
+    public ShowSubscribesResponse withDetectService(ServiceInfo detectService) {
         this.detectService = detectService;
         return this;
     }
 
-    public AuthorizeFaceRecognitionServiceResponse withDetectService(Consumer<ServiceInfo> detectServiceSetter) {
+    public ShowSubscribesResponse withDetectService(Consumer<ServiceInfo> detectServiceSetter) {
         if (this.detectService == null) {
             this.detectService = new ServiceInfo();
             detectServiceSetter.accept(this.detectService);
@@ -76,13 +76,12 @@ public class AuthorizeFaceRecognitionServiceResponse extends SdkResponse {
         this.detectService = detectService;
     }
 
-    public AuthorizeFaceRecognitionServiceResponse withLiveDetectService(ServiceInfo liveDetectService) {
+    public ShowSubscribesResponse withLiveDetectService(ServiceInfo liveDetectService) {
         this.liveDetectService = liveDetectService;
         return this;
     }
 
-    public AuthorizeFaceRecognitionServiceResponse withLiveDetectService(
-        Consumer<ServiceInfo> liveDetectServiceSetter) {
+    public ShowSubscribesResponse withLiveDetectService(Consumer<ServiceInfo> liveDetectServiceSetter) {
         if (this.liveDetectService == null) {
             this.liveDetectService = new ServiceInfo();
             liveDetectServiceSetter.accept(this.liveDetectService);
@@ -102,12 +101,12 @@ public class AuthorizeFaceRecognitionServiceResponse extends SdkResponse {
         this.liveDetectService = liveDetectService;
     }
 
-    public AuthorizeFaceRecognitionServiceResponse withCompareService(ServiceInfo compareService) {
+    public ShowSubscribesResponse withCompareService(ServiceInfo compareService) {
         this.compareService = compareService;
         return this;
     }
 
-    public AuthorizeFaceRecognitionServiceResponse withCompareService(Consumer<ServiceInfo> compareServiceSetter) {
+    public ShowSubscribesResponse withCompareService(Consumer<ServiceInfo> compareServiceSetter) {
         if (this.compareService == null) {
             this.compareService = new ServiceInfo();
             compareServiceSetter.accept(this.compareService);
@@ -127,12 +126,12 @@ public class AuthorizeFaceRecognitionServiceResponse extends SdkResponse {
         this.compareService = compareService;
     }
 
-    public AuthorizeFaceRecognitionServiceResponse withSearchService(ServiceInfo searchService) {
+    public ShowSubscribesResponse withSearchService(ServiceInfo searchService) {
         this.searchService = searchService;
         return this;
     }
 
-    public AuthorizeFaceRecognitionServiceResponse withSearchService(Consumer<ServiceInfo> searchServiceSetter) {
+    public ShowSubscribesResponse withSearchService(Consumer<ServiceInfo> searchServiceSetter) {
         if (this.searchService == null) {
             this.searchService = new ServiceInfo();
             searchServiceSetter.accept(this.searchService);
@@ -160,13 +159,12 @@ public class AuthorizeFaceRecognitionServiceResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        AuthorizeFaceRecognitionServiceResponse authorizeFaceRecognitionServiceResponse =
-            (AuthorizeFaceRecognitionServiceResponse) o;
-        return Objects.equals(this.maxFaceSetNumber, authorizeFaceRecognitionServiceResponse.maxFaceSetNumber)
-            && Objects.equals(this.detectService, authorizeFaceRecognitionServiceResponse.detectService)
-            && Objects.equals(this.liveDetectService, authorizeFaceRecognitionServiceResponse.liveDetectService)
-            && Objects.equals(this.compareService, authorizeFaceRecognitionServiceResponse.compareService)
-            && Objects.equals(this.searchService, authorizeFaceRecognitionServiceResponse.searchService);
+        ShowSubscribesResponse showSubscribesResponse = (ShowSubscribesResponse) o;
+        return Objects.equals(this.maxFaceSetNumber, showSubscribesResponse.maxFaceSetNumber)
+            && Objects.equals(this.detectService, showSubscribesResponse.detectService)
+            && Objects.equals(this.liveDetectService, showSubscribesResponse.liveDetectService)
+            && Objects.equals(this.compareService, showSubscribesResponse.compareService)
+            && Objects.equals(this.searchService, showSubscribesResponse.searchService);
     }
 
     @Override
@@ -177,7 +175,7 @@ public class AuthorizeFaceRecognitionServiceResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AuthorizeFaceRecognitionServiceResponse {\n");
+        sb.append("class ShowSubscribesResponse {\n");
         sb.append("    maxFaceSetNumber: ").append(toIndentedString(maxFaceSetNumber)).append("\n");
         sb.append("    detectService: ").append(toIndentedString(detectService)).append("\n");
         sb.append("    liveDetectService: ").append(toIndentedString(liveDetectService)).append("\n");

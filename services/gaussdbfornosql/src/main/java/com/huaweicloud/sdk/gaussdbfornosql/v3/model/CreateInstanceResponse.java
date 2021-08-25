@@ -83,6 +83,11 @@ public class CreateInstanceResponse extends SdkResponse {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dedicated_resource_id")
+
+    private String dedicatedResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_option")
 
     private String sslOption;
@@ -360,6 +365,22 @@ public class CreateInstanceResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateInstanceResponse withDedicatedResourceId(String dedicatedResourceId) {
+        this.dedicatedResourceId = dedicatedResourceId;
+        return this;
+    }
+
+    /** 专属资源ID，只有创建在专属资源上的实例才会返回该字段。
+     * 
+     * @return dedicatedResourceId */
+    public String getDedicatedResourceId() {
+        return dedicatedResourceId;
+    }
+
+    public void setDedicatedResourceId(String dedicatedResourceId) {
+        this.dedicatedResourceId = dedicatedResourceId;
+    }
+
     public CreateInstanceResponse withSslOption(String sslOption) {
         this.sslOption = sslOption;
         return this;
@@ -456,6 +477,7 @@ public class CreateInstanceResponse extends SdkResponse {
             && Objects.equals(this.flavor, createInstanceResponse.flavor)
             && Objects.equals(this.backupStrategy, createInstanceResponse.backupStrategy)
             && Objects.equals(this.enterpriseProjectId, createInstanceResponse.enterpriseProjectId)
+            && Objects.equals(this.dedicatedResourceId, createInstanceResponse.dedicatedResourceId)
             && Objects.equals(this.sslOption, createInstanceResponse.sslOption)
             && Objects.equals(this.jobId, createInstanceResponse.jobId)
             && Objects.equals(this.orderId, createInstanceResponse.orderId)
@@ -478,6 +500,7 @@ public class CreateInstanceResponse extends SdkResponse {
             flavor,
             backupStrategy,
             enterpriseProjectId,
+            dedicatedResourceId,
             sslOption,
             jobId,
             orderId,
@@ -502,6 +525,7 @@ public class CreateInstanceResponse extends SdkResponse {
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");

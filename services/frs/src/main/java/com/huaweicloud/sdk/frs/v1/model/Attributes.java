@@ -14,7 +14,7 @@ public class Attributes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dress")
 
-    private List<String> dress = null;
+    private Dress dress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "glass")
@@ -106,35 +106,28 @@ public class Attributes {
 
     private Integer faceAngle;
 
-    public Attributes withDress(List<String> dress) {
+    public Attributes withDress(Dress dress) {
         this.dress = dress;
         return this;
     }
 
-    public Attributes addDressItem(String dressItem) {
+    public Attributes withDress(Consumer<Dress> dressSetter) {
         if (this.dress == null) {
-            this.dress = new ArrayList<>();
+            this.dress = new Dress();
+            dressSetter.accept(this.dress);
         }
-        this.dress.add(dressItem);
+
         return this;
     }
 
-    public Attributes withDress(Consumer<List<String>> dressSetter) {
-        if (this.dress == null) {
-            this.dress = new ArrayList<>();
-        }
-        dressSetter.accept(this.dress);
-        return this;
-    }
-
-    /** 包含glass和hat两个属性结果。
+    /** Get dress
      * 
      * @return dress */
-    public List<String> getDress() {
+    public Dress getDress() {
         return dress;
     }
 
-    public void setDress(List<String> dress) {
+    public void setDress(Dress dress) {
         this.dress = dress;
     }
 

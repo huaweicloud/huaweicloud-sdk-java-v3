@@ -83,7 +83,7 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 唯一标识
+    /** 唯一标识。 说明：对应会议管理->创建会议接口中的vmrID。
      * 
      * @return id */
     public String getId() {
@@ -99,7 +99,7 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 云会议室ID
+    /** 云会议室ID。 说明：对应会议管理->创建会议接口中当vmrIDType等于0（固定ID）时返回数据的conferenceID 。
      * 
      * @return vmrId */
     public String getVmrId() {

@@ -107,6 +107,11 @@ public class ListInstancesResult {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dedicated_resource_id")
+
+    private String dedicatedResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_zone")
 
     private String timeZone;
@@ -455,6 +460,22 @@ public class ListInstancesResult {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListInstancesResult withDedicatedResourceId(String dedicatedResourceId) {
+        this.dedicatedResourceId = dedicatedResourceId;
+        return this;
+    }
+
+    /** 专属资源ID，只有数据库实例属于专属资源池才会返回该参数。
+     * 
+     * @return dedicatedResourceId */
+    public String getDedicatedResourceId() {
+        return dedicatedResourceId;
+    }
+
+    public void setDedicatedResourceId(String dedicatedResourceId) {
+        this.dedicatedResourceId = dedicatedResourceId;
+    }
+
     public ListInstancesResult withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
@@ -530,6 +551,7 @@ public class ListInstancesResult {
             && Objects.equals(this.maintenanceWindow, listInstancesResult.maintenanceWindow)
             && Objects.equals(this.groups, listInstancesResult.groups)
             && Objects.equals(this.enterpriseProjectId, listInstancesResult.enterpriseProjectId)
+            && Objects.equals(this.dedicatedResourceId, listInstancesResult.dedicatedResourceId)
             && Objects.equals(this.timeZone, listInstancesResult.timeZone)
             && Objects.equals(this.actions, listInstancesResult.actions);
     }
@@ -555,6 +577,7 @@ public class ListInstancesResult {
             maintenanceWindow,
             groups,
             enterpriseProjectId,
+            dedicatedResourceId,
             timeZone,
             actions);
     }
@@ -582,6 +605,7 @@ public class ListInstancesResult {
         sb.append("    maintenanceWindow: ").append(toIndentedString(maintenanceWindow)).append("\n");
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("}");

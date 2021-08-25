@@ -26,11 +26,13 @@ public class TaskNodeGroups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
+    
     private Integer nodeNum;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_size")
+    
     
     private String nodeSize;
     /**
@@ -128,11 +130,13 @@ public class TaskNodeGroups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_type")
     
+    
     private DataVolumeTypeEnum dataVolumeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
+    
     
     private Integer dataVolumeCount;
 
@@ -140,11 +144,13 @@ public class TaskNodeGroups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
+    
     private Integer dataVolumeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
+    
     
     private AutoScalingPolicy autoScalingPolicy;
 

@@ -22,17 +22,20 @@ public class ListSeriesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
+    
     private String limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
+    
     private String offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
+    
     
     private SeriesAPIQueryItemParam body;
 

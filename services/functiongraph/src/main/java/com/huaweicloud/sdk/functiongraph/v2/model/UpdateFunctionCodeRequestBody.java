@@ -16,11 +16,6 @@ import java.util.function.Consumer;
 /** UpdateFunctionCodeRequestBody */
 public class UpdateFunctionCodeRequestBody {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "handler")
-
-    private String handler;
-
     /** 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 */
     public static final class CodeTypeEnum {
 
@@ -124,27 +119,6 @@ public class UpdateFunctionCodeRequestBody {
     @JsonProperty(value = "depend_list")
 
     private List<String> dependList = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dependencies")
-
-    private List<Dependency> dependencies = null;
-
-    public UpdateFunctionCodeRequestBody withHandler(String handler) {
-        this.handler = handler;
-        return this;
-    }
-
-    /** 函数执行入口 规则：xx.xx，必须包含“. ” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
-     * 
-     * @return handler */
-    public String getHandler() {
-        return handler;
-    }
-
-    public void setHandler(String handler) {
-        this.handler = handler;
-    }
 
     public UpdateFunctionCodeRequestBody withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
@@ -251,38 +225,6 @@ public class UpdateFunctionCodeRequestBody {
         this.dependList = dependList;
     }
 
-    public UpdateFunctionCodeRequestBody withDependencies(List<Dependency> dependencies) {
-        this.dependencies = dependencies;
-        return this;
-    }
-
-    public UpdateFunctionCodeRequestBody addDependenciesItem(Dependency dependenciesItem) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
-        this.dependencies.add(dependenciesItem);
-        return this;
-    }
-
-    public UpdateFunctionCodeRequestBody withDependencies(Consumer<List<Dependency>> dependenciesSetter) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
-        dependenciesSetter.accept(this.dependencies);
-        return this;
-    }
-
-    /** 函数依赖代码包列表。
-     * 
-     * @return dependencies */
-    public List<Dependency> getDependencies() {
-        return dependencies;
-    }
-
-    public void setDependencies(List<Dependency> dependencies) {
-        this.dependencies = dependencies;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -292,31 +234,27 @@ public class UpdateFunctionCodeRequestBody {
             return false;
         }
         UpdateFunctionCodeRequestBody updateFunctionCodeRequestBody = (UpdateFunctionCodeRequestBody) o;
-        return Objects.equals(this.handler, updateFunctionCodeRequestBody.handler)
-            && Objects.equals(this.codeType, updateFunctionCodeRequestBody.codeType)
+        return Objects.equals(this.codeType, updateFunctionCodeRequestBody.codeType)
             && Objects.equals(this.codeUrl, updateFunctionCodeRequestBody.codeUrl)
             && Objects.equals(this.codeFilename, updateFunctionCodeRequestBody.codeFilename)
             && Objects.equals(this.funcCode, updateFunctionCodeRequestBody.funcCode)
-            && Objects.equals(this.dependList, updateFunctionCodeRequestBody.dependList)
-            && Objects.equals(this.dependencies, updateFunctionCodeRequestBody.dependencies);
+            && Objects.equals(this.dependList, updateFunctionCodeRequestBody.dependList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(handler, codeType, codeUrl, codeFilename, funcCode, dependList, dependencies);
+        return Objects.hash(codeType, codeUrl, codeFilename, funcCode, dependList);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateFunctionCodeRequestBody {\n");
-        sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
         sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
-        sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("}");
         return sb.toString();
     }

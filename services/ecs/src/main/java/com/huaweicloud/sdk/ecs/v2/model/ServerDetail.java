@@ -238,6 +238,16 @@ public class ServerDetail {
 
     private List<ServerSystemTag> sysTags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_options")
+
+    private CpuOptions cpuOptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hypervisor")
+
+    private Hypervisor hypervisor;
+
     public ServerDetail withStatus(String status) {
         this.status = status;
         return this;
@@ -1109,6 +1119,56 @@ public class ServerDetail {
         this.sysTags = sysTags;
     }
 
+    public ServerDetail withCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+        return this;
+    }
+
+    public ServerDetail withCpuOptions(Consumer<CpuOptions> cpuOptionsSetter) {
+        if (this.cpuOptions == null) {
+            this.cpuOptions = new CpuOptions();
+            cpuOptionsSetter.accept(this.cpuOptions);
+        }
+
+        return this;
+    }
+
+    /** Get cpuOptions
+     * 
+     * @return cpuOptions */
+    public CpuOptions getCpuOptions() {
+        return cpuOptions;
+    }
+
+    public void setCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
+    public ServerDetail withHypervisor(Hypervisor hypervisor) {
+        this.hypervisor = hypervisor;
+        return this;
+    }
+
+    public ServerDetail withHypervisor(Consumer<Hypervisor> hypervisorSetter) {
+        if (this.hypervisor == null) {
+            this.hypervisor = new Hypervisor();
+            hypervisorSetter.accept(this.hypervisor);
+        }
+
+        return this;
+    }
+
+    /** Get hypervisor
+     * 
+     * @return hypervisor */
+    public Hypervisor getHypervisor() {
+        return hypervisor;
+    }
+
+    public void setHypervisor(Hypervisor hypervisor) {
+        this.hypervisor = hypervisor;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1156,7 +1216,9 @@ public class ServerDetail {
             && Objects.equals(this.locked, serverDetail.locked) && Objects.equals(this.tags, serverDetail.tags)
             && Objects.equals(this.osSchedulerHints, serverDetail.osSchedulerHints)
             && Objects.equals(this.enterpriseProjectId, serverDetail.enterpriseProjectId)
-            && Objects.equals(this.sysTags, serverDetail.sysTags);
+            && Objects.equals(this.sysTags, serverDetail.sysTags)
+            && Objects.equals(this.cpuOptions, serverDetail.cpuOptions)
+            && Objects.equals(this.hypervisor, serverDetail.hypervisor);
     }
 
     @Override
@@ -1205,7 +1267,9 @@ public class ServerDetail {
             tags,
             osSchedulerHints,
             enterpriseProjectId,
-            sysTags);
+            sysTags,
+            cpuOptions,
+            hypervisor);
     }
 
     @Override
@@ -1261,6 +1325,8 @@ public class ServerDetail {
         sb.append("    osSchedulerHints: ").append(toIndentedString(osSchedulerHints)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
+        sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
+        sb.append("    hypervisor: ").append(toIndentedString(hypervisor)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -22,11 +22,13 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_name")
     
+    
     private String groupName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
+    
     
     private Integer nodeNum;
 
@@ -34,11 +36,13 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_size")
     
+    
     private String nodeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume_size")
+    
     
     private String rootVolumeSize;
 
@@ -46,11 +50,13 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume_type")
     
+    
     private String rootVolumeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_type")
+    
     
     private String dataVolumeType;
 
@@ -58,17 +64,20 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
     
+    
     private Integer dataVolumeCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
+    
     private Integer dataVolumeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
+    
     
     private AutoScalingPolicy autoScalingPolicy;
 

@@ -21,11 +21,13 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
+    
     private Integer jobType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
+    
     
     private String jobName;
 
@@ -33,11 +35,13 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jar_path")
     
+    
     private String jarPath;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arguments")
+    
     
     private String arguments;
 
@@ -45,11 +49,13 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
+    
     private String input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
+    
     
     private String output;
 
@@ -57,11 +63,13 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_log")
     
+    
     private String jobLog;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hive_script_path")
+    
     
     private String hiveScriptPath;
 
@@ -69,11 +77,13 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hql")
     
+    
     private String hql;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shutdown_cluster")
+    
     
     private Boolean shutdownCluster;
 
@@ -81,11 +91,13 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="submit_job_once_cluster_run")
     
+    
     private Boolean submitJobOnceClusterRun;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="file_action")
+    
     
     private String fileAction;
 
