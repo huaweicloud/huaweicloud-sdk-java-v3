@@ -18,6 +18,21 @@ public class ListTopicsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fuzzy_name")
+
+    private String fuzzyName;
+
     public ListTopicsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -50,6 +65,54 @@ public class ListTopicsRequest {
         this.limit = limit;
     }
 
+    public ListTopicsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id, 默认企业项目id为0
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListTopicsRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /** 检索的主题名称，完全匹配
+     * 
+     * @return name */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ListTopicsRequest withFuzzyName(String fuzzyName) {
+        this.fuzzyName = fuzzyName;
+        return this;
+    }
+
+    /** 检索的主题名称，模糊匹配，按照startwith模式进行匹配
+     * 
+     * @return fuzzyName */
+    public String getFuzzyName() {
+        return fuzzyName;
+    }
+
+    public void setFuzzyName(String fuzzyName) {
+        this.fuzzyName = fuzzyName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -60,12 +123,15 @@ public class ListTopicsRequest {
         }
         ListTopicsRequest listTopicsRequest = (ListTopicsRequest) o;
         return Objects.equals(this.offset, listTopicsRequest.offset)
-            && Objects.equals(this.limit, listTopicsRequest.limit);
+            && Objects.equals(this.limit, listTopicsRequest.limit)
+            && Objects.equals(this.enterpriseProjectId, listTopicsRequest.enterpriseProjectId)
+            && Objects.equals(this.name, listTopicsRequest.name)
+            && Objects.equals(this.fuzzyName, listTopicsRequest.fuzzyName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit);
+        return Objects.hash(offset, limit, enterpriseProjectId, name, fuzzyName);
     }
 
     @Override
@@ -74,6 +140,9 @@ public class ListTopicsRequest {
         sb.append("class ListTopicsRequest {\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -177,6 +177,31 @@ public class OnlineInfo {
     private AudioCodecEnum audioCodec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "video_frame_rate")
+
+    private Long videoFrameRate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_frame_rate")
+
+    private Long audioFrameRate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "video_bitrate")
+
+    private Long videoBitrate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_bitrate")
+
+    private Long audioBitrate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resolution")
+
+    private String resolution;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ip")
 
     private String clientIp;
@@ -266,6 +291,86 @@ public class OnlineInfo {
         this.audioCodec = audioCodec;
     }
 
+    public OnlineInfo withVideoFrameRate(Long videoFrameRate) {
+        this.videoFrameRate = videoFrameRate;
+        return this;
+    }
+
+    /** 视频帧率
+     * 
+     * @return videoFrameRate */
+    public Long getVideoFrameRate() {
+        return videoFrameRate;
+    }
+
+    public void setVideoFrameRate(Long videoFrameRate) {
+        this.videoFrameRate = videoFrameRate;
+    }
+
+    public OnlineInfo withAudioFrameRate(Long audioFrameRate) {
+        this.audioFrameRate = audioFrameRate;
+        return this;
+    }
+
+    /** 音频帧率
+     * 
+     * @return audioFrameRate */
+    public Long getAudioFrameRate() {
+        return audioFrameRate;
+    }
+
+    public void setAudioFrameRate(Long audioFrameRate) {
+        this.audioFrameRate = audioFrameRate;
+    }
+
+    public OnlineInfo withVideoBitrate(Long videoBitrate) {
+        this.videoBitrate = videoBitrate;
+        return this;
+    }
+
+    /** 视频码率
+     * 
+     * @return videoBitrate */
+    public Long getVideoBitrate() {
+        return videoBitrate;
+    }
+
+    public void setVideoBitrate(Long videoBitrate) {
+        this.videoBitrate = videoBitrate;
+    }
+
+    public OnlineInfo withAudioBitrate(Long audioBitrate) {
+        this.audioBitrate = audioBitrate;
+        return this;
+    }
+
+    /** 音频码率
+     * 
+     * @return audioBitrate */
+    public Long getAudioBitrate() {
+        return audioBitrate;
+    }
+
+    public void setAudioBitrate(Long audioBitrate) {
+        this.audioBitrate = audioBitrate;
+    }
+
+    public OnlineInfo withResolution(String resolution) {
+        this.resolution = resolution;
+        return this;
+    }
+
+    /** 视频分辨率
+     * 
+     * @return resolution */
+    public String getResolution() {
+        return resolution;
+    }
+
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
+    }
+
     public OnlineInfo withClientIp(String clientIp) {
         this.clientIp = clientIp;
         return this;
@@ -310,13 +415,29 @@ public class OnlineInfo {
         return Objects.equals(this.publishDomain, onlineInfo.publishDomain) && Objects.equals(this.app, onlineInfo.app)
             && Objects.equals(this.stream, onlineInfo.stream) && Objects.equals(this.videoCodec, onlineInfo.videoCodec)
             && Objects.equals(this.audioCodec, onlineInfo.audioCodec)
+            && Objects.equals(this.videoFrameRate, onlineInfo.videoFrameRate)
+            && Objects.equals(this.audioFrameRate, onlineInfo.audioFrameRate)
+            && Objects.equals(this.videoBitrate, onlineInfo.videoBitrate)
+            && Objects.equals(this.audioBitrate, onlineInfo.audioBitrate)
+            && Objects.equals(this.resolution, onlineInfo.resolution)
             && Objects.equals(this.clientIp, onlineInfo.clientIp)
             && Objects.equals(this.startTime, onlineInfo.startTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishDomain, app, stream, videoCodec, audioCodec, clientIp, startTime);
+        return Objects.hash(publishDomain,
+            app,
+            stream,
+            videoCodec,
+            audioCodec,
+            videoFrameRate,
+            audioFrameRate,
+            videoBitrate,
+            audioBitrate,
+            resolution,
+            clientIp,
+            startTime);
     }
 
     @Override
@@ -328,6 +449,11 @@ public class OnlineInfo {
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
         sb.append("    videoCodec: ").append(toIndentedString(videoCodec)).append("\n");
         sb.append("    audioCodec: ").append(toIndentedString(audioCodec)).append("\n");
+        sb.append("    videoFrameRate: ").append(toIndentedString(videoFrameRate)).append("\n");
+        sb.append("    audioFrameRate: ").append(toIndentedString(audioFrameRate)).append("\n");
+        sb.append("    videoBitrate: ").append(toIndentedString(videoBitrate)).append("\n");
+        sb.append("    audioBitrate: ").append(toIndentedString(audioBitrate)).append("\n");
+        sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
         sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("}");

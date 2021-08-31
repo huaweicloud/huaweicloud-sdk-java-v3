@@ -534,6 +534,27 @@ public class SmnMeta {
             f -> f.withMarshaller(ListSubscriptionsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+        builder.<String>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("endpoint",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getEndpoint, (req, v) -> {
+                req.setEndpoint(v);
+            }));
 
         // response
 
@@ -661,6 +682,27 @@ public class SmnMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTopicsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("fuzzy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsRequest::getFuzzyName, (req, v) -> {
+                req.setFuzzyName(v);
             }));
 
         // response

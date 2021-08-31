@@ -63,7 +63,7 @@ public class FrsMeta {
             }));
         builder.<AddFacesByFileRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddFacesByFileRequestBody.class),
             f -> f.withMarshaller(AddFacesByFileRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -397,6 +397,156 @@ public class FrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceDetectUrlReq.class),
             f -> f.withMarshaller(DetectFaceByUrlRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectLiveByBase64Request, DetectLiveByBase64Response> detectLiveByBase64 =
+        genFordetectLiveByBase64();
+
+    private static HttpRequestDef<DetectLiveByBase64Request, DetectLiveByBase64Response> genFordetectLiveByBase64() {
+        // basic
+        HttpRequestDef.Builder<DetectLiveByBase64Request, DetectLiveByBase64Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DetectLiveByBase64Request.class, DetectLiveByBase64Response.class)
+                .withName("DetectLiveByBase64")
+                .withUri("/v1/{project_id}/live-detect")
+                .withContentType("application/json");
+
+        // requests
+        builder.<LiveDetectBase64Req>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LiveDetectBase64Req.class),
+            f -> f.withMarshaller(DetectLiveByBase64Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectLiveByFileRequest, DetectLiveByFileResponse> detectLiveByFile =
+        genFordetectLiveByFile();
+
+    private static HttpRequestDef<DetectLiveByFileRequest, DetectLiveByFileResponse> genFordetectLiveByFile() {
+        // basic
+        HttpRequestDef.Builder<DetectLiveByFileRequest, DetectLiveByFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DetectLiveByFileRequest.class, DetectLiveByFileResponse.class)
+                .withName("DetectLiveByFile")
+                .withUri("/v1/{project_id}/live-detect")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<DetectLiveByFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DetectLiveByFileRequestBody.class),
+            f -> f.withMarshaller(DetectLiveByFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectLiveByUrlRequest, DetectLiveByUrlResponse> detectLiveByUrl =
+        genFordetectLiveByUrl();
+
+    private static HttpRequestDef<DetectLiveByUrlRequest, DetectLiveByUrlResponse> genFordetectLiveByUrl() {
+        // basic
+        HttpRequestDef.Builder<DetectLiveByUrlRequest, DetectLiveByUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DetectLiveByUrlRequest.class, DetectLiveByUrlResponse.class)
+                .withName("DetectLiveByUrl")
+                .withUri("/v1/{project_id}/live-detect")
+                .withContentType("application/json");
+
+        // requests
+        builder.<LiveDetectUrlReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LiveDetectUrlReq.class),
+            f -> f.withMarshaller(DetectLiveByUrlRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> detectLiveFaceByBase64 =
+        genFordetectLiveFaceByBase64();
+
+    private static HttpRequestDef<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> genFordetectLiveFaceByBase64() {
+        // basic
+        HttpRequestDef.Builder<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DetectLiveFaceByBase64Request.class, DetectLiveFaceByBase64Response.class)
+            .withName("DetectLiveFaceByBase64")
+            .withUri("/v1/{project_id}/live-detect-face")
+            .withContentType("application/json");
+
+        // requests
+        builder.<LiveDetectFaceBase64Req>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LiveDetectFaceBase64Req.class),
+            f -> f.withMarshaller(DetectLiveFaceByBase64Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> detectLiveFaceByFile =
+        genFordetectLiveFaceByFile();
+
+    private static HttpRequestDef<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> genFordetectLiveFaceByFile() {
+        // basic
+        HttpRequestDef.Builder<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DetectLiveFaceByFileRequest.class, DetectLiveFaceByFileResponse.class)
+            .withName("DetectLiveFaceByFile")
+            .withUri("/v1/{project_id}/live-detect-face")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<DetectLiveFaceByFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DetectLiveFaceByFileRequestBody.class),
+            f -> f.withMarshaller(DetectLiveFaceByFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> detectLiveFaceByUrl =
+        genFordetectLiveFaceByUrl();
+
+    private static HttpRequestDef<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> genFordetectLiveFaceByUrl() {
+        // basic
+        HttpRequestDef.Builder<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DetectLiveFaceByUrlRequest.class, DetectLiveFaceByUrlResponse.class)
+                .withName("DetectLiveFaceByUrl")
+                .withUri("/v1/{project_id}/live-detect-face")
+                .withContentType("application/json");
+
+        // requests
+        builder.<LiveDetectFaceUrlReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LiveDetectFaceUrlReq.class),
+            f -> f.withMarshaller(DetectLiveFaceByUrlRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

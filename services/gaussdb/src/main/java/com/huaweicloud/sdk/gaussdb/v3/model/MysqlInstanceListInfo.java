@@ -1,0 +1,836 @@
+package com.huaweicloud.sdk.gaussdb.v3.model;
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlBackupStrategy;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlChargeInfo;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlFlavorInfo;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlVolumeInfo;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * MysqlInstanceListInfo
+ */
+public class MysqlInstanceListInfo  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    
+    private String id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="status")
+    
+    
+    private String status;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="private_ips")
+    
+    
+    private List<String> privateIps = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="public_ips")
+    
+    
+    private List<String> publicIps = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="port")
+    
+    
+    private String port;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="type")
+    
+    
+    private String type;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region")
+    
+    
+    private String region;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="datastore")
+    
+    
+    private MysqlDatastore datastore;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="created")
+    
+    
+    private String created;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="updated")
+    
+    
+    private String updated;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="db_user_name")
+    
+    
+    private String dbUserName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vpc_id")
+    
+    
+    private String vpcId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="subnet_id")
+    
+    
+    private String subnetId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="security_group_id")
+    
+    
+    private String securityGroupId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="flavor_ref")
+    
+    
+    private String flavorRef;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="flavor_info")
+    
+    
+    private MysqlFlavorInfo flavorInfo;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="volume")
+    
+    
+    private MysqlVolumeInfo volume;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="backup_strategy")
+    
+    
+    private MysqlBackupStrategy backupStrategy;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    
+    private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="time_zone")
+    
+    
+    private String timeZone;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="charge_info")
+    
+    
+    private MysqlChargeInfo chargeInfo;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dedicated_resource_id")
+    
+    
+    private String dedicatedResourceId;
+
+    public MysqlInstanceListInfo withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
+
+    public MysqlInstanceListInfo withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建的实例名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
+    public MysqlInstanceListInfo withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例状态。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    
+
+    public MysqlInstanceListInfo withPrivateIps(List<String> privateIps) {
+        this.privateIps = privateIps;
+        return this;
+    }
+
+    
+    public MysqlInstanceListInfo addPrivateIpsItem(String privateIpsItem) {
+        if(this.privateIps == null) {
+            this.privateIps = new ArrayList<>();
+        }
+        this.privateIps.add(privateIpsItem);
+        return this;
+    }
+
+    public MysqlInstanceListInfo withPrivateIps(Consumer<List<String>> privateIpsSetter) {
+        if(this.privateIps == null) {
+            this.privateIps = new ArrayList<>();
+        }
+        privateIpsSetter.accept(this.privateIps);
+        return this;
+    }
+
+    /**
+     * 实例写内网IP地址列表。弹性云服务器创建成功后该值存在，其他情况下为空字符串。
+     * @return privateIps
+     */
+    public List<String> getPrivateIps() {
+        return privateIps;
+    }
+
+    public void setPrivateIps(List<String> privateIps) {
+        this.privateIps = privateIps;
+    }
+
+    
+
+    public MysqlInstanceListInfo withPublicIps(List<String> publicIps) {
+        this.publicIps = publicIps;
+        return this;
+    }
+
+    
+    public MysqlInstanceListInfo addPublicIpsItem(String publicIpsItem) {
+        if(this.publicIps == null) {
+            this.publicIps = new ArrayList<>();
+        }
+        this.publicIps.add(publicIpsItem);
+        return this;
+    }
+
+    public MysqlInstanceListInfo withPublicIps(Consumer<List<String>> publicIpsSetter) {
+        if(this.publicIps == null) {
+            this.publicIps = new ArrayList<>();
+        }
+        publicIpsSetter.accept(this.publicIps);
+        return this;
+    }
+
+    /**
+     * 实例外网IP地址列表。
+     * @return publicIps
+     */
+    public List<String> getPublicIps() {
+        return publicIps;
+    }
+
+    public void setPublicIps(List<String> publicIps) {
+        this.publicIps = publicIps;
+    }
+
+    
+
+    public MysqlInstanceListInfo withPort(String port) {
+        this.port = port;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库端口号。
+     * @return port
+     */
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
+
+    
+
+    public MysqlInstanceListInfo withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例类型，取值为“Cluster”。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    
+
+    public MysqlInstanceListInfo withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例所在区域。
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    
+
+    public MysqlInstanceListInfo withDatastore(MysqlDatastore datastore) {
+        this.datastore = datastore;
+        return this;
+    }
+
+    public MysqlInstanceListInfo withDatastore(Consumer<MysqlDatastore> datastoreSetter) {
+        if(this.datastore == null ){
+            this.datastore = new MysqlDatastore();
+            datastoreSetter.accept(this.datastore);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get datastore
+     * @return datastore
+     */
+    public MysqlDatastore getDatastore() {
+        return datastore;
+    }
+
+    public void setDatastore(MysqlDatastore datastore) {
+        this.datastore = datastore;
+    }
+
+    
+
+    public MysqlInstanceListInfo withCreated(String created) {
+        this.created = created;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * @return created
+     */
+    public String getCreated() {
+        return created;
+    }
+
+    public void setCreated(String created) {
+        this.created = created;
+    }
+
+    
+
+    public MysqlInstanceListInfo withUpdated(String updated) {
+        this.updated = updated;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 更新时间，格式与\"created\"字段对应格式完全相同。说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * @return updated
+     */
+    public String getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(String updated) {
+        this.updated = updated;
+    }
+
+    
+
+    public MysqlInstanceListInfo withDbUserName(String dbUserName) {
+        this.dbUserName = dbUserName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 默认用户名。
+     * @return dbUserName
+     */
+    public String getDbUserName() {
+        return dbUserName;
+    }
+
+    public void setDbUserName(String dbUserName) {
+        this.dbUserName = dbUserName;
+    }
+
+    
+
+    public MysqlInstanceListInfo withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 虚拟私有云ID。
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    
+
+    public MysqlInstanceListInfo withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 子网的网络ID信息。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    
+
+    public MysqlInstanceListInfo withSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
+    public String getSecurityGroupId() {
+        return securityGroupId;
+    }
+
+    public void setSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
+    }
+
+    
+
+    public MysqlInstanceListInfo withFlavorRef(String flavorRef) {
+        this.flavorRef = flavorRef;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 规格码。
+     * @return flavorRef
+     */
+    public String getFlavorRef() {
+        return flavorRef;
+    }
+
+    public void setFlavorRef(String flavorRef) {
+        this.flavorRef = flavorRef;
+    }
+
+    
+
+    public MysqlInstanceListInfo withFlavorInfo(MysqlFlavorInfo flavorInfo) {
+        this.flavorInfo = flavorInfo;
+        return this;
+    }
+
+    public MysqlInstanceListInfo withFlavorInfo(Consumer<MysqlFlavorInfo> flavorInfoSetter) {
+        if(this.flavorInfo == null ){
+            this.flavorInfo = new MysqlFlavorInfo();
+            flavorInfoSetter.accept(this.flavorInfo);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get flavorInfo
+     * @return flavorInfo
+     */
+    public MysqlFlavorInfo getFlavorInfo() {
+        return flavorInfo;
+    }
+
+    public void setFlavorInfo(MysqlFlavorInfo flavorInfo) {
+        this.flavorInfo = flavorInfo;
+    }
+
+    
+
+    public MysqlInstanceListInfo withVolume(MysqlVolumeInfo volume) {
+        this.volume = volume;
+        return this;
+    }
+
+    public MysqlInstanceListInfo withVolume(Consumer<MysqlVolumeInfo> volumeSetter) {
+        if(this.volume == null ){
+            this.volume = new MysqlVolumeInfo();
+            volumeSetter.accept(this.volume);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get volume
+     * @return volume
+     */
+    public MysqlVolumeInfo getVolume() {
+        return volume;
+    }
+
+    public void setVolume(MysqlVolumeInfo volume) {
+        this.volume = volume;
+    }
+
+    
+
+    public MysqlInstanceListInfo withBackupStrategy(MysqlBackupStrategy backupStrategy) {
+        this.backupStrategy = backupStrategy;
+        return this;
+    }
+
+    public MysqlInstanceListInfo withBackupStrategy(Consumer<MysqlBackupStrategy> backupStrategySetter) {
+        if(this.backupStrategy == null ){
+            this.backupStrategy = new MysqlBackupStrategy();
+            backupStrategySetter.accept(this.backupStrategy);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
+    public MysqlBackupStrategy getBackupStrategy() {
+        return backupStrategy;
+    }
+
+    public void setBackupStrategy(MysqlBackupStrategy backupStrategy) {
+        this.backupStrategy = backupStrategy;
+    }
+
+    
+
+    public MysqlInstanceListInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    
+
+    public MysqlInstanceListInfo withTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 时区。
+     * @return timeZone
+     */
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    
+
+    public MysqlInstanceListInfo withChargeInfo(MysqlChargeInfo chargeInfo) {
+        this.chargeInfo = chargeInfo;
+        return this;
+    }
+
+    public MysqlInstanceListInfo withChargeInfo(Consumer<MysqlChargeInfo> chargeInfoSetter) {
+        if(this.chargeInfo == null ){
+            this.chargeInfo = new MysqlChargeInfo();
+            chargeInfoSetter.accept(this.chargeInfo);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get chargeInfo
+     * @return chargeInfo
+     */
+    public MysqlChargeInfo getChargeInfo() {
+        return chargeInfo;
+    }
+
+    public void setChargeInfo(MysqlChargeInfo chargeInfo) {
+        this.chargeInfo = chargeInfo;
+    }
+
+    
+
+    public MysqlInstanceListInfo withDedicatedResourceId(String dedicatedResourceId) {
+        this.dedicatedResourceId = dedicatedResourceId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 专属资源池ID，只有数据库实例属于专属资源池才会返回该参数。
+     * @return dedicatedResourceId
+     */
+    public String getDedicatedResourceId() {
+        return dedicatedResourceId;
+    }
+
+    public void setDedicatedResourceId(String dedicatedResourceId) {
+        this.dedicatedResourceId = dedicatedResourceId;
+    }
+
+    
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        MysqlInstanceListInfo mysqlInstanceListInfo = (MysqlInstanceListInfo) o;
+        return Objects.equals(this.id, mysqlInstanceListInfo.id) &&
+            Objects.equals(this.name, mysqlInstanceListInfo.name) &&
+            Objects.equals(this.status, mysqlInstanceListInfo.status) &&
+            Objects.equals(this.privateIps, mysqlInstanceListInfo.privateIps) &&
+            Objects.equals(this.publicIps, mysqlInstanceListInfo.publicIps) &&
+            Objects.equals(this.port, mysqlInstanceListInfo.port) &&
+            Objects.equals(this.type, mysqlInstanceListInfo.type) &&
+            Objects.equals(this.region, mysqlInstanceListInfo.region) &&
+            Objects.equals(this.datastore, mysqlInstanceListInfo.datastore) &&
+            Objects.equals(this.created, mysqlInstanceListInfo.created) &&
+            Objects.equals(this.updated, mysqlInstanceListInfo.updated) &&
+            Objects.equals(this.dbUserName, mysqlInstanceListInfo.dbUserName) &&
+            Objects.equals(this.vpcId, mysqlInstanceListInfo.vpcId) &&
+            Objects.equals(this.subnetId, mysqlInstanceListInfo.subnetId) &&
+            Objects.equals(this.securityGroupId, mysqlInstanceListInfo.securityGroupId) &&
+            Objects.equals(this.flavorRef, mysqlInstanceListInfo.flavorRef) &&
+            Objects.equals(this.flavorInfo, mysqlInstanceListInfo.flavorInfo) &&
+            Objects.equals(this.volume, mysqlInstanceListInfo.volume) &&
+            Objects.equals(this.backupStrategy, mysqlInstanceListInfo.backupStrategy) &&
+            Objects.equals(this.enterpriseProjectId, mysqlInstanceListInfo.enterpriseProjectId) &&
+            Objects.equals(this.timeZone, mysqlInstanceListInfo.timeZone) &&
+            Objects.equals(this.chargeInfo, mysqlInstanceListInfo.chargeInfo) &&
+            Objects.equals(this.dedicatedResourceId, mysqlInstanceListInfo.dedicatedResourceId);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, status, privateIps, publicIps, port, type, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, backupStrategy, enterpriseProjectId, timeZone, chargeInfo, dedicatedResourceId);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class MysqlInstanceListInfo {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    privateIps: ").append(toIndentedString(privateIps)).append("\n");
+        sb.append("    publicIps: ").append(toIndentedString(publicIps)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    created: ").append(toIndentedString(created)).append("\n");
+        sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+        sb.append("    dbUserName: ").append(toIndentedString(dbUserName)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
+        sb.append("    flavorInfo: ").append(toIndentedString(flavorInfo)).append("\n");
+        sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+        sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
+        sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

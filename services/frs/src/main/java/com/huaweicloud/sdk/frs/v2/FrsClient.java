@@ -263,6 +263,120 @@ public class FrsClient {
             hcClient);
     }
 
+    /** 动作活体检测 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     *
+     * @param DetectLiveByBase64Request 请求对象
+     * @return DetectLiveByBase64Response */
+    public DetectLiveByBase64Response detectLiveByBase64(DetectLiveByBase64Request request) {
+        return hcClient.syncInvokeHttp(request, FrsMeta.detectLiveByBase64);
+    }
+
+    /** 动作活体检测 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     *
+     * @param DetectLiveByBase64Request 请求对象
+     * @return SyncInvoker<DetectLiveByBase64Request, DetectLiveByBase64Response> */
+    public SyncInvoker<DetectLiveByBase64Request, DetectLiveByBase64Response> detectLiveByBase64Invoker(
+        DetectLiveByBase64Request request) {
+        return new SyncInvoker<DetectLiveByBase64Request, DetectLiveByBase64Response>(request,
+            FrsMeta.detectLiveByBase64, hcClient);
+    }
+
+    /** 动作活体检测 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     *
+     * @param DetectLiveByFileRequest 请求对象
+     * @return DetectLiveByFileResponse */
+    public DetectLiveByFileResponse detectLiveByFile(DetectLiveByFileRequest request) {
+        return hcClient.syncInvokeHttp(request, FrsMeta.detectLiveByFile);
+    }
+
+    /** 动作活体检测 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     *
+     * @param DetectLiveByFileRequest 请求对象
+     * @return SyncInvoker<DetectLiveByFileRequest, DetectLiveByFileResponse> */
+    public SyncInvoker<DetectLiveByFileRequest, DetectLiveByFileResponse> detectLiveByFileInvoker(
+        DetectLiveByFileRequest request) {
+        return new SyncInvoker<DetectLiveByFileRequest, DetectLiveByFileResponse>(request, FrsMeta.detectLiveByFile,
+            hcClient);
+    }
+
+    /** 动作活体检测 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     *
+     * @param DetectLiveByUrlRequest 请求对象
+     * @return DetectLiveByUrlResponse */
+    public DetectLiveByUrlResponse detectLiveByUrl(DetectLiveByUrlRequest request) {
+        return hcClient.syncInvokeHttp(request, FrsMeta.detectLiveByUrl);
+    }
+
+    /** 动作活体检测 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     *
+     * @param DetectLiveByUrlRequest 请求对象
+     * @return SyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse> */
+    public SyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse> detectLiveByUrlInvoker(
+        DetectLiveByUrlRequest request) {
+        return new SyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse>(request, FrsMeta.detectLiveByUrl,
+            hcClient);
+    }
+
+    /** 静默活体检测
+     * 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
+     *
+     * @param DetectLiveFaceByBase64Request 请求对象
+     * @return DetectLiveFaceByBase64Response */
+    public DetectLiveFaceByBase64Response detectLiveFaceByBase64(DetectLiveFaceByBase64Request request) {
+        return hcClient.syncInvokeHttp(request, FrsMeta.detectLiveFaceByBase64);
+    }
+
+    /** 静默活体检测
+     * 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
+     *
+     * @param DetectLiveFaceByBase64Request 请求对象
+     * @return SyncInvoker<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> */
+    public SyncInvoker<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> detectLiveFaceByBase64Invoker(
+        DetectLiveFaceByBase64Request request) {
+        return new SyncInvoker<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response>(request,
+            FrsMeta.detectLiveFaceByBase64, hcClient);
+    }
+
+    /** 静默活体检测
+     * 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
+     *
+     * @param DetectLiveFaceByFileRequest 请求对象
+     * @return DetectLiveFaceByFileResponse */
+    public DetectLiveFaceByFileResponse detectLiveFaceByFile(DetectLiveFaceByFileRequest request) {
+        return hcClient.syncInvokeHttp(request, FrsMeta.detectLiveFaceByFile);
+    }
+
+    /** 静默活体检测
+     * 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
+     *
+     * @param DetectLiveFaceByFileRequest 请求对象
+     * @return SyncInvoker<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> */
+    public SyncInvoker<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> detectLiveFaceByFileInvoker(
+        DetectLiveFaceByFileRequest request) {
+        return new SyncInvoker<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse>(request,
+            FrsMeta.detectLiveFaceByFile, hcClient);
+    }
+
+    /** 静默活体检测
+     * 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
+     *
+     * @param DetectLiveFaceByUrlRequest 请求对象
+     * @return DetectLiveFaceByUrlResponse */
+    public DetectLiveFaceByUrlResponse detectLiveFaceByUrl(DetectLiveFaceByUrlRequest request) {
+        return hcClient.syncInvokeHttp(request, FrsMeta.detectLiveFaceByUrl);
+    }
+
+    /** 静默活体检测
+     * 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
+     *
+     * @param DetectLiveFaceByUrlRequest 请求对象
+     * @return SyncInvoker<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> */
+    public SyncInvoker<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> detectLiveFaceByUrlInvoker(
+        DetectLiveFaceByUrlRequest request) {
+        return new SyncInvoker<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse>(request,
+            FrsMeta.detectLiveFaceByUrl, hcClient);
+    }
+
     /** 人脸搜索 人脸搜索是指在已有的人脸库中，查询与目标人脸相似的一张或者多张人脸，并返回相应的置信度。 支持传入图片或者faceID进行人脸搜索，如果传入的是多张人脸图片，选取图片中检测到的最大尺寸人脸作为检索的输入。
      *
      * @param SearchFaceByBase64Request 请求对象

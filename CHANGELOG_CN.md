@@ -1,3 +1,86 @@
+# 3.0.58 2021-08-31
+
+### HuaweiCloud SDK CodeCraft
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateCompetitionScore`、`UpdateCompetitionScore`的请求参数`score`类型调整： `string` -> `double`
+
+### HuaweiCloud SDK CPTS
+
+- _新增特性_
+  - 支持云性能测试服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+  - 支持以下接口:
+    - `DetectLiveByUrl`
+    - `DetectLiveFaceByUrl`
+    - `DetectLiveByFile`
+    - `DetectLiveFaceByFile`
+    - `DetectLiveByBase64`
+    - `DetectLiveFaceByBase64`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Live
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListLiveStreamsOnline`新增响应参数`video_frame_rate`、`audio_frame_rate`、`audio_bitrate`、`resolution`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持云数据库服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK MRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ClusterScaling`的请求参数`data_volume_count`、`data_volume_size`、`data_volume_type`改为非必填
+  - 接口`CreateCluster`新增请求参数`auto_create_default_security_group`
+
+### HuaweiCloud SDK SCM
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ImportCertificate`的请求参数`name`、`certificate`、`certificate_chain`、`private_key`改为必填
+  - 接口`PushCertificate`的请求参数`target_project`、`target_service`改为必填
+
+### HuaweiCloud SDK SMN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListTopics`新增请求参数`enterprise_project_id`、`name`、`fuzzy_name`
+  - 接口`ListSubscriptions`新增请求参数`protocol`、`status`、`endpoint`
+
 # 3.0.57 2021-08-25
 
 ### HuaweiCloud SDK CBS

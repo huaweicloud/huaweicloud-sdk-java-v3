@@ -1604,7 +1604,7 @@ public class ImsMeta {
             HttpRequestDef.builder(HttpMethod.PATCH, GlanceUpdateImageRequest.class, GlanceUpdateImageResponse.class)
                 .withName("GlanceUpdateImage")
                 .withUri("/v2/images/{image_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/openstack-images-v2.1-json-patch");
 
         // requests
         builder.<String>withRequestField("image_id",
