@@ -205,6 +205,27 @@ public class OcrClient {
             hcClient);
     }
 
+    /** 发票验真
+     * 发票验真服务支持9种增值税发票的信息核验，包括增值税专用发票、增值税普通发票、增值税普通发票（卷式）、增值税电子专用发票、增值税电子普通发票、增值税电子普通发票（通行费）、二手车销售统一发票、机动车销售统一发票、区块链电子发票，支持返回票面的全部信息。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     *
+     * @param RecognizeInvoiceVerificationRequest 请求对象
+     * @return RecognizeInvoiceVerificationResponse */
+    public RecognizeInvoiceVerificationResponse recognizeInvoiceVerification(
+        RecognizeInvoiceVerificationRequest request) {
+        return hcClient.syncInvokeHttp(request, OcrMeta.recognizeInvoiceVerification);
+    }
+
+    /** 发票验真
+     * 发票验真服务支持9种增值税发票的信息核验，包括增值税专用发票、增值税普通发票、增值税普通发票（卷式）、增值税电子专用发票、增值税电子普通发票、增值税电子普通发票（通行费）、二手车销售统一发票、机动车销售统一发票、区块链电子发票，支持返回票面的全部信息。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     *
+     * @param RecognizeInvoiceVerificationRequest 请求对象
+     * @return SyncInvoker<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse> */
+    public SyncInvoker<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse> recognizeInvoiceVerificationInvoker(
+        RecognizeInvoiceVerificationRequest request) {
+        return new SyncInvoker<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse>(request,
+            OcrMeta.recognizeInvoiceVerification, hcClient);
+    }
+
     /** 车牌识别 识别输入图片中的车牌信息，并返回其坐标和内容。
      *
      * @param RecognizeLicensePlateRequest 请求对象

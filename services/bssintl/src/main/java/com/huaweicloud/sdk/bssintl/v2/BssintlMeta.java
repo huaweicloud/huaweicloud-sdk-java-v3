@@ -307,37 +307,6 @@ public class BssintlMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCostsRequest, ListCostsResponse> listCosts = genForlistCosts();
-
-    private static HttpRequestDef<ListCostsRequest, ListCostsResponse> genForlistCosts() {
-        // basic
-        HttpRequestDef.Builder<ListCostsRequest, ListCostsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListCostsRequest.class, ListCostsResponse.class)
-                .withName("ListCosts")
-                .withUri("/v4/costs/cost-analysed-bills/query")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCostsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
-        builder.<ListCostsReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListCostsReq.class),
-            f -> f.withMarshaller(ListCostsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResources =
         genForlistCustomerOnDemandResources();
 
@@ -915,31 +884,6 @@ public class BssintlMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceTypesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListResourceUsagesRequest, ListResourceUsagesResponse> listResourceUsages =
-        genForlistResourceUsages();
-
-    private static HttpRequestDef<ListResourceUsagesRequest, ListResourceUsagesResponse> genForlistResourceUsages() {
-        // basic
-        HttpRequestDef.Builder<ListResourceUsagesRequest, ListResourceUsagesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListResourceUsagesRequest.class, ListResourceUsagesResponse.class)
-                .withName("ListResourceUsages")
-                .withUri("/v2/payments/free-resources/usages/query")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsagesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

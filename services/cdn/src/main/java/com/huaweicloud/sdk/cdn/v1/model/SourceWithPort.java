@@ -123,7 +123,7 @@ public class SourceWithPort {
         return this;
     }
 
-    /** 源站IP或者域名。
+    /** 源站IP（非内网IP）或者域名。
      * 
      * @return ipOrDomain */
     public String getIpOrDomain() {

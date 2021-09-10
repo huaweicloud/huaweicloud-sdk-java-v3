@@ -181,7 +181,7 @@ public class HttpsDetail {
         return this;
     }
 
-    /** HTTPS证书是否启用，取值0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用并HTTPS加速并HTTP回源，开启时需要传递证书及私钥。
+    /** HTTPS证书是否启用，取值0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源，开启时需要传递证书及私钥。
      * 
      * @return httpsStatus */
     public Integer getHttpsStatus() {
@@ -197,7 +197,7 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 客户端请求是否强制重定向。1是，0否。
+    /** 客户端请求是否强制重定向。1是，0否。（如果为2，表示强制跳转HTTP）
      * 
      * @return forceRedirectHttps */
     public Integer getForceRedirectHttps() {

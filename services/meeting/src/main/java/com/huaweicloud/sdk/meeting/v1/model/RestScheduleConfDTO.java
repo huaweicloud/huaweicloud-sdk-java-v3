@@ -121,7 +121,7 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 创建会议类型（默认为普通会议）。 - 0: 普通会议。 - 1: 周期会议，此时cycleParams必须填写。 minimum: 0 maximum: 1
+    /** 创建会议类型（默认为普通会议）。 - 0: 普通会议。 - 2: 周期性会议，此时cycleParams必须填写。 minimum: 0 maximum: 2
      * 
      * @return conferenceType */
     public Integer getConferenceType() {

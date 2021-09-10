@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** UpdateDomainMultiCertificatesRequestBodyContent */
 public class UpdateDomainMultiCertificatesRequestBodyContent {
@@ -27,6 +28,11 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
     @JsonProperty(value = "force_redirect_https")
 
     private Integer forceRedirectHttps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force_redirect_config")
+
+    private ForceRedirect forceRedirectConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2")
@@ -90,7 +96,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
         return this;
     }
 
-    /** 回源方式:1：\"回源跟随\"；2：\"HTTP\"(默认)，3：\"https\" 为空值时默认设置为http
+    /** 回源方式:1：\"回源跟随\"；2：\"http\"(默认)，3：\"https\" 为空值时默认设置为http
      * 
      * @return accessOriginWay */
     public Integer getAccessOriginWay() {
@@ -106,7 +112,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
         return this;
     }
 
-    /** 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭
+    /** 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
      * 
      * @return forceRedirectHttps */
     public Integer getForceRedirectHttps() {
@@ -115,6 +121,32 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
 
     public void setForceRedirectHttps(Integer forceRedirectHttps) {
         this.forceRedirectHttps = forceRedirectHttps;
+    }
+
+    public UpdateDomainMultiCertificatesRequestBodyContent withForceRedirectConfig(ForceRedirect forceRedirectConfig) {
+        this.forceRedirectConfig = forceRedirectConfig;
+        return this;
+    }
+
+    public UpdateDomainMultiCertificatesRequestBodyContent withForceRedirectConfig(
+        Consumer<ForceRedirect> forceRedirectConfigSetter) {
+        if (this.forceRedirectConfig == null) {
+            this.forceRedirectConfig = new ForceRedirect();
+            forceRedirectConfigSetter.accept(this.forceRedirectConfig);
+        }
+
+        return this;
+    }
+
+    /** Get forceRedirectConfig
+     * 
+     * @return forceRedirectConfig */
+    public ForceRedirect getForceRedirectConfig() {
+        return forceRedirectConfig;
+    }
+
+    public void setForceRedirectConfig(ForceRedirect forceRedirectConfig) {
+        this.forceRedirectConfig = forceRedirectConfig;
     }
 
     public UpdateDomainMultiCertificatesRequestBodyContent withHttp2(Integer http2) {
@@ -212,6 +244,8 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
             && Objects.equals(this.accessOriginWay, updateDomainMultiCertificatesRequestBodyContent.accessOriginWay)
             && Objects.equals(this.forceRedirectHttps,
                 updateDomainMultiCertificatesRequestBodyContent.forceRedirectHttps)
+            && Objects.equals(this.forceRedirectConfig,
+                updateDomainMultiCertificatesRequestBodyContent.forceRedirectConfig)
             && Objects.equals(this.http2, updateDomainMultiCertificatesRequestBodyContent.http2)
             && Objects.equals(this.certName, updateDomainMultiCertificatesRequestBodyContent.certName)
             && Objects.equals(this.certificate, updateDomainMultiCertificatesRequestBodyContent.certificate)
@@ -225,6 +259,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
             httpsSwitch,
             accessOriginWay,
             forceRedirectHttps,
+            forceRedirectConfig,
             http2,
             certName,
             certificate,
@@ -240,6 +275,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
         sb.append("    httpsSwitch: ").append(toIndentedString(httpsSwitch)).append("\n");
         sb.append("    accessOriginWay: ").append(toIndentedString(accessOriginWay)).append("\n");
         sb.append("    forceRedirectHttps: ").append(toIndentedString(forceRedirectHttps)).append("\n");
+        sb.append("    forceRedirectConfig: ").append(toIndentedString(forceRedirectConfig)).append("\n");
         sb.append("    http2: ").append(toIndentedString(http2)).append("\n");
         sb.append("    certName: ").append(toIndentedString(certName)).append("\n");
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");

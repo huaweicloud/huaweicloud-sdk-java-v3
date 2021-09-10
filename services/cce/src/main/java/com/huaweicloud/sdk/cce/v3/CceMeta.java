@@ -10,6 +10,37 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CceMeta {
 
+    public static final HttpRequestDef<AddNodeRequest, AddNodeResponse> addNode = genForaddNode();
+
+    private static HttpRequestDef<AddNodeRequest, AddNodeResponse> genForaddNode() {
+        // basic
+        HttpRequestDef.Builder<AddNodeRequest, AddNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddNodeRequest.class, AddNodeResponse.class)
+                .withName("AddNode")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/add")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddNodeRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<AddNodeList>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddNodeList.class),
+            f -> f.withMarshaller(AddNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> awakeCluster = genForawakeCluster();
 
     private static HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> genForawakeCluster() {
@@ -715,6 +746,37 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemoveNodesTask.class),
             f -> f.withMarshaller(RemoveNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetNodeRequest, ResetNodeResponse> resetNode = genForresetNode();
+
+    private static HttpRequestDef<ResetNodeRequest, ResetNodeResponse> genForresetNode() {
+        // basic
+        HttpRequestDef.Builder<ResetNodeRequest, ResetNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetNodeRequest.class, ResetNodeResponse.class)
+                .withName("ResetNode")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/reset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetNodeRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ResetNodeList>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetNodeList.class),
+            f -> f.withMarshaller(ResetNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -173,6 +173,44 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddMaterialRequest, AddMaterialResponse> addMaterial = genForaddMaterial();
+
+    private static HttpRequestDef<AddMaterialRequest, AddMaterialResponse> genForaddMaterial() {
+        // basic
+        HttpRequestDef.Builder<AddMaterialRequest, AddMaterialResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddMaterialRequest.class, AddMaterialResponse.class)
+                .withName("AddMaterial")
+                .withUri("/v1/usg/sss/materials")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddMaterialRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            }));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddMaterialRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            }));
+        builder.<AddMaterialRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddMaterialRequestBody.class),
+            f -> f.withMarshaller(AddMaterialRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddProgramRequest, AddProgramResponse> addProgram = genForaddProgram();
 
     private static HttpRequestDef<AddProgramRequest, AddProgramResponse> genForaddProgram() {
@@ -903,6 +941,122 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> cancelRecurringMeeting =
+        genForcancelRecurringMeeting();
+
+    private static HttpRequestDef<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> genForcancelRecurringMeeting() {
+        // basic
+        HttpRequestDef.Builder<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, CancelRecurringMeetingRequest.class, CancelRecurringMeetingResponse.class)
+            .withName("CancelRecurringMeeting")
+            .withUri("/v1/mmc/management/cycleconferences")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("userUUID",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getUserUUID, (req, v) -> {
+                req.setUserUUID(v);
+            }));
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            }));
+        builder.<Integer>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("X-Authorization-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getXAuthorizationType, (req, v) -> {
+                req.setXAuthorizationType(v);
+            }));
+        builder.<String>withRequestField("X-Site-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getXSiteId, (req, v) -> {
+                req.setXSiteId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> cancelRecurringSubMeeting =
+        genForcancelRecurringSubMeeting();
+
+    private static HttpRequestDef<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> genForcancelRecurringSubMeeting() {
+        // basic
+        HttpRequestDef.Builder<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    CancelRecurringSubMeetingRequest.class,
+                    CancelRecurringSubMeetingResponse.class)
+                .withName("CancelRecurringSubMeeting")
+                .withUri("/v1/mmc/management/conferences/cyclesubconf")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("userUUID",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getUserUUID, (req, v) -> {
+                req.setUserUUID(v);
+            }));
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            }));
+        builder.<Integer>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("X-Authorization-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getXAuthorizationType, (req, v) -> {
+                req.setXAuthorizationType(v);
+            }));
+        builder.<String>withRequestField("X-Site-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getXSiteId, (req, v) -> {
+                req.setXSiteId(v);
+            }));
+        builder.<RestCancelSingleRecordCycleConfListReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestCancelSingleRecordCycleConfListReqBody.class),
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse> checkSlideVerifyCode =
         genForcheckSlideVerifyCode();
 
@@ -1231,6 +1385,60 @@ public class MeetingMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> createRecurringMeeting =
+        genForcreateRecurringMeeting();
+
+    private static HttpRequestDef<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> genForcreateRecurringMeeting() {
+        // basic
+        HttpRequestDef.Builder<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateRecurringMeetingRequest.class, CreateRecurringMeetingResponse.class)
+            .withName("CreateRecurringMeeting")
+            .withUri("/v1/mmc/management/cycleconferences")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("userUUID",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRecurringMeetingRequest::getUserUUID, (req, v) -> {
+                req.setUserUUID(v);
+            }));
+        builder.<String>withRequestField("X-Authorization-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRecurringMeetingRequest::getXAuthorizationType, (req, v) -> {
+                req.setXAuthorizationType(v);
+            }));
+        builder.<String>withRequestField("X-Site-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRecurringMeetingRequest::getXSiteId, (req, v) -> {
+                req.setXSiteId(v);
+            }));
+        builder.<RestScheduleConfDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestScheduleConfDTO.class),
+            f -> f.withMarshaller(CreateRecurringMeetingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<List<ConferenceInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CreateRecurringMeetingResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ConferenceInfo.class));
 
         return builder.build();
     }
@@ -6322,6 +6530,123 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModPwdReqDTO.class),
             f -> f.withMarshaller(UpdatePwdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> updateRecurringMeeting =
+        genForupdateRecurringMeeting();
+
+    private static HttpRequestDef<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> genForupdateRecurringMeeting() {
+        // basic
+        HttpRequestDef.Builder<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateRecurringMeetingRequest.class, UpdateRecurringMeetingResponse.class)
+            .withName("UpdateRecurringMeeting")
+            .withUri("/v1/mmc/management/cycleconferences")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("userUUID",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getUserUUID, (req, v) -> {
+                req.setUserUUID(v);
+            }));
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            }));
+        builder.<String>withRequestField("X-Authorization-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getXAuthorizationType, (req, v) -> {
+                req.setXAuthorizationType(v);
+            }));
+        builder.<String>withRequestField("X-Site-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getXSiteId, (req, v) -> {
+                req.setXSiteId(v);
+            }));
+        builder.<RestScheduleConfDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestScheduleConfDTO.class),
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<List<ConferenceInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(UpdateRecurringMeetingResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ConferenceInfo.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> updateRecurringSubMeeting =
+        genForupdateRecurringSubMeeting();
+
+    private static HttpRequestDef<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> genForupdateRecurringSubMeeting() {
+        // basic
+        HttpRequestDef.Builder<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateRecurringSubMeetingRequest.class,
+                    UpdateRecurringSubMeetingResponse.class)
+                .withName("UpdateRecurringSubMeeting")
+                .withUri("/v1/mmc/management/conferences/cyclesubconf")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("userUUID",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getUserUUID, (req, v) -> {
+                req.setUserUUID(v);
+            }));
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            }));
+        builder.<String>withRequestField("X-Authorization-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getXAuthorizationType, (req, v) -> {
+                req.setXAuthorizationType(v);
+            }));
+        builder.<String>withRequestField("X-Site-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getXSiteId, (req, v) -> {
+                req.setXSiteId(v);
+            }));
+        builder.<RestScheduleCycleConfDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestScheduleCycleConfDTO.class),
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

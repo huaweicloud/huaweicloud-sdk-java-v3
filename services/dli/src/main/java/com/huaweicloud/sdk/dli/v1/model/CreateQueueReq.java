@@ -61,6 +61,11 @@ public class CreateQueueReq {
 
     private String feature;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<JobsTags> tags = null;
+
     public CreateQueueReq withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -237,6 +242,38 @@ public class CreateQueueReq {
         this.feature = feature;
     }
 
+    public CreateQueueReq withTags(List<JobsTags> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateQueueReq addTagsItem(JobsTags tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateQueueReq withTags(Consumer<List<JobsTags>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /** 队列的标签。具体请参考表tags。
+     * 
+     * @return tags */
+    public List<JobsTags> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<JobsTags> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -255,7 +292,7 @@ public class CreateQueueReq {
             && Objects.equals(this.platform, createQueueReq.platform)
             && Objects.equals(this.resourceMode, createQueueReq.resourceMode)
             && Objects.equals(this.labels, createQueueReq.labels)
-            && Objects.equals(this.feature, createQueueReq.feature);
+            && Objects.equals(this.feature, createQueueReq.feature) && Objects.equals(this.tags, createQueueReq.tags);
     }
 
     @Override
@@ -269,7 +306,8 @@ public class CreateQueueReq {
             platform,
             resourceMode,
             labels,
-            feature);
+            feature,
+            tags);
     }
 
     @Override
@@ -286,6 +324,7 @@ public class CreateQueueReq {
         sb.append("    resourceMode: ").append(toIndentedString(resourceMode)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

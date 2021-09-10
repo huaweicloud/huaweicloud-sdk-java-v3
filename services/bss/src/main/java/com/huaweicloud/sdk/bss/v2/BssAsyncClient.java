@@ -894,22 +894,41 @@ public class BssAsyncClient {
             hcClient);
     }
 
-    /** 查询套餐内使用量 功能描述：客户在客户自建平台查询套餐内的使用量
+    /** 查询95计费资源用量明细 功能描述：客户对于部分云服务，可以查询自己的使用量详情。主要应对95计费的场景
      *
-     * @param ListResourceUsagesRequest 请求对象
-     * @return CompletableFuture<ListResourceUsagesResponse> */
-    public CompletableFuture<ListResourceUsagesResponse> listResourceUsagesAsync(ListResourceUsagesRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssMeta.listResourceUsages);
+     * @param ListResourceUsageRequest 请求对象
+     * @return CompletableFuture<ListResourceUsageResponse> */
+    public CompletableFuture<ListResourceUsageResponse> listResourceUsageAsync(ListResourceUsageRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listResourceUsage);
     }
 
-    /** 查询套餐内使用量 功能描述：客户在客户自建平台查询套餐内的使用量
+    /** 查询95计费资源用量明细 功能描述：客户对于部分云服务，可以查询自己的使用量详情。主要应对95计费的场景
      *
-     * @param ListResourceUsagesRequest 请求对象
-     * @return AsyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse> */
-    public AsyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse> listResourceUsagesAsyncInvoker(
-        ListResourceUsagesRequest request) {
-        return new AsyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse>(request,
-            BssMeta.listResourceUsages, hcClient);
+     * @param ListResourceUsageRequest 请求对象
+     * @return AsyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse> */
+    public AsyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse> listResourceUsageAsyncInvoker(
+        ListResourceUsageRequest request) {
+        return new AsyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse>(request, BssMeta.listResourceUsage,
+            hcClient);
+    }
+
+    /** 查询95计费资源用量汇总 功能描述：客户对于部分云服务，可以查询自己的使用量汇总详情。主要应对95计费的场景
+     *
+     * @param ListResourceUsageSummaryRequest 请求对象
+     * @return CompletableFuture<ListResourceUsageSummaryResponse> */
+    public CompletableFuture<ListResourceUsageSummaryResponse> listResourceUsageSummaryAsync(
+        ListResourceUsageSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listResourceUsageSummary);
+    }
+
+    /** 查询95计费资源用量汇总 功能描述：客户对于部分云服务，可以查询自己的使用量汇总详情。主要应对95计费的场景
+     *
+     * @param ListResourceUsageSummaryRequest 请求对象
+     * @return AsyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> */
+    public AsyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> listResourceUsageSummaryAsyncInvoker(
+        ListResourceUsageSummaryRequest request) {
+        return new AsyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse>(request,
+            BssMeta.listResourceUsageSummary, hcClient);
     }
 
     /** 根据云服务类型查询资源列表 功能描述：伙伴在伙伴销售平台根据云服务类型查询关联的资源类型编码和名称，用于查询按需产品的价格或包年/包月产品的价格。
@@ -965,6 +984,25 @@ public class BssAsyncClient {
         ListSkuInventoriesRequest request) {
         return new AsyncInvoker<ListSkuInventoriesRequest, ListSkuInventoriesResponse>(request,
             BssMeta.listSkuInventories, hcClient);
+    }
+
+    /** 查询客户消费记录 功能描述：查询客户消费记录
+     *
+     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @return CompletableFuture<ListSubCustomerBillDetailResponse> */
+    public CompletableFuture<ListSubCustomerBillDetailResponse> listSubCustomerBillDetailAsync(
+        ListSubCustomerBillDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listSubCustomerBillDetail);
+    }
+
+    /** 查询客户消费记录 功能描述：查询客户消费记录
+     *
+     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @return AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> */
+    public AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetailAsyncInvoker(
+        ListSubCustomerBillDetailRequest request) {
+        return new AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse>(request,
+            BssMeta.listSubCustomerBillDetail, hcClient);
     }
 
     /** 查询优惠券列表 功能描述：伙伴可以查询自身的优惠券信息。

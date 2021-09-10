@@ -1394,6 +1394,24 @@ public class RdsAsyncClient {
         return new AsyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>(request, RdsMeta.setDbUserPwd, hcClient);
     }
 
+    /** 修改指定实例的数据库备注 修改指定实例中的数据库备注。
+     *
+     * @param UpdateDatabaseRequest 请求对象
+     * @return CompletableFuture<UpdateDatabaseResponse> */
+    public CompletableFuture<UpdateDatabaseResponse> updateDatabaseAsync(UpdateDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateDatabase);
+    }
+
+    /** 修改指定实例的数据库备注 修改指定实例中的数据库备注。
+     *
+     * @param UpdateDatabaseRequest 请求对象
+     * @return AsyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse> */
+    public AsyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse> updateDatabaseAsyncInvoker(
+        UpdateDatabaseRequest request) {
+        return new AsyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse>(request, RdsMeta.updateDatabase,
+            hcClient);
+    }
+
     /** 授权数据库帐号 在指定实例的数据库中, 设置帐号的权限。
      *
      * @param AllowDbPrivilegeRequest 请求对象

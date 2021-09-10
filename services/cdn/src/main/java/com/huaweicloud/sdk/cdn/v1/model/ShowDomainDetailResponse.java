@@ -13,16 +13,16 @@ public class ShowDomainDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
-    private Domains domain;
+    private DomainsWithPort domain;
 
-    public ShowDomainDetailResponse withDomain(Domains domain) {
+    public ShowDomainDetailResponse withDomain(DomainsWithPort domain) {
         this.domain = domain;
         return this;
     }
 
-    public ShowDomainDetailResponse withDomain(Consumer<Domains> domainSetter) {
+    public ShowDomainDetailResponse withDomain(Consumer<DomainsWithPort> domainSetter) {
         if (this.domain == null) {
-            this.domain = new Domains();
+            this.domain = new DomainsWithPort();
             domainSetter.accept(this.domain);
         }
 
@@ -32,11 +32,11 @@ public class ShowDomainDetailResponse extends SdkResponse {
     /** Get domain
      * 
      * @return domain */
-    public Domains getDomain() {
+    public DomainsWithPort getDomain() {
         return domain;
     }
 
-    public void setDomain(Domains domain) {
+    public void setDomain(DomainsWithPort domain) {
         this.domain = domain;
     }
 

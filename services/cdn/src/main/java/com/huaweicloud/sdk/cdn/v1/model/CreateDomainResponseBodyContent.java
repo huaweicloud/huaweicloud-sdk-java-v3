@@ -81,6 +81,26 @@ public class CreateDomainResponseBodyContent {
 
     private Integer locked;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "range_status")
+
+    private String rangeStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "follow_status")
+
+    private String followStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_status")
+
+    private String originStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_refresh_preheat")
+
+    private Integer autoRefreshPreheat;
+
     public CreateDomainResponseBodyContent withId(String id) {
         this.id = id;
         return this;
@@ -118,7 +138,7 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 域名业务类型:-web:静态加速；-download:下载加速；-video:流媒体加速；-wholeSite:全站加速。
+    /** 域名业务类型:-web:网站加速；-download:文件下载加速；-video:点播加速；-wholeSite:全站加速。
      * 
      * @return businessType */
     public String getBusinessType() {
@@ -166,7 +186,7 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 加速域名状态。取值意义：online表示“已开启”、offline表示“已停用”、configuring表示“配置中”、configure_failed表示“配置失败”、checking表示“审核中”、check_failed表示“审核失败”、deleting表示“删除中”。
+    /** 加速域名状态。取值意义：online表示“已开启”、offline表示“已停用”、configuring表示“配置中”、configure_failed表示“配置失败”、checking表示“审核中”、check_failed表示“审核未通过”、deleting表示“删除中”。
      * 
      * @return domainStatus */
     public String getDomainStatus() {
@@ -330,6 +350,70 @@ public class CreateDomainResponseBodyContent {
         this.locked = locked;
     }
 
+    public CreateDomainResponseBodyContent withRangeStatus(String rangeStatus) {
+        this.rangeStatus = rangeStatus;
+        return this;
+    }
+
+    /** range状态（\"off\"/\"on\"）。
+     * 
+     * @return rangeStatus */
+    public String getRangeStatus() {
+        return rangeStatus;
+    }
+
+    public void setRangeStatus(String rangeStatus) {
+        this.rangeStatus = rangeStatus;
+    }
+
+    public CreateDomainResponseBodyContent withFollowStatus(String followStatus) {
+        this.followStatus = followStatus;
+        return this;
+    }
+
+    /** follow302状态（\"off\"/\"on\"）。
+     * 
+     * @return followStatus */
+    public String getFollowStatus() {
+        return followStatus;
+    }
+
+    public void setFollowStatus(String followStatus) {
+        this.followStatus = followStatus;
+    }
+
+    public CreateDomainResponseBodyContent withOriginStatus(String originStatus) {
+        this.originStatus = originStatus;
+        return this;
+    }
+
+    /** 是否暂停源站回源。
+     * 
+     * @return originStatus */
+    public String getOriginStatus() {
+        return originStatus;
+    }
+
+    public void setOriginStatus(String originStatus) {
+        this.originStatus = originStatus;
+    }
+
+    public CreateDomainResponseBodyContent withAutoRefreshPreheat(Integer autoRefreshPreheat) {
+        this.autoRefreshPreheat = autoRefreshPreheat;
+        return this;
+    }
+
+    /** 自动刷新预热（0代表关闭；1代表打开）
+     * 
+     * @return autoRefreshPreheat */
+    public Integer getAutoRefreshPreheat() {
+        return autoRefreshPreheat;
+    }
+
+    public void setAutoRefreshPreheat(Integer autoRefreshPreheat) {
+        this.autoRefreshPreheat = autoRefreshPreheat;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -352,7 +436,11 @@ public class CreateDomainResponseBodyContent {
             && Objects.equals(this.createTime, createDomainResponseBodyContent.createTime)
             && Objects.equals(this.modifyTime, createDomainResponseBodyContent.modifyTime)
             && Objects.equals(this.disabled, createDomainResponseBodyContent.disabled)
-            && Objects.equals(this.locked, createDomainResponseBodyContent.locked);
+            && Objects.equals(this.locked, createDomainResponseBodyContent.locked)
+            && Objects.equals(this.rangeStatus, createDomainResponseBodyContent.rangeStatus)
+            && Objects.equals(this.followStatus, createDomainResponseBodyContent.followStatus)
+            && Objects.equals(this.originStatus, createDomainResponseBodyContent.originStatus)
+            && Objects.equals(this.autoRefreshPreheat, createDomainResponseBodyContent.autoRefreshPreheat);
     }
 
     @Override
@@ -370,7 +458,11 @@ public class CreateDomainResponseBodyContent {
             createTime,
             modifyTime,
             disabled,
-            locked);
+            locked,
+            rangeStatus,
+            followStatus,
+            originStatus,
+            autoRefreshPreheat);
     }
 
     @Override
@@ -391,6 +483,10 @@ public class CreateDomainResponseBodyContent {
         sb.append("    modifyTime: ").append(toIndentedString(modifyTime)).append("\n");
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    rangeStatus: ").append(toIndentedString(rangeStatus)).append("\n");
+        sb.append("    followStatus: ").append(toIndentedString(followStatus)).append("\n");
+        sb.append("    originStatus: ").append(toIndentedString(originStatus)).append("\n");
+        sb.append("    autoRefreshPreheat: ").append(toIndentedString(autoRefreshPreheat)).append("\n");
         sb.append("}");
         return sb.toString();
     }

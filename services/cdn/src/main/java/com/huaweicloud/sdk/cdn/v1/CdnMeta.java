@@ -277,6 +277,13 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowBlackWhiteListRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBlackWhiteListRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -450,10 +457,10 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowDomainItemDetailsRequest::getServiceArea, (req, v) -> {
                 req.setServiceArea(v);
             }));
-        builder.<ShowDomainItemDetailsRequest.StatTypeEnum>withRequestField("stat_type",
+        builder.<String>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowDomainItemDetailsRequest.StatTypeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainItemDetailsRequest::getStatType, (req, v) -> {
                 req.setStatType(v);
             }));
@@ -506,10 +513,10 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getDomainName, (req, v) -> {
                 req.setDomainName(v);
             }));
-        builder.<ShowDomainItemLocationDetailsRequest.StatTypeEnum>withRequestField("stat_type",
+        builder.<String>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowDomainItemLocationDetailsRequest.StatTypeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getStatType, (req, v) -> {
                 req.setStatType(v);
             }));
@@ -667,6 +674,13 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.FileTypeEnum.class),
             f -> f.withMarshaller(ShowHistoryTasksRequest::getFileType, (req, v) -> {
                 req.setFileType(v);
+            }));
+        builder.<Long>withRequestField("create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getCreateTime, (req, v) -> {
+                req.setCreateTime(v);
             }));
 
         // response
@@ -978,6 +992,13 @@ public class CdnMeta {
             f -> f.withMarshaller(UpdateBlackWhiteListRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<BlackWhiteListBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1045,6 +1066,13 @@ public class CdnMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainMultiCertificatesRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<UpdateDomainMultiCertificatesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1115,6 +1143,13 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateFollow302SwitchRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFollow302SwitchRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<Follow302StatusRequest>withRequestField("body",
             LocationType.Body,
@@ -1229,6 +1264,13 @@ public class CdnMeta {
             f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<UpdatePrivateBucketAccessBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1260,6 +1302,13 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateRangeSwitchRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRangeSwitchRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<RangeStatusRequest>withRequestField("body",
             LocationType.Body,

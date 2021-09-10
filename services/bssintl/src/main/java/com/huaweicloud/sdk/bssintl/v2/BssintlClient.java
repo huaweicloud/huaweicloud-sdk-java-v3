@@ -221,22 +221,6 @@ public class BssintlClient {
             hcClient);
     }
 
-    /** 查询成本数据 功能描述：按照企业项目查询某个客户的成本消耗
-     *
-     * @param ListCostsRequest 请求对象
-     * @return ListCostsResponse */
-    public ListCostsResponse listCosts(ListCostsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssintlMeta.listCosts);
-    }
-
-    /** 查询成本数据 功能描述：按照企业项目查询某个客户的成本消耗
-     *
-     * @param ListCostsRequest 请求对象
-     * @return SyncInvoker<ListCostsRequest, ListCostsResponse> */
-    public SyncInvoker<ListCostsRequest, ListCostsResponse> listCostsInvoker(ListCostsRequest request) {
-        return new SyncInvoker<ListCostsRequest, ListCostsResponse>(request, BssintlMeta.listCosts, hcClient);
-    }
-
     /** 查询客户按需资源列表 功能描述：客户在伙伴销售平台查询已开通的按需资源
      *
      * @param ListCustomerOnDemandResourcesRequest 请求对象
@@ -492,24 +476,6 @@ public class BssintlClient {
         ListResourceTypesRequest request) {
         return new SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>(request,
             BssintlMeta.listResourceTypes, hcClient);
-    }
-
-    /** 查询套餐内使用量 功能描述：客户在客户自建平台查询套餐内的使用量
-     *
-     * @param ListResourceUsagesRequest 请求对象
-     * @return ListResourceUsagesResponse */
-    public ListResourceUsagesResponse listResourceUsages(ListResourceUsagesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssintlMeta.listResourceUsages);
-    }
-
-    /** 查询套餐内使用量 功能描述：客户在客户自建平台查询套餐内的使用量
-     *
-     * @param ListResourceUsagesRequest 请求对象
-     * @return SyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse> */
-    public SyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse> listResourceUsagesInvoker(
-        ListResourceUsagesRequest request) {
-        return new SyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse>(request,
-            BssintlMeta.listResourceUsages, hcClient);
     }
 
     /** 根据云服务类型查询资源列表 功能描述：伙伴在伙伴销售平台根据云服务类型查询关联的资源类型编码和名称，用于查询按需产品的价格或包年/包月产品的价格。

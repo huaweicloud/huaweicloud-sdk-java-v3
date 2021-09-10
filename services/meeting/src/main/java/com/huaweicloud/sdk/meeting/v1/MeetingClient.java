@@ -82,6 +82,22 @@ public class MeetingClient {
         return new SyncInvoker<AddDeviceRequest, AddDeviceResponse>(request, MeetingMeta.addDevice, hcClient);
     }
 
+    /** 新增全球窗素材 新增全球窗素材（上传素材文件）
+     *
+     * @param AddMaterialRequest 请求对象
+     * @return AddMaterialResponse */
+    public AddMaterialResponse addMaterial(AddMaterialRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.addMaterial);
+    }
+
+    /** 新增全球窗素材 新增全球窗素材（上传素材文件）
+     *
+     * @param AddMaterialRequest 请求对象
+     * @return SyncInvoker<AddMaterialRequest, AddMaterialResponse> */
+    public SyncInvoker<AddMaterialRequest, AddMaterialResponse> addMaterialInvoker(AddMaterialRequest request) {
+        return new SyncInvoker<AddMaterialRequest, AddMaterialResponse>(request, MeetingMeta.addMaterial, hcClient);
+    }
+
     /** 新增全球窗节目 新增全球窗节目
      *
      * @param AddProgramRequest 请求对象
@@ -385,6 +401,42 @@ public class MeetingClient {
             hcClient);
     }
 
+    /** 取消周期会议 管理员或UC账号可以通过该接口取消周期会议
+     *
+     * @param CancelRecurringMeetingRequest 请求对象
+     * @return CancelRecurringMeetingResponse */
+    public CancelRecurringMeetingResponse cancelRecurringMeeting(CancelRecurringMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.cancelRecurringMeeting);
+    }
+
+    /** 取消周期会议 管理员或UC账号可以通过该接口取消周期会议
+     *
+     * @param CancelRecurringMeetingRequest 请求对象
+     * @return SyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> */
+    public SyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> cancelRecurringMeetingInvoker(
+        CancelRecurringMeetingRequest request) {
+        return new SyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse>(request,
+            MeetingMeta.cancelRecurringMeeting, hcClient);
+    }
+
+    /** 取消周期子会议 管理员或UC账号可以通过该接口取消周期会议
+     *
+     * @param CancelRecurringSubMeetingRequest 请求对象
+     * @return CancelRecurringSubMeetingResponse */
+    public CancelRecurringSubMeetingResponse cancelRecurringSubMeeting(CancelRecurringSubMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.cancelRecurringSubMeeting);
+    }
+
+    /** 取消周期子会议 管理员或UC账号可以通过该接口取消周期会议
+     *
+     * @param CancelRecurringSubMeetingRequest 请求对象
+     * @return SyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> */
+    public SyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> cancelRecurringSubMeetingInvoker(
+        CancelRecurringSubMeetingRequest request) {
+        return new SyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse>(request,
+            MeetingMeta.cancelRecurringSubMeeting, hcClient);
+    }
+
     /** 校验滑块验证码 该接口提供校验滑块验证码。服务器收到请求，返回校验结果。用户在前台界面通过滑块操作匹配图形，使得抠图和原图吻合。然后服务器进行校验滑块验证码。
      *
      * @param CheckSlideVerifyCodeRequest 请求对象
@@ -527,6 +579,24 @@ public class MeetingClient {
         CreatePortalRefNonceRequest request) {
         return new SyncInvoker<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse>(request,
             MeetingMeta.createPortalRefNonce, hcClient);
+    }
+
+    /** 创建周期会议 管理员或UC账号可以通过该接口创建周期会议
+     *
+     * @param CreateRecurringMeetingRequest 请求对象
+     * @return CreateRecurringMeetingResponse */
+    public CreateRecurringMeetingResponse createRecurringMeeting(CreateRecurringMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.createRecurringMeeting);
+    }
+
+    /** 创建周期会议 管理员或UC账号可以通过该接口创建周期会议
+     *
+     * @param CreateRecurringMeetingRequest 请求对象
+     * @return SyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> */
+    public SyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> createRecurringMeetingInvoker(
+        CreateRecurringMeetingRequest request) {
+        return new SyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse>(request,
+            MeetingMeta.createRecurringMeeting, hcClient);
     }
 
     /** 企业管理员生成激活码 企业管理员生成智慧屏、电子白板、Ideahub的激活码
@@ -2362,6 +2432,42 @@ public class MeetingClient {
      * @return SyncInvoker<UpdatePwdRequest, UpdatePwdResponse> */
     public SyncInvoker<UpdatePwdRequest, UpdatePwdResponse> updatePwdInvoker(UpdatePwdRequest request) {
         return new SyncInvoker<UpdatePwdRequest, UpdatePwdResponse>(request, MeetingMeta.updatePwd, hcClient);
+    }
+
+    /** 修改预定周期会议 修改预定的周期会议；会议开始时，不能修改会议
+     *
+     * @param UpdateRecurringMeetingRequest 请求对象
+     * @return UpdateRecurringMeetingResponse */
+    public UpdateRecurringMeetingResponse updateRecurringMeeting(UpdateRecurringMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updateRecurringMeeting);
+    }
+
+    /** 修改预定周期会议 修改预定的周期会议；会议开始时，不能修改会议
+     *
+     * @param UpdateRecurringMeetingRequest 请求对象
+     * @return SyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> */
+    public SyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> updateRecurringMeetingInvoker(
+        UpdateRecurringMeetingRequest request) {
+        return new SyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse>(request,
+            MeetingMeta.updateRecurringMeeting, hcClient);
+    }
+
+    /** 修改预定周期子会议 修改预定的周期子会议；会议开始时，不能修改会议
+     *
+     * @param UpdateRecurringSubMeetingRequest 请求对象
+     * @return UpdateRecurringSubMeetingResponse */
+    public UpdateRecurringSubMeetingResponse updateRecurringSubMeeting(UpdateRecurringSubMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updateRecurringSubMeeting);
+    }
+
+    /** 修改预定周期子会议 修改预定的周期子会议；会议开始时，不能修改会议
+     *
+     * @param UpdateRecurringSubMeetingRequest 请求对象
+     * @return SyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> */
+    public SyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> updateRecurringSubMeetingInvoker(
+        UpdateRecurringSubMeetingRequest request) {
+        return new SyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse>(request,
+            MeetingMeta.updateRecurringSubMeeting, hcClient);
     }
 
     /** SP管理员根据修改企业资源 企业修改资源的过期时间、停用状态

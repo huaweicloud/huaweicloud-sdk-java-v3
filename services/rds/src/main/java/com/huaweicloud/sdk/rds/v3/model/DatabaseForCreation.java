@@ -18,6 +18,11 @@ public class DatabaseForCreation {
 
     private String characterSet;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "comment")
+
+    private String comment;
+
     public DatabaseForCreation withName(String name) {
         this.name = name;
         return this;
@@ -50,6 +55,22 @@ public class DatabaseForCreation {
         this.characterSet = characterSet;
     }
 
+    public DatabaseForCreation withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    /** 数据库备注，最大长度512
+     * 
+     * @return comment */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -60,12 +81,13 @@ public class DatabaseForCreation {
         }
         DatabaseForCreation databaseForCreation = (DatabaseForCreation) o;
         return Objects.equals(this.name, databaseForCreation.name)
-            && Objects.equals(this.characterSet, databaseForCreation.characterSet);
+            && Objects.equals(this.characterSet, databaseForCreation.characterSet)
+            && Objects.equals(this.comment, databaseForCreation.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, characterSet);
+        return Objects.hash(name, characterSet, comment);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class DatabaseForCreation {
         sb.append("class DatabaseForCreation {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    characterSet: ").append(toIndentedString(characterSet)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -107,7 +107,7 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。 取值范围：PEM编码格式。
+    /** 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。（为了客户信息安全，接口返回私钥为空）
      * 
      * @return privateKey */
     public String getPrivateKey() {
@@ -139,7 +139,7 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** 客户端请求是否强制重定向。1是，0否。
+    /** 客户端请求是否强制重定向。1是，0否。（如果为2，表示强制跳转HTTP）
      * 
      * @return forceRedirectHttps */
     public Integer getForceRedirectHttps() {

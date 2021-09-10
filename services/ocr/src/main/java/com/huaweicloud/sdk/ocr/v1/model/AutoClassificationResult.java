@@ -16,7 +16,7 @@ public class AutoClassificationResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Object status;
+    private AutoClassificationResultStatus status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
@@ -33,24 +33,28 @@ public class AutoClassificationResult {
 
     private List<List<Integer>> location = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "confidence")
-
-    private Object confidence;
-
-    public AutoClassificationResult withStatus(Object status) {
+    public AutoClassificationResult withStatus(AutoClassificationResultStatus status) {
         this.status = status;
         return this;
     }
 
-    /** 指示各对应票证的识别状态。
+    public AutoClassificationResult withStatus(Consumer<AutoClassificationResultStatus> statusSetter) {
+        if (this.status == null) {
+            this.status = new AutoClassificationResultStatus();
+            statusSetter.accept(this.status);
+        }
+
+        return this;
+    }
+
+    /** Get status
      * 
      * @return status */
-    public Object getStatus() {
+    public AutoClassificationResultStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Object status) {
+    public void setStatus(AutoClassificationResultStatus status) {
         this.status = status;
     }
 
@@ -118,22 +122,6 @@ public class AutoClassificationResult {
         this.location = location;
     }
 
-    public AutoClassificationResult withConfidence(Object confidence) {
-        this.confidence = confidence;
-        return this;
-    }
-
-    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
-    public Object getConfidence() {
-        return confidence;
-    }
-
-    public void setConfidence(Object confidence) {
-        this.confidence = confidence;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -146,13 +134,12 @@ public class AutoClassificationResult {
         return Objects.equals(this.status, autoClassificationResult.status)
             && Objects.equals(this.content, autoClassificationResult.content)
             && Objects.equals(this.type, autoClassificationResult.type)
-            && Objects.equals(this.location, autoClassificationResult.location)
-            && Objects.equals(this.confidence, autoClassificationResult.confidence);
+            && Objects.equals(this.location, autoClassificationResult.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, content, type, location, confidence);
+        return Objects.hash(status, content, type, location);
     }
 
     @Override
@@ -163,7 +150,6 @@ public class AutoClassificationResult {
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
-        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("}");
         return sb.toString();
     }

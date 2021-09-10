@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 实例规格信息列表。 */
 public class ListFlavorsResult {
@@ -32,6 +35,11 @@ public class ListFlavorsResult {
     @JsonProperty(value = "spec_code")
 
     private String specCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private List<String> availabilityZone = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_status")
@@ -119,6 +127,38 @@ public class ListFlavorsResult {
         this.specCode = specCode;
     }
 
+    public ListFlavorsResult withAvailabilityZone(List<String> availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    public ListFlavorsResult addAvailabilityZoneItem(String availabilityZoneItem) {
+        if (this.availabilityZone == null) {
+            this.availabilityZone = new ArrayList<>();
+        }
+        this.availabilityZone.add(availabilityZoneItem);
+        return this;
+    }
+
+    public ListFlavorsResult withAvailabilityZone(Consumer<List<String>> availabilityZoneSetter) {
+        if (this.availabilityZone == null) {
+            this.availabilityZone = new ArrayList<>();
+        }
+        availabilityZoneSetter.accept(this.availabilityZone);
+        return this;
+    }
+
+    /** Get availabilityZone
+     * 
+     * @return availabilityZone */
+    public List<String> getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(List<String> availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     public ListFlavorsResult withAzStatus(Object azStatus) {
         this.azStatus = azStatus;
         return this;
@@ -148,12 +188,13 @@ public class ListFlavorsResult {
             && Objects.equals(this.engineVersion, listFlavorsResult.engineVersion)
             && Objects.equals(this.vcpus, listFlavorsResult.vcpus) && Objects.equals(this.ram, listFlavorsResult.ram)
             && Objects.equals(this.specCode, listFlavorsResult.specCode)
+            && Objects.equals(this.availabilityZone, listFlavorsResult.availabilityZone)
             && Objects.equals(this.azStatus, listFlavorsResult.azStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engineName, engineVersion, vcpus, ram, specCode, azStatus);
+        return Objects.hash(engineName, engineVersion, vcpus, ram, specCode, availabilityZone, azStatus);
     }
 
     @Override
@@ -165,6 +206,7 @@ public class ListFlavorsResult {
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    azStatus: ").append(toIndentedString(azStatus)).append("\n");
         sb.append("}");
         return sb.toString();

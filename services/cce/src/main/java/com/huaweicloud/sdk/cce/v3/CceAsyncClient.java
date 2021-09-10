@@ -19,6 +19,22 @@ public class CceAsyncClient {
         return new ClientBuilder<>(CceAsyncClient::new);
     }
 
+    /** 纳管节点 该API用于在指定集群下纳管节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     *
+     * @param AddNodeRequest 请求对象
+     * @return CompletableFuture<AddNodeResponse> */
+    public CompletableFuture<AddNodeResponse> addNodeAsync(AddNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.addNode);
+    }
+
+    /** 纳管节点 该API用于在指定集群下纳管节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     *
+     * @param AddNodeRequest 请求对象
+     * @return AsyncInvoker<AddNodeRequest, AddNodeResponse> */
+    public AsyncInvoker<AddNodeRequest, AddNodeResponse> addNodeAsyncInvoker(AddNodeRequest request) {
+        return new AsyncInvoker<AddNodeRequest, AddNodeResponse>(request, CceMeta.addNode, hcClient);
+    }
+
     /** 集群唤醒 集群唤醒用于唤醒已休眠的集群，唤醒后，将继续收取控制节点资源费用。
      *
      * @param AwakeClusterRequest 请求对象
@@ -389,6 +405,22 @@ public class CceAsyncClient {
      * @return AsyncInvoker<RemoveNodeRequest, RemoveNodeResponse> */
     public AsyncInvoker<RemoveNodeRequest, RemoveNodeResponse> removeNodeAsyncInvoker(RemoveNodeRequest request) {
         return new AsyncInvoker<RemoveNodeRequest, RemoveNodeResponse>(request, CceMeta.removeNode, hcClient);
+    }
+
+    /** 重置节点 该API用于在指定集群下重置节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     *
+     * @param ResetNodeRequest 请求对象
+     * @return CompletableFuture<ResetNodeResponse> */
+    public CompletableFuture<ResetNodeResponse> resetNodeAsync(ResetNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.resetNode);
+    }
+
+    /** 重置节点 该API用于在指定集群下重置节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     *
+     * @param ResetNodeRequest 请求对象
+     * @return AsyncInvoker<ResetNodeRequest, ResetNodeResponse> */
+    public AsyncInvoker<ResetNodeRequest, ResetNodeResponse> resetNodeAsyncInvoker(ResetNodeRequest request) {
+        return new AsyncInvoker<ResetNodeRequest, ResetNodeResponse>(request, CceMeta.resetNode, hcClient);
     }
 
     /** 获取AddonInstance详情 获取插件实例详情。

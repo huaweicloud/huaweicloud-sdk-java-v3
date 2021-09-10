@@ -865,22 +865,40 @@ public class BssClient {
             hcClient);
     }
 
-    /** 查询套餐内使用量 功能描述：客户在客户自建平台查询套餐内的使用量
+    /** 查询95计费资源用量明细 功能描述：客户对于部分云服务，可以查询自己的使用量详情。主要应对95计费的场景
      *
-     * @param ListResourceUsagesRequest 请求对象
-     * @return ListResourceUsagesResponse */
-    public ListResourceUsagesResponse listResourceUsages(ListResourceUsagesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listResourceUsages);
+     * @param ListResourceUsageRequest 请求对象
+     * @return ListResourceUsageResponse */
+    public ListResourceUsageResponse listResourceUsage(ListResourceUsageRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listResourceUsage);
     }
 
-    /** 查询套餐内使用量 功能描述：客户在客户自建平台查询套餐内的使用量
+    /** 查询95计费资源用量明细 功能描述：客户对于部分云服务，可以查询自己的使用量详情。主要应对95计费的场景
      *
-     * @param ListResourceUsagesRequest 请求对象
-     * @return SyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse> */
-    public SyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse> listResourceUsagesInvoker(
-        ListResourceUsagesRequest request) {
-        return new SyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse>(request,
-            BssMeta.listResourceUsages, hcClient);
+     * @param ListResourceUsageRequest 请求对象
+     * @return SyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse> */
+    public SyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse> listResourceUsageInvoker(
+        ListResourceUsageRequest request) {
+        return new SyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse>(request, BssMeta.listResourceUsage,
+            hcClient);
+    }
+
+    /** 查询95计费资源用量汇总 功能描述：客户对于部分云服务，可以查询自己的使用量汇总详情。主要应对95计费的场景
+     *
+     * @param ListResourceUsageSummaryRequest 请求对象
+     * @return ListResourceUsageSummaryResponse */
+    public ListResourceUsageSummaryResponse listResourceUsageSummary(ListResourceUsageSummaryRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listResourceUsageSummary);
+    }
+
+    /** 查询95计费资源用量汇总 功能描述：客户对于部分云服务，可以查询自己的使用量汇总详情。主要应对95计费的场景
+     *
+     * @param ListResourceUsageSummaryRequest 请求对象
+     * @return SyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> */
+    public SyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> listResourceUsageSummaryInvoker(
+        ListResourceUsageSummaryRequest request) {
+        return new SyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse>(request,
+            BssMeta.listResourceUsageSummary, hcClient);
     }
 
     /** 根据云服务类型查询资源列表 功能描述：伙伴在伙伴销售平台根据云服务类型查询关联的资源类型编码和名称，用于查询按需产品的价格或包年/包月产品的价格。
@@ -935,6 +953,24 @@ public class BssClient {
         ListSkuInventoriesRequest request) {
         return new SyncInvoker<ListSkuInventoriesRequest, ListSkuInventoriesResponse>(request,
             BssMeta.listSkuInventories, hcClient);
+    }
+
+    /** 查询客户消费记录 功能描述：查询客户消费记录
+     *
+     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @return ListSubCustomerBillDetailResponse */
+    public ListSubCustomerBillDetailResponse listSubCustomerBillDetail(ListSubCustomerBillDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listSubCustomerBillDetail);
+    }
+
+    /** 查询客户消费记录 功能描述：查询客户消费记录
+     *
+     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @return SyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> */
+    public SyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetailInvoker(
+        ListSubCustomerBillDetailRequest request) {
+        return new SyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse>(request,
+            BssMeta.listSubCustomerBillDetail, hcClient);
     }
 
     /** 查询优惠券列表 功能描述：伙伴可以查询自身的优惠券信息。

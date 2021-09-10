@@ -28,6 +28,8 @@ public class VpcRegion {
     public static final Region AP_SOUTHEAST_2 =
         new Region("ap-southeast-2", "https://vpc.ap-southeast-2.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://vpc.cn-north-9.myhuaweicloud.com");
+
     public static final Region AP_SOUTHEAST_1 =
         new Region("ap-southeast-1", "https://vpc.ap-southeast-1.myhwclouds.com");
 
@@ -46,6 +48,7 @@ public class VpcRegion {
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
+        map.put("cn-north-9", CN_NORTH_9);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);

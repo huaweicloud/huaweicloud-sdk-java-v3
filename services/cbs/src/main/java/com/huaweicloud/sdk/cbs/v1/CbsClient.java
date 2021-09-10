@@ -128,6 +128,28 @@ public class CbsClient {
     }
 
     /**
+     * 发起会话
+     * 发起话务机器人会话。
+     *
+     * @param CreateTbSessionRequest 请求对象
+     * @return CreateTbSessionResponse
+     */
+    public CreateTbSessionResponse createTbSession(CreateTbSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.createTbSession);
+    }
+
+    /**
+     * 发起会话
+     * 发起话务机器人会话。
+     *
+     * @param CreateTbSessionRequest 请求对象
+     * @return SyncInvoker<CreateTbSessionRequest, CreateTbSessionResponse>
+     */
+    public SyncInvoker<CreateTbSessionRequest, CreateTbSessionResponse> createTbSessionInvoker(CreateTbSessionRequest request) {
+        return new SyncInvoker<CreateTbSessionRequest, CreateTbSessionResponse>(request, CbsMeta.createTbSession, hcClient);
+    }
+
+    /**
      * 关闭会话
      * 问答会话API由开启会话、处理会话、关闭会话三个接口组成。用户可通过调用该接口关闭会话。该接口即将下线，请优先使用问答机器人API接口进行调用。
      *
@@ -147,6 +169,28 @@ public class CbsClient {
      */
     public SyncInvoker<DeleteSessionRequest, DeleteSessionResponse> deleteSessionInvoker(DeleteSessionRequest request) {
         return new SyncInvoker<DeleteSessionRequest, DeleteSessionResponse>(request, CbsMeta.deleteSession, hcClient);
+    }
+
+    /**
+     * 结束会话
+     * 结束话务机器人会话。如果会话持续10分钟无会话请求则被清理。
+     *
+     * @param DeleteTbSessionRequest 请求对象
+     * @return DeleteTbSessionResponse
+     */
+    public DeleteTbSessionResponse deleteTbSession(DeleteTbSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.deleteTbSession);
+    }
+
+    /**
+     * 结束会话
+     * 结束话务机器人会话。如果会话持续10分钟无会话请求则被清理。
+     *
+     * @param DeleteTbSessionRequest 请求对象
+     * @return SyncInvoker<DeleteTbSessionRequest, DeleteTbSessionResponse>
+     */
+    public SyncInvoker<DeleteTbSessionRequest, DeleteTbSessionResponse> deleteTbSessionInvoker(DeleteTbSessionRequest request) {
+        return new SyncInvoker<DeleteTbSessionRequest, DeleteTbSessionResponse>(request, CbsMeta.deleteTbSession, hcClient);
     }
 
     /**
@@ -191,6 +235,28 @@ public class CbsClient {
      */
     public SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse> executeSessionInvoker(ExecuteSessionRequest request) {
         return new SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>(request, CbsMeta.executeSession, hcClient);
+    }
+
+    /**
+     * 进行会话
+     * 进行话务机器人会话。
+     *
+     * @param ExecuteTbSessionRequest 请求对象
+     * @return ExecuteTbSessionResponse
+     */
+    public ExecuteTbSessionResponse executeTbSession(ExecuteTbSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeTbSession);
+    }
+
+    /**
+     * 进行会话
+     * 进行话务机器人会话。
+     *
+     * @param ExecuteTbSessionRequest 请求对象
+     * @return SyncInvoker<ExecuteTbSessionRequest, ExecuteTbSessionResponse>
+     */
+    public SyncInvoker<ExecuteTbSessionRequest, ExecuteTbSessionResponse> executeTbSessionInvoker(ExecuteTbSessionRequest request) {
+        return new SyncInvoker<ExecuteTbSessionRequest, ExecuteTbSessionResponse>(request, CbsMeta.executeTbSession, hcClient);
     }
 
     /**

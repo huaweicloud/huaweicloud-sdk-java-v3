@@ -27,7 +27,7 @@ public class ShowBlackWhiteListResponse extends SdkResponse {
         return this;
     }
 
-    /** IP类型（0：关闭IP黑白名单功能，1：黑名单，2：白名单）
+    /** IP黑白名单类型（0：关闭IP黑白名单功能，1：黑名单，2：白名单）
      * 
      * @return type */
     public Integer getType() {

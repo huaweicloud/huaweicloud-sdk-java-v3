@@ -25,6 +25,11 @@ public class IdCardRequestBody {
 
     private String side;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_verification")
+
+    private Boolean returnVerification;
+
     public IdCardRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -76,6 +81,22 @@ public class IdCardRequestBody {
         this.side = side;
     }
 
+    public IdCardRequestBody withReturnVerification(Boolean returnVerification) {
+        this.returnVerification = returnVerification;
+        return this;
+    }
+
+    /** 返回校验身份证号等信息的开关，默认false，可选值如下所示： - true：返回校验信息 - false：不反回校验信息
+     * 
+     * @return returnVerification */
+    public Boolean getReturnVerification() {
+        return returnVerification;
+    }
+
+    public void setReturnVerification(Boolean returnVerification) {
+        this.returnVerification = returnVerification;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -86,12 +107,13 @@ public class IdCardRequestBody {
         }
         IdCardRequestBody idCardRequestBody = (IdCardRequestBody) o;
         return Objects.equals(this.image, idCardRequestBody.image) && Objects.equals(this.url, idCardRequestBody.url)
-            && Objects.equals(this.side, idCardRequestBody.side);
+            && Objects.equals(this.side, idCardRequestBody.side)
+            && Objects.equals(this.returnVerification, idCardRequestBody.returnVerification);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, side);
+        return Objects.hash(image, url, side, returnVerification);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class IdCardRequestBody {
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    side: ").append(toIndentedString(side)).append("\n");
+        sb.append("    returnVerification: ").append(toIndentedString(returnVerification)).append("\n");
         sb.append("}");
         return sb.toString();
     }

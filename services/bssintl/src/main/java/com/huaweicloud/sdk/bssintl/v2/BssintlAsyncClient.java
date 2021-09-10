@@ -227,22 +227,6 @@ public class BssintlAsyncClient {
             hcClient);
     }
 
-    /** 查询成本数据 功能描述：按照企业项目查询某个客户的成本消耗
-     *
-     * @param ListCostsRequest 请求对象
-     * @return CompletableFuture<ListCostsResponse> */
-    public CompletableFuture<ListCostsResponse> listCostsAsync(ListCostsRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssintlMeta.listCosts);
-    }
-
-    /** 查询成本数据 功能描述：按照企业项目查询某个客户的成本消耗
-     *
-     * @param ListCostsRequest 请求对象
-     * @return AsyncInvoker<ListCostsRequest, ListCostsResponse> */
-    public AsyncInvoker<ListCostsRequest, ListCostsResponse> listCostsAsyncInvoker(ListCostsRequest request) {
-        return new AsyncInvoker<ListCostsRequest, ListCostsResponse>(request, BssintlMeta.listCosts, hcClient);
-    }
-
     /** 查询客户按需资源列表 功能描述：客户在伙伴销售平台查询已开通的按需资源
      *
      * @param ListCustomerOnDemandResourcesRequest 请求对象
@@ -502,24 +486,6 @@ public class BssintlAsyncClient {
         ListResourceTypesRequest request) {
         return new AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>(request,
             BssintlMeta.listResourceTypes, hcClient);
-    }
-
-    /** 查询套餐内使用量 功能描述：客户在客户自建平台查询套餐内的使用量
-     *
-     * @param ListResourceUsagesRequest 请求对象
-     * @return CompletableFuture<ListResourceUsagesResponse> */
-    public CompletableFuture<ListResourceUsagesResponse> listResourceUsagesAsync(ListResourceUsagesRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssintlMeta.listResourceUsages);
-    }
-
-    /** 查询套餐内使用量 功能描述：客户在客户自建平台查询套餐内的使用量
-     *
-     * @param ListResourceUsagesRequest 请求对象
-     * @return AsyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse> */
-    public AsyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse> listResourceUsagesAsyncInvoker(
-        ListResourceUsagesRequest request) {
-        return new AsyncInvoker<ListResourceUsagesRequest, ListResourceUsagesResponse>(request,
-            BssintlMeta.listResourceUsages, hcClient);
     }
 
     /** 根据云服务类型查询资源列表 功能描述：伙伴在伙伴销售平台根据云服务类型查询关联的资源类型编码和名称，用于查询按需产品的价格或包年/包月产品的价格。

@@ -37,11 +37,6 @@ public class FlavorInfo {
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "availability_zone")
-
-    private List<String> availabilityZone = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_status")
 
     private Object azStatus;
@@ -131,38 +126,6 @@ public class FlavorInfo {
         this.specCode = specCode;
     }
 
-    public FlavorInfo withAvailabilityZone(List<String> availabilityZone) {
-        this.availabilityZone = availabilityZone;
-        return this;
-    }
-
-    public FlavorInfo addAvailabilityZoneItem(String availabilityZoneItem) {
-        if (this.availabilityZone == null) {
-            this.availabilityZone = new ArrayList<>();
-        }
-        this.availabilityZone.add(availabilityZoneItem);
-        return this;
-    }
-
-    public FlavorInfo withAvailabilityZone(Consumer<List<String>> availabilityZoneSetter) {
-        if (this.availabilityZone == null) {
-            this.availabilityZone = new ArrayList<>();
-        }
-        availabilityZoneSetter.accept(this.availabilityZone);
-        return this;
-    }
-
-    /** 支持该规格的可用区ID。
-     * 
-     * @return availabilityZone */
-    public List<String> getAvailabilityZone() {
-        return availabilityZone;
-    }
-
-    public void setAvailabilityZone(List<String> availabilityZone) {
-        this.availabilityZone = availabilityZone;
-    }
-
     public FlavorInfo withAzStatus(Object azStatus) {
         this.azStatus = azStatus;
         return this;
@@ -222,15 +185,13 @@ public class FlavorInfo {
         FlavorInfo flavorInfo = (FlavorInfo) o;
         return Objects.equals(this.engineName, flavorInfo.engineName) && Objects.equals(this.type, flavorInfo.type)
             && Objects.equals(this.vcpus, flavorInfo.vcpus) && Objects.equals(this.ram, flavorInfo.ram)
-            && Objects.equals(this.specCode, flavorInfo.specCode)
-            && Objects.equals(this.availabilityZone, flavorInfo.availabilityZone)
-            && Objects.equals(this.azStatus, flavorInfo.azStatus)
+            && Objects.equals(this.specCode, flavorInfo.specCode) && Objects.equals(this.azStatus, flavorInfo.azStatus)
             && Objects.equals(this.engineVersions, flavorInfo.engineVersions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engineName, type, vcpus, ram, specCode, availabilityZone, azStatus, engineVersions);
+        return Objects.hash(engineName, type, vcpus, ram, specCode, azStatus, engineVersions);
     }
 
     @Override
@@ -242,7 +203,6 @@ public class FlavorInfo {
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
-        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    azStatus: ").append(toIndentedString(azStatus)).append("\n");
         sb.append("    engineVersions: ").append(toIndentedString(engineVersions)).append("\n");
         sb.append("}");

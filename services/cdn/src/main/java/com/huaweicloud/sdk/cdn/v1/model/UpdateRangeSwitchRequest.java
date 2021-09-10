@@ -10,6 +10,11 @@ import java.util.function.Consumer;
 public class UpdateRangeSwitchRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
     private String domainId;
@@ -18,6 +23,22 @@ public class UpdateRangeSwitchRequest {
     @JsonProperty(value = "body")
 
     private RangeStatusRequest body;
+
+    public UpdateRangeSwitchRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 当用户开启企业项目功能时，该参数生效，表示资源所属项目，不传表示查询默认项目。
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public UpdateRangeSwitchRequest withDomainId(String domainId) {
         this.domainId = domainId;
@@ -69,19 +90,21 @@ public class UpdateRangeSwitchRequest {
             return false;
         }
         UpdateRangeSwitchRequest updateRangeSwitchRequest = (UpdateRangeSwitchRequest) o;
-        return Objects.equals(this.domainId, updateRangeSwitchRequest.domainId)
+        return Objects.equals(this.enterpriseProjectId, updateRangeSwitchRequest.enterpriseProjectId)
+            && Objects.equals(this.domainId, updateRangeSwitchRequest.domainId)
             && Objects.equals(this.body, updateRangeSwitchRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, body);
+        return Objects.hash(enterpriseProjectId, domainId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateRangeSwitchRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

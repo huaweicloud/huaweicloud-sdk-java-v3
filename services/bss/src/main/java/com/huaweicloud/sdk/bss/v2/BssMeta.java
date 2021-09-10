@@ -2079,23 +2079,140 @@ public class BssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourceUsagesRequest, ListResourceUsagesResponse> listResourceUsages =
-        genForlistResourceUsages();
+    public static final HttpRequestDef<ListResourceUsageRequest, ListResourceUsageResponse> listResourceUsage =
+        genForlistResourceUsage();
 
-    private static HttpRequestDef<ListResourceUsagesRequest, ListResourceUsagesResponse> genForlistResourceUsages() {
+    private static HttpRequestDef<ListResourceUsageRequest, ListResourceUsageResponse> genForlistResourceUsage() {
         // basic
-        HttpRequestDef.Builder<ListResourceUsagesRequest, ListResourceUsagesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListResourceUsagesRequest.class, ListResourceUsagesResponse.class)
-                .withName("ListResourceUsages")
-                .withUri("/v2/payments/free-resources/usages/query")
+        HttpRequestDef.Builder<ListResourceUsageRequest, ListResourceUsageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResourceUsageRequest.class, ListResourceUsageResponse.class)
+                .withName("ListResourceUsage")
+                .withUri("/v2/bills/customer-bills/resources/usage/details")
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("bill_cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageRequest::getBillCycle, (req, v) -> {
+                req.setBillCycle(v);
+            }));
+        builder.<String>withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageRequest::getServiceTypeCode, (req, v) -> {
+                req.setServiceTypeCode(v);
+            }));
+        builder.<String>withRequestField("resource_type_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageRequest::getResourceTypeCode, (req, v) -> {
+                req.setResourceTypeCode(v);
+            }));
+        builder.<String>withRequestField("usage_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageRequest::getUsageType, (req, v) -> {
+                req.setUsageType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceUsageRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceUsageRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsagesRequest::getXLanguage, (req, v) -> {
+            f -> f.withMarshaller(ListResourceUsageRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> listResourceUsageSummary =
+        genForlistResourceUsageSummary();
+
+    private static HttpRequestDef<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> genForlistResourceUsageSummary() {
+        // basic
+        HttpRequestDef.Builder<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListResourceUsageSummaryRequest.class, ListResourceUsageSummaryResponse.class)
+                .withName("ListResourceUsageSummary")
+                .withUri("/v2/bills/customer-bills/resources/usage/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bill_cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getBillCycle, (req, v) -> {
+                req.setBillCycle(v);
+            }));
+        builder.<String>withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getServiceTypeCode, (req, v) -> {
+                req.setServiceTypeCode(v);
+            }));
+        builder.<String>withRequestField("resource_type_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getResourceTypeCode, (req, v) -> {
+                req.setResourceTypeCode(v);
+            }));
+        builder.<String>withRequestField("usage_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getUsageType, (req, v) -> {
+                req.setUsageType(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -2200,6 +2317,146 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(QuerySkuInventoriesReq.class),
             f -> f.withMarshaller(ListSkuInventoriesRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetail =
+        genForlistSubCustomerBillDetail();
+
+    private static HttpRequestDef<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> genForlistSubCustomerBillDetail() {
+        // basic
+        HttpRequestDef.Builder<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSubCustomerBillDetailRequest.class,
+                    ListSubCustomerBillDetailResponse.class)
+                .withName("ListSubCustomerBillDetail")
+                .withUri("/v2/bills/subcustomer-bills/res-fee-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bill_cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillCycle, (req, v) -> {
+                req.setBillCycle(v);
+            }));
+        builder.<String>withRequestField("customer_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getCustomerId, (req, v) -> {
+                req.setCustomerId(v);
+            }));
+        builder.<String>withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getServiceTypeCode, (req, v) -> {
+                req.setServiceTypeCode(v);
+            }));
+        builder.<String>withRequestField("region_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getRegionCode, (req, v) -> {
+                req.setRegionCode(v);
+            }));
+        builder.<Integer>withRequestField("charging_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getChargingMode, (req, v) -> {
+                req.setChargingMode(v);
+            }));
+        builder.<Integer>withRequestField("bill_detail_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillDetailType, (req, v) -> {
+                req.setBillDetailType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getResourceName, (req, v) -> {
+                req.setResourceName(v);
+            }));
+        builder.<String>withRequestField("trade_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getTradeId, (req, v) -> {
+                req.setTradeId(v);
+            }));
+        builder.<String>withRequestField("account_manager_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getAccountManagerId, (req, v) -> {
+                req.setAccountManagerId(v);
+            }));
+        builder.<String>withRequestField("association_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getAssociationType, (req, v) -> {
+                req.setAssociationType(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("indirect_partner_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getIndirectPartnerId, (req, v) -> {
+                req.setIndirectPartnerId(v);
+            }));
+        builder.<String>withRequestField("bill_date_begin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillDateBegin, (req, v) -> {
+                req.setBillDateBegin(v);
+            }));
+        builder.<String>withRequestField("bill_date_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillDateEnd, (req, v) -> {
+                req.setBillDateEnd(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             }));
 
         // response

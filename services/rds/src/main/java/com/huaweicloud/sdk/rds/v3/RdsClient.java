@@ -1360,6 +1360,24 @@ public class RdsClient {
         return new SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>(request, RdsMeta.setDbUserPwd, hcClient);
     }
 
+    /** 修改指定实例的数据库备注 修改指定实例中的数据库备注。
+     *
+     * @param UpdateDatabaseRequest 请求对象
+     * @return UpdateDatabaseResponse */
+    public UpdateDatabaseResponse updateDatabase(UpdateDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateDatabase);
+    }
+
+    /** 修改指定实例的数据库备注 修改指定实例中的数据库备注。
+     *
+     * @param UpdateDatabaseRequest 请求对象
+     * @return SyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse> */
+    public SyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse> updateDatabaseInvoker(
+        UpdateDatabaseRequest request) {
+        return new SyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse>(request, RdsMeta.updateDatabase,
+            hcClient);
+    }
+
     /** 授权数据库帐号 在指定实例的数据库中, 设置帐号的权限。
      *
      * @param AllowDbPrivilegeRequest 请求对象

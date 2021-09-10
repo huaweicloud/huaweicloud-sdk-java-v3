@@ -2000,7 +2000,7 @@ public class IecMeta {
         HttpRequestDef.Builder<UpdateFirewallRuleRequest, UpdateFirewallRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFirewallRuleRequest.class, UpdateFirewallRuleResponse.class)
                 .withName("UpdateFirewallRule")
-                .withUri("/v1/firewalls/{firewall_id}/update_firewall_rules")
+                .withUri("/v1/firewalls/{firewall_id}/firewall-rules")
                 .withContentType("application/json");
 
         // requests

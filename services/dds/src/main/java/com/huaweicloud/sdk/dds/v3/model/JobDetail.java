@@ -20,6 +20,11 @@ public class JobDetail {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
     private String created;
@@ -38,6 +43,11 @@ public class JobDetail {
     @JsonProperty(value = "instance")
 
     private JobInstanceInfo instance;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fail_reason")
+
+    private String failReason;
 
     public JobDetail withId(String id) {
         this.id = id;
@@ -69,6 +79,22 @@ public class JobDetail {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public JobDetail withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /** 任务执行状态。
+     * 
+     * @return status */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public JobDetail withCreated(String created) {
@@ -144,6 +170,22 @@ public class JobDetail {
         this.instance = instance;
     }
 
+    public JobDetail withFailReason(String failReason) {
+        this.failReason = failReason;
+        return this;
+    }
+
+    /** 任务执行失败时的错误信息。
+     * 
+     * @return failReason */
+    public String getFailReason() {
+        return failReason;
+    }
+
+    public void setFailReason(String failReason) {
+        this.failReason = failReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -154,13 +196,15 @@ public class JobDetail {
         }
         JobDetail jobDetail = (JobDetail) o;
         return Objects.equals(this.id, jobDetail.id) && Objects.equals(this.name, jobDetail.name)
-            && Objects.equals(this.created, jobDetail.created) && Objects.equals(this.ended, jobDetail.ended)
-            && Objects.equals(this.progress, jobDetail.progress) && Objects.equals(this.instance, jobDetail.instance);
+            && Objects.equals(this.status, jobDetail.status) && Objects.equals(this.created, jobDetail.created)
+            && Objects.equals(this.ended, jobDetail.ended) && Objects.equals(this.progress, jobDetail.progress)
+            && Objects.equals(this.instance, jobDetail.instance)
+            && Objects.equals(this.failReason, jobDetail.failReason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, created, ended, progress, instance);
+        return Objects.hash(id, name, status, created, ended, progress, instance, failReason);
     }
 
     @Override
@@ -169,10 +213,12 @@ public class JobDetail {
         sb.append("class JobDetail {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    ended: ").append(toIndentedString(ended)).append("\n");
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    instance: ").append(toIndentedString(instance)).append("\n");
+        sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

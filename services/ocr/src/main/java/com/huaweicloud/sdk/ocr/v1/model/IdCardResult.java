@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -54,6 +55,11 @@ public class IdCardResult {
     @JsonProperty(value = "valid_to")
 
     private String validTo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verification_result")
+
+    private IdcardVerificationResult verificationResult;
 
     public IdCardResult withName(String name) {
         this.name = name;
@@ -199,6 +205,31 @@ public class IdCardResult {
         this.validTo = validTo;
     }
 
+    public IdCardResult withVerificationResult(IdcardVerificationResult verificationResult) {
+        this.verificationResult = verificationResult;
+        return this;
+    }
+
+    public IdCardResult withVerificationResult(Consumer<IdcardVerificationResult> verificationResultSetter) {
+        if (this.verificationResult == null) {
+            this.verificationResult = new IdcardVerificationResult();
+            verificationResultSetter.accept(this.verificationResult);
+        }
+
+        return this;
+    }
+
+    /** Get verificationResult
+     * 
+     * @return verificationResult */
+    public IdcardVerificationResult getVerificationResult() {
+        return verificationResult;
+    }
+
+    public void setVerificationResult(IdcardVerificationResult verificationResult) {
+        this.verificationResult = verificationResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -212,12 +243,14 @@ public class IdCardResult {
             && Objects.equals(this.birth, idCardResult.birth) && Objects.equals(this.ethnicity, idCardResult.ethnicity)
             && Objects.equals(this.address, idCardResult.address) && Objects.equals(this.number, idCardResult.number)
             && Objects.equals(this.issue, idCardResult.issue) && Objects.equals(this.validFrom, idCardResult.validFrom)
-            && Objects.equals(this.validTo, idCardResult.validTo);
+            && Objects.equals(this.validTo, idCardResult.validTo)
+            && Objects.equals(this.verificationResult, idCardResult.verificationResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, sex, birth, ethnicity, address, number, issue, validFrom, validTo);
+        return Objects
+            .hash(name, sex, birth, ethnicity, address, number, issue, validFrom, validTo, verificationResult);
     }
 
     @Override
@@ -233,6 +266,7 @@ public class IdCardResult {
         sb.append("    issue: ").append(toIndentedString(issue)).append("\n");
         sb.append("    validFrom: ").append(toIndentedString(validFrom)).append("\n");
         sb.append("    validTo: ").append(toIndentedString(validTo)).append("\n");
+        sb.append("    verificationResult: ").append(toIndentedString(verificationResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

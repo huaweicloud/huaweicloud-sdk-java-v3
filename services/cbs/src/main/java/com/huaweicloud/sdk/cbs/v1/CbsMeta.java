@@ -292,6 +292,33 @@ public class CbsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTbSessionRequest, CreateTbSessionResponse> createTbSession = genForcreateTbSession();
+
+    private static HttpRequestDef<CreateTbSessionRequest, CreateTbSessionResponse> genForcreateTbSession() {
+        // basic
+        HttpRequestDef.Builder<CreateTbSessionRequest, CreateTbSessionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTbSessionRequest.class, CreateTbSessionResponse.class)
+                .withName("CreateTbSession")
+                .withUri("/v1/{project_id}/taskbot/voicecall/bots/{bot_id}/sessions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTbSessionRequest::getBotId, (req, v) -> {
+                req.setBotId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSessionRequest, DeleteSessionResponse> deleteSession = genFordeleteSession();
 
     private static HttpRequestDef<DeleteSessionRequest, DeleteSessionResponse> genFordeleteSession() {
@@ -316,6 +343,41 @@ public class CbsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSessionRequest::getSessionId, (req, v) -> {
+                req.setSessionId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTbSessionRequest, DeleteTbSessionResponse> deleteTbSession = genFordeleteTbSession();
+
+    private static HttpRequestDef<DeleteTbSessionRequest, DeleteTbSessionResponse> genFordeleteTbSession() {
+        // basic
+        HttpRequestDef.Builder<DeleteTbSessionRequest, DeleteTbSessionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTbSessionRequest.class, DeleteTbSessionResponse.class)
+                .withName("DeleteTbSession")
+                .withUri("/v1/{project_id}/taskbot/voicecall/bots/{bot_id}/sessions/{session_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTbSessionRequest::getBotId, (req, v) -> {
+                req.setBotId(v);
+            })
+        );
+        builder.<String>withRequestField("session_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTbSessionRequest::getSessionId, (req, v) -> {
                 req.setSessionId(v);
             })
         );
@@ -394,6 +456,49 @@ public class CbsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostQaSessionReq.class),
             f -> f.withMarshaller(ExecuteSessionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteTbSessionRequest, ExecuteTbSessionResponse> executeTbSession = genForexecuteTbSession();
+
+    private static HttpRequestDef<ExecuteTbSessionRequest, ExecuteTbSessionResponse> genForexecuteTbSession() {
+        // basic
+        HttpRequestDef.Builder<ExecuteTbSessionRequest, ExecuteTbSessionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteTbSessionRequest.class, ExecuteTbSessionResponse.class)
+                .withName("ExecuteTbSession")
+                .withUri("/v1/{project_id}/taskbot/voicecall/bots/{bot_id}/sessions/{session_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteTbSessionRequest::getBotId, (req, v) -> {
+                req.setBotId(v);
+            })
+        );
+        builder.<String>withRequestField("session_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteTbSessionRequest::getSessionId, (req, v) -> {
+                req.setSessionId(v);
+            })
+        );
+        builder.<ExecuteTbSessionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteTbSessionReq.class),
+            f -> f.withMarshaller(ExecuteTbSessionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

@@ -15,6 +15,11 @@ public class UpdateFollow302SwitchRequest {
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private Follow302StatusRequest body;
@@ -33,6 +38,22 @@ public class UpdateFollow302SwitchRequest {
 
     public void setDomainId(String domainId) {
         this.domainId = domainId;
+    }
+
+    public UpdateFollow302SwitchRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 当用户开启企业项目功能时，该参数生效，表示资源所属项目，不传表示查询默认项目。
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public UpdateFollow302SwitchRequest withBody(Follow302StatusRequest body) {
@@ -70,12 +91,13 @@ public class UpdateFollow302SwitchRequest {
         }
         UpdateFollow302SwitchRequest updateFollow302SwitchRequest = (UpdateFollow302SwitchRequest) o;
         return Objects.equals(this.domainId, updateFollow302SwitchRequest.domainId)
+            && Objects.equals(this.enterpriseProjectId, updateFollow302SwitchRequest.enterpriseProjectId)
             && Objects.equals(this.body, updateFollow302SwitchRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, body);
+        return Objects.hash(domainId, enterpriseProjectId, body);
     }
 
     @Override
@@ -83,6 +105,7 @@ public class UpdateFollow302SwitchRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateFollow302SwitchRequest {\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

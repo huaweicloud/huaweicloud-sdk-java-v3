@@ -44,7 +44,7 @@ public class DomainOriginHost {
         return this;
     }
 
-    /** 回源的类型。
+    /** 回源host的类型。
      * 
      * @return originHostType */
     public String getOriginHostType() {
@@ -60,7 +60,7 @@ public class DomainOriginHost {
         return this;
     }
 
-    /** 自定义回源域名。
+    /** 自定义回源host域名。
      * 
      * @return customizeDomain */
     public String getCustomizeDomain() {

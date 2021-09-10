@@ -21,7 +21,7 @@ public class DomainBody {
 
     private String domainName;
 
-    /** 域名业务类型，若为web，则表示类型为静态加速；若为download，则表示业务类型为下载加速；若为video，则表示业务类型为流媒体加速；若为wholeSite，则表示业务类型为全站加速。 */
+    /** 域名业务类型，若为web，则表示类型为网页加速；若为download，则表示业务类型为文件下载加速；若为video，则表示业务类型为点播加速；若为wholeSite，则表示业务类型为全站加速。 */
     public static final class BusinessTypeEnum {
 
         /** Enum WEB for value: "web" */
@@ -216,7 +216,7 @@ public class DomainBody {
         return this;
     }
 
-    /** 域名业务类型，若为web，则表示类型为静态加速；若为download，则表示业务类型为下载加速；若为video，则表示业务类型为流媒体加速；若为wholeSite，则表示业务类型为全站加速。
+    /** 域名业务类型，若为web，则表示类型为网页加速；若为download，则表示业务类型为文件下载加速；若为video，则表示业务类型为点播加速；若为wholeSite，则表示业务类型为全站加速。
      * 
      * @return businessType */
     public BusinessTypeEnum getBusinessType() {

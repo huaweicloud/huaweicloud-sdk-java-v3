@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -29,7 +30,7 @@ public class DomainItemDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domains")
 
-    private List<DomainObject> domains = null;
+    private List<Map<String, Object>> domains = null;
 
     public DomainItemDetail withStartTime(Long startTime) {
         this.startTime = startTime;
@@ -79,12 +80,12 @@ public class DomainItemDetail {
         this.statType = statType;
     }
 
-    public DomainItemDetail withDomains(List<DomainObject> domains) {
+    public DomainItemDetail withDomains(List<Map<String, Object>> domains) {
         this.domains = domains;
         return this;
     }
 
-    public DomainItemDetail addDomainsItem(DomainObject domainsItem) {
+    public DomainItemDetail addDomainsItem(Map<String, Object> domainsItem) {
         if (this.domains == null) {
             this.domains = new ArrayList<>();
         }
@@ -92,7 +93,7 @@ public class DomainItemDetail {
         return this;
     }
 
-    public DomainItemDetail withDomains(Consumer<List<DomainObject>> domainsSetter) {
+    public DomainItemDetail withDomains(Consumer<List<Map<String, Object>>> domainsSetter) {
         if (this.domains == null) {
             this.domains = new ArrayList<>();
         }
@@ -103,11 +104,11 @@ public class DomainItemDetail {
     /** 数据结束时间戳，可能与请求时间不一致，可能不返回
      * 
      * @return domains */
-    public List<DomainObject> getDomains() {
+    public List<Map<String, Object>> getDomains() {
         return domains;
     }
 
-    public void setDomains(List<DomainObject> domains) {
+    public void setDomains(List<Map<String, Object>> domains) {
         this.domains = domains;
     }
 

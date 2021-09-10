@@ -200,6 +200,11 @@ public class ShowHistoryTasksRequest {
 
     private FileTypeEnum fileType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
+
     public ShowHistoryTasksRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -345,6 +350,22 @@ public class ShowHistoryTasksRequest {
         this.fileType = fileType;
     }
 
+    public ShowHistoryTasksRequest withCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /** 刷新预热任务的创建时间。不传参默认为查询3天内的任务。最长可查询15天内数据。
+     * 
+     * @return createTime */
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -362,7 +383,8 @@ public class ShowHistoryTasksRequest {
             && Objects.equals(this.endDate, showHistoryTasksRequest.endDate)
             && Objects.equals(this.orderField, showHistoryTasksRequest.orderField)
             && Objects.equals(this.orderType, showHistoryTasksRequest.orderType)
-            && Objects.equals(this.fileType, showHistoryTasksRequest.fileType);
+            && Objects.equals(this.fileType, showHistoryTasksRequest.fileType)
+            && Objects.equals(this.createTime, showHistoryTasksRequest.createTime);
     }
 
     @Override
@@ -375,7 +397,8 @@ public class ShowHistoryTasksRequest {
             endDate,
             orderField,
             orderType,
-            fileType);
+            fileType,
+            createTime);
     }
 
     @Override
@@ -391,6 +414,7 @@ public class ShowHistoryTasksRequest {
         sb.append("    orderField: ").append(toIndentedString(orderField)).append("\n");
         sb.append("    orderType: ").append(toIndentedString(orderType)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

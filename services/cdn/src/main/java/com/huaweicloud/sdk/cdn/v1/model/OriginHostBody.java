@@ -13,7 +13,7 @@ import java.util.Objects;
 /** OriginHostBody */
 public class OriginHostBody {
 
-    /** accelerate：选择加速域名作为回源地址； customize：使用自动定义的域名作为回源地址； */
+    /** accelerate：选择加速域名作为回源地址； customize：使用自定义的域名作为回源host域名； */
     public static final class OriginHostTypeEnum {
 
         /** Enum ACCELERATE for value: "accelerate" */
@@ -99,7 +99,7 @@ public class OriginHostBody {
         return this;
     }
 
-    /** accelerate：选择加速域名作为回源地址； customize：使用自动定义的域名作为回源地址；
+    /** accelerate：选择加速域名作为回源地址； customize：使用自定义的域名作为回源host域名；
      * 
      * @return originHostType */
     public OriginHostTypeEnum getOriginHostType() {

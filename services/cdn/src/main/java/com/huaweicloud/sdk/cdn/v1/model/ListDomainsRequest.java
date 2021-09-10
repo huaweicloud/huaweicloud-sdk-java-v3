@@ -18,7 +18,7 @@ public class ListDomainsRequest {
 
     private String domainName;
 
-    /** 加速域名的业务类型。取值： - web（图片及小文件分发） - download（大文件下载加速） - video（视音频点播加速） - wholeSite（全站加速） */
+    /** 加速域名的业务类型。取值： - web（网站加速） - download（文件下载加速） - video（点播加速） - wholeSite（全站加速） */
     public static final class BusinessTypeEnum {
 
         /** Enum WEB for value: "web" */
@@ -103,7 +103,7 @@ public class ListDomainsRequest {
     private BusinessTypeEnum businessType;
 
     /** 加速域名状态。取值意义： - online表示“已开启” - offline表示“已停用” - configuring表示“配置中” - configure_failed表示“配置失败” - checking表示“审核中”
-     * - check_failed表示“审核失败” - deleting表示“删除中”。 */
+     * - check_failed表示“审核未通过” - deleting表示“删除中”。 */
     public static final class DomainStatusEnum {
 
         /** Enum ONLINE for value: "online" */
@@ -315,7 +315,7 @@ public class ListDomainsRequest {
         return this;
     }
 
-    /** 加速域名的业务类型。取值： - web（图片及小文件分发） - download（大文件下载加速） - video（视音频点播加速） - wholeSite（全站加速）
+    /** 加速域名的业务类型。取值： - web（网站加速） - download（文件下载加速） - video（点播加速） - wholeSite（全站加速）
      * 
      * @return businessType */
     public BusinessTypeEnum getBusinessType() {
@@ -332,7 +332,7 @@ public class ListDomainsRequest {
     }
 
     /** 加速域名状态。取值意义： - online表示“已开启” - offline表示“已停用” - configuring表示“配置中” - configure_failed表示“配置失败” - checking表示“审核中”
-     * - check_failed表示“审核失败” - deleting表示“删除中”。
+     * - check_failed表示“审核未通过” - deleting表示“删除中”。
      * 
      * @return domainStatus */
     public DomainStatusEnum getDomainStatus() {

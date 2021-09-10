@@ -265,6 +265,34 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse> recognizeInvoiceVerification =
+        genForrecognizeInvoiceVerification();
+
+    private static HttpRequestDef<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse> genForrecognizeInvoiceVerification() {
+        // basic
+        HttpRequestDef.Builder<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeInvoiceVerificationRequest.class,
+                    RecognizeInvoiceVerificationResponse.class)
+                .withName("RecognizeInvoiceVerification")
+                .withUri("/v2/{project_id}/ocr/invoice-verification")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<InvoiceVerificationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InvoiceVerificationRequestBody.class),
+            f -> f.withMarshaller(RecognizeInvoiceVerificationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse> recognizeLicensePlate =
         genForrecognizeLicensePlate();
 

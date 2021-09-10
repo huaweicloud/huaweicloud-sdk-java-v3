@@ -13,6 +13,11 @@ public class ShowBlackWhiteListRequest {
 
     private String domainId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ShowBlackWhiteListRequest withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -29,6 +34,22 @@ public class ShowBlackWhiteListRequest {
         this.domainId = domainId;
     }
 
+    public ShowBlackWhiteListRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 当用户开启企业项目功能时，该参数生效，表示资源所属企业项目，不传表示默认项目。
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -38,12 +59,13 @@ public class ShowBlackWhiteListRequest {
             return false;
         }
         ShowBlackWhiteListRequest showBlackWhiteListRequest = (ShowBlackWhiteListRequest) o;
-        return Objects.equals(this.domainId, showBlackWhiteListRequest.domainId);
+        return Objects.equals(this.domainId, showBlackWhiteListRequest.domainId)
+            && Objects.equals(this.enterpriseProjectId, showBlackWhiteListRequest.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId);
+        return Objects.hash(domainId, enterpriseProjectId);
     }
 
     @Override
@@ -51,6 +73,7 @@ public class ShowBlackWhiteListRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowBlackWhiteListRequest {\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

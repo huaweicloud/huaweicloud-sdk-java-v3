@@ -39,7 +39,8 @@ public class CouponSimpleInfoOrderPay {
         return this;
     }
 
-    /** 折扣类型： 1：合同折扣2：商务优惠3：合作伙伴授予折扣609：订单调价折扣 说明： 订单支付时，如果包含609折扣（订单调价折扣），则必须使用，不能再更换折扣类型。 minimum: 300 maximum: 303
+    /** 折扣类型： 0：促销折扣 1：合同折扣2：商务优惠3：合作伙伴授予折扣609：订单调价折扣 说明： 订单支付时，如果包含609折扣（订单调价折扣），则必须使用，不能再更换折扣类型。 minimum: 300 maximum:
+     * 303
      * 
      * @return type */
     public Integer getType() {

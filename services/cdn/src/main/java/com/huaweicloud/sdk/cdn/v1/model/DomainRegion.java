@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -19,7 +20,7 @@ public class DomainRegion {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_isp_details")
 
-    private List<DomainRegionIspDetail> regionIspDetails = null;
+    private List<Map<String, Object>> regionIspDetails = null;
 
     public DomainRegion withDomainName(String domainName) {
         this.domainName = domainName;
@@ -37,12 +38,12 @@ public class DomainRegion {
         this.domainName = domainName;
     }
 
-    public DomainRegion withRegionIspDetails(List<DomainRegionIspDetail> regionIspDetails) {
+    public DomainRegion withRegionIspDetails(List<Map<String, Object>> regionIspDetails) {
         this.regionIspDetails = regionIspDetails;
         return this;
     }
 
-    public DomainRegion addRegionIspDetailsItem(DomainRegionIspDetail regionIspDetailsItem) {
+    public DomainRegion addRegionIspDetailsItem(Map<String, Object> regionIspDetailsItem) {
         if (this.regionIspDetails == null) {
             this.regionIspDetails = new ArrayList<>();
         }
@@ -50,7 +51,7 @@ public class DomainRegion {
         return this;
     }
 
-    public DomainRegion withRegionIspDetails(Consumer<List<DomainRegionIspDetail>> regionIspDetailsSetter) {
+    public DomainRegion withRegionIspDetails(Consumer<List<Map<String, Object>>> regionIspDetailsSetter) {
         if (this.regionIspDetails == null) {
             this.regionIspDetails = new ArrayList<>();
         }
@@ -61,11 +62,11 @@ public class DomainRegion {
     /** 指标统计数据列表 如果该时间段内无值，则为空数组[]
      * 
      * @return regionIspDetails */
-    public List<DomainRegionIspDetail> getRegionIspDetails() {
+    public List<Map<String, Object>> getRegionIspDetails() {
         return regionIspDetails;
     }
 
-    public void setRegionIspDetails(List<DomainRegionIspDetail> regionIspDetails) {
+    public void setRegionIspDetails(List<Map<String, Object>> regionIspDetails) {
         this.regionIspDetails = regionIspDetails;
     }
 

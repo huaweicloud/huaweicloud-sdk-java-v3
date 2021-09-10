@@ -186,6 +186,11 @@ public class InstanceResponse {
 
     private Boolean associatedWithDdm;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
     public InstanceResponse withId(String id) {
         this.id = id;
         return this;
@@ -892,6 +897,22 @@ public class InstanceResponse {
         this.associatedWithDdm = associatedWithDdm;
     }
 
+    public InstanceResponse withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /** 实例的备注信息。
+     * 
+     * @return alias */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -932,7 +953,8 @@ public class InstanceResponse {
             && Objects.equals(this.backupUsedSpace, instanceResponse.backupUsedSpace)
             && Objects.equals(this.storageUsedSpace, instanceResponse.storageUsedSpace)
             && Objects.equals(this.orderId, instanceResponse.orderId)
-            && Objects.equals(this.associatedWithDdm, instanceResponse.associatedWithDdm);
+            && Objects.equals(this.associatedWithDdm, instanceResponse.associatedWithDdm)
+            && Objects.equals(this.alias, instanceResponse.alias);
     }
 
     @Override
@@ -971,7 +993,8 @@ public class InstanceResponse {
             backupUsedSpace,
             storageUsedSpace,
             orderId,
-            associatedWithDdm);
+            associatedWithDdm,
+            alias);
     }
 
     @Override
@@ -1013,6 +1036,7 @@ public class InstanceResponse {
         sb.append("    storageUsedSpace: ").append(toIndentedString(storageUsedSpace)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    associatedWithDdm: ").append(toIndentedString(associatedWithDdm)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

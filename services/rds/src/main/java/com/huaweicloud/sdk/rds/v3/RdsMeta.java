@@ -3118,6 +3118,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDatabaseRequest, UpdateDatabaseResponse> updateDatabase =
+        genForupdateDatabase();
+
+    private static HttpRequestDef<UpdateDatabaseRequest, UpdateDatabaseResponse> genForupdateDatabase() {
+        // basic
+        HttpRequestDef.Builder<UpdateDatabaseRequest, UpdateDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateDatabaseRequest.class, UpdateDatabaseResponse.class)
+                .withName("UpdateDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatabaseRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateDatabaseRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateDatabaseRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateDatabaseRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<UpdateDatabaseReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDatabaseReq.class),
+            f -> f.withMarshaller(UpdateDatabaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse> allowDbPrivilege =
         genForallowDbPrivilege();
 

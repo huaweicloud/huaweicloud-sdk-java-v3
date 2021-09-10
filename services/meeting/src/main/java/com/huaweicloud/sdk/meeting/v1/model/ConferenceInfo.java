@@ -382,6 +382,11 @@ public class ConferenceInfo {
 
     private Object picDisplay;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subConfs")
+
+    private List<CycleSubConf> subConfs = null;
+
     public ConferenceInfo withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
         return this;
@@ -614,7 +619,7 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** - 0: 普通会议。 - 1: 周期会议。
+    /** - 0: 普通会议。 - 2: 周期性会议。
      * 
      * @return conferenceType */
     public Integer getConferenceType() {
@@ -1140,6 +1145,38 @@ public class ConferenceInfo {
         this.picDisplay = picDisplay;
     }
 
+    public ConferenceInfo withSubConfs(List<CycleSubConf> subConfs) {
+        this.subConfs = subConfs;
+        return this;
+    }
+
+    public ConferenceInfo addSubConfsItem(CycleSubConf subConfsItem) {
+        if (this.subConfs == null) {
+            this.subConfs = new ArrayList<>();
+        }
+        this.subConfs.add(subConfsItem);
+        return this;
+    }
+
+    public ConferenceInfo withSubConfs(Consumer<List<CycleSubConf>> subConfsSetter) {
+        if (this.subConfs == null) {
+            this.subConfs = new ArrayList<>();
+        }
+        subConfsSetter.accept(this.subConfs);
+        return this;
+    }
+
+    /** 周期子会议列表
+     * 
+     * @return subConfs */
+    public List<CycleSubConf> getSubConfs() {
+        return subConfs;
+    }
+
+    public void setSubConfs(List<CycleSubConf> subConfs) {
+        this.subConfs = subConfs;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1190,7 +1227,8 @@ public class ConferenceInfo {
             && Objects.equals(this.confMode, conferenceInfo.confMode)
             && Objects.equals(this.scheduleVmr, conferenceInfo.scheduleVmr)
             && Objects.equals(this.concurrentParticipants, conferenceInfo.concurrentParticipants)
-            && Objects.equals(this.picDisplay, conferenceInfo.picDisplay);
+            && Objects.equals(this.picDisplay, conferenceInfo.picDisplay)
+            && Objects.equals(this.subConfs, conferenceInfo.subConfs);
     }
 
     @Override
@@ -1238,7 +1276,8 @@ public class ConferenceInfo {
             confMode,
             scheduleVmr,
             concurrentParticipants,
-            picDisplay);
+            picDisplay,
+            subConfs);
     }
 
     @Override
@@ -1289,6 +1328,7 @@ public class ConferenceInfo {
         sb.append("    scheduleVmr: ").append(toIndentedString(scheduleVmr)).append("\n");
         sb.append("    concurrentParticipants: ").append(toIndentedString(concurrentParticipants)).append("\n");
         sb.append("    picDisplay: ").append(toIndentedString(picDisplay)).append("\n");
+        sb.append("    subConfs: ").append(toIndentedString(subConfs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

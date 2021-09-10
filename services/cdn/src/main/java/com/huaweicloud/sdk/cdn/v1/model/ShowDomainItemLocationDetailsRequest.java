@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /** Request Object */
@@ -33,85 +28,10 @@ public class ShowDomainItemLocationDetailsRequest {
 
     private String domainName;
 
-    /** 指标类型列表 网络资源消耗：bw（带宽），flux（流量） 访问情况：req_num（请求总数） */
-    public static final class StatTypeEnum {
-
-        /** Enum BW for value: "bw" */
-        public static final StatTypeEnum BW = new StatTypeEnum("bw");
-
-        /** Enum FLUX for value: "flux" */
-        public static final StatTypeEnum FLUX = new StatTypeEnum("flux");
-
-        /** Enum REQ_NUM for value: "req_num" */
-        public static final StatTypeEnum REQ_NUM = new StatTypeEnum("req_num");
-
-        private static final Map<String, StatTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatTypeEnum> createStaticFields() {
-            Map<String, StatTypeEnum> map = new HashMap<>();
-            map.put("bw", BW);
-            map.put("flux", FLUX);
-            map.put("req_num", REQ_NUM);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            StatTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static StatTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            StatTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatTypeEnum) {
-                return this.value.equals(((StatTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stat_type")
 
-    private StatTypeEnum statType;
+    private String statType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
@@ -187,19 +107,21 @@ public class ShowDomainItemLocationDetailsRequest {
         this.domainName = domainName;
     }
 
-    public ShowDomainItemLocationDetailsRequest withStatType(StatTypeEnum statType) {
+    public ShowDomainItemLocationDetailsRequest withStatType(String statType) {
         this.statType = statType;
         return this;
     }
 
-    /** 指标类型列表 网络资源消耗：bw（带宽），flux（流量） 访问情况：req_num（请求总数）
+    /** 指标类型列表 网络资源消耗：bw（带宽），flux（流量），ipv6_bw(ipv6带宽)，ipv6_flux(ipv6流量), https_bw(https带宽)，https_flux(https流量)
+     * 访问情况：req_num（请求总数），hit_num（请求命中次数），req_time(请求时长)
+     * HTTP状态码（组合指标）：status_code_2xx(状态码2xx)，status_code_3xx(状态码3xx)，status_code_4xx(状态码4xx)，status_code_5xx(状态码5xx)
      * 
      * @return statType */
-    public StatTypeEnum getStatType() {
+    public String getStatType() {
         return statType;
     }
 
-    public void setStatType(StatTypeEnum statType) {
+    public void setStatType(String statType) {
         this.statType = statType;
     }
 

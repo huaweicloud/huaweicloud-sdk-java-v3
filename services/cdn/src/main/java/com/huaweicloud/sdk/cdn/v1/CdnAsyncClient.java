@@ -509,7 +509,7 @@ public class CdnAsyncClient {
             CdnMeta.updateDomainOrigin, hcClient);
     }
 
-    /** 开启/关闭回源跟随 开启此项配置后，当CDN节点回源请求源站返回302状态码时，CDN节点会先跳转到302对应地址获取资源并缓存后再返回给用户。
+    /** 开启/关闭回源跟随 开启此项配置后，当CDN节点回源请求源站返回301/302状态码时，CDN节点会先跳转到301/302对应地址获取资源并缓存后再返回给用户。
      *
      * @param UpdateFollow302SwitchRequest 请求对象
      * @return CompletableFuture<UpdateFollow302SwitchResponse> */
@@ -518,7 +518,7 @@ public class CdnAsyncClient {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateFollow302Switch);
     }
 
-    /** 开启/关闭回源跟随 开启此项配置后，当CDN节点回源请求源站返回302状态码时，CDN节点会先跳转到302对应地址获取资源并缓存后再返回给用户。
+    /** 开启/关闭回源跟随 开启此项配置后，当CDN节点回源请求源站返回301/302状态码时，CDN节点会先跳转到301/302对应地址获取资源并缓存后再返回给用户。
      *
      * @param UpdateFollow302SwitchRequest 请求对象
      * @return AsyncInvoker<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse> */
