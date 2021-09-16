@@ -1326,10 +1326,10 @@ public class ProjectManMeta {
             f -> f.withMarshaller(UpdateIterationV4Request::getIterationId, (req, v) -> {
                 req.setIterationId(v);
             }));
-        builder.<CreateIterationRequestV4>withRequestField("body",
+        builder.<UpdateIterationRequestV4>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateIterationRequestV4.class),
+            TypeCasts.uncheckedConversion(UpdateIterationRequestV4.class),
             f -> f.withMarshaller(UpdateIterationV4Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));

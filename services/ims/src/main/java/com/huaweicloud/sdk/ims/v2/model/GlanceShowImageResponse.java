@@ -1386,6 +1386,11 @@ public class GlanceShowImageResponse extends SdkResponse {
 
     private String accountCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+
+    private String supportAmd;
+
     public GlanceShowImageResponse withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -2415,6 +2420,24 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.accountCode = accountCode;
     }
 
+    public GlanceShowImageResponse withSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+        return this;
+    }
+
+    /** 是否是AMD架构类型的镜像。取值为“true”或者“false”。
+     * 
+     * @return supportAmd */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+    public String getSupportAmd() {
+        return supportAmd;
+    }
+
+    public void setSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2482,7 +2505,8 @@ public class GlanceShowImageResponse extends SdkResponse {
             && Objects.equals(this.maxRam, glanceShowImageResponse.maxRam)
             && Objects.equals(this.imageLocation, glanceShowImageResponse.imageLocation)
             && Objects.equals(this.isConfigInit, glanceShowImageResponse.isConfigInit)
-            && Objects.equals(this.accountCode, glanceShowImageResponse.accountCode);
+            && Objects.equals(this.accountCode, glanceShowImageResponse.accountCode)
+            && Objects.equals(this.supportAmd, glanceShowImageResponse.supportAmd);
     }
 
     @Override
@@ -2545,7 +2569,8 @@ public class GlanceShowImageResponse extends SdkResponse {
             maxRam,
             imageLocation,
             isConfigInit,
-            accountCode);
+            accountCode,
+            supportAmd);
     }
 
     @Override
@@ -2611,6 +2636,7 @@ public class GlanceShowImageResponse extends SdkResponse {
         sb.append("    imageLocation: ").append(toIndentedString(imageLocation)).append("\n");
         sb.append("    isConfigInit: ").append(toIndentedString(isConfigInit)).append("\n");
         sb.append("    accountCode: ").append(toIndentedString(accountCode)).append("\n");
+        sb.append("    supportAmd: ").append(toIndentedString(supportAmd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

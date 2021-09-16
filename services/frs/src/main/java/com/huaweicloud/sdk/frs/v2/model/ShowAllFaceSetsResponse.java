@@ -38,7 +38,7 @@ public class ShowAllFaceSetsResponse extends SdkResponse {
         return this;
     }
 
-    /** 人脸库信息集合，详见[FaceSetInfo](zh-cn_topic_0106912072.xml)。 调用失败时无此字段。
+    /** 人脸库信息集合，详见[FaceSetInfo](https://support.huaweicloud.com/api-face/face_02_0020.html)。 调用失败时无此字段。
      * 
      * @return faceSetsInfo */
     public List<FaceSetInfo> getFaceSetsInfo() {

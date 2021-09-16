@@ -1226,6 +1226,11 @@ public class UpdateImageResponse extends SdkResponse {
 
     private String supportAgentList;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+
+    private String supportAmd;
+
     public UpdateImageResponse withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -2238,6 +2243,24 @@ public class UpdateImageResponse extends SdkResponse {
         this.supportAgentList = supportAgentList;
     }
 
+    public UpdateImageResponse withSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+        return this;
+    }
+
+    /** 是否是AMD架构类型的镜像。取值为“true”或者“false”。
+     * 
+     * @return supportAmd */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+    public String getSupportAmd() {
+        return supportAmd;
+    }
+
+    public void setSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2303,7 +2326,8 @@ public class UpdateImageResponse extends SdkResponse {
             && Objects.equals(this.rootOrigin, updateImageResponse.rootOrigin)
             && Objects.equals(this.sequenceNum, updateImageResponse.sequenceNum)
             && Objects.equals(this.activeAt, updateImageResponse.activeAt)
-            && Objects.equals(this.supportAgentList, updateImageResponse.supportAgentList);
+            && Objects.equals(this.supportAgentList, updateImageResponse.supportAgentList)
+            && Objects.equals(this.supportAmd, updateImageResponse.supportAmd);
     }
 
     @Override
@@ -2365,7 +2389,8 @@ public class UpdateImageResponse extends SdkResponse {
             rootOrigin,
             sequenceNum,
             activeAt,
-            supportAgentList);
+            supportAgentList,
+            supportAmd);
     }
 
     @Override
@@ -2430,6 +2455,7 @@ public class UpdateImageResponse extends SdkResponse {
         sb.append("    sequenceNum: ").append(toIndentedString(sequenceNum)).append("\n");
         sb.append("    activeAt: ").append(toIndentedString(activeAt)).append("\n");
         sb.append("    supportAgentList: ").append(toIndentedString(supportAgentList)).append("\n");
+        sb.append("    supportAmd: ").append(toIndentedString(supportAmd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -47,7 +47,7 @@ public class FaceSearchFaceIdReq {
         return this;
     }
 
-    /** 过滤条件，参考[filter语法](zh-cn_topic_0130807048.xml)。
+    /** 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
      * 
      * @return filter */
     public String getFilter() {
@@ -159,7 +159,7 @@ public class FaceSearchFaceIdReq {
         return this;
     }
 
-    /** 支持字段排序，参考[sort语法](zh-cn_topic_0130807047.xml)。
+    /** 支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。
      * 
      * @return sort */
     public List<Map<String, String>> getSort() {

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** ListKeysRequestBody */
@@ -22,6 +27,111 @@ public class ListKeysRequestBody {
     @JsonProperty(value = "key_state")
 
     private String keyState;
+
+    /** 密钥生成算法，默认为“AES_256”。查询所有（包含非对称）密钥需要指定参数“ALL”。 - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 -
+     * EC_P384 - SM2 - ALL */
+    public static final class KeySpecEnum {
+
+        /** Enum AES_256 for value: "AES_256" */
+        public static final KeySpecEnum AES_256 = new KeySpecEnum("AES_256");
+
+        /** Enum SM4 for value: "SM4" */
+        public static final KeySpecEnum SM4 = new KeySpecEnum("SM4");
+
+        /** Enum RSA_2048 for value: "RSA_2048" */
+        public static final KeySpecEnum RSA_2048 = new KeySpecEnum("RSA_2048");
+
+        /** Enum RSA_3072 for value: "RSA_3072" */
+        public static final KeySpecEnum RSA_3072 = new KeySpecEnum("RSA_3072");
+
+        /** Enum RSA_4096 for value: "RSA_4096" */
+        public static final KeySpecEnum RSA_4096 = new KeySpecEnum("RSA_4096");
+
+        /** Enum EC_P256 for value: "EC_P256" */
+        public static final KeySpecEnum EC_P256 = new KeySpecEnum("EC_P256");
+
+        /** Enum EC_P384 for value: "EC_P384" */
+        public static final KeySpecEnum EC_P384 = new KeySpecEnum("EC_P384");
+
+        /** Enum SM2 for value: "SM2" */
+        public static final KeySpecEnum SM2 = new KeySpecEnum("SM2");
+
+        /** Enum ALL for value: "ALL" */
+        public static final KeySpecEnum ALL = new KeySpecEnum("ALL");
+
+        private static final Map<String, KeySpecEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, KeySpecEnum> createStaticFields() {
+            Map<String, KeySpecEnum> map = new HashMap<>();
+            map.put("AES_256", AES_256);
+            map.put("SM4", SM4);
+            map.put("RSA_2048", RSA_2048);
+            map.put("RSA_3072", RSA_3072);
+            map.put("RSA_4096", RSA_4096);
+            map.put("EC_P256", EC_P256);
+            map.put("EC_P384", EC_P384);
+            map.put("SM2", SM2);
+            map.put("ALL", ALL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        KeySpecEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static KeySpecEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            KeySpecEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new KeySpecEnum(value);
+            }
+            return result;
+        }
+
+        public static KeySpecEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            KeySpecEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof KeySpecEnum) {
+                return this.value.equals(((KeySpecEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_spec")
+
+    private KeySpecEnum keySpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
@@ -76,6 +186,23 @@ public class ListKeysRequestBody {
         this.keyState = keyState;
     }
 
+    public ListKeysRequestBody withKeySpec(KeySpecEnum keySpec) {
+        this.keySpec = keySpec;
+        return this;
+    }
+
+    /** 密钥生成算法，默认为“AES_256”。查询所有（包含非对称）密钥需要指定参数“ALL”。 - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 -
+     * EC_P384 - SM2 - ALL
+     * 
+     * @return keySpec */
+    public KeySpecEnum getKeySpec() {
+        return keySpec;
+    }
+
+    public void setKeySpec(KeySpecEnum keySpec) {
+        this.keySpec = keySpec;
+    }
+
     public ListKeysRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -104,12 +231,13 @@ public class ListKeysRequestBody {
         return Objects.equals(this.limit, listKeysRequestBody.limit)
             && Objects.equals(this.marker, listKeysRequestBody.marker)
             && Objects.equals(this.keyState, listKeysRequestBody.keyState)
+            && Objects.equals(this.keySpec, listKeysRequestBody.keySpec)
             && Objects.equals(this.sequence, listKeysRequestBody.sequence);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, keyState, sequence);
+        return Objects.hash(limit, marker, keyState, keySpec, sequence);
     }
 
     @Override
@@ -119,6 +247,7 @@ public class ListKeysRequestBody {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    keyState: ").append(toIndentedString(keyState)).append("\n");
+        sb.append("    keySpec: ").append(toIndentedString(keySpec)).append("\n");
         sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
         sb.append("}");
         return sb.toString();

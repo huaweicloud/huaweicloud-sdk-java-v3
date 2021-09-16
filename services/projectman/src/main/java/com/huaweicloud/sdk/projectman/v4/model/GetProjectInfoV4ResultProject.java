@@ -43,7 +43,7 @@ public class GetProjectInfoV4ResultProject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "archive")
 
-    private Boolean archive;
+    private Integer archive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_id")
@@ -156,7 +156,7 @@ public class GetProjectInfoV4ResultProject {
         this.projectType = projectType;
     }
 
-    public GetProjectInfoV4ResultProject withArchive(Boolean archive) {
+    public GetProjectInfoV4ResultProject withArchive(Integer archive) {
         this.archive = archive;
         return this;
     }
@@ -164,11 +164,11 @@ public class GetProjectInfoV4ResultProject {
     /** 是否归档
      * 
      * @return archive */
-    public Boolean getArchive() {
+    public Integer getArchive() {
         return archive;
     }
 
-    public void setArchive(Boolean archive) {
+    public void setArchive(Integer archive) {
         this.archive = archive;
     }
 

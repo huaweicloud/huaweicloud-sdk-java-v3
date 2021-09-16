@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** EncryptDataRequestBody */
@@ -22,6 +27,93 @@ public class EncryptDataRequestBody {
     @JsonProperty(value = "plain_text")
 
     private String plainText;
+
+    /** 数据加密算法，仅使用非对称密钥需要指定该参数，默认值为“SYMMETRIC_DEFAULT”，合法枚举值如下： - SYMMETRIC_DEFAULT - RSAES_OAEP_SHA_256 -
+     * RSAES_OAEP_SHA_1 - SM2_ENCRYPT */
+    public static final class EncryptionAlgorithmEnum {
+
+        /** Enum SYMMETRIC_DEFAULT for value: "SYMMETRIC_DEFAULT" */
+        public static final EncryptionAlgorithmEnum SYMMETRIC_DEFAULT =
+            new EncryptionAlgorithmEnum("SYMMETRIC_DEFAULT");
+
+        /** Enum RSAES_OAEP_SHA_256 for value: "RSAES_OAEP_SHA_256" */
+        public static final EncryptionAlgorithmEnum RSAES_OAEP_SHA_256 =
+            new EncryptionAlgorithmEnum("RSAES_OAEP_SHA_256");
+
+        /** Enum RSAES_OAEP_SHA_1 for value: "RSAES_OAEP_SHA_1" */
+        public static final EncryptionAlgorithmEnum RSAES_OAEP_SHA_1 = new EncryptionAlgorithmEnum("RSAES_OAEP_SHA_1");
+
+        /** Enum SM2_ENCRYPT for value: "SM2_ENCRYPT" */
+        public static final EncryptionAlgorithmEnum SM2_ENCRYPT = new EncryptionAlgorithmEnum("SM2_ENCRYPT");
+
+        private static final Map<String, EncryptionAlgorithmEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EncryptionAlgorithmEnum> createStaticFields() {
+            Map<String, EncryptionAlgorithmEnum> map = new HashMap<>();
+            map.put("SYMMETRIC_DEFAULT", SYMMETRIC_DEFAULT);
+            map.put("RSAES_OAEP_SHA_256", RSAES_OAEP_SHA_256);
+            map.put("RSAES_OAEP_SHA_1", RSAES_OAEP_SHA_1);
+            map.put("SM2_ENCRYPT", SM2_ENCRYPT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EncryptionAlgorithmEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EncryptionAlgorithmEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            EncryptionAlgorithmEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new EncryptionAlgorithmEnum(value);
+            }
+            return result;
+        }
+
+        public static EncryptionAlgorithmEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            EncryptionAlgorithmEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EncryptionAlgorithmEnum) {
+                return this.value.equals(((EncryptionAlgorithmEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encryption_algorithm")
+
+    private EncryptionAlgorithmEnum encryptionAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
@@ -78,6 +170,23 @@ public class EncryptDataRequestBody {
         this.plainText = plainText;
     }
 
+    public EncryptDataRequestBody withEncryptionAlgorithm(EncryptionAlgorithmEnum encryptionAlgorithm) {
+        this.encryptionAlgorithm = encryptionAlgorithm;
+        return this;
+    }
+
+    /** 数据加密算法，仅使用非对称密钥需要指定该参数，默认值为“SYMMETRIC_DEFAULT”，合法枚举值如下： - SYMMETRIC_DEFAULT - RSAES_OAEP_SHA_256 -
+     * RSAES_OAEP_SHA_1 - SM2_ENCRYPT
+     * 
+     * @return encryptionAlgorithm */
+    public EncryptionAlgorithmEnum getEncryptionAlgorithm() {
+        return encryptionAlgorithm;
+    }
+
+    public void setEncryptionAlgorithm(EncryptionAlgorithmEnum encryptionAlgorithm) {
+        this.encryptionAlgorithm = encryptionAlgorithm;
+    }
+
     public EncryptDataRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -106,12 +215,13 @@ public class EncryptDataRequestBody {
         return Objects.equals(this.keyId, encryptDataRequestBody.keyId)
             && Objects.equals(this.encryptionContext, encryptDataRequestBody.encryptionContext)
             && Objects.equals(this.plainText, encryptDataRequestBody.plainText)
+            && Objects.equals(this.encryptionAlgorithm, encryptDataRequestBody.encryptionAlgorithm)
             && Objects.equals(this.sequence, encryptDataRequestBody.sequence);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, encryptionContext, plainText, sequence);
+        return Objects.hash(keyId, encryptionContext, plainText, encryptionAlgorithm, sequence);
     }
 
     @Override
@@ -121,6 +231,7 @@ public class EncryptDataRequestBody {
         sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
         sb.append("    encryptionContext: ").append(toIndentedString(encryptionContext)).append("\n");
         sb.append("    plainText: ").append(toIndentedString(plainText)).append("\n");
+        sb.append("    encryptionAlgorithm: ").append(toIndentedString(encryptionAlgorithm)).append("\n");
         sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
         sb.append("}");
         return sb.toString();

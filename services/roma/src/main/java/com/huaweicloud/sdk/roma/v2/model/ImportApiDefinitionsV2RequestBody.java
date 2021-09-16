@@ -349,13 +349,27 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return new LinkedHashMap<String, FormDataPart>() {
 
             {
-                put("is_create_group", new FormDataPart<>(isCreateGroup));
-                put("group_id", new FormDataPart<>(groupId));
-                put("app_id", new FormDataPart<>(appId));
-                put("extend_mode", new FormDataPart<>(extendMode));
-                put("simple_mode", new FormDataPart<>(simpleMode));
-                put("mock_mode", new FormDataPart<>(mockMode));
-                put("api_mode", new FormDataPart<>(apiMode));
+                if (isCreateGroup != null) {
+                    put("is_create_group", new FormDataPart<>(isCreateGroup));
+                }
+                if (groupId != null) {
+                    put("group_id", new FormDataPart<>(groupId));
+                }
+                if (appId != null) {
+                    put("app_id", new FormDataPart<>(appId));
+                }
+                if (extendMode != null) {
+                    put("extend_mode", new FormDataPart<>(extendMode));
+                }
+                if (simpleMode != null) {
+                    put("simple_mode", new FormDataPart<>(simpleMode));
+                }
+                if (mockMode != null) {
+                    put("mock_mode", new FormDataPart<>(mockMode));
+                }
+                if (apiMode != null) {
+                    put("api_mode", new FormDataPart<>(apiMode));
+                }
                 put("file_name", fileName);
             }
         };

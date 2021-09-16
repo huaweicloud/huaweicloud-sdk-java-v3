@@ -37,6 +37,8 @@ public class HttpConfig {
 
     private boolean ignoreSSLVerification = false;
 
+    private boolean ignoreRequiredValidation = false;
+
     private String proxyUsername;
 
     private String proxyPassword;
@@ -70,6 +72,19 @@ public class HttpConfig {
 
     public HttpConfig withIgnoreSSLVerification(boolean ignoreSSLVerification) {
         this.ignoreSSLVerification = ignoreSSLVerification;
+        return this;
+    }
+
+    public boolean isIgnoreRequiredValidation() {
+        return ignoreRequiredValidation;
+    }
+
+    public void setIgnoreRequiredValidation(boolean ignoreRequiredValidation) {
+        this.ignoreRequiredValidation = ignoreRequiredValidation;
+    }
+
+    public HttpConfig withIgnoreRequiredValidation(boolean ignoreRequiredValidation) {
+        this.ignoreRequiredValidation = ignoreRequiredValidation;
         return this;
     }
 

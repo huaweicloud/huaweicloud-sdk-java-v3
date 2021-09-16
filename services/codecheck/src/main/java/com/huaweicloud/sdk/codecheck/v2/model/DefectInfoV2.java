@@ -27,6 +27,16 @@ public class DefectInfoV2 {
     private String defectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_system_tags")
+
+    private String ruleSystemTags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_name")
+
+    private String ruleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_number")
 
     private String lineNumber;
@@ -102,6 +112,38 @@ public class DefectInfoV2 {
 
     public void setDefectStatus(String defectStatus) {
         this.defectStatus = defectStatus;
+    }
+
+    public DefectInfoV2 withRuleSystemTags(String ruleSystemTags) {
+        this.ruleSystemTags = ruleSystemTags;
+        return this;
+    }
+
+    /** 规则标签,多个标签用逗号隔开
+     * 
+     * @return ruleSystemTags */
+    public String getRuleSystemTags() {
+        return ruleSystemTags;
+    }
+
+    public void setRuleSystemTags(String ruleSystemTags) {
+        this.ruleSystemTags = ruleSystemTags;
+    }
+
+    public DefectInfoV2 withRuleName(String ruleName) {
+        this.ruleName = ruleName;
+        return this;
+    }
+
+    /** 规则名
+     * 
+     * @return ruleName */
+    public String getRuleName() {
+        return ruleName;
+    }
+
+    public void setRuleName(String ruleName) {
+        this.ruleName = ruleName;
     }
 
     public DefectInfoV2 withLineNumber(String lineNumber) {
@@ -228,6 +270,8 @@ public class DefectInfoV2 {
         return Objects.equals(this.defectId, defectInfoV2.defectId)
             && Objects.equals(this.defectCheckerName, defectInfoV2.defectCheckerName)
             && Objects.equals(this.defectStatus, defectInfoV2.defectStatus)
+            && Objects.equals(this.ruleSystemTags, defectInfoV2.ruleSystemTags)
+            && Objects.equals(this.ruleName, defectInfoV2.ruleName)
             && Objects.equals(this.lineNumber, defectInfoV2.lineNumber)
             && Objects.equals(this.defectContent, defectInfoV2.defectContent)
             && Objects.equals(this.defectLevel, defectInfoV2.defectLevel)
@@ -241,6 +285,8 @@ public class DefectInfoV2 {
         return Objects.hash(defectId,
             defectCheckerName,
             defectStatus,
+            ruleSystemTags,
+            ruleName,
             lineNumber,
             defectContent,
             defectLevel,
@@ -256,6 +302,8 @@ public class DefectInfoV2 {
         sb.append("    defectId: ").append(toIndentedString(defectId)).append("\n");
         sb.append("    defectCheckerName: ").append(toIndentedString(defectCheckerName)).append("\n");
         sb.append("    defectStatus: ").append(toIndentedString(defectStatus)).append("\n");
+        sb.append("    ruleSystemTags: ").append(toIndentedString(ruleSystemTags)).append("\n");
+        sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");
         sb.append("    lineNumber: ").append(toIndentedString(lineNumber)).append("\n");
         sb.append("    defectContent: ").append(toIndentedString(defectContent)).append("\n");
         sb.append("    defectLevel: ").append(toIndentedString(defectLevel)).append("\n");

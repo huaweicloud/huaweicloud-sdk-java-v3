@@ -23,6 +23,16 @@ public class ShowTaskDefectsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status_ids")
+
+    private String statusIds;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity")
+
+    private String severity;
+
     public ShowTaskDefectsRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -71,6 +81,38 @@ public class ShowTaskDefectsRequest {
         this.limit = limit;
     }
 
+    public ShowTaskDefectsRequest withStatusIds(String statusIds) {
+        this.statusIds = statusIds;
+        return this;
+    }
+
+    /** 问题状态筛选
+     * 
+     * @return statusIds */
+    public String getStatusIds() {
+        return statusIds;
+    }
+
+    public void setStatusIds(String statusIds) {
+        this.statusIds = statusIds;
+    }
+
+    public ShowTaskDefectsRequest withSeverity(String severity) {
+        this.severity = severity;
+        return this;
+    }
+
+    /** 严重级别，0致命，1严重，2一般，3提示
+     * 
+     * @return severity */
+    public String getSeverity() {
+        return severity;
+    }
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -82,12 +124,14 @@ public class ShowTaskDefectsRequest {
         ShowTaskDefectsRequest showTaskDefectsRequest = (ShowTaskDefectsRequest) o;
         return Objects.equals(this.taskId, showTaskDefectsRequest.taskId)
             && Objects.equals(this.offset, showTaskDefectsRequest.offset)
-            && Objects.equals(this.limit, showTaskDefectsRequest.limit);
+            && Objects.equals(this.limit, showTaskDefectsRequest.limit)
+            && Objects.equals(this.statusIds, showTaskDefectsRequest.statusIds)
+            && Objects.equals(this.severity, showTaskDefectsRequest.severity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, offset, limit);
+        return Objects.hash(taskId, offset, limit, statusIds, severity);
     }
 
     @Override
@@ -97,6 +141,8 @@ public class ShowTaskDefectsRequest {
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    statusIds: ").append(toIndentedString(statusIds)).append("\n");
+        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

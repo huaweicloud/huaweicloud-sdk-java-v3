@@ -1225,6 +1225,11 @@ public class ImageInfo {
 
     private String supportAgentList;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+
+    private String supportAmd;
+
     public ImageInfo withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -2237,6 +2242,24 @@ public class ImageInfo {
         this.supportAgentList = supportAgentList;
     }
 
+    public ImageInfo withSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+        return this;
+    }
+
+    /** 是否是AMD架构类型的镜像。取值为“true”或者“false”。
+     * 
+     * @return supportAmd */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+    public String getSupportAmd() {
+        return supportAmd;
+    }
+
+    public void setSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2294,7 +2317,8 @@ public class ImageInfo {
             && Objects.equals(this.rootOrigin, imageInfo.rootOrigin)
             && Objects.equals(this.sequenceNum, imageInfo.sequenceNum)
             && Objects.equals(this.activeAt, imageInfo.activeAt)
-            && Objects.equals(this.supportAgentList, imageInfo.supportAgentList);
+            && Objects.equals(this.supportAgentList, imageInfo.supportAgentList)
+            && Objects.equals(this.supportAmd, imageInfo.supportAmd);
     }
 
     @Override
@@ -2356,7 +2380,8 @@ public class ImageInfo {
             rootOrigin,
             sequenceNum,
             activeAt,
-            supportAgentList);
+            supportAgentList,
+            supportAmd);
     }
 
     @Override
@@ -2421,6 +2446,7 @@ public class ImageInfo {
         sb.append("    sequenceNum: ").append(toIndentedString(sequenceNum)).append("\n");
         sb.append("    activeAt: ").append(toIndentedString(activeAt)).append("\n");
         sb.append("    supportAgentList: ").append(toIndentedString(supportAgentList)).append("\n");
+        sb.append("    supportAmd: ").append(toIndentedString(supportAmd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -230,7 +230,12 @@ public class HcClient implements CustomizationConfigure {
             .withPath(reqDef.getUri());
 
         for (Field<ReqT, ?> field : reqDef.getRequestFields()) {
-            Optional<?> reqValueOption = field.readValue(request);
+            Optional<?> reqValueOption;
+            if (httpConfig.isIgnoreRequiredValidation()) {
+                reqValueOption = field.readValueNoValidation(request);
+            } else {
+                reqValueOption = field.readValue(request);
+            }
             if (reqValueOption.isPresent()) {
                 Object reqValue = reqValueOption.get();
                 if (field.getLocation() == LocationType.Header) {

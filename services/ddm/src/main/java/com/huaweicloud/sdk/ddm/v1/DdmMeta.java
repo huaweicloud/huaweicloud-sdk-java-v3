@@ -292,14 +292,14 @@ public class DdmMeta {
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDatabasesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDatabasesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
@@ -393,14 +393,14 @@ public class DdmMeta {
         // requests
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
@@ -449,6 +449,111 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListReadWriteRatioRequest, ListReadWriteRatioResponse> listReadWriteRatio =
+        genForlistReadWriteRatio();
+
+    private static HttpRequestDef<ListReadWriteRatioRequest, ListReadWriteRatioResponse> genForlistReadWriteRatio() {
+        // basic
+        HttpRequestDef.Builder<ListReadWriteRatioRequest, ListReadWriteRatioResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListReadWriteRatioRequest.class, ListReadWriteRatioResponse.class)
+                .withName("ListReadWriteRatio")
+                .withUri("/v2/{project_id}/instances/{instance_id}/read-write-ratio")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("curPage",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getCurPage, (req, v) -> {
+                req.setCurPage(v);
+            }));
+        builder.<String>withRequestField("perPage",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getPerPage, (req, v) -> {
+                req.setPerPage(v);
+            }));
+        builder.<String>withRequestField("startDate",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            }));
+        builder.<String>withRequestField("endDate",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSlowLogRequest, ListSlowLogResponse> listSlowLog = genForlistSlowLog();
+
+    private static HttpRequestDef<ListSlowLogRequest, ListSlowLogResponse> genForlistSlowLog() {
+        // basic
+        HttpRequestDef.Builder<ListSlowLogRequest, ListSlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSlowLogRequest.class, ListSlowLogResponse.class)
+                .withName("ListSlowLog")
+                .withUri("/v2/{project_id}/instances/{instance_id}/slowlog")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("curPage",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogRequest::getCurPage, (req, v) -> {
+                req.setCurPage(v);
+            }));
+        builder.<String>withRequestField("perPage",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogRequest::getPerPage, (req, v) -> {
+                req.setPerPage(v);
+            }));
+        builder.<String>withRequestField("startDate",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            }));
+        builder.<String>withRequestField("endDate",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForlistUsers();
 
     private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForlistUsers() {
@@ -469,14 +574,14 @@ public class DdmMeta {
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUsersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUsersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);

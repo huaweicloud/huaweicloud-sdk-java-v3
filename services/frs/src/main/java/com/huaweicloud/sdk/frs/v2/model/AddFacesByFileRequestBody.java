@@ -65,7 +65,8 @@ public class AddFacesByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 根据用户自定义数据类型，填入相应的数值。 创建faceset时定义该字段，Json字符串不校验重复性，参考[自定义字段](zh-cn_topic_0130807044.xml)。
+    /** 根据用户自定义数据类型，填入相应的数值。
+     * 创建faceset时定义该字段，Json字符串不校验重复性，参考[自定义字段](https://support.huaweicloud.com/api-face/face_02_0012.html)。
      * 
      * @return externalFields */
     public String getExternalFields() {
@@ -98,8 +99,12 @@ public class AddFacesByFileRequestBody implements SdkFormDataBody {
 
             {
                 put("image_file", imageFile);
-                put("external_image_id", new FormDataPart<>(externalImageId));
-                put("external_fields", new FormDataPart<>(externalFields));
+                if (externalImageId != null) {
+                    put("external_image_id", new FormDataPart<>(externalImageId));
+                }
+                if (externalFields != null) {
+                    put("external_fields", new FormDataPart<>(externalFields));
+                }
             }
         };
     }

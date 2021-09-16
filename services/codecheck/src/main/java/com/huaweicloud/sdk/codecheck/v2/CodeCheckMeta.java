@@ -7,35 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
-import java.util.List;
-
 @SuppressWarnings("unchecked")
 public class CodeCheckMeta {
-
-    public static final HttpRequestDef<CollectPluginRecordRequest, CollectPluginRecordResponse> collectPluginRecord =
-        genForcollectPluginRecord();
-
-    private static HttpRequestDef<CollectPluginRecordRequest, CollectPluginRecordResponse> genForcollectPluginRecord() {
-        // basic
-        HttpRequestDef.Builder<CollectPluginRecordRequest, CollectPluginRecordResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CollectPluginRecordRequest.class, CollectPluginRecordResponse.class)
-                .withName("CollectPluginRecord")
-                .withUri("/v2/java/plugin-record")
-                .withContentType("application/json");
-
-        // requests
-        builder.<PluginRecordModel>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(PluginRecordModel.class),
-            f -> f.withMarshaller(CollectPluginRecordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
 
     public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForcreateTask();
 
@@ -68,66 +41,26 @@ public class CodeCheckMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> downloadLibCodeAnalysisReport =
-        genFordownloadLibCodeAnalysisReport();
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
 
-    private static HttpRequestDef<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> genFordownloadLibCodeAnalysisReport() {
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
         // basic
-        HttpRequestDef.Builder<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    DownloadLibCodeAnalysisReportRequest.class,
-                    DownloadLibCodeAnalysisReportResponse.class)
-                .withName("DownloadLibCodeAnalysisReport")
-                .withUri("/v2/java/lib-code-analysis-report")
+        HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
+                .withName("DeleteTask")
+                .withUri("/v2/tasks/{task_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.<JavaLibBean>withRequestField("body",
-            LocationType.Body,
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(JavaLibBean.class),
-            f -> f.withMarshaller(DownloadLibCodeAnalysisReportRequest::getBody, (req, v) -> {
-                req.setBody(v);
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> listJavaLibUpdateSuggestion =
-        genForlistJavaLibUpdateSuggestion();
-
-    private static HttpRequestDef<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> genForlistJavaLibUpdateSuggestion() {
-        // basic
-        HttpRequestDef.Builder<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    ListJavaLibUpdateSuggestionRequest.class,
-                    ListJavaLibUpdateSuggestionResponse.class)
-                .withName("ListJavaLibUpdateSuggestion")
-                .withUri("/v2/java/lib-update-suggestion")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ListJavaLibUpdateSuggestionRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListJavaLibUpdateSuggestionRequestBody.class),
-            f -> f.withMarshaller(ListJavaLibUpdateSuggestionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        builder.<List<JavaReplaceLibInfo>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListJavaLibUpdateSuggestionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(JavaReplaceLibInfo.class));
 
         return builder.build();
     }
@@ -220,6 +153,20 @@ public class CodeCheckMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTaskDefectsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("status_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskDefectsRequest::getStatusIds, (req, v) -> {
+                req.setStatusIds(v);
+            }));
+        builder.<String>withRequestField("severity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskDefectsRequest::getSeverity, (req, v) -> {
+                req.setSeverity(v);
             }));
 
         // response

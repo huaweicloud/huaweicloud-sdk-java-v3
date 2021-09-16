@@ -1,3 +1,105 @@
+# 3.0.60 2021-09-16
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowCluster`新增响应参数`platformVersion`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 支持接口`ShowDomainStats`
+- _解决问题_
+  - 修复调用接口`ShowDomainItemLocationDetails`无响应数据的问题
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CloudRTC
+
+- _新增特性_
+  - 支持华为云实时音视频服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CodeCheck
+
+- _新增特性_
+  - 支持接口`DeleteTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DBSS
+
+- _新增特性_
+  - 支持数据库安全服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DDM
+
+- _新增特性_
+  - 支持接口`ListSlowLog`和`ListReadWriteRatio`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DSC
+
+- _新增特性_
+  - 支持数据安全中心服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateDataImage`新增非必填的请求参数`__support_amd`
+  - 接口`ListImages`新增响应参数`__support_amd`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 新增自定义鉴权方式
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK KMS
+
+- _新增特性_
+  - 支持接口`ShowPublicKey`、`Sign`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeInvoiceVerification`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.59 2021-09-10
 
 ### HuaweiCloud SDK BSS

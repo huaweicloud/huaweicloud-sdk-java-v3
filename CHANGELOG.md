@@ -1,3 +1,105 @@
+# 3.0.60 2021-09-16
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `platformVersion` to the interface `ShowCluster`.
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the interface `ShowDomainStats`.
+- _Bug Fix_
+  - Fix the issue of no response data when calling the interface `ShowDomainItemLocationDetails`.
+- _Change_
+  - None
+
+### HuaweiCloud SDK CloudRTC
+
+- _Features_
+  - Support the service `CloudRTC`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CodeCheck
+
+- _Features_
+  - Support the interface `DeleteTask`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DBSS
+
+- _Features_
+  - Support the `Database Security Service`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DDM
+
+- _Features_
+  - Support the interfaces `ListSlowLog` and `ListReadWriteRatio`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DSC
+
+- _Features_
+  - Support the service `Data Security Center`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the optional request parameter `__support_amd` to the interface `CreateDataImage`.
+  - Add the response parameter `__support_amd` to the interface `ListImages`.
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - Add custom authentication mode.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KMS
+
+- _Features_
+  - Support the interfaces `ShowPublicKey` and `Sign`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeInvoiceVerification`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.59 2021-09-10
 
 ### HuaweiCloud SDK BSS

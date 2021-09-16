@@ -244,8 +244,12 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
         return new LinkedHashMap<String, FormDataPart>() {
 
             {
-                put("extend_mode", new FormDataPart<>(extendMode));
-                put("api_mode", new FormDataPart<>(apiMode));
+                if (extendMode != null) {
+                    put("extend_mode", new FormDataPart<>(extendMode));
+                }
+                if (apiMode != null) {
+                    put("api_mode", new FormDataPart<>(apiMode));
+                }
                 put("file_name", fileName);
             }
         };

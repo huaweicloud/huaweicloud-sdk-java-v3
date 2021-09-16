@@ -96,7 +96,7 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 支持字段排序，参考[sort语法](zh-cn_topic_0130807047.xml)。
+    /** 支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。
      * 
      * @return sort */
     public String getSort() {
@@ -112,7 +112,7 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 过滤条件，参考[filter语法](zh-cn_topic_0130807048.xml)。
+    /** 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
      * 
      * @return filter */
     public String getFilter() {
@@ -161,11 +161,21 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
 
             {
                 put("image_file", imageFile);
-                put("top_n", new FormDataPart<>(topN));
-                put("threshold", new FormDataPart<>(threshold));
-                put("sort", new FormDataPart<>(sort));
-                put("filter", new FormDataPart<>(filter));
-                put("return_fields", new FormDataPart<>(returnFields));
+                if (topN != null) {
+                    put("top_n", new FormDataPart<>(topN));
+                }
+                if (threshold != null) {
+                    put("threshold", new FormDataPart<>(threshold));
+                }
+                if (sort != null) {
+                    put("sort", new FormDataPart<>(sort));
+                }
+                if (filter != null) {
+                    put("filter", new FormDataPart<>(filter));
+                }
+                if (returnFields != null) {
+                    put("return_fields", new FormDataPart<>(returnFields));
+                }
             }
         };
     }

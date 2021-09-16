@@ -17,24 +17,6 @@ public class CodeCheckClient {
         return new ClientBuilder<>(CodeCheckClient::new);
     }
 
-    /** 记录事件发生次数与服务质量 记录用户在前端使用的行为
-     *
-     * @param CollectPluginRecordRequest 请求对象
-     * @return CollectPluginRecordResponse */
-    public CollectPluginRecordResponse collectPluginRecord(CollectPluginRecordRequest request) {
-        return hcClient.syncInvokeHttp(request, CodeCheckMeta.collectPluginRecord);
-    }
-
-    /** 记录事件发生次数与服务质量 记录用户在前端使用的行为
-     *
-     * @param CollectPluginRecordRequest 请求对象
-     * @return SyncInvoker<CollectPluginRecordRequest, CollectPluginRecordResponse> */
-    public SyncInvoker<CollectPluginRecordRequest, CollectPluginRecordResponse> collectPluginRecordInvoker(
-        CollectPluginRecordRequest request) {
-        return new SyncInvoker<CollectPluginRecordRequest, CollectPluginRecordResponse>(request,
-            CodeCheckMeta.collectPluginRecord, hcClient);
-    }
-
     /** 新建检查任务 新建检查任务但是不执行。
      *
      * @param CreateTaskRequest 请求对象
@@ -51,41 +33,20 @@ public class CodeCheckClient {
         return new SyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, CodeCheckMeta.createTask, hcClient);
     }
 
-    /** 获取一个三方库的中所有代码的详细信息 获取指定库的详细内部信息，包括类、方法字段等。
+    /** 删除检查任务 删除检查任务，执行中的任务删除无法再查看
      *
-     * @param DownloadLibCodeAnalysisReportRequest 请求对象
-     * @return DownloadLibCodeAnalysisReportResponse */
-    public DownloadLibCodeAnalysisReportResponse downloadLibCodeAnalysisReport(
-        DownloadLibCodeAnalysisReportRequest request) {
-        return hcClient.syncInvokeHttp(request, CodeCheckMeta.downloadLibCodeAnalysisReport);
+     * @param DeleteTaskRequest 请求对象
+     * @return DeleteTaskResponse */
+    public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.deleteTask);
     }
 
-    /** 获取一个三方库的中所有代码的详细信息 获取指定库的详细内部信息，包括类、方法字段等。
+    /** 删除检查任务 删除检查任务，执行中的任务删除无法再查看
      *
-     * @param DownloadLibCodeAnalysisReportRequest 请求对象
-     * @return SyncInvoker<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> */
-    public SyncInvoker<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> downloadLibCodeAnalysisReportInvoker(
-        DownloadLibCodeAnalysisReportRequest request) {
-        return new SyncInvoker<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse>(request,
-            CodeCheckMeta.downloadLibCodeAnalysisReport, hcClient);
-    }
-
-    /** 获取依赖列表里所有java库的信息，主要是漏洞信息 对依赖列表进行扫描，返回其中包含的漏洞库，和对应的升级替换建议
-     *
-     * @param ListJavaLibUpdateSuggestionRequest 请求对象
-     * @return ListJavaLibUpdateSuggestionResponse */
-    public ListJavaLibUpdateSuggestionResponse listJavaLibUpdateSuggestion(ListJavaLibUpdateSuggestionRequest request) {
-        return hcClient.syncInvokeHttp(request, CodeCheckMeta.listJavaLibUpdateSuggestion);
-    }
-
-    /** 获取依赖列表里所有java库的信息，主要是漏洞信息 对依赖列表进行扫描，返回其中包含的漏洞库，和对应的升级替换建议
-     *
-     * @param ListJavaLibUpdateSuggestionRequest 请求对象
-     * @return SyncInvoker<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> */
-    public SyncInvoker<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> listJavaLibUpdateSuggestionInvoker(
-        ListJavaLibUpdateSuggestionRequest request) {
-        return new SyncInvoker<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse>(request,
-            CodeCheckMeta.listJavaLibUpdateSuggestion, hcClient);
+     * @param DeleteTaskRequest 请求对象
+     * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> */
+    public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
+        return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, CodeCheckMeta.deleteTask, hcClient);
     }
 
     /** 执行检查任务 执行检查任务。

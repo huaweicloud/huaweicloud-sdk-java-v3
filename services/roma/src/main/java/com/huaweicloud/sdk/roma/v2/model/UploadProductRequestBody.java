@@ -52,7 +52,9 @@ public class UploadProductRequestBody implements SdkFormDataBody {
         return new LinkedHashMap<String, FormDataPart>() {
 
             {
-                put("file", file);
+                if (file != null) {
+                    put("file", file);
+                }
             }
         };
     }

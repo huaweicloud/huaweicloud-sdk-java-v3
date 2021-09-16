@@ -72,6 +72,11 @@ public class ShowIterationV4Response extends SdkResponse {
 
     private String updatedTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
     public ShowIterationV4Response withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -280,6 +285,22 @@ public class ShowIterationV4Response extends SdkResponse {
         this.updatedTime = updatedTime;
     }
 
+    public ShowIterationV4Response withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /** 迭代的状态,0 未开始，1 进行中，2 结束
+     * 
+     * @return status */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -300,7 +321,8 @@ public class ShowIterationV4Response extends SdkResponse {
             && Objects.equals(this.openedTotal, showIterationV4Response.openedTotal)
             && Objects.equals(this.progress, showIterationV4Response.progress)
             && Objects.equals(this.total, showIterationV4Response.total)
-            && Objects.equals(this.updatedTime, showIterationV4Response.updatedTime);
+            && Objects.equals(this.updatedTime, showIterationV4Response.updatedTime)
+            && Objects.equals(this.status, showIterationV4Response.status);
     }
 
     @Override
@@ -316,7 +338,8 @@ public class ShowIterationV4Response extends SdkResponse {
             openedTotal,
             progress,
             total,
-            updatedTime);
+            updatedTime,
+            status);
     }
 
     @Override
@@ -335,6 +358,7 @@ public class ShowIterationV4Response extends SdkResponse {
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

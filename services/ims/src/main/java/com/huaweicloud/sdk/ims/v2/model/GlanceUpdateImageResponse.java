@@ -1386,6 +1386,11 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
     private String accountCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+
+    private String supportAmd;
+
     public GlanceUpdateImageResponse withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -2415,6 +2420,24 @@ public class GlanceUpdateImageResponse extends SdkResponse {
         this.accountCode = accountCode;
     }
 
+    public GlanceUpdateImageResponse withSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+        return this;
+    }
+
+    /** 是否是AMD架构类型的镜像。取值为“true”或者“false”。
+     * 
+     * @return supportAmd */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+    public String getSupportAmd() {
+        return supportAmd;
+    }
+
+    public void setSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2482,7 +2505,8 @@ public class GlanceUpdateImageResponse extends SdkResponse {
             && Objects.equals(this.maxRam, glanceUpdateImageResponse.maxRam)
             && Objects.equals(this.imageLocation, glanceUpdateImageResponse.imageLocation)
             && Objects.equals(this.isConfigInit, glanceUpdateImageResponse.isConfigInit)
-            && Objects.equals(this.accountCode, glanceUpdateImageResponse.accountCode);
+            && Objects.equals(this.accountCode, glanceUpdateImageResponse.accountCode)
+            && Objects.equals(this.supportAmd, glanceUpdateImageResponse.supportAmd);
     }
 
     @Override
@@ -2545,7 +2569,8 @@ public class GlanceUpdateImageResponse extends SdkResponse {
             maxRam,
             imageLocation,
             isConfigInit,
-            accountCode);
+            accountCode,
+            supportAmd);
     }
 
     @Override
@@ -2611,6 +2636,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
         sb.append("    imageLocation: ").append(toIndentedString(imageLocation)).append("\n");
         sb.append("    isConfigInit: ").append(toIndentedString(isConfigInit)).append("\n");
         sb.append("    accountCode: ").append(toIndentedString(accountCode)).append("\n");
+        sb.append("    supportAmd: ").append(toIndentedString(supportAmd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

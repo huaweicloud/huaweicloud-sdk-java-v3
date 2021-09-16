@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,40 +11,35 @@ import java.util.function.Consumer;
 public class ShowDomainItemLocationDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domains")
+    @JsonProperty(value = "domain_item_location_details")
 
-    private List<DomainItemLocationDetails> domains = null;
+    private DomainItemLocationDetails domainItemLocationDetails;
 
-    public ShowDomainItemLocationDetailsResponse withDomains(List<DomainItemLocationDetails> domains) {
-        this.domains = domains;
+    public ShowDomainItemLocationDetailsResponse withDomainItemLocationDetails(
+        DomainItemLocationDetails domainItemLocationDetails) {
+        this.domainItemLocationDetails = domainItemLocationDetails;
         return this;
     }
 
-    public ShowDomainItemLocationDetailsResponse addDomainsItem(DomainItemLocationDetails domainsItem) {
-        if (this.domains == null) {
-            this.domains = new ArrayList<>();
+    public ShowDomainItemLocationDetailsResponse withDomainItemLocationDetails(
+        Consumer<DomainItemLocationDetails> domainItemLocationDetailsSetter) {
+        if (this.domainItemLocationDetails == null) {
+            this.domainItemLocationDetails = new DomainItemLocationDetails();
+            domainItemLocationDetailsSetter.accept(this.domainItemLocationDetails);
         }
-        this.domains.add(domainsItem);
+
         return this;
     }
 
-    public ShowDomainItemLocationDetailsResponse withDomains(Consumer<List<DomainItemLocationDetails>> domainsSetter) {
-        if (this.domains == null) {
-            this.domains = new ArrayList<>();
-        }
-        domainsSetter.accept(this.domains);
-        return this;
-    }
-
-    /** 域名详情数据列表
+    /** Get domainItemLocationDetails
      * 
-     * @return domains */
-    public List<DomainItemLocationDetails> getDomains() {
-        return domains;
+     * @return domainItemLocationDetails */
+    public DomainItemLocationDetails getDomainItemLocationDetails() {
+        return domainItemLocationDetails;
     }
 
-    public void setDomains(List<DomainItemLocationDetails> domains) {
-        this.domains = domains;
+    public void setDomainItemLocationDetails(DomainItemLocationDetails domainItemLocationDetails) {
+        this.domainItemLocationDetails = domainItemLocationDetails;
     }
 
     @Override
@@ -59,19 +52,20 @@ public class ShowDomainItemLocationDetailsResponse extends SdkResponse {
         }
         ShowDomainItemLocationDetailsResponse showDomainItemLocationDetailsResponse =
             (ShowDomainItemLocationDetailsResponse) o;
-        return Objects.equals(this.domains, showDomainItemLocationDetailsResponse.domains);
+        return Objects.equals(this.domainItemLocationDetails,
+            showDomainItemLocationDetailsResponse.domainItemLocationDetails);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domains);
+        return Objects.hash(domainItemLocationDetails);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDomainItemLocationDetailsResponse {\n");
-        sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+        sb.append("    domainItemLocationDetails: ").append(toIndentedString(domainItemLocationDetails)).append("\n");
         sb.append("}");
         return sb.toString();
     }

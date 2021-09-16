@@ -124,10 +124,16 @@ public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
             if (existence == FieldExistence.NON_NULL_NON_EMPTY && value.getClass() == String.class
                 && ((String) value).isEmpty()) {
                 throw new SdkException(
-                    "request field " + name + " read empty value. not allowed by " + existence.toString());
+                    "request field " + name + " read empty value. not allowed by " + existence);
             }
             return Optional.of(value);
         }
+    }
+
+    @Override
+    public Optional<FieldT> readValueNoValidation(ReqT request) {
+        FieldT value = reader.apply(request);
+        return value == null ? Optional.empty() : Optional.of(value);
     }
 
     @Override

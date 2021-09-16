@@ -100,7 +100,9 @@ public class DetectLiveByFileRequestBody implements SdkFormDataBody {
             {
                 put("video_file", videoFile);
                 put("actions", new FormDataPart<>(actions));
-                put("action_time", new FormDataPart<>(actionTime));
+                if (actionTime != null) {
+                    put("action_time", new FormDataPart<>(actionTime));
+                }
             }
         };
     }

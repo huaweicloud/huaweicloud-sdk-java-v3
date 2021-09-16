@@ -47,7 +47,21 @@ public interface Field<ReqT, FieldT> {
      */
     boolean isValueProvided(ReqT request);
 
+    /**
+     * 读取请求中指定字段的值，校验请求参数是否满足 FieldExistence 的限制
+     *
+     * @param request 请求
+     * @return 可为空的字段值
+     */
     Optional<FieldT> readValue(ReqT request);
+
+    /**
+     * 读取请求中指定字段的值，同时不校验请求参数是否满足 FieldExistence 的限制
+     *
+     * @param request 请求
+     * @return 可为空的字段值
+     */
+    Optional<FieldT> readValueNoValidation(ReqT request);
 
     void writeValue(ReqT request, FieldT value, Class<FieldT> clazz);
 

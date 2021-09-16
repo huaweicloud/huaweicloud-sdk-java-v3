@@ -38,7 +38,7 @@ public class SearchFaceByUrlResponse extends SdkResponse {
         return this;
     }
 
-    /** 查找的人脸集合，详见[SearchFace](zh-cn_topic_0106912071.xml)。 调用失败时无此字段。
+    /** 查找的人脸集合，详见[SearchFace](https://support.huaweicloud.com/api-face/face_02_0019.html)。 调用失败时无此字段。
      * 
      * @return faces */
     public List<SearchFace> getFaces() {

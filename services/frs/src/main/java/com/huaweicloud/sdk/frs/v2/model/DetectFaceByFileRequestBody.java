@@ -78,7 +78,9 @@ public class DetectFaceByFileRequestBody implements SdkFormDataBody {
 
             {
                 put("image_file", imageFile);
-                put("attributes", new FormDataPart<>(attributes));
+                if (attributes != null) {
+                    put("attributes", new FormDataPart<>(attributes));
+                }
             }
         };
     }

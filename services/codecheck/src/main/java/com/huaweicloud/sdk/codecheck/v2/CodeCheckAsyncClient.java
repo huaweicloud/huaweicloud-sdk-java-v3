@@ -19,24 +19,6 @@ public class CodeCheckAsyncClient {
         return new ClientBuilder<>(CodeCheckAsyncClient::new);
     }
 
-    /** 记录事件发生次数与服务质量 记录用户在前端使用的行为
-     *
-     * @param CollectPluginRecordRequest 请求对象
-     * @return CompletableFuture<CollectPluginRecordResponse> */
-    public CompletableFuture<CollectPluginRecordResponse> collectPluginRecordAsync(CollectPluginRecordRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.collectPluginRecord);
-    }
-
-    /** 记录事件发生次数与服务质量 记录用户在前端使用的行为
-     *
-     * @param CollectPluginRecordRequest 请求对象
-     * @return AsyncInvoker<CollectPluginRecordRequest, CollectPluginRecordResponse> */
-    public AsyncInvoker<CollectPluginRecordRequest, CollectPluginRecordResponse> collectPluginRecordAsyncInvoker(
-        CollectPluginRecordRequest request) {
-        return new AsyncInvoker<CollectPluginRecordRequest, CollectPluginRecordResponse>(request,
-            CodeCheckMeta.collectPluginRecord, hcClient);
-    }
-
     /** 新建检查任务 新建检查任务但是不执行。
      *
      * @param CreateTaskRequest 请求对象
@@ -53,42 +35,20 @@ public class CodeCheckAsyncClient {
         return new AsyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, CodeCheckMeta.createTask, hcClient);
     }
 
-    /** 获取一个三方库的中所有代码的详细信息 获取指定库的详细内部信息，包括类、方法字段等。
+    /** 删除检查任务 删除检查任务，执行中的任务删除无法再查看
      *
-     * @param DownloadLibCodeAnalysisReportRequest 请求对象
-     * @return CompletableFuture<DownloadLibCodeAnalysisReportResponse> */
-    public CompletableFuture<DownloadLibCodeAnalysisReportResponse> downloadLibCodeAnalysisReportAsync(
-        DownloadLibCodeAnalysisReportRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.downloadLibCodeAnalysisReport);
+     * @param DeleteTaskRequest 请求对象
+     * @return CompletableFuture<DeleteTaskResponse> */
+    public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.deleteTask);
     }
 
-    /** 获取一个三方库的中所有代码的详细信息 获取指定库的详细内部信息，包括类、方法字段等。
+    /** 删除检查任务 删除检查任务，执行中的任务删除无法再查看
      *
-     * @param DownloadLibCodeAnalysisReportRequest 请求对象
-     * @return AsyncInvoker<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> */
-    public AsyncInvoker<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> downloadLibCodeAnalysisReportAsyncInvoker(
-        DownloadLibCodeAnalysisReportRequest request) {
-        return new AsyncInvoker<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse>(request,
-            CodeCheckMeta.downloadLibCodeAnalysisReport, hcClient);
-    }
-
-    /** 获取依赖列表里所有java库的信息，主要是漏洞信息 对依赖列表进行扫描，返回其中包含的漏洞库，和对应的升级替换建议
-     *
-     * @param ListJavaLibUpdateSuggestionRequest 请求对象
-     * @return CompletableFuture<ListJavaLibUpdateSuggestionResponse> */
-    public CompletableFuture<ListJavaLibUpdateSuggestionResponse> listJavaLibUpdateSuggestionAsync(
-        ListJavaLibUpdateSuggestionRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.listJavaLibUpdateSuggestion);
-    }
-
-    /** 获取依赖列表里所有java库的信息，主要是漏洞信息 对依赖列表进行扫描，返回其中包含的漏洞库，和对应的升级替换建议
-     *
-     * @param ListJavaLibUpdateSuggestionRequest 请求对象
-     * @return AsyncInvoker<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> */
-    public AsyncInvoker<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> listJavaLibUpdateSuggestionAsyncInvoker(
-        ListJavaLibUpdateSuggestionRequest request) {
-        return new AsyncInvoker<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse>(request,
-            CodeCheckMeta.listJavaLibUpdateSuggestion, hcClient);
+     * @param DeleteTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> */
+    public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
+        return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, CodeCheckMeta.deleteTask, hcClient);
     }
 
     /** 执行检查任务 执行检查任务。

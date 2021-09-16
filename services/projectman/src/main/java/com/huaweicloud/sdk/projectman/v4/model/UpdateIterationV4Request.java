@@ -22,7 +22,7 @@ public class UpdateIterationV4Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateIterationRequestV4 body;
+    private UpdateIterationRequestV4 body;
 
     public UpdateIterationV4Request withProjectId(String projectId) {
         this.projectId = projectId;
@@ -56,14 +56,14 @@ public class UpdateIterationV4Request {
         this.iterationId = iterationId;
     }
 
-    public UpdateIterationV4Request withBody(CreateIterationRequestV4 body) {
+    public UpdateIterationV4Request withBody(UpdateIterationRequestV4 body) {
         this.body = body;
         return this;
     }
 
-    public UpdateIterationV4Request withBody(Consumer<CreateIterationRequestV4> bodySetter) {
+    public UpdateIterationV4Request withBody(Consumer<UpdateIterationRequestV4> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateIterationRequestV4();
+            this.body = new UpdateIterationRequestV4();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class UpdateIterationV4Request {
     /** Get body
      * 
      * @return body */
-    public CreateIterationRequestV4 getBody() {
+    public UpdateIterationRequestV4 getBody() {
         return body;
     }
 
-    public void setBody(CreateIterationRequestV4 body) {
+    public void setBody(UpdateIterationRequestV4 body) {
         this.body = body;
     }
 

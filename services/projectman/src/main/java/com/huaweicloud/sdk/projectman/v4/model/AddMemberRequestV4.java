@@ -9,6 +9,11 @@ import java.util.Objects;
 public class AddMemberRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_name")
+
+    private String domainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
     private String domainId;
@@ -22,6 +27,22 @@ public class AddMemberRequestV4 {
     @JsonProperty(value = "user_id")
 
     private String userId;
+
+    public AddMemberRequestV4 withDomainName(String domainName) {
+        this.domainName = domainName;
+        return this;
+    }
+
+    /** 租户名称（跨租户添加用户时，填写正确的租户名称，可将未授权的租户主动授权，将用户添加为项目成员）
+     * 
+     * @return domainName */
+    public String getDomainName() {
+        return domainName;
+    }
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
 
     public AddMemberRequestV4 withDomainId(String domainId) {
         this.domainId = domainId;
@@ -44,7 +65,7 @@ public class AddMemberRequestV4 {
         return this;
     }
 
-    /** 用户在项目中的角色ID -1, 3, 4, 5, 6, 7 , 8
+    /** '用户在项目中的角色ID' 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
      * 
      * @return roleId */
     public Integer getRoleId() {
@@ -80,20 +101,22 @@ public class AddMemberRequestV4 {
             return false;
         }
         AddMemberRequestV4 addMemberRequestV4 = (AddMemberRequestV4) o;
-        return Objects.equals(this.domainId, addMemberRequestV4.domainId)
+        return Objects.equals(this.domainName, addMemberRequestV4.domainName)
+            && Objects.equals(this.domainId, addMemberRequestV4.domainId)
             && Objects.equals(this.roleId, addMemberRequestV4.roleId)
             && Objects.equals(this.userId, addMemberRequestV4.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, roleId, userId);
+        return Objects.hash(domainName, domainId, roleId, userId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddMemberRequestV4 {\n");
+        sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");

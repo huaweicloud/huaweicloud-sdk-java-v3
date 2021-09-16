@@ -1274,6 +1274,38 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPublicKeyRequest, ShowPublicKeyResponse> showPublicKey =
+        genForshowPublicKey();
+
+    private static HttpRequestDef<ShowPublicKeyRequest, ShowPublicKeyResponse> genForshowPublicKey() {
+        // basic
+        HttpRequestDef.Builder<ShowPublicKeyRequest, ShowPublicKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowPublicKeyRequest.class, ShowPublicKeyResponse.class)
+                .withName("ShowPublicKey")
+                .withUri("/{version_id}/{project_id}/kms/get-publickey")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicKeyRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            }));
+        builder.<OperateKeyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
+            f -> f.withMarshaller(ShowPublicKeyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecretRequest, ShowSecretResponse> showSecret = genForshowSecret();
 
     private static HttpRequestDef<ShowSecretRequest, ShowSecretResponse> genForshowSecret() {
@@ -1373,6 +1405,37 @@ public class KmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowUserQuotasRequest::getVersionId, (req, v) -> {
                 req.setVersionId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SignRequest, SignResponse> sign = genForsign();
+
+    private static HttpRequestDef<SignRequest, SignResponse> genForsign() {
+        // basic
+        HttpRequestDef.Builder<SignRequest, SignResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SignRequest.class, SignResponse.class)
+                .withName("Sign")
+                .withUri("/{version_id}/{project_id}/kms/sign")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SignRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            }));
+        builder.<SignRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SignRequestBody.class),
+            f -> f.withMarshaller(SignRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1541,6 +1604,38 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecretStageRequestBody.class),
             f -> f.withMarshaller(UpdateSecretStageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateSignatureRequest, ValidateSignatureResponse> validateSignature =
+        genForvalidateSignature();
+
+    private static HttpRequestDef<ValidateSignatureRequest, ValidateSignatureResponse> genForvalidateSignature() {
+        // basic
+        HttpRequestDef.Builder<ValidateSignatureRequest, ValidateSignatureResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ValidateSignatureRequest.class, ValidateSignatureResponse.class)
+                .withName("ValidateSignature")
+                .withUri("/{version_id}/{project_id}/kms/verify")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateSignatureRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            }));
+        builder.<VerifyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VerifyRequestBody.class),
+            f -> f.withMarshaller(ValidateSignatureRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
