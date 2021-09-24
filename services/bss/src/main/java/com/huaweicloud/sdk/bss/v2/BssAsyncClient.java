@@ -561,6 +561,25 @@ public class BssAsyncClient {
             BssMeta.listEnterpriseSubCustomers, hcClient);
     }
 
+    /** 查询资源包列表 功能描述：客户在自建平台查询资源包列表。
+     *
+     * @param ListFreeResourceInfosRequest 请求对象
+     * @return CompletableFuture<ListFreeResourceInfosResponse> */
+    public CompletableFuture<ListFreeResourceInfosResponse> listFreeResourceInfosAsync(
+        ListFreeResourceInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listFreeResourceInfos);
+    }
+
+    /** 查询资源包列表 功能描述：客户在自建平台查询资源包列表。
+     *
+     * @param ListFreeResourceInfosRequest 请求对象
+     * @return AsyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> */
+    public AsyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> listFreeResourceInfosAsyncInvoker(
+        ListFreeResourceInfosRequest request) {
+        return new AsyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse>(request,
+            BssMeta.listFreeResourceInfos, hcClient);
+    }
+
     /** 查询资源内使用量 功能描述：客户在自建平台查询客户自己的资源包列表
      *
      * @param ListFreeResourceUsagesRequest 请求对象
@@ -727,6 +746,25 @@ public class BssAsyncClient {
         ListOrderDiscountsRequest request) {
         return new AsyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>(request,
             BssMeta.listOrderDiscounts, hcClient);
+    }
+
+    /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
+     *
+     * @param ListParnterAdjustRecordsRequest 请求对象
+     * @return CompletableFuture<ListParnterAdjustRecordsResponse> */
+    public CompletableFuture<ListParnterAdjustRecordsResponse> listParnterAdjustRecordsAsync(
+        ListParnterAdjustRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listParnterAdjustRecords);
+    }
+
+    /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
+     *
+     * @param ListParnterAdjustRecordsRequest 请求对象
+     * @return AsyncInvoker<ListParnterAdjustRecordsRequest, ListParnterAdjustRecordsResponse> */
+    public AsyncInvoker<ListParnterAdjustRecordsRequest, ListParnterAdjustRecordsResponse> listParnterAdjustRecordsAsyncInvoker(
+        ListParnterAdjustRecordsRequest request) {
+        return new AsyncInvoker<ListParnterAdjustRecordsRequest, ListParnterAdjustRecordsResponse>(request,
+            BssMeta.listParnterAdjustRecords, hcClient);
     }
 
     /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
@@ -984,25 +1022,6 @@ public class BssAsyncClient {
         ListSkuInventoriesRequest request) {
         return new AsyncInvoker<ListSkuInventoriesRequest, ListSkuInventoriesResponse>(request,
             BssMeta.listSkuInventories, hcClient);
-    }
-
-    /** 查询客户消费记录 功能描述：查询客户消费记录
-     *
-     * @param ListSubCustomerBillDetailRequest 请求对象
-     * @return CompletableFuture<ListSubCustomerBillDetailResponse> */
-    public CompletableFuture<ListSubCustomerBillDetailResponse> listSubCustomerBillDetailAsync(
-        ListSubCustomerBillDetailRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssMeta.listSubCustomerBillDetail);
-    }
-
-    /** 查询客户消费记录 功能描述：查询客户消费记录
-     *
-     * @param ListSubCustomerBillDetailRequest 请求对象
-     * @return AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> */
-    public AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetailAsyncInvoker(
-        ListSubCustomerBillDetailRequest request) {
-        return new AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse>(request,
-            BssMeta.listSubCustomerBillDetail, hcClient);
     }
 
     /** 查询优惠券列表 功能描述：伙伴可以查询自身的优惠券信息。

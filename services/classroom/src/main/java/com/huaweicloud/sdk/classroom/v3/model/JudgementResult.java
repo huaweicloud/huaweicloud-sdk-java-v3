@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.classroom.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 任务执行结果 */
 public class JudgementResult {
@@ -22,6 +25,21 @@ public class JudgementResult {
     @JsonProperty(value = "image_id")
 
     private String imageId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "case_count")
+
+    private Integer caseCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "executed_count")
+
+    private Integer executedCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "testcases")
+
+    private List<JudgementCaseResult> testcases = null;
 
     public JudgementResult withOutput(String output) {
         this.output = output;
@@ -71,6 +89,70 @@ public class JudgementResult {
         this.imageId = imageId;
     }
 
+    public JudgementResult withCaseCount(Integer caseCount) {
+        this.caseCount = caseCount;
+        return this;
+    }
+
+    /** 用例形式输出的用例总个数
+     * 
+     * @return caseCount */
+    public Integer getCaseCount() {
+        return caseCount;
+    }
+
+    public void setCaseCount(Integer caseCount) {
+        this.caseCount = caseCount;
+    }
+
+    public JudgementResult withExecutedCount(Integer executedCount) {
+        this.executedCount = executedCount;
+        return this;
+    }
+
+    /** 用例形式输出的已执行用例的个数
+     * 
+     * @return executedCount */
+    public Integer getExecutedCount() {
+        return executedCount;
+    }
+
+    public void setExecutedCount(Integer executedCount) {
+        this.executedCount = executedCount;
+    }
+
+    public JudgementResult withTestcases(List<JudgementCaseResult> testcases) {
+        this.testcases = testcases;
+        return this;
+    }
+
+    public JudgementResult addTestcasesItem(JudgementCaseResult testcasesItem) {
+        if (this.testcases == null) {
+            this.testcases = new ArrayList<>();
+        }
+        this.testcases.add(testcasesItem);
+        return this;
+    }
+
+    public JudgementResult withTestcases(Consumer<List<JudgementCaseResult>> testcasesSetter) {
+        if (this.testcases == null) {
+            this.testcases = new ArrayList<>();
+        }
+        testcasesSetter.accept(this.testcases);
+        return this;
+    }
+
+    /** 用例形式输出的已执行用例的结果
+     * 
+     * @return testcases */
+    public List<JudgementCaseResult> getTestcases() {
+        return testcases;
+    }
+
+    public void setTestcases(List<JudgementCaseResult> testcases) {
+        this.testcases = testcases;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -82,12 +164,15 @@ public class JudgementResult {
         JudgementResult judgementResult = (JudgementResult) o;
         return Objects.equals(this.output, judgementResult.output)
             && Objects.equals(this.fileId, judgementResult.fileId)
-            && Objects.equals(this.imageId, judgementResult.imageId);
+            && Objects.equals(this.imageId, judgementResult.imageId)
+            && Objects.equals(this.caseCount, judgementResult.caseCount)
+            && Objects.equals(this.executedCount, judgementResult.executedCount)
+            && Objects.equals(this.testcases, judgementResult.testcases);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(output, fileId, imageId);
+        return Objects.hash(output, fileId, imageId, caseCount, executedCount, testcases);
     }
 
     @Override
@@ -97,6 +182,9 @@ public class JudgementResult {
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    fileId: ").append(toIndentedString(fileId)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    caseCount: ").append(toIndentedString(caseCount)).append("\n");
+        sb.append("    executedCount: ").append(toIndentedString(executedCount)).append("\n");
+        sb.append("    testcases: ").append(toIndentedString(testcases)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /** AccountBalanceV3 */
@@ -21,7 +22,7 @@ public class AccountBalanceV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
@@ -31,12 +32,12 @@ public class AccountBalanceV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "designated_amount")
 
-    private Double designatedAmount;
+    private BigDecimal designatedAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
 
-    private Double creditAmount;
+    private BigDecimal creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -75,7 +76,7 @@ public class AccountBalanceV3 {
         this.accountType = accountType;
     }
 
-    public AccountBalanceV3 withAmount(Double amount) {
+    public AccountBalanceV3 withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -83,11 +84,11 @@ public class AccountBalanceV3 {
     /** |参数名称：余额。| |参数的约束及描述：余额。|
      * 
      * @return amount */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
@@ -107,7 +108,7 @@ public class AccountBalanceV3 {
         this.currency = currency;
     }
 
-    public AccountBalanceV3 withDesignatedAmount(Double designatedAmount) {
+    public AccountBalanceV3 withDesignatedAmount(BigDecimal designatedAmount) {
         this.designatedAmount = designatedAmount;
         return this;
     }
@@ -115,15 +116,15 @@ public class AccountBalanceV3 {
     /** |参数名称：专款专用余额。| |参数的约束及描述：专款专用余额。|
      * 
      * @return designatedAmount */
-    public Double getDesignatedAmount() {
+    public BigDecimal getDesignatedAmount() {
         return designatedAmount;
     }
 
-    public void setDesignatedAmount(Double designatedAmount) {
+    public void setDesignatedAmount(BigDecimal designatedAmount) {
         this.designatedAmount = designatedAmount;
     }
 
-    public AccountBalanceV3 withCreditAmount(Double creditAmount) {
+    public AccountBalanceV3 withCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -131,11 +132,11 @@ public class AccountBalanceV3 {
     /** |参数名称：总信用额度。只有账户类型是2:信用的时候才有该字段| |参数的约束及描述：总信用额度。只有账户类型是2:信用的时候才有该字段|
      * 
      * @return creditAmount */
-    public Double getCreditAmount() {
+    public BigDecimal getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(Double creditAmount) {
+    public void setCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
     }
 

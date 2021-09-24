@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.bssintl.v2.model;
+package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** FreeResourcePackage */
-public class FreeResourcePackage {
+/** FreeResourcePackageV3 */
+public class FreeResourcePackageV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_instance_id")
@@ -84,14 +84,14 @@ public class FreeResourcePackage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resources")
 
-    private List<FreeResource> freeResources = null;
+    private List<FreeResourceV3> freeResources = null;
 
-    public FreeResourcePackage withOrderInstanceId(String orderInstanceId) {
+    public FreeResourcePackageV3 withOrderInstanceId(String orderInstanceId) {
         this.orderInstanceId = orderInstanceId;
         return this;
     }
 
-    /** |参数名称：订购实例的ID| |参数约束及描述：订购实例的ID|
+    /** 订购资源包产品后，系统生成的ID，是这个资源包列表的标识字段。
      * 
      * @return orderInstanceId */
     public String getOrderInstanceId() {
@@ -102,12 +102,12 @@ public class FreeResourcePackage {
         this.orderInstanceId = orderInstanceId;
     }
 
-    public FreeResourcePackage withOrderId(String orderId) {
+    public FreeResourcePackageV3 withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    /** |参数名称：订单ID| |参数约束及描述：订单ID|
+    /** 订单ID，如果source_type为“1：软开云赠送”，该字段为空。
      * 
      * @return orderId */
     public String getOrderId() {
@@ -118,12 +118,12 @@ public class FreeResourcePackage {
         this.orderId = orderId;
     }
 
-    public FreeResourcePackage withProductId(String productId) {
+    public FreeResourcePackageV3 withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
-    /** |参数名称：产品ID，即资源包ID| |参数约束及描述：产品ID，即资源包ID|
+    /** 产品ID，即资源包ID。
      * 
      * @return productId */
     public String getProductId() {
@@ -134,12 +134,12 @@ public class FreeResourcePackage {
         this.productId = productId;
     }
 
-    public FreeResourcePackage withProductName(String productName) {
+    public FreeResourcePackageV3 withProductName(String productName) {
         this.productName = productName;
         return this;
     }
 
-    /** |参数名称：产品名称，即资源包名称| |参数约束及描述：产品名称，即资源包名称|
+    /** 产品名称，即资源包名称。
      * 
      * @return productName */
     public String getProductName() {
@@ -150,12 +150,12 @@ public class FreeResourcePackage {
         this.productName = productName;
     }
 
-    public FreeResourcePackage withEnterpriseProjectId(String enterpriseProjectId) {
+    public FreeResourcePackageV3 withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    /** |参数名称：企业项目ID| |参数约束及描述：企业项目ID|
+    /** 企业项目ID。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -166,12 +166,12 @@ public class FreeResourcePackage {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public FreeResourcePackage withEnterpriseProjectScope(Integer enterpriseProjectScope) {
+    public FreeResourcePackageV3 withEnterpriseProjectScope(Integer enterpriseProjectScope) {
         this.enterpriseProjectScope = enterpriseProjectScope;
         return this;
     }
 
-    /** |参数名称：[0-1]应用范围0：应用所有1：应用到具体企业项目| |参数的约束及描述：[0-1]应用范围0：应用所有1：应用到具体企业项目|
+    /** 企业项目应用范围： 0：应用所有1：应用到具体企业项目
      * 
      * @return enterpriseProjectScope */
     public Integer getEnterpriseProjectScope() {
@@ -182,12 +182,12 @@ public class FreeResourcePackage {
         this.enterpriseProjectScope = enterpriseProjectScope;
     }
 
-    public FreeResourcePackage withEffectiveTime(String effectiveTime) {
+    public FreeResourcePackageV3 withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
         return this;
     }
 
-    /** |参数名称：生效时间，购买资源包的时间，UTC时间| |参数约束及描述：生效时间，购买资源包的时间，UTC时间|
+    /** 生效时间，购买资源包的时间，格式UTC。
      * 
      * @return effectiveTime */
     public String getEffectiveTime() {
@@ -198,12 +198,12 @@ public class FreeResourcePackage {
         this.effectiveTime = effectiveTime;
     }
 
-    public FreeResourcePackage withExpireTime(String expireTime) {
+    public FreeResourcePackageV3 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
     }
 
-    /** |参数名称：失效时间，资源包到期时间，UTC时间| |参数约束及描述：失效时间，资源包到期时间，UTC时间|
+    /** 失效时间，资源包到期时间，格式UTC。
      * 
      * @return expireTime */
     public String getExpireTime() {
@@ -214,12 +214,12 @@ public class FreeResourcePackage {
         this.expireTime = expireTime;
     }
 
-    public FreeResourcePackage withStatus(Integer status) {
+    public FreeResourcePackageV3 withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    /** |参数名称：状态0：未生效1：生效中2：已用完3：已失效| |参数的约束及描述：状态0：未生效1：生效中2：已用完3：已失效|
+    /** 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订
      * 
      * @return status */
     public Integer getStatus() {
@@ -230,12 +230,12 @@ public class FreeResourcePackage {
         this.status = status;
     }
 
-    public FreeResourcePackage withServiceTypeCode(String serviceTypeCode) {
+    public FreeResourcePackageV3 withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
     }
 
-    /** |参数名称：云服务类型| |参数约束及描述：云服务类型|
+    /** 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -246,12 +246,12 @@ public class FreeResourcePackage {
         this.serviceTypeCode = serviceTypeCode;
     }
 
-    public FreeResourcePackage withRegionCode(String regionCode) {
+    public FreeResourcePackageV3 withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
     }
 
-    /** |参数名称：区域编码| |参数约束及描述：区域编码|
+    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return regionCode */
     public String getRegionCode() {
@@ -262,12 +262,12 @@ public class FreeResourcePackage {
         this.regionCode = regionCode;
     }
 
-    public FreeResourcePackage withSourceType(Integer sourceType) {
+    public FreeResourcePackageV3 withSourceType(Integer sourceType) {
         this.sourceType = sourceType;
         return this;
     }
 
-    /** |参数名称：来源类型：0：订单1：软开云赠送2：免费权益| |参数的约束及描述：来源类型：0：订单1：软开云赠送2：免费权益|
+    /** 资源包的来源类型： 0：订单1：软开云赠送
      * 
      * @return sourceType */
     public Integer getSourceType() {
@@ -278,12 +278,12 @@ public class FreeResourcePackage {
         this.sourceType = sourceType;
     }
 
-    public FreeResourcePackage withBundleType(String bundleType) {
+    public FreeResourcePackageV3 withBundleType(String bundleType) {
         this.bundleType = bundleType;
         return this;
     }
 
-    /** |参数名称：套餐绑定类型ATOMIC_PKG:原子套餐BUNDLE_PKG:组合套餐| |参数约束及描述：套餐绑定类型ATOMIC_PKG:原子套餐BUNDLE_PKG:组合套餐|
+    /** 套餐绑定类型： ATOMIC_PKG：原子套餐BUNDLE_PKG：组合套餐
      * 
      * @return bundleType */
     public String getBundleType() {
@@ -294,12 +294,13 @@ public class FreeResourcePackage {
         this.bundleType = bundleType;
     }
 
-    public FreeResourcePackage withQuotaReuseMode(Integer quotaReuseMode) {
+    public FreeResourcePackageV3 withQuotaReuseMode(Integer quotaReuseMode) {
         this.quotaReuseMode = quotaReuseMode;
         return this;
     }
 
-    /** |参数名称：重用模式，1：可重用；2：不可重用| |参数的约束及描述：重用模式，1：可重用；2：不可重用|
+    /** 使用模式。 1：可重置表示购买的资源包能够按照一定的周期恢复使用量。例如购买一个1年的按需资源包，使用量是40G，可重置，重置周期为1个月，表示1年内每个月会给予40G的使用量。
+     * 2：不可重置表示购买的资源包的使用量不会恢复。例如购买一个1年的按需资源包，使用量是40G，不可重置，表示1年内一共给予40G的使用量。
      * 
      * @return quotaReuseMode */
     public Integer getQuotaReuseMode() {
@@ -310,12 +311,12 @@ public class FreeResourcePackage {
         this.quotaReuseMode = quotaReuseMode;
     }
 
-    public FreeResourcePackage withFreeResources(List<FreeResource> freeResources) {
+    public FreeResourcePackageV3 withFreeResources(List<FreeResourceV3> freeResources) {
         this.freeResources = freeResources;
         return this;
     }
 
-    public FreeResourcePackage addFreeResourcesItem(FreeResource freeResourcesItem) {
+    public FreeResourcePackageV3 addFreeResourcesItem(FreeResourceV3 freeResourcesItem) {
         if (this.freeResources == null) {
             this.freeResources = new ArrayList<>();
         }
@@ -323,7 +324,7 @@ public class FreeResourcePackage {
         return this;
     }
 
-    public FreeResourcePackage withFreeResources(Consumer<List<FreeResource>> freeResourcesSetter) {
+    public FreeResourcePackageV3 withFreeResources(Consumer<List<FreeResourceV3>> freeResourcesSetter) {
         if (this.freeResources == null) {
             this.freeResources = new ArrayList<>();
         }
@@ -331,14 +332,14 @@ public class FreeResourcePackage {
         return this;
     }
 
-    /** |参数名称：资源套餐信息（套餐包id级的详情）| |参数约束以及描述：资源套餐信息（套餐包id级的详情）|
+    /** 资源套餐内的资源项信息（资源项ID级的详情），具体参见表3。
      * 
      * @return freeResources */
-    public List<FreeResource> getFreeResources() {
+    public List<FreeResourceV3> getFreeResources() {
         return freeResources;
     }
 
-    public void setFreeResources(List<FreeResource> freeResources) {
+    public void setFreeResources(List<FreeResourceV3> freeResources) {
         this.freeResources = freeResources;
     }
 
@@ -350,22 +351,22 @@ public class FreeResourcePackage {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        FreeResourcePackage freeResourcePackage = (FreeResourcePackage) o;
-        return Objects.equals(this.orderInstanceId, freeResourcePackage.orderInstanceId)
-            && Objects.equals(this.orderId, freeResourcePackage.orderId)
-            && Objects.equals(this.productId, freeResourcePackage.productId)
-            && Objects.equals(this.productName, freeResourcePackage.productName)
-            && Objects.equals(this.enterpriseProjectId, freeResourcePackage.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectScope, freeResourcePackage.enterpriseProjectScope)
-            && Objects.equals(this.effectiveTime, freeResourcePackage.effectiveTime)
-            && Objects.equals(this.expireTime, freeResourcePackage.expireTime)
-            && Objects.equals(this.status, freeResourcePackage.status)
-            && Objects.equals(this.serviceTypeCode, freeResourcePackage.serviceTypeCode)
-            && Objects.equals(this.regionCode, freeResourcePackage.regionCode)
-            && Objects.equals(this.sourceType, freeResourcePackage.sourceType)
-            && Objects.equals(this.bundleType, freeResourcePackage.bundleType)
-            && Objects.equals(this.quotaReuseMode, freeResourcePackage.quotaReuseMode)
-            && Objects.equals(this.freeResources, freeResourcePackage.freeResources);
+        FreeResourcePackageV3 freeResourcePackageV3 = (FreeResourcePackageV3) o;
+        return Objects.equals(this.orderInstanceId, freeResourcePackageV3.orderInstanceId)
+            && Objects.equals(this.orderId, freeResourcePackageV3.orderId)
+            && Objects.equals(this.productId, freeResourcePackageV3.productId)
+            && Objects.equals(this.productName, freeResourcePackageV3.productName)
+            && Objects.equals(this.enterpriseProjectId, freeResourcePackageV3.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectScope, freeResourcePackageV3.enterpriseProjectScope)
+            && Objects.equals(this.effectiveTime, freeResourcePackageV3.effectiveTime)
+            && Objects.equals(this.expireTime, freeResourcePackageV3.expireTime)
+            && Objects.equals(this.status, freeResourcePackageV3.status)
+            && Objects.equals(this.serviceTypeCode, freeResourcePackageV3.serviceTypeCode)
+            && Objects.equals(this.regionCode, freeResourcePackageV3.regionCode)
+            && Objects.equals(this.sourceType, freeResourcePackageV3.sourceType)
+            && Objects.equals(this.bundleType, freeResourcePackageV3.bundleType)
+            && Objects.equals(this.quotaReuseMode, freeResourcePackageV3.quotaReuseMode)
+            && Objects.equals(this.freeResources, freeResourcePackageV3.freeResources);
     }
 
     @Override
@@ -390,7 +391,7 @@ public class FreeResourcePackage {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class FreeResourcePackage {\n");
+        sb.append("class FreeResourcePackageV3 {\n");
         sb.append("    orderInstanceId: ").append(toIndentedString(orderInstanceId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");

@@ -18,11 +18,6 @@ public class ShowTestCaseDetailV2Request {
 
     private String testcaseNumber;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "testcase_id")
-
-    private String testcaseId;
-
     public ShowTestCaseDetailV2Request withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -55,22 +50,6 @@ public class ShowTestCaseDetailV2Request {
         this.testcaseNumber = testcaseNumber;
     }
 
-    public ShowTestCaseDetailV2Request withTestcaseId(String testcaseId) {
-        this.testcaseId = testcaseId;
-        return this;
-    }
-
-    /** 测试用例唯一标识，固定长度32位字符
-     * 
-     * @return testcaseId */
-    public String getTestcaseId() {
-        return testcaseId;
-    }
-
-    public void setTestcaseId(String testcaseId) {
-        this.testcaseId = testcaseId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -81,13 +60,12 @@ public class ShowTestCaseDetailV2Request {
         }
         ShowTestCaseDetailV2Request showTestCaseDetailV2Request = (ShowTestCaseDetailV2Request) o;
         return Objects.equals(this.projectId, showTestCaseDetailV2Request.projectId)
-            && Objects.equals(this.testcaseNumber, showTestCaseDetailV2Request.testcaseNumber)
-            && Objects.equals(this.testcaseId, showTestCaseDetailV2Request.testcaseId);
+            && Objects.equals(this.testcaseNumber, showTestCaseDetailV2Request.testcaseNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, testcaseNumber, testcaseId);
+        return Objects.hash(projectId, testcaseNumber);
     }
 
     @Override
@@ -96,7 +74,6 @@ public class ShowTestCaseDetailV2Request {
         sb.append("class ShowTestCaseDetailV2Request {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    testcaseNumber: ").append(toIndentedString(testcaseNumber)).append("\n");
-        sb.append("    testcaseId: ").append(toIndentedString(testcaseId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -14,19 +14,19 @@ public class Configs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputs")
 
-    private List<Object> inputs = null;
+    private List<Input> inputs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
 
-    public Configs withInputs(List<Object> inputs) {
+    public Configs withInputs(List<Input> inputs) {
         this.inputs = inputs;
         return this;
     }
 
-    public Configs addInputsItem(Object inputsItem) {
+    public Configs addInputsItem(Input inputsItem) {
         if (this.inputs == null) {
             this.inputs = new ArrayList<>();
         }
@@ -34,7 +34,7 @@ public class Configs {
         return this;
     }
 
-    public Configs withInputs(Consumer<List<Object>> inputsSetter) {
+    public Configs withInputs(Consumer<List<Input>> inputsSetter) {
         if (this.inputs == null) {
             this.inputs = new ArrayList<>();
         }
@@ -42,14 +42,14 @@ public class Configs {
         return this;
     }
 
-    /** Get inputs
+    /** 输入参数列表，列表中的每个参数为“name,value”结构，请参考inputs数据结构参数说明。在“from-config-values”数据结构中，不同的源连接类型有不同的“inputs”参数列表，请参见源端作业参数说明下的章节。在“to-cofig-values”数据结构中，不同的目的连接类型有不同的“inputs”参数列表，请参见目的端作业参数说明下面的子章节。在“driver-config-values”数据结构中，“inputs”具体参数请参见作业任务参数说明。
      * 
      * @return inputs */
-    public List<Object> getInputs() {
+    public List<Input> getInputs() {
         return inputs;
     }
 
-    public void setInputs(List<Object> inputs) {
+    public void setInputs(List<Input> inputs) {
         this.inputs = inputs;
     }
 

@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FreeResource */
-public class FreeResource {
+/** FreeResourceV3 */
+public class FreeResourceV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_id")
@@ -21,24 +21,24 @@ public class FreeResource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private String amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_amount")
 
-    private Double originalAmount;
+    private String originalAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
 
     private Integer measureId;
 
-    public FreeResource withFreeResourceId(String freeResourceId) {
+    public FreeResourceV3 withFreeResourceId(String freeResourceId) {
         this.freeResourceId = freeResourceId;
         return this;
     }
 
-    /** |参数名称：免费资源ID| |参数约束及描述：免费资源ID|
+    /** |参数名称：资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。| |参数约束及描述：资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。|
      * 
      * @return freeResourceId */
     public String getFreeResourceId() {
@@ -49,12 +49,12 @@ public class FreeResource {
         this.freeResourceId = freeResourceId;
     }
 
-    public FreeResource withUsageTypeName(String usageTypeName) {
+    public FreeResourceV3 withUsageTypeName(String usageTypeName) {
         this.usageTypeName = usageTypeName;
         return this;
     }
 
-    /** |参数名称：使用量类型名称| |参数约束及描述：使用量类型名称|
+    /** |参数名称：使用量类型名称。| |参数约束及描述：使用量类型名称。|
      * 
      * @return usageTypeName */
     public String getUsageTypeName() {
@@ -65,44 +65,44 @@ public class FreeResource {
         this.usageTypeName = usageTypeName;
     }
 
-    public FreeResource withAmount(Double amount) {
+    public FreeResourceV3 withAmount(String amount) {
         this.amount = amount;
         return this;
     }
 
-    /** |参数名称：免费资源剩余额度| |参数约束及描述：免费资源剩余额度，如果是可重置套餐包，是指当前重置周期内的剩余量|
+    /** |参数名称：资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。| |参数约束及描述：资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。|
      * 
      * @return amount */
-    public Double getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
-    public FreeResource withOriginalAmount(Double originalAmount) {
+    public FreeResourceV3 withOriginalAmount(String originalAmount) {
         this.originalAmount = originalAmount;
         return this;
     }
 
-    /** |参数名称：免费资源原始额度| |参数约束及描述：免费资源原始额度，针对可重置套餐包，是指每个重置周期内的总量|
+    /** |参数名称：资源原始额度，针对可重置资源包，是指每个重置周期内的总量。| |参数约束及描述：资源原始额度，针对可重置资源包，是指每个重置周期内的总量。|
      * 
      * @return originalAmount */
-    public Double getOriginalAmount() {
+    public String getOriginalAmount() {
         return originalAmount;
     }
 
-    public void setOriginalAmount(Double originalAmount) {
+    public void setOriginalAmount(String originalAmount) {
         this.originalAmount = originalAmount;
     }
 
-    public FreeResource withMeasureId(Integer measureId) {
+    public FreeResourceV3 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
     }
 
-    /** |参数名称：度量单位| |参数约束及描述：度量单位，免费资源套餐额度度量单位|
+    /** |参数名称：度量单位，免费资源套餐额度度量单位。| |参数的约束及描述：度量单位，免费资源套餐额度度量单位。|
      * 
      * @return measureId */
     public Integer getMeasureId() {
@@ -121,12 +121,12 @@ public class FreeResource {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        FreeResource freeResource = (FreeResource) o;
-        return Objects.equals(this.freeResourceId, freeResource.freeResourceId)
-            && Objects.equals(this.usageTypeName, freeResource.usageTypeName)
-            && Objects.equals(this.amount, freeResource.amount)
-            && Objects.equals(this.originalAmount, freeResource.originalAmount)
-            && Objects.equals(this.measureId, freeResource.measureId);
+        FreeResourceV3 freeResourceV3 = (FreeResourceV3) o;
+        return Objects.equals(this.freeResourceId, freeResourceV3.freeResourceId)
+            && Objects.equals(this.usageTypeName, freeResourceV3.usageTypeName)
+            && Objects.equals(this.amount, freeResourceV3.amount)
+            && Objects.equals(this.originalAmount, freeResourceV3.originalAmount)
+            && Objects.equals(this.measureId, freeResourceV3.measureId);
     }
 
     @Override
@@ -137,7 +137,7 @@ public class FreeResource {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class FreeResource {\n");
+        sb.append("class FreeResourceV3 {\n");
         sb.append("    freeResourceId: ").append(toIndentedString(freeResourceId)).append("\n");
         sb.append("    usageTypeName: ").append(toIndentedString(usageTypeName)).append("\n");
         sb.append("    amount: ").append(toIndentedString(amount)).append("\n");

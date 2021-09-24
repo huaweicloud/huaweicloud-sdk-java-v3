@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /** Response Object */
@@ -12,12 +13,12 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "budget_amount")
 
-    private Double budgetAmount;
+    private BigDecimal budgetAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_amount")
 
-    private Double usedAmount;
+    private BigDecimal usedAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -29,7 +30,7 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
 
     private String currency;
 
-    public ShowSubCustomerBudgetResponse withBudgetAmount(Double budgetAmount) {
+    public ShowSubCustomerBudgetResponse withBudgetAmount(BigDecimal budgetAmount) {
         this.budgetAmount = budgetAmount;
         return this;
     }
@@ -37,15 +38,15 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
     /** |参数名称：预算金额。| |参数的约束及描述：预算金额。|
      * 
      * @return budgetAmount */
-    public Double getBudgetAmount() {
+    public BigDecimal getBudgetAmount() {
         return budgetAmount;
     }
 
-    public void setBudgetAmount(Double budgetAmount) {
+    public void setBudgetAmount(BigDecimal budgetAmount) {
         this.budgetAmount = budgetAmount;
     }
 
-    public ShowSubCustomerBudgetResponse withUsedAmount(Double usedAmount) {
+    public ShowSubCustomerBudgetResponse withUsedAmount(BigDecimal usedAmount) {
         this.usedAmount = usedAmount;
         return this;
     }
@@ -53,11 +54,11 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
     /** |参数名称：已经使用的预算。该预算存在一定的时延和误差。| |参数的约束及描述：已经使用的预算。该预算存在一定的时延和误差。|
      * 
      * @return usedAmount */
-    public Double getUsedAmount() {
+    public BigDecimal getUsedAmount() {
         return usedAmount;
     }
 
-    public void setUsedAmount(Double usedAmount) {
+    public void setUsedAmount(BigDecimal usedAmount) {
         this.usedAmount = usedAmount;
     }
 

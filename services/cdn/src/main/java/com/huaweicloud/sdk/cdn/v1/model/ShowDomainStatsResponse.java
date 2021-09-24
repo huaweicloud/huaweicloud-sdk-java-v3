@@ -52,7 +52,7 @@ public class ShowDomainStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据起始时间戳，可能与请求时间不一致，可能不返回
+    /** 数据起始时间戳，可能不返回
      * 
      * @return startTime */
     public Long getStartTime() {
@@ -68,7 +68,7 @@ public class ShowDomainStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据结束时间戳，可能与请求时间不一致，可能不返回
+    /** 数据结束时间戳，可能不返回
      * 
      * @return endTime */
     public Long getEndTime() {

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /** ModSubCustomerBudgetReq */
@@ -16,7 +17,7 @@ public class ModSubCustomerBudgetReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "budget_amount")
 
-    private Double budgetAmount;
+    private BigDecimal budgetAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cancel_partner_frozen")
@@ -39,7 +40,7 @@ public class ModSubCustomerBudgetReq {
         this.customerId = customerId;
     }
 
-    public ModSubCustomerBudgetReq withBudgetAmount(Double budgetAmount) {
+    public ModSubCustomerBudgetReq withBudgetAmount(BigDecimal budgetAmount) {
         this.budgetAmount = budgetAmount;
         return this;
     }
@@ -47,11 +48,11 @@ public class ModSubCustomerBudgetReq {
     /** |参数名称：调整的目标金额，可精确至小数点后面2位。| |参数的约束及描述：调整的目标金额，可精确至小数点后面2位。| minimum: 0 maximum: 2147483647
      * 
      * @return budgetAmount */
-    public Double getBudgetAmount() {
+    public BigDecimal getBudgetAmount() {
         return budgetAmount;
     }
 
-    public void setBudgetAmount(Double budgetAmount) {
+    public void setBudgetAmount(BigDecimal budgetAmount) {
         this.budgetAmount = budgetAmount;
     }
 

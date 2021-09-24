@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /** OrderRefundInfoV2 */
@@ -16,7 +17,7 @@ public class OrderRefundInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -64,7 +65,7 @@ public class OrderRefundInfoV2 {
         this.id = id;
     }
 
-    public OrderRefundInfoV2 withAmount(Double amount) {
+    public OrderRefundInfoV2 withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -72,11 +73,11 @@ public class OrderRefundInfoV2 {
     /** |参数名称：金额。金额为负数，表示退订金额。金额为正数，表示已消费金额或收取的退订手续费。| |参数的约束及描述：金额。金额为负数，表示退订金额。金额为正数，表示已消费金额或收取的退订手续费。|
      * 
      * @return amount */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

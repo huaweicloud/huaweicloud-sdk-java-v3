@@ -17,7 +17,7 @@ public class CceClient {
         return new ClientBuilder<>(CceClient::new);
     }
 
-    /** 纳管节点 该API用于在指定集群下纳管节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 纳管节点 该API用于在指定集群下纳管节点。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param AddNodeRequest 请求对象
      * @return AddNodeResponse */
@@ -25,7 +25,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.addNode);
     }
 
-    /** 纳管节点 该API用于在指定集群下纳管节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 纳管节点 该API用于在指定集群下纳管节点。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param AddNodeRequest 请求对象
      * @return SyncInvoker<AddNodeRequest, AddNodeResponse> */
@@ -132,9 +132,9 @@ public class CceClient {
             CceMeta.createKubernetesClusterCert, hcClient);
     }
 
-    /** 创建节点 该API用于在指定集群下创建节点。 &gt;
+    /** 创建节点 该API用于在指定集群下创建节点。 &gt; -
      * 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。
-     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param CreateNodeRequest 请求对象
      * @return CreateNodeResponse */
@@ -142,9 +142,9 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.createNode);
     }
 
-    /** 创建节点 该API用于在指定集群下创建节点。 &gt;
+    /** 创建节点 该API用于在指定集群下创建节点。 &gt; -
      * 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。
-     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param CreateNodeRequest 请求对象
      * @return SyncInvoker<CreateNodeRequest, CreateNodeResponse> */
@@ -213,7 +213,7 @@ public class CceClient {
             request, CceMeta.deleteCloudPersistentVolumeClaims, hcClient);
     }
 
-    /** 删除集群 该API用于删除一个指定的集群。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 删除集群 该API用于删除一个指定的集群。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param DeleteClusterRequest 请求对象
      * @return DeleteClusterResponse */
@@ -221,7 +221,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.deleteCluster);
     }
 
-    /** 删除集群 该API用于删除一个指定的集群。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 删除集群 该API用于删除一个指定的集群。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param DeleteClusterRequest 请求对象
      * @return SyncInvoker<DeleteClusterRequest, DeleteClusterResponse> */
@@ -229,7 +229,7 @@ public class CceClient {
         return new SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, CceMeta.deleteCluster, hcClient);
     }
 
-    /** 删除节点 该API用于删除指定的节点。 &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+    /** 删除节点 该API用于删除指定的节点。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      *
      * @param DeleteNodeRequest 请求对象
      * @return DeleteNodeResponse */
@@ -237,7 +237,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.deleteNode);
     }
 
-    /** 删除节点 该API用于删除指定的节点。 &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+    /** 删除节点 该API用于删除指定的节点。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      *
      * @param DeleteNodeRequest 请求对象
      * @return SyncInvoker<DeleteNodeRequest, DeleteNodeResponse> */
@@ -351,7 +351,7 @@ public class CceClient {
         return new SyncInvoker<ListNodePoolsRequest, ListNodePoolsResponse>(request, CceMeta.listNodePools, hcClient);
     }
 
-    /** 获取集群下所有节点 该API用于通过集群ID获取指定集群下所有节点的详细信息。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 获取集群下所有节点 该API用于通过集群ID获取指定集群下所有节点的详细信息。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param ListNodesRequest 请求对象
      * @return ListNodesResponse */
@@ -359,7 +359,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.listNodes);
     }
 
-    /** 获取集群下所有节点 该API用于通过集群ID获取指定集群下所有节点的详细信息。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 获取集群下所有节点 该API用于通过集群ID获取指定集群下所有节点的详细信息。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param ListNodesRequest 请求对象
      * @return SyncInvoker<ListNodesRequest, ListNodesResponse> */
@@ -367,7 +367,7 @@ public class CceClient {
         return new SyncInvoker<ListNodesRequest, ListNodesResponse>(request, CceMeta.listNodes, hcClient);
     }
 
-    /** 节点迁移 该API用于在指定集群下迁移节点到另一集群。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 节点迁移 该API用于在指定集群下迁移节点到另一集群。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param MigrateNodeRequest 请求对象
      * @return MigrateNodeResponse */
@@ -375,7 +375,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.migrateNode);
     }
 
-    /** 节点迁移 该API用于在指定集群下迁移节点到另一集群。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 节点迁移 该API用于在指定集群下迁移节点到另一集群。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param MigrateNodeRequest 请求对象
      * @return SyncInvoker<MigrateNodeRequest, MigrateNodeResponse> */
@@ -383,7 +383,7 @@ public class CceClient {
         return new SyncInvoker<MigrateNodeRequest, MigrateNodeResponse>(request, CceMeta.migrateNode, hcClient);
     }
 
-    /** 节点移除 该API用于在指定集群下移除节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 节点移除 该API用于在指定集群下移除节点。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param RemoveNodeRequest 请求对象
      * @return RemoveNodeResponse */
@@ -391,7 +391,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.removeNode);
     }
 
-    /** 节点移除 该API用于在指定集群下移除节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 节点移除 该API用于在指定集群下移除节点。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param RemoveNodeRequest 请求对象
      * @return SyncInvoker<RemoveNodeRequest, RemoveNodeResponse> */
@@ -399,7 +399,7 @@ public class CceClient {
         return new SyncInvoker<RemoveNodeRequest, RemoveNodeResponse>(request, CceMeta.removeNode, hcClient);
     }
 
-    /** 重置节点 该API用于在指定集群下重置节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 重置节点 该API用于在指定集群下重置节点。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param ResetNodeRequest 请求对象
      * @return ResetNodeResponse */
@@ -407,7 +407,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.resetNode);
     }
 
-    /** 重置节点 该API用于在指定集群下重置节点。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 重置节点 该API用于在指定集群下重置节点。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param ResetNodeRequest 请求对象
      * @return SyncInvoker<ResetNodeRequest, ResetNodeResponse> */
@@ -433,7 +433,7 @@ public class CceClient {
             hcClient);
     }
 
-    /** 获取指定的集群 该API用于获取指定集群的详细信息。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 获取指定的集群 该API用于获取指定集群的详细信息。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param ShowClusterRequest 请求对象
      * @return ShowClusterResponse */
@@ -441,7 +441,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.showCluster);
     }
 
-    /** 获取指定的集群 该API用于获取指定集群的详细信息。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 获取指定的集群 该API用于获取指定集群的详细信息。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param ShowClusterRequest 请求对象
      * @return SyncInvoker<ShowClusterRequest, ShowClusterResponse> */
@@ -467,7 +467,7 @@ public class CceClient {
         return new SyncInvoker<ShowJobRequest, ShowJobResponse>(request, CceMeta.showJob, hcClient);
     }
 
-    /** 获取指定的节点 该API用于通过节点ID获取指定节点的详细信息。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 获取指定的节点 该API用于通过节点ID获取指定节点的详细信息。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param ShowNodeRequest 请求对象
      * @return ShowNodeResponse */
@@ -475,7 +475,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.showNode);
     }
 
-    /** 获取指定的节点 该API用于通过节点ID获取指定节点的详细信息。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 获取指定的节点 该API用于通过节点ID获取指定节点的详细信息。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param ShowNodeRequest 请求对象
      * @return SyncInvoker<ShowNodeRequest, ShowNodeResponse> */
@@ -517,7 +517,7 @@ public class CceClient {
             CceMeta.updateAddonInstance, hcClient);
     }
 
-    /** 更新指定的集群 该API用于更新指定的集群。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 更新指定的集群 该API用于更新指定的集群。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param UpdateClusterRequest 请求对象
      * @return UpdateClusterResponse */
@@ -525,7 +525,7 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.updateCluster);
     }
 
-    /** 更新指定的集群 该API用于更新指定的集群。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 更新指定的集群 该API用于更新指定的集群。 &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param UpdateClusterRequest 请求对象
      * @return SyncInvoker<UpdateClusterRequest, UpdateClusterResponse> */

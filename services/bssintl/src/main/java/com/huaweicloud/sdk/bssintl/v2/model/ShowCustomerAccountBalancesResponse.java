@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -20,7 +21,7 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    private Double debtAmount;
+    private BigDecimal debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -65,7 +66,7 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         this.accountBalances = accountBalances;
     }
 
-    public ShowCustomerAccountBalancesResponse withDebtAmount(Double debtAmount) {
+    public ShowCustomerAccountBalancesResponse withDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -73,11 +74,11 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
     /** |参数名称：欠款总金额。| |参数的约束及描述：欠款总金额。|
      * 
      * @return debtAmount */
-    public Double getDebtAmount() {
+    public BigDecimal getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(Double debtAmount) {
+    public void setDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
     }
 

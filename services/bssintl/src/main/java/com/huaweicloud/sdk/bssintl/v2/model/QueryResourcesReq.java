@@ -41,6 +41,16 @@ public class QueryResourcesReq {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time_begin")
+
+    private String expireTimeBegin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time_end")
+
+    private String expireTimeEnd;
+
     public QueryResourcesReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
@@ -172,6 +182,38 @@ public class QueryResourcesReq {
         this.limit = limit;
     }
 
+    public QueryResourcesReq withExpireTimeBegin(String expireTimeBegin) {
+        this.expireTimeBegin = expireTimeBegin;
+        return this;
+    }
+
+    /** |参数名称：失效开始时间，UTC时间。| |参数约束及描述：失效开始时间，UTC时间。|
+     * 
+     * @return expireTimeBegin */
+    public String getExpireTimeBegin() {
+        return expireTimeBegin;
+    }
+
+    public void setExpireTimeBegin(String expireTimeBegin) {
+        this.expireTimeBegin = expireTimeBegin;
+    }
+
+    public QueryResourcesReq withExpireTimeEnd(String expireTimeEnd) {
+        this.expireTimeEnd = expireTimeEnd;
+        return this;
+    }
+
+    /** |参数名称：失效结束时间，UTC时间。| |参数约束及描述：失效结束时间，UTC时间。|
+     * 
+     * @return expireTimeEnd */
+    public String getExpireTimeEnd() {
+        return expireTimeEnd;
+    }
+
+    public void setExpireTimeEnd(String expireTimeEnd) {
+        this.expireTimeEnd = expireTimeEnd;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -186,12 +228,15 @@ public class QueryResourcesReq {
             && Objects.equals(this.onlyMainResource, queryResourcesReq.onlyMainResource)
             && Objects.equals(this.statusList, queryResourcesReq.statusList)
             && Objects.equals(this.offset, queryResourcesReq.offset)
-            && Objects.equals(this.limit, queryResourcesReq.limit);
+            && Objects.equals(this.limit, queryResourcesReq.limit)
+            && Objects.equals(this.expireTimeBegin, queryResourcesReq.expireTimeBegin)
+            && Objects.equals(this.expireTimeEnd, queryResourcesReq.expireTimeEnd);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceIds, orderId, onlyMainResource, statusList, offset, limit);
+        return Objects
+            .hash(resourceIds, orderId, onlyMainResource, statusList, offset, limit, expireTimeBegin, expireTimeEnd);
     }
 
     @Override
@@ -204,6 +249,8 @@ public class QueryResourcesReq {
         sb.append("    statusList: ").append(toIndentedString(statusList)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    expireTimeBegin: ").append(toIndentedString(expireTimeBegin)).append("\n");
+        sb.append("    expireTimeEnd: ").append(toIndentedString(expireTimeEnd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

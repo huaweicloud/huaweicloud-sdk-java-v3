@@ -15,14 +15,14 @@ public class ShowQuotaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotas")
 
-    private List<ShowQuotaResponseBodyQuotas> quotas = null;
+    private List<Quotas> quotas = null;
 
-    public ShowQuotaResponse withQuotas(List<ShowQuotaResponseBodyQuotas> quotas) {
+    public ShowQuotaResponse withQuotas(List<Quotas> quotas) {
         this.quotas = quotas;
         return this;
     }
 
-    public ShowQuotaResponse addQuotasItem(ShowQuotaResponseBodyQuotas quotasItem) {
+    public ShowQuotaResponse addQuotasItem(Quotas quotasItem) {
         if (this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class ShowQuotaResponse extends SdkResponse {
         return this;
     }
 
-    public ShowQuotaResponse withQuotas(Consumer<List<ShowQuotaResponseBodyQuotas>> quotasSetter) {
+    public ShowQuotaResponse withQuotas(Consumer<List<Quotas>> quotasSetter) {
         if (this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class ShowQuotaResponse extends SdkResponse {
     /** 配额数组
      * 
      * @return quotas */
-    public List<ShowQuotaResponseBodyQuotas> getQuotas() {
+    public List<Quotas> getQuotas() {
         return quotas;
     }
 
-    public void setQuotas(List<ShowQuotaResponseBodyQuotas> quotas) {
+    public void setQuotas(List<Quotas> quotas) {
         this.quotas = quotas;
     }
 

@@ -37,7 +37,8 @@ public class UpdateInstanceConfigurationRequestBody {
         return this;
     }
 
-    /** 参数值对象，用户基于默认参数模板自定义的参数值。
+    /** 参数值对象，用户基于默认参数模板自定义的参数值。为空时不修改参数值。 - key：参数名称，\"max_connections\":\"10\"。为空时不修改参数值，key不为空时value也不可为空。 -
+     * value：参数值，\"max_connections\":\"10\"。
      * 
      * @return values */
     public Map<String, String> getValues() {

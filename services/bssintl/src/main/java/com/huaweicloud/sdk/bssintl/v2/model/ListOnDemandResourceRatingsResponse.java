@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,17 +16,17 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private Double discountAmount;
+    private BigDecimal discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_website_amount")
 
-    private Double officialWebsiteAmount;
+    private BigDecimal officialWebsiteAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -42,7 +43,7 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
     private List<DemandProductRatingResult> productRatingResults = null;
 
-    public ListOnDemandResourceRatingsResponse withAmount(Double amount) {
+    public ListOnDemandResourceRatingsResponse withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -50,15 +51,15 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     /** |参数名称：总额| |参数约束及描述：即最终优惠后的金额|
      * 
      * @return amount */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
-    public ListOnDemandResourceRatingsResponse withDiscountAmount(Double discountAmount) {
+    public ListOnDemandResourceRatingsResponse withDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -66,15 +67,15 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     /** |参数名称：优惠额| |参数约束及描述：（官网价和总价的差）|
      * 
      * @return discountAmount */
-    public Double getDiscountAmount() {
+    public BigDecimal getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(Double discountAmount) {
+    public void setDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
     }
 
-    public ListOnDemandResourceRatingsResponse withOfficialWebsiteAmount(Double officialWebsiteAmount) {
+    public ListOnDemandResourceRatingsResponse withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
@@ -82,11 +83,11 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     /** |参数名称：官网价| |参数约束及描述：官网价|
      * 
      * @return officialWebsiteAmount */
-    public Double getOfficialWebsiteAmount() {
+    public BigDecimal getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 

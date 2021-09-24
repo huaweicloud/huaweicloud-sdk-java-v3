@@ -1,12 +1,12 @@
-package com.huaweicloud.sdk.bssintl.v2.model;
+package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListFreeResourcesReq */
-public class ListFreeResourcesReq {
+/** ListFreeResourceInfosReq */
+public class ListFreeResourceInfosReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_code")
@@ -48,12 +48,12 @@ public class ListFreeResourcesReq {
 
     private Integer limit;
 
-    public ListFreeResourcesReq withRegionCode(String regionCode) {
+    public ListFreeResourceInfosReq withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
     }
 
-    /** |参数名称：区域编码| |参数约束及描述：区域编码|
+    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return regionCode */
     public String getRegionCode() {
@@ -64,12 +64,12 @@ public class ListFreeResourcesReq {
         this.regionCode = regionCode;
     }
 
-    public ListFreeResourcesReq withOrderId(String orderId) {
+    public ListFreeResourceInfosReq withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    /** |参数名称：订单ID| |参数约束及描述：订单ID|
+    /** 订单ID。
      * 
      * @return orderId */
     public String getOrderId() {
@@ -80,12 +80,12 @@ public class ListFreeResourcesReq {
         this.orderId = orderId;
     }
 
-    public ListFreeResourcesReq withProductId(String productId) {
+    public ListFreeResourceInfosReq withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
-    /** |参数名称：产品ID//资源包ID| |参数约束及描述：产品ID//资源包ID|
+    /** 产品ID，即资源包ID。
      * 
      * @return productId */
     public String getProductId() {
@@ -96,12 +96,12 @@ public class ListFreeResourcesReq {
         this.productId = productId;
     }
 
-    public ListFreeResourcesReq withProductName(String productName) {
+    public ListFreeResourceInfosReq withProductName(String productName) {
         this.productName = productName;
         return this;
     }
 
-    /** |参数名称：产品名称，即资源包名称| |参数约束及描述：产品名称，即资源包名称|
+    /** 产品名称，即资源包名称。
      * 
      * @return productName */
     public String getProductName() {
@@ -112,12 +112,12 @@ public class ListFreeResourcesReq {
         this.productName = productName;
     }
 
-    public ListFreeResourcesReq withEnterpriseProjectId(String enterpriseProjectId) {
+    public ListFreeResourceInfosReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    /** |参数名称：企业项目ID| |参数约束及描述：企业项目ID|
+    /** 企业项目ID。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -128,12 +128,12 @@ public class ListFreeResourcesReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListFreeResourcesReq withStatus(Integer status) {
+    public ListFreeResourceInfosReq withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    /** |参数名称：状态| |参数的约束及描述： 0：未生效 1：生效中 2：已用完3：已失效4：已退订| minimum: 0 maximum: 4
+    /** 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订 minimum: 0 maximum: 4
      * 
      * @return status */
     public Integer getStatus() {
@@ -144,12 +144,13 @@ public class ListFreeResourcesReq {
         this.status = status;
     }
 
-    public ListFreeResourcesReq withOffset(Integer offset) {
+    public ListFreeResourceInfosReq withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    /** |参数名称：偏移量| |参数的约束及描述：从0开始，默认为0| minimum: 0 maximum: 2147483646
+    /** 偏移量，从0开始，默认为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。
+     * 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum: 999999
      * 
      * @return offset */
     public Integer getOffset() {
@@ -160,12 +161,12 @@ public class ListFreeResourcesReq {
         this.offset = offset;
     }
 
-    public ListFreeResourcesReq withLimit(Integer limit) {
+    public ListFreeResourceInfosReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    /** |参数名称：每次查询的记录数| |参数的约束及描述：默认为10| minimum: 0 maximum: 1000
+    /** 每次查询的记录数，默认为10。 minimum: 1 maximum: 1000
      * 
      * @return limit */
     public Integer getLimit() {
@@ -184,15 +185,15 @@ public class ListFreeResourcesReq {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListFreeResourcesReq listFreeResourcesReq = (ListFreeResourcesReq) o;
-        return Objects.equals(this.regionCode, listFreeResourcesReq.regionCode)
-            && Objects.equals(this.orderId, listFreeResourcesReq.orderId)
-            && Objects.equals(this.productId, listFreeResourcesReq.productId)
-            && Objects.equals(this.productName, listFreeResourcesReq.productName)
-            && Objects.equals(this.enterpriseProjectId, listFreeResourcesReq.enterpriseProjectId)
-            && Objects.equals(this.status, listFreeResourcesReq.status)
-            && Objects.equals(this.offset, listFreeResourcesReq.offset)
-            && Objects.equals(this.limit, listFreeResourcesReq.limit);
+        ListFreeResourceInfosReq listFreeResourceInfosReq = (ListFreeResourceInfosReq) o;
+        return Objects.equals(this.regionCode, listFreeResourceInfosReq.regionCode)
+            && Objects.equals(this.orderId, listFreeResourceInfosReq.orderId)
+            && Objects.equals(this.productId, listFreeResourceInfosReq.productId)
+            && Objects.equals(this.productName, listFreeResourceInfosReq.productName)
+            && Objects.equals(this.enterpriseProjectId, listFreeResourceInfosReq.enterpriseProjectId)
+            && Objects.equals(this.status, listFreeResourceInfosReq.status)
+            && Objects.equals(this.offset, listFreeResourceInfosReq.offset)
+            && Objects.equals(this.limit, listFreeResourceInfosReq.limit);
     }
 
     @Override
@@ -203,7 +204,7 @@ public class ListFreeResourcesReq {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListFreeResourcesReq {\n");
+        sb.append("class ListFreeResourceInfosReq {\n");
         sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");

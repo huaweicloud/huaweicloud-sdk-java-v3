@@ -303,6 +303,25 @@ public class BssintlAsyncClient {
             request, BssintlMeta.listCustomerselfResourceRecords, hcClient);
     }
 
+    /** 查询资源包列表 功能描述：客户在自建平台查询资源包列表。
+     *
+     * @param ListFreeResourceInfosRequest 请求对象
+     * @return CompletableFuture<ListFreeResourceInfosResponse> */
+    public CompletableFuture<ListFreeResourceInfosResponse> listFreeResourceInfosAsync(
+        ListFreeResourceInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listFreeResourceInfos);
+    }
+
+    /** 查询资源包列表 功能描述：客户在自建平台查询资源包列表。
+     *
+     * @param ListFreeResourceInfosRequest 请求对象
+     * @return AsyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> */
+    public AsyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> listFreeResourceInfosAsyncInvoker(
+        ListFreeResourceInfosRequest request) {
+        return new AsyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse>(request,
+            BssintlMeta.listFreeResourceInfos, hcClient);
+    }
+
     /** 查询资源内使用量 功能描述：客户在自建平台查询客户自己的资源包列表
      *
      * @param ListFreeResourceUsagesRequest 请求对象
@@ -320,24 +339,6 @@ public class BssintlAsyncClient {
         ListFreeResourceUsagesRequest request) {
         return new AsyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>(request,
             BssintlMeta.listFreeResourceUsages, hcClient);
-    }
-
-    /** 查询资源包列表 功能描述：查询资源包列表
-     *
-     * @param ListFreeResourcesRequest 请求对象
-     * @return CompletableFuture<ListFreeResourcesResponse> */
-    public CompletableFuture<ListFreeResourcesResponse> listFreeResourcesAsync(ListFreeResourcesRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssintlMeta.listFreeResources);
-    }
-
-    /** 查询资源包列表 功能描述：查询资源包列表
-     *
-     * @param ListFreeResourcesRequest 请求对象
-     * @return AsyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse> */
-    public AsyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse> listFreeResourcesAsyncInvoker(
-        ListFreeResourcesRequest request) {
-        return new AsyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse>(request,
-            BssintlMeta.listFreeResources, hcClient);
     }
 
     /** 查询使用量单位列表 功能描述：伙伴在伙伴销售平台上查询资源使用量的度量单位及名称，度量单位类型等。

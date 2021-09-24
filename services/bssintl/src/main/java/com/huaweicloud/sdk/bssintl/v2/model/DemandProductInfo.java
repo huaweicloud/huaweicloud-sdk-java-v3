@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /** DemandProductInfo */
@@ -56,7 +57,7 @@ public class DemandProductInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_value")
 
-    private Double usageValue;
+    private BigDecimal usageValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_measure_id")
@@ -214,7 +215,7 @@ public class DemandProductInfo {
         this.usageFactor = usageFactor;
     }
 
-    public DemandProductInfo withUsageValue(Double usageValue) {
+    public DemandProductInfo withUsageValue(BigDecimal usageValue) {
         this.usageValue = usageValue;
         return this;
     }
@@ -222,11 +223,11 @@ public class DemandProductInfo {
     /** |参数名称：使用量值| |参数约束及描述：例如按小时询价，使用量值为1，使用量单位为小时|
      * 
      * @return usageValue */
-    public Double getUsageValue() {
+    public BigDecimal getUsageValue() {
         return usageValue;
     }
 
-    public void setUsageValue(Double usageValue) {
+    public void setUsageValue(BigDecimal usageValue) {
         this.usageValue = usageValue;
     }
 

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /** Request Object */
-public class ListFreeResourcesRequest {
+public class ListFreeResourceInfosRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
@@ -17,14 +17,14 @@ public class ListFreeResourcesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ListFreeResourcesReq body;
+    private ListFreeResourceInfosReq body;
 
-    public ListFreeResourcesRequest withXLanguage(String xLanguage) {
+    public ListFreeResourceInfosRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    /** |忽略大小写，默认 zh_cn：中文 en_us：英文|
+    /** |语言。中文：zh_CN英文：en_US，缺省为zh_CN。|
      * 
      * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,14 +37,14 @@ public class ListFreeResourcesRequest {
         this.xLanguage = xLanguage;
     }
 
-    public ListFreeResourcesRequest withBody(ListFreeResourcesReq body) {
+    public ListFreeResourceInfosRequest withBody(ListFreeResourceInfosReq body) {
         this.body = body;
         return this;
     }
 
-    public ListFreeResourcesRequest withBody(Consumer<ListFreeResourcesReq> bodySetter) {
+    public ListFreeResourceInfosRequest withBody(Consumer<ListFreeResourceInfosReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ListFreeResourcesReq();
+            this.body = new ListFreeResourceInfosReq();
             bodySetter.accept(this.body);
         }
 
@@ -54,11 +54,11 @@ public class ListFreeResourcesRequest {
     /** Get body
      * 
      * @return body */
-    public ListFreeResourcesReq getBody() {
+    public ListFreeResourceInfosReq getBody() {
         return body;
     }
 
-    public void setBody(ListFreeResourcesReq body) {
+    public void setBody(ListFreeResourceInfosReq body) {
         this.body = body;
     }
 
@@ -70,9 +70,9 @@ public class ListFreeResourcesRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListFreeResourcesRequest listFreeResourcesRequest = (ListFreeResourcesRequest) o;
-        return Objects.equals(this.xLanguage, listFreeResourcesRequest.xLanguage)
-            && Objects.equals(this.body, listFreeResourcesRequest.body);
+        ListFreeResourceInfosRequest listFreeResourceInfosRequest = (ListFreeResourceInfosRequest) o;
+        return Objects.equals(this.xLanguage, listFreeResourceInfosRequest.xLanguage)
+            && Objects.equals(this.body, listFreeResourceInfosRequest.body);
     }
 
     @Override
@@ -83,7 +83,7 @@ public class ListFreeResourcesRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListFreeResourcesRequest {\n");
+        sb.append("class ListFreeResourceInfosRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

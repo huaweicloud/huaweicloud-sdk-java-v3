@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowQuotaResponseBodyQuotas */
-public class ShowQuotaResponseBodyQuotas {
+/** Quotas */
+public class Quotas {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_limit")
@@ -28,7 +28,7 @@ public class ShowQuotaResponseBodyQuotas {
 
     private String userDomainId;
 
-    public ShowQuotaResponseBodyQuotas withQuotaLimit(Integer quotaLimit) {
+    public Quotas withQuotaLimit(Integer quotaLimit) {
         this.quotaLimit = quotaLimit;
         return this;
     }
@@ -44,7 +44,7 @@ public class ShowQuotaResponseBodyQuotas {
         this.quotaLimit = quotaLimit;
     }
 
-    public ShowQuotaResponseBodyQuotas withType(String type) {
+    public Quotas withType(String type) {
         this.type = type;
         return this;
     }
@@ -60,7 +60,7 @@ public class ShowQuotaResponseBodyQuotas {
         this.type = type;
     }
 
-    public ShowQuotaResponseBodyQuotas withUsed(Integer used) {
+    public Quotas withUsed(Integer used) {
         this.used = used;
         return this;
     }
@@ -76,7 +76,7 @@ public class ShowQuotaResponseBodyQuotas {
         this.used = used;
     }
 
-    public ShowQuotaResponseBodyQuotas withUserDomainId(String userDomainId) {
+    public Quotas withUserDomainId(String userDomainId) {
         this.userDomainId = userDomainId;
         return this;
     }
@@ -100,11 +100,9 @@ public class ShowQuotaResponseBodyQuotas {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowQuotaResponseBodyQuotas showQuotaResponseBodyQuotas = (ShowQuotaResponseBodyQuotas) o;
-        return Objects.equals(this.quotaLimit, showQuotaResponseBodyQuotas.quotaLimit)
-            && Objects.equals(this.type, showQuotaResponseBodyQuotas.type)
-            && Objects.equals(this.used, showQuotaResponseBodyQuotas.used)
-            && Objects.equals(this.userDomainId, showQuotaResponseBodyQuotas.userDomainId);
+        Quotas quotas = (Quotas) o;
+        return Objects.equals(this.quotaLimit, quotas.quotaLimit) && Objects.equals(this.type, quotas.type)
+            && Objects.equals(this.used, quotas.used) && Objects.equals(this.userDomainId, quotas.userDomainId);
     }
 
     @Override
@@ -115,7 +113,7 @@ public class ShowQuotaResponseBodyQuotas {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ShowQuotaResponseBodyQuotas {\n");
+        sb.append("class Quotas {\n");
         sb.append("    quotaLimit: ").append(toIndentedString(quotaLimit)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    used: ").append(toIndentedString(used)).append("\n");

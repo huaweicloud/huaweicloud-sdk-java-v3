@@ -10,19 +10,52 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /** Response Object */
-public class ListFreeResourcesResponse extends SdkResponse {
+public class ListFreeResourceInfosResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "free_resource_packages")
+
+    private List<FreeResourcePackageV3> freeResourcePackages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "free_resource_packages")
+    public ListFreeResourceInfosResponse withFreeResourcePackages(List<FreeResourcePackageV3> freeResourcePackages) {
+        this.freeResourcePackages = freeResourcePackages;
+        return this;
+    }
 
-    private List<FreeResourcePackage> freeResourcePackages = null;
+    public ListFreeResourceInfosResponse addFreeResourcePackagesItem(FreeResourcePackageV3 freeResourcePackagesItem) {
+        if (this.freeResourcePackages == null) {
+            this.freeResourcePackages = new ArrayList<>();
+        }
+        this.freeResourcePackages.add(freeResourcePackagesItem);
+        return this;
+    }
 
-    public ListFreeResourcesResponse withTotalCount(Integer totalCount) {
+    public ListFreeResourceInfosResponse withFreeResourcePackages(
+        Consumer<List<FreeResourcePackageV3>> freeResourcePackagesSetter) {
+        if (this.freeResourcePackages == null) {
+            this.freeResourcePackages = new ArrayList<>();
+        }
+        freeResourcePackagesSetter.accept(this.freeResourcePackages);
+        return this;
+    }
+
+    /** |参数名称：调账记录列表| |参数约束以及描述：调账记录列表|
+     * 
+     * @return freeResourcePackages */
+    public List<FreeResourcePackageV3> getFreeResourcePackages() {
+        return freeResourcePackages;
+    }
+
+    public void setFreeResourcePackages(List<FreeResourcePackageV3> freeResourcePackages) {
+        this.freeResourcePackages = freeResourcePackages;
+    }
+
+    public ListFreeResourceInfosResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -38,39 +71,6 @@ public class ListFreeResourcesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ListFreeResourcesResponse withFreeResourcePackages(List<FreeResourcePackage> freeResourcePackages) {
-        this.freeResourcePackages = freeResourcePackages;
-        return this;
-    }
-
-    public ListFreeResourcesResponse addFreeResourcePackagesItem(FreeResourcePackage freeResourcePackagesItem) {
-        if (this.freeResourcePackages == null) {
-            this.freeResourcePackages = new ArrayList<>();
-        }
-        this.freeResourcePackages.add(freeResourcePackagesItem);
-        return this;
-    }
-
-    public ListFreeResourcesResponse withFreeResourcePackages(
-        Consumer<List<FreeResourcePackage>> freeResourcePackagesSetter) {
-        if (this.freeResourcePackages == null) {
-            this.freeResourcePackages = new ArrayList<>();
-        }
-        freeResourcePackagesSetter.accept(this.freeResourcePackages);
-        return this;
-    }
-
-    /** |参数名称：免费资源套餐信息列表（按订单、产品等信息汇总）| |参数约束以及描述：免费资源套餐信息列表（按订单、产品等信息汇总）|
-     * 
-     * @return freeResourcePackages */
-    public List<FreeResourcePackage> getFreeResourcePackages() {
-        return freeResourcePackages;
-    }
-
-    public void setFreeResourcePackages(List<FreeResourcePackage> freeResourcePackages) {
-        this.freeResourcePackages = freeResourcePackages;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -79,22 +79,22 @@ public class ListFreeResourcesResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListFreeResourcesResponse listFreeResourcesResponse = (ListFreeResourcesResponse) o;
-        return Objects.equals(this.totalCount, listFreeResourcesResponse.totalCount)
-            && Objects.equals(this.freeResourcePackages, listFreeResourcesResponse.freeResourcePackages);
+        ListFreeResourceInfosResponse listFreeResourceInfosResponse = (ListFreeResourceInfosResponse) o;
+        return Objects.equals(this.freeResourcePackages, listFreeResourceInfosResponse.freeResourcePackages)
+            && Objects.equals(this.totalCount, listFreeResourceInfosResponse.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalCount, freeResourcePackages);
+        return Objects.hash(freeResourcePackages, totalCount);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListFreeResourcesResponse {\n");
-        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("class ListFreeResourceInfosResponse {\n");
         sb.append("    freeResourcePackages: ").append(toIndentedString(freeResourcePackages)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

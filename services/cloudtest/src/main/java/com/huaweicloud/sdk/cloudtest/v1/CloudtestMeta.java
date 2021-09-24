@@ -464,17 +464,10 @@ public class CloudtestMeta {
             }));
         builder.<String>withRequestField("testcase_number",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTestCaseDetailV2Request::getTestcaseNumber, (req, v) -> {
                 req.setTestcaseNumber(v);
-            }));
-        builder.<String>withRequestField("testcase_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTestCaseDetailV2Request::getTestcaseId, (req, v) -> {
-                req.setTestcaseId(v);
             }));
 
         // response

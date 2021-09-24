@@ -78,6 +78,21 @@ public class ShowReposTagResp {
 
     private String deleted;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scanned")
+
+    private Boolean scanned;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag_type")
+
+    private Long tagType;
+
     public ShowReposTagResp withId(Long id) {
         this.id = id;
         return this;
@@ -302,6 +317,54 @@ public class ShowReposTagResp {
         this.deleted = deleted;
     }
 
+    public ShowReposTagResp withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /** 帐号ID
+     * 
+     * @return domainId */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public ShowReposTagResp withScanned(Boolean scanned) {
+        this.scanned = scanned;
+        return this;
+    }
+
+    /** 镜像是否被扫描过
+     * 
+     * @return scanned */
+    public Boolean getScanned() {
+        return scanned;
+    }
+
+    public void setScanned(Boolean scanned) {
+        this.scanned = scanned;
+    }
+
+    public ShowReposTagResp withTagType(Long tagType) {
+        this.tagType = tagType;
+        return this;
+    }
+
+    /** 0：manifest类型；1：manifest list类型
+     * 
+     * @return tagType */
+    public Long getTagType() {
+        return tagType;
+    }
+
+    public void setTagType(Long tagType) {
+        this.tagType = tagType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -321,7 +384,10 @@ public class ShowReposTagResp {
             && Objects.equals(this.isTrusted, showReposTagResp.isTrusted)
             && Objects.equals(this.created, showReposTagResp.created)
             && Objects.equals(this.updated, showReposTagResp.updated)
-            && Objects.equals(this.deleted, showReposTagResp.deleted);
+            && Objects.equals(this.deleted, showReposTagResp.deleted)
+            && Objects.equals(this.domainId, showReposTagResp.domainId)
+            && Objects.equals(this.scanned, showReposTagResp.scanned)
+            && Objects.equals(this.tagType, showReposTagResp.tagType);
     }
 
     @Override
@@ -339,7 +405,10 @@ public class ShowReposTagResp {
             isTrusted,
             created,
             updated,
-            deleted);
+            deleted,
+            domainId,
+            scanned,
+            tagType);
     }
 
     @Override
@@ -360,6 +429,9 @@ public class ShowReposTagResp {
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    scanned: ").append(toIndentedString(scanned)).append("\n");
+        sb.append("    tagType: ").append(toIndentedString(tagType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

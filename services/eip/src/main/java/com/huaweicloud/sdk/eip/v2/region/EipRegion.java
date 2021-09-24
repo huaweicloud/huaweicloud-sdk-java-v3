@@ -29,10 +29,12 @@ public class EipRegion {
         new Region("ap-southeast-2", "https://vpc.ap-southeast-2.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_1 =
-        new Region("ap-southeast-1", "https://vpc.ap-southeast-1.myhwclouds.com");
+        new Region("ap-southeast-1", "https://vpc.ap-southeast-1.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://vpc.ap-southeast-3.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://vpc.cn-north-9.myhuaweicloud.com");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
@@ -48,6 +50,7 @@ public class EipRegion {
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("cn-north-9", CN_NORTH_9);
         return Collections.unmodifiableMap(map);
     }
 

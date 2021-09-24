@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 下发判题任务请求参数 */
 public class JudgementTaskRequestBody {
@@ -189,7 +192,7 @@ public class JudgementTaskRequestBody {
 
     private Integer timeout;
 
-    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出） */
+    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回） */
     public static final class OutputTypeEnum {
 
         /** Enum SYSOUT for value: "sysout" */
@@ -201,6 +204,12 @@ public class JudgementTaskRequestBody {
         /** Enum IMGOUT for value: "imgout" */
         public static final OutputTypeEnum IMGOUT = new OutputTypeEnum("imgout");
 
+        /** Enum CASEOUT for value: "caseout" */
+        public static final OutputTypeEnum CASEOUT = new OutputTypeEnum("caseout");
+
+        /** Enum JUDGEOUT for value: "judgeout" */
+        public static final OutputTypeEnum JUDGEOUT = new OutputTypeEnum("judgeout");
+
         private static final Map<String, OutputTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, OutputTypeEnum> createStaticFields() {
@@ -208,6 +217,8 @@ public class JudgementTaskRequestBody {
             map.put("sysout", SYSOUT);
             map.put("fileout", FILEOUT);
             map.put("imgout", IMGOUT);
+            map.put("caseout", CASEOUT);
+            map.put("judgeout", JUDGEOUT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -268,6 +279,11 @@ public class JudgementTaskRequestBody {
     @JsonProperty(value = "output_type")
 
     private OutputTypeEnum outputType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "testcases")
+
+    private List<JudgementCaseInfo> testcases = null;
 
     public JudgementTaskRequestBody withNotifyUrl(String notifyUrl) {
         this.notifyUrl = notifyUrl;
@@ -370,7 +386,7 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）
+    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回）
      * 
      * @return outputType */
     public OutputTypeEnum getOutputType() {
@@ -379,6 +395,38 @@ public class JudgementTaskRequestBody {
 
     public void setOutputType(OutputTypeEnum outputType) {
         this.outputType = outputType;
+    }
+
+    public JudgementTaskRequestBody withTestcases(List<JudgementCaseInfo> testcases) {
+        this.testcases = testcases;
+        return this;
+    }
+
+    public JudgementTaskRequestBody addTestcasesItem(JudgementCaseInfo testcasesItem) {
+        if (this.testcases == null) {
+            this.testcases = new ArrayList<>();
+        }
+        this.testcases.add(testcasesItem);
+        return this;
+    }
+
+    public JudgementTaskRequestBody withTestcases(Consumer<List<JudgementCaseInfo>> testcasesSetter) {
+        if (this.testcases == null) {
+            this.testcases = new ArrayList<>();
+        }
+        testcasesSetter.accept(this.testcases);
+        return this;
+    }
+
+    /** 当判题结果类型是caseout和judgeout类型才需要传的字段，表示用例数据
+     * 
+     * @return testcases */
+    public List<JudgementCaseInfo> getTestcases() {
+        return testcases;
+    }
+
+    public void setTestcases(List<JudgementCaseInfo> testcases) {
+        this.testcases = testcases;
     }
 
     @Override
@@ -396,12 +444,13 @@ public class JudgementTaskRequestBody {
             && Objects.equals(this.description, judgementTaskRequestBody.description)
             && Objects.equals(this.runtimeType, judgementTaskRequestBody.runtimeType)
             && Objects.equals(this.timeout, judgementTaskRequestBody.timeout)
-            && Objects.equals(this.outputType, judgementTaskRequestBody.outputType);
+            && Objects.equals(this.outputType, judgementTaskRequestBody.outputType)
+            && Objects.equals(this.testcases, judgementTaskRequestBody.testcases);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(notifyUrl, codeType, sourceCode, description, runtimeType, timeout, outputType);
+        return Objects.hash(notifyUrl, codeType, sourceCode, description, runtimeType, timeout, outputType, testcases);
     }
 
     @Override
@@ -415,6 +464,7 @@ public class JudgementTaskRequestBody {
         sb.append("    runtimeType: ").append(toIndentedString(runtimeType)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    outputType: ").append(toIndentedString(outputType)).append("\n");
+        sb.append("    testcases: ").append(toIndentedString(testcases)).append("\n");
         sb.append("}");
         return sb.toString();
     }

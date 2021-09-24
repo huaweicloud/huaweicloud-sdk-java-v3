@@ -29,7 +29,7 @@ public class CdmCreateClusterReqCluster {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
 
-    private CdmCreateClusterReqClusterDatastore datastore;
+    private Datastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduleOffTime")
@@ -120,14 +120,14 @@ public class CdmCreateClusterReqCluster {
         this.instances = instances;
     }
 
-    public CdmCreateClusterReqCluster withDatastore(CdmCreateClusterReqClusterDatastore datastore) {
+    public CdmCreateClusterReqCluster withDatastore(Datastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public CdmCreateClusterReqCluster withDatastore(Consumer<CdmCreateClusterReqClusterDatastore> datastoreSetter) {
+    public CdmCreateClusterReqCluster withDatastore(Consumer<Datastore> datastoreSetter) {
         if (this.datastore == null) {
-            this.datastore = new CdmCreateClusterReqClusterDatastore();
+            this.datastore = new Datastore();
             datastoreSetter.accept(this.datastore);
         }
 
@@ -137,11 +137,11 @@ public class CdmCreateClusterReqCluster {
     /** Get datastore
      * 
      * @return datastore */
-    public CdmCreateClusterReqClusterDatastore getDatastore() {
+    public Datastore getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(CdmCreateClusterReqClusterDatastore datastore) {
+    public void setDatastore(Datastore datastore) {
         this.datastore = datastore;
     }
 

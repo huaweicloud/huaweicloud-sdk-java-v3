@@ -1,31 +1,48 @@
-package com.huaweicloud.sdk.cdm.v1.model;
+package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
+
+
+
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.function.Consumer;
 import java.util.Objects;
 
-/** 集群信息，请参见•datastore参数说明 */
-public class CdmCreateClusterReqClusterDatastore {
+/**
+ * 数据库信息。
+ */
+public class ListDatastore  {
+
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
+    @JsonProperty(value="type")
+    
+    
     private String type;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="version")
+    
+    
     private String version;
 
-    public CdmCreateClusterReqClusterDatastore withType(String type) {
+    public ListDatastore withType(String type) {
         this.type = type;
         return this;
     }
 
-    /** 集群类型，当前只有“cdm”一种类型
-     * 
-     * @return type */
+    
+
+
+    /**
+     * 数据库引擎。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -34,14 +51,20 @@ public class CdmCreateClusterReqClusterDatastore {
         this.type = type;
     }
 
-    public CdmCreateClusterReqClusterDatastore withVersion(String version) {
+    
+
+    public ListDatastore withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    /** 集群版本
-     * 
-     * @return version */
+    
+
+
+    /**
+     * 数据库版本。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -49,6 +72,8 @@ public class CdmCreateClusterReqClusterDatastore {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,33 +83,33 @@ public class CdmCreateClusterReqClusterDatastore {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CdmCreateClusterReqClusterDatastore cdmCreateClusterReqClusterDatastore =
-            (CdmCreateClusterReqClusterDatastore) o;
-        return Objects.equals(this.type, cdmCreateClusterReqClusterDatastore.type)
-            && Objects.equals(this.version, cdmCreateClusterReqClusterDatastore.version);
+        ListDatastore listDatastore = (ListDatastore) o;
+        return Objects.equals(this.type, listDatastore.type) &&
+            Objects.equals(this.version, listDatastore.version);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(type, version);
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CdmCreateClusterReqClusterDatastore {\n");
+        sb.append("class ListDatastore {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }
-
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-
+    
 }
+
