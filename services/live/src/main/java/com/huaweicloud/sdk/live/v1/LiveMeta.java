@@ -519,6 +519,86 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRecordContentsRequest, ListRecordContentsResponse> listRecordContents =
+        genForlistRecordContents();
+
+    private static HttpRequestDef<ListRecordContentsRequest, ListRecordContentsResponse> genForlistRecordContents() {
+        // basic
+        HttpRequestDef.Builder<ListRecordContentsRequest, ListRecordContentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRecordContentsRequest.class, ListRecordContentsResponse.class)
+                .withName("ListRecordContents")
+                .withUri("/v1/{project_id}/record/contents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("publish_domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordContentsRequest::getPublishDomain, (req, v) -> {
+                req.setPublishDomain(v);
+            }));
+        builder.<String>withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordContentsRequest::getApp, (req, v) -> {
+                req.setApp(v);
+            }));
+        builder.<String>withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordContentsRequest::getStream, (req, v) -> {
+                req.setStream(v);
+            }));
+        builder.<ListRecordContentsRequest.RecordTypeEnum>withRequestField("record_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListRecordContentsRequest.RecordTypeEnum.class),
+            f -> f.withMarshaller(ListRecordContentsRequest::getRecordType, (req, v) -> {
+                req.setRecordType(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordContentsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordContentsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecordContentsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecordContentsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRecordContentsResponse::getXRequestId,
+                ListRecordContentsResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRecordRulesRequest, ListRecordRulesResponse> listRecordRules =
         genForlistRecordRules();
 

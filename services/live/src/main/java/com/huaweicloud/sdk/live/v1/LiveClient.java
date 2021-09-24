@@ -283,6 +283,24 @@ public class LiveClient {
             LiveMeta.listRecordCallbackConfigs, hcClient);
     }
 
+    /** 录制完成内容的查询 录制完成的内容查询
+     *
+     * @param ListRecordContentsRequest 请求对象
+     * @return ListRecordContentsResponse */
+    public ListRecordContentsResponse listRecordContents(ListRecordContentsRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listRecordContents);
+    }
+
+    /** 录制完成内容的查询 录制完成的内容查询
+     *
+     * @param ListRecordContentsRequest 请求对象
+     * @return SyncInvoker<ListRecordContentsRequest, ListRecordContentsResponse> */
+    public SyncInvoker<ListRecordContentsRequest, ListRecordContentsResponse> listRecordContentsInvoker(
+        ListRecordContentsRequest request) {
+        return new SyncInvoker<ListRecordContentsRequest, ListRecordContentsResponse>(request,
+            LiveMeta.listRecordContents, hcClient);
+    }
+
     /** 查询录制规则列表 查询录制规则列表接口，通过指定条件，查询满足条件的录制规则列表。
      *
      * @param ListRecordRulesRequest 请求对象
