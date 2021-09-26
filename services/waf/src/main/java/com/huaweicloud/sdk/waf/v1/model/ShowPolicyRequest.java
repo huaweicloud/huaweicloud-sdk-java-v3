@@ -9,9 +9,30 @@ import java.util.Objects;
 public class ShowPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
+
+    public ShowPolicyRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ShowPolicyRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -38,18 +59,20 @@ public class ShowPolicyRequest {
             return false;
         }
         ShowPolicyRequest showPolicyRequest = (ShowPolicyRequest) o;
-        return Objects.equals(this.policyId, showPolicyRequest.policyId);
+        return Objects.equals(this.enterpriseProjectId, showPolicyRequest.enterpriseProjectId)
+            && Objects.equals(this.policyId, showPolicyRequest.policyId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId);
+        return Objects.hash(enterpriseProjectId, policyId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPolicyRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("}");
         return sb.toString();

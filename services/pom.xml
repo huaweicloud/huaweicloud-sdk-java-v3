@@ -6,104 +6,105 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.62</version>
+        <version>3.0.63</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.62</version>
+    <version>3.0.63</version>
     <packaging>pom</packaging>
     <name>Huawei Cloud SDK for Java Services</name>
     <description>Services code for Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
 
     <modules>
-        <module>dds</module>
-        <module>cdm</module>
-        <module>sms</module>
-        <module>image</module>
-        <module>iam</module>
-        <module>bms</module>
-        <module>cpts</module>
-        <module>cloudbuild</module>
-        <module>gsl</module>
-        <module>sa</module>
-        <module>as</module>
-        <module>dbss</module>
-        <module>rms</module>
-        <module>bcs</module>
-        <module>dcs</module>
-        <module>gaussdbfornosql</module>
-        <module>roma</module>
-        <module>moderation</module>
-        <module>cts</module>
-        <module>cloudpipeline</module>
         <module>lts</module>
-        <module>ecs</module>
-        <module>vpc</module>
-        <module>hss</module>
-        <module>waf</module>
-        <module>servicestage</module>
-        <module>ugo</module>
-        <module>clouddeploy</module>
-        <module>cdn</module>
-        <module>cce</module>
-        <module>functiongraph</module>
-        <module>ivs</module>
-        <module>codecraft</module>
-        <module>scm</module>
-        <module>projectman</module>
-        <module>kps</module>
-        <module>apig</module>
-        <module>eps</module>
-        <module>cbr</module>
-        <module>dgc</module>
-        <module>imagesearch</module>
-        <module>gaussdbforopengauss</module>
+        <module>bms</module>
+        <module>iec</module>
         <module>nat</module>
-        <module>oms</module>
+        <module>rabbitmq</module>
+        <module>gaussdbforopengauss</module>
         <module>codecheck</module>
-        <module>drs</module>
+        <module>cbr</module>
+        <module>smn</module>
+        <module>apig</module>
+        <module>as</module>
+        <module>ivs</module>
+        <module>cdn</module>
+        <module>scm</module>
+        <module>moderation</module>
         <module>iotda</module>
+        <module>csms</module>
+        <module>dgc</module>
+        <module>dli</module>
+        <module>iam</module>
+        <module>ddm</module>
+        <module>swr</module>
+        <module>rms</module>
+        <module>ugo</module>
+        <module>roma</module>
+        <module>drs</module>
+        <module>ocr</module>
+        <module>classroom</module>
+        <module>cloudide</module>
+        <module>bssintl</module>
+        <module>elb</module>
+        <module>antiddos</module>
+        <module>cdm</module>
+        <module>ims</module>
+        <module>kafka</module>
+        <module>clouddeploy</module>
+        <module>vpc</module>
+        <module>gsl</module>
+        <module>rds</module>
+        <module>cbs</module>
+        <module>waf</module>
+        <module>dns</module>
+        <module>das</module>
+        <module>aom</module>
+        <module>devstar</module>
+        <module>hss</module>
+        <module>eps</module>
+        <module>gaussdbfornosql</module>
+        <module>cloudbuild</module>
+        <module>cce</module>
+        <module>dms</module>
+        <module>servicestage</module>
+        <module>bcs</module>
+        <module>kms</module>
+        <module>cpts</module>
+        <module>dws</module>
+        <module>imagesearch</module>
+        <module>projectman</module>
+        <module>vod</module>
+        <module>osm</module>
+        <module>gaussdb</module>
+        <module>live</module>
+        <module>ccm</module>
         <module>ces</module>
         <module>bss</module>
-        <module>eip</module>
-        <module>osm</module>
-        <module>cbs</module>
-        <module>frs</module>
-        <module>kafka</module>
-        <module>ccm</module>
-        <module>das</module>
-        <module>cloudtest</module>
-        <module>ims</module>
-        <module>devstar</module>
-        <module>vod</module>
-        <module>classroom</module>
-        <module>bssintl</module>
-        <module>gaussdb</module>
-        <module>ddm</module>
-        <module>ocr</module>
-        <module>evs</module>
+        <module>cts</module>
+        <module>codecraft</module>
+        <module>sa</module>
         <module>mrs</module>
-        <module>iec</module>
-        <module>smn</module>
-        <module>live</module>
-        <module>cloudide</module>
-        <module>dms</module>
-        <module>dws</module>
-        <module>elb</module>
-        <module>aom</module>
-        <module>swr</module>
+        <module>ecs</module>
+        <module>oms</module>
         <module>dsc</module>
-        <module>rabbitmq</module>
-        <module>antiddos</module>
-        <module>tms</module>
-        <module>kms</module>
         <module>meeting</module>
+        <module>frs</module>
+        <module>eip</module>
+        <module>kps</module>
         <module>cloudrtc</module>
-        <module>dli</module>
-        <module>rds</module>
-        <module>dns</module>
+        <module>cloudpipeline</module>
         <module>mpc</module>
+        <module>dbss</module>
+        <module>dds</module>
+        <module>evs</module>
+        <module>tms</module>
+        <module>functiongraph</module>
+        <module>image</module>
+        <module>dcs</module>
+        <module>sms</module>
+        <module>cloudtest</module>
     </modules>
 </project>

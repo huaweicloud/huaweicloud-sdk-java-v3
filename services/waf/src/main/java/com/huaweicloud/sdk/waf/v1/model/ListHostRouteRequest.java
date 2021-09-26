@@ -9,9 +9,30 @@ import java.util.Objects;
 public class ListHostRouteRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
+
+    public ListHostRouteRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ListHostRouteRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -38,18 +59,20 @@ public class ListHostRouteRequest {
             return false;
         }
         ListHostRouteRequest listHostRouteRequest = (ListHostRouteRequest) o;
-        return Objects.equals(this.instanceId, listHostRouteRequest.instanceId);
+        return Objects.equals(this.enterpriseProjectId, listHostRouteRequest.enterpriseProjectId)
+            && Objects.equals(this.instanceId, listHostRouteRequest.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId);
+        return Objects.hash(enterpriseProjectId, instanceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHostRouteRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -9,9 +9,30 @@ import java.util.Objects;
 public class DeletePolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
+
+    public DeletePolicyRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public DeletePolicyRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -38,18 +59,20 @@ public class DeletePolicyRequest {
             return false;
         }
         DeletePolicyRequest deletePolicyRequest = (DeletePolicyRequest) o;
-        return Objects.equals(this.policyId, deletePolicyRequest.policyId);
+        return Objects.equals(this.enterpriseProjectId, deletePolicyRequest.enterpriseProjectId)
+            && Objects.equals(this.policyId, deletePolicyRequest.policyId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId);
+        return Objects.hash(enterpriseProjectId, policyId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeletePolicyRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("}");
         return sb.toString();

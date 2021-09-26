@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /** 请求头 */
-public class ListEventResponseBodyHeaders {
+public class ListEventItemsHeaders {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content-length")
@@ -33,7 +33,7 @@ public class ListEventResponseBodyHeaders {
 
     private String accept;
 
-    public ListEventResponseBodyHeaders withContentLength(String contentLength) {
+    public ListEventItemsHeaders withContentLength(String contentLength) {
         this.contentLength = contentLength;
         return this;
     }
@@ -49,7 +49,7 @@ public class ListEventResponseBodyHeaders {
         this.contentLength = contentLength;
     }
 
-    public ListEventResponseBodyHeaders withHost(String host) {
+    public ListEventItemsHeaders withHost(String host) {
         this.host = host;
         return this;
     }
@@ -65,7 +65,7 @@ public class ListEventResponseBodyHeaders {
         this.host = host;
     }
 
-    public ListEventResponseBodyHeaders withContentType(String contentType) {
+    public ListEventItemsHeaders withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
@@ -81,7 +81,7 @@ public class ListEventResponseBodyHeaders {
         this.contentType = contentType;
     }
 
-    public ListEventResponseBodyHeaders withUserAgent(String userAgent) {
+    public ListEventItemsHeaders withUserAgent(String userAgent) {
         this.userAgent = userAgent;
         return this;
     }
@@ -97,7 +97,7 @@ public class ListEventResponseBodyHeaders {
         this.userAgent = userAgent;
     }
 
-    public ListEventResponseBodyHeaders withAccept(String accept) {
+    public ListEventItemsHeaders withAccept(String accept) {
         this.accept = accept;
         return this;
     }
@@ -121,12 +121,12 @@ public class ListEventResponseBodyHeaders {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListEventResponseBodyHeaders listEventResponseBodyHeaders = (ListEventResponseBodyHeaders) o;
-        return Objects.equals(this.contentLength, listEventResponseBodyHeaders.contentLength)
-            && Objects.equals(this.host, listEventResponseBodyHeaders.host)
-            && Objects.equals(this.contentType, listEventResponseBodyHeaders.contentType)
-            && Objects.equals(this.userAgent, listEventResponseBodyHeaders.userAgent)
-            && Objects.equals(this.accept, listEventResponseBodyHeaders.accept);
+        ListEventItemsHeaders listEventItemsHeaders = (ListEventItemsHeaders) o;
+        return Objects.equals(this.contentLength, listEventItemsHeaders.contentLength)
+            && Objects.equals(this.host, listEventItemsHeaders.host)
+            && Objects.equals(this.contentType, listEventItemsHeaders.contentType)
+            && Objects.equals(this.userAgent, listEventItemsHeaders.userAgent)
+            && Objects.equals(this.accept, listEventItemsHeaders.accept);
     }
 
     @Override
@@ -137,7 +137,7 @@ public class ListEventResponseBodyHeaders {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListEventResponseBodyHeaders {\n");
+        sb.append("class ListEventItemsHeaders {\n");
         sb.append("    contentLength: ").append(toIndentedString(contentLength)).append("\n");
         sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");

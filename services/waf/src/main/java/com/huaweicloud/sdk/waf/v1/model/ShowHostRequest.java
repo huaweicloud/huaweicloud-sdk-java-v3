@@ -9,9 +9,30 @@ import java.util.Objects;
 public class ShowHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
+
+    public ShowHostRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ShowHostRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -38,18 +59,20 @@ public class ShowHostRequest {
             return false;
         }
         ShowHostRequest showHostRequest = (ShowHostRequest) o;
-        return Objects.equals(this.instanceId, showHostRequest.instanceId);
+        return Objects.equals(this.enterpriseProjectId, showHostRequest.enterpriseProjectId)
+            && Objects.equals(this.instanceId, showHostRequest.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId);
+        return Objects.hash(enterpriseProjectId, instanceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowHostRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();

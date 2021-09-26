@@ -76,6 +76,60 @@ public class MpcAsyncClient {
             MpcMeta.listAnimatedGraphicsTask, hcClient);
     }
 
+    /** 新建剪辑任务 创建剪辑任务，用于将多个视频文件进行裁剪成多个视频分段，并且可以把这些视频分段合并成一个视频，剪切和拼接功能可以单独使用。 待剪辑的视频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
+     *
+     * @param CreateEditingJobRequest 请求对象
+     * @return CompletableFuture<CreateEditingJobResponse> */
+    public CompletableFuture<CreateEditingJobResponse> createEditingJobAsync(CreateEditingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.createEditingJob);
+    }
+
+    /** 新建剪辑任务 创建剪辑任务，用于将多个视频文件进行裁剪成多个视频分段，并且可以把这些视频分段合并成一个视频，剪切和拼接功能可以单独使用。 待剪辑的视频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
+     *
+     * @param CreateEditingJobRequest 请求对象
+     * @return AsyncInvoker<CreateEditingJobRequest, CreateEditingJobResponse> */
+    public AsyncInvoker<CreateEditingJobRequest, CreateEditingJobResponse> createEditingJobAsyncInvoker(
+        CreateEditingJobRequest request) {
+        return new AsyncInvoker<CreateEditingJobRequest, CreateEditingJobResponse>(request, MpcMeta.createEditingJob,
+            hcClient);
+    }
+
+    /** 取消剪辑任务 取消已下发的生成剪辑任务，仅支持取消正在排队中的任务。
+     *
+     * @param DeleteEditingJobRequest 请求对象
+     * @return CompletableFuture<DeleteEditingJobResponse> */
+    public CompletableFuture<DeleteEditingJobResponse> deleteEditingJobAsync(DeleteEditingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.deleteEditingJob);
+    }
+
+    /** 取消剪辑任务 取消已下发的生成剪辑任务，仅支持取消正在排队中的任务。
+     *
+     * @param DeleteEditingJobRequest 请求对象
+     * @return AsyncInvoker<DeleteEditingJobRequest, DeleteEditingJobResponse> */
+    public AsyncInvoker<DeleteEditingJobRequest, DeleteEditingJobResponse> deleteEditingJobAsyncInvoker(
+        DeleteEditingJobRequest request) {
+        return new AsyncInvoker<DeleteEditingJobRequest, DeleteEditingJobResponse>(request, MpcMeta.deleteEditingJob,
+            hcClient);
+    }
+
+    /** 查询剪辑任务 查询剪辑任务的状态。
+     *
+     * @param ListEditingJobRequest 请求对象
+     * @return CompletableFuture<ListEditingJobResponse> */
+    public CompletableFuture<ListEditingJobResponse> listEditingJobAsync(ListEditingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listEditingJob);
+    }
+
+    /** 查询剪辑任务 查询剪辑任务的状态。
+     *
+     * @param ListEditingJobRequest 请求对象
+     * @return AsyncInvoker<ListEditingJobRequest, ListEditingJobResponse> */
+    public AsyncInvoker<ListEditingJobRequest, ListEditingJobResponse> listEditingJobAsyncInvoker(
+        ListEditingJobRequest request) {
+        return new AsyncInvoker<ListEditingJobRequest, ListEditingJobResponse>(request, MpcMeta.listEditingJob,
+            hcClient);
+    }
+
     /** 新建独立加密任务 支持独立加密，包括创建、查询、删除独立加密任务。 约束： - 只支持转码后的文件进行加密。 - 加密的文件必须是m3u8或者mpd结尾的文件。
      *
      * @param CreateEncryptTaskRequest 请求对象

@@ -9,6 +9,11 @@ import java.util.Objects;
 public class DeletePremiumHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
     private String hostId;
@@ -17,6 +22,22 @@ public class DeletePremiumHostRequest {
     @JsonProperty(value = "keepPolicy")
 
     private Boolean keepPolicy;
+
+    public DeletePremiumHostRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public DeletePremiumHostRequest withHostId(String hostId) {
         this.hostId = hostId;
@@ -59,19 +80,21 @@ public class DeletePremiumHostRequest {
             return false;
         }
         DeletePremiumHostRequest deletePremiumHostRequest = (DeletePremiumHostRequest) o;
-        return Objects.equals(this.hostId, deletePremiumHostRequest.hostId)
+        return Objects.equals(this.enterpriseProjectId, deletePremiumHostRequest.enterpriseProjectId)
+            && Objects.equals(this.hostId, deletePremiumHostRequest.hostId)
             && Objects.equals(this.keepPolicy, deletePremiumHostRequest.keepPolicy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, keepPolicy);
+        return Objects.hash(enterpriseProjectId, hostId, keepPolicy);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeletePremiumHostRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    keepPolicy: ").append(toIndentedString(keepPolicy)).append("\n");
         sb.append("}");

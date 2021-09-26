@@ -10,6 +10,11 @@ import java.util.function.Consumer;
 public class UpdateHostProtectStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
@@ -18,6 +23,22 @@ public class UpdateHostProtectStatusRequest {
     @JsonProperty(value = "body")
 
     private UpdateHostProtectStatusRequestBody body;
+
+    public UpdateHostProtectStatusRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public UpdateHostProtectStatusRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -69,19 +90,21 @@ public class UpdateHostProtectStatusRequest {
             return false;
         }
         UpdateHostProtectStatusRequest updateHostProtectStatusRequest = (UpdateHostProtectStatusRequest) o;
-        return Objects.equals(this.instanceId, updateHostProtectStatusRequest.instanceId)
+        return Objects.equals(this.enterpriseProjectId, updateHostProtectStatusRequest.enterpriseProjectId)
+            && Objects.equals(this.instanceId, updateHostProtectStatusRequest.instanceId)
             && Objects.equals(this.body, updateHostProtectStatusRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, body);
+        return Objects.hash(enterpriseProjectId, instanceId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateHostProtectStatusRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

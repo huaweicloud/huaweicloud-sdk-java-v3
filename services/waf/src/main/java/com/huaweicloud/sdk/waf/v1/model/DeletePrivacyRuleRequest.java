@@ -9,6 +9,11 @@ import java.util.Objects;
 public class DeletePrivacyRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
@@ -17,6 +22,22 @@ public class DeletePrivacyRuleRequest {
     @JsonProperty(value = "rule_id")
 
     private String ruleId;
+
+    public DeletePrivacyRuleRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public DeletePrivacyRuleRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -59,19 +80,21 @@ public class DeletePrivacyRuleRequest {
             return false;
         }
         DeletePrivacyRuleRequest deletePrivacyRuleRequest = (DeletePrivacyRuleRequest) o;
-        return Objects.equals(this.policyId, deletePrivacyRuleRequest.policyId)
+        return Objects.equals(this.enterpriseProjectId, deletePrivacyRuleRequest.enterpriseProjectId)
+            && Objects.equals(this.policyId, deletePrivacyRuleRequest.policyId)
             && Objects.equals(this.ruleId, deletePrivacyRuleRequest.ruleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, ruleId);
+        return Objects.hash(enterpriseProjectId, policyId, ruleId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeletePrivacyRuleRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("}");

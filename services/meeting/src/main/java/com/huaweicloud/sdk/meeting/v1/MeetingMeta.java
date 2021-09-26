@@ -2014,6 +2014,52 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InviteOperateVideoRequest, InviteOperateVideoResponse> inviteOperateVideo =
+        genForinviteOperateVideo();
+
+    private static HttpRequestDef<InviteOperateVideoRequest, InviteOperateVideoResponse> genForinviteOperateVideo() {
+        // basic
+        HttpRequestDef.Builder<InviteOperateVideoRequest, InviteOperateVideoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, InviteOperateVideoRequest.class, InviteOperateVideoResponse.class)
+                .withName("InviteOperateVideo")
+                .withUri("/v1/mmc/control/conferences/participants/video")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InviteOperateVideoRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            }));
+        builder.<String>withRequestField("participantID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InviteOperateVideoRequest::getParticipantID, (req, v) -> {
+                req.setParticipantID(v);
+            }));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InviteOperateVideoRequest::getXConferenceAuthorization, (req, v) -> {
+                req.setXConferenceAuthorization(v);
+            }));
+        builder.<RestVideoBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestVideoBody.class),
+            f -> f.withMarshaller(InviteOperateVideoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<InviteParticipantRequest, InviteParticipantResponse> inviteParticipant =
         genForinviteParticipant();
 
@@ -4810,6 +4856,44 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetSsoConfigRequest, SetSsoConfigResponse> setSsoConfig = genForsetSsoConfig();
+
+    private static HttpRequestDef<SetSsoConfigRequest, SetSsoConfigResponse> genForsetSsoConfig() {
+        // basic
+        HttpRequestDef.Builder<SetSsoConfigRequest, SetSsoConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetSsoConfigRequest.class, SetSsoConfigResponse.class)
+                .withName("SetSsoConfig")
+                .withUri("/v1/usg/acs/authorizeconfig")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSsoConfigRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            }));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSsoConfigRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            }));
+        builder.<AuthorizeConfigInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AuthorizeConfigInfoRequestBody.class),
+            f -> f.withMarshaller(SetSsoConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> showConfOrg = genForshowConfOrg();
 
     private static HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> genForshowConfOrg() {
@@ -5842,6 +5926,38 @@ public class MeetingMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSpResourceRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSsoConfigRequest, ShowSsoConfigResponse> showSsoConfig =
+        genForshowSsoConfig();
+
+    private static HttpRequestDef<ShowSsoConfigRequest, ShowSsoConfigResponse> genForshowSsoConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowSsoConfigRequest, ShowSsoConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSsoConfigRequest.class, ShowSsoConfigResponse.class)
+                .withName("ShowSsoConfig")
+                .withUri("/v1/usg/acs/authorizeconfig")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSsoConfigRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            }));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSsoConfigRequest::getAcceptLanguage, (req, v) -> {
                 req.setAcceptLanguage(v);
             }));
 

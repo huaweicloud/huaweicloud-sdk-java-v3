@@ -9,6 +9,11 @@ import java.util.Objects;
 public class DeleteWhiteBlackIpRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
@@ -17,6 +22,22 @@ public class DeleteWhiteBlackIpRuleRequest {
     @JsonProperty(value = "rule_id")
 
     private String ruleId;
+
+    public DeleteWhiteBlackIpRuleRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public DeleteWhiteBlackIpRuleRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -59,19 +80,21 @@ public class DeleteWhiteBlackIpRuleRequest {
             return false;
         }
         DeleteWhiteBlackIpRuleRequest deleteWhiteBlackIpRuleRequest = (DeleteWhiteBlackIpRuleRequest) o;
-        return Objects.equals(this.policyId, deleteWhiteBlackIpRuleRequest.policyId)
+        return Objects.equals(this.enterpriseProjectId, deleteWhiteBlackIpRuleRequest.enterpriseProjectId)
+            && Objects.equals(this.policyId, deleteWhiteBlackIpRuleRequest.policyId)
             && Objects.equals(this.ruleId, deleteWhiteBlackIpRuleRequest.ruleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, ruleId);
+        return Objects.hash(enterpriseProjectId, policyId, ruleId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteWhiteBlackIpRuleRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("}");

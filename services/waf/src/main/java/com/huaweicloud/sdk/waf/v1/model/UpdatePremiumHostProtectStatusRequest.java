@@ -10,6 +10,11 @@ import java.util.function.Consumer;
 public class UpdatePremiumHostProtectStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
     private String hostId;
@@ -18,6 +23,22 @@ public class UpdatePremiumHostProtectStatusRequest {
     @JsonProperty(value = "body")
 
     private UpdatePremiumHostProtectStatusRequestBody body;
+
+    public UpdatePremiumHostProtectStatusRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public UpdatePremiumHostProtectStatusRequest withHostId(String hostId) {
         this.hostId = hostId;
@@ -71,19 +92,21 @@ public class UpdatePremiumHostProtectStatusRequest {
         }
         UpdatePremiumHostProtectStatusRequest updatePremiumHostProtectStatusRequest =
             (UpdatePremiumHostProtectStatusRequest) o;
-        return Objects.equals(this.hostId, updatePremiumHostProtectStatusRequest.hostId)
+        return Objects.equals(this.enterpriseProjectId, updatePremiumHostProtectStatusRequest.enterpriseProjectId)
+            && Objects.equals(this.hostId, updatePremiumHostProtectStatusRequest.hostId)
             && Objects.equals(this.body, updatePremiumHostProtectStatusRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, body);
+        return Objects.hash(enterpriseProjectId, hostId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePremiumHostProtectStatusRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

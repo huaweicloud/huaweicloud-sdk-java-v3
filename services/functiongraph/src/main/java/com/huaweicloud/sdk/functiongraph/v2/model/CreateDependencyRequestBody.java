@@ -31,29 +31,29 @@ public class CreateDependencyRequestBody {
     /** 运行时语言。 */
     public static final class RuntimeEnum {
 
-        /** Enum JAVA_8 for value: "Java 8" */
-        public static final RuntimeEnum JAVA_8 = new RuntimeEnum("Java 8");
+        /** Enum JAVA8 for value: "Java8" */
+        public static final RuntimeEnum JAVA8 = new RuntimeEnum("Java8");
 
-        /** Enum NODE_JS_6_10 for value: "Node.js 6.10" */
-        public static final RuntimeEnum NODE_JS_6_10 = new RuntimeEnum("Node.js 6.10");
+        /** Enum NODE_JS6_10 for value: "Node.js6.10" */
+        public static final RuntimeEnum NODE_JS6_10 = new RuntimeEnum("Node.js6.10");
 
-        /** Enum NODE_JS_8_10 for value: "Node.js 8.10" */
-        public static final RuntimeEnum NODE_JS_8_10 = new RuntimeEnum("Node.js 8.10");
+        /** Enum NODE_JS8_10 for value: "Node.js8.10" */
+        public static final RuntimeEnum NODE_JS8_10 = new RuntimeEnum("Node.js8.10");
 
-        /** Enum NODE_JS_10_16 for value: "Node.js 10.16" */
-        public static final RuntimeEnum NODE_JS_10_16 = new RuntimeEnum("Node.js 10.16");
+        /** Enum NODE_JS10_16 for value: "Node.js10.16" */
+        public static final RuntimeEnum NODE_JS10_16 = new RuntimeEnum("Node.js10.16");
 
-        /** Enum NODE_JS_12_13 for value: "Node.js 12.13" */
-        public static final RuntimeEnum NODE_JS_12_13 = new RuntimeEnum("Node.js 12.13");
+        /** Enum NODE_JS12_13 for value: "Node.js12.13" */
+        public static final RuntimeEnum NODE_JS12_13 = new RuntimeEnum("Node.js12.13");
 
-        /** Enum PYTHON_2_7 for value: "Python 2.7" */
-        public static final RuntimeEnum PYTHON_2_7 = new RuntimeEnum("Python 2.7");
+        /** Enum PYTHON2_7 for value: "Python2.7" */
+        public static final RuntimeEnum PYTHON2_7 = new RuntimeEnum("Python2.7");
 
-        /** Enum PYTHON_3_6 for value: "Python 3.6" */
-        public static final RuntimeEnum PYTHON_3_6 = new RuntimeEnum("Python 3.6");
+        /** Enum PYTHON3_6 for value: "Python3.6" */
+        public static final RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
 
-        /** Enum GO_1_8 for value: "Go 1.8" */
-        public static final RuntimeEnum GO_1_8 = new RuntimeEnum("Go 1.8");
+        /** Enum GO1_8 for value: "Go1.8" */
+        public static final RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
 
         /** Enum C_NET_CORE_2_0_ for value: "C#(.NET Core 2.0)" */
         public static final RuntimeEnum C_NET_CORE_2_0_ = new RuntimeEnum("C#(.NET Core 2.0)");
@@ -64,25 +64,25 @@ public class CreateDependencyRequestBody {
         /** Enum C_NET_CORE_3_1_ for value: "C#(.NET Core 3.1)" */
         public static final RuntimeEnum C_NET_CORE_3_1_ = new RuntimeEnum("C#(.NET Core 3.1)");
 
-        /** Enum PHP_7_3 for value: "PHP 7.3" */
-        public static final RuntimeEnum PHP_7_3 = new RuntimeEnum("PHP 7.3");
+        /** Enum PHP7_3 for value: "PHP7.3" */
+        public static final RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
 
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuntimeEnum> createStaticFields() {
             Map<String, RuntimeEnum> map = new HashMap<>();
-            map.put("Java 8", JAVA_8);
-            map.put("Node.js 6.10", NODE_JS_6_10);
-            map.put("Node.js 8.10", NODE_JS_8_10);
-            map.put("Node.js 10.16", NODE_JS_10_16);
-            map.put("Node.js 12.13", NODE_JS_12_13);
-            map.put("Python 2.7", PYTHON_2_7);
-            map.put("Python 3.6", PYTHON_3_6);
-            map.put("Go 1.8", GO_1_8);
+            map.put("Java8", JAVA8);
+            map.put("Node.js6.10", NODE_JS6_10);
+            map.put("Node.js8.10", NODE_JS8_10);
+            map.put("Node.js10.16", NODE_JS10_16);
+            map.put("Node.js12.13", NODE_JS12_13);
+            map.put("Python2.7", PYTHON2_7);
+            map.put("Python3.6", PYTHON3_6);
+            map.put("Go1.8", GO1_8);
             map.put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
             map.put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
-            map.put("PHP 7.3", PHP_7_3);
+            map.put("PHP7.3", PHP7_3);
             return Collections.unmodifiableMap(map);
         }
 

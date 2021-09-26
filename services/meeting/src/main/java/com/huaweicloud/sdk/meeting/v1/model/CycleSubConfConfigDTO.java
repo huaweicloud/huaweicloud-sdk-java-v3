@@ -30,7 +30,7 @@ public class CycleSubConfConfigDTO {
     private Boolean enableWaitingRoom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ShowAudienceCountInfo")
+    @JsonProperty(value = "showAudienceCountInfo")
 
     private ShowAudienceCountInfo showAudienceCountInfo;
 

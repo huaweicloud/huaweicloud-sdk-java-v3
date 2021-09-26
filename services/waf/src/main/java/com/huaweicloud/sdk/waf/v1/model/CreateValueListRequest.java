@@ -10,9 +10,30 @@ import java.util.function.Consumer;
 public class CreateValueListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CreateValueListRequestBody body;
+
+    public CreateValueListRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public CreateValueListRequest withBody(CreateValueListRequestBody body) {
         this.body = body;
@@ -48,18 +69,20 @@ public class CreateValueListRequest {
             return false;
         }
         CreateValueListRequest createValueListRequest = (CreateValueListRequest) o;
-        return Objects.equals(this.body, createValueListRequest.body);
+        return Objects.equals(this.enterpriseProjectId, createValueListRequest.enterpriseProjectId)
+            && Objects.equals(this.body, createValueListRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(enterpriseProjectId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateValueListRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

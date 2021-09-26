@@ -9,6 +9,11 @@ import java.util.Objects;
 public class ListPremiumHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
     private String page;
@@ -32,6 +37,22 @@ public class ListPremiumHostRequest {
     @JsonProperty(value = "protect_status")
 
     private Integer protectStatus;
+
+    public ListPremiumHostRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ListPremiumHostRequest withPage(String page) {
         this.page = page;
@@ -122,7 +143,8 @@ public class ListPremiumHostRequest {
             return false;
         }
         ListPremiumHostRequest listPremiumHostRequest = (ListPremiumHostRequest) o;
-        return Objects.equals(this.page, listPremiumHostRequest.page)
+        return Objects.equals(this.enterpriseProjectId, listPremiumHostRequest.enterpriseProjectId)
+            && Objects.equals(this.page, listPremiumHostRequest.page)
             && Objects.equals(this.pagesize, listPremiumHostRequest.pagesize)
             && Objects.equals(this.hostname, listPremiumHostRequest.hostname)
             && Objects.equals(this.policyname, listPremiumHostRequest.policyname)
@@ -131,13 +153,14 @@ public class ListPremiumHostRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(page, pagesize, hostname, policyname, protectStatus);
+        return Objects.hash(enterpriseProjectId, page, pagesize, hostname, policyname, protectStatus);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPremiumHostRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");

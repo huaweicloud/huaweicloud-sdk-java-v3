@@ -294,6 +294,24 @@ public class DrsAsyncClient {
             hcClient);
     }
 
+    /** 批量设置同步策略 批量设置MySQL同步策略，包括冲突策略、过滤DROP Datase、对象同步范围。
+     *
+     * @param BatchSetPolicyRequest 请求对象
+     * @return CompletableFuture<BatchSetPolicyResponse> */
+    public CompletableFuture<BatchSetPolicyResponse> batchSetPolicyAsync(BatchSetPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.batchSetPolicy);
+    }
+
+    /** 批量设置同步策略 批量设置MySQL同步策略，包括冲突策略、过滤DROP Datase、对象同步范围。
+     *
+     * @param BatchSetPolicyRequest 请求对象
+     * @return AsyncInvoker<BatchSetPolicyRequest, BatchSetPolicyResponse> */
+    public AsyncInvoker<BatchSetPolicyRequest, BatchSetPolicyResponse> batchSetPolicyAsyncInvoker(
+        BatchSetPolicyRequest request) {
+        return new AsyncInvoker<BatchSetPolicyRequest, BatchSetPolicyResponse>(request, DrsMeta.batchSetPolicy,
+            hcClient);
+    }
+
     /** 批量设置任务限速 批量设置任务限速，任务创建成功后默认不限速。 - 限速：自定义的最大迁移速度，迁移过程中的迁移速度将不会超过该速度。 -
      * 不限速：对迁移速度不进行限制，通常会最大化使用源数据库的出口带宽。该流速模式同时会对源数据库造成读消耗，消耗取决于源数据库的出口带宽。比如：源数据库的出口带宽为100MB/s，假设高速模式使用了80%带宽，则迁移对源数据库将造成80MB/s的读操作IO消耗。
      *

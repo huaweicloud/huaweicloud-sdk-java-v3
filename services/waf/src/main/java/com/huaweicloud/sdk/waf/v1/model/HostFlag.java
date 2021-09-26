@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HostFlag */
+/** 域名配置 */
 public class HostFlag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

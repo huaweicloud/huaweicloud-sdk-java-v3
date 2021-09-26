@@ -159,10 +159,97 @@ public class ListServersRequest {
 
     private Integer offset;
 
+    /** 根据迁移周期查询 */
+    public static final class MigrationCycleEnum {
+
+        /** Enum CHECKING for value: "checking" */
+        public static final MigrationCycleEnum CHECKING = new MigrationCycleEnum("checking");
+
+        /** Enum SETTING for value: "setting" */
+        public static final MigrationCycleEnum SETTING = new MigrationCycleEnum("setting");
+
+        /** Enum REPLICATING for value: "replicating" */
+        public static final MigrationCycleEnum REPLICATING = new MigrationCycleEnum("replicating");
+
+        /** Enum SYNCING for value: "syncing" */
+        public static final MigrationCycleEnum SYNCING = new MigrationCycleEnum("syncing");
+
+        /** Enum CUTOVERING for value: "cutovering" */
+        public static final MigrationCycleEnum CUTOVERING = new MigrationCycleEnum("cutovering");
+
+        /** Enum CUTOVERED for value: "cutovered" */
+        public static final MigrationCycleEnum CUTOVERED = new MigrationCycleEnum("cutovered");
+
+        private static final Map<String, MigrationCycleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MigrationCycleEnum> createStaticFields() {
+            Map<String, MigrationCycleEnum> map = new HashMap<>();
+            map.put("checking", CHECKING);
+            map.put("setting", SETTING);
+            map.put("replicating", REPLICATING);
+            map.put("syncing", SYNCING);
+            map.put("cutovering", CUTOVERING);
+            map.put("cutovered", CUTOVERED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        MigrationCycleEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static MigrationCycleEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            MigrationCycleEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new MigrationCycleEnum(value);
+            }
+            return result;
+        }
+
+        public static MigrationCycleEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            MigrationCycleEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof MigrationCycleEnum) {
+                return this.value.equals(((MigrationCycleEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_cycle")
 
-    private String migrationCycle;
+    private MigrationCycleEnum migrationCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connected")
@@ -286,7 +373,7 @@ public class ListServersRequest {
         this.offset = offset;
     }
 
-    public ListServersRequest withMigrationCycle(String migrationCycle) {
+    public ListServersRequest withMigrationCycle(MigrationCycleEnum migrationCycle) {
         this.migrationCycle = migrationCycle;
         return this;
     }
@@ -294,11 +381,11 @@ public class ListServersRequest {
     /** 根据迁移周期查询
      * 
      * @return migrationCycle */
-    public String getMigrationCycle() {
+    public MigrationCycleEnum getMigrationCycle() {
         return migrationCycle;
     }
 
-    public void setMigrationCycle(String migrationCycle) {
+    public void setMigrationCycle(MigrationCycleEnum migrationCycle) {
         this.migrationCycle = migrationCycle;
     }
 

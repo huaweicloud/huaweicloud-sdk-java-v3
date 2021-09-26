@@ -14,6 +14,11 @@ import java.util.Objects;
 public class ListCertificatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
     private Integer page;
@@ -113,6 +118,22 @@ public class ListCertificatesRequest {
 
     private ExpStatusEnum expStatus;
 
+    public ListCertificatesRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ListCertificatesRequest withPage(Integer page) {
         this.page = page;
         return this;
@@ -202,7 +223,8 @@ public class ListCertificatesRequest {
             return false;
         }
         ListCertificatesRequest listCertificatesRequest = (ListCertificatesRequest) o;
-        return Objects.equals(this.page, listCertificatesRequest.page)
+        return Objects.equals(this.enterpriseProjectId, listCertificatesRequest.enterpriseProjectId)
+            && Objects.equals(this.page, listCertificatesRequest.page)
             && Objects.equals(this.pagesize, listCertificatesRequest.pagesize)
             && Objects.equals(this.name, listCertificatesRequest.name)
             && Objects.equals(this.host, listCertificatesRequest.host)
@@ -211,13 +233,14 @@ public class ListCertificatesRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(page, pagesize, name, host, expStatus);
+        return Objects.hash(enterpriseProjectId, page, pagesize, name, host, expStatus);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCertificatesRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

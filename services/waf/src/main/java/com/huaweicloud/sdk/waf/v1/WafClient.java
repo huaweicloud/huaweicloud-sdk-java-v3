@@ -369,6 +369,24 @@ public class WafClient {
             WafMeta.listAntitamperRule, hcClient);
     }
 
+    /** 查询安全统计带宽数据 查询安全统计带宽数据
+     *
+     * @param ListBandwidthTimelineRequest 请求对象
+     * @return ListBandwidthTimelineResponse */
+    public ListBandwidthTimelineResponse listBandwidthTimeline(ListBandwidthTimelineRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listBandwidthTimeline);
+    }
+
+    /** 查询安全统计带宽数据 查询安全统计带宽数据
+     *
+     * @param ListBandwidthTimelineRequest 请求对象
+     * @return SyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> */
+    public SyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> listBandwidthTimelineInvoker(
+        ListBandwidthTimelineRequest request) {
+        return new SyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse>(request,
+            WafMeta.listBandwidthTimeline, hcClient);
+    }
+
     /** 查询证书列表 查询证书列表
      *
      * @param ListCertificatesRequest 请求对象
@@ -469,6 +487,24 @@ public class WafClient {
         return new SyncInvoker<ListHostRouteRequest, ListHostRouteResponse>(request, WafMeta.listHostRoute, hcClient);
     }
 
+    /** 查询误报屏蔽规则列表 查询误报屏蔽规则列表
+     *
+     * @param ListIgnoreRuleRequest 请求对象
+     * @return ListIgnoreRuleResponse */
+    public ListIgnoreRuleResponse listIgnoreRule(ListIgnoreRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listIgnoreRule);
+    }
+
+    /** 查询误报屏蔽规则列表 查询误报屏蔽规则列表
+     *
+     * @param ListIgnoreRuleRequest 请求对象
+     * @return SyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse> */
+    public SyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse> listIgnoreRuleInvoker(
+        ListIgnoreRuleRequest request) {
+        return new SyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse>(request, WafMeta.listIgnoreRule,
+            hcClient);
+    }
+
     /** 查询防护策略列表 查询防护策略列表
      *
      * @param ListPolicyRequest 请求对象
@@ -518,6 +554,78 @@ public class WafClient {
     public SyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse> listPrivacyRuleInvoker(
         ListPrivacyRuleRequest request) {
         return new SyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse>(request, WafMeta.listPrivacyRule,
+            hcClient);
+    }
+
+    /** 查询安全统计qps次数 查询安全统计qps次数
+     *
+     * @param ListQpsTimelineRequest 请求对象
+     * @return ListQpsTimelineResponse */
+    public ListQpsTimelineResponse listQpsTimeline(ListQpsTimelineRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listQpsTimeline);
+    }
+
+    /** 查询安全统计qps次数 查询安全统计qps次数
+     *
+     * @param ListQpsTimelineRequest 请求对象
+     * @return SyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse> */
+    public SyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse> listQpsTimelineInvoker(
+        ListQpsTimelineRequest request) {
+        return new SyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>(request, WafMeta.listQpsTimeline,
+            hcClient);
+    }
+
+    /** 查询安全统计响应码数据 查询安全统计响应码数据
+     *
+     * @param ListResponseCodeTimelineRequest 请求对象
+     * @return ListResponseCodeTimelineResponse */
+    public ListResponseCodeTimelineResponse listResponseCodeTimeline(ListResponseCodeTimelineRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listResponseCodeTimeline);
+    }
+
+    /** 查询安全统计响应码数据 查询安全统计响应码数据
+     *
+     * @param ListResponseCodeTimelineRequest 请求对象
+     * @return SyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> */
+    public SyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimelineInvoker(
+        ListResponseCodeTimelineRequest request) {
+        return new SyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse>(request,
+            WafMeta.listResponseCodeTimeline, hcClient);
+    }
+
+    /** 查询安全总览请求数据 查询安全总览请求数据
+     *
+     * @param ListStatisticsRequest 请求对象
+     * @return ListStatisticsResponse */
+    public ListStatisticsResponse listStatistics(ListStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listStatistics);
+    }
+
+    /** 查询安全总览请求数据 查询安全总览请求数据
+     *
+     * @param ListStatisticsRequest 请求对象
+     * @return SyncInvoker<ListStatisticsRequest, ListStatisticsResponse> */
+    public SyncInvoker<ListStatisticsRequest, ListStatisticsResponse> listStatisticsInvoker(
+        ListStatisticsRequest request) {
+        return new SyncInvoker<ListStatisticsRequest, ListStatisticsResponse>(request, WafMeta.listStatistics,
+            hcClient);
+    }
+
+    /** 查询业务异常数量 查询业务异常数量
+     *
+     * @param ListTopAbnormalRequest 请求对象
+     * @return ListTopAbnormalResponse */
+    public ListTopAbnormalResponse listTopAbnormal(ListTopAbnormalRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listTopAbnormal);
+    }
+
+    /** 查询业务异常数量 查询业务异常数量
+     *
+     * @param ListTopAbnormalRequest 请求对象
+     * @return SyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse> */
+    public SyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse> listTopAbnormalInvoker(
+        ListTopAbnormalRequest request) {
+        return new SyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse>(request, WafMeta.listTopAbnormal,
             hcClient);
     }
 
@@ -588,6 +696,24 @@ public class WafClient {
     public SyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse> showCompositeHostInvoker(
         ShowCompositeHostRequest request) {
         return new SyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse>(request, WafMeta.showCompositeHost,
+            hcClient);
+    }
+
+    /** 局点支持特性查询 局点支持特性查询
+     *
+     * @param ShowConsoleConfigRequest 请求对象
+     * @return ShowConsoleConfigResponse */
+    public ShowConsoleConfigResponse showConsoleConfig(ShowConsoleConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showConsoleConfig);
+    }
+
+    /** 局点支持特性查询 局点支持特性查询
+     *
+     * @param ShowConsoleConfigRequest 请求对象
+     * @return SyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse> */
+    public SyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse> showConsoleConfigInvoker(
+        ShowConsoleConfigRequest request) {
+        return new SyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse>(request, WafMeta.showConsoleConfig,
             hcClient);
     }
 

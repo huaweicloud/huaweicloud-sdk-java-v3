@@ -22,7 +22,10 @@
 package com.huaweicloud.sdk.core.http;
 
 import com.huaweicloud.sdk.core.HttpListener;
+import com.huaweicloud.sdk.core.ssl.DefaultSSLSocketFactory;
 
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.X509TrustManager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -46,6 +49,10 @@ public class HttpConfig {
     private String proxyHost;
 
     private int proxyPort;
+
+    private SSLSocketFactory sslSocketFactory = DefaultSSLSocketFactory.getDefaultSSLSocketFactory();
+
+    private X509TrustManager trustManager = DefaultSSLSocketFactory.getDefaultX509TrustManager();
 
     private List<HttpListener> httpListeners = new ArrayList<>();
 
@@ -137,6 +144,32 @@ public class HttpConfig {
 
     public HttpConfig withProxyPort(int proxyPort) {
         this.proxyPort = proxyPort;
+        return this;
+    }
+
+    public SSLSocketFactory getSSLSocketFactory() {
+        return sslSocketFactory;
+    }
+
+    public void setSSLSocketFactory(SSLSocketFactory sslSocketFactory) {
+        this.sslSocketFactory = sslSocketFactory;
+    }
+
+    public HttpConfig withSSLSocketFactory(SSLSocketFactory sslSocketFactory) {
+        this.sslSocketFactory = sslSocketFactory;
+        return this;
+    }
+
+    public X509TrustManager getX509TrustManager() {
+        return trustManager;
+    }
+
+    public void setX509TrustManager(X509TrustManager trustManager) {
+        this.trustManager = trustManager;
+    }
+
+    public HttpConfig withX509TrustManager(X509TrustManager trustManager) {
+        this.trustManager = trustManager;
         return this;
     }
 

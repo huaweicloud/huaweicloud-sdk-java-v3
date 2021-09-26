@@ -115,7 +115,7 @@ public class ListStatisticsRequest {
         return this;
     }
 
-    /** 时间段单位为分钟，与filter参数metric配合使用。
+    /** 时间段单位为分钟，与filter参数配合使用。
      * 
      * @return period */
     public String getPeriod() {

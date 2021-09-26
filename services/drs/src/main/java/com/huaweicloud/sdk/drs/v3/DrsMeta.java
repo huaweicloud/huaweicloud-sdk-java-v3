@@ -497,6 +497,38 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchSetPolicyRequest, BatchSetPolicyResponse> batchSetPolicy =
+        genForbatchSetPolicy();
+
+    private static HttpRequestDef<BatchSetPolicyRequest, BatchSetPolicyResponse> genForbatchSetPolicy() {
+        // basic
+        HttpRequestDef.Builder<BatchSetPolicyRequest, BatchSetPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchSetPolicyRequest.class, BatchSetPolicyResponse.class)
+                .withName("BatchSetPolicy")
+                .withUri("/v3/{project_id}/jobs/batch-sync-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchSetPolicyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSetPolicyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BatchSetPolicyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<BatchSetupSyncPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSetupSyncPolicyReq.class),
+            f -> f.withMarshaller(BatchSetPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchSetSpeedRequest, BatchSetSpeedResponse> batchSetSpeed =
         genForbatchSetSpeed();
 

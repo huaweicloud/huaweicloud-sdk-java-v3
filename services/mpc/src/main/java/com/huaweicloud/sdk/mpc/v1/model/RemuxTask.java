@@ -40,6 +40,11 @@ public class RemuxTask {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_data")
+
+    private String userData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
     private ObsObjInfo input;
@@ -48,11 +53,6 @@ public class RemuxTask {
     @JsonProperty(value = "output")
 
     private ObsObjInfo output;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_data")
-
-    private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_param")
@@ -165,6 +165,22 @@ public class RemuxTask {
         this.description = description;
     }
 
+    public RemuxTask withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    /** 用户数据。
+     * 
+     * @return userData */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public RemuxTask withInput(ObsObjInfo input) {
         this.input = input;
         return this;
@@ -213,22 +229,6 @@ public class RemuxTask {
 
     public void setOutput(ObsObjInfo output) {
         this.output = output;
-    }
-
-    public RemuxTask withUserData(String userData) {
-        this.userData = userData;
-        return this;
-    }
-
-    /** 用户数据。
-     * 
-     * @return userData */
-    public String getUserData() {
-        return userData;
-    }
-
-    public void setUserData(String userData) {
-        this.userData = userData;
     }
 
     public RemuxTask withOutputParam(RemuxOutputParam outputParam) {
@@ -309,9 +309,9 @@ public class RemuxTask {
         return Objects.equals(this.taskId, remuxTask.taskId) && Objects.equals(this.status, remuxTask.status)
             && Objects.equals(this.createTime, remuxTask.createTime)
             && Objects.equals(this.startTime, remuxTask.startTime) && Objects.equals(this.endTime, remuxTask.endTime)
-            && Objects.equals(this.description, remuxTask.description) && Objects.equals(this.input, remuxTask.input)
-            && Objects.equals(this.output, remuxTask.output) && Objects.equals(this.userData, remuxTask.userData)
-            && Objects.equals(this.outputParam, remuxTask.outputParam)
+            && Objects.equals(this.description, remuxTask.description)
+            && Objects.equals(this.userData, remuxTask.userData) && Objects.equals(this.input, remuxTask.input)
+            && Objects.equals(this.output, remuxTask.output) && Objects.equals(this.outputParam, remuxTask.outputParam)
             && Objects.equals(this.completeRatio, remuxTask.completeRatio)
             && Objects.equals(this.outputMetadata, remuxTask.outputMetadata);
     }
@@ -324,9 +324,9 @@ public class RemuxTask {
             startTime,
             endTime,
             description,
+            userData,
             input,
             output,
-            userData,
             outputParam,
             completeRatio,
             outputMetadata);
@@ -342,9 +342,9 @@ public class RemuxTask {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
-        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
         sb.append("    completeRatio: ").append(toIndentedString(completeRatio)).append("\n");
         sb.append("    outputMetadata: ").append(toIndentedString(outputMetadata)).append("\n");

@@ -206,7 +206,7 @@ public class PostSourceServerBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disks")
 
-    private List<Disk> disks = null;
+    private List<ServerDisk> disks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "btrfs_list")
@@ -488,12 +488,12 @@ public class PostSourceServerBody {
         this.memory = memory;
     }
 
-    public PostSourceServerBody withDisks(List<Disk> disks) {
+    public PostSourceServerBody withDisks(List<ServerDisk> disks) {
         this.disks = disks;
         return this;
     }
 
-    public PostSourceServerBody addDisksItem(Disk disksItem) {
+    public PostSourceServerBody addDisksItem(ServerDisk disksItem) {
         if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
@@ -501,7 +501,7 @@ public class PostSourceServerBody {
         return this;
     }
 
-    public PostSourceServerBody withDisks(Consumer<List<Disk>> disksSetter) {
+    public PostSourceServerBody withDisks(Consumer<List<ServerDisk>> disksSetter) {
         if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
@@ -512,11 +512,11 @@ public class PostSourceServerBody {
     /** 源端服务器的磁盘信息
      * 
      * @return disks */
-    public List<Disk> getDisks() {
+    public List<ServerDisk> getDisks() {
         return disks;
     }
 
-    public void setDisks(List<Disk> disks) {
+    public void setDisks(List<ServerDisk> disks) {
         this.disks = disks;
     }
 

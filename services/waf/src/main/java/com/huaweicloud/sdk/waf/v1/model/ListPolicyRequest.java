@@ -9,6 +9,11 @@ import java.util.Objects;
 public class ListPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
     private Integer page;
@@ -22,6 +27,22 @@ public class ListPolicyRequest {
     @JsonProperty(value = "name")
 
     private String name;
+
+    public ListPolicyRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ListPolicyRequest withPage(Integer page) {
         this.page = page;
@@ -80,20 +101,22 @@ public class ListPolicyRequest {
             return false;
         }
         ListPolicyRequest listPolicyRequest = (ListPolicyRequest) o;
-        return Objects.equals(this.page, listPolicyRequest.page)
+        return Objects.equals(this.enterpriseProjectId, listPolicyRequest.enterpriseProjectId)
+            && Objects.equals(this.page, listPolicyRequest.page)
             && Objects.equals(this.pagesize, listPolicyRequest.pagesize)
             && Objects.equals(this.name, listPolicyRequest.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(page, pagesize, name);
+        return Objects.hash(enterpriseProjectId, page, pagesize, name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPolicyRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

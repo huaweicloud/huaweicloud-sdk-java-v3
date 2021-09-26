@@ -9,9 +9,30 @@ import java.util.Objects;
 public class DeleteValueListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valuelistid")
 
     private String valuelistid;
+
+    public DeleteValueListRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public DeleteValueListRequest withValuelistid(String valuelistid) {
         this.valuelistid = valuelistid;
@@ -38,18 +59,20 @@ public class DeleteValueListRequest {
             return false;
         }
         DeleteValueListRequest deleteValueListRequest = (DeleteValueListRequest) o;
-        return Objects.equals(this.valuelistid, deleteValueListRequest.valuelistid);
+        return Objects.equals(this.enterpriseProjectId, deleteValueListRequest.enterpriseProjectId)
+            && Objects.equals(this.valuelistid, deleteValueListRequest.valuelistid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(valuelistid);
+        return Objects.hash(enterpriseProjectId, valuelistid);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteValueListRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    valuelistid: ").append(toIndentedString(valuelistid)).append("\n");
         sb.append("}");
         return sb.toString();

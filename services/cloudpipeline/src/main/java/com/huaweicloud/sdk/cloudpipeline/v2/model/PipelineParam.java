@@ -24,9 +24,9 @@ public class PipelineParam {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "paramtype")
+    @JsonProperty(value = "param_type")
 
-    private String paramtype;
+    private String paramType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_static")
@@ -86,20 +86,20 @@ public class PipelineParam {
         this.description = description;
     }
 
-    public PipelineParam withParamtype(String paramtype) {
-        this.paramtype = paramtype;
+    public PipelineParam withParamType(String paramType) {
+        this.paramType = paramType;
         return this;
     }
 
     /** 流水线参数类型
      * 
-     * @return paramtype */
-    public String getParamtype() {
-        return paramtype;
+     * @return paramType */
+    public String getParamType() {
+        return paramType;
     }
 
-    public void setParamtype(String paramtype) {
-        this.paramtype = paramtype;
+    public void setParamType(String paramType) {
+        this.paramType = paramType;
     }
 
     public PipelineParam withIsStatic(Boolean isStatic) {
@@ -145,14 +145,14 @@ public class PipelineParam {
         PipelineParam pipelineParam = (PipelineParam) o;
         return Objects.equals(this.name, pipelineParam.name) && Objects.equals(this.value, pipelineParam.value)
             && Objects.equals(this.description, pipelineParam.description)
-            && Objects.equals(this.paramtype, pipelineParam.paramtype)
+            && Objects.equals(this.paramType, pipelineParam.paramType)
             && Objects.equals(this.isStatic, pipelineParam.isStatic)
             && Objects.equals(this.isDefault, pipelineParam.isDefault);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, value, description, paramtype, isStatic, isDefault);
+        return Objects.hash(name, value, description, paramType, isStatic, isDefault);
     }
 
     @Override
@@ -162,7 +162,7 @@ public class PipelineParam {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    paramtype: ").append(toIndentedString(paramtype)).append("\n");
+        sb.append("    paramType: ").append(toIndentedString(paramType)).append("\n");
         sb.append("    isStatic: ").append(toIndentedString(isStatic)).append("\n");
         sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
         sb.append("}");

@@ -394,10 +394,10 @@ public class SmsMeta {
             f -> f.withMarshaller(ListServersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
-        builder.<String>withRequestField("migration_cycle",
+        builder.<ListServersRequest.MigrationCycleEnum>withRequestField("migration_cycle",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListServersRequest.MigrationCycleEnum.class),
             f -> f.withMarshaller(ListServersRequest::getMigrationCycle, (req, v) -> {
                 req.setMigrationCycle(v);
             }));

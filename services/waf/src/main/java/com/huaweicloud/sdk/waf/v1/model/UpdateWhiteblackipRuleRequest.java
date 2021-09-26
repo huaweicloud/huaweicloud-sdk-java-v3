@@ -10,6 +10,11 @@ import java.util.function.Consumer;
 public class UpdateWhiteblackipRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
@@ -23,6 +28,22 @@ public class UpdateWhiteblackipRuleRequest {
     @JsonProperty(value = "body")
 
     private UpdateWhiteBlackIpRuleRequestBody body;
+
+    public UpdateWhiteblackipRuleRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public UpdateWhiteblackipRuleRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -45,7 +66,7 @@ public class UpdateWhiteblackipRuleRequest {
         return this;
     }
 
-    /** whiteblackIpRuleId
+    /** 黑白名单规则ID（从查询黑白名单规则列表ListWhiteblackipRule接口获取）
      * 
      * @return ruleId */
     public String getRuleId() {
@@ -90,20 +111,22 @@ public class UpdateWhiteblackipRuleRequest {
             return false;
         }
         UpdateWhiteblackipRuleRequest updateWhiteblackipRuleRequest = (UpdateWhiteblackipRuleRequest) o;
-        return Objects.equals(this.policyId, updateWhiteblackipRuleRequest.policyId)
+        return Objects.equals(this.enterpriseProjectId, updateWhiteblackipRuleRequest.enterpriseProjectId)
+            && Objects.equals(this.policyId, updateWhiteblackipRuleRequest.policyId)
             && Objects.equals(this.ruleId, updateWhiteblackipRuleRequest.ruleId)
             && Objects.equals(this.body, updateWhiteblackipRuleRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, ruleId, body);
+        return Objects.hash(enterpriseProjectId, policyId, ruleId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateWhiteblackipRuleRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");

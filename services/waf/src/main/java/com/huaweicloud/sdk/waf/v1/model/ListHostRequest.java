@@ -9,6 +9,11 @@ import java.util.Objects;
 public class ListHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
     private Integer page;
@@ -27,6 +32,22 @@ public class ListHostRequest {
     @JsonProperty(value = "policyname")
 
     private String policyname;
+
+    public ListHostRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ListHostRequest withPage(Integer page) {
         this.page = page;
@@ -101,7 +122,8 @@ public class ListHostRequest {
             return false;
         }
         ListHostRequest listHostRequest = (ListHostRequest) o;
-        return Objects.equals(this.page, listHostRequest.page)
+        return Objects.equals(this.enterpriseProjectId, listHostRequest.enterpriseProjectId)
+            && Objects.equals(this.page, listHostRequest.page)
             && Objects.equals(this.pagesize, listHostRequest.pagesize)
             && Objects.equals(this.hostname, listHostRequest.hostname)
             && Objects.equals(this.policyname, listHostRequest.policyname);
@@ -109,13 +131,14 @@ public class ListHostRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(page, pagesize, hostname, policyname);
+        return Objects.hash(enterpriseProjectId, page, pagesize, hostname, policyname);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHostRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");

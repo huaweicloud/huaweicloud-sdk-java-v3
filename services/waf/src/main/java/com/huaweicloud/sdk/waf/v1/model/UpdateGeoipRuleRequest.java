@@ -10,6 +10,11 @@ import java.util.function.Consumer;
 public class UpdateGeoipRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
@@ -23,6 +28,22 @@ public class UpdateGeoipRuleRequest {
     @JsonProperty(value = "body")
 
     private UpdateGeoipRuleRequestBody body;
+
+    public UpdateGeoipRuleRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public UpdateGeoipRuleRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -90,20 +111,22 @@ public class UpdateGeoipRuleRequest {
             return false;
         }
         UpdateGeoipRuleRequest updateGeoipRuleRequest = (UpdateGeoipRuleRequest) o;
-        return Objects.equals(this.policyId, updateGeoipRuleRequest.policyId)
+        return Objects.equals(this.enterpriseProjectId, updateGeoipRuleRequest.enterpriseProjectId)
+            && Objects.equals(this.policyId, updateGeoipRuleRequest.policyId)
             && Objects.equals(this.ruleId, updateGeoipRuleRequest.ruleId)
             && Objects.equals(this.body, updateGeoipRuleRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, ruleId, body);
+        return Objects.hash(enterpriseProjectId, policyId, ruleId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateGeoipRuleRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");

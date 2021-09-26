@@ -842,6 +842,24 @@ public class MeetingClient {
         return new SyncInvoker<HangUpRequest, HangUpResponse>(request, MeetingMeta.hangUp, hcClient);
     }
 
+    /** 主持人邀请与会者开启、关闭摄像头 主持人邀请与会者开启、关闭摄像头
+     *
+     * @param InviteOperateVideoRequest 请求对象
+     * @return InviteOperateVideoResponse */
+    public InviteOperateVideoResponse inviteOperateVideo(InviteOperateVideoRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.inviteOperateVideo);
+    }
+
+    /** 主持人邀请与会者开启、关闭摄像头 主持人邀请与会者开启、关闭摄像头
+     *
+     * @param InviteOperateVideoRequest 请求对象
+     * @return SyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse> */
+    public SyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse> inviteOperateVideoInvoker(
+        InviteOperateVideoRequest request) {
+        return new SyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse>(request,
+            MeetingMeta.inviteOperateVideo, hcClient);
+    }
+
     /** 邀请与会者 邀请与会者加入会议。
      *
      * @param InviteParticipantRequest 请求对象
@@ -1721,6 +1739,22 @@ public class MeetingClient {
         return new SyncInvoker<SetRoleRequest, SetRoleResponse>(request, MeetingMeta.setRole, hcClient);
     }
 
+    /** 设置SSO鉴权配置 设置SSO鉴权配置
+     *
+     * @param SetSsoConfigRequest 请求对象
+     * @return SetSsoConfigResponse */
+    public SetSsoConfigResponse setSsoConfig(SetSsoConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.setSsoConfig);
+    }
+
+    /** 设置SSO鉴权配置 设置SSO鉴权配置
+     *
+     * @param SetSsoConfigRequest 请求对象
+     * @return SyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse> */
+    public SyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse> setSsoConfigInvoker(SetSsoConfigRequest request) {
+        return new SyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse>(request, MeetingMeta.setSsoConfig, hcClient);
+    }
+
     /** 通过会议ID查询企业ID 与某个会议在同一个SP下的用户，可以通过会议ID查询到该会议对应的企业ID。
      *
      * @param ShowConfOrgRequest 请求对象
@@ -2160,6 +2194,23 @@ public class MeetingClient {
     public SyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse> showSpResourceInvoker(
         ShowSpResourceRequest request) {
         return new SyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>(request, MeetingMeta.showSpResource,
+            hcClient);
+    }
+
+    /** 查询SSO鉴权配置 查询SSO鉴权配置
+     *
+     * @param ShowSsoConfigRequest 请求对象
+     * @return ShowSsoConfigResponse */
+    public ShowSsoConfigResponse showSsoConfig(ShowSsoConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showSsoConfig);
+    }
+
+    /** 查询SSO鉴权配置 查询SSO鉴权配置
+     *
+     * @param ShowSsoConfigRequest 请求对象
+     * @return SyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse> */
+    public SyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse> showSsoConfigInvoker(ShowSsoConfigRequest request) {
+        return new SyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse>(request, MeetingMeta.showSsoConfig,
             hcClient);
     }
 

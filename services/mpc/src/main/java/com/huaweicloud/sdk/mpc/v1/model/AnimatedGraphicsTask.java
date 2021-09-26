@@ -40,6 +40,11 @@ public class AnimatedGraphicsTask {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_data")
+
+    private String userData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
     private ObsObjInfo input;
@@ -48,11 +53,6 @@ public class AnimatedGraphicsTask {
     @JsonProperty(value = "output")
 
     private ObsObjInfo output;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_data")
-
-    private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_param")
@@ -155,6 +155,22 @@ public class AnimatedGraphicsTask {
         this.description = description;
     }
 
+    public AnimatedGraphicsTask withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    /** 用户数据。
+     * 
+     * @return userData */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public AnimatedGraphicsTask withInput(ObsObjInfo input) {
         this.input = input;
         return this;
@@ -205,22 +221,6 @@ public class AnimatedGraphicsTask {
         this.output = output;
     }
 
-    public AnimatedGraphicsTask withUserData(String userData) {
-        this.userData = userData;
-        return this;
-    }
-
-    /** 用户数据。
-     * 
-     * @return userData */
-    public String getUserData() {
-        return userData;
-    }
-
-    public void setUserData(String userData) {
-        this.userData = userData;
-    }
-
     public AnimatedGraphicsTask withOutputParam(AnimatedGraphicsOutputParam outputParam) {
         this.outputParam = outputParam;
         return this;
@@ -261,16 +261,16 @@ public class AnimatedGraphicsTask {
             && Objects.equals(this.startTime, animatedGraphicsTask.startTime)
             && Objects.equals(this.endTime, animatedGraphicsTask.endTime)
             && Objects.equals(this.description, animatedGraphicsTask.description)
+            && Objects.equals(this.userData, animatedGraphicsTask.userData)
             && Objects.equals(this.input, animatedGraphicsTask.input)
             && Objects.equals(this.output, animatedGraphicsTask.output)
-            && Objects.equals(this.userData, animatedGraphicsTask.userData)
             && Objects.equals(this.outputParam, animatedGraphicsTask.outputParam);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(taskId, status, createTime, startTime, endTime, description, input, output, userData, outputParam);
+            .hash(taskId, status, createTime, startTime, endTime, description, userData, input, output, outputParam);
     }
 
     @Override
@@ -283,9 +283,9 @@ public class AnimatedGraphicsTask {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
-        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
         sb.append("}");
         return sb.toString();

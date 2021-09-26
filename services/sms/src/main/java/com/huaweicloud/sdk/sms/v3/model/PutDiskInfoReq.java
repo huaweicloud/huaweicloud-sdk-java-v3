@@ -14,7 +14,7 @@ public class PutDiskInfoReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disks")
 
-    private List<Disk> disks = null;
+    private List<ServerDisk> disks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumegroups")
@@ -26,12 +26,12 @@ public class PutDiskInfoReq {
 
     private List<BtrfsFileSystem> btrfsList = null;
 
-    public PutDiskInfoReq withDisks(List<Disk> disks) {
+    public PutDiskInfoReq withDisks(List<ServerDisk> disks) {
         this.disks = disks;
         return this;
     }
 
-    public PutDiskInfoReq addDisksItem(Disk disksItem) {
+    public PutDiskInfoReq addDisksItem(ServerDisk disksItem) {
         if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
@@ -39,7 +39,7 @@ public class PutDiskInfoReq {
         return this;
     }
 
-    public PutDiskInfoReq withDisks(Consumer<List<Disk>> disksSetter) {
+    public PutDiskInfoReq withDisks(Consumer<List<ServerDisk>> disksSetter) {
         if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
@@ -50,11 +50,11 @@ public class PutDiskInfoReq {
     /** 更新的磁盘信息
      * 
      * @return disks */
-    public List<Disk> getDisks() {
+    public List<ServerDisk> getDisks() {
         return disks;
     }
 
-    public void setDisks(List<Disk> disks) {
+    public void setDisks(List<ServerDisk> disks) {
         this.disks = disks;
     }
 

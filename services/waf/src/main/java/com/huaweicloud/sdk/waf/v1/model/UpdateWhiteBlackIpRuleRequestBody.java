@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建黑白名单规则body */
+/** 更新黑白名单规则body */
 public class UpdateWhiteBlackIpRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

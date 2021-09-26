@@ -360,9 +360,9 @@ public class TargetServer {
     private String snapshotIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rollback_snapshot_ids")
+    @JsonProperty(value = "cutovered_snapshot_ids")
 
-    private String rollbackSnapshotIds;
+    private String cutoveredSnapshotIds;
 
     public TargetServer withId(String id) {
         this.id = id;
@@ -844,20 +844,20 @@ public class TargetServer {
         this.snapshotIds = snapshotIds;
     }
 
-    public TargetServer withRollbackSnapshotIds(String rollbackSnapshotIds) {
-        this.rollbackSnapshotIds = rollbackSnapshotIds;
+    public TargetServer withCutoveredSnapshotIds(String cutoveredSnapshotIds) {
+        this.cutoveredSnapshotIds = cutoveredSnapshotIds;
         return this;
     }
 
     /** 目的端回滚快照id
      * 
-     * @return rollbackSnapshotIds */
-    public String getRollbackSnapshotIds() {
-        return rollbackSnapshotIds;
+     * @return cutoveredSnapshotIds */
+    public String getCutoveredSnapshotIds() {
+        return cutoveredSnapshotIds;
     }
 
-    public void setRollbackSnapshotIds(String rollbackSnapshotIds) {
-        this.rollbackSnapshotIds = rollbackSnapshotIds;
+    public void setCutoveredSnapshotIds(String cutoveredSnapshotIds) {
+        this.cutoveredSnapshotIds = cutoveredSnapshotIds;
     }
 
     @Override
@@ -891,7 +891,7 @@ public class TargetServer {
             && Objects.equals(this.vmId, targetServer.vmId) && Objects.equals(this.flavor, targetServer.flavor)
             && Objects.equals(this.imageDiskId, targetServer.imageDiskId)
             && Objects.equals(this.snapshotIds, targetServer.snapshotIds)
-            && Objects.equals(this.rollbackSnapshotIds, targetServer.rollbackSnapshotIds);
+            && Objects.equals(this.cutoveredSnapshotIds, targetServer.cutoveredSnapshotIds);
     }
 
     @Override
@@ -922,7 +922,7 @@ public class TargetServer {
             flavor,
             imageDiskId,
             snapshotIds,
-            rollbackSnapshotIds);
+            cutoveredSnapshotIds);
     }
 
     @Override
@@ -955,7 +955,7 @@ public class TargetServer {
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    imageDiskId: ").append(toIndentedString(imageDiskId)).append("\n");
         sb.append("    snapshotIds: ").append(toIndentedString(snapshotIds)).append("\n");
-        sb.append("    rollbackSnapshotIds: ").append(toIndentedString(rollbackSnapshotIds)).append("\n");
+        sb.append("    cutoveredSnapshotIds: ").append(toIndentedString(cutoveredSnapshotIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

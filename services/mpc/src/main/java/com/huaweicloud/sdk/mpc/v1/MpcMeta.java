@@ -136,6 +136,131 @@ public class MpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateEditingJobRequest, CreateEditingJobResponse> createEditingJob =
+        genForcreateEditingJob();
+
+    private static HttpRequestDef<CreateEditingJobRequest, CreateEditingJobResponse> genForcreateEditingJob() {
+        // basic
+        HttpRequestDef.Builder<CreateEditingJobRequest, CreateEditingJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEditingJobRequest.class, CreateEditingJobResponse.class)
+                .withName("CreateEditingJob")
+                .withUri("/v1/{project_id}/editing/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateEditingJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateEditingJobReq.class),
+            f -> f.withMarshaller(CreateEditingJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEditingJobRequest, DeleteEditingJobResponse> deleteEditingJob =
+        genFordeleteEditingJob();
+
+    private static HttpRequestDef<DeleteEditingJobRequest, DeleteEditingJobResponse> genFordeleteEditingJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteEditingJobRequest, DeleteEditingJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEditingJobRequest.class, DeleteEditingJobResponse.class)
+                .withName("DeleteEditingJob")
+                .withUri("/v1/{project_id}/editing/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEditingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEditingJobRequest, ListEditingJobResponse> listEditingJob =
+        genForlistEditingJob();
+
+    private static HttpRequestDef<ListEditingJobRequest, ListEditingJobResponse> genForlistEditingJob() {
+        // basic
+        HttpRequestDef.Builder<ListEditingJobRequest, ListEditingJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEditingJobRequest.class, ListEditingJobResponse.class)
+                .withName("ListEditingJob")
+                .withUri("/v1/{project_id}/editing/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEditingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<ListEditingJobRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEditingJobRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListEditingJobRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEditingJobRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEditingJobRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEditingJobRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<Integer>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEditingJobRequest::getSize, (req, v) -> {
+                req.setSize(v);
+            }));
+        builder.<String>withRequestField("x-language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEditingJobRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        builder.<List<QueryEditingJobRsp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEditingJobResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(QueryEditingJobRsp.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEncryptTaskRequest, CreateEncryptTaskResponse> createEncryptTask =
         genForcreateEncryptTask();
 

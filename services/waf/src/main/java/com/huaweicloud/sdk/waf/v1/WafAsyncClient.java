@@ -378,6 +378,25 @@ public class WafAsyncClient {
             WafMeta.listAntitamperRule, hcClient);
     }
 
+    /** 查询安全统计带宽数据 查询安全统计带宽数据
+     *
+     * @param ListBandwidthTimelineRequest 请求对象
+     * @return CompletableFuture<ListBandwidthTimelineResponse> */
+    public CompletableFuture<ListBandwidthTimelineResponse> listBandwidthTimelineAsync(
+        ListBandwidthTimelineRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listBandwidthTimeline);
+    }
+
+    /** 查询安全统计带宽数据 查询安全统计带宽数据
+     *
+     * @param ListBandwidthTimelineRequest 请求对象
+     * @return AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> */
+    public AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> listBandwidthTimelineAsyncInvoker(
+        ListBandwidthTimelineRequest request) {
+        return new AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse>(request,
+            WafMeta.listBandwidthTimeline, hcClient);
+    }
+
     /** 查询证书列表 查询证书列表
      *
      * @param ListCertificatesRequest 请求对象
@@ -480,6 +499,24 @@ public class WafAsyncClient {
         return new AsyncInvoker<ListHostRouteRequest, ListHostRouteResponse>(request, WafMeta.listHostRoute, hcClient);
     }
 
+    /** 查询误报屏蔽规则列表 查询误报屏蔽规则列表
+     *
+     * @param ListIgnoreRuleRequest 请求对象
+     * @return CompletableFuture<ListIgnoreRuleResponse> */
+    public CompletableFuture<ListIgnoreRuleResponse> listIgnoreRuleAsync(ListIgnoreRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listIgnoreRule);
+    }
+
+    /** 查询误报屏蔽规则列表 查询误报屏蔽规则列表
+     *
+     * @param ListIgnoreRuleRequest 请求对象
+     * @return AsyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse> */
+    public AsyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse> listIgnoreRuleAsyncInvoker(
+        ListIgnoreRuleRequest request) {
+        return new AsyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse>(request, WafMeta.listIgnoreRule,
+            hcClient);
+    }
+
     /** 查询防护策略列表 查询防护策略列表
      *
      * @param ListPolicyRequest 请求对象
@@ -529,6 +566,79 @@ public class WafAsyncClient {
     public AsyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse> listPrivacyRuleAsyncInvoker(
         ListPrivacyRuleRequest request) {
         return new AsyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse>(request, WafMeta.listPrivacyRule,
+            hcClient);
+    }
+
+    /** 查询安全统计qps次数 查询安全统计qps次数
+     *
+     * @param ListQpsTimelineRequest 请求对象
+     * @return CompletableFuture<ListQpsTimelineResponse> */
+    public CompletableFuture<ListQpsTimelineResponse> listQpsTimelineAsync(ListQpsTimelineRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listQpsTimeline);
+    }
+
+    /** 查询安全统计qps次数 查询安全统计qps次数
+     *
+     * @param ListQpsTimelineRequest 请求对象
+     * @return AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse> */
+    public AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse> listQpsTimelineAsyncInvoker(
+        ListQpsTimelineRequest request) {
+        return new AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>(request, WafMeta.listQpsTimeline,
+            hcClient);
+    }
+
+    /** 查询安全统计响应码数据 查询安全统计响应码数据
+     *
+     * @param ListResponseCodeTimelineRequest 请求对象
+     * @return CompletableFuture<ListResponseCodeTimelineResponse> */
+    public CompletableFuture<ListResponseCodeTimelineResponse> listResponseCodeTimelineAsync(
+        ListResponseCodeTimelineRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listResponseCodeTimeline);
+    }
+
+    /** 查询安全统计响应码数据 查询安全统计响应码数据
+     *
+     * @param ListResponseCodeTimelineRequest 请求对象
+     * @return AsyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> */
+    public AsyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimelineAsyncInvoker(
+        ListResponseCodeTimelineRequest request) {
+        return new AsyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse>(request,
+            WafMeta.listResponseCodeTimeline, hcClient);
+    }
+
+    /** 查询安全总览请求数据 查询安全总览请求数据
+     *
+     * @param ListStatisticsRequest 请求对象
+     * @return CompletableFuture<ListStatisticsResponse> */
+    public CompletableFuture<ListStatisticsResponse> listStatisticsAsync(ListStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listStatistics);
+    }
+
+    /** 查询安全总览请求数据 查询安全总览请求数据
+     *
+     * @param ListStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse> */
+    public AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse> listStatisticsAsyncInvoker(
+        ListStatisticsRequest request) {
+        return new AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse>(request, WafMeta.listStatistics,
+            hcClient);
+    }
+
+    /** 查询业务异常数量 查询业务异常数量
+     *
+     * @param ListTopAbnormalRequest 请求对象
+     * @return CompletableFuture<ListTopAbnormalResponse> */
+    public CompletableFuture<ListTopAbnormalResponse> listTopAbnormalAsync(ListTopAbnormalRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listTopAbnormal);
+    }
+
+    /** 查询业务异常数量 查询业务异常数量
+     *
+     * @param ListTopAbnormalRequest 请求对象
+     * @return AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse> */
+    public AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse> listTopAbnormalAsyncInvoker(
+        ListTopAbnormalRequest request) {
+        return new AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse>(request, WafMeta.listTopAbnormal,
             hcClient);
     }
 
@@ -601,6 +711,24 @@ public class WafAsyncClient {
     public AsyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse> showCompositeHostAsyncInvoker(
         ShowCompositeHostRequest request) {
         return new AsyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse>(request, WafMeta.showCompositeHost,
+            hcClient);
+    }
+
+    /** 局点支持特性查询 局点支持特性查询
+     *
+     * @param ShowConsoleConfigRequest 请求对象
+     * @return CompletableFuture<ShowConsoleConfigResponse> */
+    public CompletableFuture<ShowConsoleConfigResponse> showConsoleConfigAsync(ShowConsoleConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showConsoleConfig);
+    }
+
+    /** 局点支持特性查询 局点支持特性查询
+     *
+     * @param ShowConsoleConfigRequest 请求对象
+     * @return AsyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse> */
+    public AsyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse> showConsoleConfigAsyncInvoker(
+        ShowConsoleConfigRequest request) {
+        return new AsyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse>(request, WafMeta.showConsoleConfig,
             hcClient);
     }
 

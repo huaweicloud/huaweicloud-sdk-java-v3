@@ -10,6 +10,11 @@ import java.util.function.Consumer;
 public class ApplyCertificateToHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_id")
 
     private String certificateId;
@@ -18,6 +23,22 @@ public class ApplyCertificateToHostRequest {
     @JsonProperty(value = "body")
 
     private ApplyCertificateToHostRequestBody body;
+
+    public ApplyCertificateToHostRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ApplyCertificateToHostRequest withCertificateId(String certificateId) {
         this.certificateId = certificateId;
@@ -69,19 +90,21 @@ public class ApplyCertificateToHostRequest {
             return false;
         }
         ApplyCertificateToHostRequest applyCertificateToHostRequest = (ApplyCertificateToHostRequest) o;
-        return Objects.equals(this.certificateId, applyCertificateToHostRequest.certificateId)
+        return Objects.equals(this.enterpriseProjectId, applyCertificateToHostRequest.enterpriseProjectId)
+            && Objects.equals(this.certificateId, applyCertificateToHostRequest.certificateId)
             && Objects.equals(this.body, applyCertificateToHostRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificateId, body);
+        return Objects.hash(enterpriseProjectId, certificateId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplyCertificateToHostRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

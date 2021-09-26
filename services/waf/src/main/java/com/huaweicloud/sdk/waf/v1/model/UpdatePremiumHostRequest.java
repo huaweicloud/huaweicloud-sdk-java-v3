@@ -10,6 +10,11 @@ import java.util.function.Consumer;
 public class UpdatePremiumHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
     private String hostId;
@@ -18,6 +23,22 @@ public class UpdatePremiumHostRequest {
     @JsonProperty(value = "body")
 
     private UpdatePremiumHostRequestBody body;
+
+    public UpdatePremiumHostRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public UpdatePremiumHostRequest withHostId(String hostId) {
         this.hostId = hostId;
@@ -69,19 +90,21 @@ public class UpdatePremiumHostRequest {
             return false;
         }
         UpdatePremiumHostRequest updatePremiumHostRequest = (UpdatePremiumHostRequest) o;
-        return Objects.equals(this.hostId, updatePremiumHostRequest.hostId)
+        return Objects.equals(this.enterpriseProjectId, updatePremiumHostRequest.enterpriseProjectId)
+            && Objects.equals(this.hostId, updatePremiumHostRequest.hostId)
             && Objects.equals(this.body, updatePremiumHostRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, body);
+        return Objects.hash(enterpriseProjectId, hostId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePremiumHostRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

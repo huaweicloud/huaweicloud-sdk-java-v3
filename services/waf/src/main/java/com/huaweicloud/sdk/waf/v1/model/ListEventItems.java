@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /** 攻击类型 */
-public class ListEventResponseBodyItems {
+public class ListEventItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -67,7 +67,7 @@ public class ListEventResponseBodyItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "headers")
 
-    private ListEventResponseBodyHeaders headers;
+    private ListEventItemsHeaders headers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cookie")
@@ -104,7 +104,7 @@ public class ListEventResponseBodyItems {
 
     private String responseBody;
 
-    public ListEventResponseBodyItems withId(String id) {
+    public ListEventItems withId(String id) {
         this.id = id;
         return this;
     }
@@ -120,7 +120,7 @@ public class ListEventResponseBodyItems {
         this.id = id;
     }
 
-    public ListEventResponseBodyItems withTime(Long time) {
+    public ListEventItems withTime(Long time) {
         this.time = time;
         return this;
     }
@@ -136,7 +136,7 @@ public class ListEventResponseBodyItems {
         this.time = time;
     }
 
-    public ListEventResponseBodyItems withPolicyid(String policyid) {
+    public ListEventItems withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
@@ -152,7 +152,7 @@ public class ListEventResponseBodyItems {
         this.policyid = policyid;
     }
 
-    public ListEventResponseBodyItems withSip(String sip) {
+    public ListEventItems withSip(String sip) {
         this.sip = sip;
         return this;
     }
@@ -168,7 +168,7 @@ public class ListEventResponseBodyItems {
         this.sip = sip;
     }
 
-    public ListEventResponseBodyItems withHost(String host) {
+    public ListEventItems withHost(String host) {
         this.host = host;
         return this;
     }
@@ -184,7 +184,7 @@ public class ListEventResponseBodyItems {
         this.host = host;
     }
 
-    public ListEventResponseBodyItems withUrl(String url) {
+    public ListEventItems withUrl(String url) {
         this.url = url;
         return this;
     }
@@ -200,12 +200,12 @@ public class ListEventResponseBodyItems {
         this.url = url;
     }
 
-    public ListEventResponseBodyItems withAttack(String attack) {
+    public ListEventItems withAttack(String attack) {
         this.attack = attack;
         return this;
     }
 
-    /** 攻击类型
+    /** 攻击类型（XSS攻击：xss，sqli，命令注入：cmdi，恶意爬虫：robot，本地文件包含：lfi，远程文件包含：rfi，网站木马：webshell，cc攻击：cc，精准防护：custom_custom，IP黑白名单：custom_whiteblackip，地理位置访问控制：custom_geoip，防篡改：antitamper，反爬虫：anticrawler，网站信息防泄漏：leakage，非法请求：illegal，其它类型攻击：vuln）
      * 
      * @return attack */
     public String getAttack() {
@@ -216,7 +216,7 @@ public class ListEventResponseBodyItems {
         this.attack = attack;
     }
 
-    public ListEventResponseBodyItems withRule(String rule) {
+    public ListEventItems withRule(String rule) {
         this.rule = rule;
         return this;
     }
@@ -232,7 +232,7 @@ public class ListEventResponseBodyItems {
         this.rule = rule;
     }
 
-    public ListEventResponseBodyItems withPayload(String payload) {
+    public ListEventItems withPayload(String payload) {
         this.payload = payload;
         return this;
     }
@@ -248,7 +248,7 @@ public class ListEventResponseBodyItems {
         this.payload = payload;
     }
 
-    public ListEventResponseBodyItems withAction(String action) {
+    public ListEventItems withAction(String action) {
         this.action = action;
         return this;
     }
@@ -264,7 +264,7 @@ public class ListEventResponseBodyItems {
         this.action = action;
     }
 
-    public ListEventResponseBodyItems withRequestLine(String requestLine) {
+    public ListEventItems withRequestLine(String requestLine) {
         this.requestLine = requestLine;
         return this;
     }
@@ -280,14 +280,14 @@ public class ListEventResponseBodyItems {
         this.requestLine = requestLine;
     }
 
-    public ListEventResponseBodyItems withHeaders(ListEventResponseBodyHeaders headers) {
+    public ListEventItems withHeaders(ListEventItemsHeaders headers) {
         this.headers = headers;
         return this;
     }
 
-    public ListEventResponseBodyItems withHeaders(Consumer<ListEventResponseBodyHeaders> headersSetter) {
+    public ListEventItems withHeaders(Consumer<ListEventItemsHeaders> headersSetter) {
         if (this.headers == null) {
-            this.headers = new ListEventResponseBodyHeaders();
+            this.headers = new ListEventItemsHeaders();
             headersSetter.accept(this.headers);
         }
 
@@ -297,15 +297,15 @@ public class ListEventResponseBodyItems {
     /** Get headers
      * 
      * @return headers */
-    public ListEventResponseBodyHeaders getHeaders() {
+    public ListEventItemsHeaders getHeaders() {
         return headers;
     }
 
-    public void setHeaders(ListEventResponseBodyHeaders headers) {
+    public void setHeaders(ListEventItemsHeaders headers) {
         this.headers = headers;
     }
 
-    public ListEventResponseBodyItems withCookie(String cookie) {
+    public ListEventItems withCookie(String cookie) {
         this.cookie = cookie;
         return this;
     }
@@ -321,7 +321,7 @@ public class ListEventResponseBodyItems {
         this.cookie = cookie;
     }
 
-    public ListEventResponseBodyItems withStatus(String status) {
+    public ListEventItems withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -337,7 +337,7 @@ public class ListEventResponseBodyItems {
         this.status = status;
     }
 
-    public ListEventResponseBodyItems withRegion(String region) {
+    public ListEventItems withRegion(String region) {
         this.region = region;
         return this;
     }
@@ -353,7 +353,7 @@ public class ListEventResponseBodyItems {
         this.region = region;
     }
 
-    public ListEventResponseBodyItems withHostId(String hostId) {
+    public ListEventItems withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
@@ -369,7 +369,7 @@ public class ListEventResponseBodyItems {
         this.hostId = hostId;
     }
 
-    public ListEventResponseBodyItems withResponseTime(Long responseTime) {
+    public ListEventItems withResponseTime(Long responseTime) {
         this.responseTime = responseTime;
         return this;
     }
@@ -385,7 +385,7 @@ public class ListEventResponseBodyItems {
         this.responseTime = responseTime;
     }
 
-    public ListEventResponseBodyItems withResponseSize(Integer responseSize) {
+    public ListEventItems withResponseSize(Integer responseSize) {
         this.responseSize = responseSize;
         return this;
     }
@@ -401,7 +401,7 @@ public class ListEventResponseBodyItems {
         this.responseSize = responseSize;
     }
 
-    public ListEventResponseBodyItems withResponseBody(String responseBody) {
+    public ListEventItems withResponseBody(String responseBody) {
         this.responseBody = responseBody;
         return this;
     }
@@ -425,26 +425,20 @@ public class ListEventResponseBodyItems {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListEventResponseBodyItems listEventResponseBodyItems = (ListEventResponseBodyItems) o;
-        return Objects.equals(this.id, listEventResponseBodyItems.id)
-            && Objects.equals(this.time, listEventResponseBodyItems.time)
-            && Objects.equals(this.policyid, listEventResponseBodyItems.policyid)
-            && Objects.equals(this.sip, listEventResponseBodyItems.sip)
-            && Objects.equals(this.host, listEventResponseBodyItems.host)
-            && Objects.equals(this.url, listEventResponseBodyItems.url)
-            && Objects.equals(this.attack, listEventResponseBodyItems.attack)
-            && Objects.equals(this.rule, listEventResponseBodyItems.rule)
-            && Objects.equals(this.payload, listEventResponseBodyItems.payload)
-            && Objects.equals(this.action, listEventResponseBodyItems.action)
-            && Objects.equals(this.requestLine, listEventResponseBodyItems.requestLine)
-            && Objects.equals(this.headers, listEventResponseBodyItems.headers)
-            && Objects.equals(this.cookie, listEventResponseBodyItems.cookie)
-            && Objects.equals(this.status, listEventResponseBodyItems.status)
-            && Objects.equals(this.region, listEventResponseBodyItems.region)
-            && Objects.equals(this.hostId, listEventResponseBodyItems.hostId)
-            && Objects.equals(this.responseTime, listEventResponseBodyItems.responseTime)
-            && Objects.equals(this.responseSize, listEventResponseBodyItems.responseSize)
-            && Objects.equals(this.responseBody, listEventResponseBodyItems.responseBody);
+        ListEventItems listEventItems = (ListEventItems) o;
+        return Objects.equals(this.id, listEventItems.id) && Objects.equals(this.time, listEventItems.time)
+            && Objects.equals(this.policyid, listEventItems.policyid) && Objects.equals(this.sip, listEventItems.sip)
+            && Objects.equals(this.host, listEventItems.host) && Objects.equals(this.url, listEventItems.url)
+            && Objects.equals(this.attack, listEventItems.attack) && Objects.equals(this.rule, listEventItems.rule)
+            && Objects.equals(this.payload, listEventItems.payload)
+            && Objects.equals(this.action, listEventItems.action)
+            && Objects.equals(this.requestLine, listEventItems.requestLine)
+            && Objects.equals(this.headers, listEventItems.headers)
+            && Objects.equals(this.cookie, listEventItems.cookie) && Objects.equals(this.status, listEventItems.status)
+            && Objects.equals(this.region, listEventItems.region) && Objects.equals(this.hostId, listEventItems.hostId)
+            && Objects.equals(this.responseTime, listEventItems.responseTime)
+            && Objects.equals(this.responseSize, listEventItems.responseSize)
+            && Objects.equals(this.responseBody, listEventItems.responseBody);
     }
 
     @Override
@@ -473,7 +467,7 @@ public class ListEventResponseBodyItems {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListEventResponseBodyItems {\n");
+        sb.append("class ListEventItems {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");

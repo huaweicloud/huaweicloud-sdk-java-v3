@@ -9,6 +9,11 @@ import java.util.Objects;
 public class UpdatePolicyProtectHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
@@ -17,6 +22,22 @@ public class UpdatePolicyProtectHostRequest {
     @JsonProperty(value = "hosts")
 
     private String hosts;
+
+    public UpdatePolicyProtectHostRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public UpdatePolicyProtectHostRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -59,19 +80,21 @@ public class UpdatePolicyProtectHostRequest {
             return false;
         }
         UpdatePolicyProtectHostRequest updatePolicyProtectHostRequest = (UpdatePolicyProtectHostRequest) o;
-        return Objects.equals(this.policyId, updatePolicyProtectHostRequest.policyId)
+        return Objects.equals(this.enterpriseProjectId, updatePolicyProtectHostRequest.enterpriseProjectId)
+            && Objects.equals(this.policyId, updatePolicyProtectHostRequest.policyId)
             && Objects.equals(this.hosts, updatePolicyProtectHostRequest.hosts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, hosts);
+        return Objects.hash(enterpriseProjectId, policyId, hosts);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePolicyProtectHostRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("}");

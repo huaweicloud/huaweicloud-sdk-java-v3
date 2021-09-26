@@ -189,11 +189,6 @@ public class ServerDisk {
     private List<PhysicalVolume> physicalVolumes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "disk_id")
-
-    private String diskId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_disk")
 
     private Boolean osDisk;
@@ -315,22 +310,6 @@ public class ServerDisk {
         this.physicalVolumes = physicalVolumes;
     }
 
-    public ServerDisk withDiskId(String diskId) {
-        this.diskId = diskId;
-        return this;
-    }
-
-    /** 创建任务时，如果选择已有虚拟机，此参数必选
-     * 
-     * @return diskId */
-    public String getDiskId() {
-        return diskId;
-    }
-
-    public void setDiskId(String diskId) {
-        this.diskId = diskId;
-    }
-
     public ServerDisk withOsDisk(Boolean osDisk) {
         this.osDisk = osDisk;
         return this;
@@ -377,14 +356,13 @@ public class ServerDisk {
             && Objects.equals(this.deviceUse, serverDisk.deviceUse) && Objects.equals(this.size, serverDisk.size)
             && Objects.equals(this.usedSize, serverDisk.usedSize)
             && Objects.equals(this.physicalVolumes, serverDisk.physicalVolumes)
-            && Objects.equals(this.diskId, serverDisk.diskId) && Objects.equals(this.osDisk, serverDisk.osDisk)
+            && Objects.equals(this.osDisk, serverDisk.osDisk)
             && Objects.equals(this.relationName, serverDisk.relationName);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, partitionStyle, deviceUse, size, usedSize, physicalVolumes, diskId, osDisk, relationName);
+        return Objects.hash(name, partitionStyle, deviceUse, size, usedSize, physicalVolumes, osDisk, relationName);
     }
 
     @Override
@@ -397,7 +375,6 @@ public class ServerDisk {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    usedSize: ").append(toIndentedString(usedSize)).append("\n");
         sb.append("    physicalVolumes: ").append(toIndentedString(physicalVolumes)).append("\n");
-        sb.append("    diskId: ").append(toIndentedString(diskId)).append("\n");
         sb.append("    osDisk: ").append(toIndentedString(osDisk)).append("\n");
         sb.append("    relationName: ").append(toIndentedString(relationName)).append("\n");
         sb.append("}");

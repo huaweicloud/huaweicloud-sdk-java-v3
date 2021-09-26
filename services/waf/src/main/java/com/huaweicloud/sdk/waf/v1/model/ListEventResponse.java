@@ -20,7 +20,7 @@ public class ListEventResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<ListEventResponseBodyItems> items = null;
+    private List<ListEventItems> items = null;
 
     public ListEventResponse withTotal(Integer total) {
         this.total = total;
@@ -38,12 +38,12 @@ public class ListEventResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListEventResponse withItems(List<ListEventResponseBodyItems> items) {
+    public ListEventResponse withItems(List<ListEventItems> items) {
         this.items = items;
         return this;
     }
 
-    public ListEventResponse addItemsItem(ListEventResponseBodyItems itemsItem) {
+    public ListEventResponse addItemsItem(ListEventItems itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -51,7 +51,7 @@ public class ListEventResponse extends SdkResponse {
         return this;
     }
 
-    public ListEventResponse withItems(Consumer<List<ListEventResponseBodyItems>> itemsSetter) {
+    public ListEventResponse withItems(Consumer<List<ListEventItems>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -62,11 +62,11 @@ public class ListEventResponse extends SdkResponse {
     /** 攻击事件详情
      * 
      * @return items */
-    public List<ListEventResponseBodyItems> getItems() {
+    public List<ListEventItems> getItems() {
         return items;
     }
 
-    public void setItems(List<ListEventResponseBodyItems> items) {
+    public void setItems(List<ListEventItems> items) {
         this.items = items;
     }
 

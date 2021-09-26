@@ -9,6 +9,11 @@ import java.util.Objects;
 public class ListWhiteblackipRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
@@ -22,6 +27,22 @@ public class ListWhiteblackipRuleRequest {
     @JsonProperty(value = "pagesize")
 
     private Integer pagesize;
+
+    public ListWhiteblackipRuleRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ListWhiteblackipRuleRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -80,20 +101,22 @@ public class ListWhiteblackipRuleRequest {
             return false;
         }
         ListWhiteblackipRuleRequest listWhiteblackipRuleRequest = (ListWhiteblackipRuleRequest) o;
-        return Objects.equals(this.policyId, listWhiteblackipRuleRequest.policyId)
+        return Objects.equals(this.enterpriseProjectId, listWhiteblackipRuleRequest.enterpriseProjectId)
+            && Objects.equals(this.policyId, listWhiteblackipRuleRequest.policyId)
             && Objects.equals(this.page, listWhiteblackipRuleRequest.page)
             && Objects.equals(this.pagesize, listWhiteblackipRuleRequest.pagesize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, page, pagesize);
+        return Objects.hash(enterpriseProjectId, policyId, page, pagesize);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListWhiteblackipRuleRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");

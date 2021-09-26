@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /** 攻击类型 */
-public class ShowEventResponseBodyItems {
+public class ShowEventItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
@@ -58,7 +58,7 @@ public class ShowEventResponseBodyItems {
 
     private Long timestamp;
 
-    public ShowEventResponseBodyItems withTime(Long time) {
+    public ShowEventItems withTime(Long time) {
         this.time = time;
         return this;
     }
@@ -74,7 +74,7 @@ public class ShowEventResponseBodyItems {
         this.time = time;
     }
 
-    public ShowEventResponseBodyItems withPolicyid(String policyid) {
+    public ShowEventItems withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
@@ -90,7 +90,7 @@ public class ShowEventResponseBodyItems {
         this.policyid = policyid;
     }
 
-    public ShowEventResponseBodyItems withSip(String sip) {
+    public ShowEventItems withSip(String sip) {
         this.sip = sip;
         return this;
     }
@@ -106,7 +106,7 @@ public class ShowEventResponseBodyItems {
         this.sip = sip;
     }
 
-    public ShowEventResponseBodyItems withHost(String host) {
+    public ShowEventItems withHost(String host) {
         this.host = host;
         return this;
     }
@@ -122,7 +122,7 @@ public class ShowEventResponseBodyItems {
         this.host = host;
     }
 
-    public ShowEventResponseBodyItems withUrl(String url) {
+    public ShowEventItems withUrl(String url) {
         this.url = url;
         return this;
     }
@@ -138,7 +138,7 @@ public class ShowEventResponseBodyItems {
         this.url = url;
     }
 
-    public ShowEventResponseBodyItems withAttack(String attack) {
+    public ShowEventItems withAttack(String attack) {
         this.attack = attack;
         return this;
     }
@@ -154,7 +154,7 @@ public class ShowEventResponseBodyItems {
         this.attack = attack;
     }
 
-    public ShowEventResponseBodyItems withRule(String rule) {
+    public ShowEventItems withRule(String rule) {
         this.rule = rule;
         return this;
     }
@@ -170,7 +170,7 @@ public class ShowEventResponseBodyItems {
         this.rule = rule;
     }
 
-    public ShowEventResponseBodyItems withPayload(String payload) {
+    public ShowEventItems withPayload(String payload) {
         this.payload = payload;
         return this;
     }
@@ -186,7 +186,7 @@ public class ShowEventResponseBodyItems {
         this.payload = payload;
     }
 
-    public ShowEventResponseBodyItems withAction(String action) {
+    public ShowEventItems withAction(String action) {
         this.action = action;
         return this;
     }
@@ -202,7 +202,7 @@ public class ShowEventResponseBodyItems {
         this.action = action;
     }
 
-    public ShowEventResponseBodyItems withTimestamp(Long timestamp) {
+    public ShowEventItems withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -226,17 +226,13 @@ public class ShowEventResponseBodyItems {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowEventResponseBodyItems showEventResponseBodyItems = (ShowEventResponseBodyItems) o;
-        return Objects.equals(this.time, showEventResponseBodyItems.time)
-            && Objects.equals(this.policyid, showEventResponseBodyItems.policyid)
-            && Objects.equals(this.sip, showEventResponseBodyItems.sip)
-            && Objects.equals(this.host, showEventResponseBodyItems.host)
-            && Objects.equals(this.url, showEventResponseBodyItems.url)
-            && Objects.equals(this.attack, showEventResponseBodyItems.attack)
-            && Objects.equals(this.rule, showEventResponseBodyItems.rule)
-            && Objects.equals(this.payload, showEventResponseBodyItems.payload)
-            && Objects.equals(this.action, showEventResponseBodyItems.action)
-            && Objects.equals(this.timestamp, showEventResponseBodyItems.timestamp);
+        ShowEventItems showEventItems = (ShowEventItems) o;
+        return Objects.equals(this.time, showEventItems.time) && Objects.equals(this.policyid, showEventItems.policyid)
+            && Objects.equals(this.sip, showEventItems.sip) && Objects.equals(this.host, showEventItems.host)
+            && Objects.equals(this.url, showEventItems.url) && Objects.equals(this.attack, showEventItems.attack)
+            && Objects.equals(this.rule, showEventItems.rule) && Objects.equals(this.payload, showEventItems.payload)
+            && Objects.equals(this.action, showEventItems.action)
+            && Objects.equals(this.timestamp, showEventItems.timestamp);
     }
 
     @Override
@@ -247,7 +243,7 @@ public class ShowEventResponseBodyItems {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ShowEventResponseBodyItems {\n");
+        sb.append("class ShowEventItems {\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    sip: ").append(toIndentedString(sip)).append("\n");

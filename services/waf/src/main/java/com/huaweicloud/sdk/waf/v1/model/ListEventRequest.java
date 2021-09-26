@@ -16,6 +16,11 @@ import java.util.function.Consumer;
 /** Request Object */
 public class ListEventRequest {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     /** 查询日志的时间范围 */
     public static final class RecentEnum {
 
@@ -119,6 +124,22 @@ public class ListEventRequest {
 
     private Integer pagesize;
 
+    public ListEventRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ListEventRequest withRecent(RecentEnum recent) {
         this.recent = recent;
         return this;
@@ -208,20 +229,22 @@ public class ListEventRequest {
             return false;
         }
         ListEventRequest listEventRequest = (ListEventRequest) o;
-        return Objects.equals(this.recent, listEventRequest.recent)
+        return Objects.equals(this.enterpriseProjectId, listEventRequest.enterpriseProjectId)
+            && Objects.equals(this.recent, listEventRequest.recent)
             && Objects.equals(this.hosts, listEventRequest.hosts) && Objects.equals(this.page, listEventRequest.page)
             && Objects.equals(this.pagesize, listEventRequest.pagesize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(recent, hosts, page, pagesize);
+        return Objects.hash(enterpriseProjectId, recent, hosts, page, pagesize);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEventRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    recent: ").append(toIndentedString(recent)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");

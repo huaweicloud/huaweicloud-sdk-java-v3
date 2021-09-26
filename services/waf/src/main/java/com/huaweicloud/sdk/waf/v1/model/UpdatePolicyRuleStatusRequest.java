@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class UpdatePolicyRuleStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
@@ -113,6 +118,22 @@ public class UpdatePolicyRuleStatusRequest {
 
     private UpdateRuleStatusRequestBody body;
 
+    public UpdatePolicyRuleStatusRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public UpdatePolicyRuleStatusRequest withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -195,7 +216,8 @@ public class UpdatePolicyRuleStatusRequest {
             return false;
         }
         UpdatePolicyRuleStatusRequest updatePolicyRuleStatusRequest = (UpdatePolicyRuleStatusRequest) o;
-        return Objects.equals(this.policyId, updatePolicyRuleStatusRequest.policyId)
+        return Objects.equals(this.enterpriseProjectId, updatePolicyRuleStatusRequest.enterpriseProjectId)
+            && Objects.equals(this.policyId, updatePolicyRuleStatusRequest.policyId)
             && Objects.equals(this.ruletype, updatePolicyRuleStatusRequest.ruletype)
             && Objects.equals(this.ruleId, updatePolicyRuleStatusRequest.ruleId)
             && Objects.equals(this.body, updatePolicyRuleStatusRequest.body);
@@ -203,13 +225,14 @@ public class UpdatePolicyRuleStatusRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, ruletype, ruleId, body);
+        return Objects.hash(enterpriseProjectId, policyId, ruletype, ruleId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePolicyRuleStatusRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    ruletype: ").append(toIndentedString(ruletype)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");

@@ -40,6 +40,11 @@ public class CommonTask {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_data")
+
+    private String userData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
     private ObsObjInfo input;
@@ -48,11 +53,6 @@ public class CommonTask {
     @JsonProperty(value = "output")
 
     private ObsObjInfo output;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_data")
-
-    private String userData;
 
     public CommonTask withTaskId(String taskId) {
         this.taskId = taskId;
@@ -150,6 +150,22 @@ public class CommonTask {
         this.description = description;
     }
 
+    public CommonTask withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    /** 用户数据。
+     * 
+     * @return userData */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public CommonTask withInput(ObsObjInfo input) {
         this.input = input;
         return this;
@@ -200,22 +216,6 @@ public class CommonTask {
         this.output = output;
     }
 
-    public CommonTask withUserData(String userData) {
-        this.userData = userData;
-        return this;
-    }
-
-    /** 用户数据。
-     * 
-     * @return userData */
-    public String getUserData() {
-        return userData;
-    }
-
-    public void setUserData(String userData) {
-        this.userData = userData;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -228,13 +228,14 @@ public class CommonTask {
         return Objects.equals(this.taskId, commonTask.taskId) && Objects.equals(this.status, commonTask.status)
             && Objects.equals(this.createTime, commonTask.createTime)
             && Objects.equals(this.startTime, commonTask.startTime) && Objects.equals(this.endTime, commonTask.endTime)
-            && Objects.equals(this.description, commonTask.description) && Objects.equals(this.input, commonTask.input)
-            && Objects.equals(this.output, commonTask.output) && Objects.equals(this.userData, commonTask.userData);
+            && Objects.equals(this.description, commonTask.description)
+            && Objects.equals(this.userData, commonTask.userData) && Objects.equals(this.input, commonTask.input)
+            && Objects.equals(this.output, commonTask.output);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output, userData);
+        return Objects.hash(taskId, status, createTime, startTime, endTime, description, userData, input, output);
     }
 
     @Override
@@ -247,9 +248,9 @@ public class CommonTask {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
-        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

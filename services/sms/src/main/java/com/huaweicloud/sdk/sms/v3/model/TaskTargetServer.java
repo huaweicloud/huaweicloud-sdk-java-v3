@@ -143,9 +143,9 @@ public class TaskTargetServer {
     private String imageDiskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rollback_snapshot_ids")
+    @JsonProperty(value = "cutovered_snapshot_ids")
 
-    private String rollbackSnapshotIds;
+    private String cutoveredSnapshotIds;
 
     public TaskTargetServer withId(String id) {
         this.id = id;
@@ -371,20 +371,20 @@ public class TaskTargetServer {
         this.imageDiskId = imageDiskId;
     }
 
-    public TaskTargetServer withRollbackSnapshotIds(String rollbackSnapshotIds) {
-        this.rollbackSnapshotIds = rollbackSnapshotIds;
+    public TaskTargetServer withCutoveredSnapshotIds(String cutoveredSnapshotIds) {
+        this.cutoveredSnapshotIds = cutoveredSnapshotIds;
         return this;
     }
 
     /** 目的端回滚快照id
      * 
-     * @return rollbackSnapshotIds */
-    public String getRollbackSnapshotIds() {
-        return rollbackSnapshotIds;
+     * @return cutoveredSnapshotIds */
+    public String getCutoveredSnapshotIds() {
+        return cutoveredSnapshotIds;
     }
 
-    public void setRollbackSnapshotIds(String rollbackSnapshotIds) {
-        this.rollbackSnapshotIds = rollbackSnapshotIds;
+    public void setCutoveredSnapshotIds(String cutoveredSnapshotIds) {
+        this.cutoveredSnapshotIds = cutoveredSnapshotIds;
     }
 
     @Override
@@ -405,7 +405,7 @@ public class TaskTargetServer {
             && Objects.equals(this.volumeGroups, taskTargetServer.volumeGroups)
             && Objects.equals(this.btrfsList, taskTargetServer.btrfsList)
             && Objects.equals(this.imageDiskId, taskTargetServer.imageDiskId)
-            && Objects.equals(this.rollbackSnapshotIds, taskTargetServer.rollbackSnapshotIds);
+            && Objects.equals(this.cutoveredSnapshotIds, taskTargetServer.cutoveredSnapshotIds);
     }
 
     @Override
@@ -421,7 +421,7 @@ public class TaskTargetServer {
             volumeGroups,
             btrfsList,
             imageDiskId,
-            rollbackSnapshotIds);
+            cutoveredSnapshotIds);
     }
 
     @Override
@@ -439,7 +439,7 @@ public class TaskTargetServer {
         sb.append("    volumeGroups: ").append(toIndentedString(volumeGroups)).append("\n");
         sb.append("    btrfsList: ").append(toIndentedString(btrfsList)).append("\n");
         sb.append("    imageDiskId: ").append(toIndentedString(imageDiskId)).append("\n");
-        sb.append("    rollbackSnapshotIds: ").append(toIndentedString(rollbackSnapshotIds)).append("\n");
+        sb.append("    cutoveredSnapshotIds: ").append(toIndentedString(cutoveredSnapshotIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

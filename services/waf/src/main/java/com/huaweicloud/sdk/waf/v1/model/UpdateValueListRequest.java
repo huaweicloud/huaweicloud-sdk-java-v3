@@ -10,6 +10,11 @@ import java.util.function.Consumer;
 public class UpdateValueListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valuelistid")
 
     private String valuelistid;
@@ -18,6 +23,22 @@ public class UpdateValueListRequest {
     @JsonProperty(value = "body")
 
     private UpdateValueListRequestBody body;
+
+    public UpdateValueListRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public UpdateValueListRequest withValuelistid(String valuelistid) {
         this.valuelistid = valuelistid;
@@ -69,19 +90,21 @@ public class UpdateValueListRequest {
             return false;
         }
         UpdateValueListRequest updateValueListRequest = (UpdateValueListRequest) o;
-        return Objects.equals(this.valuelistid, updateValueListRequest.valuelistid)
+        return Objects.equals(this.enterpriseProjectId, updateValueListRequest.enterpriseProjectId)
+            && Objects.equals(this.valuelistid, updateValueListRequest.valuelistid)
             && Objects.equals(this.body, updateValueListRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(valuelistid, body);
+        return Objects.hash(enterpriseProjectId, valuelistid, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateValueListRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    valuelistid: ").append(toIndentedString(valuelistid)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

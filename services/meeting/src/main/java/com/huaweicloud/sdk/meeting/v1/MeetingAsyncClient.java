@@ -867,6 +867,24 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<HangUpRequest, HangUpResponse>(request, MeetingMeta.hangUp, hcClient);
     }
 
+    /** 主持人邀请与会者开启、关闭摄像头 主持人邀请与会者开启、关闭摄像头
+     *
+     * @param InviteOperateVideoRequest 请求对象
+     * @return CompletableFuture<InviteOperateVideoResponse> */
+    public CompletableFuture<InviteOperateVideoResponse> inviteOperateVideoAsync(InviteOperateVideoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.inviteOperateVideo);
+    }
+
+    /** 主持人邀请与会者开启、关闭摄像头 主持人邀请与会者开启、关闭摄像头
+     *
+     * @param InviteOperateVideoRequest 请求对象
+     * @return AsyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse> */
+    public AsyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse> inviteOperateVideoAsyncInvoker(
+        InviteOperateVideoRequest request) {
+        return new AsyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse>(request,
+            MeetingMeta.inviteOperateVideo, hcClient);
+    }
+
     /** 邀请与会者 邀请与会者加入会议。
      *
      * @param InviteParticipantRequest 请求对象
@@ -1759,6 +1777,23 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<SetRoleRequest, SetRoleResponse>(request, MeetingMeta.setRole, hcClient);
     }
 
+    /** 设置SSO鉴权配置 设置SSO鉴权配置
+     *
+     * @param SetSsoConfigRequest 请求对象
+     * @return CompletableFuture<SetSsoConfigResponse> */
+    public CompletableFuture<SetSsoConfigResponse> setSsoConfigAsync(SetSsoConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setSsoConfig);
+    }
+
+    /** 设置SSO鉴权配置 设置SSO鉴权配置
+     *
+     * @param SetSsoConfigRequest 请求对象
+     * @return AsyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse> */
+    public AsyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse> setSsoConfigAsyncInvoker(
+        SetSsoConfigRequest request) {
+        return new AsyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse>(request, MeetingMeta.setSsoConfig, hcClient);
+    }
+
     /** 通过会议ID查询企业ID 与某个会议在同一个SP下的用户，可以通过会议ID查询到该会议对应的企业ID。
      *
      * @param ShowConfOrgRequest 请求对象
@@ -2204,6 +2239,24 @@ public class MeetingAsyncClient {
     public AsyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse> showSpResourceAsyncInvoker(
         ShowSpResourceRequest request) {
         return new AsyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>(request, MeetingMeta.showSpResource,
+            hcClient);
+    }
+
+    /** 查询SSO鉴权配置 查询SSO鉴权配置
+     *
+     * @param ShowSsoConfigRequest 请求对象
+     * @return CompletableFuture<ShowSsoConfigResponse> */
+    public CompletableFuture<ShowSsoConfigResponse> showSsoConfigAsync(ShowSsoConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showSsoConfig);
+    }
+
+    /** 查询SSO鉴权配置 查询SSO鉴权配置
+     *
+     * @param ShowSsoConfigRequest 请求对象
+     * @return AsyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse> */
+    public AsyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse> showSsoConfigAsyncInvoker(
+        ShowSsoConfigRequest request) {
+        return new AsyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse>(request, MeetingMeta.showSsoConfig,
             hcClient);
     }
 

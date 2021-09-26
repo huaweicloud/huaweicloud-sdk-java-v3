@@ -33,7 +33,6 @@ import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.ssl.IgnoreSSLVerificationFactory;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
-
 import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -54,6 +53,7 @@ import okio.BufferedSink;
 import okio.Okio;
 import okio.Source;
 
+import javax.net.ssl.SSLHandshakeException;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
@@ -66,8 +66,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-
-import javax.net.ssl.SSLHandshakeException;
 
 /**
  * @author HuaweiCloud_SDK
@@ -98,7 +96,7 @@ public class DefaultHttpClient implements HttpClient {
      * If threads number hasn't been limited, each client will occupy one thread which may leads to out of memory.
      */
     private static ExecutorService executorService = new ThreadPoolExecutor(0, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME,
-        TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkHttp Dispatcher", false));
+            TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkHttp Dispatcher", false));
 
     private static final Dispatcher DISPATCHER = new Dispatcher(executorService);
 
@@ -120,24 +118,26 @@ public class DefaultHttpClient implements HttpClient {
         clientBuilder.connectionPool(CONNECTION_POOL);
         clientBuilder.dispatcher(DISPATCHER);
         clientBuilder.connectTimeout(httpConfig.getTimeout(), TimeUnit.SECONDS)
-            .readTimeout(DEFAULT_READ_TIMEOUT, TimeUnit.SECONDS);
+                .readTimeout(DEFAULT_READ_TIMEOUT, TimeUnit.SECONDS);
         if (httpConfig.isIgnoreSSLVerification()) {
             clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
-                .sslSocketFactory(IgnoreSSLVerificationFactory.getSSLContext().getSocketFactory(),
-                    IgnoreSSLVerificationFactory.getTrustAllManager());
+                    .sslSocketFactory(IgnoreSSLVerificationFactory.getSSLContext().getSocketFactory(),
+                            IgnoreSSLVerificationFactory.getTrustAllManager());
+        } else {
+            clientBuilder.sslSocketFactory(httpConfig.getSSLSocketFactory(), httpConfig.getX509TrustManager());
         }
 
         clientBuilder.protocols(Collections.singletonList(Protocol.HTTP_1_1));
         // set proxy
         if (!StringUtils.isEmpty(httpConfig.getProxyHost())) {
             Proxy proxy = new Proxy(Proxy.Type.HTTP,
-                new InetSocketAddress(httpConfig.getProxyHost(), httpConfig.getProxyPort()));
+                    new InetSocketAddress(httpConfig.getProxyHost(), httpConfig.getProxyPort()));
             clientBuilder.proxy(proxy);
         }
         if (!StringUtils.isEmpty(httpConfig.getProxyUsername())) {
             Authenticator proxyAuthenticator = (route, response) -> {
                 if (!OKHTTP_PREEMPTIVE.equals(response.header(PROXY_AUTHENTICATE))
-                    && response.code() == PROXY_AUTHENTICATION_REQUIRED) {
+                        && response.code() == PROXY_AUTHENTICATION_REQUIRED) {
                     return null;
                 }
 
@@ -157,7 +157,7 @@ public class DefaultHttpClient implements HttpClient {
 
         Request.Builder requestBuilder = new Request.Builder();
         HttpUrl.Builder urlBuilder = HttpUrl.parse(httpRequest.getEndpoint() + httpRequest.getPathParamsString())
-            .newBuilder();
+                .newBuilder();
 
         httpRequest.getQueryParams().forEach((key, values) -> {
             if (values.size() == 0) {
@@ -175,8 +175,8 @@ public class DefaultHttpClient implements HttpClient {
 
         if (Objects.isNull(httpRequest.getBodyAsString())) {
             return httpRequest.getContentType().startsWith(Constants.MEDIATYPE.MULTIPART_FORM_DATA)
-                ? buildOkHttpRequestWithFormData(httpRequest, requestBuilder)
-                : buildOkHttpRequestWithoutTextBody(httpRequest, requestBuilder);
+                    ? buildOkHttpRequestWithFormData(httpRequest, requestBuilder)
+                    : buildOkHttpRequestWithoutTextBody(httpRequest, requestBuilder);
         } else {
             return buildOkHttpRequestWithTextBody(httpRequest, requestBuilder);
         }
@@ -194,8 +194,8 @@ public class DefaultHttpClient implements HttpClient {
                     @Override
                     public MediaType contentType() {
                         return Objects.isNull(filePart.getContentType())
-                            ? null
-                            : MediaType.parse(filePart.getContentType());
+                                ? null
+                                : MediaType.parse(filePart.getContentType());
                     }
 
                     @Override

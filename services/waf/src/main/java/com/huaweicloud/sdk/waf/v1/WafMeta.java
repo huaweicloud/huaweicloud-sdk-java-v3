@@ -31,6 +31,13 @@ public class WafMeta {
             f -> f.withMarshaller(ApplyCertificateToHostRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ApplyCertificateToHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<ApplyCertificateToHostRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -63,6 +70,13 @@ public class WafMeta {
             f -> f.withMarshaller(CreateAntiTamperRuleRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAntiTamperRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<CreateAntiTamperRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -88,6 +102,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<CreateCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -120,6 +141,13 @@ public class WafMeta {
             f -> f.withMarshaller(CreateGeoipRuleRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGeoipRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<CreateGeoIpRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -144,6 +172,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<CreateHostRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -168,6 +203,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePolicyRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<CreatePolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -193,6 +235,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePremiumHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<CreatePremiumHostRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -225,6 +274,13 @@ public class WafMeta {
             f -> f.withMarshaller(CreatePrivacyRuleRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivacyRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<CreatePrivacyRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -250,6 +306,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateValueListRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<CreateValueListRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -281,6 +344,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateWhiteblackipRuleRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWhiteblackipRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<CreateWhiteBlackIpRuleRequestBody>withRequestField("body",
             LocationType.Body,
@@ -321,6 +391,13 @@ public class WafMeta {
             f -> f.withMarshaller(DeleteAntitamperRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAntitamperRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -345,6 +422,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response
@@ -378,6 +462,13 @@ public class WafMeta {
             f -> f.withMarshaller(DeleteGeoipRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGeoipRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -401,6 +492,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteHostRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response
@@ -426,6 +524,13 @@ public class WafMeta {
             f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePolicyRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -450,6 +555,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePremiumHostRequest::getHostId, (req, v) -> {
                 req.setHostId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePremiumHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<Boolean>withRequestField("keepPolicy",
             LocationType.Query,
@@ -490,6 +602,13 @@ public class WafMeta {
             f -> f.withMarshaller(DeletePrivacyRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivacyRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -514,6 +633,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteValueListRequest::getValuelistid, (req, v) -> {
                 req.setValuelistid(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteValueListRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response
@@ -547,6 +673,13 @@ public class WafMeta {
             f -> f.withMarshaller(DeleteWhiteBlackIpRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWhiteBlackIpRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -572,6 +705,13 @@ public class WafMeta {
             f -> f.withMarshaller(ListAntitamperRuleRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAntitamperRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -592,6 +732,74 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> listBandwidthTimeline =
+        genForlistBandwidthTimeline();
+
+    private static HttpRequestDef<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> genForlistBandwidthTimeline() {
+        // basic
+        HttpRequestDef.Builder<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListBandwidthTimelineRequest.class, ListBandwidthTimelineResponse.class)
+            .withName("ListBandwidthTimeline")
+            .withUri("/v1/{project_id}/waf/overviews/bandwidth/timeline")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthTimelineRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBandwidthTimelineRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBandwidthTimelineRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            }));
+        builder.<String>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthTimelineRequest::getHosts, (req, v) -> {
+                req.setHosts(v);
+            }));
+        builder.<String>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthTimelineRequest::getInstances, (req, v) -> {
+                req.setInstances(v);
+            }));
+        builder.<String>withRequestField("group_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthTimelineRequest::getGroupBy, (req, v) -> {
+                req.setGroupBy(v);
+            }));
+
+        // response
+
+        builder.<List<StatisticsTimelineItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBandwidthTimelineResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(StatisticsTimelineItem.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
         genForlistCertificates();
 
@@ -604,6 +812,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -657,6 +872,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCompositeHostsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -723,6 +945,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<ListEventRequest.RecentEnum>withRequestField("recent",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -776,6 +1005,13 @@ public class WafMeta {
             f -> f.withMarshaller(ListGeoipRuleRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGeoipRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -807,6 +1043,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -860,6 +1103,59 @@ public class WafMeta {
             f -> f.withMarshaller(ListHostRouteRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostRouteRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIgnoreRuleRequest, ListIgnoreRuleResponse> listIgnoreRule =
+        genForlistIgnoreRule();
+
+    private static HttpRequestDef<ListIgnoreRuleRequest, ListIgnoreRuleResponse> genForlistIgnoreRule() {
+        // basic
+        HttpRequestDef.Builder<ListIgnoreRuleRequest, ListIgnoreRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListIgnoreRuleRequest.class, ListIgnoreRuleResponse.class)
+                .withName("ListIgnoreRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/ignore")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIgnoreRuleRequest::getPolicyId, (req, v) -> {
+                req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIgnoreRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIgnoreRuleRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIgnoreRuleRequest::getPagesize, (req, v) -> {
+                req.setPagesize(v);
+            }));
 
         // response
 
@@ -877,6 +1173,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -916,6 +1219,13 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPremiumHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<String>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -976,6 +1286,13 @@ public class WafMeta {
             f -> f.withMarshaller(ListPrivacyRuleRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivacyRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -989,6 +1306,278 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPrivacyRuleRequest::getPagesize, (req, v) -> {
                 req.setPagesize(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQpsTimelineRequest, ListQpsTimelineResponse> listQpsTimeline =
+        genForlistQpsTimeline();
+
+    private static HttpRequestDef<ListQpsTimelineRequest, ListQpsTimelineResponse> genForlistQpsTimeline() {
+        // basic
+        HttpRequestDef.Builder<ListQpsTimelineRequest, ListQpsTimelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQpsTimelineRequest.class, ListQpsTimelineResponse.class)
+                .withName("ListQpsTimeline")
+                .withUri("/v1/{project_id}/waf/overviews/qps/timeline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQpsTimelineRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListQpsTimelineRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListQpsTimelineRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            }));
+        builder.<String>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQpsTimelineRequest::getHosts, (req, v) -> {
+                req.setHosts(v);
+            }));
+        builder.<String>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQpsTimelineRequest::getInstances, (req, v) -> {
+                req.setInstances(v);
+            }));
+        builder.<String>withRequestField("group_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQpsTimelineRequest::getGroupBy, (req, v) -> {
+                req.setGroupBy(v);
+            }));
+
+        // response
+
+        builder.<List<StatisticsTimelineItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListQpsTimelineResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(StatisticsTimelineItem.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimeline =
+        genForlistResponseCodeTimeline();
+
+    private static HttpRequestDef<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> genForlistResponseCodeTimeline() {
+        // basic
+        HttpRequestDef.Builder<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListResponseCodeTimelineRequest.class, ListResponseCodeTimelineResponse.class)
+                .withName("ListResponseCodeTimeline")
+                .withUri("/v1/{project_id}/waf/overviews/response-code/timeline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            }));
+        builder.<String>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getHosts, (req, v) -> {
+                req.setHosts(v);
+            }));
+        builder.<String>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getInstances, (req, v) -> {
+                req.setInstances(v);
+            }));
+        builder.<ListResponseCodeTimelineRequest.ResponseSourceEnum>withRequestField("response_source",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListResponseCodeTimelineRequest.ResponseSourceEnum.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getResponseSource, (req, v) -> {
+                req.setResponseSource(v);
+            }));
+        builder.<String>withRequestField("group_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getGroupBy, (req, v) -> {
+                req.setGroupBy(v);
+            }));
+
+        // response
+
+        builder.<List<StatisticsTimelineItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(StatisticsTimelineItem.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStatisticsRequest, ListStatisticsResponse> listStatistics =
+        genForlistStatistics();
+
+    private static HttpRequestDef<ListStatisticsRequest, ListStatisticsResponse> genForlistStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListStatisticsRequest, ListStatisticsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStatisticsRequest.class, ListStatisticsResponse.class)
+                .withName("ListStatistics")
+                .withUri("/v1/{project_id}/waf/overviews/statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStatisticsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListStatisticsRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListStatisticsRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            }));
+        builder.<String>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStatisticsRequest::getHosts, (req, v) -> {
+                req.setHosts(v);
+            }));
+        builder.<String>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStatisticsRequest::getInstances, (req, v) -> {
+                req.setInstances(v);
+            }));
+
+        // response
+
+        builder.<List<CountItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListStatisticsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(CountItem.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTopAbnormalRequest, ListTopAbnormalResponse> listTopAbnormal =
+        genForlistTopAbnormal();
+
+    private static HttpRequestDef<ListTopAbnormalRequest, ListTopAbnormalResponse> genForlistTopAbnormal() {
+        // basic
+        HttpRequestDef.Builder<ListTopAbnormalRequest, ListTopAbnormalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTopAbnormalRequest.class, ListTopAbnormalResponse.class)
+                .withName("ListTopAbnormal")
+                .withUri("/v1/{project_id}/waf/overviews/abnormal")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopAbnormalRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopAbnormalRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopAbnormalRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            }));
+        builder.<Integer>withRequestField("top",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopAbnormalRequest::getTop, (req, v) -> {
+                req.setTop(v);
+            }));
+        builder.<Integer>withRequestField("code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopAbnormalRequest::getCode, (req, v) -> {
+                req.setCode(v);
+            }));
+        builder.<String>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopAbnormalRequest::getHosts, (req, v) -> {
+                req.setHosts(v);
+            }));
+        builder.<String>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopAbnormalRequest::getInstances, (req, v) -> {
+                req.setInstances(v);
             }));
 
         // response
@@ -1047,6 +1636,13 @@ public class WafMeta {
             f -> f.withMarshaller(ListWhiteblackipRuleRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWhiteblackipRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1086,6 +1682,13 @@ public class WafMeta {
             f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -1111,6 +1714,31 @@ public class WafMeta {
             f -> f.withMarshaller(ShowCompositeHostRequest::getHostId, (req, v) -> {
                 req.setHostId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCompositeHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConsoleConfigRequest, ShowConsoleConfigResponse> showConsoleConfig =
+        genForshowConsoleConfig();
+
+    private static HttpRequestDef<ShowConsoleConfigRequest, ShowConsoleConfigResponse> genForshowConsoleConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowConsoleConfigRequest, ShowConsoleConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConsoleConfigRequest.class, ShowConsoleConfigResponse.class)
+                .withName("ShowConsoleConfig")
+                .withUri("/v1/{project_id}/waf/config/console")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1134,6 +1762,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventRequest::getEventid, (req, v) -> {
                 req.setEventid(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response
@@ -1159,6 +1794,13 @@ public class WafMeta {
             f -> f.withMarshaller(ShowHostRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -1182,6 +1824,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPolicyRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPolicyRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response
@@ -1208,6 +1857,13 @@ public class WafMeta {
             f -> f.withMarshaller(ShowPremiumHostRequest::getHostId, (req, v) -> {
                 req.setHostId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPremiumHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -1232,6 +1888,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<UpdateCertificateRequestBody>withRequestField("body",
             LocationType.Body,
@@ -1272,6 +1935,13 @@ public class WafMeta {
             f -> f.withMarshaller(UpdateGeoipRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGeoipRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<UpdateGeoipRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1302,6 +1972,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateHostRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<UpdateHostRequestBody>withRequestField("body",
             LocationType.Body,
@@ -1335,6 +2012,13 @@ public class WafMeta {
             f -> f.withMarshaller(UpdateHostProtectStatusRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHostProtectStatusRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<UpdateHostProtectStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1365,6 +2049,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePolicyRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<UpdatePolicyRequestBody>withRequestField("body",
             LocationType.Body,
@@ -1397,6 +2088,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePolicyProtectHostRequest::getPolicyId, (req, v) -> {
                 req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyProtectHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<String>withRequestField("hosts",
             LocationType.Query,
@@ -1444,6 +2142,13 @@ public class WafMeta {
             f -> f.withMarshaller(UpdatePolicyRuleStatusRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyRuleStatusRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<UpdateRuleStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1475,6 +2180,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePremiumHostRequest::getHostId, (req, v) -> {
                 req.setHostId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePremiumHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<UpdatePremiumHostRequestBody>withRequestField("body",
             LocationType.Body,
@@ -1510,6 +2222,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePremiumHostProtectStatusRequest::getHostId, (req, v) -> {
                 req.setHostId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePremiumHostProtectStatusRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<UpdatePremiumHostProtectStatusRequestBody>withRequestField("body",
             LocationType.Body,
@@ -1550,6 +2269,13 @@ public class WafMeta {
             f -> f.withMarshaller(UpdatePrivacyRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivacyRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<UpdatePrivacyRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1581,6 +2307,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateValueListRequest::getValuelistid, (req, v) -> {
                 req.setValuelistid(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateValueListRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<UpdateValueListRequestBody>withRequestField("body",
             LocationType.Body,
@@ -1620,6 +2353,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateWhiteblackipRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWhiteblackipRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<UpdateWhiteBlackIpRuleRequestBody>withRequestField("body",
             LocationType.Body,
