@@ -21,12 +21,12 @@ public class ListRecordSetsByZoneRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -95,7 +95,7 @@ public class ListRecordSetsByZoneRequest {
         this.marker = marker;
     }
 
-    public ListRecordSetsByZoneRequest withLimit(String limit) {
+    public ListRecordSetsByZoneRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -103,15 +103,15 @@ public class ListRecordSetsByZoneRequest {
     /** 每页返回的资源个数。 取值范围：0~500 取值一般为10，20，50。默认值为500。
      * 
      * @return limit */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
-    public ListRecordSetsByZoneRequest withOffset(String offset) {
+    public ListRecordSetsByZoneRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -119,11 +119,11 @@ public class ListRecordSetsByZoneRequest {
     /** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 取值范围：0~2147483647 默认值为0。 当前设置marker不为空时，以marker为分页起始标识。
      * 
      * @return offset */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 

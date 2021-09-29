@@ -18,7 +18,7 @@ public class UpdateVariableResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "json")
 
-    private CreateVariableResqJson json;
+    private CreateVariableResultJson json;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
@@ -41,14 +41,14 @@ public class UpdateVariableResponse extends SdkResponse {
         this.code = code;
     }
 
-    public UpdateVariableResponse withJson(CreateVariableResqJson json) {
+    public UpdateVariableResponse withJson(CreateVariableResultJson json) {
         this.json = json;
         return this;
     }
 
-    public UpdateVariableResponse withJson(Consumer<CreateVariableResqJson> jsonSetter) {
+    public UpdateVariableResponse withJson(Consumer<CreateVariableResultJson> jsonSetter) {
         if (this.json == null) {
-            this.json = new CreateVariableResqJson();
+            this.json = new CreateVariableResultJson();
             jsonSetter.accept(this.json);
         }
 
@@ -58,11 +58,11 @@ public class UpdateVariableResponse extends SdkResponse {
     /** Get json
      * 
      * @return json */
-    public CreateVariableResqJson getJson() {
+    public CreateVariableResultJson getJson() {
         return json;
     }
 
-    public void setJson(CreateVariableResqJson json) {
+    public void setJson(CreateVariableResultJson json) {
         this.json = json;
     }
 

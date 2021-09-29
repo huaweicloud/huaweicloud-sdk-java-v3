@@ -30,7 +30,7 @@ public class ShowTaskSetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tasks")
 
-    private List<ShowTaskSetResqTasks> tasks = null;
+    private List<Task> tasks = null;
 
     public ShowTaskSetResponse withCode(String code) {
         this.code = code;
@@ -96,12 +96,12 @@ public class ShowTaskSetResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowTaskSetResponse withTasks(List<ShowTaskSetResqTasks> tasks) {
+    public ShowTaskSetResponse withTasks(List<Task> tasks) {
         this.tasks = tasks;
         return this;
     }
 
-    public ShowTaskSetResponse addTasksItem(ShowTaskSetResqTasks tasksItem) {
+    public ShowTaskSetResponse addTasksItem(Task tasksItem) {
         if (this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
@@ -109,7 +109,7 @@ public class ShowTaskSetResponse extends SdkResponse {
         return this;
     }
 
-    public ShowTaskSetResponse withTasks(Consumer<List<ShowTaskSetResqTasks>> tasksSetter) {
+    public ShowTaskSetResponse withTasks(Consumer<List<Task>> tasksSetter) {
         if (this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
@@ -117,14 +117,14 @@ public class ShowTaskSetResponse extends SdkResponse {
         return this;
     }
 
-    /** tasks
+    /** 工程集详细信息
      * 
      * @return tasks */
-    public List<ShowTaskSetResqTasks> getTasks() {
+    public List<Task> getTasks() {
         return tasks;
     }
 
-    public void setTasks(List<ShowTaskSetResqTasks> tasks) {
+    public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
 

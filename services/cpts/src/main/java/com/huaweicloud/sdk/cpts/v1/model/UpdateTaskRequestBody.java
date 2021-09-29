@@ -44,12 +44,12 @@ public class UpdateTaskRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_run_info")
 
-    private ShowTaskSetResqTaskRunInfo taskRunInfo;
+    private TaskRunInfo taskRunInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_list")
 
-    private List<ShowTaskResqTaskinfoCaseList> caseList = null;
+    private List<CaseInfo> caseList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_mode")
@@ -64,7 +64,7 @@ public class UpdateTaskRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "related_temp_running_data")
 
-    private List<UpdateTaskRequestBodyRelatedTempRunningData> relatedTempRunningData = null;
+    private List<RelatedTempRunningData> relatedTempRunningData = null;
 
     public UpdateTaskRequestBody withId(Integer id) {
         this.id = id;
@@ -162,14 +162,14 @@ public class UpdateTaskRequestBody {
         this.runType = runType;
     }
 
-    public UpdateTaskRequestBody withTaskRunInfo(ShowTaskSetResqTaskRunInfo taskRunInfo) {
+    public UpdateTaskRequestBody withTaskRunInfo(TaskRunInfo taskRunInfo) {
         this.taskRunInfo = taskRunInfo;
         return this;
     }
 
-    public UpdateTaskRequestBody withTaskRunInfo(Consumer<ShowTaskSetResqTaskRunInfo> taskRunInfoSetter) {
+    public UpdateTaskRequestBody withTaskRunInfo(Consumer<TaskRunInfo> taskRunInfoSetter) {
         if (this.taskRunInfo == null) {
-            this.taskRunInfo = new ShowTaskSetResqTaskRunInfo();
+            this.taskRunInfo = new TaskRunInfo();
             taskRunInfoSetter.accept(this.taskRunInfo);
         }
 
@@ -179,20 +179,20 @@ public class UpdateTaskRequestBody {
     /** Get taskRunInfo
      * 
      * @return taskRunInfo */
-    public ShowTaskSetResqTaskRunInfo getTaskRunInfo() {
+    public TaskRunInfo getTaskRunInfo() {
         return taskRunInfo;
     }
 
-    public void setTaskRunInfo(ShowTaskSetResqTaskRunInfo taskRunInfo) {
+    public void setTaskRunInfo(TaskRunInfo taskRunInfo) {
         this.taskRunInfo = taskRunInfo;
     }
 
-    public UpdateTaskRequestBody withCaseList(List<ShowTaskResqTaskinfoCaseList> caseList) {
+    public UpdateTaskRequestBody withCaseList(List<CaseInfo> caseList) {
         this.caseList = caseList;
         return this;
     }
 
-    public UpdateTaskRequestBody addCaseListItem(ShowTaskResqTaskinfoCaseList caseListItem) {
+    public UpdateTaskRequestBody addCaseListItem(CaseInfo caseListItem) {
         if (this.caseList == null) {
             this.caseList = new ArrayList<>();
         }
@@ -200,7 +200,7 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    public UpdateTaskRequestBody withCaseList(Consumer<List<ShowTaskResqTaskinfoCaseList>> caseListSetter) {
+    public UpdateTaskRequestBody withCaseList(Consumer<List<CaseInfo>> caseListSetter) {
         if (this.caseList == null) {
             this.caseList = new ArrayList<>();
         }
@@ -211,11 +211,11 @@ public class UpdateTaskRequestBody {
     /** case_list
      * 
      * @return caseList */
-    public List<ShowTaskResqTaskinfoCaseList> getCaseList() {
+    public List<CaseInfo> getCaseList() {
         return caseList;
     }
 
-    public void setCaseList(List<ShowTaskResqTaskinfoCaseList> caseList) {
+    public void setCaseList(List<CaseInfo> caseList) {
         this.caseList = caseList;
     }
 
@@ -251,14 +251,12 @@ public class UpdateTaskRequestBody {
         this.benchConcurrent = benchConcurrent;
     }
 
-    public UpdateTaskRequestBody withRelatedTempRunningData(
-        List<UpdateTaskRequestBodyRelatedTempRunningData> relatedTempRunningData) {
+    public UpdateTaskRequestBody withRelatedTempRunningData(List<RelatedTempRunningData> relatedTempRunningData) {
         this.relatedTempRunningData = relatedTempRunningData;
         return this;
     }
 
-    public UpdateTaskRequestBody addRelatedTempRunningDataItem(
-        UpdateTaskRequestBodyRelatedTempRunningData relatedTempRunningDataItem) {
+    public UpdateTaskRequestBody addRelatedTempRunningDataItem(RelatedTempRunningData relatedTempRunningDataItem) {
         if (this.relatedTempRunningData == null) {
             this.relatedTempRunningData = new ArrayList<>();
         }
@@ -267,7 +265,7 @@ public class UpdateTaskRequestBody {
     }
 
     public UpdateTaskRequestBody withRelatedTempRunningData(
-        Consumer<List<UpdateTaskRequestBodyRelatedTempRunningData>> relatedTempRunningDataSetter) {
+        Consumer<List<RelatedTempRunningData>> relatedTempRunningDataSetter) {
         if (this.relatedTempRunningData == null) {
             this.relatedTempRunningData = new ArrayList<>();
         }
@@ -278,11 +276,11 @@ public class UpdateTaskRequestBody {
     /** related_temp_running_data
      * 
      * @return relatedTempRunningData */
-    public List<UpdateTaskRequestBodyRelatedTempRunningData> getRelatedTempRunningData() {
+    public List<RelatedTempRunningData> getRelatedTempRunningData() {
         return relatedTempRunningData;
     }
 
-    public void setRelatedTempRunningData(List<UpdateTaskRequestBodyRelatedTempRunningData> relatedTempRunningData) {
+    public void setRelatedTempRunningData(List<RelatedTempRunningData> relatedTempRunningData) {
         this.relatedTempRunningData = relatedTempRunningData;
     }
 

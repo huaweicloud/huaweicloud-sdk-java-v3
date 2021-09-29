@@ -23,7 +23,7 @@ public class ShowProcessResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "json")
 
-    private ShowProcessResqJson json;
+    private Json json;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend")
@@ -62,14 +62,14 @@ public class ShowProcessResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowProcessResponse withJson(ShowProcessResqJson json) {
+    public ShowProcessResponse withJson(Json json) {
         this.json = json;
         return this;
     }
 
-    public ShowProcessResponse withJson(Consumer<ShowProcessResqJson> jsonSetter) {
+    public ShowProcessResponse withJson(Consumer<Json> jsonSetter) {
         if (this.json == null) {
-            this.json = new ShowProcessResqJson();
+            this.json = new Json();
             jsonSetter.accept(this.json);
         }
 
@@ -79,11 +79,11 @@ public class ShowProcessResponse extends SdkResponse {
     /** Get json
      * 
      * @return json */
-    public ShowProcessResqJson getJson() {
+    public Json getJson() {
         return json;
     }
 
-    public void setJson(ShowProcessResqJson json) {
+    public void setJson(Json json) {
         this.json = json;
     }
 

@@ -25,7 +25,7 @@ public class ShowHistoryRunInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_list")
 
-    private List<Object> logList = null;
+    private List<HistoryRunInfo> logList = null;
 
     public ShowHistoryRunInfoResponse withCode(String code) {
         this.code = code;
@@ -59,12 +59,12 @@ public class ShowHistoryRunInfoResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowHistoryRunInfoResponse withLogList(List<Object> logList) {
+    public ShowHistoryRunInfoResponse withLogList(List<HistoryRunInfo> logList) {
         this.logList = logList;
         return this;
     }
 
-    public ShowHistoryRunInfoResponse addLogListItem(Object logListItem) {
+    public ShowHistoryRunInfoResponse addLogListItem(HistoryRunInfo logListItem) {
         if (this.logList == null) {
             this.logList = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ShowHistoryRunInfoResponse extends SdkResponse {
         return this;
     }
 
-    public ShowHistoryRunInfoResponse withLogList(Consumer<List<Object>> logListSetter) {
+    public ShowHistoryRunInfoResponse withLogList(Consumer<List<HistoryRunInfo>> logListSetter) {
         if (this.logList == null) {
             this.logList = new ArrayList<>();
         }
@@ -83,11 +83,11 @@ public class ShowHistoryRunInfoResponse extends SdkResponse {
     /** log_list
      * 
      * @return logList */
-    public List<Object> getLogList() {
+    public List<HistoryRunInfo> getLogList() {
         return logList;
     }
 
-    public void setLogList(List<Object> logList) {
+    public void setLogList(List<HistoryRunInfo> logList) {
         this.logList = logList;
     }
 

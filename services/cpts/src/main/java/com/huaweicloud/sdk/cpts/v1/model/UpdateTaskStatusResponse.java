@@ -28,7 +28,7 @@ public class UpdateTaskStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private UpdateTaskStatusResqResult result;
+    private UpdateTaskStatusResult result;
 
     public UpdateTaskStatusResponse withCode(String code) {
         this.code = code;
@@ -78,14 +78,14 @@ public class UpdateTaskStatusResponse extends SdkResponse {
         this.extend = extend;
     }
 
-    public UpdateTaskStatusResponse withResult(UpdateTaskStatusResqResult result) {
+    public UpdateTaskStatusResponse withResult(UpdateTaskStatusResult result) {
         this.result = result;
         return this;
     }
 
-    public UpdateTaskStatusResponse withResult(Consumer<UpdateTaskStatusResqResult> resultSetter) {
+    public UpdateTaskStatusResponse withResult(Consumer<UpdateTaskStatusResult> resultSetter) {
         if (this.result == null) {
-            this.result = new UpdateTaskStatusResqResult();
+            this.result = new UpdateTaskStatusResult();
             resultSetter.accept(this.result);
         }
 
@@ -95,11 +95,11 @@ public class UpdateTaskStatusResponse extends SdkResponse {
     /** Get result
      * 
      * @return result */
-    public UpdateTaskStatusResqResult getResult() {
+    public UpdateTaskStatusResult getResult() {
         return result;
     }
 
-    public void setResult(UpdateTaskStatusResqResult result) {
+    public void setResult(UpdateTaskStatusResult result) {
         this.result = result;
     }
 

@@ -28,7 +28,7 @@ public class ShowReportResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private Object result;
+    private ReportInfo result;
 
     public ShowReportResponse withCode(String code) {
         this.code = code;
@@ -78,28 +78,28 @@ public class ShowReportResponse extends SdkResponse {
         this.extend = extend;
     }
 
-    public ShowReportResponse withResult(Object result) {
+    public ShowReportResponse withResult(ReportInfo result) {
         this.result = result;
         return this;
     }
 
-    public ShowReportResponse withResult(Consumer<Object> resultSetter) {
+    public ShowReportResponse withResult(Consumer<ReportInfo> resultSetter) {
         if (this.result == null) {
-            this.result = new Object();
+            this.result = new ReportInfo();
             resultSetter.accept(this.result);
         }
 
         return this;
     }
 
-    /** result
+    /** Get result
      * 
      * @return result */
-    public Object getResult() {
+    public ReportInfo getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(ReportInfo result) {
         this.result = result;
     }
 

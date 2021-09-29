@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.projectman.v4.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,12 +27,12 @@ public class GetProjectInfoV4ResultProject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_on")
 
-    private BigDecimal createdOn;
+    private Long createdOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_on")
 
-    private BigDecimal updatedOn;
+    private Long updatedOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_type")
@@ -108,7 +107,7 @@ public class GetProjectInfoV4ResultProject {
         this.name = name;
     }
 
-    public GetProjectInfoV4ResultProject withCreatedOn(BigDecimal createdOn) {
+    public GetProjectInfoV4ResultProject withCreatedOn(Long createdOn) {
         this.createdOn = createdOn;
         return this;
     }
@@ -116,15 +115,15 @@ public class GetProjectInfoV4ResultProject {
     /** 项目创建时间
      * 
      * @return createdOn */
-    public BigDecimal getCreatedOn() {
+    public Long getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(BigDecimal createdOn) {
+    public void setCreatedOn(Long createdOn) {
         this.createdOn = createdOn;
     }
 
-    public GetProjectInfoV4ResultProject withUpdatedOn(BigDecimal updatedOn) {
+    public GetProjectInfoV4ResultProject withUpdatedOn(Long updatedOn) {
         this.updatedOn = updatedOn;
         return this;
     }
@@ -132,11 +131,11 @@ public class GetProjectInfoV4ResultProject {
     /** 项目更新时间
      * 
      * @return updatedOn */
-    public BigDecimal getUpdatedOn() {
+    public Long getUpdatedOn() {
         return updatedOn;
     }
 
-    public void setUpdatedOn(BigDecimal updatedOn) {
+    public void setUpdatedOn(Long updatedOn) {
         this.updatedOn = updatedOn;
     }
 

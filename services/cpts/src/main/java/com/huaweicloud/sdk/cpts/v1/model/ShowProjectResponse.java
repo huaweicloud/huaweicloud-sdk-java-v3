@@ -23,7 +23,7 @@ public class ShowProjectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project")
 
-    private ShowProjectResqProject project;
+    private Project project;
 
     public ShowProjectResponse withCode(String code) {
         this.code = code;
@@ -57,14 +57,14 @@ public class ShowProjectResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowProjectResponse withProject(ShowProjectResqProject project) {
+    public ShowProjectResponse withProject(Project project) {
         this.project = project;
         return this;
     }
 
-    public ShowProjectResponse withProject(Consumer<ShowProjectResqProject> projectSetter) {
+    public ShowProjectResponse withProject(Consumer<Project> projectSetter) {
         if (this.project == null) {
-            this.project = new ShowProjectResqProject();
+            this.project = new Project();
             projectSetter.accept(this.project);
         }
 
@@ -74,11 +74,11 @@ public class ShowProjectResponse extends SdkResponse {
     /** Get project
      * 
      * @return project */
-    public ShowProjectResqProject getProject() {
+    public Project getProject() {
         return project;
     }
 
-    public void setProject(ShowProjectResqProject project) {
+    public void setProject(Project project) {
         this.project = project;
     }
 

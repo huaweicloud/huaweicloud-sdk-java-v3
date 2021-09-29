@@ -582,17 +582,17 @@ public class DnsMeta {
             f -> f.withMarshaller(ListRecordSetsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRecordSetsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRecordSetsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
@@ -684,17 +684,17 @@ public class DnsMeta {
             f -> f.withMarshaller(ListRecordSetsByZoneRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRecordSetsByZoneRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRecordSetsByZoneRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
@@ -779,17 +779,17 @@ public class DnsMeta {
             f -> f.withMarshaller(ListRecordSetsWithLineRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRecordSetsWithLineRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRecordSetsWithLineRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));

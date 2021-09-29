@@ -21,660 +21,660 @@ public class GaussDBClient {
      * 变更实例规格
      * 变更数据库实例的规格。
      *
-     * @param ChangeMysqlInstanceSpecificationRequest 请求对象
-     * @return ChangeMysqlInstanceSpecificationResponse
+     * @param ChangeGaussMySqlInstanceSpecificationRequest 请求对象
+     * @return ChangeGaussMySqlInstanceSpecificationResponse
      */
-    public ChangeMysqlInstanceSpecificationResponse changeMysqlInstanceSpecification(ChangeMysqlInstanceSpecificationRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.changeMysqlInstanceSpecification);
+    public ChangeGaussMySqlInstanceSpecificationResponse changeGaussMySqlInstanceSpecification(ChangeGaussMySqlInstanceSpecificationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.changeGaussMySqlInstanceSpecification);
     }
 
     /**
      * 变更实例规格
      * 变更数据库实例的规格。
      *
-     * @param ChangeMysqlInstanceSpecificationRequest 请求对象
-     * @return SyncInvoker<ChangeMysqlInstanceSpecificationRequest, ChangeMysqlInstanceSpecificationResponse>
+     * @param ChangeGaussMySqlInstanceSpecificationRequest 请求对象
+     * @return SyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse>
      */
-    public SyncInvoker<ChangeMysqlInstanceSpecificationRequest, ChangeMysqlInstanceSpecificationResponse> changeMysqlInstanceSpecificationInvoker(ChangeMysqlInstanceSpecificationRequest request) {
-        return new SyncInvoker<ChangeMysqlInstanceSpecificationRequest, ChangeMysqlInstanceSpecificationResponse>(request, GaussDBMeta.changeMysqlInstanceSpecification, hcClient);
+    public SyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse> changeGaussMySqlInstanceSpecificationInvoker(ChangeGaussMySqlInstanceSpecificationRequest request) {
+        return new SyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse>(request, GaussDBMeta.changeGaussMySqlInstanceSpecification, hcClient);
     }
 
     /**
      * 创建手动备份
      * 创建手动备份
      *
-     * @param CreateMysqlBackupRequest 请求对象
-     * @return CreateMysqlBackupResponse
+     * @param CreateGaussMySqlBackupRequest 请求对象
+     * @return CreateGaussMySqlBackupResponse
      */
-    public CreateMysqlBackupResponse createMysqlBackup(CreateMysqlBackupRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.createMysqlBackup);
+    public CreateGaussMySqlBackupResponse createGaussMySqlBackup(CreateGaussMySqlBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createGaussMySqlBackup);
     }
 
     /**
      * 创建手动备份
      * 创建手动备份
      *
-     * @param CreateMysqlBackupRequest 请求对象
-     * @return SyncInvoker<CreateMysqlBackupRequest, CreateMysqlBackupResponse>
+     * @param CreateGaussMySqlBackupRequest 请求对象
+     * @return SyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse>
      */
-    public SyncInvoker<CreateMysqlBackupRequest, CreateMysqlBackupResponse> createMysqlBackupInvoker(CreateMysqlBackupRequest request) {
-        return new SyncInvoker<CreateMysqlBackupRequest, CreateMysqlBackupResponse>(request, GaussDBMeta.createMysqlBackup, hcClient);
+    public SyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> createGaussMySqlBackupInvoker(CreateGaussMySqlBackupRequest request) {
+        return new SyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse>(request, GaussDBMeta.createGaussMySqlBackup, hcClient);
     }
 
     /**
      * 创建数据库实例
      * 创建云数据库 GaussDB(for MySQL)实例。
      *
-     * @param CreateMysqlInstanceRequest 请求对象
-     * @return CreateMysqlInstanceResponse
+     * @param CreateGaussMySqlInstanceRequest 请求对象
+     * @return CreateGaussMySqlInstanceResponse
      */
-    public CreateMysqlInstanceResponse createMysqlInstance(CreateMysqlInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.createMysqlInstance);
+    public CreateGaussMySqlInstanceResponse createGaussMySqlInstance(CreateGaussMySqlInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createGaussMySqlInstance);
     }
 
     /**
      * 创建数据库实例
      * 创建云数据库 GaussDB(for MySQL)实例。
      *
-     * @param CreateMysqlInstanceRequest 请求对象
-     * @return SyncInvoker<CreateMysqlInstanceRequest, CreateMysqlInstanceResponse>
+     * @param CreateGaussMySqlInstanceRequest 请求对象
+     * @return SyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse>
      */
-    public SyncInvoker<CreateMysqlInstanceRequest, CreateMysqlInstanceResponse> createMysqlInstanceInvoker(CreateMysqlInstanceRequest request) {
-        return new SyncInvoker<CreateMysqlInstanceRequest, CreateMysqlInstanceResponse>(request, GaussDBMeta.createMysqlInstance, hcClient);
+    public SyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> createGaussMySqlInstanceInvoker(CreateGaussMySqlInstanceRequest request) {
+        return new SyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse>(request, GaussDBMeta.createGaussMySqlInstance, hcClient);
     }
 
     /**
      * 开启数据库代理
      * 开启数据库代理，只支持ELB模式。
      *
-     * @param CreateMysqlProxyRequest 请求对象
-     * @return CreateMysqlProxyResponse
+     * @param CreateGaussMySqlProxyRequest 请求对象
+     * @return CreateGaussMySqlProxyResponse
      */
-    public CreateMysqlProxyResponse createMysqlProxy(CreateMysqlProxyRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.createMysqlProxy);
+    public CreateGaussMySqlProxyResponse createGaussMySqlProxy(CreateGaussMySqlProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createGaussMySqlProxy);
     }
 
     /**
      * 开启数据库代理
      * 开启数据库代理，只支持ELB模式。
      *
-     * @param CreateMysqlProxyRequest 请求对象
-     * @return SyncInvoker<CreateMysqlProxyRequest, CreateMysqlProxyResponse>
+     * @param CreateGaussMySqlProxyRequest 请求对象
+     * @return SyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse>
      */
-    public SyncInvoker<CreateMysqlProxyRequest, CreateMysqlProxyResponse> createMysqlProxyInvoker(CreateMysqlProxyRequest request) {
-        return new SyncInvoker<CreateMysqlProxyRequest, CreateMysqlProxyResponse>(request, GaussDBMeta.createMysqlProxy, hcClient);
+    public SyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse> createGaussMySqlProxyInvoker(CreateGaussMySqlProxyRequest request) {
+        return new SyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse>(request, GaussDBMeta.createGaussMySqlProxy, hcClient);
     }
 
     /**
      * 创建只读节点
      * 创建只读节点。
      *
-     * @param CreateMysqlReadonlyNodeRequest 请求对象
-     * @return CreateMysqlReadonlyNodeResponse
+     * @param CreateGaussMySqlReadonlyNodeRequest 请求对象
+     * @return CreateGaussMySqlReadonlyNodeResponse
      */
-    public CreateMysqlReadonlyNodeResponse createMysqlReadonlyNode(CreateMysqlReadonlyNodeRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.createMysqlReadonlyNode);
+    public CreateGaussMySqlReadonlyNodeResponse createGaussMySqlReadonlyNode(CreateGaussMySqlReadonlyNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createGaussMySqlReadonlyNode);
     }
 
     /**
      * 创建只读节点
      * 创建只读节点。
      *
-     * @param CreateMysqlReadonlyNodeRequest 请求对象
-     * @return SyncInvoker<CreateMysqlReadonlyNodeRequest, CreateMysqlReadonlyNodeResponse>
+     * @param CreateGaussMySqlReadonlyNodeRequest 请求对象
+     * @return SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>
      */
-    public SyncInvoker<CreateMysqlReadonlyNodeRequest, CreateMysqlReadonlyNodeResponse> createMysqlReadonlyNodeInvoker(CreateMysqlReadonlyNodeRequest request) {
-        return new SyncInvoker<CreateMysqlReadonlyNodeRequest, CreateMysqlReadonlyNodeResponse>(request, GaussDBMeta.createMysqlReadonlyNode, hcClient);
+    public SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse> createGaussMySqlReadonlyNodeInvoker(CreateGaussMySqlReadonlyNodeRequest request) {
+        return new SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>(request, GaussDBMeta.createGaussMySqlReadonlyNode, hcClient);
     }
 
     /**
      * 删除实例
      * 删除数据库实例，不支持删除包周期实例。
      *
-     * @param DeleteMysqlInstanceRequest 请求对象
-     * @return DeleteMysqlInstanceResponse
+     * @param DeleteGaussMySqlInstanceRequest 请求对象
+     * @return DeleteGaussMySqlInstanceResponse
      */
-    public DeleteMysqlInstanceResponse deleteMysqlInstance(DeleteMysqlInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteMysqlInstance);
+    public DeleteGaussMySqlInstanceResponse deleteGaussMySqlInstance(DeleteGaussMySqlInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlInstance);
     }
 
     /**
      * 删除实例
      * 删除数据库实例，不支持删除包周期实例。
      *
-     * @param DeleteMysqlInstanceRequest 请求对象
-     * @return SyncInvoker<DeleteMysqlInstanceRequest, DeleteMysqlInstanceResponse>
+     * @param DeleteGaussMySqlInstanceRequest 请求对象
+     * @return SyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse>
      */
-    public SyncInvoker<DeleteMysqlInstanceRequest, DeleteMysqlInstanceResponse> deleteMysqlInstanceInvoker(DeleteMysqlInstanceRequest request) {
-        return new SyncInvoker<DeleteMysqlInstanceRequest, DeleteMysqlInstanceResponse>(request, GaussDBMeta.deleteMysqlInstance, hcClient);
+    public SyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse> deleteGaussMySqlInstanceInvoker(DeleteGaussMySqlInstanceRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse>(request, GaussDBMeta.deleteGaussMySqlInstance, hcClient);
     }
 
     /**
      * 关闭数据库代理
      * 关闭数据库代理。
      *
-     * @param DeleteMysqlProxyRequest 请求对象
-     * @return DeleteMysqlProxyResponse
+     * @param DeleteGaussMySqlProxyRequest 请求对象
+     * @return DeleteGaussMySqlProxyResponse
      */
-    public DeleteMysqlProxyResponse deleteMysqlProxy(DeleteMysqlProxyRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteMysqlProxy);
+    public DeleteGaussMySqlProxyResponse deleteGaussMySqlProxy(DeleteGaussMySqlProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlProxy);
     }
 
     /**
      * 关闭数据库代理
      * 关闭数据库代理。
      *
-     * @param DeleteMysqlProxyRequest 请求对象
-     * @return SyncInvoker<DeleteMysqlProxyRequest, DeleteMysqlProxyResponse>
+     * @param DeleteGaussMySqlProxyRequest 请求对象
+     * @return SyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse>
      */
-    public SyncInvoker<DeleteMysqlProxyRequest, DeleteMysqlProxyResponse> deleteMysqlProxyInvoker(DeleteMysqlProxyRequest request) {
-        return new SyncInvoker<DeleteMysqlProxyRequest, DeleteMysqlProxyResponse>(request, GaussDBMeta.deleteMysqlProxy, hcClient);
+    public SyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse> deleteGaussMySqlProxyInvoker(DeleteGaussMySqlProxyRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse>(request, GaussDBMeta.deleteGaussMySqlProxy, hcClient);
     }
 
     /**
      * 删除只读节点
      * 删除实例的只读节点。多可用区模式删除只读节点时，要保证删除后，剩余的只读节点和主节点在不同的可用区中，否则无法删除该只读节点。
      *
-     * @param DeleteMysqlReadonlyNodeRequest 请求对象
-     * @return DeleteMysqlReadonlyNodeResponse
+     * @param DeleteGaussMySqlReadonlyNodeRequest 请求对象
+     * @return DeleteGaussMySqlReadonlyNodeResponse
      */
-    public DeleteMysqlReadonlyNodeResponse deleteMysqlReadonlyNode(DeleteMysqlReadonlyNodeRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteMysqlReadonlyNode);
+    public DeleteGaussMySqlReadonlyNodeResponse deleteGaussMySqlReadonlyNode(DeleteGaussMySqlReadonlyNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlReadonlyNode);
     }
 
     /**
      * 删除只读节点
      * 删除实例的只读节点。多可用区模式删除只读节点时，要保证删除后，剩余的只读节点和主节点在不同的可用区中，否则无法删除该只读节点。
      *
-     * @param DeleteMysqlReadonlyNodeRequest 请求对象
-     * @return SyncInvoker<DeleteMysqlReadonlyNodeRequest, DeleteMysqlReadonlyNodeResponse>
+     * @param DeleteGaussMySqlReadonlyNodeRequest 请求对象
+     * @return SyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse>
      */
-    public SyncInvoker<DeleteMysqlReadonlyNodeRequest, DeleteMysqlReadonlyNodeResponse> deleteMysqlReadonlyNodeInvoker(DeleteMysqlReadonlyNodeRequest request) {
-        return new SyncInvoker<DeleteMysqlReadonlyNodeRequest, DeleteMysqlReadonlyNodeResponse>(request, GaussDBMeta.deleteMysqlReadonlyNode, hcClient);
+    public SyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse> deleteGaussMySqlReadonlyNodeInvoker(DeleteGaussMySqlReadonlyNodeRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse>(request, GaussDBMeta.deleteGaussMySqlReadonlyNode, hcClient);
     }
 
     /**
      * 包周期存储扩容
      * 包周期存储扩容
      *
-     * @param ExpandMysqlInstanceVolumeRequest 请求对象
-     * @return ExpandMysqlInstanceVolumeResponse
+     * @param ExpandGaussMySqlInstanceVolumeRequest 请求对象
+     * @return ExpandGaussMySqlInstanceVolumeResponse
      */
-    public ExpandMysqlInstanceVolumeResponse expandMysqlInstanceVolume(ExpandMysqlInstanceVolumeRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.expandMysqlInstanceVolume);
+    public ExpandGaussMySqlInstanceVolumeResponse expandGaussMySqlInstanceVolume(ExpandGaussMySqlInstanceVolumeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.expandGaussMySqlInstanceVolume);
     }
 
     /**
      * 包周期存储扩容
      * 包周期存储扩容
      *
-     * @param ExpandMysqlInstanceVolumeRequest 请求对象
-     * @return SyncInvoker<ExpandMysqlInstanceVolumeRequest, ExpandMysqlInstanceVolumeResponse>
+     * @param ExpandGaussMySqlInstanceVolumeRequest 请求对象
+     * @return SyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse>
      */
-    public SyncInvoker<ExpandMysqlInstanceVolumeRequest, ExpandMysqlInstanceVolumeResponse> expandMysqlInstanceVolumeInvoker(ExpandMysqlInstanceVolumeRequest request) {
-        return new SyncInvoker<ExpandMysqlInstanceVolumeRequest, ExpandMysqlInstanceVolumeResponse>(request, GaussDBMeta.expandMysqlInstanceVolume, hcClient);
+    public SyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse> expandGaussMySqlInstanceVolumeInvoker(ExpandGaussMySqlInstanceVolumeRequest request) {
+        return new SyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse>(request, GaussDBMeta.expandGaussMySqlInstanceVolume, hcClient);
     }
 
     /**
      * 扩容数据库代理节点的数量
      * 扩容数据库代理节点的数量。 DeC专属云账号暂不支持数据库代理。
      *
-     * @param ExpandMysqlProxyRequest 请求对象
-     * @return ExpandMysqlProxyResponse
+     * @param ExpandGaussMySqlProxyRequest 请求对象
+     * @return ExpandGaussMySqlProxyResponse
      */
-    public ExpandMysqlProxyResponse expandMysqlProxy(ExpandMysqlProxyRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.expandMysqlProxy);
+    public ExpandGaussMySqlProxyResponse expandGaussMySqlProxy(ExpandGaussMySqlProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.expandGaussMySqlProxy);
     }
 
     /**
      * 扩容数据库代理节点的数量
      * 扩容数据库代理节点的数量。 DeC专属云账号暂不支持数据库代理。
      *
-     * @param ExpandMysqlProxyRequest 请求对象
-     * @return SyncInvoker<ExpandMysqlProxyRequest, ExpandMysqlProxyResponse>
+     * @param ExpandGaussMySqlProxyRequest 请求对象
+     * @return SyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse>
      */
-    public SyncInvoker<ExpandMysqlProxyRequest, ExpandMysqlProxyResponse> expandMysqlProxyInvoker(ExpandMysqlProxyRequest request) {
-        return new SyncInvoker<ExpandMysqlProxyRequest, ExpandMysqlProxyResponse>(request, GaussDBMeta.expandMysqlProxy, hcClient);
-    }
-
-    /**
-     * 查询专属资源池列表
-     * 获取专属资源池列表，包括用户开通的所有专属资源池信息。
-     *
-     * @param ListDedicatedResourcesRequest 请求对象
-     * @return ListDedicatedResourcesResponse
-     */
-    public ListDedicatedResourcesResponse listDedicatedResources(ListDedicatedResourcesRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.listDedicatedResources);
-    }
-
-    /**
-     * 查询专属资源池列表
-     * 获取专属资源池列表，包括用户开通的所有专属资源池信息。
-     *
-     * @param ListDedicatedResourcesRequest 请求对象
-     * @return SyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse>
-     */
-    public SyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> listDedicatedResourcesInvoker(ListDedicatedResourcesRequest request) {
-        return new SyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse>(request, GaussDBMeta.listDedicatedResources, hcClient);
+    public SyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse> expandGaussMySqlProxyInvoker(ExpandGaussMySqlProxyRequest request) {
+        return new SyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse>(request, GaussDBMeta.expandGaussMySqlProxy, hcClient);
     }
 
     /**
      * 查询参数模板
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      *
-     * @param ListMysqlConfigurationsRequest 请求对象
-     * @return ListMysqlConfigurationsResponse
+     * @param ListGaussMySqlConfigurationsRequest 请求对象
+     * @return ListGaussMySqlConfigurationsResponse
      */
-    public ListMysqlConfigurationsResponse listMysqlConfigurations(ListMysqlConfigurationsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.listMysqlConfigurations);
+    public ListGaussMySqlConfigurationsResponse listGaussMySqlConfigurations(ListGaussMySqlConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlConfigurations);
     }
 
     /**
      * 查询参数模板
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      *
-     * @param ListMysqlConfigurationsRequest 请求对象
-     * @return SyncInvoker<ListMysqlConfigurationsRequest, ListMysqlConfigurationsResponse>
+     * @param ListGaussMySqlConfigurationsRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse>
      */
-    public SyncInvoker<ListMysqlConfigurationsRequest, ListMysqlConfigurationsResponse> listMysqlConfigurationsInvoker(ListMysqlConfigurationsRequest request) {
-        return new SyncInvoker<ListMysqlConfigurationsRequest, ListMysqlConfigurationsResponse>(request, GaussDBMeta.listMysqlConfigurations, hcClient);
+    public SyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse> listGaussMySqlConfigurationsInvoker(ListGaussMySqlConfigurationsRequest request) {
+        return new SyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse>(request, GaussDBMeta.listGaussMySqlConfigurations, hcClient);
+    }
+
+    /**
+     * 查询专属资源池列表
+     * 获取专属资源池列表，包括用户开通的所有专属资源池信息。
+     *
+     * @param ListGaussMySqlDedicatedResourcesRequest 请求对象
+     * @return ListGaussMySqlDedicatedResourcesResponse
+     */
+    public ListGaussMySqlDedicatedResourcesResponse listGaussMySqlDedicatedResources(ListGaussMySqlDedicatedResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlDedicatedResources);
+    }
+
+    /**
+     * 查询专属资源池列表
+     * 获取专属资源池列表，包括用户开通的所有专属资源池信息。
+     *
+     * @param ListGaussMySqlDedicatedResourcesRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse>
+     */
+    public SyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse> listGaussMySqlDedicatedResourcesInvoker(ListGaussMySqlDedicatedResourcesRequest request) {
+        return new SyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse>(request, GaussDBMeta.listGaussMySqlDedicatedResources, hcClient);
     }
 
     /**
      * 查询数据库错误日志
      * 查询数据库错误日志。
      *
-     * @param ListMysqlErrorLogRequest 请求对象
-     * @return ListMysqlErrorLogResponse
+     * @param ListGaussMySqlErrorLogRequest 请求对象
+     * @return ListGaussMySqlErrorLogResponse
      */
-    public ListMysqlErrorLogResponse listMysqlErrorLog(ListMysqlErrorLogRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.listMysqlErrorLog);
+    public ListGaussMySqlErrorLogResponse listGaussMySqlErrorLog(ListGaussMySqlErrorLogRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlErrorLog);
     }
 
     /**
      * 查询数据库错误日志
      * 查询数据库错误日志。
      *
-     * @param ListMysqlErrorLogRequest 请求对象
-     * @return SyncInvoker<ListMysqlErrorLogRequest, ListMysqlErrorLogResponse>
+     * @param ListGaussMySqlErrorLogRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlErrorLogRequest, ListGaussMySqlErrorLogResponse>
      */
-    public SyncInvoker<ListMysqlErrorLogRequest, ListMysqlErrorLogResponse> listMysqlErrorLogInvoker(ListMysqlErrorLogRequest request) {
-        return new SyncInvoker<ListMysqlErrorLogRequest, ListMysqlErrorLogResponse>(request, GaussDBMeta.listMysqlErrorLog, hcClient);
-    }
-
-    /**
-     * 查询数据库慢日志
-     * 查询数据库慢日志
-     *
-     * @param ListMysqlSlowLogRequest 请求对象
-     * @return ListMysqlSlowLogResponse
-     */
-    public ListMysqlSlowLogResponse listMysqlSlowLog(ListMysqlSlowLogRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.listMysqlSlowLog);
-    }
-
-    /**
-     * 查询数据库慢日志
-     * 查询数据库慢日志
-     *
-     * @param ListMysqlSlowLogRequest 请求对象
-     * @return SyncInvoker<ListMysqlSlowLogRequest, ListMysqlSlowLogResponse>
-     */
-    public SyncInvoker<ListMysqlSlowLogRequest, ListMysqlSlowLogResponse> listMysqlSlowLogInvoker(ListMysqlSlowLogRequest request) {
-        return new SyncInvoker<ListMysqlSlowLogRequest, ListMysqlSlowLogResponse>(request, GaussDBMeta.listMysqlSlowLog, hcClient);
-    }
-
-    /**
-     * 重置数据库密码
-     * 重置数据库密码
-     *
-     * @param ResetMysqlPasswordRequest 请求对象
-     * @return ResetMysqlPasswordResponse
-     */
-    public ResetMysqlPasswordResponse resetMysqlPassword(ResetMysqlPasswordRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.resetMysqlPassword);
-    }
-
-    /**
-     * 重置数据库密码
-     * 重置数据库密码
-     *
-     * @param ResetMysqlPasswordRequest 请求对象
-     * @return SyncInvoker<ResetMysqlPasswordRequest, ResetMysqlPasswordResponse>
-     */
-    public SyncInvoker<ResetMysqlPasswordRequest, ResetMysqlPasswordResponse> resetMysqlPasswordInvoker(ResetMysqlPasswordRequest request) {
-        return new SyncInvoker<ResetMysqlPasswordRequest, ResetMysqlPasswordResponse>(request, GaussDBMeta.resetMysqlPassword, hcClient);
-    }
-
-    /**
-     * 设置租户基于企业项目的资源配额
-     * 设置指定企业项目的资源配额。
-     *
-     * @param SetMysqlQuotasRequest 请求对象
-     * @return SetMysqlQuotasResponse
-     */
-    public SetMysqlQuotasResponse setMysqlQuotas(SetMysqlQuotasRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.setMysqlQuotas);
-    }
-
-    /**
-     * 设置租户基于企业项目的资源配额
-     * 设置指定企业项目的资源配额。
-     *
-     * @param SetMysqlQuotasRequest 请求对象
-     * @return SyncInvoker<SetMysqlQuotasRequest, SetMysqlQuotasResponse>
-     */
-    public SyncInvoker<SetMysqlQuotasRequest, SetMysqlQuotasResponse> setMysqlQuotasInvoker(SetMysqlQuotasRequest request) {
-        return new SyncInvoker<SetMysqlQuotasRequest, SetMysqlQuotasResponse>(request, GaussDBMeta.setMysqlQuotas, hcClient);
-    }
-
-    /**
-     * 查询备份列表
-     * 查询备份列表
-     *
-     * @param ShowMysqlBackupListRequest 请求对象
-     * @return ShowMysqlBackupListResponse
-     */
-    public ShowMysqlBackupListResponse showMysqlBackupList(ShowMysqlBackupListRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlBackupList);
-    }
-
-    /**
-     * 查询备份列表
-     * 查询备份列表
-     *
-     * @param ShowMysqlBackupListRequest 请求对象
-     * @return SyncInvoker<ShowMysqlBackupListRequest, ShowMysqlBackupListResponse>
-     */
-    public SyncInvoker<ShowMysqlBackupListRequest, ShowMysqlBackupListResponse> showMysqlBackupListInvoker(ShowMysqlBackupListRequest request) {
-        return new SyncInvoker<ShowMysqlBackupListRequest, ShowMysqlBackupListResponse>(request, GaussDBMeta.showMysqlBackupList, hcClient);
-    }
-
-    /**
-     * 查询自动备份策略
-     * 查询自动备份策略。
-     *
-     * @param ShowMysqlBackupPolicyRequest 请求对象
-     * @return ShowMysqlBackupPolicyResponse
-     */
-    public ShowMysqlBackupPolicyResponse showMysqlBackupPolicy(ShowMysqlBackupPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlBackupPolicy);
-    }
-
-    /**
-     * 查询自动备份策略
-     * 查询自动备份策略。
-     *
-     * @param ShowMysqlBackupPolicyRequest 请求对象
-     * @return SyncInvoker<ShowMysqlBackupPolicyRequest, ShowMysqlBackupPolicyResponse>
-     */
-    public SyncInvoker<ShowMysqlBackupPolicyRequest, ShowMysqlBackupPolicyResponse> showMysqlBackupPolicyInvoker(ShowMysqlBackupPolicyRequest request) {
-        return new SyncInvoker<ShowMysqlBackupPolicyRequest, ShowMysqlBackupPolicyResponse>(request, GaussDBMeta.showMysqlBackupPolicy, hcClient);
-    }
-
-    /**
-     * 查询数据库引擎的版本
-     * 获取指定数据库引擎对应的数据库版本信息。
-     *
-     * @param ShowMysqlEngineVersionRequest 请求对象
-     * @return ShowMysqlEngineVersionResponse
-     */
-    public ShowMysqlEngineVersionResponse showMysqlEngineVersion(ShowMysqlEngineVersionRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlEngineVersion);
-    }
-
-    /**
-     * 查询数据库引擎的版本
-     * 获取指定数据库引擎对应的数据库版本信息。
-     *
-     * @param ShowMysqlEngineVersionRequest 请求对象
-     * @return SyncInvoker<ShowMysqlEngineVersionRequest, ShowMysqlEngineVersionResponse>
-     */
-    public SyncInvoker<ShowMysqlEngineVersionRequest, ShowMysqlEngineVersionResponse> showMysqlEngineVersionInvoker(ShowMysqlEngineVersionRequest request) {
-        return new SyncInvoker<ShowMysqlEngineVersionRequest, ShowMysqlEngineVersionResponse>(request, GaussDBMeta.showMysqlEngineVersion, hcClient);
-    }
-
-    /**
-     * 查询数据库规格
-     * 获取指定数据库引擎版本对应的规格信息。
-     *
-     * @param ShowMysqlFlavorsRequest 请求对象
-     * @return ShowMysqlFlavorsResponse
-     */
-    public ShowMysqlFlavorsResponse showMysqlFlavors(ShowMysqlFlavorsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlFlavors);
-    }
-
-    /**
-     * 查询数据库规格
-     * 获取指定数据库引擎版本对应的规格信息。
-     *
-     * @param ShowMysqlFlavorsRequest 请求对象
-     * @return SyncInvoker<ShowMysqlFlavorsRequest, ShowMysqlFlavorsResponse>
-     */
-    public SyncInvoker<ShowMysqlFlavorsRequest, ShowMysqlFlavorsResponse> showMysqlFlavorsInvoker(ShowMysqlFlavorsRequest request) {
-        return new SyncInvoker<ShowMysqlFlavorsRequest, ShowMysqlFlavorsResponse>(request, GaussDBMeta.showMysqlFlavors, hcClient);
-    }
-
-    /**
-     * 查询实例详情信息
-     * 查询实例详情信息
-     *
-     * @param ShowMysqlInstanceInfoRequest 请求对象
-     * @return ShowMysqlInstanceInfoResponse
-     */
-    public ShowMysqlInstanceInfoResponse showMysqlInstanceInfo(ShowMysqlInstanceInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlInstanceInfo);
-    }
-
-    /**
-     * 查询实例详情信息
-     * 查询实例详情信息
-     *
-     * @param ShowMysqlInstanceInfoRequest 请求对象
-     * @return SyncInvoker<ShowMysqlInstanceInfoRequest, ShowMysqlInstanceInfoResponse>
-     */
-    public SyncInvoker<ShowMysqlInstanceInfoRequest, ShowMysqlInstanceInfoResponse> showMysqlInstanceInfoInvoker(ShowMysqlInstanceInfoRequest request) {
-        return new SyncInvoker<ShowMysqlInstanceInfoRequest, ShowMysqlInstanceInfoResponse>(request, GaussDBMeta.showMysqlInstanceInfo, hcClient);
+    public SyncInvoker<ListGaussMySqlErrorLogRequest, ListGaussMySqlErrorLogResponse> listGaussMySqlErrorLogInvoker(ListGaussMySqlErrorLogRequest request) {
+        return new SyncInvoker<ListGaussMySqlErrorLogRequest, ListGaussMySqlErrorLogResponse>(request, GaussDBMeta.listGaussMySqlErrorLog, hcClient);
     }
 
     /**
      * 查询实例列表
      * 根据指定条件查询实例列表。
      *
-     * @param ShowMysqlInstanceListRequest 请求对象
-     * @return ShowMysqlInstanceListResponse
+     * @param ListGaussMySqlInstancesRequest 请求对象
+     * @return ListGaussMySqlInstancesResponse
      */
-    public ShowMysqlInstanceListResponse showMysqlInstanceList(ShowMysqlInstanceListRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlInstanceList);
+    public ListGaussMySqlInstancesResponse listGaussMySqlInstances(ListGaussMySqlInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlInstances);
     }
 
     /**
      * 查询实例列表
      * 根据指定条件查询实例列表。
      *
-     * @param ShowMysqlInstanceListRequest 请求对象
-     * @return SyncInvoker<ShowMysqlInstanceListRequest, ShowMysqlInstanceListResponse>
+     * @param ListGaussMySqlInstancesRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>
      */
-    public SyncInvoker<ShowMysqlInstanceListRequest, ShowMysqlInstanceListResponse> showMysqlInstanceListInvoker(ShowMysqlInstanceListRequest request) {
-        return new SyncInvoker<ShowMysqlInstanceListRequest, ShowMysqlInstanceListResponse>(request, GaussDBMeta.showMysqlInstanceList, hcClient);
+    public SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstancesInvoker(ListGaussMySqlInstancesRequest request) {
+        return new SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>(request, GaussDBMeta.listGaussMySqlInstances, hcClient);
+    }
+
+    /**
+     * 查询数据库慢日志
+     * 查询数据库慢日志
+     *
+     * @param ListGaussMySqlSlowLogRequest 请求对象
+     * @return ListGaussMySqlSlowLogResponse
+     */
+    public ListGaussMySqlSlowLogResponse listGaussMySqlSlowLog(ListGaussMySqlSlowLogRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlSlowLog);
+    }
+
+    /**
+     * 查询数据库慢日志
+     * 查询数据库慢日志
+     *
+     * @param ListGaussMySqlSlowLogRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlSlowLogRequest, ListGaussMySqlSlowLogResponse>
+     */
+    public SyncInvoker<ListGaussMySqlSlowLogRequest, ListGaussMySqlSlowLogResponse> listGaussMySqlSlowLogInvoker(ListGaussMySqlSlowLogRequest request) {
+        return new SyncInvoker<ListGaussMySqlSlowLogRequest, ListGaussMySqlSlowLogResponse>(request, GaussDBMeta.listGaussMySqlSlowLog, hcClient);
+    }
+
+    /**
+     * 重置数据库密码
+     * 重置数据库密码
+     *
+     * @param ResetGaussMySqlPasswordRequest 请求对象
+     * @return ResetGaussMySqlPasswordResponse
+     */
+    public ResetGaussMySqlPasswordResponse resetGaussMySqlPassword(ResetGaussMySqlPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.resetGaussMySqlPassword);
+    }
+
+    /**
+     * 重置数据库密码
+     * 重置数据库密码
+     *
+     * @param ResetGaussMySqlPasswordRequest 请求对象
+     * @return SyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse>
+     */
+    public SyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse> resetGaussMySqlPasswordInvoker(ResetGaussMySqlPasswordRequest request) {
+        return new SyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse>(request, GaussDBMeta.resetGaussMySqlPassword, hcClient);
+    }
+
+    /**
+     * 设置租户基于企业项目的资源配额
+     * 设置指定企业项目的资源配额。
+     *
+     * @param SetGaussMySqlQuotasRequest 请求对象
+     * @return SetGaussMySqlQuotasResponse
+     */
+    public SetGaussMySqlQuotasResponse setGaussMySqlQuotas(SetGaussMySqlQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.setGaussMySqlQuotas);
+    }
+
+    /**
+     * 设置租户基于企业项目的资源配额
+     * 设置指定企业项目的资源配额。
+     *
+     * @param SetGaussMySqlQuotasRequest 请求对象
+     * @return SyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse>
+     */
+    public SyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> setGaussMySqlQuotasInvoker(SetGaussMySqlQuotasRequest request) {
+        return new SyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse>(request, GaussDBMeta.setGaussMySqlQuotas, hcClient);
+    }
+
+    /**
+     * 查询备份列表
+     * 查询备份列表
+     *
+     * @param ShowGaussMySqlBackupListRequest 请求对象
+     * @return ShowGaussMySqlBackupListResponse
+     */
+    public ShowGaussMySqlBackupListResponse showGaussMySqlBackupList(ShowGaussMySqlBackupListRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlBackupList);
+    }
+
+    /**
+     * 查询备份列表
+     * 查询备份列表
+     *
+     * @param ShowGaussMySqlBackupListRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse>
+     */
+    public SyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> showGaussMySqlBackupListInvoker(ShowGaussMySqlBackupListRequest request) {
+        return new SyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse>(request, GaussDBMeta.showGaussMySqlBackupList, hcClient);
+    }
+
+    /**
+     * 查询自动备份策略
+     * 查询自动备份策略。
+     *
+     * @param ShowGaussMySqlBackupPolicyRequest 请求对象
+     * @return ShowGaussMySqlBackupPolicyResponse
+     */
+    public ShowGaussMySqlBackupPolicyResponse showGaussMySqlBackupPolicy(ShowGaussMySqlBackupPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlBackupPolicy);
+    }
+
+    /**
+     * 查询自动备份策略
+     * 查询自动备份策略。
+     *
+     * @param ShowGaussMySqlBackupPolicyRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse>
+     */
+    public SyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse> showGaussMySqlBackupPolicyInvoker(ShowGaussMySqlBackupPolicyRequest request) {
+        return new SyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse>(request, GaussDBMeta.showGaussMySqlBackupPolicy, hcClient);
+    }
+
+    /**
+     * 查询数据库引擎的版本
+     * 获取指定数据库引擎对应的数据库版本信息。
+     *
+     * @param ShowGaussMySqlEngineVersionRequest 请求对象
+     * @return ShowGaussMySqlEngineVersionResponse
+     */
+    public ShowGaussMySqlEngineVersionResponse showGaussMySqlEngineVersion(ShowGaussMySqlEngineVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlEngineVersion);
+    }
+
+    /**
+     * 查询数据库引擎的版本
+     * 获取指定数据库引擎对应的数据库版本信息。
+     *
+     * @param ShowGaussMySqlEngineVersionRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse>
+     */
+    public SyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse> showGaussMySqlEngineVersionInvoker(ShowGaussMySqlEngineVersionRequest request) {
+        return new SyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse>(request, GaussDBMeta.showGaussMySqlEngineVersion, hcClient);
+    }
+
+    /**
+     * 查询数据库规格
+     * 获取指定数据库引擎版本对应的规格信息。
+     *
+     * @param ShowGaussMySqlFlavorsRequest 请求对象
+     * @return ShowGaussMySqlFlavorsResponse
+     */
+    public ShowGaussMySqlFlavorsResponse showGaussMySqlFlavors(ShowGaussMySqlFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlFlavors);
+    }
+
+    /**
+     * 查询数据库规格
+     * 获取指定数据库引擎版本对应的规格信息。
+     *
+     * @param ShowGaussMySqlFlavorsRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse>
+     */
+    public SyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse> showGaussMySqlFlavorsInvoker(ShowGaussMySqlFlavorsRequest request) {
+        return new SyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse>(request, GaussDBMeta.showGaussMySqlFlavors, hcClient);
+    }
+
+    /**
+     * 查询实例详情信息
+     * 查询实例详情信息
+     *
+     * @param ShowGaussMySqlInstanceInfoRequest 请求对象
+     * @return ShowGaussMySqlInstanceInfoResponse
+     */
+    public ShowGaussMySqlInstanceInfoResponse showGaussMySqlInstanceInfo(ShowGaussMySqlInstanceInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlInstanceInfo);
+    }
+
+    /**
+     * 查询实例详情信息
+     * 查询实例详情信息
+     *
+     * @param ShowGaussMySqlInstanceInfoRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>
+     */
+    public SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfoInvoker(ShowGaussMySqlInstanceInfoRequest request) {
+        return new SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>(request, GaussDBMeta.showGaussMySqlInstanceInfo, hcClient);
     }
 
     /**
      * 获取指定ID的任务信息
      * 获取指定ID的任务信息。
      *
-     * @param ShowMysqlJobInfoRequest 请求对象
-     * @return ShowMysqlJobInfoResponse
+     * @param ShowGaussMySqlJobInfoRequest 请求对象
+     * @return ShowGaussMySqlJobInfoResponse
      */
-    public ShowMysqlJobInfoResponse showMysqlJobInfo(ShowMysqlJobInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlJobInfo);
+    public ShowGaussMySqlJobInfoResponse showGaussMySqlJobInfo(ShowGaussMySqlJobInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlJobInfo);
     }
 
     /**
      * 获取指定ID的任务信息
      * 获取指定ID的任务信息。
      *
-     * @param ShowMysqlJobInfoRequest 请求对象
-     * @return SyncInvoker<ShowMysqlJobInfoRequest, ShowMysqlJobInfoResponse>
+     * @param ShowGaussMySqlJobInfoRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse>
      */
-    public SyncInvoker<ShowMysqlJobInfoRequest, ShowMysqlJobInfoResponse> showMysqlJobInfoInvoker(ShowMysqlJobInfoRequest request) {
-        return new SyncInvoker<ShowMysqlJobInfoRequest, ShowMysqlJobInfoResponse>(request, GaussDBMeta.showMysqlJobInfo, hcClient);
+    public SyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse> showGaussMySqlJobInfoInvoker(ShowGaussMySqlJobInfoRequest request) {
+        return new SyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse>(request, GaussDBMeta.showGaussMySqlJobInfo, hcClient);
     }
 
     /**
      * 查询租户的实例配额
      * 获取指定租户的资源配额。
      *
-     * @param ShowMysqlProjectQuotasRequest 请求对象
-     * @return ShowMysqlProjectQuotasResponse
+     * @param ShowGaussMySqlProjectQuotasRequest 请求对象
+     * @return ShowGaussMySqlProjectQuotasResponse
      */
-    public ShowMysqlProjectQuotasResponse showMysqlProjectQuotas(ShowMysqlProjectQuotasRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlProjectQuotas);
+    public ShowGaussMySqlProjectQuotasResponse showGaussMySqlProjectQuotas(ShowGaussMySqlProjectQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlProjectQuotas);
     }
 
     /**
      * 查询租户的实例配额
      * 获取指定租户的资源配额。
      *
-     * @param ShowMysqlProjectQuotasRequest 请求对象
-     * @return SyncInvoker<ShowMysqlProjectQuotasRequest, ShowMysqlProjectQuotasResponse>
+     * @param ShowGaussMySqlProjectQuotasRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse>
      */
-    public SyncInvoker<ShowMysqlProjectQuotasRequest, ShowMysqlProjectQuotasResponse> showMysqlProjectQuotasInvoker(ShowMysqlProjectQuotasRequest request) {
-        return new SyncInvoker<ShowMysqlProjectQuotasRequest, ShowMysqlProjectQuotasResponse>(request, GaussDBMeta.showMysqlProjectQuotas, hcClient);
+    public SyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse> showGaussMySqlProjectQuotasInvoker(ShowGaussMySqlProjectQuotasRequest request) {
+        return new SyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse>(request, GaussDBMeta.showGaussMySqlProjectQuotas, hcClient);
     }
 
     /**
      * 查询数据库代理信息
      * 查询数据库代理信息。
      *
-     * @param ShowMysqlProxyRequest 请求对象
-     * @return ShowMysqlProxyResponse
+     * @param ShowGaussMySqlProxyRequest 请求对象
+     * @return ShowGaussMySqlProxyResponse
      */
-    public ShowMysqlProxyResponse showMysqlProxy(ShowMysqlProxyRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlProxy);
+    public ShowGaussMySqlProxyResponse showGaussMySqlProxy(ShowGaussMySqlProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlProxy);
     }
 
     /**
      * 查询数据库代理信息
      * 查询数据库代理信息。
      *
-     * @param ShowMysqlProxyRequest 请求对象
-     * @return SyncInvoker<ShowMysqlProxyRequest, ShowMysqlProxyResponse>
+     * @param ShowGaussMySqlProxyRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse>
      */
-    public SyncInvoker<ShowMysqlProxyRequest, ShowMysqlProxyResponse> showMysqlProxyInvoker(ShowMysqlProxyRequest request) {
-        return new SyncInvoker<ShowMysqlProxyRequest, ShowMysqlProxyResponse>(request, GaussDBMeta.showMysqlProxy, hcClient);
+    public SyncInvoker<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse> showGaussMySqlProxyInvoker(ShowGaussMySqlProxyRequest request) {
+        return new SyncInvoker<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse>(request, GaussDBMeta.showGaussMySqlProxy, hcClient);
     }
 
     /**
      * 查询数据库代理规格信息
      * 查询数据库代理规格信息。
      *
-     * @param ShowMysqlProxyFlavorsRequest 请求对象
-     * @return ShowMysqlProxyFlavorsResponse
+     * @param ShowGaussMySqlProxyFlavorsRequest 请求对象
+     * @return ShowGaussMySqlProxyFlavorsResponse
      */
-    public ShowMysqlProxyFlavorsResponse showMysqlProxyFlavors(ShowMysqlProxyFlavorsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlProxyFlavors);
+    public ShowGaussMySqlProxyFlavorsResponse showGaussMySqlProxyFlavors(ShowGaussMySqlProxyFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlProxyFlavors);
     }
 
     /**
      * 查询数据库代理规格信息
      * 查询数据库代理规格信息。
      *
-     * @param ShowMysqlProxyFlavorsRequest 请求对象
-     * @return SyncInvoker<ShowMysqlProxyFlavorsRequest, ShowMysqlProxyFlavorsResponse>
+     * @param ShowGaussMySqlProxyFlavorsRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse>
      */
-    public SyncInvoker<ShowMysqlProxyFlavorsRequest, ShowMysqlProxyFlavorsResponse> showMysqlProxyFlavorsInvoker(ShowMysqlProxyFlavorsRequest request) {
-        return new SyncInvoker<ShowMysqlProxyFlavorsRequest, ShowMysqlProxyFlavorsResponse>(request, GaussDBMeta.showMysqlProxyFlavors, hcClient);
+    public SyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> showGaussMySqlProxyFlavorsInvoker(ShowGaussMySqlProxyFlavorsRequest request) {
+        return new SyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse>(request, GaussDBMeta.showGaussMySqlProxyFlavors, hcClient);
     }
 
     /**
      * 查询租户基于企业项目的资源配额
      * 获取指定企业项目的资源配额。
      *
-     * @param ShowMysqlQuotasRequest 请求对象
-     * @return ShowMysqlQuotasResponse
+     * @param ShowGaussMySqlQuotasRequest 请求对象
+     * @return ShowGaussMySqlQuotasResponse
      */
-    public ShowMysqlQuotasResponse showMysqlQuotas(ShowMysqlQuotasRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showMysqlQuotas);
+    public ShowGaussMySqlQuotasResponse showGaussMySqlQuotas(ShowGaussMySqlQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlQuotas);
     }
 
     /**
      * 查询租户基于企业项目的资源配额
      * 获取指定企业项目的资源配额。
      *
-     * @param ShowMysqlQuotasRequest 请求对象
-     * @return SyncInvoker<ShowMysqlQuotasRequest, ShowMysqlQuotasResponse>
+     * @param ShowGaussMySqlQuotasRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse>
      */
-    public SyncInvoker<ShowMysqlQuotasRequest, ShowMysqlQuotasResponse> showMysqlQuotasInvoker(ShowMysqlQuotasRequest request) {
-        return new SyncInvoker<ShowMysqlQuotasRequest, ShowMysqlQuotasResponse>(request, GaussDBMeta.showMysqlQuotas, hcClient);
+    public SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse> showGaussMySqlQuotasInvoker(ShowGaussMySqlQuotasRequest request) {
+        return new SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse>(request, GaussDBMeta.showGaussMySqlQuotas, hcClient);
     }
 
     /**
      * 修改备份策略
      * 修改备份策略
      *
-     * @param UpdateMysqlBackupPolicyRequest 请求对象
-     * @return UpdateMysqlBackupPolicyResponse
+     * @param UpdateGaussMySqlBackupPolicyRequest 请求对象
+     * @return UpdateGaussMySqlBackupPolicyResponse
      */
-    public UpdateMysqlBackupPolicyResponse updateMysqlBackupPolicy(UpdateMysqlBackupPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateMysqlBackupPolicy);
+    public UpdateGaussMySqlBackupPolicyResponse updateGaussMySqlBackupPolicy(UpdateGaussMySqlBackupPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlBackupPolicy);
     }
 
     /**
      * 修改备份策略
      * 修改备份策略
      *
-     * @param UpdateMysqlBackupPolicyRequest 请求对象
-     * @return SyncInvoker<UpdateMysqlBackupPolicyRequest, UpdateMysqlBackupPolicyResponse>
+     * @param UpdateGaussMySqlBackupPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse>
      */
-    public SyncInvoker<UpdateMysqlBackupPolicyRequest, UpdateMysqlBackupPolicyResponse> updateMysqlBackupPolicyInvoker(UpdateMysqlBackupPolicyRequest request) {
-        return new SyncInvoker<UpdateMysqlBackupPolicyRequest, UpdateMysqlBackupPolicyResponse>(request, GaussDBMeta.updateMysqlBackupPolicy, hcClient);
+    public SyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse> updateGaussMySqlBackupPolicyInvoker(UpdateGaussMySqlBackupPolicyRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse>(request, GaussDBMeta.updateGaussMySqlBackupPolicy, hcClient);
     }
 
     /**
      * 修改实例名称
      * 修改实例名称
      *
-     * @param UpdateMysqlInstanceNameRequest 请求对象
-     * @return UpdateMysqlInstanceNameResponse
+     * @param UpdateGaussMySqlInstanceNameRequest 请求对象
+     * @return UpdateGaussMySqlInstanceNameResponse
      */
-    public UpdateMysqlInstanceNameResponse updateMysqlInstanceName(UpdateMysqlInstanceNameRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateMysqlInstanceName);
+    public UpdateGaussMySqlInstanceNameResponse updateGaussMySqlInstanceName(UpdateGaussMySqlInstanceNameRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceName);
     }
 
     /**
      * 修改实例名称
      * 修改实例名称
      *
-     * @param UpdateMysqlInstanceNameRequest 请求对象
-     * @return SyncInvoker<UpdateMysqlInstanceNameRequest, UpdateMysqlInstanceNameResponse>
+     * @param UpdateGaussMySqlInstanceNameRequest 请求对象
+     * @return SyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse>
      */
-    public SyncInvoker<UpdateMysqlInstanceNameRequest, UpdateMysqlInstanceNameResponse> updateMysqlInstanceNameInvoker(UpdateMysqlInstanceNameRequest request) {
-        return new SyncInvoker<UpdateMysqlInstanceNameRequest, UpdateMysqlInstanceNameResponse>(request, GaussDBMeta.updateMysqlInstanceName, hcClient);
+    public SyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse> updateGaussMySqlInstanceNameInvoker(UpdateGaussMySqlInstanceNameRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse>(request, GaussDBMeta.updateGaussMySqlInstanceName, hcClient);
     }
 
     /**
      * 修改租户基于企业项目的资源配额
      * 修改指定企业项目的资源配额。
      *
-     * @param UpdateMysqlQuotasRequest 请求对象
-     * @return UpdateMysqlQuotasResponse
+     * @param UpdateGaussMySqlQuotasRequest 请求对象
+     * @return UpdateGaussMySqlQuotasResponse
      */
-    public UpdateMysqlQuotasResponse updateMysqlQuotas(UpdateMysqlQuotasRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateMysqlQuotas);
+    public UpdateGaussMySqlQuotasResponse updateGaussMySqlQuotas(UpdateGaussMySqlQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlQuotas);
     }
 
     /**
      * 修改租户基于企业项目的资源配额
      * 修改指定企业项目的资源配额。
      *
-     * @param UpdateMysqlQuotasRequest 请求对象
-     * @return SyncInvoker<UpdateMysqlQuotasRequest, UpdateMysqlQuotasResponse>
+     * @param UpdateGaussMySqlQuotasRequest 请求对象
+     * @return SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>
      */
-    public SyncInvoker<UpdateMysqlQuotasRequest, UpdateMysqlQuotasResponse> updateMysqlQuotasInvoker(UpdateMysqlQuotasRequest request) {
-        return new SyncInvoker<UpdateMysqlQuotasRequest, UpdateMysqlQuotasResponse>(request, GaussDBMeta.updateMysqlQuotas, hcClient);
+    public SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> updateGaussMySqlQuotasInvoker(UpdateGaussMySqlQuotasRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>(request, GaussDBMeta.updateGaussMySqlQuotas, hcClient);
     }
 
 }

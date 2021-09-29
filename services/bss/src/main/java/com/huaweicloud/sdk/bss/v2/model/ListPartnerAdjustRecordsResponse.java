@@ -13,14 +13,46 @@ import java.util.function.Consumer;
 public class ListPartnerAdjustRecordsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "records")
+
+    private List<AdjustRecordV3> records = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "records")
+    public ListPartnerAdjustRecordsResponse withRecords(List<AdjustRecordV3> records) {
+        this.records = records;
+        return this;
+    }
 
-    private List<AdjustRecordV2> records = null;
+    public ListPartnerAdjustRecordsResponse addRecordsItem(AdjustRecordV3 recordsItem) {
+        if (this.records == null) {
+            this.records = new ArrayList<>();
+        }
+        this.records.add(recordsItem);
+        return this;
+    }
+
+    public ListPartnerAdjustRecordsResponse withRecords(Consumer<List<AdjustRecordV3>> recordsSetter) {
+        if (this.records == null) {
+            this.records = new ArrayList<>();
+        }
+        recordsSetter.accept(this.records);
+        return this;
+    }
+
+    /** 调账记录列表。 具体请参见表2。
+     * 
+     * @return records */
+    public List<AdjustRecordV3> getRecords() {
+        return records;
+    }
+
+    public void setRecords(List<AdjustRecordV3> records) {
+        this.records = records;
+    }
 
     public ListPartnerAdjustRecordsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
@@ -38,38 +70,6 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ListPartnerAdjustRecordsResponse withRecords(List<AdjustRecordV2> records) {
-        this.records = records;
-        return this;
-    }
-
-    public ListPartnerAdjustRecordsResponse addRecordsItem(AdjustRecordV2 recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
-        this.records.add(recordsItem);
-        return this;
-    }
-
-    public ListPartnerAdjustRecordsResponse withRecords(Consumer<List<AdjustRecordV2>> recordsSetter) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
-        recordsSetter.accept(this.records);
-        return this;
-    }
-
-    /** 调账记录列表。 具体请参见表2。
-     * 
-     * @return records */
-    public List<AdjustRecordV2> getRecords() {
-        return records;
-    }
-
-    public void setRecords(List<AdjustRecordV2> records) {
-        this.records = records;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -79,21 +79,21 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
             return false;
         }
         ListPartnerAdjustRecordsResponse listPartnerAdjustRecordsResponse = (ListPartnerAdjustRecordsResponse) o;
-        return Objects.equals(this.totalCount, listPartnerAdjustRecordsResponse.totalCount)
-            && Objects.equals(this.records, listPartnerAdjustRecordsResponse.records);
+        return Objects.equals(this.records, listPartnerAdjustRecordsResponse.records)
+            && Objects.equals(this.totalCount, listPartnerAdjustRecordsResponse.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalCount, records);
+        return Objects.hash(records, totalCount);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPartnerAdjustRecordsResponse {\n");
-        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    records: ").append(toIndentedString(records)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

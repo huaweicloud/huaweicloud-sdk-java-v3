@@ -132,6 +132,11 @@ public class PostPaidServerExtendParam {
 
     private Integer spotDurationCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "CB_CSBS_BACKUP")
+
+    private String cbCsbsBackup;
+
     public PostPaidServerExtendParam withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -299,6 +304,22 @@ public class PostPaidServerExtendParam {
         this.spotDurationCount = spotDurationCount;
     }
 
+    public PostPaidServerExtendParam withCbCsbsBackup(String cbCsbsBackup) {
+        this.cbCsbsBackup = cbCsbsBackup;
+        return this;
+    }
+
+    /** 云备份策略和云备份存储库详情，取值包含备份策略ID和云备份存储库ID。
+     * 
+     * @return cbCsbsBackup */
+    public String getCbCsbsBackup() {
+        return cbCsbsBackup;
+    }
+
+    public void setCbCsbsBackup(String cbCsbsBackup) {
+        this.cbCsbsBackup = cbCsbsBackup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -317,7 +338,8 @@ public class PostPaidServerExtendParam {
             && Objects.equals(this.diskPrior, postPaidServerExtendParam.diskPrior)
             && Objects.equals(this.spotDurationHours, postPaidServerExtendParam.spotDurationHours)
             && Objects.equals(this.interruptionPolicy, postPaidServerExtendParam.interruptionPolicy)
-            && Objects.equals(this.spotDurationCount, postPaidServerExtendParam.spotDurationCount);
+            && Objects.equals(this.spotDurationCount, postPaidServerExtendParam.spotDurationCount)
+            && Objects.equals(this.cbCsbsBackup, postPaidServerExtendParam.cbCsbsBackup);
     }
 
     @Override
@@ -331,7 +353,8 @@ public class PostPaidServerExtendParam {
             diskPrior,
             spotDurationHours,
             interruptionPolicy,
-            spotDurationCount);
+            spotDurationCount,
+            cbCsbsBackup);
     }
 
     @Override
@@ -348,6 +371,7 @@ public class PostPaidServerExtendParam {
         sb.append("    spotDurationHours: ").append(toIndentedString(spotDurationHours)).append("\n");
         sb.append("    interruptionPolicy: ").append(toIndentedString(interruptionPolicy)).append("\n");
         sb.append("    spotDurationCount: ").append(toIndentedString(spotDurationCount)).append("\n");
+        sb.append("    cbCsbsBackup: ").append(toIndentedString(cbCsbsBackup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

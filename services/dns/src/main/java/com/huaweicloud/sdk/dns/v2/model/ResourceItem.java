@@ -19,7 +19,7 @@ public class ResourceItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_detail")
 
-    private String resourceDetail;
+    private Object resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -47,7 +47,7 @@ public class ResourceItem {
         this.resourceId = resourceId;
     }
 
-    public ResourceItem withResourceDetail(String resourceDetail) {
+    public ResourceItem withResourceDetail(Object resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
     }
@@ -55,11 +55,11 @@ public class ResourceItem {
     /** 资源详情。资源对象，用于扩展，默认为空。
      * 
      * @return resourceDetail */
-    public String getResourceDetail() {
+    public Object getResourceDetail() {
         return resourceDetail;
     }
 
-    public void setResourceDetail(String resourceDetail) {
+    public void setResourceDetail(Object resourceDetail) {
         this.resourceDetail = resourceDetail;
     }
 

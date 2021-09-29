@@ -18,7 +18,7 @@ public class CreateCaseResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "json")
 
-    private CreateCaseResqJson json;
+    private CreateCaseResultJson json;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
@@ -41,14 +41,14 @@ public class CreateCaseResponse extends SdkResponse {
         this.code = code;
     }
 
-    public CreateCaseResponse withJson(CreateCaseResqJson json) {
+    public CreateCaseResponse withJson(CreateCaseResultJson json) {
         this.json = json;
         return this;
     }
 
-    public CreateCaseResponse withJson(Consumer<CreateCaseResqJson> jsonSetter) {
+    public CreateCaseResponse withJson(Consumer<CreateCaseResultJson> jsonSetter) {
         if (this.json == null) {
-            this.json = new CreateCaseResqJson();
+            this.json = new CreateCaseResultJson();
             jsonSetter.accept(this.json);
         }
 
@@ -58,11 +58,11 @@ public class CreateCaseResponse extends SdkResponse {
     /** Get json
      * 
      * @return json */
-    public CreateCaseResqJson getJson() {
+    public CreateCaseResultJson getJson() {
         return json;
     }
 
-    public void setJson(CreateCaseResqJson json) {
+    public void setJson(CreateCaseResultJson json) {
         this.json = json;
     }
 

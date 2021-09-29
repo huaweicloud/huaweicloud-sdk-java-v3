@@ -20,7 +20,7 @@ public class GaussDBforopenGaussMeta {
         HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
                 .withName("CreateInstance")
-                .withUri("/opengauss/v3/{project_id}/instances")
+                .withUri("/v3/{project_id}/instances")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -55,7 +55,7 @@ public class GaussDBforopenGaussMeta {
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
                 .withName("DeleteInstance")
-                .withUri("/opengauss/v3/{project_id}/instances/{instance_id}")
+                .withUri("/v3/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
         // requests
@@ -90,7 +90,7 @@ public class GaussDBforopenGaussMeta {
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
                 .withName("ListInstances")
-                .withUri("/opengauss/v3/{project_id}/instances")
+                .withUri("/v3/{project_id}/instances")
                 .withContentType("application/json");
 
         // requests
@@ -189,7 +189,7 @@ public class GaussDBforopenGaussMeta {
         HttpRequestDef.Builder<ResetPwdRequest, ResetPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetPwdRequest.class, ResetPwdResponse.class)
                 .withName("ResetPwd")
-                .withUri("/opengauss/v3/{project_id}/instances/{instance_id}/password")
+                .withUri("/v3/{project_id}/instances/{instance_id}/password")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -232,7 +232,7 @@ public class GaussDBforopenGaussMeta {
         HttpRequestDef.Builder<RunInstanceActionRequest, RunInstanceActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunInstanceActionRequest.class, RunInstanceActionResponse.class)
                 .withName("RunInstanceAction")
-                .withUri("/opengauss/v3/{project_id}/instances/{instance_id}/action")
+                .withUri("/v3/{project_id}/instances/{instance_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -275,7 +275,7 @@ public class GaussDBforopenGaussMeta {
         HttpRequestDef.Builder<SetBackupPolicyRequest, SetBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetBackupPolicyRequest.class, SetBackupPolicyResponse.class)
                 .withName("SetBackupPolicy")
-                .withUri("/opengauss/v3/{project_id}/instances/{instance_id}/backups/policy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/policy")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -318,7 +318,7 @@ public class GaussDBforopenGaussMeta {
         HttpRequestDef.Builder<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceConfigurationRequest.class, UpdateInstanceConfigurationResponse.class)
                 .withName("UpdateInstanceConfiguration")
-                .withUri("/opengauss/v3/{project_id}/instances/{instance_id}/configurations")
+                .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -361,7 +361,7 @@ public class GaussDBforopenGaussMeta {
         HttpRequestDef.Builder<UpdateInstanceNameRequest, UpdateInstanceNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceNameRequest.class, UpdateInstanceNameResponse.class)
                 .withName("UpdateInstanceName")
-                .withUri("/opengauss/v3/{project_id}/instances/{instance_id}/name")
+                .withUri("/v3/{project_id}/instances/{instance_id}/name")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests

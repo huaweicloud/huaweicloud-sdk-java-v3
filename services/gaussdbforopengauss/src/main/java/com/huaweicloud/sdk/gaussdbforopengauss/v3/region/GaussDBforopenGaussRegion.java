@@ -9,12 +9,12 @@ import com.huaweicloud.sdk.core.region.Region;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 public class GaussDBforopenGaussRegion {
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://gaussdb.cn-north-4.myhuaweicloud.com");
-    public static final Region CN_SOUTHWEST_2 = new Region("cn-southwest-2", "https://gaussdb.cn-southwest-2.myhuaweicloud.com");
-    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://gaussdb.cn-south-1.myhuaweicloud.com");
-    public static final Region RU_NORTHWEST_2 = new Region("ru-northwest-2", "https://gaussdb.ru-northwest-2.myhuaweicloud.com");
-    public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3", "https://gaussdb.ap-southeast-3.myhuaweicloud.com");
-    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://gaussdb.cn-north-2.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://gaussdb-opengauss.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_SOUTHWEST_2 = new Region("cn-southwest-2", "https://gaussdb-opengauss.cn-southwest-2.myhuaweicloud.com");
+    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://gaussdb-opengauss.cn-south-1.myhuaweicloud.com");
+    public static final Region RU_NORTHWEST_2 = new Region("ru-northwest-2", "https://gaussdb-opengauss.ru-northwest-2.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3", "https://gaussdb-opengauss.ap-southeast-3.myhuaweicloud.com");
+    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://gaussdb-opengauss.cn-north-2.myhuaweicloud.com");
     
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 

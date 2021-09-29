@@ -27,7 +27,7 @@ public class UpdateTaskStatusRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_info")
 
-    private UpdateTaskStatusRequestBodyNetworkInfo networkInfo;
+    private NetworkInfo networkInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -82,15 +82,14 @@ public class UpdateTaskStatusRequestBody {
         this.withoutPackage = withoutPackage;
     }
 
-    public UpdateTaskStatusRequestBody withNetworkInfo(UpdateTaskStatusRequestBodyNetworkInfo networkInfo) {
+    public UpdateTaskStatusRequestBody withNetworkInfo(NetworkInfo networkInfo) {
         this.networkInfo = networkInfo;
         return this;
     }
 
-    public UpdateTaskStatusRequestBody withNetworkInfo(
-        Consumer<UpdateTaskStatusRequestBodyNetworkInfo> networkInfoSetter) {
+    public UpdateTaskStatusRequestBody withNetworkInfo(Consumer<NetworkInfo> networkInfoSetter) {
         if (this.networkInfo == null) {
-            this.networkInfo = new UpdateTaskStatusRequestBodyNetworkInfo();
+            this.networkInfo = new NetworkInfo();
             networkInfoSetter.accept(this.networkInfo);
         }
 
@@ -100,11 +99,11 @@ public class UpdateTaskStatusRequestBody {
     /** Get networkInfo
      * 
      * @return networkInfo */
-    public UpdateTaskStatusRequestBodyNetworkInfo getNetworkInfo() {
+    public NetworkInfo getNetworkInfo() {
         return networkInfo;
     }
 
-    public void setNetworkInfo(UpdateTaskStatusRequestBodyNetworkInfo networkInfo) {
+    public void setNetworkInfo(NetworkInfo networkInfo) {
         this.networkInfo = networkInfo;
     }
 

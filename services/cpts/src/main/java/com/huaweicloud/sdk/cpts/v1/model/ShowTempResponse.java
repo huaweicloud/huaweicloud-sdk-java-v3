@@ -23,7 +23,7 @@ public class ShowTempResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "temp_info")
 
-    private Object tempInfo;
+    private TempInfo tempInfo;
 
     public ShowTempResponse withCode(String code) {
         this.code = code;
@@ -57,28 +57,28 @@ public class ShowTempResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowTempResponse withTempInfo(Object tempInfo) {
+    public ShowTempResponse withTempInfo(TempInfo tempInfo) {
         this.tempInfo = tempInfo;
         return this;
     }
 
-    public ShowTempResponse withTempInfo(Consumer<Object> tempInfoSetter) {
+    public ShowTempResponse withTempInfo(Consumer<TempInfo> tempInfoSetter) {
         if (this.tempInfo == null) {
-            this.tempInfo = new Object();
+            this.tempInfo = new TempInfo();
             tempInfoSetter.accept(this.tempInfo);
         }
 
         return this;
     }
 
-    /** temp_info
+    /** Get tempInfo
      * 
      * @return tempInfo */
-    public Object getTempInfo() {
+    public TempInfo getTempInfo() {
         return tempInfo;
     }
 
-    public void setTempInfo(Object tempInfo) {
+    public void setTempInfo(TempInfo tempInfo) {
         this.tempInfo = tempInfo;
     }
 

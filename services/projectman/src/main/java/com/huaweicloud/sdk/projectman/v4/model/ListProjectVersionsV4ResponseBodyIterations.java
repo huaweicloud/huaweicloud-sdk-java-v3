@@ -33,6 +33,11 @@ public class ListProjectVersionsV4ResponseBodyIterations {
 
     private String beginTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
     public ListProjectVersionsV4ResponseBodyIterations withDescription(String description) {
         this.description = description;
         return this;
@@ -113,6 +118,22 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         this.beginTime = beginTime;
     }
 
+    public ListProjectVersionsV4ResponseBodyIterations withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /** 迭代状态
+     * 
+     * @return status */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -127,12 +148,13 @@ public class ListProjectVersionsV4ResponseBodyIterations {
             && Objects.equals(this.endTime, listProjectVersionsV4ResponseBodyIterations.endTime)
             && Objects.equals(this.id, listProjectVersionsV4ResponseBodyIterations.id)
             && Objects.equals(this.name, listProjectVersionsV4ResponseBodyIterations.name)
-            && Objects.equals(this.beginTime, listProjectVersionsV4ResponseBodyIterations.beginTime);
+            && Objects.equals(this.beginTime, listProjectVersionsV4ResponseBodyIterations.beginTime)
+            && Objects.equals(this.status, listProjectVersionsV4ResponseBodyIterations.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, endTime, id, name, beginTime);
+        return Objects.hash(description, endTime, id, name, beginTime, status);
     }
 
     @Override
@@ -144,6 +166,7 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

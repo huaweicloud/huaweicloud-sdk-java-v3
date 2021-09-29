@@ -38,6 +38,29 @@ public class EcsAsyncClient {
             EcsMeta.addServerGroupMember, hcClient);
     }
 
+    /** 云服务器网卡配置虚拟IP地址 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。 该接口用于给云服务器网卡配置虚拟IP地址： -
+     * 当指定的IP地址是一个不存在的虚拟IP地址时，系统会创建该虚拟IP，并绑定至对应网卡。 -
+     * 当指定的IP地址是一个已经创建好的私有IP时，系统会将指定的网卡和虚拟IP绑定。如果该IP的device_owner为空，则仅支持VPC内二三层通信；如果该IP的device_owner为neutron:VIP_PORT，则支持VPC内二三层通信、VPC之间对等连接访问，以及弹性公网IP、VPN、云专线等Internet接入。
+     *
+     * @param AssociateServerVirtualIpRequest 请求对象
+     * @return CompletableFuture<AssociateServerVirtualIpResponse> */
+    public CompletableFuture<AssociateServerVirtualIpResponse> associateServerVirtualIpAsync(
+        AssociateServerVirtualIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.associateServerVirtualIp);
+    }
+
+    /** 云服务器网卡配置虚拟IP地址 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。 该接口用于给云服务器网卡配置虚拟IP地址： -
+     * 当指定的IP地址是一个不存在的虚拟IP地址时，系统会创建该虚拟IP，并绑定至对应网卡。 -
+     * 当指定的IP地址是一个已经创建好的私有IP时，系统会将指定的网卡和虚拟IP绑定。如果该IP的device_owner为空，则仅支持VPC内二三层通信；如果该IP的device_owner为neutron:VIP_PORT，则支持VPC内二三层通信、VPC之间对等连接访问，以及弹性公网IP、VPN、云专线等Internet接入。
+     *
+     * @param AssociateServerVirtualIpRequest 请求对象
+     * @return AsyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> */
+    public AsyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> associateServerVirtualIpAsyncInvoker(
+        AssociateServerVirtualIpRequest request) {
+        return new AsyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse>(request,
+            EcsMeta.associateServerVirtualIp, hcClient);
+    }
+
     /** 弹性云服务器挂载磁盘 把磁盘挂载到弹性云服务器上。
      *
      * @param AttachServerVolumeRequest 请求对象
@@ -72,6 +95,25 @@ public class EcsAsyncClient {
         BatchAddServerNicsRequest request) {
         return new AsyncInvoker<BatchAddServerNicsRequest, BatchAddServerNicsResponse>(request,
             EcsMeta.batchAddServerNics, hcClient);
+    }
+
+    /** 批量挂载指定共享盘 将指定的共享磁盘一次性挂载到多个弹性云服务器，实现批量挂载。
+     *
+     * @param BatchAttachSharableVolumesRequest 请求对象
+     * @return CompletableFuture<BatchAttachSharableVolumesResponse> */
+    public CompletableFuture<BatchAttachSharableVolumesResponse> batchAttachSharableVolumesAsync(
+        BatchAttachSharableVolumesRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.batchAttachSharableVolumes);
+    }
+
+    /** 批量挂载指定共享盘 将指定的共享磁盘一次性挂载到多个弹性云服务器，实现批量挂载。
+     *
+     * @param BatchAttachSharableVolumesRequest 请求对象
+     * @return AsyncInvoker<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> */
+    public AsyncInvoker<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> batchAttachSharableVolumesAsyncInvoker(
+        BatchAttachSharableVolumesRequest request) {
+        return new AsyncInvoker<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse>(request,
+            EcsMeta.batchAttachSharableVolumes, hcClient);
     }
 
     /** 批量添加云服务器标签 - 为指定云服务器批量添加标签。 - 标签管理服务TMS使用该接口批量管理云服务器的标签。
@@ -149,6 +191,25 @@ public class EcsAsyncClient {
             EcsMeta.batchRebootServers, hcClient);
     }
 
+    /** 批量重置弹性云服务器密码 批量重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
+     *
+     * @param BatchResetServersPasswordRequest 请求对象
+     * @return CompletableFuture<BatchResetServersPasswordResponse> */
+    public CompletableFuture<BatchResetServersPasswordResponse> batchResetServersPasswordAsync(
+        BatchResetServersPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.batchResetServersPassword);
+    }
+
+    /** 批量重置弹性云服务器密码 批量重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
+     *
+     * @param BatchResetServersPasswordRequest 请求对象
+     * @return AsyncInvoker<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> */
+    public AsyncInvoker<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> batchResetServersPasswordAsyncInvoker(
+        BatchResetServersPasswordRequest request) {
+        return new AsyncInvoker<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse>(request,
+            EcsMeta.batchResetServersPassword, hcClient);
+    }
+
     /** 批量启动云服务器 根据给定的云服务器ID列表，批量启动云服务器，一次最多可以启动1000台。
      *
      * @param BatchStartServersRequest 请求对象
@@ -185,6 +246,25 @@ public class EcsAsyncClient {
             hcClient);
     }
 
+    /** 批量修改弹性云服务器 批量修改弹性云服务器信息。 当前仅支持批量修改云服务器名称，一次最多可以修改1000台。
+     *
+     * @param BatchUpdateServersNameRequest 请求对象
+     * @return CompletableFuture<BatchUpdateServersNameResponse> */
+    public CompletableFuture<BatchUpdateServersNameResponse> batchUpdateServersNameAsync(
+        BatchUpdateServersNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.batchUpdateServersName);
+    }
+
+    /** 批量修改弹性云服务器 批量修改弹性云服务器信息。 当前仅支持批量修改云服务器名称，一次最多可以修改1000台。
+     *
+     * @param BatchUpdateServersNameRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> */
+    public AsyncInvoker<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> batchUpdateServersNameAsyncInvoker(
+        BatchUpdateServersNameRequest request) {
+        return new AsyncInvoker<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse>(request,
+            EcsMeta.batchUpdateServersName, hcClient);
+    }
+
     /** 切换弹性云服务器操作系统(安装Cloud init) 切换弹性云服务器操作系统。支持弹性云服务器数据盘不变的情况下，使用新镜像重装系统盘。
      * 调用该接口后，系统将卸载系统盘，然后使用新镜像重新创建系统盘，并挂载至弹性云服务器，实现切换操作系统功能。
      *
@@ -204,6 +284,25 @@ public class EcsAsyncClient {
         ChangeServerOsWithCloudInitRequest request) {
         return new AsyncInvoker<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse>(request,
             EcsMeta.changeServerOsWithCloudInit, hcClient);
+    }
+
+    /** 切换弹性云服务器操作系统(未安装Cloud init) 切换弹性云服务器操作系统。 该接口支持未安装Cloud-init或Cloudbase-init的镜像使用。
+     *
+     * @param ChangeServerOsWithoutCloudInitRequest 请求对象
+     * @return CompletableFuture<ChangeServerOsWithoutCloudInitResponse> */
+    public CompletableFuture<ChangeServerOsWithoutCloudInitResponse> changeServerOsWithoutCloudInitAsync(
+        ChangeServerOsWithoutCloudInitRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.changeServerOsWithoutCloudInit);
+    }
+
+    /** 切换弹性云服务器操作系统(未安装Cloud init) 切换弹性云服务器操作系统。 该接口支持未安装Cloud-init或Cloudbase-init的镜像使用。
+     *
+     * @param ChangeServerOsWithoutCloudInitRequest 请求对象
+     * @return AsyncInvoker<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> */
+    public AsyncInvoker<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> changeServerOsWithoutCloudInitAsyncInvoker(
+        ChangeServerOsWithoutCloudInitRequest request) {
+        return new AsyncInvoker<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse>(request,
+            EcsMeta.changeServerOsWithoutCloudInit, hcClient);
     }
 
     /** 创建云服务器(按需) 创建一台或多台[按需付费](https://support.huaweicloud.com/productdesc-ecs/ecs_01_0065.html)方式的云服务器。
@@ -338,6 +437,25 @@ public class EcsAsyncClient {
             EcsMeta.deleteServerMetadata, hcClient);
     }
 
+    /** 云服务器清除密码(企业项目) 清除Windows云服务器初始安装时系统生成的密码记录。清除密码后，不影响云服务器密码登录功能，但不能再使用获取密码功能来查询该云服务器密码。
+     *
+     * @param DeleteServerPasswordRequest 请求对象
+     * @return CompletableFuture<DeleteServerPasswordResponse> */
+    public CompletableFuture<DeleteServerPasswordResponse> deleteServerPasswordAsync(
+        DeleteServerPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.deleteServerPassword);
+    }
+
+    /** 云服务器清除密码(企业项目) 清除Windows云服务器初始安装时系统生成的密码记录。清除密码后，不影响云服务器密码登录功能，但不能再使用获取密码功能来查询该云服务器密码。
+     *
+     * @param DeleteServerPasswordRequest 请求对象
+     * @return AsyncInvoker<DeleteServerPasswordRequest, DeleteServerPasswordResponse> */
+    public AsyncInvoker<DeleteServerPasswordRequest, DeleteServerPasswordResponse> deleteServerPasswordAsyncInvoker(
+        DeleteServerPasswordRequest request) {
+        return new AsyncInvoker<DeleteServerPasswordRequest, DeleteServerPasswordResponse>(request,
+            EcsMeta.deleteServerPassword, hcClient);
+    }
+
     /** 删除云服务器 根据指定的云服务器ID列表，删除云服务器。 系统支持删除单台云服务器和批量删除多台云服务器操作，批量删除云服务器时，一次最多可以删除1000台。
      *
      * @param DeleteServersRequest 请求对象
@@ -371,6 +489,25 @@ public class EcsAsyncClient {
         DetachServerVolumeRequest request) {
         return new AsyncInvoker<DetachServerVolumeRequest, DetachServerVolumeResponse>(request,
             EcsMeta.detachServerVolume, hcClient);
+    }
+
+    /** 云服务器网卡解绑虚拟IP地址 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。 该接口用于解绑定弹性云服务器网卡的虚拟IP地址。解绑后，网卡不会被删除。
+     *
+     * @param DisassociateServerVirtualIpRequest 请求对象
+     * @return CompletableFuture<DisassociateServerVirtualIpResponse> */
+    public CompletableFuture<DisassociateServerVirtualIpResponse> disassociateServerVirtualIpAsync(
+        DisassociateServerVirtualIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.disassociateServerVirtualIp);
+    }
+
+    /** 云服务器网卡解绑虚拟IP地址 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。 该接口用于解绑定弹性云服务器网卡的虚拟IP地址。解绑后，网卡不会被删除。
+     *
+     * @param DisassociateServerVirtualIpRequest 请求对象
+     * @return AsyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> */
+    public AsyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> disassociateServerVirtualIpAsyncInvoker(
+        DisassociateServerVirtualIpRequest request) {
+        return new AsyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse>(request,
+            EcsMeta.disassociateServerVirtualIp, hcClient);
     }
 
     /** 查询规格详情和规格扩展信息列表 查询云服务器规格详情信息和规格扩展信息列表。
@@ -463,6 +600,24 @@ public class EcsAsyncClient {
             EcsMeta.listServerInterfaces, hcClient);
     }
 
+    /** 查询项目标签 项目（Project）用于将OpenStack的资源（计算资源、存储资源和网络资源）进行分组和隔离。项目可以是一个部门或者一个项目组。一个帐户中可以创建多个项目。 该接口用于查询用户在指定项目所使用的全部标签。
+     *
+     * @param ListServerTagsRequest 请求对象
+     * @return CompletableFuture<ListServerTagsResponse> */
+    public CompletableFuture<ListServerTagsResponse> listServerTagsAsync(ListServerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.listServerTags);
+    }
+
+    /** 查询项目标签 项目（Project）用于将OpenStack的资源（计算资源、存储资源和网络资源）进行分组和隔离。项目可以是一个部门或者一个项目组。一个帐户中可以创建多个项目。 该接口用于查询用户在指定项目所使用的全部标签。
+     *
+     * @param ListServerTagsRequest 请求对象
+     * @return AsyncInvoker<ListServerTagsRequest, ListServerTagsResponse> */
+    public AsyncInvoker<ListServerTagsRequest, ListServerTagsResponse> listServerTagsAsyncInvoker(
+        ListServerTagsRequest request) {
+        return new AsyncInvoker<ListServerTagsRequest, ListServerTagsResponse>(request, EcsMeta.listServerTags,
+            hcClient);
+    }
+
     /** 查询云服务器详情列表 根据用户请求条件从数据库筛选、查询所有的弹性云服务器，并关联相关表获取到弹性云服务器的详细信息。 该接口支持查询弹性云服务器计费方式，以及是否被冻结。
      *
      * @param ListServersDetailsRequest 请求对象
@@ -479,6 +634,25 @@ public class EcsAsyncClient {
         ListServersDetailsRequest request) {
         return new AsyncInvoker<ListServersDetailsRequest, ListServersDetailsResponse>(request,
             EcsMeta.listServersDetails, hcClient);
+    }
+
+    /** 冷迁移云服务器 - 将部署在专属主机上的弹性云服务器迁移至其他专属主机。 - 将部署在专属主机上的弹性云服务器迁移至公共资源池，即不再部署在专属主机上。 -
+     * 将公共资源池的弹性云服务器迁移至专属主机上，成为专属主机上部署的弹性云服务器。
+     *
+     * @param MigrateServerRequest 请求对象
+     * @return CompletableFuture<MigrateServerResponse> */
+    public CompletableFuture<MigrateServerResponse> migrateServerAsync(MigrateServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.migrateServer);
+    }
+
+    /** 冷迁移云服务器 - 将部署在专属主机上的弹性云服务器迁移至其他专属主机。 - 将部署在专属主机上的弹性云服务器迁移至公共资源池，即不再部署在专属主机上。 -
+     * 将公共资源池的弹性云服务器迁移至专属主机上，成为专属主机上部署的弹性云服务器。
+     *
+     * @param MigrateServerRequest 请求对象
+     * @return AsyncInvoker<MigrateServerRequest, MigrateServerResponse> */
+    public AsyncInvoker<MigrateServerRequest, MigrateServerResponse> migrateServerAsyncInvoker(
+        MigrateServerRequest request) {
+        return new AsyncInvoker<MigrateServerRequest, MigrateServerResponse>(request, EcsMeta.migrateServer, hcClient);
     }
 
     /** 添加安全组 为弹性云服务器添加一个安全组。 添加多个安全组时，建议最多为弹性云服务器添加5个安全组。
@@ -706,6 +880,25 @@ public class EcsAsyncClient {
             hcClient);
     }
 
+    /** 管理云服务器自动恢复动作 配置、删除云服务器自动恢复动作。
+     *
+     * @param RegisterServerAutoRecoveryRequest 请求对象
+     * @return CompletableFuture<RegisterServerAutoRecoveryResponse> */
+    public CompletableFuture<RegisterServerAutoRecoveryResponse> registerServerAutoRecoveryAsync(
+        RegisterServerAutoRecoveryRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.registerServerAutoRecovery);
+    }
+
+    /** 管理云服务器自动恢复动作 配置、删除云服务器自动恢复动作。
+     *
+     * @param RegisterServerAutoRecoveryRequest 请求对象
+     * @return AsyncInvoker<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> */
+    public AsyncInvoker<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> registerServerAutoRecoveryAsyncInvoker(
+        RegisterServerAutoRecoveryRequest request) {
+        return new AsyncInvoker<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse>(request,
+            EcsMeta.registerServerAutoRecovery, hcClient);
+    }
+
     /** 重装弹性云服务器操作系统(安装Cloud-init) 重装弹性云服务器的操作系统。支持弹性云服务器数据盘不变的情况下，使用原镜像重装系统盘。
      * 调用该接口后，系统将卸载系统盘，然后使用原镜像重新创建系统盘，并挂载至弹性云服务器，实现重装操作系统功能。
      *
@@ -725,6 +918,25 @@ public class EcsAsyncClient {
         ReinstallServerWithCloudInitRequest request) {
         return new AsyncInvoker<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse>(request,
             EcsMeta.reinstallServerWithCloudInit, hcClient);
+    }
+
+    /** 重装弹性云服务器操作系统(未安装Cloud init) 重装弹性云服务器的操作系统。 该接口支持未安装Cloud-init或Cloudbase-init的镜像。
+     *
+     * @param ReinstallServerWithoutCloudInitRequest 请求对象
+     * @return CompletableFuture<ReinstallServerWithoutCloudInitResponse> */
+    public CompletableFuture<ReinstallServerWithoutCloudInitResponse> reinstallServerWithoutCloudInitAsync(
+        ReinstallServerWithoutCloudInitRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.reinstallServerWithoutCloudInit);
+    }
+
+    /** 重装弹性云服务器操作系统(未安装Cloud init) 重装弹性云服务器的操作系统。 该接口支持未安装Cloud-init或Cloudbase-init的镜像。
+     *
+     * @param ReinstallServerWithoutCloudInitRequest 请求对象
+     * @return AsyncInvoker<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> */
+    public AsyncInvoker<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> reinstallServerWithoutCloudInitAsyncInvoker(
+        ReinstallServerWithoutCloudInitRequest request) {
+        return new AsyncInvoker<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse>(
+            request, EcsMeta.reinstallServerWithoutCloudInit, hcClient);
     }
 
     /** 一键重置弹性云服务器密码(企业项目) 重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
@@ -826,6 +1038,44 @@ public class EcsAsyncClient {
         return new AsyncInvoker<ShowServerRequest, ShowServerResponse>(request, EcsMeta.showServer, hcClient);
     }
 
+    /** 查询云服务器是否配置了自动恢复动作 查询云服务器是否配置了自动恢复动作。
+     *
+     * @param ShowServerAutoRecoveryRequest 请求对象
+     * @return CompletableFuture<ShowServerAutoRecoveryResponse> */
+    public CompletableFuture<ShowServerAutoRecoveryResponse> showServerAutoRecoveryAsync(
+        ShowServerAutoRecoveryRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.showServerAutoRecovery);
+    }
+
+    /** 查询云服务器是否配置了自动恢复动作 查询云服务器是否配置了自动恢复动作。
+     *
+     * @param ShowServerAutoRecoveryRequest 请求对象
+     * @return AsyncInvoker<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> */
+    public AsyncInvoker<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> showServerAutoRecoveryAsyncInvoker(
+        ShowServerAutoRecoveryRequest request) {
+        return new AsyncInvoker<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse>(request,
+            EcsMeta.showServerAutoRecovery, hcClient);
+    }
+
+    /** 查询弹性云服务器单个磁盘信息 查询弹性云服务器挂载的单个磁盘信息。
+     *
+     * @param ShowServerBlockDeviceRequest 请求对象
+     * @return CompletableFuture<ShowServerBlockDeviceResponse> */
+    public CompletableFuture<ShowServerBlockDeviceResponse> showServerBlockDeviceAsync(
+        ShowServerBlockDeviceRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.showServerBlockDevice);
+    }
+
+    /** 查询弹性云服务器单个磁盘信息 查询弹性云服务器挂载的单个磁盘信息。
+     *
+     * @param ShowServerBlockDeviceRequest 请求对象
+     * @return AsyncInvoker<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> */
+    public AsyncInvoker<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> showServerBlockDeviceAsyncInvoker(
+        ShowServerBlockDeviceRequest request) {
+        return new AsyncInvoker<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse>(request,
+            EcsMeta.showServerBlockDevice, hcClient);
+    }
+
     /** 查询云服务器组详情 查询弹性云服务器组详情。 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      *
      * @param ShowServerGroupRequest 请求对象
@@ -860,6 +1110,26 @@ public class EcsAsyncClient {
         ShowServerLimitsRequest request) {
         return new AsyncInvoker<ShowServerLimitsRequest, ShowServerLimitsResponse>(request, EcsMeta.showServerLimits,
             hcClient);
+    }
+
+    /** 云服务器获取密码(企业项目)
+     * 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
+     *
+     * @param ShowServerPasswordRequest 请求对象
+     * @return CompletableFuture<ShowServerPasswordResponse> */
+    public CompletableFuture<ShowServerPasswordResponse> showServerPasswordAsync(ShowServerPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.showServerPassword);
+    }
+
+    /** 云服务器获取密码(企业项目)
+     * 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
+     *
+     * @param ShowServerPasswordRequest 请求对象
+     * @return AsyncInvoker<ShowServerPasswordRequest, ShowServerPasswordResponse> */
+    public AsyncInvoker<ShowServerPasswordRequest, ShowServerPasswordResponse> showServerPasswordAsyncInvoker(
+        ShowServerPasswordRequest request) {
+        return new AsyncInvoker<ShowServerPasswordRequest, ShowServerPasswordResponse>(request,
+            EcsMeta.showServerPassword, hcClient);
     }
 
     /** 获取VNC远程登录地址 获取弹性云服务器VNC远程登录地址。

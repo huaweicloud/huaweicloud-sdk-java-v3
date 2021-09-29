@@ -19,17 +19,17 @@ public class ListTagReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags_any")
 
-    private List<Object> tagsAny = null;
+    private List<TagValues> tagsAny = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags")
 
-    private List<Object> notTags = null;
+    private List<TagValues> notTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags_any")
 
-    private List<Object> notTagsAny = null;
+    private List<TagValues> notTagsAny = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -83,12 +83,12 @@ public class ListTagReq {
         this.tags = tags;
     }
 
-    public ListTagReq withTagsAny(List<Object> tagsAny) {
+    public ListTagReq withTagsAny(List<TagValues> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
     }
 
-    public ListTagReq addTagsAnyItem(Object tagsAnyItem) {
+    public ListTagReq addTagsAnyItem(TagValues tagsAnyItem) {
         if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
@@ -96,7 +96,7 @@ public class ListTagReq {
         return this;
     }
 
-    public ListTagReq withTagsAny(Consumer<List<Object>> tagsAnySetter) {
+    public ListTagReq withTagsAny(Consumer<List<TagValues>> tagsAnySetter) {
         if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
@@ -107,20 +107,20 @@ public class ListTagReq {
     /** 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
      * 
      * @return tagsAny */
-    public List<Object> getTagsAny() {
+    public List<TagValues> getTagsAny() {
         return tagsAny;
     }
 
-    public void setTagsAny(List<Object> tagsAny) {
+    public void setTagsAny(List<TagValues> tagsAny) {
         this.tagsAny = tagsAny;
     }
 
-    public ListTagReq withNotTags(List<Object> notTags) {
+    public ListTagReq withNotTags(List<TagValues> notTags) {
         this.notTags = notTags;
         return this;
     }
 
-    public ListTagReq addNotTagsItem(Object notTagsItem) {
+    public ListTagReq addNotTagsItem(TagValues notTagsItem) {
         if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
@@ -128,7 +128,7 @@ public class ListTagReq {
         return this;
     }
 
-    public ListTagReq withNotTags(Consumer<List<Object>> notTagsSetter) {
+    public ListTagReq withNotTags(Consumer<List<TagValues>> notTagsSetter) {
         if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
@@ -139,20 +139,20 @@ public class ListTagReq {
     /** 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
      * 
      * @return notTags */
-    public List<Object> getNotTags() {
+    public List<TagValues> getNotTags() {
         return notTags;
     }
 
-    public void setNotTags(List<Object> notTags) {
+    public void setNotTags(List<TagValues> notTags) {
         this.notTags = notTags;
     }
 
-    public ListTagReq withNotTagsAny(List<Object> notTagsAny) {
+    public ListTagReq withNotTagsAny(List<TagValues> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
     }
 
-    public ListTagReq addNotTagsAnyItem(Object notTagsAnyItem) {
+    public ListTagReq addNotTagsAnyItem(TagValues notTagsAnyItem) {
         if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
@@ -160,7 +160,7 @@ public class ListTagReq {
         return this;
     }
 
-    public ListTagReq withNotTagsAny(Consumer<List<Object>> notTagsAnySetter) {
+    public ListTagReq withNotTagsAny(Consumer<List<TagValues>> notTagsAnySetter) {
         if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
@@ -171,11 +171,11 @@ public class ListTagReq {
     /** 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
      * 
      * @return notTagsAny */
-    public List<Object> getNotTagsAny() {
+    public List<TagValues> getNotTagsAny() {
         return notTagsAny;
     }
 
-    public void setNotTagsAny(List<Object> notTagsAny) {
+    public void setNotTagsAny(List<TagValues> notTagsAny) {
         this.notTagsAny = notTagsAny;
     }
 

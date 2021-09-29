@@ -80,12 +80,12 @@ public class DeletePublicZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masters")
 
-    private String masters;
+    private List<String> masters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
 
-    private List<PageLink> links = null;
+    private PageLink links;
 
     public DeletePublicZoneResponse withId(String id) {
         this.id = id;
@@ -295,51 +295,60 @@ public class DeletePublicZoneResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
-    public DeletePublicZoneResponse withMasters(String masters) {
+    public DeletePublicZoneResponse withMasters(List<String> masters) {
         this.masters = masters;
+        return this;
+    }
+
+    public DeletePublicZoneResponse addMastersItem(String mastersItem) {
+        if (this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
+        this.masters.add(mastersItem);
+        return this;
+    }
+
+    public DeletePublicZoneResponse withMasters(Consumer<List<String>> mastersSetter) {
+        if (this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
+        mastersSetter.accept(this.masters);
         return this;
     }
 
     /** 主从模式中，从DNS服务器用以获取DNS信息
      * 
      * @return masters */
-    public String getMasters() {
+    public List<String> getMasters() {
         return masters;
     }
 
-    public void setMasters(String masters) {
+    public void setMasters(List<String> masters) {
         this.masters = masters;
     }
 
-    public DeletePublicZoneResponse withLinks(List<PageLink> links) {
+    public DeletePublicZoneResponse withLinks(PageLink links) {
         this.links = links;
         return this;
     }
 
-    public DeletePublicZoneResponse addLinksItem(PageLink linksItem) {
+    public DeletePublicZoneResponse withLinks(Consumer<PageLink> linksSetter) {
         if (this.links == null) {
-            this.links = new ArrayList<>();
+            this.links = new PageLink();
+            linksSetter.accept(this.links);
         }
-        this.links.add(linksItem);
+
         return this;
     }
 
-    public DeletePublicZoneResponse withLinks(Consumer<List<PageLink>> linksSetter) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
-        linksSetter.accept(this.links);
-        return this;
-    }
-
-    /** 指向当前资源或者其他资源的链接。当查询需要分页时，需要包含一个next链接指向下一页
+    /** Get links
      * 
      * @return links */
-    public List<PageLink> getLinks() {
+    public PageLink getLinks() {
         return links;
     }
 
-    public void setLinks(List<PageLink> links) {
+    public void setLinks(PageLink links) {
         this.links = links;
     }
 

@@ -82,6 +82,11 @@ public class QueryRecordSetWithLineResp {
     private PageLink links;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<Tag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line")
 
     private String line;
@@ -350,6 +355,38 @@ public class QueryRecordSetWithLineResp {
         this.links = links;
     }
 
+    public QueryRecordSetWithLineResp withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public QueryRecordSetWithLineResp addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public QueryRecordSetWithLineResp withTags(Consumer<List<Tag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /** 资源标签。
+     * 
+     * @return tags */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
     public QueryRecordSetWithLineResp withLine(String line) {
         this.line = line;
         return this;
@@ -446,6 +483,7 @@ public class QueryRecordSetWithLineResp {
             && Objects.equals(this._default, queryRecordSetWithLineResp._default)
             && Objects.equals(this.projectId, queryRecordSetWithLineResp.projectId)
             && Objects.equals(this.links, queryRecordSetWithLineResp.links)
+            && Objects.equals(this.tags, queryRecordSetWithLineResp.tags)
             && Objects.equals(this.line, queryRecordSetWithLineResp.line)
             && Objects.equals(this.weight, queryRecordSetWithLineResp.weight)
             && Objects.equals(this.healthCheckId, queryRecordSetWithLineResp.healthCheckId)
@@ -468,6 +506,7 @@ public class QueryRecordSetWithLineResp {
             _default,
             projectId,
             links,
+            tags,
             line,
             weight,
             healthCheckId,
@@ -492,6 +531,7 @@ public class QueryRecordSetWithLineResp {
         sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    line: ").append(toIndentedString(line)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    healthCheckId: ").append(toIndentedString(healthCheckId)).append("\n");

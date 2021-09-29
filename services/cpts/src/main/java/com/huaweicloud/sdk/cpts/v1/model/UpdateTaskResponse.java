@@ -23,7 +23,7 @@ public class UpdateTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taskinfo")
 
-    private ShowTaskResqTaskinfo taskinfo;
+    private TaskInfo taskinfo;
 
     public UpdateTaskResponse withCode(String code) {
         this.code = code;
@@ -57,14 +57,14 @@ public class UpdateTaskResponse extends SdkResponse {
         this.message = message;
     }
 
-    public UpdateTaskResponse withTaskinfo(ShowTaskResqTaskinfo taskinfo) {
+    public UpdateTaskResponse withTaskinfo(TaskInfo taskinfo) {
         this.taskinfo = taskinfo;
         return this;
     }
 
-    public UpdateTaskResponse withTaskinfo(Consumer<ShowTaskResqTaskinfo> taskinfoSetter) {
+    public UpdateTaskResponse withTaskinfo(Consumer<TaskInfo> taskinfoSetter) {
         if (this.taskinfo == null) {
-            this.taskinfo = new ShowTaskResqTaskinfo();
+            this.taskinfo = new TaskInfo();
             taskinfoSetter.accept(this.taskinfo);
         }
 
@@ -74,11 +74,11 @@ public class UpdateTaskResponse extends SdkResponse {
     /** Get taskinfo
      * 
      * @return taskinfo */
-    public ShowTaskResqTaskinfo getTaskinfo() {
+    public TaskInfo getTaskinfo() {
         return taskinfo;
     }
 
-    public void setTaskinfo(ShowTaskResqTaskinfo taskinfo) {
+    public void setTaskinfo(TaskInfo taskinfo) {
         this.taskinfo = taskinfo;
     }
 

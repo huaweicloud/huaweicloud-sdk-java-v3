@@ -578,24 +578,6 @@ public class BssClient {
             BssMeta.listFreeResourceUsages, hcClient);
     }
 
-    /** 查询资源包列表 功能描述：查询资源包列表
-     *
-     * @param ListFreeResourcesRequest 请求对象
-     * @return ListFreeResourcesResponse */
-    public ListFreeResourcesResponse listFreeResources(ListFreeResourcesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listFreeResources);
-    }
-
-    /** 查询资源包列表 功能描述：查询资源包列表
-     *
-     * @param ListFreeResourcesRequest 请求对象
-     * @return SyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse> */
-    public SyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse> listFreeResourcesInvoker(
-        ListFreeResourcesRequest request) {
-        return new SyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse>(request, BssMeta.listFreeResources,
-            hcClient);
-    }
-
     /** 查询精英服务商列表 功能描述：华为云伙伴能力中心（一级经销商）可以查询精英服务商（二级经销商）列表。
      *
      * @param ListIndirectPartnersRequest 请求对象
@@ -720,24 +702,6 @@ public class BssClient {
         ListOrderDiscountsRequest request) {
         return new SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>(request,
             BssMeta.listOrderDiscounts, hcClient);
-    }
-
-    /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
-     *
-     * @param ListParnterAdjustRecordsRequest 请求对象
-     * @return ListParnterAdjustRecordsResponse */
-    public ListParnterAdjustRecordsResponse listParnterAdjustRecords(ListParnterAdjustRecordsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listParnterAdjustRecords);
-    }
-
-    /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
-     *
-     * @param ListParnterAdjustRecordsRequest 请求对象
-     * @return SyncInvoker<ListParnterAdjustRecordsRequest, ListParnterAdjustRecordsResponse> */
-    public SyncInvoker<ListParnterAdjustRecordsRequest, ListParnterAdjustRecordsResponse> listParnterAdjustRecordsInvoker(
-        ListParnterAdjustRecordsRequest request) {
-        return new SyncInvoker<ListParnterAdjustRecordsRequest, ListParnterAdjustRecordsResponse>(request,
-            BssMeta.listParnterAdjustRecords, hcClient);
     }
 
     /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
@@ -991,6 +955,24 @@ public class BssClient {
             BssMeta.listSkuInventories, hcClient);
     }
 
+    /** 查询客户消费记录 功能描述：查询客户消费记录
+     *
+     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @return ListSubCustomerBillDetailResponse */
+    public ListSubCustomerBillDetailResponse listSubCustomerBillDetail(ListSubCustomerBillDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listSubCustomerBillDetail);
+    }
+
+    /** 查询客户消费记录 功能描述：查询客户消费记录
+     *
+     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @return SyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> */
+    public SyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetailInvoker(
+        ListSubCustomerBillDetailRequest request) {
+        return new SyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse>(request,
+            BssMeta.listSubCustomerBillDetail, hcClient);
+    }
+
     /** 查询优惠券列表 功能描述：伙伴可以查询自身的优惠券信息。
      *
      * @param ListSubCustomerCouponsRequest 请求对象
@@ -1025,25 +1007,6 @@ public class BssClient {
         ListSubCustomerDiscountsRequest request) {
         return new SyncInvoker<ListSubCustomerDiscountsRequest, ListSubCustomerDiscountsResponse>(request,
             BssMeta.listSubCustomerDiscounts, hcClient);
-    }
-
-    /** 查询客户消费记录 功能描述：合作伙伴可以查看客户的消费记录
-     *
-     * @param ListSubCustomerResFeeRecordsRequest 请求对象
-     * @return ListSubCustomerResFeeRecordsResponse */
-    public ListSubCustomerResFeeRecordsResponse listSubCustomerResFeeRecords(
-        ListSubCustomerResFeeRecordsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listSubCustomerResFeeRecords);
-    }
-
-    /** 查询客户消费记录 功能描述：合作伙伴可以查看客户的消费记录
-     *
-     * @param ListSubCustomerResFeeRecordsRequest 请求对象
-     * @return SyncInvoker<ListSubCustomerResFeeRecordsRequest, ListSubCustomerResFeeRecordsResponse> */
-    public SyncInvoker<ListSubCustomerResFeeRecordsRequest, ListSubCustomerResFeeRecordsResponse> listSubCustomerResFeeRecordsInvoker(
-        ListSubCustomerResFeeRecordsRequest request) {
-        return new SyncInvoker<ListSubCustomerResFeeRecordsRequest, ListSubCustomerResFeeRecordsResponse>(request,
-            BssMeta.listSubCustomerResFeeRecords, hcClient);
     }
 
     /** 查询客户列表 功能描述：伙伴可以查询合作伙伴的客户信息列表。

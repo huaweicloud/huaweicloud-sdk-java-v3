@@ -599,24 +599,6 @@ public class BssAsyncClient {
             BssMeta.listFreeResourceUsages, hcClient);
     }
 
-    /** 查询资源包列表 功能描述：查询资源包列表
-     *
-     * @param ListFreeResourcesRequest 请求对象
-     * @return CompletableFuture<ListFreeResourcesResponse> */
-    public CompletableFuture<ListFreeResourcesResponse> listFreeResourcesAsync(ListFreeResourcesRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssMeta.listFreeResources);
-    }
-
-    /** 查询资源包列表 功能描述：查询资源包列表
-     *
-     * @param ListFreeResourcesRequest 请求对象
-     * @return AsyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse> */
-    public AsyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse> listFreeResourcesAsyncInvoker(
-        ListFreeResourcesRequest request) {
-        return new AsyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse>(request, BssMeta.listFreeResources,
-            hcClient);
-    }
-
     /** 查询精英服务商列表 功能描述：华为云伙伴能力中心（一级经销商）可以查询精英服务商（二级经销商）列表。
      *
      * @param ListIndirectPartnersRequest 请求对象
@@ -746,25 +728,6 @@ public class BssAsyncClient {
         ListOrderDiscountsRequest request) {
         return new AsyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>(request,
             BssMeta.listOrderDiscounts, hcClient);
-    }
-
-    /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
-     *
-     * @param ListParnterAdjustRecordsRequest 请求对象
-     * @return CompletableFuture<ListParnterAdjustRecordsResponse> */
-    public CompletableFuture<ListParnterAdjustRecordsResponse> listParnterAdjustRecordsAsync(
-        ListParnterAdjustRecordsRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssMeta.listParnterAdjustRecords);
-    }
-
-    /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
-     *
-     * @param ListParnterAdjustRecordsRequest 请求对象
-     * @return AsyncInvoker<ListParnterAdjustRecordsRequest, ListParnterAdjustRecordsResponse> */
-    public AsyncInvoker<ListParnterAdjustRecordsRequest, ListParnterAdjustRecordsResponse> listParnterAdjustRecordsAsyncInvoker(
-        ListParnterAdjustRecordsRequest request) {
-        return new AsyncInvoker<ListParnterAdjustRecordsRequest, ListParnterAdjustRecordsResponse>(request,
-            BssMeta.listParnterAdjustRecords, hcClient);
     }
 
     /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
@@ -1024,6 +987,25 @@ public class BssAsyncClient {
             BssMeta.listSkuInventories, hcClient);
     }
 
+    /** 查询客户消费记录 功能描述：查询客户消费记录
+     *
+     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @return CompletableFuture<ListSubCustomerBillDetailResponse> */
+    public CompletableFuture<ListSubCustomerBillDetailResponse> listSubCustomerBillDetailAsync(
+        ListSubCustomerBillDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listSubCustomerBillDetail);
+    }
+
+    /** 查询客户消费记录 功能描述：查询客户消费记录
+     *
+     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @return AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> */
+    public AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetailAsyncInvoker(
+        ListSubCustomerBillDetailRequest request) {
+        return new AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse>(request,
+            BssMeta.listSubCustomerBillDetail, hcClient);
+    }
+
     /** 查询优惠券列表 功能描述：伙伴可以查询自身的优惠券信息。
      *
      * @param ListSubCustomerCouponsRequest 请求对象
@@ -1060,25 +1042,6 @@ public class BssAsyncClient {
         ListSubCustomerDiscountsRequest request) {
         return new AsyncInvoker<ListSubCustomerDiscountsRequest, ListSubCustomerDiscountsResponse>(request,
             BssMeta.listSubCustomerDiscounts, hcClient);
-    }
-
-    /** 查询客户消费记录 功能描述：合作伙伴可以查看客户的消费记录
-     *
-     * @param ListSubCustomerResFeeRecordsRequest 请求对象
-     * @return CompletableFuture<ListSubCustomerResFeeRecordsResponse> */
-    public CompletableFuture<ListSubCustomerResFeeRecordsResponse> listSubCustomerResFeeRecordsAsync(
-        ListSubCustomerResFeeRecordsRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssMeta.listSubCustomerResFeeRecords);
-    }
-
-    /** 查询客户消费记录 功能描述：合作伙伴可以查看客户的消费记录
-     *
-     * @param ListSubCustomerResFeeRecordsRequest 请求对象
-     * @return AsyncInvoker<ListSubCustomerResFeeRecordsRequest, ListSubCustomerResFeeRecordsResponse> */
-    public AsyncInvoker<ListSubCustomerResFeeRecordsRequest, ListSubCustomerResFeeRecordsResponse> listSubCustomerResFeeRecordsAsyncInvoker(
-        ListSubCustomerResFeeRecordsRequest request) {
-        return new AsyncInvoker<ListSubCustomerResFeeRecordsRequest, ListSubCustomerResFeeRecordsResponse>(request,
-            BssMeta.listSubCustomerResFeeRecords, hcClient);
     }
 
     /** 查询客户列表 功能描述：伙伴可以查询合作伙伴的客户信息列表。

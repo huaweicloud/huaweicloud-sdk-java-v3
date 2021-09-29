@@ -82,6 +82,11 @@ public class PublicZoneResp {
     private PageLink links;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<Tag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masters")
 
     private List<String> masters = null;
@@ -329,6 +334,38 @@ public class PublicZoneResp {
         this.links = links;
     }
 
+    public PublicZoneResp withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public PublicZoneResp addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public PublicZoneResp withTags(Consumer<List<Tag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /** 资源标签。
+     * 
+     * @return tags */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
     public PublicZoneResp withMasters(List<String> masters) {
         this.masters = masters;
         return this;
@@ -428,7 +465,8 @@ public class PublicZoneResp {
             && Objects.equals(this.projectId, publicZoneResp.projectId)
             && Objects.equals(this.createdAt, publicZoneResp.createdAt)
             && Objects.equals(this.updatedAt, publicZoneResp.updatedAt)
-            && Objects.equals(this.links, publicZoneResp.links) && Objects.equals(this.masters, publicZoneResp.masters)
+            && Objects.equals(this.links, publicZoneResp.links) && Objects.equals(this.tags, publicZoneResp.tags)
+            && Objects.equals(this.masters, publicZoneResp.masters)
             && Objects.equals(this.routers, publicZoneResp.routers)
             && Objects.equals(this.enterpriseProjectId, publicZoneResp.enterpriseProjectId);
     }
@@ -449,6 +487,7 @@ public class PublicZoneResp {
             createdAt,
             updatedAt,
             links,
+            tags,
             masters,
             routers,
             enterpriseProjectId);
@@ -472,6 +511,7 @@ public class PublicZoneResp {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    masters: ").append(toIndentedString(masters)).append("\n");
         sb.append("    routers: ").append(toIndentedString(routers)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

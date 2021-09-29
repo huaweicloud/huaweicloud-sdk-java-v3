@@ -34,7 +34,7 @@ public class CreatePrivateZoneReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl")
 
-    private String ttl;
+    private Integer ttl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "router")
@@ -115,7 +115,7 @@ public class CreatePrivateZoneReq {
         this.email = email;
     }
 
-    public CreatePrivateZoneReq withTtl(String ttl) {
+    public CreatePrivateZoneReq withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
     }
@@ -123,11 +123,11 @@ public class CreatePrivateZoneReq {
     /** 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
      * 
      * @return ttl */
-    public String getTtl() {
+    public Integer getTtl() {
         return ttl;
     }
 
-    public void setTtl(String ttl) {
+    public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
 

@@ -42,6 +42,39 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> associateServerVirtualIp =
+        genForassociateServerVirtualIp();
+
+    private static HttpRequestDef<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> genForassociateServerVirtualIp() {
+        // basic
+        HttpRequestDef.Builder<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, AssociateServerVirtualIpRequest.class, AssociateServerVirtualIpResponse.class)
+                .withName("AssociateServerVirtualIp")
+                .withUri("/v1/{project_id}/cloudservers/nics/{nic_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("nic_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateServerVirtualIpRequest::getNicId, (req, v) -> {
+                req.setNicId(v);
+            }));
+        builder.<AssociateServerVirtualIpRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateServerVirtualIpRequestBody.class),
+            f -> f.withMarshaller(AssociateServerVirtualIpRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AttachServerVolumeRequest, AttachServerVolumeResponse> attachServerVolume =
         genForattachServerVolume();
 
@@ -98,6 +131,41 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddServerNicsRequestBody.class),
             f -> f.withMarshaller(BatchAddServerNicsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> batchAttachSharableVolumes =
+        genForbatchAttachSharableVolumes();
+
+    private static HttpRequestDef<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> genForbatchAttachSharableVolumes() {
+        // basic
+        HttpRequestDef.Builder<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchAttachSharableVolumesRequest.class,
+                    BatchAttachSharableVolumesResponse.class)
+                .withName("BatchAttachSharableVolumes")
+                .withUri("/v1/{project_id}/batchaction/attachvolumes/{volume_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAttachSharableVolumesRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            }));
+        builder.<BatchAttachSharableVolumesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchAttachSharableVolumesRequestBody.class),
+            f -> f.withMarshaller(BatchAttachSharableVolumesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -227,6 +295,34 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> batchResetServersPassword =
+        genForbatchResetServersPassword();
+
+    private static HttpRequestDef<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> genForbatchResetServersPassword() {
+        // basic
+        HttpRequestDef.Builder<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchResetServersPasswordRequest.class,
+                    BatchResetServersPasswordResponse.class)
+                .withName("BatchResetServersPassword")
+                .withUri("/v1/{project_id}/cloudservers/os-reset-passwords")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchResetServersPasswordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchResetServersPasswordRequestBody.class),
+            f -> f.withMarshaller(BatchResetServersPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchStartServersRequest, BatchStartServersResponse> batchStartServers =
         genForbatchStartServers();
 
@@ -277,6 +373,31 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> batchUpdateServersName =
+        genForbatchUpdateServersName();
+
+    private static HttpRequestDef<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> genForbatchUpdateServersName() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, BatchUpdateServersNameRequest.class, BatchUpdateServersNameResponse.class)
+            .withName("BatchUpdateServersName")
+            .withUri("/v1/{project_id}/cloudservers/server-name")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchUpdateServersNameRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateServersNameRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateServersNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> changeServerOsWithCloudInit =
         genForchangeServerOsWithCloudInit();
 
@@ -304,6 +425,41 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeServerOsWithCloudInitRequestBody.class),
             f -> f.withMarshaller(ChangeServerOsWithCloudInitRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> changeServerOsWithoutCloudInit =
+        genForchangeServerOsWithoutCloudInit();
+
+    private static HttpRequestDef<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> genForchangeServerOsWithoutCloudInit() {
+        // basic
+        HttpRequestDef.Builder<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ChangeServerOsWithoutCloudInitRequest.class,
+                    ChangeServerOsWithoutCloudInitResponse.class)
+                .withName("ChangeServerOsWithoutCloudInit")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/changeos")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeServerOsWithoutCloudInitRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<ChangeServerOsWithoutCloudInitRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeServerOsWithoutCloudInitRequestBody.class),
+            f -> f.withMarshaller(ChangeServerOsWithoutCloudInitRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -476,6 +632,31 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteServerPasswordRequest, DeleteServerPasswordResponse> deleteServerPassword =
+        genFordeleteServerPassword();
+
+    private static HttpRequestDef<DeleteServerPasswordRequest, DeleteServerPasswordResponse> genFordeleteServerPassword() {
+        // basic
+        HttpRequestDef.Builder<DeleteServerPasswordRequest, DeleteServerPasswordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteServerPasswordRequest.class, DeleteServerPasswordResponse.class)
+            .withName("DeleteServerPassword")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/os-server-password")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServerPasswordRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteServersRequest, DeleteServersResponse> deleteServers =
         genFordeleteServers();
 
@@ -533,6 +714,41 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(DetachServerVolumeRequest.DeleteFlagEnum.class),
             f -> f.withMarshaller(DetachServerVolumeRequest::getDeleteFlag, (req, v) -> {
                 req.setDeleteFlag(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> disassociateServerVirtualIp =
+        genFordisassociateServerVirtualIp();
+
+    private static HttpRequestDef<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> genFordisassociateServerVirtualIp() {
+        // basic
+        HttpRequestDef.Builder<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    DisassociateServerVirtualIpRequest.class,
+                    DisassociateServerVirtualIpResponse.class)
+                .withName("DisassociateServerVirtualIp")
+                .withUri("/v1/{project_id}/cloudservers/nics/{nic_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("nic_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateServerVirtualIpRequest::getNicId, (req, v) -> {
+                req.setNicId(v);
+            }));
+        builder.<DisassociateServerVirtualIpRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisassociateServerVirtualIpRequestBody.class),
+            f -> f.withMarshaller(DisassociateServerVirtualIpRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -713,6 +929,24 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListServerTagsRequest, ListServerTagsResponse> listServerTags =
+        genForlistServerTags();
+
+    private static HttpRequestDef<ListServerTagsRequest, ListServerTagsResponse> genForlistServerTags() {
+        // basic
+        HttpRequestDef.Builder<ListServerTagsRequest, ListServerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListServerTagsRequest.class, ListServerTagsResponse.class)
+                .withName("ListServerTags")
+                .withUri("/v1/{project_id}/cloudservers/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListServersDetailsRequest, ListServersDetailsResponse> listServersDetails =
         genForlistServersDetails();
 
@@ -794,6 +1028,38 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getTags, (req, v) -> {
                 req.setTags(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<MigrateServerRequest, MigrateServerResponse> migrateServer =
+        genFormigrateServer();
+
+    private static HttpRequestDef<MigrateServerRequest, MigrateServerResponse> genFormigrateServer() {
+        // basic
+        HttpRequestDef.Builder<MigrateServerRequest, MigrateServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, MigrateServerRequest.class, MigrateServerResponse.class)
+                .withName("MigrateServer")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/migrate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateServerRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<MigrateServerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MigrateServerRequestBody.class),
+            f -> f.withMarshaller(MigrateServerRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1246,6 +1512,41 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> registerServerAutoRecovery =
+        genForregisterServerAutoRecovery();
+
+    private static HttpRequestDef<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> genForregisterServerAutoRecovery() {
+        // basic
+        HttpRequestDef.Builder<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    RegisterServerAutoRecoveryRequest.class,
+                    RegisterServerAutoRecoveryResponse.class)
+                .withName("RegisterServerAutoRecovery")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/autorecovery")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RegisterServerAutoRecoveryRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<RegisterServerAutoRecoveryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RegisterServerAutoRecoveryRequestBody.class),
+            f -> f.withMarshaller(RegisterServerAutoRecoveryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> reinstallServerWithCloudInit =
         genForreinstallServerWithCloudInit();
 
@@ -1273,6 +1574,41 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReinstallServerWithCloudInitRequestBody.class),
             f -> f.withMarshaller(ReinstallServerWithCloudInitRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> reinstallServerWithoutCloudInit =
+        genForreinstallServerWithoutCloudInit();
+
+    private static HttpRequestDef<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> genForreinstallServerWithoutCloudInit() {
+        // basic
+        HttpRequestDef.Builder<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ReinstallServerWithoutCloudInitRequest.class,
+                    ReinstallServerWithoutCloudInitResponse.class)
+                .withName("ReinstallServerWithoutCloudInit")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/reinstallos")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ReinstallServerWithoutCloudInitRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<ReinstallServerWithoutCloudInitRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReinstallServerWithoutCloudInitRequestBody.class),
+            f -> f.withMarshaller(ReinstallServerWithoutCloudInitRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1425,6 +1761,63 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> showServerAutoRecovery =
+        genForshowServerAutoRecovery();
+
+    private static HttpRequestDef<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> genForshowServerAutoRecovery() {
+        // basic
+        HttpRequestDef.Builder<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowServerAutoRecoveryRequest.class, ShowServerAutoRecoveryResponse.class)
+            .withName("ShowServerAutoRecovery")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/autorecovery")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerAutoRecoveryRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> showServerBlockDevice =
+        genForshowServerBlockDevice();
+
+    private static HttpRequestDef<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> genForshowServerBlockDevice() {
+        // basic
+        HttpRequestDef.Builder<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowServerBlockDeviceRequest.class, ShowServerBlockDeviceResponse.class)
+            .withName("ShowServerBlockDevice")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/block_device/{volume_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerBlockDeviceRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerBlockDeviceRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> showServerGroup =
         genForshowServerGroup();
 
@@ -1462,6 +1855,31 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerPasswordRequest, ShowServerPasswordResponse> showServerPassword =
+        genForshowServerPassword();
+
+    private static HttpRequestDef<ShowServerPasswordRequest, ShowServerPasswordResponse> genForshowServerPassword() {
+        // basic
+        HttpRequestDef.Builder<ShowServerPasswordRequest, ShowServerPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowServerPasswordRequest.class, ShowServerPasswordResponse.class)
+                .withName("ShowServerPassword")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-server-password")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerPasswordRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
 
         // response
 

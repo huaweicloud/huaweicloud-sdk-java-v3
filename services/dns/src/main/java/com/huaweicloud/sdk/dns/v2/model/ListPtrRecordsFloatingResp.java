@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.dns.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -48,6 +50,11 @@ public class ListPtrRecordsFloatingResp {
     @JsonProperty(value = "links")
 
     private PageLink links;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -191,6 +198,38 @@ public class ListPtrRecordsFloatingResp {
         this.links = links;
     }
 
+    public ListPtrRecordsFloatingResp withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ListPtrRecordsFloatingResp addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ListPtrRecordsFloatingResp withTags(Consumer<List<Tag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /** 资源标签。
+     * 
+     * @return tags */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
     public ListPtrRecordsFloatingResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -224,12 +263,13 @@ public class ListPtrRecordsFloatingResp {
             && Objects.equals(this.status, listPtrRecordsFloatingResp.status)
             && Objects.equals(this.action, listPtrRecordsFloatingResp.action)
             && Objects.equals(this.links, listPtrRecordsFloatingResp.links)
+            && Objects.equals(this.tags, listPtrRecordsFloatingResp.tags)
             && Objects.equals(this.enterpriseProjectId, listPtrRecordsFloatingResp.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ptrdname, description, ttl, address, status, action, links, enterpriseProjectId);
+        return Objects.hash(id, ptrdname, description, ttl, address, status, action, links, tags, enterpriseProjectId);
     }
 
     @Override
@@ -244,6 +284,7 @@ public class ListPtrRecordsFloatingResp {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -28,6 +28,16 @@ public class IssueRecordV4Details {
 
     private String operation;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public IssueRecordV4Details withProperty(String property) {
         this.property = property;
         return this;
@@ -92,6 +102,38 @@ public class IssueRecordV4Details {
         this.operation = operation;
     }
 
+    public IssueRecordV4Details withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    /** 操作记录的id
+     * 
+     * @return id */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public IssueRecordV4Details withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /** 操作的字段
+     * 
+     * @return name */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +146,13 @@ public class IssueRecordV4Details {
         return Objects.equals(this.property, issueRecordV4Details.property)
             && Objects.equals(this.oldValue, issueRecordV4Details.oldValue)
             && Objects.equals(this.newValue, issueRecordV4Details.newValue)
-            && Objects.equals(this.operation, issueRecordV4Details.operation);
+            && Objects.equals(this.operation, issueRecordV4Details.operation)
+            && Objects.equals(this.id, issueRecordV4Details.id) && Objects.equals(this.name, issueRecordV4Details.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(property, oldValue, newValue, operation);
+        return Objects.hash(property, oldValue, newValue, operation, id, name);
     }
 
     @Override
@@ -120,6 +163,8 @@ public class IssueRecordV4Details {
         sb.append("    oldValue: ").append(toIndentedString(oldValue)).append("\n");
         sb.append("    newValue: ").append(toIndentedString(newValue)).append("\n");
         sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

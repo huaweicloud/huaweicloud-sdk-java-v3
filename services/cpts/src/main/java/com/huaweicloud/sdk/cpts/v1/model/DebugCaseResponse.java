@@ -30,7 +30,7 @@ public class DebugCaseResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private List<DebugCaseResqResult> result = null;
+    private List<DebugCaseResult> result = null;
 
     public DebugCaseResponse withCode(String code) {
         this.code = code;
@@ -80,12 +80,12 @@ public class DebugCaseResponse extends SdkResponse {
         this.extend = extend;
     }
 
-    public DebugCaseResponse withResult(List<DebugCaseResqResult> result) {
+    public DebugCaseResponse withResult(List<DebugCaseResult> result) {
         this.result = result;
         return this;
     }
 
-    public DebugCaseResponse addResultItem(DebugCaseResqResult resultItem) {
+    public DebugCaseResponse addResultItem(DebugCaseResult resultItem) {
         if (this.result == null) {
             this.result = new ArrayList<>();
         }
@@ -93,7 +93,7 @@ public class DebugCaseResponse extends SdkResponse {
         return this;
     }
 
-    public DebugCaseResponse withResult(Consumer<List<DebugCaseResqResult>> resultSetter) {
+    public DebugCaseResponse withResult(Consumer<List<DebugCaseResult>> resultSetter) {
         if (this.result == null) {
             this.result = new ArrayList<>();
         }
@@ -104,11 +104,11 @@ public class DebugCaseResponse extends SdkResponse {
     /** result
      * 
      * @return result */
-    public List<DebugCaseResqResult> getResult() {
+    public List<DebugCaseResult> getResult() {
         return result;
     }
 
-    public void setResult(List<DebugCaseResqResult> result) {
+    public void setResult(List<DebugCaseResult> result) {
         this.result = result;
     }
 

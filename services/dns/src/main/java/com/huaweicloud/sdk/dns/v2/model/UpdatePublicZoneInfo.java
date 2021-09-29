@@ -21,7 +21,7 @@ public class UpdatePublicZoneInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl")
 
-    private String ttl;
+    private Integer ttl;
 
     public UpdatePublicZoneInfo withDescription(String description) {
         this.description = description;
@@ -55,7 +55,7 @@ public class UpdatePublicZoneInfo {
         this.email = email;
     }
 
-    public UpdatePublicZoneInfo withTtl(String ttl) {
+    public UpdatePublicZoneInfo withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
     }
@@ -63,11 +63,11 @@ public class UpdatePublicZoneInfo {
     /** 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
      * 
      * @return ttl */
-    public String getTtl() {
+    public Integer getTtl() {
         return ttl;
     }
 
-    public void setTtl(String ttl) {
+    public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
 

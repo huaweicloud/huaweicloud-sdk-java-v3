@@ -35,6 +35,28 @@ public class EcsClient {
             EcsMeta.addServerGroupMember, hcClient);
     }
 
+    /** 云服务器网卡配置虚拟IP地址 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。 该接口用于给云服务器网卡配置虚拟IP地址： -
+     * 当指定的IP地址是一个不存在的虚拟IP地址时，系统会创建该虚拟IP，并绑定至对应网卡。 -
+     * 当指定的IP地址是一个已经创建好的私有IP时，系统会将指定的网卡和虚拟IP绑定。如果该IP的device_owner为空，则仅支持VPC内二三层通信；如果该IP的device_owner为neutron:VIP_PORT，则支持VPC内二三层通信、VPC之间对等连接访问，以及弹性公网IP、VPN、云专线等Internet接入。
+     *
+     * @param AssociateServerVirtualIpRequest 请求对象
+     * @return AssociateServerVirtualIpResponse */
+    public AssociateServerVirtualIpResponse associateServerVirtualIp(AssociateServerVirtualIpRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.associateServerVirtualIp);
+    }
+
+    /** 云服务器网卡配置虚拟IP地址 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。 该接口用于给云服务器网卡配置虚拟IP地址： -
+     * 当指定的IP地址是一个不存在的虚拟IP地址时，系统会创建该虚拟IP，并绑定至对应网卡。 -
+     * 当指定的IP地址是一个已经创建好的私有IP时，系统会将指定的网卡和虚拟IP绑定。如果该IP的device_owner为空，则仅支持VPC内二三层通信；如果该IP的device_owner为neutron:VIP_PORT，则支持VPC内二三层通信、VPC之间对等连接访问，以及弹性公网IP、VPN、云专线等Internet接入。
+     *
+     * @param AssociateServerVirtualIpRequest 请求对象
+     * @return SyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> */
+    public SyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> associateServerVirtualIpInvoker(
+        AssociateServerVirtualIpRequest request) {
+        return new SyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse>(request,
+            EcsMeta.associateServerVirtualIp, hcClient);
+    }
+
     /** 弹性云服务器挂载磁盘 把磁盘挂载到弹性云服务器上。
      *
      * @param AttachServerVolumeRequest 请求对象
@@ -69,6 +91,24 @@ public class EcsClient {
         BatchAddServerNicsRequest request) {
         return new SyncInvoker<BatchAddServerNicsRequest, BatchAddServerNicsResponse>(request,
             EcsMeta.batchAddServerNics, hcClient);
+    }
+
+    /** 批量挂载指定共享盘 将指定的共享磁盘一次性挂载到多个弹性云服务器，实现批量挂载。
+     *
+     * @param BatchAttachSharableVolumesRequest 请求对象
+     * @return BatchAttachSharableVolumesResponse */
+    public BatchAttachSharableVolumesResponse batchAttachSharableVolumes(BatchAttachSharableVolumesRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.batchAttachSharableVolumes);
+    }
+
+    /** 批量挂载指定共享盘 将指定的共享磁盘一次性挂载到多个弹性云服务器，实现批量挂载。
+     *
+     * @param BatchAttachSharableVolumesRequest 请求对象
+     * @return SyncInvoker<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> */
+    public SyncInvoker<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> batchAttachSharableVolumesInvoker(
+        BatchAttachSharableVolumesRequest request) {
+        return new SyncInvoker<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse>(request,
+            EcsMeta.batchAttachSharableVolumes, hcClient);
     }
 
     /** 批量添加云服务器标签 - 为指定云服务器批量添加标签。 - 标签管理服务TMS使用该接口批量管理云服务器的标签。
@@ -143,6 +183,24 @@ public class EcsClient {
             EcsMeta.batchRebootServers, hcClient);
     }
 
+    /** 批量重置弹性云服务器密码 批量重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
+     *
+     * @param BatchResetServersPasswordRequest 请求对象
+     * @return BatchResetServersPasswordResponse */
+    public BatchResetServersPasswordResponse batchResetServersPassword(BatchResetServersPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.batchResetServersPassword);
+    }
+
+    /** 批量重置弹性云服务器密码 批量重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
+     *
+     * @param BatchResetServersPasswordRequest 请求对象
+     * @return SyncInvoker<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> */
+    public SyncInvoker<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> batchResetServersPasswordInvoker(
+        BatchResetServersPasswordRequest request) {
+        return new SyncInvoker<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse>(request,
+            EcsMeta.batchResetServersPassword, hcClient);
+    }
+
     /** 批量启动云服务器 根据给定的云服务器ID列表，批量启动云服务器，一次最多可以启动1000台。
      *
      * @param BatchStartServersRequest 请求对象
@@ -179,6 +237,24 @@ public class EcsClient {
             hcClient);
     }
 
+    /** 批量修改弹性云服务器 批量修改弹性云服务器信息。 当前仅支持批量修改云服务器名称，一次最多可以修改1000台。
+     *
+     * @param BatchUpdateServersNameRequest 请求对象
+     * @return BatchUpdateServersNameResponse */
+    public BatchUpdateServersNameResponse batchUpdateServersName(BatchUpdateServersNameRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.batchUpdateServersName);
+    }
+
+    /** 批量修改弹性云服务器 批量修改弹性云服务器信息。 当前仅支持批量修改云服务器名称，一次最多可以修改1000台。
+     *
+     * @param BatchUpdateServersNameRequest 请求对象
+     * @return SyncInvoker<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> */
+    public SyncInvoker<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> batchUpdateServersNameInvoker(
+        BatchUpdateServersNameRequest request) {
+        return new SyncInvoker<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse>(request,
+            EcsMeta.batchUpdateServersName, hcClient);
+    }
+
     /** 切换弹性云服务器操作系统(安装Cloud init) 切换弹性云服务器操作系统。支持弹性云服务器数据盘不变的情况下，使用新镜像重装系统盘。
      * 调用该接口后，系统将卸载系统盘，然后使用新镜像重新创建系统盘，并挂载至弹性云服务器，实现切换操作系统功能。
      *
@@ -197,6 +273,25 @@ public class EcsClient {
         ChangeServerOsWithCloudInitRequest request) {
         return new SyncInvoker<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse>(request,
             EcsMeta.changeServerOsWithCloudInit, hcClient);
+    }
+
+    /** 切换弹性云服务器操作系统(未安装Cloud init) 切换弹性云服务器操作系统。 该接口支持未安装Cloud-init或Cloudbase-init的镜像使用。
+     *
+     * @param ChangeServerOsWithoutCloudInitRequest 请求对象
+     * @return ChangeServerOsWithoutCloudInitResponse */
+    public ChangeServerOsWithoutCloudInitResponse changeServerOsWithoutCloudInit(
+        ChangeServerOsWithoutCloudInitRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.changeServerOsWithoutCloudInit);
+    }
+
+    /** 切换弹性云服务器操作系统(未安装Cloud init) 切换弹性云服务器操作系统。 该接口支持未安装Cloud-init或Cloudbase-init的镜像使用。
+     *
+     * @param ChangeServerOsWithoutCloudInitRequest 请求对象
+     * @return SyncInvoker<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> */
+    public SyncInvoker<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> changeServerOsWithoutCloudInitInvoker(
+        ChangeServerOsWithoutCloudInitRequest request) {
+        return new SyncInvoker<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse>(request,
+            EcsMeta.changeServerOsWithoutCloudInit, hcClient);
     }
 
     /** 创建云服务器(按需) 创建一台或多台[按需付费](https://support.huaweicloud.com/productdesc-ecs/ecs_01_0065.html)方式的云服务器。
@@ -327,6 +422,24 @@ public class EcsClient {
             EcsMeta.deleteServerMetadata, hcClient);
     }
 
+    /** 云服务器清除密码(企业项目) 清除Windows云服务器初始安装时系统生成的密码记录。清除密码后，不影响云服务器密码登录功能，但不能再使用获取密码功能来查询该云服务器密码。
+     *
+     * @param DeleteServerPasswordRequest 请求对象
+     * @return DeleteServerPasswordResponse */
+    public DeleteServerPasswordResponse deleteServerPassword(DeleteServerPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.deleteServerPassword);
+    }
+
+    /** 云服务器清除密码(企业项目) 清除Windows云服务器初始安装时系统生成的密码记录。清除密码后，不影响云服务器密码登录功能，但不能再使用获取密码功能来查询该云服务器密码。
+     *
+     * @param DeleteServerPasswordRequest 请求对象
+     * @return SyncInvoker<DeleteServerPasswordRequest, DeleteServerPasswordResponse> */
+    public SyncInvoker<DeleteServerPasswordRequest, DeleteServerPasswordResponse> deleteServerPasswordInvoker(
+        DeleteServerPasswordRequest request) {
+        return new SyncInvoker<DeleteServerPasswordRequest, DeleteServerPasswordResponse>(request,
+            EcsMeta.deleteServerPassword, hcClient);
+    }
+
     /** 删除云服务器 根据指定的云服务器ID列表，删除云服务器。 系统支持删除单台云服务器和批量删除多台云服务器操作，批量删除云服务器时，一次最多可以删除1000台。
      *
      * @param DeleteServersRequest 请求对象
@@ -359,6 +472,24 @@ public class EcsClient {
         DetachServerVolumeRequest request) {
         return new SyncInvoker<DetachServerVolumeRequest, DetachServerVolumeResponse>(request,
             EcsMeta.detachServerVolume, hcClient);
+    }
+
+    /** 云服务器网卡解绑虚拟IP地址 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。 该接口用于解绑定弹性云服务器网卡的虚拟IP地址。解绑后，网卡不会被删除。
+     *
+     * @param DisassociateServerVirtualIpRequest 请求对象
+     * @return DisassociateServerVirtualIpResponse */
+    public DisassociateServerVirtualIpResponse disassociateServerVirtualIp(DisassociateServerVirtualIpRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.disassociateServerVirtualIp);
+    }
+
+    /** 云服务器网卡解绑虚拟IP地址 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。 该接口用于解绑定弹性云服务器网卡的虚拟IP地址。解绑后，网卡不会被删除。
+     *
+     * @param DisassociateServerVirtualIpRequest 请求对象
+     * @return SyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> */
+    public SyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> disassociateServerVirtualIpInvoker(
+        DisassociateServerVirtualIpRequest request) {
+        return new SyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse>(request,
+            EcsMeta.disassociateServerVirtualIp, hcClient);
     }
 
     /** 查询规格详情和规格扩展信息列表 查询云服务器规格详情信息和规格扩展信息列表。
@@ -449,6 +580,24 @@ public class EcsClient {
             EcsMeta.listServerInterfaces, hcClient);
     }
 
+    /** 查询项目标签 项目（Project）用于将OpenStack的资源（计算资源、存储资源和网络资源）进行分组和隔离。项目可以是一个部门或者一个项目组。一个帐户中可以创建多个项目。 该接口用于查询用户在指定项目所使用的全部标签。
+     *
+     * @param ListServerTagsRequest 请求对象
+     * @return ListServerTagsResponse */
+    public ListServerTagsResponse listServerTags(ListServerTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.listServerTags);
+    }
+
+    /** 查询项目标签 项目（Project）用于将OpenStack的资源（计算资源、存储资源和网络资源）进行分组和隔离。项目可以是一个部门或者一个项目组。一个帐户中可以创建多个项目。 该接口用于查询用户在指定项目所使用的全部标签。
+     *
+     * @param ListServerTagsRequest 请求对象
+     * @return SyncInvoker<ListServerTagsRequest, ListServerTagsResponse> */
+    public SyncInvoker<ListServerTagsRequest, ListServerTagsResponse> listServerTagsInvoker(
+        ListServerTagsRequest request) {
+        return new SyncInvoker<ListServerTagsRequest, ListServerTagsResponse>(request, EcsMeta.listServerTags,
+            hcClient);
+    }
+
     /** 查询云服务器详情列表 根据用户请求条件从数据库筛选、查询所有的弹性云服务器，并关联相关表获取到弹性云服务器的详细信息。 该接口支持查询弹性云服务器计费方式，以及是否被冻结。
      *
      * @param ListServersDetailsRequest 请求对象
@@ -465,6 +614,24 @@ public class EcsClient {
         ListServersDetailsRequest request) {
         return new SyncInvoker<ListServersDetailsRequest, ListServersDetailsResponse>(request,
             EcsMeta.listServersDetails, hcClient);
+    }
+
+    /** 冷迁移云服务器 - 将部署在专属主机上的弹性云服务器迁移至其他专属主机。 - 将部署在专属主机上的弹性云服务器迁移至公共资源池，即不再部署在专属主机上。 -
+     * 将公共资源池的弹性云服务器迁移至专属主机上，成为专属主机上部署的弹性云服务器。
+     *
+     * @param MigrateServerRequest 请求对象
+     * @return MigrateServerResponse */
+    public MigrateServerResponse migrateServer(MigrateServerRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.migrateServer);
+    }
+
+    /** 冷迁移云服务器 - 将部署在专属主机上的弹性云服务器迁移至其他专属主机。 - 将部署在专属主机上的弹性云服务器迁移至公共资源池，即不再部署在专属主机上。 -
+     * 将公共资源池的弹性云服务器迁移至专属主机上，成为专属主机上部署的弹性云服务器。
+     *
+     * @param MigrateServerRequest 请求对象
+     * @return SyncInvoker<MigrateServerRequest, MigrateServerResponse> */
+    public SyncInvoker<MigrateServerRequest, MigrateServerResponse> migrateServerInvoker(MigrateServerRequest request) {
+        return new SyncInvoker<MigrateServerRequest, MigrateServerResponse>(request, EcsMeta.migrateServer, hcClient);
     }
 
     /** 添加安全组 为弹性云服务器添加一个安全组。 添加多个安全组时，建议最多为弹性云服务器添加5个安全组。
@@ -689,6 +856,24 @@ public class EcsClient {
             hcClient);
     }
 
+    /** 管理云服务器自动恢复动作 配置、删除云服务器自动恢复动作。
+     *
+     * @param RegisterServerAutoRecoveryRequest 请求对象
+     * @return RegisterServerAutoRecoveryResponse */
+    public RegisterServerAutoRecoveryResponse registerServerAutoRecovery(RegisterServerAutoRecoveryRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.registerServerAutoRecovery);
+    }
+
+    /** 管理云服务器自动恢复动作 配置、删除云服务器自动恢复动作。
+     *
+     * @param RegisterServerAutoRecoveryRequest 请求对象
+     * @return SyncInvoker<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> */
+    public SyncInvoker<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> registerServerAutoRecoveryInvoker(
+        RegisterServerAutoRecoveryRequest request) {
+        return new SyncInvoker<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse>(request,
+            EcsMeta.registerServerAutoRecovery, hcClient);
+    }
+
     /** 重装弹性云服务器操作系统(安装Cloud-init) 重装弹性云服务器的操作系统。支持弹性云服务器数据盘不变的情况下，使用原镜像重装系统盘。
      * 调用该接口后，系统将卸载系统盘，然后使用原镜像重新创建系统盘，并挂载至弹性云服务器，实现重装操作系统功能。
      *
@@ -708,6 +893,25 @@ public class EcsClient {
         ReinstallServerWithCloudInitRequest request) {
         return new SyncInvoker<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse>(request,
             EcsMeta.reinstallServerWithCloudInit, hcClient);
+    }
+
+    /** 重装弹性云服务器操作系统(未安装Cloud init) 重装弹性云服务器的操作系统。 该接口支持未安装Cloud-init或Cloudbase-init的镜像。
+     *
+     * @param ReinstallServerWithoutCloudInitRequest 请求对象
+     * @return ReinstallServerWithoutCloudInitResponse */
+    public ReinstallServerWithoutCloudInitResponse reinstallServerWithoutCloudInit(
+        ReinstallServerWithoutCloudInitRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.reinstallServerWithoutCloudInit);
+    }
+
+    /** 重装弹性云服务器操作系统(未安装Cloud init) 重装弹性云服务器的操作系统。 该接口支持未安装Cloud-init或Cloudbase-init的镜像。
+     *
+     * @param ReinstallServerWithoutCloudInitRequest 请求对象
+     * @return SyncInvoker<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> */
+    public SyncInvoker<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> reinstallServerWithoutCloudInitInvoker(
+        ReinstallServerWithoutCloudInitRequest request) {
+        return new SyncInvoker<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse>(request,
+            EcsMeta.reinstallServerWithoutCloudInit, hcClient);
     }
 
     /** 一键重置弹性云服务器密码(企业项目) 重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
@@ -806,6 +1010,42 @@ public class EcsClient {
         return new SyncInvoker<ShowServerRequest, ShowServerResponse>(request, EcsMeta.showServer, hcClient);
     }
 
+    /** 查询云服务器是否配置了自动恢复动作 查询云服务器是否配置了自动恢复动作。
+     *
+     * @param ShowServerAutoRecoveryRequest 请求对象
+     * @return ShowServerAutoRecoveryResponse */
+    public ShowServerAutoRecoveryResponse showServerAutoRecovery(ShowServerAutoRecoveryRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showServerAutoRecovery);
+    }
+
+    /** 查询云服务器是否配置了自动恢复动作 查询云服务器是否配置了自动恢复动作。
+     *
+     * @param ShowServerAutoRecoveryRequest 请求对象
+     * @return SyncInvoker<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> */
+    public SyncInvoker<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> showServerAutoRecoveryInvoker(
+        ShowServerAutoRecoveryRequest request) {
+        return new SyncInvoker<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse>(request,
+            EcsMeta.showServerAutoRecovery, hcClient);
+    }
+
+    /** 查询弹性云服务器单个磁盘信息 查询弹性云服务器挂载的单个磁盘信息。
+     *
+     * @param ShowServerBlockDeviceRequest 请求对象
+     * @return ShowServerBlockDeviceResponse */
+    public ShowServerBlockDeviceResponse showServerBlockDevice(ShowServerBlockDeviceRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showServerBlockDevice);
+    }
+
+    /** 查询弹性云服务器单个磁盘信息 查询弹性云服务器挂载的单个磁盘信息。
+     *
+     * @param ShowServerBlockDeviceRequest 请求对象
+     * @return SyncInvoker<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> */
+    public SyncInvoker<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> showServerBlockDeviceInvoker(
+        ShowServerBlockDeviceRequest request) {
+        return new SyncInvoker<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse>(request,
+            EcsMeta.showServerBlockDevice, hcClient);
+    }
+
     /** 查询云服务器组详情 查询弹性云服务器组详情。 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      *
      * @param ShowServerGroupRequest 请求对象
@@ -840,6 +1080,26 @@ public class EcsClient {
         ShowServerLimitsRequest request) {
         return new SyncInvoker<ShowServerLimitsRequest, ShowServerLimitsResponse>(request, EcsMeta.showServerLimits,
             hcClient);
+    }
+
+    /** 云服务器获取密码(企业项目)
+     * 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
+     *
+     * @param ShowServerPasswordRequest 请求对象
+     * @return ShowServerPasswordResponse */
+    public ShowServerPasswordResponse showServerPassword(ShowServerPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showServerPassword);
+    }
+
+    /** 云服务器获取密码(企业项目)
+     * 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
+     *
+     * @param ShowServerPasswordRequest 请求对象
+     * @return SyncInvoker<ShowServerPasswordRequest, ShowServerPasswordResponse> */
+    public SyncInvoker<ShowServerPasswordRequest, ShowServerPasswordResponse> showServerPasswordInvoker(
+        ShowServerPasswordRequest request) {
+        return new SyncInvoker<ShowServerPasswordRequest, ShowServerPasswordResponse>(request,
+            EcsMeta.showServerPassword, hcClient);
     }
 
     /** 获取VNC远程登录地址 获取弹性云服务器VNC远程登录地址。

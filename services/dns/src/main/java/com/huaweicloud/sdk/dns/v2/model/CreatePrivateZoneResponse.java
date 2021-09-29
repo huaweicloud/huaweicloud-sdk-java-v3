@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -83,7 +85,7 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masters")
 
-    private String masters;
+    private List<String> masters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "router")
@@ -323,19 +325,35 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.links = links;
     }
 
-    public CreatePrivateZoneResponse withMasters(String masters) {
+    public CreatePrivateZoneResponse withMasters(List<String> masters) {
         this.masters = masters;
+        return this;
+    }
+
+    public CreatePrivateZoneResponse addMastersItem(String mastersItem) {
+        if (this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
+        this.masters.add(mastersItem);
+        return this;
+    }
+
+    public CreatePrivateZoneResponse withMasters(Consumer<List<String>> mastersSetter) {
+        if (this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
+        mastersSetter.accept(this.masters);
         return this;
     }
 
     /** 主从模式中，从DNS服务器用以获取DNS信息。
      * 
      * @return masters */
-    public String getMasters() {
+    public List<String> getMasters() {
         return masters;
     }
 
-    public void setMasters(String masters) {
+    public void setMasters(List<String> masters) {
         this.masters = masters;
     }
 
