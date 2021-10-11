@@ -195,7 +195,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
 
     private ApiModeEnum apiMode;
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "file_name", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart fileName;
 

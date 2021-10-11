@@ -29,7 +29,7 @@ public class MetaData  {
     @JsonProperty(value="offset")
     
     
-    private Integer offset;
+    private String offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,13 +37,6 @@ public class MetaData  {
     
     
     private Integer total;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nextToken")
-    
-    
-    private Integer nextToken;
 
     public MetaData withCount(Integer count) {
         this.count = count;
@@ -67,7 +60,7 @@ public class MetaData  {
 
     
 
-    public MetaData withOffset(Integer offset) {
+    public MetaData withOffset(String offset) {
         this.offset = offset;
         return this;
     }
@@ -79,11 +72,11 @@ public class MetaData  {
      * 下一个开始的标记，用于分页，null表示无更多数据。
      * @return offset
      */
-    public Integer getOffset() {
+    public String getOffset() {
         return offset;
     }
 
-    public void setOffset(Integer offset) {
+    public void setOffset(String offset) {
         this.offset = offset;
     }
 
@@ -111,28 +104,6 @@ public class MetaData  {
 
     
 
-    public MetaData withNextToken(Integer nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 偏移量。
-     * @return nextToken
-     */
-    public Integer getNextToken() {
-        return nextToken;
-    }
-
-    public void setNextToken(Integer nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -144,12 +115,11 @@ public class MetaData  {
         MetaData metaData = (MetaData) o;
         return Objects.equals(this.count, metaData.count) &&
             Objects.equals(this.offset, metaData.offset) &&
-            Objects.equals(this.total, metaData.total) &&
-            Objects.equals(this.nextToken, metaData.nextToken);
+            Objects.equals(this.total, metaData.total);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(count, offset, total, nextToken);
+        return Objects.hash(count, offset, total);
     }
     @Override
     public String toString() {
@@ -158,7 +128,6 @@ public class MetaData  {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    nextToken: ").append(toIndentedString(nextToken)).append("\n");
         sb.append("}");
         return sb.toString();
     }

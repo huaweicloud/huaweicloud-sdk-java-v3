@@ -22,6 +22,13 @@ public class MetricDataPoints  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="statistics")
+    
+    
+    private List<StatisticValue> statistics = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timestamp")
     
     
@@ -34,13 +41,42 @@ public class MetricDataPoints  {
     
     private String unit;
 
+    public MetricDataPoints withStatistics(List<StatisticValue> statistics) {
+        this.statistics = statistics;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="statistics")
     
+    public MetricDataPoints addStatisticsItem(StatisticValue statisticsItem) {
+        if(this.statistics == null) {
+            this.statistics = new ArrayList<>();
+        }
+        this.statistics.add(statisticsItem);
+        return this;
+    }
+
+    public MetricDataPoints withStatistics(Consumer<List<StatisticValue>> statisticsSetter) {
+        if(this.statistics == null) {
+            this.statistics = new ArrayList<>();
+        }
+        statisticsSetter.accept(this.statistics);
+        return this;
+    }
+
+    /**
+     * 统计方式。
+     * @return statistics
+     */
+    public List<StatisticValue> getStatistics() {
+        return statistics;
+    }
+
+    public void setStatistics(List<StatisticValue> statistics) {
+        this.statistics = statistics;
+    }
+
     
-    private List<StatisticValue> statistics = null;
-    
+
     public MetricDataPoints withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -85,42 +121,6 @@ public class MetricDataPoints  {
 
     
 
-    public MetricDataPoints withStatistics(List<StatisticValue> statistics) {
-        this.statistics = statistics;
-        return this;
-    }
-
-    
-    public MetricDataPoints addStatisticsItem(StatisticValue statisticsItem) {
-        if(this.statistics == null) {
-            this.statistics = new ArrayList<>();
-        }
-        this.statistics.add(statisticsItem);
-        return this;
-    }
-
-    public MetricDataPoints withStatistics(Consumer<List<StatisticValue>> statisticsSetter) {
-        if(this.statistics == null) {
-            this.statistics = new ArrayList<>();
-        }
-        statisticsSetter.accept(this.statistics);
-        return this;
-    }
-
-    /**
-     * 统计方式。
-     * @return statistics
-     */
-    public List<StatisticValue> getStatistics() {
-        return statistics;
-    }
-
-    public void setStatistics(List<StatisticValue> statistics) {
-        this.statistics = statistics;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -130,21 +130,21 @@ public class MetricDataPoints  {
             return false;
         }
         MetricDataPoints metricDataPoints = (MetricDataPoints) o;
-        return Objects.equals(this.timestamp, metricDataPoints.timestamp) &&
-            Objects.equals(this.unit, metricDataPoints.unit) &&
-            Objects.equals(this.statistics, metricDataPoints.statistics);
+        return Objects.equals(this.statistics, metricDataPoints.statistics) &&
+            Objects.equals(this.timestamp, metricDataPoints.timestamp) &&
+            Objects.equals(this.unit, metricDataPoints.unit);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(timestamp, unit, statistics);
+        return Objects.hash(statistics, timestamp, unit);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetricDataPoints {\n");
+        sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
-        sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");
         sb.append("}");
         return sb.toString();
     }

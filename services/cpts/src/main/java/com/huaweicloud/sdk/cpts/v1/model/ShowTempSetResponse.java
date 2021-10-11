@@ -25,7 +25,7 @@ public class ShowTempSetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "temps")
 
-    private List<Object> temps = null;
+    private List<TempDetailInfo> temps = null;
 
     public ShowTempSetResponse withCode(String code) {
         this.code = code;
@@ -59,12 +59,12 @@ public class ShowTempSetResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowTempSetResponse withTemps(List<Object> temps) {
+    public ShowTempSetResponse withTemps(List<TempDetailInfo> temps) {
         this.temps = temps;
         return this;
     }
 
-    public ShowTempSetResponse addTempsItem(Object tempsItem) {
+    public ShowTempSetResponse addTempsItem(TempDetailInfo tempsItem) {
         if (this.temps == null) {
             this.temps = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ShowTempSetResponse extends SdkResponse {
         return this;
     }
 
-    public ShowTempSetResponse withTemps(Consumer<List<Object>> tempsSetter) {
+    public ShowTempSetResponse withTemps(Consumer<List<TempDetailInfo>> tempsSetter) {
         if (this.temps == null) {
             this.temps = new ArrayList<>();
         }
@@ -83,11 +83,11 @@ public class ShowTempSetResponse extends SdkResponse {
     /** temps
      * 
      * @return temps */
-    public List<Object> getTemps() {
+    public List<TempDetailInfo> getTemps() {
         return temps;
     }
 
-    public void setTemps(List<Object> temps) {
+    public void setTemps(List<TempDetailInfo> temps) {
         this.temps = temps;
     }
 

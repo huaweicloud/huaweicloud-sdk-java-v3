@@ -16,7 +16,7 @@ public class OrgPeer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_count")
 
-    private Integer nodeCount;
+    private Long nodeCount;
 
     public OrgPeer withName(String name) {
         this.name = name;
@@ -34,7 +34,7 @@ public class OrgPeer {
         this.name = name;
     }
 
-    public OrgPeer withNodeCount(Integer nodeCount) {
+    public OrgPeer withNodeCount(Long nodeCount) {
         this.nodeCount = nodeCount;
         return this;
     }
@@ -42,11 +42,11 @@ public class OrgPeer {
     /** 组织节点数
      * 
      * @return nodeCount */
-    public Integer getNodeCount() {
+    public Long getNodeCount() {
         return nodeCount;
     }
 
-    public void setNodeCount(Integer nodeCount) {
+    public void setNodeCount(Long nodeCount) {
         this.nodeCount = nodeCount;
     }
 

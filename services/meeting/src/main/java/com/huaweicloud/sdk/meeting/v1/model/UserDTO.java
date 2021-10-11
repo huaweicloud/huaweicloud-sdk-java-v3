@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** 分页查询企业用户信息 */
@@ -57,7 +56,7 @@ public class UserDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTime")
 
-    private BigDecimal updateTime;
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isHardTerminal")
@@ -238,7 +237,7 @@ public class UserDTO {
         this.number = number;
     }
 
-    public UserDTO withUpdateTime(BigDecimal updateTime) {
+    public UserDTO withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -246,11 +245,11 @@ public class UserDTO {
     /** 用户信息最后更新时间。
      * 
      * @return updateTime */
-    public BigDecimal getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(BigDecimal updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 

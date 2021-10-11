@@ -155,7 +155,7 @@ public class BootstrapScriptResp  {
     @JsonProperty(value="start_time")
     
     
-    private String startTime;
+    private Long startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -332,7 +332,7 @@ public class BootstrapScriptResp  {
 
     
 
-    public BootstrapScriptResp withStartTime(String startTime) {
+    public BootstrapScriptResp withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -344,11 +344,11 @@ public class BootstrapScriptResp  {
      * 单个引导操作脚本的执行时间。
      * @return startTime
      */
-    public String getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 

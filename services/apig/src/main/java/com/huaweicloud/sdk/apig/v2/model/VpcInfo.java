@@ -36,7 +36,7 @@ public class VpcInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_port")
 
-    private String vpcChannelPort;
+    private Integer vpcChannelPort;
 
     public VpcInfo withEcsId(String ecsId) {
         this.ecsId = ecsId;
@@ -118,7 +118,7 @@ public class VpcInfo {
         this.vpcChannelId = vpcChannelId;
     }
 
-    public VpcInfo withVpcChannelPort(String vpcChannelPort) {
+    public VpcInfo withVpcChannelPort(Integer vpcChannelPort) {
         this.vpcChannelPort = vpcChannelPort;
         return this;
     }
@@ -126,11 +126,11 @@ public class VpcInfo {
     /** VPC通道端口
      * 
      * @return vpcChannelPort */
-    public String getVpcChannelPort() {
+    public Integer getVpcChannelPort() {
         return vpcChannelPort;
     }
 
-    public void setVpcChannelPort(String vpcChannelPort) {
+    public void setVpcChannelPort(Integer vpcChannelPort) {
         this.vpcChannelPort = vpcChannelPort;
     }
 

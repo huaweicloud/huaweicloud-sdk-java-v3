@@ -14,7 +14,7 @@ import java.util.Objects;
 /** AddFacesByFileRequestBody */
 public class AddFacesByFileRequestBody implements SdkFormDataBody {
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "image_file", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart imageFile;
 

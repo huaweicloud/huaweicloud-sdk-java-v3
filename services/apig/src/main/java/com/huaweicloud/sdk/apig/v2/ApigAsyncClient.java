@@ -19,6 +19,40 @@ public class ApigAsyncClient {
         return new ClientBuilder<>(ApigAsyncClient::new);
     }
 
+    /** 实例更新或绑定EIP 实例更新或绑定EIP
+     *
+     * @param AddEipV2Request 请求对象
+     * @return CompletableFuture<AddEipV2Response> */
+    public CompletableFuture<AddEipV2Response> addEipV2Async(AddEipV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.addEipV2);
+    }
+
+    /** 实例更新或绑定EIP 实例更新或绑定EIP
+     *
+     * @param AddEipV2Request 请求对象
+     * @return AsyncInvoker<AddEipV2Request, AddEipV2Response> */
+    public AsyncInvoker<AddEipV2Request, AddEipV2Response> addEipV2AsyncInvoker(AddEipV2Request request) {
+        return new AsyncInvoker<AddEipV2Request, AddEipV2Response>(request, ApigMeta.addEipV2, hcClient);
+    }
+
+    /** 开启实例公网出口 实例开启公网出口
+     *
+     * @param AddEngressEipV2Request 请求对象
+     * @return CompletableFuture<AddEngressEipV2Response> */
+    public CompletableFuture<AddEngressEipV2Response> addEngressEipV2Async(AddEngressEipV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.addEngressEipV2);
+    }
+
+    /** 开启实例公网出口 实例开启公网出口
+     *
+     * @param AddEngressEipV2Request 请求对象
+     * @return AsyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response> */
+    public AsyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response> addEngressEipV2AsyncInvoker(
+        AddEngressEipV2Request request) {
+        return new AsyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response>(request, ApigMeta.addEngressEipV2,
+            hcClient);
+    }
+
     /** 绑定域名证书 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。 本章节主要介绍为特定域名绑定证书。
      *
      * @param AssociateCertificateV2Request 请求对象
@@ -79,6 +113,25 @@ public class ApigAsyncClient {
             ApigMeta.associateSignatureKeyV2, hcClient);
     }
 
+    /** 创建自定义认证 创建自定义认证
+     *
+     * @param CreateCustomAuthorizerV2Request 请求对象
+     * @return CompletableFuture<CreateCustomAuthorizerV2Response> */
+    public CompletableFuture<CreateCustomAuthorizerV2Response> createCustomAuthorizerV2Async(
+        CreateCustomAuthorizerV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createCustomAuthorizerV2);
+    }
+
+    /** 创建自定义认证 创建自定义认证
+     *
+     * @param CreateCustomAuthorizerV2Request 请求对象
+     * @return AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> */
+    public AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2AsyncInvoker(
+        CreateCustomAuthorizerV2Request request) {
+        return new AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>(request,
+            ApigMeta.createCustomAuthorizerV2, hcClient);
+    }
+
     /** 创建环境 在实际的生产中，API提供者可能有多个环境，如开发环境、测试环境、生产环境等，用户可以自由将API发布到某个环境，供调用者调用。
      * 对于不同的环境，API的版本、请求地址甚至于包括请求消息等均有可能不同。如：某个API，v1.0的版本为稳定版本，发布到了生产环境供生产使用，同时，该API正处于迭代中，v1.1的版本是开发人员交付测试人员进行测试的版本，发布在测试环境上，而v1.2的版本目前开发团队正处于开发过程中，可以发布到开发环境进行自测等。
      * 为此，API网关提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接入API网关。
@@ -126,6 +179,167 @@ public class ApigAsyncClient {
         CreateEnvironmentVariableV2Request request) {
         return new AsyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>(request,
             ApigMeta.createEnvironmentVariableV2, hcClient);
+    }
+
+    /** 实例配置特性 为实例配置需要的特性。 支持配置的特性列表及特性配置示例如下： | 特性名称 | 特性描述 | 特性配置示例 | 特性配置参数 | | | | --------| :------- | :-------|
+     * :-------| :-------| :-------| :------- | | | | 参数名称 | 参数描述 | 参数默认值 | 参数范围 | | lts |
+     * 是否支持shubao访问日志上报功能。|{\&quot;name\&quot;:\&quot;lts\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;group_id\\\\\&quot;:
+     * \\\&quot;\\,\\\\\&quot;topic_id\\\\\&quot;:\\\\\&quot;\\\\\&quot;,\\\\\&quot;log_group\\\\\&quot;:\\\\\&quot;\\\\\&quot;,\\\\\&quot;log_stream\\\\\&quot;:\\\\\&quot;\\\\\&quot;}\&quot;}
+     * | group_id | 日志组ID | | | | | | | topic_id | 日志流ID | | | | | | | log_group | 日志组名称 | | | | | | | log_stream |
+     * 日志流名称 | | | | ratelimit |
+     * 是否支持自定义流控值。|{\&quot;name\&quot;:\&quot;ratelimit\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;api_limits\\\\\&quot;: 500}\&quot;} | api_limits | API全局默认流控值。注意：如果配置过小会导致业务持续被流控，请根据业务谨慎修改。 |
+     * 200 次/秒 | 1-1000000 次/秒 | | request_body_size |
+     * 是否支持指定最大请求Body大小。|{\&quot;name\&quot;:\&quot;request_body_size\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;104857600\&quot;} | request_body_size | 请求中允许携带的Body大小上限。 | 12 M | 1-9536 M | | backend_timeout |
+     * 是否支持配置后端API最大超时时间。|{\&quot;name\&quot;:\&quot;backend_timeout\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\&quot;max_timeout\\\&quot;: 500}\&quot;} | max_timeout | API网关到后端服务的超时时间上限。 | 60000 ms | 1-600000 ms |
+     * | app_token |
+     * 是否开启app_token认证方式。|{\&quot;name\&quot;:\&quot;app_token\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;, \\\\\&quot;app_token_expire_time\\\\\&quot;:
+     * 3600, \\\\\&quot;app_token_uri\\\\\&quot;: \\\\\&quot;/v1/apigw/oauth2/token\\\\\&quot;,
+     * \\\\\&quot;refresh_token_expire_time\\\\\&quot;: 7200}\&quot;} | enable | 是否开启 | off | on/off | | | | |
+     * app_token_expire_time | access token的有效时间 | 3600 s | 1-72000 s | | | | | refresh_token_expire_time | refresh
+     * token的有效时间 | 7200 s | 1-72000 s | | | | | app_token_uri | 获取token的uri | /v1/apigw/oauth2/token | | | | | |
+     * app_token_key | token的加密key | | | | app_api_key |
+     * 是否开启app_api_key认证方式。|{\&quot;name\&quot;:\&quot;app_api_key\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;on\&quot;} | | | off | on/off | | app_basic |
+     * 是否开启app_basic认证方式。|{\&quot;name\&quot;:\&quot;app_basic\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;on\&quot;} | | | off | on/off | | app_secret |
+     * 是否支持app_secret认证方式。|{\&quot;name\&quot;:\&quot;app_secret\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;on\&quot;} | | | off | on/off | | app_jwt |
+     * 是否支持app_jwt认证方式。|{\&quot;name\&quot;:\&quot;app_jwt\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;, \\\\\&quot;auth_header\\\\\&quot;:
+     * \\\\\&quot;Authorization\\\\\&quot;}\&quot;}| enable | 是否开启app_jwt认证方式。 | off | on/off | | | | | auth_header |
+     * app_jwt认证头 | Authorization | | | public_key |
+     * 是否支持public_key类型的后端签名。|{\&quot;name\&quot;:\&quot;public_key\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;, \\\\\&quot;public_key_uri_prefix\\\\\&quot;:
+     * \\\\\&quot;/apigw/authadv/v2/public-key/\\\\\&quot;}\&quot;}| enable | 是否开启app_jwt认证方式。 | off | on/off | | | | |
+     * public_key_uri_prefix | 获取public key的uri前缀 | /apigw/authadv/v2/public-key/ | | | backend_token_allow |
+     * 是否支持普通租户透传token到后端。|{\&quot;name\&quot;:\&quot;backend_token_allow\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;backend_token_allow_users\\\\\&quot;: [\\\\\&quot;paas_apig_wwx548366_01\\\\\&quot;]}\&quot;}
+     * | backend_token_allow_users | 透传token到后端普通租户白名单，匹配普通租户domain name正则表达式 | | | | backend_client_certificate |
+     * 是否开启后端双向认证。|{\&quot;name\&quot;:\&quot;backend_client_certificate\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;,\\\\\&quot;ca\\\\\&quot;:
+     * \\\\\&quot;\\\\\&quot;,\\\\\&quot;content\\\\\&quot;: \\\\\&quot;\\\\\&quot;,\\\\\&quot;key\\\\\&quot;:
+     * \\\\\&quot;\\\\\&quot;}\&quot;} | enable | 是否开启 | off | on/off | | | | | ca | 双向认证信任证书 | | | | | | | content |
+     * 双向认证证书 | | | | | | | key | 双向认证信任私钥 | | | | ssl_ciphers |
+     * 是否支持https加密套件。|{\&quot;name\&quot;:\&quot;ssl_ciphers\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;config\&quot;: \&quot;{\\\\\&quot;ssl_ciphers\\\\\&quot;:
+     * [\\\\\&quot;ECDHE-ECDSA-AES256-GCM-SHA384\\\\\&quot;]}\&quot;} | ssl_ciphers |
+     * 支持的加解密套件。ssl_ciphers数组中只允许出现默认值中的字符串，且数组不能为空。 | |
+     * ECDHE-ECDSA-AES256-GCM-SHA384,ECDHE-RSA-AES256-GCM-SHA384,ECDHE-ECDSA-AES128-GCM-SHA256,ECDHE-RSA-AES128-GCM-SHA256,ECDHE-ECDSA-AES256-SHA384,ECDHE-RSA-AES256-SHA384,ECDHE-ECDSA-AES128-SHA256,ECDHE-RSA-AES128-SHA256
+     * | | real_ip_from_xff |
+     * 是否开启使用xff头作为访问控制、流控策略的源ip生效依据。|{\&quot;name\&quot;:\&quot;real_ip_from_xff\&quot;,\&quot;enable\&quot;:
+     * true,\&quot;config\&quot;: \&quot;{\\\\\&quot;enable\\\\\&quot;:
+     * \\\\\&quot;on\\\\\&quot;,\\\\\&quot;xff_index\\\\\&quot;: 1}\&quot;} | enable | 是否开启 | off | on/off | | | | |
+     * xff_index | 源ip所在xff头的索引位置（支持负数，-1为最后一位，以此类推） | -1 | int32有效值 |
+     *
+     * @param CreateFeatureV2Request 请求对象
+     * @return CompletableFuture<CreateFeatureV2Response> */
+    public CompletableFuture<CreateFeatureV2Response> createFeatureV2Async(CreateFeatureV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createFeatureV2);
+    }
+
+    /** 实例配置特性 为实例配置需要的特性。 支持配置的特性列表及特性配置示例如下： | 特性名称 | 特性描述 | 特性配置示例 | 特性配置参数 | | | | --------| :------- | :-------|
+     * :-------| :-------| :-------| :------- | | | | 参数名称 | 参数描述 | 参数默认值 | 参数范围 | | lts |
+     * 是否支持shubao访问日志上报功能。|{\&quot;name\&quot;:\&quot;lts\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;group_id\\\\\&quot;:
+     * \\\&quot;\\,\\\\\&quot;topic_id\\\\\&quot;:\\\\\&quot;\\\\\&quot;,\\\\\&quot;log_group\\\\\&quot;:\\\\\&quot;\\\\\&quot;,\\\\\&quot;log_stream\\\\\&quot;:\\\\\&quot;\\\\\&quot;}\&quot;}
+     * | group_id | 日志组ID | | | | | | | topic_id | 日志流ID | | | | | | | log_group | 日志组名称 | | | | | | | log_stream |
+     * 日志流名称 | | | | ratelimit |
+     * 是否支持自定义流控值。|{\&quot;name\&quot;:\&quot;ratelimit\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;api_limits\\\\\&quot;: 500}\&quot;} | api_limits | API全局默认流控值。注意：如果配置过小会导致业务持续被流控，请根据业务谨慎修改。 |
+     * 200 次/秒 | 1-1000000 次/秒 | | request_body_size |
+     * 是否支持指定最大请求Body大小。|{\&quot;name\&quot;:\&quot;request_body_size\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;104857600\&quot;} | request_body_size | 请求中允许携带的Body大小上限。 | 12 M | 1-9536 M | | backend_timeout |
+     * 是否支持配置后端API最大超时时间。|{\&quot;name\&quot;:\&quot;backend_timeout\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\&quot;max_timeout\\\&quot;: 500}\&quot;} | max_timeout | API网关到后端服务的超时时间上限。 | 60000 ms | 1-600000 ms |
+     * | app_token |
+     * 是否开启app_token认证方式。|{\&quot;name\&quot;:\&quot;app_token\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;, \\\\\&quot;app_token_expire_time\\\\\&quot;:
+     * 3600, \\\\\&quot;app_token_uri\\\\\&quot;: \\\\\&quot;/v1/apigw/oauth2/token\\\\\&quot;,
+     * \\\\\&quot;refresh_token_expire_time\\\\\&quot;: 7200}\&quot;} | enable | 是否开启 | off | on/off | | | | |
+     * app_token_expire_time | access token的有效时间 | 3600 s | 1-72000 s | | | | | refresh_token_expire_time | refresh
+     * token的有效时间 | 7200 s | 1-72000 s | | | | | app_token_uri | 获取token的uri | /v1/apigw/oauth2/token | | | | | |
+     * app_token_key | token的加密key | | | | app_api_key |
+     * 是否开启app_api_key认证方式。|{\&quot;name\&quot;:\&quot;app_api_key\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;on\&quot;} | | | off | on/off | | app_basic |
+     * 是否开启app_basic认证方式。|{\&quot;name\&quot;:\&quot;app_basic\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;on\&quot;} | | | off | on/off | | app_secret |
+     * 是否支持app_secret认证方式。|{\&quot;name\&quot;:\&quot;app_secret\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;on\&quot;} | | | off | on/off | | app_jwt |
+     * 是否支持app_jwt认证方式。|{\&quot;name\&quot;:\&quot;app_jwt\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;, \\\\\&quot;auth_header\\\\\&quot;:
+     * \\\\\&quot;Authorization\\\\\&quot;}\&quot;}| enable | 是否开启app_jwt认证方式。 | off | on/off | | | | | auth_header |
+     * app_jwt认证头 | Authorization | | | public_key |
+     * 是否支持public_key类型的后端签名。|{\&quot;name\&quot;:\&quot;public_key\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;, \\\\\&quot;public_key_uri_prefix\\\\\&quot;:
+     * \\\\\&quot;/apigw/authadv/v2/public-key/\\\\\&quot;}\&quot;}| enable | 是否开启app_jwt认证方式。 | off | on/off | | | | |
+     * public_key_uri_prefix | 获取public key的uri前缀 | /apigw/authadv/v2/public-key/ | | | backend_token_allow |
+     * 是否支持普通租户透传token到后端。|{\&quot;name\&quot;:\&quot;backend_token_allow\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;backend_token_allow_users\\\\\&quot;: [\\\\\&quot;paas_apig_wwx548366_01\\\\\&quot;]}\&quot;}
+     * | backend_token_allow_users | 透传token到后端普通租户白名单，匹配普通租户domain name正则表达式 | | | | backend_client_certificate |
+     * 是否开启后端双向认证。|{\&quot;name\&quot;:\&quot;backend_client_certificate\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;,\\\\\&quot;ca\\\\\&quot;:
+     * \\\\\&quot;\\\\\&quot;,\\\\\&quot;content\\\\\&quot;: \\\\\&quot;\\\\\&quot;,\\\\\&quot;key\\\\\&quot;:
+     * \\\\\&quot;\\\\\&quot;}\&quot;} | enable | 是否开启 | off | on/off | | | | | ca | 双向认证信任证书 | | | | | | | content |
+     * 双向认证证书 | | | | | | | key | 双向认证信任私钥 | | | | ssl_ciphers |
+     * 是否支持https加密套件。|{\&quot;name\&quot;:\&quot;ssl_ciphers\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;:
+     * \&quot;config\&quot;: \&quot;{\\\\\&quot;ssl_ciphers\\\\\&quot;:
+     * [\\\\\&quot;ECDHE-ECDSA-AES256-GCM-SHA384\\\\\&quot;]}\&quot;} | ssl_ciphers |
+     * 支持的加解密套件。ssl_ciphers数组中只允许出现默认值中的字符串，且数组不能为空。 | |
+     * ECDHE-ECDSA-AES256-GCM-SHA384,ECDHE-RSA-AES256-GCM-SHA384,ECDHE-ECDSA-AES128-GCM-SHA256,ECDHE-RSA-AES128-GCM-SHA256,ECDHE-ECDSA-AES256-SHA384,ECDHE-RSA-AES256-SHA384,ECDHE-ECDSA-AES128-SHA256,ECDHE-RSA-AES128-SHA256
+     * | | real_ip_from_xff |
+     * 是否开启使用xff头作为访问控制、流控策略的源ip生效依据。|{\&quot;name\&quot;:\&quot;real_ip_from_xff\&quot;,\&quot;enable\&quot;:
+     * true,\&quot;config\&quot;: \&quot;{\\\\\&quot;enable\\\\\&quot;:
+     * \\\\\&quot;on\\\\\&quot;,\\\\\&quot;xff_index\\\\\&quot;: 1}\&quot;} | enable | 是否开启 | off | on/off | | | | |
+     * xff_index | 源ip所在xff头的索引位置（支持负数，-1为最后一位，以此类推） | -1 | int32有效值 |
+     *
+     * @param CreateFeatureV2Request 请求对象
+     * @return AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response> */
+    public AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response> createFeatureV2AsyncInvoker(
+        CreateFeatureV2Request request) {
+        return new AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>(request, ApigMeta.createFeatureV2,
+            hcClient);
+    }
+
+    /** 创建分组自定义响应 新增分组下自定义响应
+     *
+     * @param CreateGatewayResponseV2Request 请求对象
+     * @return CompletableFuture<CreateGatewayResponseV2Response> */
+    public CompletableFuture<CreateGatewayResponseV2Response> createGatewayResponseV2Async(
+        CreateGatewayResponseV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createGatewayResponseV2);
+    }
+
+    /** 创建分组自定义响应 新增分组下自定义响应
+     *
+     * @param CreateGatewayResponseV2Request 请求对象
+     * @return AsyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> */
+    public AsyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> createGatewayResponseV2AsyncInvoker(
+        CreateGatewayResponseV2Request request) {
+        return new AsyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response>(request,
+            ApigMeta.createGatewayResponseV2, hcClient);
+    }
+
+    /** 创建专享版实例 创建专享版实例
+     *
+     * @param CreateInstanceV2Request 请求对象
+     * @return CompletableFuture<CreateInstanceV2Response> */
+    public CompletableFuture<CreateInstanceV2Response> createInstanceV2Async(CreateInstanceV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createInstanceV2);
+    }
+
+    /** 创建专享版实例 创建专享版实例
+     *
+     * @param CreateInstanceV2Request 请求对象
+     * @return AsyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response> */
+    public AsyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response> createInstanceV2AsyncInvoker(
+        CreateInstanceV2Request request) {
+        return new AsyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response>(request, ApigMeta.createInstanceV2,
+            hcClient);
     }
 
     /** 创建流控策略 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
@@ -192,6 +406,25 @@ public class ApigAsyncClient {
             request, ApigMeta.createSpecialThrottlingConfigurationV2, hcClient);
     }
 
+    /** 删除自定义认证 删除自定义认证
+     *
+     * @param DeleteCustomAuthorizerV2Request 请求对象
+     * @return CompletableFuture<DeleteCustomAuthorizerV2Response> */
+    public CompletableFuture<DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2Async(
+        DeleteCustomAuthorizerV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteCustomAuthorizerV2);
+    }
+
+    /** 删除自定义认证 删除自定义认证
+     *
+     * @param DeleteCustomAuthorizerV2Request 请求对象
+     * @return AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> */
+    public AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2AsyncInvoker(
+        DeleteCustomAuthorizerV2Request request) {
+        return new AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>(request,
+            ApigMeta.deleteCustomAuthorizerV2, hcClient);
+    }
+
     /** 删除环境 删除指定的环境。 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。 环境上存在已发布的API时，该环境不能被删除。
      *
      * @param DeleteEnvironmentV2Request 请求对象
@@ -227,6 +460,62 @@ public class ApigAsyncClient {
         DeleteEnvironmentVariableV2Request request) {
         return new AsyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>(request,
             ApigMeta.deleteEnvironmentVariableV2, hcClient);
+    }
+
+    /** 删除分组指定错误类型的自定义响应配置 删除分组指定错误类型的自定义响应配置，还原为使用默认值的配置。
+     *
+     * @param DeleteGatewayResponseTypeV2Request 请求对象
+     * @return CompletableFuture<DeleteGatewayResponseTypeV2Response> */
+    public CompletableFuture<DeleteGatewayResponseTypeV2Response> deleteGatewayResponseTypeV2Async(
+        DeleteGatewayResponseTypeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteGatewayResponseTypeV2);
+    }
+
+    /** 删除分组指定错误类型的自定义响应配置 删除分组指定错误类型的自定义响应配置，还原为使用默认值的配置。
+     *
+     * @param DeleteGatewayResponseTypeV2Request 请求对象
+     * @return AsyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> */
+    public AsyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> deleteGatewayResponseTypeV2AsyncInvoker(
+        DeleteGatewayResponseTypeV2Request request) {
+        return new AsyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response>(request,
+            ApigMeta.deleteGatewayResponseTypeV2, hcClient);
+    }
+
+    /** 删除分组自定义响应 删除分组自定义响应
+     *
+     * @param DeleteGatewayResponseV2Request 请求对象
+     * @return CompletableFuture<DeleteGatewayResponseV2Response> */
+    public CompletableFuture<DeleteGatewayResponseV2Response> deleteGatewayResponseV2Async(
+        DeleteGatewayResponseV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteGatewayResponseV2);
+    }
+
+    /** 删除分组自定义响应 删除分组自定义响应
+     *
+     * @param DeleteGatewayResponseV2Request 请求对象
+     * @return AsyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> */
+    public AsyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> deleteGatewayResponseV2AsyncInvoker(
+        DeleteGatewayResponseV2Request request) {
+        return new AsyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response>(request,
+            ApigMeta.deleteGatewayResponseV2, hcClient);
+    }
+
+    /** 删除专享版实例 删除专享版实例
+     *
+     * @param DeleteInstancesV2Request 请求对象
+     * @return CompletableFuture<DeleteInstancesV2Response> */
+    public CompletableFuture<DeleteInstancesV2Response> deleteInstancesV2Async(DeleteInstancesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteInstancesV2);
+    }
+
+    /** 删除专享版实例 删除专享版实例
+     *
+     * @param DeleteInstancesV2Request 请求对象
+     * @return AsyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response> */
+    public AsyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response> deleteInstancesV2AsyncInvoker(
+        DeleteInstancesV2Request request) {
+        return new AsyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response>(request,
+            ApigMeta.deleteInstancesV2, hcClient);
     }
 
     /** 删除流控策略 删除指定的流控策略,以及该流控策略与API的所有绑定关系。
@@ -437,6 +726,44 @@ public class ApigAsyncClient {
             ApigMeta.listAppQuantitiesV2, hcClient);
     }
 
+    /** 查看可用区信息 查看可用区信息
+     *
+     * @param ListAvailableZonesV2Request 请求对象
+     * @return CompletableFuture<ListAvailableZonesV2Response> */
+    public CompletableFuture<ListAvailableZonesV2Response> listAvailableZonesV2Async(
+        ListAvailableZonesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listAvailableZonesV2);
+    }
+
+    /** 查看可用区信息 查看可用区信息
+     *
+     * @param ListAvailableZonesV2Request 请求对象
+     * @return AsyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response> */
+    public AsyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response> listAvailableZonesV2AsyncInvoker(
+        ListAvailableZonesV2Request request) {
+        return new AsyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response>(request,
+            ApigMeta.listAvailableZonesV2, hcClient);
+    }
+
+    /** 查询自定义认证列表 查询自定义认证列表
+     *
+     * @param ListCustomAuthorizersV2Request 请求对象
+     * @return CompletableFuture<ListCustomAuthorizersV2Response> */
+    public CompletableFuture<ListCustomAuthorizersV2Response> listCustomAuthorizersV2Async(
+        ListCustomAuthorizersV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listCustomAuthorizersV2);
+    }
+
+    /** 查询自定义认证列表 查询自定义认证列表
+     *
+     * @param ListCustomAuthorizersV2Request 请求对象
+     * @return AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> */
+    public AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> listCustomAuthorizersV2AsyncInvoker(
+        ListCustomAuthorizersV2Request request) {
+        return new AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>(request,
+            ApigMeta.listCustomAuthorizersV2, hcClient);
+    }
+
     /** 查询变量列表 查询分组下的所有环境变量的列表。
      *
      * @param ListEnvironmentVariablesV2Request 请求对象
@@ -472,6 +799,154 @@ public class ApigAsyncClient {
         ListEnvironmentsV2Request request) {
         return new AsyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>(request,
             ApigMeta.listEnvironmentsV2, hcClient);
+    }
+
+    /** 查看实例特性列表 查看实例特性列表。注意：实例不支持以下特性的需要联系技术支持升级实例版本。 当前支持的特性列表如下： 特性名称 | 特性描述 | 特性是否可配置| --------| :------- |
+     * :-------| lts | 是否支持shubao访问日志上报功能。| 是 | gateway_responses | 是否支持网关自定义响应。| 否 | ratelimit | 是否支持自定义流控值。| 是 |
+     * request_body_size | 是否支持指定最大请求Body大小。| 是 | backend_timeout | 是否支持配置后端API最大超时时间。| 是 | app_token |
+     * 是否开启app_token认证方式。| 是 | app_api_key | 是否开启app_api_key认证方式。| 是 | app_basic | 是否开启app_basic认证方式。| 是 | app_secret |
+     * 是否支持app_secret认证方式。| 是 | app_jwt | 是否支持app_jwt认证方式。| 是 | public_key | 是否支持public_key类型的后端签名。| 是 |
+     * backend_token_allow | 是否支持普通租户透传token到后端。| 是 | sign_basic | 签名秘钥是否支持basic类型。| 否 | multi_auth | API是否支持双重认证方式。| 否
+     * | backend_client_certificate | 是否开启后端双向认证。| 是 | ssl_ciphers | 是否支持https加密套件。 | 是 | route | 是否支持自定义路由。| 否 | cors |
+     * 是否支持API使用插件功能。| 否 | real_ip_from_xff | 是否开启使用xff头作为访问控制、流控策略的源ip生效依据。 | 是 |
+     *
+     * @param ListFeaturesV2Request 请求对象
+     * @return CompletableFuture<ListFeaturesV2Response> */
+    public CompletableFuture<ListFeaturesV2Response> listFeaturesV2Async(ListFeaturesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listFeaturesV2);
+    }
+
+    /** 查看实例特性列表 查看实例特性列表。注意：实例不支持以下特性的需要联系技术支持升级实例版本。 当前支持的特性列表如下： 特性名称 | 特性描述 | 特性是否可配置| --------| :------- |
+     * :-------| lts | 是否支持shubao访问日志上报功能。| 是 | gateway_responses | 是否支持网关自定义响应。| 否 | ratelimit | 是否支持自定义流控值。| 是 |
+     * request_body_size | 是否支持指定最大请求Body大小。| 是 | backend_timeout | 是否支持配置后端API最大超时时间。| 是 | app_token |
+     * 是否开启app_token认证方式。| 是 | app_api_key | 是否开启app_api_key认证方式。| 是 | app_basic | 是否开启app_basic认证方式。| 是 | app_secret |
+     * 是否支持app_secret认证方式。| 是 | app_jwt | 是否支持app_jwt认证方式。| 是 | public_key | 是否支持public_key类型的后端签名。| 是 |
+     * backend_token_allow | 是否支持普通租户透传token到后端。| 是 | sign_basic | 签名秘钥是否支持basic类型。| 否 | multi_auth | API是否支持双重认证方式。| 否
+     * | backend_client_certificate | 是否开启后端双向认证。| 是 | ssl_ciphers | 是否支持https加密套件。 | 是 | route | 是否支持自定义路由。| 否 | cors |
+     * 是否支持API使用插件功能。| 否 | real_ip_from_xff | 是否开启使用xff头作为访问控制、流控策略的源ip生效依据。 | 是 |
+     *
+     * @param ListFeaturesV2Request 请求对象
+     * @return AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response> */
+    public AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response> listFeaturesV2AsyncInvoker(
+        ListFeaturesV2Request request) {
+        return new AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>(request, ApigMeta.listFeaturesV2,
+            hcClient);
+    }
+
+    /** 查询分组自定义响应列表 查询分组自定义响应列表
+     *
+     * @param ListGatewayResponsesV2Request 请求对象
+     * @return CompletableFuture<ListGatewayResponsesV2Response> */
+    public CompletableFuture<ListGatewayResponsesV2Response> listGatewayResponsesV2Async(
+        ListGatewayResponsesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listGatewayResponsesV2);
+    }
+
+    /** 查询分组自定义响应列表 查询分组自定义响应列表
+     *
+     * @param ListGatewayResponsesV2Request 请求对象
+     * @return AsyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> */
+    public AsyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> listGatewayResponsesV2AsyncInvoker(
+        ListGatewayResponsesV2Request request) {
+        return new AsyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response>(request,
+            ApigMeta.listGatewayResponsesV2, hcClient);
+    }
+
+    /** 查询租户实例配置列表 查询租户实例配置列表
+     *
+     * @param ListInstanceCofigsV2Request 请求对象
+     * @return CompletableFuture<ListInstanceCofigsV2Response> */
+    public CompletableFuture<ListInstanceCofigsV2Response> listInstanceCofigsV2Async(
+        ListInstanceCofigsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listInstanceCofigsV2);
+    }
+
+    /** 查询租户实例配置列表 查询租户实例配置列表
+     *
+     * @param ListInstanceCofigsV2Request 请求对象
+     * @return AsyncInvoker<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response> */
+    public AsyncInvoker<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response> listInstanceCofigsV2AsyncInvoker(
+        ListInstanceCofigsV2Request request) {
+        return new AsyncInvoker<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response>(request,
+            ApigMeta.listInstanceCofigsV2, hcClient);
+    }
+
+    /** 查询专享版实例列表 查询专享版实例列表
+     *
+     * @param ListInstancesV2Request 请求对象
+     * @return CompletableFuture<ListInstancesV2Response> */
+    public CompletableFuture<ListInstancesV2Response> listInstancesV2Async(ListInstancesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listInstancesV2);
+    }
+
+    /** 查询专享版实例列表 查询专享版实例列表
+     *
+     * @param ListInstancesV2Request 请求对象
+     * @return AsyncInvoker<ListInstancesV2Request, ListInstancesV2Response> */
+    public AsyncInvoker<ListInstancesV2Request, ListInstancesV2Response> listInstancesV2AsyncInvoker(
+        ListInstancesV2Request request) {
+        return new AsyncInvoker<ListInstancesV2Request, ListInstancesV2Response>(request, ApigMeta.listInstancesV2,
+            hcClient);
+    }
+
+    /** API统计信息查询-最近一段时间 根据API的id和最近的一段时间查询API被调用的次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。 &gt;
+     * 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
+     *
+     * @param ListLatelyApiStatisticsV2Request 请求对象
+     * @return CompletableFuture<ListLatelyApiStatisticsV2Response> */
+    public CompletableFuture<ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2Async(
+        ListLatelyApiStatisticsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listLatelyApiStatisticsV2);
+    }
+
+    /** API统计信息查询-最近一段时间 根据API的id和最近的一段时间查询API被调用的次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。 &gt;
+     * 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
+     *
+     * @param ListLatelyApiStatisticsV2Request 请求对象
+     * @return AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> */
+    public AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2AsyncInvoker(
+        ListLatelyApiStatisticsV2Request request) {
+        return new AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>(request,
+            ApigMeta.listLatelyApiStatisticsV2, hcClient);
+    }
+
+    /** 分组统计信息查询-最近一小时内 根据API分组的编号查询该分组下所有API被调用的总次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。 &gt;
+     * 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
+     *
+     * @param ListLatelyGroupStatisticsV2Request 请求对象
+     * @return CompletableFuture<ListLatelyGroupStatisticsV2Response> */
+    public CompletableFuture<ListLatelyGroupStatisticsV2Response> listLatelyGroupStatisticsV2Async(
+        ListLatelyGroupStatisticsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listLatelyGroupStatisticsV2);
+    }
+
+    /** 分组统计信息查询-最近一小时内 根据API分组的编号查询该分组下所有API被调用的总次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。 &gt;
+     * 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
+     *
+     * @param ListLatelyGroupStatisticsV2Request 请求对象
+     * @return AsyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> */
+    public AsyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> listLatelyGroupStatisticsV2AsyncInvoker(
+        ListLatelyGroupStatisticsV2Request request) {
+        return new AsyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response>(request,
+            ApigMeta.listLatelyGroupStatisticsV2, hcClient);
+    }
+
+    /** 查询某个实例的租户配置列表 查询某个实例的租户配置列表，用户可以通过此接口查看各类型资源配置及使用情况。
+     *
+     * @param ListProjectCofigsV2Request 请求对象
+     * @return CompletableFuture<ListProjectCofigsV2Response> */
+    public CompletableFuture<ListProjectCofigsV2Response> listProjectCofigsV2Async(ListProjectCofigsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listProjectCofigsV2);
+    }
+
+    /** 查询某个实例的租户配置列表 查询某个实例的租户配置列表，用户可以通过此接口查看各类型资源配置及使用情况。
+     *
+     * @param ListProjectCofigsV2Request 请求对象
+     * @return AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response> */
+    public AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response> listProjectCofigsV2AsyncInvoker(
+        ListProjectCofigsV2Request request) {
+        return new AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>(request,
+            ApigMeta.listProjectCofigsV2, hcClient);
     }
 
     /** 查询流控策略列表 查询所有流控策略的信息。
@@ -550,6 +1025,75 @@ public class ApigAsyncClient {
             request, ApigMeta.listSpecialThrottlingConfigurationsV2, hcClient);
     }
 
+    /** 查询标签列表 查询标签列表
+     *
+     * @param ListTagsV2Request 请求对象
+     * @return CompletableFuture<ListTagsV2Response> */
+    public CompletableFuture<ListTagsV2Response> listTagsV2Async(ListTagsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listTagsV2);
+    }
+
+    /** 查询标签列表 查询标签列表
+     *
+     * @param ListTagsV2Request 请求对象
+     * @return AsyncInvoker<ListTagsV2Request, ListTagsV2Response> */
+    public AsyncInvoker<ListTagsV2Request, ListTagsV2Response> listTagsV2AsyncInvoker(ListTagsV2Request request) {
+        return new AsyncInvoker<ListTagsV2Request, ListTagsV2Response>(request, ApigMeta.listTagsV2, hcClient);
+    }
+
+    /** 实例解绑EIP 实例解绑EIP
+     *
+     * @param RemoveEipV2Request 请求对象
+     * @return CompletableFuture<RemoveEipV2Response> */
+    public CompletableFuture<RemoveEipV2Response> removeEipV2Async(RemoveEipV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.removeEipV2);
+    }
+
+    /** 实例解绑EIP 实例解绑EIP
+     *
+     * @param RemoveEipV2Request 请求对象
+     * @return AsyncInvoker<RemoveEipV2Request, RemoveEipV2Response> */
+    public AsyncInvoker<RemoveEipV2Request, RemoveEipV2Response> removeEipV2AsyncInvoker(RemoveEipV2Request request) {
+        return new AsyncInvoker<RemoveEipV2Request, RemoveEipV2Response>(request, ApigMeta.removeEipV2, hcClient);
+    }
+
+    /** 关闭实例公网出口 关闭实例公网出口
+     *
+     * @param RemoveEngressEipV2Request 请求对象
+     * @return CompletableFuture<RemoveEngressEipV2Response> */
+    public CompletableFuture<RemoveEngressEipV2Response> removeEngressEipV2Async(RemoveEngressEipV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.removeEngressEipV2);
+    }
+
+    /** 关闭实例公网出口 关闭实例公网出口
+     *
+     * @param RemoveEngressEipV2Request 请求对象
+     * @return AsyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response> */
+    public AsyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response> removeEngressEipV2AsyncInvoker(
+        RemoveEngressEipV2Request request) {
+        return new AsyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response>(request,
+            ApigMeta.removeEngressEipV2, hcClient);
+    }
+
+    /** 查看自定义认证详情 查看自定义认证详情
+     *
+     * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfCustomAuthorizersV2Response> */
+    public CompletableFuture<ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2Async(
+        ShowDetailsOfCustomAuthorizersV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfCustomAuthorizersV2);
+    }
+
+    /** 查看自定义认证详情 查看自定义认证详情
+     *
+     * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> */
+    public AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2AsyncInvoker(
+        ShowDetailsOfCustomAuthorizersV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>(
+            request, ApigMeta.showDetailsOfCustomAuthorizersV2, hcClient);
+    }
+
     /** 查看域名证书 查看域名下绑定的证书详情。
      *
      * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
@@ -589,6 +1133,82 @@ public class ApigAsyncClient {
             request, ApigMeta.showDetailsOfEnvironmentVariableV2, hcClient);
     }
 
+    /** 查看分组下指定错误类型的自定义响应 查看分组下指定错误类型的自定义响应
+     *
+     * @param ShowDetailsOfGatewayResponseTypeV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfGatewayResponseTypeV2Response> */
+    public CompletableFuture<ShowDetailsOfGatewayResponseTypeV2Response> showDetailsOfGatewayResponseTypeV2Async(
+        ShowDetailsOfGatewayResponseTypeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfGatewayResponseTypeV2);
+    }
+
+    /** 查看分组下指定错误类型的自定义响应 查看分组下指定错误类型的自定义响应
+     *
+     * @param ShowDetailsOfGatewayResponseTypeV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> */
+    public AsyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> showDetailsOfGatewayResponseTypeV2AsyncInvoker(
+        ShowDetailsOfGatewayResponseTypeV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response>(
+            request, ApigMeta.showDetailsOfGatewayResponseTypeV2, hcClient);
+    }
+
+    /** 查询分组自定义响应详情 查询分组自定义响应详情
+     *
+     * @param ShowDetailsOfGatewayResponseV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfGatewayResponseV2Response> */
+    public CompletableFuture<ShowDetailsOfGatewayResponseV2Response> showDetailsOfGatewayResponseV2Async(
+        ShowDetailsOfGatewayResponseV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfGatewayResponseV2);
+    }
+
+    /** 查询分组自定义响应详情 查询分组自定义响应详情
+     *
+     * @param ShowDetailsOfGatewayResponseV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> */
+    public AsyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> showDetailsOfGatewayResponseV2AsyncInvoker(
+        ShowDetailsOfGatewayResponseV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response>(request,
+            ApigMeta.showDetailsOfGatewayResponseV2, hcClient);
+    }
+
+    /** 查看专享版实例创建进度 查看专享版实例创建进度
+     *
+     * @param ShowDetailsOfInstanceProgressV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfInstanceProgressV2Response> */
+    public CompletableFuture<ShowDetailsOfInstanceProgressV2Response> showDetailsOfInstanceProgressV2Async(
+        ShowDetailsOfInstanceProgressV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfInstanceProgressV2);
+    }
+
+    /** 查看专享版实例创建进度 查看专享版实例创建进度
+     *
+     * @param ShowDetailsOfInstanceProgressV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> */
+    public AsyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> showDetailsOfInstanceProgressV2AsyncInvoker(
+        ShowDetailsOfInstanceProgressV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response>(
+            request, ApigMeta.showDetailsOfInstanceProgressV2, hcClient);
+    }
+
+    /** 查看专享版实例详情 查看专享版实例详情
+     *
+     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfInstanceV2Response> */
+    public CompletableFuture<ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2Async(
+        ShowDetailsOfInstanceV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfInstanceV2);
+    }
+
+    /** 查看专享版实例详情 查看专享版实例详情
+     *
+     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> */
+    public AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2AsyncInvoker(
+        ShowDetailsOfInstanceV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>(request,
+            ApigMeta.showDetailsOfInstanceV2, hcClient);
+    }
+
     /** 查看流控策略详情 查看指定流控策略的详细信息。
      *
      * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
@@ -609,6 +1229,25 @@ public class ApigAsyncClient {
             request, ApigMeta.showDetailsOfRequestThrottlingPolicyV2, hcClient);
     }
 
+    /** 修改自定义认证 修改自定义认证
+     *
+     * @param UpdateCustomAuthorizerV2Request 请求对象
+     * @return CompletableFuture<UpdateCustomAuthorizerV2Response> */
+    public CompletableFuture<UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2Async(
+        UpdateCustomAuthorizerV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateCustomAuthorizerV2);
+    }
+
+    /** 修改自定义认证 修改自定义认证
+     *
+     * @param UpdateCustomAuthorizerV2Request 请求对象
+     * @return AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> */
+    public AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2AsyncInvoker(
+        UpdateCustomAuthorizerV2Request request) {
+        return new AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>(request,
+            ApigMeta.updateCustomAuthorizerV2, hcClient);
+    }
+
     /** 修改域名 修改绑定的域名所对应的配置信息。
      *
      * @param UpdateDomainV2Request 请求对象
@@ -627,6 +1266,24 @@ public class ApigAsyncClient {
             hcClient);
     }
 
+    /** 更新实例出公网带宽 更新实例出公网带宽
+     *
+     * @param UpdateEngressEipV2Request 请求对象
+     * @return CompletableFuture<UpdateEngressEipV2Response> */
+    public CompletableFuture<UpdateEngressEipV2Response> updateEngressEipV2Async(UpdateEngressEipV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateEngressEipV2);
+    }
+
+    /** 更新实例出公网带宽 更新实例出公网带宽
+     *
+     * @param UpdateEngressEipV2Request 请求对象
+     * @return AsyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response> */
+    public AsyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response> updateEngressEipV2AsyncInvoker(
+        UpdateEngressEipV2Request request) {
+        return new AsyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response>(request,
+            ApigMeta.updateEngressEipV2, hcClient);
+    }
+
     /** 修改环境 修改指定环境的信息。其中可修改的属性为：name、remark，其它属性不可修改。
      *
      * @param UpdateEnvironmentV2Request 请求对象
@@ -643,6 +1300,62 @@ public class ApigAsyncClient {
         UpdateEnvironmentV2Request request) {
         return new AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>(request,
             ApigMeta.updateEnvironmentV2, hcClient);
+    }
+
+    /** 修改分组下指定错误类型的自定义响应 修改分组下指定错误类型的自定义响应。
+     *
+     * @param UpdateGatewayResponseTypeV2Request 请求对象
+     * @return CompletableFuture<UpdateGatewayResponseTypeV2Response> */
+    public CompletableFuture<UpdateGatewayResponseTypeV2Response> updateGatewayResponseTypeV2Async(
+        UpdateGatewayResponseTypeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateGatewayResponseTypeV2);
+    }
+
+    /** 修改分组下指定错误类型的自定义响应 修改分组下指定错误类型的自定义响应。
+     *
+     * @param UpdateGatewayResponseTypeV2Request 请求对象
+     * @return AsyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> */
+    public AsyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> updateGatewayResponseTypeV2AsyncInvoker(
+        UpdateGatewayResponseTypeV2Request request) {
+        return new AsyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response>(request,
+            ApigMeta.updateGatewayResponseTypeV2, hcClient);
+    }
+
+    /** 修改分组自定义响应 修改分组自定义响应
+     *
+     * @param UpdateGatewayResponseV2Request 请求对象
+     * @return CompletableFuture<UpdateGatewayResponseV2Response> */
+    public CompletableFuture<UpdateGatewayResponseV2Response> updateGatewayResponseV2Async(
+        UpdateGatewayResponseV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateGatewayResponseV2);
+    }
+
+    /** 修改分组自定义响应 修改分组自定义响应
+     *
+     * @param UpdateGatewayResponseV2Request 请求对象
+     * @return AsyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> */
+    public AsyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> updateGatewayResponseV2AsyncInvoker(
+        UpdateGatewayResponseV2Request request) {
+        return new AsyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response>(request,
+            ApigMeta.updateGatewayResponseV2, hcClient);
+    }
+
+    /** 更新专享版实例 更新专享版实例
+     *
+     * @param UpdateInstanceV2Request 请求对象
+     * @return CompletableFuture<UpdateInstanceV2Response> */
+    public CompletableFuture<UpdateInstanceV2Response> updateInstanceV2Async(UpdateInstanceV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateInstanceV2);
+    }
+
+    /** 更新专享版实例 更新专享版实例
+     *
+     * @param UpdateInstanceV2Request 请求对象
+     * @return AsyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response> */
+    public AsyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response> updateInstanceV2AsyncInvoker(
+        UpdateInstanceV2Request request) {
+        return new AsyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response>(request, ApigMeta.updateInstanceV2,
+            hcClient);
     }
 
     /** 修改流控策略 修改指定流控策略的详细信息。
@@ -703,6 +1416,115 @@ public class ApigAsyncClient {
             request, ApigMeta.updateSpecialThrottlingConfigurationV2, hcClient);
     }
 
+    /** 批量删除ACL策略 批量删除指定的多个ACL策略。 删除ACL策略时，如果存在ACL策略与API绑定关系，则无法删除。
+     *
+     * @param BatchDeleteAclV2Request 请求对象
+     * @return CompletableFuture<BatchDeleteAclV2Response> */
+    public CompletableFuture<BatchDeleteAclV2Response> batchDeleteAclV2Async(BatchDeleteAclV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.batchDeleteAclV2);
+    }
+
+    /** 批量删除ACL策略 批量删除指定的多个ACL策略。 删除ACL策略时，如果存在ACL策略与API绑定关系，则无法删除。
+     *
+     * @param BatchDeleteAclV2Request 请求对象
+     * @return AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response> */
+    public AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response> batchDeleteAclV2AsyncInvoker(
+        BatchDeleteAclV2Request request) {
+        return new AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>(request, ApigMeta.batchDeleteAclV2,
+            hcClient);
+    }
+
+    /** 创建ACL策略
+     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。
+     *
+     * @param CreateAclStrategyV2Request 请求对象
+     * @return CompletableFuture<CreateAclStrategyV2Response> */
+    public CompletableFuture<CreateAclStrategyV2Response> createAclStrategyV2Async(CreateAclStrategyV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createAclStrategyV2);
+    }
+
+    /** 创建ACL策略
+     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。
+     *
+     * @param CreateAclStrategyV2Request 请求对象
+     * @return AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response> */
+    public AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response> createAclStrategyV2AsyncInvoker(
+        CreateAclStrategyV2Request request) {
+        return new AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>(request,
+            ApigMeta.createAclStrategyV2, hcClient);
+    }
+
+    /** 删除ACL策略 删除指定的ACL策略， 如果存在api与该ACL策略的绑定关系，则无法删除
+     *
+     * @param DeleteAclV2Request 请求对象
+     * @return CompletableFuture<DeleteAclV2Response> */
+    public CompletableFuture<DeleteAclV2Response> deleteAclV2Async(DeleteAclV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteAclV2);
+    }
+
+    /** 删除ACL策略 删除指定的ACL策略， 如果存在api与该ACL策略的绑定关系，则无法删除
+     *
+     * @param DeleteAclV2Request 请求对象
+     * @return AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response> */
+    public AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response> deleteAclV2AsyncInvoker(DeleteAclV2Request request) {
+        return new AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response>(request, ApigMeta.deleteAclV2, hcClient);
+    }
+
+    /** 查看ACL策略列表 查询所有的ACL策略列表。
+     *
+     * @param ListAclStrategiesV2Request 请求对象
+     * @return CompletableFuture<ListAclStrategiesV2Response> */
+    public CompletableFuture<ListAclStrategiesV2Response> listAclStrategiesV2Async(ListAclStrategiesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listAclStrategiesV2);
+    }
+
+    /** 查看ACL策略列表 查询所有的ACL策略列表。
+     *
+     * @param ListAclStrategiesV2Request 请求对象
+     * @return AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response> */
+    public AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response> listAclStrategiesV2AsyncInvoker(
+        ListAclStrategiesV2Request request) {
+        return new AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>(request,
+            ApigMeta.listAclStrategiesV2, hcClient);
+    }
+
+    /** 查看ACL策略详情 查询指定ACL策略的详情。
+     *
+     * @param ShowDetailsOfAclPolicyV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfAclPolicyV2Response> */
+    public CompletableFuture<ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2Async(
+        ShowDetailsOfAclPolicyV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfAclPolicyV2);
+    }
+
+    /** 查看ACL策略详情 查询指定ACL策略的详情。
+     *
+     * @param ShowDetailsOfAclPolicyV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> */
+    public AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2AsyncInvoker(
+        ShowDetailsOfAclPolicyV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>(request,
+            ApigMeta.showDetailsOfAclPolicyV2, hcClient);
+    }
+
+    /** 修改ACL策略 修改指定的ACL策略，其中可修改的属性为：acl_name、acl_type、acl_value，其它属性不可修改。
+     *
+     * @param UpdateAclStrategyV2Request 请求对象
+     * @return CompletableFuture<UpdateAclStrategyV2Response> */
+    public CompletableFuture<UpdateAclStrategyV2Response> updateAclStrategyV2Async(UpdateAclStrategyV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateAclStrategyV2);
+    }
+
+    /** 修改ACL策略 修改指定的ACL策略，其中可修改的属性为：acl_name、acl_type、acl_value，其它属性不可修改。
+     *
+     * @param UpdateAclStrategyV2Request 请求对象
+     * @return AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> */
+    public AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> updateAclStrategyV2AsyncInvoker(
+        UpdateAclStrategyV2Request request) {
+        return new AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>(request,
+            ApigMeta.updateAclStrategyV2, hcClient);
+    }
+
     /** 绑定流控策略 将流控策略应用于API，则所有对该API的访问将会受到该流控策略的限制。
      * 当一定时间内的访问次数超过流控策略设置的API最大访问次数限制后，后续的访问将会被拒绝，从而能够较好的保护后端API免受异常流量的冲击，保障服务的稳定运行。
      * 为指定的API绑定流控策略，绑定时，需要指定在哪个环境上生效。同一个API发布到不同的环境可以绑定不同的流控策略；一个API在发布到特定环境后只能绑定一个默认的流控策略。
@@ -743,6 +1565,62 @@ public class ApigAsyncClient {
         BatchDisassociateThrottlingPolicyV2Request request) {
         return new AsyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>(
             request, ApigMeta.batchDisassociateThrottlingPolicyV2, hcClient);
+    }
+
+    /** 批量发布或下线API 将多个API发布到一个指定的环境，或将多个API从指定的环境下线。
+     *
+     * @param BatchPublishOrOfflineApiV2Request 请求对象
+     * @return CompletableFuture<BatchPublishOrOfflineApiV2Response> */
+    public CompletableFuture<BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2Async(
+        BatchPublishOrOfflineApiV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.batchPublishOrOfflineApiV2);
+    }
+
+    /** 批量发布或下线API 将多个API发布到一个指定的环境，或将多个API从指定的环境下线。
+     *
+     * @param BatchPublishOrOfflineApiV2Request 请求对象
+     * @return AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> */
+    public AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2AsyncInvoker(
+        BatchPublishOrOfflineApiV2Request request) {
+        return new AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>(request,
+            ApigMeta.batchPublishOrOfflineApiV2, hcClient);
+    }
+
+    /** 切换API版本 API每次发布时，会基于当前的API定义生成一个版本。版本记录了API发布时的各种定义及状态。 多个版本之间可以进行随意切换。但一个API在一个环境上，只能有一个版本生效。
+     *
+     * @param ChangeApiVersionV2Request 请求对象
+     * @return CompletableFuture<ChangeApiVersionV2Response> */
+    public CompletableFuture<ChangeApiVersionV2Response> changeApiVersionV2Async(ChangeApiVersionV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.changeApiVersionV2);
+    }
+
+    /** 切换API版本 API每次发布时，会基于当前的API定义生成一个版本。版本记录了API发布时的各种定义及状态。 多个版本之间可以进行随意切换。但一个API在一个环境上，只能有一个版本生效。
+     *
+     * @param ChangeApiVersionV2Request 请求对象
+     * @return AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response> */
+    public AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response> changeApiVersionV2AsyncInvoker(
+        ChangeApiVersionV2Request request) {
+        return new AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>(request,
+            ApigMeta.changeApiVersionV2, hcClient);
+    }
+
+    /** 后端连通性检测接口 后端连通性检测接口
+     *
+     * @param CheckBackendConnectivityRequest 请求对象
+     * @return CompletableFuture<CheckBackendConnectivityResponse> */
+    public CompletableFuture<CheckBackendConnectivityResponse> checkBackendConnectivityAsync(
+        CheckBackendConnectivityRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.checkBackendConnectivity);
+    }
+
+    /** 后端连通性检测接口 后端连通性检测接口
+     *
+     * @param CheckBackendConnectivityRequest 请求对象
+     * @return AsyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> */
+    public AsyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> checkBackendConnectivityAsyncInvoker(
+        CheckBackendConnectivityRequest request) {
+        return new AsyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse>(request,
+            ApigMeta.checkBackendConnectivity, hcClient);
     }
 
     /** 创建API分组 API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
@@ -800,6 +1678,41 @@ public class ApigAsyncClient {
         CreateOrDeletePublishRecordForApiV2Request request) {
         return new AsyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>(
             request, ApigMeta.createOrDeletePublishRecordForApiV2, hcClient);
+    }
+
+    /** 调试API 调试一个API在指定运行环境下的定义，接口调用者需要具有操作该API的权限。
+     *
+     * @param DebugApiV2Request 请求对象
+     * @return CompletableFuture<DebugApiV2Response> */
+    public CompletableFuture<DebugApiV2Response> debugApiV2Async(DebugApiV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.debugApiV2);
+    }
+
+    /** 调试API 调试一个API在指定运行环境下的定义，接口调用者需要具有操作该API的权限。
+     *
+     * @param DebugApiV2Request 请求对象
+     * @return AsyncInvoker<DebugApiV2Request, DebugApiV2Response> */
+    public AsyncInvoker<DebugApiV2Request, DebugApiV2Response> debugApiV2AsyncInvoker(DebugApiV2Request request) {
+        return new AsyncInvoker<DebugApiV2Request, DebugApiV2Response>(request, ApigMeta.debugApiV2, hcClient);
+    }
+
+    /** 根据版本编号下线API 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
+     *
+     * @param DeleteApiByVersionIdV2Request 请求对象
+     * @return CompletableFuture<DeleteApiByVersionIdV2Response> */
+    public CompletableFuture<DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2Async(
+        DeleteApiByVersionIdV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteApiByVersionIdV2);
+    }
+
+    /** 根据版本编号下线API 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
+     *
+     * @param DeleteApiByVersionIdV2Request 请求对象
+     * @return AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> */
+    public AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2AsyncInvoker(
+        DeleteApiByVersionIdV2Request request) {
+        return new AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>(request,
+            ApigMeta.deleteApiByVersionIdV2, hcClient);
     }
 
     /** 删除API分组 删除指定的API分组。
@@ -874,6 +1787,64 @@ public class ApigAsyncClient {
         ListApiGroupsV2Request request) {
         return new AsyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>(request, ApigMeta.listApiGroupsV2,
             hcClient);
+    }
+
+    /** 查询API运行时定义 查看指定的API在指定的环境上的运行时定义，默认查询RELEASE环境上的运行时定义。 API的定义分为临时定义和运行时定义，分别代表如下含义： -
+     * 临时定义：API在编辑中的定义，表示用户最后一次编辑后的API的状态 - 运行时定义：API在发布到某个环境时，对发布时的API的临时定义进行快照，固化出来的API的状态。 访问某个环境上的API，其实访问的就是其运行时的定义
+     *
+     * @param ListApiRuntimeDefinitionV2Request 请求对象
+     * @return CompletableFuture<ListApiRuntimeDefinitionV2Response> */
+    public CompletableFuture<ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2Async(
+        ListApiRuntimeDefinitionV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listApiRuntimeDefinitionV2);
+    }
+
+    /** 查询API运行时定义 查看指定的API在指定的环境上的运行时定义，默认查询RELEASE环境上的运行时定义。 API的定义分为临时定义和运行时定义，分别代表如下含义： -
+     * 临时定义：API在编辑中的定义，表示用户最后一次编辑后的API的状态 - 运行时定义：API在发布到某个环境时，对发布时的API的临时定义进行快照，固化出来的API的状态。 访问某个环境上的API，其实访问的就是其运行时的定义
+     *
+     * @param ListApiRuntimeDefinitionV2Request 请求对象
+     * @return AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> */
+    public AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2AsyncInvoker(
+        ListApiRuntimeDefinitionV2Request request) {
+        return new AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>(request,
+            ApigMeta.listApiRuntimeDefinitionV2, hcClient);
+    }
+
+    /** 查看版本详情 查询某个指定的版本详情。
+     *
+     * @param ListApiVersionDetailV2Request 请求对象
+     * @return CompletableFuture<ListApiVersionDetailV2Response> */
+    public CompletableFuture<ListApiVersionDetailV2Response> listApiVersionDetailV2Async(
+        ListApiVersionDetailV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listApiVersionDetailV2);
+    }
+
+    /** 查看版本详情 查询某个指定的版本详情。
+     *
+     * @param ListApiVersionDetailV2Request 请求对象
+     * @return AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> */
+    public AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> listApiVersionDetailV2AsyncInvoker(
+        ListApiVersionDetailV2Request request) {
+        return new AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>(request,
+            ApigMeta.listApiVersionDetailV2, hcClient);
+    }
+
+    /** 查询API历史版本列表 查询某个API的历史版本。每个API在一个环境上最多存在10个历史版本。
+     *
+     * @param ListApiVersionsV2Request 请求对象
+     * @return CompletableFuture<ListApiVersionsV2Response> */
+    public CompletableFuture<ListApiVersionsV2Response> listApiVersionsV2Async(ListApiVersionsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listApiVersionsV2);
+    }
+
+    /** 查询API历史版本列表 查询某个API的历史版本。每个API在一个环境上最多存在10个历史版本。
+     *
+     * @param ListApiVersionsV2Request 请求对象
+     * @return AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response> */
+    public AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response> listApiVersionsV2AsyncInvoker(
+        ListApiVersionsV2Request request) {
+        return new AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>(request,
+            ApigMeta.listApiVersionsV2, hcClient);
     }
 
     /** 查看流控策略绑定的API列表 查询某个流控策略上已经绑定的API列表。
@@ -1023,6 +1994,120 @@ public class ApigAsyncClient {
         return new AsyncInvoker<UpdateApiV2Request, UpdateApiV2Response>(request, ApigMeta.updateApiV2, hcClient);
     }
 
+    /** 批量解除API与ACL策略的绑定 批量解除API与ACL策略的绑定
+     *
+     * @param BatchDeleteApiAclBindingV2Request 请求对象
+     * @return CompletableFuture<BatchDeleteApiAclBindingV2Response> */
+    public CompletableFuture<BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2Async(
+        BatchDeleteApiAclBindingV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.batchDeleteApiAclBindingV2);
+    }
+
+    /** 批量解除API与ACL策略的绑定 批量解除API与ACL策略的绑定
+     *
+     * @param BatchDeleteApiAclBindingV2Request 请求对象
+     * @return AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> */
+    public AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2AsyncInvoker(
+        BatchDeleteApiAclBindingV2Request request) {
+        return new AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>(request,
+            ApigMeta.batchDeleteApiAclBindingV2, hcClient);
+    }
+
+    /** 将API与ACL策略进行绑定 将API与ACL策略进行绑定。 同一个API发布到不同的环境可以绑定不同的ACL策略；一个API在发布到特定环境后只能绑定一个同一种类型的ACL策略。
+     *
+     * @param CreateApiAclBindingV2Request 请求对象
+     * @return CompletableFuture<CreateApiAclBindingV2Response> */
+    public CompletableFuture<CreateApiAclBindingV2Response> createApiAclBindingV2Async(
+        CreateApiAclBindingV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createApiAclBindingV2);
+    }
+
+    /** 将API与ACL策略进行绑定 将API与ACL策略进行绑定。 同一个API发布到不同的环境可以绑定不同的ACL策略；一个API在发布到特定环境后只能绑定一个同一种类型的ACL策略。
+     *
+     * @param CreateApiAclBindingV2Request 请求对象
+     * @return AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> */
+    public AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> createApiAclBindingV2AsyncInvoker(
+        CreateApiAclBindingV2Request request) {
+        return new AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>(request,
+            ApigMeta.createApiAclBindingV2, hcClient);
+    }
+
+    /** 解除API与ACL策略的绑定 解除某条API与ACL策略的绑定关系
+     *
+     * @param DeleteApiAclBindingV2Request 请求对象
+     * @return CompletableFuture<DeleteApiAclBindingV2Response> */
+    public CompletableFuture<DeleteApiAclBindingV2Response> deleteApiAclBindingV2Async(
+        DeleteApiAclBindingV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteApiAclBindingV2);
+    }
+
+    /** 解除API与ACL策略的绑定 解除某条API与ACL策略的绑定关系
+     *
+     * @param DeleteApiAclBindingV2Request 请求对象
+     * @return AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> */
+    public AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> deleteApiAclBindingV2AsyncInvoker(
+        DeleteApiAclBindingV2Request request) {
+        return new AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>(request,
+            ApigMeta.deleteApiAclBindingV2, hcClient);
+    }
+
+    /** 查看API绑定的ACL策略列表 查看API绑定的ACL策略列表
+     *
+     * @param ListAclPolicyBindedToApiV2Request 请求对象
+     * @return CompletableFuture<ListAclPolicyBindedToApiV2Response> */
+    public CompletableFuture<ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2Async(
+        ListAclPolicyBindedToApiV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listAclPolicyBindedToApiV2);
+    }
+
+    /** 查看API绑定的ACL策略列表 查看API绑定的ACL策略列表
+     *
+     * @param ListAclPolicyBindedToApiV2Request 请求对象
+     * @return AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> */
+    public AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2AsyncInvoker(
+        ListAclPolicyBindedToApiV2Request request) {
+        return new AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>(request,
+            ApigMeta.listAclPolicyBindedToApiV2, hcClient);
+    }
+
+    /** 查看ACL策略绑定的API列表 查看ACL策略绑定的API列表
+     *
+     * @param ListApisBindedToAclPolicyV2Request 请求对象
+     * @return CompletableFuture<ListApisBindedToAclPolicyV2Response> */
+    public CompletableFuture<ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2Async(
+        ListApisBindedToAclPolicyV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listApisBindedToAclPolicyV2);
+    }
+
+    /** 查看ACL策略绑定的API列表 查看ACL策略绑定的API列表
+     *
+     * @param ListApisBindedToAclPolicyV2Request 请求对象
+     * @return AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> */
+    public AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2AsyncInvoker(
+        ListApisBindedToAclPolicyV2Request request) {
+        return new AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>(request,
+            ApigMeta.listApisBindedToAclPolicyV2, hcClient);
+    }
+
+    /** 查看ACL策略未绑定的API列表 查看ACL策略未绑定的API列表，需要API已发布
+     *
+     * @param ListApisUnbindedToAclPolicyV2Request 请求对象
+     * @return CompletableFuture<ListApisUnbindedToAclPolicyV2Response> */
+    public CompletableFuture<ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2Async(
+        ListApisUnbindedToAclPolicyV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listApisUnbindedToAclPolicyV2);
+    }
+
+    /** 查看ACL策略未绑定的API列表 查看ACL策略未绑定的API列表，需要API已发布
+     *
+     * @param ListApisUnbindedToAclPolicyV2Request 请求对象
+     * @return AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> */
+    public AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2AsyncInvoker(
+        ListApisUnbindedToAclPolicyV2Request request) {
+        return new AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>(request,
+            ApigMeta.listApisUnbindedToAclPolicyV2, hcClient);
+    }
+
     /** 解除授权 解除API对APP的授权关系。解除授权后，APP将不再能够调用该API。
      *
      * @param CancelingAuthorizationV2Request 请求对象
@@ -1075,6 +2160,42 @@ public class ApigAsyncClient {
         return new AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>(request, ApigMeta.createAnAppV2, hcClient);
     }
 
+    /** 自动生成APP Code 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
+     *
+     * @param CreateAppCodeAutoV2Request 请求对象
+     * @return CompletableFuture<CreateAppCodeAutoV2Response> */
+    public CompletableFuture<CreateAppCodeAutoV2Response> createAppCodeAutoV2Async(CreateAppCodeAutoV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createAppCodeAutoV2);
+    }
+
+    /** 自动生成APP Code 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
+     *
+     * @param CreateAppCodeAutoV2Request 请求对象
+     * @return AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> */
+    public AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2AsyncInvoker(
+        CreateAppCodeAutoV2Request request) {
+        return new AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>(request,
+            ApigMeta.createAppCodeAutoV2, hcClient);
+    }
+
+    /** 创建APP Code App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
+     *
+     * @param CreateAppCodeV2Request 请求对象
+     * @return CompletableFuture<CreateAppCodeV2Response> */
+    public CompletableFuture<CreateAppCodeV2Response> createAppCodeV2Async(CreateAppCodeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createAppCodeV2);
+    }
+
+    /** 创建APP Code App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
+     *
+     * @param CreateAppCodeV2Request 请求对象
+     * @return AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response> */
+    public AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2AsyncInvoker(
+        CreateAppCodeV2Request request) {
+        return new AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>(request, ApigMeta.createAppCodeV2,
+            hcClient);
+    }
+
     /** APP授权 APP创建成功后，还不能访问API，如果想要访问某个环境上的API，需要将该API在该环境上授权给APP。授权成功后，APP即可访问该环境上的这个API。
      *
      * @param CreateAuthorizingAppsV2Request 请求对象
@@ -1092,6 +2213,24 @@ public class ApigAsyncClient {
         CreateAuthorizingAppsV2Request request) {
         return new AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>(request,
             ApigMeta.createAuthorizingAppsV2, hcClient);
+    }
+
+    /** 删除APP Code 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
+     *
+     * @param DeleteAppCodeV2Request 请求对象
+     * @return CompletableFuture<DeleteAppCodeV2Response> */
+    public CompletableFuture<DeleteAppCodeV2Response> deleteAppCodeV2Async(DeleteAppCodeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteAppCodeV2);
+    }
+
+    /** 删除APP Code 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
+     *
+     * @param DeleteAppCodeV2Request 请求对象
+     * @return AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response> */
+    public AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2AsyncInvoker(
+        DeleteAppCodeV2Request request) {
+        return new AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>(request, ApigMeta.deleteAppCodeV2,
+            hcClient);
     }
 
     /** 删除APP 删除指定的APP。 APP删除后，将无法再调用任何API；其中，云市场自动创建的APP无法被删除。
@@ -1148,6 +2287,24 @@ public class ApigAsyncClient {
             ApigMeta.listApisUnbindedToAppV2, hcClient);
     }
 
+    /** 查询APP Code列表 查询App Code列表。
+     *
+     * @param ListAppCodesV2Request 请求对象
+     * @return CompletableFuture<ListAppCodesV2Response> */
+    public CompletableFuture<ListAppCodesV2Response> listAppCodesV2Async(ListAppCodesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listAppCodesV2);
+    }
+
+    /** 查询APP Code列表 查询App Code列表。
+     *
+     * @param ListAppCodesV2Request 请求对象
+     * @return AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response> */
+    public AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2AsyncInvoker(
+        ListAppCodesV2Request request) {
+        return new AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>(request, ApigMeta.listAppCodesV2,
+            hcClient);
+    }
+
     /** 查看API已绑定的APP列表 查询API绑定的APP列表。
      *
      * @param ListAppsBindedToApiV2Request 请求对象
@@ -1202,6 +2359,25 @@ public class ApigAsyncClient {
             ApigMeta.resettingAppSecretV2, hcClient);
     }
 
+    /** 查看APP Code详情 App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
+     *
+     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfAppCodeV2Response> */
+    public CompletableFuture<ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2Async(
+        ShowDetailsOfAppCodeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfAppCodeV2);
+    }
+
+    /** 查看APP Code详情 App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
+     *
+     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> */
+    public AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2AsyncInvoker(
+        ShowDetailsOfAppCodeV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>(request,
+            ApigMeta.showDetailsOfAppCodeV2, hcClient);
+    }
+
     /** 查看APP详情 查看指定APP的详细信息。
      *
      * @param ShowDetailsOfAppV2Request 请求对象
@@ -1234,6 +2410,192 @@ public class ApigAsyncClient {
      * @return AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response> */
     public AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response> updateAppV2AsyncInvoker(UpdateAppV2Request request) {
         return new AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response>(request, ApigMeta.updateAppV2, hcClient);
+    }
+
+    /** 导出API 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     *
+     * @param ExportApiDefinitionsV2Request 请求对象
+     * @return CompletableFuture<ExportApiDefinitionsV2Response> */
+    public CompletableFuture<ExportApiDefinitionsV2Response> exportApiDefinitionsV2Async(
+        ExportApiDefinitionsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.exportApiDefinitionsV2);
+    }
+
+    /** 导出API 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     *
+     * @param ExportApiDefinitionsV2Request 请求对象
+     * @return AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> */
+    public AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> exportApiDefinitionsV2AsyncInvoker(
+        ExportApiDefinitionsV2Request request) {
+        return new AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>(request,
+            ApigMeta.exportApiDefinitionsV2, hcClient);
+    }
+
+    /** 导入API 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     *
+     * @param ImportApiDefinitionsV2Request 请求对象
+     * @return CompletableFuture<ImportApiDefinitionsV2Response> */
+    public CompletableFuture<ImportApiDefinitionsV2Response> importApiDefinitionsV2Async(
+        ImportApiDefinitionsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.importApiDefinitionsV2);
+    }
+
+    /** 导入API 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     *
+     * @param ImportApiDefinitionsV2Request 请求对象
+     * @return AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> */
+    public AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> importApiDefinitionsV2AsyncInvoker(
+        ImportApiDefinitionsV2Request request) {
+        return new AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>(request,
+            ApigMeta.importApiDefinitionsV2, hcClient);
+    }
+
+    /** 添加后端实例 为指定的VPC通道添加弹性云服务器
+     *
+     * @param AddingBackendInstancesV2Request 请求对象
+     * @return CompletableFuture<AddingBackendInstancesV2Response> */
+    public CompletableFuture<AddingBackendInstancesV2Response> addingBackendInstancesV2Async(
+        AddingBackendInstancesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.addingBackendInstancesV2);
+    }
+
+    /** 添加后端实例 为指定的VPC通道添加弹性云服务器
+     *
+     * @param AddingBackendInstancesV2Request 请求对象
+     * @return AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> */
+    public AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> addingBackendInstancesV2AsyncInvoker(
+        AddingBackendInstancesV2Request request) {
+        return new AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>(request,
+            ApigMeta.addingBackendInstancesV2, hcClient);
+    }
+
+    /** 创建VPC通道 在API网关中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便API网关直接访问私有VPC资源。 &gt; 每个用户最多创建30个VPC通道。
+     *
+     * @param CreateVpcChannelV2Request 请求对象
+     * @return CompletableFuture<CreateVpcChannelV2Response> */
+    public CompletableFuture<CreateVpcChannelV2Response> createVpcChannelV2Async(CreateVpcChannelV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createVpcChannelV2);
+    }
+
+    /** 创建VPC通道 在API网关中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便API网关直接访问私有VPC资源。 &gt; 每个用户最多创建30个VPC通道。
+     *
+     * @param CreateVpcChannelV2Request 请求对象
+     * @return AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response> */
+    public AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response> createVpcChannelV2AsyncInvoker(
+        CreateVpcChannelV2Request request) {
+        return new AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>(request,
+            ApigMeta.createVpcChannelV2, hcClient);
+    }
+
+    /** 删除后端实例 删除指定VPC通道中的弹性云服务器
+     *
+     * @param DeleteBackendInstanceV2Request 请求对象
+     * @return CompletableFuture<DeleteBackendInstanceV2Response> */
+    public CompletableFuture<DeleteBackendInstanceV2Response> deleteBackendInstanceV2Async(
+        DeleteBackendInstanceV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteBackendInstanceV2);
+    }
+
+    /** 删除后端实例 删除指定VPC通道中的弹性云服务器
+     *
+     * @param DeleteBackendInstanceV2Request 请求对象
+     * @return AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> */
+    public AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> deleteBackendInstanceV2AsyncInvoker(
+        DeleteBackendInstanceV2Request request) {
+        return new AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>(request,
+            ApigMeta.deleteBackendInstanceV2, hcClient);
+    }
+
+    /** 删除VPC通道 删除指定的VPC通道
+     *
+     * @param DeleteVpcChannelV2Request 请求对象
+     * @return CompletableFuture<DeleteVpcChannelV2Response> */
+    public CompletableFuture<DeleteVpcChannelV2Response> deleteVpcChannelV2Async(DeleteVpcChannelV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteVpcChannelV2);
+    }
+
+    /** 删除VPC通道 删除指定的VPC通道
+     *
+     * @param DeleteVpcChannelV2Request 请求对象
+     * @return AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> */
+    public AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> deleteVpcChannelV2AsyncInvoker(
+        DeleteVpcChannelV2Request request) {
+        return new AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>(request,
+            ApigMeta.deleteVpcChannelV2, hcClient);
+    }
+
+    /** 查看后端实例列表 查看指定VPC通道的弹性云服务器列表。
+     *
+     * @param ListBackendInstancesV2Request 请求对象
+     * @return CompletableFuture<ListBackendInstancesV2Response> */
+    public CompletableFuture<ListBackendInstancesV2Response> listBackendInstancesV2Async(
+        ListBackendInstancesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listBackendInstancesV2);
+    }
+
+    /** 查看后端实例列表 查看指定VPC通道的弹性云服务器列表。
+     *
+     * @param ListBackendInstancesV2Request 请求对象
+     * @return AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response> */
+    public AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response> listBackendInstancesV2AsyncInvoker(
+        ListBackendInstancesV2Request request) {
+        return new AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>(request,
+            ApigMeta.listBackendInstancesV2, hcClient);
+    }
+
+    /** 查询VPC通道列表 查看VPC通道列表
+     *
+     * @param ListVpcChannelsV2Request 请求对象
+     * @return CompletableFuture<ListVpcChannelsV2Response> */
+    public CompletableFuture<ListVpcChannelsV2Response> listVpcChannelsV2Async(ListVpcChannelsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listVpcChannelsV2);
+    }
+
+    /** 查询VPC通道列表 查看VPC通道列表
+     *
+     * @param ListVpcChannelsV2Request 请求对象
+     * @return AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response> */
+    public AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response> listVpcChannelsV2AsyncInvoker(
+        ListVpcChannelsV2Request request) {
+        return new AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>(request,
+            ApigMeta.listVpcChannelsV2, hcClient);
+    }
+
+    /** 查看VPC通道详情 查看指定的VPC通道详情
+     *
+     * @param ShowDetailsOfVpcChannelV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfVpcChannelV2Response> */
+    public CompletableFuture<ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2Async(
+        ShowDetailsOfVpcChannelV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfVpcChannelV2);
+    }
+
+    /** 查看VPC通道详情 查看指定的VPC通道详情
+     *
+     * @param ShowDetailsOfVpcChannelV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> */
+    public AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2AsyncInvoker(
+        ShowDetailsOfVpcChannelV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>(request,
+            ApigMeta.showDetailsOfVpcChannelV2, hcClient);
+    }
+
+    /** 更新VPC通道 更新指定VPC通道的参数
+     *
+     * @param UpdateVpcChannelV2Request 请求对象
+     * @return CompletableFuture<UpdateVpcChannelV2Response> */
+    public CompletableFuture<UpdateVpcChannelV2Response> updateVpcChannelV2Async(UpdateVpcChannelV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateVpcChannelV2);
+    }
+
+    /** 更新VPC通道 更新指定VPC通道的参数
+     *
+     * @param UpdateVpcChannelV2Request 请求对象
+     * @return AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> */
+    public AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> updateVpcChannelV2AsyncInvoker(
+        UpdateVpcChannelV2Request request) {
+        return new AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>(request,
+            ApigMeta.updateVpcChannelV2, hcClient);
     }
 
 }

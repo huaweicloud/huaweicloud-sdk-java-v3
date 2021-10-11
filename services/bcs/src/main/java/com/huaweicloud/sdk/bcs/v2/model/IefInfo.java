@@ -11,9 +11,9 @@ public class IefInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_mode")
 
-    private Integer deployMode;
+    private Long deployMode;
 
-    public IefInfo withDeployMode(Integer deployMode) {
+    public IefInfo withDeployMode(Long deployMode) {
         this.deployMode = deployMode;
         return this;
     }
@@ -21,11 +21,11 @@ public class IefInfo {
     /** BCS服务边缘节点部署模式，分为：随机模式（0），绑定模式（1）
      * 
      * @return deployMode */
-    public Integer getDeployMode() {
+    public Long getDeployMode() {
         return deployMode;
     }
 
-    public void setDeployMode(Integer deployMode) {
+    public void setDeployMode(Long deployMode) {
         this.deployMode = deployMode;
     }
 

@@ -14,7 +14,7 @@ public class ReportdetailsInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<ReportdetailsInfoData> data = null;
+    private List<ReportdetailItemInfo> data = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pageIndex")
@@ -31,12 +31,12 @@ public class ReportdetailsInfo {
 
     private Integer total;
 
-    public ReportdetailsInfo withData(List<ReportdetailsInfoData> data) {
+    public ReportdetailsInfo withData(List<ReportdetailItemInfo> data) {
         this.data = data;
         return this;
     }
 
-    public ReportdetailsInfo addDataItem(ReportdetailsInfoData dataItem) {
+    public ReportdetailsInfo addDataItem(ReportdetailItemInfo dataItem) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -44,7 +44,7 @@ public class ReportdetailsInfo {
         return this;
     }
 
-    public ReportdetailsInfo withData(Consumer<List<ReportdetailsInfoData>> dataSetter) {
+    public ReportdetailsInfo withData(Consumer<List<ReportdetailItemInfo>> dataSetter) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -55,11 +55,11 @@ public class ReportdetailsInfo {
     /** data
      * 
      * @return data */
-    public List<ReportdetailsInfoData> getData() {
+    public List<ReportdetailItemInfo> getData() {
         return data;
     }
 
-    public void setData(List<ReportdetailsInfoData> data) {
+    public void setData(List<ReportdetailItemInfo> data) {
         this.data = data;
     }
 

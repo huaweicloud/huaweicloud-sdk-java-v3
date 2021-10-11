@@ -14,7 +14,7 @@ import java.util.Objects;
 /** DetectLiveByFileRequestBody */
 public class DetectLiveByFileRequestBody implements SdkFormDataBody {
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "video_file", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart videoFile;
 

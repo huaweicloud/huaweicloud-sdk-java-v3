@@ -49,12 +49,12 @@ public class BasicInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
-    private Integer chargingMode;
+    private Long chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_type")
 
-    private Integer versionType;
+    private Long versionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_type")
@@ -134,7 +134,7 @@ public class BasicInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_status")
 
-    private Integer orderStatus;
+    private Long orderStatus;
 
     public BasicInfo withId(String id) {
         this.id = id;
@@ -205,7 +205,7 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务部署类型，分为一键购买（onestep），普通购买（normal）
+    /** BCS服务部署类型，一键部署（onestep），普通部署（normal）
      * 
      * @return purchaseType */
     public String getPurchaseType() {
@@ -237,7 +237,7 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务的共识策略，分为测试策略（solo），快速拜占庭容错算法（sflic）,Kafka(kafka)
+    /** BCS服务的共识策略，分为测试策略（solo），快速拜占庭容错算法（sflic）,Kafka(kafka)，raft共识算法（etcdraft）
      * 
      * @return consensus */
     public String getConsensus() {
@@ -248,35 +248,35 @@ public class BasicInfo {
         this.consensus = consensus;
     }
 
-    public BasicInfo withChargingMode(Integer chargingMode) {
+    public BasicInfo withChargingMode(Long chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
 
-    /** BCS服务付费模式，分为按需（1），包周期（0）
+    /** BCS服务付费模式，分为按需（1）[包周期（0）](tag:onorder)
      * 
      * @return chargingMode */
-    public Integer getChargingMode() {
+    public Long getChargingMode() {
         return chargingMode;
     }
 
-    public void setChargingMode(Integer chargingMode) {
+    public void setChargingMode(Long chargingMode) {
         this.chargingMode = chargingMode;
     }
 
-    public BasicInfo withVersionType(Integer versionType) {
+    public BasicInfo withVersionType(Long versionType) {
         this.versionType = versionType;
         return this;
     }
 
-    /** BCS服务版本类型，分为基础版（1），专业版（2），铂金版（3）
+    /** BCS服务版本类型
      * 
      * @return versionType */
-    public Integer getVersionType() {
+    public Long getVersionType() {
         return versionType;
     }
 
-    public void setVersionType(Integer versionType) {
+    public void setVersionType(Long versionType) {
         this.versionType = versionType;
     }
 
@@ -333,7 +333,7 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务的集群类型，分为CCE集群（空），IEF集群（ief）
+    /** BCS服务的集群类型，分为CCE集群（CCE），IEF集群（ief）
      * 
      * @return clusterType */
     public String getClusterType() {
@@ -536,7 +536,7 @@ public class BasicInfo {
         this.processStatus = processStatus;
     }
 
-    public BasicInfo withOrderStatus(Integer orderStatus) {
+    public BasicInfo withOrderStatus(Long orderStatus) {
         this.orderStatus = orderStatus;
         return this;
     }
@@ -544,11 +544,11 @@ public class BasicInfo {
     /** BCS服务为包周期模式时，返回值为0（订单未成功）,1（订单异常）,2（订单正常）
      * 
      * @return orderStatus */
-    public Integer getOrderStatus() {
+    public Long getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(Integer orderStatus) {
+    public void setOrderStatus(Long orderStatus) {
         this.orderStatus = orderStatus;
     }
 

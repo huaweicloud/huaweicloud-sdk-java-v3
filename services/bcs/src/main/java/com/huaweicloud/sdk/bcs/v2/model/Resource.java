@@ -21,34 +21,34 @@ public class Resource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
 
-    private Integer min;
+    private Long min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
-    private Integer max;
+    private Long max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota")
 
-    private Integer quota;
+    private Long quota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
 
-    private Integer used;
+    private Long used;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free")
 
-    private Integer free;
+    private Long free;
 
     public Resource withType(String type) {
         this.type = type;
         return this;
     }
 
-    /** 资源类型，包含instance（服务实例数）和peers（总peer数）两种
+    /** 资源类型，包含instance（服务实例数）
      * 
      * @return type */
     public String getType() {
@@ -75,7 +75,7 @@ public class Resource {
         this.unit = unit;
     }
 
-    public Resource withMin(Integer min) {
+    public Resource withMin(Long min) {
         this.min = min;
         return this;
     }
@@ -83,15 +83,15 @@ public class Resource {
     /** 最小值
      * 
      * @return min */
-    public Integer getMin() {
+    public Long getMin() {
         return min;
     }
 
-    public void setMin(Integer min) {
+    public void setMin(Long min) {
         this.min = min;
     }
 
-    public Resource withMax(Integer max) {
+    public Resource withMax(Long max) {
         this.max = max;
         return this;
     }
@@ -99,15 +99,15 @@ public class Resource {
     /** 最大值
      * 
      * @return max */
-    public Integer getMax() {
+    public Long getMax() {
         return max;
     }
 
-    public void setMax(Integer max) {
+    public void setMax(Long max) {
         this.max = max;
     }
 
-    public Resource withQuota(Integer quota) {
+    public Resource withQuota(Long quota) {
         this.quota = quota;
         return this;
     }
@@ -115,15 +115,15 @@ public class Resource {
     /** 配额
      * 
      * @return quota */
-    public Integer getQuota() {
+    public Long getQuota() {
         return quota;
     }
 
-    public void setQuota(Integer quota) {
+    public void setQuota(Long quota) {
         this.quota = quota;
     }
 
-    public Resource withUsed(Integer used) {
+    public Resource withUsed(Long used) {
         this.used = used;
         return this;
     }
@@ -131,15 +131,15 @@ public class Resource {
     /** 已使用配额
      * 
      * @return used */
-    public Integer getUsed() {
+    public Long getUsed() {
         return used;
     }
 
-    public void setUsed(Integer used) {
+    public void setUsed(Long used) {
         this.used = used;
     }
 
-    public Resource withFree(Integer free) {
+    public Resource withFree(Long free) {
         this.free = free;
         return this;
     }
@@ -147,11 +147,11 @@ public class Resource {
     /** 剩余配额
      * 
      * @return free */
-    public Integer getFree() {
+    public Long getFree() {
         return free;
     }
 
-    public void setFree(Integer free) {
+    public void setFree(Long free) {
         this.free = free;
     }
 

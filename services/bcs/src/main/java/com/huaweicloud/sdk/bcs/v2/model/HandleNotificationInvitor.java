@@ -49,7 +49,7 @@ public class HandleNotificationInvitor {
         return this;
     }
 
-    /** 邀请方实例名称，同意联盟邀请时比填
+    /** 邀请方实例名称
      * 
      * @return invitorBcsName */
     public String getInvitorBcsName() {
@@ -81,7 +81,7 @@ public class HandleNotificationInvitor {
         return this;
     }
 
-    /** 邀请方租户,hcs模式下是邀请方租户id
+    /** 邀请方租户id
      * 
      * @return invitorUserId */
     public String getInvitorUserId() {

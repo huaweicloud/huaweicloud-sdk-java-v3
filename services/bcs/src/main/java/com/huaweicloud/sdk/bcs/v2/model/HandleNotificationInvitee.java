@@ -49,7 +49,7 @@ public class HandleNotificationInvitee {
         return this;
     }
 
-    /** 被邀请方服务实例名称，同意联盟邀请时比填
+    /** 被邀请方服务实例名称，同意联盟邀请时必填
      * 
      * @return inviteeBcsName */
     public String getInviteeBcsName() {

@@ -14,16 +14,14 @@ public class BatchAddPeersToChannelRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_peers")
 
-    private List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers = null;
+    private List<PeerChannelInfo> channelPeers = null;
 
-    public BatchAddPeersToChannelRequestBody withChannelPeers(
-        List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers) {
+    public BatchAddPeersToChannelRequestBody withChannelPeers(List<PeerChannelInfo> channelPeers) {
         this.channelPeers = channelPeers;
         return this;
     }
 
-    public BatchAddPeersToChannelRequestBody addChannelPeersItem(
-        BatchAddPeersToChannelRequestBodyChannelPeers channelPeersItem) {
+    public BatchAddPeersToChannelRequestBody addChannelPeersItem(PeerChannelInfo channelPeersItem) {
         if (this.channelPeers == null) {
             this.channelPeers = new ArrayList<>();
         }
@@ -31,8 +29,7 @@ public class BatchAddPeersToChannelRequestBody {
         return this;
     }
 
-    public BatchAddPeersToChannelRequestBody withChannelPeers(
-        Consumer<List<BatchAddPeersToChannelRequestBodyChannelPeers>> channelPeersSetter) {
+    public BatchAddPeersToChannelRequestBody withChannelPeers(Consumer<List<PeerChannelInfo>> channelPeersSetter) {
         if (this.channelPeers == null) {
             this.channelPeers = new ArrayList<>();
         }
@@ -43,11 +40,11 @@ public class BatchAddPeersToChannelRequestBody {
     /** 加入某个通道的节点信息
      * 
      * @return channelPeers */
-    public List<BatchAddPeersToChannelRequestBodyChannelPeers> getChannelPeers() {
+    public List<PeerChannelInfo> getChannelPeers() {
         return channelPeers;
     }
 
-    public void setChannelPeers(List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers) {
+    public void setChannelPeers(List<PeerChannelInfo> channelPeers) {
         this.channelPeers = channelPeers;
     }
 

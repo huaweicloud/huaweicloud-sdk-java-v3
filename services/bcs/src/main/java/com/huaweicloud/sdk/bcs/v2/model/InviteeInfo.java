@@ -16,7 +16,7 @@ public class InviteeInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_name")
 
-    private Integer inviteeName;
+    private Long inviteeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_bcs_name")
@@ -49,7 +49,7 @@ public class InviteeInfo {
         this.inviteeId = inviteeId;
     }
 
-    public InviteeInfo withInviteeName(Integer inviteeName) {
+    public InviteeInfo withInviteeName(Long inviteeName) {
         this.inviteeName = inviteeName;
         return this;
     }
@@ -57,11 +57,11 @@ public class InviteeInfo {
     /** 被邀请租户名称
      * 
      * @return inviteeName */
-    public Integer getInviteeName() {
+    public Long getInviteeName() {
         return inviteeName;
     }
 
-    public void setInviteeName(Integer inviteeName) {
+    public void setInviteeName(Long inviteeName) {
         this.inviteeName = inviteeName;
     }
 

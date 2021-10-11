@@ -101,6 +101,13 @@ public class Cluster  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vpcId")
+    
+    
+    private String vpcId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
     
@@ -701,6 +708,28 @@ public class Cluster  {
 
     public void setVpc(String vpc) {
         this.vpc = vpc;
+    }
+
+    
+
+    public Cluster withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * VPC ID。
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
     }
 
     
@@ -1925,6 +1954,7 @@ public class Cluster  {
             Objects.equals(this.billingType, cluster.billingType) &&
             Objects.equals(this.dataCenter, cluster.dataCenter) &&
             Objects.equals(this.vpc, cluster.vpc) &&
+            Objects.equals(this.vpcId, cluster.vpcId) &&
             Objects.equals(this.duration, cluster.duration) &&
             Objects.equals(this.fee, cluster.fee) &&
             Objects.equals(this.hadoopVersion, cluster.hadoopVersion) &&
@@ -1980,7 +2010,7 @@ public class Cluster  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName, totalNodeNum, clusterState, stageDesc, createAt, updateAt, chargingStartTime, billingType, dataCenter, vpc, duration, fee, hadoopVersion, componentList, externalIp, externalAlternateIp, internalIp, deploymentId, remark, orderId, azId, azName, azCode, instanceId, vnc, tenantId, volumeSize, volumeType, subnetId, subnetName, securityGroupsId, slaveSecurityGroupsId, bootstrapScripts, safeMode, clusterVersion, nodePublicCertName, masterNodeIp, privateIpFirst, errorInfo, tags, masterNodeNum, coreNodeNum, masterNodeSize, coreNodeSize, masterNodeProductId, masterNodeSpecId, coreNodeProductId, coreNodeSpecId, masterDataVolumeType, masterDataVolumeSize, masterDataVolumeCount, coreDataVolumeType, coreDataVolumeSize, coreDataVolumeCount, enterpriseProjectId, isMrsManagerFinish, clusterType, logCollection, periodType, scale, nodeGroups, taskNodeGroups);
+        return Objects.hash(clusterId, clusterName, totalNodeNum, clusterState, stageDesc, createAt, updateAt, chargingStartTime, billingType, dataCenter, vpc, vpcId, duration, fee, hadoopVersion, componentList, externalIp, externalAlternateIp, internalIp, deploymentId, remark, orderId, azId, azName, azCode, instanceId, vnc, tenantId, volumeSize, volumeType, subnetId, subnetName, securityGroupsId, slaveSecurityGroupsId, bootstrapScripts, safeMode, clusterVersion, nodePublicCertName, masterNodeIp, privateIpFirst, errorInfo, tags, masterNodeNum, coreNodeNum, masterNodeSize, coreNodeSize, masterNodeProductId, masterNodeSpecId, coreNodeProductId, coreNodeSpecId, masterDataVolumeType, masterDataVolumeSize, masterDataVolumeCount, coreDataVolumeType, coreDataVolumeSize, coreDataVolumeCount, enterpriseProjectId, isMrsManagerFinish, clusterType, logCollection, periodType, scale, nodeGroups, taskNodeGroups);
     }
     @Override
     public String toString() {
@@ -1997,6 +2027,7 @@ public class Cluster  {
         sb.append("    billingType: ").append(toIndentedString(billingType)).append("\n");
         sb.append("    dataCenter: ").append(toIndentedString(dataCenter)).append("\n");
         sb.append("    vpc: ").append(toIndentedString(vpc)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
         sb.append("    hadoopVersion: ").append(toIndentedString(hadoopVersion)).append("\n");

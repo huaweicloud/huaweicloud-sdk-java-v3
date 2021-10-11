@@ -132,11 +132,11 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
 
     private String blindWatermark;
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart file;
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "image_mark", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart imageMark;
 

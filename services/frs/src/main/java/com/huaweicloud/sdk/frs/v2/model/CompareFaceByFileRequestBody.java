@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.frs.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -12,11 +13,11 @@ import java.util.Objects;
 /** CompareFaceByFileRequestBody */
 public class CompareFaceByFileRequestBody implements SdkFormDataBody {
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "image1_file", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart image1File;
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "image2_file", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart image2File;
 

@@ -12,50 +12,50 @@ import java.util.function.Consumer;
 public class Org {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "msp_id")
+    @JsonProperty(value = "org_msp_id")
 
-    private String mspId;
+    private String orgMspId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain")
+    @JsonProperty(value = "org_domain")
 
-    private String domain;
+    private String orgDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peers")
 
     private Map<String, Node> peers = null;
 
-    public Org withMspId(String mspId) {
-        this.mspId = mspId;
+    public Org withOrgMspId(String orgMspId) {
+        this.orgMspId = orgMspId;
         return this;
     }
 
     /** 组织MSP标识
      * 
-     * @return mspId */
-    public String getMspId() {
-        return mspId;
+     * @return orgMspId */
+    public String getOrgMspId() {
+        return orgMspId;
     }
 
-    public void setMspId(String mspId) {
-        this.mspId = mspId;
+    public void setOrgMspId(String orgMspId) {
+        this.orgMspId = orgMspId;
     }
 
-    public Org withDomain(String domain) {
-        this.domain = domain;
+    public Org withOrgDomain(String orgDomain) {
+        this.orgDomain = orgDomain;
         return this;
     }
 
     /** 组织域名
      * 
-     * @return domain */
-    public String getDomain() {
-        return domain;
+     * @return orgDomain */
+    public String getOrgDomain() {
+        return orgDomain;
     }
 
-    public void setDomain(String domain) {
-        this.domain = domain;
+    public void setOrgDomain(String orgDomain) {
+        this.orgDomain = orgDomain;
     }
 
     public Org withPeers(Map<String, Node> peers) {
@@ -99,21 +99,21 @@ public class Org {
             return false;
         }
         Org org = (Org) o;
-        return Objects.equals(this.mspId, org.mspId) && Objects.equals(this.domain, org.domain)
+        return Objects.equals(this.orgMspId, org.orgMspId) && Objects.equals(this.orgDomain, org.orgDomain)
             && Objects.equals(this.peers, org.peers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mspId, domain, peers);
+        return Objects.hash(orgMspId, orgDomain, peers);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Org {\n");
-        sb.append("    mspId: ").append(toIndentedString(mspId)).append("\n");
-        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    orgMspId: ").append(toIndentedString(orgMspId)).append("\n");
+        sb.append("    orgDomain: ").append(toIndentedString(orgDomain)).append("\n");
         sb.append("    peers: ").append(toIndentedString(peers)).append("\n");
         sb.append("}");
         return sb.toString();

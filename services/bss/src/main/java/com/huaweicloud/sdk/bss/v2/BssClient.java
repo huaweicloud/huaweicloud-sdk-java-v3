@@ -937,24 +937,6 @@ public class BssClient {
             hcClient);
     }
 
-    /** 查询硬件库存 功能描述：客户在购买硬件产品时，可以在客户自建平台上查询硬件产品的库存
-     *
-     * @param ListSkuInventoriesRequest 请求对象
-     * @return ListSkuInventoriesResponse */
-    public ListSkuInventoriesResponse listSkuInventories(ListSkuInventoriesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listSkuInventories);
-    }
-
-    /** 查询硬件库存 功能描述：客户在购买硬件产品时，可以在客户自建平台上查询硬件产品的库存
-     *
-     * @param ListSkuInventoriesRequest 请求对象
-     * @return SyncInvoker<ListSkuInventoriesRequest, ListSkuInventoriesResponse> */
-    public SyncInvoker<ListSkuInventoriesRequest, ListSkuInventoriesResponse> listSkuInventoriesInvoker(
-        ListSkuInventoriesRequest request) {
-        return new SyncInvoker<ListSkuInventoriesRequest, ListSkuInventoriesResponse>(request,
-            BssMeta.listSkuInventories, hcClient);
-    }
-
     /** 查询客户消费记录 功能描述：查询客户消费记录
      *
      * @param ListSubCustomerBillDetailRequest 请求对象

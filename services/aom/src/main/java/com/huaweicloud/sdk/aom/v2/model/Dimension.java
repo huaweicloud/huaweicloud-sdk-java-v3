@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 维度。
+ * 指标维度。
  */
 public class Dimension  {
 
@@ -40,7 +40,7 @@ public class Dimension  {
 
 
     /**
-     * 名称。
+     * 维度名称。
      * @return name
      */
     public String getName() {
@@ -62,7 +62,7 @@ public class Dimension  {
 
 
     /**
-     * 具体数值。
+     * 维度取值。
      * @return value
      */
     public String getValue() {

@@ -50,7 +50,7 @@ public class QuerySample  {
 
 
     /**
-     * 时间序列的命名空间。 取值范围  PAAS.CONTAINER PAAS.NODE PAAS.SLA PAAS.AGGR CUSTOMMETRICS 
+     * 时间序列的命名空间。 取值范围 PAAS.CONTAINER PAAS.NODE PAAS.SLA PAAS.AGGR CUSTOMMETRICS 
      * @return namespace
      */
     public String getNamespace() {

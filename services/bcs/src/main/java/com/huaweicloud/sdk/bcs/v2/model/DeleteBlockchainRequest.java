@@ -49,7 +49,7 @@ public class DeleteBlockchainRequest {
         return this;
     }
 
-    /** [是否删除存储，IEF模式下不用填写](tag:online)[是否删除存储](tag:hcs)
+    /** [是否删除存储，IEF模式下不用填写](tag:online,g42)[是否删除存储](tag:hcs)
      * 
      * @return isDeleteStorage */
     public Boolean getIsDeleteStorage() {
@@ -65,7 +65,7 @@ public class DeleteBlockchainRequest {
         return this;
     }
 
-    /** [是否删除obs，IEF模式下不用填写](tag:online)[是否删除obs](tag:hcs)
+    /** [是否删除obs，IEF模式下不用填写](tag:online,g42)[是否删除obs](tag:hcs)
      * 
      * @return isDeleteObs */
     public Boolean getIsDeleteObs() {
@@ -81,7 +81,7 @@ public class DeleteBlockchainRequest {
         return this;
     }
 
-    /** 是否删除底层CCE资源
+    /** 是否删除底层CCE资源，IEF模式下不用填写
      * 
      * @return isDeleteResource */
     public Boolean getIsDeleteResource() {

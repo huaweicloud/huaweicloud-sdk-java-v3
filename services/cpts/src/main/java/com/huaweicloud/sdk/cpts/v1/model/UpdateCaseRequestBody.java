@@ -14,19 +14,19 @@ public class UpdateCaseRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contents")
 
-    private List<UpdateCaseRequestBodyContents> contents = null;
+    private List<CaseInfo> contents = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "for_loop_params")
 
     private List<Object> forLoopParams = null;
 
-    public UpdateCaseRequestBody withContents(List<UpdateCaseRequestBodyContents> contents) {
+    public UpdateCaseRequestBody withContents(List<CaseInfo> contents) {
         this.contents = contents;
         return this;
     }
 
-    public UpdateCaseRequestBody addContentsItem(UpdateCaseRequestBodyContents contentsItem) {
+    public UpdateCaseRequestBody addContentsItem(CaseInfo contentsItem) {
         if (this.contents == null) {
             this.contents = new ArrayList<>();
         }
@@ -34,7 +34,7 @@ public class UpdateCaseRequestBody {
         return this;
     }
 
-    public UpdateCaseRequestBody withContents(Consumer<List<UpdateCaseRequestBodyContents>> contentsSetter) {
+    public UpdateCaseRequestBody withContents(Consumer<List<CaseInfo>> contentsSetter) {
         if (this.contents == null) {
             this.contents = new ArrayList<>();
         }
@@ -45,11 +45,11 @@ public class UpdateCaseRequestBody {
     /** contents
      * 
      * @return contents */
-    public List<UpdateCaseRequestBodyContents> getContents() {
+    public List<CaseInfo> getContents() {
         return contents;
     }
 
-    public void setContents(List<UpdateCaseRequestBodyContents> contents) {
+    public void setContents(List<CaseInfo> contents) {
         this.contents = contents;
     }
 

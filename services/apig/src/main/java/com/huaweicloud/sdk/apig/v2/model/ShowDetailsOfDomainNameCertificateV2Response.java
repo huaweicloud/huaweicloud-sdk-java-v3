@@ -25,7 +25,7 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    private String version;
+    private Integer version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organization")
@@ -125,7 +125,7 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.san = san;
     }
 
-    public ShowDetailsOfDomainNameCertificateV2Response withVersion(String version) {
+    public ShowDetailsOfDomainNameCertificateV2Response withVersion(Integer version) {
         this.version = version;
         return this;
     }
@@ -133,11 +133,11 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     /** 证书版本
      * 
      * @return version */
-    public String getVersion() {
+    public Integer getVersion() {
         return version;
     }
 
-    public void setVersion(String version) {
+    public void setVersion(Integer version) {
         this.version = version;
     }
 

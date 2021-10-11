@@ -23,7 +23,7 @@ public class ListEntityMetricRequestBody {
         return this;
     }
 
-    /** 实体类型，可选值如下 org # 节点组织 plugin # 插件 默认为org
+    /** 实体类型，[可选值如下 org # 节点组织 plugin # 插件](tag:online) 默认为org
      * 
      * @return type */
     public String getType() {

@@ -75,7 +75,26 @@ public class BcsAsyncClient {
             BcsMeta.batchInviteMembersToChannel, hcClient);
     }
 
-    /** 创建服务实例 创建BCS服务实例
+    /** BCS组织退出某通道 该接口用于BCS组织退出某通道。
+     *
+     * @param BatchRemoveOrgsFromChannelRequest 请求对象
+     * @return CompletableFuture<BatchRemoveOrgsFromChannelResponse> */
+    public CompletableFuture<BatchRemoveOrgsFromChannelResponse> batchRemoveOrgsFromChannelAsync(
+        BatchRemoveOrgsFromChannelRequest request) {
+        return hcClient.asyncInvokeHttp(request, BcsMeta.batchRemoveOrgsFromChannel);
+    }
+
+    /** BCS组织退出某通道 该接口用于BCS组织退出某通道。
+     *
+     * @param BatchRemoveOrgsFromChannelRequest 请求对象
+     * @return AsyncInvoker<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> */
+    public AsyncInvoker<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> batchRemoveOrgsFromChannelAsyncInvoker(
+        BatchRemoveOrgsFromChannelRequest request) {
+        return new AsyncInvoker<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse>(request,
+            BcsMeta.batchRemoveOrgsFromChannel, hcClient);
+    }
+
+    /** 创建服务实例 创建BCS服务实例,只支持按需创建
      *
      * @param CreateNewBlockchainRequest 请求对象
      * @return CompletableFuture<CreateNewBlockchainResponse> */
@@ -83,7 +102,7 @@ public class BcsAsyncClient {
         return hcClient.asyncInvokeHttp(request, BcsMeta.createNewBlockchain);
     }
 
-    /** 创建服务实例 创建BCS服务实例
+    /** 创建服务实例 创建BCS服务实例,只支持按需创建
      *
      * @param CreateNewBlockchainRequest 请求对象
      * @return AsyncInvoker<CreateNewBlockchainRequest, CreateNewBlockchainResponse> */
@@ -93,7 +112,7 @@ public class BcsAsyncClient {
             BcsMeta.createNewBlockchain, hcClient);
     }
 
-    /** 删除bcs实例 删除bcs实例
+    /** 删除服务实例 删除bcs实例。包周期实例不支持
      *
      * @param DeleteBlockchainRequest 请求对象
      * @return CompletableFuture<DeleteBlockchainResponse> */
@@ -101,7 +120,7 @@ public class BcsAsyncClient {
         return hcClient.asyncInvokeHttp(request, BcsMeta.deleteBlockchain);
     }
 
-    /** 删除bcs实例 删除bcs实例
+    /** 删除服务实例 删除bcs实例。包周期实例不支持
      *
      * @param DeleteBlockchainRequest 请求对象
      * @return AsyncInvoker<DeleteBlockchainRequest, DeleteBlockchainResponse> */
@@ -167,7 +186,7 @@ public class BcsAsyncClient {
             BcsMeta.handleNotification, hcClient);
     }
 
-    /** 查询BCS服务实例监控数据 [该接口用于查询BCS服务的监控数据，可以指定相应的指标名称,目前不支持IEF节点](tag:online)[该接口用于查询BCS服务的监控数据，可以指定相应的指标名称](tag:hcs)
+    /** 查询BCS服务实例监控数据 该接口用于查询BCS服务的监控数据，可以指定相应的指标名称。[目前不支持IEF节点](tag:hasief)
      *
      * @param ListBcsMetricRequest 请求对象
      * @return CompletableFuture<ListBcsMetricResponse> */
@@ -175,7 +194,7 @@ public class BcsAsyncClient {
         return hcClient.asyncInvokeHttp(request, BcsMeta.listBcsMetric);
     }
 
-    /** 查询BCS服务实例监控数据 [该接口用于查询BCS服务的监控数据，可以指定相应的指标名称,目前不支持IEF节点](tag:online)[该接口用于查询BCS服务的监控数据，可以指定相应的指标名称](tag:hcs)
+    /** 查询BCS服务实例监控数据 该接口用于查询BCS服务的监控数据，可以指定相应的指标名称。[目前不支持IEF节点](tag:hasief)
      *
      * @param ListBcsMetricRequest 请求对象
      * @return AsyncInvoker<ListBcsMetricRequest, ListBcsMetricResponse> */
@@ -203,7 +222,7 @@ public class BcsAsyncClient {
             BcsMeta.listBlockchainChannels, hcClient);
     }
 
-    /** 查询服务实例简要信息 查询当前项目下所有服务实例的简要信息
+    /** 查询服务实例列表 查询当前项目下所有服务实例的简要信息
      *
      * @param ListBlockchainsRequest 请求对象
      * @return CompletableFuture<ListBlockchainsResponse> */
@@ -211,7 +230,7 @@ public class BcsAsyncClient {
         return hcClient.asyncInvokeHttp(request, BcsMeta.listBlockchains);
     }
 
-    /** 查询服务实例简要信息 查询当前项目下所有服务实例的简要信息
+    /** 查询服务实例列表 查询当前项目下所有服务实例的简要信息
      *
      * @param ListBlockchainsRequest 请求对象
      * @return AsyncInvoker<ListBlockchainsRequest, ListBlockchainsResponse> */
@@ -324,7 +343,7 @@ public class BcsAsyncClient {
         return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, BcsMeta.listQuotas, hcClient);
     }
 
-    /** 查询详细信息 查询指定服务实例详细信息
+    /** 查询实例信息 查询指定服务实例详细信息
      *
      * @param ShowBlockchainDetailRequest 请求对象
      * @return CompletableFuture<ShowBlockchainDetailResponse> */
@@ -333,7 +352,7 @@ public class BcsAsyncClient {
         return hcClient.asyncInvokeHttp(request, BcsMeta.showBlockchainDetail);
     }
 
-    /** 查询详细信息 查询指定服务实例详细信息
+    /** 查询实例信息 查询指定服务实例详细信息
      *
      * @param ShowBlockchainDetailRequest 请求对象
      * @return AsyncInvoker<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> */
@@ -380,7 +399,8 @@ public class BcsAsyncClient {
             BcsMeta.showBlockchainStatus, hcClient);
     }
 
-    /** 修改实例 修改实例的节点、组织，目前仅支持添加节点，添加组织
+    /** 修改服务实例 修改实例的节点、组织，目前仅支持添加、删除节点（IEF模式不支持添加、删除节点），添加、删除组织，共4种类型，每次操作只可以操作一种类型。此接口不支持包周期模式;
+     * 注意注册IEF节点时，IEF节点名称长度应该为4-24位的字符
      *
      * @param UpdateInstanceRequest 请求对象
      * @return CompletableFuture<UpdateInstanceResponse> */
@@ -388,7 +408,8 @@ public class BcsAsyncClient {
         return hcClient.asyncInvokeHttp(request, BcsMeta.updateInstance);
     }
 
-    /** 修改实例 修改实例的节点、组织，目前仅支持添加节点，添加组织
+    /** 修改服务实例 修改实例的节点、组织，目前仅支持添加、删除节点（IEF模式不支持添加、删除节点），添加、删除组织，共4种类型，每次操作只可以操作一种类型。此接口不支持包周期模式;
+     * 注意注册IEF节点时，IEF节点名称长度应该为4-24位的字符
      *
      * @param UpdateInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> */

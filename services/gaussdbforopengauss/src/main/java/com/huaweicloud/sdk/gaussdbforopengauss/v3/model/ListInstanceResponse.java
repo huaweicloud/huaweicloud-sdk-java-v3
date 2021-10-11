@@ -209,6 +209,13 @@ public class ListInstanceResponse  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="instance_mode")
+    
+    
+    private String instanceMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_encryption_id")
     
     
@@ -898,6 +905,28 @@ public class ListInstanceResponse  {
 
     
 
+    public ListInstanceResponse withInstanceMode(String instanceMode) {
+        this.instanceMode = instanceMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * basic为基础版 ，enterprise为企业版。
+     * @return instanceMode
+     */
+    public String getInstanceMode() {
+        return instanceMode;
+    }
+
+    public void setInstanceMode(String instanceMode) {
+        this.instanceMode = instanceMode;
+    }
+
+    
+
     public ListInstanceResponse withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
         return this;
@@ -1042,6 +1071,7 @@ public class ListInstanceResponse  {
             Objects.equals(this.relatedInstance, listInstanceResponse.relatedInstance) &&
             Objects.equals(this.nodes, listInstanceResponse.nodes) &&
             Objects.equals(this.enterpriseProjectId, listInstanceResponse.enterpriseProjectId) &&
+            Objects.equals(this.instanceMode, listInstanceResponse.instanceMode) &&
             Objects.equals(this.diskEncryptionId, listInstanceResponse.diskEncryptionId) &&
             Objects.equals(this.chargeInfo, listInstanceResponse.chargeInfo) &&
             Objects.equals(this.timeZone, listInstanceResponse.timeZone) &&
@@ -1049,7 +1079,7 @@ public class ListInstanceResponse  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, privateIps, publicIps, port, type, ha, replicaNum, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, switchStrategy, backupStrategy, maintenanceWindow, relatedInstance, nodes, enterpriseProjectId, diskEncryptionId, chargeInfo, timeZone, tags);
+        return Objects.hash(id, name, status, privateIps, publicIps, port, type, ha, replicaNum, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, switchStrategy, backupStrategy, maintenanceWindow, relatedInstance, nodes, enterpriseProjectId, instanceMode, diskEncryptionId, chargeInfo, timeZone, tags);
     }
     @Override
     public String toString() {
@@ -1081,6 +1111,7 @@ public class ListInstanceResponse  {
         sb.append("    relatedInstance: ").append(toIndentedString(relatedInstance)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    instanceMode: ").append(toIndentedString(instanceMode)).append("\n");
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");

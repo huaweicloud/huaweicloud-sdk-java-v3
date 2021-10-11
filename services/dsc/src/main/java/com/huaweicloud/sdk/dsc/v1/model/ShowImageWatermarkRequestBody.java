@@ -14,7 +14,7 @@ import java.util.Objects;
 /** ShowImageWatermarkRequestBody */
 public class ShowImageWatermarkRequestBody implements SdkFormDataBody {
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart file;
 

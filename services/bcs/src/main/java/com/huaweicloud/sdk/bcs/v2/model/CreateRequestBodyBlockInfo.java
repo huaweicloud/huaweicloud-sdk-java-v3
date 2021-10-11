@@ -11,19 +11,19 @@ public class CreateRequestBodyBlockInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "batch_timeout")
 
-    private Integer batchTimeout;
+    private Long batchTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_message_count")
 
-    private Integer maxMessageCount;
+    private Long maxMessageCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preferred_maxbytes")
 
-    private Integer preferredMaxbytes;
+    private Long preferredMaxbytes;
 
-    public CreateRequestBodyBlockInfo withBatchTimeout(Integer batchTimeout) {
+    public CreateRequestBodyBlockInfo withBatchTimeout(Long batchTimeout) {
         this.batchTimeout = batchTimeout;
         return this;
     }
@@ -31,15 +31,15 @@ public class CreateRequestBodyBlockInfo {
     /** 区块产生时间（单位：秒），默认2秒
      * 
      * @return batchTimeout */
-    public Integer getBatchTimeout() {
+    public Long getBatchTimeout() {
         return batchTimeout;
     }
 
-    public void setBatchTimeout(Integer batchTimeout) {
+    public void setBatchTimeout(Long batchTimeout) {
         this.batchTimeout = batchTimeout;
     }
 
-    public CreateRequestBodyBlockInfo withMaxMessageCount(Integer maxMessageCount) {
+    public CreateRequestBodyBlockInfo withMaxMessageCount(Long maxMessageCount) {
         this.maxMessageCount = maxMessageCount;
         return this;
     }
@@ -47,15 +47,15 @@ public class CreateRequestBodyBlockInfo {
     /** 区块包含交易数量，默认500
      * 
      * @return maxMessageCount */
-    public Integer getMaxMessageCount() {
+    public Long getMaxMessageCount() {
         return maxMessageCount;
     }
 
-    public void setMaxMessageCount(Integer maxMessageCount) {
+    public void setMaxMessageCount(Long maxMessageCount) {
         this.maxMessageCount = maxMessageCount;
     }
 
-    public CreateRequestBodyBlockInfo withPreferredMaxbytes(Integer preferredMaxbytes) {
+    public CreateRequestBodyBlockInfo withPreferredMaxbytes(Long preferredMaxbytes) {
         this.preferredMaxbytes = preferredMaxbytes;
         return this;
     }
@@ -63,11 +63,11 @@ public class CreateRequestBodyBlockInfo {
     /** 区块容量（单位：MB），默认2MB
      * 
      * @return preferredMaxbytes */
-    public Integer getPreferredMaxbytes() {
+    public Long getPreferredMaxbytes() {
         return preferredMaxbytes;
     }
 
-    public void setPreferredMaxbytes(Integer preferredMaxbytes) {
+    public void setPreferredMaxbytes(Long preferredMaxbytes) {
         this.preferredMaxbytes = preferredMaxbytes;
     }
 

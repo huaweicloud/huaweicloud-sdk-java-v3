@@ -25,7 +25,7 @@ public class ListVariablesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variable_list")
 
-    private List<ListVariablesResqVariableList> variableList = null;
+    private List<VariableDetail> variableList = null;
 
     public ListVariablesResponse withCode(String code) {
         this.code = code;
@@ -59,12 +59,12 @@ public class ListVariablesResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListVariablesResponse withVariableList(List<ListVariablesResqVariableList> variableList) {
+    public ListVariablesResponse withVariableList(List<VariableDetail> variableList) {
         this.variableList = variableList;
         return this;
     }
 
-    public ListVariablesResponse addVariableListItem(ListVariablesResqVariableList variableListItem) {
+    public ListVariablesResponse addVariableListItem(VariableDetail variableListItem) {
         if (this.variableList == null) {
             this.variableList = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ListVariablesResponse extends SdkResponse {
         return this;
     }
 
-    public ListVariablesResponse withVariableList(Consumer<List<ListVariablesResqVariableList>> variableListSetter) {
+    public ListVariablesResponse withVariableList(Consumer<List<VariableDetail>> variableListSetter) {
         if (this.variableList == null) {
             this.variableList = new ArrayList<>();
         }
@@ -83,11 +83,11 @@ public class ListVariablesResponse extends SdkResponse {
     /** variable_list
      * 
      * @return variableList */
-    public List<ListVariablesResqVariableList> getVariableList() {
+    public List<VariableDetail> getVariableList() {
         return variableList;
     }
 
-    public void setVariableList(List<ListVariablesResqVariableList> variableList) {
+    public void setVariableList(List<VariableDetail> variableList) {
         this.variableList = variableList;
     }
 

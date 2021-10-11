@@ -24,7 +24,7 @@ public class DmsKafkaInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_fade_cache")
 
-    private Integer orderFadeCache;
+    private Long orderFadeCache;
 
     public DmsKafkaInfo withAddr(List<String> addr) {
         this.addr = addr;
@@ -74,7 +74,7 @@ public class DmsKafkaInfo {
         this.orderFadeEnable = orderFadeEnable;
     }
 
-    public DmsKafkaInfo withOrderFadeCache(Integer orderFadeCache) {
+    public DmsKafkaInfo withOrderFadeCache(Long orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
         return this;
     }
@@ -82,11 +82,11 @@ public class DmsKafkaInfo {
     /** Kafka模式下，开启共识节点后的老化阈值
      * 
      * @return orderFadeCache */
-    public Integer getOrderFadeCache() {
+    public Long getOrderFadeCache() {
         return orderFadeCache;
     }
 
-    public void setOrderFadeCache(Integer orderFadeCache) {
+    public void setOrderFadeCache(Long orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
     }
 

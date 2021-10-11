@@ -17,7 +17,7 @@ public class UpdateInstanceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private OpIdRes body;
+    private UpdateInstanceRequestBody body;
 
     public UpdateInstanceRequest withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
@@ -35,14 +35,14 @@ public class UpdateInstanceRequest {
         this.blockchainId = blockchainId;
     }
 
-    public UpdateInstanceRequest withBody(OpIdRes body) {
+    public UpdateInstanceRequest withBody(UpdateInstanceRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateInstanceRequest withBody(Consumer<OpIdRes> bodySetter) {
+    public UpdateInstanceRequest withBody(Consumer<UpdateInstanceRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new OpIdRes();
+            this.body = new UpdateInstanceRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class UpdateInstanceRequest {
     /** Get body
      * 
      * @return body */
-    public OpIdRes getBody() {
+    public UpdateInstanceRequestBody getBody() {
         return body;
     }
 
-    public void setBody(OpIdRes body) {
+    public void setBody(UpdateInstanceRequestBody body) {
         this.body = body;
     }
 

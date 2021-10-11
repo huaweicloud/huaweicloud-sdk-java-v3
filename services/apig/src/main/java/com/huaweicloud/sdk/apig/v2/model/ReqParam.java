@@ -234,81 +234,10 @@ public class ReqParam {
 
     private String jsonSchema;
 
-    /** 是否透传 - 1：是 - 2：否 */
-    public static final class PassThroughEnum {
-
-        /** Enum _1 for value: "1" */
-        public static final PassThroughEnum _1 = new PassThroughEnum("1");
-
-        /** Enum _2 for value: "2" */
-        public static final PassThroughEnum _2 = new PassThroughEnum("2");
-
-        private static final Map<String, PassThroughEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PassThroughEnum> createStaticFields() {
-            Map<String, PassThroughEnum> map = new HashMap<>();
-            map.put("1", _1);
-            map.put("2", _2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PassThroughEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PassThroughEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            PassThroughEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PassThroughEnum(value);
-            }
-            return result;
-        }
-
-        public static PassThroughEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            PassThroughEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PassThroughEnum) {
-                return this.value.equals(((PassThroughEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pass_through")
 
-    private PassThroughEnum passThrough;
+    private Integer passThrough;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -555,7 +484,7 @@ public class ReqParam {
         this.jsonSchema = jsonSchema;
     }
 
-    public ReqParam withPassThrough(PassThroughEnum passThrough) {
+    public ReqParam withPassThrough(Integer passThrough) {
         this.passThrough = passThrough;
         return this;
     }
@@ -563,11 +492,11 @@ public class ReqParam {
     /** 是否透传 - 1：是 - 2：否
      * 
      * @return passThrough */
-    public PassThroughEnum getPassThrough() {
+    public Integer getPassThrough() {
         return passThrough;
     }
 
-    public void setPassThrough(PassThroughEnum passThrough) {
+    public void setPassThrough(Integer passThrough) {
         this.passThrough = passThrough;
     }
 

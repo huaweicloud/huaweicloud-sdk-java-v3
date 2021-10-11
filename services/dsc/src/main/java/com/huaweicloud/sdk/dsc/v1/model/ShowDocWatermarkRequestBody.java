@@ -107,7 +107,7 @@ public class ShowDocWatermarkRequestBody implements SdkFormDataBody {
 
     private String filePassword;
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart file;
 

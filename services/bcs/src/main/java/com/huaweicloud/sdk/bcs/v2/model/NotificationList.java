@@ -44,7 +44,7 @@ public class NotificationList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hide")
 
-    private Integer hide;
+    private Long hide;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_orgs")
@@ -54,7 +54,7 @@ public class NotificationList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "read_status")
 
-    private Integer readStatus;
+    private Long readStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cross_version_upgrade")
@@ -175,7 +175,7 @@ public class NotificationList {
         this.inviteeInfo = inviteeInfo;
     }
 
-    public NotificationList withHide(Integer hide) {
+    public NotificationList withHide(Long hide) {
         this.hide = hide;
         return this;
     }
@@ -183,11 +183,11 @@ public class NotificationList {
     /** 是否删除
      * 
      * @return hide */
-    public Integer getHide() {
+    public Long getHide() {
         return hide;
     }
 
-    public void setHide(Integer hide) {
+    public void setHide(Long hide) {
         this.hide = hide;
     }
 
@@ -223,7 +223,7 @@ public class NotificationList {
         this.inviteeOrgs = inviteeOrgs;
     }
 
-    public NotificationList withReadStatus(Integer readStatus) {
+    public NotificationList withReadStatus(Long readStatus) {
         this.readStatus = readStatus;
         return this;
     }
@@ -231,11 +231,11 @@ public class NotificationList {
     /** 阅读状态值
      * 
      * @return readStatus */
-    public Integer getReadStatus() {
+    public Long getReadStatus() {
         return readStatus;
     }
 
-    public void setReadStatus(Integer readStatus) {
+    public void setReadStatus(Long readStatus) {
         this.readStatus = readStatus;
     }
 

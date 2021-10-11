@@ -28,9 +28,19 @@ public class Channel {
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consensus")
+
+    private String consensus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peers")
 
     private Map<String, List<String>> peers = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consensusNodes")
+
+    private Map<String, List<String>> consensusNodes = null;
 
     public Channel withName(String name) {
         this.name = name;
@@ -80,6 +90,22 @@ public class Channel {
         this.createTime = createTime;
     }
 
+    public Channel withConsensus(String consensus) {
+        this.consensus = consensus;
+        return this;
+    }
+
+    /** 共识策略
+     * 
+     * @return consensus */
+    public String getConsensus() {
+        return consensus;
+    }
+
+    public void setConsensus(String consensus) {
+        this.consensus = consensus;
+    }
+
     public Channel withPeers(Map<String, List<String>> peers) {
         this.peers = peers;
         return this;
@@ -112,6 +138,38 @@ public class Channel {
         this.peers = peers;
     }
 
+    public Channel withConsensusNodes(Map<String, List<String>> consensusNodes) {
+        this.consensusNodes = consensusNodes;
+        return this;
+    }
+
+    public Channel putConsensusNodesItem(String key, List<String> consensusNodesItem) {
+        if (this.consensusNodes == null) {
+            this.consensusNodes = new HashMap<>();
+        }
+        this.consensusNodes.put(key, consensusNodesItem);
+        return this;
+    }
+
+    public Channel withConsensusNodes(Consumer<Map<String, List<String>>> consensusNodesSetter) {
+        if (this.consensusNodes == null) {
+            this.consensusNodes = new HashMap<>();
+        }
+        consensusNodesSetter.accept(this.consensusNodes);
+        return this;
+    }
+
+    /** key:组织名，value:节点名称列表
+     * 
+     * @return consensusNodes */
+    public Map<String, List<String>> getConsensusNodes() {
+        return consensusNodes;
+    }
+
+    public void setConsensusNodes(Map<String, List<String>> consensusNodes) {
+        this.consensusNodes = consensusNodes;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -122,12 +180,13 @@ public class Channel {
         }
         Channel channel = (Channel) o;
         return Objects.equals(this.name, channel.name) && Objects.equals(this.description, channel.description)
-            && Objects.equals(this.createTime, channel.createTime) && Objects.equals(this.peers, channel.peers);
+            && Objects.equals(this.createTime, channel.createTime) && Objects.equals(this.consensus, channel.consensus)
+            && Objects.equals(this.peers, channel.peers) && Objects.equals(this.consensusNodes, channel.consensusNodes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, createTime, peers);
+        return Objects.hash(name, description, createTime, consensus, peers, consensusNodes);
     }
 
     @Override
@@ -137,7 +196,9 @@ public class Channel {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    consensus: ").append(toIndentedString(consensus)).append("\n");
         sb.append("    peers: ").append(toIndentedString(peers)).append("\n");
+        sb.append("    consensusNodes: ").append(toIndentedString(consensusNodes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

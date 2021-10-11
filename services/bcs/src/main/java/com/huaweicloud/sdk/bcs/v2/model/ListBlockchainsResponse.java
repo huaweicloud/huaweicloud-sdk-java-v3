@@ -17,6 +17,11 @@ public class ListBlockchainsResponse extends SdkResponse {
 
     private List<BlockchainInfo> blockchains = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Long count;
+
     public ListBlockchainsResponse withBlockchains(List<BlockchainInfo> blockchains) {
         this.blockchains = blockchains;
         return this;
@@ -49,6 +54,22 @@ public class ListBlockchainsResponse extends SdkResponse {
         this.blockchains = blockchains;
     }
 
+    public ListBlockchainsResponse withCount(Long count) {
+        this.count = count;
+        return this;
+    }
+
+    /** 实例总数
+     * 
+     * @return count */
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -58,12 +79,13 @@ public class ListBlockchainsResponse extends SdkResponse {
             return false;
         }
         ListBlockchainsResponse listBlockchainsResponse = (ListBlockchainsResponse) o;
-        return Objects.equals(this.blockchains, listBlockchainsResponse.blockchains);
+        return Objects.equals(this.blockchains, listBlockchainsResponse.blockchains)
+            && Objects.equals(this.count, listBlockchainsResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(blockchains);
+        return Objects.hash(blockchains, count);
     }
 
     @Override
@@ -71,6 +93,7 @@ public class ListBlockchainsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBlockchainsResponse {\n");
         sb.append("    blockchains: ").append(toIndentedString(blockchains)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

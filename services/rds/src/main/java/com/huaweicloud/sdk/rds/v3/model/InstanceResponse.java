@@ -22,6 +22,11 @@ public class InstanceResponse {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_ssl")
+
+    private Boolean enableSsl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ips")
 
     private List<String> privateIps = null;
@@ -224,6 +229,22 @@ public class InstanceResponse {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public InstanceResponse withEnableSsl(Boolean enableSsl) {
+        this.enableSsl = enableSsl;
+        return this;
+    }
+
+    /** 实例是否开启SSL，取值为\"true\"表示实例开启了SSL，取值为\"false\"表示实例未开启SSL。
+     * 
+     * @return enableSsl */
+    public Boolean getEnableSsl() {
+        return enableSsl;
+    }
+
+    public void setEnableSsl(Boolean enableSsl) {
+        this.enableSsl = enableSsl;
     }
 
     public InstanceResponse withPrivateIps(List<String> privateIps) {
@@ -923,6 +944,7 @@ public class InstanceResponse {
         }
         InstanceResponse instanceResponse = (InstanceResponse) o;
         return Objects.equals(this.id, instanceResponse.id) && Objects.equals(this.status, instanceResponse.status)
+            && Objects.equals(this.enableSsl, instanceResponse.enableSsl)
             && Objects.equals(this.privateIps, instanceResponse.privateIps)
             && Objects.equals(this.privateDnsNames, instanceResponse.privateDnsNames)
             && Objects.equals(this.publicIps, instanceResponse.publicIps)
@@ -961,6 +983,7 @@ public class InstanceResponse {
     public int hashCode() {
         return Objects.hash(id,
             status,
+            enableSsl,
             privateIps,
             privateDnsNames,
             publicIps,
@@ -1003,6 +1026,7 @@ public class InstanceResponse {
         sb.append("class InstanceResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
         sb.append("    privateIps: ").append(toIndentedString(privateIps)).append("\n");
         sb.append("    privateDnsNames: ").append(toIndentedString(privateDnsNames)).append("\n");
         sb.append("    publicIps: ").append(toIndentedString(publicIps)).append("\n");

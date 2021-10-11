@@ -66,7 +66,7 @@ public class InvitorInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_fade_cache")
 
-    private Integer orderFadeCache;
+    private Long orderFadeCache;
 
     public InvitorInfo withInvitorId(String invitorId) {
         this.invitorId = invitorId;
@@ -244,7 +244,7 @@ public class InvitorInfo {
         this.orderFadeEnabled = orderFadeEnabled;
     }
 
-    public InvitorInfo withOrderFadeCache(Integer orderFadeCache) {
+    public InvitorInfo withOrderFadeCache(Long orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
         return this;
     }
@@ -252,11 +252,11 @@ public class InvitorInfo {
     /** order老化阈值
      * 
      * @return orderFadeCache */
-    public Integer getOrderFadeCache() {
+    public Long getOrderFadeCache() {
         return orderFadeCache;
     }
 
-    public void setOrderFadeCache(Integer orderFadeCache) {
+    public void setOrderFadeCache(Long orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
     }
 

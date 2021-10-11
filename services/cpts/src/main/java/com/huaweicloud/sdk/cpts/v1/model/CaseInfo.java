@@ -27,9 +27,9 @@ public class CaseInfo {
     private Integer caseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "contents")
+    @JsonProperty(value = "content")
 
-    private List<Contents> contents = null;
+    private List<Contents> content = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "for_loop_params")
@@ -104,36 +104,36 @@ public class CaseInfo {
         this.caseType = caseType;
     }
 
-    public CaseInfo withContents(List<Contents> contents) {
-        this.contents = contents;
+    public CaseInfo withContent(List<Contents> content) {
+        this.content = content;
         return this;
     }
 
-    public CaseInfo addContentsItem(Contents contentsItem) {
-        if (this.contents == null) {
-            this.contents = new ArrayList<>();
+    public CaseInfo addContentItem(Contents contentItem) {
+        if (this.content == null) {
+            this.content = new ArrayList<>();
         }
-        this.contents.add(contentsItem);
+        this.content.add(contentItem);
         return this;
     }
 
-    public CaseInfo withContents(Consumer<List<Contents>> contentsSetter) {
-        if (this.contents == null) {
-            this.contents = new ArrayList<>();
+    public CaseInfo withContent(Consumer<List<Contents>> contentSetter) {
+        if (this.content == null) {
+            this.content = new ArrayList<>();
         }
-        contentsSetter.accept(this.contents);
+        contentSetter.accept(this.content);
         return this;
     }
 
     /** contents
      * 
-     * @return contents */
-    public List<Contents> getContents() {
-        return contents;
+     * @return content */
+    public List<Contents> getContent() {
+        return content;
     }
 
-    public void setContents(List<Contents> contents) {
-        this.contents = contents;
+    public void setContent(List<Contents> content) {
+        this.content = content;
     }
 
     public CaseInfo withForLoopParams(List<Object> forLoopParams) {
@@ -274,7 +274,7 @@ public class CaseInfo {
         }
         CaseInfo caseInfo = (CaseInfo) o;
         return Objects.equals(this.caseId, caseInfo.caseId) && Objects.equals(this.caseName, caseInfo.caseName)
-            && Objects.equals(this.caseType, caseInfo.caseType) && Objects.equals(this.contents, caseInfo.contents)
+            && Objects.equals(this.caseType, caseInfo.caseType) && Objects.equals(this.content, caseInfo.content)
             && Objects.equals(this.forLoopParams, caseInfo.forLoopParams)
             && Objects.equals(this.increaseSetting, caseInfo.increaseSetting)
             && Objects.equals(this.stages, caseInfo.stages) && Objects.equals(this.status, caseInfo.status)
@@ -284,7 +284,7 @@ public class CaseInfo {
     @Override
     public int hashCode() {
         return Objects
-            .hash(caseId, caseName, caseType, contents, forLoopParams, increaseSetting, stages, status, tempId);
+            .hash(caseId, caseName, caseType, content, forLoopParams, increaseSetting, stages, status, tempId);
     }
 
     @Override
@@ -294,7 +294,7 @@ public class CaseInfo {
         sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
         sb.append("    caseName: ").append(toIndentedString(caseName)).append("\n");
         sb.append("    caseType: ").append(toIndentedString(caseType)).append("\n");
-        sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
+        sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    forLoopParams: ").append(toIndentedString(forLoopParams)).append("\n");
         sb.append("    increaseSetting: ").append(toIndentedString(increaseSetting)).append("\n");
         sb.append("    stages: ").append(toIndentedString(stages)).append("\n");

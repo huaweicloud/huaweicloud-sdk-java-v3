@@ -19,7 +19,7 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_type")
 
-    private Integer versionType;
+    private Long versionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fabric_version")
@@ -59,7 +59,7 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "org_disk_size")
 
-    private Integer orgDiskSize;
+    private Long orgDiskSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_type")
@@ -74,7 +74,7 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orderer_node_number")
 
-    private Integer ordererNodeNumber;
+    private Long ordererNodeNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_eip")
@@ -84,7 +84,7 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_size")
 
-    private Integer bandwidthSize;
+    private Long bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_type")
@@ -99,17 +99,17 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cce_cluster_info")
 
-    private CreateRequestBodyCceClusterInfo cceClusterInfo;
+    private CCEClusterInfo cceClusterInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cce_create_info")
 
-    private CreateRequestBodyCceCreateInfo cceCreateInfo;
+    private CCECreateInfo cceCreateInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ief_deploy_mode")
 
-    private Integer iefDeployMode;
+    private Long iefDeployMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ief_nodes_info")
@@ -129,12 +129,12 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "couchdb_info")
 
-    private CreateRequestBodyCouchdbInfo couchdbInfo;
+    private CouchDbInfo couchdbInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "turbo_info")
 
-    private CreateRequestBodyTurboInfo turboInfo;
+    private TurboInfo turboInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_info")
@@ -144,7 +144,7 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_create_info")
 
-    private CreateRequestBodyKafkaCreateInfo kafkaCreateInfo;
+    private KafkaCreateInfo kafkaCreateInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tc3_need")
@@ -164,7 +164,7 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_infos")
 
-    private CreateRequestBodyInvitorInfos invitorInfos;
+    private InvitorInfos invitorInfos;
 
     public CreateRequestBody withName(String name) {
         this.name = name;
@@ -182,19 +182,19 @@ public class CreateRequestBody {
         this.name = name;
     }
 
-    public CreateRequestBody withVersionType(Integer versionType) {
+    public CreateRequestBody withVersionType(Long versionType) {
         this.versionType = versionType;
         return this;
     }
 
-    /** BCS服务版本类型，可选：基础版（1），专业版（4），企业版（2），铂金版（3）
+    /** BCS服务版本类型，[专业版（4），企业版（2）](tag:g42)[可选：基础版（1），专业版（4），企业版（2），铂金版（3）](tag:online)。被邀请方创建时，和邀请方保持一致。
      * 
      * @return versionType */
-    public Integer getVersionType() {
+    public Long getVersionType() {
         return versionType;
     }
 
-    public void setVersionType(Integer versionType) {
+    public void setVersionType(Long versionType) {
         this.versionType = versionType;
     }
 
@@ -203,7 +203,7 @@ public class CreateRequestBody {
         return this;
     }
 
-    /** Fabric版本，可选：\"1.4\"，\"2.0\"。目前HCS只支持1.4
+    /** Fabric版本，当前邀请方以及私有链的创建仅可选：2.2 ;被邀请方创建时，和邀请方保持一致，1.4版本服务仅支持1.15及以下版本集群
      * 
      * @return fabricVersion */
     public String getFabricVersion() {
@@ -219,7 +219,7 @@ public class CreateRequestBody {
         return this;
     }
 
-    /** 区块链类型，可选：联盟链（union），私有链（private）
+    /** 区块链类型，默认私有链，可选：联盟链（union），私有链（private）。被邀请方创建时，和邀请方保持一致。
      * 
      * @return blockchainType */
     public String getBlockchainType() {
@@ -235,7 +235,7 @@ public class CreateRequestBody {
         return this;
     }
 
-    /** BCS服务的共识策略，可选：（etcdraft,1.4版本不支持raft共识算法）、快速拜占庭容错算法（SFLIC）、测试策略（solo）、Kafka共识（kafka）
+    /** BCS服务的共识策略，Fabric1.4版本可选：测试策略（solo）、快速拜占庭容错算法（SFLIC）；Fabric2.2版本可选：raft共识算法（etcdraft）、快速拜占庭容错算法（SFLIC）。被邀请方创建时，和邀请方保持一致。
      * 
      * @return consensus */
     public String getConsensus() {
@@ -310,19 +310,19 @@ public class CreateRequestBody {
         this.evsDiskType = evsDiskType;
     }
 
-    public CreateRequestBody withOrgDiskSize(Integer orgDiskSize) {
+    public CreateRequestBody withOrgDiskSize(Long orgDiskSize) {
         this.orgDiskSize = orgDiskSize;
         return this;
     }
 
-    /** [节点组织存储容量，基础版至少40GB，专业版和企业版至少100GB，铂金版至少500GB](tag:online)[节点组织存储容量GB，至少为100GB](tag:hcs)
+    /** 节点组织存储容量[，基础版至少40GB，专业版和企业版至少100GB，铂金版至少500GB](tag:online)[，专业版和企业版至少100GB](tag:g42)[节点组织存储容量GB，至少为100GB](tag:hcs)
      * 
      * @return orgDiskSize */
-    public Integer getOrgDiskSize() {
+    public Long getOrgDiskSize() {
         return orgDiskSize;
     }
 
-    public void setOrgDiskSize(Integer orgDiskSize) {
+    public void setOrgDiskSize(Long orgDiskSize) {
         this.orgDiskSize = orgDiskSize;
     }
 
@@ -331,7 +331,7 @@ public class CreateRequestBody {
         return this;
     }
 
-    /** BCS服务数据库类型，包括文件数据库（goleveldb），NoSQL（couchdb）
+    /** BCS服务数据库类型，包括文件数据库（goleveldb），NoSQL（couchdb），选择couchdb需要填写couchdb_info字段中的信息
      * 
      * @return databaseType */
     public String getDatabaseType() {
@@ -358,19 +358,19 @@ public class CreateRequestBody {
         this.resourcePassword = resourcePassword;
     }
 
-    public CreateRequestBody withOrdererNodeNumber(Integer ordererNodeNumber) {
+    public CreateRequestBody withOrdererNodeNumber(Long ordererNodeNumber) {
         this.ordererNodeNumber = ordererNodeNumber;
         return this;
     }
 
-    /** 共识组织节点数，被邀请方创实例时可不填
+    /** 共识组织节点数，被邀请方创实例时可不填。购买fabric2.2服务时必填。
      * 
      * @return ordererNodeNumber */
-    public Integer getOrdererNodeNumber() {
+    public Long getOrdererNodeNumber() {
         return ordererNodeNumber;
     }
 
-    public void setOrdererNodeNumber(Integer ordererNodeNumber) {
+    public void setOrdererNodeNumber(Long ordererNodeNumber) {
         this.ordererNodeNumber = ordererNodeNumber;
     }
 
@@ -390,7 +390,7 @@ public class CreateRequestBody {
         this.useEip = useEip;
     }
 
-    public CreateRequestBody withBandwidthSize(Integer bandwidthSize) {
+    public CreateRequestBody withBandwidthSize(Long bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
         return this;
     }
@@ -398,11 +398,11 @@ public class CreateRequestBody {
     /** 弹性IP带宽
      * 
      * @return bandwidthSize */
-    public Integer getBandwidthSize() {
+    public Long getBandwidthSize() {
         return bandwidthSize;
     }
 
-    public void setBandwidthSize(Integer bandwidthSize) {
+    public void setBandwidthSize(Long bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
     }
 
@@ -411,7 +411,7 @@ public class CreateRequestBody {
         return this;
     }
 
-    /** 集群类型，[可选：CCE集群（cce），边缘集群（ief）](tag:online)[目前线下混合云模式下只支持CCE集群](tag:hcs)
+    /** 集群类型，可选：CCE集群 [,边缘集群ief](tag:hasief)。
      * 
      * @return clusterType */
     public String getClusterType() {
@@ -427,7 +427,7 @@ public class CreateRequestBody {
         return this;
     }
 
-    /** 是否创建新集群
+    /** 是否创建新集群，使用已有集群需要填写cce_cluster_info字段中的信息，创建新集群需要填写cce_create_info字段中的信息
      * 
      * @return createNewCluster */
     public Boolean getCreateNewCluster() {
@@ -438,14 +438,14 @@ public class CreateRequestBody {
         this.createNewCluster = createNewCluster;
     }
 
-    public CreateRequestBody withCceClusterInfo(CreateRequestBodyCceClusterInfo cceClusterInfo) {
+    public CreateRequestBody withCceClusterInfo(CCEClusterInfo cceClusterInfo) {
         this.cceClusterInfo = cceClusterInfo;
         return this;
     }
 
-    public CreateRequestBody withCceClusterInfo(Consumer<CreateRequestBodyCceClusterInfo> cceClusterInfoSetter) {
+    public CreateRequestBody withCceClusterInfo(Consumer<CCEClusterInfo> cceClusterInfoSetter) {
         if (this.cceClusterInfo == null) {
-            this.cceClusterInfo = new CreateRequestBodyCceClusterInfo();
+            this.cceClusterInfo = new CCEClusterInfo();
             cceClusterInfoSetter.accept(this.cceClusterInfo);
         }
 
@@ -455,22 +455,22 @@ public class CreateRequestBody {
     /** Get cceClusterInfo
      * 
      * @return cceClusterInfo */
-    public CreateRequestBodyCceClusterInfo getCceClusterInfo() {
+    public CCEClusterInfo getCceClusterInfo() {
         return cceClusterInfo;
     }
 
-    public void setCceClusterInfo(CreateRequestBodyCceClusterInfo cceClusterInfo) {
+    public void setCceClusterInfo(CCEClusterInfo cceClusterInfo) {
         this.cceClusterInfo = cceClusterInfo;
     }
 
-    public CreateRequestBody withCceCreateInfo(CreateRequestBodyCceCreateInfo cceCreateInfo) {
+    public CreateRequestBody withCceCreateInfo(CCECreateInfo cceCreateInfo) {
         this.cceCreateInfo = cceCreateInfo;
         return this;
     }
 
-    public CreateRequestBody withCceCreateInfo(Consumer<CreateRequestBodyCceCreateInfo> cceCreateInfoSetter) {
+    public CreateRequestBody withCceCreateInfo(Consumer<CCECreateInfo> cceCreateInfoSetter) {
         if (this.cceCreateInfo == null) {
-            this.cceCreateInfo = new CreateRequestBodyCceCreateInfo();
+            this.cceCreateInfo = new CCECreateInfo();
             cceCreateInfoSetter.accept(this.cceCreateInfo);
         }
 
@@ -480,27 +480,27 @@ public class CreateRequestBody {
     /** Get cceCreateInfo
      * 
      * @return cceCreateInfo */
-    public CreateRequestBodyCceCreateInfo getCceCreateInfo() {
+    public CCECreateInfo getCceCreateInfo() {
         return cceCreateInfo;
     }
 
-    public void setCceCreateInfo(CreateRequestBodyCceCreateInfo cceCreateInfo) {
+    public void setCceCreateInfo(CCECreateInfo cceCreateInfo) {
         this.cceCreateInfo = cceCreateInfo;
     }
 
-    public CreateRequestBody withIefDeployMode(Integer iefDeployMode) {
+    public CreateRequestBody withIefDeployMode(Long iefDeployMode) {
         this.iefDeployMode = iefDeployMode;
         return this;
     }
 
-    /** IEF集群部署方式，随机部署（0），组织节点绑定（1）
+    /** IEF集群部署方式，随机部署（0），组织节点绑定（1）。组织节点绑定模式时，peer_orgs 参数必填。组织名和IEF节点名必须一致。
      * 
      * @return iefDeployMode */
-    public Integer getIefDeployMode() {
+    public Long getIefDeployMode() {
         return iefDeployMode;
     }
 
-    public void setIefDeployMode(Integer iefDeployMode) {
+    public void setIefDeployMode(Long iefDeployMode) {
         this.iefDeployMode = iefDeployMode;
     }
 
@@ -525,7 +525,7 @@ public class CreateRequestBody {
         return this;
     }
 
-    /** IEF集群节点列表
+    /** IEF集群节点列表，使用边缘集群模式部署时必填。
      * 
      * @return iefNodesInfo */
     public List<IEFNode> getIefNodesInfo() {
@@ -557,7 +557,7 @@ public class CreateRequestBody {
         return this;
     }
 
-    /** 节点组织列表
+    /** 节点组织列表。节点绑定模式中，组织名和IEF节点名必须一致。边缘集群模式时此字段必填。
      * 
      * @return peerOrgs */
     public List<OrgPeer> getPeerOrgs() {
@@ -600,14 +600,14 @@ public class CreateRequestBody {
         this.channels = channels;
     }
 
-    public CreateRequestBody withCouchdbInfo(CreateRequestBodyCouchdbInfo couchdbInfo) {
+    public CreateRequestBody withCouchdbInfo(CouchDbInfo couchdbInfo) {
         this.couchdbInfo = couchdbInfo;
         return this;
     }
 
-    public CreateRequestBody withCouchdbInfo(Consumer<CreateRequestBodyCouchdbInfo> couchdbInfoSetter) {
+    public CreateRequestBody withCouchdbInfo(Consumer<CouchDbInfo> couchdbInfoSetter) {
         if (this.couchdbInfo == null) {
-            this.couchdbInfo = new CreateRequestBodyCouchdbInfo();
+            this.couchdbInfo = new CouchDbInfo();
             couchdbInfoSetter.accept(this.couchdbInfo);
         }
 
@@ -617,22 +617,22 @@ public class CreateRequestBody {
     /** Get couchdbInfo
      * 
      * @return couchdbInfo */
-    public CreateRequestBodyCouchdbInfo getCouchdbInfo() {
+    public CouchDbInfo getCouchdbInfo() {
         return couchdbInfo;
     }
 
-    public void setCouchdbInfo(CreateRequestBodyCouchdbInfo couchdbInfo) {
+    public void setCouchdbInfo(CouchDbInfo couchdbInfo) {
         this.couchdbInfo = couchdbInfo;
     }
 
-    public CreateRequestBody withTurboInfo(CreateRequestBodyTurboInfo turboInfo) {
+    public CreateRequestBody withTurboInfo(TurboInfo turboInfo) {
         this.turboInfo = turboInfo;
         return this;
     }
 
-    public CreateRequestBody withTurboInfo(Consumer<CreateRequestBodyTurboInfo> turboInfoSetter) {
+    public CreateRequestBody withTurboInfo(Consumer<TurboInfo> turboInfoSetter) {
         if (this.turboInfo == null) {
-            this.turboInfo = new CreateRequestBodyTurboInfo();
+            this.turboInfo = new TurboInfo();
             turboInfoSetter.accept(this.turboInfo);
         }
 
@@ -642,11 +642,11 @@ public class CreateRequestBody {
     /** Get turboInfo
      * 
      * @return turboInfo */
-    public CreateRequestBodyTurboInfo getTurboInfo() {
+    public TurboInfo getTurboInfo() {
         return turboInfo;
     }
 
-    public void setTurboInfo(CreateRequestBodyTurboInfo turboInfo) {
+    public void setTurboInfo(TurboInfo turboInfo) {
         this.turboInfo = turboInfo;
     }
 
@@ -675,14 +675,14 @@ public class CreateRequestBody {
         this.blockInfo = blockInfo;
     }
 
-    public CreateRequestBody withKafkaCreateInfo(CreateRequestBodyKafkaCreateInfo kafkaCreateInfo) {
+    public CreateRequestBody withKafkaCreateInfo(KafkaCreateInfo kafkaCreateInfo) {
         this.kafkaCreateInfo = kafkaCreateInfo;
         return this;
     }
 
-    public CreateRequestBody withKafkaCreateInfo(Consumer<CreateRequestBodyKafkaCreateInfo> kafkaCreateInfoSetter) {
+    public CreateRequestBody withKafkaCreateInfo(Consumer<KafkaCreateInfo> kafkaCreateInfoSetter) {
         if (this.kafkaCreateInfo == null) {
-            this.kafkaCreateInfo = new CreateRequestBodyKafkaCreateInfo();
+            this.kafkaCreateInfo = new KafkaCreateInfo();
             kafkaCreateInfoSetter.accept(this.kafkaCreateInfo);
         }
 
@@ -692,11 +692,11 @@ public class CreateRequestBody {
     /** Get kafkaCreateInfo
      * 
      * @return kafkaCreateInfo */
-    public CreateRequestBodyKafkaCreateInfo getKafkaCreateInfo() {
+    public KafkaCreateInfo getKafkaCreateInfo() {
         return kafkaCreateInfo;
     }
 
-    public void setKafkaCreateInfo(CreateRequestBodyKafkaCreateInfo kafkaCreateInfo) {
+    public void setKafkaCreateInfo(KafkaCreateInfo kafkaCreateInfo) {
         this.kafkaCreateInfo = kafkaCreateInfo;
     }
 
@@ -737,7 +737,7 @@ public class CreateRequestBody {
         return this;
     }
 
-    /** 是否是被邀请方创建实例
+    /** 是否是创建被邀请方实例，创建被邀请方实例需要同时填写invitor_infos字段中的信息
      * 
      * @return isInvitee */
     public Boolean getIsInvitee() {
@@ -748,14 +748,14 @@ public class CreateRequestBody {
         this.isInvitee = isInvitee;
     }
 
-    public CreateRequestBody withInvitorInfos(CreateRequestBodyInvitorInfos invitorInfos) {
+    public CreateRequestBody withInvitorInfos(InvitorInfos invitorInfos) {
         this.invitorInfos = invitorInfos;
         return this;
     }
 
-    public CreateRequestBody withInvitorInfos(Consumer<CreateRequestBodyInvitorInfos> invitorInfosSetter) {
+    public CreateRequestBody withInvitorInfos(Consumer<InvitorInfos> invitorInfosSetter) {
         if (this.invitorInfos == null) {
-            this.invitorInfos = new CreateRequestBodyInvitorInfos();
+            this.invitorInfos = new InvitorInfos();
             invitorInfosSetter.accept(this.invitorInfos);
         }
 
@@ -765,11 +765,11 @@ public class CreateRequestBody {
     /** Get invitorInfos
      * 
      * @return invitorInfos */
-    public CreateRequestBodyInvitorInfos getInvitorInfos() {
+    public InvitorInfos getInvitorInfos() {
         return invitorInfos;
     }
 
-    public void setInvitorInfos(CreateRequestBodyInvitorInfos invitorInfos) {
+    public void setInvitorInfos(InvitorInfos invitorInfos) {
         this.invitorInfos = invitorInfos;
     }
 

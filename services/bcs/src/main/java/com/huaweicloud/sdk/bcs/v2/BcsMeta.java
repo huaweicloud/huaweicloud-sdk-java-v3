@@ -102,6 +102,48 @@ public class BcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> batchRemoveOrgsFromChannel =
+        genForbatchRemoveOrgsFromChannel();
+
+    private static HttpRequestDef<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> genForbatchRemoveOrgsFromChannel() {
+        // basic
+        HttpRequestDef.Builder<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchRemoveOrgsFromChannelRequest.class,
+                    BatchRemoveOrgsFromChannelResponse.class)
+                .withName("BatchRemoveOrgsFromChannel")
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/{channel_id}/orgs/quit")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("blockchain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRemoveOrgsFromChannelRequest::getBlockchainId, (req, v) -> {
+                req.setBlockchainId(v);
+            }));
+        builder.<String>withRequestField("channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRemoveOrgsFromChannelRequest::getChannelId, (req, v) -> {
+                req.setChannelId(v);
+            }));
+        builder.<BatchRemoveOrgsFromChannelRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchRemoveOrgsFromChannelRequestBody.class),
+            f -> f.withMarshaller(BatchRemoveOrgsFromChannelRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateNewBlockchainRequest, CreateNewBlockchainResponse> createNewBlockchain =
         genForcreateNewBlockchain();
 
@@ -609,10 +651,10 @@ public class BcsMeta {
             f -> f.withMarshaller(UpdateInstanceRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
             }));
-        builder.<OpIdRes>withRequestField("body",
+        builder.<UpdateInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OpIdRes.class),
+            TypeCasts.uncheckedConversion(UpdateInstanceRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

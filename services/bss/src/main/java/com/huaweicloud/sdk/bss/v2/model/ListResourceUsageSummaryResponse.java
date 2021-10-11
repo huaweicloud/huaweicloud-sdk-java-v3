@@ -60,7 +60,7 @@ public class ListResourceUsageSummaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 统计值，按照资源ID维度返回的月度统计结果。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则只返回资源ID。
+    /** 统计值，按照资源ID维度返回的月度统计结果。具体请参见表3。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则只返回资源ID。
      * 
      * @return summaryUsageInfoList */
     public List<StatUsageSummaryInfo> getSummaryUsageInfoList() {

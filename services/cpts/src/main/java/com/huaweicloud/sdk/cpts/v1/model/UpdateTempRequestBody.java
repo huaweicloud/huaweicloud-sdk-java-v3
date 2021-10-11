@@ -49,7 +49,7 @@ public class UpdateTempRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contents")
 
-    private List<UpdateTempRequestBodyContents> contents = null;
+    private List<TempContentInfo> contents = null;
 
     public UpdateTempRequestBody withId(Integer id) {
         this.id = id;
@@ -179,12 +179,12 @@ public class UpdateTempRequestBody {
         this.enablePre = enablePre;
     }
 
-    public UpdateTempRequestBody withContents(List<UpdateTempRequestBodyContents> contents) {
+    public UpdateTempRequestBody withContents(List<TempContentInfo> contents) {
         this.contents = contents;
         return this;
     }
 
-    public UpdateTempRequestBody addContentsItem(UpdateTempRequestBodyContents contentsItem) {
+    public UpdateTempRequestBody addContentsItem(TempContentInfo contentsItem) {
         if (this.contents == null) {
             this.contents = new ArrayList<>();
         }
@@ -192,7 +192,7 @@ public class UpdateTempRequestBody {
         return this;
     }
 
-    public UpdateTempRequestBody withContents(Consumer<List<UpdateTempRequestBodyContents>> contentsSetter) {
+    public UpdateTempRequestBody withContents(Consumer<List<TempContentInfo>> contentsSetter) {
         if (this.contents == null) {
             this.contents = new ArrayList<>();
         }
@@ -203,11 +203,11 @@ public class UpdateTempRequestBody {
     /** contents
      * 
      * @return contents */
-    public List<UpdateTempRequestBodyContents> getContents() {
+    public List<TempContentInfo> getContents() {
         return contents;
     }
 
-    public void setContents(List<UpdateTempRequestBodyContents> contents) {
+    public void setContents(List<TempContentInfo> contents) {
         this.contents = contents;
     }
 

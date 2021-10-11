@@ -7,8 +7,73 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
+import java.util.Map;
+
 @SuppressWarnings("unchecked")
 public class ApigMeta {
+
+    public static final HttpRequestDef<AddEipV2Request, AddEipV2Response> addEipV2 = genForaddEipV2();
+
+    private static HttpRequestDef<AddEipV2Request, AddEipV2Response> genForaddEipV2() {
+        // basic
+        HttpRequestDef.Builder<AddEipV2Request, AddEipV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddEipV2Request.class, AddEipV2Response.class)
+                .withName("AddEipV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/eip")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddEipV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<EipBindReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EipBindReq.class),
+            f -> f.withMarshaller(AddEipV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddEngressEipV2Request, AddEngressEipV2Response> addEngressEipV2 =
+        genForaddEngressEipV2();
+
+    private static HttpRequestDef<AddEngressEipV2Request, AddEngressEipV2Response> genForaddEngressEipV2() {
+        // basic
+        HttpRequestDef.Builder<AddEngressEipV2Request, AddEngressEipV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddEngressEipV2Request.class, AddEngressEipV2Response.class)
+                .withName("AddEngressEipV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/nat-eip")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddEngressEipV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<OpenEngressEipReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OpenEngressEipReq.class),
+            f -> f.withMarshaller(AddEngressEipV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<AssociateCertificateV2Request, AssociateCertificateV2Response> associateCertificateV2 =
         genForassociateCertificateV2();
@@ -128,6 +193,39 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2 =
+        genForcreateCustomAuthorizerV2();
+
+    private static HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> genForcreateCustomAuthorizerV2() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateCustomAuthorizerV2Request.class, CreateCustomAuthorizerV2Response.class)
+                .withName("CreateCustomAuthorizerV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/authorizers")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AuthorizerCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AuthorizerCreate.class),
+            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEnvironmentV2Request, CreateEnvironmentV2Response> createEnvironmentV2 =
         genForcreateEnvironmentV2();
 
@@ -187,6 +285,102 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvVariableReq.class),
             f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFeatureV2Request, CreateFeatureV2Response> createFeatureV2 =
+        genForcreateFeatureV2();
+
+    private static HttpRequestDef<CreateFeatureV2Request, CreateFeatureV2Response> genForcreateFeatureV2() {
+        // basic
+        HttpRequestDef.Builder<CreateFeatureV2Request, CreateFeatureV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFeatureV2Request.class, CreateFeatureV2Response.class)
+                .withName("CreateFeatureV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/features")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFeatureV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<FeatureToggle>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FeatureToggle.class),
+            f -> f.withMarshaller(CreateFeatureV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> createGatewayResponseV2 =
+        genForcreateGatewayResponseV2();
+
+    private static HttpRequestDef<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> genForcreateGatewayResponseV2() {
+        // basic
+        HttpRequestDef.Builder<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateGatewayResponseV2Request.class, CreateGatewayResponseV2Response.class)
+            .withName("CreateGatewayResponseV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/gateway-responses")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGatewayResponseV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGatewayResponseV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<ResponsesCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResponsesCreate.class),
+            f -> f.withMarshaller(CreateGatewayResponseV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInstanceV2Request, CreateInstanceV2Response> createInstanceV2 =
+        genForcreateInstanceV2();
+
+    private static HttpRequestDef<CreateInstanceV2Request, CreateInstanceV2Response> genForcreateInstanceV2() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceV2Request, CreateInstanceV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInstanceV2Request.class, CreateInstanceV2Response.class)
+                .withName("CreateInstanceV2")
+                .withUri("/v2/{project_id}/apigw/instances")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<InstanceCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceCreateReq.class),
+            f -> f.withMarshaller(CreateInstanceV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -304,6 +498,41 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2 =
+        genFordeleteCustomAuthorizerV2();
+
+    private static HttpRequestDef<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> genFordeleteCustomAuthorizerV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteCustomAuthorizerV2Request.class,
+                    DeleteCustomAuthorizerV2Response.class)
+                .withName("DeleteCustomAuthorizerV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/authorizers/{authorizer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("authorizer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getAuthorizerId, (req, v) -> {
+                req.setAuthorizerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> deleteEnvironmentV2 =
         genFordeleteEnvironmentV2();
 
@@ -364,6 +593,121 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteEnvironmentVariableV2Request::getEnvVariableId, (req, v) -> {
                 req.setEnvVariableId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> deleteGatewayResponseTypeV2 =
+        genFordeleteGatewayResponseTypeV2();
+
+    private static HttpRequestDef<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> genFordeleteGatewayResponseTypeV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteGatewayResponseTypeV2Request.class,
+                    DeleteGatewayResponseTypeV2Response.class)
+                .withName("DeleteGatewayResponseTypeV2")
+                .withUri(
+                    "/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/gateway-responses/{response_id}/{response_type}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("response_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getResponseId, (req, v) -> {
+                req.setResponseId(v);
+            }));
+        builder.<DeleteGatewayResponseTypeV2Request.ResponseTypeEnum>withRequestField("response_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteGatewayResponseTypeV2Request.ResponseTypeEnum.class),
+            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getResponseType, (req, v) -> {
+                req.setResponseType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> deleteGatewayResponseV2 =
+        genFordeleteGatewayResponseV2();
+
+    private static HttpRequestDef<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> genFordeleteGatewayResponseV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteGatewayResponseV2Request.class, DeleteGatewayResponseV2Response.class)
+            .withName("DeleteGatewayResponseV2")
+            .withUri(
+                "/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/gateway-responses/{response_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGatewayResponseV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGatewayResponseV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("response_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGatewayResponseV2Request::getResponseId, (req, v) -> {
+                req.setResponseId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInstancesV2Request, DeleteInstancesV2Response> deleteInstancesV2 =
+        genFordeleteInstancesV2();
+
+    private static HttpRequestDef<DeleteInstancesV2Request, DeleteInstancesV2Response> genFordeleteInstancesV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstancesV2Request, DeleteInstancesV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstancesV2Request.class, DeleteInstancesV2Response.class)
+                .withName("DeleteInstancesV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstancesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response
@@ -837,6 +1181,84 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAvailableZonesV2Request, ListAvailableZonesV2Response> listAvailableZonesV2 =
+        genForlistAvailableZonesV2();
+
+    private static HttpRequestDef<ListAvailableZonesV2Request, ListAvailableZonesV2Response> genForlistAvailableZonesV2() {
+        // basic
+        HttpRequestDef.Builder<ListAvailableZonesV2Request, ListAvailableZonesV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAvailableZonesV2Request.class, ListAvailableZonesV2Response.class)
+            .withName("ListAvailableZonesV2")
+            .withUri("/v2/{project_id}/apigw/available-zones")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> listCustomAuthorizersV2 =
+        genForlistCustomAuthorizersV2();
+
+    private static HttpRequestDef<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> genForlistCustomAuthorizersV2() {
+        // basic
+        HttpRequestDef.Builder<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListCustomAuthorizersV2Request.class, ListCustomAuthorizersV2Response.class)
+            .withName("ListCustomAuthorizersV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/authorizers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> listEnvironmentVariablesV2 =
         genForlistEnvironmentVariablesV2();
 
@@ -945,6 +1367,292 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEnvironmentsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFeaturesV2Request, ListFeaturesV2Response> listFeaturesV2 =
+        genForlistFeaturesV2();
+
+    private static HttpRequestDef<ListFeaturesV2Request, ListFeaturesV2Response> genForlistFeaturesV2() {
+        // basic
+        HttpRequestDef.Builder<ListFeaturesV2Request, ListFeaturesV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFeaturesV2Request.class, ListFeaturesV2Response.class)
+                .withName("ListFeaturesV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/features")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFeaturesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFeaturesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFeaturesV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> listGatewayResponsesV2 =
+        genForlistGatewayResponsesV2();
+
+    private static HttpRequestDef<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> genForlistGatewayResponsesV2() {
+        // basic
+        HttpRequestDef.Builder<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListGatewayResponsesV2Request.class, ListGatewayResponsesV2Response.class)
+            .withName("ListGatewayResponsesV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/gateway-responses")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGatewayResponsesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGatewayResponsesV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListGatewayResponsesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGatewayResponsesV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response> listInstanceCofigsV2 =
+        genForlistInstanceCofigsV2();
+
+    private static HttpRequestDef<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response> genForlistInstanceCofigsV2() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstanceCofigsV2Request.class, ListInstanceCofigsV2Response.class)
+            .withName("ListInstanceCofigsV2")
+            .withUri("/v2/{project_id}/apigw/instance/configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInstanceCofigsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceCofigsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesV2Request, ListInstancesV2Response> listInstancesV2 =
+        genForlistInstancesV2();
+
+    private static HttpRequestDef<ListInstancesV2Request, ListInstancesV2Response> genForlistInstancesV2() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesV2Request, ListInstancesV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstancesV2Request.class, ListInstancesV2Response.class)
+                .withName("ListInstancesV2")
+                .withUri("/v2/{project_id}/apigw/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInstancesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesV2Request::getInstanceName, (req, v) -> {
+                req.setInstanceName(v);
+            }));
+        builder.<ListInstancesV2Request.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesV2Request.StatusEnum.class),
+            f -> f.withMarshaller(ListInstancesV2Request::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2 =
+        genForlistLatelyApiStatisticsV2();
+
+    private static HttpRequestDef<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> genForlistLatelyApiStatisticsV2() {
+        // basic
+        HttpRequestDef.Builder<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListLatelyApiStatisticsV2Request.class,
+                    ListLatelyApiStatisticsV2Response.class)
+                .withName("ListLatelyApiStatisticsV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/statistics/api/latest")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("duration",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getDuration, (req, v) -> {
+                req.setDuration(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> listLatelyGroupStatisticsV2 =
+        genForlistLatelyGroupStatisticsV2();
+
+    private static HttpRequestDef<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> genForlistLatelyGroupStatisticsV2() {
+        // basic
+        HttpRequestDef.Builder<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListLatelyGroupStatisticsV2Request.class,
+                    ListLatelyGroupStatisticsV2Response.class)
+                .withName("ListLatelyGroupStatisticsV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/statistics/group/latest")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLatelyGroupStatisticsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLatelyGroupStatisticsV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectCofigsV2Request, ListProjectCofigsV2Response> listProjectCofigsV2 =
+        genForlistProjectCofigsV2();
+
+    private static HttpRequestDef<ListProjectCofigsV2Request, ListProjectCofigsV2Response> genForlistProjectCofigsV2() {
+        // basic
+        HttpRequestDef.Builder<ListProjectCofigsV2Request, ListProjectCofigsV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectCofigsV2Request.class, ListProjectCofigsV2Response.class)
+                .withName("ListProjectCofigsV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/project/configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectCofigsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProjectCofigsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectCofigsV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
 
@@ -1189,6 +1897,13 @@ public class ApigMeta {
             f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getAppName, (req, v) -> {
                 req.setAppName(v);
             }));
+        builder.<String>withRequestField("user",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getUser, (req, v) -> {
+                req.setUser(v);
+            }));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1202,6 +1917,128 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsV2Request, ListTagsV2Response> listTagsV2 = genForlistTagsV2();
+
+    private static HttpRequestDef<ListTagsV2Request, ListTagsV2Response> genForlistTagsV2() {
+        // basic
+        HttpRequestDef.Builder<ListTagsV2Request, ListTagsV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsV2Request.class, ListTagsV2Response.class)
+                .withName("ListTagsV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTagsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveEipV2Request, RemoveEipV2Response> removeEipV2 = genForremoveEipV2();
+
+    private static HttpRequestDef<RemoveEipV2Request, RemoveEipV2Response> genForremoveEipV2() {
+        // basic
+        HttpRequestDef.Builder<RemoveEipV2Request, RemoveEipV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, RemoveEipV2Request.class, RemoveEipV2Response.class)
+                .withName("RemoveEipV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/eip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveEipV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveEngressEipV2Request, RemoveEngressEipV2Response> removeEngressEipV2 =
+        genForremoveEngressEipV2();
+
+    private static HttpRequestDef<RemoveEngressEipV2Request, RemoveEngressEipV2Response> genForremoveEngressEipV2() {
+        // basic
+        HttpRequestDef.Builder<RemoveEngressEipV2Request, RemoveEngressEipV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, RemoveEngressEipV2Request.class, RemoveEngressEipV2Response.class)
+                .withName("RemoveEngressEipV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/nat-eip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveEngressEipV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2 =
+        genForshowDetailsOfCustomAuthorizersV2();
+
+    private static HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> genForshowDetailsOfCustomAuthorizersV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDetailsOfCustomAuthorizersV2Request.class,
+                    ShowDetailsOfCustomAuthorizersV2Response.class)
+                .withName("ShowDetailsOfCustomAuthorizersV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/authorizers/{authorizer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("authorizer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getAuthorizerId, (req, v) -> {
+                req.setAuthorizerId(v);
             }));
 
         // response
@@ -1294,6 +2131,160 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> showDetailsOfGatewayResponseTypeV2 =
+        genForshowDetailsOfGatewayResponseTypeV2();
+
+    private static HttpRequestDef<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> genForshowDetailsOfGatewayResponseTypeV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDetailsOfGatewayResponseTypeV2Request.class,
+                    ShowDetailsOfGatewayResponseTypeV2Response.class)
+                .withName("ShowDetailsOfGatewayResponseTypeV2")
+                .withUri(
+                    "/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/gateway-responses/{response_id}/{response_type}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("response_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getResponseId, (req, v) -> {
+                req.setResponseId(v);
+            }));
+        builder.<ShowDetailsOfGatewayResponseTypeV2Request.ResponseTypeEnum>withRequestField("response_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowDetailsOfGatewayResponseTypeV2Request.ResponseTypeEnum.class),
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getResponseType, (req, v) -> {
+                req.setResponseType(v);
+            }));
+
+        // response
+
+        builder.<Map<String, ResponseInfoResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Response::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ResponseInfoResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> showDetailsOfGatewayResponseV2 =
+        genForshowDetailsOfGatewayResponseV2();
+
+    private static HttpRequestDef<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> genForshowDetailsOfGatewayResponseV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDetailsOfGatewayResponseV2Request.class,
+                    ShowDetailsOfGatewayResponseV2Response.class)
+                .withName("ShowDetailsOfGatewayResponseV2")
+                .withUri(
+                    "/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/gateway-responses/{response_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("response_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseV2Request::getResponseId, (req, v) -> {
+                req.setResponseId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> showDetailsOfInstanceProgressV2 =
+        genForshowDetailsOfInstanceProgressV2();
+
+    private static HttpRequestDef<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> genForshowDetailsOfInstanceProgressV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDetailsOfInstanceProgressV2Request.class,
+                    ShowDetailsOfInstanceProgressV2Response.class)
+                .withName("ShowDetailsOfInstanceProgressV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/progress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfInstanceProgressV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2 =
+        genForshowDetailsOfInstanceV2();
+
+    private static HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> genForshowDetailsOfInstanceV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDetailsOfInstanceV2Request.class, ShowDetailsOfInstanceV2Response.class)
+            .withName("ShowDetailsOfInstanceV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfInstanceV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2 =
         genForshowDetailsOfRequestThrottlingPolicyV2();
 
@@ -1322,6 +2313,46 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
                 req.setThrottleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2 =
+        genForupdateCustomAuthorizerV2();
+
+    private static HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> genForupdateCustomAuthorizerV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateCustomAuthorizerV2Request.class, UpdateCustomAuthorizerV2Response.class)
+                .withName("UpdateCustomAuthorizerV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/authorizers/{authorizer_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("authorizer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getAuthorizerId, (req, v) -> {
+                req.setAuthorizerId(v);
+            }));
+        builder.<AuthorizerCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AuthorizerCreate.class),
+            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1375,6 +2406,38 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateEngressEipV2Request, UpdateEngressEipV2Response> updateEngressEipV2 =
+        genForupdateEngressEipV2();
+
+    private static HttpRequestDef<UpdateEngressEipV2Request, UpdateEngressEipV2Response> genForupdateEngressEipV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateEngressEipV2Request, UpdateEngressEipV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEngressEipV2Request.class, UpdateEngressEipV2Response.class)
+                .withName("UpdateEngressEipV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/nat-eip")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEngressEipV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<OpenEngressEipReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OpenEngressEipReq.class),
+            f -> f.withMarshaller(UpdateEngressEipV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> updateEnvironmentV2 =
         genForupdateEnvironmentV2();
 
@@ -1406,6 +2469,150 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvReq.class),
             f -> f.withMarshaller(UpdateEnvironmentV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> updateGatewayResponseTypeV2 =
+        genForupdateGatewayResponseTypeV2();
+
+    private static HttpRequestDef<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> genForupdateGatewayResponseTypeV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateGatewayResponseTypeV2Request.class,
+                    UpdateGatewayResponseTypeV2Response.class)
+                .withName("UpdateGatewayResponseTypeV2")
+                .withUri(
+                    "/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/gateway-responses/{response_id}/{response_type}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("response_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getResponseId, (req, v) -> {
+                req.setResponseId(v);
+            }));
+        builder.<UpdateGatewayResponseTypeV2Request.ResponseTypeEnum>withRequestField("response_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateGatewayResponseTypeV2Request.ResponseTypeEnum.class),
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getResponseType, (req, v) -> {
+                req.setResponseType(v);
+            }));
+        builder.<ResponseInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResponseInfo.class),
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<Map<String, ResponseInfoResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Response::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ResponseInfoResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> updateGatewayResponseV2 =
+        genForupdateGatewayResponseV2();
+
+    private static HttpRequestDef<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> genForupdateGatewayResponseV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateGatewayResponseV2Request.class, UpdateGatewayResponseV2Response.class)
+            .withName("UpdateGatewayResponseV2")
+            .withUri(
+                "/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/gateway-responses/{response_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("response_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getResponseId, (req, v) -> {
+                req.setResponseId(v);
+            }));
+        builder.<ResponsesCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResponsesCreate.class),
+            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceV2Request, UpdateInstanceV2Response> updateInstanceV2 =
+        genForupdateInstanceV2();
+
+    private static HttpRequestDef<UpdateInstanceV2Request, UpdateInstanceV2Response> genForupdateInstanceV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceV2Request, UpdateInstanceV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceV2Request.class, UpdateInstanceV2Response.class)
+                .withName("UpdateInstanceV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<InstanceModReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceModReq.class),
+            f -> f.withMarshaller(UpdateInstanceV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1545,6 +2752,254 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteAclV2Request, BatchDeleteAclV2Response> batchDeleteAclV2 =
+        genForbatchDeleteAclV2();
+
+    private static HttpRequestDef<BatchDeleteAclV2Request, BatchDeleteAclV2Response> genForbatchDeleteAclV2() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteAclV2Request, BatchDeleteAclV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, BatchDeleteAclV2Request.class, BatchDeleteAclV2Response.class)
+                .withName("BatchDeleteAclV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acls")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteAclV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteAclV2Request::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+        builder.<AclBatchDelete>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AclBatchDelete.class),
+            f -> f.withMarshaller(BatchDeleteAclV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAclStrategyV2Request, CreateAclStrategyV2Response> createAclStrategyV2 =
+        genForcreateAclStrategyV2();
+
+    private static HttpRequestDef<CreateAclStrategyV2Request, CreateAclStrategyV2Response> genForcreateAclStrategyV2() {
+        // basic
+        HttpRequestDef.Builder<CreateAclStrategyV2Request, CreateAclStrategyV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAclStrategyV2Request.class, CreateAclStrategyV2Response.class)
+                .withName("CreateAclStrategyV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acls")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAclStrategyV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ApiAclCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiAclCreate.class),
+            f -> f.withMarshaller(CreateAclStrategyV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> deleteAclV2 = genFordeleteAclV2();
+
+    private static HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> genFordeleteAclV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteAclV2Request, DeleteAclV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAclV2Request.class, DeleteAclV2Response.class)
+                .withName("DeleteAclV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acls/{acl_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAclV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("acl_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAclV2Request::getAclId, (req, v) -> {
+                req.setAclId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAclStrategiesV2Request, ListAclStrategiesV2Response> listAclStrategiesV2 =
+        genForlistAclStrategiesV2();
+
+    private static HttpRequestDef<ListAclStrategiesV2Request, ListAclStrategiesV2Response> genForlistAclStrategiesV2() {
+        // basic
+        HttpRequestDef.Builder<ListAclStrategiesV2Request, ListAclStrategiesV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAclStrategiesV2Request.class, ListAclStrategiesV2Response.class)
+                .withName("ListAclStrategiesV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("acl_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getAclType, (req, v) -> {
+                req.setAclType(v);
+            }));
+        builder.<String>withRequestField("entity_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getEntityType, (req, v) -> {
+                req.setEntityType(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2 =
+        genForshowDetailsOfAclPolicyV2();
+
+    private static HttpRequestDef<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> genForshowDetailsOfAclPolicyV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowDetailsOfAclPolicyV2Request.class, ShowDetailsOfAclPolicyV2Response.class)
+                .withName("ShowDetailsOfAclPolicyV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acls/{acl_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("acl_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getAclId, (req, v) -> {
+                req.setAclId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> updateAclStrategyV2 =
+        genForupdateAclStrategyV2();
+
+    private static HttpRequestDef<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> genForupdateAclStrategyV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAclStrategyV2Request.class, UpdateAclStrategyV2Response.class)
+                .withName("UpdateAclStrategyV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acls/{acl_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclStrategyV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("acl_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclStrategyV2Request::getAclId, (req, v) -> {
+                req.setAclId(v);
+            }));
+        builder.<ApiAclCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiAclCreate.class),
+            f -> f.withMarshaller(UpdateAclStrategyV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> associateRequestThrottlingPolicyV2 =
         genForassociateRequestThrottlingPolicyV2();
 
@@ -1614,6 +3069,120 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleBindingBatchDelete.class),
             f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2 =
+        genForbatchPublishOrOfflineApiV2();
+
+    private static HttpRequestDef<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> genForbatchPublishOrOfflineApiV2() {
+        // basic
+        HttpRequestDef.Builder<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchPublishOrOfflineApiV2Request.class,
+                    BatchPublishOrOfflineApiV2Response.class)
+                .withName("BatchPublishOrOfflineApiV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/publish")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+        builder.<ApiBatchPublish>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiBatchPublish.class),
+            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeApiVersionV2Request, ChangeApiVersionV2Response> changeApiVersionV2 =
+        genForchangeApiVersionV2();
+
+    private static HttpRequestDef<ChangeApiVersionV2Request, ChangeApiVersionV2Response> genForchangeApiVersionV2() {
+        // basic
+        HttpRequestDef.Builder<ChangeApiVersionV2Request, ChangeApiVersionV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeApiVersionV2Request.class, ChangeApiVersionV2Response.class)
+                .withName("ChangeApiVersionV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/publish/{api_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeApiVersionV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeApiVersionV2Request::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<ApiVersionInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiVersionInfo.class),
+            f -> f.withMarshaller(ChangeApiVersionV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> checkBackendConnectivity =
+        genForcheckBackendConnectivity();
+
+    private static HttpRequestDef<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> genForcheckBackendConnectivity() {
+        // basic
+        HttpRequestDef.Builder<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CheckBackendConnectivityRequest.class, CheckBackendConnectivityResponse.class)
+                .withName("CheckBackendConnectivity")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/backend/connectivity/check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckBackendConnectivityRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CheckBackendConnectivityReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckBackendConnectivityReq.class),
+            f -> f.withMarshaller(CheckBackendConnectivityRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1713,6 +3282,76 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(ApiPublishReq.class),
             f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DebugApiV2Request, DebugApiV2Response> debugApiV2 = genFordebugApiV2();
+
+    private static HttpRequestDef<DebugApiV2Request, DebugApiV2Response> genFordebugApiV2() {
+        // basic
+        HttpRequestDef.Builder<DebugApiV2Request, DebugApiV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DebugApiV2Request.class, DebugApiV2Response.class)
+                .withName("DebugApiV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/debug/{api_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DebugApiV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DebugApiV2Request::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<DebugApiReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DebugApiReq.class),
+            f -> f.withMarshaller(DebugApiV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2 =
+        genFordeleteApiByVersionIdV2();
+
+    private static HttpRequestDef<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> genFordeleteApiByVersionIdV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteApiByVersionIdV2Request.class, DeleteApiByVersionIdV2Response.class)
+            .withName("DeleteApiByVersionIdV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/versions/{version_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getVersionId, (req, v) -> {
+                req.setVersionId(v);
             }));
 
         // response
@@ -1871,6 +3510,140 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApiGroupsV2Request::getPreciseSearch, (req, v) -> {
                 req.setPreciseSearch(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2 =
+        genForlistApiRuntimeDefinitionV2();
+
+    private static HttpRequestDef<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> genForlistApiRuntimeDefinitionV2() {
+        // basic
+        HttpRequestDef.Builder<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListApiRuntimeDefinitionV2Request.class,
+                    ListApiRuntimeDefinitionV2Response.class)
+                .withName("ListApiRuntimeDefinitionV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/runtime/{api_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> listApiVersionDetailV2 =
+        genForlistApiVersionDetailV2();
+
+    private static HttpRequestDef<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> genForlistApiVersionDetailV2() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListApiVersionDetailV2Request.class, ListApiVersionDetailV2Response.class)
+            .withName("ListApiVersionDetailV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/versions/{version_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiVersionDetailV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiVersionDetailV2Request::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiVersionsV2Request, ListApiVersionsV2Response> listApiVersionsV2 =
+        genForlistApiVersionsV2();
+
+    private static HttpRequestDef<ListApiVersionsV2Request, ListApiVersionsV2Response> genForlistApiVersionsV2() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionsV2Request, ListApiVersionsV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsV2Request.class, ListApiVersionsV2Response.class)
+                .withName("ListApiVersionsV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/publish/{api_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiVersionsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiVersionsV2Request::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("env_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvName, (req, v) -> {
+                req.setEnvName(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApiVersionsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApiVersionsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -2351,6 +4124,343 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2 =
+        genForbatchDeleteApiAclBindingV2();
+
+    private static HttpRequestDef<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> genForbatchDeleteApiAclBindingV2() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchDeleteApiAclBindingV2Request.class,
+                    BatchDeleteApiAclBindingV2Response.class)
+                .withName("BatchDeleteApiAclBindingV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acl-bindings")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+        builder.<AclBindingBatchDelete>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AclBindingBatchDelete.class),
+            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> createApiAclBindingV2 =
+        genForcreateApiAclBindingV2();
+
+    private static HttpRequestDef<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> genForcreateApiAclBindingV2() {
+        // basic
+        HttpRequestDef.Builder<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateApiAclBindingV2Request.class, CreateApiAclBindingV2Response.class)
+            .withName("CreateApiAclBindingV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acl-bindings")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateApiAclBindingV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AclApiBindingCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AclApiBindingCreate.class),
+            f -> f.withMarshaller(CreateApiAclBindingV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> deleteApiAclBindingV2 =
+        genFordeleteApiAclBindingV2();
+
+    private static HttpRequestDef<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> genFordeleteApiAclBindingV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteApiAclBindingV2Request.class, DeleteApiAclBindingV2Response.class)
+            .withName("DeleteApiAclBindingV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acl-bindings/{acl_bindings_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("acl_bindings_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getAclBindingsId, (req, v) -> {
+                req.setAclBindingsId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2 =
+        genForlistAclPolicyBindedToApiV2();
+
+    private static HttpRequestDef<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> genForlistAclPolicyBindedToApiV2() {
+        // basic
+        HttpRequestDef.Builder<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAclPolicyBindedToApiV2Request.class,
+                    ListAclPolicyBindedToApiV2Response.class)
+                .withName("ListAclPolicyBindedToApiV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acl-bindings/binded-acls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("env_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvName, (req, v) -> {
+                req.setEnvName(v);
+            }));
+        builder.<String>withRequestField("acl_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclId, (req, v) -> {
+                req.setAclId(v);
+            }));
+        builder.<String>withRequestField("acl_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclName, (req, v) -> {
+                req.setAclName(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2 =
+        genForlistApisBindedToAclPolicyV2();
+
+    private static HttpRequestDef<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> genForlistApisBindedToAclPolicyV2() {
+        // basic
+        HttpRequestDef.Builder<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListApisBindedToAclPolicyV2Request.class,
+                    ListApisBindedToAclPolicyV2Response.class)
+                .withName("ListApisBindedToAclPolicyV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acl-bindings/binded-apis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("acl_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getAclId, (req, v) -> {
+                req.setAclId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("api_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getApiName, (req, v) -> {
+                req.setApiName(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2 =
+        genForlistApisUnbindedToAclPolicyV2();
+
+    private static HttpRequestDef<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> genForlistApisUnbindedToAclPolicyV2() {
+        // basic
+        HttpRequestDef.Builder<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListApisUnbindedToAclPolicyV2Request.class,
+                    ListApisUnbindedToAclPolicyV2Response.class)
+                .withName("ListApisUnbindedToAclPolicyV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/acl-bindings/unbinded-apis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("acl_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getAclId, (req, v) -> {
+                req.setAclId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("api_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiName, (req, v) -> {
+                req.setApiName(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> cancelingAuthorizationV2 =
         genForcancelingAuthorizationV2();
 
@@ -2449,6 +4559,77 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2 =
+        genForcreateAppCodeAutoV2();
+
+    private static HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> genForcreateAppCodeAutoV2() {
+        // basic
+        HttpRequestDef.Builder<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateAppCodeAutoV2Request.class, CreateAppCodeAutoV2Response.class)
+                .withName("CreateAppCodeAutoV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2 =
+        genForcreateAppCodeV2();
+
+    private static HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> genForcreateAppCodeV2() {
+        // basic
+        HttpRequestDef.Builder<CreateAppCodeV2Request, CreateAppCodeV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAppCodeV2Request.class, CreateAppCodeV2Response.class)
+                .withName("CreateAppCodeV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppCodeV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppCodeV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<AppCodeCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppCodeCreate.class),
+            f -> f.withMarshaller(CreateAppCodeV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> createAuthorizingAppsV2 =
         genForcreateAuthorizingAppsV2();
 
@@ -2474,6 +4655,45 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(AppAuthReq.class),
             f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2 =
+        genFordeleteAppCodeV2();
+
+    private static HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> genFordeleteAppCodeV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppCodeV2Request, DeleteAppCodeV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppCodeV2Request.class, DeleteAppCodeV2Response.class)
+                .withName("DeleteAppCodeV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes/{app_code_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("app_code_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppCodeId, (req, v) -> {
+                req.setAppCodeId(v);
             }));
 
         // response
@@ -2659,6 +4879,52 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2 =
+        genForlistAppCodesV2();
+
+    private static HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> genForlistAppCodesV2() {
+        // basic
+        HttpRequestDef.Builder<ListAppCodesV2Request, ListAppCodesV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAppCodesV2Request.class, ListAppCodesV2Response.class)
+                .withName("ListAppCodesV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppCodesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppCodesV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppCodesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppCodesV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
 
@@ -2853,6 +5119,45 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2 =
+        genForshowDetailsOfAppCodeV2();
+
+    private static HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> genForshowDetailsOfAppCodeV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDetailsOfAppCodeV2Request.class, ShowDetailsOfAppCodeV2Response.class)
+            .withName("ShowDetailsOfAppCodeV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes/{app_code_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("app_code_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppCodeId, (req, v) -> {
+                req.setAppCodeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2 =
         genForshowDetailsOfAppV2();
 
@@ -2915,6 +5220,400 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppReq.class),
             f -> f.withMarshaller(UpdateAppV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> exportApiDefinitionsV2 =
+        genForexportApiDefinitionsV2();
+
+    private static HttpRequestDef<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> genForexportApiDefinitionsV2() {
+        // basic
+        HttpRequestDef.Builder<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExportApiDefinitionsV2Request.class, ExportApiDefinitionsV2Response.class)
+            .withName("ExportApiDefinitionsV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/openapi/export")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<SwaggerReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwaggerReq.class),
+            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> importApiDefinitionsV2 =
+        genForimportApiDefinitionsV2();
+
+    private static HttpRequestDef<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> genForimportApiDefinitionsV2() {
+        // basic
+        HttpRequestDef.Builder<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ImportApiDefinitionsV2Request.class, ImportApiDefinitionsV2Response.class)
+            .withName("ImportApiDefinitionsV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/openapi/import")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ImportApiDefinitionsV2RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportApiDefinitionsV2RequestBody.class),
+            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> addingBackendInstancesV2 =
+        genForaddingBackendInstancesV2();
+
+    private static HttpRequestDef<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> genForaddingBackendInstancesV2() {
+        // basic
+        HttpRequestDef.Builder<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, AddingBackendInstancesV2Request.class, AddingBackendInstancesV2Response.class)
+                .withName("AddingBackendInstancesV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddingBackendInstancesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddingBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<VpcMemberCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VpcMemberCreate.class),
+            f -> f.withMarshaller(AddingBackendInstancesV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateVpcChannelV2Request, CreateVpcChannelV2Response> createVpcChannelV2 =
+        genForcreateVpcChannelV2();
+
+    private static HttpRequestDef<CreateVpcChannelV2Request, CreateVpcChannelV2Response> genForcreateVpcChannelV2() {
+        // basic
+        HttpRequestDef.Builder<CreateVpcChannelV2Request, CreateVpcChannelV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVpcChannelV2Request.class, CreateVpcChannelV2Response.class)
+                .withName("CreateVpcChannelV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateVpcChannelV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<VpcCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VpcCreate.class),
+            f -> f.withMarshaller(CreateVpcChannelV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> deleteBackendInstanceV2 =
+        genFordeleteBackendInstanceV2();
+
+    private static HttpRequestDef<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> genFordeleteBackendInstanceV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteBackendInstanceV2Request.class, DeleteBackendInstanceV2Response.class)
+            .withName("DeleteBackendInstanceV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members/{member_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<String>withRequestField("member_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getMemberId, (req, v) -> {
+                req.setMemberId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> deleteVpcChannelV2 =
+        genFordeleteVpcChannelV2();
+
+    private static HttpRequestDef<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> genFordeleteVpcChannelV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcChannelV2Request.class, DeleteVpcChannelV2Response.class)
+                .withName("DeleteVpcChannelV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpcChannelV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpcChannelV2Request::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackendInstancesV2Request, ListBackendInstancesV2Response> listBackendInstancesV2 =
+        genForlistBackendInstancesV2();
+
+    private static HttpRequestDef<ListBackendInstancesV2Request, ListBackendInstancesV2Response> genForlistBackendInstancesV2() {
+        // basic
+        HttpRequestDef.Builder<ListBackendInstancesV2Request, ListBackendInstancesV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListBackendInstancesV2Request.class, ListBackendInstancesV2Response.class)
+            .withName("ListBackendInstancesV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVpcChannelsV2Request, ListVpcChannelsV2Response> listVpcChannelsV2 =
+        genForlistVpcChannelsV2();
+
+    private static HttpRequestDef<ListVpcChannelsV2Request, ListVpcChannelsV2Response> genForlistVpcChannelsV2() {
+        // basic
+        HttpRequestDef.Builder<ListVpcChannelsV2Request, ListVpcChannelsV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVpcChannelsV2Request.class, ListVpcChannelsV2Response.class)
+                .withName("ListVpcChannelsV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2 =
+        genForshowDetailsOfVpcChannelV2();
+
+    private static HttpRequestDef<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> genForshowDetailsOfVpcChannelV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDetailsOfVpcChannelV2Request.class,
+                    ShowDetailsOfVpcChannelV2Response.class)
+                .withName("ShowDetailsOfVpcChannelV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> updateVpcChannelV2 =
+        genForupdateVpcChannelV2();
+
+    private static HttpRequestDef<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> genForupdateVpcChannelV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateVpcChannelV2Request.class, UpdateVpcChannelV2Response.class)
+                .withName("UpdateVpcChannelV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVpcChannelV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVpcChannelV2Request::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<VpcCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VpcCreate.class),
+            f -> f.withMarshaller(UpdateVpcChannelV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -37,12 +37,22 @@ public class CfgRequestBody {
 
     private Map<String, List<String>> unionInfo = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_multi_chan")
+
+    private Boolean isMultiChan;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "channel_chaincode")
+
+    private Map<String, List<String>> channelChaincode = null;
+
     public CfgRequestBody withChaincodeName(String chaincodeName) {
         this.chaincodeName = chaincodeName;
         return this;
     }
 
-    /** 链代码名称
+    /** 链代码名称，以小写字母开头，支持小写字母和数字，长度6-25位
      * 
      * @return chaincodeName */
     public String getChaincodeName() {
@@ -106,7 +116,7 @@ public class CfgRequestBody {
         return this;
     }
 
-    /** key：组织名，value：该组织下需要下载的peer节点信息
+    /** key：组织名，value：该组织下需要下载的peer节点信息，peer节点请按照0,1,2的顺序升序填写
      * 
      * @return peerOrgs */
     public Map<String, List<String>> getPeerOrgs() {
@@ -149,6 +159,54 @@ public class CfgRequestBody {
         this.unionInfo = unionInfo;
     }
 
+    public CfgRequestBody withIsMultiChan(Boolean isMultiChan) {
+        this.isMultiChan = isMultiChan;
+        return this;
+    }
+
+    /** 是否是多通道请求，如此处设成true则必须传入channel_chaincode，chaincode_name和channel_name设为空即可
+     * 
+     * @return isMultiChan */
+    public Boolean getIsMultiChan() {
+        return isMultiChan;
+    }
+
+    public void setIsMultiChan(Boolean isMultiChan) {
+        this.isMultiChan = isMultiChan;
+    }
+
+    public CfgRequestBody withChannelChaincode(Map<String, List<String>> channelChaincode) {
+        this.channelChaincode = channelChaincode;
+        return this;
+    }
+
+    public CfgRequestBody putChannelChaincodeItem(String key, List<String> channelChaincodeItem) {
+        if (this.channelChaincode == null) {
+            this.channelChaincode = new HashMap<>();
+        }
+        this.channelChaincode.put(key, channelChaincodeItem);
+        return this;
+    }
+
+    public CfgRequestBody withChannelChaincode(Consumer<Map<String, List<String>>> channelChaincodeSetter) {
+        if (this.channelChaincode == null) {
+            this.channelChaincode = new HashMap<>();
+        }
+        channelChaincodeSetter.accept(this.channelChaincode);
+        return this;
+    }
+
+    /** key：通道名称，value：该通道对应的链代码数组
+     * 
+     * @return channelChaincode */
+    public Map<String, List<String>> getChannelChaincode() {
+        return channelChaincode;
+    }
+
+    public void setChannelChaincode(Map<String, List<String>> channelChaincode) {
+        this.channelChaincode = channelChaincode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -162,12 +220,14 @@ public class CfgRequestBody {
             && Objects.equals(this.certPath, cfgRequestBody.certPath)
             && Objects.equals(this.channelName, cfgRequestBody.channelName)
             && Objects.equals(this.peerOrgs, cfgRequestBody.peerOrgs)
-            && Objects.equals(this.unionInfo, cfgRequestBody.unionInfo);
+            && Objects.equals(this.unionInfo, cfgRequestBody.unionInfo)
+            && Objects.equals(this.isMultiChan, cfgRequestBody.isMultiChan)
+            && Objects.equals(this.channelChaincode, cfgRequestBody.channelChaincode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chaincodeName, certPath, channelName, peerOrgs, unionInfo);
+        return Objects.hash(chaincodeName, certPath, channelName, peerOrgs, unionInfo, isMultiChan, channelChaincode);
     }
 
     @Override
@@ -179,6 +239,8 @@ public class CfgRequestBody {
         sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
         sb.append("    peerOrgs: ").append(toIndentedString(peerOrgs)).append("\n");
         sb.append("    unionInfo: ").append(toIndentedString(unionInfo)).append("\n");
+        sb.append("    isMultiChan: ").append(toIndentedString(isMultiChan)).append("\n");
+        sb.append("    channelChaincode: ").append(toIndentedString(channelChaincode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

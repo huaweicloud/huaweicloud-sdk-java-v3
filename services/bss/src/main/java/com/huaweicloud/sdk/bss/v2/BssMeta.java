@@ -2299,31 +2299,6 @@ public class BssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSkuInventoriesRequest, ListSkuInventoriesResponse> listSkuInventories =
-        genForlistSkuInventories();
-
-    private static HttpRequestDef<ListSkuInventoriesRequest, ListSkuInventoriesResponse> genForlistSkuInventories() {
-        // basic
-        HttpRequestDef.Builder<ListSkuInventoriesRequest, ListSkuInventoriesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListSkuInventoriesRequest.class, ListSkuInventoriesResponse.class)
-                .withName("ListSkuInventories")
-                .withUri("/v2/orders/inventories/sku-inventories/query")
-                .withContentType("application/json");
-
-        // requests
-        builder.<QuerySkuInventoriesReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(QuerySkuInventoriesReq.class),
-            f -> f.withMarshaller(ListSkuInventoriesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetail =
         genForlistSubCustomerBillDetail();
 

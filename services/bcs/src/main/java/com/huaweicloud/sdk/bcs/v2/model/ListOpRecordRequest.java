@@ -18,7 +18,7 @@ public class ListOpRecordRequest {
 
     private String blockchainId;
 
-    /** 操作状态 */
+    /** 操作状态, 可选数值如下（括号中为该数值对应的操作类型含义）：waiting(等待执行)，processing（处理中），finished（操作完成，成功），failed（操作失败），stop（操作中断） */
     public static final class OperationStatusEnum {
 
         /** Enum WAITING for value: "waiting" */
@@ -106,7 +106,8 @@ public class ListOpRecordRequest {
 
     private OperationStatusEnum operationStatus;
 
-    /** 资源类型 */
+    /** 资源类型,
+     * 可选数值如下（括号中为该数值对应的操作类型含义）：BCSSVC01（BCS变更操作），BCSSVC02（UGBaaS变更操作），PLUGIN01（RestAPI插件变更操作），PLUGIN02（TC3插件变更操作），PLUGIN03（轻节点插件变更操作） */
     public static final class ResourceTypeEnum {
 
         /** Enum BCSSVC01 for value: "BCSSVC01" */
@@ -321,7 +322,7 @@ public class ListOpRecordRequest {
         return this;
     }
 
-    /** 操作状态
+    /** 操作状态, 可选数值如下（括号中为该数值对应的操作类型含义）：waiting(等待执行)，processing（处理中），finished（操作完成，成功），failed（操作失败），stop（操作中断）
      * 
      * @return operationStatus */
     public OperationStatusEnum getOperationStatus() {
@@ -337,7 +338,8 @@ public class ListOpRecordRequest {
         return this;
     }
 
-    /** 资源类型
+    /** 资源类型,
+     * 可选数值如下（括号中为该数值对应的操作类型含义）：BCSSVC01（BCS变更操作），BCSSVC02（UGBaaS变更操作），PLUGIN01（RestAPI插件变更操作），PLUGIN02（TC3插件变更操作），PLUGIN03（轻节点插件变更操作）
      * 
      * @return resourceType */
     public ResourceTypeEnum getResourceType() {

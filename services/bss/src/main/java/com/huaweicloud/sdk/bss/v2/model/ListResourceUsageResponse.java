@@ -165,7 +165,7 @@ public class ListResourceUsageResponse extends SdkResponse {
         return this;
     }
 
-    /** 使用量明细（5分钟统计值）。
+    /** 使用量明细（5分钟统计值）。具体请参见表3。
      * 
      * @return usageInfoList */
     public List<StatUsageInfo> getUsageInfoList() {

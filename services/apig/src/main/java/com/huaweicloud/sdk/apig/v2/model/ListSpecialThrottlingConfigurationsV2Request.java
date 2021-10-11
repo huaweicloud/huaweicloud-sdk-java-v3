@@ -29,6 +29,11 @@ public class ListSpecialThrottlingConfigurationsV2Request {
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user")
+
+    private String user;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Long offset;
@@ -102,6 +107,22 @@ public class ListSpecialThrottlingConfigurationsV2Request {
         this.appName = appName;
     }
 
+    public ListSpecialThrottlingConfigurationsV2Request withUser(String user) {
+        this.user = user;
+        return this;
+    }
+
+    /** 筛选的特殊用户名称
+     * 
+     * @return user */
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     public ListSpecialThrottlingConfigurationsV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -148,13 +169,14 @@ public class ListSpecialThrottlingConfigurationsV2Request {
             && Objects.equals(this.throttleId, listSpecialThrottlingConfigurationsV2Request.throttleId)
             && Objects.equals(this.objectType, listSpecialThrottlingConfigurationsV2Request.objectType)
             && Objects.equals(this.appName, listSpecialThrottlingConfigurationsV2Request.appName)
+            && Objects.equals(this.user, listSpecialThrottlingConfigurationsV2Request.user)
             && Objects.equals(this.offset, listSpecialThrottlingConfigurationsV2Request.offset)
             && Objects.equals(this.limit, listSpecialThrottlingConfigurationsV2Request.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, throttleId, objectType, appName, offset, limit);
+        return Objects.hash(instanceId, throttleId, objectType, appName, user, offset, limit);
     }
 
     @Override
@@ -165,6 +187,7 @@ public class ListSpecialThrottlingConfigurationsV2Request {
         sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

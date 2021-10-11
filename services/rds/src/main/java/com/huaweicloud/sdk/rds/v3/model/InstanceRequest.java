@@ -131,6 +131,21 @@ public class InstanceRequest {
 
     private List<TagWithKeyValue> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unchangeable_param")
+
+    private UnchangeableParam unchangeableParam;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dry_run")
+
+    private Boolean dryRun;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public InstanceRequest withName(String name) {
         this.name = name;
         return this;
@@ -604,6 +619,64 @@ public class InstanceRequest {
         this.tags = tags;
     }
 
+    public InstanceRequest withUnchangeableParam(UnchangeableParam unchangeableParam) {
+        this.unchangeableParam = unchangeableParam;
+        return this;
+    }
+
+    public InstanceRequest withUnchangeableParam(Consumer<UnchangeableParam> unchangeableParamSetter) {
+        if (this.unchangeableParam == null) {
+            this.unchangeableParam = new UnchangeableParam();
+            unchangeableParamSetter.accept(this.unchangeableParam);
+        }
+
+        return this;
+    }
+
+    /** Get unchangeableParam
+     * 
+     * @return unchangeableParam */
+    public UnchangeableParam getUnchangeableParam() {
+        return unchangeableParam;
+    }
+
+    public void setUnchangeableParam(UnchangeableParam unchangeableParam) {
+        this.unchangeableParam = unchangeableParam;
+    }
+
+    public InstanceRequest withDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+        return this;
+    }
+
+    /** 是否只预检此次请求，仅支持MySQL。 - true：发送参数检查请求，不会创建实例。 - 检查通过：返回202状态码。 - 检查不通过：返回对应错误码，详情请参考错误码。 -
+     * false：发送正常请求，通过检查后，并且执行创建实例的请求。
+     * 
+     * @return dryRun */
+    public Boolean getDryRun() {
+        return dryRun;
+    }
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
+    public InstanceRequest withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /** 批量创建实例的数量，取值范围为1~50。
+     * 
+     * @return count */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -635,7 +708,9 @@ public class InstanceRequest {
             && Objects.equals(this.replicaOfId, instanceRequest.replicaOfId)
             && Objects.equals(this.restorePoint, instanceRequest.restorePoint)
             && Objects.equals(this.collation, instanceRequest.collation)
-            && Objects.equals(this.tags, instanceRequest.tags);
+            && Objects.equals(this.tags, instanceRequest.tags)
+            && Objects.equals(this.unchangeableParam, instanceRequest.unchangeableParam)
+            && Objects.equals(this.dryRun, instanceRequest.dryRun) && Objects.equals(this.count, instanceRequest.count);
     }
 
     @Override
@@ -663,7 +738,10 @@ public class InstanceRequest {
             replicaOfId,
             restorePoint,
             collation,
-            tags);
+            tags,
+            unchangeableParam,
+            dryRun,
+            count);
     }
 
     @Override
@@ -694,6 +772,9 @@ public class InstanceRequest {
         sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
         sb.append("    collation: ").append(toIndentedString(collation)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    unchangeableParam: ").append(toIndentedString(unchangeableParam)).append("\n");
+        sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -12,7 +13,7 @@ import java.util.Objects;
 /** AddMaterialRequestBody */
 public class AddMaterialRequestBody implements SdkFormDataBody {
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart file;
 

@@ -18,7 +18,7 @@ public class InvitedDomain {
         return this;
     }
 
-    /** 被邀请方租户，hcs模式下是邀请方的租户ID
+    /** 被邀请方租户
      * 
      * @return invitedUser */
     public String getInvitedUser() {
