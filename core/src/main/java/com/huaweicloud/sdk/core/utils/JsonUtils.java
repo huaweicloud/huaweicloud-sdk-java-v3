@@ -37,6 +37,8 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.http.FormDataFilePart;
+import com.huaweicloud.sdk.core.json.FormDataDeserializer;
 import com.huaweicloud.sdk.core.json.OffsetDateTimeDeserializer;
 import com.huaweicloud.sdk.core.json.StrictBooleanDeserializer;
 import com.huaweicloud.sdk.core.json.StrictDoubleDeserializer;
@@ -95,6 +97,7 @@ public final class JsonUtils {
             .registerModule(new SimpleModule().addDeserializer(Double.class, new StrictDoubleDeserializer()))
             .registerModule(new SimpleModule().addDeserializer(Float.class, new StrictFloatDeserializer()))
             .registerModule(new SimpleModule().addDeserializer(String.class, new StrictStringDeserializer()))
+            .registerModule(new SimpleModule().addDeserializer(FormDataFilePart.class, new FormDataDeserializer()))
             .setFilterProvider(new SimpleFilterProvider().setFailOnUnknownId(false));
 
         DeserializationConfig readConfig = mapper.getDeserializationConfig()

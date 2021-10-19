@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -123,12 +122,12 @@ public class ServerAppInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private BigDecimal createTime;
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private BigDecimal updateTime;
+    private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_user")
@@ -236,35 +235,35 @@ public class ServerAppInfo {
         this.roles = roles;
     }
 
-    public ServerAppInfo withCreateTime(BigDecimal createTime) {
+    public ServerAppInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建UTC时间 minimum: 1 maximum: 128
+    /** 创建UTC时间
      * 
      * @return createTime */
-    public BigDecimal getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(BigDecimal createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public ServerAppInfo withUpdateTime(BigDecimal updateTime) {
+    public ServerAppInfo withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    /** 创建UTC时间 minimum: 1 maximum: 128
+    /** 创建UTC时间
      * 
      * @return updateTime */
-    public BigDecimal getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(BigDecimal updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 

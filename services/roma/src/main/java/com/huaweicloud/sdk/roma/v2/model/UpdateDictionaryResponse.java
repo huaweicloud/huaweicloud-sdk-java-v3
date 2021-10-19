@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** Response Object */
@@ -58,12 +57,12 @@ public class UpdateDictionaryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private BigDecimal createTime;
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private BigDecimal updateTime;
+    private String updateTime;
 
     public UpdateDictionaryResponse withId(String id) {
         this.id = id;
@@ -209,35 +208,35 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.type = type;
     }
 
-    public UpdateDictionaryResponse withCreateTime(BigDecimal createTime) {
+    public UpdateDictionaryResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建时间 minimum: 1 maximum: 128
+    /** 创建时间
      * 
      * @return createTime */
-    public BigDecimal getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(BigDecimal createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public UpdateDictionaryResponse withUpdateTime(BigDecimal updateTime) {
+    public UpdateDictionaryResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    /** 更新时间 minimum: 1 maximum: 128
+    /** 更新时间
      * 
      * @return updateTime */
-    public BigDecimal getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(BigDecimal updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 

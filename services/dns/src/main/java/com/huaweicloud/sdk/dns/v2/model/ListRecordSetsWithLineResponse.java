@@ -20,7 +20,7 @@ public class ListRecordSetsWithLineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordsets")
 
-    private List<QueryRecordSetWithLineResp> recordsets = null;
+    private List<QueryRecordSetWithLineAndTagsResp> recordsets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
@@ -52,12 +52,12 @@ public class ListRecordSetsWithLineResponse extends SdkResponse {
         this.links = links;
     }
 
-    public ListRecordSetsWithLineResponse withRecordsets(List<QueryRecordSetWithLineResp> recordsets) {
+    public ListRecordSetsWithLineResponse withRecordsets(List<QueryRecordSetWithLineAndTagsResp> recordsets) {
         this.recordsets = recordsets;
         return this;
     }
 
-    public ListRecordSetsWithLineResponse addRecordsetsItem(QueryRecordSetWithLineResp recordsetsItem) {
+    public ListRecordSetsWithLineResponse addRecordsetsItem(QueryRecordSetWithLineAndTagsResp recordsetsItem) {
         if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
@@ -65,7 +65,8 @@ public class ListRecordSetsWithLineResponse extends SdkResponse {
         return this;
     }
 
-    public ListRecordSetsWithLineResponse withRecordsets(Consumer<List<QueryRecordSetWithLineResp>> recordsetsSetter) {
+    public ListRecordSetsWithLineResponse withRecordsets(
+        Consumer<List<QueryRecordSetWithLineAndTagsResp>> recordsetsSetter) {
         if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
@@ -76,11 +77,11 @@ public class ListRecordSetsWithLineResponse extends SdkResponse {
     /** Get recordsets
      * 
      * @return recordsets */
-    public List<QueryRecordSetWithLineResp> getRecordsets() {
+    public List<QueryRecordSetWithLineAndTagsResp> getRecordsets() {
         return recordsets;
     }
 
-    public void setRecordsets(List<QueryRecordSetWithLineResp> recordsets) {
+    public void setRecordsets(List<QueryRecordSetWithLineAndTagsResp> recordsets) {
         this.recordsets = recordsets;
     }
 

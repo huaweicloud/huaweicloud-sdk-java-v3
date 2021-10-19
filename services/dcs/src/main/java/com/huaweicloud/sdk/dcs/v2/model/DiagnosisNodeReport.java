@@ -125,7 +125,7 @@ public class DiagnosisNodeReport {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_time_taken_list")
 
-    private Object commandTimeTakenList;
+    private CommandTimeTakenList commandTimeTakenList;
 
     public DiagnosisNodeReport withNodeIp(String nodeIp) {
         this.nodeIp = nodeIp;
@@ -256,19 +256,28 @@ public class DiagnosisNodeReport {
         this.diagnosisDimensionList = diagnosisDimensionList;
     }
 
-    public DiagnosisNodeReport withCommandTimeTakenList(Object commandTimeTakenList) {
+    public DiagnosisNodeReport withCommandTimeTakenList(CommandTimeTakenList commandTimeTakenList) {
         this.commandTimeTakenList = commandTimeTakenList;
         return this;
     }
 
-    /** 命令耗时统计列表
+    public DiagnosisNodeReport withCommandTimeTakenList(Consumer<CommandTimeTakenList> commandTimeTakenListSetter) {
+        if (this.commandTimeTakenList == null) {
+            this.commandTimeTakenList = new CommandTimeTakenList();
+            commandTimeTakenListSetter.accept(this.commandTimeTakenList);
+        }
+
+        return this;
+    }
+
+    /** Get commandTimeTakenList
      * 
      * @return commandTimeTakenList */
-    public Object getCommandTimeTakenList() {
+    public CommandTimeTakenList getCommandTimeTakenList() {
         return commandTimeTakenList;
     }
 
-    public void setCommandTimeTakenList(Object commandTimeTakenList) {
+    public void setCommandTimeTakenList(CommandTimeTakenList commandTimeTakenList) {
         this.commandTimeTakenList = commandTimeTakenList;
     }
 

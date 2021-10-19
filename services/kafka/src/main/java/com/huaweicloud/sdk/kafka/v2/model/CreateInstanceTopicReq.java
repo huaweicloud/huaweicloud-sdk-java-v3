@@ -91,7 +91,7 @@ public class CreateInstanceTopicReq {
         return this;
     }
 
-    /** topic分区数，设置消费的并发数。 取值范围：1-50。
+    /** topic分区数，设置消费的并发数。 取值范围：1-100。
      * 
      * @return partition */
     public Integer getPartition() {

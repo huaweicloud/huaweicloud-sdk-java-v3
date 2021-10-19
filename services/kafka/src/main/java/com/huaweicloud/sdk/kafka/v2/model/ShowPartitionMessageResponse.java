@@ -15,14 +15,14 @@ public class ShowPartitionMessageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
-    private List<ShowPartitionMessageRespMessage> message = null;
+    private List<ShowPartitionMessageEntity> message = null;
 
-    public ShowPartitionMessageResponse withMessage(List<ShowPartitionMessageRespMessage> message) {
+    public ShowPartitionMessageResponse withMessage(List<ShowPartitionMessageEntity> message) {
         this.message = message;
         return this;
     }
 
-    public ShowPartitionMessageResponse addMessageItem(ShowPartitionMessageRespMessage messageItem) {
+    public ShowPartitionMessageResponse addMessageItem(ShowPartitionMessageEntity messageItem) {
         if (this.message == null) {
             this.message = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class ShowPartitionMessageResponse extends SdkResponse {
         return this;
     }
 
-    public ShowPartitionMessageResponse withMessage(Consumer<List<ShowPartitionMessageRespMessage>> messageSetter) {
+    public ShowPartitionMessageResponse withMessage(Consumer<List<ShowPartitionMessageEntity>> messageSetter) {
         if (this.message == null) {
             this.message = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class ShowPartitionMessageResponse extends SdkResponse {
     /** 消息列表。
      * 
      * @return message */
-    public List<ShowPartitionMessageRespMessage> getMessage() {
+    public List<ShowPartitionMessageEntity> getMessage() {
         return message;
     }
 
-    public void setMessage(List<ShowPartitionMessageRespMessage> message) {
+    public void setMessage(List<ShowPartitionMessageEntity> message) {
         this.message = message;
     }
 

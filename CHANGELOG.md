@@ -1,3 +1,83 @@
+# 3.0.66 2021-10-19
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `backup_id` to the interface `ShowMigrationTask`.
+  - Add the following response parameters to the interface `ListMigrationTask`:
+    - `source_instance_name`
+    - `source_instance_id`
+    - `target_instance_addrs`
+    - `target_instance_id`
+  - Modify the type of the response parameter `total_usec_sum` of the interface `ListDiagnosisTasks`: `integer` -> `double`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - Support the following interfaces:
+    - `ListCommonPools`
+    - `ListPublicBorderGroups`
+    - `ListPublicipPool`
+    - `ShowPublicipPool`
+    - `ListShareBandwidthTypes`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `allow_share_bandwidth_type_any` to the interface `ListPublicips`.
+  - Modify the type of the request parameter `limit` of the interface `NeutronListFloatingIps`.
+  - Modify the name of the request body of the interface `NeutronUpdateFloatingIp`: `floatingip` -> `NeutronUpdateFloatingIpRequestBody`
+  - Add the response parameter `allow_share_bandwidth_types` to the interface `ShowPublicip`.
+
+### HuaweiCloud SDK MPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `hls_init_count` and `hls_init_interval` to the interface `CreateTranscodingTask`.
+
+### HuaweiCloud SDK ROMA
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type of the response parameters `create_time` and `update_time` of the interface `ListRomaApp`: `number` -> `string`
+  - Modify the type of the response parameters `create_time` and `update_time` of the interface `ListDictionary`: `number` -> `string`
+
+### HuaweiCloud SDK SDRS
+
+- _Features_
+  - Support the `Storage Disaster Recovery Service`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPCEP
+
+- _Features_
+  - Support the service `VPC Endpoint`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VSS
+
+- _Features_
+  - Support the `Vulnerability Scan Service`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.65 2021-10-11
 
 ### HuaweiCloud SDK APIG

@@ -35,7 +35,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
 
-    private List<ListInstanceTopicsRespTopics> topics = null;
+    private List<TopicEntity> topics = null;
 
     public ListInstanceTopicsResponse withTotal(Integer total) {
         this.total = total;
@@ -101,12 +101,12 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         this.maxPartitions = maxPartitions;
     }
 
-    public ListInstanceTopicsResponse withTopics(List<ListInstanceTopicsRespTopics> topics) {
+    public ListInstanceTopicsResponse withTopics(List<TopicEntity> topics) {
         this.topics = topics;
         return this;
     }
 
-    public ListInstanceTopicsResponse addTopicsItem(ListInstanceTopicsRespTopics topicsItem) {
+    public ListInstanceTopicsResponse addTopicsItem(TopicEntity topicsItem) {
         if (this.topics == null) {
             this.topics = new ArrayList<>();
         }
@@ -114,7 +114,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    public ListInstanceTopicsResponse withTopics(Consumer<List<ListInstanceTopicsRespTopics>> topicsSetter) {
+    public ListInstanceTopicsResponse withTopics(Consumer<List<TopicEntity>> topicsSetter) {
         if (this.topics == null) {
             this.topics = new ArrayList<>();
         }
@@ -125,11 +125,11 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     /** topic列表。
      * 
      * @return topics */
-    public List<ListInstanceTopicsRespTopics> getTopics() {
+    public List<TopicEntity> getTopics() {
         return topics;
     }
 
-    public void setTopics(List<ListInstanceTopicsRespTopics> topics) {
+    public void setTopics(List<TopicEntity> topics) {
         this.topics = topics;
     }
 

@@ -13,16 +13,16 @@ public class UpdatePublicipResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip")
 
-    private PublicipShowResp publicip;
+    private PublicipUpdateResp publicip;
 
-    public UpdatePublicipResponse withPublicip(PublicipShowResp publicip) {
+    public UpdatePublicipResponse withPublicip(PublicipUpdateResp publicip) {
         this.publicip = publicip;
         return this;
     }
 
-    public UpdatePublicipResponse withPublicip(Consumer<PublicipShowResp> publicipSetter) {
+    public UpdatePublicipResponse withPublicip(Consumer<PublicipUpdateResp> publicipSetter) {
         if (this.publicip == null) {
-            this.publicip = new PublicipShowResp();
+            this.publicip = new PublicipUpdateResp();
             publicipSetter.accept(this.publicip);
         }
 
@@ -32,11 +32,11 @@ public class UpdatePublicipResponse extends SdkResponse {
     /** Get publicip
      * 
      * @return publicip */
-    public PublicipShowResp getPublicip() {
+    public PublicipUpdateResp getPublicip() {
         return publicip;
     }
 
-    public void setPublicip(PublicipShowResp publicip) {
+    public void setPublicip(PublicipUpdateResp publicip) {
         this.publicip = publicip;
     }
 

@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -124,12 +123,12 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private BigDecimal createTime;
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private BigDecimal updateTime;
+    private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_user")
@@ -237,35 +236,35 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.roles = roles;
     }
 
-    public CheckRomaAppDetailsResponse withCreateTime(BigDecimal createTime) {
+    public CheckRomaAppDetailsResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建UTC时间 minimum: 1 maximum: 128
+    /** 创建UTC时间
      * 
      * @return createTime */
-    public BigDecimal getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(BigDecimal createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public CheckRomaAppDetailsResponse withUpdateTime(BigDecimal updateTime) {
+    public CheckRomaAppDetailsResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    /** 创建UTC时间 minimum: 1 maximum: 128
+    /** 创建UTC时间
      * 
      * @return updateTime */
-    public BigDecimal getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(BigDecimal updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 

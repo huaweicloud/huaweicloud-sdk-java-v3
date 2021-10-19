@@ -38,7 +38,7 @@ public class UpdateInstanceTopicReqTopics {
         return this;
     }
 
-    /** topic名称
+    /** topic名称，不支持修改。
      * 
      * @return id */
     public String getId() {

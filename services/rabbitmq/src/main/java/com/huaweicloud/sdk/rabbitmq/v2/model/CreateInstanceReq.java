@@ -327,7 +327,7 @@ public class CreateInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<CreateInstanceReqTags> tags = null;
+    private List<TagEntity> tags = null;
 
     public CreateInstanceReq withName(String name) {
         this.name = name;
@@ -656,12 +656,12 @@ public class CreateInstanceReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public CreateInstanceReq withTags(List<CreateInstanceReqTags> tags) {
+    public CreateInstanceReq withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateInstanceReq addTagsItem(CreateInstanceReqTags tagsItem) {
+    public CreateInstanceReq addTagsItem(TagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -669,7 +669,7 @@ public class CreateInstanceReq {
         return this;
     }
 
-    public CreateInstanceReq withTags(Consumer<List<CreateInstanceReqTags>> tagsSetter) {
+    public CreateInstanceReq withTags(Consumer<List<TagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -680,11 +680,11 @@ public class CreateInstanceReq {
     /** 标签列表。
      * 
      * @return tags */
-    public List<CreateInstanceReqTags> getTags() {
+    public List<TagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<CreateInstanceReqTags> tags) {
+    public void setTags(List<TagEntity> tags) {
         this.tags = tags;
     }
 

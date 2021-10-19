@@ -15,14 +15,14 @@ public class ListPluginsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugins")
 
-    private List<ListPluginsRespPlugins> plugins = null;
+    private List<PluginEntity> plugins = null;
 
-    public ListPluginsResponse withPlugins(List<ListPluginsRespPlugins> plugins) {
+    public ListPluginsResponse withPlugins(List<PluginEntity> plugins) {
         this.plugins = plugins;
         return this;
     }
 
-    public ListPluginsResponse addPluginsItem(ListPluginsRespPlugins pluginsItem) {
+    public ListPluginsResponse addPluginsItem(PluginEntity pluginsItem) {
         if (this.plugins == null) {
             this.plugins = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class ListPluginsResponse extends SdkResponse {
         return this;
     }
 
-    public ListPluginsResponse withPlugins(Consumer<List<ListPluginsRespPlugins>> pluginsSetter) {
+    public ListPluginsResponse withPlugins(Consumer<List<PluginEntity>> pluginsSetter) {
         if (this.plugins == null) {
             this.plugins = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class ListPluginsResponse extends SdkResponse {
     /** 插件信息列表。
      * 
      * @return plugins */
-    public List<ListPluginsRespPlugins> getPlugins() {
+    public List<PluginEntity> getPlugins() {
         return plugins;
     }
 
-    public void setPlugins(List<ListPluginsRespPlugins> plugins) {
+    public void setPlugins(List<PluginEntity> plugins) {
         this.plugins = plugins;
     }
 

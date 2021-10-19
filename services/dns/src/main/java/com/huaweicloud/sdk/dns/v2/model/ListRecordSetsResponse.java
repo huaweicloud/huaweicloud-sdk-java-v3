@@ -20,7 +20,7 @@ public class ListRecordSetsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordsets")
 
-    private List<ListRecordSets> recordsets = null;
+    private List<ListRecordSetsWithTags> recordsets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
@@ -52,12 +52,12 @@ public class ListRecordSetsResponse extends SdkResponse {
         this.links = links;
     }
 
-    public ListRecordSetsResponse withRecordsets(List<ListRecordSets> recordsets) {
+    public ListRecordSetsResponse withRecordsets(List<ListRecordSetsWithTags> recordsets) {
         this.recordsets = recordsets;
         return this;
     }
 
-    public ListRecordSetsResponse addRecordsetsItem(ListRecordSets recordsetsItem) {
+    public ListRecordSetsResponse addRecordsetsItem(ListRecordSetsWithTags recordsetsItem) {
         if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
@@ -65,7 +65,7 @@ public class ListRecordSetsResponse extends SdkResponse {
         return this;
     }
 
-    public ListRecordSetsResponse withRecordsets(Consumer<List<ListRecordSets>> recordsetsSetter) {
+    public ListRecordSetsResponse withRecordsets(Consumer<List<ListRecordSetsWithTags>> recordsetsSetter) {
         if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
@@ -76,11 +76,11 @@ public class ListRecordSetsResponse extends SdkResponse {
     /** Get recordsets
      * 
      * @return recordsets */
-    public List<ListRecordSets> getRecordsets() {
+    public List<ListRecordSetsWithTags> getRecordsets() {
         return recordsets;
     }
 
-    public void setRecordsets(List<ListRecordSets> recordsets) {
+    public void setRecordsets(List<ListRecordSetsWithTags> recordsets) {
         this.recordsets = recordsets;
     }
 

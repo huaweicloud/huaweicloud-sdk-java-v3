@@ -111,7 +111,7 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 开始时间。Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
+    /** 开始时间。 Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
      * 
      * @return startTime */
     public String getStartTime() {
@@ -127,7 +127,7 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 结束时间。Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
+    /** 结束时间。 Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
      * 
      * @return endTime */
     public String getEndTime() {

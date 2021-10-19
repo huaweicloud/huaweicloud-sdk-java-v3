@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -358,6 +360,11 @@ public class PublicipShowResp {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_share_bandwidth_types")
+
+    private List<String> allowShareBandwidthTypes = null;
+
     public PublicipShowResp withBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
         return this;
@@ -629,7 +636,7 @@ public class PublicipShowResp {
         return this;
     }
 
-    /** 功能说明：表示中心站点资源或者边缘站点资源，对接了边缘站点的区域才会返回此字段 取值范围： center、边缘站点名称 上线区域：华北-乌兰察布一，华南-广州 约束：publicip只能绑定该字段相同的资源
+    /** 功能说明：表示中心站点资源或者边缘站点资源 取值范围： center、边缘站点名称 约束：publicip只能绑定该字段相同的资源
      * 
      * @return publicBorderGroup */
     public String getPublicBorderGroup() {
@@ -638,6 +645,38 @@ public class PublicipShowResp {
 
     public void setPublicBorderGroup(String publicBorderGroup) {
         this.publicBorderGroup = publicBorderGroup;
+    }
+
+    public PublicipShowResp withAllowShareBandwidthTypes(List<String> allowShareBandwidthTypes) {
+        this.allowShareBandwidthTypes = allowShareBandwidthTypes;
+        return this;
+    }
+
+    public PublicipShowResp addAllowShareBandwidthTypesItem(String allowShareBandwidthTypesItem) {
+        if (this.allowShareBandwidthTypes == null) {
+            this.allowShareBandwidthTypes = new ArrayList<>();
+        }
+        this.allowShareBandwidthTypes.add(allowShareBandwidthTypesItem);
+        return this;
+    }
+
+    public PublicipShowResp withAllowShareBandwidthTypes(Consumer<List<String>> allowShareBandwidthTypesSetter) {
+        if (this.allowShareBandwidthTypes == null) {
+            this.allowShareBandwidthTypes = new ArrayList<>();
+        }
+        allowShareBandwidthTypesSetter.accept(this.allowShareBandwidthTypes);
+        return this;
+    }
+
+    /** 功能说明：表示此publicip可以加入的共享带宽类型列表，如果为空列表，则表示该 publicip不能加入任何共享带宽 约束：publicip只能加入到有该带宽类型的共享带宽中
+     * 
+     * @return allowShareBandwidthTypes */
+    public List<String> getAllowShareBandwidthTypes() {
+        return allowShareBandwidthTypes;
+    }
+
+    public void setAllowShareBandwidthTypes(List<String> allowShareBandwidthTypes) {
+        this.allowShareBandwidthTypes = allowShareBandwidthTypes;
     }
 
     @Override
@@ -664,7 +703,8 @@ public class PublicipShowResp {
             && Objects.equals(this.type, publicipShowResp.type)
             && Objects.equals(this.publicIpv6Address, publicipShowResp.publicIpv6Address)
             && Objects.equals(this.ipVersion, publicipShowResp.ipVersion)
-            && Objects.equals(this.publicBorderGroup, publicipShowResp.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, publicipShowResp.publicBorderGroup)
+            && Objects.equals(this.allowShareBandwidthTypes, publicipShowResp.allowShareBandwidthTypes);
     }
 
     @Override
@@ -685,7 +725,8 @@ public class PublicipShowResp {
             type,
             publicIpv6Address,
             ipVersion,
-            publicBorderGroup);
+            publicBorderGroup,
+            allowShareBandwidthTypes);
     }
 
     @Override
@@ -709,6 +750,7 @@ public class PublicipShowResp {
         sb.append("    publicIpv6Address: ").append(toIndentedString(publicIpv6Address)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    allowShareBandwidthTypes: ").append(toIndentedString(allowShareBandwidthTypes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,7 +25,7 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
-    private List<ShowTopicAccessPolicyRespPolicies> policies = null;
+    private List<PolicyEntity> policies = null;
 
     public ShowTopicAccessPolicyResponse withName(String name) {
         this.name = name;
@@ -59,12 +59,12 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
         this.topicType = topicType;
     }
 
-    public ShowTopicAccessPolicyResponse withPolicies(List<ShowTopicAccessPolicyRespPolicies> policies) {
+    public ShowTopicAccessPolicyResponse withPolicies(List<PolicyEntity> policies) {
         this.policies = policies;
         return this;
     }
 
-    public ShowTopicAccessPolicyResponse addPoliciesItem(ShowTopicAccessPolicyRespPolicies policiesItem) {
+    public ShowTopicAccessPolicyResponse addPoliciesItem(PolicyEntity policiesItem) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -72,8 +72,7 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
         return this;
     }
 
-    public ShowTopicAccessPolicyResponse withPolicies(
-        Consumer<List<ShowTopicAccessPolicyRespPolicies>> policiesSetter) {
+    public ShowTopicAccessPolicyResponse withPolicies(Consumer<List<PolicyEntity>> policiesSetter) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -84,11 +83,11 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
     /** 权限列表。
      * 
      * @return policies */
-    public List<ShowTopicAccessPolicyRespPolicies> getPolicies() {
+    public List<PolicyEntity> getPolicies() {
         return policies;
     }
 
-    public void setPolicies(List<ShowTopicAccessPolicyRespPolicies> policies) {
+    public void setPolicies(List<PolicyEntity> policies) {
         this.policies = policies;
     }
 

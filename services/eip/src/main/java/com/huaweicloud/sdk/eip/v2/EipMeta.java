@@ -608,6 +608,13 @@ public class EipMeta {
             f -> f.withMarshaller(ListPublicipsRequest::getId, (req, v) -> {
                 req.setId(v);
             }));
+        builder.<List<String>>withRequestField("allow_share_bandwidth_type_any",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPublicipsRequest::getAllowShareBandwidthTypeAny, (req, v) -> {
+                req.setAllowShareBandwidthTypeAny(v);
+            }));
 
         // response
 
@@ -782,10 +789,10 @@ public class EipMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(NeutronListFloatingIpsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));

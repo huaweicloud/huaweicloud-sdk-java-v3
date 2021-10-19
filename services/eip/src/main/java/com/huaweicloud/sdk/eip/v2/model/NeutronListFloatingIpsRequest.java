@@ -11,7 +11,7 @@ public class NeutronListFloatingIpsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
@@ -58,19 +58,19 @@ public class NeutronListFloatingIpsRequest {
 
     private String floatingNetworkId;
 
-    public NeutronListFloatingIpsRequest withLimit(String limit) {
+    public NeutronListFloatingIpsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    /** 每页显示的条目数量。
+    /** 每页显示的条目数量。 minimum: 0 maximum: 2000
      * 
      * @return limit */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 

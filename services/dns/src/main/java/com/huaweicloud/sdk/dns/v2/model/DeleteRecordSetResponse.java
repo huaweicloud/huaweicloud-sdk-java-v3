@@ -82,11 +82,6 @@ public class DeleteRecordSetResponse extends SdkResponse {
 
     private PageLink links;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
-
-    private List<Tag> tags = null;
-
     public DeleteRecordSetResponse withId(String id) {
         this.id = id;
         return this;
@@ -336,38 +331,6 @@ public class DeleteRecordSetResponse extends SdkResponse {
         this.links = links;
     }
 
-    public DeleteRecordSetResponse withTags(List<Tag> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public DeleteRecordSetResponse addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public DeleteRecordSetResponse withTags(Consumer<List<Tag>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /** 资源标签。
-     * 
-     * @return tags */
-    public List<Tag> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<Tag> tags) {
-        this.tags = tags;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -390,8 +353,7 @@ public class DeleteRecordSetResponse extends SdkResponse {
             && Objects.equals(this.status, deleteRecordSetResponse.status)
             && Objects.equals(this._default, deleteRecordSetResponse._default)
             && Objects.equals(this.projectId, deleteRecordSetResponse.projectId)
-            && Objects.equals(this.links, deleteRecordSetResponse.links)
-            && Objects.equals(this.tags, deleteRecordSetResponse.tags);
+            && Objects.equals(this.links, deleteRecordSetResponse.links);
     }
 
     @Override
@@ -409,8 +371,7 @@ public class DeleteRecordSetResponse extends SdkResponse {
             status,
             _default,
             projectId,
-            links,
-            tags);
+            links);
     }
 
     @Override
@@ -431,7 +392,6 @@ public class DeleteRecordSetResponse extends SdkResponse {
         sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

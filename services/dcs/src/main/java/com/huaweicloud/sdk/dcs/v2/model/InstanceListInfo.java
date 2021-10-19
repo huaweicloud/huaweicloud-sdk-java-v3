@@ -77,6 +77,11 @@ public class InstanceListInfo {
     private String capacityMinor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
 
     private String maintainBegin;
@@ -397,6 +402,22 @@ public class InstanceListInfo {
 
     public void setCapacityMinor(String capacityMinor) {
         this.capacityMinor = capacityMinor;
+    }
+
+    public InstanceListInfo withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /** 订单ID，仅在创建包周期实例时返回。按需实例时此值为null
+     * 
+     * @return orderId */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public InstanceListInfo withMaintainBegin(String maintainBegin) {
@@ -821,6 +842,7 @@ public class InstanceListInfo {
             && Objects.equals(this.publicipAddress, instanceListInfo.publicipAddress)
             && Objects.equals(this.capacity, instanceListInfo.capacity)
             && Objects.equals(this.capacityMinor, instanceListInfo.capacityMinor)
+            && Objects.equals(this.orderId, instanceListInfo.orderId)
             && Objects.equals(this.maintainBegin, instanceListInfo.maintainBegin)
             && Objects.equals(this.maintainEnd, instanceListInfo.maintainEnd)
             && Objects.equals(this.engine, instanceListInfo.engine)
@@ -859,6 +881,7 @@ public class InstanceListInfo {
             publicipAddress,
             capacity,
             capacityMinor,
+            orderId,
             maintainBegin,
             maintainEnd,
             engine,
@@ -901,6 +924,7 @@ public class InstanceListInfo {
         sb.append("    publicipAddress: ").append(toIndentedString(publicipAddress)).append("\n");
         sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
         sb.append("    capacityMinor: ").append(toIndentedString(capacityMinor)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");

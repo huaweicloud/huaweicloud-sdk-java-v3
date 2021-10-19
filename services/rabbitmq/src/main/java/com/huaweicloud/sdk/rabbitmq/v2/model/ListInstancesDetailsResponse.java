@@ -15,19 +15,19 @@ public class ListInstancesDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private List<ListInstancesRespInstances> instances = null;
+    private List<ShowInstanceResp> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_num")
 
     private Integer instanceNum;
 
-    public ListInstancesDetailsResponse withInstances(List<ListInstancesRespInstances> instances) {
+    public ListInstancesDetailsResponse withInstances(List<ShowInstanceResp> instances) {
         this.instances = instances;
         return this;
     }
 
-    public ListInstancesDetailsResponse addInstancesItem(ListInstancesRespInstances instancesItem) {
+    public ListInstancesDetailsResponse addInstancesItem(ShowInstanceResp instancesItem) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -35,7 +35,7 @@ public class ListInstancesDetailsResponse extends SdkResponse {
         return this;
     }
 
-    public ListInstancesDetailsResponse withInstances(Consumer<List<ListInstancesRespInstances>> instancesSetter) {
+    public ListInstancesDetailsResponse withInstances(Consumer<List<ShowInstanceResp>> instancesSetter) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -46,11 +46,11 @@ public class ListInstancesDetailsResponse extends SdkResponse {
     /** 实例列表。
      * 
      * @return instances */
-    public List<ListInstancesRespInstances> getInstances() {
+    public List<ShowInstanceResp> getInstances() {
         return instances;
     }
 
-    public void setInstances(List<ListInstancesRespInstances> instances) {
+    public void setInstances(List<ShowInstanceResp> instances) {
         this.instances = instances;
     }
 

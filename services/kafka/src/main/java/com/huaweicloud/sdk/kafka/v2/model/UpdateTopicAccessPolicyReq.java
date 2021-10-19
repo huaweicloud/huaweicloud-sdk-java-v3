@@ -14,14 +14,14 @@ public class UpdateTopicAccessPolicyReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
 
-    private List<UpdateTopicAccessPolicyReqTopics> topics = null;
+    private List<AccessPolicyTopicEntity> topics = null;
 
-    public UpdateTopicAccessPolicyReq withTopics(List<UpdateTopicAccessPolicyReqTopics> topics) {
+    public UpdateTopicAccessPolicyReq withTopics(List<AccessPolicyTopicEntity> topics) {
         this.topics = topics;
         return this;
     }
 
-    public UpdateTopicAccessPolicyReq addTopicsItem(UpdateTopicAccessPolicyReqTopics topicsItem) {
+    public UpdateTopicAccessPolicyReq addTopicsItem(AccessPolicyTopicEntity topicsItem) {
         if (this.topics == null) {
             this.topics = new ArrayList<>();
         }
@@ -29,7 +29,7 @@ public class UpdateTopicAccessPolicyReq {
         return this;
     }
 
-    public UpdateTopicAccessPolicyReq withTopics(Consumer<List<UpdateTopicAccessPolicyReqTopics>> topicsSetter) {
+    public UpdateTopicAccessPolicyReq withTopics(Consumer<List<AccessPolicyTopicEntity>> topicsSetter) {
         if (this.topics == null) {
             this.topics = new ArrayList<>();
         }
@@ -40,11 +40,11 @@ public class UpdateTopicAccessPolicyReq {
     /** topic列表。
      * 
      * @return topics */
-    public List<UpdateTopicAccessPolicyReqTopics> getTopics() {
+    public List<AccessPolicyTopicEntity> getTopics() {
         return topics;
     }
 
-    public void setTopics(List<UpdateTopicAccessPolicyReqTopics> topics) {
+    public void setTopics(List<AccessPolicyTopicEntity> topics) {
         this.topics = topics;
     }
 

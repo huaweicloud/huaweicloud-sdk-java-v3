@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** Dictionary */
@@ -57,12 +56,12 @@ public class Dictionary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private BigDecimal createTime;
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private BigDecimal updateTime;
+    private String updateTime;
 
     public Dictionary withId(String id) {
         this.id = id;
@@ -208,35 +207,35 @@ public class Dictionary {
         this.type = type;
     }
 
-    public Dictionary withCreateTime(BigDecimal createTime) {
+    public Dictionary withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建时间 minimum: 1 maximum: 128
+    /** 创建时间
      * 
      * @return createTime */
-    public BigDecimal getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(BigDecimal createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public Dictionary withUpdateTime(BigDecimal updateTime) {
+    public Dictionary withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    /** 更新时间 minimum: 1 maximum: 128
+    /** 更新时间
      * 
      * @return updateTime */
-    public BigDecimal getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(BigDecimal updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 

@@ -15,14 +15,14 @@ public class ShowInstanceUsersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
-    private List<ShowInstanceUsersRespUsers> users = null;
+    private List<ShowInstanceUsersEntity> users = null;
 
-    public ShowInstanceUsersResponse withUsers(List<ShowInstanceUsersRespUsers> users) {
+    public ShowInstanceUsersResponse withUsers(List<ShowInstanceUsersEntity> users) {
         this.users = users;
         return this;
     }
 
-    public ShowInstanceUsersResponse addUsersItem(ShowInstanceUsersRespUsers usersItem) {
+    public ShowInstanceUsersResponse addUsersItem(ShowInstanceUsersEntity usersItem) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class ShowInstanceUsersResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInstanceUsersResponse withUsers(Consumer<List<ShowInstanceUsersRespUsers>> usersSetter) {
+    public ShowInstanceUsersResponse withUsers(Consumer<List<ShowInstanceUsersEntity>> usersSetter) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class ShowInstanceUsersResponse extends SdkResponse {
     /** 用户列表。
      * 
      * @return users */
-    public List<ShowInstanceUsersRespUsers> getUsers() {
+    public List<ShowInstanceUsersEntity> getUsers() {
         return users;
     }
 
-    public void setUsers(List<ShowInstanceUsersRespUsers> users) {
+    public void setUsers(List<ShowInstanceUsersEntity> users) {
         this.users = users;
     }
 

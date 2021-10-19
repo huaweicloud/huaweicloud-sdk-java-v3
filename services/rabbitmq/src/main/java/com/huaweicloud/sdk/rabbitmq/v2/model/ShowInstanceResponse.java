@@ -291,7 +291,7 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<ListInstancesRespTags> tags = null;
+    private List<TagEntity> tags = null;
 
     public ShowInstanceResponse withName(String name) {
         this.name = name;
@@ -977,12 +977,12 @@ public class ShowInstanceResponse extends SdkResponse {
         this.ipv6ConnectAddresses = ipv6ConnectAddresses;
     }
 
-    public ShowInstanceResponse withTags(List<ListInstancesRespTags> tags) {
+    public ShowInstanceResponse withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowInstanceResponse addTagsItem(ListInstancesRespTags tagsItem) {
+    public ShowInstanceResponse addTagsItem(TagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -990,7 +990,7 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInstanceResponse withTags(Consumer<List<ListInstancesRespTags>> tagsSetter) {
+    public ShowInstanceResponse withTags(Consumer<List<TagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -1001,11 +1001,11 @@ public class ShowInstanceResponse extends SdkResponse {
     /** 标签列表。
      * 
      * @return tags */
-    public List<ListInstancesRespTags> getTags() {
+    public List<TagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<ListInstancesRespTags> tags) {
+    public void setTags(List<TagEntity> tags) {
         this.tags = tags;
     }
 

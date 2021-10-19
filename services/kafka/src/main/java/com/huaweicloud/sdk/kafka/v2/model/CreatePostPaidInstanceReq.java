@@ -524,7 +524,7 @@ public class CreatePostPaidInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<CreatePostPaidInstanceReqTags> tags = null;
+    private List<TagEntity> tags = null;
 
     public CreatePostPaidInstanceReq withName(String name) {
         this.name = name;
@@ -881,7 +881,7 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 实例绑定的弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+    /** 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
      * 
      * @return publicipId */
     public String getPublicipId() {
@@ -992,12 +992,12 @@ public class CreatePostPaidInstanceReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public CreatePostPaidInstanceReq withTags(List<CreatePostPaidInstanceReqTags> tags) {
+    public CreatePostPaidInstanceReq withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreatePostPaidInstanceReq addTagsItem(CreatePostPaidInstanceReqTags tagsItem) {
+    public CreatePostPaidInstanceReq addTagsItem(TagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -1005,7 +1005,7 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    public CreatePostPaidInstanceReq withTags(Consumer<List<CreatePostPaidInstanceReqTags>> tagsSetter) {
+    public CreatePostPaidInstanceReq withTags(Consumer<List<TagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -1016,11 +1016,11 @@ public class CreatePostPaidInstanceReq {
     /** 标签列表。
      * 
      * @return tags */
-    public List<CreatePostPaidInstanceReqTags> getTags() {
+    public List<TagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<CreatePostPaidInstanceReqTags> tags) {
+    public void setTags(List<TagEntity> tags) {
         this.tags = tags;
     }
 

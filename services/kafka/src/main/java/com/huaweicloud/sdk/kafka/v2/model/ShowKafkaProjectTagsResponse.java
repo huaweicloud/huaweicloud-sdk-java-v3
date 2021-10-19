@@ -15,14 +15,14 @@ public class ShowKafkaProjectTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<ShowProjectTagsRespTags> tags = null;
+    private List<TagMultyValueEntity> tags = null;
 
-    public ShowKafkaProjectTagsResponse withTags(List<ShowProjectTagsRespTags> tags) {
+    public ShowKafkaProjectTagsResponse withTags(List<TagMultyValueEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowKafkaProjectTagsResponse addTagsItem(ShowProjectTagsRespTags tagsItem) {
+    public ShowKafkaProjectTagsResponse addTagsItem(TagMultyValueEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class ShowKafkaProjectTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ShowKafkaProjectTagsResponse withTags(Consumer<List<ShowProjectTagsRespTags>> tagsSetter) {
+    public ShowKafkaProjectTagsResponse withTags(Consumer<List<TagMultyValueEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class ShowKafkaProjectTagsResponse extends SdkResponse {
     /** 标签列表
      * 
      * @return tags */
-    public List<ShowProjectTagsRespTags> getTags() {
+    public List<TagMultyValueEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<ShowProjectTagsRespTags> tags) {
+    public void setTags(List<TagMultyValueEntity> tags) {
         this.tags = tags;
     }
 

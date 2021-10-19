@@ -103,6 +103,16 @@ public class VideoProcess {
 
     private Integer upsample;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hls_init_count")
+
+    private Integer hlsInitCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hls_init_interval")
+
+    private Integer hlsInitInterval;
+
     public VideoProcess withRotate(Integer rotate) {
         this.rotate = rotate;
         return this;
@@ -151,6 +161,38 @@ public class VideoProcess {
         this.upsample = upsample;
     }
 
+    public VideoProcess withHlsInitCount(Integer hlsInitCount) {
+        this.hlsInitCount = hlsInitCount;
+        return this;
+    }
+
+    /** 需要单独设置时长的HLS起始分片数量。与hls_init_interval配合使用，设置前面hls_init_count个HLS分片时长。 为0表示不单独配置时长。 maximum: 10
+     * 
+     * @return hlsInitCount */
+    public Integer getHlsInitCount() {
+        return hlsInitCount;
+    }
+
+    public void setHlsInitCount(Integer hlsInitCount) {
+        this.hlsInitCount = hlsInitCount;
+    }
+
+    public VideoProcess withHlsInitInterval(Integer hlsInitInterval) {
+        this.hlsInitInterval = hlsInitInterval;
+        return this;
+    }
+
+    /** 表示前面hls_init_count个HLS分片的时长。hls_init_count不为0时，该字段才起作用。 maximum: 10
+     * 
+     * @return hlsInitInterval */
+    public Integer getHlsInitInterval() {
+        return hlsInitInterval;
+    }
+
+    public void setHlsInitInterval(Integer hlsInitInterval) {
+        this.hlsInitInterval = hlsInitInterval;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -162,12 +204,14 @@ public class VideoProcess {
         VideoProcess videoProcess = (VideoProcess) o;
         return Objects.equals(this.rotate, videoProcess.rotate)
             && Objects.equals(this.adaptation, videoProcess.adaptation)
-            && Objects.equals(this.upsample, videoProcess.upsample);
+            && Objects.equals(this.upsample, videoProcess.upsample)
+            && Objects.equals(this.hlsInitCount, videoProcess.hlsInitCount)
+            && Objects.equals(this.hlsInitInterval, videoProcess.hlsInitInterval);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rotate, adaptation, upsample);
+        return Objects.hash(rotate, adaptation, upsample, hlsInitCount, hlsInitInterval);
     }
 
     @Override
@@ -177,6 +221,8 @@ public class VideoProcess {
         sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
         sb.append("    adaptation: ").append(toIndentedString(adaptation)).append("\n");
         sb.append("    upsample: ").append(toIndentedString(upsample)).append("\n");
+        sb.append("    hlsInitCount: ").append(toIndentedString(hlsInitCount)).append("\n");
+        sb.append("    hlsInitInterval: ").append(toIndentedString(hlsInitInterval)).append("\n");
         sb.append("}");
         return sb.toString();
     }

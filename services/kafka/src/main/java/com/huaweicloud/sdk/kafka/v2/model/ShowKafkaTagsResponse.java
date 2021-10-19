@@ -15,14 +15,14 @@ public class ShowKafkaTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<CreatePostPaidInstanceReqTags> tags = null;
+    private List<TagEntity> tags = null;
 
-    public ShowKafkaTagsResponse withTags(List<CreatePostPaidInstanceReqTags> tags) {
+    public ShowKafkaTagsResponse withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowKafkaTagsResponse addTagsItem(CreatePostPaidInstanceReqTags tagsItem) {
+    public ShowKafkaTagsResponse addTagsItem(TagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class ShowKafkaTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ShowKafkaTagsResponse withTags(Consumer<List<CreatePostPaidInstanceReqTags>> tagsSetter) {
+    public ShowKafkaTagsResponse withTags(Consumer<List<TagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class ShowKafkaTagsResponse extends SdkResponse {
     /** 标签列表
      * 
      * @return tags */
-    public List<CreatePostPaidInstanceReqTags> getTags() {
+    public List<TagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<CreatePostPaidInstanceReqTags> tags) {
+    public void setTags(List<TagEntity> tags) {
         this.tags = tags;
     }
 

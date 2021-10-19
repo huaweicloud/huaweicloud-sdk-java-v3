@@ -262,14 +262,34 @@ public class MigrationTaskList {
     private MigrationMethodEnum migrationMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_source")
+
+    private String dataSource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_instance_name")
+
+    private String sourceInstanceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_instance_id")
+
+    private String sourceInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_instance_addrs")
+
+    private String targetInstanceAddrs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance_name")
 
     private String targetInstanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_source")
+    @JsonProperty(value = "target_instance_id")
 
-    private String dataSource;
+    private String targetInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
@@ -356,6 +376,70 @@ public class MigrationTaskList {
         this.migrationMethod = migrationMethod;
     }
 
+    public MigrationTaskList withDataSource(String dataSource) {
+        this.dataSource = dataSource;
+        return this;
+    }
+
+    /** 数据源，格式为ip:port或者桶名。
+     * 
+     * @return dataSource */
+    public String getDataSource() {
+        return dataSource;
+    }
+
+    public void setDataSource(String dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    public MigrationTaskList withSourceInstanceName(String sourceInstanceName) {
+        this.sourceInstanceName = sourceInstanceName;
+        return this;
+    }
+
+    /** 源实例名称，若自建redis则为空。
+     * 
+     * @return sourceInstanceName */
+    public String getSourceInstanceName() {
+        return sourceInstanceName;
+    }
+
+    public void setSourceInstanceName(String sourceInstanceName) {
+        this.sourceInstanceName = sourceInstanceName;
+    }
+
+    public MigrationTaskList withSourceInstanceId(String sourceInstanceId) {
+        this.sourceInstanceId = sourceInstanceId;
+        return this;
+    }
+
+    /** 源实例ID，若自建redis则为空。
+     * 
+     * @return sourceInstanceId */
+    public String getSourceInstanceId() {
+        return sourceInstanceId;
+    }
+
+    public void setSourceInstanceId(String sourceInstanceId) {
+        this.sourceInstanceId = sourceInstanceId;
+    }
+
+    public MigrationTaskList withTargetInstanceAddrs(String targetInstanceAddrs) {
+        this.targetInstanceAddrs = targetInstanceAddrs;
+        return this;
+    }
+
+    /** 目标redis地址，格式为ip:port。
+     * 
+     * @return targetInstanceAddrs */
+    public String getTargetInstanceAddrs() {
+        return targetInstanceAddrs;
+    }
+
+    public void setTargetInstanceAddrs(String targetInstanceAddrs) {
+        this.targetInstanceAddrs = targetInstanceAddrs;
+    }
+
     public MigrationTaskList withTargetInstanceName(String targetInstanceName) {
         this.targetInstanceName = targetInstanceName;
         return this;
@@ -372,20 +456,20 @@ public class MigrationTaskList {
         this.targetInstanceName = targetInstanceName;
     }
 
-    public MigrationTaskList withDataSource(String dataSource) {
-        this.dataSource = dataSource;
+    public MigrationTaskList withTargetInstanceId(String targetInstanceId) {
+        this.targetInstanceId = targetInstanceId;
         return this;
     }
 
-    /** 数据源，格式为ip:port或者桶名。
+    /** 目标实例ID。
      * 
-     * @return dataSource */
-    public String getDataSource() {
-        return dataSource;
+     * @return targetInstanceId */
+    public String getTargetInstanceId() {
+        return targetInstanceId;
     }
 
-    public void setDataSource(String dataSource) {
-        this.dataSource = dataSource;
+    public void setTargetInstanceId(String targetInstanceId) {
+        this.targetInstanceId = targetInstanceId;
     }
 
     public MigrationTaskList withCreatedAt(String createdAt) {
@@ -418,15 +502,29 @@ public class MigrationTaskList {
             && Objects.equals(this.status, migrationTaskList.status)
             && Objects.equals(this.migrationType, migrationTaskList.migrationType)
             && Objects.equals(this.migrationMethod, migrationTaskList.migrationMethod)
-            && Objects.equals(this.targetInstanceName, migrationTaskList.targetInstanceName)
             && Objects.equals(this.dataSource, migrationTaskList.dataSource)
+            && Objects.equals(this.sourceInstanceName, migrationTaskList.sourceInstanceName)
+            && Objects.equals(this.sourceInstanceId, migrationTaskList.sourceInstanceId)
+            && Objects.equals(this.targetInstanceAddrs, migrationTaskList.targetInstanceAddrs)
+            && Objects.equals(this.targetInstanceName, migrationTaskList.targetInstanceName)
+            && Objects.equals(this.targetInstanceId, migrationTaskList.targetInstanceId)
             && Objects.equals(this.createdAt, migrationTaskList.createdAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(taskId, taskName, status, migrationType, migrationMethod, targetInstanceName, dataSource, createdAt);
+        return Objects.hash(taskId,
+            taskName,
+            status,
+            migrationType,
+            migrationMethod,
+            dataSource,
+            sourceInstanceName,
+            sourceInstanceId,
+            targetInstanceAddrs,
+            targetInstanceName,
+            targetInstanceId,
+            createdAt);
     }
 
     @Override
@@ -438,8 +536,12 @@ public class MigrationTaskList {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    migrationType: ").append(toIndentedString(migrationType)).append("\n");
         sb.append("    migrationMethod: ").append(toIndentedString(migrationMethod)).append("\n");
-        sb.append("    targetInstanceName: ").append(toIndentedString(targetInstanceName)).append("\n");
         sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
+        sb.append("    sourceInstanceName: ").append(toIndentedString(sourceInstanceName)).append("\n");
+        sb.append("    sourceInstanceId: ").append(toIndentedString(sourceInstanceId)).append("\n");
+        sb.append("    targetInstanceAddrs: ").append(toIndentedString(targetInstanceAddrs)).append("\n");
+        sb.append("    targetInstanceName: ").append(toIndentedString(targetInstanceName)).append("\n");
+        sb.append("    targetInstanceId: ").append(toIndentedString(targetInstanceId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("}");
         return sb.toString();

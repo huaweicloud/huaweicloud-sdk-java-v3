@@ -98,6 +98,11 @@ public class BackupFilesBody {
 
     private List<Files> files = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_id")
+
+    private String backupId;
+
     public BackupFilesBody withFileSource(FileSourceEnum fileSource) {
         this.fileSource = fileSource;
         return this;
@@ -162,6 +167,22 @@ public class BackupFilesBody {
         this.files = files;
     }
 
+    public BackupFilesBody withBackupId(String backupId) {
+        this.backupId = backupId;
+        return this;
+    }
+
+    /** 备份记录ID，数据来源为备份记录时必须填写
+     * 
+     * @return backupId */
+    public String getBackupId() {
+        return backupId;
+    }
+
+    public void setBackupId(String backupId) {
+        this.backupId = backupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -173,12 +194,13 @@ public class BackupFilesBody {
         BackupFilesBody backupFilesBody = (BackupFilesBody) o;
         return Objects.equals(this.fileSource, backupFilesBody.fileSource)
             && Objects.equals(this.bucketName, backupFilesBody.bucketName)
-            && Objects.equals(this.files, backupFilesBody.files);
+            && Objects.equals(this.files, backupFilesBody.files)
+            && Objects.equals(this.backupId, backupFilesBody.backupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fileSource, bucketName, files);
+        return Objects.hash(fileSource, bucketName, files, backupId);
     }
 
     @Override
@@ -188,6 +210,7 @@ public class BackupFilesBody {
         sb.append("    fileSource: ").append(toIndentedString(fileSource)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    files: ").append(toIndentedString(files)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

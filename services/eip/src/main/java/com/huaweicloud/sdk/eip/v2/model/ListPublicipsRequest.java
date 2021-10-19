@@ -127,6 +127,11 @@ public class ListPublicipsRequest {
 
     private List<String> id = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_share_bandwidth_type_any")
+
+    private List<String> allowShareBandwidthTypeAny = null;
+
     public ListPublicipsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -320,6 +325,39 @@ public class ListPublicipsRequest {
         this.id = id;
     }
 
+    public ListPublicipsRequest withAllowShareBandwidthTypeAny(List<String> allowShareBandwidthTypeAny) {
+        this.allowShareBandwidthTypeAny = allowShareBandwidthTypeAny;
+        return this;
+    }
+
+    public ListPublicipsRequest addAllowShareBandwidthTypeAnyItem(String allowShareBandwidthTypeAnyItem) {
+        if (this.allowShareBandwidthTypeAny == null) {
+            this.allowShareBandwidthTypeAny = new ArrayList<>();
+        }
+        this.allowShareBandwidthTypeAny.add(allowShareBandwidthTypeAnyItem);
+        return this;
+    }
+
+    public ListPublicipsRequest withAllowShareBandwidthTypeAny(
+        Consumer<List<String>> allowShareBandwidthTypeAnySetter) {
+        if (this.allowShareBandwidthTypeAny == null) {
+            this.allowShareBandwidthTypeAny = new ArrayList<>();
+        }
+        allowShareBandwidthTypeAnySetter.accept(this.allowShareBandwidthTypeAny);
+        return this;
+    }
+
+    /** 共享带宽类型，根据任一共享带宽类型过滤EIP列表。 可以指定多个带宽类型，不同的带宽类型间用逗号分隔。
+     * 
+     * @return allowShareBandwidthTypeAny */
+    public List<String> getAllowShareBandwidthTypeAny() {
+        return allowShareBandwidthTypeAny;
+    }
+
+    public void setAllowShareBandwidthTypeAny(List<String> allowShareBandwidthTypeAny) {
+        this.allowShareBandwidthTypeAny = allowShareBandwidthTypeAny;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -336,13 +374,21 @@ public class ListPublicipsRequest {
             && Objects.equals(this.portId, listPublicipsRequest.portId)
             && Objects.equals(this.publicIpAddress, listPublicipsRequest.publicIpAddress)
             && Objects.equals(this.privateIpAddress, listPublicipsRequest.privateIpAddress)
-            && Objects.equals(this.id, listPublicipsRequest.id);
+            && Objects.equals(this.id, listPublicipsRequest.id)
+            && Objects.equals(this.allowShareBandwidthTypeAny, listPublicipsRequest.allowShareBandwidthTypeAny);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(marker, limit, ipVersion, enterpriseProjectId, portId, publicIpAddress, privateIpAddress, id);
+        return Objects.hash(marker,
+            limit,
+            ipVersion,
+            enterpriseProjectId,
+            portId,
+            publicIpAddress,
+            privateIpAddress,
+            id,
+            allowShareBandwidthTypeAny);
     }
 
     @Override
@@ -357,6 +403,7 @@ public class ListPublicipsRequest {
         sb.append("    publicIpAddress: ").append(toIndentedString(publicIpAddress)).append("\n");
         sb.append("    privateIpAddress: ").append(toIndentedString(privateIpAddress)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    allowShareBandwidthTypeAny: ").append(toIndentedString(allowShareBandwidthTypeAny)).append("\n");
         sb.append("}");
         return sb.toString();
     }

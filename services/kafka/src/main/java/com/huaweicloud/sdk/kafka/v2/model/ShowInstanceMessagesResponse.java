@@ -15,7 +15,7 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "messages")
 
-    private List<ShowInstanceMessagesRespMessages> messages = null;
+    private List<MessagesEntity> messages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
@@ -27,12 +27,12 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
 
     private Long size;
 
-    public ShowInstanceMessagesResponse withMessages(List<ShowInstanceMessagesRespMessages> messages) {
+    public ShowInstanceMessagesResponse withMessages(List<MessagesEntity> messages) {
         this.messages = messages;
         return this;
     }
 
-    public ShowInstanceMessagesResponse addMessagesItem(ShowInstanceMessagesRespMessages messagesItem) {
+    public ShowInstanceMessagesResponse addMessagesItem(MessagesEntity messagesItem) {
         if (this.messages == null) {
             this.messages = new ArrayList<>();
         }
@@ -40,7 +40,7 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInstanceMessagesResponse withMessages(Consumer<List<ShowInstanceMessagesRespMessages>> messagesSetter) {
+    public ShowInstanceMessagesResponse withMessages(Consumer<List<MessagesEntity>> messagesSetter) {
         if (this.messages == null) {
             this.messages = new ArrayList<>();
         }
@@ -51,11 +51,11 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
     /** 消息列表。
      * 
      * @return messages */
-    public List<ShowInstanceMessagesRespMessages> getMessages() {
+    public List<MessagesEntity> getMessages() {
         return messages;
     }
 
-    public void setMessages(List<ShowInstanceMessagesRespMessages> messages) {
+    public void setMessages(List<MessagesEntity> messages) {
         this.messages = messages;
     }
 

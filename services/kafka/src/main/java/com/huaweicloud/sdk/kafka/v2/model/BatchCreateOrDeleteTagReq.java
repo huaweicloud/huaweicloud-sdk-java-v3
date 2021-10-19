@@ -95,7 +95,7 @@ public class BatchCreateOrDeleteTagReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<CreatePostPaidInstanceReqTags> tags = null;
+    private List<TagEntity> tags = null;
 
     public BatchCreateOrDeleteTagReq withAction(ActionEnum action) {
         this.action = action;
@@ -113,12 +113,12 @@ public class BatchCreateOrDeleteTagReq {
         this.action = action;
     }
 
-    public BatchCreateOrDeleteTagReq withTags(List<CreatePostPaidInstanceReqTags> tags) {
+    public BatchCreateOrDeleteTagReq withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public BatchCreateOrDeleteTagReq addTagsItem(CreatePostPaidInstanceReqTags tagsItem) {
+    public BatchCreateOrDeleteTagReq addTagsItem(TagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -126,7 +126,7 @@ public class BatchCreateOrDeleteTagReq {
         return this;
     }
 
-    public BatchCreateOrDeleteTagReq withTags(Consumer<List<CreatePostPaidInstanceReqTags>> tagsSetter) {
+    public BatchCreateOrDeleteTagReq withTags(Consumer<List<TagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -137,11 +137,11 @@ public class BatchCreateOrDeleteTagReq {
     /** 标签列表。
      * 
      * @return tags */
-    public List<CreatePostPaidInstanceReqTags> getTags() {
+    public List<TagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<CreatePostPaidInstanceReqTags> tags) {
+    public void setTags(List<TagEntity> tags) {
         this.tags = tags;
     }
 

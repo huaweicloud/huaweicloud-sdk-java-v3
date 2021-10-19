@@ -50,7 +50,7 @@ public class QuotaShowResp {
         return this;
     }
 
-    /** 功能说明：已创建的资源个数 取值范围：0~quota数
+    /** 功能说明：已创建的资源个数 取值范围：0~quota数 minimum: 0 maximum: 999999
      * 
      * @return used */
     public Integer getUsed() {
@@ -68,6 +68,7 @@ public class QuotaShowResp {
 
     /** 功能说明：资源的最大配额数 取值范围：各类型资源默认配额数~Integer最大值
      * 约束：资源的默认配额数可以修改，而且配额需要提前在底层配置，参考默认配置为：vpc默认5，子网默认100，安全组默认100，安全组规则默认5000，弹性公网IP默认10，vpn默认5，vpngw默认2，vpcPeer默认50，firewall默认200，shareBandwidth默认5，shareBandwidthIP默认20
+     * minimum: -1 maximum: 999999
      * 
      * @return quota */
     public Integer getQuota() {
@@ -83,7 +84,7 @@ public class QuotaShowResp {
         return this;
     }
 
-    /** 允许修改的配额最小值
+    /** 允许修改的配额最小值 minimum: 0 maximum: 999999
      * 
      * @return min */
     public Integer getMin() {

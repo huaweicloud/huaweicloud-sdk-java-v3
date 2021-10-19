@@ -15,14 +15,14 @@ public class ShowRabbitMqTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<CreateInstanceReqTags> tags = null;
+    private List<TagEntity> tags = null;
 
-    public ShowRabbitMqTagsResponse withTags(List<CreateInstanceReqTags> tags) {
+    public ShowRabbitMqTagsResponse withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowRabbitMqTagsResponse addTagsItem(CreateInstanceReqTags tagsItem) {
+    public ShowRabbitMqTagsResponse addTagsItem(TagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class ShowRabbitMqTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ShowRabbitMqTagsResponse withTags(Consumer<List<CreateInstanceReqTags>> tagsSetter) {
+    public ShowRabbitMqTagsResponse withTags(Consumer<List<TagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class ShowRabbitMqTagsResponse extends SdkResponse {
     /** 标签列表
      * 
      * @return tags */
-    public List<CreateInstanceReqTags> getTags() {
+    public List<TagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<CreateInstanceReqTags> tags) {
+    public void setTags(List<TagEntity> tags) {
         this.tags = tags;
     }
 

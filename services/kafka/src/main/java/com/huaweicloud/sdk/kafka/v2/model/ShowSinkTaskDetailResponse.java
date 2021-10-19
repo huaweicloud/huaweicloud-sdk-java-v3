@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -39,6 +41,11 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
     @JsonProperty(value = "obs_destination_descriptor")
 
     private ShowSinkTaskDetailRespObsDestinationDescriptor obsDestinationDescriptor;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topics_info")
+
+    private List<ShowSinkTaskDetailRespTopicsInfo> topicsInfo = null;
 
     public ShowSinkTaskDetailResponse withTaskName(String taskName) {
         this.taskName = taskName;
@@ -147,6 +154,39 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         this.obsDestinationDescriptor = obsDestinationDescriptor;
     }
 
+    public ShowSinkTaskDetailResponse withTopicsInfo(List<ShowSinkTaskDetailRespTopicsInfo> topicsInfo) {
+        this.topicsInfo = topicsInfo;
+        return this;
+    }
+
+    public ShowSinkTaskDetailResponse addTopicsInfoItem(ShowSinkTaskDetailRespTopicsInfo topicsInfoItem) {
+        if (this.topicsInfo == null) {
+            this.topicsInfo = new ArrayList<>();
+        }
+        this.topicsInfo.add(topicsInfoItem);
+        return this;
+    }
+
+    public ShowSinkTaskDetailResponse withTopicsInfo(
+        Consumer<List<ShowSinkTaskDetailRespTopicsInfo>> topicsInfoSetter) {
+        if (this.topicsInfo == null) {
+            this.topicsInfo = new ArrayList<>();
+        }
+        topicsInfoSetter.accept(this.topicsInfo);
+        return this;
+    }
+
+    /** topic信息。
+     * 
+     * @return topicsInfo */
+    public List<ShowSinkTaskDetailRespTopicsInfo> getTopicsInfo() {
+        return topicsInfo;
+    }
+
+    public void setTopicsInfo(List<ShowSinkTaskDetailRespTopicsInfo> topicsInfo) {
+        this.topicsInfo = topicsInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -161,12 +201,14 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
             && Objects.equals(this.createTime, showSinkTaskDetailResponse.createTime)
             && Objects.equals(this.status, showSinkTaskDetailResponse.status)
             && Objects.equals(this.topics, showSinkTaskDetailResponse.topics)
-            && Objects.equals(this.obsDestinationDescriptor, showSinkTaskDetailResponse.obsDestinationDescriptor);
+            && Objects.equals(this.obsDestinationDescriptor, showSinkTaskDetailResponse.obsDestinationDescriptor)
+            && Objects.equals(this.topicsInfo, showSinkTaskDetailResponse.topicsInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskName, destinationType, createTime, status, topics, obsDestinationDescriptor);
+        return Objects
+            .hash(taskName, destinationType, createTime, status, topics, obsDestinationDescriptor, topicsInfo);
     }
 
     @Override
@@ -179,6 +221,7 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("    obsDestinationDescriptor: ").append(toIndentedString(obsDestinationDescriptor)).append("\n");
+        sb.append("    topicsInfo: ").append(toIndentedString(topicsInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

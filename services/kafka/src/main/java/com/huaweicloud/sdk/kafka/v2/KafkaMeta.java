@@ -1511,6 +1511,13 @@ public class KafkaMeta {
             f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
+        builder.<ShowSinkTaskDetailRequest.TopicInfoEnum>withRequestField("topic-info",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSinkTaskDetailRequest.TopicInfoEnum.class),
+            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTopicInfo, (req, v) -> {
+                req.setTopicInfo(v);
+            }));
 
         // response
 

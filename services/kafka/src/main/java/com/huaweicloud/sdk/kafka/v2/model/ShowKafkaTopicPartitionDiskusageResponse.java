@@ -15,16 +15,14 @@ public class ShowKafkaTopicPartitionDiskusageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_list")
 
-    private List<ShowKafkaTopicPartitionDiskusageRespBrokerList> brokerList = null;
+    private List<DiskusageEntity> brokerList = null;
 
-    public ShowKafkaTopicPartitionDiskusageResponse withBrokerList(
-        List<ShowKafkaTopicPartitionDiskusageRespBrokerList> brokerList) {
+    public ShowKafkaTopicPartitionDiskusageResponse withBrokerList(List<DiskusageEntity> brokerList) {
         this.brokerList = brokerList;
         return this;
     }
 
-    public ShowKafkaTopicPartitionDiskusageResponse addBrokerListItem(
-        ShowKafkaTopicPartitionDiskusageRespBrokerList brokerListItem) {
+    public ShowKafkaTopicPartitionDiskusageResponse addBrokerListItem(DiskusageEntity brokerListItem) {
         if (this.brokerList == null) {
             this.brokerList = new ArrayList<>();
         }
@@ -32,8 +30,7 @@ public class ShowKafkaTopicPartitionDiskusageResponse extends SdkResponse {
         return this;
     }
 
-    public ShowKafkaTopicPartitionDiskusageResponse withBrokerList(
-        Consumer<List<ShowKafkaTopicPartitionDiskusageRespBrokerList>> brokerListSetter) {
+    public ShowKafkaTopicPartitionDiskusageResponse withBrokerList(Consumer<List<DiskusageEntity>> brokerListSetter) {
         if (this.brokerList == null) {
             this.brokerList = new ArrayList<>();
         }
@@ -44,11 +41,11 @@ public class ShowKafkaTopicPartitionDiskusageResponse extends SdkResponse {
     /** Broker列表。
      * 
      * @return brokerList */
-    public List<ShowKafkaTopicPartitionDiskusageRespBrokerList> getBrokerList() {
+    public List<DiskusageEntity> getBrokerList() {
         return brokerList;
     }
 
-    public void setBrokerList(List<ShowKafkaTopicPartitionDiskusageRespBrokerList> brokerList) {
+    public void setBrokerList(List<DiskusageEntity> brokerList) {
         this.brokerList = brokerList;
     }
 
