@@ -294,22 +294,6 @@ public class SmsAsyncClient {
             hcClient);
     }
 
-    /** 获取SSL目的端证书和私钥 当源端服务器为Windows操作系统时，安装在源端服务器上的迁移Agent通过SSLSocket同目的端服务器通信，该接口用于下载目的端服务器所需要的证书和私钥(PEM格式)。
-     *
-     * @param ShowCertKeyRequest 请求对象
-     * @return CompletableFuture<ShowCertKeyResponse> */
-    public CompletableFuture<ShowCertKeyResponse> showCertKeyAsync(ShowCertKeyRequest request) {
-        return hcClient.asyncInvokeHttp(request, SmsMeta.showCertKey);
-    }
-
-    /** 获取SSL目的端证书和私钥 当源端服务器为Windows操作系统时，安装在源端服务器上的迁移Agent通过SSLSocket同目的端服务器通信，该接口用于下载目的端服务器所需要的证书和私钥(PEM格式)。
-     *
-     * @param ShowCertKeyRequest 请求对象
-     * @return AsyncInvoker<ShowCertKeyRequest, ShowCertKeyResponse> */
-    public AsyncInvoker<ShowCertKeyRequest, ShowCertKeyResponse> showCertKeyAsyncInvoker(ShowCertKeyRequest request) {
-        return new AsyncInvoker<ShowCertKeyRequest, ShowCertKeyResponse>(request, SmsMeta.showCertKey, hcClient);
-    }
-
     /** 获取服务端命令 迁移Agent调用该接口从SMS服务端获取下发给指定源端迁移Agent的命令。
      *
      * @param ShowCommandRequest 请求对象

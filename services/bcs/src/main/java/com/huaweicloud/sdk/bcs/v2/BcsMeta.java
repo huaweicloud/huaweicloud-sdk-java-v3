@@ -582,6 +582,24 @@ public class BcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> showBlockchainFlavors =
+        genForshowBlockchainFlavors();
+
+    private static HttpRequestDef<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> genForshowBlockchainFlavors() {
+        // basic
+        HttpRequestDef.Builder<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowBlockchainFlavorsRequest.class, ShowBlockchainFlavorsResponse.class)
+            .withName("ShowBlockchainFlavors")
+            .withUri("/v2/{project_id}/blockchains/flavors")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> showBlockchainNodes =
         genForshowBlockchainNodes();
 

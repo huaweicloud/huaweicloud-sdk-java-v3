@@ -2695,7 +2695,7 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<UploadFileRequest, UploadFileResponse>(request, MeetingMeta.uploadFile, hcClient);
     }
 
-    /** 查询QoS历史会议列表 * 查询企业内QoS历史会议列表。 * 支持按照时间范围查询，可查询最近3个月内数据。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+    /** 查询QoS历史会议列表 * 查询企业内QoS历史会议列表。 * 支持按照时间范围查询，可查询最近3个月内数据。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchQosHistoryMeetingsRequest 请求对象
      * @return CompletableFuture<SearchQosHistoryMeetingsResponse> */
@@ -2704,7 +2704,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchQosHistoryMeetings);
     }
 
-    /** 查询QoS历史会议列表 * 查询企业内QoS历史会议列表。 * 支持按照时间范围查询，可查询最近3个月内数据。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+    /** 查询QoS历史会议列表 * 查询企业内QoS历史会议列表。 * 支持按照时间范围查询，可查询最近3个月内数据。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchQosHistoryMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> */
@@ -2714,7 +2714,7 @@ public class MeetingAsyncClient {
             MeetingMeta.searchQosHistoryMeetings, hcClient);
     }
 
-    /** 查询QoS在线会议列表 * 查询企业内QoS在线会议列表。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+    /** 查询QoS在线会议列表 * 查询企业内QoS在线会议列表。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchQosOnlineMeetingsRequest 请求对象
      * @return CompletableFuture<SearchQosOnlineMeetingsResponse> */
@@ -2723,7 +2723,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchQosOnlineMeetings);
     }
 
-    /** 查询QoS在线会议列表 * 查询企业内QoS在线会议列表。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+    /** 查询QoS在线会议列表 * 查询企业内QoS在线会议列表。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchQosOnlineMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> */
@@ -2733,7 +2733,7 @@ public class MeetingAsyncClient {
             MeetingMeta.searchQosOnlineMeetings, hcClient);
     }
 
-    /** 查询与会者的QoS数据 * 查询企业内指定与会者的QoS数据，按照音频，视频，屏幕共享，CPU分类查询QoS数据。 * QoS数据的打点周期为5秒。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+    /** 查询与会者的QoS数据 * 查询企业内指定与会者的QoS数据，按照音频，视频，屏幕共享，CPU分类查询QoS数据。 * QoS数据的打点周期为5秒。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchQosParticipantDetailRequest 请求对象
      * @return CompletableFuture<SearchQosParticipantDetailResponse> */
@@ -2742,7 +2742,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchQosParticipantDetail);
     }
 
-    /** 查询与会者的QoS数据 * 查询企业内指定与会者的QoS数据，按照音频，视频，屏幕共享，CPU分类查询QoS数据。 * QoS数据的打点周期为5秒。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+    /** 查询与会者的QoS数据 * 查询企业内指定与会者的QoS数据，按照音频，视频，屏幕共享，CPU分类查询QoS数据。 * QoS数据的打点周期为5秒。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchQosParticipantDetailRequest 请求对象
      * @return AsyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> */
@@ -2752,7 +2752,7 @@ public class MeetingAsyncClient {
             MeetingMeta.searchQosParticipantDetail, hcClient);
     }
 
-    /** 查询QoS会议与会者列表 * 查询企业内QoS会议与会者列表。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+    /** 查询QoS会议与会者列表 * 查询企业内QoS会议与会者列表。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchQosParticipantsRequest 请求对象
      * @return CompletableFuture<SearchQosParticipantsResponse> */
@@ -2761,7 +2761,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchQosParticipants);
     }
 
-    /** 查询QoS会议与会者列表 * 查询企业内QoS会议与会者列表。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+    /** 查询QoS会议与会者列表 * 查询企业内QoS会议与会者列表。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchQosParticipantsRequest 请求对象
      * @return AsyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse> */
@@ -2771,7 +2771,43 @@ public class MeetingAsyncClient {
             MeetingMeta.searchQosParticipants, hcClient);
     }
 
-    /** 查询企业级会议总体统计数据 * 查询企业级会议指定时间范围内总体统计数据，按日/按月统计。 * 查询企业级会议单日内总体统计数据，按小时统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+    /** 设置企业租户指定类型的会议质量阈值 * 设置企业租户指定类型的会议质量阈值。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
+     *
+     * @param SetQosThresholdRequest 请求对象
+     * @return CompletableFuture<SetQosThresholdResponse> */
+    public CompletableFuture<SetQosThresholdResponse> setQosThresholdAsync(SetQosThresholdRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setQosThreshold);
+    }
+
+    /** 设置企业租户指定类型的会议质量阈值 * 设置企业租户指定类型的会议质量阈值。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
+     *
+     * @param SetQosThresholdRequest 请求对象
+     * @return AsyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse> */
+    public AsyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse> setQosThresholdAsyncInvoker(
+        SetQosThresholdRequest request) {
+        return new AsyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse>(request, MeetingMeta.setQosThreshold,
+            hcClient);
+    }
+
+    /** 查询企业租户指定类型的会议质量阈值 * 查询企业租户指定类型的会议质量阈值。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
+     *
+     * @param ShowQosThresholdRequest 请求对象
+     * @return CompletableFuture<ShowQosThresholdResponse> */
+    public CompletableFuture<ShowQosThresholdResponse> showQosThresholdAsync(ShowQosThresholdRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showQosThreshold);
+    }
+
+    /** 查询企业租户指定类型的会议质量阈值 * 查询企业租户指定类型的会议质量阈值。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
+     *
+     * @param ShowQosThresholdRequest 请求对象
+     * @return AsyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse> */
+    public AsyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse> showQosThresholdAsyncInvoker(
+        ShowQosThresholdRequest request) {
+        return new AsyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse>(request,
+            MeetingMeta.showQosThreshold, hcClient);
+    }
+
+    /** 查询企业级会议总体统计数据 * 查询企业级会议指定时间范围内总体统计数据，按日/按月统计。 * 查询企业级会议单日内总体统计数据，按小时统计。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchStatisticConferenceInfoRequest 请求对象
      * @return CompletableFuture<SearchStatisticConferenceInfoResponse> */
@@ -2780,7 +2816,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchStatisticConferenceInfo);
     }
 
-    /** 查询企业级会议总体统计数据 * 查询企业级会议指定时间范围内总体统计数据，按日/按月统计。 * 查询企业级会议单日内总体统计数据，按小时统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+    /** 查询企业级会议总体统计数据 * 查询企业级会议指定时间范围内总体统计数据，按日/按月统计。 * 查询企业级会议单日内总体统计数据，按小时统计。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchStatisticConferenceInfoRequest 请求对象
      * @return AsyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> */
@@ -2791,7 +2827,7 @@ public class MeetingAsyncClient {
     }
 
     /** 查询企业级会议与会统计数据 * 查询企业级会议与会用户统计数据，按日/按月统计。 * 查询企业级会议与会硬件终端统计数据，按日/按月统计。 * 查询企业级会议与会设备统计数据，按日/按月统计。 * 权限角色 &#x3D;
-     * 旗舰版企业 + 管理员。
+     * 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchStatisticConferenceParticipantRequest 请求对象
      * @return CompletableFuture<SearchStatisticConferenceParticipantResponse> */
@@ -2801,7 +2837,7 @@ public class MeetingAsyncClient {
     }
 
     /** 查询企业级会议与会统计数据 * 查询企业级会议与会用户统计数据，按日/按月统计。 * 查询企业级会议与会硬件终端统计数据，按日/按月统计。 * 查询企业级会议与会设备统计数据，按日/按月统计。 * 权限角色 &#x3D;
-     * 旗舰版企业 + 管理员。
+     * 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchStatisticConferenceParticipantRequest 请求对象
      * @return AsyncInvoker<SearchStatisticConferenceParticipantRequest,
@@ -2812,7 +2848,7 @@ public class MeetingAsyncClient {
             request, MeetingMeta.searchStatisticConferenceParticipant, hcClient);
     }
 
-    /** 查询企业级会议已购资源使用统计数据 * 查询企业级会议的已购资源使用状况，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+    /** 查询企业级会议已购资源使用统计数据 * 查询企业级会议的已购资源使用状况，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchStatisticResourceInfoRequest 请求对象
      * @return CompletableFuture<SearchStatisticResourceInfoResponse> */
@@ -2821,7 +2857,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchStatisticResourceInfo);
     }
 
-    /** 查询企业级会议已购资源使用统计数据 * 查询企业级会议的已购资源使用状况，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业 + 管理员。
+    /** 查询企业级会议已购资源使用统计数据 * 查询企业级会议的已购资源使用状况，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchStatisticResourceInfoRequest 请求对象
      * @return AsyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> */
@@ -2831,8 +2867,8 @@ public class MeetingAsyncClient {
             MeetingMeta.searchStatisticResourceInfo, hcClient);
     }
 
-    /** 查询企业级会议的用户统计数据 * 查询企业级会议用户登录数据，按日/按月统计。 * 查询企业级会议用户激活数据，按日/按月统计。 * 查询企业级会议用户登录设备数据，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业
-     * + 管理员。
+    /** 查询企业级会议的用户统计数据 * 查询企业级会议用户登录数据，按日/按月统计。 * 查询企业级会议用户激活数据，按日/按月统计。 * 查询企业级会议用户登录设备数据，按日/按月统计。 * 权限角色 &#x3D;
+     * 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchStatisticUserInfoRequest 请求对象
      * @return CompletableFuture<SearchStatisticUserInfoResponse> */
@@ -2841,8 +2877,8 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchStatisticUserInfo);
     }
 
-    /** 查询企业级会议的用户统计数据 * 查询企业级会议用户登录数据，按日/按月统计。 * 查询企业级会议用户激活数据，按日/按月统计。 * 查询企业级会议用户登录设备数据，按日/按月统计。 * 权限角色 &#x3D; 旗舰版企业
-     * + 管理员。
+    /** 查询企业级会议的用户统计数据 * 查询企业级会议用户登录数据，按日/按月统计。 * 查询企业级会议用户激活数据，按日/按月统计。 * 查询企业级会议用户登录设备数据，按日/按月统计。 * 权限角色 &#x3D;
+     * 旗舰版企业/标准版企业 + 管理员。
      *
      * @param SearchStatisticUserInfoRequest 请求对象
      * @return AsyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> */

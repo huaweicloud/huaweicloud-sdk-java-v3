@@ -19,7 +19,7 @@ public class CsmsAsyncClient {
         return new ClientBuilder<>(CsmsAsyncClient::new);
     }
 
-    /** 批量添加删除凭据标签 - 功能介绍：批量添加删除凭据标签。
+    /** 批量添加或删除凭据标签 - 功能介绍：批量添加或删除凭据标签。
      *
      * @param BatchCreateOrDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteTagsResponse> */
@@ -28,7 +28,7 @@ public class CsmsAsyncClient {
         return hcClient.asyncInvokeHttp(request, CsmsMeta.batchCreateOrDeleteTags);
     }
 
-    /** 批量添加删除凭据标签 - 功能介绍：批量添加删除凭据标签。
+    /** 批量添加或删除凭据标签 - 功能介绍：批量添加或删除凭据标签。
      *
      * @param BatchCreateOrDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> */
@@ -36,23 +36,6 @@ public class CsmsAsyncClient {
         BatchCreateOrDeleteTagsRequest request) {
         return new AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>(request,
             CsmsMeta.batchCreateOrDeleteTags, hcClient);
-    }
-
-    /** 添加凭据标签 - 功能介绍：添加凭据标签。
-     *
-     * @param CreateKmsTagRequest 请求对象
-     * @return CompletableFuture<CreateKmsTagResponse> */
-    public CompletableFuture<CreateKmsTagResponse> createKmsTagAsync(CreateKmsTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, CsmsMeta.createKmsTag);
-    }
-
-    /** 添加凭据标签 - 功能介绍：添加凭据标签。
-     *
-     * @param CreateKmsTagRequest 请求对象
-     * @return AsyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse> */
-    public AsyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse> createKmsTagAsyncInvoker(
-        CreateKmsTagRequest request) {
-        return new AsyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse>(request, CsmsMeta.createKmsTag, hcClient);
     }
 
     /** 创建凭据 创建新的凭据，并将凭据值存入凭据的初始版本。
@@ -74,6 +57,24 @@ public class CsmsAsyncClient {
     public AsyncInvoker<CreateSecretRequest, CreateSecretResponse> createSecretAsyncInvoker(
         CreateSecretRequest request) {
         return new AsyncInvoker<CreateSecretRequest, CreateSecretResponse>(request, CsmsMeta.createSecret, hcClient);
+    }
+
+    /** 添加凭据标签 - 功能介绍：添加凭据标签。
+     *
+     * @param CreateSecretTagRequest 请求对象
+     * @return CompletableFuture<CreateSecretTagResponse> */
+    public CompletableFuture<CreateSecretTagResponse> createSecretTagAsync(CreateSecretTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.createSecretTag);
+    }
+
+    /** 添加凭据标签 - 功能介绍：添加凭据标签。
+     *
+     * @param CreateSecretTagRequest 请求对象
+     * @return AsyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse> */
+    public AsyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse> createSecretTagAsyncInvoker(
+        CreateSecretTagRequest request) {
+        return new AsyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse>(request, CsmsMeta.createSecretTag,
+            hcClient);
     }
 
     /** 创建凭据版本
@@ -152,37 +153,42 @@ public class CsmsAsyncClient {
 
     /** 删除凭据标签 - 功能介绍：删除凭据标签。
      *
-     * @param DeleteTagRequest 请求对象
-     * @return CompletableFuture<DeleteTagResponse> */
-    public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, CsmsMeta.deleteTag);
+     * @param DeleteSecretTagRequest 请求对象
+     * @return CompletableFuture<DeleteSecretTagResponse> */
+    public CompletableFuture<DeleteSecretTagResponse> deleteSecretTagAsync(DeleteSecretTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.deleteSecretTag);
     }
 
     /** 删除凭据标签 - 功能介绍：删除凭据标签。
      *
-     * @param DeleteTagRequest 请求对象
-     * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse> */
-    public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
-        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, CsmsMeta.deleteTag, hcClient);
+     * @param DeleteSecretTagRequest 请求对象
+     * @return AsyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse> */
+    public AsyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse> deleteSecretTagAsyncInvoker(
+        DeleteSecretTagRequest request) {
+        return new AsyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse>(request, CsmsMeta.deleteSecretTag,
+            hcClient);
     }
 
-    /** 查询项目标签 - 功能介绍：查询用户在指定项目下的所有标签集合。
+    /** 查询项目标签 - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
      *
-     * @param ListKmsTagsRequest 请求对象
-     * @return CompletableFuture<ListKmsTagsResponse> */
-    public CompletableFuture<ListKmsTagsResponse> listKmsTagsAsync(ListKmsTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CsmsMeta.listKmsTags);
+     * @param ListProjectSecretsTagsRequest 请求对象
+     * @return CompletableFuture<ListProjectSecretsTagsResponse> */
+    public CompletableFuture<ListProjectSecretsTagsResponse> listProjectSecretsTagsAsync(
+        ListProjectSecretsTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.listProjectSecretsTags);
     }
 
-    /** 查询项目标签 - 功能介绍：查询用户在指定项目下的所有标签集合。
+    /** 查询项目标签 - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
      *
-     * @param ListKmsTagsRequest 请求对象
-     * @return AsyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse> */
-    public AsyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse> listKmsTagsAsyncInvoker(ListKmsTagsRequest request) {
-        return new AsyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse>(request, CsmsMeta.listKmsTags, hcClient);
+     * @param ListProjectSecretsTagsRequest 请求对象
+     * @return AsyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> */
+    public AsyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> listProjectSecretsTagsAsyncInvoker(
+        ListProjectSecretsTagsRequest request) {
+        return new AsyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse>(request,
+            CsmsMeta.listProjectSecretsTags, hcClient);
     }
 
-    /** 查询凭据实例 - 功能介绍：查询凭据实例。通过标签过滤，查询指定用户凭据的详细信息。
+    /** 查询凭据实例 - 功能介绍：查询凭据实例。通过标签过滤，筛选用户凭据,返回凭据列表。
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListResourceInstancesResponse> */
@@ -191,7 +197,7 @@ public class CsmsAsyncClient {
         return hcClient.asyncInvokeHttp(request, CsmsMeta.listResourceInstances);
     }
 
-    /** 查询凭据实例 - 功能介绍：查询凭据实例。通过标签过滤，查询指定用户凭据的详细信息。
+    /** 查询凭据实例 - 功能介绍：查询凭据实例。通过标签过滤，筛选用户凭据,返回凭据列表。
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> */
@@ -216,6 +222,24 @@ public class CsmsAsyncClient {
     public AsyncInvoker<ListSecretStageRequest, ListSecretStageResponse> listSecretStageAsyncInvoker(
         ListSecretStageRequest request) {
         return new AsyncInvoker<ListSecretStageRequest, ListSecretStageResponse>(request, CsmsMeta.listSecretStage,
+            hcClient);
+    }
+
+    /** 查询凭据标签 - 功能介绍：查询凭据标签。
+     *
+     * @param ListSecretTagsRequest 请求对象
+     * @return CompletableFuture<ListSecretTagsResponse> */
+    public CompletableFuture<ListSecretTagsResponse> listSecretTagsAsync(ListSecretTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.listSecretTags);
+    }
+
+    /** 查询凭据标签 - 功能介绍：查询凭据标签。
+     *
+     * @param ListSecretTagsRequest 请求对象
+     * @return AsyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse> */
+    public AsyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse> listSecretTagsAsyncInvoker(
+        ListSecretTagsRequest request) {
+        return new AsyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse>(request, CsmsMeta.listSecretTags,
             hcClient);
     }
 
@@ -268,22 +292,6 @@ public class CsmsAsyncClient {
     public AsyncInvoker<RestoreSecretRequest, RestoreSecretResponse> restoreSecretAsyncInvoker(
         RestoreSecretRequest request) {
         return new AsyncInvoker<RestoreSecretRequest, RestoreSecretResponse>(request, CsmsMeta.restoreSecret, hcClient);
-    }
-
-    /** 查询凭据标签 - 功能介绍：查询凭据标签。
-     *
-     * @param ShowKmsTagsRequest 请求对象
-     * @return CompletableFuture<ShowKmsTagsResponse> */
-    public CompletableFuture<ShowKmsTagsResponse> showKmsTagsAsync(ShowKmsTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CsmsMeta.showKmsTags);
-    }
-
-    /** 查询凭据标签 - 功能介绍：查询凭据标签。
-     *
-     * @param ShowKmsTagsRequest 请求对象
-     * @return AsyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse> */
-    public AsyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse> showKmsTagsAsyncInvoker(ShowKmsTagsRequest request) {
-        return new AsyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse>(request, CsmsMeta.showKmsTags, hcClient);
     }
 
     /** 查询凭据 查询指定凭据的信息。

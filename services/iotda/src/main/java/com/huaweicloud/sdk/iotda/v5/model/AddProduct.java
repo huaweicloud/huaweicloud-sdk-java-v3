@@ -163,7 +163,7 @@ public class AddProduct {
         return this;
     }
 
-    /** **参数说明**：设备的服务能力列表。
+    /** **参数说明**：设备的服务能力列表。 **取值范围**：数组长度大小不超过500，内容大小不超过500k。
      * 
      * @return serviceCapabilities */
     public List<ServiceCapability> getServiceCapabilities() {

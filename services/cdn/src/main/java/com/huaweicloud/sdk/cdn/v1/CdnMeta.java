@@ -689,6 +689,13 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getUrl, (req, v) -> {
                 req.setUrl(v);
             }));
+        builder.<Long>withRequestField("create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getCreateTime, (req, v) -> {
+                req.setCreateTime(v);
+            }));
 
         // response
 
@@ -769,13 +776,6 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.FileTypeEnum.class),
             f -> f.withMarshaller(ShowHistoryTasksRequest::getFileType, (req, v) -> {
                 req.setFileType(v);
-            }));
-        builder.<Long>withRequestField("create_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getCreateTime, (req, v) -> {
-                req.setCreateTime(v);
             }));
 
         // response

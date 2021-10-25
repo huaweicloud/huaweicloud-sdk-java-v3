@@ -48,7 +48,7 @@ public class DeviceMessageRequest {
         return this;
     }
 
-    /** **参数说明**：消息id，由用户生成（推荐使用UUID），同一个设备下唯一， 如果用户填写的id在设备下不唯一， 则接口返回错误。
+    /** **参数说明**：消息id，由用户生成（推荐使用UUID），同一个设备下唯一， 如果用户填写的id在设备下不唯一， 则接口返回错误。 **取值范围**：长度不超过100，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * 
      * @return messageId */
     public String getMessageId() {

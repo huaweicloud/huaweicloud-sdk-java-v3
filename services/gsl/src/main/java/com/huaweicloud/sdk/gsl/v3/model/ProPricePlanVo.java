@@ -83,6 +83,11 @@ public class ProPricePlanVo {
 
     private Integer carrierType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "price")
+
+    private Integer price;
+
     public ProPricePlanVo withPricePlanId(String pricePlanId) {
         this.pricePlanId = pricePlanId;
         return this;
@@ -324,6 +329,22 @@ public class ProPricePlanVo {
         this.carrierType = carrierType;
     }
 
+    public ProPricePlanVo withPrice(Integer price) {
+        this.price = price;
+        return this;
+    }
+
+    /** 价格(元)
+     * 
+     * @return price */
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -347,7 +368,8 @@ public class ProPricePlanVo {
             && Objects.equals(this.locationDesc, proPricePlanVo.locationDesc)
             && Objects.equals(this.locationType, proPricePlanVo.locationType)
             && Objects.equals(this.simType, proPricePlanVo.simType)
-            && Objects.equals(this.carrierType, proPricePlanVo.carrierType);
+            && Objects.equals(this.carrierType, proPricePlanVo.carrierType)
+            && Objects.equals(this.price, proPricePlanVo.price);
     }
 
     @Override
@@ -366,7 +388,8 @@ public class ProPricePlanVo {
             locationDesc,
             locationType,
             simType,
-            carrierType);
+            carrierType,
+            price);
     }
 
     @Override
@@ -388,6 +411,7 @@ public class ProPricePlanVo {
         sb.append("    locationType: ").append(toIndentedString(locationType)).append("\n");
         sb.append("    simType: ").append(toIndentedString(simType)).append("\n");
         sb.append("    carrierType: ").append(toIndentedString(carrierType)).append("\n");
+        sb.append("    price: ").append(toIndentedString(price)).append("\n");
         sb.append("}");
         return sb.toString();
     }

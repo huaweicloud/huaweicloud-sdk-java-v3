@@ -119,6 +119,25 @@ public class OcrAsyncClient {
             OcrMeta.recognizeDriverLicense, hcClient);
     }
 
+    /** 财务报表识别 识别用户上传的表格图片中的文字内容，并将识别的结果返回给用户。
+     *
+     * @param RecognizeFinancialStatementRequest 请求对象
+     * @return CompletableFuture<RecognizeFinancialStatementResponse> */
+    public CompletableFuture<RecognizeFinancialStatementResponse> recognizeFinancialStatementAsync(
+        RecognizeFinancialStatementRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeFinancialStatement);
+    }
+
+    /** 财务报表识别 识别用户上传的表格图片中的文字内容，并将识别的结果返回给用户。
+     *
+     * @param RecognizeFinancialStatementRequest 请求对象
+     * @return AsyncInvoker<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse> */
+    public AsyncInvoker<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse> recognizeFinancialStatementAsyncInvoker(
+        RecognizeFinancialStatementRequest request) {
+        return new AsyncInvoker<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse>(request,
+            OcrMeta.recognizeFinancialStatement, hcClient);
+    }
+
     /** 飞机行程单识别 识别飞机行程单中的文字信息，并返回识别的结构化结果。 说明： 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      *
      * @param RecognizeFlightItineraryRequest 请求对象
@@ -215,6 +234,25 @@ public class OcrAsyncClient {
             hcClient);
     }
 
+    /** 保险单识别 识别保险单图片上的文字信息，并将识别的结构化结果返回给用户。支持对多板式保险单的扫描图片及手机照片进行结构化信息提取。
+     *
+     * @param RecognizeInsurancePolicyRequest 请求对象
+     * @return CompletableFuture<RecognizeInsurancePolicyResponse> */
+    public CompletableFuture<RecognizeInsurancePolicyResponse> recognizeInsurancePolicyAsync(
+        RecognizeInsurancePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeInsurancePolicy);
+    }
+
+    /** 保险单识别 识别保险单图片上的文字信息，并将识别的结构化结果返回给用户。支持对多板式保险单的扫描图片及手机照片进行结构化信息提取。
+     *
+     * @param RecognizeInsurancePolicyRequest 请求对象
+     * @return AsyncInvoker<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse> */
+    public AsyncInvoker<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse> recognizeInsurancePolicyAsyncInvoker(
+        RecognizeInsurancePolicyRequest request) {
+        return new AsyncInvoker<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse>(request,
+            OcrMeta.recognizeInsurancePolicy, hcClient);
+    }
+
     /** 发票验真
      * 发票验真服务支持9种增值税发票的信息核验，包括增值税专用发票、增值税普通发票、增值税普通发票（卷式）、增值税电子专用发票、增值税电子普通发票、增值税电子普通发票（通行费）、二手车销售统一发票、机动车销售统一发票、区块链电子发票，支持返回票面的全部信息。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
      *
@@ -293,6 +331,27 @@ public class OcrAsyncClient {
         RecognizePassportRequest request) {
         return new AsyncInvoker<RecognizePassportRequest, RecognizePassportResponse>(request, OcrMeta.recognizePassport,
             hcClient);
+    }
+
+    /** 从业资格证识别 识别道路运输从业资格证上的关键文字信息，并返回识别的结构化结果。 说明：
+     * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
+     *
+     * @param RecognizeQualificationCertificateRequest 请求对象
+     * @return CompletableFuture<RecognizeQualificationCertificateResponse> */
+    public CompletableFuture<RecognizeQualificationCertificateResponse> recognizeQualificationCertificateAsync(
+        RecognizeQualificationCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeQualificationCertificate);
+    }
+
+    /** 从业资格证识别 识别道路运输从业资格证上的关键文字信息，并返回识别的结构化结果。 说明：
+     * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
+     *
+     * @param RecognizeQualificationCertificateRequest 请求对象
+     * @return AsyncInvoker<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse> */
+    public AsyncInvoker<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse> recognizeQualificationCertificateAsyncInvoker(
+        RecognizeQualificationCertificateRequest request) {
+        return new AsyncInvoker<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse>(
+            request, OcrMeta.recognizeQualificationCertificate, hcClient);
     }
 
     /** 定额发票识别 识别定额发票中的文字信息，并返回识别的结构化结果。 说明：

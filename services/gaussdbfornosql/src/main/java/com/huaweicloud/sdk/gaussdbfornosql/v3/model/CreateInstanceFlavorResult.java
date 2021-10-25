@@ -11,7 +11,7 @@ public class CreateInstanceFlavorResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num")
 
-    private Integer num;
+    private String num;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage")
@@ -21,14 +21,14 @@ public class CreateInstanceFlavorResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Integer size;
+    private String size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
     private String specCode;
 
-    public CreateInstanceFlavorResult withNum(Integer num) {
+    public CreateInstanceFlavorResult withNum(String num) {
         this.num = num;
         return this;
     }
@@ -37,11 +37,11 @@ public class CreateInstanceFlavorResult {
      * Mongo)4.0版本副本集实例的节点数量可取3。 - GaussDB(for Influx)实例的节点数量可取3~16。
      * 
      * @return num */
-    public Integer getNum() {
+    public String getNum() {
         return num;
     }
 
-    public void setNum(Integer num) {
+    public void setNum(String num) {
         this.num = num;
     }
 
@@ -61,7 +61,7 @@ public class CreateInstanceFlavorResult {
         this.storage = storage;
     }
 
-    public CreateInstanceFlavorResult withSize(Integer size) {
+    public CreateInstanceFlavorResult withSize(String size) {
         this.size = size;
         return this;
     }
@@ -69,11 +69,11 @@ public class CreateInstanceFlavorResult {
     /** 磁盘大小。必须为10的整数倍。单位为GB。最小磁盘容量100GB，最大磁盘容量与实例的性能规格有关，详见数据库实例规格。
      * 
      * @return size */
-    public Integer getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

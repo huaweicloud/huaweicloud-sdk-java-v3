@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.imagesearch.v1.model.SearchBoxDetail;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -54,38 +55,17 @@ public class SearchPictureReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isCrop")
+    @JsonProperty(value="is_crop")
     
     
     private Boolean isCrop;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x")
+    @JsonProperty(value="box")
     
     
-    private Integer x;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="y")
-    
-    
-    private Integer y;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="width")
-    
-    
-    private Integer width;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="height")
-    
-    
-    private Integer height;
+    private SearchBoxDetail box;
 
     public SearchPictureReq withFile(String file) {
         this.file = file;
@@ -222,90 +202,31 @@ public class SearchPictureReq  {
 
     
 
-    public SearchPictureReq withX(Integer x) {
-        this.x = x;
+    public SearchPictureReq withBox(SearchBoxDetail box) {
+        this.box = box;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域中x坐标的最小值，单位：像素。
-     * @return x
-     */
-    public Integer getX() {
-        return x;
-    }
-
-    public void setX(Integer x) {
-        this.x = x;
-    }
-
-    
-
-    public SearchPictureReq withY(Integer y) {
-        this.y = y;
+    public SearchPictureReq withBox(Consumer<SearchBoxDetail> boxSetter) {
+        if(this.box == null ){
+            this.box = new SearchBoxDetail();
+            boxSetter.accept(this.box);
+        }
+        
         return this;
     }
 
-    
-
 
     /**
-     * 区域中y坐标的最小值，单位：像素。
-     * @return y
+     * Get box
+     * @return box
      */
-    public Integer getY() {
-        return y;
+    public SearchBoxDetail getBox() {
+        return box;
     }
 
-    public void setY(Integer y) {
-        this.y = y;
-    }
-
-    
-
-    public SearchPictureReq withWidth(Integer width) {
-        this.width = width;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 区域的宽度，单位：像素。
-     * @return width
-     */
-    public Integer getWidth() {
-        return width;
-    }
-
-    public void setWidth(Integer width) {
-        this.width = width;
-    }
-
-    
-
-    public SearchPictureReq withHeight(Integer height) {
-        this.height = height;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 区域的高度，单位：像素。
-     * @return height
-     */
-    public Integer getHeight() {
-        return height;
-    }
-
-    public void setHeight(Integer height) {
-        this.height = height;
+    public void setBox(SearchBoxDetail box) {
+        this.box = box;
     }
 
     
@@ -325,14 +246,11 @@ public class SearchPictureReq  {
             Objects.equals(this.offset, searchPictureReq.offset) &&
             Objects.equals(this.tags, searchPictureReq.tags) &&
             Objects.equals(this.isCrop, searchPictureReq.isCrop) &&
-            Objects.equals(this.x, searchPictureReq.x) &&
-            Objects.equals(this.y, searchPictureReq.y) &&
-            Objects.equals(this.width, searchPictureReq.width) &&
-            Objects.equals(this.height, searchPictureReq.height);
+            Objects.equals(this.box, searchPictureReq.box);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(file, path, limit, offset, tags, isCrop, x, y, width, height);
+        return Objects.hash(file, path, limit, offset, tags, isCrop, box);
     }
     @Override
     public String toString() {
@@ -344,10 +262,7 @@ public class SearchPictureReq  {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    isCrop: ").append(toIndentedString(isCrop)).append("\n");
-        sb.append("    x: ").append(toIndentedString(x)).append("\n");
-        sb.append("    y: ").append(toIndentedString(y)).append("\n");
-        sb.append("    width: ").append(toIndentedString(width)).append("\n");
-        sb.append("    height: ").append(toIndentedString(height)).append("\n");
+        sb.append("    box: ").append(toIndentedString(box)).append("\n");
         sb.append("}");
         return sb.toString();
     }

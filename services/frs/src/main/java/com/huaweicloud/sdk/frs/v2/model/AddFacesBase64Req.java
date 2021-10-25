@@ -23,6 +23,11 @@ public class AddFacesBase64Req {
 
     private String externalImageId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "single")
+
+    private Boolean single;
+
     public AddFacesBase64Req withImageBase64(String imageBase64) {
         this.imageBase64 = imageBase64;
         return this;
@@ -72,6 +77,23 @@ public class AddFacesBase64Req {
         this.externalImageId = externalImageId;
     }
 
+    public AddFacesBase64Req withSingle(Boolean single) {
+        this.single = single;
+        return this;
+    }
+
+    /** 是否将图片中的最大人脸添加至人脸库。可选值包括: • true: 传入的单张图片中如果包含多张人脸，则只将最大人脸添加到人脸库中。 • false:
+     * 默认为false。传入的单张图片中如果包含多张人脸，则将所有人脸添加至人脸库中。
+     * 
+     * @return single */
+    public Boolean getSingle() {
+        return single;
+    }
+
+    public void setSingle(Boolean single) {
+        this.single = single;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,12 +105,13 @@ public class AddFacesBase64Req {
         AddFacesBase64Req addFacesBase64Req = (AddFacesBase64Req) o;
         return Objects.equals(this.imageBase64, addFacesBase64Req.imageBase64)
             && Objects.equals(this.externalFields, addFacesBase64Req.externalFields)
-            && Objects.equals(this.externalImageId, addFacesBase64Req.externalImageId);
+            && Objects.equals(this.externalImageId, addFacesBase64Req.externalImageId)
+            && Objects.equals(this.single, addFacesBase64Req.single);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageBase64, externalFields, externalImageId);
+        return Objects.hash(imageBase64, externalFields, externalImageId, single);
     }
 
     @Override
@@ -98,6 +121,7 @@ public class AddFacesBase64Req {
         sb.append("    imageBase64: ").append(toIndentedString(imageBase64)).append("\n");
         sb.append("    externalFields: ").append(toIndentedString(externalFields)).append("\n");
         sb.append("    externalImageId: ").append(toIndentedString(externalImageId)).append("\n");
+        sb.append("    single: ").append(toIndentedString(single)).append("\n");
         sb.append("}");
         return sb.toString();
     }

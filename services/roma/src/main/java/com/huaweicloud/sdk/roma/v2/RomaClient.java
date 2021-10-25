@@ -511,6 +511,24 @@ public class RomaClient {
             RomaMeta.createMqsInstanceTopic, hcClient);
     }
 
+    /** 创建订阅管理 该接口用于创建指定实例下对应的应用下的设备操作，订阅到指定的topic
+     *
+     * @param CreateNotificationRequest 请求对象
+     * @return CreateNotificationResponse */
+    public CreateNotificationResponse createNotification(CreateNotificationRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createNotification);
+    }
+
+    /** 创建订阅管理 该接口用于创建指定实例下对应的应用下的设备操作，订阅到指定的topic
+     *
+     * @param CreateNotificationRequest 请求对象
+     * @return SyncInvoker<CreateNotificationRequest, CreateNotificationResponse> */
+    public SyncInvoker<CreateNotificationRequest, CreateNotificationResponse> createNotificationInvoker(
+        CreateNotificationRequest request) {
+        return new SyncInvoker<CreateNotificationRequest, CreateNotificationResponse>(request,
+            RomaMeta.createNotification, hcClient);
+    }
+
     /** 创建产品 创建产品
      *
      * @param CreateProductRequest 请求对象
@@ -1010,6 +1028,24 @@ public class RomaClient {
         DeleteMqsInstanceTopicRequest request) {
         return new SyncInvoker<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse>(request,
             RomaMeta.deleteMqsInstanceTopic, hcClient);
+    }
+
+    /** 删除订阅管理 该接口用于删除指定订阅管理
+     *
+     * @param DeleteNotificationRequest 请求对象
+     * @return DeleteNotificationResponse */
+    public DeleteNotificationResponse deleteNotification(DeleteNotificationRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.deleteNotification);
+    }
+
+    /** 删除订阅管理 该接口用于删除指定订阅管理
+     *
+     * @param DeleteNotificationRequest 请求对象
+     * @return SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse> */
+    public SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse> deleteNotificationInvoker(
+        DeleteNotificationRequest request) {
+        return new SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse>(request,
+            RomaMeta.deleteNotification, hcClient);
     }
 
     /** 删除产品 删除产品
@@ -1795,6 +1831,24 @@ public class RomaClient {
         ListMqsInstanceTopicsRequest request) {
         return new SyncInvoker<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse>(request,
             RomaMeta.listMqsInstanceTopics, hcClient);
+    }
+
+    /** 查询订阅管理信息 该接口用于查询指定应用订阅管理信息的数据
+     *
+     * @param ListNotificationRequest 请求对象
+     * @return ListNotificationResponse */
+    public ListNotificationResponse listNotification(ListNotificationRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listNotification);
+    }
+
+    /** 查询订阅管理信息 该接口用于查询指定应用订阅管理信息的数据
+     *
+     * @param ListNotificationRequest 请求对象
+     * @return SyncInvoker<ListNotificationRequest, ListNotificationResponse> */
+    public SyncInvoker<ListNotificationRequest, ListNotificationResponse> listNotificationInvoker(
+        ListNotificationRequest request) {
+        return new SyncInvoker<ListNotificationRequest, ListNotificationResponse>(request, RomaMeta.listNotification,
+            hcClient);
     }
 
     /** 查询产品模板 查询产品模板
@@ -2933,6 +2987,24 @@ public class RomaClient {
         UpdateMqsInstanceTopicRequest request) {
         return new SyncInvoker<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse>(request,
             RomaMeta.updateMqsInstanceTopic, hcClient);
+    }
+
+    /** 修改订阅管理 该接口用于修改指定的订阅管理
+     *
+     * @param UpdateNotificationRequest 请求对象
+     * @return UpdateNotificationResponse */
+    public UpdateNotificationResponse updateNotification(UpdateNotificationRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateNotification);
+    }
+
+    /** 修改订阅管理 该接口用于修改指定的订阅管理
+     *
+     * @param UpdateNotificationRequest 请求对象
+     * @return SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse> */
+    public SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse> updateNotificationInvoker(
+        UpdateNotificationRequest request) {
+        return new SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse>(request,
+            RomaMeta.updateNotification, hcClient);
     }
 
     /** 修改产品信息 修改产品信息

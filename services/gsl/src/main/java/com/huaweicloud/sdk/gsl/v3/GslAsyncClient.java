@@ -277,7 +277,7 @@ public class GslAsyncClient {
             GslMeta.listFlowBySimCards, hcClient);
     }
 
-    /** sim卡套餐列表查询 sim卡套餐列表查询
+    /** sim卡套餐列表查询 SIM卡套餐列表查询，实体卡只会有一个套餐，eSIM/vSIM可能会有多个套餐
      *
      * @param ListSimPricePlansRequest 请求对象
      * @return CompletableFuture<ListSimPricePlansResponse> */
@@ -285,7 +285,7 @@ public class GslAsyncClient {
         return hcClient.asyncInvokeHttp(request, GslMeta.listSimPricePlans);
     }
 
-    /** sim卡套餐列表查询 sim卡套餐列表查询
+    /** sim卡套餐列表查询 SIM卡套餐列表查询，实体卡只会有一个套餐，eSIM/vSIM可能会有多个套餐
      *
      * @param ListSimPricePlansRequest 请求对象
      * @return AsyncInvoker<ListSimPricePlansRequest, ListSimPricePlansResponse> */

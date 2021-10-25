@@ -28,6 +28,11 @@ public class AddFacesByFileRequestBody implements SdkFormDataBody {
 
     private String externalFields;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "single")
+
+    private Boolean single;
+
     public AddFacesByFileRequestBody withImageFile(FormDataFilePart imageFile) {
         this.imageFile = imageFile;
         return this;
@@ -77,6 +82,23 @@ public class AddFacesByFileRequestBody implements SdkFormDataBody {
         this.externalFields = externalFields;
     }
 
+    public AddFacesByFileRequestBody withSingle(Boolean single) {
+        this.single = single;
+        return this;
+    }
+
+    /** 是否将图片中的最大人脸添加至人脸库。可选值包括: • true: 传入的单张图片中如果包含多张人脸，则只将最大人脸添加到人脸库中。 • false:
+     * 默认为false。传入的单张图片中如果包含多张人脸，则将所有人脸添加至人脸库中。
+     * 
+     * @return single */
+    public Boolean getSingle() {
+        return single;
+    }
+
+    public void setSingle(Boolean single) {
+        this.single = single;
+    }
+
     public AddFacesByFileRequestBody withImageFile(InputStream inputStream, String fileName, String contentType) {
         this.imageFile = new FormDataFilePart(inputStream, fileName).withContentType(contentType);
         return this;
@@ -105,6 +127,9 @@ public class AddFacesByFileRequestBody implements SdkFormDataBody {
                 if (externalFields != null) {
                     put("external_fields", new FormDataPart<>(externalFields));
                 }
+                if (single != null) {
+                    put("single", new FormDataPart<>(single));
+                }
             }
         };
     }
@@ -120,12 +145,13 @@ public class AddFacesByFileRequestBody implements SdkFormDataBody {
         AddFacesByFileRequestBody addFacesByFileRequestBody = (AddFacesByFileRequestBody) o;
         return Objects.equals(this.imageFile, addFacesByFileRequestBody.imageFile)
             && Objects.equals(this.externalImageId, addFacesByFileRequestBody.externalImageId)
-            && Objects.equals(this.externalFields, addFacesByFileRequestBody.externalFields);
+            && Objects.equals(this.externalFields, addFacesByFileRequestBody.externalFields)
+            && Objects.equals(this.single, addFacesByFileRequestBody.single);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageFile, externalImageId, externalFields);
+        return Objects.hash(imageFile, externalImageId, externalFields, single);
     }
 
     @Override
@@ -135,6 +161,7 @@ public class AddFacesByFileRequestBody implements SdkFormDataBody {
         sb.append("    imageFile: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
         sb.append("    externalImageId: ").append(toIndentedString(externalImageId)).append("\n");
         sb.append("    externalFields: ").append(toIndentedString(externalFields)).append("\n");
+        sb.append("    single: ").append(toIndentedString(single)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -38,6 +38,11 @@ public class ShowHistoryTaskDetailsRequest {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
+
     public ShowHistoryTaskDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -134,6 +139,22 @@ public class ShowHistoryTaskDetailsRequest {
         this.url = url;
     }
 
+    public ShowHistoryTaskDetailsRequest withCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /** 刷新预热任务的创建时间。不传参默认为查询3天内的任务。最长可查询15天内数据。
+     * 
+     * @return createTime */
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -148,12 +169,13 @@ public class ShowHistoryTaskDetailsRequest {
             && Objects.equals(this.pageSize, showHistoryTaskDetailsRequest.pageSize)
             && Objects.equals(this.pageNumber, showHistoryTaskDetailsRequest.pageNumber)
             && Objects.equals(this.status, showHistoryTaskDetailsRequest.status)
-            && Objects.equals(this.url, showHistoryTaskDetailsRequest.url);
+            && Objects.equals(this.url, showHistoryTaskDetailsRequest.url)
+            && Objects.equals(this.createTime, showHistoryTaskDetailsRequest.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, historyTasksId, pageSize, pageNumber, status, url);
+        return Objects.hash(enterpriseProjectId, historyTasksId, pageSize, pageNumber, status, url, createTime);
     }
 
     @Override
@@ -166,6 +188,7 @@ public class ShowHistoryTaskDetailsRequest {
         sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -33,6 +33,11 @@ public class UrlObject {
 
     private String taskId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_type")
+
+    private String taskType;
+
     public UrlObject withId(String id) {
         this.id = id;
         return this;
@@ -113,6 +118,22 @@ public class UrlObject {
         this.taskId = taskId;
     }
 
+    public UrlObject withTaskType(String taskType) {
+        this.taskType = taskType;
+        return this;
+    }
+
+    /** 任务的类型， 其值可以为REFRESH、PREHEATING、REFRESH_AFTER_PREHEATING
+     * 
+     * @return taskType */
+    public String getTaskType() {
+        return taskType;
+    }
+
+    public void setTaskType(String taskType) {
+        this.taskType = taskType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -124,12 +145,12 @@ public class UrlObject {
         UrlObject urlObject = (UrlObject) o;
         return Objects.equals(this.id, urlObject.id) && Objects.equals(this.url, urlObject.url)
             && Objects.equals(this.status, urlObject.status) && Objects.equals(this.createTime, urlObject.createTime)
-            && Objects.equals(this.taskId, urlObject.taskId);
+            && Objects.equals(this.taskId, urlObject.taskId) && Objects.equals(this.taskType, urlObject.taskType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, url, status, createTime, taskId);
+        return Objects.hash(id, url, status, createTime, taskId, taskType);
     }
 
     @Override
@@ -141,6 +162,7 @@ public class UrlObject {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

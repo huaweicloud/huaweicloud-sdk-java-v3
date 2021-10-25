@@ -565,30 +565,6 @@ public class SmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCertKeyRequest, ShowCertKeyResponse> showCertKey = genForshowCertKey();
-
-    private static HttpRequestDef<ShowCertKeyRequest, ShowCertKeyResponse> genForshowCertKey() {
-        // basic
-        HttpRequestDef.Builder<ShowCertKeyRequest, ShowCertKeyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowCertKeyRequest.class, ShowCertKeyResponse.class)
-                .withName("ShowCertKey")
-                .withUri("/v3/tasks/{task_id}/certkey")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertKeyRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowCommandRequest, ShowCommandResponse> showCommand = genForshowCommand();
 
     private static HttpRequestDef<ShowCommandRequest, ShowCommandResponse> genForshowCommand() {

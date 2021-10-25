@@ -19,7 +19,7 @@ public class FrsAsyncClient {
         return new ClientBuilder<>(FrsAsyncClient::new);
     }
 
-    /** 添加人脸 添加人脸到人脸库中，检测到传入的单张图片中存在多少张人脸，则增加多少张人脸到人脸库当中。
+    /** 添加人脸 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
      *
      * @param AddFacesByBase64Request 请求对象
      * @return CompletableFuture<AddFacesByBase64Response> */
@@ -27,7 +27,7 @@ public class FrsAsyncClient {
         return hcClient.asyncInvokeHttp(request, FrsMeta.addFacesByBase64);
     }
 
-    /** 添加人脸 添加人脸到人脸库中，检测到传入的单张图片中存在多少张人脸，则增加多少张人脸到人脸库当中。
+    /** 添加人脸 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
      *
      * @param AddFacesByBase64Request 请求对象
      * @return AsyncInvoker<AddFacesByBase64Request, AddFacesByBase64Response> */
@@ -37,7 +37,7 @@ public class FrsAsyncClient {
             hcClient);
     }
 
-    /** 添加人脸 添加人脸到人脸库中，检测到传入的单张图片中存在多少张人脸，则增加多少张人脸到人脸库当中。
+    /** 添加人脸 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
      *
      * @param AddFacesByFileRequest 请求对象
      * @return CompletableFuture<AddFacesByFileResponse> */
@@ -45,7 +45,7 @@ public class FrsAsyncClient {
         return hcClient.asyncInvokeHttp(request, FrsMeta.addFacesByFile);
     }
 
-    /** 添加人脸 添加人脸到人脸库中，检测到传入的单张图片中存在多少张人脸，则增加多少张人脸到人脸库当中。
+    /** 添加人脸 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
      *
      * @param AddFacesByFileRequest 请求对象
      * @return AsyncInvoker<AddFacesByFileRequest, AddFacesByFileResponse> */
@@ -55,7 +55,7 @@ public class FrsAsyncClient {
             hcClient);
     }
 
-    /** 添加人脸 添加人脸到人脸库中，检测到传入的单张图片中存在多少张人脸，则增加多少张人脸到人脸库当中。
+    /** 添加人脸 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
      *
      * @param AddFacesByUrlRequest 请求对象
      * @return CompletableFuture<AddFacesByUrlResponse> */
@@ -63,7 +63,7 @@ public class FrsAsyncClient {
         return hcClient.asyncInvokeHttp(request, FrsMeta.addFacesByUrl);
     }
 
-    /** 添加人脸 添加人脸到人脸库中，检测到传入的单张图片中存在多少张人脸，则增加多少张人脸到人脸库当中。
+    /** 添加人脸 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
      *
      * @param AddFacesByUrlRequest 请求对象
      * @return AsyncInvoker<AddFacesByUrlRequest, AddFacesByUrlResponse> */

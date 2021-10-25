@@ -10,10 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.GetJobEntitiesObjectDetail;
+import com.huaweicloud.sdk.gaussdb.v3.model.GetJobEntitiesInfoDetail;
 import com.huaweicloud.sdk.gaussdb.v3.model.GetJobInstanceInfoDetail;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -162,8 +161,8 @@ public class GetJobInfoDetail  {
     @JsonProperty(value="entities")
     
     
-    private Map<String, GetJobEntitiesObjectDetail> entities = null;
-    
+    private GetJobEntitiesInfoDetail entities;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_reason")
@@ -332,37 +331,30 @@ public class GetJobInfoDetail  {
 
     
 
-    public GetJobInfoDetail withEntities(Map<String, GetJobEntitiesObjectDetail> entities) {
+    public GetJobInfoDetail withEntities(GetJobEntitiesInfoDetail entities) {
         this.entities = entities;
         return this;
     }
 
-    
-
-    public GetJobInfoDetail putEntitiesItem(String key, GetJobEntitiesObjectDetail entitiesItem) {
-        if(this.entities == null) {
-            this.entities = new HashMap<>();
+    public GetJobInfoDetail withEntities(Consumer<GetJobEntitiesInfoDetail> entitiesSetter) {
+        if(this.entities == null ){
+            this.entities = new GetJobEntitiesInfoDetail();
+            entitiesSetter.accept(this.entities);
         }
-        this.entities.put(key, entitiesItem);
+        
         return this;
     }
 
-    public GetJobInfoDetail withEntities(Consumer<Map<String, GetJobEntitiesObjectDetail>> entitiesSetter) {
-        if(this.entities == null) {
-            this.entities = new HashMap<>();
-        }
-        entitiesSetter.accept(this.entities);
-        return this;
-    }
+
     /**
-     * 根据不同的任务，显示不同的内容。
+     * Get entities
      * @return entities
      */
-    public Map<String, GetJobEntitiesObjectDetail> getEntities() {
+    public GetJobEntitiesInfoDetail getEntities() {
         return entities;
     }
 
-    public void setEntities(Map<String, GetJobEntitiesObjectDetail> entities) {
+    public void setEntities(GetJobEntitiesInfoDetail entities) {
         this.entities = entities;
     }
 

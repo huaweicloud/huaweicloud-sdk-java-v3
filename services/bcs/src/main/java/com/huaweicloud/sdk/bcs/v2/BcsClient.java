@@ -351,6 +351,24 @@ public class BcsClient {
             BcsMeta.showBlockchainDetail, hcClient);
     }
 
+    /** 查询规格 查询服务联盟链规格信息
+     *
+     * @param ShowBlockchainFlavorsRequest 请求对象
+     * @return ShowBlockchainFlavorsResponse */
+    public ShowBlockchainFlavorsResponse showBlockchainFlavors(ShowBlockchainFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.showBlockchainFlavors);
+    }
+
+    /** 查询规格 查询服务联盟链规格信息
+     *
+     * @param ShowBlockchainFlavorsRequest 请求对象
+     * @return SyncInvoker<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> */
+    public SyncInvoker<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> showBlockchainFlavorsInvoker(
+        ShowBlockchainFlavorsRequest request) {
+        return new SyncInvoker<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse>(request,
+            BcsMeta.showBlockchainFlavors, hcClient);
+    }
+
     /** 查询节点信息 查询指定服务实例节点信息
      *
      * @param ShowBlockchainNodesRequest 请求对象

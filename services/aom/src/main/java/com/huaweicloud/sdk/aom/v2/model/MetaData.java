@@ -26,10 +26,10 @@ public class MetaData  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
+    @JsonProperty(value="start")
     
     
-    private String offset;
+    private String start;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,8 +60,8 @@ public class MetaData  {
 
     
 
-    public MetaData withOffset(String offset) {
-        this.offset = offset;
+    public MetaData withStart(String start) {
+        this.start = start;
         return this;
     }
 
@@ -70,14 +70,14 @@ public class MetaData  {
 
     /**
      * 下一个开始的标记，用于分页，null表示无更多数据。
-     * @return offset
+     * @return start
      */
-    public String getOffset() {
-        return offset;
+    public String getStart() {
+        return start;
     }
 
-    public void setOffset(String offset) {
-        this.offset = offset;
+    public void setStart(String start) {
+        this.start = start;
     }
 
     
@@ -114,19 +114,19 @@ public class MetaData  {
         }
         MetaData metaData = (MetaData) o;
         return Objects.equals(this.count, metaData.count) &&
-            Objects.equals(this.offset, metaData.offset) &&
+            Objects.equals(this.start, metaData.start) &&
             Objects.equals(this.total, metaData.total);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(count, offset, total);
+        return Objects.hash(count, start, total);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetaData {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();

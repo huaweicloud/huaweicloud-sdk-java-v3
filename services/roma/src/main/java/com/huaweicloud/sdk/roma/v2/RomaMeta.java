@@ -964,6 +964,38 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> createNotification =
+        genForcreateNotification();
+
+    private static HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> genForcreateNotification() {
+        // basic
+        HttpRequestDef.Builder<CreateNotificationRequest, CreateNotificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNotificationRequest.class, CreateNotificationResponse.class)
+                .withName("CreateNotification")
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/notifications")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNotificationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateNotificationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateNotificationRequestBody.class),
+            f -> f.withMarshaller(CreateNotificationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct =
         genForcreateProduct();
 
@@ -1960,6 +1992,38 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteMqsInstanceTopicRequest::getName, (req, v) -> {
                 req.setName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> deleteNotification =
+        genFordeleteNotification();
+
+    private static HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> genFordeleteNotification() {
+        // basic
+        HttpRequestDef.Builder<DeleteNotificationRequest, DeleteNotificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNotificationRequest.class, DeleteNotificationResponse.class)
+                .withName("DeleteNotification")
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/notifications/{notification_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNotificationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("notification_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DeleteNotificationRequest::getNotificationId, (req, v) -> {
+                req.setNotificationId(v);
             }));
 
         // response
@@ -4090,6 +4154,38 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotificationRequest, ListNotificationResponse> listNotification =
+        genForlistNotification();
+
+    private static HttpRequestDef<ListNotificationRequest, ListNotificationResponse> genForlistNotification() {
+        // basic
+        HttpRequestDef.Builder<ListNotificationRequest, ListNotificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNotificationRequest.class, ListNotificationResponse.class)
+                .withName("ListNotification")
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/notifications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotificationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotificationRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
             }));
 
         // response
@@ -7094,6 +7190,45 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateMqsInstanceTopicReq.class),
             f -> f.withMarshaller(UpdateMqsInstanceTopicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> updateNotification =
+        genForupdateNotification();
+
+    private static HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> genForupdateNotification() {
+        // basic
+        HttpRequestDef.Builder<UpdateNotificationRequest, UpdateNotificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateNotificationRequest.class, UpdateNotificationResponse.class)
+                .withName("UpdateNotification")
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/notifications/{notification_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNotificationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("notification_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(UpdateNotificationRequest::getNotificationId, (req, v) -> {
+                req.setNotificationId(v);
+            }));
+        builder.<UpdateNotificationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNotificationRequestBody.class),
+            f -> f.withMarshaller(UpdateNotificationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

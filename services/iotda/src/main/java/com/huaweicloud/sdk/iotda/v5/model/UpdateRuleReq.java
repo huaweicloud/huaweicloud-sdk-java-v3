@@ -38,7 +38,7 @@ public class UpdateRuleReq {
         return this;
     }
 
-    /** **参数说明**：用户自定义的规则名称。
+    /** **参数说明**：规则名称。 **取值范围**：长度不超过256，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合
      * 
      * @return ruleName */
     public String getRuleName() {

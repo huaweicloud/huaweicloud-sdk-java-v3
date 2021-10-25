@@ -49,44 +49,6 @@ public class CsmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateKmsTagRequest, CreateKmsTagResponse> createKmsTag = genForcreateKmsTag();
-
-    private static HttpRequestDef<CreateKmsTagRequest, CreateKmsTagResponse> genForcreateKmsTag() {
-        // basic
-        HttpRequestDef.Builder<CreateKmsTagRequest, CreateKmsTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateKmsTagRequest.class, CreateKmsTagResponse.class)
-                .withName("CreateKmsTag")
-                .withUri("/{version_id}/{project_id}/csms/{secret_id}/tags")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateKmsTagRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
-        builder.<String>withRequestField("secret_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateKmsTagRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
-        builder.<CreateKmsTagRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateKmsTagRequestBody.class),
-            f -> f.withMarshaller(CreateKmsTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForcreateSecret();
 
     private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForcreateSecret() {
@@ -103,6 +65,45 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecretRequestBody.class),
             f -> f.withMarshaller(CreateSecretRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecretTagRequest, CreateSecretTagResponse> createSecretTag =
+        genForcreateSecretTag();
+
+    private static HttpRequestDef<CreateSecretTagRequest, CreateSecretTagResponse> genForcreateSecretTag() {
+        // basic
+        HttpRequestDef.Builder<CreateSecretTagRequest, CreateSecretTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSecretTagRequest.class, CreateSecretTagResponse.class)
+                .withName("CreateSecretTag")
+                .withUri("/{version_id}/{project_id}/csms/{secret_id}/tags")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecretTagRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            }));
+        builder.<String>withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecretTagRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            }));
+        builder.<CreateSecretTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSecretTagRequestBody.class),
+            f -> f.withMarshaller(CreateSecretTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -231,13 +232,14 @@ public class CsmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genFordeleteTag();
+    public static final HttpRequestDef<DeleteSecretTagRequest, DeleteSecretTagResponse> deleteSecretTag =
+        genFordeleteSecretTag();
 
-    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genFordeleteTag() {
+    private static HttpRequestDef<DeleteSecretTagRequest, DeleteSecretTagResponse> genFordeleteSecretTag() {
         // basic
-        HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
-                .withName("DeleteTag")
+        HttpRequestDef.Builder<DeleteSecretTagRequest, DeleteSecretTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretTagRequest.class, DeleteSecretTagResponse.class)
+                .withName("DeleteSecretTag")
                 .withUri("/{version_id}/{project_id}/csms/{secret_id}/tags/{key}")
                 .withContentType("application/json");
 
@@ -246,21 +248,21 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getSecretId, (req, v) -> {
+            f -> f.withMarshaller(DeleteSecretTagRequest::getSecretId, (req, v) -> {
                 req.setSecretId(v);
             }));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getKey, (req, v) -> {
+            f -> f.withMarshaller(DeleteSecretTagRequest::getKey, (req, v) -> {
                 req.setKey(v);
             }));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getVersionId, (req, v) -> {
+            f -> f.withMarshaller(DeleteSecretTagRequest::getVersionId, (req, v) -> {
                 req.setVersionId(v);
             }));
 
@@ -269,22 +271,23 @@ public class CsmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListKmsTagsRequest, ListKmsTagsResponse> listKmsTags = genForlistKmsTags();
+    public static final HttpRequestDef<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> listProjectSecretsTags =
+        genForlistProjectSecretsTags();
 
-    private static HttpRequestDef<ListKmsTagsRequest, ListKmsTagsResponse> genForlistKmsTags() {
+    private static HttpRequestDef<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> genForlistProjectSecretsTags() {
         // basic
-        HttpRequestDef.Builder<ListKmsTagsRequest, ListKmsTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListKmsTagsRequest.class, ListKmsTagsResponse.class)
-                .withName("ListKmsTags")
-                .withUri("/{version_id}/{project_id}/csms/tags")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListProjectSecretsTagsRequest.class, ListProjectSecretsTagsResponse.class)
+            .withName("ListProjectSecretsTags")
+            .withUri("/{version_id}/{project_id}/csms/tags")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListKmsTagsRequest::getVersionId, (req, v) -> {
+            f -> f.withMarshaller(ListProjectSecretsTagsRequest::getVersionId, (req, v) -> {
                 req.setVersionId(v);
             }));
 
@@ -357,6 +360,38 @@ public class CsmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecretStageRequest::getStageName, (req, v) -> {
                 req.setStageName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecretTagsRequest, ListSecretTagsResponse> listSecretTags =
+        genForlistSecretTags();
+
+    private static HttpRequestDef<ListSecretTagsRequest, ListSecretTagsResponse> genForlistSecretTags() {
+        // basic
+        HttpRequestDef.Builder<ListSecretTagsRequest, ListSecretTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSecretTagsRequest.class, ListSecretTagsResponse.class)
+                .withName("ListSecretTags")
+                .withUri("/{version_id}/{project_id}/csms/{secret_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecretTagsRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            }));
+        builder.<String>withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecretTagsRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
             }));
 
         // response
@@ -438,37 +473,6 @@ public class CsmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreSecretRequest::getSecretName, (req, v) -> {
                 req.setSecretName(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowKmsTagsRequest, ShowKmsTagsResponse> showKmsTags = genForshowKmsTags();
-
-    private static HttpRequestDef<ShowKmsTagsRequest, ShowKmsTagsResponse> genForshowKmsTags() {
-        // basic
-        HttpRequestDef.Builder<ShowKmsTagsRequest, ShowKmsTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowKmsTagsRequest.class, ShowKmsTagsResponse.class)
-                .withName("ShowKmsTags")
-                .withUri("/{version_id}/{project_id}/csms/{secret_id}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKmsTagsRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
-        builder.<String>withRequestField("secret_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKmsTagsRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
             }));
 
         // response

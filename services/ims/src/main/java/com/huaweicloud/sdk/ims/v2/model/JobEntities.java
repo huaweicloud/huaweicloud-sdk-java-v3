@@ -15,6 +15,21 @@ public class JobEntities {
 
     private String imageId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "current_task")
+
+    private String currentTask;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_name")
+
+    private String imageName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_percent")
+
+    private Double processPercent;
+
     public JobEntities withImageId(String imageId) {
         this.imageId = imageId;
         return this;
@@ -31,6 +46,54 @@ public class JobEntities {
         this.imageId = imageId;
     }
 
+    public JobEntities withCurrentTask(String currentTask) {
+        this.currentTask = currentTask;
+        return this;
+    }
+
+    /** 当前任务名称
+     * 
+     * @return currentTask */
+    public String getCurrentTask() {
+        return currentTask;
+    }
+
+    public void setCurrentTask(String currentTask) {
+        this.currentTask = currentTask;
+    }
+
+    public JobEntities withImageName(String imageName) {
+        this.imageName = imageName;
+        return this;
+    }
+
+    /** 镜像名称
+     * 
+     * @return imageName */
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public JobEntities withProcessPercent(Double processPercent) {
+        this.processPercent = processPercent;
+        return this;
+    }
+
+    /** 任务执行进度
+     * 
+     * @return processPercent */
+    public Double getProcessPercent() {
+        return processPercent;
+    }
+
+    public void setProcessPercent(Double processPercent) {
+        this.processPercent = processPercent;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -40,12 +103,15 @@ public class JobEntities {
             return false;
         }
         JobEntities jobEntities = (JobEntities) o;
-        return Objects.equals(this.imageId, jobEntities.imageId);
+        return Objects.equals(this.imageId, jobEntities.imageId)
+            && Objects.equals(this.currentTask, jobEntities.currentTask)
+            && Objects.equals(this.imageName, jobEntities.imageName)
+            && Objects.equals(this.processPercent, jobEntities.processPercent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageId);
+        return Objects.hash(imageId, currentTask, imageName, processPercent);
     }
 
     @Override
@@ -53,6 +119,9 @@ public class JobEntities {
         StringBuilder sb = new StringBuilder();
         sb.append("class JobEntities {\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    currentTask: ").append(toIndentedString(currentTask)).append("\n");
+        sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
+        sb.append("    processPercent: ").append(toIndentedString(processPercent)).append("\n");
         sb.append("}");
         return sb.toString();
     }

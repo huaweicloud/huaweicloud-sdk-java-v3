@@ -17,7 +17,7 @@ public class CsmsClient {
         return new ClientBuilder<>(CsmsClient::new);
     }
 
-    /** 批量添加删除凭据标签 - 功能介绍：批量添加删除凭据标签。
+    /** 批量添加或删除凭据标签 - 功能介绍：批量添加或删除凭据标签。
      *
      * @param BatchCreateOrDeleteTagsRequest 请求对象
      * @return BatchCreateOrDeleteTagsResponse */
@@ -25,7 +25,7 @@ public class CsmsClient {
         return hcClient.syncInvokeHttp(request, CsmsMeta.batchCreateOrDeleteTags);
     }
 
-    /** 批量添加删除凭据标签 - 功能介绍：批量添加删除凭据标签。
+    /** 批量添加或删除凭据标签 - 功能介绍：批量添加或删除凭据标签。
      *
      * @param BatchCreateOrDeleteTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> */
@@ -33,22 +33,6 @@ public class CsmsClient {
         BatchCreateOrDeleteTagsRequest request) {
         return new SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>(request,
             CsmsMeta.batchCreateOrDeleteTags, hcClient);
-    }
-
-    /** 添加凭据标签 - 功能介绍：添加凭据标签。
-     *
-     * @param CreateKmsTagRequest 请求对象
-     * @return CreateKmsTagResponse */
-    public CreateKmsTagResponse createKmsTag(CreateKmsTagRequest request) {
-        return hcClient.syncInvokeHttp(request, CsmsMeta.createKmsTag);
-    }
-
-    /** 添加凭据标签 - 功能介绍：添加凭据标签。
-     *
-     * @param CreateKmsTagRequest 请求对象
-     * @return SyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse> */
-    public SyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse> createKmsTagInvoker(CreateKmsTagRequest request) {
-        return new SyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse>(request, CsmsMeta.createKmsTag, hcClient);
     }
 
     /** 创建凭据 创建新的凭据，并将凭据值存入凭据的初始版本。
@@ -69,6 +53,24 @@ public class CsmsClient {
      * @return SyncInvoker<CreateSecretRequest, CreateSecretResponse> */
     public SyncInvoker<CreateSecretRequest, CreateSecretResponse> createSecretInvoker(CreateSecretRequest request) {
         return new SyncInvoker<CreateSecretRequest, CreateSecretResponse>(request, CsmsMeta.createSecret, hcClient);
+    }
+
+    /** 添加凭据标签 - 功能介绍：添加凭据标签。
+     *
+     * @param CreateSecretTagRequest 请求对象
+     * @return CreateSecretTagResponse */
+    public CreateSecretTagResponse createSecretTag(CreateSecretTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.createSecretTag);
+    }
+
+    /** 添加凭据标签 - 功能介绍：添加凭据标签。
+     *
+     * @param CreateSecretTagRequest 请求对象
+     * @return SyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse> */
+    public SyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse> createSecretTagInvoker(
+        CreateSecretTagRequest request) {
+        return new SyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse>(request, CsmsMeta.createSecretTag,
+            hcClient);
     }
 
     /** 创建凭据版本
@@ -145,37 +147,41 @@ public class CsmsClient {
 
     /** 删除凭据标签 - 功能介绍：删除凭据标签。
      *
-     * @param DeleteTagRequest 请求对象
-     * @return DeleteTagResponse */
-    public DeleteTagResponse deleteTag(DeleteTagRequest request) {
-        return hcClient.syncInvokeHttp(request, CsmsMeta.deleteTag);
+     * @param DeleteSecretTagRequest 请求对象
+     * @return DeleteSecretTagResponse */
+    public DeleteSecretTagResponse deleteSecretTag(DeleteSecretTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.deleteSecretTag);
     }
 
     /** 删除凭据标签 - 功能介绍：删除凭据标签。
      *
-     * @param DeleteTagRequest 请求对象
-     * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse> */
-    public SyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagInvoker(DeleteTagRequest request) {
-        return new SyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, CsmsMeta.deleteTag, hcClient);
+     * @param DeleteSecretTagRequest 请求对象
+     * @return SyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse> */
+    public SyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse> deleteSecretTagInvoker(
+        DeleteSecretTagRequest request) {
+        return new SyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse>(request, CsmsMeta.deleteSecretTag,
+            hcClient);
     }
 
-    /** 查询项目标签 - 功能介绍：查询用户在指定项目下的所有标签集合。
+    /** 查询项目标签 - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
      *
-     * @param ListKmsTagsRequest 请求对象
-     * @return ListKmsTagsResponse */
-    public ListKmsTagsResponse listKmsTags(ListKmsTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, CsmsMeta.listKmsTags);
+     * @param ListProjectSecretsTagsRequest 请求对象
+     * @return ListProjectSecretsTagsResponse */
+    public ListProjectSecretsTagsResponse listProjectSecretsTags(ListProjectSecretsTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.listProjectSecretsTags);
     }
 
-    /** 查询项目标签 - 功能介绍：查询用户在指定项目下的所有标签集合。
+    /** 查询项目标签 - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
      *
-     * @param ListKmsTagsRequest 请求对象
-     * @return SyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse> */
-    public SyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse> listKmsTagsInvoker(ListKmsTagsRequest request) {
-        return new SyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse>(request, CsmsMeta.listKmsTags, hcClient);
+     * @param ListProjectSecretsTagsRequest 请求对象
+     * @return SyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> */
+    public SyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> listProjectSecretsTagsInvoker(
+        ListProjectSecretsTagsRequest request) {
+        return new SyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse>(request,
+            CsmsMeta.listProjectSecretsTags, hcClient);
     }
 
-    /** 查询凭据实例 - 功能介绍：查询凭据实例。通过标签过滤，查询指定用户凭据的详细信息。
+    /** 查询凭据实例 - 功能介绍：查询凭据实例。通过标签过滤，筛选用户凭据,返回凭据列表。
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return ListResourceInstancesResponse */
@@ -183,7 +189,7 @@ public class CsmsClient {
         return hcClient.syncInvokeHttp(request, CsmsMeta.listResourceInstances);
     }
 
-    /** 查询凭据实例 - 功能介绍：查询凭据实例。通过标签过滤，查询指定用户凭据的详细信息。
+    /** 查询凭据实例 - 功能介绍：查询凭据实例。通过标签过滤，筛选用户凭据,返回凭据列表。
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> */
@@ -208,6 +214,24 @@ public class CsmsClient {
     public SyncInvoker<ListSecretStageRequest, ListSecretStageResponse> listSecretStageInvoker(
         ListSecretStageRequest request) {
         return new SyncInvoker<ListSecretStageRequest, ListSecretStageResponse>(request, CsmsMeta.listSecretStage,
+            hcClient);
+    }
+
+    /** 查询凭据标签 - 功能介绍：查询凭据标签。
+     *
+     * @param ListSecretTagsRequest 请求对象
+     * @return ListSecretTagsResponse */
+    public ListSecretTagsResponse listSecretTags(ListSecretTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.listSecretTags);
+    }
+
+    /** 查询凭据标签 - 功能介绍：查询凭据标签。
+     *
+     * @param ListSecretTagsRequest 请求对象
+     * @return SyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse> */
+    public SyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse> listSecretTagsInvoker(
+        ListSecretTagsRequest request) {
+        return new SyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse>(request, CsmsMeta.listSecretTags,
             hcClient);
     }
 
@@ -259,22 +283,6 @@ public class CsmsClient {
      * @return SyncInvoker<RestoreSecretRequest, RestoreSecretResponse> */
     public SyncInvoker<RestoreSecretRequest, RestoreSecretResponse> restoreSecretInvoker(RestoreSecretRequest request) {
         return new SyncInvoker<RestoreSecretRequest, RestoreSecretResponse>(request, CsmsMeta.restoreSecret, hcClient);
-    }
-
-    /** 查询凭据标签 - 功能介绍：查询凭据标签。
-     *
-     * @param ShowKmsTagsRequest 请求对象
-     * @return ShowKmsTagsResponse */
-    public ShowKmsTagsResponse showKmsTags(ShowKmsTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, CsmsMeta.showKmsTags);
-    }
-
-    /** 查询凭据标签 - 功能介绍：查询凭据标签。
-     *
-     * @param ShowKmsTagsRequest 请求对象
-     * @return SyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse> */
-    public SyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse> showKmsTagsInvoker(ShowKmsTagsRequest request) {
-        return new SyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse>(request, CsmsMeta.showKmsTags, hcClient);
     }
 
     /** 查询凭据 查询指定凭据的信息。

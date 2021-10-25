@@ -28,6 +28,11 @@ public class GetBackupDownloadLinkFiles {
 
     private String linkExpiredTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_name")
+
+    private String databaseName;
+
     public GetBackupDownloadLinkFiles withName(String name) {
         this.name = name;
         return this;
@@ -92,6 +97,22 @@ public class GetBackupDownloadLinkFiles {
         this.linkExpiredTime = linkExpiredTime;
     }
 
+    public GetBackupDownloadLinkFiles withDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+        return this;
+    }
+
+    /** 数据库名。若文件不是数据库备份，则返回空
+     * 
+     * @return databaseName */
+    public String getDatabaseName() {
+        return databaseName;
+    }
+
+    public void setDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +125,13 @@ public class GetBackupDownloadLinkFiles {
         return Objects.equals(this.name, getBackupDownloadLinkFiles.name)
             && Objects.equals(this.size, getBackupDownloadLinkFiles.size)
             && Objects.equals(this.downloadLink, getBackupDownloadLinkFiles.downloadLink)
-            && Objects.equals(this.linkExpiredTime, getBackupDownloadLinkFiles.linkExpiredTime);
+            && Objects.equals(this.linkExpiredTime, getBackupDownloadLinkFiles.linkExpiredTime)
+            && Objects.equals(this.databaseName, getBackupDownloadLinkFiles.databaseName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, size, downloadLink, linkExpiredTime);
+        return Objects.hash(name, size, downloadLink, linkExpiredTime, databaseName);
     }
 
     @Override
@@ -120,6 +142,7 @@ public class GetBackupDownloadLinkFiles {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    downloadLink: ").append(toIndentedString(downloadLink)).append("\n");
         sb.append("    linkExpiredTime: ").append(toIndentedString(linkExpiredTime)).append("\n");
+        sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -51,7 +51,7 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备的服务ID。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-$等字符的组合。
+    /** **参数说明**：设备的服务ID。注：产品内不允许重复。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-$等字符的组合。
      * 
      * @return serviceId */
     public String getServiceId() {
@@ -99,7 +99,7 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备服务支持的属性列表
+    /** **参数说明**：设备服务支持的属性列表。 **取值范围**：数组长度大小不超过500。
      * 
      * @return properties */
     public List<ServiceProperty> getProperties() {
@@ -131,7 +131,7 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备服务支持的命令列表。
+    /** **参数说明**：设备服务支持的命令列表。 **取值范围**：数组长度大小不超过500。
      * 
      * @return commands */
     public List<ServiceCommand> getCommands() {
@@ -163,7 +163,7 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备服务支持的事件列表。
+    /** **参数说明**：设备服务支持的事件列表。 **取值范围**：数组长度大小不超过500。
      * 
      * @return events */
     public List<ServiceEvent> getEvents() {

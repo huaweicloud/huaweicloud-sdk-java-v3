@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** Response Object */
 public class ResetSimCardResponse extends SdkResponse {
@@ -13,6 +16,11 @@ public class ResetSimCardResponse extends SdkResponse {
     @JsonProperty(value = "work_order_id")
 
     private Long workOrderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sim_price_plan_list")
+
+    private List<SimPricePlanInfoVO> simPricePlanList = null;
 
     public ResetSimCardResponse withWorkOrderId(Long workOrderId) {
         this.workOrderId = workOrderId;
@@ -30,6 +38,38 @@ public class ResetSimCardResponse extends SdkResponse {
         this.workOrderId = workOrderId;
     }
 
+    public ResetSimCardResponse withSimPricePlanList(List<SimPricePlanInfoVO> simPricePlanList) {
+        this.simPricePlanList = simPricePlanList;
+        return this;
+    }
+
+    public ResetSimCardResponse addSimPricePlanListItem(SimPricePlanInfoVO simPricePlanListItem) {
+        if (this.simPricePlanList == null) {
+            this.simPricePlanList = new ArrayList<>();
+        }
+        this.simPricePlanList.add(simPricePlanListItem);
+        return this;
+    }
+
+    public ResetSimCardResponse withSimPricePlanList(Consumer<List<SimPricePlanInfoVO>> simPricePlanListSetter) {
+        if (this.simPricePlanList == null) {
+            this.simPricePlanList = new ArrayList<>();
+        }
+        simPricePlanListSetter.accept(this.simPricePlanList);
+        return this;
+    }
+
+    /** 套餐列表
+     * 
+     * @return simPricePlanList */
+    public List<SimPricePlanInfoVO> getSimPricePlanList() {
+        return simPricePlanList;
+    }
+
+    public void setSimPricePlanList(List<SimPricePlanInfoVO> simPricePlanList) {
+        this.simPricePlanList = simPricePlanList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -39,12 +79,13 @@ public class ResetSimCardResponse extends SdkResponse {
             return false;
         }
         ResetSimCardResponse resetSimCardResponse = (ResetSimCardResponse) o;
-        return Objects.equals(this.workOrderId, resetSimCardResponse.workOrderId);
+        return Objects.equals(this.workOrderId, resetSimCardResponse.workOrderId)
+            && Objects.equals(this.simPricePlanList, resetSimCardResponse.simPricePlanList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workOrderId);
+        return Objects.hash(workOrderId, simPricePlanList);
     }
 
     @Override
@@ -52,6 +93,7 @@ public class ResetSimCardResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResetSimCardResponse {\n");
         sb.append("    workOrderId: ").append(toIndentedString(workOrderId)).append("\n");
+        sb.append("    simPricePlanList: ").append(toIndentedString(simPricePlanList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

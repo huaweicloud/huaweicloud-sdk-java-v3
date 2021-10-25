@@ -187,6 +187,31 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuota =
+        genForshowDomainQuota();
+
+    private static HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> genForshowDomainQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainQuotaRequest, ShowDomainQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainQuotaRequest.class, ShowDomainQuotaResponse.class)
+                .withName("ShowDomainQuota")
+                .withUri("/v2/quotamg/dns/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainQuotaRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateCustomLineRequest, UpdateCustomLineResponse> updateCustomLine =
         genForupdateCustomLine();
 

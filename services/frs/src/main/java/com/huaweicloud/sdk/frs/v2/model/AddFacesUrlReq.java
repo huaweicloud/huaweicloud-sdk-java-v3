@@ -23,6 +23,11 @@ public class AddFacesUrlReq {
 
     private String externalImageId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "single")
+
+    private Boolean single;
+
     public AddFacesUrlReq withImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
@@ -71,6 +76,23 @@ public class AddFacesUrlReq {
         this.externalImageId = externalImageId;
     }
 
+    public AddFacesUrlReq withSingle(Boolean single) {
+        this.single = single;
+        return this;
+    }
+
+    /** 是否将图片中的最大人脸添加至人脸库。可选值包括: • true: 传入的单张图片中如果包含多张人脸，则只将最大人脸添加到人脸库中。 • false:
+     * 默认为false。传入的单张图片中如果包含多张人脸，则将所有人脸添加至人脸库中。
+     * 
+     * @return single */
+    public Boolean getSingle() {
+        return single;
+    }
+
+    public void setSingle(Boolean single) {
+        this.single = single;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -82,12 +104,13 @@ public class AddFacesUrlReq {
         AddFacesUrlReq addFacesUrlReq = (AddFacesUrlReq) o;
         return Objects.equals(this.imageUrl, addFacesUrlReq.imageUrl)
             && Objects.equals(this.externalFields, addFacesUrlReq.externalFields)
-            && Objects.equals(this.externalImageId, addFacesUrlReq.externalImageId);
+            && Objects.equals(this.externalImageId, addFacesUrlReq.externalImageId)
+            && Objects.equals(this.single, addFacesUrlReq.single);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageUrl, externalFields, externalImageId);
+        return Objects.hash(imageUrl, externalFields, externalImageId, single);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class AddFacesUrlReq {
         sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
         sb.append("    externalFields: ").append(toIndentedString(externalFields)).append("\n");
         sb.append("    externalImageId: ").append(toIndentedString(externalImageId)).append("\n");
+        sb.append("    single: ").append(toIndentedString(single)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -71,7 +71,7 @@ public class GaussDBforNoSQLClient {
             GaussDBforNoSQLMeta.createConfiguration, hcClient);
     }
 
-    /** 创建实例 创建文档数据库实例，包括集群实例、副本集实例、以及单节点实例。
+    /** 创建实例 创建数据库实例。
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse */
@@ -79,7 +79,7 @@ public class GaussDBforNoSQLClient {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.createInstance);
     }
 
-    /** 创建实例 创建文档数据库实例，包括集群实例、副本集实例、以及单节点实例。
+    /** 创建实例 创建数据库实例。
      *
      * @param CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> */

@@ -7257,6 +7257,63 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetQosThresholdRequest, SetQosThresholdResponse> setQosThreshold =
+        genForsetQosThreshold();
+
+    private static HttpRequestDef<SetQosThresholdRequest, SetQosThresholdResponse> genForsetQosThreshold() {
+        // basic
+        HttpRequestDef.Builder<SetQosThresholdRequest, SetQosThresholdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetQosThresholdRequest.class, SetQosThresholdResponse.class)
+                .withName("SetQosThreshold")
+                .withUri("/v1/metrics/conference/threshold")
+                .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<SetQosThresholdRequest.ThresholdTypeEnum>withRequestField("thresholdType",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetQosThresholdRequest.ThresholdTypeEnum.class),
+            f -> f.withMarshaller(SetQosThresholdRequest::getThresholdType, (req, v) -> {
+                req.setThresholdType(v);
+            }));
+        builder.<SetQosThresholdReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetQosThresholdReq.class),
+            f -> f.withMarshaller(SetQosThresholdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQosThresholdRequest, ShowQosThresholdResponse> showQosThreshold =
+        genForshowQosThreshold();
+
+    private static HttpRequestDef<ShowQosThresholdRequest, ShowQosThresholdResponse> genForshowQosThreshold() {
+        // basic
+        HttpRequestDef.Builder<ShowQosThresholdRequest, ShowQosThresholdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQosThresholdRequest.class, ShowQosThresholdResponse.class)
+                .withName("ShowQosThreshold")
+                .withUri("/v1/metrics/conference/threshold")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowQosThresholdRequest.ThresholdTypeEnum>withRequestField("thresholdType",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowQosThresholdRequest.ThresholdTypeEnum.class),
+            f -> f.withMarshaller(ShowQosThresholdRequest::getThresholdType, (req, v) -> {
+                req.setThresholdType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> searchStatisticConferenceInfo =
         genForsearchStatisticConferenceInfo();
 

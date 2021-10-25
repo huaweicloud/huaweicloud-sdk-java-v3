@@ -139,6 +139,34 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse> recognizeFinancialStatement =
+        genForrecognizeFinancialStatement();
+
+    private static HttpRequestDef<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse> genForrecognizeFinancialStatement() {
+        // basic
+        HttpRequestDef.Builder<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeFinancialStatementRequest.class,
+                    RecognizeFinancialStatementResponse.class)
+                .withName("RecognizeFinancialStatement")
+                .withUri("/v2/{project_id}/ocr/financial-statement")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<FinancialStatementRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FinancialStatementRequestBody.class),
+            f -> f.withMarshaller(RecognizeFinancialStatementRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeFlightItineraryRequest, RecognizeFlightItineraryResponse> recognizeFlightItinerary =
         genForrecognizeFlightItinerary();
 
@@ -265,6 +293,32 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse> recognizeInsurancePolicy =
+        genForrecognizeInsurancePolicy();
+
+    private static HttpRequestDef<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse> genForrecognizeInsurancePolicy() {
+        // basic
+        HttpRequestDef.Builder<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, RecognizeInsurancePolicyRequest.class, RecognizeInsurancePolicyResponse.class)
+                .withName("RecognizeInsurancePolicy")
+                .withUri("/v2/{project_id}/ocr/insurance-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<InsurancePolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InsurancePolicyRequestBody.class),
+            f -> f.withMarshaller(RecognizeInsurancePolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse> recognizeInvoiceVerification =
         genForrecognizeInvoiceVerification();
 
@@ -360,6 +414,34 @@ public class OcrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PassportRequestBody.class),
             f -> f.withMarshaller(RecognizePassportRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse> recognizeQualificationCertificate =
+        genForrecognizeQualificationCertificate();
+
+    private static HttpRequestDef<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse> genForrecognizeQualificationCertificate() {
+        // basic
+        HttpRequestDef.Builder<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeQualificationCertificateRequest.class,
+                    RecognizeQualificationCertificateResponse.class)
+                .withName("RecognizeQualificationCertificate")
+                .withUri("/v2/{project_id}/ocr/transportation-qualification-certificate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<QualificationCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QualificationCertificateRequestBody.class),
+            f -> f.withMarshaller(RecognizeQualificationCertificateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

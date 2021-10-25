@@ -60,7 +60,7 @@ public class ShowDeviceMessageRequest {
         return this;
     }
 
-    /** **参数说明**：下发消息的消息ID，用于唯一标识一个消息，在消息下发时由物联网平台分配获得。
+    /** **参数说明**：下发消息的消息ID，用于唯一标识一个消息，在消息下发时由物联网平台分配获得。 **取值范围**：长度不超过100，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * 
      * @return messageId */
     public String getMessageId() {

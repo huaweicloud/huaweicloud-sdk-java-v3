@@ -38,6 +38,16 @@ public class IndirectPartnerInfo {
 
     private String associatedOn;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_manager_id")
+
+    private String accountManagerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_manager_name")
+
+    private String accountManagerName;
+
     public IndirectPartnerInfo withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -123,7 +133,7 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 精英服务商关联华为云伙伴能力中心的时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
+    /** 精英服务商关联华为云伙伴能力中心的时间。 UTC时间（包括时区），例如2016-03-28T00:00:00Z。
      * 
      * @return associatedOn */
     public String getAssociatedOn() {
@@ -132,6 +142,38 @@ public class IndirectPartnerInfo {
 
     public void setAssociatedOn(String associatedOn) {
         this.associatedOn = associatedOn;
+    }
+
+    public IndirectPartnerInfo withAccountManagerId(String accountManagerId) {
+        this.accountManagerId = accountManagerId;
+        return this;
+    }
+
+    /** 客户经理ID。
+     * 
+     * @return accountManagerId */
+    public String getAccountManagerId() {
+        return accountManagerId;
+    }
+
+    public void setAccountManagerId(String accountManagerId) {
+        this.accountManagerId = accountManagerId;
+    }
+
+    public IndirectPartnerInfo withAccountManagerName(String accountManagerName) {
+        this.accountManagerName = accountManagerName;
+        return this;
+    }
+
+    /** 客户经理的名称。
+     * 
+     * @return accountManagerName */
+    public String getAccountManagerName() {
+        return accountManagerName;
+    }
+
+    public void setAccountManagerName(String accountManagerName) {
+        this.accountManagerName = accountManagerName;
     }
 
     @Override
@@ -148,12 +190,21 @@ public class IndirectPartnerInfo {
             && Objects.equals(this.email, indirectPartnerInfo.email)
             && Objects.equals(this.accountName, indirectPartnerInfo.accountName)
             && Objects.equals(this.name, indirectPartnerInfo.name)
-            && Objects.equals(this.associatedOn, indirectPartnerInfo.associatedOn);
+            && Objects.equals(this.associatedOn, indirectPartnerInfo.associatedOn)
+            && Objects.equals(this.accountManagerId, indirectPartnerInfo.accountManagerId)
+            && Objects.equals(this.accountManagerName, indirectPartnerInfo.accountManagerName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(indirectPartnerId, mobilePhone, email, accountName, name, associatedOn);
+        return Objects.hash(indirectPartnerId,
+            mobilePhone,
+            email,
+            accountName,
+            name,
+            associatedOn,
+            accountManagerId,
+            accountManagerName);
     }
 
     @Override
@@ -166,6 +217,8 @@ public class IndirectPartnerInfo {
         sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    associatedOn: ").append(toIndentedString(associatedOn)).append("\n");
+        sb.append("    accountManagerId: ").append(toIndentedString(accountManagerId)).append("\n");
+        sb.append("    accountManagerName: ").append(toIndentedString(accountManagerName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

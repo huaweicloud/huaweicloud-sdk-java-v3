@@ -110,6 +110,11 @@ public class CreateSharedBandwidthOption {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth_type")
+
+    private String bandwidthType;
+
     public CreateSharedBandwidthOption withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -193,6 +198,22 @@ public class CreateSharedBandwidthOption {
         this.publicBorderGroup = publicBorderGroup;
     }
 
+    public CreateSharedBandwidthOption withBandwidthType(String bandwidthType) {
+        this.bandwidthType = bandwidthType;
+        return this;
+    }
+
+    /** 功能说明：指定带宽类型创建，默认中心站点为share，边缘站点为edgeshare 取值范围： 查询当前租户可见的带宽类型列表获取
+     * 
+     * @return bandwidthType */
+    public String getBandwidthType() {
+        return bandwidthType;
+    }
+
+    public void setBandwidthType(String bandwidthType) {
+        this.bandwidthType = bandwidthType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -206,12 +227,13 @@ public class CreateSharedBandwidthOption {
             && Objects.equals(this.name, createSharedBandwidthOption.name)
             && Objects.equals(this.size, createSharedBandwidthOption.size)
             && Objects.equals(this.chargeMode, createSharedBandwidthOption.chargeMode)
-            && Objects.equals(this.publicBorderGroup, createSharedBandwidthOption.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, createSharedBandwidthOption.publicBorderGroup)
+            && Objects.equals(this.bandwidthType, createSharedBandwidthOption.bandwidthType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, name, size, chargeMode, publicBorderGroup);
+        return Objects.hash(enterpriseProjectId, name, size, chargeMode, publicBorderGroup, bandwidthType);
     }
 
     @Override
@@ -223,6 +245,7 @@ public class CreateSharedBandwidthOption {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    bandwidthType: ").append(toIndentedString(bandwidthType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -196,6 +196,16 @@ public class InstanceResponse {
 
     private String alias;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_iops")
+
+    private Long maxIops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expiration_time")
+
+    private String expirationTime;
+
     public InstanceResponse withId(String id) {
         this.id = id;
         return this;
@@ -934,6 +944,38 @@ public class InstanceResponse {
         this.alias = alias;
     }
 
+    public InstanceResponse withMaxIops(Long maxIops) {
+        this.maxIops = maxIops;
+        return this;
+    }
+
+    /** 实例磁盘的最大IOPS值。 当前该字段仅对于SQL Server引擎实例返回。
+     * 
+     * @return maxIops */
+    public Long getMaxIops() {
+        return maxIops;
+    }
+
+    public void setMaxIops(Long maxIops) {
+        this.maxIops = maxIops;
+    }
+
+    public InstanceResponse withExpirationTime(String expirationTime) {
+        this.expirationTime = expirationTime;
+        return this;
+    }
+
+    /** 实例的到期时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 仅包周期场景返回。
+     * 
+     * @return expirationTime */
+    public String getExpirationTime() {
+        return expirationTime;
+    }
+
+    public void setExpirationTime(String expirationTime) {
+        this.expirationTime = expirationTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -976,7 +1018,9 @@ public class InstanceResponse {
             && Objects.equals(this.storageUsedSpace, instanceResponse.storageUsedSpace)
             && Objects.equals(this.orderId, instanceResponse.orderId)
             && Objects.equals(this.associatedWithDdm, instanceResponse.associatedWithDdm)
-            && Objects.equals(this.alias, instanceResponse.alias);
+            && Objects.equals(this.alias, instanceResponse.alias)
+            && Objects.equals(this.maxIops, instanceResponse.maxIops)
+            && Objects.equals(this.expirationTime, instanceResponse.expirationTime);
     }
 
     @Override
@@ -1017,7 +1061,9 @@ public class InstanceResponse {
             storageUsedSpace,
             orderId,
             associatedWithDdm,
-            alias);
+            alias,
+            maxIops,
+            expirationTime);
     }
 
     @Override
@@ -1061,6 +1107,8 @@ public class InstanceResponse {
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    associatedWithDdm: ").append(toIndentedString(associatedWithDdm)).append("\n");
         sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
+        sb.append("    maxIops: ").append(toIndentedString(maxIops)).append("\n");
+        sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

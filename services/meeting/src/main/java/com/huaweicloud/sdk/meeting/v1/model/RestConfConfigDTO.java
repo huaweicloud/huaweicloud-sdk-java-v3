@@ -29,6 +29,11 @@ public class RestConfConfigDTO {
     private Boolean isAutoMute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isHardTerminalAutoMute")
+
+    private Boolean isHardTerminalAutoMute;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isGuestFreePwd")
 
     private Boolean isGuestFreePwd;
@@ -116,7 +121,7 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 是否自动静音。默认值由会议模板决定。 - True: 自动静音。 - False: 不自动静音。
+    /** 来宾入会,软终端是否自动静音。默认值由会议模板决定。 - True: 自动静音。 - False: 不自动静音。
      * 
      * @return isAutoMute */
     public Boolean getIsAutoMute() {
@@ -125,6 +130,22 @@ public class RestConfConfigDTO {
 
     public void setIsAutoMute(Boolean isAutoMute) {
         this.isAutoMute = isAutoMute;
+    }
+
+    public RestConfConfigDTO withIsHardTerminalAutoMute(Boolean isHardTerminalAutoMute) {
+        this.isHardTerminalAutoMute = isHardTerminalAutoMute;
+        return this;
+    }
+
+    /** 来宾入会,硬终端是否自动静音。默认值由会议模板决定。 - True: 自动静音。 - False: 不自动静音。
+     * 
+     * @return isHardTerminalAutoMute */
+    public Boolean getIsHardTerminalAutoMute() {
+        return isHardTerminalAutoMute;
+    }
+
+    public void setIsHardTerminalAutoMute(Boolean isHardTerminalAutoMute) {
+        this.isHardTerminalAutoMute = isHardTerminalAutoMute;
     }
 
     public RestConfConfigDTO withIsGuestFreePwd(Boolean isGuestFreePwd) {
@@ -252,6 +273,7 @@ public class RestConfConfigDTO {
             && Objects.equals(this.isSendSms, restConfConfigDTO.isSendSms)
             && Objects.equals(this.isSendCalendar, restConfConfigDTO.isSendCalendar)
             && Objects.equals(this.isAutoMute, restConfConfigDTO.isAutoMute)
+            && Objects.equals(this.isHardTerminalAutoMute, restConfConfigDTO.isHardTerminalAutoMute)
             && Objects.equals(this.isGuestFreePwd, restConfConfigDTO.isGuestFreePwd)
             && Objects.equals(this.callInRestriction, restConfConfigDTO.callInRestriction)
             && Objects.equals(this.allowGuestStartConf, restConfConfigDTO.allowGuestStartConf)
@@ -267,6 +289,7 @@ public class RestConfConfigDTO {
             isSendSms,
             isSendCalendar,
             isAutoMute,
+            isHardTerminalAutoMute,
             isGuestFreePwd,
             callInRestriction,
             allowGuestStartConf,
@@ -284,6 +307,7 @@ public class RestConfConfigDTO {
         sb.append("    isSendSms: ").append(toIndentedString(isSendSms)).append("\n");
         sb.append("    isSendCalendar: ").append(toIndentedString(isSendCalendar)).append("\n");
         sb.append("    isAutoMute: ").append(toIndentedString(isAutoMute)).append("\n");
+        sb.append("    isHardTerminalAutoMute: ").append(toIndentedString(isHardTerminalAutoMute)).append("\n");
         sb.append("    isGuestFreePwd: ").append(toIndentedString(isGuestFreePwd)).append("\n");
         sb.append("    callInRestriction: ").append(toIndentedString(callInRestriction)).append("\n");
         sb.append("    allowGuestStartConf: ").append(toIndentedString(allowGuestStartConf)).append("\n");

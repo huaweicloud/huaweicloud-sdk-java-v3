@@ -52,6 +52,13 @@ public class GslMeta {
             f -> f.withMarshaller(ListProPricePlansRequest::getFlowTotal, (req, v) -> {
                 req.setFlowTotal(v);
             }));
+        builder.<Long>withRequestField("network_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getNetworkType, (req, v) -> {
+                req.setNetworkType(v);
+            }));
         builder.<Long>withRequestField("location_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -72,6 +79,34 @@ public class GslMeta {
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListProPricePlansRequest::getCountryType, (req, v) -> {
                 req.setCountryType(v);
+            }));
+        builder.<Long>withRequestField("sim_card_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getSimCardId, (req, v) -> {
+                req.setSimCardId(v);
+            }));
+        builder.<Integer>withRequestField("partner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getPartner, (req, v) -> {
+                req.setPartner(v);
+            }));
+        builder.<Integer>withRequestField("package_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getPackageType, (req, v) -> {
+                req.setPackageType(v);
+            }));
+        builder.<Integer>withRequestField("sim_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getSimType, (req, v) -> {
+                req.setSimType(v);
             }));
 
         // response
@@ -181,6 +216,13 @@ public class GslMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSimCardsRequest::getDeviceStatus, (req, v) -> {
                 req.setDeviceStatus(v);
+            }));
+        builder.<List<Long>>withRequestField("tag_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getTagId, (req, v) -> {
+                req.setTagId(v);
             }));
         builder.<Integer>withRequestField("sim_type",
             LocationType.Query,
@@ -589,7 +631,7 @@ public class GslMeta {
             }));
         builder.<String>withRequestField("billing_cycle",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSimPoolsRequest::getBillingCycle, (req, v) -> {
                 req.setBillingCycle(v);
@@ -651,6 +693,13 @@ public class GslMeta {
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListSimPricePlansRequest::getSimCardId, (req, v) -> {
                 req.setSimCardId(v);
+            }));
+        builder.<Long>withRequestField("sim_price_plan_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimPricePlansRequest::getSimPricePlanId, (req, v) -> {
+                req.setSimPricePlanId(v);
             }));
         builder.<Boolean>withRequestField("real_time",
             LocationType.Query,

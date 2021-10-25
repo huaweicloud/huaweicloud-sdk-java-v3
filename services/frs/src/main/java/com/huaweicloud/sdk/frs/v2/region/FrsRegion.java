@@ -16,8 +16,6 @@ public class FrsRegion {
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://face.cn-east-3.myhuaweicloud.com");
 
-    public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://face.cn-north-1.myhuaweicloud.com");
-
     public static final Region AP_SOUTHEAST_1 =
         new Region("ap-southeast-1", "https://face.ap-southeast-1.myhuaweicloud.com");
 
@@ -31,7 +29,6 @@ public class FrsRegion {
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-east-3", CN_EAST_3);
-        map.put("cn-north-1", CN_NORTH_1);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         return Collections.unmodifiableMap(map);
