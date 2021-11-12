@@ -17,9 +17,19 @@ public class GeneralTableWordsBlockList {
     private String words;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confidence")
+
+    private Float confidence;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "location")
+
+    private List<List<Integer>> location = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words_list")
 
-    private List<Object> wordsList = null;
+    private List<WordsListIem> wordsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
@@ -32,24 +42,9 @@ public class GeneralTableWordsBlockList {
     private List<Integer> columns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "location")
-
-    private List<List<Integer>> location = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cell_location")
 
     private List<List<Integer>> cellLocation = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "confidence")
-
-    private Float confidence;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "excel")
-
-    private String excel;
 
     public GeneralTableWordsBlockList withWords(String words) {
         this.words = words;
@@ -67,12 +62,60 @@ public class GeneralTableWordsBlockList {
         this.words = words;
     }
 
-    public GeneralTableWordsBlockList withWordsList(List<Object> wordsList) {
+    public GeneralTableWordsBlockList withConfidence(Float confidence) {
+        this.confidence = confidence;
+        return this;
+    }
+
+    /** 字段的平均置信度，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。置信度由算法给出，不直接等价于对应字段的准确率。
+     * 
+     * @return confidence */
+    public Float getConfidence() {
+        return confidence;
+    }
+
+    public void setConfidence(Float confidence) {
+        this.confidence = confidence;
+    }
+
+    public GeneralTableWordsBlockList withLocation(List<List<Integer>> location) {
+        this.location = location;
+        return this;
+    }
+
+    public GeneralTableWordsBlockList addLocationItem(List<Integer> locationItem) {
+        if (this.location == null) {
+            this.location = new ArrayList<>();
+        }
+        this.location.add(locationItem);
+        return this;
+    }
+
+    public GeneralTableWordsBlockList withLocation(Consumer<List<List<Integer>>> locationSetter) {
+        if (this.location == null) {
+            this.location = new ArrayList<>();
+        }
+        locationSetter.accept(this.location);
+        return this;
+    }
+
+    /** 文字块位置信息，列表形式，分别表示文字块4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
+     * 
+     * @return location */
+    public List<List<Integer>> getLocation() {
+        return location;
+    }
+
+    public void setLocation(List<List<Integer>> location) {
+        this.location = location;
+    }
+
+    public GeneralTableWordsBlockList withWordsList(List<WordsListIem> wordsList) {
         this.wordsList = wordsList;
         return this;
     }
 
-    public GeneralTableWordsBlockList addWordsListItem(Object wordsListItem) {
+    public GeneralTableWordsBlockList addWordsListItem(WordsListIem wordsListItem) {
         if (this.wordsList == null) {
             this.wordsList = new ArrayList<>();
         }
@@ -80,7 +123,7 @@ public class GeneralTableWordsBlockList {
         return this;
     }
 
-    public GeneralTableWordsBlockList withWordsList(Consumer<List<Object>> wordsListSetter) {
+    public GeneralTableWordsBlockList withWordsList(Consumer<List<WordsListIem>> wordsListSetter) {
         if (this.wordsList == null) {
             this.wordsList = new ArrayList<>();
         }
@@ -91,11 +134,11 @@ public class GeneralTableWordsBlockList {
     /** 单元格内文字段列表。输出顺序从左到右，从上到下。仅当入参\"return_text_location\"为true时存在。
      * 
      * @return wordsList */
-    public List<Object> getWordsList() {
+    public List<WordsListIem> getWordsList() {
         return wordsList;
     }
 
-    public void setWordsList(List<Object> wordsList) {
+    public void setWordsList(List<WordsListIem> wordsList) {
         this.wordsList = wordsList;
     }
 
@@ -163,38 +206,6 @@ public class GeneralTableWordsBlockList {
         this.columns = columns;
     }
 
-    public GeneralTableWordsBlockList withLocation(List<List<Integer>> location) {
-        this.location = location;
-        return this;
-    }
-
-    public GeneralTableWordsBlockList addLocationItem(List<Integer> locationItem) {
-        if (this.location == null) {
-            this.location = new ArrayList<>();
-        }
-        this.location.add(locationItem);
-        return this;
-    }
-
-    public GeneralTableWordsBlockList withLocation(Consumer<List<List<Integer>>> locationSetter) {
-        if (this.location == null) {
-            this.location = new ArrayList<>();
-        }
-        locationSetter.accept(this.location);
-        return this;
-    }
-
-    /** 文字块位置信息，列表形式，分别表示文字块4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return location */
-    public List<List<Integer>> getLocation() {
-        return location;
-    }
-
-    public void setLocation(List<List<Integer>> location) {
-        this.location = location;
-    }
-
     public GeneralTableWordsBlockList withCellLocation(List<List<Integer>> cellLocation) {
         this.cellLocation = cellLocation;
         return this;
@@ -227,38 +238,6 @@ public class GeneralTableWordsBlockList {
         this.cellLocation = cellLocation;
     }
 
-    public GeneralTableWordsBlockList withConfidence(Float confidence) {
-        this.confidence = confidence;
-        return this;
-    }
-
-    /** 字段的平均置信度，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
-    public Float getConfidence() {
-        return confidence;
-    }
-
-    public void setConfidence(Float confidence) {
-        this.confidence = confidence;
-    }
-
-    public GeneralTableWordsBlockList withExcel(String excel) {
-        this.excel = excel;
-        return this;
-    }
-
-    /** 表格图像转换为excel的base64编码，图像中的文字和表格按位置写入excel。对返回的excel编码可用base64.b64decode解码并保存为.xlsx文件。
-     * 
-     * @return excel */
-    public String getExcel() {
-        return excel;
-    }
-
-    public void setExcel(String excel) {
-        this.excel = excel;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -269,18 +248,17 @@ public class GeneralTableWordsBlockList {
         }
         GeneralTableWordsBlockList generalTableWordsBlockList = (GeneralTableWordsBlockList) o;
         return Objects.equals(this.words, generalTableWordsBlockList.words)
+            && Objects.equals(this.confidence, generalTableWordsBlockList.confidence)
+            && Objects.equals(this.location, generalTableWordsBlockList.location)
             && Objects.equals(this.wordsList, generalTableWordsBlockList.wordsList)
             && Objects.equals(this.rows, generalTableWordsBlockList.rows)
             && Objects.equals(this.columns, generalTableWordsBlockList.columns)
-            && Objects.equals(this.location, generalTableWordsBlockList.location)
-            && Objects.equals(this.cellLocation, generalTableWordsBlockList.cellLocation)
-            && Objects.equals(this.confidence, generalTableWordsBlockList.confidence)
-            && Objects.equals(this.excel, generalTableWordsBlockList.excel);
+            && Objects.equals(this.cellLocation, generalTableWordsBlockList.cellLocation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(words, wordsList, rows, columns, location, cellLocation, confidence, excel);
+        return Objects.hash(words, confidence, location, wordsList, rows, columns, cellLocation);
     }
 
     @Override
@@ -288,13 +266,12 @@ public class GeneralTableWordsBlockList {
         StringBuilder sb = new StringBuilder();
         sb.append("class GeneralTableWordsBlockList {\n");
         sb.append("    words: ").append(toIndentedString(words)).append("\n");
+        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    wordsList: ").append(toIndentedString(wordsList)).append("\n");
         sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
         sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
-        sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    cellLocation: ").append(toIndentedString(cellLocation)).append("\n");
-        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-        sb.append("    excel: ").append(toIndentedString(excel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -4,8 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,40 +14,40 @@ import java.util.function.Consumer;
 public class ListStructuredLogsWithTimeRangeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "context")
+    @JsonProperty(value = "body")
 
-    private List<String> context = null;
+    private Map<String, List<Object>> body = null;
 
-    public ListStructuredLogsWithTimeRangeResponse withContext(List<String> context) {
-        this.context = context;
+    public ListStructuredLogsWithTimeRangeResponse withBody(Map<String, List<Object>> body) {
+        this.body = body;
         return this;
     }
 
-    public ListStructuredLogsWithTimeRangeResponse addContextItem(String contextItem) {
-        if (this.context == null) {
-            this.context = new ArrayList<>();
+    public ListStructuredLogsWithTimeRangeResponse putBodyItem(String key, List<Object> bodyItem) {
+        if (this.body == null) {
+            this.body = new HashMap<>();
         }
-        this.context.add(contextItem);
+        this.body.put(key, bodyItem);
         return this;
     }
 
-    public ListStructuredLogsWithTimeRangeResponse withContext(Consumer<List<String>> contextSetter) {
-        if (this.context == null) {
-            this.context = new ArrayList<>();
+    public ListStructuredLogsWithTimeRangeResponse withBody(Consumer<Map<String, List<Object>>> bodySetter) {
+        if (this.body == null) {
+            this.body = new HashMap<>();
         }
-        contextSetter.accept(this.context);
+        bodySetter.accept(this.body);
         return this;
     }
 
-    /** 查询结构化日志结果信息。此处仅为示例，具体参数名称取决于查询的字段。
+    /** 此参数在请求实体中，采用json字符串格式。
      * 
-     * @return context */
-    public List<String> getContext() {
-        return context;
+     * @return body */
+    public Map<String, List<Object>> getBody() {
+        return body;
     }
 
-    public void setContext(List<String> context) {
-        this.context = context;
+    public void setBody(Map<String, List<Object>> body) {
+        this.body = body;
     }
 
     @Override
@@ -59,19 +60,19 @@ public class ListStructuredLogsWithTimeRangeResponse extends SdkResponse {
         }
         ListStructuredLogsWithTimeRangeResponse listStructuredLogsWithTimeRangeResponse =
             (ListStructuredLogsWithTimeRangeResponse) o;
-        return Objects.equals(this.context, listStructuredLogsWithTimeRangeResponse.context);
+        return Objects.equals(this.body, listStructuredLogsWithTimeRangeResponse.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(context);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListStructuredLogsWithTimeRangeResponse {\n");
-        sb.append("    context: ").append(toIndentedString(context)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -40,9 +40,9 @@ public class ImageWatermarkSetting {
     private String timelineDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "index")
+    @JsonProperty(value = "overlay_input")
 
-    private Integer index;
+    private String overlayInput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
@@ -209,20 +209,20 @@ public class ImageWatermarkSetting {
         this.timelineDuration = timelineDuration;
     }
 
-    public ImageWatermarkSetting withIndex(Integer index) {
-        this.index = index;
+    public ImageWatermarkSetting withOverlayInput(String overlayInput) {
+        this.overlayInput = overlayInput;
         return this;
     }
 
-    /** 对应拼接列表中第几个片段打水印，从1开始，0表示所有拼接后所有片源打水印。 minimum: 0 maximum: 50
+    /** 对应拼接列表中第几个片段打水印，从0开始，\"0表示第1个，“1”表示第二个，不带或填\"ALL\"表示所有拼接片源打水印。
      * 
-     * @return index */
-    public Integer getIndex() {
-        return index;
+     * @return overlayInput */
+    public String getOverlayInput() {
+        return overlayInput;
     }
 
-    public void setIndex(Integer index) {
-        this.index = index;
+    public void setOverlayInput(String overlayInput) {
+        this.overlayInput = overlayInput;
     }
 
     public ImageWatermarkSetting withInput(ObsObjInfo input) {
@@ -279,14 +279,14 @@ public class ImageWatermarkSetting {
             && Objects.equals(this.referpos, imageWatermarkSetting.referpos)
             && Objects.equals(this.timelineStart, imageWatermarkSetting.timelineStart)
             && Objects.equals(this.timelineDuration, imageWatermarkSetting.timelineDuration)
-            && Objects.equals(this.index, imageWatermarkSetting.index)
+            && Objects.equals(this.overlayInput, imageWatermarkSetting.overlayInput)
             && Objects.equals(this.input, imageWatermarkSetting.input)
             && Objects.equals(this.base, imageWatermarkSetting.base);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dx, dy, referpos, timelineStart, timelineDuration, index, input, base);
+        return Objects.hash(dx, dy, referpos, timelineStart, timelineDuration, overlayInput, input, base);
     }
 
     @Override
@@ -298,7 +298,7 @@ public class ImageWatermarkSetting {
         sb.append("    referpos: ").append(toIndentedString(referpos)).append("\n");
         sb.append("    timelineStart: ").append(toIndentedString(timelineStart)).append("\n");
         sb.append("    timelineDuration: ").append(toIndentedString(timelineDuration)).append("\n");
-        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    overlayInput: ").append(toIndentedString(overlayInput)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    base: ").append(toIndentedString(base)).append("\n");
         sb.append("}");

@@ -879,6 +879,38 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSystemIssueV4Request, CreateSystemIssueV4Response> createSystemIssueV4 =
+        genForcreateSystemIssueV4();
+
+    private static HttpRequestDef<CreateSystemIssueV4Request, CreateSystemIssueV4Response> genForcreateSystemIssueV4() {
+        // basic
+        HttpRequestDef.Builder<CreateSystemIssueV4Request, CreateSystemIssueV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSystemIssueV4Request.class, CreateSystemIssueV4Response.class)
+                .withName("CreateSystemIssueV4")
+                .withUri("/v4/projects/{project_id}/system/issue")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSystemIssueV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<CreateSystemIssueRequestV4>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSystemIssueRequestV4.class),
+            f -> f.withMarshaller(CreateSystemIssueV4Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteIssueV4Request, DeleteIssueV4Response> deleteIssueV4 =
         genFordeleteIssueV4();
 
@@ -1331,6 +1363,38 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateIterationRequestV4.class),
             f -> f.withMarshaller(UpdateIterationV4Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadIssueImgRequest, UploadIssueImgResponse> uploadIssueImg =
+        genForuploadIssueImg();
+
+    private static HttpRequestDef<UploadIssueImgRequest, UploadIssueImgResponse> genForuploadIssueImg() {
+        // basic
+        HttpRequestDef.Builder<UploadIssueImgRequest, UploadIssueImgResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadIssueImgRequest.class, UploadIssueImgResponse.class)
+                .withName("UploadIssueImg")
+                .withUri("/v2/{project_id}/img")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadIssueImgRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<UploadIssueImgRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadIssueImgRequestBody.class),
+            f -> f.withMarshaller(UploadIssueImgRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

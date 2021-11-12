@@ -20,7 +20,7 @@ public class DbssMeta {
         HttpRequestDef.Builder<SwitchAgentRequest, SwitchAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchAgentRequest.class, SwitchAgentResponse.class)
                 .withName("SwitchAgent")
-                .withUri("/dbss/v1/{project_id}/{instance_id}/audit/agent/switch")
+                .withUri("/v1/{project_id}/{instance_id}/audit/agent/switch")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -55,7 +55,7 @@ public class DbssMeta {
         HttpRequestDef.Builder<SwitchRiskRuleRequest, SwitchRiskRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchRiskRuleRequest.class, SwitchRiskRuleResponse.class)
                 .withName("SwitchRiskRule")
-                .withUri("/dbss/v1/{project_id}/{instance_id}/audit/rule/risk/switch")
+                .withUri("/v1/{project_id}/{instance_id}/audit/rule/risk/switch")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests

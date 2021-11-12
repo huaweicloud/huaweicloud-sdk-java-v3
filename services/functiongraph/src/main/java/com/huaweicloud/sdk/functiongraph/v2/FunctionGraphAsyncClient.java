@@ -222,25 +222,6 @@ public class FunctionGraphAsyncClient {
             request, FunctionGraphMeta.deleteFunctionAsyncInvokeConfig, hcClient);
     }
 
-    /** 根据预留实例ID删除对应预留实例 预留实例异常时，可以根据预留实例ID删除该预留实例，注意：删除成功之后重新会重新拉起一个新的预留实例，业务高峰期可以更好的工作（该接口主要针对白名单用户）
-     *
-     * @param DeleteReservedInstanceByIdRequest 请求对象
-     * @return CompletableFuture<DeleteReservedInstanceByIdResponse> */
-    public CompletableFuture<DeleteReservedInstanceByIdResponse> deleteReservedInstanceByIdAsync(
-        DeleteReservedInstanceByIdRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteReservedInstanceById);
-    }
-
-    /** 根据预留实例ID删除对应预留实例 预留实例异常时，可以根据预留实例ID删除该预留实例，注意：删除成功之后重新会重新拉起一个新的预留实例，业务高峰期可以更好的工作（该接口主要针对白名单用户）
-     *
-     * @param DeleteReservedInstanceByIdRequest 请求对象
-     * @return AsyncInvoker<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> */
-    public AsyncInvoker<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> deleteReservedInstanceByIdAsyncInvoker(
-        DeleteReservedInstanceByIdRequest request) {
-        return new AsyncInvoker<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse>(request,
-            FunctionGraphMeta.deleteReservedInstanceById, hcClient);
-    }
-
     /** 删除函数版本别名。 删除函数版本别名。
      *
      * @param DeleteVersionAliasRequest 请求对象
@@ -599,6 +580,23 @@ public class FunctionGraphAsyncClient {
             FunctionGraphMeta.showLtsLogDetails, hcClient);
     }
 
+    /** 获取函数调用链配置 获取函数调用链配置
+     *
+     * @param ShowTracingRequest 请求对象
+     * @return CompletableFuture<ShowTracingResponse> */
+    public CompletableFuture<ShowTracingResponse> showTracingAsync(ShowTracingRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showTracing);
+    }
+
+    /** 获取函数调用链配置 获取函数调用链配置
+     *
+     * @param ShowTracingRequest 请求对象
+     * @return AsyncInvoker<ShowTracingRequest, ShowTracingResponse> */
+    public AsyncInvoker<ShowTracingRequest, ShowTracingResponse> showTracingAsyncInvoker(ShowTracingRequest request) {
+        return new AsyncInvoker<ShowTracingRequest, ShowTracingResponse>(request, FunctionGraphMeta.showTracing,
+            hcClient);
+    }
+
     /** 获取函数版本的指定别名信息。 获取函数指定的版本别名信息。
      *
      * @param ShowVersionAliasRequest 请求对象
@@ -725,6 +723,24 @@ public class FunctionGraphAsyncClient {
         UpdateFunctionReservedInstancesRequest request) {
         return new AsyncInvoker<UpdateFunctionReservedInstancesRequest, UpdateFunctionReservedInstancesResponse>(
             request, FunctionGraphMeta.updateFunctionReservedInstances, hcClient);
+    }
+
+    /** 修改函数调用链配置 修改函数调用链配置,开通/修改传入aksk，关闭aksk传空
+     *
+     * @param UpdateTracingRequest 请求对象
+     * @return CompletableFuture<UpdateTracingResponse> */
+    public CompletableFuture<UpdateTracingResponse> updateTracingAsync(UpdateTracingRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateTracing);
+    }
+
+    /** 修改函数调用链配置 修改函数调用链配置,开通/修改传入aksk，关闭aksk传空
+     *
+     * @param UpdateTracingRequest 请求对象
+     * @return AsyncInvoker<UpdateTracingRequest, UpdateTracingResponse> */
+    public AsyncInvoker<UpdateTracingRequest, UpdateTracingResponse> updateTracingAsyncInvoker(
+        UpdateTracingRequest request) {
+        return new AsyncInvoker<UpdateTracingRequest, UpdateTracingResponse>(request, FunctionGraphMeta.updateTracing,
+            hcClient);
     }
 
     /** 修改函数版本别名信息。 修改函数版本别名信息。

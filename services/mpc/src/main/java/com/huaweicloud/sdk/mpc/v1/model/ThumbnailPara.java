@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 /** ThumbnailPara */
 public class ThumbnailPara {
 
-    /** 采样类型。 取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\" */
+    /** 采样类型。 取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。选择同步截图时，需指定此类型。 默认值：\"TIME\" */
     public static final class TypeEnum {
 
         /** Enum PERCENT for value: "PERCENT" */
@@ -151,7 +151,7 @@ public class ThumbnailPara {
         return this;
     }
 
-    /** 采样类型。 取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\"
+    /** 采样类型。 取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。选择同步截图时，需指定此类型。 默认值：\"TIME\"
      * 
      * @return type */
     public TypeEnum getType() {
@@ -333,7 +333,7 @@ public class ThumbnailPara {
 
     /** 截图最长边的尺寸。宽边尺寸按照该尺寸与原始视频像素等比缩放计算。 取值范围：[240,3840] 默认值：480 单位：像素 >
      * 该参数和width/height选择使用，以width/height优先，若width/height都不等于0，则图片尺寸按width/height得出；反之，则图片尺寸按 max_length 得出。 >
-     * 若该参数和width/height都未选择，则取max_length默认为480 minimum: 0 maximum: 3840
+     * 若该参数和width/height都未选择，则按源片源宽高输出截图 minimum: 0 maximum: 3840
      * 
      * @return maxLength */
     public Integer getMaxLength() {

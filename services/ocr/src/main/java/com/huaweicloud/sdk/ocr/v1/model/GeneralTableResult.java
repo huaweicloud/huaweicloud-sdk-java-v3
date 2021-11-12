@@ -23,6 +23,11 @@ public class GeneralTableResult {
 
     private List<WordsRegionList> wordsRegionList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "excel")
+
+    private String excel;
+
     public GeneralTableResult withWordsRegionCount(Integer wordsRegionCount) {
         this.wordsRegionCount = wordsRegionCount;
         return this;
@@ -71,6 +76,22 @@ public class GeneralTableResult {
         this.wordsRegionList = wordsRegionList;
     }
 
+    public GeneralTableResult withExcel(String excel) {
+        this.excel = excel;
+        return this;
+    }
+
+    /** 表格图像转换为excel的base64编码，图像中的文字和表格按位置写入excel。对返回的excel编码可用base64.b64decode解码并保存为.xlsx文件。
+     * 
+     * @return excel */
+    public String getExcel() {
+        return excel;
+    }
+
+    public void setExcel(String excel) {
+        this.excel = excel;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -81,12 +102,13 @@ public class GeneralTableResult {
         }
         GeneralTableResult generalTableResult = (GeneralTableResult) o;
         return Objects.equals(this.wordsRegionCount, generalTableResult.wordsRegionCount)
-            && Objects.equals(this.wordsRegionList, generalTableResult.wordsRegionList);
+            && Objects.equals(this.wordsRegionList, generalTableResult.wordsRegionList)
+            && Objects.equals(this.excel, generalTableResult.excel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(wordsRegionCount, wordsRegionList);
+        return Objects.hash(wordsRegionCount, wordsRegionList, excel);
     }
 
     @Override
@@ -95,6 +117,7 @@ public class GeneralTableResult {
         sb.append("class GeneralTableResult {\n");
         sb.append("    wordsRegionCount: ").append(toIndentedString(wordsRegionCount)).append("\n");
         sb.append("    wordsRegionList: ").append(toIndentedString(wordsRegionList)).append("\n");
+        sb.append("    excel: ").append(toIndentedString(excel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

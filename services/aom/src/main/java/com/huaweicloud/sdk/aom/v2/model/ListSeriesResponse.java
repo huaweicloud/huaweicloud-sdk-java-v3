@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Metadata2;
+import com.huaweicloud.sdk.aom.v2.model.MetaDataSeries;
 import com.huaweicloud.sdk.aom.v2.model.SeriesQueryItemResult;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class ListSeriesResponse extends SdkResponse {
     @JsonProperty(value="meta_data")
     
     
-    private Metadata2 metaData;
+    private MetaDataSeries metaData;
 
     public ListSeriesResponse withSeries(List<SeriesQueryItemResult> series) {
         this.series = series;
@@ -73,14 +73,14 @@ public class ListSeriesResponse extends SdkResponse {
 
     
 
-    public ListSeriesResponse withMetaData(Metadata2 metaData) {
+    public ListSeriesResponse withMetaData(MetaDataSeries metaData) {
         this.metaData = metaData;
         return this;
     }
 
-    public ListSeriesResponse withMetaData(Consumer<Metadata2> metaDataSetter) {
+    public ListSeriesResponse withMetaData(Consumer<MetaDataSeries> metaDataSetter) {
         if(this.metaData == null ){
-            this.metaData = new Metadata2();
+            this.metaData = new MetaDataSeries();
             metaDataSetter.accept(this.metaData);
         }
         
@@ -92,11 +92,11 @@ public class ListSeriesResponse extends SdkResponse {
      * Get metaData
      * @return metaData
      */
-    public Metadata2 getMetaData() {
+    public MetaDataSeries getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(Metadata2 metaData) {
+    public void setMetaData(MetaDataSeries metaData) {
         this.metaData = metaData;
     }
 

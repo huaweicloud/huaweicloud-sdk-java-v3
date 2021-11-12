@@ -83,14 +83,14 @@ public class AppRulesSpec  {
     @JsonProperty(value="nameRule")
     
     
-    private List<NameRule> nameRule = null;
-    
+    private NameRule nameRule;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority")
     
     
-    private Integer priority;
+    private String priority;
 
     public AppRulesSpec withAppType(String appType) {
         this.appType = appType;
@@ -324,43 +324,36 @@ public class AppRulesSpec  {
 
     
 
-    public AppRulesSpec withNameRule(List<NameRule> nameRule) {
+    public AppRulesSpec withNameRule(NameRule nameRule) {
         this.nameRule = nameRule;
         return this;
     }
 
-    
-    public AppRulesSpec addNameRuleItem(NameRule nameRuleItem) {
-        if(this.nameRule == null) {
-            this.nameRule = new ArrayList<>();
+    public AppRulesSpec withNameRule(Consumer<NameRule> nameRuleSetter) {
+        if(this.nameRule == null ){
+            this.nameRule = new NameRule();
+            nameRuleSetter.accept(this.nameRule);
         }
-        this.nameRule.add(nameRuleItem);
+        
         return this;
     }
 
-    public AppRulesSpec withNameRule(Consumer<List<NameRule>> nameRuleSetter) {
-        if(this.nameRule == null) {
-            this.nameRule = new ArrayList<>();
-        }
-        nameRuleSetter.accept(this.nameRule);
-        return this;
-    }
 
     /**
-     * 服务发现规则命名部分。
+     * Get nameRule
      * @return nameRule
      */
-    public List<NameRule> getNameRule() {
+    public NameRule getNameRule() {
         return nameRule;
     }
 
-    public void setNameRule(List<NameRule> nameRule) {
+    public void setNameRule(NameRule nameRule) {
         this.nameRule = nameRule;
     }
 
     
 
-    public AppRulesSpec withPriority(Integer priority) {
+    public AppRulesSpec withPriority(String priority) {
         this.priority = priority;
         return this;
     }
@@ -369,14 +362,14 @@ public class AppRulesSpec  {
 
 
     /**
-     * 1~9999的整数,默认取值为9999 规则优先级。
+     * 1~9999的整数字符串,默认取值为9999 规则优先级。
      * @return priority
      */
-    public Integer getPriority() {
+    public String getPriority() {
         return priority;
     }
 
-    public void setPriority(Integer priority) {
+    public void setPriority(String priority) {
         this.priority = priority;
     }
 

@@ -35,19 +35,9 @@ public class SimPricePlanVO {
     private String pricePlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "partner")
-
-    private Integer partner;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cid")
 
     private String cid;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "partner_pid")
-
-    private String partnerPid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
@@ -209,22 +199,6 @@ public class SimPricePlanVO {
         this.pricePlanId = pricePlanId;
     }
 
-    public SimPricePlanVO withPartner(Integer partner) {
-        this.partner = partner;
-        return this;
-    }
-
-    /** 伙伴 minimum: 0 maximum: 2147483647
-     * 
-     * @return partner */
-    public Integer getPartner() {
-        return partner;
-    }
-
-    public void setPartner(Integer partner) {
-        this.partner = partner;
-    }
-
     public SimPricePlanVO withCid(String cid) {
         this.cid = cid;
         return this;
@@ -239,22 +213,6 @@ public class SimPricePlanVO {
 
     public void setCid(String cid) {
         this.cid = cid;
-    }
-
-    public SimPricePlanVO withPartnerPid(String partnerPid) {
-        this.partnerPid = partnerPid;
-        return this;
-    }
-
-    /** 伙伴套餐pid
-     * 
-     * @return partnerPid */
-    public String getPartnerPid() {
-        return partnerPid;
-    }
-
-    public void setPartnerPid(String partnerPid) {
-        this.partnerPid = partnerPid;
     }
 
     public SimPricePlanVO withOrderId(String orderId) {
@@ -526,9 +484,7 @@ public class SimPricePlanVO {
             && Objects.equals(this.simCardId, simPricePlanVO.simCardId)
             && Objects.equals(this.status, simPricePlanVO.status)
             && Objects.equals(this.pricePlanId, simPricePlanVO.pricePlanId)
-            && Objects.equals(this.partner, simPricePlanVO.partner) && Objects.equals(this.cid, simPricePlanVO.cid)
-            && Objects.equals(this.partnerPid, simPricePlanVO.partnerPid)
-            && Objects.equals(this.orderId, simPricePlanVO.orderId)
+            && Objects.equals(this.cid, simPricePlanVO.cid) && Objects.equals(this.orderId, simPricePlanVO.orderId)
             && Objects.equals(this.createTime, simPricePlanVO.createTime)
             && Objects.equals(this.activeTime, simPricePlanVO.activeTime)
             && Objects.equals(this.stopTime, simPricePlanVO.stopTime)
@@ -553,9 +509,7 @@ public class SimPricePlanVO {
             simCardId,
             status,
             pricePlanId,
-            partner,
             cid,
-            partnerPid,
             orderId,
             createTime,
             activeTime,
@@ -583,9 +537,7 @@ public class SimPricePlanVO {
         sb.append("    simCardId: ").append(toIndentedString(simCardId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    pricePlanId: ").append(toIndentedString(pricePlanId)).append("\n");
-        sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
         sb.append("    cid: ").append(toIndentedString(cid)).append("\n");
-        sb.append("    partnerPid: ").append(toIndentedString(partnerPid)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    activeTime: ").append(toIndentedString(activeTime)).append("\n");

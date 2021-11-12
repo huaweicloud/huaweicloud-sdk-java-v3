@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** token详细信息 */
+/** token详细信息。 */
 public class ScopedTokenInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,7 +44,7 @@ public class ScopedTokenInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roles")
 
-    private List<UnscopedTokenInfoRoles> roles = null;
+    private List<ScopedTokenInfoRoles> roles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalog")
@@ -56,7 +56,7 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** 过期时间
+    /** 过期时间。
      * 
      * @return expiresAt */
     public String getExpiresAt() {
@@ -88,7 +88,7 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** 获取token的方式，联邦用户默认为mapped
+    /** 获取token的方式，联邦用户默认为mapped。
      * 
      * @return methods */
     public List<String> getMethods() {
@@ -104,7 +104,7 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** 生成时间
+    /** 生成时间。
      * 
      * @return issuedAt */
     public String getIssuedAt() {
@@ -190,12 +190,12 @@ public class ScopedTokenInfo {
         this.project = project;
     }
 
-    public ScopedTokenInfo withRoles(List<UnscopedTokenInfoRoles> roles) {
+    public ScopedTokenInfo withRoles(List<ScopedTokenInfoRoles> roles) {
         this.roles = roles;
         return this;
     }
 
-    public ScopedTokenInfo addRolesItem(UnscopedTokenInfoRoles rolesItem) {
+    public ScopedTokenInfo addRolesItem(ScopedTokenInfoRoles rolesItem) {
         if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
@@ -203,7 +203,7 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    public ScopedTokenInfo withRoles(Consumer<List<UnscopedTokenInfoRoles>> rolesSetter) {
+    public ScopedTokenInfo withRoles(Consumer<List<ScopedTokenInfoRoles>> rolesSetter) {
         if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
@@ -211,14 +211,14 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** roles信息
+    /** roles信息。
      * 
      * @return roles */
-    public List<UnscopedTokenInfoRoles> getRoles() {
+    public List<ScopedTokenInfoRoles> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<UnscopedTokenInfoRoles> roles) {
+    public void setRoles(List<ScopedTokenInfoRoles> roles) {
         this.roles = roles;
     }
 

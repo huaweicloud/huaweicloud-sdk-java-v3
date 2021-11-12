@@ -21,13 +21,6 @@ public class AppNameRule  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="args")
-    
-    
-    private List<String> args = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nameType")
     
     
@@ -35,11 +28,40 @@ public class AppNameRule  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="args")
+    
+    
+    private List<String> args = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
     
     private List<String> value = null;
     
+    public AppNameRule withNameType(String nameType) {
+        this.nameType = nameType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * cmdLineHash、cmdLine、env、str 取值类型。
+     * @return nameType
+     */
+    public String getNameType() {
+        return nameType;
+    }
+
+    public void setNameType(String nameType) {
+        this.nameType = nameType;
+    }
+
+    
+
     public AppNameRule withArgs(List<String> args) {
         this.args = args;
         return this;
@@ -72,28 +94,6 @@ public class AppNameRule  {
 
     public void setArgs(List<String> args) {
         this.args = args;
-    }
-
-    
-
-    public AppNameRule withNameType(String nameType) {
-        this.nameType = nameType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * cmdLineHash、cmdLine、env、str 取值类型。
-     * @return nameType
-     */
-    public String getNameType() {
-        return nameType;
-    }
-
-    public void setNameType(String nameType) {
-        this.nameType = nameType;
     }
 
     
@@ -143,20 +143,20 @@ public class AppNameRule  {
             return false;
         }
         AppNameRule appNameRule = (AppNameRule) o;
-        return Objects.equals(this.args, appNameRule.args) &&
-            Objects.equals(this.nameType, appNameRule.nameType) &&
+        return Objects.equals(this.nameType, appNameRule.nameType) &&
+            Objects.equals(this.args, appNameRule.args) &&
             Objects.equals(this.value, appNameRule.value);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(args, nameType, value);
+        return Objects.hash(nameType, args, value);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AppNameRule {\n");
-        sb.append("    args: ").append(toIndentedString(args)).append("\n");
         sb.append("    nameType: ").append(toIndentedString(nameType)).append("\n");
+        sb.append("    args: ").append(toIndentedString(args)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");
         return sb.toString();

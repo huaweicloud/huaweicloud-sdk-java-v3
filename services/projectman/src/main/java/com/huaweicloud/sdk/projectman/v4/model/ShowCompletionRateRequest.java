@@ -24,7 +24,7 @@ public class ShowCompletionRateRequest {
         return this;
     }
 
-    /** 项目ID
+    /** devcloud的项目ID
      * 
      * @return projectId */
     public String getProjectId() {

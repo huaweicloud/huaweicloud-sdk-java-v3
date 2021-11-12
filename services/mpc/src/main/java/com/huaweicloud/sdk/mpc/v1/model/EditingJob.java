@@ -57,6 +57,11 @@ public class EditingJob {
     private List<String> editType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output")
+
+    private ObsObjInfo output;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edit_task_req")
 
     private CreateEditingJobReq editTaskReq;
@@ -215,7 +220,7 @@ public class EditingJob {
         return this;
     }
 
-    /** 剪辑任务类型。取值如下：\"CLIP\",\"CONCAT\"。
+    /** 剪辑任务类型。取值如下：\"CLIP\",\"CONCAT\",\"CONCATS\",\"MIX\"。
      * 
      * @return editType */
     public List<String> getEditType() {
@@ -224,6 +229,31 @@ public class EditingJob {
 
     public void setEditType(List<String> editType) {
         this.editType = editType;
+    }
+
+    public EditingJob withOutput(ObsObjInfo output) {
+        this.output = output;
+        return this;
+    }
+
+    public EditingJob withOutput(Consumer<ObsObjInfo> outputSetter) {
+        if (this.output == null) {
+            this.output = new ObsObjInfo();
+            outputSetter.accept(this.output);
+        }
+
+        return this;
+    }
+
+    /** Get output
+     * 
+     * @return output */
+    public ObsObjInfo getOutput() {
+        return output;
+    }
+
+    public void setOutput(ObsObjInfo output) {
+        this.output = output;
     }
 
     public EditingJob withEditTaskReq(CreateEditingJobReq editTaskReq) {
@@ -297,7 +327,7 @@ public class EditingJob {
             && Objects.equals(this.startTime, editingJob.startTime) && Objects.equals(this.endTime, editingJob.endTime)
             && Objects.equals(this.description, editingJob.description)
             && Objects.equals(this.userData, editingJob.userData) && Objects.equals(this.jobId, editingJob.jobId)
-            && Objects.equals(this.editType, editingJob.editType)
+            && Objects.equals(this.editType, editingJob.editType) && Objects.equals(this.output, editingJob.output)
             && Objects.equals(this.editTaskReq, editingJob.editTaskReq)
             && Objects.equals(this.outputFileInfo, editingJob.outputFileInfo);
     }
@@ -313,6 +343,7 @@ public class EditingJob {
             userData,
             jobId,
             editType,
+            output,
             editTaskReq,
             outputFileInfo);
     }
@@ -330,6 +361,7 @@ public class EditingJob {
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    editType: ").append(toIndentedString(editType)).append("\n");
+        sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    editTaskReq: ").append(toIndentedString(editTaskReq)).append("\n");
         sb.append("    outputFileInfo: ").append(toIndentedString(outputFileInfo)).append("\n");
         sb.append("}");

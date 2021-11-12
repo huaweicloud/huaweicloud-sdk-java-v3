@@ -343,11 +343,6 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     private StrategyConfig strategyConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend_config")
-
-    private String extendConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependencies")
 
     private List<Dependency> dependencies = null;
@@ -457,6 +452,11 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     @JsonProperty(value = "type")
 
     private TypeEnum type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_dynamic_memory")
+
+    private Boolean enableDynamicMemory;
 
     public UpdateFunctionConfigResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -921,22 +921,6 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         this.strategyConfig = strategyConfig;
     }
 
-    public UpdateFunctionConfigResponse withExtendConfig(String extendConfig) {
-        this.extendConfig = extendConfig;
-        return this;
-    }
-
-    /** 函数扩展配置。
-     * 
-     * @return extendConfig */
-    public String getExtendConfig() {
-        return extendConfig;
-    }
-
-    public void setExtendConfig(String extendConfig) {
-        this.extendConfig = extendConfig;
-    }
-
     public UpdateFunctionConfigResponse withDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
         return this;
@@ -1081,6 +1065,22 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         this.type = type;
     }
 
+    public UpdateFunctionConfigResponse withEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+        return this;
+    }
+
+    /** 是否启动动态内存配置
+     * 
+     * @return enableDynamicMemory */
+    public Boolean getEnableDynamicMemory() {
+        return enableDynamicMemory;
+    }
+
+    public void setEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1117,7 +1117,6 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.funcVpc, updateFunctionConfigResponse.funcVpc)
             && Objects.equals(this.mountConfig, updateFunctionConfigResponse.mountConfig)
             && Objects.equals(this.strategyConfig, updateFunctionConfigResponse.strategyConfig)
-            && Objects.equals(this.extendConfig, updateFunctionConfigResponse.extendConfig)
             && Objects.equals(this.dependencies, updateFunctionConfigResponse.dependencies)
             && Objects.equals(this.initializerHandler, updateFunctionConfigResponse.initializerHandler)
             && Objects.equals(this.initializerTimeout, updateFunctionConfigResponse.initializerTimeout)
@@ -1125,7 +1124,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.longTime, updateFunctionConfigResponse.longTime)
             && Objects.equals(this.logGroupId, updateFunctionConfigResponse.logGroupId)
             && Objects.equals(this.logStreamId, updateFunctionConfigResponse.logStreamId)
-            && Objects.equals(this.type, updateFunctionConfigResponse.type);
+            && Objects.equals(this.type, updateFunctionConfigResponse.type)
+            && Objects.equals(this.enableDynamicMemory, updateFunctionConfigResponse.enableDynamicMemory);
     }
 
     @Override
@@ -1157,7 +1157,6 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             funcVpc,
             mountConfig,
             strategyConfig,
-            extendConfig,
             dependencies,
             initializerHandler,
             initializerTimeout,
@@ -1165,7 +1164,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             longTime,
             logGroupId,
             logStreamId,
-            type);
+            type,
+            enableDynamicMemory);
     }
 
     @Override
@@ -1199,7 +1199,6 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
-        sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
@@ -1208,6 +1207,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
         sb.append("}");
         return sb.toString();
     }

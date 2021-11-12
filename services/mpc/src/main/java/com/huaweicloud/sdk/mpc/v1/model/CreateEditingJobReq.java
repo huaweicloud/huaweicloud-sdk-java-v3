@@ -22,9 +22,19 @@ public class CreateEditingJobReq {
     private List<ClipInfo> clips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "contcat")
+    @JsonProperty(value = "concats")
 
-    private ConcatInfo contcat;
+    private List<MultiConcatInfo> concats = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "concat")
+
+    private ConcatInfo concat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mix")
+
+    private MixInfo mix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_setting")
@@ -62,7 +72,7 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** 剪辑任务类型。取值如下：\"CLIP\",\"CONCAT\"。
+    /** 剪辑任务类型。取值如下：\"CLIP\",\"CONCAT\",\"CONCATS\",\"MIX\"。
      * 
      * @return editType */
     public List<String> getEditType() {
@@ -105,29 +115,86 @@ public class CreateEditingJobReq {
         this.clips = clips;
     }
 
-    public CreateEditingJobReq withContcat(ConcatInfo contcat) {
-        this.contcat = contcat;
+    public CreateEditingJobReq withConcats(List<MultiConcatInfo> concats) {
+        this.concats = concats;
         return this;
     }
 
-    public CreateEditingJobReq withContcat(Consumer<ConcatInfo> contcatSetter) {
-        if (this.contcat == null) {
-            this.contcat = new ConcatInfo();
-            contcatSetter.accept(this.contcat);
+    public CreateEditingJobReq addConcatsItem(MultiConcatInfo concatsItem) {
+        if (this.concats == null) {
+            this.concats = new ArrayList<>();
+        }
+        this.concats.add(concatsItem);
+        return this;
+    }
+
+    public CreateEditingJobReq withConcats(Consumer<List<MultiConcatInfo>> concatsSetter) {
+        if (this.concats == null) {
+            this.concats = new ArrayList<>();
+        }
+        concatsSetter.accept(this.concats);
+        return this;
+    }
+
+    /** 多拼接任务信息，支持多个拼接输出，与concat参数只能二选一。
+     * 
+     * @return concats */
+    public List<MultiConcatInfo> getConcats() {
+        return concats;
+    }
+
+    public void setConcats(List<MultiConcatInfo> concats) {
+        this.concats = concats;
+    }
+
+    public CreateEditingJobReq withConcat(ConcatInfo concat) {
+        this.concat = concat;
+        return this;
+    }
+
+    public CreateEditingJobReq withConcat(Consumer<ConcatInfo> concatSetter) {
+        if (this.concat == null) {
+            this.concat = new ConcatInfo();
+            concatSetter.accept(this.concat);
         }
 
         return this;
     }
 
-    /** Get contcat
+    /** Get concat
      * 
-     * @return contcat */
-    public ConcatInfo getContcat() {
-        return contcat;
+     * @return concat */
+    public ConcatInfo getConcat() {
+        return concat;
     }
 
-    public void setContcat(ConcatInfo contcat) {
-        this.contcat = contcat;
+    public void setConcat(ConcatInfo concat) {
+        this.concat = concat;
+    }
+
+    public CreateEditingJobReq withMix(MixInfo mix) {
+        this.mix = mix;
+        return this;
+    }
+
+    public CreateEditingJobReq withMix(Consumer<MixInfo> mixSetter) {
+        if (this.mix == null) {
+            this.mix = new MixInfo();
+            mixSetter.accept(this.mix);
+        }
+
+        return this;
+    }
+
+    /** Get mix
+     * 
+     * @return mix */
+    public MixInfo getMix() {
+        return mix;
+    }
+
+    public void setMix(MixInfo mix) {
+        this.mix = mix;
     }
 
     public CreateEditingJobReq withOutputSetting(OutputSetting outputSetting) {
@@ -215,7 +282,9 @@ public class CreateEditingJobReq {
         CreateEditingJobReq createEditingJobReq = (CreateEditingJobReq) o;
         return Objects.equals(this.editType, createEditingJobReq.editType)
             && Objects.equals(this.clips, createEditingJobReq.clips)
-            && Objects.equals(this.contcat, createEditingJobReq.contcat)
+            && Objects.equals(this.concats, createEditingJobReq.concats)
+            && Objects.equals(this.concat, createEditingJobReq.concat)
+            && Objects.equals(this.mix, createEditingJobReq.mix)
             && Objects.equals(this.outputSetting, createEditingJobReq.outputSetting)
             && Objects.equals(this.imageWatermarkSettings, createEditingJobReq.imageWatermarkSettings)
             && Objects.equals(this.userData, createEditingJobReq.userData);
@@ -223,7 +292,7 @@ public class CreateEditingJobReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(editType, clips, contcat, outputSetting, imageWatermarkSettings, userData);
+        return Objects.hash(editType, clips, concats, concat, mix, outputSetting, imageWatermarkSettings, userData);
     }
 
     @Override
@@ -232,7 +301,9 @@ public class CreateEditingJobReq {
         sb.append("class CreateEditingJobReq {\n");
         sb.append("    editType: ").append(toIndentedString(editType)).append("\n");
         sb.append("    clips: ").append(toIndentedString(clips)).append("\n");
-        sb.append("    contcat: ").append(toIndentedString(contcat)).append("\n");
+        sb.append("    concats: ").append(toIndentedString(concats)).append("\n");
+        sb.append("    concat: ").append(toIndentedString(concat)).append("\n");
+        sb.append("    mix: ").append(toIndentedString(mix)).append("\n");
         sb.append("    outputSetting: ").append(toIndentedString(outputSetting)).append("\n");
         sb.append("    imageWatermarkSettings: ").append(toIndentedString(imageWatermarkSettings)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");

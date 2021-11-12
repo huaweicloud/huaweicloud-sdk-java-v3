@@ -30,11 +30,6 @@ public class SimDeviceVO {
     private Long simPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sn")
-
-    private String sn;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imei")
 
     private String imei;
@@ -65,11 +60,6 @@ public class SimDeviceVO {
     private LocalDate deviceStatusDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "supply_code")
-
-    private String supplyCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
     private String nodeId;
@@ -78,11 +68,6 @@ public class SimDeviceVO {
     @JsonProperty(value = "iccid")
 
     private String iccid;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bundle_id")
-
-    private String bundleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
@@ -103,11 +88,6 @@ public class SimDeviceVO {
     @JsonProperty(value = "sim_type")
 
     private Integer simType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "test_type")
-
-    private Boolean testType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_names")
@@ -283,22 +263,6 @@ public class SimDeviceVO {
         this.simPoolId = simPoolId;
     }
 
-    public SimDeviceVO withSn(String sn) {
-        this.sn = sn;
-        return this;
-    }
-
-    /** sn
-     * 
-     * @return sn */
-    public String getSn() {
-        return sn;
-    }
-
-    public void setSn(String sn) {
-        this.sn = sn;
-    }
-
     public SimDeviceVO withImei(String imei) {
         this.imei = imei;
         return this;
@@ -395,22 +359,6 @@ public class SimDeviceVO {
         this.deviceStatusDate = deviceStatusDate;
     }
 
-    public SimDeviceVO withSupplyCode(String supplyCode) {
-        this.supplyCode = supplyCode;
-        return this;
-    }
-
-    /** 供应商代码
-     * 
-     * @return supplyCode */
-    public String getSupplyCode() {
-        return supplyCode;
-    }
-
-    public void setSupplyCode(String supplyCode) {
-        this.supplyCode = supplyCode;
-    }
-
     public SimDeviceVO withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -441,22 +389,6 @@ public class SimDeviceVO {
 
     public void setIccid(String iccid) {
         this.iccid = iccid;
-    }
-
-    public SimDeviceVO withBundleId(String bundleId) {
-        this.bundleId = bundleId;
-        return this;
-    }
-
-    /** 码号对应的bundle
-     * 
-     * @return bundleId */
-    public String getBundleId() {
-        return bundleId;
-    }
-
-    public void setBundleId(String bundleId) {
-        this.bundleId = bundleId;
     }
 
     public SimDeviceVO withNetworkType(String networkType) {
@@ -521,22 +453,6 @@ public class SimDeviceVO {
 
     public void setSimType(Integer simType) {
         this.simType = simType;
-    }
-
-    public SimDeviceVO withTestType(Boolean testType) {
-        this.testType = testType;
-        return this;
-    }
-
-    /** 是否测试卡
-     * 
-     * @return testType */
-    public Boolean getTestType() {
-        return testType;
-    }
-
-    public void setTestType(Boolean testType) {
-        this.testType = testType;
     }
 
     public SimDeviceVO withTagNames(String tagNames) {
@@ -902,19 +818,17 @@ public class SimDeviceVO {
         SimDeviceVO simDeviceVO = (SimDeviceVO) o;
         return Objects.equals(this.simCardId, simDeviceVO.simCardId)
             && Objects.equals(this.accountId, simDeviceVO.accountId) && Objects.equals(this.cid, simDeviceVO.cid)
-            && Objects.equals(this.simPoolId, simDeviceVO.simPoolId) && Objects.equals(this.sn, simDeviceVO.sn)
-            && Objects.equals(this.imei, simDeviceVO.imei) && Objects.equals(this.simStatus, simDeviceVO.simStatus)
+            && Objects.equals(this.simPoolId, simDeviceVO.simPoolId) && Objects.equals(this.imei, simDeviceVO.imei)
+            && Objects.equals(this.simStatus, simDeviceVO.simStatus)
             && Objects.equals(this.deviceStatus, simDeviceVO.deviceStatus)
             && Objects.equals(this.deviceModel, simDeviceVO.deviceModel)
             && Objects.equals(this.actDate, simDeviceVO.actDate)
             && Objects.equals(this.deviceStatusDate, simDeviceVO.deviceStatusDate)
-            && Objects.equals(this.supplyCode, simDeviceVO.supplyCode)
             && Objects.equals(this.nodeId, simDeviceVO.nodeId) && Objects.equals(this.iccid, simDeviceVO.iccid)
-            && Objects.equals(this.bundleId, simDeviceVO.bundleId)
             && Objects.equals(this.networkType, simDeviceVO.networkType) && Objects.equals(this.dbm, simDeviceVO.dbm)
             && Objects.equals(this.signalLevel, simDeviceVO.signalLevel)
-            && Objects.equals(this.simType, simDeviceVO.simType) && Objects.equals(this.testType, simDeviceVO.testType)
-            && Objects.equals(this.tagNames, simDeviceVO.tagNames) && Objects.equals(this.orderId, simDeviceVO.orderId)
+            && Objects.equals(this.simType, simDeviceVO.simType) && Objects.equals(this.tagNames, simDeviceVO.tagNames)
+            && Objects.equals(this.orderId, simDeviceVO.orderId)
             && Objects.equals(this.expireTime, simDeviceVO.expireTime)
             && Objects.equals(this.pricePlanName, simDeviceVO.pricePlanName)
             && Objects.equals(this.simPricePlanId, simDeviceVO.simPricePlanId)
@@ -942,22 +856,18 @@ public class SimDeviceVO {
             accountId,
             cid,
             simPoolId,
-            sn,
             imei,
             simStatus,
             deviceStatus,
             deviceModel,
             actDate,
             deviceStatusDate,
-            supplyCode,
             nodeId,
             iccid,
-            bundleId,
             networkType,
             dbm,
             signalLevel,
             simType,
-            testType,
             tagNames,
             orderId,
             expireTime,
@@ -990,22 +900,18 @@ public class SimDeviceVO {
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    cid: ").append(toIndentedString(cid)).append("\n");
         sb.append("    simPoolId: ").append(toIndentedString(simPoolId)).append("\n");
-        sb.append("    sn: ").append(toIndentedString(sn)).append("\n");
         sb.append("    imei: ").append(toIndentedString(imei)).append("\n");
         sb.append("    simStatus: ").append(toIndentedString(simStatus)).append("\n");
         sb.append("    deviceStatus: ").append(toIndentedString(deviceStatus)).append("\n");
         sb.append("    deviceModel: ").append(toIndentedString(deviceModel)).append("\n");
         sb.append("    actDate: ").append(toIndentedString(actDate)).append("\n");
         sb.append("    deviceStatusDate: ").append(toIndentedString(deviceStatusDate)).append("\n");
-        sb.append("    supplyCode: ").append(toIndentedString(supplyCode)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
-        sb.append("    bundleId: ").append(toIndentedString(bundleId)).append("\n");
         sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    dbm: ").append(toIndentedString(dbm)).append("\n");
         sb.append("    signalLevel: ").append(toIndentedString(signalLevel)).append("\n");
         sb.append("    simType: ").append(toIndentedString(simType)).append("\n");
-        sb.append("    testType: ").append(toIndentedString(testType)).append("\n");
         sb.append("    tagNames: ").append(toIndentedString(tagNames)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");

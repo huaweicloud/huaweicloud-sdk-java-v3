@@ -19,7 +19,7 @@ public class LiveAsyncClient {
         return new ClientBuilder<>(LiveAsyncClient::new);
     }
 
-    /** 查询播放带宽趋势接口 查询播放域名带宽数据。 最大查询跨度31天，最大查询周期90天。
+    /** 查询播放带宽趋势接口 查询播放域名带宽数据。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListBandwidthDetailRequest 请求对象
      * @return CompletableFuture<ListBandwidthDetailResponse> */
@@ -27,7 +27,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listBandwidthDetail);
     }
 
-    /** 查询播放带宽趋势接口 查询播放域名带宽数据。 最大查询跨度31天，最大查询周期90天。
+    /** 查询播放带宽趋势接口 查询播放域名带宽数据。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListBandwidthDetailRequest 请求对象
      * @return AsyncInvoker<ListBandwidthDetailRequest, ListBandwidthDetailResponse> */
@@ -37,7 +37,7 @@ public class LiveAsyncClient {
             LiveMeta.listBandwidthDetail, hcClient);
     }
 
-    /** 查询播放带宽峰值接口 查询指定时间范围内播放带宽峰值。 最大查询跨度31天，最大查询周期90天。
+    /** 查询播放带宽峰值接口 查询指定时间范围内播放带宽峰值。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListDomainBandwidthPeakRequest 请求对象
      * @return CompletableFuture<ListDomainBandwidthPeakResponse> */
@@ -46,7 +46,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listDomainBandwidthPeak);
     }
 
-    /** 查询播放带宽峰值接口 查询指定时间范围内播放带宽峰值。 最大查询跨度31天，最大查询周期90天。
+    /** 查询播放带宽峰值接口 查询指定时间范围内播放带宽峰值。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListDomainBandwidthPeakRequest 请求对象
      * @return AsyncInvoker<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse> */
@@ -56,7 +56,7 @@ public class LiveAsyncClient {
             LiveMeta.listDomainBandwidthPeak, hcClient);
     }
 
-    /** 查询播放流量趋势接口 查询播放域名流量数据。 最大查询跨度31天，最大查询周期90天。
+    /** 查询播放流量趋势接口 查询播放域名流量数据。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListDomainTrafficDetailRequest 请求对象
      * @return CompletableFuture<ListDomainTrafficDetailResponse> */
@@ -65,7 +65,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listDomainTrafficDetail);
     }
 
-    /** 查询播放流量趋势接口 查询播放域名流量数据。 最大查询跨度31天，最大查询周期90天。
+    /** 查询播放流量趋势接口 查询播放域名流量数据。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListDomainTrafficDetailRequest 请求对象
      * @return AsyncInvoker<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse> */
@@ -75,7 +75,7 @@ public class LiveAsyncClient {
             LiveMeta.listDomainTrafficDetail, hcClient);
     }
 
-    /** 查询播放流量汇总接口 查询指定时间范围内流量汇总量。 最大查询跨度31天，最大查询周期90天。
+    /** 查询播放流量汇总接口 查询指定时间范围内流量汇总量。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListDomainTrafficSummaryRequest 请求对象
      * @return CompletableFuture<ListDomainTrafficSummaryResponse> */
@@ -84,7 +84,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listDomainTrafficSummary);
     }
 
-    /** 查询播放流量汇总接口 查询指定时间范围内流量汇总量。 最大查询跨度31天，最大查询周期90天。
+    /** 查询播放流量汇总接口 查询指定时间范围内流量汇总量。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListDomainTrafficSummaryRequest 请求对象
      * @return AsyncInvoker<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse> */
@@ -94,7 +94,7 @@ public class LiveAsyncClient {
             LiveMeta.listDomainTrafficSummary, hcClient);
     }
 
-    /** 查询历史推流列表接口 查询历史推流列表。 最大查询跨度1天，最大查询周期7天。
+    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天，最大查询周期1个月。
      *
      * @param ListHistoryStreamsRequest 请求对象
      * @return CompletableFuture<ListHistoryStreamsResponse> */
@@ -102,7 +102,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listHistoryStreams);
     }
 
-    /** 查询历史推流列表接口 查询历史推流列表。 最大查询跨度1天，最大查询周期7天。
+    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天，最大查询周期1个月。
      *
      * @param ListHistoryStreamsRequest 请求对象
      * @return AsyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse> */
@@ -184,7 +184,7 @@ public class LiveAsyncClient {
             LiveMeta.listTranscodeData, hcClient);
     }
 
-    /** 查询观众趋势接口 查询观众趋势。 最大查询跨度7天，最大查询周期90天。
+    /** 查询观众趋势接口 查询观众趋势。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListUsersOfStreamRequest 请求对象
      * @return CompletableFuture<ListUsersOfStreamResponse> */
@@ -192,7 +192,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listUsersOfStream);
     }
 
-    /** 查询观众趋势接口 查询观众趋势。 最大查询跨度7天，最大查询周期90天。
+    /** 查询观众趋势接口 查询观众趋势。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListUsersOfStreamRequest 请求对象
      * @return AsyncInvoker<ListUsersOfStreamRequest, ListUsersOfStreamResponse> */
@@ -202,7 +202,7 @@ public class LiveAsyncClient {
             LiveMeta.listUsersOfStream, hcClient);
     }
 
-    /** 查询域名维度推流路数接口 查询域名维度推流路数接口。 最大查询跨度31天，最大查询周期90天。
+    /** 查询域名维度推流路数接口 查询域名维度推流路数接口。 最大查询跨度31天，最大查询周期1年。
      *
      * @param ShowStreamCountRequest 请求对象
      * @return CompletableFuture<ShowStreamCountResponse> */
@@ -210,7 +210,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.showStreamCount);
     }
 
-    /** 查询域名维度推流路数接口 查询域名维度推流路数接口。 最大查询跨度31天，最大查询周期90天。
+    /** 查询域名维度推流路数接口 查询域名维度推流路数接口。 最大查询跨度31天，最大查询周期1年。
      *
      * @param ShowStreamCountRequest 请求对象
      * @return AsyncInvoker<ShowStreamCountRequest, ShowStreamCountResponse> */
@@ -220,7 +220,7 @@ public class LiveAsyncClient {
             hcClient);
     }
 
-    /** 查询播放画像信息接口 查询播放画像信息。 最大查询跨度1天，最大查询周期31天。
+    /** 查询播放画像信息接口 查询播放画像信息。 最大查询跨度1天，最大查询周期31天。 不统计协议为HLS的播放时长（play_duration）信息。
      *
      * @param ShowStreamPortraitRequest 请求对象
      * @return CompletableFuture<ShowStreamPortraitResponse> */
@@ -228,7 +228,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.showStreamPortrait);
     }
 
-    /** 查询播放画像信息接口 查询播放画像信息。 最大查询跨度1天，最大查询周期31天。
+    /** 查询播放画像信息接口 查询播放画像信息。 最大查询跨度1天，最大查询周期31天。 不统计协议为HLS的播放时长（play_duration）信息。
      *
      * @param ShowStreamPortraitRequest 请求对象
      * @return AsyncInvoker<ShowStreamPortraitRequest, ShowStreamPortraitResponse> */
@@ -238,7 +238,7 @@ public class LiveAsyncClient {
             LiveMeta.showStreamPortrait, hcClient);
     }
 
-    /** 查询上行带宽数据接口 查询上行带宽数据。 最大查询跨度31天，最大查询周期90天。
+    /** 查询上行带宽数据接口 查询上行带宽数据。 最大查询跨度31天，最大查询周期1年。
      *
      * @param ShowUpBandwidthRequest 请求对象
      * @return CompletableFuture<ShowUpBandwidthResponse> */
@@ -246,7 +246,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.showUpBandwidth);
     }
 
-    /** 查询上行带宽数据接口 查询上行带宽数据。 最大查询跨度31天，最大查询周期90天。
+    /** 查询上行带宽数据接口 查询上行带宽数据。 最大查询跨度31天，最大查询周期1年。
      *
      * @param ShowUpBandwidthRequest 请求对象
      * @return AsyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse> */
@@ -256,7 +256,7 @@ public class LiveAsyncClient {
             hcClient);
     }
 
-    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度6小时，最大查询周期7天。
+    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。
      *
      * @param ListSingleStreamBitrateRequest 请求对象
      * @return CompletableFuture<ListSingleStreamBitrateResponse> */
@@ -265,7 +265,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listSingleStreamBitrate);
     }
 
-    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度6小时，最大查询周期7天。
+    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。
      *
      * @param ListSingleStreamBitrateRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> */
@@ -275,7 +275,7 @@ public class LiveAsyncClient {
             LiveMeta.listSingleStreamBitrate, hcClient);
     }
 
-    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度6小时，最大查询周期7天。
+    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。
      *
      * @param ListSingleStreamFramerateRequest 请求对象
      * @return CompletableFuture<ListSingleStreamFramerateResponse> */
@@ -284,7 +284,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listSingleStreamFramerate);
     }
 
-    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度6小时，最大查询周期7天。
+    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。
      *
      * @param ListSingleStreamFramerateRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> */

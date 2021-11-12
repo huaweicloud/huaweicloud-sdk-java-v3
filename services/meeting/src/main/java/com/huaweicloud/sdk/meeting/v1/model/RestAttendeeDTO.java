@@ -253,7 +253,7 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 会议开始时是否自动邀请该与会者。默认不自动邀请。 - 0: 不自动邀请 - 1: 自动邀请 minimum: 0 maximum: 1
+    /** 会议开始时是否自动邀请该与会者。默认值由企业级配置决定。 - 0: 不自动邀请 - 1: 自动邀请 minimum: 0 maximum: 1
      * 
      * @return isAutoInvite */
     public Integer getIsAutoInvite() {

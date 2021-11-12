@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.ims.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -29,6 +32,11 @@ public class JobEntities {
     @JsonProperty(value = "process_percent")
 
     private Double processPercent;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "results")
+
+    private List<JobEntitiesResult> results = null;
 
     public JobEntities withImageId(String imageId) {
         this.imageId = imageId;
@@ -94,6 +102,38 @@ public class JobEntities {
         this.processPercent = processPercent;
     }
 
+    public JobEntities withResults(List<JobEntitiesResult> results) {
+        this.results = results;
+        return this;
+    }
+
+    public JobEntities addResultsItem(JobEntitiesResult resultsItem) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
+        }
+        this.results.add(resultsItem);
+        return this;
+    }
+
+    public JobEntities withResults(Consumer<List<JobEntitiesResult>> resultsSetter) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
+        }
+        resultsSetter.accept(this.results);
+        return this;
+    }
+
+    /** 批量任务执行结果
+     * 
+     * @return results */
+    public List<JobEntitiesResult> getResults() {
+        return results;
+    }
+
+    public void setResults(List<JobEntitiesResult> results) {
+        this.results = results;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -106,12 +146,13 @@ public class JobEntities {
         return Objects.equals(this.imageId, jobEntities.imageId)
             && Objects.equals(this.currentTask, jobEntities.currentTask)
             && Objects.equals(this.imageName, jobEntities.imageName)
-            && Objects.equals(this.processPercent, jobEntities.processPercent);
+            && Objects.equals(this.processPercent, jobEntities.processPercent)
+            && Objects.equals(this.results, jobEntities.results);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageId, currentTask, imageName, processPercent);
+        return Objects.hash(imageId, currentTask, imageName, processPercent, results);
     }
 
     @Override
@@ -122,6 +163,7 @@ public class JobEntities {
         sb.append("    currentTask: ").append(toIndentedString(currentTask)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    processPercent: ").append(toIndentedString(processPercent)).append("\n");
+        sb.append("    results: ").append(toIndentedString(results)).append("\n");
         sb.append("}");
         return sb.toString();
     }

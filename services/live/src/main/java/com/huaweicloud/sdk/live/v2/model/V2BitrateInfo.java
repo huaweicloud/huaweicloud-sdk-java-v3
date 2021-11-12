@@ -142,7 +142,7 @@ public class V2BitrateInfo {
         return this;
     }
 
-    /** 数据
+    /** 码率信息列表，单位为Kbps。
      * 
      * @return dataList */
     public List<Long> getDataList() {

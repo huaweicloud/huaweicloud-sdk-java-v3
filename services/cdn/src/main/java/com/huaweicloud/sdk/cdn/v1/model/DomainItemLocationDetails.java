@@ -36,7 +36,7 @@ public class DomainItemLocationDetails {
         return this;
     }
 
-    /** 数据起始时间戳，可能与请求时间不一致，可能不返回
+    /** 数据起始时间戳，可能与请求时间不一致
      * 
      * @return startTime */
     public Long getStartTime() {
@@ -52,7 +52,7 @@ public class DomainItemLocationDetails {
         return this;
     }
 
-    /** 数据结束时间戳，可能与请求时间不一致，可能不返回
+    /** 数据结束时间戳，可能与请求时间不一致
      * 
      * @return endTime */
     public Long getEndTime() {
@@ -68,7 +68,7 @@ public class DomainItemLocationDetails {
         return this;
     }
 
-    /** 指标类型，可能不返回
+    /** 指标类型
      * 
      * @return statType */
     public String getStatType() {

@@ -14,7 +14,7 @@ import java.util.Objects;
 public class EditVideoInfo {
 
     /** 剪辑输出视频参数的参照物。取值如下： - MAX，以输入片源中最大分辨率的视频参数作为输出参照。 - MIN，以输入片源中最小分辨率的视频参数作为输出参照。 -
-     * CUSTOM，自定义视频输出参数，使用该参数时，所有视频参数必填 */
+     * CUSTOM，自定义视频输出参数，使用该参数时，所有视频参数必填。- SHORT_HEIGHT_SHORT_WIDTH，当edit_type为MIX时，只能使用该值。 */
     public static final class ReferenceEnum {
 
         /** Enum MAX for value: "MAX" */
@@ -26,6 +26,9 @@ public class EditVideoInfo {
         /** Enum CUSTOM for value: "CUSTOM" */
         public static final ReferenceEnum CUSTOM = new ReferenceEnum("CUSTOM");
 
+        /** Enum SHORT_HEIGHT_SHORT_WIDTH for value: "SHORT_HEIGHT_SHORT_WIDTH" */
+        public static final ReferenceEnum SHORT_HEIGHT_SHORT_WIDTH = new ReferenceEnum("SHORT_HEIGHT_SHORT_WIDTH");
+
         private static final Map<String, ReferenceEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ReferenceEnum> createStaticFields() {
@@ -33,6 +36,7 @@ public class EditVideoInfo {
             map.put("MAX", MAX);
             map.put("MIN", MIN);
             map.put("CUSTOM", CUSTOM);
+            map.put("SHORT_HEIGHT_SHORT_WIDTH", SHORT_HEIGHT_SHORT_WIDTH);
             return Collections.unmodifiableMap(map);
         }
 
@@ -196,7 +200,7 @@ public class EditVideoInfo {
     }
 
     /** 剪辑输出视频参数的参照物。取值如下： - MAX，以输入片源中最大分辨率的视频参数作为输出参照。 - MIN，以输入片源中最小分辨率的视频参数作为输出参照。 -
-     * CUSTOM，自定义视频输出参数，使用该参数时，所有视频参数必填
+     * CUSTOM，自定义视频输出参数，使用该参数时，所有视频参数必填。- SHORT_HEIGHT_SHORT_WIDTH，当edit_type为MIX时，只能使用该值。
      * 
      * @return reference */
     public ReferenceEnum getReference() {

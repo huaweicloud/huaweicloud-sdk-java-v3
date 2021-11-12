@@ -137,6 +137,92 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> associateRoleToGroupOnEnterpriseProject =
+        genForassociateRoleToGroupOnEnterpriseProject();
+
+    private static HttpRequestDef<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> genForassociateRoleToGroupOnEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    AssociateRoleToGroupOnEnterpriseProjectRequest.class,
+                    AssociateRoleToGroupOnEnterpriseProjectResponse.class)
+                .withName("AssociateRoleToGroupOnEnterpriseProject")
+                .withUri(
+                    "/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles/{role_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRoleToGroupOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRoleToGroupOnEnterpriseProjectRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRoleToGroupOnEnterpriseProjectRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> associateRoleToUserOnEnterpriseProject =
+        genForassociateRoleToUserOnEnterpriseProject();
+
+    private static HttpRequestDef<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> genForassociateRoleToUserOnEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    AssociateRoleToUserOnEnterpriseProjectRequest.class,
+                    AssociateRoleToUserOnEnterpriseProjectResponse.class)
+                .withName("AssociateRoleToUserOnEnterpriseProject")
+                .withUri(
+                    "/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles/{role_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRoleToUserOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRoleToUserOnEnterpriseProjectRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            }));
+        builder.<String>withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRoleToUserOnEnterpriseProjectRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> checkAllProjectsPermissionForAgency =
         genForcheckAllProjectsPermissionForAgency();
 
@@ -482,6 +568,54 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(CreateTokenWithIdTokenResponse::getXSubjectToken,
                 CreateTokenWithIdTokenResponse::setXSubjectToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> createUnscopedTokenWithIdToken =
+        genForcreateUnscopedTokenWithIdToken();
+
+    private static HttpRequestDef<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> genForcreateUnscopedTokenWithIdToken() {
+        // basic
+        HttpRequestDef.Builder<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateUnscopedTokenWithIdTokenRequest.class,
+                    CreateUnscopedTokenWithIdTokenResponse.class)
+                .withName("CreateUnscopedTokenWithIdToken")
+                .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/auth")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            }));
+        builder.<String>withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenRequest::getProtocolId, (req, v) -> {
+                req.setProtocolId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Subject-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenResponse::getXSubjectToken,
+                CreateUnscopedTokenWithIdTokenResponse::setXSubjectToken));
         return builder.build();
     }
 
@@ -1284,6 +1418,27 @@ public class IamMeta {
             f -> f.withMarshaller(KeystoneListEndpointsRequest::getServiceId, (req, v) -> {
                 req.setServiceId(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> keystoneListFederationDomains =
+        genForkeystoneListFederationDomains();
+
+    private static HttpRequestDef<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> genForkeystoneListFederationDomains() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    KeystoneListFederationDomainsRequest.class,
+                    KeystoneListFederationDomainsResponse.class)
+                .withName("KeystoneListFederationDomains")
+                .withUri("/v3/OS-FEDERATION/domains")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -2442,6 +2597,90 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> listEnterpriseProjectsForGroup =
+        genForlistEnterpriseProjectsForGroup();
+
+    private static HttpRequestDef<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> genForlistEnterpriseProjectsForGroup() {
+        // basic
+        HttpRequestDef.Builder<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListEnterpriseProjectsForGroupRequest.class,
+                    ListEnterpriseProjectsForGroupResponse.class)
+                .withName("ListEnterpriseProjectsForGroup")
+                .withUri("/v3.0/OS-PERMISSION/groups/{group_id}/enterprise-projects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnterpriseProjectsForGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> listEnterpriseProjectsForUser =
+        genForlistEnterpriseProjectsForUser();
+
+    private static HttpRequestDef<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> genForlistEnterpriseProjectsForUser() {
+        // basic
+        HttpRequestDef.Builder<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListEnterpriseProjectsForUserRequest.class,
+                    ListEnterpriseProjectsForUserResponse.class)
+                .withName("ListEnterpriseProjectsForUser")
+                .withUri("/v3.0/OS-PERMISSION/users/{user_id}/enterprise-projects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnterpriseProjectsForUserRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> listGroupsForEnterpriseProject =
+        genForlistGroupsForEnterpriseProject();
+
+    private static HttpRequestDef<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> genForlistGroupsForEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListGroupsForEnterpriseProjectRequest.class,
+                    ListGroupsForEnterpriseProjectResponse.class)
+                .withName("ListGroupsForEnterpriseProject")
+                .withUri("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGroupsForEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> listProjectPermissionsForAgency =
         genForlistProjectPermissionsForAgency();
 
@@ -2470,6 +2709,104 @@ public class IamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProjectPermissionsForAgencyRequest::getAgencyId, (req, v) -> {
                 req.setAgencyId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> listRolesForGroupOnEnterpriseProject =
+        genForlistRolesForGroupOnEnterpriseProject();
+
+    private static HttpRequestDef<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> genForlistRolesForGroupOnEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRolesForGroupOnEnterpriseProjectRequest.class,
+                    ListRolesForGroupOnEnterpriseProjectResponse.class)
+                .withName("ListRolesForGroupOnEnterpriseProject")
+                .withUri("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRolesForGroupOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRolesForGroupOnEnterpriseProjectRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> listRolesForUserOnEnterpriseProject =
+        genForlistRolesForUserOnEnterpriseProject();
+
+    private static HttpRequestDef<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> genForlistRolesForUserOnEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRolesForUserOnEnterpriseProjectRequest.class,
+                    ListRolesForUserOnEnterpriseProjectResponse.class)
+                .withName("ListRolesForUserOnEnterpriseProject")
+                .withUri("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRolesForUserOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRolesForUserOnEnterpriseProjectRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> listUsersForEnterpriseProject =
+        genForlistUsersForEnterpriseProject();
+
+    private static HttpRequestDef<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> genForlistUsersForEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListUsersForEnterpriseProjectRequest.class,
+                    ListUsersForEnterpriseProjectResponse.class)
+                .withName("ListUsersForEnterpriseProject")
+                .withUri("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersForEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response
@@ -2596,6 +2933,92 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> revokeRoleFromGroupOnEnterpriseProject =
+        genForrevokeRoleFromGroupOnEnterpriseProject();
+
+    private static HttpRequestDef<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> genForrevokeRoleFromGroupOnEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    RevokeRoleFromGroupOnEnterpriseProjectRequest.class,
+                    RevokeRoleFromGroupOnEnterpriseProjectResponse.class)
+                .withName("RevokeRoleFromGroupOnEnterpriseProject")
+                .withUri(
+                    "/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles/{role_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeRoleFromGroupOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeRoleFromGroupOnEnterpriseProjectRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeRoleFromGroupOnEnterpriseProjectRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> revokeRoleFromUserOnEnterpriseProject =
+        genForrevokeRoleFromUserOnEnterpriseProject();
+
+    private static HttpRequestDef<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> genForrevokeRoleFromUserOnEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    RevokeRoleFromUserOnEnterpriseProjectRequest.class,
+                    RevokeRoleFromUserOnEnterpriseProjectResponse.class)
+                .withName("RevokeRoleFromUserOnEnterpriseProject")
+                .withUri(
+                    "/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles/{role_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeRoleFromUserOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeRoleFromUserOnEnterpriseProjectRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            }));
+        builder.<String>withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeRoleFromUserOnEnterpriseProjectRequest::getRoleId, (req, v) -> {
                 req.setRoleId(v);
             }));
 

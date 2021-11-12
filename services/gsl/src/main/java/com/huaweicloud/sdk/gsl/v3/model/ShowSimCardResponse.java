@@ -31,11 +31,6 @@ public class ShowSimCardResponse extends SdkResponse {
     private Long simPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sn")
-
-    private String sn;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imei")
 
     private String imei;
@@ -66,11 +61,6 @@ public class ShowSimCardResponse extends SdkResponse {
     private LocalDate deviceStatusDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "supply_code")
-
-    private String supplyCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
     private String nodeId;
@@ -79,11 +69,6 @@ public class ShowSimCardResponse extends SdkResponse {
     @JsonProperty(value = "iccid")
 
     private String iccid;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bundle_id")
-
-    private String bundleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
@@ -104,11 +89,6 @@ public class ShowSimCardResponse extends SdkResponse {
     @JsonProperty(value = "sim_type")
 
     private Integer simType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "test_type")
-
-    private Boolean testType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_names")
@@ -284,22 +264,6 @@ public class ShowSimCardResponse extends SdkResponse {
         this.simPoolId = simPoolId;
     }
 
-    public ShowSimCardResponse withSn(String sn) {
-        this.sn = sn;
-        return this;
-    }
-
-    /** sn
-     * 
-     * @return sn */
-    public String getSn() {
-        return sn;
-    }
-
-    public void setSn(String sn) {
-        this.sn = sn;
-    }
-
     public ShowSimCardResponse withImei(String imei) {
         this.imei = imei;
         return this;
@@ -396,22 +360,6 @@ public class ShowSimCardResponse extends SdkResponse {
         this.deviceStatusDate = deviceStatusDate;
     }
 
-    public ShowSimCardResponse withSupplyCode(String supplyCode) {
-        this.supplyCode = supplyCode;
-        return this;
-    }
-
-    /** 供应商代码
-     * 
-     * @return supplyCode */
-    public String getSupplyCode() {
-        return supplyCode;
-    }
-
-    public void setSupplyCode(String supplyCode) {
-        this.supplyCode = supplyCode;
-    }
-
     public ShowSimCardResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -442,22 +390,6 @@ public class ShowSimCardResponse extends SdkResponse {
 
     public void setIccid(String iccid) {
         this.iccid = iccid;
-    }
-
-    public ShowSimCardResponse withBundleId(String bundleId) {
-        this.bundleId = bundleId;
-        return this;
-    }
-
-    /** 码号对应的bundle
-     * 
-     * @return bundleId */
-    public String getBundleId() {
-        return bundleId;
-    }
-
-    public void setBundleId(String bundleId) {
-        this.bundleId = bundleId;
     }
 
     public ShowSimCardResponse withNetworkType(String networkType) {
@@ -522,22 +454,6 @@ public class ShowSimCardResponse extends SdkResponse {
 
     public void setSimType(Integer simType) {
         this.simType = simType;
-    }
-
-    public ShowSimCardResponse withTestType(Boolean testType) {
-        this.testType = testType;
-        return this;
-    }
-
-    /** 是否测试卡
-     * 
-     * @return testType */
-    public Boolean getTestType() {
-        return testType;
-    }
-
-    public void setTestType(Boolean testType) {
-        this.testType = testType;
     }
 
     public ShowSimCardResponse withTagNames(String tagNames) {
@@ -905,21 +821,18 @@ public class ShowSimCardResponse extends SdkResponse {
             && Objects.equals(this.accountId, showSimCardResponse.accountId)
             && Objects.equals(this.cid, showSimCardResponse.cid)
             && Objects.equals(this.simPoolId, showSimCardResponse.simPoolId)
-            && Objects.equals(this.sn, showSimCardResponse.sn) && Objects.equals(this.imei, showSimCardResponse.imei)
+            && Objects.equals(this.imei, showSimCardResponse.imei)
             && Objects.equals(this.simStatus, showSimCardResponse.simStatus)
             && Objects.equals(this.deviceStatus, showSimCardResponse.deviceStatus)
             && Objects.equals(this.deviceModel, showSimCardResponse.deviceModel)
             && Objects.equals(this.actDate, showSimCardResponse.actDate)
             && Objects.equals(this.deviceStatusDate, showSimCardResponse.deviceStatusDate)
-            && Objects.equals(this.supplyCode, showSimCardResponse.supplyCode)
             && Objects.equals(this.nodeId, showSimCardResponse.nodeId)
             && Objects.equals(this.iccid, showSimCardResponse.iccid)
-            && Objects.equals(this.bundleId, showSimCardResponse.bundleId)
             && Objects.equals(this.networkType, showSimCardResponse.networkType)
             && Objects.equals(this.dbm, showSimCardResponse.dbm)
             && Objects.equals(this.signalLevel, showSimCardResponse.signalLevel)
             && Objects.equals(this.simType, showSimCardResponse.simType)
-            && Objects.equals(this.testType, showSimCardResponse.testType)
             && Objects.equals(this.tagNames, showSimCardResponse.tagNames)
             && Objects.equals(this.orderId, showSimCardResponse.orderId)
             && Objects.equals(this.expireTime, showSimCardResponse.expireTime)
@@ -950,22 +863,18 @@ public class ShowSimCardResponse extends SdkResponse {
             accountId,
             cid,
             simPoolId,
-            sn,
             imei,
             simStatus,
             deviceStatus,
             deviceModel,
             actDate,
             deviceStatusDate,
-            supplyCode,
             nodeId,
             iccid,
-            bundleId,
             networkType,
             dbm,
             signalLevel,
             simType,
-            testType,
             tagNames,
             orderId,
             expireTime,
@@ -998,22 +907,18 @@ public class ShowSimCardResponse extends SdkResponse {
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    cid: ").append(toIndentedString(cid)).append("\n");
         sb.append("    simPoolId: ").append(toIndentedString(simPoolId)).append("\n");
-        sb.append("    sn: ").append(toIndentedString(sn)).append("\n");
         sb.append("    imei: ").append(toIndentedString(imei)).append("\n");
         sb.append("    simStatus: ").append(toIndentedString(simStatus)).append("\n");
         sb.append("    deviceStatus: ").append(toIndentedString(deviceStatus)).append("\n");
         sb.append("    deviceModel: ").append(toIndentedString(deviceModel)).append("\n");
         sb.append("    actDate: ").append(toIndentedString(actDate)).append("\n");
         sb.append("    deviceStatusDate: ").append(toIndentedString(deviceStatusDate)).append("\n");
-        sb.append("    supplyCode: ").append(toIndentedString(supplyCode)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
-        sb.append("    bundleId: ").append(toIndentedString(bundleId)).append("\n");
         sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    dbm: ").append(toIndentedString(dbm)).append("\n");
         sb.append("    signalLevel: ").append(toIndentedString(signalLevel)).append("\n");
         sb.append("    simType: ").append(toIndentedString(simType)).append("\n");
-        sb.append("    testType: ").append(toIndentedString(testType)).append("\n");
         sb.append("    tagNames: ").append(toIndentedString(tagNames)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");

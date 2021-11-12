@@ -125,7 +125,7 @@ public class DnsAsyncClient {
         return new AsyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>(request, DnsMeta.showApiInfo, hcClient);
     }
 
-    /** 查询配额 查询单租户在DNS服务下的资源配额，包括公网zone配额、内网zone配额、Record Set配额、PTR Record配额、入站终端节点配额、出站终端节点配额、自定义线路配额、线路分组配额等。
+    /** 查询租户配额 查询单租户在DNS服务下的资源配额，包括公网zone配额、内网zone配额、Record Set配额、PTR Record配额、入站终端节点配额、出站终端节点配额、自定义线路配额、线路分组配额等。
      *
      * @param ShowDomainQuotaRequest 请求对象
      * @return CompletableFuture<ShowDomainQuotaResponse> */
@@ -133,7 +133,7 @@ public class DnsAsyncClient {
         return hcClient.asyncInvokeHttp(request, DnsMeta.showDomainQuota);
     }
 
-    /** 查询配额 查询单租户在DNS服务下的资源配额，包括公网zone配额、内网zone配额、Record Set配额、PTR Record配额、入站终端节点配额、出站终端节点配额、自定义线路配额、线路分组配额等。
+    /** 查询租户配额 查询单租户在DNS服务下的资源配额，包括公网zone配额、内网zone配额、Record Set配额、PTR Record配额、入站终端节点配额、出站终端节点配额、自定义线路配额、线路分组配额等。
      *
      * @param ShowDomainQuotaRequest 请求对象
      * @return AsyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse> */

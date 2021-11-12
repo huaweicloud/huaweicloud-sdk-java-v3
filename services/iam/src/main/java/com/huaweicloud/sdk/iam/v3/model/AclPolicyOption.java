@@ -77,7 +77,7 @@ public class AclPolicyOption {
         return this;
     }
 
-    /** 允许访问的IP地址区间
+    /** 允许访问的IP地址区间。
      * 
      * @return allowIpRanges */
     public List<AllowIpRangesOption> getAllowIpRanges() {

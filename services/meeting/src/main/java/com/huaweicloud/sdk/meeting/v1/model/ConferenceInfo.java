@@ -387,6 +387,11 @@ public class ConferenceInfo {
 
     private List<CycleSubConf> subConfs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cycleSubConfID")
+
+    private String cycleSubConfID;
+
     public ConferenceInfo withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
         return this;
@@ -1177,6 +1182,22 @@ public class ConferenceInfo {
         this.subConfs = subConfs;
     }
 
+    public ConferenceInfo withCycleSubConfID(String cycleSubConfID) {
+        this.cycleSubConfID = cycleSubConfID;
+        return this;
+    }
+
+    /** 周期子会议UUID, 用于查询在线会议和历史会议详情时标识
+     * 
+     * @return cycleSubConfID */
+    public String getCycleSubConfID() {
+        return cycleSubConfID;
+    }
+
+    public void setCycleSubConfID(String cycleSubConfID) {
+        this.cycleSubConfID = cycleSubConfID;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1228,7 +1249,8 @@ public class ConferenceInfo {
             && Objects.equals(this.scheduleVmr, conferenceInfo.scheduleVmr)
             && Objects.equals(this.concurrentParticipants, conferenceInfo.concurrentParticipants)
             && Objects.equals(this.picDisplay, conferenceInfo.picDisplay)
-            && Objects.equals(this.subConfs, conferenceInfo.subConfs);
+            && Objects.equals(this.subConfs, conferenceInfo.subConfs)
+            && Objects.equals(this.cycleSubConfID, conferenceInfo.cycleSubConfID);
     }
 
     @Override
@@ -1277,7 +1299,8 @@ public class ConferenceInfo {
             scheduleVmr,
             concurrentParticipants,
             picDisplay,
-            subConfs);
+            subConfs,
+            cycleSubConfID);
     }
 
     @Override
@@ -1329,6 +1352,7 @@ public class ConferenceInfo {
         sb.append("    concurrentParticipants: ").append(toIndentedString(concurrentParticipants)).append("\n");
         sb.append("    picDisplay: ").append(toIndentedString(picDisplay)).append("\n");
         sb.append("    subConfs: ").append(toIndentedString(subConfs)).append("\n");
+        sb.append("    cycleSubConfID: ").append(toIndentedString(cycleSubConfID)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -334,41 +334,6 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> deleteReservedInstanceById =
-        genFordeleteReservedInstanceById();
-
-    private static HttpRequestDef<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> genFordeleteReservedInstanceById() {
-        // basic
-        HttpRequestDef.Builder<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    DeleteReservedInstanceByIdRequest.class,
-                    DeleteReservedInstanceByIdResponse.class)
-                .withName("DeleteReservedInstanceById")
-                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/reservedinstances/{instance_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("function_urn",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteReservedInstanceByIdRequest::getFunctionUrn, (req, v) -> {
-                req.setFunctionUrn(v);
-            }));
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteReservedInstanceByIdRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteVersionAliasRequest, DeleteVersionAliasResponse> deleteVersionAlias =
         genFordeleteVersionAlias();
 
@@ -1006,6 +971,30 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTracingRequest, ShowTracingResponse> showTracing = genForshowTracing();
+
+    private static HttpRequestDef<ShowTracingRequest, ShowTracingResponse> genForshowTracing() {
+        // basic
+        HttpRequestDef.Builder<ShowTracingRequest, ShowTracingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTracingRequest.class, ShowTracingResponse.class)
+                .withName("ShowTracing")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/tracing")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTracingRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowVersionAliasRequest, ShowVersionAliasResponse> showVersionAlias =
         genForshowVersionAlias();
 
@@ -1234,6 +1223,38 @@ public class FunctionGraphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFunctionReservedInstancesRequestBody.class),
             f -> f.withMarshaller(UpdateFunctionReservedInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTracingRequest, UpdateTracingResponse> updateTracing =
+        genForupdateTracing();
+
+    private static HttpRequestDef<UpdateTracingRequest, UpdateTracingResponse> genForupdateTracing() {
+        // basic
+        HttpRequestDef.Builder<UpdateTracingRequest, UpdateTracingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTracingRequest.class, UpdateTracingResponse.class)
+                .withName("UpdateTracing")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/tracing")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTracingRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+        builder.<UpdateTracingRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTracingRequestBody.class),
+            f -> f.withMarshaller(UpdateTracingRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

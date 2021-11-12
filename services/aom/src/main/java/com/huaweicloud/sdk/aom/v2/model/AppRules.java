@@ -187,7 +187,7 @@ public class AppRules  {
 
 
     /**
-     * 具体的服务发现规则ID,可以精确匹配到一条服务发现规则。不传时返回project下所有服务发现规则的列表。
+     * 创建时填空，修改时填规则ID。
      * @return id
      */
     public String getId() {

@@ -23,7 +23,7 @@ public class DeleteIterationV4Request {
         return this;
     }
 
-    /** 项目id
+    /** devcloud的项目id
      * 
      * @return projectId */
     public String getProjectId() {

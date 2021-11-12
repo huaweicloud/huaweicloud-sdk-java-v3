@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 联邦用户信息 */
+/** 联邦用户信息。 */
 public class FederationUserBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,7 +84,7 @@ public class FederationUserBody {
         return this;
     }
 
-    /** user id
+    /** user id。
      * 
      * @return id */
     public String getId() {
@@ -100,7 +100,7 @@ public class FederationUserBody {
         return this;
     }
 
-    /** user name
+    /** user name。
      * 
      * @return name */
     public String getName() {

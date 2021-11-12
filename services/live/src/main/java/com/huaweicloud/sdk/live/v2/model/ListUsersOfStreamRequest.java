@@ -37,9 +37,90 @@ public class ListUsersOfStreamRequest {
     private List<String> isp = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "country")
+
+    private List<String> country = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
     private List<String> region = null;
+
+    /** 请求协议 */
+    public static final class ProtocolEnum {
+
+        /** Enum FLV for value: "flv" */
+        public static final ProtocolEnum FLV = new ProtocolEnum("flv");
+
+        /** Enum HLS for value: "hls" */
+        public static final ProtocolEnum HLS = new ProtocolEnum("hls");
+
+        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtocolEnum> createStaticFields() {
+            Map<String, ProtocolEnum> map = new HashMap<>();
+            map.put("flv", FLV);
+            map.put("hls", HLS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProtocolEnum(value);
+            }
+            return result;
+        }
+
+        public static ProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtocolEnum) {
+                return this.value.equals(((ProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol")
+
+    private ProtocolEnum protocol;
 
     /** 查询数据的时间粒度，支持60（默认值）, 300秒。不传值时，使用默认值60秒。 */
     public static final class IntervalEnum {
@@ -196,7 +277,7 @@ public class ListUsersOfStreamRequest {
         return this;
     }
 
-    /** 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\" 不填写查询所有运营商。
+    /** 运营商列表，取值如下： - CMCC ：移动 - CTCC ： 电信 - CUCC ：联通 - OTHER ：其他 不填写查询所有运营商。
      * 
      * @return isp */
     public List<String> getIsp() {
@@ -205,6 +286,38 @@ public class ListUsersOfStreamRequest {
 
     public void setIsp(List<String> isp) {
         this.isp = isp;
+    }
+
+    public ListUsersOfStreamRequest withCountry(List<String> country) {
+        this.country = country;
+        return this;
+    }
+
+    public ListUsersOfStreamRequest addCountryItem(String countryItem) {
+        if (this.country == null) {
+            this.country = new ArrayList<>();
+        }
+        this.country.add(countryItem);
+        return this;
+    }
+
+    public ListUsersOfStreamRequest withCountry(Consumer<List<String>> countrySetter) {
+        if (this.country == null) {
+            this.country = new ArrayList<>();
+        }
+        countrySetter.accept(this.country);
+        return this;
+    }
+
+    /** 国家列表。具体取值请参考[国家名称缩写](vod_08_0172.xml)，不填写查询所有国家。
+     * 
+     * @return country */
+    public List<String> getCountry() {
+        return country;
+    }
+
+    public void setCountry(List<String> country) {
+        this.country = country;
     }
 
     public ListUsersOfStreamRequest withRegion(List<String> region) {
@@ -239,6 +352,22 @@ public class ListUsersOfStreamRequest {
         this.region = region;
     }
 
+    public ListUsersOfStreamRequest withProtocol(ProtocolEnum protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    /** 请求协议
+     * 
+     * @return protocol */
+    public ProtocolEnum getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(ProtocolEnum protocol) {
+        this.protocol = protocol;
+    }
+
     public ListUsersOfStreamRequest withInterval(IntervalEnum interval) {
         this.interval = interval;
         return this;
@@ -260,7 +389,7 @@ public class ListUsersOfStreamRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。 若参数为空，默认查询7天数据。
+    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期一年。 若参数为空，默认查询7天数据。
      * 
      * @return startTime */
     public String getStartTime() {
@@ -300,7 +429,9 @@ public class ListUsersOfStreamRequest {
             && Objects.equals(this.app, listUsersOfStreamRequest.app)
             && Objects.equals(this.stream, listUsersOfStreamRequest.stream)
             && Objects.equals(this.isp, listUsersOfStreamRequest.isp)
+            && Objects.equals(this.country, listUsersOfStreamRequest.country)
             && Objects.equals(this.region, listUsersOfStreamRequest.region)
+            && Objects.equals(this.protocol, listUsersOfStreamRequest.protocol)
             && Objects.equals(this.interval, listUsersOfStreamRequest.interval)
             && Objects.equals(this.startTime, listUsersOfStreamRequest.startTime)
             && Objects.equals(this.endTime, listUsersOfStreamRequest.endTime);
@@ -308,7 +439,7 @@ public class ListUsersOfStreamRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(playDomain, app, stream, isp, region, interval, startTime, endTime);
+        return Objects.hash(playDomain, app, stream, isp, country, region, protocol, interval, startTime, endTime);
     }
 
     @Override
@@ -319,7 +450,9 @@ public class ListUsersOfStreamRequest {
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
         sb.append("    isp: ").append(toIndentedString(isp)).append("\n");
+        sb.append("    country: ").append(toIndentedString(country)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");

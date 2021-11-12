@@ -43,7 +43,7 @@ public class ShowStreamCountResponse extends SdkResponse {
         return this;
     }
 
-    /** 采样数据列表
+    /** 采样数据列表。
      * 
      * @return dataList */
     public List<StreamCountData> getDataList() {

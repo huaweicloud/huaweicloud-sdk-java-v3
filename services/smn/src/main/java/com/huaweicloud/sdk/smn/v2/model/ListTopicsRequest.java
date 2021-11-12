@@ -70,7 +70,7 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 企业项目id, 默认企业项目id为0
+    /** 企业项目id，默认企业项目id为0。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -86,7 +86,7 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 检索的主题名称，完全匹配
+    /** 检索的主题名称，完全匹配。
      * 
      * @return name */
     public String getName() {
@@ -102,7 +102,7 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 检索的主题名称，模糊匹配，按照startwith模式进行匹配
+    /** 检索的主题名称，模糊匹配，按照startwith模式进行匹配。
      * 
      * @return fuzzyName */
     public String getFuzzyName() {

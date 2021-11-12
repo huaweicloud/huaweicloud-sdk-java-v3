@@ -349,6 +349,22 @@ public class LiveAsyncClient {
             LiveMeta.listStreamForbidden, hcClient);
     }
 
+    /** 提交录制控制命令 对单条流的实时录制控制接口。
+     *
+     * @param RunRecordRequest 请求对象
+     * @return CompletableFuture<RunRecordResponse> */
+    public CompletableFuture<RunRecordResponse> runRecordAsync(RunRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.runRecord);
+    }
+
+    /** 提交录制控制命令 对单条流的实时录制控制接口。
+     *
+     * @param RunRecordRequest 请求对象
+     * @return AsyncInvoker<RunRecordRequest, RunRecordResponse> */
+    public AsyncInvoker<RunRecordRequest, RunRecordResponse> runRecordAsyncInvoker(RunRecordRequest request) {
+        return new AsyncInvoker<RunRecordRequest, RunRecordResponse>(request, LiveMeta.runRecord, hcClient);
+    }
+
     /** 查询直播域名 查询直播域名
      *
      * @param ShowDomainRequest 请求对象

@@ -12,6 +12,8 @@ public class CceRegion {
 
     public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://cce.cn-north-1.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://cce.cn-north-2.myhuaweicloud.com");
+
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://cce.cn-north-4.myhuaweicloud.com");
 
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://cce.cn-south-1.myhuaweicloud.com");
@@ -39,6 +41,7 @@ public class CceRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-1", CN_NORTH_1);
+        map.put("cn-north-2", CN_NORTH_2);
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-east-2", CN_EAST_2);

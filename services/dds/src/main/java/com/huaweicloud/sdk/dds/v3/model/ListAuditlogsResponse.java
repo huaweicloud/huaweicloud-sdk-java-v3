@@ -13,29 +13,29 @@ import java.util.function.Consumer;
 public class ListAuditlogsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total_count")
+    @JsonProperty(value = "total_record")
 
-    private Integer totalCount;
+    private Integer totalRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audit_logs")
 
     private List<ListAuditlogsResult> auditLogs = null;
 
-    public ListAuditlogsResponse withTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
+    public ListAuditlogsResponse withTotalRecord(Integer totalRecord) {
+        this.totalRecord = totalRecord;
         return this;
     }
 
     /** 总记录数。
      * 
-     * @return totalCount */
-    public Integer getTotalCount() {
-        return totalCount;
+     * @return totalRecord */
+    public Integer getTotalRecord() {
+        return totalRecord;
     }
 
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
+    public void setTotalRecord(Integer totalRecord) {
+        this.totalRecord = totalRecord;
     }
 
     public ListAuditlogsResponse withAuditLogs(List<ListAuditlogsResult> auditLogs) {
@@ -79,20 +79,20 @@ public class ListAuditlogsResponse extends SdkResponse {
             return false;
         }
         ListAuditlogsResponse listAuditlogsResponse = (ListAuditlogsResponse) o;
-        return Objects.equals(this.totalCount, listAuditlogsResponse.totalCount)
+        return Objects.equals(this.totalRecord, listAuditlogsResponse.totalRecord)
             && Objects.equals(this.auditLogs, listAuditlogsResponse.auditLogs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalCount, auditLogs);
+        return Objects.hash(totalRecord, auditLogs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAuditlogsResponse {\n");
-        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    totalRecord: ").append(toIndentedString(totalRecord)).append("\n");
         sb.append("    auditLogs: ").append(toIndentedString(auditLogs)).append("\n");
         sb.append("}");
         return sb.toString();

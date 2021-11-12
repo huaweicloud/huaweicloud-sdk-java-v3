@@ -19,20 +19,6 @@ public class MysqlProxyComputeFlavor  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    
-    private String id;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
-    
-    private String specCode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
     
@@ -54,61 +40,24 @@ public class MysqlProxyComputeFlavor  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    
+    private String id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="spec_code")
+    
+    
+    private String specCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
     
     private Object azStatus;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_status")
-    
-    
-    private String regionStatus;
-
-    public MysqlProxyComputeFlavor withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Proxy规格id。
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    
-
-    public MysqlProxyComputeFlavor withSpecCode(String specCode) {
-        this.specCode = specCode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Proxy规格码。
-     * @return specCode
-     */
-    public String getSpecCode() {
-        return specCode;
-    }
-
-    public void setSpecCode(String specCode) {
-        this.specCode = specCode;
-    }
-
-    
 
     public MysqlProxyComputeFlavor withVcpus(String vcpus) {
         this.vcpus = vcpus;
@@ -176,6 +125,50 @@ public class MysqlProxyComputeFlavor  {
 
     
 
+    public MysqlProxyComputeFlavor withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Proxy规格id。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
+
+    public MysqlProxyComputeFlavor withSpecCode(String specCode) {
+        this.specCode = specCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Proxy规格码。
+     * @return specCode
+     */
+    public String getSpecCode() {
+        return specCode;
+    }
+
+    public void setSpecCode(String specCode) {
+        this.specCode = specCode;
+    }
+
+    
+
     public MysqlProxyComputeFlavor withAzStatus(Object azStatus) {
         this.azStatus = azStatus;
         return this;
@@ -198,28 +191,6 @@ public class MysqlProxyComputeFlavor  {
 
     
 
-    public MysqlProxyComputeFlavor withRegionStatus(String regionStatus) {
-        this.regionStatus = regionStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Region状态。
-     * @return regionStatus
-     */
-    public String getRegionStatus() {
-        return regionStatus;
-    }
-
-    public void setRegionStatus(String regionStatus) {
-        this.regionStatus = regionStatus;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -229,29 +200,27 @@ public class MysqlProxyComputeFlavor  {
             return false;
         }
         MysqlProxyComputeFlavor mysqlProxyComputeFlavor = (MysqlProxyComputeFlavor) o;
-        return Objects.equals(this.id, mysqlProxyComputeFlavor.id) &&
-            Objects.equals(this.specCode, mysqlProxyComputeFlavor.specCode) &&
-            Objects.equals(this.vcpus, mysqlProxyComputeFlavor.vcpus) &&
+        return Objects.equals(this.vcpus, mysqlProxyComputeFlavor.vcpus) &&
             Objects.equals(this.ram, mysqlProxyComputeFlavor.ram) &&
             Objects.equals(this.dbType, mysqlProxyComputeFlavor.dbType) &&
-            Objects.equals(this.azStatus, mysqlProxyComputeFlavor.azStatus) &&
-            Objects.equals(this.regionStatus, mysqlProxyComputeFlavor.regionStatus);
+            Objects.equals(this.id, mysqlProxyComputeFlavor.id) &&
+            Objects.equals(this.specCode, mysqlProxyComputeFlavor.specCode) &&
+            Objects.equals(this.azStatus, mysqlProxyComputeFlavor.azStatus);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, specCode, vcpus, ram, dbType, azStatus, regionStatus);
+        return Objects.hash(vcpus, ram, dbType, id, specCode, azStatus);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MysqlProxyComputeFlavor {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    dbType: ").append(toIndentedString(dbType)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    azStatus: ").append(toIndentedString(azStatus)).append("\n");
-        sb.append("    regionStatus: ").append(toIndentedString(regionStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

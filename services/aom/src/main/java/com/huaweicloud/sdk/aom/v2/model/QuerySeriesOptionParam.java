@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Dimension;
+import com.huaweicloud.sdk.aom.v2.model.DimensionSeries;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,7 +39,7 @@ public class QuerySeriesOptionParam  {
     @JsonProperty(value="dimensions")
     
     
-    private List<Dimension> dimensions = null;
+    private List<DimensionSeries> dimensions = null;
     
     public QuerySeriesOptionParam withNamespace(String namespace) {
         this.namespace = namespace;
@@ -85,13 +85,13 @@ public class QuerySeriesOptionParam  {
 
     
 
-    public QuerySeriesOptionParam withDimensions(List<Dimension> dimensions) {
+    public QuerySeriesOptionParam withDimensions(List<DimensionSeries> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
     
-    public QuerySeriesOptionParam addDimensionsItem(Dimension dimensionsItem) {
+    public QuerySeriesOptionParam addDimensionsItem(DimensionSeries dimensionsItem) {
         if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -99,7 +99,7 @@ public class QuerySeriesOptionParam  {
         return this;
     }
 
-    public QuerySeriesOptionParam withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
+    public QuerySeriesOptionParam withDimensions(Consumer<List<DimensionSeries>> dimensionsSetter) {
         if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -111,11 +111,11 @@ public class QuerySeriesOptionParam  {
      * 时间序列维度列表。
      * @return dimensions
      */
-    public List<Dimension> getDimensions() {
+    public List<DimensionSeries> getDimensions() {
         return dimensions;
     }
 
-    public void setDimensions(List<Dimension> dimensions) {
+    public void setDimensions(List<DimensionSeries> dimensions) {
         this.dimensions = dimensions;
     }
 

@@ -150,4 +150,39 @@ public class DscAsyncClient {
             DscMeta.showImageWatermark, hcClient);
     }
 
+    /** 查询指定任务扫描结果 查询指定任务扫描结果
+     *
+     * @param ShowScanJobResultsRequest 请求对象
+     * @return CompletableFuture<ShowScanJobResultsResponse> */
+    public CompletableFuture<ShowScanJobResultsResponse> showScanJobResultsAsync(ShowScanJobResultsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.showScanJobResults);
+    }
+
+    /** 查询指定任务扫描结果 查询指定任务扫描结果
+     *
+     * @param ShowScanJobResultsRequest 请求对象
+     * @return AsyncInvoker<ShowScanJobResultsRequest, ShowScanJobResultsResponse> */
+    public AsyncInvoker<ShowScanJobResultsRequest, ShowScanJobResultsResponse> showScanJobResultsAsyncInvoker(
+        ShowScanJobResultsRequest request) {
+        return new AsyncInvoker<ShowScanJobResultsRequest, ShowScanJobResultsResponse>(request,
+            DscMeta.showScanJobResults, hcClient);
+    }
+
+    /** 查询扫描任务列表 查询扫描任务列表
+     *
+     * @param ShowScanJobsRequest 请求对象
+     * @return CompletableFuture<ShowScanJobsResponse> */
+    public CompletableFuture<ShowScanJobsResponse> showScanJobsAsync(ShowScanJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.showScanJobs);
+    }
+
+    /** 查询扫描任务列表 查询扫描任务列表
+     *
+     * @param ShowScanJobsRequest 请求对象
+     * @return AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse> */
+    public AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse> showScanJobsAsyncInvoker(
+        ShowScanJobsRequest request) {
+        return new AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse>(request, DscMeta.showScanJobs, hcClient);
+    }
+
 }

@@ -32,6 +32,11 @@ public class ListBandwidthDetailRequest {
     private String stream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "country")
+
+    private List<String> country = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
     private List<String> region = null;
@@ -40,6 +45,82 @@ public class ListBandwidthDetailRequest {
     @JsonProperty(value = "isp")
 
     private List<String> isp = null;
+
+    /** 请求协议 */
+    public static final class ProtocolEnum {
+
+        /** Enum FLV for value: "flv" */
+        public static final ProtocolEnum FLV = new ProtocolEnum("flv");
+
+        /** Enum HLS for value: "hls" */
+        public static final ProtocolEnum HLS = new ProtocolEnum("hls");
+
+        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtocolEnum> createStaticFields() {
+            Map<String, ProtocolEnum> map = new HashMap<>();
+            map.put("flv", FLV);
+            map.put("hls", HLS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProtocolEnum(value);
+            }
+            return result;
+        }
+
+        public static ProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtocolEnum) {
+                return this.value.equals(((ProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol")
+
+    private ProtocolEnum protocol;
 
     /** 查询数据的时间粒度。支持300（默认值）, 3600和86400秒。不传值时，使用默认值300秒。 */
     public static final class IntervalEnum {
@@ -152,7 +233,7 @@ public class ListBandwidthDetailRequest {
         return this;
     }
 
-    /** 播放域名列表，最多支持查询10个域名，多个域名以逗号分隔。
+    /** 播放域名列表，最多支持查询100个域名，多个域名以逗号分隔。
      * 
      * @return playDomains */
     public List<String> getPlayDomains() {
@@ -193,6 +274,38 @@ public class ListBandwidthDetailRequest {
 
     public void setStream(String stream) {
         this.stream = stream;
+    }
+
+    public ListBandwidthDetailRequest withCountry(List<String> country) {
+        this.country = country;
+        return this;
+    }
+
+    public ListBandwidthDetailRequest addCountryItem(String countryItem) {
+        if (this.country == null) {
+            this.country = new ArrayList<>();
+        }
+        this.country.add(countryItem);
+        return this;
+    }
+
+    public ListBandwidthDetailRequest withCountry(Consumer<List<String>> countrySetter) {
+        if (this.country == null) {
+            this.country = new ArrayList<>();
+        }
+        countrySetter.accept(this.country);
+        return this;
+    }
+
+    /** 国家列表。具体取值请参考[国家名称缩写](vod_08_0172.xml)，不填写查询所有国家。
+     * 
+     * @return country */
+    public List<String> getCountry() {
+        return country;
+    }
+
+    public void setCountry(List<String> country) {
+        this.country = country;
     }
 
     public ListBandwidthDetailRequest withRegion(List<String> region) {
@@ -248,7 +361,7 @@ public class ListBandwidthDetailRequest {
         return this;
     }
 
-    /** 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\" 不填写查询所有运营商。
+    /** 运营商列表，取值如下： - CMCC ：移动 - CTCC ：电信 - CUCC ：联通 - OTHER ：其他 不填写查询所有运营商。
      * 
      * @return isp */
     public List<String> getIsp() {
@@ -257,6 +370,22 @@ public class ListBandwidthDetailRequest {
 
     public void setIsp(List<String> isp) {
         this.isp = isp;
+    }
+
+    public ListBandwidthDetailRequest withProtocol(ProtocolEnum protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    /** 请求协议
+     * 
+     * @return protocol */
+    public ProtocolEnum getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(ProtocolEnum protocol) {
+        this.protocol = protocol;
     }
 
     public ListBandwidthDetailRequest withInterval(IntervalEnum interval) {
@@ -280,7 +409,7 @@ public class ListBandwidthDetailRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。 若参数为空，默认查询7天数据。
+    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期一年。 若参数为空，默认查询7天数据。
      * 
      * @return startTime */
     public String getStartTime() {
@@ -319,8 +448,10 @@ public class ListBandwidthDetailRequest {
         return Objects.equals(this.playDomains, listBandwidthDetailRequest.playDomains)
             && Objects.equals(this.app, listBandwidthDetailRequest.app)
             && Objects.equals(this.stream, listBandwidthDetailRequest.stream)
+            && Objects.equals(this.country, listBandwidthDetailRequest.country)
             && Objects.equals(this.region, listBandwidthDetailRequest.region)
             && Objects.equals(this.isp, listBandwidthDetailRequest.isp)
+            && Objects.equals(this.protocol, listBandwidthDetailRequest.protocol)
             && Objects.equals(this.interval, listBandwidthDetailRequest.interval)
             && Objects.equals(this.startTime, listBandwidthDetailRequest.startTime)
             && Objects.equals(this.endTime, listBandwidthDetailRequest.endTime);
@@ -328,7 +459,7 @@ public class ListBandwidthDetailRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(playDomains, app, stream, region, isp, interval, startTime, endTime);
+        return Objects.hash(playDomains, app, stream, country, region, isp, protocol, interval, startTime, endTime);
     }
 
     @Override
@@ -338,8 +469,10 @@ public class ListBandwidthDetailRequest {
         sb.append("    playDomains: ").append(toIndentedString(playDomains)).append("\n");
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
+        sb.append("    country: ").append(toIndentedString(country)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    isp: ").append(toIndentedString(isp)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 协议信息 */
+/** 协议信息。 */
 public class ProtocolIdInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,7 +18,7 @@ public class ProtocolIdInfo {
         return this;
     }
 
-    /** 协议id
+    /** 协议id。
      * 
      * @return id */
     public String getId() {

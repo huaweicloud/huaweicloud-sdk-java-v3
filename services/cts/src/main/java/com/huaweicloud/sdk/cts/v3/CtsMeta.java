@@ -10,6 +10,31 @@ import com.huaweicloud.sdk.cts.v3.model.*;
 @SuppressWarnings("unchecked")
 public class CtsMeta {
 
+    public static final HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> createNotification =
+        genForcreateNotification();
+
+    private static HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> genForcreateNotification() {
+        // basic
+        HttpRequestDef.Builder<CreateNotificationRequest, CreateNotificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNotificationRequest.class, CreateNotificationResponse.class)
+                .withName("CreateNotification")
+                .withUri("/v3/{project_id}/notifications")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateNotificationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateNotificationRequestBody.class),
+            f -> f.withMarshaller(CreateNotificationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateTrackerRequest, CreateTrackerResponse> createTracker =
         genForcreateTracker();
 
@@ -28,6 +53,31 @@ public class CtsMeta {
             TypeCasts.uncheckedConversion(CreateTrackerRequestBody.class),
             f -> f.withMarshaller(CreateTrackerRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> deleteNotification =
+        genFordeleteNotification();
+
+    private static HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> genFordeleteNotification() {
+        // basic
+        HttpRequestDef.Builder<DeleteNotificationRequest, DeleteNotificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNotificationRequest.class, DeleteNotificationResponse.class)
+                .withName("DeleteNotification")
+                .withUri("/v3/{project_id}/notifications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("notification_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNotificationRequest::getNotificationId, (req, v) -> {
+                req.setNotificationId(v);
             }));
 
         // response
@@ -60,6 +110,38 @@ public class CtsMeta {
             TypeCasts.uncheckedConversion(DeleteTrackerRequest.TrackerTypeEnum.class),
             f -> f.withMarshaller(DeleteTrackerRequest::getTrackerType, (req, v) -> {
                 req.setTrackerType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> listNotifications =
+        genForlistNotifications();
+
+    private static HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> genForlistNotifications() {
+        // basic
+        HttpRequestDef.Builder<ListNotificationsRequest, ListNotificationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNotificationsRequest.class, ListNotificationsResponse.class)
+                .withName("ListNotifications")
+                .withUri("/v3/{project_id}/notifications/{notification_type}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListNotificationsRequest.NotificationTypeEnum>withRequestField("notification_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListNotificationsRequest.NotificationTypeEnum.class),
+            f -> f.withMarshaller(ListNotificationsRequest::getNotificationType, (req, v) -> {
+                req.setNotificationType(v);
+            }));
+        builder.<String>withRequestField("notification_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotificationsRequest::getNotificationName, (req, v) -> {
+                req.setNotificationName(v);
             }));
 
         // response
@@ -223,6 +305,31 @@ public class CtsMeta {
             TypeCasts.uncheckedConversion(ListTrackersRequest.TrackerTypeEnum.class),
             f -> f.withMarshaller(ListTrackersRequest::getTrackerType, (req, v) -> {
                 req.setTrackerType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> updateNotification =
+        genForupdateNotification();
+
+    private static HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> genForupdateNotification() {
+        // basic
+        HttpRequestDef.Builder<UpdateNotificationRequest, UpdateNotificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateNotificationRequest.class, UpdateNotificationResponse.class)
+                .withName("UpdateNotification")
+                .withUri("/v3/{project_id}/notifications")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UpdateNotificationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNotificationRequestBody.class),
+            f -> f.withMarshaller(UpdateNotificationRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

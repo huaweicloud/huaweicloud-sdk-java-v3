@@ -339,7 +339,7 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户密码强度。结果为low/middle/high/none，分别表示密码强度低/中/高/无。
+    /** IAM用户密码强度。结果为Low/Middle/High/None，分别表示密码强度低/中/高/无。
      * 
      * @return pwdStrength */
     public String getPwdStrength() {

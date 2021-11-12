@@ -70,7 +70,7 @@ public class ListSubscriptionsRequest {
         return this;
     }
 
-    /** 协议名称, 枚举值：http,https,sms,email,functionstage,dms,application
+    /** 协议名称， 枚举值：http、https、sms、email、functionstage、dms、application。
      * 
      * @return protocol */
     public String getProtocol() {
@@ -86,7 +86,7 @@ public class ListSubscriptionsRequest {
         return this;
     }
 
-    /** 状态：0-未确认，1-已确认，2-不需要确认，3-已取消确认，4-已经删除
+    /** 状态。 0：未确认 1：已确认 2：不需要确认 3：已取消确认 4：已经删除。
      * 
      * @return status */
     public Integer getStatus() {
@@ -102,7 +102,7 @@ public class ListSubscriptionsRequest {
         return this;
     }
 
-    /** 订阅终端
+    /** 订阅终端。
      * 
      * @return endpoint */
     public String getEndpoint() {

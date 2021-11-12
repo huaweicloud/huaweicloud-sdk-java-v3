@@ -205,7 +205,7 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 套餐生效类型
+    /** 套餐生效类型 1.订购后激活使用时生效 2.订购即时生效 3.订购下个月开始生效
      * 
      * @return effectType */
     public Integer getEffectType() {
@@ -301,7 +301,7 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** SIM卡类型
+    /** SIM卡类型 1.vSIM 2.eSIM 3.实体卡
      * 
      * @return simType */
     public Integer getSimType() {
@@ -334,7 +334,7 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 价格(元)
+    /** 价格(分)
      * 
      * @return price */
     public Integer getPrice() {

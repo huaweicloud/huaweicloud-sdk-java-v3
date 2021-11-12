@@ -12,11 +12,6 @@ import java.util.function.Consumer;
 public class RestScheduleConfDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "conferenceType")
-
-    private Integer conferenceType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
     private String startTime;
@@ -115,22 +110,6 @@ public class RestScheduleConfDTO {
     @JsonProperty(value = "concurrentParticipants")
 
     private Integer concurrentParticipants;
-
-    public RestScheduleConfDTO withConferenceType(Integer conferenceType) {
-        this.conferenceType = conferenceType;
-        return this;
-    }
-
-    /** 创建会议类型（默认为普通会议）。 - 0: 普通会议。 - 2: 周期性会议，此时cycleParams必须填写。 minimum: 0 maximum: 2
-     * 
-     * @return conferenceType */
-    public Integer getConferenceType() {
-        return conferenceType;
-    }
-
-    public void setConferenceType(Integer conferenceType) {
-        this.conferenceType = conferenceType;
-    }
 
     public RestScheduleConfDTO withStartTime(String startTime) {
         this.startTime = startTime;
@@ -498,8 +477,7 @@ public class RestScheduleConfDTO {
             return false;
         }
         RestScheduleConfDTO restScheduleConfDTO = (RestScheduleConfDTO) o;
-        return Objects.equals(this.conferenceType, restScheduleConfDTO.conferenceType)
-            && Objects.equals(this.startTime, restScheduleConfDTO.startTime)
+        return Objects.equals(this.startTime, restScheduleConfDTO.startTime)
             && Objects.equals(this.length, restScheduleConfDTO.length)
             && Objects.equals(this.subject, restScheduleConfDTO.subject)
             && Objects.equals(this.mediaTypes, restScheduleConfDTO.mediaTypes)
@@ -523,8 +501,7 @@ public class RestScheduleConfDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceType,
-            startTime,
+        return Objects.hash(startTime,
             length,
             subject,
             mediaTypes,
@@ -550,7 +527,6 @@ public class RestScheduleConfDTO {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RestScheduleConfDTO {\n");
-        sb.append("    conferenceType: ").append(toIndentedString(conferenceType)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    length: ").append(toIndentedString(length)).append("\n");
         sb.append("    subject: ").append(toIndentedString(subject)).append("\n");

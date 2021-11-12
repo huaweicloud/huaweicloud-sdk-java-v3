@@ -18,7 +18,7 @@ public class ShowDomainQuotaRequest {
         return this;
     }
 
-    /** 账号ID。
+    /** 租户ID。
      * 
      * @return domainId */
     public String getDomainId() {

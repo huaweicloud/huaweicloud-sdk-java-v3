@@ -218,7 +218,7 @@ public class TextWatermark {
         return this;
     }
 
-    /** 字体，当前支持fzyouh、msyh
+    /** 字体，当前支持fzyouh
      * 
      * @return fontName */
     public String getFontName() {

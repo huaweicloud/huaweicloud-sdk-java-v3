@@ -866,6 +866,73 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListErrorLogsNewRequest, ListErrorLogsNewResponse> listErrorLogsNew =
+        genForlistErrorLogsNew();
+
+    private static HttpRequestDef<ListErrorLogsNewRequest, ListErrorLogsNewResponse> genForlistErrorLogsNew() {
+        // basic
+        HttpRequestDef.Builder<ListErrorLogsNewRequest, ListErrorLogsNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListErrorLogsNewRequest.class, ListErrorLogsNewResponse.class)
+                .withName("ListErrorLogsNew")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/errorlog")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListErrorLogsNewRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListErrorLogsNewRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            }));
+        builder.<String>withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListErrorLogsNewRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListErrorLogsNewRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListErrorLogsNewRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ListErrorLogsNewRequest.LevelEnum>withRequestField("level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListErrorLogsNewRequest.LevelEnum.class),
+            f -> f.withMarshaller(ListErrorLogsNewRequest::getLevel, (req, v) -> {
+                req.setLevel(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListErrorLogsNewRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
 
     private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
@@ -1350,6 +1417,73 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSlowLogsNewRequest, ListSlowLogsNewResponse> listSlowLogsNew =
+        genForlistSlowLogsNew();
+
+    private static HttpRequestDef<ListSlowLogsNewRequest, ListSlowLogsNewResponse> genForlistSlowLogsNew() {
+        // basic
+        HttpRequestDef.Builder<ListSlowLogsNewRequest, ListSlowLogsNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSlowLogsNewRequest.class, ListSlowLogsNewResponse.class)
+                .withName("ListSlowLogsNew")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/slowlog")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogsNewRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogsNewRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            }));
+        builder.<String>withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogsNewRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSlowLogsNewRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSlowLogsNewRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ListSlowLogsNewRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSlowLogsNewRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListSlowLogsNewRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogsNewRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -2606,6 +2740,45 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRdsInstanceAliasRequest.class),
             f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersion =
+        genForupgradeDbVersion();
+
+    private static HttpRequestDef<UpgradeDbVersionRequest, UpgradeDbVersionResponse> genForupgradeDbVersion() {
+        // basic
+        HttpRequestDef.Builder<UpgradeDbVersionRequest, UpgradeDbVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeDbVersionRequest.class, UpgradeDbVersionResponse.class)
+                .withName("UpgradeDbVersion")
+                .withUri("/v3/{project_id}/instances/{instance_id}/action/db-upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDbVersionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpgradeDbVersionRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpgradeDbVersionRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpgradeDbVersionRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CustomerUpgradeDatabaseVersionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CustomerUpgradeDatabaseVersionReq.class),
+            f -> f.withMarshaller(UpgradeDbVersionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

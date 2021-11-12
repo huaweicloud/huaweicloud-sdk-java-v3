@@ -25,7 +25,7 @@ public class IdentityToken {
         return this;
     }
 
-    /** token的ID。与请求头中的X-Auth-Token填写其一即可，若都填写，优先校验X-Auth-Token。
+    /** token的ID。与请求头中的X-Auth-Token含义相同，待废弃。
      * 
      * @return id */
     public String getId() {

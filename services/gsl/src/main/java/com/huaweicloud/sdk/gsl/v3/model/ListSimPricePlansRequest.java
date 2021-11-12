@@ -14,11 +14,6 @@ public class ListSimPricePlansRequest {
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sim_price_plan_id")
-
-    private Long simPricePlanId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_time")
 
     private Boolean realTime;
@@ -47,22 +42,6 @@ public class ListSimPricePlansRequest {
 
     public void setSimCardId(Long simCardId) {
         this.simCardId = simCardId;
-    }
-
-    public ListSimPricePlansRequest withSimPricePlanId(Long simPricePlanId) {
-        this.simPricePlanId = simPricePlanId;
-        return this;
-    }
-
-    /** 套餐实例ID minimum: 0
-     * 
-     * @return simPricePlanId */
-    public Long getSimPricePlanId() {
-        return simPricePlanId;
-    }
-
-    public void setSimPricePlanId(Long simPricePlanId) {
-        this.simPricePlanId = simPricePlanId;
     }
 
     public ListSimPricePlansRequest withRealTime(Boolean realTime) {
@@ -123,7 +102,6 @@ public class ListSimPricePlansRequest {
         }
         ListSimPricePlansRequest listSimPricePlansRequest = (ListSimPricePlansRequest) o;
         return Objects.equals(this.simCardId, listSimPricePlansRequest.simCardId)
-            && Objects.equals(this.simPricePlanId, listSimPricePlansRequest.simPricePlanId)
             && Objects.equals(this.realTime, listSimPricePlansRequest.realTime)
             && Objects.equals(this.limit, listSimPricePlansRequest.limit)
             && Objects.equals(this.offset, listSimPricePlansRequest.offset);
@@ -131,7 +109,7 @@ public class ListSimPricePlansRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(simCardId, simPricePlanId, realTime, limit, offset);
+        return Objects.hash(simCardId, realTime, limit, offset);
     }
 
     @Override
@@ -139,7 +117,6 @@ public class ListSimPricePlansRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSimPricePlansRequest {\n");
         sb.append("    simCardId: ").append(toIndentedString(simCardId)).append("\n");
-        sb.append("    simPricePlanId: ").append(toIndentedString(simPricePlanId)).append("\n");
         sb.append("    realTime: ").append(toIndentedString(realTime)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

@@ -343,19 +343,9 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     private MountConfig mountConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "depend_list")
-
-    private List<String> dependList = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy_config")
 
     private StrategyConfig strategyConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend_config")
-
-    private String extendConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependencies")
@@ -467,6 +457,16 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     @JsonProperty(value = "type")
 
     private TypeEnum type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_dynamic_memory")
+
+    private Boolean enableDynamicMemory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "function_async_config")
+
+    private FunctionAsyncConfig functionAsyncConfig;
 
     public CreateFunctionVersionResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -922,38 +922,6 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.mountConfig = mountConfig;
     }
 
-    public CreateFunctionVersionResponse withDependList(List<String> dependList) {
-        this.dependList = dependList;
-        return this;
-    }
-
-    public CreateFunctionVersionResponse addDependListItem(String dependListItem) {
-        if (this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
-        this.dependList.add(dependListItem);
-        return this;
-    }
-
-    public CreateFunctionVersionResponse withDependList(Consumer<List<String>> dependListSetter) {
-        if (this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
-        dependListSetter.accept(this.dependList);
-        return this;
-    }
-
-    /** 依赖id列表
-     * 
-     * @return dependList */
-    public List<String> getDependList() {
-        return dependList;
-    }
-
-    public void setDependList(List<String> dependList) {
-        this.dependList = dependList;
-    }
-
     public CreateFunctionVersionResponse withStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
         return this;
@@ -977,22 +945,6 @@ public class CreateFunctionVersionResponse extends SdkResponse {
 
     public void setStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
-    }
-
-    public CreateFunctionVersionResponse withExtendConfig(String extendConfig) {
-        this.extendConfig = extendConfig;
-        return this;
-    }
-
-    /** 函数扩展配置。
-     * 
-     * @return extendConfig */
-    public String getExtendConfig() {
-        return extendConfig;
-    }
-
-    public void setExtendConfig(String extendConfig) {
-        this.extendConfig = extendConfig;
     }
 
     public CreateFunctionVersionResponse withDependencies(List<Dependency> dependencies) {
@@ -1139,6 +1091,48 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.type = type;
     }
 
+    public CreateFunctionVersionResponse withEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+        return this;
+    }
+
+    /** 是否允许动态内存配置
+     * 
+     * @return enableDynamicMemory */
+    public Boolean getEnableDynamicMemory() {
+        return enableDynamicMemory;
+    }
+
+    public void setEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+    }
+
+    public CreateFunctionVersionResponse withFunctionAsyncConfig(FunctionAsyncConfig functionAsyncConfig) {
+        this.functionAsyncConfig = functionAsyncConfig;
+        return this;
+    }
+
+    public CreateFunctionVersionResponse withFunctionAsyncConfig(
+        Consumer<FunctionAsyncConfig> functionAsyncConfigSetter) {
+        if (this.functionAsyncConfig == null) {
+            this.functionAsyncConfig = new FunctionAsyncConfig();
+            functionAsyncConfigSetter.accept(this.functionAsyncConfig);
+        }
+
+        return this;
+    }
+
+    /** Get functionAsyncConfig
+     * 
+     * @return functionAsyncConfig */
+    public FunctionAsyncConfig getFunctionAsyncConfig() {
+        return functionAsyncConfig;
+    }
+
+    public void setFunctionAsyncConfig(FunctionAsyncConfig functionAsyncConfig) {
+        this.functionAsyncConfig = functionAsyncConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1175,9 +1169,7 @@ public class CreateFunctionVersionResponse extends SdkResponse {
             && Objects.equals(this.lastModified, createFunctionVersionResponse.lastModified)
             && Objects.equals(this.funcVpc, createFunctionVersionResponse.funcVpc)
             && Objects.equals(this.mountConfig, createFunctionVersionResponse.mountConfig)
-            && Objects.equals(this.dependList, createFunctionVersionResponse.dependList)
             && Objects.equals(this.strategyConfig, createFunctionVersionResponse.strategyConfig)
-            && Objects.equals(this.extendConfig, createFunctionVersionResponse.extendConfig)
             && Objects.equals(this.dependencies, createFunctionVersionResponse.dependencies)
             && Objects.equals(this.initializerHandler, createFunctionVersionResponse.initializerHandler)
             && Objects.equals(this.initializerTimeout, createFunctionVersionResponse.initializerTimeout)
@@ -1185,7 +1177,9 @@ public class CreateFunctionVersionResponse extends SdkResponse {
             && Objects.equals(this.longTime, createFunctionVersionResponse.longTime)
             && Objects.equals(this.logGroupId, createFunctionVersionResponse.logGroupId)
             && Objects.equals(this.logStreamId, createFunctionVersionResponse.logStreamId)
-            && Objects.equals(this.type, createFunctionVersionResponse.type);
+            && Objects.equals(this.type, createFunctionVersionResponse.type)
+            && Objects.equals(this.enableDynamicMemory, createFunctionVersionResponse.enableDynamicMemory)
+            && Objects.equals(this.functionAsyncConfig, createFunctionVersionResponse.functionAsyncConfig);
     }
 
     @Override
@@ -1217,9 +1211,7 @@ public class CreateFunctionVersionResponse extends SdkResponse {
             lastModified,
             funcVpc,
             mountConfig,
-            dependList,
             strategyConfig,
-            extendConfig,
             dependencies,
             initializerHandler,
             initializerTimeout,
@@ -1227,7 +1219,9 @@ public class CreateFunctionVersionResponse extends SdkResponse {
             longTime,
             logGroupId,
             logStreamId,
-            type);
+            type,
+            enableDynamicMemory,
+            functionAsyncConfig);
     }
 
     @Override
@@ -1261,9 +1255,7 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
-        sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
-        sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
@@ -1272,6 +1264,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
+        sb.append("    functionAsyncConfig: ").append(toIndentedString(functionAsyncConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -719,6 +719,37 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunRecordRequest, RunRecordResponse> runRecord = genForrunRecord();
+
+    private static HttpRequestDef<RunRecordRequest, RunRecordResponse> genForrunRecord() {
+        // basic
+        HttpRequestDef.Builder<RunRecordRequest, RunRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunRecordRequest.class, RunRecordResponse.class)
+                .withName("RunRecord")
+                .withUri("/v1/{project_id}/record/control")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<RunRecordRequest.ActionEnum>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunRecordRequest.ActionEnum.class),
+            f -> f.withMarshaller(RunRecordRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+        builder.<RecordControlInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RecordControlInfo.class),
+            f -> f.withMarshaller(RunRecordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDomainRequest, ShowDomainResponse> showDomain = genForshowDomain();
 
     private static HttpRequestDef<ShowDomainRequest, ShowDomainResponse> genForshowDomain() {

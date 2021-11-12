@@ -64,7 +64,7 @@ public class ListSnapshotDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 指定时间区间内截图数量总和 minimum: 0 maximum: -1
+    /** 指定时间区间内截图数量总和。 minimum: 0 maximum: -1
      * 
      * @return total */
     public Long getTotal() {

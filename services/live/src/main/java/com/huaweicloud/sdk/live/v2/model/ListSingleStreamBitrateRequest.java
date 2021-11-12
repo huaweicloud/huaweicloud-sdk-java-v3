@@ -86,7 +86,7 @@ public class ListSingleStreamBitrateRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度6小时，最大查询周期7天。 若参数为空，默认查询最近1小时数据。
+    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期1个月。 若参数为空，默认查询最近1小时数据。
      * 
      * @return startTime */
     public String getStartTime() {

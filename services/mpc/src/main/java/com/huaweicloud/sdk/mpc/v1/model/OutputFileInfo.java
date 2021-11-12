@@ -22,7 +22,7 @@ public class OutputFileInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
 
-    private MetaData metaData;
+    private SourceInfo metaData;
 
     public OutputFileInfo withOutputFileName(String outputFileName) {
         this.outputFileName = outputFileName;
@@ -56,14 +56,14 @@ public class OutputFileInfo {
         this.execDescription = execDescription;
     }
 
-    public OutputFileInfo withMetaData(MetaData metaData) {
+    public OutputFileInfo withMetaData(SourceInfo metaData) {
         this.metaData = metaData;
         return this;
     }
 
-    public OutputFileInfo withMetaData(Consumer<MetaData> metaDataSetter) {
+    public OutputFileInfo withMetaData(Consumer<SourceInfo> metaDataSetter) {
         if (this.metaData == null) {
-            this.metaData = new MetaData();
+            this.metaData = new SourceInfo();
             metaDataSetter.accept(this.metaData);
         }
 
@@ -73,11 +73,11 @@ public class OutputFileInfo {
     /** Get metaData
      * 
      * @return metaData */
-    public MetaData getMetaData() {
+    public SourceInfo getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(MetaData metaData) {
+    public void setMetaData(SourceInfo metaData) {
         this.metaData = metaData;
     }
 

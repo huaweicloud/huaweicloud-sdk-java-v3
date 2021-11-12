@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.cdn.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -17,7 +19,7 @@ public class CompressResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress_rules")
 
-    private CompressRules compressRules;
+    private List<CompressRules> compressRules = null;
 
     public CompressResponse withCompressSwitch(Integer compressSwitch) {
         this.compressSwitch = compressSwitch;
@@ -35,28 +37,35 @@ public class CompressResponse {
         this.compressSwitch = compressSwitch;
     }
 
-    public CompressResponse withCompressRules(CompressRules compressRules) {
+    public CompressResponse withCompressRules(List<CompressRules> compressRules) {
         this.compressRules = compressRules;
         return this;
     }
 
-    public CompressResponse withCompressRules(Consumer<CompressRules> compressRulesSetter) {
+    public CompressResponse addCompressRulesItem(CompressRules compressRulesItem) {
         if (this.compressRules == null) {
-            this.compressRules = new CompressRules();
-            compressRulesSetter.accept(this.compressRules);
+            this.compressRules = new ArrayList<>();
         }
-
+        this.compressRules.add(compressRulesItem);
         return this;
     }
 
-    /** Get compressRules
+    public CompressResponse withCompressRules(Consumer<List<CompressRules>> compressRulesSetter) {
+        if (this.compressRules == null) {
+            this.compressRules = new ArrayList<>();
+        }
+        compressRulesSetter.accept(this.compressRules);
+        return this;
+    }
+
+    /** GZIP压缩规则
      * 
      * @return compressRules */
-    public CompressRules getCompressRules() {
+    public List<CompressRules> getCompressRules() {
         return compressRules;
     }
 
-    public void setCompressRules(CompressRules compressRules) {
+    public void setCompressRules(List<CompressRules> compressRules) {
         this.compressRules = compressRules;
     }
 

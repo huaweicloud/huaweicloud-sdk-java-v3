@@ -458,7 +458,7 @@ public class MysqlInstanceRequest  {
 
 
     /**
-     * 时区。
+     * 时区。默认时区为UTC。
      * @return timeZone
      */
     public String getTimeZone() {

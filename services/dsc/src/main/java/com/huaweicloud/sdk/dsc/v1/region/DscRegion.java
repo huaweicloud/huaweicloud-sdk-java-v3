@@ -14,11 +14,16 @@ public class DscRegion {
 
     public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://sdg.cn-north-1.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://sdg.cn-north-9.myhuaweicloud.com");
+
     public static final Region CN_EAST_2 = new Region("cn-east-2", "https://sdg.cn-east-2.myhuaweicloud.com");
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://sdg.cn-east-3.myhuaweicloud.com");
 
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://sdg.cn-south-1.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_2 =
+        new Region("ap-southeast-2", "https://sdg.ap-southeast-2.myhuaweicloud.com");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
@@ -26,9 +31,11 @@ public class DscRegion {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-north-1", CN_NORTH_1);
+        map.put("cn-north-9", CN_NORTH_9);
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-south-1", CN_SOUTH_1);
+        map.put("ap-southeast-2", AP_SOUTHEAST_2);
         return Collections.unmodifiableMap(map);
     }
 

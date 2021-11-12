@@ -87,7 +87,7 @@ public class ProjectManClient {
             ProjectManMeta.batchDeleteMembersV4, hcClient);
     }
 
-    /** 检查项目名称是否存在 更新项目
+    /** 检查项目名称是否存在 检查项目名称是否存在
      *
      * @param CheckProjectNameV4Request 请求对象
      * @return CheckProjectNameV4Response */
@@ -95,7 +95,7 @@ public class ProjectManClient {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.checkProjectNameV4);
     }
 
-    /** 检查项目名称是否存在 更新项目
+    /** 检查项目名称是否存在 检查项目名称是否存在
      *
      * @param CheckProjectNameV4Request 请求对象
      * @return SyncInvoker<CheckProjectNameV4Request, CheckProjectNameV4Response> */
@@ -518,6 +518,24 @@ public class ProjectManClient {
             ProjectManMeta.createIterationV4, hcClient);
     }
 
+    /** 细粒度权限用户创建工作项 拥有IAM细粒度权限（projectmanConfig:systemSettingField:set）且在devcloud项目中有创建工作项的权限的用户可以设置工作项的创建者
+     *
+     * @param CreateSystemIssueV4Request 请求对象
+     * @return CreateSystemIssueV4Response */
+    public CreateSystemIssueV4Response createSystemIssueV4(CreateSystemIssueV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.createSystemIssueV4);
+    }
+
+    /** 细粒度权限用户创建工作项 拥有IAM细粒度权限（projectmanConfig:systemSettingField:set）且在devcloud项目中有创建工作项的权限的用户可以设置工作项的创建者
+     *
+     * @param CreateSystemIssueV4Request 请求对象
+     * @return SyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response> */
+    public SyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response> createSystemIssueV4Invoker(
+        CreateSystemIssueV4Request request) {
+        return new SyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response>(request,
+            ProjectManMeta.createSystemIssueV4, hcClient);
+    }
+
     /** 删除工作项 删除工作项
      *
      * @param DeleteIssueV4Request 请求对象
@@ -763,6 +781,24 @@ public class ProjectManClient {
         UpdateIterationV4Request request) {
         return new SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>(request,
             ProjectManMeta.updateIterationV4, hcClient);
+    }
+
+    /** 上传图片 上传图片
+     *
+     * @param UploadIssueImgRequest 请求对象
+     * @return UploadIssueImgResponse */
+    public UploadIssueImgResponse uploadIssueImg(UploadIssueImgRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.uploadIssueImg);
+    }
+
+    /** 上传图片 上传图片
+     *
+     * @param UploadIssueImgRequest 请求对象
+     * @return SyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse> */
+    public SyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse> uploadIssueImgInvoker(
+        UploadIssueImgRequest request) {
+        return new SyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse>(request, ProjectManMeta.uploadIssueImg,
+            hcClient);
     }
 
 }

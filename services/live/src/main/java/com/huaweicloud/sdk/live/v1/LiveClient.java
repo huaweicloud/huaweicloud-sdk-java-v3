@@ -337,6 +337,22 @@ public class LiveClient {
             LiveMeta.listStreamForbidden, hcClient);
     }
 
+    /** 提交录制控制命令 对单条流的实时录制控制接口。
+     *
+     * @param RunRecordRequest 请求对象
+     * @return RunRecordResponse */
+    public RunRecordResponse runRecord(RunRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.runRecord);
+    }
+
+    /** 提交录制控制命令 对单条流的实时录制控制接口。
+     *
+     * @param RunRecordRequest 请求对象
+     * @return SyncInvoker<RunRecordRequest, RunRecordResponse> */
+    public SyncInvoker<RunRecordRequest, RunRecordResponse> runRecordInvoker(RunRecordRequest request) {
+        return new SyncInvoker<RunRecordRequest, RunRecordResponse>(request, LiveMeta.runRecord, hcClient);
+    }
+
     /** 查询直播域名 查询直播域名
      *
      * @param ShowDomainRequest 请求对象

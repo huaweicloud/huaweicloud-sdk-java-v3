@@ -33,7 +33,7 @@ public class DomainQuotaResponseQuotas {
         return this;
     }
 
-    /** Get quotaKey
+    /** 资源类型。
      * 
      * @return quotaKey */
     public String getQuotaKey() {
@@ -49,7 +49,7 @@ public class DomainQuotaResponseQuotas {
         return this;
     }
 
-    /** Get quotaLimit
+    /** 资源配额的最大值。
      * 
      * @return quotaLimit */
     public Integer getQuotaLimit() {
@@ -65,7 +65,7 @@ public class DomainQuotaResponseQuotas {
         return this;
     }
 
-    /** Get used
+    /** 配额已使用数量。
      * 
      * @return used */
     public Integer getUsed() {
@@ -81,7 +81,7 @@ public class DomainQuotaResponseQuotas {
         return this;
     }
 
-    /** Get unit
+    /** 配额统计单位，取固定值“count”。
      * 
      * @return unit */
     public String getUnit() {

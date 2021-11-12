@@ -16,7 +16,7 @@ public class IamAsyncClient {
     }
 
     public static ClientBuilder<IamAsyncClient> newBuilder() {
-        return new ClientBuilder<>(IamAsyncClient::new, "GlobalCredentials,BasicCredentials");
+        return new ClientBuilder<>(IamAsyncClient::new, "GlobalCredentials,BasicCredentials,IAMCredentials");
     }
 
     /** 为委托授予所有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予所有项目服务权限。
@@ -82,6 +82,50 @@ public class IamAsyncClient {
         AssociateAgencyWithProjectPermissionRequest request) {
         return new AsyncInvoker<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse>(
             request, IamMeta.associateAgencyWithProjectPermission, hcClient);
+    }
+
+    /** 基于用户组为企业项目授权 该接口用于基于用户组为企业项目授权。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<AssociateRoleToGroupOnEnterpriseProjectResponse> */
+    public CompletableFuture<AssociateRoleToGroupOnEnterpriseProjectResponse> associateRoleToGroupOnEnterpriseProjectAsync(
+        AssociateRoleToGroupOnEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.associateRoleToGroupOnEnterpriseProject);
+    }
+
+    /** 基于用户组为企业项目授权 该接口用于基于用户组为企业项目授权。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest,
+     *         AssociateRoleToGroupOnEnterpriseProjectResponse> */
+    public AsyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> associateRoleToGroupOnEnterpriseProjectAsyncInvoker(
+        AssociateRoleToGroupOnEnterpriseProjectRequest request) {
+        return new AsyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse>(
+            request, IamMeta.associateRoleToGroupOnEnterpriseProject, hcClient);
+    }
+
+    /** 基于用户为企业项目授权 基于用户为企业项目授权。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<AssociateRoleToUserOnEnterpriseProjectResponse> */
+    public CompletableFuture<AssociateRoleToUserOnEnterpriseProjectResponse> associateRoleToUserOnEnterpriseProjectAsync(
+        AssociateRoleToUserOnEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.associateRoleToUserOnEnterpriseProject);
+    }
+
+    /** 基于用户为企业项目授权 基于用户为企业项目授权。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest,
+     *         AssociateRoleToUserOnEnterpriseProjectResponse> */
+    public AsyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> associateRoleToUserOnEnterpriseProjectAsyncInvoker(
+        AssociateRoleToUserOnEnterpriseProjectRequest request) {
+        return new AsyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse>(
+            request, IamMeta.associateRoleToUserOnEnterpriseProject, hcClient);
     }
 
     /** 检查委托下是否具有所有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)检查委托是否具有所有项目服务权限。
@@ -290,6 +334,25 @@ public class IamAsyncClient {
         CreateTokenWithIdTokenRequest request) {
         return new AsyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse>(request,
             IamMeta.createTokenWithIdToken, hcClient);
+    }
+
+    /** 获取联邦认证unscoped token(OpenId Connect Id token方式) 获取联邦认证token(OpenId Connect Id token方式)。
+     *
+     * @param CreateUnscopedTokenWithIdTokenRequest 请求对象
+     * @return CompletableFuture<CreateUnscopedTokenWithIdTokenResponse> */
+    public CompletableFuture<CreateUnscopedTokenWithIdTokenResponse> createUnscopedTokenWithIdTokenAsync(
+        CreateUnscopedTokenWithIdTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createUnscopedTokenWithIdToken);
+    }
+
+    /** 获取联邦认证unscoped token(OpenId Connect Id token方式) 获取联邦认证token(OpenId Connect Id token方式)。
+     *
+     * @param CreateUnscopedTokenWithIdTokenRequest 请求对象
+     * @return AsyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> */
+    public AsyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> createUnscopedTokenWithIdTokenAsyncInvoker(
+        CreateUnscopedTokenWithIdTokenRequest request) {
+        return new AsyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse>(request,
+            IamMeta.createUnscopedTokenWithIdToken, hcClient);
     }
 
     /** 删除委托 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除委托。
@@ -714,7 +777,7 @@ public class IamAsyncClient {
     }
 
     /** 查询用户组的所有项目权限列表 该接口可以用于管理员查询用户组所有项目服务权限列表。
-     * \\n\\n该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
      * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
      * @return CompletableFuture<KeystoneListAllProjectPermissionsForGroupResponse> */
@@ -724,7 +787,7 @@ public class IamAsyncClient {
     }
 
     /** 查询用户组的所有项目权限列表 该接口可以用于管理员查询用户组所有项目服务权限列表。
-     * \\n\\n该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
      * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneListAllProjectPermissionsForGroupRequest,
@@ -818,6 +881,31 @@ public class IamAsyncClient {
         KeystoneListEndpointsRequest request) {
         return new AsyncInvoker<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse>(request,
             IamMeta.keystoneListEndpoints, hcClient);
+    }
+
+    /** 查询联邦用户可以访问的账号列表 该接口用于查询联邦用户可以访问的账号列表。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * &gt; -
+     * 推荐使用[查询IAM用户可以访问的账号详情](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneQueryAccessibleDomainDetailsToUser)，该接口可以返回相同的响应格式。
+     *
+     * @param KeystoneListFederationDomainsRequest 请求对象
+     * @return CompletableFuture<KeystoneListFederationDomainsResponse> */
+    public CompletableFuture<KeystoneListFederationDomainsResponse> keystoneListFederationDomainsAsync(
+        KeystoneListFederationDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneListFederationDomains);
+    }
+
+    /** 查询联邦用户可以访问的账号列表 该接口用于查询联邦用户可以访问的账号列表。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * &gt; -
+     * 推荐使用[查询IAM用户可以访问的账号详情](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneQueryAccessibleDomainDetailsToUser)，该接口可以返回相同的响应格式。
+     *
+     * @param KeystoneListFederationDomainsRequest 请求对象
+     * @return AsyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> */
+    public AsyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> keystoneListFederationDomainsAsyncInvoker(
+        KeystoneListFederationDomainsRequest request) {
+        return new AsyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse>(request,
+            IamMeta.keystoneListFederationDomains, hcClient);
     }
 
     /** 查询用户组列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组列表。
@@ -1590,6 +1678,69 @@ public class IamAsyncClient {
             IamMeta.listDomainPermissionsForAgency, hcClient);
     }
 
+    /** 查询用户组关联的企业项目 该接口可用于查询用户组所关联的企业项目。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListEnterpriseProjectsForGroupRequest 请求对象
+     * @return CompletableFuture<ListEnterpriseProjectsForGroupResponse> */
+    public CompletableFuture<ListEnterpriseProjectsForGroupResponse> listEnterpriseProjectsForGroupAsync(
+        ListEnterpriseProjectsForGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listEnterpriseProjectsForGroup);
+    }
+
+    /** 查询用户组关联的企业项目 该接口可用于查询用户组所关联的企业项目。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListEnterpriseProjectsForGroupRequest 请求对象
+     * @return AsyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> */
+    public AsyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> listEnterpriseProjectsForGroupAsyncInvoker(
+        ListEnterpriseProjectsForGroupRequest request) {
+        return new AsyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse>(request,
+            IamMeta.listEnterpriseProjectsForGroup, hcClient);
+    }
+
+    /** 查询用户关联的企业项目 该接口可用于查询用户所关联的企业项目。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListEnterpriseProjectsForUserRequest 请求对象
+     * @return CompletableFuture<ListEnterpriseProjectsForUserResponse> */
+    public CompletableFuture<ListEnterpriseProjectsForUserResponse> listEnterpriseProjectsForUserAsync(
+        ListEnterpriseProjectsForUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listEnterpriseProjectsForUser);
+    }
+
+    /** 查询用户关联的企业项目 该接口可用于查询用户所关联的企业项目。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListEnterpriseProjectsForUserRequest 请求对象
+     * @return AsyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> */
+    public AsyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> listEnterpriseProjectsForUserAsyncInvoker(
+        ListEnterpriseProjectsForUserRequest request) {
+        return new AsyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse>(request,
+            IamMeta.listEnterpriseProjectsForUser, hcClient);
+    }
+
+    /** 查询企业项目关联的用户组 该接口可用于查询企业项目关联的用户组。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListGroupsForEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<ListGroupsForEnterpriseProjectResponse> */
+    public CompletableFuture<ListGroupsForEnterpriseProjectResponse> listGroupsForEnterpriseProjectAsync(
+        ListGroupsForEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listGroupsForEnterpriseProject);
+    }
+
+    /** 查询企业项目关联的用户组 该接口可用于查询企业项目关联的用户组。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListGroupsForEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> */
+    public AsyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> listGroupsForEnterpriseProjectAsyncInvoker(
+        ListGroupsForEnterpriseProjectRequest request) {
+        return new AsyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse>(request,
+            IamMeta.listGroupsForEnterpriseProject, hcClient);
+    }
+
     /** 查询项目服务中的委托权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目服务中的委托权限。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -1609,6 +1760,70 @@ public class IamAsyncClient {
         ListProjectPermissionsForAgencyRequest request) {
         return new AsyncInvoker<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse>(
             request, IamMeta.listProjectPermissionsForAgency, hcClient);
+    }
+
+    /** 查询企业项目已关联用户组的权限 该接口可用于查询企业项目已关联用户组的权限。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListRolesForGroupOnEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<ListRolesForGroupOnEnterpriseProjectResponse> */
+    public CompletableFuture<ListRolesForGroupOnEnterpriseProjectResponse> listRolesForGroupOnEnterpriseProjectAsync(
+        ListRolesForGroupOnEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listRolesForGroupOnEnterpriseProject);
+    }
+
+    /** 查询企业项目已关联用户组的权限 该接口可用于查询企业项目已关联用户组的权限。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListRolesForGroupOnEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest,
+     *         ListRolesForGroupOnEnterpriseProjectResponse> */
+    public AsyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> listRolesForGroupOnEnterpriseProjectAsyncInvoker(
+        ListRolesForGroupOnEnterpriseProjectRequest request) {
+        return new AsyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse>(
+            request, IamMeta.listRolesForGroupOnEnterpriseProject, hcClient);
+    }
+
+    /** 查询企业项目直接关联用户的权限 该接口可用于查询企业项目直接关联用户的权限。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListRolesForUserOnEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<ListRolesForUserOnEnterpriseProjectResponse> */
+    public CompletableFuture<ListRolesForUserOnEnterpriseProjectResponse> listRolesForUserOnEnterpriseProjectAsync(
+        ListRolesForUserOnEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listRolesForUserOnEnterpriseProject);
+    }
+
+    /** 查询企业项目直接关联用户的权限 该接口可用于查询企业项目直接关联用户的权限。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListRolesForUserOnEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> */
+    public AsyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> listRolesForUserOnEnterpriseProjectAsyncInvoker(
+        ListRolesForUserOnEnterpriseProjectRequest request) {
+        return new AsyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse>(
+            request, IamMeta.listRolesForUserOnEnterpriseProject, hcClient);
+    }
+
+    /** 查询企业项目直接关联用户 该接口可用于查询企业项目直接关联的用户。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListUsersForEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<ListUsersForEnterpriseProjectResponse> */
+    public CompletableFuture<ListUsersForEnterpriseProjectResponse> listUsersForEnterpriseProjectAsync(
+        ListUsersForEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listUsersForEnterpriseProject);
+    }
+
+    /** 查询企业项目直接关联用户 该接口可用于查询企业项目直接关联的用户。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ListUsersForEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> */
+    public AsyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> listUsersForEnterpriseProjectAsyncInvoker(
+        ListUsersForEnterpriseProjectRequest request) {
+        return new AsyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse>(request,
+            IamMeta.listUsersForEnterpriseProject, hcClient);
     }
 
     /** 移除委托下的所有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的所有项目服务权限。
@@ -1673,6 +1888,50 @@ public class IamAsyncClient {
         RemoveProjectPermissionFromAgencyRequest request) {
         return new AsyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse>(
             request, IamMeta.removeProjectPermissionFromAgency, hcClient);
+    }
+
+    /** 删除企业项目关联用户组的权限 该接口用于删除企业项目关联用户组的权限。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<RevokeRoleFromGroupOnEnterpriseProjectResponse> */
+    public CompletableFuture<RevokeRoleFromGroupOnEnterpriseProjectResponse> revokeRoleFromGroupOnEnterpriseProjectAsync(
+        RevokeRoleFromGroupOnEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.revokeRoleFromGroupOnEnterpriseProject);
+    }
+
+    /** 删除企业项目关联用户组的权限 该接口用于删除企业项目关联用户组的权限。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest,
+     *         RevokeRoleFromGroupOnEnterpriseProjectResponse> */
+    public AsyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> revokeRoleFromGroupOnEnterpriseProjectAsyncInvoker(
+        RevokeRoleFromGroupOnEnterpriseProjectRequest request) {
+        return new AsyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse>(
+            request, IamMeta.revokeRoleFromGroupOnEnterpriseProject, hcClient);
+    }
+
+    /** 删除企业项目直接关联用户的权限 删除企业项目直接关联用户的权限。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<RevokeRoleFromUserOnEnterpriseProjectResponse> */
+    public CompletableFuture<RevokeRoleFromUserOnEnterpriseProjectResponse> revokeRoleFromUserOnEnterpriseProjectAsync(
+        RevokeRoleFromUserOnEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.revokeRoleFromUserOnEnterpriseProject);
+    }
+
+    /** 删除企业项目直接关联用户的权限 删除企业项目直接关联用户的权限。
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest,
+     *         RevokeRoleFromUserOnEnterpriseProjectResponse> */
+    public AsyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> revokeRoleFromUserOnEnterpriseProjectAsyncInvoker(
+        RevokeRoleFromUserOnEnterpriseProjectRequest request) {
+        return new AsyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse>(
+            request, IamMeta.revokeRoleFromUserOnEnterpriseProject, hcClient);
     }
 
     /** 查询委托详情 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托详情。

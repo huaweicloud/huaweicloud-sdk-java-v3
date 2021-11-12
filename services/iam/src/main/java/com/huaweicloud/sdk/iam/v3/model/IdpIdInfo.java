@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 身份提供商信息 */
+/** 身份提供商信息。 */
 public class IdpIdInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,7 +18,7 @@ public class IdpIdInfo {
         return this;
     }
 
-    /** 身份提供商id
+    /** 身份提供商id。
      * 
      * @return id */
     public String getId() {

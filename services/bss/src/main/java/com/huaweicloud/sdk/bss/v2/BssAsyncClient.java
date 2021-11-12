@@ -599,6 +599,25 @@ public class BssAsyncClient {
             BssMeta.listFreeResourceUsages, hcClient);
     }
 
+    /** 查询产品的折扣和激励策略 功能描述：合作伙伴可以查看产品的折扣和激励策略。
+     *
+     * @param ListIncentiveDiscountPoliciesRequest 请求对象
+     * @return CompletableFuture<ListIncentiveDiscountPoliciesResponse> */
+    public CompletableFuture<ListIncentiveDiscountPoliciesResponse> listIncentiveDiscountPoliciesAsync(
+        ListIncentiveDiscountPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listIncentiveDiscountPolicies);
+    }
+
+    /** 查询产品的折扣和激励策略 功能描述：合作伙伴可以查看产品的折扣和激励策略。
+     *
+     * @param ListIncentiveDiscountPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> */
+    public AsyncInvoker<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> listIncentiveDiscountPoliciesAsyncInvoker(
+        ListIncentiveDiscountPoliciesRequest request) {
+        return new AsyncInvoker<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse>(request,
+            BssMeta.listIncentiveDiscountPolicies, hcClient);
+    }
+
     /** 查询精英服务商列表 功能描述：华为云伙伴能力中心（一级经销商）可以查询精英服务商（二级经销商）列表。
      *
      * @param ListIndirectPartnersRequest 请求对象
@@ -728,6 +747,25 @@ public class BssAsyncClient {
         ListOrderDiscountsRequest request) {
         return new AsyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>(request,
             BssMeta.listOrderDiscounts, hcClient);
+    }
+
+    /** 查询收支明细 功能描述：伙伴在伙伴管理台可以查看自身的收支明细情况
+     *
+     * @param ListPartnerAccountChangeRecordsRequest 请求对象
+     * @return CompletableFuture<ListPartnerAccountChangeRecordsResponse> */
+    public CompletableFuture<ListPartnerAccountChangeRecordsResponse> listPartnerAccountChangeRecordsAsync(
+        ListPartnerAccountChangeRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listPartnerAccountChangeRecords);
+    }
+
+    /** 查询收支明细 功能描述：伙伴在伙伴管理台可以查看自身的收支明细情况
+     *
+     * @param ListPartnerAccountChangeRecordsRequest 请求对象
+     * @return AsyncInvoker<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> */
+    public AsyncInvoker<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> listPartnerAccountChangeRecordsAsyncInvoker(
+        ListPartnerAccountChangeRecordsRequest request) {
+        return new AsyncInvoker<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse>(
+            request, BssMeta.listPartnerAccountChangeRecords, hcClient);
     }
 
     /** 查询调账记录 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录

@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Dimension;
+import com.huaweicloud.sdk.aom.v2.model.DimensionSeries;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -32,7 +32,7 @@ public class SeriesQueryItemResult  {
     @JsonProperty(value="dimensions")
     
     
-    private List<Dimension> dimensions = null;
+    private List<DimensionSeries> dimensions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,13 +77,13 @@ public class SeriesQueryItemResult  {
 
     
 
-    public SeriesQueryItemResult withDimensions(List<Dimension> dimensions) {
+    public SeriesQueryItemResult withDimensions(List<DimensionSeries> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
     
-    public SeriesQueryItemResult addDimensionsItem(Dimension dimensionsItem) {
+    public SeriesQueryItemResult addDimensionsItem(DimensionSeries dimensionsItem) {
         if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -91,7 +91,7 @@ public class SeriesQueryItemResult  {
         return this;
     }
 
-    public SeriesQueryItemResult withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
+    public SeriesQueryItemResult withDimensions(Consumer<List<DimensionSeries>> dimensionsSetter) {
         if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -103,11 +103,11 @@ public class SeriesQueryItemResult  {
      * 维度列表。
      * @return dimensions
      */
-    public List<Dimension> getDimensions() {
+    public List<DimensionSeries> getDimensions() {
         return dimensions;
     }
 
-    public void setDimensions(List<Dimension> dimensions) {
+    public void setDimensions(List<DimensionSeries> dimensions) {
         this.dimensions = dimensions;
     }
 

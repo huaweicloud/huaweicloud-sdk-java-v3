@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** domain信息 */
+/** domain信息。 */
 public class DomainInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,7 +23,7 @@ public class DomainInfo {
         return this;
     }
 
-    /** 租户id
+    /** 租户id。
      * 
      * @return id */
     public String getId() {
@@ -39,7 +39,7 @@ public class DomainInfo {
         return this;
     }
 
-    /** 租户name
+    /** 租户name。
      * 
      * @return name */
     public String getName() {

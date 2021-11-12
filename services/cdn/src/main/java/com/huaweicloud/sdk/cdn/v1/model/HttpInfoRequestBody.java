@@ -40,6 +40,11 @@ public class HttpInfoRequestBody {
     private Integer certificateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force_redirect_https")
+
+    private Integer forceRedirectHttps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_redirect_config")
 
     private ForceRedirect forceRedirectConfig;
@@ -140,6 +145,22 @@ public class HttpInfoRequestBody {
         this.certificateType = certificateType;
     }
 
+    public HttpInfoRequestBody withForceRedirectHttps(Integer forceRedirectHttps) {
+        this.forceRedirectHttps = forceRedirectHttps;
+        return this;
+    }
+
+    /** 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
+     * 
+     * @return forceRedirectHttps */
+    public Integer getForceRedirectHttps() {
+        return forceRedirectHttps;
+    }
+
+    public void setForceRedirectHttps(Integer forceRedirectHttps) {
+        this.forceRedirectHttps = forceRedirectHttps;
+    }
+
     public HttpInfoRequestBody withForceRedirectConfig(ForceRedirect forceRedirectConfig) {
         this.forceRedirectConfig = forceRedirectConfig;
         return this;
@@ -180,13 +201,20 @@ public class HttpInfoRequestBody {
             && Objects.equals(this.privateKey, httpInfoRequestBody.privateKey)
             && Objects.equals(this.http2, httpInfoRequestBody.http2)
             && Objects.equals(this.certificateType, httpInfoRequestBody.certificateType)
+            && Objects.equals(this.forceRedirectHttps, httpInfoRequestBody.forceRedirectHttps)
             && Objects.equals(this.forceRedirectConfig, httpInfoRequestBody.forceRedirectConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(certName, httpsStatus, certificate, privateKey, http2, certificateType, forceRedirectConfig);
+        return Objects.hash(certName,
+            httpsStatus,
+            certificate,
+            privateKey,
+            http2,
+            certificateType,
+            forceRedirectHttps,
+            forceRedirectConfig);
     }
 
     @Override
@@ -199,6 +227,7 @@ public class HttpInfoRequestBody {
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
         sb.append("    http2: ").append(toIndentedString(http2)).append("\n");
         sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
+        sb.append("    forceRedirectHttps: ").append(toIndentedString(forceRedirectHttps)).append("\n");
         sb.append("    forceRedirectConfig: ").append(toIndentedString(forceRedirectConfig)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -6,10 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -287,6 +285,11 @@ public class ListFunctionVersionResult {
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encrypted_user_data")
+
+    private String encryptedUserData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "digest")
 
     private String digest;
@@ -312,29 +315,14 @@ public class ListFunctionVersionResult {
     private String appXrole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version_description")
-
-    private String versionDescription;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modified")
 
     private OffsetDateTime lastModified;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "func_vpc")
+    @JsonProperty(value = "func_vpc_id")
 
-    private FuncVpc funcVpc;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mount_config")
-
-    private MountConfig mountConfig;
+    private String funcVpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concurrency")
@@ -342,24 +330,14 @@ public class ListFunctionVersionResult {
     private Integer concurrency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "depend_list")
+    @JsonProperty(value = "concurrent_num")
 
-    private List<String> dependList = null;
+    private Integer concurrentNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy_config")
 
     private StrategyConfig strategyConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend_config")
-
-    private String extendConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dependencies")
-
-    private List<Dependency> dependencies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initializer_handler")
@@ -370,6 +348,41 @@ public class ListFunctionVersionResult {
     @JsonProperty(value = "initializer_timeout")
 
     private Integer initializerTimeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "long_time")
+
+    private Boolean longTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_id")
+
+    private String logGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_id")
+
+    private String logStreamId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "function_async_config")
+
+    private FunctionAsyncConfig functionAsyncConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_cloud_debug")
+
+    private String enableCloudDebug;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_dynamic_memory")
+
+    private Boolean enableDynamicMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -636,6 +649,22 @@ public class ListFunctionVersionResult {
         this.userData = userData;
     }
 
+    public ListFunctionVersionResult withEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
+        return this;
+    }
+
+    /** 用户自定义的name/value信息，用于需要加密的配置。
+     * 
+     * @return encryptedUserData */
+    public String getEncryptedUserData() {
+        return encryptedUserData;
+    }
+
+    public void setEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
+    }
+
     public ListFunctionVersionResult withDigest(String digest) {
         this.digest = digest;
         return this;
@@ -716,38 +745,6 @@ public class ListFunctionVersionResult {
         this.appXrole = appXrole;
     }
 
-    public ListFunctionVersionResult withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /** 函数描述。
-     * 
-     * @return description */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public ListFunctionVersionResult withVersionDescription(String versionDescription) {
-        this.versionDescription = versionDescription;
-        return this;
-    }
-
-    /** 函数版本描述。
-     * 
-     * @return versionDescription */
-    public String getVersionDescription() {
-        return versionDescription;
-    }
-
-    public void setVersionDescription(String versionDescription) {
-        this.versionDescription = versionDescription;
-    }
-
     public ListFunctionVersionResult withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -764,54 +761,20 @@ public class ListFunctionVersionResult {
         this.lastModified = lastModified;
     }
 
-    public ListFunctionVersionResult withFuncVpc(FuncVpc funcVpc) {
-        this.funcVpc = funcVpc;
+    public ListFunctionVersionResult withFuncVpcId(String funcVpcId) {
+        this.funcVpcId = funcVpcId;
         return this;
     }
 
-    public ListFunctionVersionResult withFuncVpc(Consumer<FuncVpc> funcVpcSetter) {
-        if (this.funcVpc == null) {
-            this.funcVpc = new FuncVpc();
-            funcVpcSetter.accept(this.funcVpc);
-        }
-
-        return this;
-    }
-
-    /** Get funcVpc
+    /** 用户的vpcid
      * 
-     * @return funcVpc */
-    public FuncVpc getFuncVpc() {
-        return funcVpc;
+     * @return funcVpcId */
+    public String getFuncVpcId() {
+        return funcVpcId;
     }
 
-    public void setFuncVpc(FuncVpc funcVpc) {
-        this.funcVpc = funcVpc;
-    }
-
-    public ListFunctionVersionResult withMountConfig(MountConfig mountConfig) {
-        this.mountConfig = mountConfig;
-        return this;
-    }
-
-    public ListFunctionVersionResult withMountConfig(Consumer<MountConfig> mountConfigSetter) {
-        if (this.mountConfig == null) {
-            this.mountConfig = new MountConfig();
-            mountConfigSetter.accept(this.mountConfig);
-        }
-
-        return this;
-    }
-
-    /** Get mountConfig
-     * 
-     * @return mountConfig */
-    public MountConfig getMountConfig() {
-        return mountConfig;
-    }
-
-    public void setMountConfig(MountConfig mountConfig) {
-        this.mountConfig = mountConfig;
+    public void setFuncVpcId(String funcVpcId) {
+        this.funcVpcId = funcVpcId;
     }
 
     public ListFunctionVersionResult withConcurrency(Integer concurrency) {
@@ -830,36 +793,20 @@ public class ListFunctionVersionResult {
         this.concurrency = concurrency;
     }
 
-    public ListFunctionVersionResult withDependList(List<String> dependList) {
-        this.dependList = dependList;
+    public ListFunctionVersionResult withConcurrentNum(Integer concurrentNum) {
+        this.concurrentNum = concurrentNum;
         return this;
     }
 
-    public ListFunctionVersionResult addDependListItem(String dependListItem) {
-        if (this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
-        this.dependList.add(dependListItem);
-        return this;
-    }
-
-    public ListFunctionVersionResult withDependList(Consumer<List<String>> dependListSetter) {
-        if (this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
-        dependListSetter.accept(this.dependList);
-        return this;
-    }
-
-    /** 依赖id列表
+    /** Get concurrentNum
      * 
-     * @return dependList */
-    public List<String> getDependList() {
-        return dependList;
+     * @return concurrentNum */
+    public Integer getConcurrentNum() {
+        return concurrentNum;
     }
 
-    public void setDependList(List<String> dependList) {
-        this.dependList = dependList;
+    public void setConcurrentNum(Integer concurrentNum) {
+        this.concurrentNum = concurrentNum;
     }
 
     public ListFunctionVersionResult withStrategyConfig(StrategyConfig strategyConfig) {
@@ -885,54 +832,6 @@ public class ListFunctionVersionResult {
 
     public void setStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
-    }
-
-    public ListFunctionVersionResult withExtendConfig(String extendConfig) {
-        this.extendConfig = extendConfig;
-        return this;
-    }
-
-    /** 函数扩展配置。
-     * 
-     * @return extendConfig */
-    public String getExtendConfig() {
-        return extendConfig;
-    }
-
-    public void setExtendConfig(String extendConfig) {
-        this.extendConfig = extendConfig;
-    }
-
-    public ListFunctionVersionResult withDependencies(List<Dependency> dependencies) {
-        this.dependencies = dependencies;
-        return this;
-    }
-
-    public ListFunctionVersionResult addDependenciesItem(Dependency dependenciesItem) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
-        this.dependencies.add(dependenciesItem);
-        return this;
-    }
-
-    public ListFunctionVersionResult withDependencies(Consumer<List<Dependency>> dependenciesSetter) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
-        dependenciesSetter.accept(this.dependencies);
-        return this;
-    }
-
-    /** 函数依赖代码包列表。
-     * 
-     * @return dependencies */
-    public List<Dependency> getDependencies() {
-        return dependencies;
-    }
-
-    public void setDependencies(List<Dependency> dependencies) {
-        this.dependencies = dependencies;
     }
 
     public ListFunctionVersionResult withInitializerHandler(String initializerHandler) {
@@ -965,6 +864,127 @@ public class ListFunctionVersionResult {
 
     public void setInitializerTimeout(Integer initializerTimeout) {
         this.initializerTimeout = initializerTimeout;
+    }
+
+    public ListFunctionVersionResult withLongTime(Boolean longTime) {
+        this.longTime = longTime;
+        return this;
+    }
+
+    /** 是否是支持长时间运行
+     * 
+     * @return longTime */
+    public Boolean getLongTime() {
+        return longTime;
+    }
+
+    public void setLongTime(Boolean longTime) {
+        this.longTime = longTime;
+    }
+
+    public ListFunctionVersionResult withLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+        return this;
+    }
+
+    /** 自定义日志查询组id
+     * 
+     * @return logGroupId */
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    public void setLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+    }
+
+    public ListFunctionVersionResult withLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+        return this;
+    }
+
+    /** 自定义日志查询流id
+     * 
+     * @return logStreamId */
+    public String getLogStreamId() {
+        return logStreamId;
+    }
+
+    public void setLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+    }
+
+    public ListFunctionVersionResult withFunctionAsyncConfig(FunctionAsyncConfig functionAsyncConfig) {
+        this.functionAsyncConfig = functionAsyncConfig;
+        return this;
+    }
+
+    public ListFunctionVersionResult withFunctionAsyncConfig(Consumer<FunctionAsyncConfig> functionAsyncConfigSetter) {
+        if (this.functionAsyncConfig == null) {
+            this.functionAsyncConfig = new FunctionAsyncConfig();
+            functionAsyncConfigSetter.accept(this.functionAsyncConfig);
+        }
+
+        return this;
+    }
+
+    /** Get functionAsyncConfig
+     * 
+     * @return functionAsyncConfig */
+    public FunctionAsyncConfig getFunctionAsyncConfig() {
+        return functionAsyncConfig;
+    }
+
+    public void setFunctionAsyncConfig(FunctionAsyncConfig functionAsyncConfig) {
+        this.functionAsyncConfig = functionAsyncConfig;
+    }
+
+    public ListFunctionVersionResult withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /** 函数版本
+     * 
+     * @return type */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public ListFunctionVersionResult withEnableCloudDebug(String enableCloudDebug) {
+        this.enableCloudDebug = enableCloudDebug;
+        return this;
+    }
+
+    /** 是否启用cloud debug功能
+     * 
+     * @return enableCloudDebug */
+    public String getEnableCloudDebug() {
+        return enableCloudDebug;
+    }
+
+    public void setEnableCloudDebug(String enableCloudDebug) {
+        this.enableCloudDebug = enableCloudDebug;
+    }
+
+    public ListFunctionVersionResult withEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+        return this;
+    }
+
+    /** 是否启用动态内存功能
+     * 
+     * @return enableDynamicMemory */
+    public Boolean getEnableDynamicMemory() {
+        return enableDynamicMemory;
+    }
+
+    public void setEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
     }
 
     public ListFunctionVersionResult withEnterpriseProjectId(String enterpriseProjectId) {
@@ -1008,23 +1028,26 @@ public class ListFunctionVersionResult {
             && Objects.equals(this.codeFilename, listFunctionVersionResult.codeFilename)
             && Objects.equals(this.codeSize, listFunctionVersionResult.codeSize)
             && Objects.equals(this.userData, listFunctionVersionResult.userData)
+            && Objects.equals(this.encryptedUserData, listFunctionVersionResult.encryptedUserData)
             && Objects.equals(this.digest, listFunctionVersionResult.digest)
             && Objects.equals(this.version, listFunctionVersionResult.version)
             && Objects.equals(this.imageName, listFunctionVersionResult.imageName)
             && Objects.equals(this.xrole, listFunctionVersionResult.xrole)
             && Objects.equals(this.appXrole, listFunctionVersionResult.appXrole)
-            && Objects.equals(this.description, listFunctionVersionResult.description)
-            && Objects.equals(this.versionDescription, listFunctionVersionResult.versionDescription)
             && Objects.equals(this.lastModified, listFunctionVersionResult.lastModified)
-            && Objects.equals(this.funcVpc, listFunctionVersionResult.funcVpc)
-            && Objects.equals(this.mountConfig, listFunctionVersionResult.mountConfig)
+            && Objects.equals(this.funcVpcId, listFunctionVersionResult.funcVpcId)
             && Objects.equals(this.concurrency, listFunctionVersionResult.concurrency)
-            && Objects.equals(this.dependList, listFunctionVersionResult.dependList)
+            && Objects.equals(this.concurrentNum, listFunctionVersionResult.concurrentNum)
             && Objects.equals(this.strategyConfig, listFunctionVersionResult.strategyConfig)
-            && Objects.equals(this.extendConfig, listFunctionVersionResult.extendConfig)
-            && Objects.equals(this.dependencies, listFunctionVersionResult.dependencies)
             && Objects.equals(this.initializerHandler, listFunctionVersionResult.initializerHandler)
             && Objects.equals(this.initializerTimeout, listFunctionVersionResult.initializerTimeout)
+            && Objects.equals(this.longTime, listFunctionVersionResult.longTime)
+            && Objects.equals(this.logGroupId, listFunctionVersionResult.logGroupId)
+            && Objects.equals(this.logStreamId, listFunctionVersionResult.logStreamId)
+            && Objects.equals(this.functionAsyncConfig, listFunctionVersionResult.functionAsyncConfig)
+            && Objects.equals(this.type, listFunctionVersionResult.type)
+            && Objects.equals(this.enableCloudDebug, listFunctionVersionResult.enableCloudDebug)
+            && Objects.equals(this.enableDynamicMemory, listFunctionVersionResult.enableDynamicMemory)
             && Objects.equals(this.enterpriseProjectId, listFunctionVersionResult.enterpriseProjectId);
     }
 
@@ -1046,23 +1069,26 @@ public class ListFunctionVersionResult {
             codeFilename,
             codeSize,
             userData,
+            encryptedUserData,
             digest,
             version,
             imageName,
             xrole,
             appXrole,
-            description,
-            versionDescription,
             lastModified,
-            funcVpc,
-            mountConfig,
+            funcVpcId,
             concurrency,
-            dependList,
+            concurrentNum,
             strategyConfig,
-            extendConfig,
-            dependencies,
             initializerHandler,
             initializerTimeout,
+            longTime,
+            logGroupId,
+            logStreamId,
+            functionAsyncConfig,
+            type,
+            enableCloudDebug,
+            enableDynamicMemory,
             enterpriseProjectId);
     }
 
@@ -1086,23 +1112,26 @@ public class ListFunctionVersionResult {
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
         sb.append("    codeSize: ").append(toIndentedString(codeSize)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    encryptedUserData: ").append(toIndentedString(encryptedUserData)).append("\n");
         sb.append("    digest: ").append(toIndentedString(digest)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    xrole: ").append(toIndentedString(xrole)).append("\n");
         sb.append("    appXrole: ").append(toIndentedString(appXrole)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    versionDescription: ").append(toIndentedString(versionDescription)).append("\n");
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-        sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
-        sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
+        sb.append("    funcVpcId: ").append(toIndentedString(funcVpcId)).append("\n");
         sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
-        sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
+        sb.append("    concurrentNum: ").append(toIndentedString(concurrentNum)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
-        sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
-        sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
+        sb.append("    longTime: ").append(toIndentedString(longTime)).append("\n");
+        sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
+        sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
+        sb.append("    functionAsyncConfig: ").append(toIndentedString(functionAsyncConfig)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enableCloudDebug: ").append(toIndentedString(enableCloudDebug)).append("\n");
+        sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

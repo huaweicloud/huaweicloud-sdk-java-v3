@@ -64,7 +64,7 @@ public class ListHistoryStreamsResponse extends SdkResponse {
         return this;
     }
 
-    /** 总记录数 minimum: 0 maximum: 2147483647
+    /** 总记录数。 minimum: 0 maximum: 2147483647
      * 
      * @return total */
     public Integer getTotal() {

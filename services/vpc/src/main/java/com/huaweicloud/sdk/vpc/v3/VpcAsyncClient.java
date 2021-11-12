@@ -206,6 +206,25 @@ public class VpcAsyncClient {
             VpcMeta.listSubNetworkInterfaces, hcClient);
     }
 
+    /** 迁移辅助弹性网卡 批量迁移辅助弹性网卡
+     *
+     * @param MigrateSubNetworkInterfaceRequest 请求对象
+     * @return CompletableFuture<MigrateSubNetworkInterfaceResponse> */
+    public CompletableFuture<MigrateSubNetworkInterfaceResponse> migrateSubNetworkInterfaceAsync(
+        MigrateSubNetworkInterfaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.migrateSubNetworkInterface);
+    }
+
+    /** 迁移辅助弹性网卡 批量迁移辅助弹性网卡
+     *
+     * @param MigrateSubNetworkInterfaceRequest 请求对象
+     * @return AsyncInvoker<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> */
+    public AsyncInvoker<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> migrateSubNetworkInterfaceAsyncInvoker(
+        MigrateSubNetworkInterfaceRequest request) {
+        return new AsyncInvoker<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse>(request,
+            VpcMeta.migrateSubNetworkInterface, hcClient);
+    }
+
     /** 查询安全组 查询单个安全组详情
      *
      * @param ShowSecurityGroupRequest 请求对象
@@ -316,6 +335,231 @@ public class VpcAsyncClient {
         UpdateSubNetworkInterfaceRequest request) {
         return new AsyncInvoker<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse>(request,
             VpcMeta.updateSubNetworkInterface, hcClient);
+    }
+
+    /** 创建地址组 创建地址组
+     *
+     * @param CreateAddressGroupRequest 请求对象
+     * @return CompletableFuture<CreateAddressGroupResponse> */
+    public CompletableFuture<CreateAddressGroupResponse> createAddressGroupAsync(CreateAddressGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createAddressGroup);
+    }
+
+    /** 创建地址组 创建地址组
+     *
+     * @param CreateAddressGroupRequest 请求对象
+     * @return AsyncInvoker<CreateAddressGroupRequest, CreateAddressGroupResponse> */
+    public AsyncInvoker<CreateAddressGroupRequest, CreateAddressGroupResponse> createAddressGroupAsyncInvoker(
+        CreateAddressGroupRequest request) {
+        return new AsyncInvoker<CreateAddressGroupRequest, CreateAddressGroupResponse>(request,
+            VpcMeta.createAddressGroup, hcClient);
+    }
+
+    /** 删除地址组 删除地址组，非强制删除，删除前请确保未被其他资源引用
+     *
+     * @param DeleteAddressGroupRequest 请求对象
+     * @return CompletableFuture<DeleteAddressGroupResponse> */
+    public CompletableFuture<DeleteAddressGroupResponse> deleteAddressGroupAsync(DeleteAddressGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteAddressGroup);
+    }
+
+    /** 删除地址组 删除地址组，非强制删除，删除前请确保未被其他资源引用
+     *
+     * @param DeleteAddressGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteAddressGroupRequest, DeleteAddressGroupResponse> */
+    public AsyncInvoker<DeleteAddressGroupRequest, DeleteAddressGroupResponse> deleteAddressGroupAsyncInvoker(
+        DeleteAddressGroupRequest request) {
+        return new AsyncInvoker<DeleteAddressGroupRequest, DeleteAddressGroupResponse>(request,
+            VpcMeta.deleteAddressGroup, hcClient);
+    }
+
+    /** 强制删除地址组 强制删除地址组，删除的地址组与安全组规则关联时，会删除地址组与关联的安全组规则。
+     *
+     * @param DeleteIpAddressGroupForceRequest 请求对象
+     * @return CompletableFuture<DeleteIpAddressGroupForceResponse> */
+    public CompletableFuture<DeleteIpAddressGroupForceResponse> deleteIpAddressGroupForceAsync(
+        DeleteIpAddressGroupForceRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteIpAddressGroupForce);
+    }
+
+    /** 强制删除地址组 强制删除地址组，删除的地址组与安全组规则关联时，会删除地址组与关联的安全组规则。
+     *
+     * @param DeleteIpAddressGroupForceRequest 请求对象
+     * @return AsyncInvoker<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> */
+    public AsyncInvoker<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> deleteIpAddressGroupForceAsyncInvoker(
+        DeleteIpAddressGroupForceRequest request) {
+        return new AsyncInvoker<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse>(request,
+            VpcMeta.deleteIpAddressGroupForce, hcClient);
+    }
+
+    /** 查询地址组列表 查询地址组列表，根据过滤条件进行过滤。
+     *
+     * @param ListAddressGroupRequest 请求对象
+     * @return CompletableFuture<ListAddressGroupResponse> */
+    public CompletableFuture<ListAddressGroupResponse> listAddressGroupAsync(ListAddressGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listAddressGroup);
+    }
+
+    /** 查询地址组列表 查询地址组列表，根据过滤条件进行过滤。
+     *
+     * @param ListAddressGroupRequest 请求对象
+     * @return AsyncInvoker<ListAddressGroupRequest, ListAddressGroupResponse> */
+    public AsyncInvoker<ListAddressGroupRequest, ListAddressGroupResponse> listAddressGroupAsyncInvoker(
+        ListAddressGroupRequest request) {
+        return new AsyncInvoker<ListAddressGroupRequest, ListAddressGroupResponse>(request, VpcMeta.listAddressGroup,
+            hcClient);
+    }
+
+    /** 查询地址组 查询地址组详情。
+     *
+     * @param ShowAddressGroupRequest 请求对象
+     * @return CompletableFuture<ShowAddressGroupResponse> */
+    public CompletableFuture<ShowAddressGroupResponse> showAddressGroupAsync(ShowAddressGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showAddressGroup);
+    }
+
+    /** 查询地址组 查询地址组详情。
+     *
+     * @param ShowAddressGroupRequest 请求对象
+     * @return AsyncInvoker<ShowAddressGroupRequest, ShowAddressGroupResponse> */
+    public AsyncInvoker<ShowAddressGroupRequest, ShowAddressGroupResponse> showAddressGroupAsyncInvoker(
+        ShowAddressGroupRequest request) {
+        return new AsyncInvoker<ShowAddressGroupRequest, ShowAddressGroupResponse>(request, VpcMeta.showAddressGroup,
+            hcClient);
+    }
+
+    /** 更新地址组 更新地址组。
+     *
+     * @param UpdateAddressGroupRequest 请求对象
+     * @return CompletableFuture<UpdateAddressGroupResponse> */
+    public CompletableFuture<UpdateAddressGroupResponse> updateAddressGroupAsync(UpdateAddressGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.updateAddressGroup);
+    }
+
+    /** 更新地址组 更新地址组。
+     *
+     * @param UpdateAddressGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateAddressGroupRequest, UpdateAddressGroupResponse> */
+    public AsyncInvoker<UpdateAddressGroupRequest, UpdateAddressGroupResponse> updateAddressGroupAsyncInvoker(
+        UpdateAddressGroupRequest request) {
+        return new AsyncInvoker<UpdateAddressGroupRequest, UpdateAddressGroupResponse>(request,
+            VpcMeta.updateAddressGroup, hcClient);
+    }
+
+    /** 添加VPC扩展网段 添加VPC的扩展网段
+     *
+     * @param AddVpcExtendCidrRequest 请求对象
+     * @return CompletableFuture<AddVpcExtendCidrResponse> */
+    public CompletableFuture<AddVpcExtendCidrResponse> addVpcExtendCidrAsync(AddVpcExtendCidrRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.addVpcExtendCidr);
+    }
+
+    /** 添加VPC扩展网段 添加VPC的扩展网段
+     *
+     * @param AddVpcExtendCidrRequest 请求对象
+     * @return AsyncInvoker<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> */
+    public AsyncInvoker<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> addVpcExtendCidrAsyncInvoker(
+        AddVpcExtendCidrRequest request) {
+        return new AsyncInvoker<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse>(request, VpcMeta.addVpcExtendCidr,
+            hcClient);
+    }
+
+    /** 创建VPC 创建虚拟私有云
+     *
+     * @param CreateVpcRequest 请求对象
+     * @return CompletableFuture<CreateVpcResponse> */
+    public CompletableFuture<CreateVpcResponse> createVpcAsync(CreateVpcRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createVpc);
+    }
+
+    /** 创建VPC 创建虚拟私有云
+     *
+     * @param CreateVpcRequest 请求对象
+     * @return AsyncInvoker<CreateVpcRequest, CreateVpcResponse> */
+    public AsyncInvoker<CreateVpcRequest, CreateVpcResponse> createVpcAsyncInvoker(CreateVpcRequest request) {
+        return new AsyncInvoker<CreateVpcRequest, CreateVpcResponse>(request, VpcMeta.createVpc, hcClient);
+    }
+
+    /** 删除VPC 删除VPC
+     *
+     * @param DeleteVpcRequest 请求对象
+     * @return CompletableFuture<DeleteVpcResponse> */
+    public CompletableFuture<DeleteVpcResponse> deleteVpcAsync(DeleteVpcRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteVpc);
+    }
+
+    /** 删除VPC 删除VPC
+     *
+     * @param DeleteVpcRequest 请求对象
+     * @return AsyncInvoker<DeleteVpcRequest, DeleteVpcResponse> */
+    public AsyncInvoker<DeleteVpcRequest, DeleteVpcResponse> deleteVpcAsyncInvoker(DeleteVpcRequest request) {
+        return new AsyncInvoker<DeleteVpcRequest, DeleteVpcResponse>(request, VpcMeta.deleteVpc, hcClient);
+    }
+
+    /** 查询VPC列表 查询vpc列表
+     *
+     * @param ListVpcsRequest 请求对象
+     * @return CompletableFuture<ListVpcsResponse> */
+    public CompletableFuture<ListVpcsResponse> listVpcsAsync(ListVpcsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listVpcs);
+    }
+
+    /** 查询VPC列表 查询vpc列表
+     *
+     * @param ListVpcsRequest 请求对象
+     * @return AsyncInvoker<ListVpcsRequest, ListVpcsResponse> */
+    public AsyncInvoker<ListVpcsRequest, ListVpcsResponse> listVpcsAsyncInvoker(ListVpcsRequest request) {
+        return new AsyncInvoker<ListVpcsRequest, ListVpcsResponse>(request, VpcMeta.listVpcs, hcClient);
+    }
+
+    /** 移除VPC扩展网段 移除VPC扩展网段
+     *
+     * @param RemoveVpcExtendCidrRequest 请求对象
+     * @return CompletableFuture<RemoveVpcExtendCidrResponse> */
+    public CompletableFuture<RemoveVpcExtendCidrResponse> removeVpcExtendCidrAsync(RemoveVpcExtendCidrRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.removeVpcExtendCidr);
+    }
+
+    /** 移除VPC扩展网段 移除VPC扩展网段
+     *
+     * @param RemoveVpcExtendCidrRequest 请求对象
+     * @return AsyncInvoker<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> */
+    public AsyncInvoker<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> removeVpcExtendCidrAsyncInvoker(
+        RemoveVpcExtendCidrRequest request) {
+        return new AsyncInvoker<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse>(request,
+            VpcMeta.removeVpcExtendCidr, hcClient);
+    }
+
+    /** 查询VPC详情 查询vpc详情
+     *
+     * @param ShowVpcRequest 请求对象
+     * @return CompletableFuture<ShowVpcResponse> */
+    public CompletableFuture<ShowVpcResponse> showVpcAsync(ShowVpcRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showVpc);
+    }
+
+    /** 查询VPC详情 查询vpc详情
+     *
+     * @param ShowVpcRequest 请求对象
+     * @return AsyncInvoker<ShowVpcRequest, ShowVpcResponse> */
+    public AsyncInvoker<ShowVpcRequest, ShowVpcResponse> showVpcAsyncInvoker(ShowVpcRequest request) {
+        return new AsyncInvoker<ShowVpcRequest, ShowVpcResponse>(request, VpcMeta.showVpc, hcClient);
+    }
+
+    /** 更新VPC 更新vpc
+     *
+     * @param UpdateVpcRequest 请求对象
+     * @return CompletableFuture<UpdateVpcResponse> */
+    public CompletableFuture<UpdateVpcResponse> updateVpcAsync(UpdateVpcRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.updateVpc);
+    }
+
+    /** 更新VPC 更新vpc
+     *
+     * @param UpdateVpcRequest 请求对象
+     * @return AsyncInvoker<UpdateVpcRequest, UpdateVpcResponse> */
+    public AsyncInvoker<UpdateVpcRequest, UpdateVpcResponse> updateVpcAsyncInvoker(UpdateVpcRequest request) {
+        return new AsyncInvoker<UpdateVpcRequest, UpdateVpcResponse>(request, VpcMeta.updateVpc, hcClient);
     }
 
 }

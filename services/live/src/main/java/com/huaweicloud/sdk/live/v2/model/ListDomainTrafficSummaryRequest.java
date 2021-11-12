@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.live.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -35,6 +40,82 @@ public class ListDomainTrafficSummaryRequest {
     @JsonProperty(value = "isp")
 
     private List<String> isp = null;
+
+    /** 请求协议 */
+    public static final class ProtocolEnum {
+
+        /** Enum FLV for value: "flv" */
+        public static final ProtocolEnum FLV = new ProtocolEnum("flv");
+
+        /** Enum HLS for value: "hls" */
+        public static final ProtocolEnum HLS = new ProtocolEnum("hls");
+
+        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtocolEnum> createStaticFields() {
+            Map<String, ProtocolEnum> map = new HashMap<>();
+            map.put("flv", FLV);
+            map.put("hls", HLS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProtocolEnum(value);
+            }
+            return result;
+        }
+
+        public static ProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtocolEnum) {
+                return this.value.equals(((ProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol")
+
+    private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -67,7 +148,7 @@ public class ListDomainTrafficSummaryRequest {
         return this;
     }
 
-    /** 播放域名列表，最多支持查询10个域名，多个域名以逗号分隔。
+    /** 播放域名列表，最多支持查询100个域名，多个域名以逗号分隔。
      * 
      * @return playDomains */
     public List<String> getPlayDomains() {
@@ -163,7 +244,7 @@ public class ListDomainTrafficSummaryRequest {
         return this;
     }
 
-    /** 运营商列表。取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\" 不填写查询所有运营商。
+    /** 运营商列表。取值如下： - CMCC ：移动 - CTCC ： 电信 - CUCC ：联通 - OTHER ：其他 不填写查询所有运营商。
      * 
      * @return isp */
     public List<String> getIsp() {
@@ -174,12 +255,28 @@ public class ListDomainTrafficSummaryRequest {
         this.isp = isp;
     }
 
+    public ListDomainTrafficSummaryRequest withProtocol(ProtocolEnum protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    /** 请求协议
+     * 
+     * @return protocol */
+    public ProtocolEnum getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(ProtocolEnum protocol) {
+        this.protocol = protocol;
+    }
+
     public ListDomainTrafficSummaryRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。 若参数为空，默认查询7天数据。
+    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期一年。 若参数为空，默认查询7天数据。
      * 
      * @return startTime */
     public String getStartTime() {
@@ -220,13 +317,14 @@ public class ListDomainTrafficSummaryRequest {
             && Objects.equals(this.stream, listDomainTrafficSummaryRequest.stream)
             && Objects.equals(this.region, listDomainTrafficSummaryRequest.region)
             && Objects.equals(this.isp, listDomainTrafficSummaryRequest.isp)
+            && Objects.equals(this.protocol, listDomainTrafficSummaryRequest.protocol)
             && Objects.equals(this.startTime, listDomainTrafficSummaryRequest.startTime)
             && Objects.equals(this.endTime, listDomainTrafficSummaryRequest.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playDomains, app, stream, region, isp, startTime, endTime);
+        return Objects.hash(playDomains, app, stream, region, isp, protocol, startTime, endTime);
     }
 
     @Override
@@ -238,6 +336,7 @@ public class ListDomainTrafficSummaryRequest {
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    isp: ").append(toIndentedString(isp)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

@@ -1401,6 +1401,55 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> listIncentiveDiscountPolicies =
+        genForlistIncentiveDiscountPolicies();
+
+    private static HttpRequestDef<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> genForlistIncentiveDiscountPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListIncentiveDiscountPoliciesRequest.class,
+                    ListIncentiveDiscountPoliciesResponse.class)
+                .withName("ListIncentiveDiscountPolicies")
+                .withUri("/v2/products/incentive-discount-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getTime, (req, v) -> {
+                req.setTime(v);
+            }));
+        builder.<String>withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getServiceTypeCode, (req, v) -> {
+                req.setServiceTypeCode(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListIndirectPartnersRequest, ListIndirectPartnersResponse> listIndirectPartners =
         genForlistIndirectPartners();
 
@@ -1695,6 +1744,76 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOrderDiscountsRequest::getOrderId, (req, v) -> {
                 req.setOrderId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> listPartnerAccountChangeRecords =
+        genForlistPartnerAccountChangeRecords();
+
+    private static HttpRequestDef<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> genForlistPartnerAccountChangeRecords() {
+        // basic
+        HttpRequestDef.Builder<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPartnerAccountChangeRecordsRequest.class,
+                    ListPartnerAccountChangeRecordsResponse.class)
+                .withName("ListPartnerAccountChangeRecords")
+                .withUri("/v2/accounts/partner-accounts/account-change-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("balance_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getBalanceType, (req, v) -> {
+                req.setBalanceType(v);
+            }));
+        builder.<String>withRequestField("trade_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getTradeType, (req, v) -> {
+                req.setTradeType(v);
+            }));
+        builder.<String>withRequestField("trade_time_begin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getTradeTimeBegin, (req, v) -> {
+                req.setTradeTimeBegin(v);
+            }));
+        builder.<String>withRequestField("trade_time_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getTradeTimeEnd, (req, v) -> {
+                req.setTradeTimeEnd(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("indirect_partner_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getIndirectPartnerId, (req, v) -> {
+                req.setIndirectPartnerId(v);
             }));
 
         // response

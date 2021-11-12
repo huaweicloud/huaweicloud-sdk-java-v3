@@ -45,7 +45,7 @@ public class BatchRemoveOrgsFromChannelRequest {
         return this;
     }
 
-    /** 区块链通道id。
+    /** 区块链通道名称。
      * 
      * @return channelId */
     public String getChannelId() {

@@ -62,7 +62,7 @@ public class ListQueryHttpCodeRequest {
         return this;
     }
 
-    /** 播放域名列表，最多支持查询10个域名，多个域名以逗号分隔。
+    /** 播放域名列表，最多支持查询100个域名，多个域名以逗号分隔。
      * 
      * @return playDomains */
     public List<String> getPlayDomains() {
@@ -158,7 +158,7 @@ public class ListQueryHttpCodeRequest {
         return this;
     }
 
-    /** 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\" 不填写查询所有运营商。
+    /** 运营商列表，取值如下： - CMCC ：移动 - CTCC ： 电信 - CUCC ：联通 - OTHER ：其他 不填写查询所有运营商。
      * 
      * @return isp */
     public List<String> getIsp() {

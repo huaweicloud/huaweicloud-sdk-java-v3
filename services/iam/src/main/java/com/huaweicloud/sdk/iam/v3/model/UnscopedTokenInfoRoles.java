@@ -23,7 +23,7 @@ public class UnscopedTokenInfoRoles {
         return this;
     }
 
-    /** role id
+    /** role id。
      * 
      * @return id */
     public String getId() {
@@ -39,7 +39,7 @@ public class UnscopedTokenInfoRoles {
         return this;
     }
 
-    /** name id
+    /** name id。
      * 
      * @return name */
     public String getName() {

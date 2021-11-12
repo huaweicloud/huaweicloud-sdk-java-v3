@@ -53,7 +53,7 @@ public class QueryAlarmResult  {
     @JsonProperty(value="alarm_level")
     
     
-    private Integer alarmLevel;
+    private String alarmLevel;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -297,7 +297,7 @@ public class QueryAlarmResult  {
 
     
 
-    public QueryAlarmResult withAlarmLevel(Integer alarmLevel) {
+    public QueryAlarmResult withAlarmLevel(String alarmLevel) {
         this.alarmLevel = alarmLevel;
         return this;
     }
@@ -309,11 +309,11 @@ public class QueryAlarmResult  {
      * 告警级别。
      * @return alarmLevel
      */
-    public Integer getAlarmLevel() {
+    public String getAlarmLevel() {
         return alarmLevel;
     }
 
-    public void setAlarmLevel(Integer alarmLevel) {
+    public void setAlarmLevel(String alarmLevel) {
         this.alarmLevel = alarmLevel;
     }
 

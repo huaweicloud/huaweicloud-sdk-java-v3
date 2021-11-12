@@ -419,6 +419,34 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> migrateSubNetworkInterface =
+        genFormigrateSubNetworkInterface();
+
+    private static HttpRequestDef<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> genFormigrateSubNetworkInterface() {
+        // basic
+        HttpRequestDef.Builder<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    MigrateSubNetworkInterfaceRequest.class,
+                    MigrateSubNetworkInterfaceResponse.class)
+                .withName("MigrateSubNetworkInterface")
+                .withUri("/v3/{project_id}/vpc/sub-network-interfaces/migrate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<MigrateSubNetworkInterfaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MigrateSubNetworkInterfaceRequestBody.class),
+            f -> f.withMarshaller(MigrateSubNetworkInterfaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroup =
         genForshowSecurityGroup();
 
@@ -574,6 +602,427 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSubNetworkInterfaceRequestBody.class),
             f -> f.withMarshaller(UpdateSubNetworkInterfaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAddressGroupRequest, CreateAddressGroupResponse> createAddressGroup =
+        genForcreateAddressGroup();
+
+    private static HttpRequestDef<CreateAddressGroupRequest, CreateAddressGroupResponse> genForcreateAddressGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateAddressGroupRequest, CreateAddressGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAddressGroupRequest.class, CreateAddressGroupResponse.class)
+                .withName("CreateAddressGroup")
+                .withUri("/v3/{project_id}/vpc/address_groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateAddressGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAddressGroupRequestBody.class),
+            f -> f.withMarshaller(CreateAddressGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAddressGroupRequest, DeleteAddressGroupResponse> deleteAddressGroup =
+        genFordeleteAddressGroup();
+
+    private static HttpRequestDef<DeleteAddressGroupRequest, DeleteAddressGroupResponse> genFordeleteAddressGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteAddressGroupRequest, DeleteAddressGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAddressGroupRequest.class, DeleteAddressGroupResponse.class)
+                .withName("DeleteAddressGroup")
+                .withUri("/v3/{project_id}/vpc/address_groups/{address_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("address_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAddressGroupRequest::getAddressGroupId, (req, v) -> {
+                req.setAddressGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> deleteIpAddressGroupForce =
+        genFordeleteIpAddressGroupForce();
+
+    private static HttpRequestDef<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> genFordeleteIpAddressGroupForce() {
+        // basic
+        HttpRequestDef.Builder<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteIpAddressGroupForceRequest.class,
+                    DeleteIpAddressGroupForceResponse.class)
+                .withName("DeleteIpAddressGroupForce")
+                .withUri("/v3/{project_id}/vpc/address_groups/{address_group_id}/force")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("address_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpAddressGroupForceRequest::getAddressGroupId, (req, v) -> {
+                req.setAddressGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAddressGroupRequest, ListAddressGroupResponse> listAddressGroup =
+        genForlistAddressGroup();
+
+    private static HttpRequestDef<ListAddressGroupRequest, ListAddressGroupResponse> genForlistAddressGroup() {
+        // basic
+        HttpRequestDef.Builder<ListAddressGroupRequest, ListAddressGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAddressGroupRequest.class, ListAddressGroupResponse.class)
+                .withName("ListAddressGroup")
+                .withUri("/v3/{project_id}/vpc/address_groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAddressGroupRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressGroupRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAddressGroupRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAddressGroupRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("ip_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAddressGroupRequest::getIpVersion, (req, v) -> {
+                req.setIpVersion(v);
+            }));
+        builder.<List<String>>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAddressGroupRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAddressGroupRequest, ShowAddressGroupResponse> showAddressGroup =
+        genForshowAddressGroup();
+
+    private static HttpRequestDef<ShowAddressGroupRequest, ShowAddressGroupResponse> genForshowAddressGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowAddressGroupRequest, ShowAddressGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAddressGroupRequest.class, ShowAddressGroupResponse.class)
+                .withName("ShowAddressGroup")
+                .withUri("/v3/{project_id}/vpc/address_groups/{address_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("address_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAddressGroupRequest::getAddressGroupId, (req, v) -> {
+                req.setAddressGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAddressGroupRequest, UpdateAddressGroupResponse> updateAddressGroup =
+        genForupdateAddressGroup();
+
+    private static HttpRequestDef<UpdateAddressGroupRequest, UpdateAddressGroupResponse> genForupdateAddressGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateAddressGroupRequest, UpdateAddressGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAddressGroupRequest.class, UpdateAddressGroupResponse.class)
+                .withName("UpdateAddressGroup")
+                .withUri("/v3/{project_id}/vpc/address_groups/{address_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("address_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAddressGroupRequest::getAddressGroupId, (req, v) -> {
+                req.setAddressGroupId(v);
+            }));
+        builder.<UpdateAddressGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAddressGroupRequestBody.class),
+            f -> f.withMarshaller(UpdateAddressGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> addVpcExtendCidr =
+        genForaddVpcExtendCidr();
+
+    private static HttpRequestDef<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> genForaddVpcExtendCidr() {
+        // basic
+        HttpRequestDef.Builder<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddVpcExtendCidrRequest.class, AddVpcExtendCidrResponse.class)
+                .withName("AddVpcExtendCidr")
+                .withUri("/v3/{project_id}/vpc/vpcs/{vpc_id}/add-extend-cidr")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddVpcExtendCidrRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<AddVpcExtendCidrRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddVpcExtendCidrRequestBody.class),
+            f -> f.withMarshaller(AddVpcExtendCidrRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateVpcRequest, CreateVpcResponse> createVpc = genForcreateVpc();
+
+    private static HttpRequestDef<CreateVpcRequest, CreateVpcResponse> genForcreateVpc() {
+        // basic
+        HttpRequestDef.Builder<CreateVpcRequest, CreateVpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVpcRequest.class, CreateVpcResponse.class)
+                .withName("CreateVpc")
+                .withUri("/v3/{project_id}/vpc/vpcs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateVpcRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateVpcRequestBody.class),
+            f -> f.withMarshaller(CreateVpcRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVpcRequest, DeleteVpcResponse> deleteVpc = genFordeleteVpc();
+
+    private static HttpRequestDef<DeleteVpcRequest, DeleteVpcResponse> genFordeleteVpc() {
+        // basic
+        HttpRequestDef.Builder<DeleteVpcRequest, DeleteVpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcRequest.class, DeleteVpcResponse.class)
+                .withName("DeleteVpc")
+                .withUri("/v3/{project_id}/vpc/vpcs/{vpc_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpcRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVpcsRequest, ListVpcsResponse> listVpcs = genForlistVpcs();
+
+    private static HttpRequestDef<ListVpcsRequest, ListVpcsResponse> genForlistVpcs() {
+        // basic
+        HttpRequestDef.Builder<ListVpcsRequest, ListVpcsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVpcsRequest.class, ListVpcsResponse.class)
+                .withName("ListVpcs")
+                .withUri("/v3/{project_id}/vpc/vpcs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVpcsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVpcsRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVpcsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<List<String>>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVpcsRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<List<String>>withRequestField("cidr",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVpcsRequest::getCidr, (req, v) -> {
+                req.setCidr(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> removeVpcExtendCidr =
+        genForremoveVpcExtendCidr();
+
+    private static HttpRequestDef<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> genForremoveVpcExtendCidr() {
+        // basic
+        HttpRequestDef.Builder<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RemoveVpcExtendCidrRequest.class, RemoveVpcExtendCidrResponse.class)
+                .withName("RemoveVpcExtendCidr")
+                .withUri("/v3/{project_id}/vpc/vpcs/{vpc_id}/remove-extend-cidr")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveVpcExtendCidrRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<RemoveVpcExtendCidrRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemoveVpcExtendCidrRequestBody.class),
+            f -> f.withMarshaller(RemoveVpcExtendCidrRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVpcRequest, ShowVpcResponse> showVpc = genForshowVpc();
+
+    private static HttpRequestDef<ShowVpcRequest, ShowVpcResponse> genForshowVpc() {
+        // basic
+        HttpRequestDef.Builder<ShowVpcRequest, ShowVpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVpcRequest.class, ShowVpcResponse.class)
+                .withName("ShowVpc")
+                .withUri("/v3/{project_id}/vpc/vpcs/{vpc_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVpcRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVpcRequest, UpdateVpcResponse> updateVpc = genForupdateVpc();
+
+    private static HttpRequestDef<UpdateVpcRequest, UpdateVpcResponse> genForupdateVpc() {
+        // basic
+        HttpRequestDef.Builder<UpdateVpcRequest, UpdateVpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateVpcRequest.class, UpdateVpcResponse.class)
+                .withName("UpdateVpc")
+                .withUri("/v3/{project_id}/vpc/vpcs/{vpc_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVpcRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<UpdateVpcRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateVpcRequestBody.class),
+            f -> f.withMarshaller(UpdateVpcRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -73,7 +73,7 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 是否需要发送会议邮件通知。默认值由会议模板决定。 - True: 需要。 - False: 不需要。
+    /** 是否需要发送会议邮件通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
      * 
      * @return isSendNotify */
     public Boolean getIsSendNotify() {
@@ -89,7 +89,7 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 是否需要发送会议短信通知。默认值由会议模板决定。 - True: 需要。 - False: 不需要。
+    /** 是否需要发送会议短信通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
      * 
      * @return isSendSms */
     public Boolean getIsSendSms() {
@@ -105,7 +105,7 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 是否需要发送会议通知。默认值由会议模板决定。 - True: 需要。 - False: 不需要。
+    /** 是否需要发送会议通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
      * 
      * @return isSendCalendar */
     public Boolean getIsSendCalendar() {
@@ -121,7 +121,7 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 来宾入会,软终端是否自动静音。默认值由会议模板决定。 - True: 自动静音。 - False: 不自动静音。
+    /** 来宾入会,软终端是否自动静音。默认值由企业级配置决定。 - True: 自动静音。 - False: 不自动静音。
      * 
      * @return isAutoMute */
     public Boolean getIsAutoMute() {
@@ -137,7 +137,7 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 来宾入会,硬终端是否自动静音。默认值由会议模板决定。 - True: 自动静音。 - False: 不自动静音。
+    /** 来宾入会,硬终端是否自动静音。默认值由企业级配置决定。 - True: 自动静音。 - False: 不自动静音。
      * 
      * @return isHardTerminalAutoMute */
     public Boolean getIsHardTerminalAutoMute() {

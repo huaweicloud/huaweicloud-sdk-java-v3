@@ -48,26 +48,6 @@ public class ListProPricePlansRequest {
 
     private Long countryType;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sim_card_id")
-
-    private Long simCardId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "partner")
-
-    private Integer partner;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "package_type")
-
-    private Integer packageType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sim_type")
-
-    private Integer simType;
-
     public ListProPricePlansRequest withLimit(Long limit) {
         this.limit = limit;
         return this;
@@ -137,7 +117,7 @@ public class ListProPricePlansRequest {
         return this;
     }
 
-    /** 网络制式 minimum: 0
+    /** 网络制式 1.2g,3g,4g 2.NB minimum: 0
      * 
      * @return networkType */
     public Long getNetworkType() {
@@ -197,70 +177,6 @@ public class ListProPricePlansRequest {
         this.countryType = countryType;
     }
 
-    public ListProPricePlansRequest withSimCardId(Long simCardId) {
-        this.simCardId = simCardId;
-        return this;
-    }
-
-    /** sim card id sim卡标识 minimum: 0
-     * 
-     * @return simCardId */
-    public Long getSimCardId() {
-        return simCardId;
-    }
-
-    public void setSimCardId(Long simCardId) {
-        this.simCardId = simCardId;
-    }
-
-    public ListProPricePlansRequest withPartner(Integer partner) {
-        this.partner = partner;
-        return this;
-    }
-
-    /** 伙伴 minimum: 0
-     * 
-     * @return partner */
-    public Integer getPartner() {
-        return partner;
-    }
-
-    public void setPartner(Integer partner) {
-        this.partner = partner;
-    }
-
-    public ListProPricePlansRequest withPackageType(Integer packageType) {
-        this.packageType = packageType;
-        return this;
-    }
-
-    /** 套餐类型
-     * 
-     * @return packageType */
-    public Integer getPackageType() {
-        return packageType;
-    }
-
-    public void setPackageType(Integer packageType) {
-        this.packageType = packageType;
-    }
-
-    public ListProPricePlansRequest withSimType(Integer simType) {
-        this.simType = simType;
-        return this;
-    }
-
-    /** 适用SIM卡类型
-     * 
-     * @return simType */
-    public Integer getSimType() {
-        return simType;
-    }
-
-    public void setSimType(Integer simType) {
-        this.simType = simType;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -277,27 +193,13 @@ public class ListProPricePlansRequest {
             && Objects.equals(this.networkType, listProPricePlansRequest.networkType)
             && Objects.equals(this.locationType, listProPricePlansRequest.locationType)
             && Objects.equals(this.carrierType, listProPricePlansRequest.carrierType)
-            && Objects.equals(this.countryType, listProPricePlansRequest.countryType)
-            && Objects.equals(this.simCardId, listProPricePlansRequest.simCardId)
-            && Objects.equals(this.partner, listProPricePlansRequest.partner)
-            && Objects.equals(this.packageType, listProPricePlansRequest.packageType)
-            && Objects.equals(this.simType, listProPricePlansRequest.simType);
+            && Objects.equals(this.countryType, listProPricePlansRequest.countryType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit,
-            offset,
-            mainSearchKey,
-            flowTotal,
-            networkType,
-            locationType,
-            carrierType,
-            countryType,
-            simCardId,
-            partner,
-            packageType,
-            simType);
+        return Objects
+            .hash(limit, offset, mainSearchKey, flowTotal, networkType, locationType, carrierType, countryType);
     }
 
     @Override
@@ -312,10 +214,6 @@ public class ListProPricePlansRequest {
         sb.append("    locationType: ").append(toIndentedString(locationType)).append("\n");
         sb.append("    carrierType: ").append(toIndentedString(carrierType)).append("\n");
         sb.append("    countryType: ").append(toIndentedString(countryType)).append("\n");
-        sb.append("    simCardId: ").append(toIndentedString(simCardId)).append("\n");
-        sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
-        sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
-        sb.append("    simType: ").append(toIndentedString(simType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

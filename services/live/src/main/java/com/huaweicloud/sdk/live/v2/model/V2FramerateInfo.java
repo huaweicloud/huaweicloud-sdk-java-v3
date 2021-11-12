@@ -142,7 +142,7 @@ public class V2FramerateInfo {
         return this;
     }
 
-    /** 帧率信息列表。
+    /** 帧率信息列表，单位为fps。
      * 
      * @return dataList */
     public List<Long> getDataList() {

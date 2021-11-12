@@ -59,7 +59,7 @@ public class DomainRegion {
         return this;
     }
 
-    /** 指标统计数据列表 如果该时间段内无值，则为空数组[]
+    /** 指标统计数据列表，如果该时间段内无值，则为空数组[]
      * 
      * @return regionIspDetails */
     public List<Map<String, Object>> getRegionIspDetails() {

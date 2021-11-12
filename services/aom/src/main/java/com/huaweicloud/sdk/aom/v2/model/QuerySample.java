@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Dimension;
+import com.huaweicloud.sdk.aom.v2.model.DimensionSeries;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -32,7 +32,7 @@ public class QuerySample  {
     @JsonProperty(value="dimensions")
     
     
-    private List<Dimension> dimensions = null;
+    private List<DimensionSeries> dimensions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,13 +63,13 @@ public class QuerySample  {
 
     
 
-    public QuerySample withDimensions(List<Dimension> dimensions) {
+    public QuerySample withDimensions(List<DimensionSeries> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
     
-    public QuerySample addDimensionsItem(Dimension dimensionsItem) {
+    public QuerySample addDimensionsItem(DimensionSeries dimensionsItem) {
         if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -77,7 +77,7 @@ public class QuerySample  {
         return this;
     }
 
-    public QuerySample withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
+    public QuerySample withDimensions(Consumer<List<DimensionSeries>> dimensionsSetter) {
         if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -89,11 +89,11 @@ public class QuerySample  {
      * 时间序列维度列表。 取值范围： 数组不能为空，同时数组中任何一个dimension对象name和value属性的值也不能为空。 
      * @return dimensions
      */
-    public List<Dimension> getDimensions() {
+    public List<DimensionSeries> getDimensions() {
         return dimensions;
     }
 
-    public void setDimensions(List<Dimension> dimensions) {
+    public void setDimensions(List<DimensionSeries> dimensions) {
         this.dimensions = dimensions;
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** user详细信息 */
+/** user详细信息。 */
 public class OsFederationInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,7 +97,7 @@ public class OsFederationInfo {
         return this;
     }
 
-    /** 用户组信息
+    /** 用户组信息。
      * 
      * @return groups */
     public List<Object> getGroups() {

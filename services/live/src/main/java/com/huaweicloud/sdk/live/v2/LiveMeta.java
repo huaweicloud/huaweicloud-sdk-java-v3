@@ -45,6 +45,13 @@ public class LiveMeta {
             f -> f.withMarshaller(ListBandwidthDetailRequest::getStream, (req, v) -> {
                 req.setStream(v);
             }));
+        builder.<List<String>>withRequestField("country",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getCountry, (req, v) -> {
+                req.setCountry(v);
+            }));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -58,6 +65,13 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListBandwidthDetailRequest::getIsp, (req, v) -> {
                 req.setIsp(v);
+            }));
+        builder.<ListBandwidthDetailRequest.ProtocolEnum>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBandwidthDetailRequest.ProtocolEnum.class),
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
             }));
         builder.<ListBandwidthDetailRequest.IntervalEnum>withRequestField("interval",
             LocationType.Query,
@@ -139,6 +153,13 @@ public class LiveMeta {
             f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getIsp, (req, v) -> {
                 req.setIsp(v);
             }));
+        builder.<ListDomainBandwidthPeakRequest.ProtocolEnum>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDomainBandwidthPeakRequest.ProtocolEnum.class),
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
+            }));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -211,6 +232,13 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListDomainTrafficDetailRequest::getIsp, (req, v) -> {
                 req.setIsp(v);
+            }));
+        builder.<ListDomainTrafficDetailRequest.ProtocolEnum>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDomainTrafficDetailRequest.ProtocolEnum.class),
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
             }));
         builder.<Integer>withRequestField("interval",
             LocationType.Query,
@@ -293,6 +321,13 @@ public class LiveMeta {
             f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getIsp, (req, v) -> {
                 req.setIsp(v);
             }));
+        builder.<ListDomainTrafficSummaryRequest.ProtocolEnum>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDomainTrafficSummaryRequest.ProtocolEnum.class),
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
+            }));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -344,6 +379,27 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHistoryStreamsRequest::getApp, (req, v) -> {
                 req.setApp(v);
+            }));
+        builder.<String>withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getStream, (req, v) -> {
+                req.setStream(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
@@ -536,6 +592,13 @@ public class LiveMeta {
             f -> f.withMarshaller(ListTranscodeDataRequest::getPublishDomain, (req, v) -> {
                 req.setPublishDomain(v);
             }));
+        builder.<String>withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeDataRequest::getStream, (req, v) -> {
+                req.setStream(v);
+            }));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -601,12 +664,26 @@ public class LiveMeta {
             f -> f.withMarshaller(ListUsersOfStreamRequest::getIsp, (req, v) -> {
                 req.setIsp(v);
             }));
+        builder.<List<String>>withRequestField("country",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getCountry, (req, v) -> {
+                req.setCountry(v);
+            }));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListUsersOfStreamRequest::getRegion, (req, v) -> {
                 req.setRegion(v);
+            }));
+        builder.<ListUsersOfStreamRequest.ProtocolEnum>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListUsersOfStreamRequest.ProtocolEnum.class),
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
             }));
         builder.<ListUsersOfStreamRequest.IntervalEnum>withRequestField("interval",
             LocationType.Query,

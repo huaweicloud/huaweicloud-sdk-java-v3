@@ -185,4 +185,116 @@ public class DscMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowScanJobResultsRequest, ShowScanJobResultsResponse> showScanJobResults =
+        genForshowScanJobResults();
+
+    private static HttpRequestDef<ShowScanJobResultsRequest, ShowScanJobResultsResponse> genForshowScanJobResults() {
+        // basic
+        HttpRequestDef.Builder<ShowScanJobResultsRequest, ShowScanJobResultsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowScanJobResultsRequest.class, ShowScanJobResultsResponse.class)
+                .withName("ShowScanJobResults")
+                .withUri("/v1/{project_id}/sdg/scan/job/{job_id}/results")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ShowScanJobResultsRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowScanJobResultsRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScanJobsRequest, ShowScanJobsResponse> showScanJobs = genForshowScanJobs();
+
+    private static HttpRequestDef<ShowScanJobsRequest, ShowScanJobsResponse> genForshowScanJobs() {
+        // basic
+        HttpRequestDef.Builder<ShowScanJobsRequest, ShowScanJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowScanJobsRequest.class, ShowScanJobsResponse.class)
+                .withName("ShowScanJobs")
+                .withUri("/v1/{project_id}/sdg/scan/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowScanJobsRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowScanJobsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("content",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScanJobsRequest::getContent, (req, v) -> {
+                req.setContent(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScanJobsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScanJobsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
 }

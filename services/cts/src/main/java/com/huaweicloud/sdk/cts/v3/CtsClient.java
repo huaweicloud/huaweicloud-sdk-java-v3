@@ -17,6 +17,24 @@ public class CtsClient {
         return new ClientBuilder<>(CtsClient::new);
     }
 
+    /** 创建关键操作通知 配置关键操作通知，可在发生特定操作时，使用预先创建好的SMN主题，向用户手机、邮箱发送消息，也可直接发送http/https消息。常用于实时感知高危操作、触发特定操作或对接用户自有审计分析系统。
+     *
+     * @param CreateNotificationRequest 请求对象
+     * @return CreateNotificationResponse */
+    public CreateNotificationResponse createNotification(CreateNotificationRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.createNotification);
+    }
+
+    /** 创建关键操作通知 配置关键操作通知，可在发生特定操作时，使用预先创建好的SMN主题，向用户手机、邮箱发送消息，也可直接发送http/https消息。常用于实时感知高危操作、触发特定操作或对接用户自有审计分析系统。
+     *
+     * @param CreateNotificationRequest 请求对象
+     * @return SyncInvoker<CreateNotificationRequest, CreateNotificationResponse> */
+    public SyncInvoker<CreateNotificationRequest, CreateNotificationResponse> createNotificationInvoker(
+        CreateNotificationRequest request) {
+        return new SyncInvoker<CreateNotificationRequest, CreateNotificationResponse>(request,
+            CtsMeta.createNotification, hcClient);
+    }
+
     /** 创建追踪器 云审计服务开通后系统会自动创建一个追踪器，用来关联系统记录的所有操作。目前，一个云账户在一个Region下支持创建一个管理类追踪器和多个数据类追踪器。
      * 云审计服务支持在管理控制台查询近7天内的操作记录。如需保存更长时间的操作记录，您可以在创建追踪器之后通过对象存储服务（Object Storage Service，以下简称OBS）将操作记录实时保存至OBS桶中。
      *
@@ -35,6 +53,24 @@ public class CtsClient {
         return new SyncInvoker<CreateTrackerRequest, CreateTrackerResponse>(request, CtsMeta.createTracker, hcClient);
     }
 
+    /** 删除关键操作通知 云审计服务支持删除已创建的关键操作通知。
+     *
+     * @param DeleteNotificationRequest 请求对象
+     * @return DeleteNotificationResponse */
+    public DeleteNotificationResponse deleteNotification(DeleteNotificationRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.deleteNotification);
+    }
+
+    /** 删除关键操作通知 云审计服务支持删除已创建的关键操作通知。
+     *
+     * @param DeleteNotificationRequest 请求对象
+     * @return SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse> */
+    public SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse> deleteNotificationInvoker(
+        DeleteNotificationRequest request) {
+        return new SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse>(request,
+            CtsMeta.deleteNotification, hcClient);
+    }
+
     /** 删除追踪器 云审计服务目前仅支持删除已创建的数据类追踪器。删除追踪器对已有的操作记录没有影响，当您重新开通云审计服务后，依旧可以查看已有的操作记录。
      *
      * @param DeleteTrackerRequest 请求对象
@@ -49,6 +85,24 @@ public class CtsClient {
      * @return SyncInvoker<DeleteTrackerRequest, DeleteTrackerResponse> */
     public SyncInvoker<DeleteTrackerRequest, DeleteTrackerResponse> deleteTrackerInvoker(DeleteTrackerRequest request) {
         return new SyncInvoker<DeleteTrackerRequest, DeleteTrackerResponse>(request, CtsMeta.deleteTracker, hcClient);
+    }
+
+    /** 查询关键操作通知 查询创建的关键操作通知规则。
+     *
+     * @param ListNotificationsRequest 请求对象
+     * @return ListNotificationsResponse */
+    public ListNotificationsResponse listNotifications(ListNotificationsRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.listNotifications);
+    }
+
+    /** 查询关键操作通知 查询创建的关键操作通知规则。
+     *
+     * @param ListNotificationsRequest 请求对象
+     * @return SyncInvoker<ListNotificationsRequest, ListNotificationsResponse> */
+    public SyncInvoker<ListNotificationsRequest, ListNotificationsResponse> listNotificationsInvoker(
+        ListNotificationsRequest request) {
+        return new SyncInvoker<ListNotificationsRequest, ListNotificationsResponse>(request, CtsMeta.listNotifications,
+            hcClient);
     }
 
     /** 查询租户追踪器配额信息 查询租户追踪器配额信息。
@@ -97,6 +151,24 @@ public class CtsClient {
      * @return SyncInvoker<ListTrackersRequest, ListTrackersResponse> */
     public SyncInvoker<ListTrackersRequest, ListTrackersResponse> listTrackersInvoker(ListTrackersRequest request) {
         return new SyncInvoker<ListTrackersRequest, ListTrackersResponse>(request, CtsMeta.listTrackers, hcClient);
+    }
+
+    /** 修改关键操作通知 云审计服务支持修改已创建关键操作通知配置项，通过notification_id的字段匹配修改对象，notification_id必须已经存在。
+     *
+     * @param UpdateNotificationRequest 请求对象
+     * @return UpdateNotificationResponse */
+    public UpdateNotificationResponse updateNotification(UpdateNotificationRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.updateNotification);
+    }
+
+    /** 修改关键操作通知 云审计服务支持修改已创建关键操作通知配置项，通过notification_id的字段匹配修改对象，notification_id必须已经存在。
+     *
+     * @param UpdateNotificationRequest 请求对象
+     * @return SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse> */
+    public SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse> updateNotificationInvoker(
+        UpdateNotificationRequest request) {
+        return new SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse>(request,
+            CtsMeta.updateNotification, hcClient);
     }
 
     /** 修改追踪器

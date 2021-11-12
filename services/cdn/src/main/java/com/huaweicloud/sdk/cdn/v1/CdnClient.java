@@ -426,7 +426,10 @@ public class CdnClient {
             CdnMeta.showResponseHeader, hcClient);
     }
 
-    /** 查询TOP100 URL明细 查询TOP100 URL明细。
+    /** 查询TOP100 URL明细 - 查询TOP100 URL明细。 - 支持查询90天内的数据。 - 查询跨度不能超过31天。 - 起始时间和结束时间，左闭右开，需要同时指定。如查询2021-10-24 00:00:00 到
+     * 2021-10-25 00:00:00 的数据，表示取 [2021-10-24 00:00:00, 2021-10-25 00:00:00)的统计数据。 -
+     * 开始时间、结束时间必须传毫秒级时间戳，且必须为凌晨0点整时刻点，如果传的不是凌晨0点整时刻点，返回数据可能与预期不一致。 -
+     * 流量类指标单位统一为Byte（字节）、请求数类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
      *
      * @param ShowTopUrlRequest 请求对象
      * @return ShowTopUrlResponse */
@@ -434,7 +437,10 @@ public class CdnClient {
         return hcClient.syncInvokeHttp(request, CdnMeta.showTopUrl);
     }
 
-    /** 查询TOP100 URL明细 查询TOP100 URL明细。
+    /** 查询TOP100 URL明细 - 查询TOP100 URL明细。 - 支持查询90天内的数据。 - 查询跨度不能超过31天。 - 起始时间和结束时间，左闭右开，需要同时指定。如查询2021-10-24 00:00:00 到
+     * 2021-10-25 00:00:00 的数据，表示取 [2021-10-24 00:00:00, 2021-10-25 00:00:00)的统计数据。 -
+     * 开始时间、结束时间必须传毫秒级时间戳，且必须为凌晨0点整时刻点，如果传的不是凌晨0点整时刻点，返回数据可能与预期不一致。 -
+     * 流量类指标单位统一为Byte（字节）、请求数类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
      *
      * @param ShowTopUrlRequest 请求对象
      * @return SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse> */

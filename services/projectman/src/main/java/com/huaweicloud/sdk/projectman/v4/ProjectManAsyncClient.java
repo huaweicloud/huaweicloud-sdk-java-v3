@@ -91,7 +91,7 @@ public class ProjectManAsyncClient {
             ProjectManMeta.batchDeleteMembersV4, hcClient);
     }
 
-    /** 检查项目名称是否存在 更新项目
+    /** 检查项目名称是否存在 检查项目名称是否存在
      *
      * @param CheckProjectNameV4Request 请求对象
      * @return CompletableFuture<CheckProjectNameV4Response> */
@@ -99,7 +99,7 @@ public class ProjectManAsyncClient {
         return hcClient.asyncInvokeHttp(request, ProjectManMeta.checkProjectNameV4);
     }
 
-    /** 检查项目名称是否存在 更新项目
+    /** 检查项目名称是否存在 检查项目名称是否存在
      *
      * @param CheckProjectNameV4Request 请求对象
      * @return AsyncInvoker<CheckProjectNameV4Request, CheckProjectNameV4Response> */
@@ -530,6 +530,24 @@ public class ProjectManAsyncClient {
             ProjectManMeta.createIterationV4, hcClient);
     }
 
+    /** 细粒度权限用户创建工作项 拥有IAM细粒度权限（projectmanConfig:systemSettingField:set）且在devcloud项目中有创建工作项的权限的用户可以设置工作项的创建者
+     *
+     * @param CreateSystemIssueV4Request 请求对象
+     * @return CompletableFuture<CreateSystemIssueV4Response> */
+    public CompletableFuture<CreateSystemIssueV4Response> createSystemIssueV4Async(CreateSystemIssueV4Request request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.createSystemIssueV4);
+    }
+
+    /** 细粒度权限用户创建工作项 拥有IAM细粒度权限（projectmanConfig:systemSettingField:set）且在devcloud项目中有创建工作项的权限的用户可以设置工作项的创建者
+     *
+     * @param CreateSystemIssueV4Request 请求对象
+     * @return AsyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response> */
+    public AsyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response> createSystemIssueV4AsyncInvoker(
+        CreateSystemIssueV4Request request) {
+        return new AsyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response>(request,
+            ProjectManMeta.createSystemIssueV4, hcClient);
+    }
+
     /** 删除工作项 删除工作项
      *
      * @param DeleteIssueV4Request 请求对象
@@ -782,6 +800,24 @@ public class ProjectManAsyncClient {
         UpdateIterationV4Request request) {
         return new AsyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>(request,
             ProjectManMeta.updateIterationV4, hcClient);
+    }
+
+    /** 上传图片 上传图片
+     *
+     * @param UploadIssueImgRequest 请求对象
+     * @return CompletableFuture<UploadIssueImgResponse> */
+    public CompletableFuture<UploadIssueImgResponse> uploadIssueImgAsync(UploadIssueImgRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.uploadIssueImg);
+    }
+
+    /** 上传图片 上传图片
+     *
+     * @param UploadIssueImgRequest 请求对象
+     * @return AsyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse> */
+    public AsyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse> uploadIssueImgAsyncInvoker(
+        UploadIssueImgRequest request) {
+        return new AsyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse>(request, ProjectManMeta.uploadIssueImg,
+            hcClient);
     }
 
 }

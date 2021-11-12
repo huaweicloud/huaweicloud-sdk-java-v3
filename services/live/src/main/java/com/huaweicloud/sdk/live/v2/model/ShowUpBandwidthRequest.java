@@ -152,7 +152,7 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 推流域名列表，最多支持查询10个域名，多个域名以逗号分隔，若查询多个域名，则返回的是多个域名合并数据。
+    /** 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔，若查询多个域名，则返回的是多个域名合并数据。
      * 
      * @return publishDomains */
     public List<String> getPublishDomains() {
@@ -248,7 +248,7 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\" 不填写查询所有运营商。
+    /** 运营商列表，取值如下： - CMCC ：移动 - CTCC ： 电信 - CUCC ：联通 - OTHER ：其他 不填写查询所有运营商。
      * 
      * @return isp */
     public List<String> getIsp() {
@@ -280,7 +280,7 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天 若参数为空，默认查询7天数据。
+    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。 最大查询跨度31天，最大查询周期1年。 若参数为空，默认查询7天数据。
      * 
      * @return startTime */
     public String getStartTime() {

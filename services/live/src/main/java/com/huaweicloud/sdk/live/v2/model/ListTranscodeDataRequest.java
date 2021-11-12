@@ -14,6 +14,11 @@ public class ListTranscodeDataRequest {
     private String publishDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream")
+
+    private String stream;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -37,6 +42,22 @@ public class ListTranscodeDataRequest {
 
     public void setPublishDomain(String publishDomain) {
         this.publishDomain = publishDomain;
+    }
+
+    public ListTranscodeDataRequest withStream(String stream) {
+        this.stream = stream;
+        return this;
+    }
+
+    /** 流名。
+     * 
+     * @return stream */
+    public String getStream() {
+        return stream;
+    }
+
+    public void setStream(String stream) {
+        this.stream = stream;
     }
 
     public ListTranscodeDataRequest withStartTime(String startTime) {
@@ -83,13 +104,14 @@ public class ListTranscodeDataRequest {
         }
         ListTranscodeDataRequest listTranscodeDataRequest = (ListTranscodeDataRequest) o;
         return Objects.equals(this.publishDomain, listTranscodeDataRequest.publishDomain)
+            && Objects.equals(this.stream, listTranscodeDataRequest.stream)
             && Objects.equals(this.startTime, listTranscodeDataRequest.startTime)
             && Objects.equals(this.endTime, listTranscodeDataRequest.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishDomain, startTime, endTime);
+        return Objects.hash(publishDomain, stream, startTime, endTime);
     }
 
     @Override
@@ -97,6 +119,7 @@ public class ListTranscodeDataRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTranscodeDataRequest {\n");
         sb.append("    publishDomain: ").append(toIndentedString(publishDomain)).append("\n");
+        sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

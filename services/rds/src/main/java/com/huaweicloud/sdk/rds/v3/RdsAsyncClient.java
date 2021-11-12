@@ -410,6 +410,24 @@ public class RdsAsyncClient {
         return new AsyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse>(request, RdsMeta.listErrorLogs, hcClient);
     }
 
+    /** 查询数据库错误日志 查询数据库错误日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+     *
+     * @param ListErrorLogsNewRequest 请求对象
+     * @return CompletableFuture<ListErrorLogsNewResponse> */
+    public CompletableFuture<ListErrorLogsNewResponse> listErrorLogsNewAsync(ListErrorLogsNewRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listErrorLogsNew);
+    }
+
+    /** 查询数据库错误日志 查询数据库错误日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+     *
+     * @param ListErrorLogsNewRequest 请求对象
+     * @return AsyncInvoker<ListErrorLogsNewRequest, ListErrorLogsNewResponse> */
+    public AsyncInvoker<ListErrorLogsNewRequest, ListErrorLogsNewResponse> listErrorLogsNewAsyncInvoker(
+        ListErrorLogsNewRequest request) {
+        return new AsyncInvoker<ListErrorLogsNewRequest, ListErrorLogsNewResponse>(request, RdsMeta.listErrorLogsNew,
+            hcClient);
+    }
+
     /** 查询数据库规格 查询数据库规格。
      *
      * @param ListFlavorsRequest 请求对象
@@ -584,6 +602,24 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsAsyncInvoker(
         ListSlowLogsRequest request) {
         return new AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>(request, RdsMeta.listSlowLogs, hcClient);
+    }
+
+    /** 查询数据库慢日志 查询数据库慢日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+     *
+     * @param ListSlowLogsNewRequest 请求对象
+     * @return CompletableFuture<ListSlowLogsNewResponse> */
+    public CompletableFuture<ListSlowLogsNewResponse> listSlowLogsNewAsync(ListSlowLogsNewRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSlowLogsNew);
+    }
+
+    /** 查询数据库慢日志 查询数据库慢日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+     *
+     * @param ListSlowLogsNewRequest 请求对象
+     * @return AsyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse> */
+    public AsyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse> listSlowLogsNewAsyncInvoker(
+        ListSlowLogsNewRequest request) {
+        return new AsyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse>(request, RdsMeta.listSlowLogsNew,
+            hcClient);
     }
 
     /** 获取慢日志统计信息 获取慢日志统计信息
@@ -1183,6 +1219,24 @@ public class RdsAsyncClient {
         UpdatePostgresqlInstanceAliasRequest request) {
         return new AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request,
             RdsMeta.updatePostgresqlInstanceAlias, hcClient);
+    }
+
+    /** 升级内核小版本 对实例进行小版本升级。
+     *
+     * @param UpgradeDbVersionRequest 请求对象
+     * @return CompletableFuture<UpgradeDbVersionResponse> */
+    public CompletableFuture<UpgradeDbVersionResponse> upgradeDbVersionAsync(UpgradeDbVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.upgradeDbVersion);
+    }
+
+    /** 升级内核小版本 对实例进行小版本升级。
+     *
+     * @param UpgradeDbVersionRequest 请求对象
+     * @return AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse> */
+    public AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersionAsyncInvoker(
+        UpgradeDbVersionRequest request) {
+        return new AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>(request, RdsMeta.upgradeDbVersion,
+            hcClient);
     }
 
     /** 授权数据库帐号 授权数据库帐号。

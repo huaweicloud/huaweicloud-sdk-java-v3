@@ -23,7 +23,7 @@ public class ListConversionsRequest {
         return this;
     }
 
-    /** |忽略大小写，默认 zh_CN：中文 en_US：英文|
+    /** 语言。zh_CN：中文en_US：英文缺省为zh_CN。
      * 
      * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
