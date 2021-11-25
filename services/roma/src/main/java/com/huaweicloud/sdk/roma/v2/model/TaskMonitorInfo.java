@@ -99,81 +99,10 @@ public class TaskMonitorInfo {
 
     private TaskTypeEnum taskType;
 
-    /** 任务状态, 只允许两种类型:STOP-停止, RUNNING-运行中 */
-    public static final class StatusEnum {
-
-        /** Enum STOP for value: "STOP" */
-        public static final StatusEnum STOP = new StatusEnum("STOP");
-
-        /** Enum RUNNING for value: "RUNNING" */
-        public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("STOP", STOP);
-            map.put("RUNNING", RUNNING);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
+    private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_execute_time")
@@ -615,19 +544,19 @@ public class TaskMonitorInfo {
         this.taskType = taskType;
     }
 
-    public TaskMonitorInfo withStatus(StatusEnum status) {
+    public TaskMonitorInfo withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    /** 任务状态, 只允许两种类型:STOP-停止, RUNNING-运行中
+    /** 任务状态, 只允许两种类型:0-停止, 1-运行中
      * 
      * @return status */
-    public StatusEnum getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

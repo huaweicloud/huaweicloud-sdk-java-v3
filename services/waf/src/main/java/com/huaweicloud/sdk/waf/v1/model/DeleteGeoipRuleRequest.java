@@ -28,7 +28,7 @@ public class DeleteGeoipRuleRequest {
         return this;
     }
 
-    /** 企业项目id
+    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -44,7 +44,7 @@ public class DeleteGeoipRuleRequest {
         return this;
     }
 
-    /** 策略id（策略id从查询防护策略列表接口获取）
+    /** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
      * 
      * @return policyId */
     public String getPolicyId() {
@@ -60,7 +60,7 @@ public class DeleteGeoipRuleRequest {
         return this;
     }
 
-    /** geoipRuleId
+    /** 地理位置访问控制规则id，通过查询地理位置规则列表接口获取https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=WAF&api=ListGeoipRule
      * 
      * @return ruleId */
     public String getRuleId() {

@@ -16,7 +16,7 @@ public class VpcInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_name")
 
-    private Integer ecsName;
+    private String ecsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cascade_flag")
@@ -54,7 +54,7 @@ public class VpcInfo {
         this.ecsId = ecsId;
     }
 
-    public VpcInfo withEcsName(Integer ecsName) {
+    public VpcInfo withEcsName(String ecsName) {
         this.ecsName = ecsName;
         return this;
     }
@@ -62,11 +62,11 @@ public class VpcInfo {
     /** 云服务器名称
      * 
      * @return ecsName */
-    public Integer getEcsName() {
+    public String getEcsName() {
         return ecsName;
     }
 
-    public void setEcsName(Integer ecsName) {
+    public void setEcsName(String ecsName) {
         this.ecsName = ecsName;
     }
 

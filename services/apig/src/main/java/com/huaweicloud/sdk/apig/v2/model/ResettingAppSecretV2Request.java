@@ -22,14 +22,14 @@ public class ResettingAppSecretV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AppSecretReq body;
+    private AppResetCreate body;
 
     public ResettingAppSecretV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -45,7 +45,7 @@ public class ResettingAppSecretV2Request {
         return this;
     }
 
-    /** APP的编号，可通过查询APP列表获取
+    /** 应用编号
      * 
      * @return appId */
     public String getAppId() {
@@ -56,14 +56,14 @@ public class ResettingAppSecretV2Request {
         this.appId = appId;
     }
 
-    public ResettingAppSecretV2Request withBody(AppSecretReq body) {
+    public ResettingAppSecretV2Request withBody(AppResetCreate body) {
         this.body = body;
         return this;
     }
 
-    public ResettingAppSecretV2Request withBody(Consumer<AppSecretReq> bodySetter) {
+    public ResettingAppSecretV2Request withBody(Consumer<AppResetCreate> bodySetter) {
         if (this.body == null) {
-            this.body = new AppSecretReq();
+            this.body = new AppResetCreate();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class ResettingAppSecretV2Request {
     /** Get body
      * 
      * @return body */
-    public AppSecretReq getBody() {
+    public AppResetCreate getBody() {
         return body;
     }
 
-    public void setBody(AppSecretReq body) {
+    public void setBody(AppResetCreate body) {
         this.body = body;
     }
 

@@ -14,19 +14,19 @@ public class BatchAddOrRemoveResourceInstanceBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TagList> tags = null;
+    private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
     private String action;
 
-    public BatchAddOrRemoveResourceInstanceBody withTags(List<TagList> tags) {
+    public BatchAddOrRemoveResourceInstanceBody withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public BatchAddOrRemoveResourceInstanceBody addTagsItem(TagList tagsItem) {
+    public BatchAddOrRemoveResourceInstanceBody addTagsItem(ResourceTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -34,7 +34,7 @@ public class BatchAddOrRemoveResourceInstanceBody {
         return this;
     }
 
-    public BatchAddOrRemoveResourceInstanceBody withTags(Consumer<List<TagList>> tagsSetter) {
+    public BatchAddOrRemoveResourceInstanceBody withTags(Consumer<List<ResourceTag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -45,11 +45,11 @@ public class BatchAddOrRemoveResourceInstanceBody {
     /** 标签列表，没有标签默认为空数组。
      * 
      * @return tags */
-    public List<TagList> getTags() {
+    public List<ResourceTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TagList> tags) {
+    public void setTags(List<ResourceTag> tags) {
         this.tags = tags;
     }
 

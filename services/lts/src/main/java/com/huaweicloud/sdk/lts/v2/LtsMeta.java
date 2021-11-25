@@ -120,6 +120,41 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> createNotificationTemplate =
+        genForcreateNotificationTemplate();
+
+    private static HttpRequestDef<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> genForcreateNotificationTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateNotificationTemplateRequest.class,
+                    CreateNotificationTemplateResponse.class)
+                .withName("CreateNotificationTemplate")
+                .withUri("/v2/{project_id}/{domain_id}/lts/events/notification/templates")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNotificationTemplateRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<CreateNotificationTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateNotificationTemplateRequestBody.class),
+            f -> f.withMarshaller(CreateNotificationTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateStructTemplateRequest, CreateStructTemplateResponse> createStructTemplate =
         genForcreateStructTemplate();
 
@@ -149,6 +184,31 @@ public class LtsMeta {
             f -> f.withMarshaller(CreateStructTemplateResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTransferRequest, CreateTransferResponse> createTransfer =
+        genForcreateTransfer();
+
+    private static HttpRequestDef<CreateTransferRequest, CreateTransferResponse> genForcreateTransfer() {
+        // basic
+        HttpRequestDef.Builder<CreateTransferRequest, CreateTransferResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTransferRequest.class, CreateTransferResponse.class)
+                .withName("CreateTransfer")
+                .withUri("/v2/{project_id}/transfers")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateTransferRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTransferRequestBody.class),
+            f -> f.withMarshaller(CreateTransferRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -283,6 +343,41 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> deleteNotificationTemplate =
+        genFordeleteNotificationTemplate();
+
+    private static HttpRequestDef<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> genFordeleteNotificationTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteNotificationTemplateRequest.class,
+                    DeleteNotificationTemplateResponse.class)
+                .withName("DeleteNotificationTemplate")
+                .withUri("/v2/{project_id}/{domain_id}/lts/events/notification/templates")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNotificationTemplateRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<DeleteNotificationTemplateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteNotificationTemplateBody.class),
+            f -> f.withMarshaller(DeleteNotificationTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteStructTemplateRequest, DeleteStructTemplateResponse> deleteStructTemplate =
         genFordeleteStructTemplate();
 
@@ -312,6 +407,31 @@ public class LtsMeta {
             f -> f.withMarshaller(DeleteStructTemplateResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTransferRequest, DeleteTransferResponse> deleteTransfer =
+        genFordeleteTransfer();
+
+    private static HttpRequestDef<DeleteTransferRequest, DeleteTransferResponse> genFordeleteTransfer() {
+        // basic
+        HttpRequestDef.Builder<DeleteTransferRequest, DeleteTransferResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTransferRequest.class, DeleteTransferResponse.class)
+                .withName("DeleteTransfer")
+                .withUri("/v2/{project_id}/transfers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("log_transfer_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTransferRequest::getLogTransferId, (req, v) -> {
+                req.setLogTransferId(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -507,6 +627,38 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLogStreamsRequest, ListLogStreamsResponse> listLogStreams =
+        genForlistLogStreams();
+
+    private static HttpRequestDef<ListLogStreamsRequest, ListLogStreamsResponse> genForlistLogStreams() {
+        // basic
+        HttpRequestDef.Builder<ListLogStreamsRequest, ListLogStreamsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogStreamsRequest.class, ListLogStreamsResponse.class)
+                .withName("ListLogStreams")
+                .withUri("/v2/{project_id}/log-streams")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("log_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogStreamsRequest::getLogGroupName, (req, v) -> {
+                req.setLogGroupName(v);
+            }));
+        builder.<String>withRequestField("log_stream_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogStreamsRequest::getLogStreamName, (req, v) -> {
+                req.setLogStreamName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListLogsRequest, ListLogsResponse> listLogs = genForlistLogs();
 
     private static HttpRequestDef<ListLogsRequest, ListLogsResponse> genForlistLogs() {
@@ -538,6 +690,67 @@ public class LtsMeta {
             TypeCasts.uncheckedConversion(QueryLTSLogParams.class),
             f -> f.withMarshaller(ListLogsRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotificationTemplateRequest, ListNotificationTemplateResponse> listNotificationTemplate =
+        genForlistNotificationTemplate();
+
+    private static HttpRequestDef<ListNotificationTemplateRequest, ListNotificationTemplateResponse> genForlistNotificationTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListNotificationTemplateRequest, ListNotificationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ListNotificationTemplateRequest.class, ListNotificationTemplateResponse.class)
+                .withName("ListNotificationTemplate")
+                .withUri("/v2/{project_id}/{domain_id}/lts/events/notification/templates/view")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotificationTemplateRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<PreviewTemplateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PreviewTemplateBody.class),
+            f -> f.withMarshaller(ListNotificationTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> listNotificationTemplates =
+        genForlistNotificationTemplates();
+
+    private static HttpRequestDef<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> genForlistNotificationTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListNotificationTemplatesRequest.class,
+                    ListNotificationTemplatesResponse.class)
+                .withName("ListNotificationTemplates")
+                .withUri("/v2/{project_id}/{domain_id}/lts/events/notification/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotificationTemplatesRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
             }));
 
         // response
@@ -659,6 +872,104 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTransfersRequest, ListTransfersResponse> listTransfers =
+        genForlistTransfers();
+
+    private static HttpRequestDef<ListTransfersRequest, ListTransfersResponse> genForlistTransfers() {
+        // basic
+        HttpRequestDef.Builder<ListTransfersRequest, ListTransfersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTransfersRequest.class, ListTransfersResponse.class)
+                .withName("ListTransfers")
+                .withUri("/v2/{project_id}/transfers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListTransfersRequest.LogTransferTypeEnum>withRequestField("log_transfer_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTransfersRequest.LogTransferTypeEnum.class),
+            f -> f.withMarshaller(ListTransfersRequest::getLogTransferType, (req, v) -> {
+                req.setLogTransferType(v);
+            }));
+        builder.<String>withRequestField("log_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTransfersRequest::getLogGroupName, (req, v) -> {
+                req.setLogGroupName(v);
+            }));
+        builder.<String>withRequestField("log_stream_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTransfersRequest::getLogStreamName, (req, v) -> {
+                req.setLogStreamName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> registerDmsKafkaInstance =
+        genForregisterDmsKafkaInstance();
+
+    private static HttpRequestDef<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> genForregisterDmsKafkaInstance() {
+        // basic
+        HttpRequestDef.Builder<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, RegisterDmsKafkaInstanceRequest.class, RegisterDmsKafkaInstanceResponse.class)
+                .withName("RegisterDmsKafkaInstance")
+                .withUri("/v2/{project_id}/lts/dms/kafka-instance")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<RegisterDmsKafkaInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RegisterDmsKafkaInstanceRequestBody.class),
+            f -> f.withMarshaller(RegisterDmsKafkaInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> showNotificationTemplate =
+        genForshowNotificationTemplate();
+
+    private static HttpRequestDef<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> genForshowNotificationTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowNotificationTemplateRequest.class, ShowNotificationTemplateResponse.class)
+                .withName("ShowNotificationTemplate")
+                .withUri("/v2/{project_id}/{domain_id}/lts/events/notification/template/{template_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNotificationTemplateRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNotificationTemplateRequest::getTemplateName, (req, v) -> {
+                req.setTemplateName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowStructTemplateRequest, ShowStructTemplateResponse> showStructTemplate =
         genForshowStructTemplate();
 
@@ -748,6 +1059,41 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> updateNotificationTemplate =
+        genForupdateNotificationTemplate();
+
+    private static HttpRequestDef<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> genForupdateNotificationTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateNotificationTemplateRequest.class,
+                    UpdateNotificationTemplateResponse.class)
+                .withName("UpdateNotificationTemplate")
+                .withUri("/v2/{project_id}/{domain_id}/lts/events/notification/templates")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNotificationTemplateRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<CreateNotificationTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateNotificationTemplateRequestBody.class),
+            f -> f.withMarshaller(UpdateNotificationTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateStructTemplateRequest, UpdateStructTemplateResponse> updateStructTemplate =
         genForupdateStructTemplate();
 
@@ -777,6 +1123,31 @@ public class LtsMeta {
             f -> f.withMarshaller(UpdateStructTemplateResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTransferRequest, UpdateTransferResponse> updateTransfer =
+        genForupdateTransfer();
+
+    private static HttpRequestDef<UpdateTransferRequest, UpdateTransferResponse> genForupdateTransfer() {
+        // basic
+        HttpRequestDef.Builder<UpdateTransferRequest, UpdateTransferResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTransferRequest.class, UpdateTransferResponse.class)
+                .withName("UpdateTransfer")
+                .withUri("/v2/{project_id}/transfers")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UpdateTransferRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTransferRequestBody.class),
+            f -> f.withMarshaller(UpdateTransferRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -934,6 +1305,39 @@ public class LtsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatus =
+        genForupdateAlarmRuleStatus();
+
+    private static HttpRequestDef<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> genForupdateAlarmRuleStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAlarmRuleStatusRequest.class, UpdateAlarmRuleStatusResponse.class)
+            .withName("UpdateAlarmRuleStatus")
+            .withUri("/v2/{project_id}/lts/alarms/status")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ChangeAlarmRuleStatus>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ChangeAlarmRuleStatus.class),
+            f -> f.withMarshaller(UpdateAlarmRuleStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAlarmRuleStatusResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

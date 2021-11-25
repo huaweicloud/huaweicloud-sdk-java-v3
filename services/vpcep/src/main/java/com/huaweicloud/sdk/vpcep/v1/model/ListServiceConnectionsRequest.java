@@ -33,7 +33,7 @@ public class ListServiceConnectionsRequest {
 
     private String status;
 
-    /** 查询结果中终端节点列表的排序字 段，取值为： ● create_at：终端节点的创建时 间 ● update_at：终端节点的更新时 间 默认值为create_at。 */
+    /** 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。 */
     public static final class SortKeyEnum {
 
         /** Enum CREATE_AT for value: "create_at" */
@@ -264,7 +264,7 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 查询结果中终端节点列表的排序字 段，取值为： ● create_at：终端节点的创建时 间 ● update_at：终端节点的更新时 间 默认值为create_at。
+    /** 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
      * 
      * @return sortKey */
     public SortKeyEnum getSortKey() {
@@ -296,7 +296,7 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 查询返回终端节点服务的连接列表 限制每页个数，即每页返回的个 数。 取值范围：0~1000，取值一般为 10，20或者50，默认为10。 minimum: 1
+    /** 查询返回终端节点服务的连接列表限制每页个数，即每页返回的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。 minimum: 1
      * 
      * @return limit */
     public Integer getLimit() {

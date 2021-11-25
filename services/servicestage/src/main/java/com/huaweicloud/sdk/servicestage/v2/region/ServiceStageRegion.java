@@ -33,7 +33,7 @@ public class ServiceStageRegion {
         new Region("ap-southeast-2", "https://servicestage.ap-southeast-2.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_1 =
-        new Region("ap-southeast-1", "https://servicestage.ap-southeast-1.myhwclouds.com");
+        new Region("ap-southeast-1", "https://servicestage.ap-southeast-1.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://servicestage.ap-southeast-3.myhuaweicloud.com");

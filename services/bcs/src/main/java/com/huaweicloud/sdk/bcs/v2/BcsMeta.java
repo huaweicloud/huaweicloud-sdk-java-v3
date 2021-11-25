@@ -144,6 +144,48 @@ public class BcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> createBlockchainCertByUserName =
+        genForcreateBlockchainCertByUserName();
+
+    private static HttpRequestDef<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> genForcreateBlockchainCertByUserName() {
+        // basic
+        HttpRequestDef.Builder<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateBlockchainCertByUserNameRequest.class,
+                    CreateBlockchainCertByUserNameResponse.class)
+                .withName("CreateBlockchainCertByUserName")
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/orgs/{org_name}/usercert/{user_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("blockchain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getBlockchainId, (req, v) -> {
+                req.setBlockchainId(v);
+            }));
+        builder.<String>withRequestField("org_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getOrgName, (req, v) -> {
+                req.setOrgName(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateNewBlockchainRequest, CreateNewBlockchainResponse> createNewBlockchain =
         genForcreateNewBlockchain();
 
@@ -208,6 +250,31 @@ public class BcsMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteResource, (req, v) -> {
                 req.setIsDeleteResource(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMemberInviteRequest, DeleteMemberInviteResponse> deleteMemberInvite =
+        genFordeleteMemberInvite();
+
+    private static HttpRequestDef<DeleteMemberInviteRequest, DeleteMemberInviteResponse> genFordeleteMemberInvite() {
+        // basic
+        HttpRequestDef.Builder<DeleteMemberInviteRequest, DeleteMemberInviteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteMemberInviteRequest.class, DeleteMemberInviteResponse.class)
+                .withName("DeleteMemberInvite")
+                .withUri("/v2/{project_id}/members/invitations")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DeleteMemberInviteRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteMemberInviteRequestBody.class),
+            f -> f.withMarshaller(DeleteMemberInviteRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -282,6 +349,44 @@ public class BcsMeta {
             TypeCasts.uncheckedConversion(CfgRequestBody.class),
             f -> f.withMarshaller(DownloadBlockchainSdkConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<FreezeCertRequest, FreezeCertResponse> freezeCert = genForfreezeCert();
+
+    private static HttpRequestDef<FreezeCertRequest, FreezeCertResponse> genForfreezeCert() {
+        // basic
+        HttpRequestDef.Builder<FreezeCertRequest, FreezeCertResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, FreezeCertRequest.class, FreezeCertResponse.class)
+                .withName("FreezeCert")
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/orgs/{org_name}/usercert/{user_name}/freeze")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(FreezeCertRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<String>withRequestField("blockchain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(FreezeCertRequest::getBlockchainId, (req, v) -> {
+                req.setBlockchainId(v);
+            }));
+        builder.<String>withRequestField("org_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(FreezeCertRequest::getOrgName, (req, v) -> {
+                req.setOrgName(v);
             }));
 
         // response
@@ -643,6 +748,44 @@ public class BcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBlockchainStatusRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnfreezeCertRequest, UnfreezeCertResponse> unfreezeCert = genForunfreezeCert();
+
+    private static HttpRequestDef<UnfreezeCertRequest, UnfreezeCertResponse> genForunfreezeCert() {
+        // basic
+        HttpRequestDef.Builder<UnfreezeCertRequest, UnfreezeCertResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UnfreezeCertRequest.class, UnfreezeCertResponse.class)
+                .withName("UnfreezeCert")
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/orgs/{org_name}/usercert/{user_name}/unfreeze")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnfreezeCertRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<String>withRequestField("blockchain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnfreezeCertRequest::getBlockchainId, (req, v) -> {
+                req.setBlockchainId(v);
+            }));
+        builder.<String>withRequestField("org_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnfreezeCertRequest::getOrgName, (req, v) -> {
+                req.setOrgName(v);
             }));
 
         // response

@@ -28,12 +28,17 @@ public class ListWhiteblackipRuleRequest {
 
     private Integer pagesize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public ListWhiteblackipRuleRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    /** 企业项目id
+    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -49,7 +54,7 @@ public class ListWhiteblackipRuleRequest {
         return this;
     }
 
-    /** 策略id（策略id从查询防护策略列表接口获取）
+    /** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
      * 
      * @return policyId */
     public String getPolicyId() {
@@ -65,7 +70,7 @@ public class ListWhiteblackipRuleRequest {
         return this;
     }
 
-    /** 页码
+    /** 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
      * 
      * @return page */
     public Integer getPage() {
@@ -81,7 +86,7 @@ public class ListWhiteblackipRuleRequest {
         return this;
     }
 
-    /** 每页条数
+    /** 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
      * 
      * @return pagesize */
     public Integer getPagesize() {
@@ -90,6 +95,22 @@ public class ListWhiteblackipRuleRequest {
 
     public void setPagesize(Integer pagesize) {
         this.pagesize = pagesize;
+    }
+
+    public ListWhiteblackipRuleRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /** 黑白名单规则名称
+     * 
+     * @return name */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -104,12 +125,13 @@ public class ListWhiteblackipRuleRequest {
         return Objects.equals(this.enterpriseProjectId, listWhiteblackipRuleRequest.enterpriseProjectId)
             && Objects.equals(this.policyId, listWhiteblackipRuleRequest.policyId)
             && Objects.equals(this.page, listWhiteblackipRuleRequest.page)
-            && Objects.equals(this.pagesize, listWhiteblackipRuleRequest.pagesize);
+            && Objects.equals(this.pagesize, listWhiteblackipRuleRequest.pagesize)
+            && Objects.equals(this.name, listWhiteblackipRuleRequest.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, policyId, page, pagesize);
+        return Objects.hash(enterpriseProjectId, policyId, page, pagesize, name);
     }
 
     @Override
@@ -120,6 +142,7 @@ public class ListWhiteblackipRuleRequest {
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

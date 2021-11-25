@@ -15,19 +15,19 @@ public class ListServicePermissionsDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permissions")
 
-    private List<Permissions> permissions = null;
+    private List<Permission> permissions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListServicePermissionsDetailsResponse withPermissions(List<Permissions> permissions) {
+    public ListServicePermissionsDetailsResponse withPermissions(List<Permission> permissions) {
         this.permissions = permissions;
         return this;
     }
 
-    public ListServicePermissionsDetailsResponse addPermissionsItem(Permissions permissionsItem) {
+    public ListServicePermissionsDetailsResponse addPermissionsItem(Permission permissionsItem) {
         if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
@@ -35,7 +35,7 @@ public class ListServicePermissionsDetailsResponse extends SdkResponse {
         return this;
     }
 
-    public ListServicePermissionsDetailsResponse withPermissions(Consumer<List<Permissions>> permissionsSetter) {
+    public ListServicePermissionsDetailsResponse withPermissions(Consumer<List<Permission>> permissionsSetter) {
         if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
@@ -46,11 +46,11 @@ public class ListServicePermissionsDetailsResponse extends SdkResponse {
     /** permission列表。
      * 
      * @return permissions */
-    public List<Permissions> getPermissions() {
+    public List<Permission> getPermissions() {
         return permissions;
     }
 
-    public void setPermissions(List<Permissions> permissions) {
+    public void setPermissions(List<Permission> permissions) {
         this.permissions = permissions;
     }
 

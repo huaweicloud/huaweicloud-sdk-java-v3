@@ -22,14 +22,14 @@ public class UpdateApiGroupV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ApiGroupReq body;
+    private ApiGroupBase body;
 
     public UpdateApiGroupV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -56,14 +56,14 @@ public class UpdateApiGroupV2Request {
         this.groupId = groupId;
     }
 
-    public UpdateApiGroupV2Request withBody(ApiGroupReq body) {
+    public UpdateApiGroupV2Request withBody(ApiGroupBase body) {
         this.body = body;
         return this;
     }
 
-    public UpdateApiGroupV2Request withBody(Consumer<ApiGroupReq> bodySetter) {
+    public UpdateApiGroupV2Request withBody(Consumer<ApiGroupBase> bodySetter) {
         if (this.body == null) {
-            this.body = new ApiGroupReq();
+            this.body = new ApiGroupBase();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class UpdateApiGroupV2Request {
     /** Get body
      * 
      * @return body */
-    public ApiGroupReq getBody() {
+    public ApiGroupBase getBody() {
         return body;
     }
 
-    public void setBody(ApiGroupReq body) {
+    public void setBody(ApiGroupBase body) {
         this.body = body;
     }
 

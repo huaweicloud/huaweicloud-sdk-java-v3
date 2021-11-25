@@ -187,7 +187,7 @@ public class TaskNodeGroups  {
 
 
     /**
-     * Task节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](mrs_01_9006.xml)和[MRS所使用的裸金属服务器规格](mrs_01_9001.xml)。
+     * Task节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9006.html)和[MRS所使用的裸金属服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9001.html)。 该参数建议从MRS控制台的集群创建页面获取对应区域对应版本所支持的规格。
      * @return nodeSize
      */
     public String getNodeSize() {

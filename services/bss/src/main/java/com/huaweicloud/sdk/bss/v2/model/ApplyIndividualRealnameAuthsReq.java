@@ -77,7 +77,7 @@ public class ApplyIndividualRealnameAuthsReq {
         return this;
     }
 
-    /** 认证方案： 0：个人证件认证 4：个人银行卡认证。这种方式下，仅仅需要上传一张个人扫脸的图片附件即可。 minimum: 0 maximum: 32
+    /** 认证方案： 0：个人证件认证 4：个人银行卡认证 minimum: 0 maximum: 32
      * 
      * @return identifyType */
     public Integer getIdentifyType() {

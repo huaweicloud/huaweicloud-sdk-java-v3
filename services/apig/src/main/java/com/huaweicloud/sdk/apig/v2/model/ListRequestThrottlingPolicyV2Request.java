@@ -14,16 +14,6 @@ public class ListRequestThrottlingPolicyV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Long offset;
@@ -32,6 +22,16 @@ public class ListRequestThrottlingPolicyV2Request {
     @JsonProperty(value = "limit")
 
     private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "precise_search")
@@ -43,7 +43,7 @@ public class ListRequestThrottlingPolicyV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -52,38 +52,6 @@ public class ListRequestThrottlingPolicyV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public ListRequestThrottlingPolicyV2Request withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /** 流控策略编号
-     * 
-     * @return id */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public ListRequestThrottlingPolicyV2Request withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /** 流控策略名称
-     * 
-     * @return name */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public ListRequestThrottlingPolicyV2Request withOffset(Long offset) {
@@ -118,6 +86,38 @@ public class ListRequestThrottlingPolicyV2Request {
         this.limit = limit;
     }
 
+    public ListRequestThrottlingPolicyV2Request withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /** 流控策略编号
+     * 
+     * @return id */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ListRequestThrottlingPolicyV2Request withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /** 流控策略名称
+     * 
+     * @return name */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public ListRequestThrottlingPolicyV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -145,16 +145,16 @@ public class ListRequestThrottlingPolicyV2Request {
         ListRequestThrottlingPolicyV2Request listRequestThrottlingPolicyV2Request =
             (ListRequestThrottlingPolicyV2Request) o;
         return Objects.equals(this.instanceId, listRequestThrottlingPolicyV2Request.instanceId)
-            && Objects.equals(this.id, listRequestThrottlingPolicyV2Request.id)
-            && Objects.equals(this.name, listRequestThrottlingPolicyV2Request.name)
             && Objects.equals(this.offset, listRequestThrottlingPolicyV2Request.offset)
             && Objects.equals(this.limit, listRequestThrottlingPolicyV2Request.limit)
+            && Objects.equals(this.id, listRequestThrottlingPolicyV2Request.id)
+            && Objects.equals(this.name, listRequestThrottlingPolicyV2Request.name)
             && Objects.equals(this.preciseSearch, listRequestThrottlingPolicyV2Request.preciseSearch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, id, name, offset, limit, preciseSearch);
+        return Objects.hash(instanceId, offset, limit, id, name, preciseSearch);
     }
 
     @Override
@@ -162,10 +162,10 @@ public class ListRequestThrottlingPolicyV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRequestThrottlingPolicyV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
         sb.append("}");
         return sb.toString();

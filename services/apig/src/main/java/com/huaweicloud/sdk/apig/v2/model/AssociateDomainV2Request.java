@@ -29,7 +29,7 @@ public class AssociateDomainV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -45,7 +45,7 @@ public class AssociateDomainV2Request {
         return this;
     }
 
-    /** API分组编号
+    /** 分组的编号
      * 
      * @return groupId */
     public String getGroupId() {

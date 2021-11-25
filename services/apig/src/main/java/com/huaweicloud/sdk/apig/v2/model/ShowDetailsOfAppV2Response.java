@@ -15,7 +15,22 @@ import java.util.Objects;
 /** Response Object */
 public class ShowDetailsOfAppV2Response extends SdkResponse {
 
-    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remark")
+
+    private String remark;
+
+    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 暂不支持MARKET */
     public static final class CreatorEnum {
 
         /** Enum USER for value: "USER" */
@@ -102,21 +117,6 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "remark")
-
-    private String remark;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_secret")
 
     private String appSecret;
@@ -126,12 +126,79 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
 
     private OffsetDateTime registerTime;
 
+    /** 状态 - 1： 有效 */
+    public static final class StatusEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private StatusEnum status;
 
-    /** APP的类型 默认为apig，暂不支持其他类型 */
+    /** APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用 默认apig，暂不支持其他类型 */
     public static final class AppTypeEnum {
 
         /** Enum APIG for value: "apig" */
@@ -207,12 +274,65 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
 
     private AppTypeEnum appType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roma_app_type")
+
+    private Object romaAppType;
+
+    public ShowDetailsOfAppV2Response withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /** 编号
+     * 
+     * @return id */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ShowDetailsOfAppV2Response withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /** 名称
+     * 
+     * @return name */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ShowDetailsOfAppV2Response withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    /** 描述
+     * 
+     * @return remark */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
     public ShowDetailsOfAppV2Response withCreator(CreatorEnum creator) {
         this.creator = creator;
         return this;
     }
 
-    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配
+    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 暂不支持MARKET
      * 
      * @return creator */
     public CreatorEnum getCreator() {
@@ -255,54 +375,6 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.appKey = appKey;
     }
 
-    public ShowDetailsOfAppV2Response withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /** 名称
-     * 
-     * @return name */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ShowDetailsOfAppV2Response withRemark(String remark) {
-        this.remark = remark;
-        return this;
-    }
-
-    /** 描述
-     * 
-     * @return remark */
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public ShowDetailsOfAppV2Response withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /** 编号
-     * 
-     * @return id */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public ShowDetailsOfAppV2Response withAppSecret(String appSecret) {
         this.appSecret = appSecret;
         return this;
@@ -335,19 +407,19 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.registerTime = registerTime;
     }
 
-    public ShowDetailsOfAppV2Response withStatus(Integer status) {
+    public ShowDetailsOfAppV2Response withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    /** 状态
+    /** 状态 - 1： 有效
      * 
      * @return status */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -356,7 +428,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** APP的类型 默认为apig，暂不支持其他类型
+    /** APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用 默认apig，暂不支持其他类型
      * 
      * @return appType */
     public AppTypeEnum getAppType() {
@@ -365,6 +437,22 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
 
     public void setAppType(AppTypeEnum appType) {
         this.appType = appType;
+    }
+
+    public ShowDetailsOfAppV2Response withRomaAppType(Object romaAppType) {
+        this.romaAppType = romaAppType;
+        return this;
+    }
+
+    /** ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用 暂不支持
+     * 
+     * @return romaAppType */
+    public Object getRomaAppType() {
+        return romaAppType;
+    }
+
+    public void setRomaAppType(Object romaAppType) {
+        this.romaAppType = romaAppType;
     }
 
     @Override
@@ -376,37 +464,40 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             return false;
         }
         ShowDetailsOfAppV2Response showDetailsOfAppV2Response = (ShowDetailsOfAppV2Response) o;
-        return Objects.equals(this.creator, showDetailsOfAppV2Response.creator)
-            && Objects.equals(this.updateTime, showDetailsOfAppV2Response.updateTime)
-            && Objects.equals(this.appKey, showDetailsOfAppV2Response.appKey)
+        return Objects.equals(this.id, showDetailsOfAppV2Response.id)
             && Objects.equals(this.name, showDetailsOfAppV2Response.name)
             && Objects.equals(this.remark, showDetailsOfAppV2Response.remark)
-            && Objects.equals(this.id, showDetailsOfAppV2Response.id)
+            && Objects.equals(this.creator, showDetailsOfAppV2Response.creator)
+            && Objects.equals(this.updateTime, showDetailsOfAppV2Response.updateTime)
+            && Objects.equals(this.appKey, showDetailsOfAppV2Response.appKey)
             && Objects.equals(this.appSecret, showDetailsOfAppV2Response.appSecret)
             && Objects.equals(this.registerTime, showDetailsOfAppV2Response.registerTime)
             && Objects.equals(this.status, showDetailsOfAppV2Response.status)
-            && Objects.equals(this.appType, showDetailsOfAppV2Response.appType);
+            && Objects.equals(this.appType, showDetailsOfAppV2Response.appType)
+            && Objects.equals(this.romaAppType, showDetailsOfAppV2Response.romaAppType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(creator, updateTime, appKey, name, remark, id, appSecret, registerTime, status, appType);
+        return Objects
+            .hash(id, name, remark, creator, updateTime, appKey, appSecret, registerTime, status, appType, romaAppType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDetailsOfAppV2Response {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    appSecret: ").append(toIndentedString(appSecret)).append("\n");
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
+        sb.append("    romaAppType: ").append(toIndentedString(romaAppType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /** Response Object */
@@ -42,27 +43,27 @@ public class ShowTaskDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_line_total")
 
-    private String codeLineTotal;
+    private Integer codeLineTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_line")
 
-    private String codeLine;
+    private Integer codeLine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_quality")
 
-    private String codeQuality;
+    private BigDecimal codeQuality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_count")
 
-    private String issueCount;
+    private Integer issueCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_coefficient")
 
-    private String riskCoefficient;
+    private BigDecimal riskCoefficient;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duplication_ratio")
@@ -72,17 +73,17 @@ public class ShowTaskDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "complexity_count")
 
-    private String complexityCount;
+    private Integer complexityCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duplicated_lines")
 
-    private String duplicatedLines;
+    private Integer duplicatedLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comment_lines")
 
-    private String commentLines;
+    private Integer commentLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comment_ratio")
@@ -92,7 +93,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duplicated_blocks")
 
-    private String duplicatedBlocks;
+    private Integer duplicatedBlocks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_exec_time")
@@ -230,7 +231,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
         this.lastCheckTime = lastCheckTime;
     }
 
-    public ShowTaskDetailResponse withCodeLineTotal(String codeLineTotal) {
+    public ShowTaskDetailResponse withCodeLineTotal(Integer codeLineTotal) {
         this.codeLineTotal = codeLineTotal;
         return this;
     }
@@ -238,31 +239,31 @@ public class ShowTaskDetailResponse extends SdkResponse {
     /** 代码总行数
      * 
      * @return codeLineTotal */
-    public String getCodeLineTotal() {
+    public Integer getCodeLineTotal() {
         return codeLineTotal;
     }
 
-    public void setCodeLineTotal(String codeLineTotal) {
+    public void setCodeLineTotal(Integer codeLineTotal) {
         this.codeLineTotal = codeLineTotal;
     }
 
-    public ShowTaskDetailResponse withCodeLine(String codeLine) {
+    public ShowTaskDetailResponse withCodeLine(Integer codeLine) {
         this.codeLine = codeLine;
         return this;
     }
 
-    /** 代码有效行数
+    /** Get codeLine
      * 
      * @return codeLine */
-    public String getCodeLine() {
+    public Integer getCodeLine() {
         return codeLine;
     }
 
-    public void setCodeLine(String codeLine) {
+    public void setCodeLine(Integer codeLine) {
         this.codeLine = codeLine;
     }
 
-    public ShowTaskDetailResponse withCodeQuality(String codeQuality) {
+    public ShowTaskDetailResponse withCodeQuality(BigDecimal codeQuality) {
         this.codeQuality = codeQuality;
         return this;
     }
@@ -270,15 +271,15 @@ public class ShowTaskDetailResponse extends SdkResponse {
     /** 代码质量
      * 
      * @return codeQuality */
-    public String getCodeQuality() {
+    public BigDecimal getCodeQuality() {
         return codeQuality;
     }
 
-    public void setCodeQuality(String codeQuality) {
+    public void setCodeQuality(BigDecimal codeQuality) {
         this.codeQuality = codeQuality;
     }
 
-    public ShowTaskDetailResponse withIssueCount(String issueCount) {
+    public ShowTaskDetailResponse withIssueCount(Integer issueCount) {
         this.issueCount = issueCount;
         return this;
     }
@@ -286,15 +287,15 @@ public class ShowTaskDetailResponse extends SdkResponse {
     /** 问题数
      * 
      * @return issueCount */
-    public String getIssueCount() {
+    public Integer getIssueCount() {
         return issueCount;
     }
 
-    public void setIssueCount(String issueCount) {
+    public void setIssueCount(Integer issueCount) {
         this.issueCount = issueCount;
     }
 
-    public ShowTaskDetailResponse withRiskCoefficient(String riskCoefficient) {
+    public ShowTaskDetailResponse withRiskCoefficient(BigDecimal riskCoefficient) {
         this.riskCoefficient = riskCoefficient;
         return this;
     }
@@ -302,11 +303,11 @@ public class ShowTaskDetailResponse extends SdkResponse {
     /** 危险系数
      * 
      * @return riskCoefficient */
-    public String getRiskCoefficient() {
+    public BigDecimal getRiskCoefficient() {
         return riskCoefficient;
     }
 
-    public void setRiskCoefficient(String riskCoefficient) {
+    public void setRiskCoefficient(BigDecimal riskCoefficient) {
         this.riskCoefficient = riskCoefficient;
     }
 
@@ -326,7 +327,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
         this.duplicationRatio = duplicationRatio;
     }
 
-    public ShowTaskDetailResponse withComplexityCount(String complexityCount) {
+    public ShowTaskDetailResponse withComplexityCount(Integer complexityCount) {
         this.complexityCount = complexityCount;
         return this;
     }
@@ -334,15 +335,15 @@ public class ShowTaskDetailResponse extends SdkResponse {
     /** 复杂度
      * 
      * @return complexityCount */
-    public String getComplexityCount() {
+    public Integer getComplexityCount() {
         return complexityCount;
     }
 
-    public void setComplexityCount(String complexityCount) {
+    public void setComplexityCount(Integer complexityCount) {
         this.complexityCount = complexityCount;
     }
 
-    public ShowTaskDetailResponse withDuplicatedLines(String duplicatedLines) {
+    public ShowTaskDetailResponse withDuplicatedLines(Integer duplicatedLines) {
         this.duplicatedLines = duplicatedLines;
         return this;
     }
@@ -350,15 +351,15 @@ public class ShowTaskDetailResponse extends SdkResponse {
     /** 重复行数
      * 
      * @return duplicatedLines */
-    public String getDuplicatedLines() {
+    public Integer getDuplicatedLines() {
         return duplicatedLines;
     }
 
-    public void setDuplicatedLines(String duplicatedLines) {
+    public void setDuplicatedLines(Integer duplicatedLines) {
         this.duplicatedLines = duplicatedLines;
     }
 
-    public ShowTaskDetailResponse withCommentLines(String commentLines) {
+    public ShowTaskDetailResponse withCommentLines(Integer commentLines) {
         this.commentLines = commentLines;
         return this;
     }
@@ -366,11 +367,11 @@ public class ShowTaskDetailResponse extends SdkResponse {
     /** 注释行数
      * 
      * @return commentLines */
-    public String getCommentLines() {
+    public Integer getCommentLines() {
         return commentLines;
     }
 
-    public void setCommentLines(String commentLines) {
+    public void setCommentLines(Integer commentLines) {
         this.commentLines = commentLines;
     }
 
@@ -390,7 +391,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
         this.commentRatio = commentRatio;
     }
 
-    public ShowTaskDetailResponse withDuplicatedBlocks(String duplicatedBlocks) {
+    public ShowTaskDetailResponse withDuplicatedBlocks(Integer duplicatedBlocks) {
         this.duplicatedBlocks = duplicatedBlocks;
         return this;
     }
@@ -398,11 +399,11 @@ public class ShowTaskDetailResponse extends SdkResponse {
     /** 重复块
      * 
      * @return duplicatedBlocks */
-    public String getDuplicatedBlocks() {
+    public Integer getDuplicatedBlocks() {
         return duplicatedBlocks;
     }
 
-    public void setDuplicatedBlocks(String duplicatedBlocks) {
+    public void setDuplicatedBlocks(Integer duplicatedBlocks) {
         this.duplicatedBlocks = duplicatedBlocks;
     }
 

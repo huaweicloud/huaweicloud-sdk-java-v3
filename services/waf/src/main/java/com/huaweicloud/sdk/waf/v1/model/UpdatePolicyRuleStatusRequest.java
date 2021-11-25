@@ -116,7 +116,7 @@ public class UpdatePolicyRuleStatusRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateRuleStatusRequestBody body;
+    private UpdatePolicyRuleStatusRequestBody body;
 
     public UpdatePolicyRuleStatusRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -171,7 +171,7 @@ public class UpdatePolicyRuleStatusRequest {
         return this;
     }
 
-    /** 规则id（根据不同的ruletype调用规则列表接口获取规则id）
+    /** 规则id，根据不同的规则类型（ruletype）调用规则列表接口获取规则id，例如黑白名单（whiteblackip）规则id，您可以通过调用查询黑白名单规则列表（ListWhiteblackipRule）获取规则id
      * 
      * @return ruleId */
     public String getRuleId() {
@@ -182,14 +182,14 @@ public class UpdatePolicyRuleStatusRequest {
         this.ruleId = ruleId;
     }
 
-    public UpdatePolicyRuleStatusRequest withBody(UpdateRuleStatusRequestBody body) {
+    public UpdatePolicyRuleStatusRequest withBody(UpdatePolicyRuleStatusRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePolicyRuleStatusRequest withBody(Consumer<UpdateRuleStatusRequestBody> bodySetter) {
+    public UpdatePolicyRuleStatusRequest withBody(Consumer<UpdatePolicyRuleStatusRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateRuleStatusRequestBody();
+            this.body = new UpdatePolicyRuleStatusRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -199,11 +199,11 @@ public class UpdatePolicyRuleStatusRequest {
     /** Get body
      * 
      * @return body */
-    public UpdateRuleStatusRequestBody getBody() {
+    public UpdatePolicyRuleStatusRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateRuleStatusRequestBody body) {
+    public void setBody(UpdatePolicyRuleStatusRequestBody body) {
         this.body = body;
     }
 

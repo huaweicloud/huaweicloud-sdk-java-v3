@@ -14,6 +14,16 @@ public class ListApiVersionsV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Long offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
 
     private String apiId;
@@ -28,22 +38,12 @@ public class ListApiVersionsV2Request {
 
     private String envName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Long offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
     public ListApiVersionsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -52,6 +52,38 @@ public class ListApiVersionsV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ListApiVersionsV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * 
+     * @return offset */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    public ListApiVersionsV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量 minimum: 1 maximum: 500
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     public ListApiVersionsV2Request withApiId(String apiId) {
@@ -102,38 +134,6 @@ public class ListApiVersionsV2Request {
         this.envName = envName;
     }
 
-    public ListApiVersionsV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    public ListApiVersionsV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -144,16 +144,16 @@ public class ListApiVersionsV2Request {
         }
         ListApiVersionsV2Request listApiVersionsV2Request = (ListApiVersionsV2Request) o;
         return Objects.equals(this.instanceId, listApiVersionsV2Request.instanceId)
+            && Objects.equals(this.offset, listApiVersionsV2Request.offset)
+            && Objects.equals(this.limit, listApiVersionsV2Request.limit)
             && Objects.equals(this.apiId, listApiVersionsV2Request.apiId)
             && Objects.equals(this.envId, listApiVersionsV2Request.envId)
-            && Objects.equals(this.envName, listApiVersionsV2Request.envName)
-            && Objects.equals(this.offset, listApiVersionsV2Request.offset)
-            && Objects.equals(this.limit, listApiVersionsV2Request.limit);
+            && Objects.equals(this.envName, listApiVersionsV2Request.envName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, apiId, envId, envName, offset, limit);
+        return Objects.hash(instanceId, offset, limit, apiId, envId, envName);
     }
 
     @Override
@@ -161,11 +161,11 @@ public class ListApiVersionsV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListApiVersionsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
         sb.append("    envName: ").append(toIndentedString(envName)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

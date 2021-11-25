@@ -17,14 +17,14 @@ public class ExportApiDefinitionsV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private SwaggerReq body;
+    private ExportOpenApiReq body;
 
     public ExportApiDefinitionsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -35,14 +35,14 @@ public class ExportApiDefinitionsV2Request {
         this.instanceId = instanceId;
     }
 
-    public ExportApiDefinitionsV2Request withBody(SwaggerReq body) {
+    public ExportApiDefinitionsV2Request withBody(ExportOpenApiReq body) {
         this.body = body;
         return this;
     }
 
-    public ExportApiDefinitionsV2Request withBody(Consumer<SwaggerReq> bodySetter) {
+    public ExportApiDefinitionsV2Request withBody(Consumer<ExportOpenApiReq> bodySetter) {
         if (this.body == null) {
-            this.body = new SwaggerReq();
+            this.body = new ExportOpenApiReq();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class ExportApiDefinitionsV2Request {
     /** Get body
      * 
      * @return body */
-    public SwaggerReq getBody() {
+    public ExportOpenApiReq getBody() {
         return body;
     }
 
-    public void setBody(SwaggerReq body) {
+    public void setBody(ExportOpenApiReq body) {
         this.body = body;
     }
 

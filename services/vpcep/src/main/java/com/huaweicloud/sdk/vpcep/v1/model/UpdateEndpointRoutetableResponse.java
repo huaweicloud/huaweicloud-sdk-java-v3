@@ -20,7 +20,7 @@ public class UpdateEndpointRoutetableResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
 
-    private RoutetableInfoError error;
+    private List<RoutetableInfoError> error = null;
 
     public UpdateEndpointRoutetableResponse withRoutetables(List<String> routetables) {
         this.routetables = routetables;
@@ -54,28 +54,35 @@ public class UpdateEndpointRoutetableResponse extends SdkResponse {
         this.routetables = routetables;
     }
 
-    public UpdateEndpointRoutetableResponse withError(RoutetableInfoError error) {
+    public UpdateEndpointRoutetableResponse withError(List<RoutetableInfoError> error) {
         this.error = error;
         return this;
     }
 
-    public UpdateEndpointRoutetableResponse withError(Consumer<RoutetableInfoError> errorSetter) {
+    public UpdateEndpointRoutetableResponse addErrorItem(RoutetableInfoError errorItem) {
         if (this.error == null) {
-            this.error = new RoutetableInfoError();
-            errorSetter.accept(this.error);
+            this.error = new ArrayList<>();
         }
-
+        this.error.add(errorItem);
         return this;
     }
 
-    /** Get error
+    public UpdateEndpointRoutetableResponse withError(Consumer<List<RoutetableInfoError>> errorSetter) {
+        if (this.error == null) {
+            this.error = new ArrayList<>();
+        }
+        errorSetter.accept(this.error);
+        return this;
+    }
+
+    /** 当修改终端节点子网路由表失败 时，返回错误提示信息
      * 
      * @return error */
-    public RoutetableInfoError getError() {
+    public List<RoutetableInfoError> getError() {
         return error;
     }
 
-    public void setError(RoutetableInfoError error) {
+    public void setError(List<RoutetableInfoError> error) {
         this.error = error;
     }
 

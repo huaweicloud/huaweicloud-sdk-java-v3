@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -222,9 +221,9 @@ public class EndpointResp {
     private List<String> dnsNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_id")
+    @JsonProperty(value = "ip")
 
-    private String subnetId;
+    private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -232,14 +231,19 @@ public class EndpointResp {
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private OffsetDateTime createdAt;
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    private OffsetDateTime updatedAt;
+    private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -250,6 +254,11 @@ public class EndpointResp {
     @JsonProperty(value = "tags")
 
     private List<TagList> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error")
+
+    private List<QueryError> error = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whitelist")
@@ -443,20 +452,21 @@ public class EndpointResp {
         this.dnsNames = dnsNames;
     }
 
-    public EndpointResp withSubnetId(String subnetId) {
-        this.subnetId = subnetId;
+    public EndpointResp withIp(String ip) {
+        this.ip = ip;
         return this;
     }
 
-    /** vpc_id对应VPC下已创建的网络 （network）的ID，UUID格式。
+    /** 访问所连接的终端节点服务的IP。 仅当同时满足如下条件时，返回该参数： 当查询连接interface类型终端节点服务的终端节点时。 终端节点服务启用“连接审批”功能，且已经“接受”连接审批。
+     * “status”可以是“accepted”或者“rejected（仅支持“接受”连接审批后再“拒绝”的情况）”。
      * 
-     * @return subnetId */
-    public String getSubnetId() {
-        return subnetId;
+     * @return ip */
+    public String getIp() {
+        return ip;
     }
 
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public EndpointResp withVpcId(String vpcId) {
@@ -475,7 +485,23 @@ public class EndpointResp {
         this.vpcId = vpcId;
     }
 
-    public EndpointResp withCreatedAt(OffsetDateTime createdAt) {
+    public EndpointResp withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /** vpc_id对应VPC下已创建的网络 （network）的ID，UUID格式。
+     * 
+     * @return subnetId */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    public EndpointResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -483,15 +509,15 @@ public class EndpointResp {
     /** 终端节点的创建时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
      * 
      * @return createdAt */
-    public OffsetDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public EndpointResp withUpdatedAt(OffsetDateTime updatedAt) {
+    public EndpointResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -499,11 +525,11 @@ public class EndpointResp {
     /** 终端节点的更新时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
      * 
      * @return updatedAt */
-    public OffsetDateTime getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(OffsetDateTime updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -553,6 +579,38 @@ public class EndpointResp {
 
     public void setTags(List<TagList> tags) {
         this.tags = tags;
+    }
+
+    public EndpointResp withError(List<QueryError> error) {
+        this.error = error;
+        return this;
+    }
+
+    public EndpointResp addErrorItem(QueryError errorItem) {
+        if (this.error == null) {
+            this.error = new ArrayList<>();
+        }
+        this.error.add(errorItem);
+        return this;
+    }
+
+    public EndpointResp withError(Consumer<List<QueryError>> errorSetter) {
+        if (this.error == null) {
+            this.error = new ArrayList<>();
+        }
+        errorSetter.accept(this.error);
+        return this;
+    }
+
+    /** 错误信息。 当终端节点状态异常，即“status”的值为“failed”时，会返回该字段。
+     * 
+     * @return error */
+    public List<QueryError> getError() {
+        return error;
+    }
+
+    public void setError(List<QueryError> error) {
+        this.error = error;
     }
 
     public EndpointResp withWhitelist(List<String> whitelist) {
@@ -651,12 +709,12 @@ public class EndpointResp {
             && Objects.equals(this.markerId, endpointResp.markerId)
             && Objects.equals(this.endpointServiceId, endpointResp.endpointServiceId)
             && Objects.equals(this.enableDns, endpointResp.enableDns)
-            && Objects.equals(this.dnsNames, endpointResp.dnsNames)
-            && Objects.equals(this.subnetId, endpointResp.subnetId) && Objects.equals(this.vpcId, endpointResp.vpcId)
+            && Objects.equals(this.dnsNames, endpointResp.dnsNames) && Objects.equals(this.ip, endpointResp.ip)
+            && Objects.equals(this.vpcId, endpointResp.vpcId) && Objects.equals(this.subnetId, endpointResp.subnetId)
             && Objects.equals(this.createdAt, endpointResp.createdAt)
             && Objects.equals(this.updatedAt, endpointResp.updatedAt)
             && Objects.equals(this.projectId, endpointResp.projectId) && Objects.equals(this.tags, endpointResp.tags)
-            && Objects.equals(this.whitelist, endpointResp.whitelist)
+            && Objects.equals(this.error, endpointResp.error) && Objects.equals(this.whitelist, endpointResp.whitelist)
             && Objects.equals(this.enableWhitelist, endpointResp.enableWhitelist)
             && Objects.equals(this.routetables, endpointResp.routetables);
     }
@@ -672,12 +730,14 @@ public class EndpointResp {
             endpointServiceId,
             enableDns,
             dnsNames,
-            subnetId,
+            ip,
             vpcId,
+            subnetId,
             createdAt,
             updatedAt,
             projectId,
             tags,
+            error,
             whitelist,
             enableWhitelist,
             routetables);
@@ -696,12 +756,14 @@ public class EndpointResp {
         sb.append("    endpointServiceId: ").append(toIndentedString(endpointServiceId)).append("\n");
         sb.append("    enableDns: ").append(toIndentedString(enableDns)).append("\n");
         sb.append("    dnsNames: ").append(toIndentedString(dnsNames)).append("\n");
-        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("    whitelist: ").append(toIndentedString(whitelist)).append("\n");
         sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
         sb.append("    routetables: ").append(toIndentedString(routetables)).append("\n");

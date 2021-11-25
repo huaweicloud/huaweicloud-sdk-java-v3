@@ -15,14 +15,14 @@ public class AcceptOrRejectEndpointResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connections")
 
-    private List<Endpoints> connections = null;
+    private List<ConnectionEndpoints> connections = null;
 
-    public AcceptOrRejectEndpointResponse withConnections(List<Endpoints> connections) {
+    public AcceptOrRejectEndpointResponse withConnections(List<ConnectionEndpoints> connections) {
         this.connections = connections;
         return this;
     }
 
-    public AcceptOrRejectEndpointResponse addConnectionsItem(Endpoints connectionsItem) {
+    public AcceptOrRejectEndpointResponse addConnectionsItem(ConnectionEndpoints connectionsItem) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class AcceptOrRejectEndpointResponse extends SdkResponse {
         return this;
     }
 
-    public AcceptOrRejectEndpointResponse withConnections(Consumer<List<Endpoints>> connectionsSetter) {
+    public AcceptOrRejectEndpointResponse withConnections(Consumer<List<ConnectionEndpoints>> connectionsSetter) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class AcceptOrRejectEndpointResponse extends SdkResponse {
     /** 连接列表
      * 
      * @return connections */
-    public List<Endpoints> getConnections() {
+    public List<ConnectionEndpoints> getConnections() {
         return connections;
     }
 
-    public void setConnections(List<Endpoints> connections) {
+    public void setConnections(List<ConnectionEndpoints> connections) {
         this.connections = connections;
     }
 

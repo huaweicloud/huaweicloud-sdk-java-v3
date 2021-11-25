@@ -15,26 +15,26 @@ public class AssociateCertificateV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_id")
-
-    private String domainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DomainCertReq body;
+    private CertForm body;
 
     public AssociateCertificateV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -43,22 +43,6 @@ public class AssociateCertificateV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public AssociateCertificateV2Request withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    /** 域名的编号
-     * 
-     * @return domainId */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
     }
 
     public AssociateCertificateV2Request withGroupId(String groupId) {
@@ -77,14 +61,30 @@ public class AssociateCertificateV2Request {
         this.groupId = groupId;
     }
 
-    public AssociateCertificateV2Request withBody(DomainCertReq body) {
+    public AssociateCertificateV2Request withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /** 域名的编号
+     * 
+     * @return domainId */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public AssociateCertificateV2Request withBody(CertForm body) {
         this.body = body;
         return this;
     }
 
-    public AssociateCertificateV2Request withBody(Consumer<DomainCertReq> bodySetter) {
+    public AssociateCertificateV2Request withBody(Consumer<CertForm> bodySetter) {
         if (this.body == null) {
-            this.body = new DomainCertReq();
+            this.body = new CertForm();
             bodySetter.accept(this.body);
         }
 
@@ -94,11 +94,11 @@ public class AssociateCertificateV2Request {
     /** Get body
      * 
      * @return body */
-    public DomainCertReq getBody() {
+    public CertForm getBody() {
         return body;
     }
 
-    public void setBody(DomainCertReq body) {
+    public void setBody(CertForm body) {
         this.body = body;
     }
 
@@ -112,14 +112,14 @@ public class AssociateCertificateV2Request {
         }
         AssociateCertificateV2Request associateCertificateV2Request = (AssociateCertificateV2Request) o;
         return Objects.equals(this.instanceId, associateCertificateV2Request.instanceId)
-            && Objects.equals(this.domainId, associateCertificateV2Request.domainId)
             && Objects.equals(this.groupId, associateCertificateV2Request.groupId)
+            && Objects.equals(this.domainId, associateCertificateV2Request.domainId)
             && Objects.equals(this.body, associateCertificateV2Request.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, domainId, groupId, body);
+        return Objects.hash(instanceId, groupId, domainId, body);
     }
 
     @Override
@@ -127,8 +127,8 @@ public class AssociateCertificateV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class AssociateCertificateV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -17,14 +17,14 @@ public class CreateEnvironmentVariableV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private EnvVariableReq body;
+    private EnvVariableCreate body;
 
     public CreateEnvironmentVariableV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -35,14 +35,14 @@ public class CreateEnvironmentVariableV2Request {
         this.instanceId = instanceId;
     }
 
-    public CreateEnvironmentVariableV2Request withBody(EnvVariableReq body) {
+    public CreateEnvironmentVariableV2Request withBody(EnvVariableCreate body) {
         this.body = body;
         return this;
     }
 
-    public CreateEnvironmentVariableV2Request withBody(Consumer<EnvVariableReq> bodySetter) {
+    public CreateEnvironmentVariableV2Request withBody(Consumer<EnvVariableCreate> bodySetter) {
         if (this.body == null) {
-            this.body = new EnvVariableReq();
+            this.body = new EnvVariableCreate();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class CreateEnvironmentVariableV2Request {
     /** Get body
      * 
      * @return body */
-    public EnvVariableReq getBody() {
+    public EnvVariableCreate getBody() {
         return body;
     }
 
-    public void setBody(EnvVariableReq body) {
+    public void setBody(EnvVariableCreate body) {
         this.body = body;
     }
 

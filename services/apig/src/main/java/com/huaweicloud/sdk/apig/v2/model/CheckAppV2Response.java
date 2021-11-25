@@ -10,6 +10,11 @@ import java.util.Objects;
 public class CheckAppV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -19,10 +24,21 @@ public class CheckAppV2Response extends SdkResponse {
 
     private String remark;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    public CheckAppV2Response withId(String id) {
+        this.id = id;
+        return this;
+    }
 
-    private String id;
+    /** 编号
+     * 
+     * @return id */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public CheckAppV2Response withName(String name) {
         this.name = name;
@@ -56,22 +72,6 @@ public class CheckAppV2Response extends SdkResponse {
         this.remark = remark;
     }
 
-    public CheckAppV2Response withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /** 编号
-     * 
-     * @return id */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -81,22 +81,22 @@ public class CheckAppV2Response extends SdkResponse {
             return false;
         }
         CheckAppV2Response checkAppV2Response = (CheckAppV2Response) o;
-        return Objects.equals(this.name, checkAppV2Response.name)
-            && Objects.equals(this.remark, checkAppV2Response.remark) && Objects.equals(this.id, checkAppV2Response.id);
+        return Objects.equals(this.id, checkAppV2Response.id) && Objects.equals(this.name, checkAppV2Response.name)
+            && Objects.equals(this.remark, checkAppV2Response.remark);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, remark, id);
+        return Objects.hash(id, name, remark);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CheckAppV2Response {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

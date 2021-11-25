@@ -7,8 +7,35 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class CodeCheckMeta {
+
+    public static final HttpRequestDef<CreateRulesetRequest, CreateRulesetResponse> createRuleset =
+        genForcreateRuleset();
+
+    private static HttpRequestDef<CreateRulesetRequest, CreateRulesetResponse> genForcreateRuleset() {
+        // basic
+        HttpRequestDef.Builder<CreateRulesetRequest, CreateRulesetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRulesetRequest.class, CreateRulesetResponse.class)
+                .withName("CreateRuleset")
+                .withUri("/v2/ruleset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Ruleset>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Ruleset.class),
+            f -> f.withMarshaller(CreateRulesetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForcreateTask();
 
@@ -58,6 +85,96 @@ public class CodeCheckMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRulesRequest, ListRulesResponse> listRules = genForlistRules();
+
+    private static HttpRequestDef<ListRulesRequest, ListRulesResponse> genForlistRules() {
+        // basic
+        HttpRequestDef.Builder<ListRulesRequest, ListRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRulesRequest.class, ListRulesResponse.class)
+                .withName("ListRules")
+                .withUri("/v2/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_languages",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRulesRequest::getRuleLanguages, (req, v) -> {
+                req.setRuleLanguages(v);
+            }));
+        builder.<String>withRequestField("rule_severity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRulesRequest::getRuleSeverity, (req, v) -> {
+                req.setRuleSeverity(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRulesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRulesetsRequest, ListRulesetsResponse> listRulesets = genForlistRulesets();
+
+    private static HttpRequestDef<ListRulesetsRequest, ListRulesetsResponse> genForlistRulesets() {
+        // basic
+        HttpRequestDef.Builder<ListRulesetsRequest, ListRulesetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRulesetsRequest.class, ListRulesetsResponse.class)
+                .withName("ListRulesets")
+                .withUri("/v2/{project_id}/rulesets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRulesetsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRulesetsRequest::getCategory, (req, v) -> {
+                req.setCategory(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRulesetsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRulesetsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -314,6 +431,38 @@ public class CodeCheckMeta {
             f -> f.withMarshaller(UpdateDefectStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> updateTaskRuleset =
+        genForupdateTaskRuleset();
+
+    private static HttpRequestDef<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> genForupdateTaskRuleset() {
+        // basic
+        HttpRequestDef.Builder<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskRulesetRequest.class, UpdateTaskRulesetResponse.class)
+                .withName("UpdateTaskRuleset")
+                .withUri("/v2/tasks/{task_id}/ruleset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaskRulesetRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<List<UpdateTaskRulesetItem>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(UpdateTaskRulesetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(UpdateTaskRulesetItem.class));
 
         // response
 

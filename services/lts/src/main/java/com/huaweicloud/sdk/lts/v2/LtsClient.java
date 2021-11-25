@@ -89,6 +89,24 @@ public class LtsClient {
             hcClient);
     }
 
+    /** 创建通知模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
+     *
+     * @param CreateNotificationTemplateRequest 请求对象
+     * @return CreateNotificationTemplateResponse */
+    public CreateNotificationTemplateResponse createNotificationTemplate(CreateNotificationTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createNotificationTemplate);
+    }
+
+    /** 创建通知模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
+     *
+     * @param CreateNotificationTemplateRequest 请求对象
+     * @return SyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> */
+    public SyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> createNotificationTemplateInvoker(
+        CreateNotificationTemplateRequest request) {
+        return new SyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse>(request,
+            LtsMeta.createNotificationTemplate, hcClient);
+    }
+
     /** 创建结构化配置 该接口用于创建指定日志流下的结构化配置。
      *
      * @param CreateStructTemplateRequest 请求对象
@@ -105,6 +123,24 @@ public class LtsClient {
         CreateStructTemplateRequest request) {
         return new SyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse>(request,
             LtsMeta.createStructTemplate, hcClient);
+    }
+
+    /** 创建日志转储 该接口用于创建OBS转储，DIS转储，DMS转储。
+     *
+     * @param CreateTransferRequest 请求对象
+     * @return CreateTransferResponse */
+    public CreateTransferResponse createTransfer(CreateTransferRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createTransfer);
+    }
+
+    /** 创建日志转储 该接口用于创建OBS转储，DIS转储，DMS转储。
+     *
+     * @param CreateTransferRequest 请求对象
+     * @return SyncInvoker<CreateTransferRequest, CreateTransferResponse> */
+    public SyncInvoker<CreateTransferRequest, CreateTransferResponse> createTransferInvoker(
+        CreateTransferRequest request) {
+        return new SyncInvoker<CreateTransferRequest, CreateTransferResponse>(request, LtsMeta.createTransfer,
+            hcClient);
     }
 
     /** 删除活动告警 该接口用于删除活动告警
@@ -179,6 +215,24 @@ public class LtsClient {
             hcClient);
     }
 
+    /** 删除通知模板 该接口用于删除通知模板。
+     *
+     * @param DeleteNotificationTemplateRequest 请求对象
+     * @return DeleteNotificationTemplateResponse */
+    public DeleteNotificationTemplateResponse deleteNotificationTemplate(DeleteNotificationTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.deleteNotificationTemplate);
+    }
+
+    /** 删除通知模板 该接口用于删除通知模板。
+     *
+     * @param DeleteNotificationTemplateRequest 请求对象
+     * @return SyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> */
+    public SyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> deleteNotificationTemplateInvoker(
+        DeleteNotificationTemplateRequest request) {
+        return new SyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse>(request,
+            LtsMeta.deleteNotificationTemplate, hcClient);
+    }
+
     /** 删除结构化配置 该接口用于删除指定日志流下的结构化配置。
      *
      * @param DeleteStructTemplateRequest 请求对象
@@ -195,6 +249,24 @@ public class LtsClient {
         DeleteStructTemplateRequest request) {
         return new SyncInvoker<DeleteStructTemplateRequest, DeleteStructTemplateResponse>(request,
             LtsMeta.deleteStructTemplate, hcClient);
+    }
+
+    /** 删除日志转储 该接口用于删除OBS转储，DIS转储，DMS转储。
+     *
+     * @param DeleteTransferRequest 请求对象
+     * @return DeleteTransferResponse */
+    public DeleteTransferResponse deleteTransfer(DeleteTransferRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.deleteTransfer);
+    }
+
+    /** 删除日志转储 该接口用于删除OBS转储，DIS转储，DMS转储。
+     *
+     * @param DeleteTransferRequest 请求对象
+     * @return SyncInvoker<DeleteTransferRequest, DeleteTransferResponse> */
+    public SyncInvoker<DeleteTransferRequest, DeleteTransferResponse> deleteTransferInvoker(
+        DeleteTransferRequest request) {
+        return new SyncInvoker<DeleteTransferRequest, DeleteTransferResponse>(request, LtsMeta.deleteTransfer,
+            hcClient);
     }
 
     /** 关闭超额采集开关 该接口用于将超额采集日志功能关闭。
@@ -317,6 +389,24 @@ public class LtsClient {
         return new SyncInvoker<ListLogStreamRequest, ListLogStreamResponse>(request, LtsMeta.listLogStream, hcClient);
     }
 
+    /** 查询日志流信息 该接口用于查询LTS日志流信息。
+     *
+     * @param ListLogStreamsRequest 请求对象
+     * @return ListLogStreamsResponse */
+    public ListLogStreamsResponse listLogStreams(ListLogStreamsRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listLogStreams);
+    }
+
+    /** 查询日志流信息 该接口用于查询LTS日志流信息。
+     *
+     * @param ListLogStreamsRequest 请求对象
+     * @return SyncInvoker<ListLogStreamsRequest, ListLogStreamsResponse> */
+    public SyncInvoker<ListLogStreamsRequest, ListLogStreamsResponse> listLogStreamsInvoker(
+        ListLogStreamsRequest request) {
+        return new SyncInvoker<ListLogStreamsRequest, ListLogStreamsResponse>(request, LtsMeta.listLogStreams,
+            hcClient);
+    }
+
     /** 查询日志 该接口用于查询指定日志流下的日志内容。
      *
      * @param ListLogsRequest 请求对象
@@ -331,6 +421,42 @@ public class LtsClient {
      * @return SyncInvoker<ListLogsRequest, ListLogsResponse> */
     public SyncInvoker<ListLogsRequest, ListLogsResponse> listLogsInvoker(ListLogsRequest request) {
         return new SyncInvoker<ListLogsRequest, ListLogsResponse>(request, LtsMeta.listLogs, hcClient);
+    }
+
+    /** 预览通知模板邮件格式 该接口用于预览通知模板邮件格式
+     *
+     * @param ListNotificationTemplateRequest 请求对象
+     * @return ListNotificationTemplateResponse */
+    public ListNotificationTemplateResponse listNotificationTemplate(ListNotificationTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listNotificationTemplate);
+    }
+
+    /** 预览通知模板邮件格式 该接口用于预览通知模板邮件格式
+     *
+     * @param ListNotificationTemplateRequest 请求对象
+     * @return SyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse> */
+    public SyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse> listNotificationTemplateInvoker(
+        ListNotificationTemplateRequest request) {
+        return new SyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse>(request,
+            LtsMeta.listNotificationTemplate, hcClient);
+    }
+
+    /** 查询通知模板 该接口用于查询通知模板。
+     *
+     * @param ListNotificationTemplatesRequest 请求对象
+     * @return ListNotificationTemplatesResponse */
+    public ListNotificationTemplatesResponse listNotificationTemplates(ListNotificationTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listNotificationTemplates);
+    }
+
+    /** 查询通知模板 该接口用于查询通知模板。
+     *
+     * @param ListNotificationTemplatesRequest 请求对象
+     * @return SyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> */
+    public SyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> listNotificationTemplatesInvoker(
+        ListNotificationTemplatesRequest request) {
+        return new SyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse>(request,
+            LtsMeta.listNotificationTemplates, hcClient);
     }
 
     /** 查询SMN主题 该接口用于查询SMN主题
@@ -388,6 +514,58 @@ public class LtsClient {
             LtsMeta.listStructuredLogsWithTimeRange, hcClient);
     }
 
+    /** 查询日志转储 该接口用于查询OBS转储，DIS转储，DMS转储配置。
+     *
+     * @param ListTransfersRequest 请求对象
+     * @return ListTransfersResponse */
+    public ListTransfersResponse listTransfers(ListTransfersRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listTransfers);
+    }
+
+    /** 查询日志转储 该接口用于查询OBS转储，DIS转储，DMS转储配置。
+     *
+     * @param ListTransfersRequest 请求对象
+     * @return SyncInvoker<ListTransfersRequest, ListTransfersResponse> */
+    public SyncInvoker<ListTransfersRequest, ListTransfersResponse> listTransfersInvoker(ListTransfersRequest request) {
+        return new SyncInvoker<ListTransfersRequest, ListTransfersResponse>(request, LtsMeta.listTransfers, hcClient);
+    }
+
+    /** 注册DMS kafka实例 该接口用于注册DMS kafka实例。
+     *
+     * @param RegisterDmsKafkaInstanceRequest 请求对象
+     * @return RegisterDmsKafkaInstanceResponse */
+    public RegisterDmsKafkaInstanceResponse registerDmsKafkaInstance(RegisterDmsKafkaInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.registerDmsKafkaInstance);
+    }
+
+    /** 注册DMS kafka实例 该接口用于注册DMS kafka实例。
+     *
+     * @param RegisterDmsKafkaInstanceRequest 请求对象
+     * @return SyncInvoker<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> */
+    public SyncInvoker<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> registerDmsKafkaInstanceInvoker(
+        RegisterDmsKafkaInstanceRequest request) {
+        return new SyncInvoker<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse>(request,
+            LtsMeta.registerDmsKafkaInstance, hcClient);
+    }
+
+    /** 查询单个通知模板 该接口用于查询单个通知模板
+     *
+     * @param ShowNotificationTemplateRequest 请求对象
+     * @return ShowNotificationTemplateResponse */
+    public ShowNotificationTemplateResponse showNotificationTemplate(ShowNotificationTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.showNotificationTemplate);
+    }
+
+    /** 查询单个通知模板 该接口用于查询单个通知模板
+     *
+     * @param ShowNotificationTemplateRequest 请求对象
+     * @return SyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> */
+    public SyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> showNotificationTemplateInvoker(
+        ShowNotificationTemplateRequest request) {
+        return new SyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse>(request,
+            LtsMeta.showNotificationTemplate, hcClient);
+    }
+
     /** 查询结构化配置 该接口用于查询指定日志流下的结构化配置内容。
      *
      * @param ShowStructTemplateRequest 请求对象
@@ -442,6 +620,24 @@ public class LtsClient {
             hcClient);
     }
 
+    /** 修改通知模板 该接口用于修改通知模板,根据名称进行修改。
+     *
+     * @param UpdateNotificationTemplateRequest 请求对象
+     * @return UpdateNotificationTemplateResponse */
+    public UpdateNotificationTemplateResponse updateNotificationTemplate(UpdateNotificationTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateNotificationTemplate);
+    }
+
+    /** 修改通知模板 该接口用于修改通知模板,根据名称进行修改。
+     *
+     * @param UpdateNotificationTemplateRequest 请求对象
+     * @return SyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> */
+    public SyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> updateNotificationTemplateInvoker(
+        UpdateNotificationTemplateRequest request) {
+        return new SyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse>(request,
+            LtsMeta.updateNotificationTemplate, hcClient);
+    }
+
     /** 修改结构化配置 该接口用于修改指定日志流下的结构化配置。
      *
      * @param UpdateStructTemplateRequest 请求对象
@@ -458,6 +654,24 @@ public class LtsClient {
         UpdateStructTemplateRequest request) {
         return new SyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse>(request,
             LtsMeta.updateStructTemplate, hcClient);
+    }
+
+    /** 更新日志转储 该接口用于更新OBS转储，DIS转储，DMS转储。
+     *
+     * @param UpdateTransferRequest 请求对象
+     * @return UpdateTransferResponse */
+    public UpdateTransferResponse updateTransfer(UpdateTransferRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateTransfer);
+    }
+
+    /** 更新日志转储 该接口用于更新OBS转储，DIS转储，DMS转储。
+     *
+     * @param UpdateTransferRequest 请求对象
+     * @return SyncInvoker<UpdateTransferRequest, UpdateTransferResponse> */
+    public SyncInvoker<UpdateTransferRequest, UpdateTransferResponse> updateTransferInvoker(
+        UpdateTransferRequest request) {
+        return new SyncInvoker<UpdateTransferRequest, UpdateTransferResponse>(request, LtsMeta.updateTransfer,
+            hcClient);
     }
 
     /** 创建日志接入lts规则 该接口用于创建aom日志接入lts规则
@@ -548,6 +762,24 @@ public class LtsClient {
         UpdateAomMappingRulesRequest request) {
         return new SyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse>(request,
             LtsMeta.updateAomMappingRules, hcClient);
+    }
+
+    /** 改变告警规则状态 改变告警规则状态
+     *
+     * @param UpdateAlarmRuleStatusRequest 请求对象
+     * @return UpdateAlarmRuleStatusResponse */
+    public UpdateAlarmRuleStatusResponse updateAlarmRuleStatus(UpdateAlarmRuleStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateAlarmRuleStatus);
+    }
+
+    /** 改变告警规则状态 改变告警规则状态
+     *
+     * @param UpdateAlarmRuleStatusRequest 请求对象
+     * @return SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> */
+    public SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatusInvoker(
+        UpdateAlarmRuleStatusRequest request) {
+        return new SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse>(request,
+            LtsMeta.updateAlarmRuleStatus, hcClient);
     }
 
     /** 创建SQL告警规则 该接口用于创建SQL告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警

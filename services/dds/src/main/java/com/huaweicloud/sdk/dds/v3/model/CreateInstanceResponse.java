@@ -107,6 +107,11 @@ public class CreateInstanceResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagWithKeyValue> tags = null;
+
     public CreateInstanceResponse withId(String id) {
         this.id = id;
         return this;
@@ -445,6 +450,38 @@ public class CreateInstanceResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public CreateInstanceResponse withTags(List<TagWithKeyValue> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateInstanceResponse addTagsItem(TagWithKeyValue tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateInstanceResponse withTags(Consumer<List<TagWithKeyValue>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /** 标签列表，与请求参数相同。
+     * 
+     * @return tags */
+    public List<TagWithKeyValue> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagWithKeyValue> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -472,7 +509,8 @@ public class CreateInstanceResponse extends SdkResponse {
             && Objects.equals(this.enterpriseProjectId, createInstanceResponse.enterpriseProjectId)
             && Objects.equals(this.sslOption, createInstanceResponse.sslOption)
             && Objects.equals(this.dssPoolId, createInstanceResponse.dssPoolId)
-            && Objects.equals(this.jobId, createInstanceResponse.jobId);
+            && Objects.equals(this.jobId, createInstanceResponse.jobId)
+            && Objects.equals(this.tags, createInstanceResponse.tags);
     }
 
     @Override
@@ -495,7 +533,8 @@ public class CreateInstanceResponse extends SdkResponse {
             enterpriseProjectId,
             sslOption,
             dssPoolId,
-            jobId);
+            jobId,
+            tags);
     }
 
     @Override
@@ -521,6 +560,7 @@ public class CreateInstanceResponse extends SdkResponse {
         sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
         sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

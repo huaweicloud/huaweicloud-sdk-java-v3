@@ -56,7 +56,7 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书ID
+    /** 证书id
      * 
      * @return id */
     public String getId() {
@@ -136,7 +136,7 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书过期状态，0-未过期，1-已过期，2-即将过期
+    /** 证书过期状态，0-未过期，1-已过期，2-即将过期（一个月内即将过期）
      * 
      * @return expStatus */
     public Integer getExpStatus() {

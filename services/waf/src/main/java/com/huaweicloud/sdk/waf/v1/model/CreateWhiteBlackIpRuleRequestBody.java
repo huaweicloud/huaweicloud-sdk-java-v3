@@ -9,6 +9,11 @@ import java.util.Objects;
 public class CreateWhiteBlackIpRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addr")
 
     private String addr;
@@ -23,12 +28,28 @@ public class CreateWhiteBlackIpRuleRequestBody {
 
     private Integer white;
 
+    public CreateWhiteBlackIpRuleRequestBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /** 规则名称只能由字母、数字、-、_和.组成，长度不能超过64个字符
+     * 
+     * @return name */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public CreateWhiteBlackIpRuleRequestBody withAddr(String addr) {
         this.addr = addr;
         return this;
     }
 
-    /** 黑白名单地址
+    /** 黑白名单ip地址，需要输入标准的ip地址或地址段，例如：42.123.120.66或42.123.120.0/16
      * 
      * @return addr */
     public String getAddr() {
@@ -60,7 +81,7 @@ public class CreateWhiteBlackIpRuleRequestBody {
         return this;
     }
 
-    /** 设置ip的防护动作，1放行，0拦截，2仅记录
+    /** 防护动作： - 0 拦截 - 1 放行 - 2 仅记录
      * 
      * @return white */
     public Integer getWhite() {
@@ -80,20 +101,22 @@ public class CreateWhiteBlackIpRuleRequestBody {
             return false;
         }
         CreateWhiteBlackIpRuleRequestBody createWhiteBlackIpRuleRequestBody = (CreateWhiteBlackIpRuleRequestBody) o;
-        return Objects.equals(this.addr, createWhiteBlackIpRuleRequestBody.addr)
+        return Objects.equals(this.name, createWhiteBlackIpRuleRequestBody.name)
+            && Objects.equals(this.addr, createWhiteBlackIpRuleRequestBody.addr)
             && Objects.equals(this.description, createWhiteBlackIpRuleRequestBody.description)
             && Objects.equals(this.white, createWhiteBlackIpRuleRequestBody.white);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(addr, description, white);
+        return Objects.hash(name, addr, description, white);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateWhiteBlackIpRuleRequestBody {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");

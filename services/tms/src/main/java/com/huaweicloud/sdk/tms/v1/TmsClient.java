@@ -107,6 +107,22 @@ public class TmsClient {
             hcClient);
     }
 
+    /** 查询标签配额 查询标签的配额信息。
+     *
+     * @param ShowTagQuotaRequest 请求对象
+     * @return ShowTagQuotaResponse */
+    public ShowTagQuotaResponse showTagQuota(ShowTagQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, TmsMeta.showTagQuota);
+    }
+
+    /** 查询标签配额 查询标签的配额信息。
+     *
+     * @param ShowTagQuotaRequest 请求对象
+     * @return SyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse> */
+    public SyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse> showTagQuotaInvoker(ShowTagQuotaRequest request) {
+        return new SyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse>(request, TmsMeta.showTagQuota, hcClient);
+    }
+
     /** 修改预定义标签 修改预定义标签。
      *
      * @param UpdatePredefineTagsRequest 请求对象

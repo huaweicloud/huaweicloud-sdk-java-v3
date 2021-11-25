@@ -20,7 +20,7 @@ public class ListHostResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<CloudWafHostResponseBody> items = null;
+    private List<CloudWafHostItem> items = null;
 
     public ListHostResponse withTotal(Integer total) {
         this.total = total;
@@ -38,12 +38,12 @@ public class ListHostResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListHostResponse withItems(List<CloudWafHostResponseBody> items) {
+    public ListHostResponse withItems(List<CloudWafHostItem> items) {
         this.items = items;
         return this;
     }
 
-    public ListHostResponse addItemsItem(CloudWafHostResponseBody itemsItem) {
+    public ListHostResponse addItemsItem(CloudWafHostItem itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -51,7 +51,7 @@ public class ListHostResponse extends SdkResponse {
         return this;
     }
 
-    public ListHostResponse withItems(Consumer<List<CloudWafHostResponseBody>> itemsSetter) {
+    public ListHostResponse withItems(Consumer<List<CloudWafHostItem>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -62,11 +62,11 @@ public class ListHostResponse extends SdkResponse {
     /** 详细的防护域名信息
      * 
      * @return items */
-    public List<CloudWafHostResponseBody> getItems() {
+    public List<CloudWafHostItem> getItems() {
         return items;
     }
 
-    public void setItems(List<CloudWafHostResponseBody> items) {
+    public void setItems(List<CloudWafHostItem> items) {
         this.items = items;
     }
 

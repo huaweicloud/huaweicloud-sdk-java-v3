@@ -46,7 +46,7 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 证书id
+    /** 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id - 对外协议为HTTP时不需要填写 -对外协议HTTPS时为必填参数
      * 
      * @return certificateid */
     public String getCertificateid() {
@@ -62,7 +62,7 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 证书名称
+    /** 证书名 - 对外协议为HTTP时不需要填写 -对外协议HTTPS时为必填参数
      * 
      * @return certificatename */
     public String getCertificatename() {
@@ -110,7 +110,7 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 防护域名初始绑定的策略ID
+    /** 防护域名初始绑定的策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
      * 
      * @return policyid */
     public String getPolicyid() {

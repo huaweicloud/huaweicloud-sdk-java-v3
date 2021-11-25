@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -101,7 +100,7 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private OffsetDateTime createdAt;
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_charge")
@@ -157,7 +156,7 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         this.serviceType = serviceType;
     }
 
-    public ListServiceDescribeDetailsResponse withCreatedAt(OffsetDateTime createdAt) {
+    public ListServiceDescribeDetailsResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -165,11 +164,11 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
     /** 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
      * 
      * @return createdAt */
-    public OffsetDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 

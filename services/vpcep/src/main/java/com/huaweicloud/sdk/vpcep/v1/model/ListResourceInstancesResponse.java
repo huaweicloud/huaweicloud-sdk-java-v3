@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,35 +15,42 @@ public class ListResourceInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private ResourceInstance resources;
+    private List<ResourceInstance> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListResourceInstancesResponse withResources(ResourceInstance resources) {
+    public ListResourceInstancesResponse withResources(List<ResourceInstance> resources) {
         this.resources = resources;
         return this;
     }
 
-    public ListResourceInstancesResponse withResources(Consumer<ResourceInstance> resourcesSetter) {
+    public ListResourceInstancesResponse addResourcesItem(ResourceInstance resourcesItem) {
         if (this.resources == null) {
-            this.resources = new ResourceInstance();
-            resourcesSetter.accept(this.resources);
+            this.resources = new ArrayList<>();
         }
-
+        this.resources.add(resourcesItem);
         return this;
     }
 
-    /** Get resources
+    public ListResourceInstancesResponse withResources(Consumer<List<ResourceInstance>> resourcesSetter) {
+        if (this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        resourcesSetter.accept(this.resources);
+        return this;
+    }
+
+    /** 资源实例详情
      * 
      * @return resources */
-    public ResourceInstance getResources() {
+    public List<ResourceInstance> getResources() {
         return resources;
     }
 
-    public void setResources(ResourceInstance resources) {
+    public void setResources(List<ResourceInstance> resources) {
         this.resources = resources;
     }
 

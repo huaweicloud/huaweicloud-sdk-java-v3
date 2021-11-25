@@ -365,6 +365,11 @@ public class PublicipShowResp {
 
     private List<String> allowShareBandwidthTypes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
     public PublicipShowResp withBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
         return this;
@@ -679,6 +684,22 @@ public class PublicipShowResp {
         this.allowShareBandwidthTypes = allowShareBandwidthTypes;
     }
 
+    public PublicipShowResp withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /** 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * 
+     * @return alias */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -704,7 +725,8 @@ public class PublicipShowResp {
             && Objects.equals(this.publicIpv6Address, publicipShowResp.publicIpv6Address)
             && Objects.equals(this.ipVersion, publicipShowResp.ipVersion)
             && Objects.equals(this.publicBorderGroup, publicipShowResp.publicBorderGroup)
-            && Objects.equals(this.allowShareBandwidthTypes, publicipShowResp.allowShareBandwidthTypes);
+            && Objects.equals(this.allowShareBandwidthTypes, publicipShowResp.allowShareBandwidthTypes)
+            && Objects.equals(this.alias, publicipShowResp.alias);
     }
 
     @Override
@@ -726,7 +748,8 @@ public class PublicipShowResp {
             publicIpv6Address,
             ipVersion,
             publicBorderGroup,
-            allowShareBandwidthTypes);
+            allowShareBandwidthTypes,
+            alias);
     }
 
     @Override
@@ -751,6 +774,7 @@ public class PublicipShowResp {
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    allowShareBandwidthTypes: ").append(toIndentedString(allowShareBandwidthTypes)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

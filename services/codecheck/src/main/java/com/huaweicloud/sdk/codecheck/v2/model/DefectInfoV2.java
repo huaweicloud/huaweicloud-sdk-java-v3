@@ -62,6 +62,11 @@ public class DefectInfoV2 {
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "issue_key")
+
+    private String issueKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fragment")
 
     private List<DefectFragmentV2> fragment = null;
@@ -226,6 +231,22 @@ public class DefectInfoV2 {
         this.createdAt = createdAt;
     }
 
+    public DefectInfoV2 withIssueKey(String issueKey) {
+        this.issueKey = issueKey;
+        return this;
+    }
+
+    /** 问题唯一标识
+     * 
+     * @return issueKey */
+    public String getIssueKey() {
+        return issueKey;
+    }
+
+    public void setIssueKey(String issueKey) {
+        this.issueKey = issueKey;
+    }
+
     public DefectInfoV2 withFragment(List<DefectFragmentV2> fragment) {
         this.fragment = fragment;
         return this;
@@ -277,6 +298,7 @@ public class DefectInfoV2 {
             && Objects.equals(this.defectLevel, defectInfoV2.defectLevel)
             && Objects.equals(this.filePath, defectInfoV2.filePath)
             && Objects.equals(this.createdAt, defectInfoV2.createdAt)
+            && Objects.equals(this.issueKey, defectInfoV2.issueKey)
             && Objects.equals(this.fragment, defectInfoV2.fragment);
     }
 
@@ -292,6 +314,7 @@ public class DefectInfoV2 {
             defectLevel,
             filePath,
             createdAt,
+            issueKey,
             fragment);
     }
 
@@ -309,6 +332,7 @@ public class DefectInfoV2 {
         sb.append("    defectLevel: ").append(toIndentedString(defectLevel)).append("\n");
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    issueKey: ").append(toIndentedString(issueKey)).append("\n");
         sb.append("    fragment: ").append(toIndentedString(fragment)).append("\n");
         sb.append("}");
         return sb.toString();

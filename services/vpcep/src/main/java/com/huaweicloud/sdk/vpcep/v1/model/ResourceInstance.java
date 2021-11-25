@@ -31,7 +31,7 @@ public class ResourceInstance {
         return this;
     }
 
-    /** 资源ID，Endpoint Service ID或 Endpoint ID。
+    /** 资源ID，Endpoint Service ID或Endpoint ID。
      * 
      * @return resourceId */
     public String getResourceId() {
@@ -79,7 +79,7 @@ public class ResourceInstance {
         return this;
     }
 
-    /** 资源名称，资源没有名称时，返回 ID。
+    /** 资源名称，资源没有名称时，返回ID。
      * 
      * @return resourceName */
     public String getResourceName() {

@@ -42,7 +42,7 @@ public class ApplyCertificateToHostRequestBody {
         return this;
     }
 
-    /** 云模式HTTPS域名ID
+    /** 云模式HTTPS域名id，通过查询云模式防护域名列表（ListHost）接口获取
      * 
      * @return cloudHostIds */
     public List<String> getCloudHostIds() {
@@ -74,7 +74,7 @@ public class ApplyCertificateToHostRequestBody {
         return this;
     }
 
-    /** 独享模式HTTPS域名ID
+    /** 独享模式HTTPS域名id，通过独享模式域名列表（ListPremiumHost）接口获取
      * 
      * @return premiumHostIds */
     public List<String> getPremiumHostIds() {

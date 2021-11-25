@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -23,7 +25,7 @@ public class ListCbhInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance")
 
-    private InstanceDetail instance;
+    private List<InstanceDetail> instance = null;
 
     public ListCbhInstanceResponse withTotal(Integer total) {
         this.total = total;
@@ -66,28 +68,35 @@ public class ListCbhInstanceResponse extends SdkResponse {
         this.quotaDetail = quotaDetail;
     }
 
-    public ListCbhInstanceResponse withInstance(InstanceDetail instance) {
+    public ListCbhInstanceResponse withInstance(List<InstanceDetail> instance) {
         this.instance = instance;
         return this;
     }
 
-    public ListCbhInstanceResponse withInstance(Consumer<InstanceDetail> instanceSetter) {
+    public ListCbhInstanceResponse addInstanceItem(InstanceDetail instanceItem) {
         if (this.instance == null) {
-            this.instance = new InstanceDetail();
-            instanceSetter.accept(this.instance);
+            this.instance = new ArrayList<>();
         }
-
+        this.instance.add(instanceItem);
         return this;
     }
 
-    /** Get instance
+    public ListCbhInstanceResponse withInstance(Consumer<List<InstanceDetail>> instanceSetter) {
+        if (this.instance == null) {
+            this.instance = new ArrayList<>();
+        }
+        instanceSetter.accept(this.instance);
+        return this;
+    }
+
+    /** 实例列表
      * 
      * @return instance */
-    public InstanceDetail getInstance() {
+    public List<InstanceDetail> getInstance() {
         return instance;
     }
 
-    public void setInstance(InstanceDetail instance) {
+    public void setInstance(List<InstanceDetail> instance) {
         this.instance = instance;
     }
 

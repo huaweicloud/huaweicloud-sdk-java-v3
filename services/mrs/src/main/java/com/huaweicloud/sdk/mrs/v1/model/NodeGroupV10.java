@@ -105,7 +105,7 @@ public class NodeGroupV10  {
     
     private String rootVolumeResourceType;
     /**
-     * 节点数据磁盘存储类别，目前支持SATA、SAS和SSD。  SATA：普通IO SAS：高IO SSD：超高IO
+     * 节点数据磁盘存储类别，目前支持SATA、SAS和SSD。  - SATA：普通IO - SAS：高IO - SSD：超高IO
      */
     public static final class DataVolumeTypeEnum {
 
@@ -514,7 +514,7 @@ public class NodeGroupV10  {
 
 
     /**
-     * 节点数据磁盘存储类别，目前支持SATA、SAS和SSD。  SATA：普通IO SAS：高IO SSD：超高IO
+     * 节点数据磁盘存储类别，目前支持SATA、SAS和SSD。  - SATA：普通IO - SAS：高IO - SSD：超高IO
      * @return dataVolumeType
      */
     public DataVolumeTypeEnum getDataVolumeType() {

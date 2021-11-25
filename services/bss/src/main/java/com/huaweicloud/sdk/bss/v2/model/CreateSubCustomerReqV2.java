@@ -105,7 +105,8 @@ public class CreateSubCustomerReqV2 {
         return this;
     }
 
-    /** 申请的权限列表。 支持的权限项参见表2。
+    /** 申请的权限列表。
+     * 支持的权限项：READ_FINANCE_INFO；READ_CONSUME_BILL；SUBSTITUTE-OPEN-INVOICE；TAKE-OVER-OPEN-INVOICE；SHARE-CREDIT-TO-SUB；SHARE-BIZ-DISCOUNT-TO-SUB。
      * 
      * @return permissionIds */
     public List<String> getPermissionIds() {

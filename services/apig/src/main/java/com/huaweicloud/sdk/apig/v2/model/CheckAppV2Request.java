@@ -23,7 +23,7 @@ public class CheckAppV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -39,7 +39,7 @@ public class CheckAppV2Request {
         return this;
     }
 
-    /** APP的编号
+    /** 应用编号
      * 
      * @return appId */
     public String getAppId() {

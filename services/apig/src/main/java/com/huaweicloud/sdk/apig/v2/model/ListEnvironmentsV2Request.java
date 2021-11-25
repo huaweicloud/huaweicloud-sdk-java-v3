@@ -14,11 +14,6 @@ public class ListEnvironmentsV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Long offset;
@@ -28,12 +23,17 @@ public class ListEnvironmentsV2Request {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public ListEnvironmentsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -42,22 +42,6 @@ public class ListEnvironmentsV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public ListEnvironmentsV2Request withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /** 环境名称
-     * 
-     * @return name */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public ListEnvironmentsV2Request withOffset(Long offset) {
@@ -92,6 +76,22 @@ public class ListEnvironmentsV2Request {
         this.limit = limit;
     }
 
+    public ListEnvironmentsV2Request withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /** 环境名称
+     * 
+     * @return name */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -102,14 +102,14 @@ public class ListEnvironmentsV2Request {
         }
         ListEnvironmentsV2Request listEnvironmentsV2Request = (ListEnvironmentsV2Request) o;
         return Objects.equals(this.instanceId, listEnvironmentsV2Request.instanceId)
-            && Objects.equals(this.name, listEnvironmentsV2Request.name)
             && Objects.equals(this.offset, listEnvironmentsV2Request.offset)
-            && Objects.equals(this.limit, listEnvironmentsV2Request.limit);
+            && Objects.equals(this.limit, listEnvironmentsV2Request.limit)
+            && Objects.equals(this.name, listEnvironmentsV2Request.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, name, offset, limit);
+        return Objects.hash(instanceId, offset, limit, name);
     }
 
     @Override
@@ -117,9 +117,9 @@ public class ListEnvironmentsV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEnvironmentsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

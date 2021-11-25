@@ -655,7 +655,7 @@ public class ElbClient {
         return new SyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, ElbMeta.showPool, hcClient);
     }
 
-    /** 查询配额详情 【不开放】查询特定项目的配额数。
+    /** 查询配额详情 查询特定项目的配额数。
      *
      * @param ShowQuotaRequest 请求对象
      * @return ShowQuotaResponse */
@@ -663,7 +663,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showQuota);
     }
 
-    /** 查询配额详情 【不开放】查询特定项目的配额数。
+    /** 查询配额详情 查询特定项目的配额数。
      *
      * @param ShowQuotaRequest 请求对象
      * @return SyncInvoker<ShowQuotaRequest, ShowQuotaResponse> */
@@ -671,7 +671,7 @@ public class ElbClient {
         return new SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, ElbMeta.showQuota, hcClient);
     }
 
-    /** 查询默认配额 【不开放】查询默认配额数。
+    /** 查询默认配额 查询默认配额数。
      *
      * @param ShowQuotaDefaultsRequest 请求对象
      * @return ShowQuotaDefaultsResponse */
@@ -679,7 +679,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showQuotaDefaults);
     }
 
-    /** 查询默认配额 【不开放】查询默认配额数。
+    /** 查询默认配额 查询默认配额数。
      *
      * @param ShowQuotaDefaultsRequest 请求对象
      * @return SyncInvoker<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse> */

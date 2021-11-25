@@ -192,7 +192,7 @@ public class JudgementTaskRequestBody {
 
     private Integer timeout;
 
-    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回） */
+    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（用例对比返回） */
     public static final class OutputTypeEnum {
 
         /** Enum SYSOUT for value: "sysout" */
@@ -386,7 +386,7 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回）
+    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（用例对比返回）
      * 
      * @return outputType */
     public OutputTypeEnum getOutputType() {

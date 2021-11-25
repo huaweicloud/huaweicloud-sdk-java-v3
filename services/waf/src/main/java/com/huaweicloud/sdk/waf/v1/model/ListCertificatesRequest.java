@@ -38,7 +38,7 @@ public class ListCertificatesRequest {
 
     private Boolean host;
 
-    /** 证书过期状态，0-未过期，1-已过期，2-即将过期 */
+    /** 证书过期状态，0-未过期，1-已过期，2-即将过期（证书将在一个月内过期） */
     public static final class ExpStatusEnum {
 
         /** Enum NUMBER_0 for value: 0 */
@@ -123,7 +123,7 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 企业项目id
+    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -139,7 +139,7 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 页码
+    /** 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
      * 
      * @return page */
     public Integer getPage() {
@@ -155,7 +155,7 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 每页条数
+    /** 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
      * 
      * @return pagesize */
     public Integer getPagesize() {
@@ -187,7 +187,7 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 是否获取证书关联的域名
+    /** 是否获取证书关联的域名，默认为false -true:获取已关联域名的证书 -false:获取未关联域名的证书
      * 
      * @return host */
     public Boolean getHost() {
@@ -203,7 +203,7 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 证书过期状态，0-未过期，1-已过期，2-即将过期
+    /** 证书过期状态，0-未过期，1-已过期，2-即将过期（证书将在一个月内过期）
      * 
      * @return expStatus */
     public ExpStatusEnum getExpStatus() {

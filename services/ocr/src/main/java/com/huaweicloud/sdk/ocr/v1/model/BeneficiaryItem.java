@@ -22,7 +22,7 @@ public class BeneficiaryItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "beneficiary_order")
 
-    private Object beneficiaryOrder;
+    private InsurancePolicyDetail beneficiaryOrder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "beneficiary_share")
@@ -79,19 +79,28 @@ public class BeneficiaryItem {
         this.beneficiaryType = beneficiaryType;
     }
 
-    public BeneficiaryItem withBeneficiaryOrder(Object beneficiaryOrder) {
+    public BeneficiaryItem withBeneficiaryOrder(InsurancePolicyDetail beneficiaryOrder) {
         this.beneficiaryOrder = beneficiaryOrder;
         return this;
     }
 
-    /** 受益顺序。
+    public BeneficiaryItem withBeneficiaryOrder(Consumer<InsurancePolicyDetail> beneficiaryOrderSetter) {
+        if (this.beneficiaryOrder == null) {
+            this.beneficiaryOrder = new InsurancePolicyDetail();
+            beneficiaryOrderSetter.accept(this.beneficiaryOrder);
+        }
+
+        return this;
+    }
+
+    /** Get beneficiaryOrder
      * 
      * @return beneficiaryOrder */
-    public Object getBeneficiaryOrder() {
+    public InsurancePolicyDetail getBeneficiaryOrder() {
         return beneficiaryOrder;
     }
 
-    public void setBeneficiaryOrder(Object beneficiaryOrder) {
+    public void setBeneficiaryOrder(InsurancePolicyDetail beneficiaryOrder) {
         this.beneficiaryOrder = beneficiaryOrder;
     }
 

@@ -1604,25 +1604,6 @@ public class ApigAsyncClient {
             ApigMeta.changeApiVersionV2, hcClient);
     }
 
-    /** 后端连通性检测接口 后端连通性检测接口
-     *
-     * @param CheckBackendConnectivityRequest 请求对象
-     * @return CompletableFuture<CheckBackendConnectivityResponse> */
-    public CompletableFuture<CheckBackendConnectivityResponse> checkBackendConnectivityAsync(
-        CheckBackendConnectivityRequest request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.checkBackendConnectivity);
-    }
-
-    /** 后端连通性检测接口 后端连通性检测接口
-     *
-     * @param CheckBackendConnectivityRequest 请求对象
-     * @return AsyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> */
-    public AsyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> checkBackendConnectivityAsyncInvoker(
-        CheckBackendConnectivityRequest request) {
-        return new AsyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse>(request,
-            ApigMeta.checkBackendConnectivity, hcClient);
-    }
-
     /** 创建API分组 API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
      *
      * @param CreateApiGroupV2Request 请求对象

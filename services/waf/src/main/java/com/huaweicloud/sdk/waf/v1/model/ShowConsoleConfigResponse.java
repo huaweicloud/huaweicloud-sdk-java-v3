@@ -120,7 +120,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持TLS
+    /** 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
      * 
      * @return tls */
     public Boolean getTls() {

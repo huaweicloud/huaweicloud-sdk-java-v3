@@ -14,6 +14,16 @@ public class ListAppsV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Long offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -39,16 +49,6 @@ public class ListAppsV2Request {
     private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Long offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "precise_search")
 
     private String preciseSearch;
@@ -58,7 +58,7 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -67,6 +67,38 @@ public class ListAppsV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ListAppsV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * 
+     * @return offset */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    public ListAppsV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量 minimum: 1 maximum: 500
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     public ListAppsV2Request withId(String id) {
@@ -149,38 +181,6 @@ public class ListAppsV2Request {
         this.creator = creator;
     }
 
-    public ListAppsV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    public ListAppsV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
     public ListAppsV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -207,18 +207,18 @@ public class ListAppsV2Request {
         }
         ListAppsV2Request listAppsV2Request = (ListAppsV2Request) o;
         return Objects.equals(this.instanceId, listAppsV2Request.instanceId)
-            && Objects.equals(this.id, listAppsV2Request.id) && Objects.equals(this.name, listAppsV2Request.name)
+            && Objects.equals(this.offset, listAppsV2Request.offset)
+            && Objects.equals(this.limit, listAppsV2Request.limit) && Objects.equals(this.id, listAppsV2Request.id)
+            && Objects.equals(this.name, listAppsV2Request.name)
             && Objects.equals(this.status, listAppsV2Request.status)
             && Objects.equals(this.appKey, listAppsV2Request.appKey)
             && Objects.equals(this.creator, listAppsV2Request.creator)
-            && Objects.equals(this.offset, listAppsV2Request.offset)
-            && Objects.equals(this.limit, listAppsV2Request.limit)
             && Objects.equals(this.preciseSearch, listAppsV2Request.preciseSearch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, id, name, status, appKey, creator, offset, limit, preciseSearch);
+        return Objects.hash(instanceId, offset, limit, id, name, status, appKey, creator, preciseSearch);
     }
 
     @Override
@@ -226,13 +226,13 @@ public class ListAppsV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAppsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
         sb.append("}");
         return sb.toString();

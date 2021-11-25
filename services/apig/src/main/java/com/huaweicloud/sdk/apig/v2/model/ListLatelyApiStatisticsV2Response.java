@@ -25,12 +25,12 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private Integer startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private Integer endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "list")
@@ -69,7 +69,7 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
         this.msg = msg;
     }
 
-    public ListLatelyApiStatisticsV2Response withStartTime(Integer startTime) {
+    public ListLatelyApiStatisticsV2Response withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -77,15 +77,15 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
     /** 开始时间的UTC的时间戳
      * 
      * @return startTime */
-    public Integer getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public ListLatelyApiStatisticsV2Response withEndTime(Integer endTime) {
+    public ListLatelyApiStatisticsV2Response withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -93,11 +93,11 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
     /** 截止时间的UTC的时间戳
      * 
      * @return endTime */
-    public Integer getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

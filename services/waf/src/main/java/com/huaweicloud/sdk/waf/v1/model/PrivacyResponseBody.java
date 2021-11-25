@@ -24,6 +24,16 @@ public class PrivacyResponseBody {
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timestamp")
+
+    private Long timestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
     private String url;
@@ -149,6 +159,38 @@ public class PrivacyResponseBody {
         this.policyid = policyid;
     }
 
+    public PrivacyResponseBody withTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    /** 创建规则的时间，格式为13位毫秒时间戳
+     * 
+     * @return timestamp */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public PrivacyResponseBody withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /** 规则状态，0：关闭，1：开启
+     * 
+     * @return status */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     public PrivacyResponseBody withUrl(String url) {
         this.url = url;
         return this;
@@ -208,6 +250,8 @@ public class PrivacyResponseBody {
         PrivacyResponseBody privacyResponseBody = (PrivacyResponseBody) o;
         return Objects.equals(this.id, privacyResponseBody.id)
             && Objects.equals(this.policyid, privacyResponseBody.policyid)
+            && Objects.equals(this.timestamp, privacyResponseBody.timestamp)
+            && Objects.equals(this.status, privacyResponseBody.status)
             && Objects.equals(this.url, privacyResponseBody.url)
             && Objects.equals(this.category, privacyResponseBody.category)
             && Objects.equals(this.index, privacyResponseBody.index);
@@ -215,7 +259,7 @@ public class PrivacyResponseBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, url, category, index);
+        return Objects.hash(id, policyid, timestamp, status, url, category, index);
     }
 
     @Override
@@ -224,6 +268,8 @@ public class PrivacyResponseBody {
         sb.append("class PrivacyResponseBody {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");

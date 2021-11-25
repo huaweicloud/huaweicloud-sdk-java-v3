@@ -199,6 +199,11 @@ public class ListInstancesRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
     public ListInstancesRequest withId(String id) {
         this.id = id;
         return this;
@@ -328,6 +333,22 @@ public class ListInstancesRequest {
         this.limit = limit;
     }
 
+    public ListInstancesRequest withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /** 根据实例标签键值对进行查询。{key}表示标签键，{value}表示标签值，最多包含20组。key不可以为空或重复，value可以为空。如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，表示查询同时包含指定标签键值对的实例。
+     * 
+     * @return tags */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -343,12 +364,13 @@ public class ListInstancesRequest {
             && Objects.equals(this.vpcId, listInstancesRequest.vpcId)
             && Objects.equals(this.subnetId, listInstancesRequest.subnetId)
             && Objects.equals(this.offset, listInstancesRequest.offset)
-            && Objects.equals(this.limit, listInstancesRequest.limit);
+            && Objects.equals(this.limit, listInstancesRequest.limit)
+            && Objects.equals(this.tags, listInstancesRequest.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, mode, datastoreType, vpcId, subnetId, offset, limit);
+        return Objects.hash(id, name, mode, datastoreType, vpcId, subnetId, offset, limit, tags);
     }
 
     @Override
@@ -363,6 +385,7 @@ public class ListInstancesRequest {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

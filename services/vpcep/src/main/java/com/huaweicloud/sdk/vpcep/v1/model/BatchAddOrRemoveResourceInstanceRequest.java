@@ -29,7 +29,7 @@ public class BatchAddOrRemoveResourceInstanceRequest {
         return this;
     }
 
-    /** 资源类型，值为： endpoint_service或 endpoint。
+    /** 资源类型，值为：endpoint_service或endpoint。
      * 
      * @return resourceType */
     public String getResourceType() {
@@ -45,7 +45,7 @@ public class BatchAddOrRemoveResourceInstanceRequest {
         return this;
     }
 
-    /** 资源ID，Endpoint Service ID或Endpoint ID。
+    /** 资源ID，Endpoint ServiceID或Endpoint ID。
      * 
      * @return resourceId */
     public String getResourceId() {

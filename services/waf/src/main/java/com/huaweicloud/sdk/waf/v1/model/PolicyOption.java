@@ -64,6 +64,11 @@ public class PolicyOption {
     private Boolean whiteblackip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "geoip")
+
+    private Boolean geoip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ignore")
 
     private Boolean ignore;
@@ -77,6 +82,21 @@ public class PolicyOption {
     @JsonProperty(value = "antitamper")
 
     private Boolean antitamper;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "antileakage")
+
+    private Boolean antileakage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bot_enable")
+
+    private Boolean botEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modulex_enabled")
+
+    private Boolean modulexEnabled;
 
     public PolicyOption withWebattack(Boolean webattack) {
         this.webattack = webattack;
@@ -254,6 +274,22 @@ public class PolicyOption {
         this.whiteblackip = whiteblackip;
     }
 
+    public PolicyOption withGeoip(Boolean geoip) {
+        this.geoip = geoip;
+        return this;
+    }
+
+    /** 地理位置访问控制规则是否开启
+     * 
+     * @return geoip */
+    public Boolean getGeoip() {
+        return geoip;
+    }
+
+    public void setGeoip(Boolean geoip) {
+        this.geoip = geoip;
+    }
+
     public PolicyOption withIgnore(Boolean ignore) {
         this.ignore = ignore;
         return this;
@@ -302,6 +338,54 @@ public class PolicyOption {
         this.antitamper = antitamper;
     }
 
+    public PolicyOption withAntileakage(Boolean antileakage) {
+        this.antileakage = antileakage;
+        return this;
+    }
+
+    /** 防敏感信息泄露规则是否开启
+     * 
+     * @return antileakage */
+    public Boolean getAntileakage() {
+        return antileakage;
+    }
+
+    public void setAntileakage(Boolean antileakage) {
+        this.antileakage = antileakage;
+    }
+
+    public PolicyOption withBotEnable(Boolean botEnable) {
+        this.botEnable = botEnable;
+        return this;
+    }
+
+    /** 防网络机器人攻击是否开启
+     * 
+     * @return botEnable */
+    public Boolean getBotEnable() {
+        return botEnable;
+    }
+
+    public void setBotEnable(Boolean botEnable) {
+        this.botEnable = botEnable;
+    }
+
+    public PolicyOption withModulexEnabled(Boolean modulexEnabled) {
+        this.modulexEnabled = modulexEnabled;
+        return this;
+    }
+
+    /** modulex智能cc防护是否开启，该特性是公测特性，在公测期间，只支持仅记录模式。
+     * 
+     * @return modulexEnabled */
+    public Boolean getModulexEnabled() {
+        return modulexEnabled;
+    }
+
+    public void setModulexEnabled(Boolean modulexEnabled) {
+        this.modulexEnabled = modulexEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -320,8 +404,12 @@ public class PolicyOption {
             && Objects.equals(this.webshell, policyOption.webshell) && Objects.equals(this.cc, policyOption.cc)
             && Objects.equals(this.custom, policyOption.custom)
             && Objects.equals(this.whiteblackip, policyOption.whiteblackip)
-            && Objects.equals(this.ignore, policyOption.ignore) && Objects.equals(this.privacy, policyOption.privacy)
-            && Objects.equals(this.antitamper, policyOption.antitamper);
+            && Objects.equals(this.geoip, policyOption.geoip) && Objects.equals(this.ignore, policyOption.ignore)
+            && Objects.equals(this.privacy, policyOption.privacy)
+            && Objects.equals(this.antitamper, policyOption.antitamper)
+            && Objects.equals(this.antileakage, policyOption.antileakage)
+            && Objects.equals(this.botEnable, policyOption.botEnable)
+            && Objects.equals(this.modulexEnabled, policyOption.modulexEnabled);
     }
 
     @Override
@@ -337,9 +425,13 @@ public class PolicyOption {
             cc,
             custom,
             whiteblackip,
+            geoip,
             ignore,
             privacy,
-            antitamper);
+            antitamper,
+            antileakage,
+            botEnable,
+            modulexEnabled);
     }
 
     @Override
@@ -357,9 +449,13 @@ public class PolicyOption {
         sb.append("    cc: ").append(toIndentedString(cc)).append("\n");
         sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
         sb.append("    whiteblackip: ").append(toIndentedString(whiteblackip)).append("\n");
+        sb.append("    geoip: ").append(toIndentedString(geoip)).append("\n");
         sb.append("    ignore: ").append(toIndentedString(ignore)).append("\n");
         sb.append("    privacy: ").append(toIndentedString(privacy)).append("\n");
         sb.append("    antitamper: ").append(toIndentedString(antitamper)).append("\n");
+        sb.append("    antileakage: ").append(toIndentedString(antileakage)).append("\n");
+        sb.append("    botEnable: ").append(toIndentedString(botEnable)).append("\n");
+        sb.append("    modulexEnabled: ").append(toIndentedString(modulexEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

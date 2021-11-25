@@ -20,7 +20,7 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failure")
 
-    private List<ThrottleBindingBatchResultFailureResp> failure = null;
+    private List<ThrottleBindingBatchFailure> failure = null;
 
     public BatchDisassociateThrottlingPolicyV2Response withSuccessCount(Integer successCount) {
         this.successCount = successCount;
@@ -38,14 +38,12 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
         this.successCount = successCount;
     }
 
-    public BatchDisassociateThrottlingPolicyV2Response withFailure(
-        List<ThrottleBindingBatchResultFailureResp> failure) {
+    public BatchDisassociateThrottlingPolicyV2Response withFailure(List<ThrottleBindingBatchFailure> failure) {
         this.failure = failure;
         return this;
     }
 
-    public BatchDisassociateThrottlingPolicyV2Response addFailureItem(
-        ThrottleBindingBatchResultFailureResp failureItem) {
+    public BatchDisassociateThrottlingPolicyV2Response addFailureItem(ThrottleBindingBatchFailure failureItem) {
         if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -54,7 +52,7 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
     }
 
     public BatchDisassociateThrottlingPolicyV2Response withFailure(
-        Consumer<List<ThrottleBindingBatchResultFailureResp>> failureSetter) {
+        Consumer<List<ThrottleBindingBatchFailure>> failureSetter) {
         if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -65,11 +63,11 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
     /** 解除绑定失败的API和流控绑定关系及错误信息
      * 
      * @return failure */
-    public List<ThrottleBindingBatchResultFailureResp> getFailure() {
+    public List<ThrottleBindingBatchFailure> getFailure() {
         return failure;
     }
 
-    public void setFailure(List<ThrottleBindingBatchResultFailureResp> failure) {
+    public void setFailure(List<ThrottleBindingBatchFailure> failure) {
         this.failure = failure;
     }
 

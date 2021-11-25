@@ -25,7 +25,7 @@ public class ListAppsV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apps")
 
-    private List<AppInfoWithBindNumResp> apps = null;
+    private List<AppInfoWithBindNum> apps = null;
 
     public ListAppsV2Response withSize(Integer size) {
         this.size = size;
@@ -59,12 +59,12 @@ public class ListAppsV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListAppsV2Response withApps(List<AppInfoWithBindNumResp> apps) {
+    public ListAppsV2Response withApps(List<AppInfoWithBindNum> apps) {
         this.apps = apps;
         return this;
     }
 
-    public ListAppsV2Response addAppsItem(AppInfoWithBindNumResp appsItem) {
+    public ListAppsV2Response addAppsItem(AppInfoWithBindNum appsItem) {
         if (this.apps == null) {
             this.apps = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ListAppsV2Response extends SdkResponse {
         return this;
     }
 
-    public ListAppsV2Response withApps(Consumer<List<AppInfoWithBindNumResp>> appsSetter) {
+    public ListAppsV2Response withApps(Consumer<List<AppInfoWithBindNum>> appsSetter) {
         if (this.apps == null) {
             this.apps = new ArrayList<>();
         }
@@ -83,11 +83,11 @@ public class ListAppsV2Response extends SdkResponse {
     /** APP列表
      * 
      * @return apps */
-    public List<AppInfoWithBindNumResp> getApps() {
+    public List<AppInfoWithBindNum> getApps() {
         return apps;
     }
 
-    public void setApps(List<AppInfoWithBindNumResp> apps) {
+    public void setApps(List<AppInfoWithBindNum> apps) {
         this.apps = apps;
     }
 

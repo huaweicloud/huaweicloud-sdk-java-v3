@@ -155,7 +155,7 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 隐私屏蔽规则应用的url
+    /** 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
      * 
      * @return url */
     public String getUrl() {

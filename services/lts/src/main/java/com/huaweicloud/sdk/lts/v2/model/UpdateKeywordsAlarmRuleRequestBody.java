@@ -130,10 +130,89 @@ public class UpdateKeywordsAlarmRuleRequestBody {
 
     private Boolean keywordsAlarmSend;
 
+    /** 发送主题 0:不变 1:新增 2:修改 3:删除 */
+    public static final class KeywordsAlarmSendCodeEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final KeywordsAlarmSendCodeEnum NUMBER_0 = new KeywordsAlarmSendCodeEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final KeywordsAlarmSendCodeEnum NUMBER_1 = new KeywordsAlarmSendCodeEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final KeywordsAlarmSendCodeEnum NUMBER_2 = new KeywordsAlarmSendCodeEnum(2);
+
+        /** Enum NUMBER_3 for value: 3 */
+        public static final KeywordsAlarmSendCodeEnum NUMBER_3 = new KeywordsAlarmSendCodeEnum(3);
+
+        private static final Map<Integer, KeywordsAlarmSendCodeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, KeywordsAlarmSendCodeEnum> createStaticFields() {
+            Map<Integer, KeywordsAlarmSendCodeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        KeywordsAlarmSendCodeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static KeywordsAlarmSendCodeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            KeywordsAlarmSendCodeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new KeywordsAlarmSendCodeEnum(value);
+            }
+            return result;
+        }
+
+        public static KeywordsAlarmSendCodeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            KeywordsAlarmSendCodeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof KeywordsAlarmSendCodeEnum) {
+                return this.value.equals(((KeywordsAlarmSendCodeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_send_code")
 
-    private Integer keywordsAlarmSendCode;
+    private KeywordsAlarmSendCodeEnum keywordsAlarmSendCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
@@ -288,7 +367,8 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         this.keywordsAlarmSend = keywordsAlarmSend;
     }
 
-    public UpdateKeywordsAlarmRuleRequestBody withKeywordsAlarmSendCode(Integer keywordsAlarmSendCode) {
+    public UpdateKeywordsAlarmRuleRequestBody withKeywordsAlarmSendCode(
+        KeywordsAlarmSendCodeEnum keywordsAlarmSendCode) {
         this.keywordsAlarmSendCode = keywordsAlarmSendCode;
         return this;
     }
@@ -296,11 +376,11 @@ public class UpdateKeywordsAlarmRuleRequestBody {
     /** 发送主题 0:不变 1:新增 2:修改 3:删除 minimum: 0 maximum: 3
      * 
      * @return keywordsAlarmSendCode */
-    public Integer getKeywordsAlarmSendCode() {
+    public KeywordsAlarmSendCodeEnum getKeywordsAlarmSendCode() {
         return keywordsAlarmSendCode;
     }
 
-    public void setKeywordsAlarmSendCode(Integer keywordsAlarmSendCode) {
+    public void setKeywordsAlarmSendCode(KeywordsAlarmSendCodeEnum keywordsAlarmSendCode) {
         this.keywordsAlarmSendCode = keywordsAlarmSendCode;
     }
 

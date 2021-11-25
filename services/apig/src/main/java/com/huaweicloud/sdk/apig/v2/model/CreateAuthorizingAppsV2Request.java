@@ -17,14 +17,14 @@ public class CreateAuthorizingAppsV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AppAuthReq body;
+    private ApiAuthCreate body;
 
     public CreateAuthorizingAppsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -35,14 +35,14 @@ public class CreateAuthorizingAppsV2Request {
         this.instanceId = instanceId;
     }
 
-    public CreateAuthorizingAppsV2Request withBody(AppAuthReq body) {
+    public CreateAuthorizingAppsV2Request withBody(ApiAuthCreate body) {
         this.body = body;
         return this;
     }
 
-    public CreateAuthorizingAppsV2Request withBody(Consumer<AppAuthReq> bodySetter) {
+    public CreateAuthorizingAppsV2Request withBody(Consumer<ApiAuthCreate> bodySetter) {
         if (this.body == null) {
-            this.body = new AppAuthReq();
+            this.body = new ApiAuthCreate();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class CreateAuthorizingAppsV2Request {
     /** Get body
      * 
      * @return body */
-    public AppAuthReq getBody() {
+    public ApiAuthCreate getBody() {
         return body;
     }
 
-    public void setBody(AppAuthReq body) {
+    public void setBody(ApiAuthCreate body) {
         this.body = body;
     }
 

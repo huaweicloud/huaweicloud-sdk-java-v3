@@ -177,73 +177,6 @@ public class VpcepMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEndpointDetailsRequest, ListEndpointDetailsResponse> listEndpointDetails =
-        genForlistEndpointDetails();
-
-    private static HttpRequestDef<ListEndpointDetailsRequest, ListEndpointDetailsResponse> genForlistEndpointDetails() {
-        // basic
-        HttpRequestDef.Builder<ListEndpointDetailsRequest, ListEndpointDetailsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListEndpointDetailsRequest.class, ListEndpointDetailsResponse.class)
-                .withName("ListEndpointDetails")
-                .withUri("/v1/{project_id}/vpc-endpoints")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("endpoint_service_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointDetailsRequest::getEndpointServiceName, (req, v) -> {
-                req.setEndpointServiceName(v);
-            }));
-        builder.<String>withRequestField("vpc_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointDetailsRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
-        builder.<String>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointDetailsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("sort_key",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointDetailsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
-        builder.<String>withRequestField("sort_dir",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointDetailsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListEndpointInfoDetailsRequest, ListEndpointInfoDetailsResponse> listEndpointInfoDetails =
         genForlistEndpointInfoDetails();
 
@@ -329,6 +262,73 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEndpointServiceRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> listEndpoints =
+        genForlistEndpoints();
+
+    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForlistEndpoints() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointsRequest, ListEndpointsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEndpointsRequest.class, ListEndpointsResponse.class)
+                .withName("ListEndpoints")
+                .withUri("/v1/{project_id}/vpc-endpoints")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_service_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getEndpointServiceName, (req, v) -> {
+                req.setEndpointServiceName(v);
+            }));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
             }));
 
         // response
@@ -853,7 +853,7 @@ public class VpcepMeta {
             }));
         builder.<QueryResourceInstanceTagsBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryResourceInstanceTagsBody.class),
             f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);

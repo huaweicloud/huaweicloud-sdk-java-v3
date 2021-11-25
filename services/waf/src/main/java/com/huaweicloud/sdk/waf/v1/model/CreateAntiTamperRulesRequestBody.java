@@ -28,7 +28,7 @@ public class CreateAntiTamperRulesRequestBody {
         return this;
     }
 
-    /** 防护网站（查询云模式防护域名列表获取防护域名，响应体的hostname字段）
+    /** 防护网站，查询云模式防护域名列表（ListHost）接口获取防护域名，响应体中的的hostname字段
      * 
      * @return hostname */
     public String getHostname() {
@@ -44,7 +44,7 @@ public class CreateAntiTamperRulesRequestBody {
         return this;
     }
 
-    /** 防篡改的url
+    /** 防篡改规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
      * 
      * @return url */
     public String getUrl() {

@@ -69,7 +69,7 @@ public class ListCouponQuotasRecordsRequest {
         return this;
     }
 
-    /** 精英服务商的代金券额度ID。即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
+    /** 精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
      * 
      * @return quotaId */
     public String getQuotaId() {

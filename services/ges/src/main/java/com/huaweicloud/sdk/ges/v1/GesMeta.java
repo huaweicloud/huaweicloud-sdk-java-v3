@@ -355,6 +355,41 @@ public class GesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExpandGraphRequest, ExpandGraphResponse> expandGraph = genForexpandGraph();
+
+    private static HttpRequestDef<ExpandGraphRequest, ExpandGraphResponse> genForexpandGraph() {
+        // basic
+        HttpRequestDef.Builder<ExpandGraphRequest, ExpandGraphResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExpandGraphRequest.class, ExpandGraphResponse.class)
+                .withName("ExpandGraph")
+                .withUri("/v1.0/{project_id}/graphs/{graph_id}/expand")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("graph_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandGraphRequest::getGraphId, (req, v) -> {
+                req.setGraphId(v);
+            })
+        );
+        builder.<ExpandGraphReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExpandGraphReq.class),
+            f -> f.withMarshaller(ExpandGraphRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExportGraphRequest, ExportGraphResponse> exportGraph = genForexportGraph();
 
     private static HttpRequestDef<ExportGraphRequest, ExportGraphResponse> genForexportGraph() {
@@ -702,6 +737,41 @@ public class GesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeGraphRequest, ResizeGraphResponse> resizeGraph = genForresizeGraph();
+
+    private static HttpRequestDef<ResizeGraphRequest, ResizeGraphResponse> genForresizeGraph() {
+        // basic
+        HttpRequestDef.Builder<ResizeGraphRequest, ResizeGraphResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResizeGraphRequest.class, ResizeGraphResponse.class)
+                .withName("ResizeGraph")
+                .withUri("/v1.0/{project_id}/graphs/{graph_id}/resize")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("graph_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeGraphRequest::getGraphId, (req, v) -> {
+                req.setGraphId(v);
+            })
+        );
+        builder.<ResizeGraphReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeGraphReq.class),
+            f -> f.withMarshaller(ResizeGraphRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestartGraphRequest, RestartGraphResponse> restartGraph = genForrestartGraph();
 
     private static HttpRequestDef<RestartGraphRequest, RestartGraphResponse> genForrestartGraph() {
@@ -909,6 +979,33 @@ public class GesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeGraphReq.class),
             f -> f.withMarshaller(UpgradeGraphRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadFromObsRequest, UploadFromObsResponse> uploadFromObs = genForuploadFromObs();
+
+    private static HttpRequestDef<UploadFromObsRequest, UploadFromObsResponse> genForuploadFromObs() {
+        // basic
+        HttpRequestDef.Builder<UploadFromObsRequest, UploadFromObsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadFromObsRequest.class, UploadFromObsResponse.class)
+                .withName("UploadFromObs")
+                .withUri("/v1.0/{project_id}/graphs/metadata/upload_from_obs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UploadFromOBSReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadFromOBSReq.class),
+            f -> f.withMarshaller(UploadFromObsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

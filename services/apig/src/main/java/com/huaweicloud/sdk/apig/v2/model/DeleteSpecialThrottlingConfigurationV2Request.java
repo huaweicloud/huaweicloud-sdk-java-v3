@@ -28,7 +28,7 @@ public class DeleteSpecialThrottlingConfigurationV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -44,7 +44,7 @@ public class DeleteSpecialThrottlingConfigurationV2Request {
         return this;
     }
 
-    /** 流控策略的ID
+    /** 流控策略的编号
      * 
      * @return throttleId */
     public String getThrottleId() {

@@ -21,6 +21,8 @@ public class CodeCheckRegion {
     public static final Region CN_SOUTH_1 =
         new Region("cn-south-1", "https://codecheck-ext.cn-south-1.myhuaweicloud.com");
 
+    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://codecheck-ext.cn-east-3.myhuaweicloud.com");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -29,6 +31,7 @@ public class CodeCheckRegion {
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-south-1", CN_SOUTH_1);
+        map.put("cn-east-3", CN_EAST_3);
         return Collections.unmodifiableMap(map);
     }
 

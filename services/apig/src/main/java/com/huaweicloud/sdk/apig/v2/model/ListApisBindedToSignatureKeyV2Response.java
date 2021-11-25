@@ -25,7 +25,7 @@ public class ListApisBindedToSignatureKeyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bindings")
 
-    private List<SignBindingApiResp> bindings = null;
+    private List<SignApiBindingBase> bindings = null;
 
     public ListApisBindedToSignatureKeyV2Response withSize(Integer size) {
         this.size = size;
@@ -59,12 +59,12 @@ public class ListApisBindedToSignatureKeyV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListApisBindedToSignatureKeyV2Response withBindings(List<SignBindingApiResp> bindings) {
+    public ListApisBindedToSignatureKeyV2Response withBindings(List<SignApiBindingBase> bindings) {
         this.bindings = bindings;
         return this;
     }
 
-    public ListApisBindedToSignatureKeyV2Response addBindingsItem(SignBindingApiResp bindingsItem) {
+    public ListApisBindedToSignatureKeyV2Response addBindingsItem(SignApiBindingBase bindingsItem) {
         if (this.bindings == null) {
             this.bindings = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ListApisBindedToSignatureKeyV2Response extends SdkResponse {
         return this;
     }
 
-    public ListApisBindedToSignatureKeyV2Response withBindings(Consumer<List<SignBindingApiResp>> bindingsSetter) {
+    public ListApisBindedToSignatureKeyV2Response withBindings(Consumer<List<SignApiBindingBase>> bindingsSetter) {
         if (this.bindings == null) {
             this.bindings = new ArrayList<>();
         }
@@ -80,14 +80,14 @@ public class ListApisBindedToSignatureKeyV2Response extends SdkResponse {
         return this;
     }
 
-    /** 本次查询返回的列表
+    /** 本次查询到的签名密钥和API绑定关系列表
      * 
      * @return bindings */
-    public List<SignBindingApiResp> getBindings() {
+    public List<SignApiBindingBase> getBindings() {
         return bindings;
     }
 
-    public void setBindings(List<SignBindingApiResp> bindings) {
+    public void setBindings(List<SignApiBindingBase> bindings) {
         this.bindings = bindings;
     }
 

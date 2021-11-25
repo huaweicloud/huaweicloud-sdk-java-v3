@@ -17,14 +17,14 @@ public class CreateRequestThrottlingPolicyV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ThrottleReq body;
+    private ThrottleBaseInfo body;
 
     public CreateRequestThrottlingPolicyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -35,14 +35,14 @@ public class CreateRequestThrottlingPolicyV2Request {
         this.instanceId = instanceId;
     }
 
-    public CreateRequestThrottlingPolicyV2Request withBody(ThrottleReq body) {
+    public CreateRequestThrottlingPolicyV2Request withBody(ThrottleBaseInfo body) {
         this.body = body;
         return this;
     }
 
-    public CreateRequestThrottlingPolicyV2Request withBody(Consumer<ThrottleReq> bodySetter) {
+    public CreateRequestThrottlingPolicyV2Request withBody(Consumer<ThrottleBaseInfo> bodySetter) {
         if (this.body == null) {
-            this.body = new ThrottleReq();
+            this.body = new ThrottleBaseInfo();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class CreateRequestThrottlingPolicyV2Request {
     /** Get body
      * 
      * @return body */
-    public ThrottleReq getBody() {
+    public ThrottleBaseInfo getBody() {
         return body;
     }
 
-    public void setBody(ThrottleReq body) {
+    public void setBody(ThrottleBaseInfo body) {
         this.body = body;
     }
 

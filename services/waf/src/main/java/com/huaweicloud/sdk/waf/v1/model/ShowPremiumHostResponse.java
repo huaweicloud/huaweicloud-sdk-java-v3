@@ -1,10 +1,13 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,17 +65,184 @@ public class ShowPremiumHostResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificatename")
 
-    private String certificatename;
+    private Object certificatename;
+
+    /** 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本 */
+    public static final class TlsEnum {
+
+        /** Enum TLS_V1_0 for value: "TLS v1.0" */
+        public static final TlsEnum TLS_V1_0 = new TlsEnum("TLS v1.0");
+
+        /** Enum TLS_V1_1 for value: "TLS v1.1" */
+        public static final TlsEnum TLS_V1_1 = new TlsEnum("TLS v1.1");
+
+        /** Enum TLS_V1_2 for value: "TLS v1.2" */
+        public static final TlsEnum TLS_V1_2 = new TlsEnum("TLS v1.2");
+
+        /** Enum TLS_V1_3 for value: "TLS v1.3" */
+        public static final TlsEnum TLS_V1_3 = new TlsEnum("TLS v1.3");
+
+        private static final Map<String, TlsEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TlsEnum> createStaticFields() {
+            Map<String, TlsEnum> map = new HashMap<>();
+            map.put("TLS v1.0", TLS_V1_0);
+            map.put("TLS v1.1", TLS_V1_1);
+            map.put("TLS v1.2", TLS_V1_2);
+            map.put("TLS v1.3", TLS_V1_3);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TlsEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TlsEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TlsEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TlsEnum(value);
+            }
+            return result;
+        }
+
+        public static TlsEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TlsEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TlsEnum) {
+                return this.value.equals(((TlsEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls")
 
-    private String tls;
+    private TlsEnum tls;
+
+    /** 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）： cipher_1：
+     * 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH
+     * cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM
+     * cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH
+     * cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH
+     * cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM */
+    public static final class CipherEnum {
+
+        /** Enum CIPHER_1 for value: "cipher_1" */
+        public static final CipherEnum CIPHER_1 = new CipherEnum("cipher_1");
+
+        /** Enum CIPHER_2 for value: "cipher_2" */
+        public static final CipherEnum CIPHER_2 = new CipherEnum("cipher_2");
+
+        /** Enum CIPHER_3 for value: "cipher_3" */
+        public static final CipherEnum CIPHER_3 = new CipherEnum("cipher_3");
+
+        /** Enum CIPHER_4 for value: "cipher_4" */
+        public static final CipherEnum CIPHER_4 = new CipherEnum("cipher_4");
+
+        /** Enum CIPHER_DEFAULT for value: "cipher_default" */
+        public static final CipherEnum CIPHER_DEFAULT = new CipherEnum("cipher_default");
+
+        private static final Map<String, CipherEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CipherEnum> createStaticFields() {
+            Map<String, CipherEnum> map = new HashMap<>();
+            map.put("cipher_1", CIPHER_1);
+            map.put("cipher_2", CIPHER_2);
+            map.put("cipher_3", CIPHER_3);
+            map.put("cipher_4", CIPHER_4);
+            map.put("cipher_default", CIPHER_DEFAULT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CipherEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CipherEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            CipherEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new CipherEnum(value);
+            }
+            return result;
+        }
+
+        public static CipherEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            CipherEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CipherEnum) {
+                return this.value.equals(((CipherEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cipher")
 
-    private String cipher;
+    private CipherEnum cipher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
@@ -150,7 +320,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
+    /** 防护域名初始绑定的策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
      * 
      * @return policyid */
     public String getPolicyid() {
@@ -278,7 +448,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回的证书id
+    /** 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id - 对外协议为HTTP时不需要填写 - 对外协议HTTPS时为必填参数
      * 
      * @return certificateid */
     public String getCertificateid() {
@@ -289,51 +459,56 @@ public class ShowPremiumHostResponse extends SdkResponse {
         this.certificateid = certificateid;
     }
 
-    public ShowPremiumHostResponse withCertificatename(String certificatename) {
+    public ShowPremiumHostResponse withCertificatename(Object certificatename) {
         this.certificatename = certificatename;
         return this;
     }
 
-    /** 证书名称
+    /** 证书名 - 对外协议为HTTP时不需要填写 - 对外协议HTTPS时为必填参数
      * 
      * @return certificatename */
-    public String getCertificatename() {
+    public Object getCertificatename() {
         return certificatename;
     }
 
-    public void setCertificatename(String certificatename) {
+    public void setCertificatename(Object certificatename) {
         this.certificatename = certificatename;
     }
 
-    public ShowPremiumHostResponse withTls(String tls) {
+    public ShowPremiumHostResponse withTls(TlsEnum tls) {
         this.tls = tls;
         return this;
     }
 
-    /** 支持最低的TLS版本
+    /** 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
      * 
      * @return tls */
-    public String getTls() {
+    public TlsEnum getTls() {
         return tls;
     }
 
-    public void setTls(String tls) {
+    public void setTls(TlsEnum tls) {
         this.tls = tls;
     }
 
-    public ShowPremiumHostResponse withCipher(String cipher) {
+    public ShowPremiumHostResponse withCipher(CipherEnum cipher) {
         this.cipher = cipher;
         return this;
     }
 
-    /** 加密套件代码
+    /** 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）： cipher_1：
+     * 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH
+     * cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM
+     * cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH
+     * cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH
+     * cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
      * 
      * @return cipher */
-    public String getCipher() {
+    public CipherEnum getCipher() {
         return cipher;
     }
 
-    public void setCipher(String cipher) {
+    public void setCipher(CipherEnum cipher) {
         this.cipher = cipher;
     }
 
@@ -374,7 +549,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 防护状态
+    /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测
      * 
      * @return protectStatus */
     public Integer getProtectStatus() {

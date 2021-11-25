@@ -14,6 +14,16 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Long offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
 
     private String apiId;
@@ -33,22 +43,12 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request {
 
     private String envId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Long offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
     public ListRequestThrottlingPoliciesBindedToApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -57,6 +57,38 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ListRequestThrottlingPoliciesBindedToApiV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * 
+     * @return offset */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    public ListRequestThrottlingPoliciesBindedToApiV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量 minimum: 1 maximum: 500
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     public ListRequestThrottlingPoliciesBindedToApiV2Request withApiId(String apiId) {
@@ -123,38 +155,6 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request {
         this.envId = envId;
     }
 
-    public ListRequestThrottlingPoliciesBindedToApiV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    public ListRequestThrottlingPoliciesBindedToApiV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -166,17 +166,17 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request {
         ListRequestThrottlingPoliciesBindedToApiV2Request listRequestThrottlingPoliciesBindedToApiV2Request =
             (ListRequestThrottlingPoliciesBindedToApiV2Request) o;
         return Objects.equals(this.instanceId, listRequestThrottlingPoliciesBindedToApiV2Request.instanceId)
+            && Objects.equals(this.offset, listRequestThrottlingPoliciesBindedToApiV2Request.offset)
+            && Objects.equals(this.limit, listRequestThrottlingPoliciesBindedToApiV2Request.limit)
             && Objects.equals(this.apiId, listRequestThrottlingPoliciesBindedToApiV2Request.apiId)
             && Objects.equals(this.throttleId, listRequestThrottlingPoliciesBindedToApiV2Request.throttleId)
             && Objects.equals(this.throttleName, listRequestThrottlingPoliciesBindedToApiV2Request.throttleName)
-            && Objects.equals(this.envId, listRequestThrottlingPoliciesBindedToApiV2Request.envId)
-            && Objects.equals(this.offset, listRequestThrottlingPoliciesBindedToApiV2Request.offset)
-            && Objects.equals(this.limit, listRequestThrottlingPoliciesBindedToApiV2Request.limit);
+            && Objects.equals(this.envId, listRequestThrottlingPoliciesBindedToApiV2Request.envId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, apiId, throttleId, throttleName, envId, offset, limit);
+        return Objects.hash(instanceId, offset, limit, apiId, throttleId, throttleName, envId);
     }
 
     @Override
@@ -184,12 +184,12 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRequestThrottlingPoliciesBindedToApiV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
         sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    throttleName: ").append(toIndentedString(throttleName)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

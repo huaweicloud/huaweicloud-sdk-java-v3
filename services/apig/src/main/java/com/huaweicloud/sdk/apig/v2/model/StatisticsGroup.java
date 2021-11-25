@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.apig.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
@@ -18,7 +17,7 @@ public class StatisticsGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_latency")
 
-    private BigDecimal avgLatency;
+    private Float avgLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count")
@@ -96,7 +95,7 @@ public class StatisticsGroup {
         this.maxLatency = maxLatency;
     }
 
-    public StatisticsGroup withAvgLatency(BigDecimal avgLatency) {
+    public StatisticsGroup withAvgLatency(Float avgLatency) {
         this.avgLatency = avgLatency;
         return this;
     }
@@ -104,11 +103,11 @@ public class StatisticsGroup {
     /** 平均延时 单位：ms
      * 
      * @return avgLatency */
-    public BigDecimal getAvgLatency() {
+    public Float getAvgLatency() {
         return avgLatency;
     }
 
-    public void setAvgLatency(BigDecimal avgLatency) {
+    public void setAvgLatency(Float avgLatency) {
         this.avgLatency = avgLatency;
     }
 

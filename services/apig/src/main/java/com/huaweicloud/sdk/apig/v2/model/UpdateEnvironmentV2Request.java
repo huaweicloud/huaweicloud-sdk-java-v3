@@ -22,14 +22,14 @@ public class UpdateEnvironmentV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private EnvReq body;
+    private EnvCreate body;
 
     public UpdateEnvironmentV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -45,7 +45,7 @@ public class UpdateEnvironmentV2Request {
         return this;
     }
 
-    /** 环境的ID，可通过查询环境信息获取该ID
+    /** 环境的ID
      * 
      * @return envId */
     public String getEnvId() {
@@ -56,14 +56,14 @@ public class UpdateEnvironmentV2Request {
         this.envId = envId;
     }
 
-    public UpdateEnvironmentV2Request withBody(EnvReq body) {
+    public UpdateEnvironmentV2Request withBody(EnvCreate body) {
         this.body = body;
         return this;
     }
 
-    public UpdateEnvironmentV2Request withBody(Consumer<EnvReq> bodySetter) {
+    public UpdateEnvironmentV2Request withBody(Consumer<EnvCreate> bodySetter) {
         if (this.body == null) {
-            this.body = new EnvReq();
+            this.body = new EnvCreate();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class UpdateEnvironmentV2Request {
     /** Get body
      * 
      * @return body */
-    public EnvReq getBody() {
+    public EnvCreate getBody() {
         return body;
     }
 
-    public void setBody(EnvReq body) {
+    public void setBody(EnvCreate body) {
         this.body = body;
     }
 

@@ -22,11 +22,6 @@ public class VpcCreate {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private Integer type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
     private Integer port;
@@ -34,37 +29,37 @@ public class VpcCreate {
     /** 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri） VPC通道类型为2时必选。 */
     public static final class BalanceStrategyEnum {
 
-        /** Enum NUMBER_1 for value: 1l */
-        public static final BalanceStrategyEnum NUMBER_1 = new BalanceStrategyEnum(1l);
+        /** Enum NUMBER_1 for value: 1 */
+        public static final BalanceStrategyEnum NUMBER_1 = new BalanceStrategyEnum(1);
 
-        /** Enum NUMBER_2 for value: 2l */
-        public static final BalanceStrategyEnum NUMBER_2 = new BalanceStrategyEnum(2l);
+        /** Enum NUMBER_2 for value: 2 */
+        public static final BalanceStrategyEnum NUMBER_2 = new BalanceStrategyEnum(2);
 
-        /** Enum NUMBER_3 for value: 3l */
-        public static final BalanceStrategyEnum NUMBER_3 = new BalanceStrategyEnum(3l);
+        /** Enum NUMBER_3 for value: 3 */
+        public static final BalanceStrategyEnum NUMBER_3 = new BalanceStrategyEnum(3);
 
-        /** Enum NUMBER_4 for value: 4l */
-        public static final BalanceStrategyEnum NUMBER_4 = new BalanceStrategyEnum(4l);
+        /** Enum NUMBER_4 for value: 4 */
+        public static final BalanceStrategyEnum NUMBER_4 = new BalanceStrategyEnum(4);
 
-        private static final Map<Long, BalanceStrategyEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<Integer, BalanceStrategyEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<Long, BalanceStrategyEnum> createStaticFields() {
-            Map<Long, BalanceStrategyEnum> map = new HashMap<>();
-            map.put(1l, NUMBER_1);
-            map.put(2l, NUMBER_2);
-            map.put(3l, NUMBER_3);
-            map.put(4l, NUMBER_4);
+        private static Map<Integer, BalanceStrategyEnum> createStaticFields() {
+            Map<Integer, BalanceStrategyEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            map.put(4, NUMBER_4);
             return Collections.unmodifiableMap(map);
         }
 
-        private Long value;
+        private Integer value;
 
-        BalanceStrategyEnum(Long value) {
+        BalanceStrategyEnum(Integer value) {
             this.value = value;
         }
 
         @JsonValue
-        public Long getValue() {
+        public Integer getValue() {
             return value;
         }
 
@@ -74,7 +69,7 @@ public class VpcCreate {
         }
 
         @JsonCreator
-        public static BalanceStrategyEnum fromValue(Long value) {
+        public static BalanceStrategyEnum fromValue(Integer value) {
             if (value == null) {
                 return null;
             }
@@ -85,7 +80,7 @@ public class VpcCreate {
             return result;
         }
 
-        public static BalanceStrategyEnum valueOf(Long value) {
+        public static BalanceStrategyEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
@@ -217,22 +212,6 @@ public class VpcCreate {
         this.name = name;
     }
 
-    public VpcCreate withType(Integer type) {
-        this.type = type;
-        return this;
-    }
-
-    /** VPC通道的类型。 - 1：私网ELB通道（待废弃） - 2：API网关内置支持负载均衡功能的快速通道类型
-     * 
-     * @return type */
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
     public VpcCreate withPort(Integer port) {
         this.port = port;
         return this;
@@ -347,8 +326,7 @@ public class VpcCreate {
             return false;
         }
         VpcCreate vpcCreate = (VpcCreate) o;
-        return Objects.equals(this.name, vpcCreate.name) && Objects.equals(this.type, vpcCreate.type)
-            && Objects.equals(this.port, vpcCreate.port)
+        return Objects.equals(this.name, vpcCreate.name) && Objects.equals(this.port, vpcCreate.port)
             && Objects.equals(this.balanceStrategy, vpcCreate.balanceStrategy)
             && Objects.equals(this.memberType, vpcCreate.memberType) && Objects.equals(this.members, vpcCreate.members)
             && Objects.equals(this.vpcHealthConfig, vpcCreate.vpcHealthConfig);
@@ -356,7 +334,7 @@ public class VpcCreate {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, port, balanceStrategy, memberType, members, vpcHealthConfig);
+        return Objects.hash(name, port, balanceStrategy, memberType, members, vpcHealthConfig);
     }
 
     @Override
@@ -364,7 +342,6 @@ public class VpcCreate {
         StringBuilder sb = new StringBuilder();
         sb.append("class VpcCreate {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");

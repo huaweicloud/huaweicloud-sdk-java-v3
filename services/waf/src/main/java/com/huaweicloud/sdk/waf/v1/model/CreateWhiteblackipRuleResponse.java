@@ -20,9 +20,9 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip")
+    @JsonProperty(value = "addr")
 
-    private String ip;
+    private String addr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "white")
@@ -66,20 +66,20 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
         this.policyid = policyid;
     }
 
-    public CreateWhiteblackipRuleResponse withIp(String ip) {
-        this.ip = ip;
+    public CreateWhiteblackipRuleResponse withAddr(String addr) {
+        this.addr = addr;
         return this;
     }
 
-    /** 黑白名单
+    /** 黑白名单ip地址，需要输入标准的ip地址或地址段，例如：42.123.120.66或42.123.120.0/16
      * 
-     * @return ip */
-    public String getIp() {
-        return ip;
+     * @return addr */
+    public String getAddr() {
+        return addr;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip;
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
 
     public CreateWhiteblackipRuleResponse withWhite(Integer white) {
@@ -87,7 +87,7 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 类型，0拦截，1放行
+    /** 防护动作： - 0 拦截 - 1 放行 - 2 仅记录
      * 
      * @return white */
     public Integer getWhite() {
@@ -103,7 +103,7 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建规则的时间戳
+    /** 创建规则的时间戳,13位毫秒时间戳
      * 
      * @return timestamp */
     public Long getTimestamp() {
@@ -125,14 +125,14 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
         CreateWhiteblackipRuleResponse createWhiteblackipRuleResponse = (CreateWhiteblackipRuleResponse) o;
         return Objects.equals(this.id, createWhiteblackipRuleResponse.id)
             && Objects.equals(this.policyid, createWhiteblackipRuleResponse.policyid)
-            && Objects.equals(this.ip, createWhiteblackipRuleResponse.ip)
+            && Objects.equals(this.addr, createWhiteblackipRuleResponse.addr)
             && Objects.equals(this.white, createWhiteblackipRuleResponse.white)
             && Objects.equals(this.timestamp, createWhiteblackipRuleResponse.timestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, ip, white, timestamp);
+        return Objects.hash(id, policyid, addr, white, timestamp);
     }
 
     @Override
@@ -141,7 +141,7 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
         sb.append("class CreateWhiteblackipRuleResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");

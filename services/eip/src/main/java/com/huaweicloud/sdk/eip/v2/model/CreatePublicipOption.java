@@ -99,6 +99,11 @@ public class CreatePublicipOption {
 
     private IpVersionEnum ipVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
     public CreatePublicipOption withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
@@ -150,6 +155,22 @@ public class CreatePublicipOption {
         this.ipVersion = ipVersion;
     }
 
+    public CreatePublicipOption withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /** 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * 
+     * @return alias */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -161,12 +182,13 @@ public class CreatePublicipOption {
         CreatePublicipOption createPublicipOption = (CreatePublicipOption) o;
         return Objects.equals(this.ipAddress, createPublicipOption.ipAddress)
             && Objects.equals(this.type, createPublicipOption.type)
-            && Objects.equals(this.ipVersion, createPublicipOption.ipVersion);
+            && Objects.equals(this.ipVersion, createPublicipOption.ipVersion)
+            && Objects.equals(this.alias, createPublicipOption.alias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ipAddress, type, ipVersion);
+        return Objects.hash(ipAddress, type, ipVersion, alias);
     }
 
     @Override
@@ -176,6 +198,7 @@ public class CreatePublicipOption {
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

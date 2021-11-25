@@ -76,7 +76,7 @@ public class CreatePremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
+    /** 域名id
      * 
      * @return hostname */
     public String getHostname() {

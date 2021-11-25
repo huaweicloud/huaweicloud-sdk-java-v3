@@ -15,19 +15,19 @@ public class ListServiceConnectionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connections")
 
-    private List<Endpoints> connections = null;
+    private List<Connection> connections = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListServiceConnectionsResponse withConnections(List<Endpoints> connections) {
+    public ListServiceConnectionsResponse withConnections(List<Connection> connections) {
         this.connections = connections;
         return this;
     }
 
-    public ListServiceConnectionsResponse addConnectionsItem(Endpoints connectionsItem) {
+    public ListServiceConnectionsResponse addConnectionsItem(Connection connectionsItem) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -35,7 +35,7 @@ public class ListServiceConnectionsResponse extends SdkResponse {
         return this;
     }
 
-    public ListServiceConnectionsResponse withConnections(Consumer<List<Endpoints>> connectionsSetter) {
+    public ListServiceConnectionsResponse withConnections(Consumer<List<Connection>> connectionsSetter) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -46,11 +46,11 @@ public class ListServiceConnectionsResponse extends SdkResponse {
     /** 连接列表。
      * 
      * @return connections */
-    public List<Endpoints> getConnections() {
+    public List<Connection> getConnections() {
         return connections;
     }
 
-    public void setConnections(List<Endpoints> connections) {
+    public void setConnections(List<Connection> connections) {
         this.connections = connections;
     }
 
@@ -59,7 +59,7 @@ public class ListServiceConnectionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 满足查询条件的终端节点总条数，不受分 页（即limit、offset参数）影响。
+    /** 满足查询条件的终端节点总条数，不受分页（即limit、offset参数）影响。
      * 
      * @return totalCount */
     public Integer getTotalCount() {

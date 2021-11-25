@@ -199,6 +199,24 @@ public class RomaClient {
             RomaMeta.batchFreezeDevices, hcClient);
     }
 
+    /** 批量启动\\停止任务 批量启动\\停止任务
+     *
+     * @param BatchStartOrStopTasksRequest 请求对象
+     * @return BatchStartOrStopTasksResponse */
+    public BatchStartOrStopTasksResponse batchStartOrStopTasks(BatchStartOrStopTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.batchStartOrStopTasks);
+    }
+
+    /** 批量启动\\停止任务 批量启动\\停止任务
+     *
+     * @param BatchStartOrStopTasksRequest 请求对象
+     * @return SyncInvoker<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> */
+    public SyncInvoker<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> batchStartOrStopTasksInvoker(
+        BatchStartOrStopTasksRequest request) {
+        return new SyncInvoker<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse>(request,
+            RomaMeta.batchStartOrStopTasks, hcClient);
+    }
+
     /** 校验自定义后端API定义 校验自定义后端API定义。校验自定义后端API的路径或名称是否已存在
      *
      * @param CheckLivedataApisV2Request 请求对象
@@ -321,6 +339,24 @@ public class RomaClient {
         return new SyncInvoker<CreateCommandRequest, CreateCommandResponse>(request, RomaMeta.createCommand, hcClient);
     }
 
+    /** 创建普通任务 创建普通任务(区别于组合任务)
+     *
+     * @param CreateCommonTaskRequest 请求对象
+     * @return CreateCommonTaskResponse */
+    public CreateCommonTaskResponse createCommonTask(CreateCommonTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createCommonTask);
+    }
+
+    /** 创建普通任务 创建普通任务(区别于组合任务)
+     *
+     * @param CreateCommonTaskRequest 请求对象
+     * @return SyncInvoker<CreateCommonTaskRequest, CreateCommonTaskResponse> */
+    public SyncInvoker<CreateCommonTaskRequest, CreateCommonTaskResponse> createCommonTaskInvoker(
+        CreateCommonTaskRequest request) {
+        return new SyncInvoker<CreateCommonTaskRequest, CreateCommonTaskResponse>(request, RomaMeta.createCommonTask,
+            hcClient);
+    }
+
     /** 创建自定义认证 创建自定义认证
      *
      * @param CreateCustomAuthorizerV2Request 请求对象
@@ -337,6 +373,24 @@ public class RomaClient {
         CreateCustomAuthorizerV2Request request) {
         return new SyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>(request,
             RomaMeta.createCustomAuthorizerV2, hcClient);
+    }
+
+    /** 创建数据源 创建数据源
+     *
+     * @param CreateDatasourceInfoRequest 请求对象
+     * @return CreateDatasourceInfoResponse */
+    public CreateDatasourceInfoResponse createDatasourceInfo(CreateDatasourceInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createDatasourceInfo);
+    }
+
+    /** 创建数据源 创建数据源
+     *
+     * @param CreateDatasourceInfoRequest 请求对象
+     * @return SyncInvoker<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> */
+    public SyncInvoker<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> createDatasourceInfoInvoker(
+        CreateDatasourceInfoRequest request) {
+        return new SyncInvoker<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse>(request,
+            RomaMeta.createDatasourceInfo, hcClient);
     }
 
     /** 添加目标数据源 添加目标数据源
@@ -388,6 +442,24 @@ public class RomaClient {
     public SyncInvoker<CreateDeviceGroupRequest, CreateDeviceGroupResponse> createDeviceGroupInvoker(
         CreateDeviceGroupRequest request) {
         return new SyncInvoker<CreateDeviceGroupRequest, CreateDeviceGroupResponse>(request, RomaMeta.createDeviceGroup,
+            hcClient);
+    }
+
+    /** 创建调度计划 创建调度计划
+     *
+     * @param CreateDispatchesRequest 请求对象
+     * @return CreateDispatchesResponse */
+    public CreateDispatchesResponse createDispatches(CreateDispatchesRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createDispatches);
+    }
+
+    /** 创建调度计划 创建调度计划
+     *
+     * @param CreateDispatchesRequest 请求对象
+     * @return SyncInvoker<CreateDispatchesRequest, CreateDispatchesResponse> */
+    public SyncInvoker<CreateDispatchesRequest, CreateDispatchesResponse> createDispatchesInvoker(
+        CreateDispatchesRequest request) {
+        return new SyncInvoker<CreateDispatchesRequest, CreateDispatchesResponse>(request, RomaMeta.createDispatches,
             hcClient);
     }
 
@@ -888,6 +960,24 @@ public class RomaClient {
             RomaMeta.deleteCustomAuthorizerV2, hcClient);
     }
 
+    /** 通过数据源Id删除指定数据源信息 通过数据源Id删除指定数据源信息
+     *
+     * @param DeleteDatasourceInfoByIdRequest 请求对象
+     * @return DeleteDatasourceInfoByIdResponse */
+    public DeleteDatasourceInfoByIdResponse deleteDatasourceInfoById(DeleteDatasourceInfoByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.deleteDatasourceInfoById);
+    }
+
+    /** 通过数据源Id删除指定数据源信息 通过数据源Id删除指定数据源信息
+     *
+     * @param DeleteDatasourceInfoByIdRequest 请求对象
+     * @return SyncInvoker<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> */
+    public SyncInvoker<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> deleteDatasourceInfoByIdInvoker(
+        DeleteDatasourceInfoByIdRequest request) {
+        return new SyncInvoker<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse>(request,
+            RomaMeta.deleteDatasourceInfoById, hcClient);
+    }
+
     /** 删除目标数据源 删除目标数据源
      *
      * @param DeleteDestinationRequest 请求对象
@@ -1259,6 +1349,22 @@ public class RomaClient {
             request, RomaMeta.deleteSpecialThrottlingConfigurationV2, hcClient);
     }
 
+    /** 通过任务ID删除指定任务 通过任务ID删除指定任务
+     *
+     * @param DeleteTaskRequest 请求对象
+     * @return DeleteTaskResponse */
+    public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.deleteTask);
+    }
+
+    /** 通过任务ID删除指定任务 通过任务ID删除指定任务
+     *
+     * @param DeleteTaskRequest 请求对象
+     * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> */
+    public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
+        return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, RomaMeta.deleteTask, hcClient);
+    }
+
     /** 解除客户端配额和客户端应用的绑定 解除客户端配额和客户端应用的绑定
      *
      * @param DisassociateAppQuotaWithAppRequest 请求对象
@@ -1559,6 +1665,60 @@ public class RomaClient {
         ListCustomAuthorizersV2Request request) {
         return new SyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>(request,
             RomaMeta.listCustomAuthorizersV2, hcClient);
+    }
+
+    /** 获取数据源中某个表中所有字段 获取数据源中中某个表中所有字段
+     *
+     * @param ListDatasourceColumnsRequest 请求对象
+     * @return ListDatasourceColumnsResponse */
+    public ListDatasourceColumnsResponse listDatasourceColumns(ListDatasourceColumnsRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listDatasourceColumns);
+    }
+
+    /** 获取数据源中某个表中所有字段 获取数据源中中某个表中所有字段
+     *
+     * @param ListDatasourceColumnsRequest 请求对象
+     * @return SyncInvoker<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> */
+    public SyncInvoker<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> listDatasourceColumnsInvoker(
+        ListDatasourceColumnsRequest request) {
+        return new SyncInvoker<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse>(request,
+            RomaMeta.listDatasourceColumns, hcClient);
+    }
+
+    /** 获取数据源中所有的表 获取数据源中所有的表
+     *
+     * @param ListDatasourceTablesRequest 请求对象
+     * @return ListDatasourceTablesResponse */
+    public ListDatasourceTablesResponse listDatasourceTables(ListDatasourceTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listDatasourceTables);
+    }
+
+    /** 获取数据源中所有的表 获取数据源中所有的表
+     *
+     * @param ListDatasourceTablesRequest 请求对象
+     * @return SyncInvoker<ListDatasourceTablesRequest, ListDatasourceTablesResponse> */
+    public SyncInvoker<ListDatasourceTablesRequest, ListDatasourceTablesResponse> listDatasourceTablesInvoker(
+        ListDatasourceTablesRequest request) {
+        return new SyncInvoker<ListDatasourceTablesRequest, ListDatasourceTablesResponse>(request,
+            RomaMeta.listDatasourceTables, hcClient);
+    }
+
+    /** 查询数据源 查询数据源
+     *
+     * @param ListDatasourcesRequest 请求对象
+     * @return ListDatasourcesResponse */
+    public ListDatasourcesResponse listDatasources(ListDatasourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listDatasources);
+    }
+
+    /** 查询数据源 查询数据源
+     *
+     * @param ListDatasourcesRequest 请求对象
+     * @return SyncInvoker<ListDatasourcesRequest, ListDatasourcesResponse> */
+    public SyncInvoker<ListDatasourcesRequest, ListDatasourcesResponse> listDatasourcesInvoker(
+        ListDatasourcesRequest request) {
+        return new SyncInvoker<ListDatasourcesRequest, ListDatasourcesResponse>(request, RomaMeta.listDatasources,
+            hcClient);
     }
 
     /** 查询目标数据源列表 查询目标数据源列表
@@ -2165,6 +2325,22 @@ public class RomaClient {
         return new SyncInvoker<ListTagsV2Request, ListTagsV2Response>(request, RomaMeta.listTagsV2, hcClient);
     }
 
+    /** 查询任务列表 查询任务列表
+     *
+     * @param ListTasksRequest 请求对象
+     * @return ListTasksResponse */
+    public ListTasksResponse listTasks(ListTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listTasks);
+    }
+
+    /** 查询任务列表 查询任务列表
+     *
+     * @param ListTasksRequest 请求对象
+     * @return SyncInvoker<ListTasksRequest, ListTasksResponse> */
+    public SyncInvoker<ListTasksRequest, ListTasksResponse> listTasksInvoker(ListTasksRequest request) {
+        return new SyncInvoker<ListTasksRequest, ListTasksResponse>(request, RomaMeta.listTasks, hcClient);
+    }
+
     /** 查询设备主题 查询设备主题
      *
      * @param ListTopicsRequest 请求对象
@@ -2349,6 +2525,24 @@ public class RomaClient {
      * @return SyncInvoker<ShowCommandRequest, ShowCommandResponse> */
     public SyncInvoker<ShowCommandRequest, ShowCommandResponse> showCommandInvoker(ShowCommandRequest request) {
         return new SyncInvoker<ShowCommandRequest, ShowCommandResponse>(request, RomaMeta.showCommand, hcClient);
+    }
+
+    /** 查询指定数据源 根据数据源id查询数据源
+     *
+     * @param ShowDataourceDetailRequest 请求对象
+     * @return ShowDataourceDetailResponse */
+    public ShowDataourceDetailResponse showDataourceDetail(ShowDataourceDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showDataourceDetail);
+    }
+
+    /** 查询指定数据源 根据数据源id查询数据源
+     *
+     * @param ShowDataourceDetailRequest 请求对象
+     * @return SyncInvoker<ShowDataourceDetailRequest, ShowDataourceDetailResponse> */
+    public SyncInvoker<ShowDataourceDetailRequest, ShowDataourceDetailResponse> showDataourceDetailInvoker(
+        ShowDataourceDetailRequest request) {
+        return new SyncInvoker<ShowDataourceDetailRequest, ShowDataourceDetailResponse>(request,
+            RomaMeta.showDataourceDetail, hcClient);
     }
 
     /** 查看APP的访问控制详情 查看APP的访问控制详情。
@@ -2570,6 +2764,24 @@ public class RomaClient {
             RomaMeta.showDevicesInGroup, hcClient);
     }
 
+    /** 查询调度计划 查询调度计划
+     *
+     * @param ShowDispatchesRequest 请求对象
+     * @return ShowDispatchesResponse */
+    public ShowDispatchesResponse showDispatches(ShowDispatchesRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showDispatches);
+    }
+
+    /** 查询调度计划 查询调度计划
+     *
+     * @param ShowDispatchesRequest 请求对象
+     * @return SyncInvoker<ShowDispatchesRequest, ShowDispatchesResponse> */
+    public SyncInvoker<ShowDispatchesRequest, ShowDispatchesResponse> showDispatchesInvoker(
+        ShowDispatchesRequest request) {
+        return new SyncInvoker<ShowDispatchesRequest, ShowDispatchesResponse>(request, RomaMeta.showDispatches,
+            hcClient);
+    }
+
     /** 查询后端API详情 查询后端API的详细信息。
      *
      * @param ShowLiveDataApiV2Request 请求对象
@@ -2761,6 +2973,56 @@ public class RomaClient {
         return new SyncInvoker<ShowServiceRequest, ShowServiceResponse>(request, RomaMeta.showService, hcClient);
     }
 
+    /** 通过任务ID查询指定任务的信息 通过任务ID查询指定任务的信息
+     *
+     * @param ShowTaskRequest 请求对象
+     * @return ShowTaskResponse */
+    public ShowTaskResponse showTask(ShowTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showTask);
+    }
+
+    /** 通过任务ID查询指定任务的信息 通过任务ID查询指定任务的信息
+     *
+     * @param ShowTaskRequest 请求对象
+     * @return SyncInvoker<ShowTaskRequest, ShowTaskResponse> */
+    public SyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskInvoker(ShowTaskRequest request) {
+        return new SyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, RomaMeta.showTask, hcClient);
+    }
+
+    /** 测试数据源连通性 测试数据源连通性
+     *
+     * @param StartTestDatasourceRequest 请求对象
+     * @return StartTestDatasourceResponse */
+    public StartTestDatasourceResponse startTestDatasource(StartTestDatasourceRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.startTestDatasource);
+    }
+
+    /** 测试数据源连通性 测试数据源连通性
+     *
+     * @param StartTestDatasourceRequest 请求对象
+     * @return SyncInvoker<StartTestDatasourceRequest, StartTestDatasourceResponse> */
+    public SyncInvoker<StartTestDatasourceRequest, StartTestDatasourceResponse> startTestDatasourceInvoker(
+        StartTestDatasourceRequest request) {
+        return new SyncInvoker<StartTestDatasourceRequest, StartTestDatasourceResponse>(request,
+            RomaMeta.startTestDatasource, hcClient);
+    }
+
+    /** 手工停止当前执行的任务 手工停止当前执行的任务
+     *
+     * @param StopTaskRequest 请求对象
+     * @return StopTaskResponse */
+    public StopTaskResponse stopTask(StopTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.stopTask);
+    }
+
+    /** 手工停止当前执行的任务 手工停止当前执行的任务
+     *
+     * @param StopTaskRequest 请求对象
+     * @return SyncInvoker<StopTaskRequest, StopTaskResponse> */
+    public SyncInvoker<StopTaskRequest, StopTaskResponse> stopTaskInvoker(StopTaskRequest request) {
+        return new SyncInvoker<StopTaskRequest, StopTaskResponse>(request, RomaMeta.stopTask, hcClient);
+    }
+
     /** 撤销后端API 在某个实例中取消部署后端API。
      *
      * @param UnpublishLiveDataApiV2Request 请求对象
@@ -2865,6 +3127,24 @@ public class RomaClient {
             RomaMeta.updateCustomAuthorizerV2, hcClient);
     }
 
+    /** 修改数据源 修改数据源
+     *
+     * @param UpdateDatasourceInfoRequest 请求对象
+     * @return UpdateDatasourceInfoResponse */
+    public UpdateDatasourceInfoResponse updateDatasourceInfo(UpdateDatasourceInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateDatasourceInfo);
+    }
+
+    /** 修改数据源 修改数据源
+     *
+     * @param UpdateDatasourceInfoRequest 请求对象
+     * @return SyncInvoker<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> */
+    public SyncInvoker<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> updateDatasourceInfoInvoker(
+        UpdateDatasourceInfoRequest request) {
+        return new SyncInvoker<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse>(request,
+            RomaMeta.updateDatasourceInfo, hcClient);
+    }
+
     /** 修改设备 修改设备信息
      *
      * @param UpdateDeviceRequest 请求对象
@@ -2896,6 +3176,24 @@ public class RomaClient {
     public SyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> updateDeviceGroupInvoker(
         UpdateDeviceGroupRequest request) {
         return new SyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse>(request, RomaMeta.updateDeviceGroup,
+            hcClient);
+    }
+
+    /** 修改调度计划 通过任务ID和调度ID修改调度计划
+     *
+     * @param UpdateDispatchesRequest 请求对象
+     * @return UpdateDispatchesResponse */
+    public UpdateDispatchesResponse updateDispatches(UpdateDispatchesRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateDispatches);
+    }
+
+    /** 修改调度计划 通过任务ID和调度ID修改调度计划
+     *
+     * @param UpdateDispatchesRequest 请求对象
+     * @return SyncInvoker<UpdateDispatchesRequest, UpdateDispatchesResponse> */
+    public SyncInvoker<UpdateDispatchesRequest, UpdateDispatchesResponse> updateDispatchesInvoker(
+        UpdateDispatchesRequest request) {
+        return new SyncInvoker<UpdateDispatchesRequest, UpdateDispatchesResponse>(request, RomaMeta.updateDispatches,
             hcClient);
     }
 
@@ -3200,6 +3498,22 @@ public class RomaClient {
         UpdateSpecialThrottlingConfigurationV2Request request) {
         return new SyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>(
             request, RomaMeta.updateSpecialThrottlingConfigurationV2, hcClient);
+    }
+
+    /** 更新普通任务 更新普通任务
+     *
+     * @param UpdateTaskRequest 请求对象
+     * @return UpdateTaskResponse */
+    public UpdateTaskResponse updateTask(UpdateTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateTask);
+    }
+
+    /** 更新普通任务 更新普通任务
+     *
+     * @param UpdateTaskRequest 请求对象
+     * @return SyncInvoker<UpdateTaskRequest, UpdateTaskResponse> */
+    public SyncInvoker<UpdateTaskRequest, UpdateTaskResponse> updateTaskInvoker(UpdateTaskRequest request) {
+        return new SyncInvoker<UpdateTaskRequest, UpdateTaskResponse>(request, RomaMeta.updateTask, hcClient);
     }
 
     /** 更新Topic权限 更新Topic权限。

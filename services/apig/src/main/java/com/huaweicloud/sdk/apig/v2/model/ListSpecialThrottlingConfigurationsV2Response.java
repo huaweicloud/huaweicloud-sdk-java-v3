@@ -25,7 +25,7 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "throttle_specials")
 
-    private List<ThrottleSpecialResp> throttleSpecials = null;
+    private List<ThrottleSpecialInfo> throttleSpecials = null;
 
     public ListSpecialThrottlingConfigurationsV2Response withSize(Integer size) {
         this.size = size;
@@ -60,13 +60,13 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
     }
 
     public ListSpecialThrottlingConfigurationsV2Response withThrottleSpecials(
-        List<ThrottleSpecialResp> throttleSpecials) {
+        List<ThrottleSpecialInfo> throttleSpecials) {
         this.throttleSpecials = throttleSpecials;
         return this;
     }
 
     public ListSpecialThrottlingConfigurationsV2Response addThrottleSpecialsItem(
-        ThrottleSpecialResp throttleSpecialsItem) {
+        ThrottleSpecialInfo throttleSpecialsItem) {
         if (this.throttleSpecials == null) {
             this.throttleSpecials = new ArrayList<>();
         }
@@ -75,7 +75,7 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
     }
 
     public ListSpecialThrottlingConfigurationsV2Response withThrottleSpecials(
-        Consumer<List<ThrottleSpecialResp>> throttleSpecialsSetter) {
+        Consumer<List<ThrottleSpecialInfo>> throttleSpecialsSetter) {
         if (this.throttleSpecials == null) {
             this.throttleSpecials = new ArrayList<>();
         }
@@ -86,11 +86,11 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
     /** 本次查询返回的特殊配置列表
      * 
      * @return throttleSpecials */
-    public List<ThrottleSpecialResp> getThrottleSpecials() {
+    public List<ThrottleSpecialInfo> getThrottleSpecials() {
         return throttleSpecials;
     }
 
-    public void setThrottleSpecials(List<ThrottleSpecialResp> throttleSpecials) {
+    public void setThrottleSpecials(List<ThrottleSpecialInfo> throttleSpecials) {
         this.throttleSpecials = throttleSpecials;
     }
 

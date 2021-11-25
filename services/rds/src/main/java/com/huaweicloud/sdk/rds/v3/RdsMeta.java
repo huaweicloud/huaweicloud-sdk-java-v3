@@ -1546,6 +1546,13 @@ public class RdsMeta {
             f -> f.withMarshaller(ListSlowlogStatisticsRequest::getType, (req, v) -> {
                 req.setType(v);
             }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowlogStatisticsRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
         builder.<ListSlowlogStatisticsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

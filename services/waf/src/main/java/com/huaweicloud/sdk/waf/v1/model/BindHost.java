@@ -65,7 +65,7 @@ public class BindHost {
         return this;
     }
 
-    /** 域名对应模式：cloud/premium
+    /** 域名对应模式：cloud（云模式）/premium（独享模式）
      * 
      * @return wafType */
     public String getWafType() {
@@ -81,7 +81,7 @@ public class BindHost {
         return this;
     }
 
-    /** （仅独享模式）特殊域名模式
+    /** 仅独享模式涉及特殊域名模式
      * 
      * @return mode */
     public String getMode() {

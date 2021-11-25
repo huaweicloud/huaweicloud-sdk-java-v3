@@ -73,6 +73,11 @@ public class QueryResRecordsDetailReq {
 
     private String subCustomerId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statistic_type")
+
+    private Integer statisticType;
+
     public QueryResRecordsDetailReq withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -282,6 +287,22 @@ public class QueryResRecordsDetailReq {
         this.subCustomerId = subCustomerId;
     }
 
+    public QueryResRecordsDetailReq withStatisticType(Integer statisticType) {
+        this.statisticType = statisticType;
+        return this;
+    }
+
+    /** 统计类型。默认值为1。 1：按账期2：按天 minimum: 1 maximum: 2
+     * 
+     * @return statisticType */
+    public Integer getStatisticType() {
+        return statisticType;
+    }
+
+    public void setStatisticType(Integer statisticType) {
+        this.statisticType = statisticType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -303,7 +324,8 @@ public class QueryResRecordsDetailReq {
             && Objects.equals(this.offset, queryResRecordsDetailReq.offset)
             && Objects.equals(this.limit, queryResRecordsDetailReq.limit)
             && Objects.equals(this.method, queryResRecordsDetailReq.method)
-            && Objects.equals(this.subCustomerId, queryResRecordsDetailReq.subCustomerId);
+            && Objects.equals(this.subCustomerId, queryResRecordsDetailReq.subCustomerId)
+            && Objects.equals(this.statisticType, queryResRecordsDetailReq.statisticType);
     }
 
     @Override
@@ -320,7 +342,8 @@ public class QueryResRecordsDetailReq {
             offset,
             limit,
             method,
-            subCustomerId);
+            subCustomerId,
+            statisticType);
     }
 
     @Override
@@ -340,6 +363,7 @@ public class QueryResRecordsDetailReq {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    subCustomerId: ").append(toIndentedString(subCustomerId)).append("\n");
+        sb.append("    statisticType: ").append(toIndentedString(statisticType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

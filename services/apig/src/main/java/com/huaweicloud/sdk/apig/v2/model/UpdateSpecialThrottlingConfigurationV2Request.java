@@ -27,14 +27,14 @@ public class UpdateSpecialThrottlingConfigurationV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ThrottleSpecialUpdateReq body;
+    private ThrottleSpecialUpdate body;
 
     public UpdateSpecialThrottlingConfigurationV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -50,7 +50,7 @@ public class UpdateSpecialThrottlingConfigurationV2Request {
         return this;
     }
 
-    /** 流控策略的ID
+    /** 流控策略的编号
      * 
      * @return throttleId */
     public String getThrottleId() {
@@ -77,14 +77,14 @@ public class UpdateSpecialThrottlingConfigurationV2Request {
         this.strategyId = strategyId;
     }
 
-    public UpdateSpecialThrottlingConfigurationV2Request withBody(ThrottleSpecialUpdateReq body) {
+    public UpdateSpecialThrottlingConfigurationV2Request withBody(ThrottleSpecialUpdate body) {
         this.body = body;
         return this;
     }
 
-    public UpdateSpecialThrottlingConfigurationV2Request withBody(Consumer<ThrottleSpecialUpdateReq> bodySetter) {
+    public UpdateSpecialThrottlingConfigurationV2Request withBody(Consumer<ThrottleSpecialUpdate> bodySetter) {
         if (this.body == null) {
-            this.body = new ThrottleSpecialUpdateReq();
+            this.body = new ThrottleSpecialUpdate();
             bodySetter.accept(this.body);
         }
 
@@ -94,11 +94,11 @@ public class UpdateSpecialThrottlingConfigurationV2Request {
     /** Get body
      * 
      * @return body */
-    public ThrottleSpecialUpdateReq getBody() {
+    public ThrottleSpecialUpdate getBody() {
         return body;
     }
 
-    public void setBody(ThrottleSpecialUpdateReq body) {
+    public void setBody(ThrottleSpecialUpdate body) {
         this.body = body;
     }
 

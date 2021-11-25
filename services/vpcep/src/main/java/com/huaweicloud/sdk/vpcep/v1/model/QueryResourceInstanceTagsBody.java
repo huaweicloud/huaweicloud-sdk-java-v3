@@ -14,22 +14,22 @@ public class QueryResourceInstanceTagsBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TagValuesList> tags = null;
+    private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags_any")
 
-    private List<TagAnyValuesList> tagsAny = null;
+    private List<Tag> tagsAny = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags")
 
-    private List<NotTagsValuesList> notTags = null;
+    private List<Tag> notTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags_any")
 
-    private List<NotTagsAnyValuesList> notTagsAny = null;
+    private List<Tag> notTagsAny = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -49,14 +49,14 @@ public class QueryResourceInstanceTagsBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matches")
 
-    private List<TagMatchList> matches = null;
+    private List<Match> matches = null;
 
-    public QueryResourceInstanceTagsBody withTags(List<TagValuesList> tags) {
+    public QueryResourceInstanceTagsBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public QueryResourceInstanceTagsBody addTagsItem(TagValuesList tagsItem) {
+    public QueryResourceInstanceTagsBody addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -64,7 +64,7 @@ public class QueryResourceInstanceTagsBody {
         return this;
     }
 
-    public QueryResourceInstanceTagsBody withTags(Consumer<List<TagValuesList>> tagsSetter) {
+    public QueryResourceInstanceTagsBody withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -76,20 +76,20 @@ public class QueryResourceInstanceTagsBody {
      * key之间是与的关系，key-value结 构中value是或的关系。无tag过滤 条件时返回全量数据。
      * 
      * @return tags */
-    public List<TagValuesList> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TagValuesList> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 
-    public QueryResourceInstanceTagsBody withTagsAny(List<TagAnyValuesList> tagsAny) {
+    public QueryResourceInstanceTagsBody withTagsAny(List<Tag> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
     }
 
-    public QueryResourceInstanceTagsBody addTagsAnyItem(TagAnyValuesList tagsAnyItem) {
+    public QueryResourceInstanceTagsBody addTagsAnyItem(Tag tagsAnyItem) {
         if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
@@ -97,7 +97,7 @@ public class QueryResourceInstanceTagsBody {
         return this;
     }
 
-    public QueryResourceInstanceTagsBody withTagsAny(Consumer<List<TagAnyValuesList>> tagsAnySetter) {
+    public QueryResourceInstanceTagsBody withTagsAny(Consumer<List<Tag>> tagsAnySetter) {
         if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
@@ -109,20 +109,20 @@ public class QueryResourceInstanceTagsBody {
      * 表，key之间是或的关系，keyvalue 结构中value是或的关系。无 过滤条件时返回全量数据。
      * 
      * @return tagsAny */
-    public List<TagAnyValuesList> getTagsAny() {
+    public List<Tag> getTagsAny() {
         return tagsAny;
     }
 
-    public void setTagsAny(List<TagAnyValuesList> tagsAny) {
+    public void setTagsAny(List<Tag> tagsAny) {
         this.tagsAny = tagsAny;
     }
 
-    public QueryResourceInstanceTagsBody withNotTags(List<NotTagsValuesList> notTags) {
+    public QueryResourceInstanceTagsBody withNotTags(List<Tag> notTags) {
         this.notTags = notTags;
         return this;
     }
 
-    public QueryResourceInstanceTagsBody addNotTagsItem(NotTagsValuesList notTagsItem) {
+    public QueryResourceInstanceTagsBody addNotTagsItem(Tag notTagsItem) {
         if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
@@ -130,7 +130,7 @@ public class QueryResourceInstanceTagsBody {
         return this;
     }
 
-    public QueryResourceInstanceTagsBody withNotTags(Consumer<List<NotTagsValuesList>> notTagsSetter) {
+    public QueryResourceInstanceTagsBody withNotTags(Consumer<List<Tag>> notTagsSetter) {
         if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
@@ -142,20 +142,20 @@ public class QueryResourceInstanceTagsBody {
      * 表，key之间是与的关系，keyvalue 结构中value是或的关系。无 过滤条件时返回全量数据。
      * 
      * @return notTags */
-    public List<NotTagsValuesList> getNotTags() {
+    public List<Tag> getNotTags() {
         return notTags;
     }
 
-    public void setNotTags(List<NotTagsValuesList> notTags) {
+    public void setNotTags(List<Tag> notTags) {
         this.notTags = notTags;
     }
 
-    public QueryResourceInstanceTagsBody withNotTagsAny(List<NotTagsAnyValuesList> notTagsAny) {
+    public QueryResourceInstanceTagsBody withNotTagsAny(List<Tag> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
     }
 
-    public QueryResourceInstanceTagsBody addNotTagsAnyItem(NotTagsAnyValuesList notTagsAnyItem) {
+    public QueryResourceInstanceTagsBody addNotTagsAnyItem(Tag notTagsAnyItem) {
         if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
@@ -163,7 +163,7 @@ public class QueryResourceInstanceTagsBody {
         return this;
     }
 
-    public QueryResourceInstanceTagsBody withNotTagsAny(Consumer<List<NotTagsAnyValuesList>> notTagsAnySetter) {
+    public QueryResourceInstanceTagsBody withNotTagsAny(Consumer<List<Tag>> notTagsAnySetter) {
         if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
@@ -175,11 +175,11 @@ public class QueryResourceInstanceTagsBody {
      * 表，key之间是与的关系，keyvalue 结构中value是或的关系。无 过滤条件时返回全量数据。
      * 
      * @return notTagsAny */
-    public List<NotTagsAnyValuesList> getNotTagsAny() {
+    public List<Tag> getNotTagsAny() {
         return notTagsAny;
     }
 
-    public void setNotTagsAny(List<NotTagsAnyValuesList> notTagsAny) {
+    public void setNotTagsAny(List<Tag> notTagsAny) {
         this.notTagsAny = notTagsAny;
     }
 
@@ -231,12 +231,12 @@ public class QueryResourceInstanceTagsBody {
         this.action = action;
     }
 
-    public QueryResourceInstanceTagsBody withMatches(List<TagMatchList> matches) {
+    public QueryResourceInstanceTagsBody withMatches(List<Match> matches) {
         this.matches = matches;
         return this;
     }
 
-    public QueryResourceInstanceTagsBody addMatchesItem(TagMatchList matchesItem) {
+    public QueryResourceInstanceTagsBody addMatchesItem(Match matchesItem) {
         if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
@@ -244,7 +244,7 @@ public class QueryResourceInstanceTagsBody {
         return this;
     }
 
-    public QueryResourceInstanceTagsBody withMatches(Consumer<List<TagMatchList>> matchesSetter) {
+    public QueryResourceInstanceTagsBody withMatches(Consumer<List<Match>> matchesSetter) {
         if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
@@ -257,11 +257,11 @@ public class QueryResourceInstanceTagsBody {
      * 只做resource_name，后续再扩 展。
      * 
      * @return matches */
-    public List<TagMatchList> getMatches() {
+    public List<Match> getMatches() {
         return matches;
     }
 
-    public void setMatches(List<TagMatchList> matches) {
+    public void setMatches(List<Match> matches) {
         this.matches = matches;
     }
 

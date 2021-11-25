@@ -184,15 +184,157 @@ public class ReqParam {
 
     private String sampleValue;
 
+    /** 是否必须 - 1：是 - 2：否 location为PATH时，required默认为1，其他场景required默认为2 */
+    public static final class RequiredEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final RequiredEnum NUMBER_1 = new RequiredEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final RequiredEnum NUMBER_2 = new RequiredEnum(2);
+
+        private static final Map<Integer, RequiredEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, RequiredEnum> createStaticFields() {
+            Map<Integer, RequiredEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        RequiredEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RequiredEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            RequiredEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new RequiredEnum(value);
+            }
+            return result;
+        }
+
+        public static RequiredEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            RequiredEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RequiredEnum) {
+                return this.value.equals(((RequiredEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required")
 
-    private Integer required;
+    private RequiredEnum required;
+
+    /** 是否开启校验 - 1：开启校验 - 2：不开启校验 */
+    public static final class ValidEnableEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final ValidEnableEnum NUMBER_1 = new ValidEnableEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final ValidEnableEnum NUMBER_2 = new ValidEnableEnum(2);
+
+        private static final Map<Integer, ValidEnableEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ValidEnableEnum> createStaticFields() {
+            Map<Integer, ValidEnableEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ValidEnableEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ValidEnableEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            ValidEnableEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ValidEnableEnum(value);
+            }
+            return result;
+        }
+
+        public static ValidEnableEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            ValidEnableEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ValidEnableEnum) {
+                return this.value.equals(((ValidEnableEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_enable")
 
-    private Integer validEnable;
+    private ValidEnableEnum validEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
@@ -234,10 +376,81 @@ public class ReqParam {
 
     private String jsonSchema;
 
+    /** 是否透传 - 1：是 - 2：否 */
+    public static final class PassThroughEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final PassThroughEnum NUMBER_1 = new PassThroughEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final PassThroughEnum NUMBER_2 = new PassThroughEnum(2);
+
+        private static final Map<Integer, PassThroughEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PassThroughEnum> createStaticFields() {
+            Map<Integer, PassThroughEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        PassThroughEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PassThroughEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PassThroughEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PassThroughEnum(value);
+            }
+            return result;
+        }
+
+        public static PassThroughEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PassThroughEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PassThroughEnum) {
+                return this.value.equals(((PassThroughEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pass_through")
 
-    private Integer passThrough;
+    private PassThroughEnum passThrough;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -324,7 +537,7 @@ public class ReqParam {
         this.sampleValue = sampleValue;
     }
 
-    public ReqParam withRequired(Integer required) {
+    public ReqParam withRequired(RequiredEnum required) {
         this.required = required;
         return this;
     }
@@ -332,15 +545,15 @@ public class ReqParam {
     /** 是否必须 - 1：是 - 2：否 location为PATH时，required默认为1，其他场景required默认为2
      * 
      * @return required */
-    public Integer getRequired() {
+    public RequiredEnum getRequired() {
         return required;
     }
 
-    public void setRequired(Integer required) {
+    public void setRequired(RequiredEnum required) {
         this.required = required;
     }
 
-    public ReqParam withValidEnable(Integer validEnable) {
+    public ReqParam withValidEnable(ValidEnableEnum validEnable) {
         this.validEnable = validEnable;
         return this;
     }
@@ -348,11 +561,11 @@ public class ReqParam {
     /** 是否开启校验 - 1：开启校验 - 2：不开启校验
      * 
      * @return validEnable */
-    public Integer getValidEnable() {
+    public ValidEnableEnum getValidEnable() {
         return validEnable;
     }
 
-    public void setValidEnable(Integer validEnable) {
+    public void setValidEnable(ValidEnableEnum validEnable) {
         this.validEnable = validEnable;
     }
 
@@ -484,7 +697,7 @@ public class ReqParam {
         this.jsonSchema = jsonSchema;
     }
 
-    public ReqParam withPassThrough(Integer passThrough) {
+    public ReqParam withPassThrough(PassThroughEnum passThrough) {
         this.passThrough = passThrough;
         return this;
     }
@@ -492,11 +705,11 @@ public class ReqParam {
     /** 是否透传 - 1：是 - 2：否
      * 
      * @return passThrough */
-    public Integer getPassThrough() {
+    public PassThroughEnum getPassThrough() {
         return passThrough;
     }
 
-    public void setPassThrough(Integer passThrough) {
+    public void setPassThrough(PassThroughEnum passThrough) {
         this.passThrough = passThrough;
     }
 

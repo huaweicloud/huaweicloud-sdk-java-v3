@@ -17,14 +17,14 @@ public class CreateAnAppV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AppReq body;
+    private AppCreate body;
 
     public CreateAnAppV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -35,14 +35,14 @@ public class CreateAnAppV2Request {
         this.instanceId = instanceId;
     }
 
-    public CreateAnAppV2Request withBody(AppReq body) {
+    public CreateAnAppV2Request withBody(AppCreate body) {
         this.body = body;
         return this;
     }
 
-    public CreateAnAppV2Request withBody(Consumer<AppReq> bodySetter) {
+    public CreateAnAppV2Request withBody(Consumer<AppCreate> bodySetter) {
         if (this.body == null) {
-            this.body = new AppReq();
+            this.body = new AppCreate();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class CreateAnAppV2Request {
     /** Get body
      * 
      * @return body */
-    public AppReq getBody() {
+    public AppCreate getBody() {
         return body;
     }
 
-    public void setBody(AppReq body) {
+    public void setBody(AppCreate body) {
         this.body = body;
     }
 

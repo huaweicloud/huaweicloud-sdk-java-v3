@@ -25,7 +25,7 @@ public class ListApiGroupsV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
 
-    private List<ApiGroupDetailResp> groups = null;
+    private List<ApiGroupInfoPage> groups = null;
 
     public ListApiGroupsV2Response withSize(Integer size) {
         this.size = size;
@@ -59,12 +59,12 @@ public class ListApiGroupsV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListApiGroupsV2Response withGroups(List<ApiGroupDetailResp> groups) {
+    public ListApiGroupsV2Response withGroups(List<ApiGroupInfoPage> groups) {
         this.groups = groups;
         return this;
     }
 
-    public ListApiGroupsV2Response addGroupsItem(ApiGroupDetailResp groupsItem) {
+    public ListApiGroupsV2Response addGroupsItem(ApiGroupInfoPage groupsItem) {
         if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ListApiGroupsV2Response extends SdkResponse {
         return this;
     }
 
-    public ListApiGroupsV2Response withGroups(Consumer<List<ApiGroupDetailResp>> groupsSetter) {
+    public ListApiGroupsV2Response withGroups(Consumer<List<ApiGroupInfoPage>> groupsSetter) {
         if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -83,11 +83,11 @@ public class ListApiGroupsV2Response extends SdkResponse {
     /** 分组列表
      * 
      * @return groups */
-    public List<ApiGroupDetailResp> getGroups() {
+    public List<ApiGroupInfoPage> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<ApiGroupDetailResp> groups) {
+    public void setGroups(List<ApiGroupInfoPage> groups) {
         this.groups = groups;
     }
 

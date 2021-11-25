@@ -33,7 +33,7 @@ public class ListServicePublicDetailsRequest {
 
     private String id;
 
-    /** 查询结果中终端节点服务列表的 排序字段，取值为： ● create_at：终端节点服务的创 建时间 ● update_at：终端节点服务的 更新时间 默认值为create_at。 */
+    /** 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。 */
     public static final class SortKeyEnum {
 
         /** Enum CREATE_AT for value: "create_at" */
@@ -109,7 +109,7 @@ public class ListServicePublicDetailsRequest {
 
     private SortKeyEnum sortKey;
 
-    /** 查询结果中终端节点服务列表的 排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。 */
+    /** 查询结果中终端节点服务列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。 */
     public static final class SortDirEnum {
 
         /** Enum ASC for value: "asc" */
@@ -190,7 +190,7 @@ public class ListServicePublicDetailsRequest {
         return this;
     }
 
-    /** 查询返回公共的终端节点服务数 量限制，即每页返回的个数。 取值范围：0~1000，取值一般为 10，20或者50，默认为10。 minimum: 1
+    /** 查询返回公共的终端节点服务数量限制，即每页返回的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。 minimum: 1
      * 
      * @return limit */
     public Integer getLimit() {
@@ -206,7 +206,7 @@ public class ListServicePublicDetailsRequest {
         return this;
     }
 
-    /** 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移 量后面的终端节点服务开始查 询。 minimum: 0
+    /** 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数，表示从偏移量后面的终端节点服务开始查询。 minimum: 0
      * 
      * @return offset */
     public Integer getOffset() {
@@ -222,7 +222,7 @@ public class ListServicePublicDetailsRequest {
         return this;
     }
 
-    /** 公共终端节点服务的名称，支持 大小写以及模糊匹配。
+    /** 公共终端节点服务的名称，支持大小写以及模糊匹配。
      * 
      * @return endpointServiceName */
     public String getEndpointServiceName() {
@@ -238,7 +238,7 @@ public class ListServicePublicDetailsRequest {
         return this;
     }
 
-    /** 公共终端节点服务的ID，唯一标 识。
+    /** 公共终端节点服务的ID，唯一标识。
      * 
      * @return id */
     public String getId() {
@@ -254,7 +254,7 @@ public class ListServicePublicDetailsRequest {
         return this;
     }
 
-    /** 查询结果中终端节点服务列表的 排序字段，取值为： ● create_at：终端节点服务的创 建时间 ● update_at：终端节点服务的 更新时间 默认值为create_at。
+    /** 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。
      * 
      * @return sortKey */
     public SortKeyEnum getSortKey() {
@@ -270,7 +270,7 @@ public class ListServicePublicDetailsRequest {
         return this;
     }
 
-    /** 查询结果中终端节点服务列表的 排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+    /** 查询结果中终端节点服务列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
      * 
      * @return sortDir */
     public SortDirEnum getSortDir() {

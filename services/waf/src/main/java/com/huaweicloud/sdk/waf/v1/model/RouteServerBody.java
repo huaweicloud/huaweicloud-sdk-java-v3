@@ -28,7 +28,7 @@ public class RouteServerBody {
         return this;
     }
 
-    /** 协议
+    /** 后端协议
      * 
      * @return backProtocol */
     public String getBackProtocol() {
@@ -44,7 +44,7 @@ public class RouteServerBody {
         return this;
     }
 
-    /** ip信息
+    /** 后端ip地址
      * 
      * @return address */
     public String getAddress() {

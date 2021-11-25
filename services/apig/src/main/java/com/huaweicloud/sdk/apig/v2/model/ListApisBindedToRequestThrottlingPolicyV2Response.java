@@ -25,7 +25,7 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apis")
 
-    private List<ThrottleBindingApiResp> apis = null;
+    private List<ApiForThrottle> apis = null;
 
     public ListApisBindedToRequestThrottlingPolicyV2Response withSize(Integer size) {
         this.size = size;
@@ -59,12 +59,12 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
         this.total = total;
     }
 
-    public ListApisBindedToRequestThrottlingPolicyV2Response withApis(List<ThrottleBindingApiResp> apis) {
+    public ListApisBindedToRequestThrottlingPolicyV2Response withApis(List<ApiForThrottle> apis) {
         this.apis = apis;
         return this;
     }
 
-    public ListApisBindedToRequestThrottlingPolicyV2Response addApisItem(ThrottleBindingApiResp apisItem) {
+    public ListApisBindedToRequestThrottlingPolicyV2Response addApisItem(ApiForThrottle apisItem) {
         if (this.apis == null) {
             this.apis = new ArrayList<>();
         }
@@ -72,8 +72,7 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
         return this;
     }
 
-    public ListApisBindedToRequestThrottlingPolicyV2Response withApis(
-        Consumer<List<ThrottleBindingApiResp>> apisSetter) {
+    public ListApisBindedToRequestThrottlingPolicyV2Response withApis(Consumer<List<ApiForThrottle>> apisSetter) {
         if (this.apis == null) {
             this.apis = new ArrayList<>();
         }
@@ -84,11 +83,11 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
     /** 本次查询返回的API列表
      * 
      * @return apis */
-    public List<ThrottleBindingApiResp> getApis() {
+    public List<ApiForThrottle> getApis() {
         return apis;
     }
 
-    public void setApis(List<ThrottleBindingApiResp> apis) {
+    public void setApis(List<ApiForThrottle> apis) {
         this.apis = apis;
     }
 

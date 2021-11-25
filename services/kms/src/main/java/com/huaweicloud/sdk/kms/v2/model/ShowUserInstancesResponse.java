@@ -1,0 +1,67 @@
+package com.huaweicloud.sdk.kms.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.Objects;
+
+/** Response Object */
+public class ShowUserInstancesResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_num")
+
+    private Integer instanceNum;
+
+    public ShowUserInstancesResponse withInstanceNum(Integer instanceNum) {
+        this.instanceNum = instanceNum;
+        return this;
+    }
+
+    /** 非默认用户主密钥个数。 minimum: 0 maximum: 100
+     * 
+     * @return instanceNum */
+    public Integer getInstanceNum() {
+        return instanceNum;
+    }
+
+    public void setInstanceNum(Integer instanceNum) {
+        this.instanceNum = instanceNum;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ShowUserInstancesResponse showUserInstancesResponse = (ShowUserInstancesResponse) o;
+        return Objects.equals(this.instanceNum, showUserInstancesResponse.instanceNum);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(instanceNum);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ShowUserInstancesResponse {\n");
+        sb.append("    instanceNum: ").append(toIndentedString(instanceNum)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

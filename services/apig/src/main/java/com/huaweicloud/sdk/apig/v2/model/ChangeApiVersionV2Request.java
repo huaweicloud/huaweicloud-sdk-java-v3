@@ -22,14 +22,14 @@ public class ChangeApiVersionV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ApiVersionInfo body;
+    private ApiVersion body;
 
     public ChangeApiVersionV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -56,14 +56,14 @@ public class ChangeApiVersionV2Request {
         this.apiId = apiId;
     }
 
-    public ChangeApiVersionV2Request withBody(ApiVersionInfo body) {
+    public ChangeApiVersionV2Request withBody(ApiVersion body) {
         this.body = body;
         return this;
     }
 
-    public ChangeApiVersionV2Request withBody(Consumer<ApiVersionInfo> bodySetter) {
+    public ChangeApiVersionV2Request withBody(Consumer<ApiVersion> bodySetter) {
         if (this.body == null) {
-            this.body = new ApiVersionInfo();
+            this.body = new ApiVersion();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class ChangeApiVersionV2Request {
     /** Get body
      * 
      * @return body */
-    public ApiVersionInfo getBody() {
+    public ApiVersion getBody() {
         return body;
     }
 
-    public void setBody(ApiVersionInfo body) {
+    public void setBody(ApiVersion body) {
         this.body = body;
     }
 

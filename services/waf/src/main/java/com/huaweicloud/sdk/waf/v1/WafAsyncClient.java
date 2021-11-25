@@ -433,7 +433,7 @@ public class WafAsyncClient {
             WafMeta.listCompositeHosts, hcClient);
     }
 
-    /** 查询攻击事件列表 查询攻击事件列表
+    /** 查询攻击事件列表 查询攻击事件列表，该API暂时不支持查询全部防护事件，pagesize参数不可设为-1
      *
      * @param ListEventRequest 请求对象
      * @return CompletableFuture<ListEventResponse> */
@@ -441,7 +441,7 @@ public class WafAsyncClient {
         return hcClient.asyncInvokeHttp(request, WafMeta.listEvent);
     }
 
-    /** 查询攻击事件列表 查询攻击事件列表
+    /** 查询攻击事件列表 查询攻击事件列表，该API暂时不支持查询全部防护事件，pagesize参数不可设为-1
      *
      * @param ListEventRequest 请求对象
      * @return AsyncInvoker<ListEventRequest, ListEventResponse> */
@@ -585,25 +585,6 @@ public class WafAsyncClient {
         ListQpsTimelineRequest request) {
         return new AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>(request, WafMeta.listQpsTimeline,
             hcClient);
-    }
-
-    /** 查询安全统计响应码数据 查询安全统计响应码数据
-     *
-     * @param ListResponseCodeTimelineRequest 请求对象
-     * @return CompletableFuture<ListResponseCodeTimelineResponse> */
-    public CompletableFuture<ListResponseCodeTimelineResponse> listResponseCodeTimelineAsync(
-        ListResponseCodeTimelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listResponseCodeTimeline);
-    }
-
-    /** 查询安全统计响应码数据 查询安全统计响应码数据
-     *
-     * @param ListResponseCodeTimelineRequest 请求对象
-     * @return AsyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> */
-    public AsyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimelineAsyncInvoker(
-        ListResponseCodeTimelineRequest request) {
-        return new AsyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse>(request,
-            WafMeta.listResponseCodeTimeline, hcClient);
     }
 
     /** 查询安全总览请求数据 查询安全总览请求数据
@@ -834,7 +815,7 @@ public class WafAsyncClient {
             hcClient);
     }
 
-    /** 更新云模式防护域名 更新云模式防护域名
+    /** 更新云模式防护域名 更新云模式防护域名配置，在没有填入源站信息server的原始数据的情况下，则新的源站信息server会覆盖源站信息，而不是新增源站
      *
      * @param UpdateHostRequest 请求对象
      * @return CompletableFuture<UpdateHostResponse> */
@@ -842,7 +823,7 @@ public class WafAsyncClient {
         return hcClient.asyncInvokeHttp(request, WafMeta.updateHost);
     }
 
-    /** 更新云模式防护域名 更新云模式防护域名
+    /** 更新云模式防护域名 更新云模式防护域名配置，在没有填入源站信息server的原始数据的情况下，则新的源站信息server会覆盖源站信息，而不是新增源站
      *
      * @param UpdateHostRequest 请求对象
      * @return AsyncInvoker<UpdateHostRequest, UpdateHostResponse> */
@@ -905,7 +886,7 @@ public class WafAsyncClient {
             WafMeta.updatePolicyProtectHost, hcClient);
     }
 
-    /** 修改单条规则的状态 查询敏感信息选项的详细信息。
+    /** 修改单条规则的状态 修改单条规则的状态
      *
      * @param UpdatePolicyRuleStatusRequest 请求对象
      * @return CompletableFuture<UpdatePolicyRuleStatusResponse> */
@@ -914,7 +895,7 @@ public class WafAsyncClient {
         return hcClient.asyncInvokeHttp(request, WafMeta.updatePolicyRuleStatus);
     }
 
-    /** 修改单条规则的状态 查询敏感信息选项的详细信息。
+    /** 修改单条规则的状态 修改单条规则的状态
      *
      * @param UpdatePolicyRuleStatusRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse> */

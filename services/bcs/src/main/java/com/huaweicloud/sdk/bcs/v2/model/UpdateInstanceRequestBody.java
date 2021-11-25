@@ -19,7 +19,7 @@ public class UpdateInstanceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicips")
 
-    private List<IefNode> publicips = null;
+    private List<IefNodeinfo> publicips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_delete_org")
@@ -58,12 +58,12 @@ public class UpdateInstanceRequestBody {
         this.nodeOrgs = nodeOrgs;
     }
 
-    public UpdateInstanceRequestBody withPublicips(List<IefNode> publicips) {
+    public UpdateInstanceRequestBody withPublicips(List<IefNodeinfo> publicips) {
         this.publicips = publicips;
         return this;
     }
 
-    public UpdateInstanceRequestBody addPublicipsItem(IefNode publicipsItem) {
+    public UpdateInstanceRequestBody addPublicipsItem(IefNodeinfo publicipsItem) {
         if (this.publicips == null) {
             this.publicips = new ArrayList<>();
         }
@@ -71,7 +71,7 @@ public class UpdateInstanceRequestBody {
         return this;
     }
 
-    public UpdateInstanceRequestBody withPublicips(Consumer<List<IefNode>> publicipsSetter) {
+    public UpdateInstanceRequestBody withPublicips(Consumer<List<IefNodeinfo>> publicipsSetter) {
         if (this.publicips == null) {
             this.publicips = new ArrayList<>();
         }
@@ -82,11 +82,11 @@ public class UpdateInstanceRequestBody {
     /** ief添加组织时，ief节点信息。绑定模式的IEF服务，新增组织时，该字段必填
      * 
      * @return publicips */
-    public List<IefNode> getPublicips() {
+    public List<IefNodeinfo> getPublicips() {
         return publicips;
     }
 
-    public void setPublicips(List<IefNode> publicips) {
+    public void setPublicips(List<IefNodeinfo> publicips) {
         this.publicips = publicips;
     }
 

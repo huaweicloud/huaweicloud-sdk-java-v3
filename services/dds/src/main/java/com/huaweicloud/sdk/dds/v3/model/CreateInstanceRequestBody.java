@@ -96,6 +96,11 @@ public class CreateInstanceRequestBody {
 
     private List<String> serverGroupPolicies = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagWithKeyValue> tags = null;
+
     public CreateInstanceRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -420,6 +425,38 @@ public class CreateInstanceRequestBody {
         this.serverGroupPolicies = serverGroupPolicies;
     }
 
+    public CreateInstanceRequestBody withTags(List<TagWithKeyValue> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateInstanceRequestBody addTagsItem(TagWithKeyValue tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateInstanceRequestBody withTags(Consumer<List<TagWithKeyValue>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /** 标签列表。单个实例总标签数上限20个。
+     * 
+     * @return tags */
+    public List<TagWithKeyValue> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagWithKeyValue> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -445,7 +482,8 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.enterpriseProjectId, createInstanceRequestBody.enterpriseProjectId)
             && Objects.equals(this.sslOption, createInstanceRequestBody.sslOption)
             && Objects.equals(this.dssPoolId, createInstanceRequestBody.dssPoolId)
-            && Objects.equals(this.serverGroupPolicies, createInstanceRequestBody.serverGroupPolicies);
+            && Objects.equals(this.serverGroupPolicies, createInstanceRequestBody.serverGroupPolicies)
+            && Objects.equals(this.tags, createInstanceRequestBody.tags);
     }
 
     @Override
@@ -466,7 +504,8 @@ public class CreateInstanceRequestBody {
             enterpriseProjectId,
             sslOption,
             dssPoolId,
-            serverGroupPolicies);
+            serverGroupPolicies,
+            tags);
     }
 
     @Override
@@ -490,6 +529,7 @@ public class CreateInstanceRequestBody {
         sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
         sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
         sb.append("    serverGroupPolicies: ").append(toIndentedString(serverGroupPolicies)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

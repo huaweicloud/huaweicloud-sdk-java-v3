@@ -136,6 +136,16 @@ public class QueryInstanceResponse {
 
     private List<String> actions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagResponse> tags = null;
+
     public QueryInstanceResponse withId(String id) {
         this.id = id;
         return this;
@@ -587,6 +597,54 @@ public class QueryInstanceResponse {
         this.actions = actions;
     }
 
+    public QueryInstanceResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /** 订单ID，仅包周期场景返回。
+     * 
+     * @return orderId */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public QueryInstanceResponse withTags(List<TagResponse> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public QueryInstanceResponse addTagsItem(TagResponse tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public QueryInstanceResponse withTags(Consumer<List<TagResponse>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /** 标签列表。
+     * 
+     * @return tags */
+    public List<TagResponse> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagResponse> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -620,7 +678,9 @@ public class QueryInstanceResponse {
             && Objects.equals(this.enterpriseProjectId, queryInstanceResponse.enterpriseProjectId)
             && Objects.equals(this.timeZone, queryInstanceResponse.timeZone)
             && Objects.equals(this.dssPoolId, queryInstanceResponse.dssPoolId)
-            && Objects.equals(this.actions, queryInstanceResponse.actions);
+            && Objects.equals(this.actions, queryInstanceResponse.actions)
+            && Objects.equals(this.orderId, queryInstanceResponse.orderId)
+            && Objects.equals(this.tags, queryInstanceResponse.tags);
     }
 
     @Override
@@ -649,7 +709,9 @@ public class QueryInstanceResponse {
             enterpriseProjectId,
             timeZone,
             dssPoolId,
-            actions);
+            actions,
+            orderId,
+            tags);
     }
 
     @Override
@@ -681,6 +743,8 @@ public class QueryInstanceResponse {
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

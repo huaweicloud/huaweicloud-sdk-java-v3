@@ -25,6 +25,11 @@ public class UpdatePolicyResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "level")
+
+    private Integer level;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
     private PolicyAction action;
@@ -35,9 +40,19 @@ public class UpdatePolicyResponse extends SdkResponse {
     private PolicyOption options;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "level")
+    @JsonProperty(value = "hosts")
 
-    private Integer level;
+    private List<String> hosts = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend")
+
+    private Map<String, String> extend = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timestamp")
+
+    private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "full_detection")
@@ -48,16 +63,6 @@ public class UpdatePolicyResponse extends SdkResponse {
     @JsonProperty(value = "bind_host")
 
     private List<BindHost> bindHost = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "timestamp")
-
-    private Long timestamp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend")
-
-    private Map<String, String> extend = null;
 
     public UpdatePolicyResponse withId(String id) {
         this.id = id;
@@ -89,6 +94,22 @@ public class UpdatePolicyResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public UpdatePolicyResponse withLevel(Integer level) {
+        this.level = level;
+        return this;
+    }
+
+    /** 防护等级
+     * 
+     * @return level */
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     public UpdatePolicyResponse withAction(PolicyAction action) {
@@ -141,20 +162,84 @@ public class UpdatePolicyResponse extends SdkResponse {
         this.options = options;
     }
 
-    public UpdatePolicyResponse withLevel(Integer level) {
-        this.level = level;
+    public UpdatePolicyResponse withHosts(List<String> hosts) {
+        this.hosts = hosts;
         return this;
     }
 
-    /** 防护等级
-     * 
-     * @return level */
-    public Integer getLevel() {
-        return level;
+    public UpdatePolicyResponse addHostsItem(String hostsItem) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        this.hosts.add(hostsItem);
+        return this;
     }
 
-    public void setLevel(Integer level) {
-        this.level = level;
+    public UpdatePolicyResponse withHosts(Consumer<List<String>> hostsSetter) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        hostsSetter.accept(this.hosts);
+        return this;
+    }
+
+    /** 防护域名的信息
+     * 
+     * @return hosts */
+    public List<String> getHosts() {
+        return hosts;
+    }
+
+    public void setHosts(List<String> hosts) {
+        this.hosts = hosts;
+    }
+
+    public UpdatePolicyResponse withExtend(Map<String, String> extend) {
+        this.extend = extend;
+        return this;
+    }
+
+    public UpdatePolicyResponse putExtendItem(String key, String extendItem) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        this.extend.put(key, extendItem);
+        return this;
+    }
+
+    public UpdatePolicyResponse withExtend(Consumer<Map<String, String>> extendSetter) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        extendSetter.accept(this.extend);
+        return this;
+    }
+
+    /** 扩展字段
+     * 
+     * @return extend */
+    public Map<String, String> getExtend() {
+        return extend;
+    }
+
+    public void setExtend(Map<String, String> extend) {
+        this.extend = extend;
+    }
+
+    public UpdatePolicyResponse withTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    /** 创建防护策略的时间
+     * 
+     * @return timestamp */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
     }
 
     public UpdatePolicyResponse withFullDetection(Boolean fullDetection) {
@@ -205,54 +290,6 @@ public class UpdatePolicyResponse extends SdkResponse {
         this.bindHost = bindHost;
     }
 
-    public UpdatePolicyResponse withTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-    /** 创建防护策略的时间
-     * 
-     * @return timestamp */
-    public Long getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public UpdatePolicyResponse withExtend(Map<String, String> extend) {
-        this.extend = extend;
-        return this;
-    }
-
-    public UpdatePolicyResponse putExtendItem(String key, String extendItem) {
-        if (this.extend == null) {
-            this.extend = new HashMap<>();
-        }
-        this.extend.put(key, extendItem);
-        return this;
-    }
-
-    public UpdatePolicyResponse withExtend(Consumer<Map<String, String>> extendSetter) {
-        if (this.extend == null) {
-            this.extend = new HashMap<>();
-        }
-        extendSetter.accept(this.extend);
-        return this;
-    }
-
-    /** 扩展字段
-     * 
-     * @return extend */
-    public Map<String, String> getExtend() {
-        return extend;
-    }
-
-    public void setExtend(Map<String, String> extend) {
-        this.extend = extend;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -263,18 +300,19 @@ public class UpdatePolicyResponse extends SdkResponse {
         }
         UpdatePolicyResponse updatePolicyResponse = (UpdatePolicyResponse) o;
         return Objects.equals(this.id, updatePolicyResponse.id) && Objects.equals(this.name, updatePolicyResponse.name)
+            && Objects.equals(this.level, updatePolicyResponse.level)
             && Objects.equals(this.action, updatePolicyResponse.action)
             && Objects.equals(this.options, updatePolicyResponse.options)
-            && Objects.equals(this.level, updatePolicyResponse.level)
-            && Objects.equals(this.fullDetection, updatePolicyResponse.fullDetection)
-            && Objects.equals(this.bindHost, updatePolicyResponse.bindHost)
+            && Objects.equals(this.hosts, updatePolicyResponse.hosts)
+            && Objects.equals(this.extend, updatePolicyResponse.extend)
             && Objects.equals(this.timestamp, updatePolicyResponse.timestamp)
-            && Objects.equals(this.extend, updatePolicyResponse.extend);
+            && Objects.equals(this.fullDetection, updatePolicyResponse.fullDetection)
+            && Objects.equals(this.bindHost, updatePolicyResponse.bindHost);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, action, options, level, fullDetection, bindHost, timestamp, extend);
+        return Objects.hash(id, name, level, action, options, hosts, extend, timestamp, fullDetection, bindHost);
     }
 
     @Override
@@ -283,13 +321,14 @@ public class UpdatePolicyResponse extends SdkResponse {
         sb.append("class UpdatePolicyResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    options: ").append(toIndentedString(options)).append("\n");
-        sb.append("    level: ").append(toIndentedString(level)).append("\n");
+        sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
+        sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    fullDetection: ").append(toIndentedString(fullDetection)).append("\n");
         sb.append("    bindHost: ").append(toIndentedString(bindHost)).append("\n");
-        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
-        sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -38,7 +38,7 @@ public class ListIssuedCouponQuotasRequest {
         return this;
     }
 
-    /** 精英服务商的代金券额度ID。
+    /** 精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。
      * 
      * @return quotaId */
     public String getQuotaId() {

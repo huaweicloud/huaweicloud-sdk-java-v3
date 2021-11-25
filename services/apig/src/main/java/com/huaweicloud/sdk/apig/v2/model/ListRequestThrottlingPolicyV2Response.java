@@ -25,7 +25,7 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "throttles")
 
-    private List<ThrottleResp> throttles = null;
+    private List<ThrottlesInfo> throttles = null;
 
     public ListRequestThrottlingPolicyV2Response withSize(Integer size) {
         this.size = size;
@@ -59,12 +59,12 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListRequestThrottlingPolicyV2Response withThrottles(List<ThrottleResp> throttles) {
+    public ListRequestThrottlingPolicyV2Response withThrottles(List<ThrottlesInfo> throttles) {
         this.throttles = throttles;
         return this;
     }
 
-    public ListRequestThrottlingPolicyV2Response addThrottlesItem(ThrottleResp throttlesItem) {
+    public ListRequestThrottlingPolicyV2Response addThrottlesItem(ThrottlesInfo throttlesItem) {
         if (this.throttles == null) {
             this.throttles = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    public ListRequestThrottlingPolicyV2Response withThrottles(Consumer<List<ThrottleResp>> throttlesSetter) {
+    public ListRequestThrottlingPolicyV2Response withThrottles(Consumer<List<ThrottlesInfo>> throttlesSetter) {
         if (this.throttles == null) {
             this.throttles = new ArrayList<>();
         }
@@ -83,11 +83,11 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
     /** 本次查询到的流控策略列表
      * 
      * @return throttles */
-    public List<ThrottleResp> getThrottles() {
+    public List<ThrottlesInfo> getThrottles() {
         return throttles;
     }
 
-    public void setThrottles(List<ThrottleResp> throttles) {
+    public void setThrottles(List<ThrottlesInfo> throttles) {
         this.throttles = throttles;
     }
 

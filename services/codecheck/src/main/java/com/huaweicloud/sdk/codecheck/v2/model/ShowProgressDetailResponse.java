@@ -13,14 +13,14 @@ public class ShowProgressDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_status")
 
-    private String taskStatus;
+    private Integer taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
     private ProgressDetailV2 progress;
 
-    public ShowProgressDetailResponse withTaskStatus(String taskStatus) {
+    public ShowProgressDetailResponse withTaskStatus(Integer taskStatus) {
         this.taskStatus = taskStatus;
         return this;
     }
@@ -28,11 +28,11 @@ public class ShowProgressDetailResponse extends SdkResponse {
     /** 任务状态,0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止
      * 
      * @return taskStatus */
-    public String getTaskStatus() {
+    public Integer getTaskStatus() {
         return taskStatus;
     }
 
-    public void setTaskStatus(String taskStatus) {
+    public void setTaskStatus(Integer taskStatus) {
         this.taskStatus = taskStatus;
     }
 

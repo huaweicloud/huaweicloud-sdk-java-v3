@@ -14,11 +14,6 @@ import java.util.Objects;
 public class UpdatePrivacyRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
     private String url;
@@ -112,28 +107,17 @@ public class UpdatePrivacyRuleRequestBody {
 
     private String index;
 
-    public UpdatePrivacyRuleRequestBody withId(String id) {
-        this.id = id;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
 
-    /** 规则id
-     * 
-     * @return id */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String description;
 
     public UpdatePrivacyRuleRequestBody withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    /** 隐私屏蔽规则应用的url
+    /** 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
      * 
      * @return url */
     public String getUrl() {
@@ -176,6 +160,22 @@ public class UpdatePrivacyRuleRequestBody {
         this.index = index;
     }
 
+    public UpdatePrivacyRuleRequestBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /** 规则描述
+     * 
+     * @return description */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -185,25 +185,25 @@ public class UpdatePrivacyRuleRequestBody {
             return false;
         }
         UpdatePrivacyRuleRequestBody updatePrivacyRuleRequestBody = (UpdatePrivacyRuleRequestBody) o;
-        return Objects.equals(this.id, updatePrivacyRuleRequestBody.id)
-            && Objects.equals(this.url, updatePrivacyRuleRequestBody.url)
+        return Objects.equals(this.url, updatePrivacyRuleRequestBody.url)
             && Objects.equals(this.category, updatePrivacyRuleRequestBody.category)
-            && Objects.equals(this.index, updatePrivacyRuleRequestBody.index);
+            && Objects.equals(this.index, updatePrivacyRuleRequestBody.index)
+            && Objects.equals(this.description, updatePrivacyRuleRequestBody.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, url, category, index);
+        return Objects.hash(url, category, index, description);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePrivacyRuleRequestBody {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

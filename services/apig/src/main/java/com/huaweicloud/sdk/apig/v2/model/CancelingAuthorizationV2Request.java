@@ -23,7 +23,7 @@ public class CancelingAuthorizationV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -39,7 +39,7 @@ public class CancelingAuthorizationV2Request {
         return this;
     }
 
-    /** 授权关系的ID
+    /** 授权关系的编号
      * 
      * @return appAuthId */
     public String getAppAuthId() {

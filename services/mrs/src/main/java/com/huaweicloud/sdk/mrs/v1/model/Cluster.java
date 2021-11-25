@@ -567,7 +567,7 @@ public class Cluster  {
 
 
     /**
-     * 集群进度描述。  安装集群进度包括： - Verifying cluster parameters：校验集群参数中 - Applying for cluster resources：申请集群资源中 - Creating VM：创建虚拟机中 - Initializing VM：初始化虚拟机中 - Installing MRS Manager：安装MRS Manager中 - Deploying cluster：部署集群中 - Cluster installation failed：集群安装失败 扩容集群进度包括： - Preparing for cluster expansion：准备扩容中 - Creating VM：创建虚拟机中 - Initializing VM：初始化虚拟机中 - Adding node to the cluster：节点加入集群中 - Cluster expansion failed：集群扩容失败 缩容集群进度包括： - Preparing for cluster shrink：正在准备缩容 - Decommissioning instance：实例退服中 - Deleting VM：删除虚拟机中 - Deleting node from the cluster：从集群删除节点中 - Cluster shrink failed：集群缩容失败 集群安装、扩容、缩容失败，stageDesc会显示失败的原因。
+     * 集群进度描述。  安装集群进度包括： - Verifying cluster parameters：校验集群参数中 - Applying for cluster resources：申请集群资源中 - Creating VM：创建虚拟机中 - Initializing VM：初始化虚拟机中 - Installing MRS Manager：安装MRS Manager中 - Deploying cluster：部署集群中 - Cluster installation failed：集群安装失败  扩容集群进度包括： - Preparing for cluster expansion：准备扩容中 - Creating VM：创建虚拟机中 - Initializing VM：初始化虚拟机中 - Adding node to the cluster：节点加入集群中 - Cluster expansion failed：集群扩容失败  缩容集群进度包括： - Preparing for cluster shrink：正在准备缩容 - Decommissioning instance：实例退服中 - Deleting VM：删除虚拟机中 - Deleting node from the cluster：从集群删除节点中 - Cluster shrink failed：集群缩容失败 集群安装、扩容、缩容失败，stageDesc会显示失败的原因。
      * @return stageDesc
      */
     public String getStageDesc() {
@@ -1219,7 +1219,7 @@ public class Cluster  {
 
 
     /**
-     * 非Master节点的安全组id，当前一个MRS集群只会使用一个安全组，所以该字段已经废弃。
+     * 非Master节点的安全组id，当前一个MRS集群只会使用一个安全组，所以该字段已经废弃，从兼容性考虑，该字段会返回和securityGroupsId同样的值。
      * @return slaveSecurityGroupsId
      */
     public String getSlaveSecurityGroupsId() {
@@ -1255,7 +1255,7 @@ public class Cluster  {
     }
 
     /**
-     * 配置引导操作脚本信息。 MRS 1.7.1及以后版本支持该参数。
+     * 配置引导操作脚本信息。
      * @return bootstrapScripts
      */
     public List<BootstrapScriptResp> getBootstrapScripts() {
@@ -1629,7 +1629,7 @@ public class Cluster  {
 
 
     /**
-     * Master节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。 取值范围：100GB～32000GB,传值只需填数字,不需要带单位GB
+     * Master节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。 取值范围：100GB～32000GB，传值只需填数字，不需要带单位GB。
      * @return masterDataVolumeSize
      */
     public Integer getMasterDataVolumeSize() {
@@ -1783,7 +1783,7 @@ public class Cluster  {
 
 
     /**
-     * 集群类型
+     * 集群类型。
      * @return clusterType
      */
     public Integer getClusterType() {

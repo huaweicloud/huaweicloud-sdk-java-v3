@@ -17,14 +17,14 @@ public class AssociateSignatureKeyV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private SignBindingReq body;
+    private SignApiBinding body;
 
     public AssociateSignatureKeyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -35,14 +35,14 @@ public class AssociateSignatureKeyV2Request {
         this.instanceId = instanceId;
     }
 
-    public AssociateSignatureKeyV2Request withBody(SignBindingReq body) {
+    public AssociateSignatureKeyV2Request withBody(SignApiBinding body) {
         this.body = body;
         return this;
     }
 
-    public AssociateSignatureKeyV2Request withBody(Consumer<SignBindingReq> bodySetter) {
+    public AssociateSignatureKeyV2Request withBody(Consumer<SignApiBinding> bodySetter) {
         if (this.body == null) {
-            this.body = new SignBindingReq();
+            this.body = new SignApiBinding();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class AssociateSignatureKeyV2Request {
     /** Get body
      * 
      * @return body */
-    public SignBindingReq getBody() {
+    public SignApiBinding getBody() {
         return body;
     }
 
-    public void setBody(SignBindingReq body) {
+    public void setBody(SignApiBinding body) {
         this.body = body;
     }
 

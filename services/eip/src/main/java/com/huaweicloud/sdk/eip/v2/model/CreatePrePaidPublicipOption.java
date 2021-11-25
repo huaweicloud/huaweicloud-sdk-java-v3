@@ -18,6 +18,11 @@ public class CreatePrePaidPublicipOption {
 
     private Integer ipVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
     public CreatePrePaidPublicipOption withType(String type) {
         this.type = type;
         return this;
@@ -53,6 +58,22 @@ public class CreatePrePaidPublicipOption {
         this.ipVersion = ipVersion;
     }
 
+    public CreatePrePaidPublicipOption withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /** 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * 
+     * @return alias */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -63,12 +84,13 @@ public class CreatePrePaidPublicipOption {
         }
         CreatePrePaidPublicipOption createPrePaidPublicipOption = (CreatePrePaidPublicipOption) o;
         return Objects.equals(this.type, createPrePaidPublicipOption.type)
-            && Objects.equals(this.ipVersion, createPrePaidPublicipOption.ipVersion);
+            && Objects.equals(this.ipVersion, createPrePaidPublicipOption.ipVersion)
+            && Objects.equals(this.alias, createPrePaidPublicipOption.alias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, ipVersion);
+        return Objects.hash(type, ipVersion, alias);
     }
 
     @Override
@@ -77,6 +99,7 @@ public class CreatePrePaidPublicipOption {
         sb.append("class CreatePrePaidPublicipOption {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

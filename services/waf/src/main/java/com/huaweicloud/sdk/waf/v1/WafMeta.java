@@ -753,14 +753,14 @@ public class WafMeta {
             }));
         builder.<Long>withRequestField("from",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
             }));
         builder.<Long>withRequestField("to",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getTo, (req, v) -> {
                 req.setTo(v);
@@ -907,10 +907,10 @@ public class WafMeta {
             f -> f.withMarshaller(ListCompositeHostsRequest::getPolicyname, (req, v) -> {
                 req.setPolicyname(v);
             }));
-        builder.<Integer>withRequestField("protect_status",
+        builder.<ListCompositeHostsRequest.ProtectStatusEnum>withRequestField("protect_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(ListCompositeHostsRequest.ProtectStatusEnum.class),
             f -> f.withMarshaller(ListCompositeHostsRequest::getProtectStatus, (req, v) -> {
                 req.setProtectStatus(v);
             }));
@@ -954,10 +954,24 @@ public class WafMeta {
             }));
         builder.<ListEventRequest.RecentEnum>withRequestField("recent",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEventRequest.RecentEnum.class),
             f -> f.withMarshaller(ListEventRequest::getRecent, (req, v) -> {
                 req.setRecent(v);
+            }));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEventRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEventRequest::getTo, (req, v) -> {
+                req.setTo(v);
             }));
         builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
@@ -1254,10 +1268,10 @@ public class WafMeta {
             f -> f.withMarshaller(ListPremiumHostRequest::getPolicyname, (req, v) -> {
                 req.setPolicyname(v);
             }));
-        builder.<Integer>withRequestField("protect_status",
+        builder.<ListPremiumHostRequest.ProtectStatusEnum>withRequestField("protect_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(ListPremiumHostRequest.ProtectStatusEnum.class),
             f -> f.withMarshaller(ListPremiumHostRequest::getProtectStatus, (req, v) -> {
                 req.setProtectStatus(v);
             }));
@@ -1334,14 +1348,14 @@ public class WafMeta {
             }));
         builder.<Long>withRequestField("from",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListQpsTimelineRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
             }));
         builder.<Long>withRequestField("to",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListQpsTimelineRequest::getTo, (req, v) -> {
                 req.setTo(v);
@@ -1381,82 +1395,6 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimeline =
-        genForlistResponseCodeTimeline();
-
-    private static HttpRequestDef<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> genForlistResponseCodeTimeline() {
-        // basic
-        HttpRequestDef.Builder<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET, ListResponseCodeTimelineRequest.class, ListResponseCodeTimelineResponse.class)
-                .withName("ListResponseCodeTimeline")
-                .withUri("/v1/{project_id}/waf/overviews/response-code/timeline")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
-        builder.<Long>withRequestField("from",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getFrom, (req, v) -> {
-                req.setFrom(v);
-            }));
-        builder.<Long>withRequestField("to",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getTo, (req, v) -> {
-                req.setTo(v);
-            }));
-        builder.<String>withRequestField("hosts",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getHosts, (req, v) -> {
-                req.setHosts(v);
-            }));
-        builder.<String>withRequestField("instances",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getInstances, (req, v) -> {
-                req.setInstances(v);
-            }));
-        builder.<ListResponseCodeTimelineRequest.ResponseSourceEnum>withRequestField("response_source",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListResponseCodeTimelineRequest.ResponseSourceEnum.class),
-            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getResponseSource, (req, v) -> {
-                req.setResponseSource(v);
-            }));
-        builder.<String>withRequestField("group_by",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getGroupBy, (req, v) -> {
-                req.setGroupBy(v);
-            }));
-
-        // response
-
-        builder.<List<StatisticsTimelineItem>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListResponseCodeTimelineResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(StatisticsTimelineItem.class));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListStatisticsRequest, ListStatisticsResponse> listStatistics =
         genForlistStatistics();
 
@@ -1478,14 +1416,14 @@ public class WafMeta {
             }));
         builder.<Long>withRequestField("from",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListStatisticsRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
             }));
         builder.<Long>withRequestField("to",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListStatisticsRequest::getTo, (req, v) -> {
                 req.setTo(v);
@@ -1539,14 +1477,14 @@ public class WafMeta {
             }));
         builder.<Long>withRequestField("from",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListTopAbnormalRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
             }));
         builder.<Long>withRequestField("to",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListTopAbnormalRequest::getTo, (req, v) -> {
                 req.setTo(v);
@@ -1611,6 +1549,13 @@ public class WafMeta {
             f -> f.withMarshaller(ListValueListRequest::getPagesize, (req, v) -> {
                 req.setPagesize(v);
             }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListValueListRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
 
         // response
 
@@ -1656,6 +1601,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListWhiteblackipRuleRequest::getPagesize, (req, v) -> {
                 req.setPagesize(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWhiteblackipRuleRequest::getName, (req, v) -> {
+                req.setName(v);
             }));
 
         // response
@@ -2149,10 +2101,10 @@ public class WafMeta {
             f -> f.withMarshaller(UpdatePolicyRuleStatusRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             }));
-        builder.<UpdateRuleStatusRequestBody>withRequestField("body",
+        builder.<UpdatePolicyRuleStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateRuleStatusRequestBody.class),
+            TypeCasts.uncheckedConversion(UpdatePolicyRuleStatusRequestBody.class),
             f -> f.withMarshaller(UpdatePolicyRuleStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

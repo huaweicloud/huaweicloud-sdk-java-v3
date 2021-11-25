@@ -18,7 +18,7 @@ public class ListQueryProjectResourceTagsRequest {
         return this;
     }
 
-    /** 资源类型，值为： endpoint_service或 endpoint。
+    /** 资源类型，值为：endpoint_service或endpoint。
      * 
      * @return resourceType */
     public String getResourceType() {

@@ -24,11 +24,6 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private Integer type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
     private Integer port;
@@ -36,37 +31,37 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     /** 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri） VPC通道类型为2时必选。 */
     public static final class BalanceStrategyEnum {
 
-        /** Enum NUMBER_1 for value: 1l */
-        public static final BalanceStrategyEnum NUMBER_1 = new BalanceStrategyEnum(1l);
+        /** Enum NUMBER_1 for value: 1 */
+        public static final BalanceStrategyEnum NUMBER_1 = new BalanceStrategyEnum(1);
 
-        /** Enum NUMBER_2 for value: 2l */
-        public static final BalanceStrategyEnum NUMBER_2 = new BalanceStrategyEnum(2l);
+        /** Enum NUMBER_2 for value: 2 */
+        public static final BalanceStrategyEnum NUMBER_2 = new BalanceStrategyEnum(2);
 
-        /** Enum NUMBER_3 for value: 3l */
-        public static final BalanceStrategyEnum NUMBER_3 = new BalanceStrategyEnum(3l);
+        /** Enum NUMBER_3 for value: 3 */
+        public static final BalanceStrategyEnum NUMBER_3 = new BalanceStrategyEnum(3);
 
-        /** Enum NUMBER_4 for value: 4l */
-        public static final BalanceStrategyEnum NUMBER_4 = new BalanceStrategyEnum(4l);
+        /** Enum NUMBER_4 for value: 4 */
+        public static final BalanceStrategyEnum NUMBER_4 = new BalanceStrategyEnum(4);
 
-        private static final Map<Long, BalanceStrategyEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<Integer, BalanceStrategyEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<Long, BalanceStrategyEnum> createStaticFields() {
-            Map<Long, BalanceStrategyEnum> map = new HashMap<>();
-            map.put(1l, NUMBER_1);
-            map.put(2l, NUMBER_2);
-            map.put(3l, NUMBER_3);
-            map.put(4l, NUMBER_4);
+        private static Map<Integer, BalanceStrategyEnum> createStaticFields() {
+            Map<Integer, BalanceStrategyEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            map.put(4, NUMBER_4);
             return Collections.unmodifiableMap(map);
         }
 
-        private Long value;
+        private Integer value;
 
-        BalanceStrategyEnum(Long value) {
+        BalanceStrategyEnum(Integer value) {
             this.value = value;
         }
 
         @JsonValue
-        public Long getValue() {
+        public Integer getValue() {
             return value;
         }
 
@@ -76,7 +71,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         }
 
         @JsonCreator
-        public static BalanceStrategyEnum fromValue(Long value) {
+        public static BalanceStrategyEnum fromValue(Integer value) {
             if (value == null) {
                 return null;
             }
@@ -87,7 +82,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
             return result;
         }
 
-        public static BalanceStrategyEnum valueOf(Long value) {
+        public static BalanceStrategyEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
@@ -203,15 +198,86 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
 
     private String id;
 
+    /** VPC通道的状态。 - 1：正常 - 2：异常 */
+    public static final class StatusEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "elb_id")
+    @JsonProperty(value = "member_groups")
 
-    private String elbId;
+    private List<MemberGroupInfo> memberGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
@@ -237,22 +303,6 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ShowDetailsOfVpcChannelV2Response withType(Integer type) {
-        this.type = type;
-        return this;
-    }
-
-    /** VPC通道的类型。 - 1：私网ELB通道（待废弃） - 2：API网关内置支持负载均衡功能的快速通道类型
-     * 
-     * @return type */
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
     }
 
     public ShowDetailsOfVpcChannelV2Response withPort(Integer port) {
@@ -335,7 +385,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         this.id = id;
     }
 
-    public ShowDetailsOfVpcChannelV2Response withStatus(Integer status) {
+    public ShowDetailsOfVpcChannelV2Response withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -343,28 +393,44 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     /** VPC通道的状态。 - 1：正常 - 2：异常
      * 
      * @return status */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
-    public ShowDetailsOfVpcChannelV2Response withElbId(String elbId) {
-        this.elbId = elbId;
+    public ShowDetailsOfVpcChannelV2Response withMemberGroups(List<MemberGroupInfo> memberGroups) {
+        this.memberGroups = memberGroups;
         return this;
     }
 
-    /** 私网ELB通道的编号。 仅当VPC通道类型为1时生效
-     * 
-     * @return elbId */
-    public String getElbId() {
-        return elbId;
+    public ShowDetailsOfVpcChannelV2Response addMemberGroupsItem(MemberGroupInfo memberGroupsItem) {
+        if (this.memberGroups == null) {
+            this.memberGroups = new ArrayList<>();
+        }
+        this.memberGroups.add(memberGroupsItem);
+        return this;
     }
 
-    public void setElbId(String elbId) {
-        this.elbId = elbId;
+    public ShowDetailsOfVpcChannelV2Response withMemberGroups(Consumer<List<MemberGroupInfo>> memberGroupsSetter) {
+        if (this.memberGroups == null) {
+            this.memberGroups = new ArrayList<>();
+        }
+        memberGroupsSetter.accept(this.memberGroups);
+        return this;
+    }
+
+    /** 后端云服务器组列表。 暂不支持
+     * 
+     * @return memberGroups */
+    public List<MemberGroupInfo> getMemberGroups() {
+        return memberGroups;
+    }
+
+    public void setMemberGroups(List<MemberGroupInfo> memberGroups) {
+        this.memberGroups = memberGroups;
     }
 
     public ShowDetailsOfVpcChannelV2Response withMembers(List<VpcMemberInfo> members) {
@@ -434,14 +500,13 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         }
         ShowDetailsOfVpcChannelV2Response showDetailsOfVpcChannelV2Response = (ShowDetailsOfVpcChannelV2Response) o;
         return Objects.equals(this.name, showDetailsOfVpcChannelV2Response.name)
-            && Objects.equals(this.type, showDetailsOfVpcChannelV2Response.type)
             && Objects.equals(this.port, showDetailsOfVpcChannelV2Response.port)
             && Objects.equals(this.balanceStrategy, showDetailsOfVpcChannelV2Response.balanceStrategy)
             && Objects.equals(this.memberType, showDetailsOfVpcChannelV2Response.memberType)
             && Objects.equals(this.createTime, showDetailsOfVpcChannelV2Response.createTime)
             && Objects.equals(this.id, showDetailsOfVpcChannelV2Response.id)
             && Objects.equals(this.status, showDetailsOfVpcChannelV2Response.status)
-            && Objects.equals(this.elbId, showDetailsOfVpcChannelV2Response.elbId)
+            && Objects.equals(this.memberGroups, showDetailsOfVpcChannelV2Response.memberGroups)
             && Objects.equals(this.members, showDetailsOfVpcChannelV2Response.members)
             && Objects.equals(this.vpcHealthConfig, showDetailsOfVpcChannelV2Response.vpcHealthConfig);
     }
@@ -449,14 +514,13 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(name,
-            type,
             port,
             balanceStrategy,
             memberType,
             createTime,
             id,
             status,
-            elbId,
+            memberGroups,
             members,
             vpcHealthConfig);
     }
@@ -466,14 +530,13 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDetailsOfVpcChannelV2Response {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    elbId: ").append(toIndentedString(elbId)).append("\n");
+        sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    vpcHealthConfig: ").append(toIndentedString(vpcHealthConfig)).append("\n");
         sb.append("}");

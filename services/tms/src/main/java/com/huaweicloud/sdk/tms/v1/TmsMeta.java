@@ -163,6 +163,23 @@ public class TmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTagQuotaRequest, ShowTagQuotaResponse> showTagQuota = genForshowTagQuota();
+
+    private static HttpRequestDef<ShowTagQuotaRequest, ShowTagQuotaResponse> genForshowTagQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowTagQuotaRequest, ShowTagQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTagQuotaRequest.class, ShowTagQuotaResponse.class)
+                .withName("ShowTagQuota")
+                .withUri("/v1.0/tms/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> updatePredefineTags =
         genForupdatePredefineTags();
 

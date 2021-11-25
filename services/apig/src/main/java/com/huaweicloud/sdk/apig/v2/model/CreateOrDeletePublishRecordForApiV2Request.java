@@ -17,14 +17,14 @@ public class CreateOrDeletePublishRecordForApiV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ApiPublishReq body;
+    private ApiActionInfo body;
 
     public CreateOrDeletePublishRecordForApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -35,14 +35,14 @@ public class CreateOrDeletePublishRecordForApiV2Request {
         this.instanceId = instanceId;
     }
 
-    public CreateOrDeletePublishRecordForApiV2Request withBody(ApiPublishReq body) {
+    public CreateOrDeletePublishRecordForApiV2Request withBody(ApiActionInfo body) {
         this.body = body;
         return this;
     }
 
-    public CreateOrDeletePublishRecordForApiV2Request withBody(Consumer<ApiPublishReq> bodySetter) {
+    public CreateOrDeletePublishRecordForApiV2Request withBody(Consumer<ApiActionInfo> bodySetter) {
         if (this.body == null) {
-            this.body = new ApiPublishReq();
+            this.body = new ApiActionInfo();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class CreateOrDeletePublishRecordForApiV2Request {
     /** Get body
      * 
      * @return body */
-    public ApiPublishReq getBody() {
+    public ApiActionInfo getBody() {
         return body;
     }
 
-    public void setBody(ApiPublishReq body) {
+    public void setBody(ApiActionInfo body) {
         this.body = body;
     }
 

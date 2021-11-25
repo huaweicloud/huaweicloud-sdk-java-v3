@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -193,6 +192,11 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_status")
 
     private List<String> activeStatus = null;
@@ -223,9 +227,9 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     private List<String> dnsNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip")
+    @JsonProperty(value = "subnet_id")
 
-    private String ip;
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -233,19 +237,14 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_id")
-
-    private String subnetId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private OffsetDateTime createdAt;
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    private OffsetDateTime updatedAt;
+    private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -258,11 +257,6 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     private List<TagList> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error")
-
-    private QueryError error;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whitelist")
 
     private List<String> whitelist = null;
@@ -271,11 +265,6 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     @JsonProperty(value = "enable_whitelist")
 
     private Boolean enableWhitelist;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "routetables")
-
-    private List<String> routetables = null;
 
     public UpdateEndpointWhiteResponse withId(String id) {
         this.id = id;
@@ -324,6 +313,23 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public UpdateEndpointWhiteResponse withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /** 访问所连接的终端节点服务的IP。 仅当同时满足如下条件时，返回该参数： ● 当查询连接interface类型终端节点服务的终 端节点时。 ● 终端节点服务启用“连接审批”功能，且已 经“接受”连接审批。
+     * “status”可以是“accepted”或者 “rejected（仅支持“接受”连接审批后再 “拒绝”的情况）”。
+     * 
+     * @return ip */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public UpdateEndpointWhiteResponse withActiveStatus(List<String> activeStatus) {
@@ -454,21 +460,20 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         this.dnsNames = dnsNames;
     }
 
-    public UpdateEndpointWhiteResponse withIp(String ip) {
-        this.ip = ip;
+    public UpdateEndpointWhiteResponse withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
         return this;
     }
 
-    /** 访问所连接的终端节点服务的IP。 仅当同时满足如下条件时，返回该参数： ● 当查询连接interface类型终端节点服务的终 端节点时。 ● 终端节点服务启用“连接审批”功能，且已 经“接受”连接审批。
-     * “status”可以是“accepted”或者 “rejected（仅支持“接受”连接审批后再 “拒绝”的情况）”。
+    /** vpc_id对应VPC下已创建的网络 （network）的ID，UUID格式。
      * 
-     * @return ip */
-    public String getIp() {
-        return ip;
+     * @return subnetId */
+    public String getSubnetId() {
+        return subnetId;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip;
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
     }
 
     public UpdateEndpointWhiteResponse withVpcId(String vpcId) {
@@ -487,23 +492,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         this.vpcId = vpcId;
     }
 
-    public UpdateEndpointWhiteResponse withSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-        return this;
-    }
-
-    /** vpc_id对应VPC下已创建的网络 （network）的ID，UUID格式。
-     * 
-     * @return subnetId */
-    public String getSubnetId() {
-        return subnetId;
-    }
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    public UpdateEndpointWhiteResponse withCreatedAt(OffsetDateTime createdAt) {
+    public UpdateEndpointWhiteResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -511,15 +500,15 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     /** 终端节点的创建时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
      * 
      * @return createdAt */
-    public OffsetDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public UpdateEndpointWhiteResponse withUpdatedAt(OffsetDateTime updatedAt) {
+    public UpdateEndpointWhiteResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -527,11 +516,11 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     /** 终端节点的更新时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
      * 
      * @return updatedAt */
-    public OffsetDateTime getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(OffsetDateTime updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -583,31 +572,6 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    public UpdateEndpointWhiteResponse withError(QueryError error) {
-        this.error = error;
-        return this;
-    }
-
-    public UpdateEndpointWhiteResponse withError(Consumer<QueryError> errorSetter) {
-        if (this.error == null) {
-            this.error = new QueryError();
-            errorSetter.accept(this.error);
-        }
-
-        return this;
-    }
-
-    /** Get error
-     * 
-     * @return error */
-    public QueryError getError() {
-        return error;
-    }
-
-    public void setError(QueryError error) {
-        this.error = error;
-    }
-
     public UpdateEndpointWhiteResponse withWhitelist(List<String> whitelist) {
         this.whitelist = whitelist;
         return this;
@@ -656,38 +620,6 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         this.enableWhitelist = enableWhitelist;
     }
 
-    public UpdateEndpointWhiteResponse withRoutetables(List<String> routetables) {
-        this.routetables = routetables;
-        return this;
-    }
-
-    public UpdateEndpointWhiteResponse addRoutetablesItem(String routetablesItem) {
-        if (this.routetables == null) {
-            this.routetables = new ArrayList<>();
-        }
-        this.routetables.add(routetablesItem);
-        return this;
-    }
-
-    public UpdateEndpointWhiteResponse withRoutetables(Consumer<List<String>> routetablesSetter) {
-        if (this.routetables == null) {
-            this.routetables = new ArrayList<>();
-        }
-        routetablesSetter.accept(this.routetables);
-        return this;
-    }
-
-    /** 路由表ID列表。 若未指定，返回默认VPC下路由表 ID。 创建连接Gateway类型终端节点 服务的终端节点时，显示此参 数。
-     * 
-     * @return routetables */
-    public List<String> getRoutetables() {
-        return routetables;
-    }
-
-    public void setRoutetables(List<String> routetables) {
-        this.routetables = routetables;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -700,23 +632,21 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         return Objects.equals(this.id, updateEndpointWhiteResponse.id)
             && Objects.equals(this.serviceType, updateEndpointWhiteResponse.serviceType)
             && Objects.equals(this.status, updateEndpointWhiteResponse.status)
+            && Objects.equals(this.ip, updateEndpointWhiteResponse.ip)
             && Objects.equals(this.activeStatus, updateEndpointWhiteResponse.activeStatus)
             && Objects.equals(this.endpointServiceName, updateEndpointWhiteResponse.endpointServiceName)
             && Objects.equals(this.markerId, updateEndpointWhiteResponse.markerId)
             && Objects.equals(this.endpointServiceId, updateEndpointWhiteResponse.endpointServiceId)
             && Objects.equals(this.enableDns, updateEndpointWhiteResponse.enableDns)
             && Objects.equals(this.dnsNames, updateEndpointWhiteResponse.dnsNames)
-            && Objects.equals(this.ip, updateEndpointWhiteResponse.ip)
-            && Objects.equals(this.vpcId, updateEndpointWhiteResponse.vpcId)
             && Objects.equals(this.subnetId, updateEndpointWhiteResponse.subnetId)
+            && Objects.equals(this.vpcId, updateEndpointWhiteResponse.vpcId)
             && Objects.equals(this.createdAt, updateEndpointWhiteResponse.createdAt)
             && Objects.equals(this.updatedAt, updateEndpointWhiteResponse.updatedAt)
             && Objects.equals(this.projectId, updateEndpointWhiteResponse.projectId)
             && Objects.equals(this.tags, updateEndpointWhiteResponse.tags)
-            && Objects.equals(this.error, updateEndpointWhiteResponse.error)
             && Objects.equals(this.whitelist, updateEndpointWhiteResponse.whitelist)
-            && Objects.equals(this.enableWhitelist, updateEndpointWhiteResponse.enableWhitelist)
-            && Objects.equals(this.routetables, updateEndpointWhiteResponse.routetables);
+            && Objects.equals(this.enableWhitelist, updateEndpointWhiteResponse.enableWhitelist);
     }
 
     @Override
@@ -724,23 +654,21 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         return Objects.hash(id,
             serviceType,
             status,
+            ip,
             activeStatus,
             endpointServiceName,
             markerId,
             endpointServiceId,
             enableDns,
             dnsNames,
-            ip,
-            vpcId,
             subnetId,
+            vpcId,
             createdAt,
             updatedAt,
             projectId,
             tags,
-            error,
             whitelist,
-            enableWhitelist,
-            routetables);
+            enableWhitelist);
     }
 
     @Override
@@ -750,23 +678,21 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    activeStatus: ").append(toIndentedString(activeStatus)).append("\n");
         sb.append("    endpointServiceName: ").append(toIndentedString(endpointServiceName)).append("\n");
         sb.append("    markerId: ").append(toIndentedString(markerId)).append("\n");
         sb.append("    endpointServiceId: ").append(toIndentedString(endpointServiceId)).append("\n");
         sb.append("    enableDns: ").append(toIndentedString(enableDns)).append("\n");
         sb.append("    dnsNames: ").append(toIndentedString(dnsNames)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("    whitelist: ").append(toIndentedString(whitelist)).append("\n");
         sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
-        sb.append("    routetables: ").append(toIndentedString(routetables)).append("\n");
         sb.append("}");
         return sb.toString();
     }

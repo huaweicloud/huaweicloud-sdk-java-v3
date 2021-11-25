@@ -38,7 +38,7 @@ public class ListConversionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 度量单位的换算信息，具体参见表2。
+    /** 度量单位的换算信息，具体参见表3。
      * 
      * @return conversions */
     public List<Conversion> getConversions() {

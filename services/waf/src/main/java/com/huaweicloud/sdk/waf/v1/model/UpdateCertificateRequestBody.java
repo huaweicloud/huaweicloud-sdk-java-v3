@@ -18,7 +18,7 @@ public class UpdateCertificateRequestBody {
         return this;
     }
 
-    /** 证书名
+    /** 证书名称，证书名称只能由数字、字母、中划线、下划线和英文句点组成，长度不能超过64位字符
      * 
      * @return name */
     public String getName() {

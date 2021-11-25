@@ -20,7 +20,7 @@ public class BatchDeleteApiAclBindingV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failure")
 
-    private List<AclBindingBatchResultFailureResp> failure = null;
+    private List<AclBindingBatchFailure> failure = null;
 
     public BatchDeleteApiAclBindingV2Response withSuccessCount(Integer successCount) {
         this.successCount = successCount;
@@ -38,12 +38,12 @@ public class BatchDeleteApiAclBindingV2Response extends SdkResponse {
         this.successCount = successCount;
     }
 
-    public BatchDeleteApiAclBindingV2Response withFailure(List<AclBindingBatchResultFailureResp> failure) {
+    public BatchDeleteApiAclBindingV2Response withFailure(List<AclBindingBatchFailure> failure) {
         this.failure = failure;
         return this;
     }
 
-    public BatchDeleteApiAclBindingV2Response addFailureItem(AclBindingBatchResultFailureResp failureItem) {
+    public BatchDeleteApiAclBindingV2Response addFailureItem(AclBindingBatchFailure failureItem) {
         if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -51,8 +51,7 @@ public class BatchDeleteApiAclBindingV2Response extends SdkResponse {
         return this;
     }
 
-    public BatchDeleteApiAclBindingV2Response withFailure(
-        Consumer<List<AclBindingBatchResultFailureResp>> failureSetter) {
+    public BatchDeleteApiAclBindingV2Response withFailure(Consumer<List<AclBindingBatchFailure>> failureSetter) {
         if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -63,11 +62,11 @@ public class BatchDeleteApiAclBindingV2Response extends SdkResponse {
     /** 解除绑定失败的ACL策略及错误信息
      * 
      * @return failure */
-    public List<AclBindingBatchResultFailureResp> getFailure() {
+    public List<AclBindingBatchFailure> getFailure() {
         return failure;
     }
 
-    public void setFailure(List<AclBindingBatchResultFailureResp> failure) {
+    public void setFailure(List<AclBindingBatchFailure> failure) {
         this.failure = failure;
     }
 

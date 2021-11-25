@@ -1,0 +1,88 @@
+package com.huaweicloud.sdk.bcs.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/** couchDB信息 */
+public class Couchdb {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_name")
+
+    private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "password")
+
+    private String password;
+
+    public Couchdb withUserName(String userName) {
+        this.userName = userName;
+        return this;
+    }
+
+    /** couchDB用户名
+     * 
+     * @return userName */
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Couchdb withPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    /** couchDB密码
+     * 
+     * @return password */
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Couchdb couchdb = (Couchdb) o;
+        return Objects.equals(this.userName, couchdb.userName) && Objects.equals(this.password, couchdb.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userName, password);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Couchdb {\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

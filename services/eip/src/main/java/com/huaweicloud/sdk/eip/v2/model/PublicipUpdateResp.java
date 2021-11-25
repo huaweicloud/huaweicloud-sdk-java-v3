@@ -353,6 +353,11 @@ public class PublicipUpdateResp {
 
     private IpVersionEnum ipVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
     public PublicipUpdateResp withBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
         return this;
@@ -619,6 +624,22 @@ public class PublicipUpdateResp {
         this.ipVersion = ipVersion;
     }
 
+    public PublicipUpdateResp withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /** 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * 
+     * @return alias */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -642,7 +663,8 @@ public class PublicipUpdateResp {
             && Objects.equals(this.tenantId, publicipUpdateResp.tenantId)
             && Objects.equals(this.type, publicipUpdateResp.type)
             && Objects.equals(this.publicIpv6Address, publicipUpdateResp.publicIpv6Address)
-            && Objects.equals(this.ipVersion, publicipUpdateResp.ipVersion);
+            && Objects.equals(this.ipVersion, publicipUpdateResp.ipVersion)
+            && Objects.equals(this.alias, publicipUpdateResp.alias);
     }
 
     @Override
@@ -662,7 +684,8 @@ public class PublicipUpdateResp {
             tenantId,
             type,
             publicIpv6Address,
-            ipVersion);
+            ipVersion,
+            alias);
     }
 
     @Override
@@ -685,6 +708,7 @@ public class PublicipUpdateResp {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    publicIpv6Address: ").append(toIndentedString(publicIpv6Address)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -240,6 +240,28 @@ public class GesAsyncClient {
     }
 
     /**
+     * 扩副本(2.2.23)
+     * 扩副本能力允许动态扩容多个从节点，扩容的从节点可以处理读请求，从而提高读请求性能。 &gt;一万边和百亿边规格的图暂不支持扩副本。
+     *
+     * @param ExpandGraphRequest 请求对象
+     * @return CompletableFuture<ExpandGraphResponse>
+     */
+    public CompletableFuture<ExpandGraphResponse> expandGraphAsync(ExpandGraphRequest request) {
+        return hcClient.asyncInvokeHttp(request, GesMeta.expandGraph);
+    }
+
+    /**
+     * 扩副本(2.2.23)
+     * 扩副本能力允许动态扩容多个从节点，扩容的从节点可以处理读请求，从而提高读请求性能。 &gt;一万边和百亿边规格的图暂不支持扩副本。
+     *
+     * @param ExpandGraphRequest 请求对象
+     * @return AsyncInvoker<ExpandGraphRequest, ExpandGraphResponse>
+     */
+    public AsyncInvoker<ExpandGraphRequest, ExpandGraphResponse> expandGraphAsyncInvoker(ExpandGraphRequest request) {
+        return new AsyncInvoker<ExpandGraphRequest, ExpandGraphResponse>(request, GesMeta.expandGraph, hcClient);
+    }
+
+    /**
      * 导出图(1.0.5)
      * 导出图。
      *
@@ -438,6 +460,28 @@ public class GesAsyncClient {
     }
 
     /**
+     * 扩容图(2.2.21)
+     * 扩容图规格。
+     *
+     * @param ResizeGraphRequest 请求对象
+     * @return CompletableFuture<ResizeGraphResponse>
+     */
+    public CompletableFuture<ResizeGraphResponse> resizeGraphAsync(ResizeGraphRequest request) {
+        return hcClient.asyncInvokeHttp(request, GesMeta.resizeGraph);
+    }
+
+    /**
+     * 扩容图(2.2.21)
+     * 扩容图规格。
+     *
+     * @param ResizeGraphRequest 请求对象
+     * @return AsyncInvoker<ResizeGraphRequest, ResizeGraphResponse>
+     */
+    public AsyncInvoker<ResizeGraphRequest, ResizeGraphResponse> resizeGraphAsyncInvoker(ResizeGraphRequest request) {
+        return new AsyncInvoker<ResizeGraphRequest, ResizeGraphResponse>(request, GesMeta.resizeGraph, hcClient);
+    }
+
+    /**
      * 强制重启图(2.2.21)
      * 强制启动一个图。针对导入、导出 、运行中 、清空中的图。强制重启图，会将该图执行中的异步任务变为失败，然后停止图、启动图到运行状态。
      *
@@ -567,6 +611,28 @@ public class GesAsyncClient {
      */
     public AsyncInvoker<UpgradeGraphRequest, UpgradeGraphResponse> upgradeGraphAsyncInvoker(UpgradeGraphRequest request) {
         return new AsyncInvoker<UpgradeGraphRequest, UpgradeGraphResponse>(request, GesMeta.upgradeGraph, hcClient);
+    }
+
+    /**
+     * 从OBS导入元数据(1.0.0)
+     * 从OBS导入元数据。
+     *
+     * @param UploadFromObsRequest 请求对象
+     * @return CompletableFuture<UploadFromObsResponse>
+     */
+    public CompletableFuture<UploadFromObsResponse> uploadFromObsAsync(UploadFromObsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GesMeta.uploadFromObs);
+    }
+
+    /**
+     * 从OBS导入元数据(1.0.0)
+     * 从OBS导入元数据。
+     *
+     * @param UploadFromObsRequest 请求对象
+     * @return AsyncInvoker<UploadFromObsRequest, UploadFromObsResponse>
+     */
+    public AsyncInvoker<UploadFromObsRequest, UploadFromObsResponse> uploadFromObsAsyncInvoker(UploadFromObsRequest request) {
+        return new AsyncInvoker<UploadFromObsRequest, UploadFromObsResponse>(request, GesMeta.uploadFromObs, hcClient);
     }
 
 }

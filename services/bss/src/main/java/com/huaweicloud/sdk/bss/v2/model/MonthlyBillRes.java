@@ -14,6 +14,11 @@ public class MonthlyBillRes {
     private String cycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bill_date")
+
+    private String billDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_type")
 
     private Integer billType;
@@ -152,6 +157,22 @@ public class MonthlyBillRes {
 
     public void setCycle(String cycle) {
         this.cycle = cycle;
+    }
+
+    public MonthlyBillRes withBillDate(String billDate) {
+        this.billDate = billDate;
+        return this;
+    }
+
+    /** 消费日期，格式为YYYY-MM-DD。 说明： 当statistic_type=2时该字段才有值，否则返回null。
+     * 
+     * @return billDate */
+    public String getBillDate() {
+        return billDate;
+    }
+
+    public void setBillDate(String billDate) {
+        this.billDate = billDate;
     }
 
     public MonthlyBillRes withBillType(Integer billType) {
@@ -566,6 +587,7 @@ public class MonthlyBillRes {
         }
         MonthlyBillRes monthlyBillRes = (MonthlyBillRes) o;
         return Objects.equals(this.cycle, monthlyBillRes.cycle)
+            && Objects.equals(this.billDate, monthlyBillRes.billDate)
             && Objects.equals(this.billType, monthlyBillRes.billType)
             && Objects.equals(this.customerId, monthlyBillRes.customerId)
             && Objects.equals(this.region, monthlyBillRes.region)
@@ -596,6 +618,7 @@ public class MonthlyBillRes {
     @Override
     public int hashCode() {
         return Objects.hash(cycle,
+            billDate,
             billType,
             customerId,
             region,
@@ -628,6 +651,7 @@ public class MonthlyBillRes {
         StringBuilder sb = new StringBuilder();
         sb.append("class MonthlyBillRes {\n");
         sb.append("    cycle: ").append(toIndentedString(cycle)).append("\n");
+        sb.append("    billDate: ").append(toIndentedString(billDate)).append("\n");
         sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");

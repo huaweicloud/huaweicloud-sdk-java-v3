@@ -666,7 +666,7 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, ElbMeta.showPool, hcClient);
     }
 
-    /** 查询配额详情 【不开放】查询特定项目的配额数。
+    /** 查询配额详情 查询特定项目的配额数。
      *
      * @param ShowQuotaRequest 请求对象
      * @return CompletableFuture<ShowQuotaResponse> */
@@ -674,7 +674,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showQuota);
     }
 
-    /** 查询配额详情 【不开放】查询特定项目的配额数。
+    /** 查询配额详情 查询特定项目的配额数。
      *
      * @param ShowQuotaRequest 请求对象
      * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> */
@@ -682,7 +682,7 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, ElbMeta.showQuota, hcClient);
     }
 
-    /** 查询默认配额 【不开放】查询默认配额数。
+    /** 查询默认配额 查询默认配额数。
      *
      * @param ShowQuotaDefaultsRequest 请求对象
      * @return CompletableFuture<ShowQuotaDefaultsResponse> */
@@ -690,7 +690,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showQuotaDefaults);
     }
 
-    /** 查询默认配额 【不开放】查询默认配额数。
+    /** 查询默认配额 查询默认配额数。
      *
      * @param ShowQuotaDefaultsRequest 请求对象
      * @return AsyncInvoker<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse> */

@@ -95,13 +95,6 @@ public class ApigMeta {
             f -> f.withMarshaller(AssociateCertificateV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateCertificateV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -109,10 +102,17 @@ public class ApigMeta {
             f -> f.withMarshaller(AssociateCertificateV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
             }));
-        builder.<DomainCertReq>withRequestField("body",
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateCertificateV2Request::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<CertForm>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DomainCertReq.class),
+            TypeCasts.uncheckedConversion(CertForm.class),
             f -> f.withMarshaller(AssociateCertificateV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -180,10 +180,10 @@ public class ApigMeta {
             f -> f.withMarshaller(AssociateSignatureKeyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<SignBindingReq>withRequestField("body",
+        builder.<SignApiBinding>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SignBindingReq.class),
+            TypeCasts.uncheckedConversion(SignApiBinding.class),
             f -> f.withMarshaller(AssociateSignatureKeyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -245,10 +245,10 @@ public class ApigMeta {
             f -> f.withMarshaller(CreateEnvironmentV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<EnvReq>withRequestField("body",
+        builder.<EnvCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(EnvReq.class),
+            TypeCasts.uncheckedConversion(EnvCreate.class),
             f -> f.withMarshaller(CreateEnvironmentV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -280,10 +280,10 @@ public class ApigMeta {
             f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<EnvVariableReq>withRequestField("body",
+        builder.<EnvVariableCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(EnvVariableReq.class),
+            TypeCasts.uncheckedConversion(EnvVariableCreate.class),
             f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -411,10 +411,10 @@ public class ApigMeta {
             f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<ThrottleReq>withRequestField("body",
+        builder.<ThrottleBaseInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ThrottleReq.class),
+            TypeCasts.uncheckedConversion(ThrottleBaseInfo.class),
             f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -443,10 +443,10 @@ public class ApigMeta {
             f -> f.withMarshaller(CreateSignatureKeyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<SignatureReq>withRequestField("body",
+        builder.<BaseSignature>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SignatureReq.class),
+            TypeCasts.uncheckedConversion(BaseSignature.class),
             f -> f.withMarshaller(CreateSignatureKeyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -485,10 +485,10 @@ public class ApigMeta {
             f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
                 req.setThrottleId(v);
             }));
-        builder.<ThrottleSpecialReq>withRequestField("body",
+        builder.<ThrottleSpecialCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ThrottleSpecialReq.class),
+            TypeCasts.uncheckedConversion(ThrottleSpecialCreate.class),
             f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -848,19 +848,19 @@ public class ApigMeta {
             f -> f.withMarshaller(DisassociateCertificateV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateCertificateV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisassociateCertificateV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateCertificateV2Request::getDomainId, (req, v) -> {
+                req.setDomainId(v);
             }));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
@@ -894,19 +894,19 @@ public class ApigMeta {
             f -> f.withMarshaller(DisassociateDomainV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateDomainV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisassociateDomainV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateDomainV2Request::getDomainId, (req, v) -> {
+                req.setDomainId(v);
             }));
 
         // response
@@ -1024,6 +1024,20 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("sign_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1059,20 +1073,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -1100,6 +1100,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("sign_id",
             LocationType.Query,
@@ -1135,20 +1149,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
             }));
 
         // response
@@ -1218,6 +1218,20 @@ public class ApigMeta {
             f -> f.withMarshaller(ListCustomAuthorizersV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1238,20 +1252,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomAuthorizersV2Request::getType, (req, v) -> {
                 req.setType(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
             }));
 
         // response
@@ -1281,12 +1281,19 @@ public class ApigMeta {
             f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("group_id",
+        builder.<Long>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
@@ -1301,20 +1308,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getVariableName, (req, v) -> {
                 req.setVariableName(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
             }));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
@@ -1348,13 +1341,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListEnvironmentsV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1368,6 +1354,13 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEnvironmentsV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnvironmentsV2Request::getName, (req, v) -> {
+                req.setName(v);
             }));
 
         // response
@@ -1683,20 +1676,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1710,6 +1689,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getName, (req, v) -> {
+                req.setName(v);
             }));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
@@ -1746,6 +1739,20 @@ public class ApigMeta {
             f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1774,20 +1781,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getEnvId, (req, v) -> {
                 req.setEnvId(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -1813,20 +1806,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListSignatureKeysV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1840,6 +1819,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSignatureKeysV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getName, (req, v) -> {
+                req.setName(v);
             }));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
@@ -1883,6 +1876,20 @@ public class ApigMeta {
             f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getThrottleId, (req, v) -> {
                 req.setThrottleId(v);
             }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("object_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1903,20 +1910,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getUser, (req, v) -> {
                 req.setUser(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
             }));
 
         // response
@@ -2069,19 +2062,19 @@ public class ApigMeta {
             f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getDomainId, (req, v) -> {
+                req.setDomainId(v);
             }));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
@@ -2464,10 +2457,10 @@ public class ApigMeta {
             f -> f.withMarshaller(UpdateEnvironmentV2Request::getEnvId, (req, v) -> {
                 req.setEnvId(v);
             }));
-        builder.<EnvReq>withRequestField("body",
+        builder.<EnvCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(EnvReq.class),
+            TypeCasts.uncheckedConversion(EnvCreate.class),
             f -> f.withMarshaller(UpdateEnvironmentV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -2650,10 +2643,10 @@ public class ApigMeta {
             f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
                 req.setThrottleId(v);
             }));
-        builder.<ThrottleReq>withRequestField("body",
+        builder.<ThrottleBaseInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ThrottleReq.class),
+            TypeCasts.uncheckedConversion(ThrottleBaseInfo.class),
             f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -2689,10 +2682,10 @@ public class ApigMeta {
             f -> f.withMarshaller(UpdateSignatureKeyV2Request::getSignId, (req, v) -> {
                 req.setSignId(v);
             }));
-        builder.<SignatureReq>withRequestField("body",
+        builder.<BaseSignature>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SignatureReq.class),
+            TypeCasts.uncheckedConversion(BaseSignature.class),
             f -> f.withMarshaller(UpdateSignatureKeyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -2739,10 +2732,10 @@ public class ApigMeta {
             f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getStrategyId, (req, v) -> {
                 req.setStrategyId(v);
             }));
-        builder.<ThrottleSpecialUpdateReq>withRequestField("body",
+        builder.<ThrottleSpecialUpdate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ThrottleSpecialUpdateReq.class),
+            TypeCasts.uncheckedConversion(ThrottleSpecialUpdate.class),
             f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -3022,10 +3015,10 @@ public class ApigMeta {
             f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<ThrottleBindingReq>withRequestField("body",
+        builder.<ThrottleApiBindingCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ThrottleBindingReq.class),
+            TypeCasts.uncheckedConversion(ThrottleApiBindingCreate.class),
             f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -3145,44 +3138,11 @@ public class ApigMeta {
             f -> f.withMarshaller(ChangeApiVersionV2Request::getApiId, (req, v) -> {
                 req.setApiId(v);
             }));
-        builder.<ApiVersionInfo>withRequestField("body",
+        builder.<ApiVersion>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ApiVersionInfo.class),
+            TypeCasts.uncheckedConversion(ApiVersion.class),
             f -> f.withMarshaller(ChangeApiVersionV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> checkBackendConnectivity =
-        genForcheckBackendConnectivity();
-
-    private static HttpRequestDef<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> genForcheckBackendConnectivity() {
-        // basic
-        HttpRequestDef.Builder<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, CheckBackendConnectivityRequest.class, CheckBackendConnectivityResponse.class)
-                .withName("CheckBackendConnectivity")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/backend/connectivity/check")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckBackendConnectivityRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<CheckBackendConnectivityReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CheckBackendConnectivityReq.class),
-            f -> f.withMarshaller(CheckBackendConnectivityRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3210,10 +3170,10 @@ public class ApigMeta {
             f -> f.withMarshaller(CreateApiGroupV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<ApiGroupReq>withRequestField("body",
+        builder.<ApiGroupCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ApiGroupReq.class),
+            TypeCasts.uncheckedConversion(ApiGroupCreate.class),
             f -> f.withMarshaller(CreateApiGroupV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -3276,10 +3236,10 @@ public class ApigMeta {
             f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<ApiPublishReq>withRequestField("body",
+        builder.<ApiActionInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ApiPublishReq.class),
+            TypeCasts.uncheckedConversion(ApiActionInfo.class),
             f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -3314,10 +3274,10 @@ public class ApigMeta {
             f -> f.withMarshaller(DebugApiV2Request::getApiId, (req, v) -> {
                 req.setApiId(v);
             }));
-        builder.<DebugApiReq>withRequestField("body",
+        builder.<ApiDebugInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DebugApiReq.class),
+            TypeCasts.uncheckedConversion(ApiDebugInfo.class),
             f -> f.withMarshaller(DebugApiV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -3476,20 +3436,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApiGroupsV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3503,6 +3449,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListApiGroupsV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiGroupsV2Request::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiGroupsV2Request::getName, (req, v) -> {
+                req.setName(v);
             }));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
@@ -3617,20 +3577,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApiVersionsV2Request::getApiId, (req, v) -> {
                 req.setApiId(v);
             }));
-        builder.<String>withRequestField("env_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
-        builder.<String>withRequestField("env_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvName, (req, v) -> {
-                req.setEnvName(v);
-            }));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3644,6 +3590,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListApiVersionsV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("env_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvName, (req, v) -> {
+                req.setEnvName(v);
             }));
 
         // response
@@ -3672,6 +3632,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("throttle_id",
             LocationType.Query,
@@ -3708,20 +3682,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiName, (req, v) -> {
                 req.setApiName(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -3749,6 +3709,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("throttle_id",
             LocationType.Query,
@@ -3785,20 +3759,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiName, (req, v) -> {
                 req.setApiName(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -3822,6 +3782,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("id",
             LocationType.Query,
@@ -3886,20 +3860,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisV2Request::getType, (req, v) -> {
                 req.setType(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3935,6 +3895,20 @@ public class ApigMeta {
             f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3962,20 +3936,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getEnvId, (req, v) -> {
                 req.setEnvId(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
             }));
 
         // response
@@ -4073,10 +4033,10 @@ public class ApigMeta {
             f -> f.withMarshaller(UpdateApiGroupV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
             }));
-        builder.<ApiGroupReq>withRequestField("body",
+        builder.<ApiGroupBase>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ApiGroupReq.class),
+            TypeCasts.uncheckedConversion(ApiGroupBase.class),
             f -> f.withMarshaller(UpdateApiGroupV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -4252,6 +4212,20 @@ public class ApigMeta {
             f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -4287,20 +4261,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclName, (req, v) -> {
                 req.setAclName(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -4328,6 +4288,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("acl_id",
             LocationType.Query,
@@ -4364,20 +4338,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -4405,6 +4365,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("acl_id",
             LocationType.Query,
@@ -4440,20 +4414,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
             }));
 
         // response
@@ -4546,10 +4506,10 @@ public class ApigMeta {
             f -> f.withMarshaller(CreateAnAppV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<AppReq>withRequestField("body",
+        builder.<AppCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppReq.class),
+            TypeCasts.uncheckedConversion(AppCreate.class),
             f -> f.withMarshaller(CreateAnAppV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -4649,10 +4609,10 @@ public class ApigMeta {
             f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<AppAuthReq>withRequestField("body",
+        builder.<ApiAuthCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppAuthReq.class),
+            TypeCasts.uncheckedConversion(ApiAuthCreate.class),
             f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -4751,6 +4711,20 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisBindedToAppV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -4793,20 +4767,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisBindedToAppV2Request::getEnvId, (req, v) -> {
                 req.setEnvId(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -4831,6 +4791,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
@@ -4866,20 +4840,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiName, (req, v) -> {
                 req.setApiName(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
             }));
 
         // response
@@ -4952,6 +4912,20 @@ public class ApigMeta {
             f -> f.withMarshaller(ListAppsBindedToApiV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -4980,20 +4954,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListAppsBindedToApiV2Request::getEnvId, (req, v) -> {
                 req.setEnvId(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -5017,6 +4977,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("id",
             LocationType.Query,
@@ -5052,20 +5026,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsV2Request::getCreator, (req, v) -> {
                 req.setCreator(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
             }));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
@@ -5106,10 +5066,10 @@ public class ApigMeta {
             f -> f.withMarshaller(ResettingAppSecretV2Request::getAppId, (req, v) -> {
                 req.setAppId(v);
             }));
-        builder.<AppSecretReq>withRequestField("body",
+        builder.<AppResetCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppSecretReq.class),
+            TypeCasts.uncheckedConversion(AppResetCreate.class),
             f -> f.withMarshaller(ResettingAppSecretV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -5215,10 +5175,10 @@ public class ApigMeta {
             f -> f.withMarshaller(UpdateAppV2Request::getAppId, (req, v) -> {
                 req.setAppId(v);
             }));
-        builder.<AppReq>withRequestField("body",
+        builder.<AppCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppReq.class),
+            TypeCasts.uncheckedConversion(AppCreate.class),
             f -> f.withMarshaller(UpdateAppV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -5247,10 +5207,10 @@ public class ApigMeta {
             f -> f.withMarshaller(ExportApiDefinitionsV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<SwaggerReq>withRequestField("body",
+        builder.<ExportOpenApiReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SwaggerReq.class),
+            TypeCasts.uncheckedConversion(ExportOpenApiReq.class),
             f -> f.withMarshaller(ExportApiDefinitionsV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -5461,12 +5421,12 @@ public class ApigMeta {
             f -> f.withMarshaller(ListBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
                 req.setVpcChannelId(v);
             }));
-        builder.<String>withRequestField("name",
+        builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getName, (req, v) -> {
-                req.setName(v);
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -5475,12 +5435,12 @@ public class ApigMeta {
             f -> f.withMarshaller(ListBackendInstancesV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<Integer>withRequestField("offset",
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getName, (req, v) -> {
+                req.setName(v);
             }));
 
         // response
@@ -5507,20 +5467,6 @@ public class ApigMeta {
             f -> f.withMarshaller(ListVpcChannelsV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5534,6 +5480,20 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListVpcChannelsV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getName, (req, v) -> {
+                req.setName(v);
             }));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,

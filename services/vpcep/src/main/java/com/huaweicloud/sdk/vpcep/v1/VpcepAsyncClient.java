@@ -75,8 +75,8 @@ public class VpcepAsyncClient {
             hcClient);
     }
 
-    /** 创建终端节点服务 功能介绍 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，使用您 所提供的服务。 说明 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。通常创建终端节点服务
-     * 需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
+    /** 创建终端节点服务 功能介绍 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，使用您所提供的服务。 说明
+     * 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。通常创建终端节点服务需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
      *
      * @param CreateEndpointServiceRequest 请求对象
      * @return CompletableFuture<CreateEndpointServiceResponse> */
@@ -85,8 +85,8 @@ public class VpcepAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcepMeta.createEndpointService);
     }
 
-    /** 创建终端节点服务 功能介绍 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，使用您 所提供的服务。 说明 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。通常创建终端节点服务
-     * 需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
+    /** 创建终端节点服务 功能介绍 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，使用您所提供的服务。 说明
+     * 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。通常创建终端节点服务需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
      *
      * @param CreateEndpointServiceRequest 请求对象
      * @return AsyncInvoker<CreateEndpointServiceRequest, CreateEndpointServiceResponse> */
@@ -133,24 +133,6 @@ public class VpcepAsyncClient {
             VpcepMeta.deleteEndpointService, hcClient);
     }
 
-    /** 查询终端节点列表 功能介绍 查询当前用户下的终端节点的列表。
-     *
-     * @param ListEndpointDetailsRequest 请求对象
-     * @return CompletableFuture<ListEndpointDetailsResponse> */
-    public CompletableFuture<ListEndpointDetailsResponse> listEndpointDetailsAsync(ListEndpointDetailsRequest request) {
-        return hcClient.asyncInvokeHttp(request, VpcepMeta.listEndpointDetails);
-    }
-
-    /** 查询终端节点列表 功能介绍 查询当前用户下的终端节点的列表。
-     *
-     * @param ListEndpointDetailsRequest 请求对象
-     * @return AsyncInvoker<ListEndpointDetailsRequest, ListEndpointDetailsResponse> */
-    public AsyncInvoker<ListEndpointDetailsRequest, ListEndpointDetailsResponse> listEndpointDetailsAsyncInvoker(
-        ListEndpointDetailsRequest request) {
-        return new AsyncInvoker<ListEndpointDetailsRequest, ListEndpointDetailsResponse>(request,
-            VpcepMeta.listEndpointDetails, hcClient);
-    }
-
     /** 查询终端节点详情 功能介绍 查询终端节点的详细信息。
      *
      * @param ListEndpointInfoDetailsRequest 请求对象
@@ -188,6 +170,24 @@ public class VpcepAsyncClient {
             VpcepMeta.listEndpointService, hcClient);
     }
 
+    /** 查询终端节点列表 功能介绍 查询当前用户下的终端节点的列表。
+     *
+     * @param ListEndpointsRequest 请求对象
+     * @return CompletableFuture<ListEndpointsResponse> */
+    public CompletableFuture<ListEndpointsResponse> listEndpointsAsync(ListEndpointsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.listEndpoints);
+    }
+
+    /** 查询终端节点列表 功能介绍 查询当前用户下的终端节点的列表。
+     *
+     * @param ListEndpointsRequest 请求对象
+     * @return AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse> */
+    public AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse> listEndpointsAsyncInvoker(
+        ListEndpointsRequest request) {
+        return new AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse>(request, VpcepMeta.listEndpoints,
+            hcClient);
+    }
+
     /** 查询配额 功能介绍 查询用户的资源配额，包括终端节点服务和终端节点。
      *
      * @param ListQuotaDetailsRequest 请求对象
@@ -206,7 +206,7 @@ public class VpcepAsyncClient {
             hcClient);
     }
 
-    /** 查询连接终端节点服务的连接列表 功能介绍 查询连接当前用户下的某一个终端节点服务的连接列表。marker_id是连接的唯一标 识。
+    /** 查询连接终端节点服务的连接列表 功能介绍 查询连接当前用户下的某一个终端节点服务的连接列表。marker_id是连接的唯一标识。
      *
      * @param ListServiceConnectionsRequest 请求对象
      * @return CompletableFuture<ListServiceConnectionsResponse> */
@@ -215,7 +215,7 @@ public class VpcepAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcepMeta.listServiceConnections);
     }
 
-    /** 查询连接终端节点服务的连接列表 功能介绍 查询连接当前用户下的某一个终端节点服务的连接列表。marker_id是连接的唯一标 识。
+    /** 查询连接终端节点服务的连接列表 功能介绍 查询连接当前用户下的某一个终端节点服务的连接列表。marker_id是连接的唯一标识。
      *
      * @param ListServiceConnectionsRequest 请求对象
      * @return AsyncInvoker<ListServiceConnectionsRequest, ListServiceConnectionsResponse> */
@@ -225,8 +225,8 @@ public class VpcepAsyncClient {
             VpcepMeta.listServiceConnections, hcClient);
     }
 
-    /** 查询终端节点服务概要 功能介绍 查询终端节点服务的概要信息，此接口是供创建终端节点的用户来查询需要连接的终 端节点服务信息。此接口既可以方便其他用户查询到您的终端节点服务概要信息又可
-     * 以避免您的终端节点服务的细节信息暴露给其他用户。
+    /** 查询终端节点服务概要 功能介绍
+     * 查询终端节点服务的概要信息，此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。此接口既可以方便其他用户查询到您的终端节点服务概要信息又可以避免您的终端节点服务的细节信息暴露给其他用户。
      *
      * @param ListServiceDescribeDetailsRequest 请求对象
      * @return CompletableFuture<ListServiceDescribeDetailsResponse> */
@@ -235,8 +235,8 @@ public class VpcepAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcepMeta.listServiceDescribeDetails);
     }
 
-    /** 查询终端节点服务概要 功能介绍 查询终端节点服务的概要信息，此接口是供创建终端节点的用户来查询需要连接的终 端节点服务信息。此接口既可以方便其他用户查询到您的终端节点服务概要信息又可
-     * 以避免您的终端节点服务的细节信息暴露给其他用户。
+    /** 查询终端节点服务概要 功能介绍
+     * 查询终端节点服务的概要信息，此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。此接口既可以方便其他用户查询到您的终端节点服务概要信息又可以避免您的终端节点服务的细节信息暴露给其他用户。
      *
      * @param ListServiceDescribeDetailsRequest 请求对象
      * @return AsyncInvoker<ListServiceDescribeDetailsRequest, ListServiceDescribeDetailsResponse> */
@@ -283,7 +283,7 @@ public class VpcepAsyncClient {
             VpcepMeta.listServicePermissionsDetails, hcClient);
     }
 
-    /** 查询公共终端节点服务列表 功能介绍 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节 点服务，由运维人员创建，用户可直接使用，但无权创建。
+    /** 查询公共终端节点服务列表 功能介绍 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，由运维人员创建，用户可直接使用，但无权创建。
      *
      * @param ListServicePublicDetailsRequest 请求对象
      * @return CompletableFuture<ListServicePublicDetailsResponse> */
@@ -292,7 +292,7 @@ public class VpcepAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcepMeta.listServicePublicDetails);
     }
 
-    /** 查询公共终端节点服务列表 功能介绍 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节 点服务，由运维人员创建，用户可直接使用，但无权创建。
+    /** 查询公共终端节点服务列表 功能介绍 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，由运维人员创建，用户可直接使用，但无权创建。
      *
      * @param ListServicePublicDetailsRequest 请求对象
      * @return AsyncInvoker<ListServicePublicDetailsRequest, ListServicePublicDetailsResponse> */
@@ -395,7 +395,7 @@ public class VpcepAsyncClient {
             VpcepMeta.updateEndpointWhite, hcClient);
     }
 
-    /** 功能介绍 为指定Endpoint Service或Endpoint批量添加或删除标签。 ● 一个资源上最多有10个标签。
+    /** 批量添加或删除资源标签接口 功能介绍 为指定Endpoint Service或Endpoint批量添加或删除标签。 ● 一个资源上最多有10个标签。
      *
      * @param BatchAddOrRemoveResourceInstanceRequest 请求对象
      * @return CompletableFuture<BatchAddOrRemoveResourceInstanceResponse> */
@@ -404,7 +404,7 @@ public class VpcepAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcepMeta.batchAddOrRemoveResourceInstance);
     }
 
-    /** 功能介绍 为指定Endpoint Service或Endpoint批量添加或删除标签。 ● 一个资源上最多有10个标签。
+    /** 批量添加或删除资源标签接口 功能介绍 为指定Endpoint Service或Endpoint批量添加或删除标签。 ● 一个资源上最多有10个标签。
      *
      * @param BatchAddOrRemoveResourceInstanceRequest 请求对象
      * @return AsyncInvoker<BatchAddOrRemoveResourceInstanceRequest, BatchAddOrRemoveResourceInstanceResponse> */
@@ -414,7 +414,7 @@ public class VpcepAsyncClient {
             request, VpcepMeta.batchAddOrRemoveResourceInstance, hcClient);
     }
 
-    /** 功能介绍 根据租户ID和资源类型，获取租户下资源的标签。
+    /** 查询租户资源标签接口 功能介绍 根据租户ID和资源类型，获取租户下资源的标签。
      *
      * @param ListQueryProjectResourceTagsRequest 请求对象
      * @return CompletableFuture<ListQueryProjectResourceTagsResponse> */
@@ -423,7 +423,7 @@ public class VpcepAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcepMeta.listQueryProjectResourceTags);
     }
 
-    /** 功能介绍 根据租户ID和资源类型，获取租户下资源的标签。
+    /** 查询租户资源标签接口 功能介绍 根据租户ID和资源类型，获取租户下资源的标签。
      *
      * @param ListQueryProjectResourceTagsRequest 请求对象
      * @return AsyncInvoker<ListQueryProjectResourceTagsRequest, ListQueryProjectResourceTagsResponse> */

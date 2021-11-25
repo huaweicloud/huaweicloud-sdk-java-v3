@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /** Response Object */
 public class DeleteValueListResponse extends SdkResponse {
@@ -28,19 +25,9 @@ public class DeleteValueListResponse extends SdkResponse {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
     private Long timestamp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "values")
-
-    private List<String> values = null;
 
     public DeleteValueListResponse withId(String id) {
         this.id = id;
@@ -90,28 +77,12 @@ public class DeleteValueListResponse extends SdkResponse {
         this.type = type;
     }
 
-    public DeleteValueListResponse withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /** 引用表描述
-     * 
-     * @return description */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public DeleteValueListResponse withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    /** 引用表时间戳
+    /** 删除引用表的时间，时间为13位毫秒时间戳
      * 
      * @return timestamp */
     public Long getTimestamp() {
@@ -120,38 +91,6 @@ public class DeleteValueListResponse extends SdkResponse {
 
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
-    }
-
-    public DeleteValueListResponse withValues(List<String> values) {
-        this.values = values;
-        return this;
-    }
-
-    public DeleteValueListResponse addValuesItem(String valuesItem) {
-        if (this.values == null) {
-            this.values = new ArrayList<>();
-        }
-        this.values.add(valuesItem);
-        return this;
-    }
-
-    public DeleteValueListResponse withValues(Consumer<List<String>> valuesSetter) {
-        if (this.values == null) {
-            this.values = new ArrayList<>();
-        }
-        valuesSetter.accept(this.values);
-        return this;
-    }
-
-    /** 引用表的值
-     * 
-     * @return values */
-    public List<String> getValues() {
-        return values;
-    }
-
-    public void setValues(List<String> values) {
-        this.values = values;
     }
 
     @Override
@@ -166,14 +105,12 @@ public class DeleteValueListResponse extends SdkResponse {
         return Objects.equals(this.id, deleteValueListResponse.id)
             && Objects.equals(this.name, deleteValueListResponse.name)
             && Objects.equals(this.type, deleteValueListResponse.type)
-            && Objects.equals(this.description, deleteValueListResponse.description)
-            && Objects.equals(this.timestamp, deleteValueListResponse.timestamp)
-            && Objects.equals(this.values, deleteValueListResponse.values);
+            && Objects.equals(this.timestamp, deleteValueListResponse.timestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, description, timestamp, values);
+        return Objects.hash(id, name, type, timestamp);
     }
 
     @Override
@@ -183,9 +120,7 @@ public class DeleteValueListResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
-        sb.append("    values: ").append(toIndentedString(values)).append("\n");
         sb.append("}");
         return sb.toString();
     }

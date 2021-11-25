@@ -43,7 +43,7 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 企业项目id
+    /** 通过企业项目管理服务的查询企业项目列表接口ListEnterpriseProject查询通过企业项目管理服务的查询企业项目列表接口ListEnterpriseProject查询企业项目ID
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -59,7 +59,7 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 起始时间（13位毫秒时间戳）
+    /** 起始时间（13位毫秒时间戳），需要和to同时使用
      * 
      * @return from */
     public Long getFrom() {
@@ -75,7 +75,7 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 结束时间（13位毫秒时间戳）
+    /** 结束时间（13位毫秒时间戳），需要和from同时使用
      * 
      * @return to */
     public Long getTo() {
@@ -123,7 +123,7 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 展示维度，按天展示时传\"DAY\"
+    /** 展示维度，需要按天展示时传\"DAY\"
      * 
      * @return groupBy */
     public String getGroupBy() {

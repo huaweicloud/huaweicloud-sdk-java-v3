@@ -61,8 +61,9 @@ public class CreateEndpointRequestBody {
         return this;
     }
 
-    /** 需要指定vpc_id对应VPC下已 创建的网络（network）的 ID，UUID格式。 详细内容请参考《虚拟私有云 API参考》中的“查询子 网”，详见响应消息中的 “id”字段。 创建连接Interface类型终端节
-     * 点服务的终端节点时，此参数 必选。 说明 ● VPC的子网网段不能与 198.19.128.0/20重叠 ● VPC路由表中自定义路由的目 的地址不能与 198.19.128.0/20重叠
+    /** 说明： 创建Interface类型Client必选。需要指定vpc_id对应VPC下已 创建的网络（network）的 ID，UUID格式。 详细内容请参考《虚拟私有云 API参考》中的“查询子 网”，详见响应消息中的
+     * “id”字段。 创建连接Interface类型终端节 点服务的终端节点时，此参数 必选。 说明 ● VPC的子网网段不能与 198.19.128.0/20重叠 ● VPC路由表中自定义路由的目 的地址不能与
+     * 198.19.128.0/20重叠
      * 
      * @return subnetId */
     public String getSubnetId() {
@@ -110,7 +111,7 @@ public class CreateEndpointRequestBody {
         return this;
     }
 
-    /** 是否创建域名。 ● true：创建域名 ● false：不创建域名 默认值为false。 说明 当创建连接gateway类型终端节 点服务的终端节点时， “enable_dns”设置为true或者 false，均不创建域名。
+    /** 是否创建域名。 ● true：创建域名 ● false：不创建域名 默认值为false。 说明 当创建连接gateway类型终端节点服务的终端节点时，“enable_dns”设置为true或者false，均不创建域名。
      * 
      * @return enableDns */
     public Boolean getEnableDns() {
@@ -174,8 +175,7 @@ public class CreateEndpointRequestBody {
         return this;
     }
 
-    /** 路由表ID列表。 详细内容请参考《虚拟私有云 API参考》中的“查询VPC路 由”，详见响应消息中的 “id”字段。 创建连接gateway类型终端节 点服务的终节点时，此参数必 选。 说明 不设置此参数时，选择默认路由
-     * 表。
+    /** 路由表ID列表。详细内容请参考《虚拟私有云 API参考》中的“查询VPC路由”，详见响应消息中的“id”字段。 创建连接gateway类型终端节点服务的终节点时，此参数必选。 说明 不设置此参数时，选择默认路由表。
      * 
      * @return routetables */
     public List<String> getRoutetables() {
@@ -191,7 +191,7 @@ public class CreateEndpointRequestBody {
         return this;
     }
 
-    /** 访问所连接的终端节点服务的 IP。 创建终端节点时，可以指定访 问所连接的终端节点服务的 IP，目前只支持IPv4类型 。 创建连接Interface类型终端节 点服务的终端节点时，此参数 必选。
+    /** 访问所连接的终端节点服务的IP。 创建终端节点时，可以指定访问所连接的终端节点服务的IP，目前只支持IPv4类型 。 创建连接Interface类型终端节点服务的终端节点时，此参数必选。
      * 
      * @return portIp */
     public String getPortIp() {
@@ -223,7 +223,7 @@ public class CreateEndpointRequestBody {
         return this;
     }
 
-    /** 添加用于控制访问终端节点的 白名单。 创建终端节点时，支持访问控 制，使用此参数可以添加IPv4 或CIDR，默认空列表。 仅当创建连接Interface类型终 端节点服务的终端节点时，支 持设置此参数。
+    /** 添加用于控制访问终端节点的白名单。 创建终端节点时，支持访问控制，使用此参数可以添加IPv4或CIDR，默认空列表。 仅当创建连接Interface类型终端节点服务的终端节点时，支持设置此参数。
      * 
      * @return whitelist */
     public List<String> getWhitelist() {

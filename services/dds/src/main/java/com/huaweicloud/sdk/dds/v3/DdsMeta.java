@@ -1113,6 +1113,13 @@ public class DdsMeta {
             f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
 
         // response
 

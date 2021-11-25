@@ -180,6 +180,11 @@ public class ClusterSpec {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "platformVersion")
+
+    private String platformVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -393,6 +398,22 @@ public class ClusterSpec {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public ClusterSpec withPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
+        return this;
+    }
+
+    /** CCE集群平台版本号，仅供查看，不支持创建指定，集群创建时自动选择对应集群版本的最新平台版本。
+     * 
+     * @return platformVersion */
+    public String getPlatformVersion() {
+        return platformVersion;
+    }
+
+    public void setPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
     }
 
     public ClusterSpec withDescription(String description) {
@@ -710,6 +731,7 @@ public class ClusterSpec {
         ClusterSpec clusterSpec = (ClusterSpec) o;
         return Objects.equals(this.category, clusterSpec.category) && Objects.equals(this.type, clusterSpec.type)
             && Objects.equals(this.flavor, clusterSpec.flavor) && Objects.equals(this.version, clusterSpec.version)
+            && Objects.equals(this.platformVersion, clusterSpec.platformVersion)
             && Objects.equals(this.description, clusterSpec.description)
             && Objects.equals(this.ipv6enable, clusterSpec.ipv6enable)
             && Objects.equals(this.hostNetwork, clusterSpec.hostNetwork)
@@ -731,6 +753,7 @@ public class ClusterSpec {
             type,
             flavor,
             version,
+            platformVersion,
             description,
             ipv6enable,
             hostNetwork,
@@ -755,6 +778,7 @@ public class ClusterSpec {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    platformVersion: ").append(toIndentedString(platformVersion)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    ipv6enable: ").append(toIndentedString(ipv6enable)).append("\n");
         sb.append("    hostNetwork: ").append(toIndentedString(hostNetwork)).append("\n");

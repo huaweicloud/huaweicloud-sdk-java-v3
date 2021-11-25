@@ -13,15 +13,157 @@ import java.util.Objects;
 /** 独享模式回源服务器配置 */
 public class CloudWafServer {
 
+    /** 对外协议 */
+    public static final class FrontProtocolEnum {
+
+        /** Enum HTTP for value: "HTTP" */
+        public static final FrontProtocolEnum HTTP = new FrontProtocolEnum("HTTP");
+
+        /** Enum HTTPS for value: "HTTPS" */
+        public static final FrontProtocolEnum HTTPS = new FrontProtocolEnum("HTTPS");
+
+        private static final Map<String, FrontProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FrontProtocolEnum> createStaticFields() {
+            Map<String, FrontProtocolEnum> map = new HashMap<>();
+            map.put("HTTP", HTTP);
+            map.put("HTTPS", HTTPS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        FrontProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static FrontProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            FrontProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new FrontProtocolEnum(value);
+            }
+            return result;
+        }
+
+        public static FrontProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            FrontProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof FrontProtocolEnum) {
+                return this.value.equals(((FrontProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "front_protocol")
 
-    private String frontProtocol;
+    private FrontProtocolEnum frontProtocol;
+
+    /** 源站协议 */
+    public static final class BackProtocolEnum {
+
+        /** Enum HTTP for value: "HTTP" */
+        public static final BackProtocolEnum HTTP = new BackProtocolEnum("HTTP");
+
+        /** Enum HTTPS for value: "HTTPS" */
+        public static final BackProtocolEnum HTTPS = new BackProtocolEnum("HTTPS");
+
+        private static final Map<String, BackProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BackProtocolEnum> createStaticFields() {
+            Map<String, BackProtocolEnum> map = new HashMap<>();
+            map.put("HTTP", HTTP);
+            map.put("HTTPS", HTTPS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        BackProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static BackProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            BackProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new BackProtocolEnum(value);
+            }
+            return result;
+        }
+
+        public static BackProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            BackProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof BackProtocolEnum) {
+                return this.value.equals(((BackProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "back_protocol")
 
-    private String backProtocol;
+    private BackProtocolEnum backProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
@@ -109,7 +251,7 @@ public class CloudWafServer {
 
     private TypeEnum type;
 
-    public CloudWafServer withFrontProtocol(String frontProtocol) {
+    public CloudWafServer withFrontProtocol(FrontProtocolEnum frontProtocol) {
         this.frontProtocol = frontProtocol;
         return this;
     }
@@ -117,15 +259,15 @@ public class CloudWafServer {
     /** 对外协议
      * 
      * @return frontProtocol */
-    public String getFrontProtocol() {
+    public FrontProtocolEnum getFrontProtocol() {
         return frontProtocol;
     }
 
-    public void setFrontProtocol(String frontProtocol) {
+    public void setFrontProtocol(FrontProtocolEnum frontProtocol) {
         this.frontProtocol = frontProtocol;
     }
 
-    public CloudWafServer withBackProtocol(String backProtocol) {
+    public CloudWafServer withBackProtocol(BackProtocolEnum backProtocol) {
         this.backProtocol = backProtocol;
         return this;
     }
@@ -133,11 +275,11 @@ public class CloudWafServer {
     /** 源站协议
      * 
      * @return backProtocol */
-    public String getBackProtocol() {
+    public BackProtocolEnum getBackProtocol() {
         return backProtocol;
     }
 
-    public void setBackProtocol(String backProtocol) {
+    public void setBackProtocol(BackProtocolEnum backProtocol) {
         this.backProtocol = backProtocol;
     }
 

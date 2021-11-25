@@ -135,10 +135,89 @@ public class UpdateSqlAlarmRuleRequestBody {
 
     private Boolean sqlAlarmSend;
 
+    /** 发送主题 0:不变 1:新增 2:修改 3:删除 */
+    public static final class SqlAlarmSendCodeEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final SqlAlarmSendCodeEnum NUMBER_0 = new SqlAlarmSendCodeEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final SqlAlarmSendCodeEnum NUMBER_1 = new SqlAlarmSendCodeEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final SqlAlarmSendCodeEnum NUMBER_2 = new SqlAlarmSendCodeEnum(2);
+
+        /** Enum NUMBER_3 for value: 3 */
+        public static final SqlAlarmSendCodeEnum NUMBER_3 = new SqlAlarmSendCodeEnum(3);
+
+        private static final Map<Integer, SqlAlarmSendCodeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, SqlAlarmSendCodeEnum> createStaticFields() {
+            Map<Integer, SqlAlarmSendCodeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        SqlAlarmSendCodeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SqlAlarmSendCodeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            SqlAlarmSendCodeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new SqlAlarmSendCodeEnum(value);
+            }
+            return result;
+        }
+
+        public static SqlAlarmSendCodeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            SqlAlarmSendCodeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SqlAlarmSendCodeEnum) {
+                return this.value.equals(((SqlAlarmSendCodeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_alarm_send_code")
 
-    private Integer sqlAlarmSendCode;
+    private SqlAlarmSendCodeEnum sqlAlarmSendCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
@@ -308,7 +387,7 @@ public class UpdateSqlAlarmRuleRequestBody {
         this.sqlAlarmSend = sqlAlarmSend;
     }
 
-    public UpdateSqlAlarmRuleRequestBody withSqlAlarmSendCode(Integer sqlAlarmSendCode) {
+    public UpdateSqlAlarmRuleRequestBody withSqlAlarmSendCode(SqlAlarmSendCodeEnum sqlAlarmSendCode) {
         this.sqlAlarmSendCode = sqlAlarmSendCode;
         return this;
     }
@@ -316,11 +395,11 @@ public class UpdateSqlAlarmRuleRequestBody {
     /** 发送主题 0:不变 1:新增 2:修改 3:删除 minimum: 0 maximum: 3
      * 
      * @return sqlAlarmSendCode */
-    public Integer getSqlAlarmSendCode() {
+    public SqlAlarmSendCodeEnum getSqlAlarmSendCode() {
         return sqlAlarmSendCode;
     }
 
-    public void setSqlAlarmSendCode(Integer sqlAlarmSendCode) {
+    public void setSqlAlarmSendCode(SqlAlarmSendCodeEnum sqlAlarmSendCode) {
         this.sqlAlarmSendCode = sqlAlarmSendCode;
     }
 

@@ -94,6 +94,11 @@ public class UpdatePublicipOption {
 
     private IpVersionEnum ipVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
     public UpdatePublicipOption withPortId(String portId) {
         this.portId = portId;
         return this;
@@ -126,6 +131,22 @@ public class UpdatePublicipOption {
         this.ipVersion = ipVersion;
     }
 
+    public UpdatePublicipOption withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /** 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * 
+     * @return alias */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -136,12 +157,13 @@ public class UpdatePublicipOption {
         }
         UpdatePublicipOption updatePublicipOption = (UpdatePublicipOption) o;
         return Objects.equals(this.portId, updatePublicipOption.portId)
-            && Objects.equals(this.ipVersion, updatePublicipOption.ipVersion);
+            && Objects.equals(this.ipVersion, updatePublicipOption.ipVersion)
+            && Objects.equals(this.alias, updatePublicipOption.alias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(portId, ipVersion);
+        return Objects.hash(portId, ipVersion, alias);
     }
 
     @Override
@@ -150,6 +172,7 @@ public class UpdatePublicipOption {
         sb.append("class UpdatePublicipOption {\n");
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

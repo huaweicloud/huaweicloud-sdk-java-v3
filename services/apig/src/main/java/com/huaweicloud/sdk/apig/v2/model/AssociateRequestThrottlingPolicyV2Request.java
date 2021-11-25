@@ -17,14 +17,14 @@ public class AssociateRequestThrottlingPolicyV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ThrottleBindingReq body;
+    private ThrottleApiBindingCreate body;
 
     public AssociateRequestThrottlingPolicyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -35,14 +35,14 @@ public class AssociateRequestThrottlingPolicyV2Request {
         this.instanceId = instanceId;
     }
 
-    public AssociateRequestThrottlingPolicyV2Request withBody(ThrottleBindingReq body) {
+    public AssociateRequestThrottlingPolicyV2Request withBody(ThrottleApiBindingCreate body) {
         this.body = body;
         return this;
     }
 
-    public AssociateRequestThrottlingPolicyV2Request withBody(Consumer<ThrottleBindingReq> bodySetter) {
+    public AssociateRequestThrottlingPolicyV2Request withBody(Consumer<ThrottleApiBindingCreate> bodySetter) {
         if (this.body == null) {
-            this.body = new ThrottleBindingReq();
+            this.body = new ThrottleApiBindingCreate();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class AssociateRequestThrottlingPolicyV2Request {
     /** Get body
      * 
      * @return body */
-    public ThrottleBindingReq getBody() {
+    public ThrottleApiBindingCreate getBody() {
         return body;
     }
 
-    public void setBody(ThrottleBindingReq body) {
+    public void setBody(ThrottleApiBindingCreate body) {
         this.body = body;
     }
 

@@ -15,14 +15,14 @@ public class AssociateSignatureKeyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bindings")
 
-    private List<SignBindingApiResp> bindings = null;
+    private List<SignApiBindingInfo> bindings = null;
 
-    public AssociateSignatureKeyV2Response withBindings(List<SignBindingApiResp> bindings) {
+    public AssociateSignatureKeyV2Response withBindings(List<SignApiBindingInfo> bindings) {
         this.bindings = bindings;
         return this;
     }
 
-    public AssociateSignatureKeyV2Response addBindingsItem(SignBindingApiResp bindingsItem) {
+    public AssociateSignatureKeyV2Response addBindingsItem(SignApiBindingInfo bindingsItem) {
         if (this.bindings == null) {
             this.bindings = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class AssociateSignatureKeyV2Response extends SdkResponse {
         return this;
     }
 
-    public AssociateSignatureKeyV2Response withBindings(Consumer<List<SignBindingApiResp>> bindingsSetter) {
+    public AssociateSignatureKeyV2Response withBindings(Consumer<List<SignApiBindingInfo>> bindingsSetter) {
         if (this.bindings == null) {
             this.bindings = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class AssociateSignatureKeyV2Response extends SdkResponse {
     /** API与签名密钥的绑定关系列表
      * 
      * @return bindings */
-    public List<SignBindingApiResp> getBindings() {
+    public List<SignApiBindingInfo> getBindings() {
         return bindings;
     }
 
-    public void setBindings(List<SignBindingApiResp> bindings) {
+    public void setBindings(List<SignApiBindingInfo> bindings) {
         this.bindings = bindings;
     }
 

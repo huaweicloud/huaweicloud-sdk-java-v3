@@ -1,0 +1,226 @@
+package com.huaweicloud.sdk.roma.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/** 表字段详情 */
+public class ColumnInfo {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "field_name")
+
+    private String fieldName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "field_type")
+
+    private String fieldType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "field_length")
+
+    private String fieldLength;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nullable")
+
+    private String nullable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_partition")
+
+    private Boolean isPartition;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary")
+
+    private String primary;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unique")
+
+    private String unique;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "decimal_digits")
+
+    private String decimalDigits;
+
+    public ColumnInfo withFieldName(String fieldName) {
+        this.fieldName = fieldName;
+        return this;
+    }
+
+    /** 字段名称
+     * 
+     * @return fieldName */
+    public String getFieldName() {
+        return fieldName;
+    }
+
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
+    }
+
+    public ColumnInfo withFieldType(String fieldType) {
+        this.fieldType = fieldType;
+        return this;
+    }
+
+    /** 字段类型
+     * 
+     * @return fieldType */
+    public String getFieldType() {
+        return fieldType;
+    }
+
+    public void setFieldType(String fieldType) {
+        this.fieldType = fieldType;
+    }
+
+    public ColumnInfo withFieldLength(String fieldLength) {
+        this.fieldLength = fieldLength;
+        return this;
+    }
+
+    /** 字段长度
+     * 
+     * @return fieldLength */
+    public String getFieldLength() {
+        return fieldLength;
+    }
+
+    public void setFieldLength(String fieldLength) {
+        this.fieldLength = fieldLength;
+    }
+
+    public ColumnInfo withNullable(String nullable) {
+        this.nullable = nullable;
+        return this;
+    }
+
+    /** 是否允许为空
+     * 
+     * @return nullable */
+    public String getNullable() {
+        return nullable;
+    }
+
+    public void setNullable(String nullable) {
+        this.nullable = nullable;
+    }
+
+    public ColumnInfo withIsPartition(Boolean isPartition) {
+        this.isPartition = isPartition;
+        return this;
+    }
+
+    /** 是否是分区字段
+     * 
+     * @return isPartition */
+    public Boolean getIsPartition() {
+        return isPartition;
+    }
+
+    public void setIsPartition(Boolean isPartition) {
+        this.isPartition = isPartition;
+    }
+
+    public ColumnInfo withPrimary(String primary) {
+        this.primary = primary;
+        return this;
+    }
+
+    /** 是否是主键字段
+     * 
+     * @return primary */
+    public String getPrimary() {
+        return primary;
+    }
+
+    public void setPrimary(String primary) {
+        this.primary = primary;
+    }
+
+    public ColumnInfo withUnique(String unique) {
+        this.unique = unique;
+        return this;
+    }
+
+    /** 是否是唯一键字段
+     * 
+     * @return unique */
+    public String getUnique() {
+        return unique;
+    }
+
+    public void setUnique(String unique) {
+        this.unique = unique;
+    }
+
+    public ColumnInfo withDecimalDigits(String decimalDigits) {
+        this.decimalDigits = decimalDigits;
+        return this;
+    }
+
+    /** 小数部分位数，非数字类型返回null
+     * 
+     * @return decimalDigits */
+    public String getDecimalDigits() {
+        return decimalDigits;
+    }
+
+    public void setDecimalDigits(String decimalDigits) {
+        this.decimalDigits = decimalDigits;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ColumnInfo columnInfo = (ColumnInfo) o;
+        return Objects.equals(this.fieldName, columnInfo.fieldName)
+            && Objects.equals(this.fieldType, columnInfo.fieldType)
+            && Objects.equals(this.fieldLength, columnInfo.fieldLength)
+            && Objects.equals(this.nullable, columnInfo.nullable)
+            && Objects.equals(this.isPartition, columnInfo.isPartition)
+            && Objects.equals(this.primary, columnInfo.primary) && Objects.equals(this.unique, columnInfo.unique)
+            && Objects.equals(this.decimalDigits, columnInfo.decimalDigits);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fieldName, fieldType, fieldLength, nullable, isPartition, primary, unique, decimalDigits);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ColumnInfo {\n");
+        sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
+        sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
+        sb.append("    fieldLength: ").append(toIndentedString(fieldLength)).append("\n");
+        sb.append("    nullable: ").append(toIndentedString(nullable)).append("\n");
+        sb.append("    isPartition: ").append(toIndentedString(isPartition)).append("\n");
+        sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
+        sb.append("    unique: ").append(toIndentedString(unique)).append("\n");
+        sb.append("    decimalDigits: ").append(toIndentedString(decimalDigits)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

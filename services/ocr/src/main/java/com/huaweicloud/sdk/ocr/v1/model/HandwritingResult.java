@@ -23,11 +23,6 @@ public class HandwritingResult {
 
     private List<HandwritingWordsBlockList> wordsBlockList = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extracted_data")
-
-    private ExtractedData extractedData;
-
     public HandwritingResult withWordsBlockCount(Integer wordsBlockCount) {
         this.wordsBlockCount = wordsBlockCount;
         return this;
@@ -76,31 +71,6 @@ public class HandwritingResult {
         this.wordsBlockList = wordsBlockList;
     }
 
-    public HandwritingResult withExtractedData(ExtractedData extractedData) {
-        this.extractedData = extractedData;
-        return this;
-    }
-
-    public HandwritingResult withExtractedData(Consumer<ExtractedData> extractedDataSetter) {
-        if (this.extractedData == null) {
-            this.extractedData = new ExtractedData();
-            extractedDataSetter.accept(this.extractedData);
-        }
-
-        return this;
-    }
-
-    /** Get extractedData
-     * 
-     * @return extractedData */
-    public ExtractedData getExtractedData() {
-        return extractedData;
-    }
-
-    public void setExtractedData(ExtractedData extractedData) {
-        this.extractedData = extractedData;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,13 +81,12 @@ public class HandwritingResult {
         }
         HandwritingResult handwritingResult = (HandwritingResult) o;
         return Objects.equals(this.wordsBlockCount, handwritingResult.wordsBlockCount)
-            && Objects.equals(this.wordsBlockList, handwritingResult.wordsBlockList)
-            && Objects.equals(this.extractedData, handwritingResult.extractedData);
+            && Objects.equals(this.wordsBlockList, handwritingResult.wordsBlockList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(wordsBlockCount, wordsBlockList, extractedData);
+        return Objects.hash(wordsBlockCount, wordsBlockList);
     }
 
     @Override
@@ -126,7 +95,6 @@ public class HandwritingResult {
         sb.append("class HandwritingResult {\n");
         sb.append("    wordsBlockCount: ").append(toIndentedString(wordsBlockCount)).append("\n");
         sb.append("    wordsBlockList: ").append(toIndentedString(wordsBlockList)).append("\n");
-        sb.append("    extractedData: ").append(toIndentedString(extractedData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

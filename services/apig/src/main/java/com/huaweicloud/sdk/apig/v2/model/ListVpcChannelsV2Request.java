@@ -14,16 +14,6 @@ public class ListVpcChannelsV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Long offset;
@@ -32,6 +22,16 @@ public class ListVpcChannelsV2Request {
     @JsonProperty(value = "limit")
 
     private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "precise_search")
@@ -43,7 +43,7 @@ public class ListVpcChannelsV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -52,38 +52,6 @@ public class ListVpcChannelsV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public ListVpcChannelsV2Request withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /** VPC通道的编号
-     * 
-     * @return id */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public ListVpcChannelsV2Request withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /** VPC通道的名称
-     * 
-     * @return name */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public ListVpcChannelsV2Request withOffset(Long offset) {
@@ -118,6 +86,38 @@ public class ListVpcChannelsV2Request {
         this.limit = limit;
     }
 
+    public ListVpcChannelsV2Request withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /** VPC通道的编号
+     * 
+     * @return id */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ListVpcChannelsV2Request withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /** VPC通道的名称
+     * 
+     * @return name */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public ListVpcChannelsV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -144,16 +144,16 @@ public class ListVpcChannelsV2Request {
         }
         ListVpcChannelsV2Request listVpcChannelsV2Request = (ListVpcChannelsV2Request) o;
         return Objects.equals(this.instanceId, listVpcChannelsV2Request.instanceId)
-            && Objects.equals(this.id, listVpcChannelsV2Request.id)
-            && Objects.equals(this.name, listVpcChannelsV2Request.name)
             && Objects.equals(this.offset, listVpcChannelsV2Request.offset)
             && Objects.equals(this.limit, listVpcChannelsV2Request.limit)
+            && Objects.equals(this.id, listVpcChannelsV2Request.id)
+            && Objects.equals(this.name, listVpcChannelsV2Request.name)
             && Objects.equals(this.preciseSearch, listVpcChannelsV2Request.preciseSearch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, id, name, offset, limit, preciseSearch);
+        return Objects.hash(instanceId, offset, limit, id, name, preciseSearch);
     }
 
     @Override
@@ -161,10 +161,10 @@ public class ListVpcChannelsV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListVpcChannelsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -618,7 +618,7 @@ public class VpcMeta {
         HttpRequestDef.Builder<CreateAddressGroupRequest, CreateAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAddressGroupRequest.class, CreateAddressGroupResponse.class)
                 .withName("CreateAddressGroup")
-                .withUri("/v3/{project_id}/vpc/address_groups")
+                .withUri("/v3/{project_id}/vpc/address-groups")
                 .withContentType("application/json");
 
         // requests
@@ -643,7 +643,7 @@ public class VpcMeta {
         HttpRequestDef.Builder<DeleteAddressGroupRequest, DeleteAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAddressGroupRequest.class, DeleteAddressGroupResponse.class)
                 .withName("DeleteAddressGroup")
-                .withUri("/v3/{project_id}/vpc/address_groups/{address_group_id}")
+                .withUri("/v3/{project_id}/vpc/address-groups/{address_group_id}")
                 .withContentType("application/json");
 
         // requests
@@ -671,7 +671,7 @@ public class VpcMeta {
                     DeleteIpAddressGroupForceRequest.class,
                     DeleteIpAddressGroupForceResponse.class)
                 .withName("DeleteIpAddressGroupForce")
-                .withUri("/v3/{project_id}/vpc/address_groups/{address_group_id}/force")
+                .withUri("/v3/{project_id}/vpc/address-groups/{address_group_id}/force")
                 .withContentType("application/json");
 
         // requests
@@ -696,7 +696,7 @@ public class VpcMeta {
         HttpRequestDef.Builder<ListAddressGroupRequest, ListAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAddressGroupRequest.class, ListAddressGroupResponse.class)
                 .withName("ListAddressGroup")
-                .withUri("/v3/{project_id}/vpc/address_groups")
+                .withUri("/v3/{project_id}/vpc/address-groups")
                 .withContentType("application/json");
 
         // requests
@@ -756,7 +756,7 @@ public class VpcMeta {
         HttpRequestDef.Builder<ShowAddressGroupRequest, ShowAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAddressGroupRequest.class, ShowAddressGroupResponse.class)
                 .withName("ShowAddressGroup")
-                .withUri("/v3/{project_id}/vpc/address_groups/{address_group_id}")
+                .withUri("/v3/{project_id}/vpc/address-groups/{address_group_id}")
                 .withContentType("application/json");
 
         // requests
@@ -781,7 +781,7 @@ public class VpcMeta {
         HttpRequestDef.Builder<UpdateAddressGroupRequest, UpdateAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAddressGroupRequest.class, UpdateAddressGroupResponse.class)
                 .withName("UpdateAddressGroup")
-                .withUri("/v3/{project_id}/vpc/address_groups/{address_group_id}")
+                .withUri("/v3/{project_id}/vpc/address-groups/{address_group_id}")
                 .withContentType("application/json");
 
         // requests

@@ -22,14 +22,14 @@ public class CreateSpecialThrottlingConfigurationV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ThrottleSpecialReq body;
+    private ThrottleSpecialCreate body;
 
     public CreateSpecialThrottlingConfigurationV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -45,7 +45,7 @@ public class CreateSpecialThrottlingConfigurationV2Request {
         return this;
     }
 
-    /** 流控策略的ID
+    /** 流控策略的编号
      * 
      * @return throttleId */
     public String getThrottleId() {
@@ -56,14 +56,14 @@ public class CreateSpecialThrottlingConfigurationV2Request {
         this.throttleId = throttleId;
     }
 
-    public CreateSpecialThrottlingConfigurationV2Request withBody(ThrottleSpecialReq body) {
+    public CreateSpecialThrottlingConfigurationV2Request withBody(ThrottleSpecialCreate body) {
         this.body = body;
         return this;
     }
 
-    public CreateSpecialThrottlingConfigurationV2Request withBody(Consumer<ThrottleSpecialReq> bodySetter) {
+    public CreateSpecialThrottlingConfigurationV2Request withBody(Consumer<ThrottleSpecialCreate> bodySetter) {
         if (this.body == null) {
-            this.body = new ThrottleSpecialReq();
+            this.body = new ThrottleSpecialCreate();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class CreateSpecialThrottlingConfigurationV2Request {
     /** Get body
      * 
      * @return body */
-    public ThrottleSpecialReq getBody() {
+    public ThrottleSpecialCreate getBody() {
         return body;
     }
 
-    public void setBody(ThrottleSpecialReq body) {
+    public void setBody(ThrottleSpecialCreate body) {
         this.body = body;
     }
 

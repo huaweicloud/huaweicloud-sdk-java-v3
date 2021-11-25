@@ -270,7 +270,8 @@ public class PremiumWafServer {
         return this;
     }
 
-    /** 独享引擎所在VPC ID（子网id）源站和独享引擎需要在同一子网
+    /** VPC id,通过以下步骤获取VPC id： \\n 1.找到独享引擎所在的虚拟私有云名称，VPC\\子网这一列就是VPC的名称：登录WAF的控制台->单击系统管理->独享引擎->VPC\\子网 \\n 2.登录虚拟私有云
+     * VPC控制台->虚拟私有云->单击虚拟私有云的名称->基本信息的ID
      * 
      * @return vpcId */
     public String getVpcId() {

@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.ResultDatasDetail;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -39,7 +38,7 @@ public class ListLogItemsResponse extends SdkResponse {
     @JsonProperty(value="result")
     
     
-    private ResultDatasDetail result;
+    private String result;
 
     public ListLogItemsResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -85,30 +84,23 @@ public class ListLogItemsResponse extends SdkResponse {
 
     
 
-    public ListLogItemsResponse withResult(ResultDatasDetail result) {
+    public ListLogItemsResponse withResult(String result) {
         this.result = result;
         return this;
     }
 
-    public ListLogItemsResponse withResult(Consumer<ResultDatasDetail> resultSetter) {
-        if(this.result == null ){
-            this.result = new ResultDatasDetail();
-            resultSetter.accept(this.result);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get result
+     * 查询结果元数据信息，包括返回总数及结果。
      * @return result
      */
-    public ResultDatasDetail getResult() {
+    public String getResult() {
         return result;
     }
 
-    public void setResult(ResultDatasDetail result) {
+    public void setResult(String result) {
         this.result = result;
     }
 

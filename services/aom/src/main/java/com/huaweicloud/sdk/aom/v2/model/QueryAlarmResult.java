@@ -144,8 +144,8 @@ public class QueryAlarmResult  {
     @JsonProperty(value="resources")
     
     
-    private String resources;
-
+    private List<String> resources = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state_reason")
@@ -625,23 +625,37 @@ public class QueryAlarmResult  {
 
     
 
-    public QueryAlarmResult withResources(String resources) {
+    public QueryAlarmResult withResources(List<String> resources) {
         this.resources = resources;
         return this;
     }
 
     
+    public QueryAlarmResult addResourcesItem(String resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        this.resources.add(resourcesItem);
+        return this;
+    }
 
+    public QueryAlarmResult withResources(Consumer<List<String>> resourcesSetter) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        resourcesSetter.accept(this.resources);
+        return this;
+    }
 
     /**
      * 资源信息(已废弃)。
      * @return resources
      */
-    public String getResources() {
+    public List<String> getResources() {
         return resources;
     }
 
-    public void setResources(String resources) {
+    public void setResources(List<String> resources) {
         this.resources = resources;
     }
 

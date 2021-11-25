@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -37,11 +36,6 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     @JsonProperty(value = "service_name")
 
     private String serviceName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "service_type")
-
-    private String serviceType;
 
     /** 资源类型。 ● VM：云服务器。 ● VIP：虚拟IP。 ● LB：增强负载均衡型。 */
     public static final class ServerTypeEnum {
@@ -214,14 +208,19 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type")
+
+    private String serviceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private OffsetDateTime createdAt;
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    private OffsetDateTime updatedAt;
+    private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -422,8 +421,8 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         return this;
     }
 
-    /** 标识终端节点服务后端资源的ID，格式为通用 唯一识别码（Universally Unique Identifier， 下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端 口ID。 ●
-     * VM类型：弹性云服务器IP地址对应的网卡 ID。 ● VIP类型：虚拟资源所在物理服务器对应的网 卡ID。
+    /** 标识终端节点服务后端资源的ID，格式为通用唯一识别码 （Universally Unique Identifier，下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 ●
+     * VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。
      * 
      * @return portId */
     public String getPortId() {
@@ -439,7 +438,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         return this;
     }
 
-    /** 虚拟IP的网卡ID。 仅当“port_id”为“VIP类型”时，返回该参 数。
+    /** 虚拟IP的网卡ID。 仅当“port_id”为“VIP类型”时，返回该参数。
      * 
      * @return vipPortId */
     public String getVipPortId() {
@@ -464,23 +463,6 @@ public class CreateEndpointServiceResponse extends SdkResponse {
 
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
-    }
-
-    public CreateEndpointServiceResponse withServiceType(String serviceType) {
-        this.serviceType = serviceType;
-        return this;
-    }
-
-    /** 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型” 和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ●
-     * interface：包括运维人员配置的云服务和用 户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
-     * 
-     * @return serviceType */
-    public String getServiceType() {
-        return serviceType;
-    }
-
-    public void setServiceType(String serviceType) {
-        this.serviceType = serviceType;
     }
 
     public CreateEndpointServiceResponse withServerType(ServerTypeEnum serverType) {
@@ -520,7 +502,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否需要审批。 ● false：不需要审批，创建的终端节点连接直 接为accepted状态。 ● true：需要审批，创建的终端节点连接为 pendingAcceptance状态，需要终端节点服 务所属用户审核后方可使用。
+    /** 是否需要审批。 ● false：不需要审批，创建的终端节点连接直接为accepted状态。 ● true：需要审批，创建的终端节点连接为pendingAcceptance状态，需要终端节点服务所属用户审核后方可使用。
      * 
      * @return approvalEnabled */
     public Boolean getApprovalEnabled() {
@@ -547,35 +529,52 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         this.status = status;
     }
 
-    public CreateEndpointServiceResponse withCreatedAt(OffsetDateTime createdAt) {
+    public CreateEndpointServiceResponse withServiceType(String serviceType) {
+        this.serviceType = serviceType;
+        return this;
+    }
+
+    /** 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ●
+     * interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+     * 
+     * @return serviceType */
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public CreateEndpointServiceResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    /** 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+    /** 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * 
      * @return createdAt */
-    public OffsetDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public CreateEndpointServiceResponse withUpdatedAt(OffsetDateTime updatedAt) {
+    public CreateEndpointServiceResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    /** 终端节点服务的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+    /** 终端节点服务的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * 
      * @return updatedAt */
-    public OffsetDateTime getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(OffsetDateTime updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -708,11 +707,11 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             && Objects.equals(this.portId, createEndpointServiceResponse.portId)
             && Objects.equals(this.vipPortId, createEndpointServiceResponse.vipPortId)
             && Objects.equals(this.serviceName, createEndpointServiceResponse.serviceName)
-            && Objects.equals(this.serviceType, createEndpointServiceResponse.serviceType)
             && Objects.equals(this.serverType, createEndpointServiceResponse.serverType)
             && Objects.equals(this.vpcId, createEndpointServiceResponse.vpcId)
             && Objects.equals(this.approvalEnabled, createEndpointServiceResponse.approvalEnabled)
             && Objects.equals(this.status, createEndpointServiceResponse.status)
+            && Objects.equals(this.serviceType, createEndpointServiceResponse.serviceType)
             && Objects.equals(this.createdAt, createEndpointServiceResponse.createdAt)
             && Objects.equals(this.updatedAt, createEndpointServiceResponse.updatedAt)
             && Objects.equals(this.projectId, createEndpointServiceResponse.projectId)
@@ -728,11 +727,11 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             portId,
             vipPortId,
             serviceName,
-            serviceType,
             serverType,
             vpcId,
             approvalEnabled,
             status,
+            serviceType,
             createdAt,
             updatedAt,
             projectId,
@@ -750,11 +749,11 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    vipPortId: ").append(toIndentedString(vipPortId)).append("\n");
         sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
-        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    serverType: ").append(toIndentedString(serverType)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    approvalEnabled: ").append(toIndentedString(approvalEnabled)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");

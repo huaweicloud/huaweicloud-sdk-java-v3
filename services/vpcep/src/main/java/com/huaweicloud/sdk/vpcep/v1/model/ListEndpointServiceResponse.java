@@ -15,19 +15,19 @@ public class ListEndpointServiceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_services")
 
-    private List<ServiceDetailsResp> endpointServices = null;
+    private List<ServiceList> endpointServices = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListEndpointServiceResponse withEndpointServices(List<ServiceDetailsResp> endpointServices) {
+    public ListEndpointServiceResponse withEndpointServices(List<ServiceList> endpointServices) {
         this.endpointServices = endpointServices;
         return this;
     }
 
-    public ListEndpointServiceResponse addEndpointServicesItem(ServiceDetailsResp endpointServicesItem) {
+    public ListEndpointServiceResponse addEndpointServicesItem(ServiceList endpointServicesItem) {
         if (this.endpointServices == null) {
             this.endpointServices = new ArrayList<>();
         }
@@ -35,7 +35,7 @@ public class ListEndpointServiceResponse extends SdkResponse {
         return this;
     }
 
-    public ListEndpointServiceResponse withEndpointServices(Consumer<List<ServiceDetailsResp>> endpointServicesSetter) {
+    public ListEndpointServiceResponse withEndpointServices(Consumer<List<ServiceList>> endpointServicesSetter) {
         if (this.endpointServices == null) {
             this.endpointServices = new ArrayList<>();
         }
@@ -46,11 +46,11 @@ public class ListEndpointServiceResponse extends SdkResponse {
     /** 终端节点服务列表
      * 
      * @return endpointServices */
-    public List<ServiceDetailsResp> getEndpointServices() {
+    public List<ServiceList> getEndpointServices() {
         return endpointServices;
     }
 
-    public void setEndpointServices(List<ServiceDetailsResp> endpointServices) {
+    public void setEndpointServices(List<ServiceList> endpointServices) {
         this.endpointServices = endpointServices;
     }
 

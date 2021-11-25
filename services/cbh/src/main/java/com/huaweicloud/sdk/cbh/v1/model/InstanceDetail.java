@@ -253,7 +253,7 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例的server id
+    /** 实例名称
      * 
      * @return name */
     public String getName() {
@@ -269,7 +269,7 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 开始时间
+    /** 实例的server id
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -509,7 +509,7 @@ public class InstanceDetail {
         return this;
     }
 
-    /** instance数据库表中的instance_id字段
+    /** 实例ID
      * 
      * @return instanceKey */
     public String getInstanceKey() {

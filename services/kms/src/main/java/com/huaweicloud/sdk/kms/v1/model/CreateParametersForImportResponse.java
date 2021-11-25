@@ -22,7 +22,7 @@ public class CreateParametersForImportResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiration_time")
 
-    private String expirationTime;
+    private Long expirationTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_key")
@@ -61,19 +61,19 @@ public class CreateParametersForImportResponse extends SdkResponse {
         this.importToken = importToken;
     }
 
-    public CreateParametersForImportResponse withExpirationTime(String expirationTime) {
+    public CreateParametersForImportResponse withExpirationTime(Long expirationTime) {
         this.expirationTime = expirationTime;
         return this;
     }
 
-    /** 导入参数到期时间，时间戳，即从1970年1月1日至该时间的总秒数。
+    /** 导入参数到期时间，时间戳，即从1970年1月1日至该时间的总秒数。 minimum: 0 maximum: 10000000000
      * 
      * @return expirationTime */
-    public String getExpirationTime() {
+    public Long getExpirationTime() {
         return expirationTime;
     }
 
-    public void setExpirationTime(String expirationTime) {
+    public void setExpirationTime(Long expirationTime) {
         this.expirationTime = expirationTime;
     }
 

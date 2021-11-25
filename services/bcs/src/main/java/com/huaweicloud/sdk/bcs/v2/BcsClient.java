@@ -89,6 +89,25 @@ public class BcsClient {
             BcsMeta.batchRemoveOrgsFromChannel, hcClient);
     }
 
+    /** 生成用户证书 通过用户名生成指定服务实例组织用户证书
+     *
+     * @param CreateBlockchainCertByUserNameRequest 请求对象
+     * @return CreateBlockchainCertByUserNameResponse */
+    public CreateBlockchainCertByUserNameResponse createBlockchainCertByUserName(
+        CreateBlockchainCertByUserNameRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.createBlockchainCertByUserName);
+    }
+
+    /** 生成用户证书 通过用户名生成指定服务实例组织用户证书
+     *
+     * @param CreateBlockchainCertByUserNameRequest 请求对象
+     * @return SyncInvoker<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> */
+    public SyncInvoker<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> createBlockchainCertByUserNameInvoker(
+        CreateBlockchainCertByUserNameRequest request) {
+        return new SyncInvoker<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse>(request,
+            BcsMeta.createBlockchainCertByUserName, hcClient);
+    }
+
     /** 创建服务实例 创建BCS服务实例,只支持按需创建
      *
      * @param CreateNewBlockchainRequest 请求对象
@@ -125,6 +144,24 @@ public class BcsClient {
             hcClient);
     }
 
+    /** 删除邀请成员信息 可通过此接口批量取消邀请或删除对已退出或拒绝加入或解散的成员邀请信息
+     *
+     * @param DeleteMemberInviteRequest 请求对象
+     * @return DeleteMemberInviteResponse */
+    public DeleteMemberInviteResponse deleteMemberInvite(DeleteMemberInviteRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.deleteMemberInvite);
+    }
+
+    /** 删除邀请成员信息 可通过此接口批量取消邀请或删除对已退出或拒绝加入或解散的成员邀请信息
+     *
+     * @param DeleteMemberInviteRequest 请求对象
+     * @return SyncInvoker<DeleteMemberInviteRequest, DeleteMemberInviteResponse> */
+    public SyncInvoker<DeleteMemberInviteRequest, DeleteMemberInviteResponse> deleteMemberInviteInvoker(
+        DeleteMemberInviteRequest request) {
+        return new SyncInvoker<DeleteMemberInviteRequest, DeleteMemberInviteResponse>(request,
+            BcsMeta.deleteMemberInvite, hcClient);
+    }
+
     /** 下载证书 下载指定服务实例相关证书
      *
      * @param DownloadBlockchainCertRequest 请求对象
@@ -159,6 +196,22 @@ public class BcsClient {
         DownloadBlockchainSdkConfigRequest request) {
         return new SyncInvoker<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse>(request,
             BcsMeta.downloadBlockchainSdkConfig, hcClient);
+    }
+
+    /** 冻结用户证书 冻结指定服务实例组织用户证书，冻结后需等待半分钟到一分钟左右生效
+     *
+     * @param FreezeCertRequest 请求对象
+     * @return FreezeCertResponse */
+    public FreezeCertResponse freezeCert(FreezeCertRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.freezeCert);
+    }
+
+    /** 冻结用户证书 冻结指定服务实例组织用户证书，冻结后需等待半分钟到一分钟左右生效
+     *
+     * @param FreezeCertRequest 请求对象
+     * @return SyncInvoker<FreezeCertRequest, FreezeCertResponse> */
+    public SyncInvoker<FreezeCertRequest, FreezeCertResponse> freezeCertInvoker(FreezeCertRequest request) {
+        return new SyncInvoker<FreezeCertRequest, FreezeCertResponse>(request, BcsMeta.freezeCert, hcClient);
     }
 
     /** 处理联盟邀请 处理联盟邀请
@@ -403,6 +456,22 @@ public class BcsClient {
         ShowBlockchainStatusRequest request) {
         return new SyncInvoker<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse>(request,
             BcsMeta.showBlockchainStatus, hcClient);
+    }
+
+    /** 解冻用户证书 解冻指定服务实例组织用户证书，解冻后需等待半分钟到一分钟左右生效
+     *
+     * @param UnfreezeCertRequest 请求对象
+     * @return UnfreezeCertResponse */
+    public UnfreezeCertResponse unfreezeCert(UnfreezeCertRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.unfreezeCert);
+    }
+
+    /** 解冻用户证书 解冻指定服务实例组织用户证书，解冻后需等待半分钟到一分钟左右生效
+     *
+     * @param UnfreezeCertRequest 请求对象
+     * @return SyncInvoker<UnfreezeCertRequest, UnfreezeCertResponse> */
+    public SyncInvoker<UnfreezeCertRequest, UnfreezeCertResponse> unfreezeCertInvoker(UnfreezeCertRequest request) {
+        return new SyncInvoker<UnfreezeCertRequest, UnfreezeCertResponse>(request, BcsMeta.unfreezeCert, hcClient);
     }
 
     /** 修改服务实例 修改实例的节点、组织，目前仅支持添加、删除节点（IEF模式不支持添加、删除节点），添加、删除组织，共4种类型，每次操作只可以操作一种类型。此接口不支持包周期模式;

@@ -15,14 +15,14 @@ public class CreateAuthorizingAppsV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auths")
 
-    private List<AppAuthResp> auths = null;
+    private List<ApiAuthRelations> auths = null;
 
-    public CreateAuthorizingAppsV2Response withAuths(List<AppAuthResp> auths) {
+    public CreateAuthorizingAppsV2Response withAuths(List<ApiAuthRelations> auths) {
         this.auths = auths;
         return this;
     }
 
-    public CreateAuthorizingAppsV2Response addAuthsItem(AppAuthResp authsItem) {
+    public CreateAuthorizingAppsV2Response addAuthsItem(ApiAuthRelations authsItem) {
         if (this.auths == null) {
             this.auths = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class CreateAuthorizingAppsV2Response extends SdkResponse {
         return this;
     }
 
-    public CreateAuthorizingAppsV2Response withAuths(Consumer<List<AppAuthResp>> authsSetter) {
+    public CreateAuthorizingAppsV2Response withAuths(Consumer<List<ApiAuthRelations>> authsSetter) {
         if (this.auths == null) {
             this.auths = new ArrayList<>();
         }
@@ -41,11 +41,11 @@ public class CreateAuthorizingAppsV2Response extends SdkResponse {
     /** API与APP的授权关系列表
      * 
      * @return auths */
-    public List<AppAuthResp> getAuths() {
+    public List<ApiAuthRelations> getAuths() {
         return auths;
     }
 
-    public void setAuths(List<AppAuthResp> auths) {
+    public void setAuths(List<ApiAuthRelations> auths) {
         this.auths = auths;
     }
 

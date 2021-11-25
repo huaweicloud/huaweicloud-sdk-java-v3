@@ -157,7 +157,7 @@ public class AutoScalingPolicy  {
     }
 
     /**
-     * 资源计划列表。若该参数为空表示不启用资源计划。  当启用弹性伸缩时，资源计划与自动伸缩规则需至少配置其中一种。  MRS 1.6.3及以后版本支持该参数。
+     * 资源计划列表。若该参数为空表示不启用资源计划。  当启用弹性伸缩时，资源计划与自动伸缩规则需至少配置其中一种。
      * @return resourcesPlans
      */
     public List<ResourcesPlan> getResourcesPlans() {
@@ -229,7 +229,7 @@ public class AutoScalingPolicy  {
     }
 
     /**
-     * 弹性伸缩自定义自动化脚本列表。若该参数为空表示不启用自动化脚本。  MRS 1.7.1及以后版本支持该参数。
+     * 弹性伸缩自定义自动化脚本列表。若该参数为空表示不启用自动化脚本。
      * @return execScripts
      */
     public List<ScaleScript> getExecScripts() {

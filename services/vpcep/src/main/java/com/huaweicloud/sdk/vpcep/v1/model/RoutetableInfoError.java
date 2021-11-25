@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.vpcep.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -12,60 +14,74 @@ public class RoutetableInfoError {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_failed")
 
-    private RoutetableInfoErrorDetial bindFailed;
+    private List<RoutetableInfoErrorDetial> bindFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unbind_failed")
 
-    private RoutetableInfoErrorDetial unbindFailed;
+    private List<RoutetableInfoErrorDetial> unbindFailed = null;
 
-    public RoutetableInfoError withBindFailed(RoutetableInfoErrorDetial bindFailed) {
+    public RoutetableInfoError withBindFailed(List<RoutetableInfoErrorDetial> bindFailed) {
         this.bindFailed = bindFailed;
         return this;
     }
 
-    public RoutetableInfoError withBindFailed(Consumer<RoutetableInfoErrorDetial> bindFailedSetter) {
+    public RoutetableInfoError addBindFailedItem(RoutetableInfoErrorDetial bindFailedItem) {
         if (this.bindFailed == null) {
-            this.bindFailed = new RoutetableInfoErrorDetial();
-            bindFailedSetter.accept(this.bindFailed);
+            this.bindFailed = new ArrayList<>();
         }
-
+        this.bindFailed.add(bindFailedItem);
         return this;
     }
 
-    /** Get bindFailed
+    public RoutetableInfoError withBindFailed(Consumer<List<RoutetableInfoErrorDetial>> bindFailedSetter) {
+        if (this.bindFailed == null) {
+            this.bindFailed = new ArrayList<>();
+        }
+        bindFailedSetter.accept(this.bindFailed);
+        return this;
+    }
+
+    /** 绑定终端节点子网路由表失败信息。
      * 
      * @return bindFailed */
-    public RoutetableInfoErrorDetial getBindFailed() {
+    public List<RoutetableInfoErrorDetial> getBindFailed() {
         return bindFailed;
     }
 
-    public void setBindFailed(RoutetableInfoErrorDetial bindFailed) {
+    public void setBindFailed(List<RoutetableInfoErrorDetial> bindFailed) {
         this.bindFailed = bindFailed;
     }
 
-    public RoutetableInfoError withUnbindFailed(RoutetableInfoErrorDetial unbindFailed) {
+    public RoutetableInfoError withUnbindFailed(List<RoutetableInfoErrorDetial> unbindFailed) {
         this.unbindFailed = unbindFailed;
         return this;
     }
 
-    public RoutetableInfoError withUnbindFailed(Consumer<RoutetableInfoErrorDetial> unbindFailedSetter) {
+    public RoutetableInfoError addUnbindFailedItem(RoutetableInfoErrorDetial unbindFailedItem) {
         if (this.unbindFailed == null) {
-            this.unbindFailed = new RoutetableInfoErrorDetial();
-            unbindFailedSetter.accept(this.unbindFailed);
+            this.unbindFailed = new ArrayList<>();
         }
-
+        this.unbindFailed.add(unbindFailedItem);
         return this;
     }
 
-    /** Get unbindFailed
+    public RoutetableInfoError withUnbindFailed(Consumer<List<RoutetableInfoErrorDetial>> unbindFailedSetter) {
+        if (this.unbindFailed == null) {
+            this.unbindFailed = new ArrayList<>();
+        }
+        unbindFailedSetter.accept(this.unbindFailed);
+        return this;
+    }
+
+    /** 解绑终端节点子网路由表失败信息。
      * 
      * @return unbindFailed */
-    public RoutetableInfoErrorDetial getUnbindFailed() {
+    public List<RoutetableInfoErrorDetial> getUnbindFailed() {
         return unbindFailed;
     }
 
-    public void setUnbindFailed(RoutetableInfoErrorDetial unbindFailed) {
+    public void setUnbindFailed(List<RoutetableInfoErrorDetial> unbindFailed) {
         this.unbindFailed = unbindFailed;
     }
 

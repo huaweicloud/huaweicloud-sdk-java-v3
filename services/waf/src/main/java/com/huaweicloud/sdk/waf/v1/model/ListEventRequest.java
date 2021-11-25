@@ -21,7 +21,7 @@ public class ListEventRequest {
 
     private String enterpriseProjectId;
 
-    /** 查询日志的时间范围 */
+    /** 查询日志的时间范围,(不能和from、to同时使用) */
     public static final class RecentEnum {
 
         /** Enum YESTERDAY for value: "yesterday" */
@@ -110,6 +110,16 @@ public class ListEventRequest {
     private RecentEnum recent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from")
+
+    private Long from;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "to")
+
+    private Long to;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
     private List<String> hosts = null;
@@ -129,7 +139,7 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 企业项目id
+    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -145,7 +155,7 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 查询日志的时间范围
+    /** 查询日志的时间范围,(不能和from、to同时使用)
      * 
      * @return recent */
     public RecentEnum getRecent() {
@@ -154,6 +164,38 @@ public class ListEventRequest {
 
     public void setRecent(RecentEnum recent) {
         this.recent = recent;
+    }
+
+    public ListEventRequest withFrom(Long from) {
+        this.from = from;
+        return this;
+    }
+
+    /** 起始时间(13位时间戳)，需要和to同时使用，不能和recent参数同时使用
+     * 
+     * @return from */
+    public Long getFrom() {
+        return from;
+    }
+
+    public void setFrom(Long from) {
+        this.from = from;
+    }
+
+    public ListEventRequest withTo(Long to) {
+        this.to = to;
+        return this;
+    }
+
+    /** 结束时间(13位时间戳)，需要和from同时使用，不能和recent参数同时使用
+     * 
+     * @return to */
+    public Long getTo() {
+        return to;
+    }
+
+    public void setTo(Long to) {
+        this.to = to;
     }
 
     public ListEventRequest withHosts(List<String> hosts) {
@@ -177,7 +219,7 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 域名id9从获取防护网站列表获取域名id）
+    /** 域名id，从获取防护网站列表（ListHost）接口获取域名id
      * 
      * @return hosts */
     public List<String> getHosts() {
@@ -193,7 +235,7 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 页码
+    /** 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
      * 
      * @return page */
     public Integer getPage() {
@@ -209,7 +251,7 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 每页的条数
+    /** 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
      * 
      * @return pagesize */
     public Integer getPagesize() {
@@ -230,14 +272,15 @@ public class ListEventRequest {
         }
         ListEventRequest listEventRequest = (ListEventRequest) o;
         return Objects.equals(this.enterpriseProjectId, listEventRequest.enterpriseProjectId)
-            && Objects.equals(this.recent, listEventRequest.recent)
-            && Objects.equals(this.hosts, listEventRequest.hosts) && Objects.equals(this.page, listEventRequest.page)
+            && Objects.equals(this.recent, listEventRequest.recent) && Objects.equals(this.from, listEventRequest.from)
+            && Objects.equals(this.to, listEventRequest.to) && Objects.equals(this.hosts, listEventRequest.hosts)
+            && Objects.equals(this.page, listEventRequest.page)
             && Objects.equals(this.pagesize, listEventRequest.pagesize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, recent, hosts, page, pagesize);
+        return Objects.hash(enterpriseProjectId, recent, from, to, hosts, page, pagesize);
     }
 
     @Override
@@ -246,6 +289,8 @@ public class ListEventRequest {
         sb.append("class ListEventRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    recent: ").append(toIndentedString(recent)).append("\n");
+        sb.append("    from: ").append(toIndentedString(from)).append("\n");
+        sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");

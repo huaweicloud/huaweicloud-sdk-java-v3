@@ -29,7 +29,7 @@ public class UpdateVpcChannelV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {

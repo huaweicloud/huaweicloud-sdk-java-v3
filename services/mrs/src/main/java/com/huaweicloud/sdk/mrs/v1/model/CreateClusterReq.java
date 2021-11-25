@@ -73,7 +73,7 @@ public class CreateClusterReq  {
     
     private Integer coreNodeNum;
     /**
-     * 集群的计费模式。   12表示按需计费。接口调用仅支持创建按需计费集群。
+     * 集群的计费模式。  12：表示按需计费。接口调用仅支持创建按需计费集群。
      */
     public static final class BillingTypeEnum {
 
@@ -662,7 +662,7 @@ public class CreateClusterReq  {
     
     private String clusterMasterSecret;
     /**
-     * MRS集群运行模式。 - 0：普通集群，表示Kerberos认证关闭，用户可使用集群提供的所有功能。 - 1：安全集群，表示Kerberos认证开启，普通用户无权限使用MRS集群的“文件管理”和“作业管理”功能，并且无法查看Hadoop、Spark的作业记录以及集群资源使用情况。如果需要使用集群更多功能，需要找MRS Manager的管理员分配权限。   说明： 针对MRS 1.8.0以前的版本，仅当“safe_mode”配置为“1”时，请求消息体中包含cluster_admin_secret字段。 针对MRS 1.8.0及以后版本，请求消息体中包含cluster_admin_secret字段，不受参数“safe_mode”配置的影响。
+     * MRS集群运行模式。 - 0：普通集群，表示Kerberos认证关闭，用户可使用集群提供的所有功能。 - 1：安全集群，表示Kerberos认证开启，普通用户无权限使用MRS集群的“文件管理”和“作业管理”功能，并且无法查看Hadoop、Spark的作业记录以及集群资源使用情况。如果需要使用集群更多功能，需要找MRS Manager的管理员分配权限。
      */
     public static final class SafeModeEnum {
 
@@ -931,7 +931,7 @@ public class CreateClusterReq  {
     
     private List<Tag> tags = null;
         /**
-     * 集群登录方式。默认设置为1。  - 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 - 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。  说明： 该参数仅适用于MRS 1.6.2及以后版本的集群，MRS 1.6.2前的版本不支持。  枚举值： - 0：密码方式 - 1：密钥对方式
+     * 集群登录方式。默认设置为1。  - 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 - 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。  枚举值： - 0：密码方式 - 1：密钥对方式
      */
     public static final class LoginModeEnum {
 
@@ -1032,7 +1032,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群版本。 MRS目前支持MRS 1.8.10、MRS 1.9.2、MRS 2.1.0、MRS 3.0.2版本。
+     * 集群版本。 MRS目前支持MRS 1.9.2、MRS 3.1.0版本。
      * @return clusterVersion
      */
     public String getClusterVersion() {
@@ -1076,7 +1076,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Master节点数量。启用集群高可用功能时配置为2，不启用集群高可用功能时配置为1。
+     * Master节点数量。启用集群高可用功能时配置为2，不启用集群高可用功能时配置为1。MRS 3.x版本暂时不支持该参数配置为1。
      * @return masterNodeNum
      */
     public Integer getMasterNodeNum() {
@@ -1122,7 +1122,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群的计费模式。   12表示按需计费。接口调用仅支持创建按需计费集群。
+     * 集群的计费模式。  12：表示按需计费。接口调用仅支持创建按需计费集群。
      * @return billingType
      */
     public BillingTypeEnum getBillingType() {
@@ -1144,7 +1144,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群区域信息，请参见[终端节点及区域](mrs_02_0003.xml)。
+     * 集群区域信息，请参见[终端节点及区域](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)。
      * @return dataCenter
      */
     public String getDataCenter() {
@@ -1188,7 +1188,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Master节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。MRS当前支持主机规格的配型由CPU+内存+Disk共同决定。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](mrs_01_9006.xml)和[MRS所使用的裸金属服务器规格](mrs_01_9001.xml)。
+     * Master节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。MRS当前支持主机规格的配型由CPU+内存+Disk共同决定。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9006.html)和[MRS所使用的裸金属服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9001.html)。 该参数建议从MRS控制台的集群创建页面获取对应区域对应版本所支持的规格。
      * @return masterNodeSize
      */
     public String getMasterNodeSize() {
@@ -1210,7 +1210,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Core节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](mrs_01_9006.xml)和[MRS所使用的裸金属服务器规格](mrs_01_9001.xml)。
+     * Core节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9006.html)和[MRS所使用的裸金属服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9001.html)。 该参数建议从MRS控制台的集群创建页面获取对应区域对应版本所支持的规格。
      * @return coreNodeSize
      */
     public String getCoreNodeSize() {
@@ -1312,7 +1312,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 子网ID。通过VPC管理控制台获取子网ID： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网。 4) 单击对应子网名称，获取“网络ID”。  “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。
+     * 子网ID。通过VPC管理控制台获取子网ID： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网。 4) 单击对应子网名称，获取“网络ID”。  “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。推荐使用“subnet_id”。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -1334,7 +1334,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 子网名称。 通过VPC管理控制台获取子网名称： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网，获取子网名称。  “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。当仅填写“subnet_name”一个参数且VPC下存在同名子网时，创建集群时以VPC平台第一个名称的子网为准。
+     * 子网名称。 通过VPC管理控制台获取子网名称： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网，获取子网名称。  “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。当仅填写“subnet_name”一个参数且VPC下存在同名子网时，创建集群时以VPC平台第一个名称的子网为准。推荐使用“subnet_id”。
      * @return subnetName
      */
     public String getSubnetName() {
@@ -1649,7 +1649,7 @@ public class CreateClusterReq  {
     }
 
     /**
-     * 配置引导操作脚本信息。 MRS 1.7.2及以后版本支持该参数。
+     * 配置引导操作脚本信息。
      * @return bootstrapScripts
      */
     public List<BootstrapScript> getBootstrapScripts() {
@@ -1693,7 +1693,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 配置MRS Manager管理员用户的密码。 - 密码长度应在8～32个字符之间 - 不能与用户名或者倒序用户名相同 - 必须包含如下4种中至少3种字符的组合     - 至少一个小写字母     - 至少一个大写字母     - 至少一个数字     - 至少一个特殊字符：`~!@#$%^&*()-_=+\\|[{}];:'\",<.>/?和空格   说明： - 针对MRS 1.8.0以前的版本，仅当“safe_mode”配置为“1”时需要配置此参数。  - 针对MRS 1.8.0及以后版本，该参数为必选参数，不受参数“safe_mode”配置的影响。
+     * 配置MRS Manager管理员用户的密码。 - 密码长度应在8～32个字符之间 - 不能与用户名或者倒序用户名相同 - 必须包含如下4种中至少3种字符的组合     - 至少一个小写字母     - 至少一个大写字母     - 至少一个数字     - 至少一个特殊字符：`~!@#$%^&*()-_=+\\|[{}];:'\",<.>/?和空格
      * @return clusterAdminSecret
      */
     public String getClusterAdminSecret() {
@@ -1737,7 +1737,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * MRS集群运行模式。 - 0：普通集群，表示Kerberos认证关闭，用户可使用集群提供的所有功能。 - 1：安全集群，表示Kerberos认证开启，普通用户无权限使用MRS集群的“文件管理”和“作业管理”功能，并且无法查看Hadoop、Spark的作业记录以及集群资源使用情况。如果需要使用集群更多功能，需要找MRS Manager的管理员分配权限。   说明： 针对MRS 1.8.0以前的版本，仅当“safe_mode”配置为“1”时，请求消息体中包含cluster_admin_secret字段。 针对MRS 1.8.0及以后版本，请求消息体中包含cluster_admin_secret字段，不受参数“safe_mode”配置的影响。
+     * MRS集群运行模式。 - 0：普通集群，表示Kerberos认证关闭，用户可使用集群提供的所有功能。 - 1：安全集群，表示Kerberos认证开启，普通用户无权限使用MRS集群的“文件管理”和“作业管理”功能，并且无法查看Hadoop、Spark的作业记录以及集群资源使用情况。如果需要使用集群更多功能，需要找MRS Manager的管理员分配权限。
      * @return safeMode
      */
     public SafeModeEnum getSafeMode() {
@@ -1861,7 +1861,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群登录方式。默认设置为1。  - 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 - 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。  说明： 该参数仅适用于MRS 1.6.2及以后版本的集群，MRS 1.6.2前的版本不支持。  枚举值： - 0：密码方式 - 1：密钥对方式
+     * 集群登录方式。默认设置为1。  - 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 - 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。  枚举值： - 0：密码方式 - 1：密钥对方式
      * @return loginMode
      */
     public LoginModeEnum getLoginMode() {

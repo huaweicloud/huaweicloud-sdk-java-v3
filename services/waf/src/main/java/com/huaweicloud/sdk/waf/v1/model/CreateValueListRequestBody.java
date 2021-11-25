@@ -51,8 +51,8 @@ public class CreateValueListRequestBody {
         /** Enum RESPONSE_HEADER for value: "response_header" */
         public static final TypeEnum RESPONSE_HEADER = new TypeEnum("response_header");
 
-        /** Enum RESOPNSE_BODY for value: "resopnse_body" */
-        public static final TypeEnum RESOPNSE_BODY = new TypeEnum("resopnse_body");
+        /** Enum RESPONSE_BODY for value: "response_body" */
+        public static final TypeEnum RESPONSE_BODY = new TypeEnum("response_body");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,7 +67,7 @@ public class CreateValueListRequestBody {
             map.put("header", HEADER);
             map.put("response_code", RESPONSE_CODE);
             map.put("response_header", RESPONSE_HEADER);
-            map.put("resopnse_body", RESOPNSE_BODY);
+            map.put("response_body", RESPONSE_BODY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -144,7 +144,7 @@ public class CreateValueListRequestBody {
         return this;
     }
 
-    /** 引用表名称，2-32位字符串组成
+    /** 引用表名称，只能由数字、字母、中划线、下划线和英文句点组成，长度不能超过64
      * 
      * @return name */
     public String getName() {

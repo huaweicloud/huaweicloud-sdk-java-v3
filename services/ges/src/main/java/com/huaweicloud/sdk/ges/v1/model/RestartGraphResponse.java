@@ -93,7 +93,7 @@ public class RestartGraphResponse extends SdkResponse {
 
 
     /**
-     * 启动图任务ID。请求失败时字段为空。 >可以查询jobId查看任务执行状态、获取返回结果
+     * 强制重启任务ID。请求失败时字段为空。 >可以查询jobId查看任务执行状态、获取返回结果
      * @return jobId
      */
     public String getJobId() {

@@ -19,6 +19,24 @@ public class CodeCheckAsyncClient {
         return new ClientBuilder<>(CodeCheckAsyncClient::new);
     }
 
+    /** 创建自定义规则集 可根据需求灵活的组合规则。
+     *
+     * @param CreateRulesetRequest 请求对象
+     * @return CompletableFuture<CreateRulesetResponse> */
+    public CompletableFuture<CreateRulesetResponse> createRulesetAsync(CreateRulesetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.createRuleset);
+    }
+
+    /** 创建自定义规则集 可根据需求灵活的组合规则。
+     *
+     * @param CreateRulesetRequest 请求对象
+     * @return AsyncInvoker<CreateRulesetRequest, CreateRulesetResponse> */
+    public AsyncInvoker<CreateRulesetRequest, CreateRulesetResponse> createRulesetAsyncInvoker(
+        CreateRulesetRequest request) {
+        return new AsyncInvoker<CreateRulesetRequest, CreateRulesetResponse>(request, CodeCheckMeta.createRuleset,
+            hcClient);
+    }
+
     /** 新建检查任务 新建检查任务但是不执行。
      *
      * @param CreateTaskRequest 请求对象
@@ -49,6 +67,40 @@ public class CodeCheckAsyncClient {
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> */
     public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
         return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, CodeCheckMeta.deleteTask, hcClient);
+    }
+
+    /** 获取规则列表接口 根据语言、问题级别等条件查询规则列表。
+     *
+     * @param ListRulesRequest 请求对象
+     * @return CompletableFuture<ListRulesResponse> */
+    public CompletableFuture<ListRulesResponse> listRulesAsync(ListRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.listRules);
+    }
+
+    /** 获取规则列表接口 根据语言、问题级别等条件查询规则列表。
+     *
+     * @param ListRulesRequest 请求对象
+     * @return AsyncInvoker<ListRulesRequest, ListRulesResponse> */
+    public AsyncInvoker<ListRulesRequest, ListRulesResponse> listRulesAsyncInvoker(ListRulesRequest request) {
+        return new AsyncInvoker<ListRulesRequest, ListRulesResponse>(request, CodeCheckMeta.listRules, hcClient);
+    }
+
+    /** 查询规则集列表 根据项目ID、语言等条件查询规则集列表。
+     *
+     * @param ListRulesetsRequest 请求对象
+     * @return CompletableFuture<ListRulesetsResponse> */
+    public CompletableFuture<ListRulesetsResponse> listRulesetsAsync(ListRulesetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.listRulesets);
+    }
+
+    /** 查询规则集列表 根据项目ID、语言等条件查询规则集列表。
+     *
+     * @param ListRulesetsRequest 请求对象
+     * @return AsyncInvoker<ListRulesetsRequest, ListRulesetsResponse> */
+    public AsyncInvoker<ListRulesetsRequest, ListRulesetsResponse> listRulesetsAsyncInvoker(
+        ListRulesetsRequest request) {
+        return new AsyncInvoker<ListRulesetsRequest, ListRulesetsResponse>(request, CodeCheckMeta.listRulesets,
+            hcClient);
     }
 
     /** 执行检查任务 执行检查任务。
@@ -193,6 +245,24 @@ public class CodeCheckAsyncClient {
         UpdateDefectStatusRequest request) {
         return new AsyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse>(request,
             CodeCheckMeta.updateDefectStatus, hcClient);
+    }
+
+    /** 修改任务规则集 修改任务规则集。
+     *
+     * @param UpdateTaskRulesetRequest 请求对象
+     * @return CompletableFuture<UpdateTaskRulesetResponse> */
+    public CompletableFuture<UpdateTaskRulesetResponse> updateTaskRulesetAsync(UpdateTaskRulesetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.updateTaskRuleset);
+    }
+
+    /** 修改任务规则集 修改任务规则集。
+     *
+     * @param UpdateTaskRulesetRequest 请求对象
+     * @return AsyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> */
+    public AsyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> updateTaskRulesetAsyncInvoker(
+        UpdateTaskRulesetRequest request) {
+        return new AsyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse>(request,
+            CodeCheckMeta.updateTaskRuleset, hcClient);
     }
 
 }

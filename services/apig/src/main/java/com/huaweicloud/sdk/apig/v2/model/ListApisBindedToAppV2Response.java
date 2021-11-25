@@ -25,7 +25,7 @@ public class ListApisBindedToAppV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auths")
 
-    private List<AppAuthBindedApiResp> auths = null;
+    private List<ApiAuthInfo> auths = null;
 
     public ListApisBindedToAppV2Response withSize(Integer size) {
         this.size = size;
@@ -59,12 +59,12 @@ public class ListApisBindedToAppV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListApisBindedToAppV2Response withAuths(List<AppAuthBindedApiResp> auths) {
+    public ListApisBindedToAppV2Response withAuths(List<ApiAuthInfo> auths) {
         this.auths = auths;
         return this;
     }
 
-    public ListApisBindedToAppV2Response addAuthsItem(AppAuthBindedApiResp authsItem) {
+    public ListApisBindedToAppV2Response addAuthsItem(ApiAuthInfo authsItem) {
         if (this.auths == null) {
             this.auths = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ListApisBindedToAppV2Response extends SdkResponse {
         return this;
     }
 
-    public ListApisBindedToAppV2Response withAuths(Consumer<List<AppAuthBindedApiResp>> authsSetter) {
+    public ListApisBindedToAppV2Response withAuths(Consumer<List<ApiAuthInfo>> authsSetter) {
         if (this.auths == null) {
             this.auths = new ArrayList<>();
         }
@@ -83,11 +83,11 @@ public class ListApisBindedToAppV2Response extends SdkResponse {
     /** 本次返回的API列表
      * 
      * @return auths */
-    public List<AppAuthBindedApiResp> getAuths() {
+    public List<ApiAuthInfo> getAuths() {
         return auths;
     }
 
-    public void setAuths(List<AppAuthBindedApiResp> auths) {
+    public void setAuths(List<ApiAuthInfo> auths) {
         this.auths = auths;
     }
 

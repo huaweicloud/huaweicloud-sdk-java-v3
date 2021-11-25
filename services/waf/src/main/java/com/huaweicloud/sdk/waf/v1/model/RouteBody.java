@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class RouteBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cname")
+
+    private String cname;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -20,6 +25,22 @@ public class RouteBody {
     @JsonProperty(value = "servers")
 
     private List<RouteServerBody> servers = null;
+
+    public RouteBody withCname(String cname) {
+        this.cname = cname;
+        return this;
+    }
+
+    /** cname后缀
+     * 
+     * @return cname */
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
 
     public RouteBody withName(String name) {
         this.name = name;
@@ -78,18 +99,20 @@ public class RouteBody {
             return false;
         }
         RouteBody routeBody = (RouteBody) o;
-        return Objects.equals(this.name, routeBody.name) && Objects.equals(this.servers, routeBody.servers);
+        return Objects.equals(this.cname, routeBody.cname) && Objects.equals(this.name, routeBody.name)
+            && Objects.equals(this.servers, routeBody.servers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, servers);
+        return Objects.hash(cname, name, servers);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RouteBody {\n");
+        sb.append("    cname: ").append(toIndentedString(cname)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
         sb.append("}");

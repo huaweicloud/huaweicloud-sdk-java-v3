@@ -17,6 +17,23 @@ public class CodeCheckClient {
         return new ClientBuilder<>(CodeCheckClient::new);
     }
 
+    /** 创建自定义规则集 可根据需求灵活的组合规则。
+     *
+     * @param CreateRulesetRequest 请求对象
+     * @return CreateRulesetResponse */
+    public CreateRulesetResponse createRuleset(CreateRulesetRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.createRuleset);
+    }
+
+    /** 创建自定义规则集 可根据需求灵活的组合规则。
+     *
+     * @param CreateRulesetRequest 请求对象
+     * @return SyncInvoker<CreateRulesetRequest, CreateRulesetResponse> */
+    public SyncInvoker<CreateRulesetRequest, CreateRulesetResponse> createRulesetInvoker(CreateRulesetRequest request) {
+        return new SyncInvoker<CreateRulesetRequest, CreateRulesetResponse>(request, CodeCheckMeta.createRuleset,
+            hcClient);
+    }
+
     /** 新建检查任务 新建检查任务但是不执行。
      *
      * @param CreateTaskRequest 请求对象
@@ -47,6 +64,39 @@ public class CodeCheckClient {
      * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> */
     public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
         return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, CodeCheckMeta.deleteTask, hcClient);
+    }
+
+    /** 获取规则列表接口 根据语言、问题级别等条件查询规则列表。
+     *
+     * @param ListRulesRequest 请求对象
+     * @return ListRulesResponse */
+    public ListRulesResponse listRules(ListRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.listRules);
+    }
+
+    /** 获取规则列表接口 根据语言、问题级别等条件查询规则列表。
+     *
+     * @param ListRulesRequest 请求对象
+     * @return SyncInvoker<ListRulesRequest, ListRulesResponse> */
+    public SyncInvoker<ListRulesRequest, ListRulesResponse> listRulesInvoker(ListRulesRequest request) {
+        return new SyncInvoker<ListRulesRequest, ListRulesResponse>(request, CodeCheckMeta.listRules, hcClient);
+    }
+
+    /** 查询规则集列表 根据项目ID、语言等条件查询规则集列表。
+     *
+     * @param ListRulesetsRequest 请求对象
+     * @return ListRulesetsResponse */
+    public ListRulesetsResponse listRulesets(ListRulesetsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.listRulesets);
+    }
+
+    /** 查询规则集列表 根据项目ID、语言等条件查询规则集列表。
+     *
+     * @param ListRulesetsRequest 请求对象
+     * @return SyncInvoker<ListRulesetsRequest, ListRulesetsResponse> */
+    public SyncInvoker<ListRulesetsRequest, ListRulesetsResponse> listRulesetsInvoker(ListRulesetsRequest request) {
+        return new SyncInvoker<ListRulesetsRequest, ListRulesetsResponse>(request, CodeCheckMeta.listRulesets,
+            hcClient);
     }
 
     /** 执行检查任务 执行检查任务。
@@ -188,6 +238,24 @@ public class CodeCheckClient {
         UpdateDefectStatusRequest request) {
         return new SyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse>(request,
             CodeCheckMeta.updateDefectStatus, hcClient);
+    }
+
+    /** 修改任务规则集 修改任务规则集。
+     *
+     * @param UpdateTaskRulesetRequest 请求对象
+     * @return UpdateTaskRulesetResponse */
+    public UpdateTaskRulesetResponse updateTaskRuleset(UpdateTaskRulesetRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.updateTaskRuleset);
+    }
+
+    /** 修改任务规则集 修改任务规则集。
+     *
+     * @param UpdateTaskRulesetRequest 请求对象
+     * @return SyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> */
+    public SyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> updateTaskRulesetInvoker(
+        UpdateTaskRulesetRequest request) {
+        return new SyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse>(request,
+            CodeCheckMeta.updateTaskRuleset, hcClient);
     }
 
 }

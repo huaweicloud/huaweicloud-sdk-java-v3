@@ -129,7 +129,7 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "couchdb_info")
 
-    private CouchDbInfo couchdbInfo;
+    private Couchdb couchdbInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "turbo_info")
@@ -600,14 +600,14 @@ public class CreateRequestBody {
         this.channels = channels;
     }
 
-    public CreateRequestBody withCouchdbInfo(CouchDbInfo couchdbInfo) {
+    public CreateRequestBody withCouchdbInfo(Couchdb couchdbInfo) {
         this.couchdbInfo = couchdbInfo;
         return this;
     }
 
-    public CreateRequestBody withCouchdbInfo(Consumer<CouchDbInfo> couchdbInfoSetter) {
+    public CreateRequestBody withCouchdbInfo(Consumer<Couchdb> couchdbInfoSetter) {
         if (this.couchdbInfo == null) {
-            this.couchdbInfo = new CouchDbInfo();
+            this.couchdbInfo = new Couchdb();
             couchdbInfoSetter.accept(this.couchdbInfo);
         }
 
@@ -617,11 +617,11 @@ public class CreateRequestBody {
     /** Get couchdbInfo
      * 
      * @return couchdbInfo */
-    public CouchDbInfo getCouchdbInfo() {
+    public Couchdb getCouchdbInfo() {
         return couchdbInfo;
     }
 
-    public void setCouchdbInfo(CouchDbInfo couchdbInfo) {
+    public void setCouchdbInfo(Couchdb couchdbInfo) {
         this.couchdbInfo = couchdbInfo;
     }
 

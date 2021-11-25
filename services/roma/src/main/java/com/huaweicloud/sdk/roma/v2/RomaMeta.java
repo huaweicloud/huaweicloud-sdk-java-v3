@@ -387,6 +387,38 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> batchStartOrStopTasks =
+        genForbatchStartOrStopTasks();
+
+    private static HttpRequestDef<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> genForbatchStartOrStopTasks() {
+        // basic
+        HttpRequestDef.Builder<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchStartOrStopTasksRequest.class, BatchStartOrStopTasksResponse.class)
+            .withName("BatchStartOrStopTasks")
+            .withUri("/v2/{project_id}/fdi/instances/{instance_id}/batch-operation/tasks")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchStartOrStopTasksRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<OperateTasksBean>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateTasksBean.class),
+            f -> f.withMarshaller(BatchStartOrStopTasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckLivedataApisV2Request, CheckLivedataApisV2Response> checkLivedataApisV2 =
         genForcheckLivedataApisV2();
 
@@ -624,6 +656,38 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCommonTaskRequest, CreateCommonTaskResponse> createCommonTask =
+        genForcreateCommonTask();
+
+    private static HttpRequestDef<CreateCommonTaskRequest, CreateCommonTaskResponse> genForcreateCommonTask() {
+        // basic
+        HttpRequestDef.Builder<CreateCommonTaskRequest, CreateCommonTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCommonTaskRequest.class, CreateCommonTaskResponse.class)
+                .withName("CreateCommonTask")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCommonTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateCommonTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCommonTaskRequestBody.class),
+            f -> f.withMarshaller(CreateCommonTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2 =
         genForcreateCustomAuthorizerV2();
 
@@ -649,6 +713,38 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizerCreate.class),
             f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> createDatasourceInfo =
+        genForcreateDatasourceInfo();
+
+    private static HttpRequestDef<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> genForcreateDatasourceInfo() {
+        // basic
+        HttpRequestDef.Builder<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDatasourceInfoRequest.class, CreateDatasourceInfoResponse.class)
+            .withName("CreateDatasourceInfo")
+            .withUri("/v2/{project_id}/fdi/instances/{instance_id}/datasources")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasourceInfoRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DatasourceInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DatasourceInfo.class),
+            f -> f.withMarshaller(CreateDatasourceInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -751,6 +847,45 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDeviceGroupRequestBody.class),
             f -> f.withMarshaller(CreateDeviceGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDispatchesRequest, CreateDispatchesResponse> createDispatches =
+        genForcreateDispatches();
+
+    private static HttpRequestDef<CreateDispatchesRequest, CreateDispatchesResponse> genForcreateDispatches() {
+        // basic
+        HttpRequestDef.Builder<CreateDispatchesRequest, CreateDispatchesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDispatchesRequest.class, CreateDispatchesResponse.class)
+                .withName("CreateDispatches")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}/dispatches")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDispatchesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDispatchesRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<TaskDispatch>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TaskDispatch.class),
+            f -> f.withMarshaller(CreateDispatchesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1727,6 +1862,49 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> deleteDatasourceInfoById =
+        genFordeleteDatasourceInfoById();
+
+    private static HttpRequestDef<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> genFordeleteDatasourceInfoById() {
+        // basic
+        HttpRequestDef.Builder<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDatasourceInfoByIdRequest.class,
+                    DeleteDatasourceInfoByIdResponse.class)
+                .withName("DeleteDatasourceInfoById")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/datasources/{datasource_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceInfoByIdRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("datasource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceInfoByIdRequest::getDatasourceId, (req, v) -> {
+                req.setDatasourceId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDatasourceInfoByIdResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteDestinationRequest, DeleteDestinationResponse> deleteDestination =
         genFordeleteDestination();
 
@@ -2471,6 +2649,37 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getStrategyId, (req, v) -> {
                 req.setStrategyId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
+
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
+                .withName("DeleteTask")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response
@@ -3352,6 +3561,200 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomAuthorizersV2Request::getType, (req, v) -> {
                 req.setType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> listDatasourceColumns =
+        genForlistDatasourceColumns();
+
+    private static HttpRequestDef<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> genForlistDatasourceColumns() {
+        // basic
+        HttpRequestDef.Builder<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDatasourceColumnsRequest.class, ListDatasourceColumnsResponse.class)
+            .withName("ListDatasourceColumns")
+            .withUri("/v2/{project_id}/fdi/instances/{instance_id}/datasources/{datasource_id}/columns")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("datasource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getDatasourceId, (req, v) -> {
+                req.setDatasourceId(v);
+            }));
+        builder.<ListDatasourceColumnsRequest.PositionEnum>withRequestField("position",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListDatasourceColumnsRequest.PositionEnum.class),
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getPosition, (req, v) -> {
+                req.setPosition(v);
+            }));
+        builder.<String>withRequestField("db_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            }));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getTableName, (req, v) -> {
+                req.setTableName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatasourceTablesRequest, ListDatasourceTablesResponse> listDatasourceTables =
+        genForlistDatasourceTables();
+
+    private static HttpRequestDef<ListDatasourceTablesRequest, ListDatasourceTablesResponse> genForlistDatasourceTables() {
+        // basic
+        HttpRequestDef.Builder<ListDatasourceTablesRequest, ListDatasourceTablesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDatasourceTablesRequest.class, ListDatasourceTablesResponse.class)
+            .withName("ListDatasourceTables")
+            .withUri("/v2/{project_id}/fdi/instances/{instance_id}/datasources/{datasource_id}/tables")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("datasource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getDatasourceId, (req, v) -> {
+                req.setDatasourceId(v);
+            }));
+        builder.<ListDatasourceTablesRequest.PositionEnum>withRequestField("position",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListDatasourceTablesRequest.PositionEnum.class),
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getPosition, (req, v) -> {
+                req.setPosition(v);
+            }));
+        builder.<String>withRequestField("db_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            }));
+        builder.<String>withRequestField("db_schema",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getDbSchema, (req, v) -> {
+                req.setDbSchema(v);
+            }));
+        builder.<String>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatasourcesRequest, ListDatasourcesResponse> listDatasources =
+        genForlistDatasources();
+
+    private static HttpRequestDef<ListDatasourcesRequest, ListDatasourcesResponse> genForlistDatasources() {
+        // basic
+        HttpRequestDef.Builder<ListDatasourcesRequest, ListDatasourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDatasourcesRequest.class, ListDatasourcesResponse.class)
+                .withName("ListDatasources")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/datasources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourcesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatasourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatasourcesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ListDatasourcesRequest.DatasourceTypeEnum>withRequestField("datasource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDatasourcesRequest.DatasourceTypeEnum.class),
+            f -> f.withMarshaller(ListDatasourcesRequest::getDatasourceType, (req, v) -> {
+                req.setDatasourceType(v);
+            }));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourcesRequest::getSortField, (req, v) -> {
+                req.setSortField(v);
+            }));
+        builder.<ListDatasourcesRequest.SortTypeEnum>withRequestField("sort_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDatasourcesRequest.SortTypeEnum.class),
+            f -> f.withMarshaller(ListDatasourcesRequest::getSortType, (req, v) -> {
+                req.setSortType(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourcesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourcesRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("custom_plugin_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourcesRequest::getCustomPluginId, (req, v) -> {
+                req.setCustomPluginId(v);
             }));
 
         // response
@@ -5348,6 +5751,128 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForlistTasks();
+
+    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForlistTasks() {
+        // basic
+        HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
+                .withName("ListTasks")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<ListTasksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTasksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListTasksRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<ListTasksRequest.TaskTypeEnum>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTasksRequest.TaskTypeEnum.class),
+            f -> f.withMarshaller(ListTasksRequest::getTaskType, (req, v) -> {
+                req.setTaskType(v);
+            }));
+        builder.<String>withRequestField("source_datasource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getSourceDatasourceId, (req, v) -> {
+                req.setSourceDatasourceId(v);
+            }));
+        builder.<String>withRequestField("target_datasource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getTargetDatasourceId, (req, v) -> {
+                req.setTargetDatasourceId(v);
+            }));
+        builder.<ListTasksRequest.SortFieldEnum>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTasksRequest.SortFieldEnum.class),
+            f -> f.withMarshaller(ListTasksRequest::getSortField, (req, v) -> {
+                req.setSortField(v);
+            }));
+        builder.<ListTasksRequest.SortTypeEnum>withRequestField("sort_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTasksRequest.SortTypeEnum.class),
+            f -> f.withMarshaller(ListTasksRequest::getSortType, (req, v) -> {
+                req.setSortType(v);
+            }));
+        builder.<String>withRequestField("execute_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getExecuteStatus, (req, v) -> {
+                req.setExecuteStatus(v);
+            }));
+        builder.<String>withRequestField("source_app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getSourceAppId, (req, v) -> {
+                req.setSourceAppId(v);
+            }));
+        builder.<String>withRequestField("target_app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getTargetAppId, (req, v) -> {
+                req.setTargetAppId(v);
+            }));
+        builder.<String>withRequestField("task_tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getTaskTag, (req, v) -> {
+                req.setTaskTag(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTopicsRequest, ListTopicsResponse> listTopics = genForlistTopics();
 
     private static HttpRequestDef<ListTopicsRequest, ListTopicsResponse> genForlistTopics() {
@@ -5761,6 +6286,38 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowCommandRequest::getCommandId, (req, v) -> {
                 req.setCommandId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDataourceDetailRequest, ShowDataourceDetailResponse> showDataourceDetail =
+        genForshowDataourceDetail();
+
+    private static HttpRequestDef<ShowDataourceDetailRequest, ShowDataourceDetailResponse> genForshowDataourceDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowDataourceDetailRequest, ShowDataourceDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDataourceDetailRequest.class, ShowDataourceDetailResponse.class)
+                .withName("ShowDataourceDetail")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/datasources/{datasource_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataourceDetailRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("datasource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataourceDetailRequest::getDatasourceId, (req, v) -> {
+                req.setDatasourceId(v);
             }));
 
         // response
@@ -6214,6 +6771,38 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowDevicesInGroupRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDispatchesRequest, ShowDispatchesResponse> showDispatches =
+        genForshowDispatches();
+
+    private static HttpRequestDef<ShowDispatchesRequest, ShowDispatchesResponse> genForshowDispatches() {
+        // basic
+        HttpRequestDef.Builder<ShowDispatchesRequest, ShowDispatchesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDispatchesRequest.class, ShowDispatchesResponse.class)
+                .withName("ShowDispatches")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}/dispatches")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDispatchesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDispatchesRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response
@@ -6682,6 +7271,107 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForshowTask();
+
+    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForshowTask() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
+                .withName("ShowTask")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartTestDatasourceRequest, StartTestDatasourceResponse> startTestDatasource =
+        genForstartTestDatasource();
+
+    private static HttpRequestDef<StartTestDatasourceRequest, StartTestDatasourceResponse> genForstartTestDatasource() {
+        // basic
+        HttpRequestDef.Builder<StartTestDatasourceRequest, StartTestDatasourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartTestDatasourceRequest.class, StartTestDatasourceResponse.class)
+                .withName("StartTestDatasource")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/datasources/{datasource_id}/test-connect")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartTestDatasourceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("datasource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartTestDatasourceRequest::getDatasourceId, (req, v) -> {
+                req.setDatasourceId(v);
+            }));
+        builder.<DatasourceInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DatasourceInfo.class),
+            f -> f.withMarshaller(StartTestDatasourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopTaskRequest, StopTaskResponse> stopTask = genForstopTask();
+
+    private static HttpRequestDef<StopTaskRequest, StopTaskResponse> genForstopTask() {
+        // basic
+        HttpRequestDef.Builder<StopTaskRequest, StopTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopTaskRequest.class, StopTaskResponse.class)
+                .withName("StopTask")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}/terminate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response> unpublishLiveDataApiV2 =
         genForunpublishLiveDataApiV2();
 
@@ -6923,6 +7613,45 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> updateDatasourceInfo =
+        genForupdateDatasourceInfo();
+
+    private static HttpRequestDef<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> genForupdateDatasourceInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDatasourceInfoRequest.class, UpdateDatasourceInfoResponse.class)
+            .withName("UpdateDatasourceInfo")
+            .withUri("/v2/{project_id}/fdi/instances/{instance_id}/datasources/{datasource_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasourceInfoRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("datasource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasourceInfoRequest::getDatasourceId, (req, v) -> {
+                req.setDatasourceId(v);
+            }));
+        builder.<DatasourceInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DatasourceInfo.class),
+            f -> f.withMarshaller(UpdateDatasourceInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForupdateDevice();
 
     private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForupdateDevice() {
@@ -6992,6 +7721,52 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDeviceGroupRequestBody.class),
             f -> f.withMarshaller(UpdateDeviceGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDispatchesRequest, UpdateDispatchesResponse> updateDispatches =
+        genForupdateDispatches();
+
+    private static HttpRequestDef<UpdateDispatchesRequest, UpdateDispatchesResponse> genForupdateDispatches() {
+        // basic
+        HttpRequestDef.Builder<UpdateDispatchesRequest, UpdateDispatchesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDispatchesRequest.class, UpdateDispatchesResponse.class)
+                .withName("UpdateDispatches")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}/dispatches/{dispatch_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDispatchesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDispatchesRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("dispatch_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDispatchesRequest::getDispatchId, (req, v) -> {
+                req.setDispatchId(v);
+            }));
+        builder.<TaskDispatch>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TaskDispatch.class),
+            f -> f.withMarshaller(UpdateDispatchesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -7715,6 +8490,44 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleSpecialUpdate.class),
             f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> updateTask = genForupdateTask();
+
+    private static HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> genForupdateTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateTaskRequest, UpdateTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskRequest.class, UpdateTaskResponse.class)
+                .withName("UpdateTask")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<CreateCommonTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCommonTaskRequestBody.class),
+            f -> f.withMarshaller(UpdateTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

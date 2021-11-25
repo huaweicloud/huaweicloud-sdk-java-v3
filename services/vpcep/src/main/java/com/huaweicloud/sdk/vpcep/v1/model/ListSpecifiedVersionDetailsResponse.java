@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,40 +11,33 @@ import java.util.function.Consumer;
 public class ListSpecifiedVersionDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "versions")
+    @JsonProperty(value = "version")
 
-    private List<Versions> versions = null;
+    private Version version;
 
-    public ListSpecifiedVersionDetailsResponse withVersions(List<Versions> versions) {
-        this.versions = versions;
+    public ListSpecifiedVersionDetailsResponse withVersion(Version version) {
+        this.version = version;
         return this;
     }
 
-    public ListSpecifiedVersionDetailsResponse addVersionsItem(Versions versionsItem) {
-        if (this.versions == null) {
-            this.versions = new ArrayList<>();
+    public ListSpecifiedVersionDetailsResponse withVersion(Consumer<Version> versionSetter) {
+        if (this.version == null) {
+            this.version = new Version();
+            versionSetter.accept(this.version);
         }
-        this.versions.add(versionsItem);
+
         return this;
     }
 
-    public ListSpecifiedVersionDetailsResponse withVersions(Consumer<List<Versions>> versionsSetter) {
-        if (this.versions == null) {
-            this.versions = new ArrayList<>();
-        }
-        versionsSetter.accept(this.versions);
-        return this;
-    }
-
-    /** VPC终端节点版本信息列表。
+    /** Get version
      * 
-     * @return versions */
-    public List<Versions> getVersions() {
-        return versions;
+     * @return version */
+    public Version getVersion() {
+        return version;
     }
 
-    public void setVersions(List<Versions> versions) {
-        this.versions = versions;
+    public void setVersion(Version version) {
+        this.version = version;
     }
 
     @Override
@@ -59,19 +50,19 @@ public class ListSpecifiedVersionDetailsResponse extends SdkResponse {
         }
         ListSpecifiedVersionDetailsResponse listSpecifiedVersionDetailsResponse =
             (ListSpecifiedVersionDetailsResponse) o;
-        return Objects.equals(this.versions, listSpecifiedVersionDetailsResponse.versions);
+        return Objects.equals(this.version, listSpecifiedVersionDetailsResponse.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(versions);
+        return Objects.hash(version);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSpecifiedVersionDetailsResponse {\n");
-        sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
@@ -23,7 +22,7 @@ public class StatisticsAPI {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_latency")
 
-    private BigDecimal avgLatency;
+    private Float avgLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count")
@@ -58,7 +57,7 @@ public class StatisticsAPI {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_inner_latency")
 
-    private BigDecimal avgInnerLatency;
+    private Float avgInnerLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_backend_latency")
@@ -68,7 +67,7 @@ public class StatisticsAPI {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_backend_latency")
 
-    private BigDecimal avgBackendLatency;
+    private Float avgBackendLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_throughput")
@@ -211,7 +210,7 @@ public class StatisticsAPI {
         this.maxLatency = maxLatency;
     }
 
-    public StatisticsAPI withAvgLatency(BigDecimal avgLatency) {
+    public StatisticsAPI withAvgLatency(Float avgLatency) {
         this.avgLatency = avgLatency;
         return this;
     }
@@ -219,11 +218,11 @@ public class StatisticsAPI {
     /** 平均延时 单位：ms
      * 
      * @return avgLatency */
-    public BigDecimal getAvgLatency() {
+    public Float getAvgLatency() {
         return avgLatency;
     }
 
-    public void setAvgLatency(BigDecimal avgLatency) {
+    public void setAvgLatency(Float avgLatency) {
         this.avgLatency = avgLatency;
     }
 
@@ -323,7 +322,7 @@ public class StatisticsAPI {
         this.maxInnerLatency = maxInnerLatency;
     }
 
-    public StatisticsAPI withAvgInnerLatency(BigDecimal avgInnerLatency) {
+    public StatisticsAPI withAvgInnerLatency(Float avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
         return this;
     }
@@ -331,11 +330,11 @@ public class StatisticsAPI {
     /** 平均网关内部延时 单位：ms
      * 
      * @return avgInnerLatency */
-    public BigDecimal getAvgInnerLatency() {
+    public Float getAvgInnerLatency() {
         return avgInnerLatency;
     }
 
-    public void setAvgInnerLatency(BigDecimal avgInnerLatency) {
+    public void setAvgInnerLatency(Float avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
     }
 
@@ -355,7 +354,7 @@ public class StatisticsAPI {
         this.maxBackendLatency = maxBackendLatency;
     }
 
-    public StatisticsAPI withAvgBackendLatency(BigDecimal avgBackendLatency) {
+    public StatisticsAPI withAvgBackendLatency(Float avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
         return this;
     }
@@ -363,11 +362,11 @@ public class StatisticsAPI {
     /** 平均后端延时
      * 
      * @return avgBackendLatency */
-    public BigDecimal getAvgBackendLatency() {
+    public Float getAvgBackendLatency() {
         return avgBackendLatency;
     }
 
-    public void setAvgBackendLatency(BigDecimal avgBackendLatency) {
+    public void setAvgBackendLatency(Float avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
     }
 

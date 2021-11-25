@@ -1572,24 +1572,6 @@ public class ApigClient {
             ApigMeta.changeApiVersionV2, hcClient);
     }
 
-    /** 后端连通性检测接口 后端连通性检测接口
-     *
-     * @param CheckBackendConnectivityRequest 请求对象
-     * @return CheckBackendConnectivityResponse */
-    public CheckBackendConnectivityResponse checkBackendConnectivity(CheckBackendConnectivityRequest request) {
-        return hcClient.syncInvokeHttp(request, ApigMeta.checkBackendConnectivity);
-    }
-
-    /** 后端连通性检测接口 后端连通性检测接口
-     *
-     * @param CheckBackendConnectivityRequest 请求对象
-     * @return SyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> */
-    public SyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> checkBackendConnectivityInvoker(
-        CheckBackendConnectivityRequest request) {
-        return new SyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse>(request,
-            ApigMeta.checkBackendConnectivity, hcClient);
-    }
-
     /** 创建API分组 API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
      *
      * @param CreateApiGroupV2Request 请求对象

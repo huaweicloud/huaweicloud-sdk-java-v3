@@ -18,12 +18,17 @@ public class ListValueListRequest {
 
     private Integer pagesize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public ListValueListRequest withPage(Integer page) {
         this.page = page;
         return this;
     }
 
-    /** 页码
+    /** 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
      * 
      * @return page */
     public Integer getPage() {
@@ -39,7 +44,7 @@ public class ListValueListRequest {
         return this;
     }
 
-    /** 每页的条数
+    /** 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
      * 
      * @return pagesize */
     public Integer getPagesize() {
@@ -48,6 +53,22 @@ public class ListValueListRequest {
 
     public void setPagesize(Integer pagesize) {
         this.pagesize = pagesize;
+    }
+
+    public ListValueListRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /** 引用表名称
+     * 
+     * @return name */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -60,12 +81,13 @@ public class ListValueListRequest {
         }
         ListValueListRequest listValueListRequest = (ListValueListRequest) o;
         return Objects.equals(this.page, listValueListRequest.page)
-            && Objects.equals(this.pagesize, listValueListRequest.pagesize);
+            && Objects.equals(this.pagesize, listValueListRequest.pagesize)
+            && Objects.equals(this.name, listValueListRequest.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(page, pagesize);
+        return Objects.hash(page, pagesize, name);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ListValueListRequest {
         sb.append("class ListValueListRequest {\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

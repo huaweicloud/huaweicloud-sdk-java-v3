@@ -14,14 +14,14 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_id")
-
-    private String domainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
     private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_id")
@@ -33,7 +33,7 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -42,22 +42,6 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public ShowDetailsOfDomainNameCertificateV2Request withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    /** 域名的编号
-     * 
-     * @return domainId */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Request withGroupId(String groupId) {
@@ -74,6 +58,22 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Request withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /** 域名的编号
+     * 
+     * @return domainId */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Request withCertificateId(String certificateId) {
@@ -103,14 +103,14 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
         ShowDetailsOfDomainNameCertificateV2Request showDetailsOfDomainNameCertificateV2Request =
             (ShowDetailsOfDomainNameCertificateV2Request) o;
         return Objects.equals(this.instanceId, showDetailsOfDomainNameCertificateV2Request.instanceId)
-            && Objects.equals(this.domainId, showDetailsOfDomainNameCertificateV2Request.domainId)
             && Objects.equals(this.groupId, showDetailsOfDomainNameCertificateV2Request.groupId)
+            && Objects.equals(this.domainId, showDetailsOfDomainNameCertificateV2Request.domainId)
             && Objects.equals(this.certificateId, showDetailsOfDomainNameCertificateV2Request.certificateId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, domainId, groupId, certificateId);
+        return Objects.hash(instanceId, groupId, domainId, certificateId);
     }
 
     @Override
@@ -118,8 +118,8 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDetailsOfDomainNameCertificateV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("}");
         return sb.toString();

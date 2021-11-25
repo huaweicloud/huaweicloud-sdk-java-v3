@@ -146,7 +146,7 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 防护状态
+    /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测
      * 
      * @return protectStatus */
     public Integer getProtectStatus() {
@@ -178,7 +178,7 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回的客户端协议类型
+    /** 后端包含的协议类型：HTTPS、HTTP、HTTP&HTTPS
      * 
      * @return protocol */
     public String getProtocol() {
@@ -194,7 +194,7 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回的证书id
+    /** https证书id
      * 
      * @return certificateid */
     public String getCertificateid() {

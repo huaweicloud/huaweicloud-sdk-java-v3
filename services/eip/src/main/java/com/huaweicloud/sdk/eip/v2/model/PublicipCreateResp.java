@@ -251,6 +251,11 @@ public class PublicipCreateResp {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
     public PublicipCreateResp withBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
         return this;
@@ -415,6 +420,22 @@ public class PublicipCreateResp {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public PublicipCreateResp withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /** 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * 
+     * @return alias */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -433,7 +454,8 @@ public class PublicipCreateResp {
             && Objects.equals(this.type, publicipCreateResp.type)
             && Objects.equals(this.publicIpv6Address, publicipCreateResp.publicIpv6Address)
             && Objects.equals(this.ipVersion, publicipCreateResp.ipVersion)
-            && Objects.equals(this.enterpriseProjectId, publicipCreateResp.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, publicipCreateResp.enterpriseProjectId)
+            && Objects.equals(this.alias, publicipCreateResp.alias);
     }
 
     @Override
@@ -447,7 +469,8 @@ public class PublicipCreateResp {
             type,
             publicIpv6Address,
             ipVersion,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            alias);
     }
 
     @Override
@@ -464,6 +487,7 @@ public class PublicipCreateResp {
         sb.append("    publicIpv6Address: ").append(toIndentedString(publicIpv6Address)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

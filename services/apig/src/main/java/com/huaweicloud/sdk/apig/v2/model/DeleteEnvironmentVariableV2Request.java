@@ -23,7 +23,7 @@ public class DeleteEnvironmentVariableV2Request {
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -39,7 +39,7 @@ public class DeleteEnvironmentVariableV2Request {
         return this;
     }
 
-    /** 环境变量的ID
+    /** 环境变量的编号
      * 
      * @return envVariableId */
     public String getEnvVariableId() {

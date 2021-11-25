@@ -31,7 +31,7 @@ public class AdjustCouponQuotasReq {
         return this;
     }
 
-    /** 华为云伙伴能力中心发放的代金券额度的ID。
+    /** 华为云伙伴能力中心发放的代金券额度的ID。获取方法请参见查询优惠券额度。
      * 
      * @return quotaId */
     public String getQuotaId() {

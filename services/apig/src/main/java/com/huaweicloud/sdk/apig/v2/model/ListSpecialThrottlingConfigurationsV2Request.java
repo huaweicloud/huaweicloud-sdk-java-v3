@@ -14,6 +14,16 @@ public class ListSpecialThrottlingConfigurationsV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Long offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "throttle_id")
 
     private String throttleId;
@@ -33,22 +43,12 @@ public class ListSpecialThrottlingConfigurationsV2Request {
 
     private String user;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Long offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
     public ListSpecialThrottlingConfigurationsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -59,12 +59,44 @@ public class ListSpecialThrottlingConfigurationsV2Request {
         this.instanceId = instanceId;
     }
 
+    public ListSpecialThrottlingConfigurationsV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * 
+     * @return offset */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    public ListSpecialThrottlingConfigurationsV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量 minimum: 1 maximum: 500
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     public ListSpecialThrottlingConfigurationsV2Request withThrottleId(String throttleId) {
         this.throttleId = throttleId;
         return this;
     }
 
-    /** 流控策略的ID
+    /** 流控策略的编号
      * 
      * @return throttleId */
     public String getThrottleId() {
@@ -123,38 +155,6 @@ public class ListSpecialThrottlingConfigurationsV2Request {
         this.user = user;
     }
 
-    public ListSpecialThrottlingConfigurationsV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    public ListSpecialThrottlingConfigurationsV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -166,17 +166,17 @@ public class ListSpecialThrottlingConfigurationsV2Request {
         ListSpecialThrottlingConfigurationsV2Request listSpecialThrottlingConfigurationsV2Request =
             (ListSpecialThrottlingConfigurationsV2Request) o;
         return Objects.equals(this.instanceId, listSpecialThrottlingConfigurationsV2Request.instanceId)
+            && Objects.equals(this.offset, listSpecialThrottlingConfigurationsV2Request.offset)
+            && Objects.equals(this.limit, listSpecialThrottlingConfigurationsV2Request.limit)
             && Objects.equals(this.throttleId, listSpecialThrottlingConfigurationsV2Request.throttleId)
             && Objects.equals(this.objectType, listSpecialThrottlingConfigurationsV2Request.objectType)
             && Objects.equals(this.appName, listSpecialThrottlingConfigurationsV2Request.appName)
-            && Objects.equals(this.user, listSpecialThrottlingConfigurationsV2Request.user)
-            && Objects.equals(this.offset, listSpecialThrottlingConfigurationsV2Request.offset)
-            && Objects.equals(this.limit, listSpecialThrottlingConfigurationsV2Request.limit);
+            && Objects.equals(this.user, listSpecialThrottlingConfigurationsV2Request.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, throttleId, objectType, appName, user, offset, limit);
+        return Objects.hash(instanceId, offset, limit, throttleId, objectType, appName, user);
     }
 
     @Override
@@ -184,12 +184,12 @@ public class ListSpecialThrottlingConfigurationsV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSpecialThrottlingConfigurationsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -23,8 +22,8 @@ public class CreateEndpointResponse extends SdkResponse {
 
     private String id;
 
-    /** 终端节点连接的终端节点服务类 型。 ● gataway：由运维人员配置。 用户无需创建，可直接使用。 ● interface：包括运维人员配置 的云服务和用户自己创建的私 有服务。其中，运维人员配置
-     * 的云服务无需创建，用户可直 接使用。 您可以通过查询公共终端节点服 务列表查看由运维人员配置的所 有用户可见且可连接的终端节点 服务，并通过创建终端节点服务 创建Interface类型的终端节点服 务。 */
+    /** 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配置的云服务无需创建，用户可直接使用。
+     * 您可以通过查询公共终端节点服务列表查看由运维人员配置的所有用户可见且可连接的终端节点服务，并通过创建终端节点服务创建Interface类型的终端节点服务。 */
     public static final class ServiceTypeEnum {
 
         /** Enum INTERFACE for value: "interface" */
@@ -235,12 +234,12 @@ public class CreateEndpointResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private OffsetDateTime createdAt;
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    private OffsetDateTime updatedAt;
+    private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -288,8 +287,8 @@ public class CreateEndpointResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点连接的终端节点服务类 型。 ● gataway：由运维人员配置。 用户无需创建，可直接使用。 ● interface：包括运维人员配置 的云服务和用户自己创建的私 有服务。其中，运维人员配置
-     * 的云服务无需创建，用户可直 接使用。 您可以通过查询公共终端节点服 务列表查看由运维人员配置的所 有用户可见且可连接的终端节点 服务，并通过创建终端节点服务 创建Interface类型的终端节点服 务。
+    /** 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配置的云服务无需创建，用户可直接使用。
+     * 您可以通过查询公共终端节点服务列表查看由运维人员配置的所有用户可见且可连接的终端节点服务，并通过创建终端节点服务创建Interface类型的终端节点服务。
      * 
      * @return serviceType */
     public ServiceTypeEnum getServiceType() {
@@ -433,7 +432,7 @@ public class CreateEndpointResponse extends SdkResponse {
         return this;
     }
 
-    /** 访问所连接的终端节点服务的域 名。 当“enable_dns”为true时，该 参数可见。
+    /** 访问所连接的终端节点服务的域名。 当“enable_dns”为true时，该参数可见。
      * 
      * @return dnsNames */
     public List<String> getDnsNames() {
@@ -476,35 +475,35 @@ public class CreateEndpointResponse extends SdkResponse {
         this.vpcId = vpcId;
     }
 
-    public CreateEndpointResponse withCreatedAt(OffsetDateTime createdAt) {
+    public CreateEndpointResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    /** 终端节点的创建时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
+    /** 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * 
      * @return createdAt */
-    public OffsetDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public CreateEndpointResponse withUpdatedAt(OffsetDateTime updatedAt) {
+    public CreateEndpointResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    /** 终端节点的更新时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
+    /** 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * 
      * @return updatedAt */
-    public OffsetDateTime getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(OffsetDateTime updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 

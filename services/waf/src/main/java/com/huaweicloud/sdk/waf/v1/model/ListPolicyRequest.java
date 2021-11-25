@@ -33,7 +33,7 @@ public class ListPolicyRequest {
         return this;
     }
 
-    /** 企业项目id
+    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -49,7 +49,7 @@ public class ListPolicyRequest {
         return this;
     }
 
-    /** 页码
+    /** 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
      * 
      * @return page */
     public Integer getPage() {
@@ -65,7 +65,7 @@ public class ListPolicyRequest {
         return this;
     }
 
-    /** 每页条数
+    /** 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
      * 
      * @return pagesize */
     public Integer getPagesize() {

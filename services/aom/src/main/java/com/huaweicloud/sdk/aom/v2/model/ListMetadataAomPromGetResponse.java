@@ -10,8 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -33,8 +31,8 @@ public class ListMetadataAomPromGetResponse extends SdkResponse {
     @JsonProperty(value="data")
     
     
-    private List<String> data = null;
-    
+    private Object data;
+
     public ListMetadataAomPromGetResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -57,37 +55,23 @@ public class ListMetadataAomPromGetResponse extends SdkResponse {
 
     
 
-    public ListMetadataAomPromGetResponse withData(List<String> data) {
+    public ListMetadataAomPromGetResponse withData(Object data) {
         this.data = data;
         return this;
     }
 
     
-    public ListMetadataAomPromGetResponse addDataItem(String dataItem) {
-        if(this.data == null) {
-            this.data = new ArrayList<>();
-        }
-        this.data.add(dataItem);
-        return this;
-    }
 
-    public ListMetadataAomPromGetResponse withData(Consumer<List<String>> dataSetter) {
-        if(this.data == null) {
-            this.data = new ArrayList<>();
-        }
-        dataSetter.accept(this.data);
-        return this;
-    }
 
     /**
      * Get data
      * @return data
      */
-    public List<String> getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(List<String> data) {
+    public void setData(Object data) {
         this.data = data;
     }
 

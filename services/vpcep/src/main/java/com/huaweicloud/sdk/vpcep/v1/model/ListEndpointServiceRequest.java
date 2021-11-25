@@ -107,7 +107,7 @@ public class ListEndpointServiceRequest {
 
     private StatusEnum status;
 
-    /** 查询结果中终端节点服务列表的排 序字段，取值为： ● create_at：终端节点服务的创建 时间 ● update_at：终端节点服务的更 新时间 默认值为create_at。 */
+    /** 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。 */
     public static final class SortKeyEnum {
 
         /** Enum CREATE_AT for value: "create_at" */
@@ -274,7 +274,7 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 终端节点服务的名称，支持大小 写，前后模糊匹配。
+    /** 终端节点服务的名称，支持大小写，前后模糊匹配。
      * 
      * @return endpointServiceName */
     public String getEndpointServiceName() {
@@ -322,7 +322,7 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 查询结果中终端节点服务列表的排 序字段，取值为： ● create_at：终端节点服务的创建 时间 ● update_at：终端节点服务的更 新时间 默认值为create_at。
+    /** 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。
      * 
      * @return sortKey */
     public SortKeyEnum getSortKey() {
@@ -354,7 +354,7 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 查询返回的终端节点服务数量限 制，即每页返回的终端节点服务的 个数。 取值范围：0~1000，取值一般为 10，20或者50，默认为10。 minimum: 1
+    /** 查询返回的终端节点服务数量限制，即每页返回的终端节点服务的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。 minimum: 1
      * 
      * @return limit */
     public Integer getLimit() {
@@ -370,7 +370,7 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移量 后面的终端节点服务开始查询。 minimum: 0
+    /** 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数，表示从偏移量后面的终端节点服务开始查询。 minimum: 0
      * 
      * @return offset */
     public Integer getOffset() {

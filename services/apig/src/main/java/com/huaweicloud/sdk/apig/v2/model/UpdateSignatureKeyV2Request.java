@@ -22,14 +22,14 @@ public class UpdateSignatureKeyV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private SignatureReq body;
+    private BaseSignature body;
 
     public UpdateSignatureKeyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -56,14 +56,14 @@ public class UpdateSignatureKeyV2Request {
         this.signId = signId;
     }
 
-    public UpdateSignatureKeyV2Request withBody(SignatureReq body) {
+    public UpdateSignatureKeyV2Request withBody(BaseSignature body) {
         this.body = body;
         return this;
     }
 
-    public UpdateSignatureKeyV2Request withBody(Consumer<SignatureReq> bodySetter) {
+    public UpdateSignatureKeyV2Request withBody(Consumer<BaseSignature> bodySetter) {
         if (this.body == null) {
-            this.body = new SignatureReq();
+            this.body = new BaseSignature();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class UpdateSignatureKeyV2Request {
     /** Get body
      * 
      * @return body */
-    public SignatureReq getBody() {
+    public BaseSignature getBody() {
         return body;
     }
 
-    public void setBody(SignatureReq body) {
+    public void setBody(BaseSignature body) {
         this.body = body;
     }
 

@@ -22,14 +22,14 @@ public class DebugApiV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DebugApiReq body;
+    private ApiDebugInfo body;
 
     public DebugApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    /** 实例编号
+    /** 实例ID
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -56,14 +56,14 @@ public class DebugApiV2Request {
         this.apiId = apiId;
     }
 
-    public DebugApiV2Request withBody(DebugApiReq body) {
+    public DebugApiV2Request withBody(ApiDebugInfo body) {
         this.body = body;
         return this;
     }
 
-    public DebugApiV2Request withBody(Consumer<DebugApiReq> bodySetter) {
+    public DebugApiV2Request withBody(Consumer<ApiDebugInfo> bodySetter) {
         if (this.body == null) {
-            this.body = new DebugApiReq();
+            this.body = new ApiDebugInfo();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class DebugApiV2Request {
     /** Get body
      * 
      * @return body */
-    public DebugApiReq getBody() {
+    public ApiDebugInfo getBody() {
         return body;
     }
 
-    public void setBody(DebugApiReq body) {
+    public void setBody(ApiDebugInfo body) {
         this.body = body;
     }
 

@@ -206,6 +206,11 @@ public class ListSlowlogStatisticsRequest {
 
     private TypeEnum type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort")
+
+    private String sort;
+
     public ListSlowlogStatisticsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -320,6 +325,22 @@ public class ListSlowlogStatisticsRequest {
         this.type = type;
     }
 
+    public ListSlowlogStatisticsRequest withSort(String sort) {
+        this.sort = sort;
+        return this;
+    }
+
+    /** 取值范围：\"executeTime\",表示按执行时间降序排序，不传或者传其他表示按执行次数降序排序
+     * 
+     * @return sort */
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -335,12 +356,13 @@ public class ListSlowlogStatisticsRequest {
             && Objects.equals(this.perPage, listSlowlogStatisticsRequest.perPage)
             && Objects.equals(this.startDate, listSlowlogStatisticsRequest.startDate)
             && Objects.equals(this.endDate, listSlowlogStatisticsRequest.endDate)
-            && Objects.equals(this.type, listSlowlogStatisticsRequest.type);
+            && Objects.equals(this.type, listSlowlogStatisticsRequest.type)
+            && Objects.equals(this.sort, listSlowlogStatisticsRequest.sort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, curPage, perPage, startDate, endDate, type);
+        return Objects.hash(xLanguage, instanceId, curPage, perPage, startDate, endDate, type, sort);
     }
 
     @Override
@@ -354,6 +376,7 @@ public class ListSlowlogStatisticsRequest {
         sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
         sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

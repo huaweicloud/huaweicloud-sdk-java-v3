@@ -25,7 +25,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "throttles")
 
-    private List<ThrottleBindingThrottleResp> throttles = null;
+    private List<ThrottleForApi> throttles = null;
 
     public ListRequestThrottlingPoliciesBindedToApiV2Response withSize(Integer size) {
         this.size = size;
@@ -59,14 +59,12 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
         this.total = total;
     }
 
-    public ListRequestThrottlingPoliciesBindedToApiV2Response withThrottles(
-        List<ThrottleBindingThrottleResp> throttles) {
+    public ListRequestThrottlingPoliciesBindedToApiV2Response withThrottles(List<ThrottleForApi> throttles) {
         this.throttles = throttles;
         return this;
     }
 
-    public ListRequestThrottlingPoliciesBindedToApiV2Response addThrottlesItem(
-        ThrottleBindingThrottleResp throttlesItem) {
+    public ListRequestThrottlingPoliciesBindedToApiV2Response addThrottlesItem(ThrottleForApi throttlesItem) {
         if (this.throttles == null) {
             this.throttles = new ArrayList<>();
         }
@@ -75,7 +73,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
     }
 
     public ListRequestThrottlingPoliciesBindedToApiV2Response withThrottles(
-        Consumer<List<ThrottleBindingThrottleResp>> throttlesSetter) {
+        Consumer<List<ThrottleForApi>> throttlesSetter) {
         if (this.throttles == null) {
             this.throttles = new ArrayList<>();
         }
@@ -86,11 +84,11 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
     /** 本次查询返回的流控策略列表
      * 
      * @return throttles */
-    public List<ThrottleBindingThrottleResp> getThrottles() {
+    public List<ThrottleForApi> getThrottles() {
         return throttles;
     }
 
-    public void setThrottles(List<ThrottleBindingThrottleResp> throttles) {
+    public void setThrottles(List<ThrottleForApi> throttles) {
         this.throttles = throttles;
     }
 

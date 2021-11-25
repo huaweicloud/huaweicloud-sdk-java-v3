@@ -13,24 +13,118 @@ import java.util.function.Consumer;
 public class ImportApiDefinitionsV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success")
+
+    private List<Success> success = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failure")
+
+    private List<Failure> failure = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "swagger")
+
+    private Swagger swagger;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "failure")
+    @JsonProperty(value = "ignore")
 
-    private List<SwaggerFailureResp> failure = null;
+    private List<Ignore> ignore = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success")
+    public ImportApiDefinitionsV2Response withSuccess(List<Success> success) {
+        this.success = success;
+        return this;
+    }
 
-    private List<SwaggerSuccessResp> success = null;
+    public ImportApiDefinitionsV2Response addSuccessItem(Success successItem) {
+        if (this.success == null) {
+            this.success = new ArrayList<>();
+        }
+        this.success.add(successItem);
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "swagger")
+    public ImportApiDefinitionsV2Response withSuccess(Consumer<List<Success>> successSetter) {
+        if (this.success == null) {
+            this.success = new ArrayList<>();
+        }
+        successSetter.accept(this.success);
+        return this;
+    }
 
-    private SwaggerInfoResp swagger;
+    /** 导入成功信息
+     * 
+     * @return success */
+    public List<Success> getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(List<Success> success) {
+        this.success = success;
+    }
+
+    public ImportApiDefinitionsV2Response withFailure(List<Failure> failure) {
+        this.failure = failure;
+        return this;
+    }
+
+    public ImportApiDefinitionsV2Response addFailureItem(Failure failureItem) {
+        if (this.failure == null) {
+            this.failure = new ArrayList<>();
+        }
+        this.failure.add(failureItem);
+        return this;
+    }
+
+    public ImportApiDefinitionsV2Response withFailure(Consumer<List<Failure>> failureSetter) {
+        if (this.failure == null) {
+            this.failure = new ArrayList<>();
+        }
+        failureSetter.accept(this.failure);
+        return this;
+    }
+
+    /** 导入失败信息
+     * 
+     * @return failure */
+    public List<Failure> getFailure() {
+        return failure;
+    }
+
+    public void setFailure(List<Failure> failure) {
+        this.failure = failure;
+    }
+
+    public ImportApiDefinitionsV2Response withSwagger(Swagger swagger) {
+        this.swagger = swagger;
+        return this;
+    }
+
+    public ImportApiDefinitionsV2Response withSwagger(Consumer<Swagger> swaggerSetter) {
+        if (this.swagger == null) {
+            this.swagger = new Swagger();
+            swaggerSetter.accept(this.swagger);
+        }
+
+        return this;
+    }
+
+    /** Get swagger
+     * 
+     * @return swagger */
+    public Swagger getSwagger() {
+        return swagger;
+    }
+
+    public void setSwagger(Swagger swagger) {
+        this.swagger = swagger;
+    }
 
     public ImportApiDefinitionsV2Response withGroupId(String groupId) {
         this.groupId = groupId;
@@ -48,93 +142,36 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         this.groupId = groupId;
     }
 
-    public ImportApiDefinitionsV2Response withFailure(List<SwaggerFailureResp> failure) {
-        this.failure = failure;
+    public ImportApiDefinitionsV2Response withIgnore(List<Ignore> ignore) {
+        this.ignore = ignore;
         return this;
     }
 
-    public ImportApiDefinitionsV2Response addFailureItem(SwaggerFailureResp failureItem) {
-        if (this.failure == null) {
-            this.failure = new ArrayList<>();
+    public ImportApiDefinitionsV2Response addIgnoreItem(Ignore ignoreItem) {
+        if (this.ignore == null) {
+            this.ignore = new ArrayList<>();
         }
-        this.failure.add(failureItem);
+        this.ignore.add(ignoreItem);
         return this;
     }
 
-    public ImportApiDefinitionsV2Response withFailure(Consumer<List<SwaggerFailureResp>> failureSetter) {
-        if (this.failure == null) {
-            this.failure = new ArrayList<>();
+    public ImportApiDefinitionsV2Response withIgnore(Consumer<List<Ignore>> ignoreSetter) {
+        if (this.ignore == null) {
+            this.ignore = new ArrayList<>();
         }
-        failureSetter.accept(this.failure);
+        ignoreSetter.accept(this.ignore);
         return this;
     }
 
-    /** 导入失败信息
+    /** 被忽略导入的API信息
      * 
-     * @return failure */
-    public List<SwaggerFailureResp> getFailure() {
-        return failure;
+     * @return ignore */
+    public List<Ignore> getIgnore() {
+        return ignore;
     }
 
-    public void setFailure(List<SwaggerFailureResp> failure) {
-        this.failure = failure;
-    }
-
-    public ImportApiDefinitionsV2Response withSuccess(List<SwaggerSuccessResp> success) {
-        this.success = success;
-        return this;
-    }
-
-    public ImportApiDefinitionsV2Response addSuccessItem(SwaggerSuccessResp successItem) {
-        if (this.success == null) {
-            this.success = new ArrayList<>();
-        }
-        this.success.add(successItem);
-        return this;
-    }
-
-    public ImportApiDefinitionsV2Response withSuccess(Consumer<List<SwaggerSuccessResp>> successSetter) {
-        if (this.success == null) {
-            this.success = new ArrayList<>();
-        }
-        successSetter.accept(this.success);
-        return this;
-    }
-
-    /** 导入成功信息
-     * 
-     * @return success */
-    public List<SwaggerSuccessResp> getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(List<SwaggerSuccessResp> success) {
-        this.success = success;
-    }
-
-    public ImportApiDefinitionsV2Response withSwagger(SwaggerInfoResp swagger) {
-        this.swagger = swagger;
-        return this;
-    }
-
-    public ImportApiDefinitionsV2Response withSwagger(Consumer<SwaggerInfoResp> swaggerSetter) {
-        if (this.swagger == null) {
-            this.swagger = new SwaggerInfoResp();
-            swaggerSetter.accept(this.swagger);
-        }
-
-        return this;
-    }
-
-    /** Get swagger
-     * 
-     * @return swagger */
-    public SwaggerInfoResp getSwagger() {
-        return swagger;
-    }
-
-    public void setSwagger(SwaggerInfoResp swagger) {
-        this.swagger = swagger;
+    public void setIgnore(List<Ignore> ignore) {
+        this.ignore = ignore;
     }
 
     @Override
@@ -146,25 +183,27 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
             return false;
         }
         ImportApiDefinitionsV2Response importApiDefinitionsV2Response = (ImportApiDefinitionsV2Response) o;
-        return Objects.equals(this.groupId, importApiDefinitionsV2Response.groupId)
+        return Objects.equals(this.success, importApiDefinitionsV2Response.success)
             && Objects.equals(this.failure, importApiDefinitionsV2Response.failure)
-            && Objects.equals(this.success, importApiDefinitionsV2Response.success)
-            && Objects.equals(this.swagger, importApiDefinitionsV2Response.swagger);
+            && Objects.equals(this.swagger, importApiDefinitionsV2Response.swagger)
+            && Objects.equals(this.groupId, importApiDefinitionsV2Response.groupId)
+            && Objects.equals(this.ignore, importApiDefinitionsV2Response.ignore);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, failure, success, swagger);
+        return Objects.hash(success, failure, swagger, groupId, ignore);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImportApiDefinitionsV2Response {\n");
-        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
-        sb.append("    failure: ").append(toIndentedString(failure)).append("\n");
         sb.append("    success: ").append(toIndentedString(success)).append("\n");
+        sb.append("    failure: ").append(toIndentedString(failure)).append("\n");
         sb.append("    swagger: ").append(toIndentedString(swagger)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    ignore: ").append(toIndentedString(ignore)).append("\n");
         sb.append("}");
         return sb.toString();
     }

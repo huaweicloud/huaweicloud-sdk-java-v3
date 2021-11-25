@@ -46,14 +46,18 @@ public class ExportSlowQueryLogsRequest {
     /** 请求语言类型。 */
     public static final class XLanguageEnum {
 
-        /** Enum EN_US_ZH_CN for value: "en-us、zh-cn" */
-        public static final XLanguageEnum EN_US_ZH_CN = new XLanguageEnum("en-us、zh-cn");
+        /** Enum EN_US for value: "en-us" */
+        public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
+
+        /** Enum ZH_CN for value: "zh-cn" */
+        public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, XLanguageEnum> createStaticFields() {
             Map<String, XLanguageEnum> map = new HashMap<>();
-            map.put("en-us、zh-cn", EN_US_ZH_CN);
+            map.put("en-us", EN_US);
+            map.put("zh-cn", ZH_CN);
             return Collections.unmodifiableMap(map);
         }
 
