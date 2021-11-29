@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 可用区 */
+/** 可用区。 */
 public class AvailabilityZone {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,7 +23,7 @@ public class AvailabilityZone {
         return this;
     }
 
-    /** 可用区code。
+    /** 可用区唯一编码。
      * 
      * @return code */
     public String getCode() {
@@ -39,7 +39,7 @@ public class AvailabilityZone {
         return this;
     }
 
-    /** az状态。 取值：ACTIVE
+    /** 可用区状态。 取值：ACTIVE。
      * 
      * @return state */
     public String getState() {

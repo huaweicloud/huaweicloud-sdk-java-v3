@@ -9,30 +9,14 @@ import java.util.Objects;
 public class ShowMemberRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "member_id")
-
-    private String memberId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
 
     private String poolId;
 
-    public ShowMemberRequest withMemberId(String memberId) {
-        this.memberId = memberId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_id")
 
-    /** 后端服务器ID。
-     * 
-     * @return memberId */
-    public String getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
-    }
+    private String memberId;
 
     public ShowMemberRequest withPoolId(String poolId) {
         this.poolId = poolId;
@@ -50,6 +34,22 @@ public class ShowMemberRequest {
         this.poolId = poolId;
     }
 
+    public ShowMemberRequest withMemberId(String memberId) {
+        this.memberId = memberId;
+        return this;
+    }
+
+    /** 后端服务器ID。
+     * 
+     * @return memberId */
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -59,21 +59,21 @@ public class ShowMemberRequest {
             return false;
         }
         ShowMemberRequest showMemberRequest = (ShowMemberRequest) o;
-        return Objects.equals(this.memberId, showMemberRequest.memberId)
-            && Objects.equals(this.poolId, showMemberRequest.poolId);
+        return Objects.equals(this.poolId, showMemberRequest.poolId)
+            && Objects.equals(this.memberId, showMemberRequest.memberId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(memberId, poolId);
+        return Objects.hash(poolId, memberId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMemberRequest {\n");
-        sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
+        sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

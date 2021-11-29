@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 函数工作流后端详情 */
+/** [函数工作流后端详情](tag:hws;hws_hk;hcs;fcs;g42;)[暂不支持](tag:Site) */
 public class ApiFuncCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

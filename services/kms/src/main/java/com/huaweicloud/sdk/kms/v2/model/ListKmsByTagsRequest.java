@@ -24,7 +24,7 @@ public class ListKmsByTagsRequest {
         return this;
     }
 
-    /** 资源实例，默认值为resource_instances
+    /** 资源实例，固定值为resource_instances
      * 
      * @return resourceInstances */
     public String getResourceInstances() {

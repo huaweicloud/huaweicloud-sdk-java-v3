@@ -73,12 +73,12 @@ public class StatisticsAPI {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_throughput")
 
-    private Integer outputThroughput;
+    private Long outputThroughput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_throughput")
 
-    private Integer inputThroughput;
+    private Long inputThroughput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_minute")
@@ -190,10 +190,81 @@ public class StatisticsAPI {
 
     private OffsetDateTime registerTime;
 
+    /** 状态值： - 1：调度中，未上报CES - 2：已经成功上报CES 预留字段，暂不支持 */
+    public static final class StatusEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private StatusEnum status;
 
     public StatisticsAPI withMaxLatency(Integer maxLatency) {
         this.maxLatency = maxLatency;
@@ -371,7 +442,7 @@ public class StatisticsAPI {
         this.avgBackendLatency = avgBackendLatency;
     }
 
-    public StatisticsAPI withOutputThroughput(Integer outputThroughput) {
+    public StatisticsAPI withOutputThroughput(Long outputThroughput) {
         this.outputThroughput = outputThroughput;
         return this;
     }
@@ -379,15 +450,15 @@ public class StatisticsAPI {
     /** 下行吞吐量（byte）
      * 
      * @return outputThroughput */
-    public Integer getOutputThroughput() {
+    public Long getOutputThroughput() {
         return outputThroughput;
     }
 
-    public void setOutputThroughput(Integer outputThroughput) {
+    public void setOutputThroughput(Long outputThroughput) {
         this.outputThroughput = outputThroughput;
     }
 
-    public StatisticsAPI withInputThroughput(Integer inputThroughput) {
+    public StatisticsAPI withInputThroughput(Long inputThroughput) {
         this.inputThroughput = inputThroughput;
         return this;
     }
@@ -395,11 +466,11 @@ public class StatisticsAPI {
     /** 上行吞吐量（byte）
      * 
      * @return inputThroughput */
-    public Integer getInputThroughput() {
+    public Long getInputThroughput() {
         return inputThroughput;
     }
 
-    public void setInputThroughput(Integer inputThroughput) {
+    public void setInputThroughput(Long inputThroughput) {
         this.inputThroughput = inputThroughput;
     }
 
@@ -515,7 +586,7 @@ public class StatisticsAPI {
         this.registerTime = registerTime;
     }
 
-    public StatisticsAPI withStatus(Integer status) {
+    public StatisticsAPI withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -523,11 +594,11 @@ public class StatisticsAPI {
     /** 状态值： - 1：调度中，未上报CES - 2：已经成功上报CES 预留字段，暂不支持
      * 
      * @return status */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 

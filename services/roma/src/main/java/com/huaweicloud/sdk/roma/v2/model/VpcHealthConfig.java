@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 健康检查详情，VPC通道类型为2时必选。 */
+/** 健康检查详情。 */
 public class VpcHealthConfig {
 
     /** 使用以下协议，对VPC中主机执行健康检查： - TCP - HTTP - HTTPS */
@@ -204,6 +204,82 @@ public class VpcHealthConfig {
 
     private Boolean enableClientSsl;
 
+    /** 健康检查状态 - 1：可用 - 2：不可用 */
+    public static final class StatusEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private StatusEnum status;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
@@ -262,7 +338,7 @@ public class VpcHealthConfig {
         return this;
     }
 
-    /** 健康检查的目标端口，缺省或port = 0时为VPC中主机的端口号。 minimum: 0 maximum: 65535
+    /** 健康检查的目标端口，缺少或port = 0时为VPC中主机的端口号。 若此端口存在非0值，则使用此端口进行健康检查。 minimum: 0 maximum: 65535
      * 
      * @return port */
     public Integer getPort() {
@@ -354,6 +430,22 @@ public class VpcHealthConfig {
         this.enableClientSsl = enableClientSsl;
     }
 
+    public VpcHealthConfig withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /** 健康检查状态 - 1：可用 - 2：不可用
+     * 
+     * @return status */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
     public VpcHealthConfig withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -387,6 +479,7 @@ public class VpcHealthConfig {
             && Objects.equals(this.timeInterval, vpcHealthConfig.timeInterval)
             && Objects.equals(this.httpCode, vpcHealthConfig.httpCode)
             && Objects.equals(this.enableClientSsl, vpcHealthConfig.enableClientSsl)
+            && Objects.equals(this.status, vpcHealthConfig.status)
             && Objects.equals(this.timeout, vpcHealthConfig.timeout);
     }
 
@@ -401,6 +494,7 @@ public class VpcHealthConfig {
             timeInterval,
             httpCode,
             enableClientSsl,
+            status,
             timeout);
     }
 
@@ -417,6 +511,7 @@ public class VpcHealthConfig {
         sb.append("    timeInterval: ").append(toIndentedString(timeInterval)).append("\n");
         sb.append("    httpCode: ").append(toIndentedString(httpCode)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -8,9 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/**
- * 
- */
+/** UpdateIpGroupOption */
 public class UpdateIpGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,7 +79,7 @@ public class UpdateIpGroupOption {
         return this;
     }
 
-    /** IP地址组中包含的ip列表。
+    /** IP地址组中包含的IP列表。
      * 
      * @return ipList */
     public List<UpadateIpGroupIpOption> getIpList() {

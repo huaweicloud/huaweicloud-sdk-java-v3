@@ -916,6 +916,24 @@ public class RdsAsyncClient {
             hcClient);
     }
 
+    /** 查询跨云容灾复制状态 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
+     *
+     * @param ShowDrReplicaStatusRequest 请求对象
+     * @return CompletableFuture<ShowDrReplicaStatusResponse> */
+    public CompletableFuture<ShowDrReplicaStatusResponse> showDrReplicaStatusAsync(ShowDrReplicaStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showDrReplicaStatus);
+    }
+
+    /** 查询跨云容灾复制状态 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
+     *
+     * @param ShowDrReplicaStatusRequest 请求对象
+     * @return AsyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> */
+    public AsyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> showDrReplicaStatusAsyncInvoker(
+        ShowDrReplicaStatusRequest request) {
+        return new AsyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse>(request,
+            RdsMeta.showDrReplicaStatus, hcClient);
+    }
+
     /** 获取指定实例的参数模板 获取指定实例的参数模板。
      *
      * @param ShowInstanceConfigurationRequest 请求对象
@@ -1484,6 +1502,43 @@ public class RdsAsyncClient {
             hcClient);
     }
 
+    /** 数据库代理规格变更 数据库代理实例进行规格变更。 - 调用接口前，您需要了解API 认证鉴权。
+     *
+     * @param ChangeProxyScaleRequest 请求对象
+     * @return CompletableFuture<ChangeProxyScaleResponse> */
+    public CompletableFuture<ChangeProxyScaleResponse> changeProxyScaleAsync(ChangeProxyScaleRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.changeProxyScale);
+    }
+
+    /** 数据库代理规格变更 数据库代理实例进行规格变更。 - 调用接口前，您需要了解API 认证鉴权。
+     *
+     * @param ChangeProxyScaleRequest 请求对象
+     * @return AsyncInvoker<ChangeProxyScaleRequest, ChangeProxyScaleResponse> */
+    public AsyncInvoker<ChangeProxyScaleRequest, ChangeProxyScaleResponse> changeProxyScaleAsyncInvoker(
+        ChangeProxyScaleRequest request) {
+        return new AsyncInvoker<ChangeProxyScaleRequest, ChangeProxyScaleResponse>(request, RdsMeta.changeProxyScale,
+            hcClient);
+    }
+
+    /** 修改读写分离阈值 修改指定实例的读写分离延时阈值。
+     *
+     * @param ChangeTheDelayThresholdRequest 请求对象
+     * @return CompletableFuture<ChangeTheDelayThresholdResponse> */
+    public CompletableFuture<ChangeTheDelayThresholdResponse> changeTheDelayThresholdAsync(
+        ChangeTheDelayThresholdRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.changeTheDelayThreshold);
+    }
+
+    /** 修改读写分离阈值 修改指定实例的读写分离延时阈值。
+     *
+     * @param ChangeTheDelayThresholdRequest 请求对象
+     * @return AsyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> */
+    public AsyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> changeTheDelayThresholdAsyncInvoker(
+        ChangeTheDelayThresholdRequest request) {
+        return new AsyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse>(request,
+            RdsMeta.changeTheDelayThreshold, hcClient);
+    }
+
     /** 创建数据库 在指定实例中创建数据库。
      *
      * @param CreatePostgresqlDatabaseRequest 请求对象
@@ -1598,6 +1653,25 @@ public class RdsAsyncClient {
             RdsMeta.listPostgresqlDbUserPaginated, hcClient);
     }
 
+    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+     *
+     * @param SearchQueryScaleFlavorsRequest 请求对象
+     * @return CompletableFuture<SearchQueryScaleFlavorsResponse> */
+    public CompletableFuture<SearchQueryScaleFlavorsResponse> searchQueryScaleFlavorsAsync(
+        SearchQueryScaleFlavorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.searchQueryScaleFlavors);
+    }
+
+    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+     *
+     * @param SearchQueryScaleFlavorsRequest 请求对象
+     * @return AsyncInvoker<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse> */
+    public AsyncInvoker<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse> searchQueryScaleFlavorsAsyncInvoker(
+        SearchQueryScaleFlavorsRequest request) {
+        return new AsyncInvoker<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse>(request,
+            RdsMeta.searchQueryScaleFlavors, hcClient);
+    }
+
     /** 重置数据库帐号密码 重置指定数据库帐号的密码。
      *
      * @param SetPostgresqlDbUserPwdRequest 请求对象
@@ -1615,6 +1689,79 @@ public class RdsAsyncClient {
         SetPostgresqlDbUserPwdRequest request) {
         return new AsyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>(request,
             RdsMeta.setPostgresqlDbUserPwd, hcClient);
+    }
+
+    /** 查询数据库代理信息 查询指定实例的数据库代理详细信息。
+     *
+     * @param ShowInformationAboutDatabaseProxyRequest 请求对象
+     * @return CompletableFuture<ShowInformationAboutDatabaseProxyResponse> */
+    public CompletableFuture<ShowInformationAboutDatabaseProxyResponse> showInformationAboutDatabaseProxyAsync(
+        ShowInformationAboutDatabaseProxyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showInformationAboutDatabaseProxy);
+    }
+
+    /** 查询数据库代理信息 查询指定实例的数据库代理详细信息。
+     *
+     * @param ShowInformationAboutDatabaseProxyRequest 请求对象
+     * @return AsyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> */
+    public AsyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> showInformationAboutDatabaseProxyAsyncInvoker(
+        ShowInformationAboutDatabaseProxyRequest request) {
+        return new AsyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse>(
+            request, RdsMeta.showInformationAboutDatabaseProxy, hcClient);
+    }
+
+    /** 开启数据库代理 为指定实例开启数据库代理。
+     *
+     * @param StartDatabaseProxyRequest 请求对象
+     * @return CompletableFuture<StartDatabaseProxyResponse> */
+    public CompletableFuture<StartDatabaseProxyResponse> startDatabaseProxyAsync(StartDatabaseProxyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.startDatabaseProxy);
+    }
+
+    /** 开启数据库代理 为指定实例开启数据库代理。
+     *
+     * @param StartDatabaseProxyRequest 请求对象
+     * @return AsyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse> */
+    public AsyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse> startDatabaseProxyAsyncInvoker(
+        StartDatabaseProxyRequest request) {
+        return new AsyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse>(request,
+            RdsMeta.startDatabaseProxy, hcClient);
+    }
+
+    /** 关闭数据库代理 为指定实例关闭数据库代理。
+     *
+     * @param StopDatabaseProxyRequest 请求对象
+     * @return CompletableFuture<StopDatabaseProxyResponse> */
+    public CompletableFuture<StopDatabaseProxyResponse> stopDatabaseProxyAsync(StopDatabaseProxyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.stopDatabaseProxy);
+    }
+
+    /** 关闭数据库代理 为指定实例关闭数据库代理。
+     *
+     * @param StopDatabaseProxyRequest 请求对象
+     * @return AsyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse> */
+    public AsyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse> stopDatabaseProxyAsyncInvoker(
+        StopDatabaseProxyRequest request) {
+        return new AsyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse>(request, RdsMeta.stopDatabaseProxy,
+            hcClient);
+    }
+
+    /** 修改读写分离权重 修改指定实例的读写分离权重。
+     *
+     * @param UpdateReadWeightRequest 请求对象
+     * @return CompletableFuture<UpdateReadWeightResponse> */
+    public CompletableFuture<UpdateReadWeightResponse> updateReadWeightAsync(UpdateReadWeightRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateReadWeight);
+    }
+
+    /** 修改读写分离权重 修改指定实例的读写分离权重。
+     *
+     * @param UpdateReadWeightRequest 请求对象
+     * @return AsyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse> */
+    public AsyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse> updateReadWeightAsyncInvoker(
+        UpdateReadWeightRequest request) {
+        return new AsyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse>(request, RdsMeta.updateReadWeight,
+            hcClient);
     }
 
     /** 授权数据库帐号 授权数据库帐号。

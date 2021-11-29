@@ -74,38 +74,6 @@ public class EvsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CinderExportToImageRequest, CinderExportToImageResponse> cinderExportToImage =
-        genForcinderExportToImage();
-
-    private static HttpRequestDef<CinderExportToImageRequest, CinderExportToImageResponse> genForcinderExportToImage() {
-        // basic
-        HttpRequestDef.Builder<CinderExportToImageRequest, CinderExportToImageResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CinderExportToImageRequest.class, CinderExportToImageResponse.class)
-                .withName("CinderExportToImage")
-                .withUri("/v2/{project_id}/volumes/{volume_id}/action")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("volume_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CinderExportToImageRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
-        builder.<CinderExportToImageRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CinderExportToImageRequestBody.class),
-            f -> f.withMarshaller(CinderExportToImageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> cinderListAvailabilityZones =
         genForcinderListAvailabilityZones();
 

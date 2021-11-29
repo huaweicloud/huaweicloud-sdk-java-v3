@@ -20,7 +20,7 @@ public class ListGeoipRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<ListGeoIpResponseBodyItems> items = null;
+    private List<GeOIpItem> items = null;
 
     public ListGeoipRuleResponse withTotal(Integer total) {
         this.total = total;
@@ -38,12 +38,12 @@ public class ListGeoipRuleResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListGeoipRuleResponse withItems(List<ListGeoIpResponseBodyItems> items) {
+    public ListGeoipRuleResponse withItems(List<GeOIpItem> items) {
         this.items = items;
         return this;
     }
 
-    public ListGeoipRuleResponse addItemsItem(ListGeoIpResponseBodyItems itemsItem) {
+    public ListGeoipRuleResponse addItemsItem(GeOIpItem itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -51,7 +51,7 @@ public class ListGeoipRuleResponse extends SdkResponse {
         return this;
     }
 
-    public ListGeoipRuleResponse withItems(Consumer<List<ListGeoIpResponseBodyItems>> itemsSetter) {
+    public ListGeoipRuleResponse withItems(Consumer<List<GeOIpItem>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -62,11 +62,11 @@ public class ListGeoipRuleResponse extends SdkResponse {
     /** 地理位置封禁列表
      * 
      * @return items */
-    public List<ListGeoIpResponseBodyItems> getItems() {
+    public List<GeOIpItem> getItems() {
         return items;
     }
 
-    public void setItems(List<ListGeoIpResponseBodyItems> items) {
+    public void setItems(List<GeOIpItem> items) {
         this.items = items;
     }
 

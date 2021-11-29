@@ -21,14 +21,14 @@ public class CinderListQuotasRequest {
     /** 是否查询配额详细信息。当前只支持传true。 */
     public static final class UsageEnum {
 
-        /** Enum TRUE for value: "true" */
-        public static final UsageEnum TRUE = new UsageEnum("true");
+        /** Enum TRUE for value: "True" */
+        public static final UsageEnum TRUE = new UsageEnum("True");
 
         private static final Map<String, UsageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, UsageEnum> createStaticFields() {
             Map<String, UsageEnum> map = new HashMap<>();
-            map.put("true", TRUE);
+            map.put("True", TRUE);
             return Collections.unmodifiableMap(map);
         }
 

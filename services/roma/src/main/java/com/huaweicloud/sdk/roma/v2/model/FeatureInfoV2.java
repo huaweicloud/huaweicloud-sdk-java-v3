@@ -109,6 +109,9 @@ public class FeatureInfoV2 {
         /** Enum VPC_BACKUP for value: "vpc_backup" */
         public static final NameEnum VPC_BACKUP = new NameEnum("vpc_backup");
 
+        /** Enum THROTTLE_STRATEGY for value: "throttle_strategy" */
+        public static final NameEnum THROTTLE_STRATEGY = new NameEnum("throttle_strategy");
+
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, NameEnum> createStaticFields() {
@@ -142,6 +145,7 @@ public class FeatureInfoV2 {
             map.put("app_quota", APP_QUOTA);
             map.put("app_acl", APP_ACL);
             map.put("vpc_backup", VPC_BACKUP);
+            map.put("throttle_strategy", THROTTLE_STRATEGY);
             return Collections.unmodifiableMap(map);
         }
 

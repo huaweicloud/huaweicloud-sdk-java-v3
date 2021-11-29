@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** Response Object */
 public class ListIgnoreRuleResponse extends SdkResponse {
@@ -13,6 +16,11 @@ public class ListIgnoreRuleResponse extends SdkResponse {
     @JsonProperty(value = "total")
 
     private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "items")
+
+    private List<IngnoreItem> items = null;
 
     public ListIgnoreRuleResponse withTotal(Integer total) {
         this.total = total;
@@ -30,6 +38,38 @@ public class ListIgnoreRuleResponse extends SdkResponse {
         this.total = total;
     }
 
+    public ListIgnoreRuleResponse withItems(List<IngnoreItem> items) {
+        this.items = items;
+        return this;
+    }
+
+    public ListIgnoreRuleResponse addItemsItem(IngnoreItem itemsItem) {
+        if (this.items == null) {
+            this.items = new ArrayList<>();
+        }
+        this.items.add(itemsItem);
+        return this;
+    }
+
+    public ListIgnoreRuleResponse withItems(Consumer<List<IngnoreItem>> itemsSetter) {
+        if (this.items == null) {
+            this.items = new ArrayList<>();
+        }
+        itemsSetter.accept(this.items);
+        return this;
+    }
+
+    /** 误报屏蔽规则对象列表
+     * 
+     * @return items */
+    public List<IngnoreItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<IngnoreItem> items) {
+        this.items = items;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -39,12 +79,13 @@ public class ListIgnoreRuleResponse extends SdkResponse {
             return false;
         }
         ListIgnoreRuleResponse listIgnoreRuleResponse = (ListIgnoreRuleResponse) o;
-        return Objects.equals(this.total, listIgnoreRuleResponse.total);
+        return Objects.equals(this.total, listIgnoreRuleResponse.total)
+            && Objects.equals(this.items, listIgnoreRuleResponse.items);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total);
+        return Objects.hash(total, items);
     }
 
     @Override
@@ -52,6 +93,7 @@ public class ListIgnoreRuleResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListIgnoreRuleResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("}");
         return sb.toString();
     }

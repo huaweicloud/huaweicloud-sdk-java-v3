@@ -110,6 +110,11 @@ public class ListEventRequest {
     private RecentEnum recent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attacks")
+
+    private List<String> attacks = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
 
     private Long from;
@@ -164,6 +169,40 @@ public class ListEventRequest {
 
     public void setRecent(RecentEnum recent) {
         this.recent = recent;
+    }
+
+    public ListEventRequest withAttacks(List<String> attacks) {
+        this.attacks = attacks;
+        return this;
+    }
+
+    public ListEventRequest addAttacksItem(String attacksItem) {
+        if (this.attacks == null) {
+            this.attacks = new ArrayList<>();
+        }
+        this.attacks.add(attacksItem);
+        return this;
+    }
+
+    public ListEventRequest withAttacks(Consumer<List<String>> attacksSetter) {
+        if (this.attacks == null) {
+            this.attacks = new ArrayList<>();
+        }
+        attacksSetter.accept(this.attacks);
+        return this;
+    }
+
+    /** 攻击类型: - vuln：其它攻击类型 - sqli： sql注入攻击 - lfi： 本地文件包含 - cmdi：命令注入攻击 - xss：XSS攻击 - robot：恶意爬虫 - rfi：远程文件包含 -
+     * custom_custom：精准防护 - webshell：网站木马 - custom_whiteblackip：黑白名单拦截 - custom_geoip：地理访问控制拦截 - antitamper：防篡改 -
+     * anticrawler：反爬虫 - leakage：网站信息防泄漏 - illegal：非法请求
+     * 
+     * @return attacks */
+    public List<String> getAttacks() {
+        return attacks;
+    }
+
+    public void setAttacks(List<String> attacks) {
+        this.attacks = attacks;
     }
 
     public ListEventRequest withFrom(Long from) {
@@ -272,15 +311,16 @@ public class ListEventRequest {
         }
         ListEventRequest listEventRequest = (ListEventRequest) o;
         return Objects.equals(this.enterpriseProjectId, listEventRequest.enterpriseProjectId)
-            && Objects.equals(this.recent, listEventRequest.recent) && Objects.equals(this.from, listEventRequest.from)
-            && Objects.equals(this.to, listEventRequest.to) && Objects.equals(this.hosts, listEventRequest.hosts)
-            && Objects.equals(this.page, listEventRequest.page)
+            && Objects.equals(this.recent, listEventRequest.recent)
+            && Objects.equals(this.attacks, listEventRequest.attacks)
+            && Objects.equals(this.from, listEventRequest.from) && Objects.equals(this.to, listEventRequest.to)
+            && Objects.equals(this.hosts, listEventRequest.hosts) && Objects.equals(this.page, listEventRequest.page)
             && Objects.equals(this.pagesize, listEventRequest.pagesize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, recent, from, to, hosts, page, pagesize);
+        return Objects.hash(enterpriseProjectId, recent, attacks, from, to, hosts, page, pagesize);
     }
 
     @Override
@@ -289,6 +329,7 @@ public class ListEventRequest {
         sb.append("class ListEventRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    recent: ").append(toIndentedString(recent)).append("\n");
+        sb.append("    attacks: ").append(toIndentedString(attacks)).append("\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");
         sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");

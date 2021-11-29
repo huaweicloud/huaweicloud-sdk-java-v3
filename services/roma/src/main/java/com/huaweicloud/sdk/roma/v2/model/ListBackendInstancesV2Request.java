@@ -33,6 +33,21 @@ public class ListBackendInstancesV2Request {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_group_name")
+
+    private String memberGroupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_group_id")
+
+    private String memberGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "precise_search")
+
+    private String preciseSearch;
+
     public ListBackendInstancesV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -102,7 +117,7 @@ public class ListBackendInstancesV2Request {
         return this;
     }
 
-    /** 云服务器的名称
+    /** 云服务器的名称。
      * 
      * @return name */
     public String getName() {
@@ -111,6 +126,54 @@ public class ListBackendInstancesV2Request {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ListBackendInstancesV2Request withMemberGroupName(String memberGroupName) {
+        this.memberGroupName = memberGroupName;
+        return this;
+    }
+
+    /** 后端服务器组名称。
+     * 
+     * @return memberGroupName */
+    public String getMemberGroupName() {
+        return memberGroupName;
+    }
+
+    public void setMemberGroupName(String memberGroupName) {
+        this.memberGroupName = memberGroupName;
+    }
+
+    public ListBackendInstancesV2Request withMemberGroupId(String memberGroupId) {
+        this.memberGroupId = memberGroupId;
+        return this;
+    }
+
+    /** 后端服务器组编号
+     * 
+     * @return memberGroupId */
+    public String getMemberGroupId() {
+        return memberGroupId;
+    }
+
+    public void setMemberGroupId(String memberGroupId) {
+        this.memberGroupId = memberGroupId;
+    }
+
+    public ListBackendInstancesV2Request withPreciseSearch(String preciseSearch) {
+        this.preciseSearch = preciseSearch;
+        return this;
+    }
+
+    /** 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。 目前支持name，member_group_name。
+     * 
+     * @return preciseSearch */
+    public String getPreciseSearch() {
+        return preciseSearch;
+    }
+
+    public void setPreciseSearch(String preciseSearch) {
+        this.preciseSearch = preciseSearch;
     }
 
     @Override
@@ -126,12 +189,16 @@ public class ListBackendInstancesV2Request {
             && Objects.equals(this.vpcChannelId, listBackendInstancesV2Request.vpcChannelId)
             && Objects.equals(this.offset, listBackendInstancesV2Request.offset)
             && Objects.equals(this.limit, listBackendInstancesV2Request.limit)
-            && Objects.equals(this.name, listBackendInstancesV2Request.name);
+            && Objects.equals(this.name, listBackendInstancesV2Request.name)
+            && Objects.equals(this.memberGroupName, listBackendInstancesV2Request.memberGroupName)
+            && Objects.equals(this.memberGroupId, listBackendInstancesV2Request.memberGroupId)
+            && Objects.equals(this.preciseSearch, listBackendInstancesV2Request.preciseSearch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, vpcChannelId, offset, limit, name);
+        return Objects
+            .hash(instanceId, vpcChannelId, offset, limit, name, memberGroupName, memberGroupId, preciseSearch);
     }
 
     @Override
@@ -143,6 +210,9 @@ public class ListBackendInstancesV2Request {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    memberGroupName: ").append(toIndentedString(memberGroupName)).append("\n");
+        sb.append("    memberGroupId: ").append(toIndentedString(memberGroupId)).append("\n");
+        sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

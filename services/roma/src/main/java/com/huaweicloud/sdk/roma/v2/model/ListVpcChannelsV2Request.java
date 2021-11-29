@@ -34,14 +34,34 @@ public class ListVpcChannelsV2Request {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vpc_type")
+    @JsonProperty(value = "dict_code")
 
-    private Integer vpcType;
+    private String dictCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "precise_search")
 
     private String preciseSearch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_host")
+
+    private String memberHost;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_port")
+
+    private Integer memberPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_group_name")
+
+    private String memberGroupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_group_id")
+
+    private String memberGroupId;
 
     public ListVpcChannelsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -123,20 +143,20 @@ public class ListVpcChannelsV2Request {
         this.name = name;
     }
 
-    public ListVpcChannelsV2Request withVpcType(Integer vpcType) {
-        this.vpcType = vpcType;
+    public ListVpcChannelsV2Request withDictCode(String dictCode) {
+        this.dictCode = dictCode;
         return this;
     }
 
-    /** VPC通道的类型
+    /** VPC通道的字典编码 支持英文，数字，特殊字符（-_.） 暂不支持
      * 
-     * @return vpcType */
-    public Integer getVpcType() {
-        return vpcType;
+     * @return dictCode */
+    public String getDictCode() {
+        return dictCode;
     }
 
-    public void setVpcType(Integer vpcType) {
-        this.vpcType = vpcType;
+    public void setDictCode(String dictCode) {
+        this.dictCode = dictCode;
     }
 
     public ListVpcChannelsV2Request withPreciseSearch(String preciseSearch) {
@@ -144,7 +164,7 @@ public class ListVpcChannelsV2Request {
         return this;
     }
 
-    /** 指定需要精确匹配查找的参数名称，目前仅支持name
+    /** 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。 目前支持name，member_group_name。
      * 
      * @return preciseSearch */
     public String getPreciseSearch() {
@@ -153,6 +173,70 @@ public class ListVpcChannelsV2Request {
 
     public void setPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
+    }
+
+    public ListVpcChannelsV2Request withMemberHost(String memberHost) {
+        this.memberHost = memberHost;
+        return this;
+    }
+
+    /** 后端服务地址。默认精确查询，不支持模糊查询。
+     * 
+     * @return memberHost */
+    public String getMemberHost() {
+        return memberHost;
+    }
+
+    public void setMemberHost(String memberHost) {
+        this.memberHost = memberHost;
+    }
+
+    public ListVpcChannelsV2Request withMemberPort(Integer memberPort) {
+        this.memberPort = memberPort;
+        return this;
+    }
+
+    /** 后端服务器端口 minimum: 0 maximum: 65535
+     * 
+     * @return memberPort */
+    public Integer getMemberPort() {
+        return memberPort;
+    }
+
+    public void setMemberPort(Integer memberPort) {
+        this.memberPort = memberPort;
+    }
+
+    public ListVpcChannelsV2Request withMemberGroupName(String memberGroupName) {
+        this.memberGroupName = memberGroupName;
+        return this;
+    }
+
+    /** 后端服务器组名称
+     * 
+     * @return memberGroupName */
+    public String getMemberGroupName() {
+        return memberGroupName;
+    }
+
+    public void setMemberGroupName(String memberGroupName) {
+        this.memberGroupName = memberGroupName;
+    }
+
+    public ListVpcChannelsV2Request withMemberGroupId(String memberGroupId) {
+        this.memberGroupId = memberGroupId;
+        return this;
+    }
+
+    /** 后端服务器组编号
+     * 
+     * @return memberGroupId */
+    public String getMemberGroupId() {
+        return memberGroupId;
+    }
+
+    public void setMemberGroupId(String memberGroupId) {
+        this.memberGroupId = memberGroupId;
     }
 
     @Override
@@ -169,13 +253,27 @@ public class ListVpcChannelsV2Request {
             && Objects.equals(this.limit, listVpcChannelsV2Request.limit)
             && Objects.equals(this.id, listVpcChannelsV2Request.id)
             && Objects.equals(this.name, listVpcChannelsV2Request.name)
-            && Objects.equals(this.vpcType, listVpcChannelsV2Request.vpcType)
-            && Objects.equals(this.preciseSearch, listVpcChannelsV2Request.preciseSearch);
+            && Objects.equals(this.dictCode, listVpcChannelsV2Request.dictCode)
+            && Objects.equals(this.preciseSearch, listVpcChannelsV2Request.preciseSearch)
+            && Objects.equals(this.memberHost, listVpcChannelsV2Request.memberHost)
+            && Objects.equals(this.memberPort, listVpcChannelsV2Request.memberPort)
+            && Objects.equals(this.memberGroupName, listVpcChannelsV2Request.memberGroupName)
+            && Objects.equals(this.memberGroupId, listVpcChannelsV2Request.memberGroupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, id, name, vpcType, preciseSearch);
+        return Objects.hash(instanceId,
+            offset,
+            limit,
+            id,
+            name,
+            dictCode,
+            preciseSearch,
+            memberHost,
+            memberPort,
+            memberGroupName,
+            memberGroupId);
     }
 
     @Override
@@ -187,8 +285,12 @@ public class ListVpcChannelsV2Request {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    vpcType: ").append(toIndentedString(vpcType)).append("\n");
+        sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
+        sb.append("    memberHost: ").append(toIndentedString(memberHost)).append("\n");
+        sb.append("    memberPort: ").append(toIndentedString(memberPort)).append("\n");
+        sb.append("    memberGroupName: ").append(toIndentedString(memberGroupName)).append("\n");
+        sb.append("    memberGroupId: ").append(toIndentedString(memberGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

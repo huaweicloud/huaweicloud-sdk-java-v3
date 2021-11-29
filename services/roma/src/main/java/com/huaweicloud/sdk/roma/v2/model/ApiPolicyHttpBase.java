@@ -209,6 +209,11 @@ public class ApiPolicyHttpBase {
 
     private Boolean enableClientSsl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
     public ApiPolicyHttpBase withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -307,6 +312,22 @@ public class ApiPolicyHttpBase {
         this.enableClientSsl = enableClientSsl;
     }
 
+    public ApiPolicyHttpBase withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /** ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * 
+     * @return retryCount */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -321,12 +342,13 @@ public class ApiPolicyHttpBase {
             && Objects.equals(this.reqMethod, apiPolicyHttpBase.reqMethod)
             && Objects.equals(this.reqUri, apiPolicyHttpBase.reqUri)
             && Objects.equals(this.timeout, apiPolicyHttpBase.timeout)
-            && Objects.equals(this.enableClientSsl, apiPolicyHttpBase.enableClientSsl);
+            && Objects.equals(this.enableClientSsl, apiPolicyHttpBase.enableClientSsl)
+            && Objects.equals(this.retryCount, apiPolicyHttpBase.retryCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout, enableClientSsl);
+        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout, enableClientSsl, retryCount);
     }
 
     @Override
@@ -339,6 +361,7 @@ public class ApiPolicyHttpBase {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

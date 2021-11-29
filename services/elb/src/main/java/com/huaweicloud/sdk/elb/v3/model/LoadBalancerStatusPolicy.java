@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** lb状态树的策略状态信息 */
+/** LB状态树的转发策略状态信息 */
 public class LoadBalancerStatusPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,7 +41,7 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** 匹配动作。 支持REDIRECT_TO_POOL和REDIRECT_TO_LISTENER。
+    /** 匹配后动作。取值： - REDIRECT_TO_POOL：转发到后端服务器组。 - REDIRECT_TO_LISTENER：转发到监听器。
      * 
      * @return action */
     public String getAction() {
@@ -57,7 +57,7 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** 策略ID。
+    /** 转发策略ID。
      * 
      * @return id */
     public String getId() {
@@ -73,7 +73,7 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** provisioning的状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。默认为ACTIVE。
+    /** 转发策略的配置状态。取值： - ACTIVE：使用中，默认值。 - ERROR：表示当前策略与同一监听器下的其他策略存在相同的规则配置。
      * 
      * @return provisioningStatus */
     public String getProvisioningStatus() {
@@ -89,7 +89,7 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** 策略名称。
+    /** 转发策略名称。
      * 
      * @return name */
     public String getName() {
@@ -121,7 +121,7 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** 规则。
+    /** 转发规则状态信息。
      * 
      * @return rules */
     public List<LoadBalancerStatusL7Rule> getRules() {

@@ -12,9 +12,9 @@ import java.util.function.Consumer;
 public class CountPreoccupyIpNumRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "availability_zone_id")
+    @JsonProperty(value = "l7_flavor_id")
 
-    private List<String> availabilityZoneId = null;
+    private String l7FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_target_enable")
@@ -27,14 +27,79 @@ public class CountPreoccupyIpNumRequest {
     private Integer ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "l7_flavor_id")
-
-    private String l7FlavorId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_id")
 
     private String loadbalancerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone_id")
+
+    private List<String> availabilityZoneId = null;
+
+    public CountPreoccupyIpNumRequest withL7FlavorId(String l7FlavorId) {
+        this.l7FlavorId = l7FlavorId;
+        return this;
+    }
+
+    /** 负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB，或变更LB的原七层规格到该规格所需要的预占IP。 适用场景：创建负LB，变更LB规格。
+     * 
+     * @return l7FlavorId */
+    public String getL7FlavorId() {
+        return l7FlavorId;
+    }
+
+    public void setL7FlavorId(String l7FlavorId) {
+        this.l7FlavorId = l7FlavorId;
+    }
+
+    public CountPreoccupyIpNumRequest withIpTargetEnable(Boolean ipTargetEnable) {
+        this.ipTargetEnable = ipTargetEnable;
+        return this;
+    }
+
+    /** 是否开启跨VPC转发。 取值true表示计算创建或变更为开启跨VPC转发的LB的预占IP。 取值false表示计算创建或变更为不开启跨VPC转发的LB的预占IP。不传等价false。 适用场景：创建LB，变更LB规格。
+     * 
+     * @return ipTargetEnable */
+    public Boolean getIpTargetEnable() {
+        return ipTargetEnable;
+    }
+
+    public void setIpTargetEnable(Boolean ipTargetEnable) {
+        this.ipTargetEnable = ipTargetEnable;
+    }
+
+    public CountPreoccupyIpNumRequest withIpVersion(Integer ipVersion) {
+        this.ipVersion = ipVersion;
+        return this;
+    }
+
+    /** 负载均衡器IP地址类型，取值4，6 。 取值4表示计算创建支持IPv4地址的LB的预占IP。 取值6表示计算创建支持IPv6地址的LB的预占IP。 适用场景：创建LB。
+     * [不支持IPv6，请勿设置为6。](tag:otc,otc_test,dt,dt_test)
+     * 
+     * @return ipVersion */
+    public Integer getIpVersion() {
+        return ipVersion;
+    }
+
+    public void setIpVersion(Integer ipVersion) {
+        this.ipVersion = ipVersion;
+    }
+
+    public CountPreoccupyIpNumRequest withLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+        return this;
+    }
+
+    /** 负载均衡器ID。计算LB规格变更或创建LB中的第一个七层监听器的预占IP。 适用场景：变更LB规格，创建LB中的第一个七层监听器。
+     * 
+     * @return loadbalancerId */
+    public String getLoadbalancerId() {
+        return loadbalancerId;
+    }
+
+    public void setLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+    }
 
     public CountPreoccupyIpNumRequest withAvailabilityZoneId(List<String> availabilityZoneId) {
         this.availabilityZoneId = availabilityZoneId;
@@ -57,7 +122,7 @@ public class CountPreoccupyIpNumRequest {
         return this;
     }
 
-    /** 功能描述：LB需要部署的AZ列表 约束：若查询创建一个LB所需预占IP数时，该参数为必选
+    /** 计算创建AZ列表为availability_zone_id的负载局衡器实例的预占IP。 适用场景：创建LB。 使用说明： - 传入loadbalancer_id时，该参数无效。
      * 
      * @return availabilityZoneId */
     public List<String> getAvailabilityZoneId() {
@@ -66,70 +131,6 @@ public class CountPreoccupyIpNumRequest {
 
     public void setAvailabilityZoneId(List<String> availabilityZoneId) {
         this.availabilityZoneId = availabilityZoneId;
-    }
-
-    public CountPreoccupyIpNumRequest withIpTargetEnable(Boolean ipTargetEnable) {
-        this.ipTargetEnable = ipTargetEnable;
-        return this;
-    }
-
-    /** 是否启用跨VPC后端转发
-     * 
-     * @return ipTargetEnable */
-    public Boolean getIpTargetEnable() {
-        return ipTargetEnable;
-    }
-
-    public void setIpTargetEnable(Boolean ipTargetEnable) {
-        this.ipTargetEnable = ipTargetEnable;
-    }
-
-    public CountPreoccupyIpNumRequest withIpVersion(Integer ipVersion) {
-        this.ipVersion = ipVersion;
-        return this;
-    }
-
-    /** 负载均衡器网络类型，枚举值4，6
-     * 
-     * @return ipVersion */
-    public Integer getIpVersion() {
-        return ipVersion;
-    }
-
-    public void setIpVersion(Integer ipVersion) {
-        this.ipVersion = ipVersion;
-    }
-
-    public CountPreoccupyIpNumRequest withL7FlavorId(String l7FlavorId) {
-        this.l7FlavorId = l7FlavorId;
-        return this;
-    }
-
-    /** 七层Flavor的ID。如果欲创建7层规格的弹性负载均衡实例，则该参数为必选
-     * 
-     * @return l7FlavorId */
-    public String getL7FlavorId() {
-        return l7FlavorId;
-    }
-
-    public void setL7FlavorId(String l7FlavorId) {
-        this.l7FlavorId = l7FlavorId;
-    }
-
-    public CountPreoccupyIpNumRequest withLoadbalancerId(String loadbalancerId) {
-        this.loadbalancerId = loadbalancerId;
-        return this;
-    }
-
-    /** 负载均衡器ID。当查询创建第一个七层监听器所需预占的ip数时，该参数为必选。
-     * 
-     * @return loadbalancerId */
-    public String getLoadbalancerId() {
-        return loadbalancerId;
-    }
-
-    public void setLoadbalancerId(String loadbalancerId) {
-        this.loadbalancerId = loadbalancerId;
     }
 
     @Override
@@ -141,27 +142,27 @@ public class CountPreoccupyIpNumRequest {
             return false;
         }
         CountPreoccupyIpNumRequest countPreoccupyIpNumRequest = (CountPreoccupyIpNumRequest) o;
-        return Objects.equals(this.availabilityZoneId, countPreoccupyIpNumRequest.availabilityZoneId)
+        return Objects.equals(this.l7FlavorId, countPreoccupyIpNumRequest.l7FlavorId)
             && Objects.equals(this.ipTargetEnable, countPreoccupyIpNumRequest.ipTargetEnable)
             && Objects.equals(this.ipVersion, countPreoccupyIpNumRequest.ipVersion)
-            && Objects.equals(this.l7FlavorId, countPreoccupyIpNumRequest.l7FlavorId)
-            && Objects.equals(this.loadbalancerId, countPreoccupyIpNumRequest.loadbalancerId);
+            && Objects.equals(this.loadbalancerId, countPreoccupyIpNumRequest.loadbalancerId)
+            && Objects.equals(this.availabilityZoneId, countPreoccupyIpNumRequest.availabilityZoneId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZoneId, ipTargetEnable, ipVersion, l7FlavorId, loadbalancerId);
+        return Objects.hash(l7FlavorId, ipTargetEnable, ipVersion, loadbalancerId, availabilityZoneId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CountPreoccupyIpNumRequest {\n");
-        sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
+        sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");
         sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
-        sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");
         sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

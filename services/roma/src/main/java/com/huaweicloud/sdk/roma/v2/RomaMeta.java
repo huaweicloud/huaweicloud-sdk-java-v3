@@ -133,10 +133,10 @@ public class RomaMeta {
             f -> f.withMarshaller(AssociateCertificateV2Request::getDomainId, (req, v) -> {
                 req.setDomainId(v);
             }));
-        builder.<DomainCertReq>withRequestField("body",
+        builder.<CertForm>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DomainCertReq.class),
+            TypeCasts.uncheckedConversion(CertForm.class),
             f -> f.withMarshaller(AssociateCertificateV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -6588,6 +6588,31 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2 =
+        genForshowDetailsOfInstanceV2();
+
+    private static HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> genForshowDetailsOfInstanceV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDetailsOfInstanceV2Request.class, ShowDetailsOfInstanceV2Response.class)
+            .withName("ShowDetailsOfInstanceV2")
+            .withUri("/v2/{project_id}/apic/instances/{instance_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfInstanceV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2 =
         genForshowDetailsOfRequestThrottlingPolicyV2();
 
@@ -9396,6 +9421,13 @@ public class RomaMeta {
             f -> f.withMarshaller(ListApiGroupsV2Request::getPreciseSearch, (req, v) -> {
                 req.setPreciseSearch(v);
             }));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiGroupsV2Request::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
 
         // response
 
@@ -9791,6 +9823,20 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisV2Request::getPreciseSearch, (req, v) -> {
                 req.setPreciseSearch(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisV2Request::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisV2Request::getVpcChannelName, (req, v) -> {
+                req.setVpcChannelName(v);
             }));
 
         // response
@@ -11587,6 +11633,178 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> batchDisableMembers =
+        genForbatchDisableMembers();
+
+    private static HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> genForbatchDisableMembers() {
+        // basic
+        HttpRequestDef.Builder<BatchDisableMembersRequest, BatchDisableMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDisableMembersRequest.class, BatchDisableMembersResponse.class)
+                .withName("BatchDisableMembers")
+                .withUri(
+                    "/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members/batch-disable")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisableMembersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisableMembersRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<MembersBatchEnableOrDisable>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MembersBatchEnableOrDisable.class),
+            f -> f.withMarshaller(BatchDisableMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> batchEnableMembers =
+        genForbatchEnableMembers();
+
+    private static HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> genForbatchEnableMembers() {
+        // basic
+        HttpRequestDef.Builder<BatchEnableMembersRequest, BatchEnableMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchEnableMembersRequest.class, BatchEnableMembersResponse.class)
+                .withName("BatchEnableMembers")
+                .withUri(
+                    "/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members/batch-enable")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchEnableMembersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchEnableMembersRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<MembersBatchEnableOrDisable>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MembersBatchEnableOrDisable.class),
+            f -> f.withMarshaller(BatchEnableMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> createMemberGroup =
+        genForcreateMemberGroup();
+
+    private static HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> genForcreateMemberGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateMemberGroupRequest, CreateMemberGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMemberGroupRequest.class, CreateMemberGroupResponse.class)
+                .withName("CreateMemberGroup")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMemberGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMemberGroupRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<MemberGroupCreateBatch>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MemberGroupCreateBatch.class),
+            f -> f.withMarshaller(CreateMemberGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> createProjectVpcChannel =
+        genForcreateProjectVpcChannel();
+
+    private static HttpRequestDef<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> genForcreateProjectVpcChannel() {
+        // basic
+        HttpRequestDef.Builder<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateProjectVpcChannelRequest.class, CreateProjectVpcChannelResponse.class)
+            .withName("CreateProjectVpcChannel")
+            .withUri("/v2/{project_id}/apic/vpc-channels")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ProjectVpcCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProjectVpcCreate.class),
+            f -> f.withMarshaller(CreateProjectVpcChannelRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> createProjectVpcChannelSyncs =
+        genForcreateProjectVpcChannelSyncs();
+
+    private static HttpRequestDef<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> genForcreateProjectVpcChannelSyncs() {
+        // basic
+        HttpRequestDef.Builder<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateProjectVpcChannelSyncsRequest.class,
+                    CreateProjectVpcChannelSyncsResponse.class)
+                .withName("CreateProjectVpcChannelSyncs")
+                .withUri("/v2/{project_id}/apic/vpc-channels/syncs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ProjectVpcSync>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProjectVpcSync.class),
+            f -> f.withMarshaller(CreateProjectVpcChannelSyncsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateVpcChannelV2Request, CreateVpcChannelV2Response> createVpcChannelV2 =
         genForcreateVpcChannelV2();
 
@@ -11651,6 +11869,46 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackendInstanceV2Request::getMemberId, (req, v) -> {
                 req.setMemberId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> deleteMemberGroup =
+        genFordeleteMemberGroup();
+
+    private static HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> genFordeleteMemberGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteMemberGroupRequest, DeleteMemberGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteMemberGroupRequest.class, DeleteMemberGroupResponse.class)
+            .withName("DeleteMemberGroup")
+            .withUri(
+                "/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups/{member_group_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
             }));
 
         // response
@@ -11737,6 +11995,183 @@ public class RomaMeta {
             f -> f.withMarshaller(ListBackendInstancesV2Request::getName, (req, v) -> {
                 req.setName(v);
             }));
+        builder.<String>withRequestField("member_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupName, (req, v) -> {
+                req.setMemberGroupName(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> listMemberGroups =
+        genForlistMemberGroups();
+
+    private static HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> genForlistMemberGroups() {
+        // basic
+        HttpRequestDef.Builder<ListMemberGroupsRequest, ListMemberGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMemberGroupsRequest.class, ListMemberGroupsResponse.class)
+                .withName("ListMemberGroups")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("dict_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getDictCode, (req, v) -> {
+                req.setDictCode(v);
+            }));
+        builder.<String>withRequestField("member_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getMemberGroupName, (req, v) -> {
+                req.setMemberGroupName(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> listProjectVpcChannelsV2 =
+        genForlistProjectVpcChannelsV2();
+
+    private static HttpRequestDef<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> genForlistProjectVpcChannelsV2() {
+        // basic
+        HttpRequestDef.Builder<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListProjectVpcChannelsV2Request.class, ListProjectVpcChannelsV2Response.class)
+                .withName("ListProjectVpcChannelsV2")
+                .withUri("/v2/{project_id}/apic/vpc-channels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
+            }));
+        builder.<String>withRequestField("member_host",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberHost, (req, v) -> {
+                req.setMemberHost(v);
+            }));
+        builder.<Integer>withRequestField("member_port",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberPort, (req, v) -> {
+                req.setMemberPort(v);
+            }));
+        builder.<String>withRequestField("member_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberGroupName, (req, v) -> {
+                req.setMemberGroupName(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
+            }));
+        builder.<Boolean>withRequestField("members_return",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMembersReturn, (req, v) -> {
+                req.setMembersReturn(v);
+            }));
 
         // response
 
@@ -11790,12 +12225,12 @@ public class RomaMeta {
             f -> f.withMarshaller(ListVpcChannelsV2Request::getName, (req, v) -> {
                 req.setName(v);
             }));
-        builder.<Integer>withRequestField("vpc_type",
+        builder.<String>withRequestField("dict_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getVpcType, (req, v) -> {
-                req.setVpcType(v);
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getDictCode, (req, v) -> {
+                req.setDictCode(v);
             }));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
@@ -11803,6 +12238,75 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcChannelsV2Request::getPreciseSearch, (req, v) -> {
                 req.setPreciseSearch(v);
+            }));
+        builder.<String>withRequestField("member_host",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberHost, (req, v) -> {
+                req.setMemberHost(v);
+            }));
+        builder.<Integer>withRequestField("member_port",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberPort, (req, v) -> {
+                req.setMemberPort(v);
+            }));
+        builder.<String>withRequestField("member_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupName, (req, v) -> {
+                req.setMemberGroupName(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroup =
+        genForshowDetailsOfMemberGroup();
+
+    private static HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> genForshowDetailsOfMemberGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowDetailsOfMemberGroupRequest.class, ShowDetailsOfMemberGroupResponse.class)
+                .withName("ShowDetailsOfMemberGroup")
+                .withUri(
+                    "/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups/{member_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
             }));
 
         // response
@@ -11838,6 +12342,157 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getVpcChannelId, (req, v) -> {
                 req.setVpcChannelId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> updateBackendInstancesV2 =
+        genForupdateBackendInstancesV2();
+
+    private static HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> genForupdateBackendInstancesV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateBackendInstancesV2Request.class, UpdateBackendInstancesV2Response.class)
+                .withName("UpdateBackendInstancesV2")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<VpcMemberModify>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VpcMemberModify.class),
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheck =
+        genForupdateHealthCheck();
+
+    private static HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> genForupdateHealthCheck() {
+        // basic
+        HttpRequestDef.Builder<UpdateHealthCheckRequest, UpdateHealthCheckResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHealthCheckRequest.class, UpdateHealthCheckResponse.class)
+                .withName("UpdateHealthCheck")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/health-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<VpcHealthConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VpcHealthConfig.class),
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> updateMemberGroup =
+        genForupdateMemberGroup();
+
+    private static HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> genForupdateMemberGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateMemberGroupRequest, UpdateMemberGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateMemberGroupRequest.class, UpdateMemberGroupResponse.class)
+            .withName("UpdateMemberGroup")
+            .withUri(
+                "/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups/{member_group_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
+            }));
+        builder.<MemberGroupCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MemberGroupCreate.class),
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> updateProjectVpcChannel =
+        genForupdateProjectVpcChannel();
+
+    private static HttpRequestDef<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> genForupdateProjectVpcChannel() {
+        // basic
+        HttpRequestDef.Builder<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateProjectVpcChannelRequest.class, UpdateProjectVpcChannelResponse.class)
+            .withName("UpdateProjectVpcChannel")
+            .withUri("/v2/{project_id}/apic/vpc-channels")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ProjectVpcCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProjectVpcCreate.class),
+            f -> f.withMarshaller(UpdateProjectVpcChannelRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

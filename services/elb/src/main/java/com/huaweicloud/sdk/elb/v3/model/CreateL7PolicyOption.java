@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 转发策略 */
+/** 创建转发策略请求参数。 */
 public class CreateL7PolicyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,6 +42,11 @@ public class CreateL7PolicyOption {
     private Integer position;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
@@ -62,6 +67,16 @@ public class CreateL7PolicyOption {
     private String redirectUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redirect_url_config")
+
+    private CreateRedirectUrlConfig redirectUrlConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fixed_response_config")
+
+    private CreateFixtedResponseConfig fixedResponseConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rules")
 
     private List<CreateL7PolicyRuleOption> rules = null;
@@ -71,7 +86,10 @@ public class CreateL7PolicyOption {
         return this;
     }
 
-    /** 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
+    /** 转发策略的转发动作。取值： - REDIRECT_TO_POOL：转发到后端云服务器组； - REDIRECT_TO_LISTENER：重定向到监听器； - REDIRECT_TO_URL：重定向到URL； -
+     * FIXED_RESPONSE：返回固定响应体。 使用说明： - REDIRECT_TO_LISTENER的优先级最高，配置了以后，该监听器下的其他policy会失效。 -
+     * 当action为REDIRECT_TO_POOL时，只支持创建在PROTOCOL为HTTP、HTTPS、TERMINATED_HTTPS的listener上。 -
+     * 当action为REDIRECT_TO_LISTENER时，只支持创建在PROTOCOL为HTTP的listener上。
      * 
      * @return action */
     public String getAction() {
@@ -87,7 +105,7 @@ public class CreateL7PolicyOption {
         return this;
     }
 
-    /** 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
+    /** 转发策略的管理状态，默认为true。 不支持该字段，请勿使用。
      * 
      * @return adminStateUp */
     public Boolean getAdminStateUp() {
@@ -119,7 +137,7 @@ public class CreateL7PolicyOption {
         return this;
     }
 
-    /** 转发策略对应的监听器ID。当action为REDIRECT_TO_POOL时，只支持创建在PROTOCOL为HTTP或TERMINATED_HTTPS的listener上。
+    /** 转发策略对应的监听器ID。当action为REDIRECT_TO_POOL时，只支持创建在PROTOCOL为HTTP或HTTPS的listener上。
      * 当action为REDIRECT_TO_LISTENER时，只支持创建在PROTOCOL为HTTP的listener上。
      * 
      * @return listenerId */
@@ -152,7 +170,7 @@ public class CreateL7PolicyOption {
         return this;
     }
 
-    /** 转发策略的优先级，从1递增，最高100。该字段为预留字段，暂未启用。 minimum: 1 maximum: 100
+    /** 转发策略的优先级，不支持更新。 不支持该字段，请勿使用。 minimum: 1 maximum: 100
      * 
      * @return position */
     public Integer getPosition() {
@@ -161,6 +179,26 @@ public class CreateL7PolicyOption {
 
     public void setPosition(Integer position) {
         this.position = position;
+    }
+
+    public CreateL7PolicyOption withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /** 转发策略的优先级。共享型实例该字段无意义。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段。
+     * 数字越小表示优先级越高，同一监听器下不允许重复。 当action为REDIRECT_TO_LISTENER时，仅支持指定为0，优先级最高。
+     * 当关联的listener没有开启enhance_l7policy_enable，按原有policy的排序逻辑，自动排序。各域名之间优先级独立，相同域名下，按path的compare_type排序，精确>前缀>正则，匹配类型相同时，path的长度越长优先级越高。若policy下只有域名rule，没有路径rule，默认path为前缀匹配/。
+     * 当关联的listener开启了enhance_l7policy_enable，且不传该字段，则新创建的转发策略的优先级的值为：同一监听器下已有转发策略的优先级的最大值+1。因此，若当前已有转发策略的优先级的最大值是10000，新创建会因超出取值范围10000而失败。此时可通过传入指定priority，或调整原有policy的优先级来避免错误。若监听器下没有转发策略，则新建的转发策略的优先级为1。
+     * [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test) minimum: 0 maximum: 10000
+     * 
+     * @return priority */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public CreateL7PolicyOption withProjectId(String projectId) {
@@ -184,7 +222,8 @@ public class CreateL7PolicyOption {
         return this;
     }
 
-    /** 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。当action为REDIRECT_TO_LISTENER时必选。
+    /** 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时必选。 使用说明： - 只支持protocol为HTTPS/TERMINATED_HTTPS的listener。 -
+     * 不能指定为其他loadbalancer下的listener。 - 当action为REDIRECT_TO_POOL时，创建或更新时不能传入该参数。 - 共享型负载均衡器下的转发策略不支持该字段。
      * 
      * @return redirectListenerId */
     public String getRedirectListenerId() {
@@ -200,7 +239,8 @@ public class CreateL7PolicyOption {
         return this;
     }
 
-    /** 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。使用说明：指定的pool不能是listener的default_pool。不能是其他listener的l7policy使用的pool。当action为REDIRECT_TO_POOL时为必选字段。当action为REDIRECT_TO_LISTENER时，不可指定。
+    /** 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。 使用说明： - 指定的pool不能是listener的default_pool。不能是其他listener的l7policy使用的pool。 -
+     * 当action为REDIRECT_TO_POOL时为必选字段。当action为REDIRECT_TO_LISTENER时，不可指定。
      * 
      * @return redirectPoolId */
     public String getRedirectPoolId() {
@@ -216,7 +256,7 @@ public class CreateL7PolicyOption {
         return this;
     }
 
-    /** 转发到的url。该字段未启用。
+    /** 转发到的url。必须满足格式: protocol://host:port/path?query。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return redirectUrl */
     public String getRedirectUrl() {
@@ -225,6 +265,57 @@ public class CreateL7PolicyOption {
 
     public void setRedirectUrl(String redirectUrl) {
         this.redirectUrl = redirectUrl;
+    }
+
+    public CreateL7PolicyOption withRedirectUrlConfig(CreateRedirectUrlConfig redirectUrlConfig) {
+        this.redirectUrlConfig = redirectUrlConfig;
+        return this;
+    }
+
+    public CreateL7PolicyOption withRedirectUrlConfig(Consumer<CreateRedirectUrlConfig> redirectUrlConfigSetter) {
+        if (this.redirectUrlConfig == null) {
+            this.redirectUrlConfig = new CreateRedirectUrlConfig();
+            redirectUrlConfigSetter.accept(this.redirectUrlConfig);
+        }
+
+        return this;
+    }
+
+    /** Get redirectUrlConfig
+     * 
+     * @return redirectUrlConfig */
+    public CreateRedirectUrlConfig getRedirectUrlConfig() {
+        return redirectUrlConfig;
+    }
+
+    public void setRedirectUrlConfig(CreateRedirectUrlConfig redirectUrlConfig) {
+        this.redirectUrlConfig = redirectUrlConfig;
+    }
+
+    public CreateL7PolicyOption withFixedResponseConfig(CreateFixtedResponseConfig fixedResponseConfig) {
+        this.fixedResponseConfig = fixedResponseConfig;
+        return this;
+    }
+
+    public CreateL7PolicyOption withFixedResponseConfig(
+        Consumer<CreateFixtedResponseConfig> fixedResponseConfigSetter) {
+        if (this.fixedResponseConfig == null) {
+            this.fixedResponseConfig = new CreateFixtedResponseConfig();
+            fixedResponseConfigSetter.accept(this.fixedResponseConfig);
+        }
+
+        return this;
+    }
+
+    /** Get fixedResponseConfig
+     * 
+     * @return fixedResponseConfig */
+    public CreateFixtedResponseConfig getFixedResponseConfig() {
+        return fixedResponseConfig;
+    }
+
+    public void setFixedResponseConfig(CreateFixtedResponseConfig fixedResponseConfig) {
+        this.fixedResponseConfig = fixedResponseConfig;
     }
 
     public CreateL7PolicyOption withRules(List<CreateL7PolicyRuleOption> rules) {
@@ -248,7 +339,9 @@ public class CreateL7PolicyOption {
         return this;
     }
 
-    /** 转发策略关联的转发规则对象。详细参考表 l7rule字段说明。rules列表中最多含有2个rule对象，且每个rule的type字段不可相同。
+    /** 转发策略关联的转发规则对象。详细参考表
+     * l7rule字段说明。rules列表中最多含有10个rule规则（若rule中包含conditions字段，一条condition算一个规则），且列表中type为HOST_NAME，PATH，METHOD，SOURCE_IP的rule不能重复，至多指定一条。
+     * 仅支持全量替换。
      * 
      * @return rules */
     public List<CreateL7PolicyRuleOption> getRules() {
@@ -274,10 +367,13 @@ public class CreateL7PolicyOption {
             && Objects.equals(this.listenerId, createL7PolicyOption.listenerId)
             && Objects.equals(this.name, createL7PolicyOption.name)
             && Objects.equals(this.position, createL7PolicyOption.position)
+            && Objects.equals(this.priority, createL7PolicyOption.priority)
             && Objects.equals(this.projectId, createL7PolicyOption.projectId)
             && Objects.equals(this.redirectListenerId, createL7PolicyOption.redirectListenerId)
             && Objects.equals(this.redirectPoolId, createL7PolicyOption.redirectPoolId)
             && Objects.equals(this.redirectUrl, createL7PolicyOption.redirectUrl)
+            && Objects.equals(this.redirectUrlConfig, createL7PolicyOption.redirectUrlConfig)
+            && Objects.equals(this.fixedResponseConfig, createL7PolicyOption.fixedResponseConfig)
             && Objects.equals(this.rules, createL7PolicyOption.rules);
     }
 
@@ -289,10 +385,13 @@ public class CreateL7PolicyOption {
             listenerId,
             name,
             position,
+            priority,
             projectId,
             redirectListenerId,
             redirectPoolId,
             redirectUrl,
+            redirectUrlConfig,
+            fixedResponseConfig,
             rules);
     }
 
@@ -306,10 +405,13 @@ public class CreateL7PolicyOption {
         sb.append("    listenerId: ").append(toIndentedString(listenerId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    redirectListenerId: ").append(toIndentedString(redirectListenerId)).append("\n");
         sb.append("    redirectPoolId: ").append(toIndentedString(redirectPoolId)).append("\n");
         sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
+        sb.append("    redirectUrlConfig: ").append(toIndentedString(redirectUrlConfig)).append("\n");
+        sb.append("    fixedResponseConfig: ").append(toIndentedString(fixedResponseConfig)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("}");
         return sb.toString();

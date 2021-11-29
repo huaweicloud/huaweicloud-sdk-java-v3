@@ -36,7 +36,7 @@ public class Graph  {
     @JsonProperty(value="graphSizeTypeIndex")
     
     
-    private Integer graphSizeTypeIndex;
+    private String graphSizeTypeIndex;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -144,7 +144,7 @@ public class Graph  {
 
     
 
-    public Graph withGraphSizeTypeIndex(Integer graphSizeTypeIndex) {
+    public Graph withGraphSizeTypeIndex(String graphSizeTypeIndex) {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
         return this;
     }
@@ -156,11 +156,11 @@ public class Graph  {
      * 图规模类型索引。 - 0：一万边 - 1：百万边 - 2：千万边 - 3：一亿边 - 4：十亿边 - 5：百亿边 - 401：十亿增强边
      * @return graphSizeTypeIndex
      */
-    public Integer getGraphSizeTypeIndex() {
+    public String getGraphSizeTypeIndex() {
         return graphSizeTypeIndex;
     }
 
-    public void setGraphSizeTypeIndex(Integer graphSizeTypeIndex) {
+    public void setGraphSizeTypeIndex(String graphSizeTypeIndex) {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
     }
 

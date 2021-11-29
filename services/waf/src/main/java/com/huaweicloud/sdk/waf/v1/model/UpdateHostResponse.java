@@ -60,7 +60,7 @@ public class UpdateHostResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificatename")
 
-    private Object certificatename;
+    private String certificatename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
@@ -438,7 +438,7 @@ public class UpdateHostResponse extends SdkResponse {
         this.certificateid = certificateid;
     }
 
-    public UpdateHostResponse withCertificatename(Object certificatename) {
+    public UpdateHostResponse withCertificatename(String certificatename) {
         this.certificatename = certificatename;
         return this;
     }
@@ -446,11 +446,11 @@ public class UpdateHostResponse extends SdkResponse {
     /** 证书名，通过查询证书列表接口（ListCertificates）接口获取证书id
      * 
      * @return certificatename */
-    public Object getCertificatename() {
+    public String getCertificatename() {
         return certificatename;
     }
 
-    public void setCertificatename(Object certificatename) {
+    public void setCertificatename(String certificatename) {
         this.certificatename = certificatename;
     }
 

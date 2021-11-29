@@ -12,9 +12,9 @@ import java.util.function.Consumer;
 public class ListFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "marker")
 
-    private List<String> id = null;
+    private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -22,9 +22,14 @@ public class ListFlavorsRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "marker")
+    @JsonProperty(value = "page_reverse")
 
-    private String marker;
+    private Boolean pageReverse;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -32,19 +37,62 @@ public class ListFlavorsRequest {
     private List<String> name = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_reverse")
+    @JsonProperty(value = "type")
 
-    private Boolean pageReverse;
+    private List<String> type = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shared")
 
     private Boolean shared;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
+    public ListFlavorsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
 
-    private List<String> type = null;
+    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * 
+     * @return marker */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ListFlavorsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页返回的个数。 minimum: 0 maximum: 2000
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListFlavorsRequest withPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
+        return this;
+    }
+
+    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明： - 必须与limit一起使用。
+     * 
+     * @return pageReverse */
+    public Boolean getPageReverse() {
+        return pageReverse;
+    }
+
+    public void setPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
+    }
 
     public ListFlavorsRequest withId(List<String> id) {
         this.id = id;
@@ -67,7 +115,7 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 规格ID。
+    /** 规格ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx*。
      * 
      * @return id */
     public List<String> getId() {
@@ -76,38 +124,6 @@ public class ListFlavorsRequest {
 
     public void setId(List<String> id) {
         this.id = id;
-    }
-
-    public ListFlavorsRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /** 每页返回的个数。 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public ListFlavorsRequest withMarker(String marker) {
-        this.marker = marker;
-        return this;
-    }
-
-    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * 
-     * @return marker */
-    public String getMarker() {
-        return marker;
-    }
-
-    public void setMarker(String marker) {
-        this.marker = marker;
     }
 
     public ListFlavorsRequest withName(List<String> name) {
@@ -131,7 +147,7 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 规格名称。
+    /** 规格名称。 支持多值查询，查询条件格式：*name=xxx&name=xxx*。
      * 
      * @return name */
     public List<String> getName() {
@@ -140,38 +156,6 @@ public class ListFlavorsRequest {
 
     public void setName(List<String> name) {
         this.name = name;
-    }
-
-    public ListFlavorsRequest withPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
-        return this;
-    }
-
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
-     * 
-     * @return pageReverse */
-    public Boolean getPageReverse() {
-        return pageReverse;
-    }
-
-    public void setPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
-    }
-
-    public ListFlavorsRequest withShared(Boolean shared) {
-        this.shared = shared;
-        return this;
-    }
-
-    /** 是否共享。
-     * 
-     * @return shared */
-    public Boolean getShared() {
-        return shared;
-    }
-
-    public void setShared(Boolean shared) {
-        this.shared = shared;
     }
 
     public ListFlavorsRequest withType(List<String> type) {
@@ -195,7 +179,7 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** L4和L7 分别表示四层和七层flavor，查询支持按type过滤。
+    /** L4和L7 分别表示四层和七层flavor，查询支持按type过滤。 支持多值查询，查询条件格式：*type=xxx&type=xxx*。
      * 
      * @return type */
     public List<String> getType() {
@@ -204,6 +188,22 @@ public class ListFlavorsRequest {
 
     public void setType(List<String> type) {
         this.type = type;
+    }
+
+    public ListFlavorsRequest withShared(Boolean shared) {
+        this.shared = shared;
+        return this;
+    }
+
+    /** 是否查询公共规格。true表示公共规格，所有租户可见。false表示私有规格，为当前租户所有。
+     * 
+     * @return shared */
+    public Boolean getShared() {
+        return shared;
+    }
+
+    public void setShared(Boolean shared) {
+        this.shared = shared;
     }
 
     @Override
@@ -215,30 +215,30 @@ public class ListFlavorsRequest {
             return false;
         }
         ListFlavorsRequest listFlavorsRequest = (ListFlavorsRequest) o;
-        return Objects.equals(this.id, listFlavorsRequest.id) && Objects.equals(this.limit, listFlavorsRequest.limit)
-            && Objects.equals(this.marker, listFlavorsRequest.marker)
-            && Objects.equals(this.name, listFlavorsRequest.name)
+        return Objects.equals(this.marker, listFlavorsRequest.marker)
+            && Objects.equals(this.limit, listFlavorsRequest.limit)
             && Objects.equals(this.pageReverse, listFlavorsRequest.pageReverse)
-            && Objects.equals(this.shared, listFlavorsRequest.shared)
-            && Objects.equals(this.type, listFlavorsRequest.type);
+            && Objects.equals(this.id, listFlavorsRequest.id) && Objects.equals(this.name, listFlavorsRequest.name)
+            && Objects.equals(this.type, listFlavorsRequest.type)
+            && Objects.equals(this.shared, listFlavorsRequest.shared);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, limit, marker, name, pageReverse, shared, type);
+        return Objects.hash(marker, limit, pageReverse, id, name, type, shared);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFlavorsRequest {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
-        sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
         sb.append("}");
         return sb.toString();
     }

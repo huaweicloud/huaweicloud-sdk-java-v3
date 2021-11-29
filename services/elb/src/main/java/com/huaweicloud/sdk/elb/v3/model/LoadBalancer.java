@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建loadbalancer的消息返回体 */
+/** 负载均衡器的详细信息。 */
 public class LoadBalancer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,103 +51,10 @@ public class LoadBalancer {
 
     private List<ListenerRef> listeners = null;
 
-    /** 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。 */
-    public static final class OperatingStatusEnum {
-
-        /** Enum ONLINE for value: "ONLINE" */
-        public static final OperatingStatusEnum ONLINE = new OperatingStatusEnum("ONLINE");
-
-        /** Enum OFFLINE for value: "OFFLINE" */
-        public static final OperatingStatusEnum OFFLINE = new OperatingStatusEnum("OFFLINE");
-
-        /** Enum DEGRADED for value: "DEGRADED" */
-        public static final OperatingStatusEnum DEGRADED = new OperatingStatusEnum("DEGRADED");
-
-        /** Enum DISABLED for value: "DISABLED" */
-        public static final OperatingStatusEnum DISABLED = new OperatingStatusEnum("DISABLED");
-
-        /** Enum NO_MONITOR for value: "NO_MONITOR" */
-        public static final OperatingStatusEnum NO_MONITOR = new OperatingStatusEnum("NO_MONITOR");
-
-        private static final Map<String, OperatingStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, OperatingStatusEnum> createStaticFields() {
-            Map<String, OperatingStatusEnum> map = new HashMap<>();
-            map.put("ONLINE", ONLINE);
-            map.put("OFFLINE", OFFLINE);
-            map.put("DEGRADED", DEGRADED);
-            map.put("DISABLED", DISABLED);
-            map.put("NO_MONITOR", NO_MONITOR);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        OperatingStatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OperatingStatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            OperatingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperatingStatusEnum(value);
-            }
-            return result;
-        }
-
-        public static OperatingStatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            OperatingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof OperatingStatusEnum) {
-                return this.value.equals(((OperatingStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operating_status")
 
-    private OperatingStatusEnum operatingStatus;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vip_address")
-
-    private String vipAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vip_subnet_cidr_id")
-
-    private String vipSubnetCidrId;
+    private String operatingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -158,6 +65,16 @@ public class LoadBalancer {
     @JsonProperty(value = "project_id")
 
     private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vip_subnet_cidr_id")
+
+    private String vipSubnetCidrId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vip_address")
+
+    private String vipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_port_id")
@@ -220,6 +137,11 @@ public class LoadBalancer {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "billing_info")
+
+    private String billingInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_flavor_id")
 
     private String l4FlavorId;
@@ -249,7 +171,7 @@ public class LoadBalancer {
 
     private List<String> elbVirsubnetIds = null;
 
-    /** 功能描述：下联面子网类型 */
+    /** 下联面子网类型 - ipv4：ipv4 - dualstack：双栈 */
     public static final class ElbVirsubnetTypeEnum {
 
         /** Enum IPV4 for value: "ipv4" */
@@ -331,11 +253,6 @@ public class LoadBalancer {
     private Boolean ipTargetEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deletion_protection_enable")
-
-    private Boolean deletionProtectionEnable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_scene")
 
     private String frozenScene;
@@ -345,12 +262,22 @@ public class LoadBalancer {
 
     private BandwidthRef ipv6Bandwidth;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deletion_protection_enable")
+
+    private Boolean deletionProtectionEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "autoscaling")
+
+    private AutoscalingRef autoscaling;
+
     public LoadBalancer withId(String id) {
         this.id = id;
         return this;
     }
 
-    /** 功能描述：负载均衡器ID。
+    /** 负载均衡器ID。
      * 
      * @return id */
     public String getId() {
@@ -366,7 +293,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡器描述信息。
+    /** 负载均衡器描述信息。
      * 
      * @return description */
     public String getDescription() {
@@ -382,7 +309,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡器的配置状态。 取值范围：ACTIVE、PENDING_CREATE 或者ERROR。 约束：该字段为预留字段，暂未启用，默认为ACTIVE。
+    /** 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
      * 
      * @return provisioningStatus */
     public String getProvisioningStatus() {
@@ -398,7 +325,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡器的管理状态。 约束：只支持设定为true。
+    /** 负载均衡器的管理状态。固定为true。
      * 
      * @return adminStateUp */
     public Boolean getAdminStateUp() {
@@ -414,7 +341,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡器的生产者名称。 约束：只支持vlb。
+    /** 负载均衡器的生产者名称。固定为vlb。
      * 
      * @return provider */
     public String getProvider() {
@@ -446,7 +373,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡器关联的后端云服务器组ID的列表。
+    /** 负载均衡器直接关联的后端云服务器组的ID列表。
      * 
      * @return pools */
     public List<PoolRef> getPools() {
@@ -478,7 +405,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡器关联的监听器ID的列表。
+    /** 负载均衡器关联的监听器的ID列表。
      * 
      * @return listeners */
     public List<ListenerRef> getListeners() {
@@ -489,52 +416,20 @@ public class LoadBalancer {
         this.listeners = listeners;
     }
 
-    public LoadBalancer withOperatingStatus(OperatingStatusEnum operatingStatus) {
+    public LoadBalancer withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
-    /** 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。
+    /** 负载均衡器的操作状态。取值： - ONLINE：在线。
      * 
      * @return operatingStatus */
-    public OperatingStatusEnum getOperatingStatus() {
+    public String getOperatingStatus() {
         return operatingStatus;
     }
 
-    public void setOperatingStatus(OperatingStatusEnum operatingStatus) {
+    public void setOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
-    }
-
-    public LoadBalancer withVipAddress(String vipAddress) {
-        this.vipAddress = vipAddress;
-        return this;
-    }
-
-    /** 功能描述：负载均衡器的虚拟IP。
-     * 
-     * @return vipAddress */
-    public String getVipAddress() {
-        return vipAddress;
-    }
-
-    public void setVipAddress(String vipAddress) {
-        this.vipAddress = vipAddress;
-    }
-
-    public LoadBalancer withVipSubnetCidrId(String vipSubnetCidrId) {
-        this.vipSubnetCidrId = vipSubnetCidrId;
-        return this;
-    }
-
-    /** 功能描述：负载均衡器所在的子网ID。 约束：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
-     * 
-     * @return vipSubnetCidrId */
-    public String getVipSubnetCidrId() {
-        return vipSubnetCidrId;
-    }
-
-    public void setVipSubnetCidrId(String vipSubnetCidrId) {
-        this.vipSubnetCidrId = vipSubnetCidrId;
     }
 
     public LoadBalancer withName(String name) {
@@ -542,7 +437,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡器的负载均衡器名称。
+    /** 负载均衡器的名称。
      * 
      * @return name */
     public String getName() {
@@ -558,7 +453,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器所在的项目ID。
+    /** 负载均衡器所属的项目ID。
      * 
      * @return projectId */
     public String getProjectId() {
@@ -569,12 +464,44 @@ public class LoadBalancer {
         this.projectId = projectId;
     }
 
+    public LoadBalancer withVipSubnetCidrId(String vipSubnetCidrId) {
+        this.vipSubnetCidrId = vipSubnetCidrId;
+        return this;
+    }
+
+    /** 负载均衡器所在子网的IPv4子网ID。
+     * 
+     * @return vipSubnetCidrId */
+    public String getVipSubnetCidrId() {
+        return vipSubnetCidrId;
+    }
+
+    public void setVipSubnetCidrId(String vipSubnetCidrId) {
+        this.vipSubnetCidrId = vipSubnetCidrId;
+    }
+
+    public LoadBalancer withVipAddress(String vipAddress) {
+        this.vipAddress = vipAddress;
+        return this;
+    }
+
+    /** 负载均衡器的IPv4虚拟IP地址。
+     * 
+     * @return vipAddress */
+    public String getVipAddress() {
+        return vipAddress;
+    }
+
+    public void setVipAddress(String vipAddress) {
+        this.vipAddress = vipAddress;
+    }
+
     public LoadBalancer withVipPortId(String vipPortId) {
         this.vipPortId = vipPortId;
         return this;
     }
 
-    /** 负载均衡器虚拟IP对应的端口ID。
+    /** 负载均衡器的IPv4对应的port ID。
      * 
      * @return vipPortId */
     public String getVipPortId() {
@@ -606,7 +533,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡的标签列表。
+    /** 负载均衡的标签列表。
      * 
      * @return tags */
     public List<Tag> getTags() {
@@ -622,7 +549,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡器的创建时间。
+    /** 负载均衡器的创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'
      * 
      * @return createdAt */
     public String getCreatedAt() {
@@ -638,7 +565,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：负载均衡器的更新时间。
+    /** 负载均衡器的更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'
      * 
      * @return updatedAt */
     public String getUpdatedAt() {
@@ -654,7 +581,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：是否是性能保障性实例 取值范围：共享型：false；性能保障型：true
+    /** 是否独享型LB，取值： - false：共享型。 - true：独享型。
      * 
      * @return guaranteed */
     public Boolean getGuaranteed() {
@@ -670,8 +597,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：实例对应的vpc属性。若无，则从vip_subnet_cidr_id获取。 约束：vpc_id , vip_subnet_cidr_id,
-     * ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+    /** 负载均衡器所在VPC ID。
      * 
      * @return vpcId */
     public String getVpcId() {
@@ -703,7 +629,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：公网ELB实例绑定EIP信息。
+    /** 负载均衡器绑定的EIP。只支持绑定一个EIP。 注：该字段与publicips一致。
      * 
      * @return eips */
     public List<EipInfo> getEips() {
@@ -719,7 +645,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：双栈实例对应v6的ip地址。
+    /** 双栈类型负载均衡器的IPv6地址。 [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return ipv6VipAddress */
     public String getIpv6VipAddress() {
@@ -735,8 +661,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：双栈实例对应v6的网络id 。 约束： 1、默认为空，只有开启IPv6时才会传入。 2、vpc_id , vip_subnet_cidr_id,
-     * ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+    /** 双栈类型负载均衡器所在子网的IPv6网络ID。 [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return ipv6VipVirsubnetId */
     public String getIpv6VipVirsubnetId() {
@@ -752,7 +677,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：IPv6的VIP端口id。
+    /** 双栈类型负载均衡器的IPv6对应的port ID。 [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return ipv6VipPortId */
     public String getIpv6VipPortId() {
@@ -784,7 +709,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：可用区列表。默认指定所有可利用的AZ。可调用nova接口（/v2/{project_id}/os-availability-zone）查询可用AZ
+    /** 负载均衡器所在的可用区列表。
      * 
      * @return availabilityZoneList */
     public List<String> getAvailabilityZoneList() {
@@ -800,7 +725,8 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：企业项目ID
+    /** 企业项目ID。创建时不传则返回\"0\"，表示资源属于default企业项目。 注：\"0\"并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。
+     * [不支持该字段，请勿使用](tag:otcc,otc_test)
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -811,12 +737,30 @@ public class LoadBalancer {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public LoadBalancer withBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
+        return this;
+    }
+
+    /** 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费， 包周期计费billing_info字段的格式为：order_id&#58;product_id&#58;region_id&#58;project_id，如：
+     * CS2107161019CDJZZ&#58;OFFI569702121789763584&#58;eu-de&#58;057ef081eb00d2732fd1c01a9be75e6f 使用说明： -
+     * admin权限才能更新此字段。 [不支持该字段，请勿使用](tag:otc,otc_test,dt,dt_test)
+     * 
+     * @return billingInfo */
+    public String getBillingInfo() {
+        return billingInfo;
+    }
+
+    public void setBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
+    }
+
     public LoadBalancer withL4FlavorId(String l4FlavorId) {
         this.l4FlavorId = l4FlavorId;
         return this;
     }
 
-    /** 功能描述：四层Flavor。
+    /** 四层Flavor ID。 [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso)
      * 
      * @return l4FlavorId */
     public String getL4FlavorId() {
@@ -832,7 +776,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：预留L4 弹性flavor。
+    /** 四层弹性Flavor ID。 不支持该字段，请勿使用。
      * 
      * @return l4ScaleFlavorId */
     public String getL4ScaleFlavorId() {
@@ -848,7 +792,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：七层Flavor。
+    /** 七层Flavor ID。 [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso)
      * 
      * @return l7FlavorId */
     public String getL7FlavorId() {
@@ -864,7 +808,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：预留弹性flavor。
+    /** 七层弹性Flavor ID。 不支持该字段，请勿使用。
      * 
      * @return l7ScaleFlavorId */
     public String getL7ScaleFlavorId() {
@@ -896,7 +840,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：弹性公网EIP信息
+    /** 负载均衡器绑定的公网IP。只支持绑定一个公网IP。 注：该字段与eips一致。
      * 
      * @return publicips */
     public List<PublicIpInfo> getPublicips() {
@@ -928,7 +872,9 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：下联面子网ID loadbalancer使用的下联面端口会动态的从这些网络中占用IP
+    /** 下联面子网网络ID列表。可以通过GET https&#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。
+     * [若不指定该字段，则会在当前负载均衡器所在的VPC中任意选一个子网，优选双栈网络。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。 下联面子网必须属于该LB所在的VPC。
      * 
      * @return elbVirsubnetIds */
     public List<String> getElbVirsubnetIds() {
@@ -944,7 +890,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 功能描述：下联面子网类型
+    /** 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
      * 
      * @return elbVirsubnetType */
     public ElbVirsubnetTypeEnum getElbVirsubnetType() {
@@ -960,7 +906,8 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 是否启用跨VPC后端转发
+    /** 是否启用跨VPC后端转发。取值： - true：开启、 - false：不开启。 仅独享型负载均衡器支持该特性。
+     * 开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return ipTargetEnable */
     public Boolean getIpTargetEnable() {
@@ -971,29 +918,13 @@ public class LoadBalancer {
         this.ipTargetEnable = ipTargetEnable;
     }
 
-    public LoadBalancer withDeletionProtectionEnable(Boolean deletionProtectionEnable) {
-        this.deletionProtectionEnable = deletionProtectionEnable;
-        return this;
-    }
-
-    /** 是否开启删除保护
-     * 
-     * @return deletionProtectionEnable */
-    public Boolean getDeletionProtectionEnable() {
-        return deletionProtectionEnable;
-    }
-
-    public void setDeletionProtectionEnable(Boolean deletionProtectionEnable) {
-        this.deletionProtectionEnable = deletionProtectionEnable;
-    }
-
     public LoadBalancer withFrozenScene(String frozenScene) {
         this.frozenScene = frozenScene;
         return this;
     }
 
-    /** 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔 POLICE：公安冻结场景。 ILLEGAL：违规冻结场景。 VERIFY：客户未实名认证冻结场景。 PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。
-     * ARREAR：欠费冻结场景。
+    /** 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 -
+     * RTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - REAR：欠费冻结场景。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return frozenScene */
     public String getFrozenScene() {
@@ -1029,6 +960,47 @@ public class LoadBalancer {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
 
+    public LoadBalancer withDeletionProtectionEnable(Boolean deletionProtectionEnable) {
+        this.deletionProtectionEnable = deletionProtectionEnable;
+        return this;
+    }
+
+    /** 是否开启删除保护，取值： - false：不开启。 - true：开启。 >退场时需要先关闭所有资源的删除保护开关。 仅当前局点启用删除保护特性后才会返回该字段。
+     * 
+     * @return deletionProtectionEnable */
+    public Boolean getDeletionProtectionEnable() {
+        return deletionProtectionEnable;
+    }
+
+    public void setDeletionProtectionEnable(Boolean deletionProtectionEnable) {
+        this.deletionProtectionEnable = deletionProtectionEnable;
+    }
+
+    public LoadBalancer withAutoscaling(AutoscalingRef autoscaling) {
+        this.autoscaling = autoscaling;
+        return this;
+    }
+
+    public LoadBalancer withAutoscaling(Consumer<AutoscalingRef> autoscalingSetter) {
+        if (this.autoscaling == null) {
+            this.autoscaling = new AutoscalingRef();
+            autoscalingSetter.accept(this.autoscaling);
+        }
+
+        return this;
+    }
+
+    /** Get autoscaling
+     * 
+     * @return autoscaling */
+    public AutoscalingRef getAutoscaling() {
+        return autoscaling;
+    }
+
+    public void setAutoscaling(AutoscalingRef autoscaling) {
+        this.autoscaling = autoscaling;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1044,9 +1016,9 @@ public class LoadBalancer {
             && Objects.equals(this.provider, loadBalancer.provider) && Objects.equals(this.pools, loadBalancer.pools)
             && Objects.equals(this.listeners, loadBalancer.listeners)
             && Objects.equals(this.operatingStatus, loadBalancer.operatingStatus)
-            && Objects.equals(this.vipAddress, loadBalancer.vipAddress)
-            && Objects.equals(this.vipSubnetCidrId, loadBalancer.vipSubnetCidrId)
             && Objects.equals(this.name, loadBalancer.name) && Objects.equals(this.projectId, loadBalancer.projectId)
+            && Objects.equals(this.vipSubnetCidrId, loadBalancer.vipSubnetCidrId)
+            && Objects.equals(this.vipAddress, loadBalancer.vipAddress)
             && Objects.equals(this.vipPortId, loadBalancer.vipPortId) && Objects.equals(this.tags, loadBalancer.tags)
             && Objects.equals(this.createdAt, loadBalancer.createdAt)
             && Objects.equals(this.updatedAt, loadBalancer.updatedAt)
@@ -1057,6 +1029,7 @@ public class LoadBalancer {
             && Objects.equals(this.ipv6VipPortId, loadBalancer.ipv6VipPortId)
             && Objects.equals(this.availabilityZoneList, loadBalancer.availabilityZoneList)
             && Objects.equals(this.enterpriseProjectId, loadBalancer.enterpriseProjectId)
+            && Objects.equals(this.billingInfo, loadBalancer.billingInfo)
             && Objects.equals(this.l4FlavorId, loadBalancer.l4FlavorId)
             && Objects.equals(this.l4ScaleFlavorId, loadBalancer.l4ScaleFlavorId)
             && Objects.equals(this.l7FlavorId, loadBalancer.l7FlavorId)
@@ -1065,9 +1038,10 @@ public class LoadBalancer {
             && Objects.equals(this.elbVirsubnetIds, loadBalancer.elbVirsubnetIds)
             && Objects.equals(this.elbVirsubnetType, loadBalancer.elbVirsubnetType)
             && Objects.equals(this.ipTargetEnable, loadBalancer.ipTargetEnable)
-            && Objects.equals(this.deletionProtectionEnable, loadBalancer.deletionProtectionEnable)
             && Objects.equals(this.frozenScene, loadBalancer.frozenScene)
-            && Objects.equals(this.ipv6Bandwidth, loadBalancer.ipv6Bandwidth);
+            && Objects.equals(this.ipv6Bandwidth, loadBalancer.ipv6Bandwidth)
+            && Objects.equals(this.deletionProtectionEnable, loadBalancer.deletionProtectionEnable)
+            && Objects.equals(this.autoscaling, loadBalancer.autoscaling);
     }
 
     @Override
@@ -1080,10 +1054,10 @@ public class LoadBalancer {
             pools,
             listeners,
             operatingStatus,
-            vipAddress,
-            vipSubnetCidrId,
             name,
             projectId,
+            vipSubnetCidrId,
+            vipAddress,
             vipPortId,
             tags,
             createdAt,
@@ -1096,6 +1070,7 @@ public class LoadBalancer {
             ipv6VipPortId,
             availabilityZoneList,
             enterpriseProjectId,
+            billingInfo,
             l4FlavorId,
             l4ScaleFlavorId,
             l7FlavorId,
@@ -1104,9 +1079,10 @@ public class LoadBalancer {
             elbVirsubnetIds,
             elbVirsubnetType,
             ipTargetEnable,
-            deletionProtectionEnable,
             frozenScene,
-            ipv6Bandwidth);
+            ipv6Bandwidth,
+            deletionProtectionEnable,
+            autoscaling);
     }
 
     @Override
@@ -1121,10 +1097,10 @@ public class LoadBalancer {
         sb.append("    pools: ").append(toIndentedString(pools)).append("\n");
         sb.append("    listeners: ").append(toIndentedString(listeners)).append("\n");
         sb.append("    operatingStatus: ").append(toIndentedString(operatingStatus)).append("\n");
-        sb.append("    vipAddress: ").append(toIndentedString(vipAddress)).append("\n");
-        sb.append("    vipSubnetCidrId: ").append(toIndentedString(vipSubnetCidrId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    vipSubnetCidrId: ").append(toIndentedString(vipSubnetCidrId)).append("\n");
+        sb.append("    vipAddress: ").append(toIndentedString(vipAddress)).append("\n");
         sb.append("    vipPortId: ").append(toIndentedString(vipPortId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
@@ -1137,6 +1113,7 @@ public class LoadBalancer {
         sb.append("    ipv6VipPortId: ").append(toIndentedString(ipv6VipPortId)).append("\n");
         sb.append("    availabilityZoneList: ").append(toIndentedString(availabilityZoneList)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    l4FlavorId: ").append(toIndentedString(l4FlavorId)).append("\n");
         sb.append("    l4ScaleFlavorId: ").append(toIndentedString(l4ScaleFlavorId)).append("\n");
         sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");
@@ -1145,9 +1122,10 @@ public class LoadBalancer {
         sb.append("    elbVirsubnetIds: ").append(toIndentedString(elbVirsubnetIds)).append("\n");
         sb.append("    elbVirsubnetType: ").append(toIndentedString(elbVirsubnetType)).append("\n");
         sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
-        sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
         sb.append("    frozenScene: ").append(toIndentedString(frozenScene)).append("\n");
         sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");
+        sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
+        sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("}");
         return sb.toString();
     }

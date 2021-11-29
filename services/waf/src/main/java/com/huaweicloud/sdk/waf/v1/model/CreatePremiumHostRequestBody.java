@@ -46,7 +46,7 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id - 对外协议为HTTP时不需要填写 -对外协议HTTPS时为必填参数
+    /** 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id - 对外协议为HTTP时不需要填写 - 对外协议HTTPS时为必填参数
      * 
      * @return certificateid */
     public String getCertificateid() {
@@ -62,7 +62,7 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 证书名 - 对外协议为HTTP时不需要填写 -对外协议HTTPS时为必填参数
+    /** 证书名 - 对外协议为HTTP时不需要填写 - 对外协议HTTPS时为必填参数
      * 
      * @return certificatename */
     public String getCertificatename() {

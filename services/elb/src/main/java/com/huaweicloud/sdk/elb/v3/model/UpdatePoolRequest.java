@@ -24,7 +24,7 @@ public class UpdatePoolRequest {
         return this;
     }
 
-    /** 后端服务器组ID
+    /** 后端服务器组ID。
      * 
      * @return poolId */
     public String getPoolId() {

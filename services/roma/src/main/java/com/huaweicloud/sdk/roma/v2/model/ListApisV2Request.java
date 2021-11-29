@@ -73,6 +73,16 @@ public class ListApisV2Request {
 
     private String preciseSearch;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_channel_id")
+
+    private String vpcChannelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_channel_name")
+
+    private String vpcChannelName;
+
     public ListApisV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -270,7 +280,7 @@ public class ListApisV2Request {
         return this;
     }
 
-    /** 指定需要精确匹配查找的参数名称，目前仅支持name、req_uri
+    /** 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。 目前仅支持name，req_uri，vpc_channel_name。
      * 
      * @return preciseSearch */
     public String getPreciseSearch() {
@@ -279,6 +289,38 @@ public class ListApisV2Request {
 
     public void setPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
+    }
+
+    public ListApisV2Request withVpcChannelId(String vpcChannelId) {
+        this.vpcChannelId = vpcChannelId;
+        return this;
+    }
+
+    /** 负载通道编号
+     * 
+     * @return vpcChannelId */
+    public String getVpcChannelId() {
+        return vpcChannelId;
+    }
+
+    public void setVpcChannelId(String vpcChannelId) {
+        this.vpcChannelId = vpcChannelId;
+    }
+
+    public ListApisV2Request withVpcChannelName(String vpcChannelName) {
+        this.vpcChannelName = vpcChannelName;
+        return this;
+    }
+
+    /** 负载通道名称。
+     * 
+     * @return vpcChannelName */
+    public String getVpcChannelName() {
+        return vpcChannelName;
+    }
+
+    public void setVpcChannelName(String vpcChannelName) {
+        this.vpcChannelName = vpcChannelName;
     }
 
     @Override
@@ -300,7 +342,9 @@ public class ListApisV2Request {
             && Objects.equals(this.reqUri, listApisV2Request.reqUri)
             && Objects.equals(this.authType, listApisV2Request.authType)
             && Objects.equals(this.envId, listApisV2Request.envId) && Objects.equals(this.type, listApisV2Request.type)
-            && Objects.equals(this.preciseSearch, listApisV2Request.preciseSearch);
+            && Objects.equals(this.preciseSearch, listApisV2Request.preciseSearch)
+            && Objects.equals(this.vpcChannelId, listApisV2Request.vpcChannelId)
+            && Objects.equals(this.vpcChannelName, listApisV2Request.vpcChannelName);
     }
 
     @Override
@@ -317,7 +361,9 @@ public class ListApisV2Request {
             authType,
             envId,
             type,
-            preciseSearch);
+            preciseSearch,
+            vpcChannelId,
+            vpcChannelName);
     }
 
     @Override
@@ -337,6 +383,8 @@ public class ListApisV2Request {
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
+        sb.append("    vpcChannelId: ").append(toIndentedString(vpcChannelId)).append("\n");
+        sb.append("    vpcChannelName: ").append(toIndentedString(vpcChannelName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

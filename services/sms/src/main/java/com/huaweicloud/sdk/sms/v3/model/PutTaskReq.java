@@ -24,18 +24,18 @@ public class PutTaskReq {
     /** 任务类型，创建时必选，更新时可选 */
     public static final class TypeEnum {
 
-        /** Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级" */
-        public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级");
+        /** Enum MIGRATE_FILE for value: "MIGRATE_FILE" */
+        public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
 
-        /** Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块级" */
-        public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块级");
+        /** Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK" */
+        public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("MIGRATE_FILE：文件级", MIGRATE_FILE_);
-            map.put("MIGRATE_BLOCK：块级", MIGRATE_BLOCK_);
+            map.put("MIGRATE_FILE", MIGRATE_FILE);
+            map.put("MIGRATE_BLOCK", MIGRATE_BLOCK);
             return Collections.unmodifiableMap(map);
         }
 
@@ -178,10 +178,85 @@ public class PutTaskReq {
 
     private String id;
 
+    /** 进程优先级 0：低 1：标准（默认） 2：高 */
+    public static final class PriorityEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final PriorityEnum NUMBER_0 = new PriorityEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final PriorityEnum NUMBER_1 = new PriorityEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final PriorityEnum NUMBER_2 = new PriorityEnum(2);
+
+        private static final Map<Integer, PriorityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PriorityEnum> createStaticFields() {
+            Map<Integer, PriorityEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        PriorityEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PriorityEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PriorityEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PriorityEnum(value);
+            }
+            return result;
+        }
+
+        public static PriorityEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PriorityEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PriorityEnum) {
+                return this.value.equals(((PriorityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
-    private Integer priority;
+    private PriorityEnum priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
@@ -367,7 +442,7 @@ public class PutTaskReq {
         this.id = id;
     }
 
-    public PutTaskReq withPriority(Integer priority) {
+    public PutTaskReq withPriority(PriorityEnum priority) {
         this.priority = priority;
         return this;
     }
@@ -375,11 +450,11 @@ public class PutTaskReq {
     /** 进程优先级 0：低 1：标准（默认） 2：高 minimum: 0 maximum: 2
      * 
      * @return priority */
-    public Integer getPriority() {
+    public PriorityEnum getPriority() {
         return priority;
     }
 
-    public void setPriority(Integer priority) {
+    public void setPriority(PriorityEnum priority) {
         this.priority = priority;
     }
 

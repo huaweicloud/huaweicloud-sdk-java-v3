@@ -16,58 +16,58 @@ public class ListServersRequest {
     /** 源端服务器状态 */
     public static final class StateEnum {
 
-        /** Enum UNAVAILABLE_ for value: "unavailable:环境校验不通过" */
-        public static final StateEnum UNAVAILABLE_ = new StateEnum("unavailable:环境校验不通过");
+        /** Enum UNAVAILABLE for value: "unavailable" */
+        public static final StateEnum UNAVAILABLE = new StateEnum("unavailable");
 
-        /** Enum _WAITING_ for value: " waiting:等待" */
-        public static final StateEnum _WAITING_ = new StateEnum(" waiting:等待");
+        /** Enum WAITING for value: "waiting" */
+        public static final StateEnum WAITING = new StateEnum("waiting");
 
-        /** Enum _INITIALIZE_ for value: " initialize:初始化" */
-        public static final StateEnum _INITIALIZE_ = new StateEnum(" initialize:初始化");
+        /** Enum INITIALIZE for value: "initialize" */
+        public static final StateEnum INITIALIZE = new StateEnum("initialize");
 
-        /** Enum _REPLICATE_ for value: " replicate:复制" */
-        public static final StateEnum _REPLICATE_ = new StateEnum(" replicate:复制");
+        /** Enum REPLICATE for value: "replicate" */
+        public static final StateEnum REPLICATE = new StateEnum("replicate");
 
-        /** Enum _SYNCING_ for value: " syncing:持续同步" */
-        public static final StateEnum _SYNCING_ = new StateEnum(" syncing:持续同步");
+        /** Enum SYNCING for value: "syncing" */
+        public static final StateEnum SYNCING = new StateEnum("syncing");
 
-        /** Enum _STOPPING_ for value: " stopping:暂停中" */
-        public static final StateEnum _STOPPING_ = new StateEnum(" stopping:暂停中");
+        /** Enum STOPPING for value: "stopping" */
+        public static final StateEnum STOPPING = new StateEnum("stopping");
 
-        /** Enum _STOPPED_ for value: " stopped:已暂停" */
-        public static final StateEnum _STOPPED_ = new StateEnum(" stopped:已暂停");
+        /** Enum STOPPED for value: "stopped" */
+        public static final StateEnum STOPPED = new StateEnum("stopped");
 
-        /** Enum _DELETING_ for value: " deleting:删除中" */
-        public static final StateEnum _DELETING_ = new StateEnum(" deleting:删除中");
+        /** Enum DELETING for value: "deleting" */
+        public static final StateEnum DELETING = new StateEnum("deleting");
 
-        /** Enum _ERROR_ for value: " error:错误" */
-        public static final StateEnum _ERROR_ = new StateEnum(" error:错误");
+        /** Enum ERROR for value: "error" */
+        public static final StateEnum ERROR = new StateEnum("error");
 
-        /** Enum _CLONING_ for value: " cloning:等待克隆完成" */
-        public static final StateEnum _CLONING_ = new StateEnum(" cloning:等待克隆完成");
+        /** Enum CLONING for value: "cloning" */
+        public static final StateEnum CLONING = new StateEnum("cloning");
 
-        /** Enum _CUTOVERING_ for value: " cutovering:启动目的端中" */
-        public static final StateEnum _CUTOVERING_ = new StateEnum(" cutovering:启动目的端中");
+        /** Enum CUTOVERING for value: "cutovering" */
+        public static final StateEnum CUTOVERING = new StateEnum("cutovering");
 
-        /** Enum _FINISHED_ for value: " finished:启动目的端完成" */
-        public static final StateEnum _FINISHED_ = new StateEnum(" finished:启动目的端完成");
+        /** Enum FINISHED for value: "finished" */
+        public static final StateEnum FINISHED = new StateEnum("finished");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
             Map<String, StateEnum> map = new HashMap<>();
-            map.put("unavailable:环境校验不通过", UNAVAILABLE_);
-            map.put(" waiting:等待", _WAITING_);
-            map.put(" initialize:初始化", _INITIALIZE_);
-            map.put(" replicate:复制", _REPLICATE_);
-            map.put(" syncing:持续同步", _SYNCING_);
-            map.put(" stopping:暂停中", _STOPPING_);
-            map.put(" stopped:已暂停", _STOPPED_);
-            map.put(" deleting:删除中", _DELETING_);
-            map.put(" error:错误", _ERROR_);
-            map.put(" cloning:等待克隆完成", _CLONING_);
-            map.put(" cutovering:启动目的端中", _CUTOVERING_);
-            map.put(" finished:启动目的端完成", _FINISHED_);
+            map.put("unavailable", UNAVAILABLE);
+            map.put("waiting", WAITING);
+            map.put("initialize", INITIALIZE);
+            map.put("replicate", REPLICATE);
+            map.put("syncing", SYNCING);
+            map.put("stopping", STOPPING);
+            map.put("stopped", STOPPED);
+            map.put("deleting", DELETING);
+            map.put("error", ERROR);
+            map.put("cloning", CLONING);
+            map.put("cutovering", CUTOVERING);
+            map.put("finished", FINISHED);
             return Collections.unmodifiableMap(map);
         }
 

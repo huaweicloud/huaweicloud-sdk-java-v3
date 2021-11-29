@@ -19,7 +19,45 @@ public class ElbAsyncClient {
         return new ClientBuilder<>(ElbAsyncClient::new);
     }
 
-    /** 创建证书 创建证书。
+    /** 批量更新转发策略优先级 批量更新转发策略的优先级。
+     *
+     * @param BatchUpdatePoliciesPriorityRequest 请求对象
+     * @return CompletableFuture<BatchUpdatePoliciesPriorityResponse> */
+    public CompletableFuture<BatchUpdatePoliciesPriorityResponse> batchUpdatePoliciesPriorityAsync(
+        BatchUpdatePoliciesPriorityRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchUpdatePoliciesPriority);
+    }
+
+    /** 批量更新转发策略优先级 批量更新转发策略的优先级。
+     *
+     * @param BatchUpdatePoliciesPriorityRequest 请求对象
+     * @return AsyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse> */
+    public AsyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse> batchUpdatePoliciesPriorityAsyncInvoker(
+        BatchUpdatePoliciesPriorityRequest request) {
+        return new AsyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse>(request,
+            ElbMeta.batchUpdatePoliciesPriority, hcClient);
+    }
+
+    /** 负载均衡器计费模式变更 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
+     *
+     * @param ChangeLoadbalancerChargeModeRequest 请求对象
+     * @return CompletableFuture<ChangeLoadbalancerChargeModeResponse> */
+    public CompletableFuture<ChangeLoadbalancerChargeModeResponse> changeLoadbalancerChargeModeAsync(
+        ChangeLoadbalancerChargeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.changeLoadbalancerChargeMode);
+    }
+
+    /** 负载均衡器计费模式变更 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
+     *
+     * @param ChangeLoadbalancerChargeModeRequest 请求对象
+     * @return AsyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse> */
+    public AsyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse> changeLoadbalancerChargeModeAsyncInvoker(
+        ChangeLoadbalancerChargeModeRequest request) {
+        return new AsyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse>(request,
+            ElbMeta.changeLoadbalancerChargeMode, hcClient);
+    }
+
+    /** 创建证书 创建证书。用于HTTPS协议监听器。
      *
      * @param CreateCertificateRequest 请求对象
      * @return CompletableFuture<CreateCertificateResponse> */
@@ -27,7 +65,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.createCertificate);
     }
 
-    /** 创建证书 创建证书。
+    /** 创建证书 创建证书。用于HTTPS协议监听器。
      *
      * @param CreateCertificateRequest 请求对象
      * @return AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse> */
@@ -55,7 +93,7 @@ public class ElbAsyncClient {
             ElbMeta.createHealthMonitor, hcClient);
     }
 
-    /** 创建转发策略 创建转发策略.
+    /** 创建转发策略 创建七层转发策略。
      *
      * @param CreateL7PolicyRequest 请求对象
      * @return CompletableFuture<CreateL7PolicyResponse> */
@@ -63,7 +101,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.createL7Policy);
     }
 
-    /** 创建转发策略 创建转发策略.
+    /** 创建转发策略 创建七层转发策略。
      *
      * @param CreateL7PolicyRequest 请求对象
      * @return AsyncInvoker<CreateL7PolicyRequest, CreateL7PolicyResponse> */
@@ -73,7 +111,7 @@ public class ElbAsyncClient {
             hcClient);
     }
 
-    /** 创建转发规则 创建转发规则。
+    /** 创建转发规则 创建七层转发规则。
      *
      * @param CreateL7RuleRequest 请求对象
      * @return CompletableFuture<CreateL7RuleResponse> */
@@ -81,7 +119,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.createL7Rule);
     }
 
-    /** 创建转发规则 创建转发规则。
+    /** 创建转发规则 创建七层转发规则。
      *
      * @param CreateL7RuleRequest 请求对象
      * @return AsyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse> */
@@ -90,7 +128,7 @@ public class ElbAsyncClient {
         return new AsyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse>(request, ElbMeta.createL7Rule, hcClient);
     }
 
-    /** 创建监听器 ElbV3 创建监听器。
+    /** 创建监听器 创建监听器。
      *
      * @param CreateListenerRequest 请求对象
      * @return CompletableFuture<CreateListenerResponse> */
@@ -98,7 +136,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.createListener);
     }
 
-    /** 创建监听器 ElbV3 创建监听器。
+    /** 创建监听器 创建监听器。
      *
      * @param CreateListenerRequest 请求对象
      * @return AsyncInvoker<CreateListenerRequest, CreateListenerResponse> */
@@ -108,9 +146,11 @@ public class ElbAsyncClient {
             hcClient);
     }
 
-    /** 创建负载均衡器 创建负载均衡器。 1.创建公网负载均衡器的场合，需要传入vpc_id。 2.创建内网负载均衡器的场合，需要传入vip_subnet_cidr_id。
-     * 3.创建内网双栈负载均衡器的场合，需要传入ipv6_vip_virsubnet_id。 关联有已有公网ip地址，需要传入publicip_ids 新建公网ip地址，需要传入publicip
-     * 包括IPV4私网类型，IPV4公网类型，IPV6私网，IPV6公网
+    /** 创建负载均衡器 创建负载均衡器。 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id和vip_address。
+     * 2.若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 3.若要绑定有已有公网IPv4地址，需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 4.若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。 5.若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
+     * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。 [&gt;不支持创建IPv6地址负载均衡器](tag:otc,otc_test,dt,dt_test)
      *
      * @param CreateLoadBalancerRequest 请求对象
      * @return CompletableFuture<CreateLoadBalancerResponse> */
@@ -118,9 +158,11 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.createLoadBalancer);
     }
 
-    /** 创建负载均衡器 创建负载均衡器。 1.创建公网负载均衡器的场合，需要传入vpc_id。 2.创建内网负载均衡器的场合，需要传入vip_subnet_cidr_id。
-     * 3.创建内网双栈负载均衡器的场合，需要传入ipv6_vip_virsubnet_id。 关联有已有公网ip地址，需要传入publicip_ids 新建公网ip地址，需要传入publicip
-     * 包括IPV4私网类型，IPV4公网类型，IPV6私网，IPV6公网
+    /** 创建负载均衡器 创建负载均衡器。 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id和vip_address。
+     * 2.若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 3.若要绑定有已有公网IPv4地址，需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 4.若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。 5.若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
+     * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。 [&gt;不支持创建IPv6地址负载均衡器](tag:otc,otc_test,dt,dt_test)
      *
      * @param CreateLoadBalancerRequest 请求对象
      * @return AsyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse> */
@@ -163,7 +205,26 @@ public class ElbAsyncClient {
         return new AsyncInvoker<CreatePoolRequest, CreatePoolResponse>(request, ElbMeta.createPool, hcClient);
     }
 
-    /** 删除证书 删除SSL证书。
+    /** 创建自定义安全策略 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
+     *
+     * @param CreateSecurityPolicyRequest 请求对象
+     * @return CompletableFuture<CreateSecurityPolicyResponse> */
+    public CompletableFuture<CreateSecurityPolicyResponse> createSecurityPolicyAsync(
+        CreateSecurityPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.createSecurityPolicy);
+    }
+
+    /** 创建自定义安全策略 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
+     *
+     * @param CreateSecurityPolicyRequest 请求对象
+     * @return AsyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse> */
+    public AsyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse> createSecurityPolicyAsyncInvoker(
+        CreateSecurityPolicyRequest request) {
+        return new AsyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse>(request,
+            ElbMeta.createSecurityPolicy, hcClient);
+    }
+
+    /** 删除证书 删除证书。
      *
      * @param DeleteCertificateRequest 请求对象
      * @return CompletableFuture<DeleteCertificateResponse> */
@@ -171,7 +232,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.deleteCertificate);
     }
 
-    /** 删除证书 删除SSL证书。
+    /** 删除证书 删除证书。
      *
      * @param DeleteCertificateRequest 请求对象
      * @return AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> */
@@ -199,7 +260,7 @@ public class ElbAsyncClient {
             ElbMeta.deleteHealthMonitor, hcClient);
     }
 
-    /** 删除转发策略 删除转发策略。
+    /** 删除转发策略 删除七层转发策略。
      *
      * @param DeleteL7PolicyRequest 请求对象
      * @return CompletableFuture<DeleteL7PolicyResponse> */
@@ -207,7 +268,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.deleteL7Policy);
     }
 
-    /** 删除转发策略 删除转发策略。
+    /** 删除转发策略 删除七层转发策略。
      *
      * @param DeleteL7PolicyRequest 请求对象
      * @return AsyncInvoker<DeleteL7PolicyRequest, DeleteL7PolicyResponse> */
@@ -217,7 +278,7 @@ public class ElbAsyncClient {
             hcClient);
     }
 
-    /** 删除转发规则 删除转发规则。
+    /** 删除转发规则 删除七层转发规则。
      *
      * @param DeleteL7RuleRequest 请求对象
      * @return CompletableFuture<DeleteL7RuleResponse> */
@@ -225,7 +286,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.deleteL7Rule);
     }
 
-    /** 删除转发规则 删除转发规则。
+    /** 删除转发规则 删除七层转发规则。
      *
      * @param DeleteL7RuleRequest 请求对象
      * @return AsyncInvoker<DeleteL7RuleRequest, DeleteL7RuleResponse> */
@@ -303,6 +364,25 @@ public class ElbAsyncClient {
         return new AsyncInvoker<DeletePoolRequest, DeletePoolResponse>(request, ElbMeta.deletePool, hcClient);
     }
 
+    /** 删除自定义安全策略 删除自定义安全策略。
+     *
+     * @param DeleteSecurityPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteSecurityPolicyResponse> */
+    public CompletableFuture<DeleteSecurityPolicyResponse> deleteSecurityPolicyAsync(
+        DeleteSecurityPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.deleteSecurityPolicy);
+    }
+
+    /** 删除自定义安全策略 删除自定义安全策略。
+     *
+     * @param DeleteSecurityPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse> */
+    public AsyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse> deleteSecurityPolicyAsyncInvoker(
+        DeleteSecurityPolicyRequest request) {
+        return new AsyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse>(request,
+            ElbMeta.deleteSecurityPolicy, hcClient);
+    }
+
     /** 后端服务器全局列表 查询当前租户下的后端服务器列表。
      *
      * @param ListAllMembersRequest 请求对象
@@ -321,8 +401,9 @@ public class ElbAsyncClient {
             hcClient);
     }
 
-    /** 查询可用区列表 返回租户创建LB时可使用的可用区列表情况。 返回的数据类型是可用区集合的列表，比如列表 [ [az1,az2], [az2, az3] ]
-     * ，有两个可用区集合。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选择 az2和az3，但不能选择 az1和az3。
+    /** 查询可用区列表 返回租户创建LB时可使用的可用区集合列表情况。 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
+     * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
+     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return CompletableFuture<ListAvailabilityZonesResponse> */
@@ -331,8 +412,9 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.listAvailabilityZones);
     }
 
-    /** 查询可用区列表 返回租户创建LB时可使用的可用区列表情况。 返回的数据类型是可用区集合的列表，比如列表 [ [az1,az2], [az2, az3] ]
-     * ，有两个可用区集合。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选择 az2和az3，但不能选择 az1和az3。
+    /** 查询可用区列表 返回租户创建LB时可使用的可用区集合列表情况。 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
+     * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
+     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> */
@@ -342,7 +424,7 @@ public class ElbAsyncClient {
             ElbMeta.listAvailabilityZones, hcClient);
     }
 
-    /** 证书列表 查询SSL证书列表。
+    /** 证书列表 查询证书列表。
      *
      * @param ListCertificatesRequest 请求对象
      * @return CompletableFuture<ListCertificatesResponse> */
@@ -350,7 +432,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.listCertificates);
     }
 
-    /** 证书列表 查询SSL证书列表。
+    /** 证书列表 查询证书列表。
      *
      * @param ListCertificatesRequest 请求对象
      * @return AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse> */
@@ -360,7 +442,7 @@ public class ElbAsyncClient {
             hcClient);
     }
 
-    /** 查询规格列表 查询所有的规格。
+    /** 查询规格列表 查询租户在当前region下可用的负载均衡规格列表。
      *
      * @param ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse> */
@@ -368,7 +450,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.listFlavors);
     }
 
-    /** 查询规格列表 查询所有的规格。
+    /** 查询规格列表 查询租户在当前region下可用的负载均衡规格列表。
      *
      * @param ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> */
@@ -394,7 +476,7 @@ public class ElbAsyncClient {
             ElbMeta.listHealthMonitors, hcClient);
     }
 
-    /** 查询转发策略列表 查询转发策略列表。
+    /** 查询转发策略列表 查询七层转发策略列表。
      *
      * @param ListL7PoliciesRequest 请求对象
      * @return CompletableFuture<ListL7PoliciesResponse> */
@@ -402,7 +484,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.listL7Policies);
     }
 
-    /** 查询转发策略列表 查询转发策略列表。
+    /** 查询转发策略列表 查询七层转发策略列表。
      *
      * @param ListL7PoliciesRequest 请求对象
      * @return AsyncInvoker<ListL7PoliciesRequest, ListL7PoliciesResponse> */
@@ -445,7 +527,7 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ListListenersRequest, ListListenersResponse>(request, ElbMeta.listListeners, hcClient);
     }
 
-    /** 查询负载均衡器列表 查询负载均衡器列表，支持过滤查询和分页查询
+    /** 查询负载均衡器列表 查询负载均衡器列表。
      *
      * @param ListLoadBalancersRequest 请求对象
      * @return CompletableFuture<ListLoadBalancersResponse> */
@@ -453,7 +535,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.listLoadBalancers);
     }
 
-    /** 查询负载均衡器列表 查询负载均衡器列表，支持过滤查询和分页查询
+    /** 查询负载均衡器列表 查询负载均衡器列表。
      *
      * @param ListLoadBalancersRequest 请求对象
      * @return AsyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse> */
@@ -495,7 +577,63 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ListPoolsRequest, ListPoolsResponse>(request, ElbMeta.listPools, hcClient);
     }
 
-    /** 证书详情 查询SSL证书详情。
+    /** 查询配额使用详情 查询指定项目中负载均衡相关的各类资源的当前配额和已使用配额信息。
+     *
+     * @param ListQuotaDetailsRequest 请求对象
+     * @return CompletableFuture<ListQuotaDetailsResponse> */
+    public CompletableFuture<ListQuotaDetailsResponse> listQuotaDetailsAsync(ListQuotaDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listQuotaDetails);
+    }
+
+    /** 查询配额使用详情 查询指定项目中负载均衡相关的各类资源的当前配额和已使用配额信息。
+     *
+     * @param ListQuotaDetailsRequest 请求对象
+     * @return AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse> */
+    public AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse> listQuotaDetailsAsyncInvoker(
+        ListQuotaDetailsRequest request) {
+        return new AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>(request, ElbMeta.listQuotaDetails,
+            hcClient);
+    }
+
+    /** 查询自定义安全策略列表 查询自定义安全策略列表。
+     *
+     * @param ListSecurityPoliciesRequest 请求对象
+     * @return CompletableFuture<ListSecurityPoliciesResponse> */
+    public CompletableFuture<ListSecurityPoliciesResponse> listSecurityPoliciesAsync(
+        ListSecurityPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listSecurityPolicies);
+    }
+
+    /** 查询自定义安全策略列表 查询自定义安全策略列表。
+     *
+     * @param ListSecurityPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse> */
+    public AsyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse> listSecurityPoliciesAsyncInvoker(
+        ListSecurityPoliciesRequest request) {
+        return new AsyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>(request,
+            ElbMeta.listSecurityPolicies, hcClient);
+    }
+
+    /** 查询系统安全策略列表 查询系统安全策略列表。 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
+     *
+     * @param ListSystemSecurityPoliciesRequest 请求对象
+     * @return CompletableFuture<ListSystemSecurityPoliciesResponse> */
+    public CompletableFuture<ListSystemSecurityPoliciesResponse> listSystemSecurityPoliciesAsync(
+        ListSystemSecurityPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listSystemSecurityPolicies);
+    }
+
+    /** 查询系统安全策略列表 查询系统安全策略列表。 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
+     *
+     * @param ListSystemSecurityPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse> */
+    public AsyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse> listSystemSecurityPoliciesAsyncInvoker(
+        ListSystemSecurityPoliciesRequest request) {
+        return new AsyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse>(request,
+            ElbMeta.listSystemSecurityPolicies, hcClient);
+    }
+
+    /** 证书详情 查询证书详情。
      *
      * @param ShowCertificateRequest 请求对象
      * @return CompletableFuture<ShowCertificateResponse> */
@@ -503,7 +641,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showCertificate);
     }
 
-    /** 证书详情 查询SSL证书详情。
+    /** 证书详情 查询证书详情。
      *
      * @param ShowCertificateRequest 请求对象
      * @return AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse> */
@@ -547,7 +685,7 @@ public class ElbAsyncClient {
             hcClient);
     }
 
-    /** 查询转发策略详情 查询转发策略详情。
+    /** 查询转发策略详情 查询七层转发策略详情。
      *
      * @param ShowL7PolicyRequest 请求对象
      * @return CompletableFuture<ShowL7PolicyResponse> */
@@ -555,7 +693,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showL7Policy);
     }
 
-    /** 查询转发策略详情 查询转发策略详情。
+    /** 查询转发策略详情 查询七层转发策略详情。
      *
      * @param ShowL7PolicyRequest 请求对象
      * @return AsyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse> */
@@ -564,7 +702,7 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse>(request, ElbMeta.showL7Policy, hcClient);
     }
 
-    /** 查询转发规则详情 查询转发规则详情
+    /** 查询转发规则详情 查询七层转发规则详情。
      *
      * @param ShowL7RuleRequest 请求对象
      * @return CompletableFuture<ShowL7RuleResponse> */
@@ -572,7 +710,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showL7Rule);
     }
 
-    /** 查询转发规则详情 查询转发规则详情
+    /** 查询转发规则详情 查询七层转发规则详情。
      *
      * @param ShowL7RuleRequest 请求对象
      * @return AsyncInvoker<ShowL7RuleRequest, ShowL7RuleResponse> */
@@ -597,7 +735,7 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ShowListenerRequest, ShowListenerResponse>(request, ElbMeta.showListener, hcClient);
     }
 
-    /** 查询负载均衡器详情 查询负载均衡器详情
+    /** 查询负载均衡器详情 查询负载均衡器详情。
      *
      * @param ShowLoadBalancerRequest 请求对象
      * @return CompletableFuture<ShowLoadBalancerResponse> */
@@ -605,7 +743,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showLoadBalancer);
     }
 
-    /** 查询负载均衡器详情 查询负载均衡器详情
+    /** 查询负载均衡器详情 查询负载均衡器详情。
      *
      * @param ShowLoadBalancerRequest 请求对象
      * @return AsyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse> */
@@ -615,7 +753,8 @@ public class ElbAsyncClient {
             hcClient);
     }
 
-    /** 查询负载均衡器状态树 查询负载均衡器状态树，列出负载均衡器关联的子资源的信息
+    /** 查询负载均衡器状态树 查询负载均衡器状态树，包括负载均衡器及其关联的子资源的状态信息。
+     * 注意：该接口中的operating_status不一定与对应资源的operating_status相同。如：当Member的admin_state_up&#x3D;false且operating_status&#x3D;OFFLINE时，该接口返回member的operating_status&#x3D;DISABLE。
      *
      * @param ShowLoadBalancerStatusRequest 请求对象
      * @return CompletableFuture<ShowLoadBalancerStatusResponse> */
@@ -624,7 +763,8 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showLoadBalancerStatus);
     }
 
-    /** 查询负载均衡器状态树 查询负载均衡器状态树，列出负载均衡器关联的子资源的信息
+    /** 查询负载均衡器状态树 查询负载均衡器状态树，包括负载均衡器及其关联的子资源的状态信息。
+     * 注意：该接口中的operating_status不一定与对应资源的operating_status相同。如：当Member的admin_state_up&#x3D;false且operating_status&#x3D;OFFLINE时，该接口返回member的operating_status&#x3D;DISABLE。
      *
      * @param ShowLoadBalancerStatusRequest 请求对象
      * @return AsyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> */
@@ -634,7 +774,7 @@ public class ElbAsyncClient {
             ElbMeta.showLoadBalancerStatus, hcClient);
     }
 
-    /** 后端服务器详情 后端服务器详情
+    /** 后端服务器详情 后端服务器详情。
      *
      * @param ShowMemberRequest 请求对象
      * @return CompletableFuture<ShowMemberResponse> */
@@ -642,7 +782,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showMember);
     }
 
-    /** 后端服务器详情 后端服务器详情
+    /** 后端服务器详情 后端服务器详情。
      *
      * @param ShowMemberRequest 请求对象
      * @return AsyncInvoker<ShowMemberRequest, ShowMemberResponse> */
@@ -666,7 +806,7 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, ElbMeta.showPool, hcClient);
     }
 
-    /** 查询配额详情 查询特定项目的配额数。
+    /** 查询配额 查询指定项目中负载均衡相关的各类资源的当前配额。
      *
      * @param ShowQuotaRequest 请求对象
      * @return CompletableFuture<ShowQuotaResponse> */
@@ -674,7 +814,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showQuota);
     }
 
-    /** 查询配额详情 查询特定项目的配额数。
+    /** 查询配额 查询指定项目中负载均衡相关的各类资源的当前配额。
      *
      * @param ShowQuotaRequest 请求对象
      * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> */
@@ -682,25 +822,25 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, ElbMeta.showQuota, hcClient);
     }
 
-    /** 查询默认配额 查询默认配额数。
+    /** 查询自定义安全策略详情 查询自定义安全策略详情。
      *
-     * @param ShowQuotaDefaultsRequest 请求对象
-     * @return CompletableFuture<ShowQuotaDefaultsResponse> */
-    public CompletableFuture<ShowQuotaDefaultsResponse> showQuotaDefaultsAsync(ShowQuotaDefaultsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ElbMeta.showQuotaDefaults);
+     * @param ShowSecurityPolicyRequest 请求对象
+     * @return CompletableFuture<ShowSecurityPolicyResponse> */
+    public CompletableFuture<ShowSecurityPolicyResponse> showSecurityPolicyAsync(ShowSecurityPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.showSecurityPolicy);
     }
 
-    /** 查询默认配额 查询默认配额数。
+    /** 查询自定义安全策略详情 查询自定义安全策略详情。
      *
-     * @param ShowQuotaDefaultsRequest 请求对象
-     * @return AsyncInvoker<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse> */
-    public AsyncInvoker<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse> showQuotaDefaultsAsyncInvoker(
-        ShowQuotaDefaultsRequest request) {
-        return new AsyncInvoker<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse>(request, ElbMeta.showQuotaDefaults,
-            hcClient);
+     * @param ShowSecurityPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse> */
+    public AsyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse> showSecurityPolicyAsyncInvoker(
+        ShowSecurityPolicyRequest request) {
+        return new AsyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse>(request,
+            ElbMeta.showSecurityPolicy, hcClient);
     }
 
-    /** 更新证书 更新SSL证书。
+    /** 更新证书 更新证书。
      *
      * @param UpdateCertificateRequest 请求对象
      * @return CompletableFuture<UpdateCertificateResponse> */
@@ -708,7 +848,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.updateCertificate);
     }
 
-    /** 更新证书 更新SSL证书。
+    /** 更新证书 更新证书。
      *
      * @param UpdateCertificateRequest 请求对象
      * @return AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> */
@@ -736,7 +876,7 @@ public class ElbAsyncClient {
             ElbMeta.updateHealthMonitor, hcClient);
     }
 
-    /** 更新转发策略 更新转发策略。
+    /** 更新转发策略 更新七层转发策略。
      *
      * @param UpdateL7PolicyRequest 请求对象
      * @return CompletableFuture<UpdateL7PolicyResponse> */
@@ -744,7 +884,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.updateL7Policy);
     }
 
-    /** 更新转发策略 更新转发策略。
+    /** 更新转发策略 更新七层转发策略。
      *
      * @param UpdateL7PolicyRequest 请求对象
      * @return AsyncInvoker<UpdateL7PolicyRequest, UpdateL7PolicyResponse> */
@@ -754,7 +894,7 @@ public class ElbAsyncClient {
             hcClient);
     }
 
-    /** 更新转发规则 更新转发规则。
+    /** 更新转发规则 更新七层转发规则。
      *
      * @param UpdateL7RuleRequest 请求对象
      * @return CompletableFuture<UpdateL7RuleResponse> */
@@ -762,7 +902,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.updateL7Rule);
     }
 
-    /** 更新转发规则 更新转发规则。
+    /** 更新转发规则 更新七层转发规则。
      *
      * @param UpdateL7RuleRequest 请求对象
      * @return AsyncInvoker<UpdateL7RuleRequest, UpdateL7RuleResponse> */
@@ -807,7 +947,7 @@ public class ElbAsyncClient {
             ElbMeta.updateLoadBalancer, hcClient);
     }
 
-    /** 更新后端服务器 如果member绑定的负载均衡器的provisioning status不是ACTIVE，则不能更新该member。
+    /** 更新后端服务器 更新后端服务器。
      *
      * @param UpdateMemberRequest 请求对象
      * @return CompletableFuture<UpdateMemberResponse> */
@@ -815,7 +955,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.updateMember);
     }
 
-    /** 更新后端服务器 如果member绑定的负载均衡器的provisioning status不是ACTIVE，则不能更新该member。
+    /** 更新后端服务器 更新后端服务器。
      *
      * @param UpdateMemberRequest 请求对象
      * @return AsyncInvoker<UpdateMemberRequest, UpdateMemberResponse> */
@@ -840,7 +980,65 @@ public class ElbAsyncClient {
         return new AsyncInvoker<UpdatePoolRequest, UpdatePoolResponse>(request, ElbMeta.updatePool, hcClient);
     }
 
-    /** 计算预占IP数 计算创建一个负载均衡实例和第一个七层监听器需预占用的IP数
+    /** 更新自定义安全策略 更新自定义安全策略。
+     *
+     * @param UpdateSecurityPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateSecurityPolicyResponse> */
+    public CompletableFuture<UpdateSecurityPolicyResponse> updateSecurityPolicyAsync(
+        UpdateSecurityPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.updateSecurityPolicy);
+    }
+
+    /** 更新自定义安全策略 更新自定义安全策略。
+     *
+     * @param UpdateSecurityPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse> */
+    public AsyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse> updateSecurityPolicyAsyncInvoker(
+        UpdateSecurityPolicyRequest request) {
+        return new AsyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>(request,
+            ElbMeta.updateSecurityPolicy, hcClient);
+    }
+
+    /** 查询API版本列表信息 返回ELB当前所有可用的API版本。
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return CompletableFuture<ListApiVersionsResponse> */
+    public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listApiVersions);
+    }
+
+    /** 查询API版本列表信息 返回ELB当前所有可用的API版本。
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> */
+    public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
+        ListApiVersionsRequest request) {
+        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, ElbMeta.listApiVersions,
+            hcClient);
+    }
+
+    /** 删除IP地址组的IP列表项 批量删除IP地址组的IP列表项。
+     *
+     * @param BatchDeleteIpListRequest 请求对象
+     * @return CompletableFuture<BatchDeleteIpListResponse> */
+    public CompletableFuture<BatchDeleteIpListResponse> batchDeleteIpListAsync(BatchDeleteIpListRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchDeleteIpList);
+    }
+
+    /** 删除IP地址组的IP列表项 批量删除IP地址组的IP列表项。
+     *
+     * @param BatchDeleteIpListRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse> */
+    public AsyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse> batchDeleteIpListAsyncInvoker(
+        BatchDeleteIpListRequest request) {
+        return new AsyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse>(request, ElbMeta.batchDeleteIpList,
+            hcClient);
+    }
+
+    /** 计算预占IP数 计算以下几种场景的预占用IP数量： - 计算创建LB的第一个七层监听器后总占用IP数量：传入loadbalancer_id、l7_flavor_id为空、ip_target_enable不传或为false。
+     * - 计算LB规格变更或开启跨VPC后总占用IP数量：传入参数loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。 -
+     * 计算创建LB所需IP数量：传入参数availability_zone_id，及可选参数l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。 &gt;
+     * 查询出的预占IP数大于等于最终实际占用的IP数。
      *
      * @param CountPreoccupyIpNumRequest 请求对象
      * @return CompletableFuture<CountPreoccupyIpNumResponse> */
@@ -848,7 +1046,10 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.countPreoccupyIpNum);
     }
 
-    /** 计算预占IP数 计算创建一个负载均衡实例和第一个七层监听器需预占用的IP数
+    /** 计算预占IP数 计算以下几种场景的预占用IP数量： - 计算创建LB的第一个七层监听器后总占用IP数量：传入loadbalancer_id、l7_flavor_id为空、ip_target_enable不传或为false。
+     * - 计算LB规格变更或开启跨VPC后总占用IP数量：传入参数loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。 -
+     * 计算创建LB所需IP数量：传入参数availability_zone_id，及可选参数l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。 &gt;
+     * 查询出的预占IP数大于等于最终实际占用的IP数。
      *
      * @param CountPreoccupyIpNumRequest 请求对象
      * @return AsyncInvoker<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse> */
@@ -858,7 +1059,8 @@ public class ElbAsyncClient {
             ElbMeta.countPreoccupyIpNum, hcClient);
     }
 
-    /** 创建IP地址组 创建ip地址组
+    /** 创建IP地址组
+     * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
      *
      * @param CreateIpGroupRequest 请求对象
      * @return CompletableFuture<CreateIpGroupResponse> */
@@ -866,7 +1068,8 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.createIpGroup);
     }
 
-    /** 创建IP地址组 创建ip地址组
+    /** 创建IP地址组
+     * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
      *
      * @param CreateIpGroupRequest 请求对象
      * @return AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> */
@@ -892,7 +1095,7 @@ public class ElbAsyncClient {
         return new AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>(request, ElbMeta.deleteIpGroup, hcClient);
     }
 
-    /** 查询IP地址组列表 查询IP地址组列表
+    /** 查询IP地址组列表 查询IP地址组列表。
      *
      * @param ListIpGroupsRequest 请求对象
      * @return CompletableFuture<ListIpGroupsResponse> */
@@ -900,7 +1103,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.listIpGroups);
     }
 
-    /** 查询IP地址组列表 查询IP地址组列表
+    /** 查询IP地址组列表 查询IP地址组列表。
      *
      * @param ListIpGroupsRequest 请求对象
      * @return AsyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse> */
@@ -909,7 +1112,7 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>(request, ElbMeta.listIpGroups, hcClient);
     }
 
-    /** 查询IP地址组详情 获取ip地址组详情
+    /** 查询IP地址组详情 获取IP地址组详情。
      *
      * @param ShowIpGroupRequest 请求对象
      * @return CompletableFuture<ShowIpGroupResponse> */
@@ -917,7 +1120,7 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.showIpGroup);
     }
 
-    /** 查询IP地址组详情 获取ip地址组详情
+    /** 查询IP地址组详情 获取IP地址组详情。
      *
      * @param ShowIpGroupRequest 请求对象
      * @return AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse> */
@@ -925,7 +1128,8 @@ public class ElbAsyncClient {
         return new AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>(request, ElbMeta.showIpGroup, hcClient);
     }
 
-    /** 更新IP地址组 更新ip地址组，只支持全量更新ip。
+    /** 更新IP地址组
+     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return CompletableFuture<UpdateIpGroupResponse> */
@@ -933,13 +1137,31 @@ public class ElbAsyncClient {
         return hcClient.asyncInvokeHttp(request, ElbMeta.updateIpGroup);
     }
 
-    /** 更新IP地址组 更新ip地址组，只支持全量更新ip。
+    /** 更新IP地址组
+     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> */
     public AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroupAsyncInvoker(
         UpdateIpGroupRequest request) {
         return new AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>(request, ElbMeta.updateIpGroup, hcClient);
+    }
+
+    /** 更新IP地址组的IP列表项 更新IP地址组的IP列表信息。
+     *
+     * @param UpdateIpListRequest 请求对象
+     * @return CompletableFuture<UpdateIpListResponse> */
+    public CompletableFuture<UpdateIpListResponse> updateIpListAsync(UpdateIpListRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.updateIpList);
+    }
+
+    /** 更新IP地址组的IP列表项 更新IP地址组的IP列表信息。
+     *
+     * @param UpdateIpListRequest 请求对象
+     * @return AsyncInvoker<UpdateIpListRequest, UpdateIpListResponse> */
+    public AsyncInvoker<UpdateIpListRequest, UpdateIpListResponse> updateIpListAsyncInvoker(
+        UpdateIpListRequest request) {
+        return new AsyncInvoker<UpdateIpListRequest, UpdateIpListResponse>(request, ElbMeta.updateIpList, hcClient);
     }
 
 }

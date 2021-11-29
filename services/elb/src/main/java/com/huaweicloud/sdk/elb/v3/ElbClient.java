@@ -17,7 +17,44 @@ public class ElbClient {
         return new ClientBuilder<>(ElbClient::new);
     }
 
-    /** 创建证书 创建证书。
+    /** 批量更新转发策略优先级 批量更新转发策略的优先级。
+     *
+     * @param BatchUpdatePoliciesPriorityRequest 请求对象
+     * @return BatchUpdatePoliciesPriorityResponse */
+    public BatchUpdatePoliciesPriorityResponse batchUpdatePoliciesPriority(BatchUpdatePoliciesPriorityRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.batchUpdatePoliciesPriority);
+    }
+
+    /** 批量更新转发策略优先级 批量更新转发策略的优先级。
+     *
+     * @param BatchUpdatePoliciesPriorityRequest 请求对象
+     * @return SyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse> */
+    public SyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse> batchUpdatePoliciesPriorityInvoker(
+        BatchUpdatePoliciesPriorityRequest request) {
+        return new SyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse>(request,
+            ElbMeta.batchUpdatePoliciesPriority, hcClient);
+    }
+
+    /** 负载均衡器计费模式变更 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
+     *
+     * @param ChangeLoadbalancerChargeModeRequest 请求对象
+     * @return ChangeLoadbalancerChargeModeResponse */
+    public ChangeLoadbalancerChargeModeResponse changeLoadbalancerChargeMode(
+        ChangeLoadbalancerChargeModeRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.changeLoadbalancerChargeMode);
+    }
+
+    /** 负载均衡器计费模式变更 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
+     *
+     * @param ChangeLoadbalancerChargeModeRequest 请求对象
+     * @return SyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse> */
+    public SyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse> changeLoadbalancerChargeModeInvoker(
+        ChangeLoadbalancerChargeModeRequest request) {
+        return new SyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse>(request,
+            ElbMeta.changeLoadbalancerChargeMode, hcClient);
+    }
+
+    /** 创建证书 创建证书。用于HTTPS协议监听器。
      *
      * @param CreateCertificateRequest 请求对象
      * @return CreateCertificateResponse */
@@ -25,7 +62,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.createCertificate);
     }
 
-    /** 创建证书 创建证书。
+    /** 创建证书 创建证书。用于HTTPS协议监听器。
      *
      * @param CreateCertificateRequest 请求对象
      * @return SyncInvoker<CreateCertificateRequest, CreateCertificateResponse> */
@@ -53,7 +90,7 @@ public class ElbClient {
             ElbMeta.createHealthMonitor, hcClient);
     }
 
-    /** 创建转发策略 创建转发策略.
+    /** 创建转发策略 创建七层转发策略。
      *
      * @param CreateL7PolicyRequest 请求对象
      * @return CreateL7PolicyResponse */
@@ -61,7 +98,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.createL7Policy);
     }
 
-    /** 创建转发策略 创建转发策略.
+    /** 创建转发策略 创建七层转发策略。
      *
      * @param CreateL7PolicyRequest 请求对象
      * @return SyncInvoker<CreateL7PolicyRequest, CreateL7PolicyResponse> */
@@ -71,7 +108,7 @@ public class ElbClient {
             hcClient);
     }
 
-    /** 创建转发规则 创建转发规则。
+    /** 创建转发规则 创建七层转发规则。
      *
      * @param CreateL7RuleRequest 请求对象
      * @return CreateL7RuleResponse */
@@ -79,7 +116,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.createL7Rule);
     }
 
-    /** 创建转发规则 创建转发规则。
+    /** 创建转发规则 创建七层转发规则。
      *
      * @param CreateL7RuleRequest 请求对象
      * @return SyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse> */
@@ -87,7 +124,7 @@ public class ElbClient {
         return new SyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse>(request, ElbMeta.createL7Rule, hcClient);
     }
 
-    /** 创建监听器 ElbV3 创建监听器。
+    /** 创建监听器 创建监听器。
      *
      * @param CreateListenerRequest 请求对象
      * @return CreateListenerResponse */
@@ -95,7 +132,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.createListener);
     }
 
-    /** 创建监听器 ElbV3 创建监听器。
+    /** 创建监听器 创建监听器。
      *
      * @param CreateListenerRequest 请求对象
      * @return SyncInvoker<CreateListenerRequest, CreateListenerResponse> */
@@ -105,9 +142,11 @@ public class ElbClient {
             hcClient);
     }
 
-    /** 创建负载均衡器 创建负载均衡器。 1.创建公网负载均衡器的场合，需要传入vpc_id。 2.创建内网负载均衡器的场合，需要传入vip_subnet_cidr_id。
-     * 3.创建内网双栈负载均衡器的场合，需要传入ipv6_vip_virsubnet_id。 关联有已有公网ip地址，需要传入publicip_ids 新建公网ip地址，需要传入publicip
-     * 包括IPV4私网类型，IPV4公网类型，IPV6私网，IPV6公网
+    /** 创建负载均衡器 创建负载均衡器。 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id和vip_address。
+     * 2.若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 3.若要绑定有已有公网IPv4地址，需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 4.若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。 5.若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
+     * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。 [&gt;不支持创建IPv6地址负载均衡器](tag:otc,otc_test,dt,dt_test)
      *
      * @param CreateLoadBalancerRequest 请求对象
      * @return CreateLoadBalancerResponse */
@@ -115,9 +154,11 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.createLoadBalancer);
     }
 
-    /** 创建负载均衡器 创建负载均衡器。 1.创建公网负载均衡器的场合，需要传入vpc_id。 2.创建内网负载均衡器的场合，需要传入vip_subnet_cidr_id。
-     * 3.创建内网双栈负载均衡器的场合，需要传入ipv6_vip_virsubnet_id。 关联有已有公网ip地址，需要传入publicip_ids 新建公网ip地址，需要传入publicip
-     * 包括IPV4私网类型，IPV4公网类型，IPV6私网，IPV6公网
+    /** 创建负载均衡器 创建负载均衡器。 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id和vip_address。
+     * 2.若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 3.若要绑定有已有公网IPv4地址，需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 4.若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。 5.若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
+     * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。 [&gt;不支持创建IPv6地址负载均衡器](tag:otc,otc_test,dt,dt_test)
      *
      * @param CreateLoadBalancerRequest 请求对象
      * @return SyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse> */
@@ -159,7 +200,25 @@ public class ElbClient {
         return new SyncInvoker<CreatePoolRequest, CreatePoolResponse>(request, ElbMeta.createPool, hcClient);
     }
 
-    /** 删除证书 删除SSL证书。
+    /** 创建自定义安全策略 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
+     *
+     * @param CreateSecurityPolicyRequest 请求对象
+     * @return CreateSecurityPolicyResponse */
+    public CreateSecurityPolicyResponse createSecurityPolicy(CreateSecurityPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.createSecurityPolicy);
+    }
+
+    /** 创建自定义安全策略 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
+     *
+     * @param CreateSecurityPolicyRequest 请求对象
+     * @return SyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse> */
+    public SyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse> createSecurityPolicyInvoker(
+        CreateSecurityPolicyRequest request) {
+        return new SyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse>(request,
+            ElbMeta.createSecurityPolicy, hcClient);
+    }
+
+    /** 删除证书 删除证书。
      *
      * @param DeleteCertificateRequest 请求对象
      * @return DeleteCertificateResponse */
@@ -167,7 +226,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.deleteCertificate);
     }
 
-    /** 删除证书 删除SSL证书。
+    /** 删除证书 删除证书。
      *
      * @param DeleteCertificateRequest 请求对象
      * @return SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> */
@@ -195,7 +254,7 @@ public class ElbClient {
             ElbMeta.deleteHealthMonitor, hcClient);
     }
 
-    /** 删除转发策略 删除转发策略。
+    /** 删除转发策略 删除七层转发策略。
      *
      * @param DeleteL7PolicyRequest 请求对象
      * @return DeleteL7PolicyResponse */
@@ -203,7 +262,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.deleteL7Policy);
     }
 
-    /** 删除转发策略 删除转发策略。
+    /** 删除转发策略 删除七层转发策略。
      *
      * @param DeleteL7PolicyRequest 请求对象
      * @return SyncInvoker<DeleteL7PolicyRequest, DeleteL7PolicyResponse> */
@@ -213,7 +272,7 @@ public class ElbClient {
             hcClient);
     }
 
-    /** 删除转发规则 删除转发规则。
+    /** 删除转发规则 删除七层转发规则。
      *
      * @param DeleteL7RuleRequest 请求对象
      * @return DeleteL7RuleResponse */
@@ -221,7 +280,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.deleteL7Rule);
     }
 
-    /** 删除转发规则 删除转发规则。
+    /** 删除转发规则 删除七层转发规则。
      *
      * @param DeleteL7RuleRequest 请求对象
      * @return SyncInvoker<DeleteL7RuleRequest, DeleteL7RuleResponse> */
@@ -297,6 +356,24 @@ public class ElbClient {
         return new SyncInvoker<DeletePoolRequest, DeletePoolResponse>(request, ElbMeta.deletePool, hcClient);
     }
 
+    /** 删除自定义安全策略 删除自定义安全策略。
+     *
+     * @param DeleteSecurityPolicyRequest 请求对象
+     * @return DeleteSecurityPolicyResponse */
+    public DeleteSecurityPolicyResponse deleteSecurityPolicy(DeleteSecurityPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.deleteSecurityPolicy);
+    }
+
+    /** 删除自定义安全策略 删除自定义安全策略。
+     *
+     * @param DeleteSecurityPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse> */
+    public SyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse> deleteSecurityPolicyInvoker(
+        DeleteSecurityPolicyRequest request) {
+        return new SyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse>(request,
+            ElbMeta.deleteSecurityPolicy, hcClient);
+    }
+
     /** 后端服务器全局列表 查询当前租户下的后端服务器列表。
      *
      * @param ListAllMembersRequest 请求对象
@@ -315,8 +392,9 @@ public class ElbClient {
             hcClient);
     }
 
-    /** 查询可用区列表 返回租户创建LB时可使用的可用区列表情况。 返回的数据类型是可用区集合的列表，比如列表 [ [az1,az2], [az2, az3] ]
-     * ，有两个可用区集合。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选择 az2和az3，但不能选择 az1和az3。
+    /** 查询可用区列表 返回租户创建LB时可使用的可用区集合列表情况。 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
+     * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
+     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return ListAvailabilityZonesResponse */
@@ -324,8 +402,9 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.listAvailabilityZones);
     }
 
-    /** 查询可用区列表 返回租户创建LB时可使用的可用区列表情况。 返回的数据类型是可用区集合的列表，比如列表 [ [az1,az2], [az2, az3] ]
-     * ，有两个可用区集合。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选择 az2和az3，但不能选择 az1和az3。
+    /** 查询可用区列表 返回租户创建LB时可使用的可用区集合列表情况。 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
+     * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
+     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return SyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> */
@@ -335,7 +414,7 @@ public class ElbClient {
             ElbMeta.listAvailabilityZones, hcClient);
     }
 
-    /** 证书列表 查询SSL证书列表。
+    /** 证书列表 查询证书列表。
      *
      * @param ListCertificatesRequest 请求对象
      * @return ListCertificatesResponse */
@@ -343,7 +422,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.listCertificates);
     }
 
-    /** 证书列表 查询SSL证书列表。
+    /** 证书列表 查询证书列表。
      *
      * @param ListCertificatesRequest 请求对象
      * @return SyncInvoker<ListCertificatesRequest, ListCertificatesResponse> */
@@ -353,7 +432,7 @@ public class ElbClient {
             hcClient);
     }
 
-    /** 查询规格列表 查询所有的规格。
+    /** 查询规格列表 查询租户在当前region下可用的负载均衡规格列表。
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse */
@@ -361,7 +440,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.listFlavors);
     }
 
-    /** 查询规格列表 查询所有的规格。
+    /** 查询规格列表 查询租户在当前region下可用的负载均衡规格列表。
      *
      * @param ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> */
@@ -387,7 +466,7 @@ public class ElbClient {
             ElbMeta.listHealthMonitors, hcClient);
     }
 
-    /** 查询转发策略列表 查询转发策略列表。
+    /** 查询转发策略列表 查询七层转发策略列表。
      *
      * @param ListL7PoliciesRequest 请求对象
      * @return ListL7PoliciesResponse */
@@ -395,7 +474,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.listL7Policies);
     }
 
-    /** 查询转发策略列表 查询转发策略列表。
+    /** 查询转发策略列表 查询七层转发策略列表。
      *
      * @param ListL7PoliciesRequest 请求对象
      * @return SyncInvoker<ListL7PoliciesRequest, ListL7PoliciesResponse> */
@@ -437,7 +516,7 @@ public class ElbClient {
         return new SyncInvoker<ListListenersRequest, ListListenersResponse>(request, ElbMeta.listListeners, hcClient);
     }
 
-    /** 查询负载均衡器列表 查询负载均衡器列表，支持过滤查询和分页查询
+    /** 查询负载均衡器列表 查询负载均衡器列表。
      *
      * @param ListLoadBalancersRequest 请求对象
      * @return ListLoadBalancersResponse */
@@ -445,7 +524,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.listLoadBalancers);
     }
 
-    /** 查询负载均衡器列表 查询负载均衡器列表，支持过滤查询和分页查询
+    /** 查询负载均衡器列表 查询负载均衡器列表。
      *
      * @param ListLoadBalancersRequest 请求对象
      * @return SyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse> */
@@ -487,7 +566,61 @@ public class ElbClient {
         return new SyncInvoker<ListPoolsRequest, ListPoolsResponse>(request, ElbMeta.listPools, hcClient);
     }
 
-    /** 证书详情 查询SSL证书详情。
+    /** 查询配额使用详情 查询指定项目中负载均衡相关的各类资源的当前配额和已使用配额信息。
+     *
+     * @param ListQuotaDetailsRequest 请求对象
+     * @return ListQuotaDetailsResponse */
+    public ListQuotaDetailsResponse listQuotaDetails(ListQuotaDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.listQuotaDetails);
+    }
+
+    /** 查询配额使用详情 查询指定项目中负载均衡相关的各类资源的当前配额和已使用配额信息。
+     *
+     * @param ListQuotaDetailsRequest 请求对象
+     * @return SyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse> */
+    public SyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse> listQuotaDetailsInvoker(
+        ListQuotaDetailsRequest request) {
+        return new SyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>(request, ElbMeta.listQuotaDetails,
+            hcClient);
+    }
+
+    /** 查询自定义安全策略列表 查询自定义安全策略列表。
+     *
+     * @param ListSecurityPoliciesRequest 请求对象
+     * @return ListSecurityPoliciesResponse */
+    public ListSecurityPoliciesResponse listSecurityPolicies(ListSecurityPoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.listSecurityPolicies);
+    }
+
+    /** 查询自定义安全策略列表 查询自定义安全策略列表。
+     *
+     * @param ListSecurityPoliciesRequest 请求对象
+     * @return SyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse> */
+    public SyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse> listSecurityPoliciesInvoker(
+        ListSecurityPoliciesRequest request) {
+        return new SyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>(request,
+            ElbMeta.listSecurityPolicies, hcClient);
+    }
+
+    /** 查询系统安全策略列表 查询系统安全策略列表。 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
+     *
+     * @param ListSystemSecurityPoliciesRequest 请求对象
+     * @return ListSystemSecurityPoliciesResponse */
+    public ListSystemSecurityPoliciesResponse listSystemSecurityPolicies(ListSystemSecurityPoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.listSystemSecurityPolicies);
+    }
+
+    /** 查询系统安全策略列表 查询系统安全策略列表。 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
+     *
+     * @param ListSystemSecurityPoliciesRequest 请求对象
+     * @return SyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse> */
+    public SyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse> listSystemSecurityPoliciesInvoker(
+        ListSystemSecurityPoliciesRequest request) {
+        return new SyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse>(request,
+            ElbMeta.listSystemSecurityPolicies, hcClient);
+    }
+
+    /** 证书详情 查询证书详情。
      *
      * @param ShowCertificateRequest 请求对象
      * @return ShowCertificateResponse */
@@ -495,7 +628,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showCertificate);
     }
 
-    /** 证书详情 查询SSL证书详情。
+    /** 证书详情 查询证书详情。
      *
      * @param ShowCertificateRequest 请求对象
      * @return SyncInvoker<ShowCertificateRequest, ShowCertificateResponse> */
@@ -539,7 +672,7 @@ public class ElbClient {
             hcClient);
     }
 
-    /** 查询转发策略详情 查询转发策略详情。
+    /** 查询转发策略详情 查询七层转发策略详情。
      *
      * @param ShowL7PolicyRequest 请求对象
      * @return ShowL7PolicyResponse */
@@ -547,7 +680,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showL7Policy);
     }
 
-    /** 查询转发策略详情 查询转发策略详情。
+    /** 查询转发策略详情 查询七层转发策略详情。
      *
      * @param ShowL7PolicyRequest 请求对象
      * @return SyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse> */
@@ -555,7 +688,7 @@ public class ElbClient {
         return new SyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse>(request, ElbMeta.showL7Policy, hcClient);
     }
 
-    /** 查询转发规则详情 查询转发规则详情
+    /** 查询转发规则详情 查询七层转发规则详情。
      *
      * @param ShowL7RuleRequest 请求对象
      * @return ShowL7RuleResponse */
@@ -563,7 +696,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showL7Rule);
     }
 
-    /** 查询转发规则详情 查询转发规则详情
+    /** 查询转发规则详情 查询七层转发规则详情。
      *
      * @param ShowL7RuleRequest 请求对象
      * @return SyncInvoker<ShowL7RuleRequest, ShowL7RuleResponse> */
@@ -587,7 +720,7 @@ public class ElbClient {
         return new SyncInvoker<ShowListenerRequest, ShowListenerResponse>(request, ElbMeta.showListener, hcClient);
     }
 
-    /** 查询负载均衡器详情 查询负载均衡器详情
+    /** 查询负载均衡器详情 查询负载均衡器详情。
      *
      * @param ShowLoadBalancerRequest 请求对象
      * @return ShowLoadBalancerResponse */
@@ -595,7 +728,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showLoadBalancer);
     }
 
-    /** 查询负载均衡器详情 查询负载均衡器详情
+    /** 查询负载均衡器详情 查询负载均衡器详情。
      *
      * @param ShowLoadBalancerRequest 请求对象
      * @return SyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse> */
@@ -605,7 +738,8 @@ public class ElbClient {
             hcClient);
     }
 
-    /** 查询负载均衡器状态树 查询负载均衡器状态树，列出负载均衡器关联的子资源的信息
+    /** 查询负载均衡器状态树 查询负载均衡器状态树，包括负载均衡器及其关联的子资源的状态信息。
+     * 注意：该接口中的operating_status不一定与对应资源的operating_status相同。如：当Member的admin_state_up&#x3D;false且operating_status&#x3D;OFFLINE时，该接口返回member的operating_status&#x3D;DISABLE。
      *
      * @param ShowLoadBalancerStatusRequest 请求对象
      * @return ShowLoadBalancerStatusResponse */
@@ -613,7 +747,8 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showLoadBalancerStatus);
     }
 
-    /** 查询负载均衡器状态树 查询负载均衡器状态树，列出负载均衡器关联的子资源的信息
+    /** 查询负载均衡器状态树 查询负载均衡器状态树，包括负载均衡器及其关联的子资源的状态信息。
+     * 注意：该接口中的operating_status不一定与对应资源的operating_status相同。如：当Member的admin_state_up&#x3D;false且operating_status&#x3D;OFFLINE时，该接口返回member的operating_status&#x3D;DISABLE。
      *
      * @param ShowLoadBalancerStatusRequest 请求对象
      * @return SyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> */
@@ -623,7 +758,7 @@ public class ElbClient {
             ElbMeta.showLoadBalancerStatus, hcClient);
     }
 
-    /** 后端服务器详情 后端服务器详情
+    /** 后端服务器详情 后端服务器详情。
      *
      * @param ShowMemberRequest 请求对象
      * @return ShowMemberResponse */
@@ -631,7 +766,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showMember);
     }
 
-    /** 后端服务器详情 后端服务器详情
+    /** 后端服务器详情 后端服务器详情。
      *
      * @param ShowMemberRequest 请求对象
      * @return SyncInvoker<ShowMemberRequest, ShowMemberResponse> */
@@ -655,7 +790,7 @@ public class ElbClient {
         return new SyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, ElbMeta.showPool, hcClient);
     }
 
-    /** 查询配额详情 查询特定项目的配额数。
+    /** 查询配额 查询指定项目中负载均衡相关的各类资源的当前配额。
      *
      * @param ShowQuotaRequest 请求对象
      * @return ShowQuotaResponse */
@@ -663,7 +798,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showQuota);
     }
 
-    /** 查询配额详情 查询特定项目的配额数。
+    /** 查询配额 查询指定项目中负载均衡相关的各类资源的当前配额。
      *
      * @param ShowQuotaRequest 请求对象
      * @return SyncInvoker<ShowQuotaRequest, ShowQuotaResponse> */
@@ -671,25 +806,25 @@ public class ElbClient {
         return new SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, ElbMeta.showQuota, hcClient);
     }
 
-    /** 查询默认配额 查询默认配额数。
+    /** 查询自定义安全策略详情 查询自定义安全策略详情。
      *
-     * @param ShowQuotaDefaultsRequest 请求对象
-     * @return ShowQuotaDefaultsResponse */
-    public ShowQuotaDefaultsResponse showQuotaDefaults(ShowQuotaDefaultsRequest request) {
-        return hcClient.syncInvokeHttp(request, ElbMeta.showQuotaDefaults);
+     * @param ShowSecurityPolicyRequest 请求对象
+     * @return ShowSecurityPolicyResponse */
+    public ShowSecurityPolicyResponse showSecurityPolicy(ShowSecurityPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.showSecurityPolicy);
     }
 
-    /** 查询默认配额 查询默认配额数。
+    /** 查询自定义安全策略详情 查询自定义安全策略详情。
      *
-     * @param ShowQuotaDefaultsRequest 请求对象
-     * @return SyncInvoker<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse> */
-    public SyncInvoker<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse> showQuotaDefaultsInvoker(
-        ShowQuotaDefaultsRequest request) {
-        return new SyncInvoker<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse>(request, ElbMeta.showQuotaDefaults,
-            hcClient);
+     * @param ShowSecurityPolicyRequest 请求对象
+     * @return SyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse> */
+    public SyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse> showSecurityPolicyInvoker(
+        ShowSecurityPolicyRequest request) {
+        return new SyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse>(request,
+            ElbMeta.showSecurityPolicy, hcClient);
     }
 
-    /** 更新证书 更新SSL证书。
+    /** 更新证书 更新证书。
      *
      * @param UpdateCertificateRequest 请求对象
      * @return UpdateCertificateResponse */
@@ -697,7 +832,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.updateCertificate);
     }
 
-    /** 更新证书 更新SSL证书。
+    /** 更新证书 更新证书。
      *
      * @param UpdateCertificateRequest 请求对象
      * @return SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> */
@@ -725,7 +860,7 @@ public class ElbClient {
             ElbMeta.updateHealthMonitor, hcClient);
     }
 
-    /** 更新转发策略 更新转发策略。
+    /** 更新转发策略 更新七层转发策略。
      *
      * @param UpdateL7PolicyRequest 请求对象
      * @return UpdateL7PolicyResponse */
@@ -733,7 +868,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.updateL7Policy);
     }
 
-    /** 更新转发策略 更新转发策略。
+    /** 更新转发策略 更新七层转发策略。
      *
      * @param UpdateL7PolicyRequest 请求对象
      * @return SyncInvoker<UpdateL7PolicyRequest, UpdateL7PolicyResponse> */
@@ -743,7 +878,7 @@ public class ElbClient {
             hcClient);
     }
 
-    /** 更新转发规则 更新转发规则。
+    /** 更新转发规则 更新七层转发规则。
      *
      * @param UpdateL7RuleRequest 请求对象
      * @return UpdateL7RuleResponse */
@@ -751,7 +886,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.updateL7Rule);
     }
 
-    /** 更新转发规则 更新转发规则。
+    /** 更新转发规则 更新七层转发规则。
      *
      * @param UpdateL7RuleRequest 请求对象
      * @return SyncInvoker<UpdateL7RuleRequest, UpdateL7RuleResponse> */
@@ -795,7 +930,7 @@ public class ElbClient {
             ElbMeta.updateLoadBalancer, hcClient);
     }
 
-    /** 更新后端服务器 如果member绑定的负载均衡器的provisioning status不是ACTIVE，则不能更新该member。
+    /** 更新后端服务器 更新后端服务器。
      *
      * @param UpdateMemberRequest 请求对象
      * @return UpdateMemberResponse */
@@ -803,7 +938,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.updateMember);
     }
 
-    /** 更新后端服务器 如果member绑定的负载均衡器的provisioning status不是ACTIVE，则不能更新该member。
+    /** 更新后端服务器 更新后端服务器。
      *
      * @param UpdateMemberRequest 请求对象
      * @return SyncInvoker<UpdateMemberRequest, UpdateMemberResponse> */
@@ -827,7 +962,64 @@ public class ElbClient {
         return new SyncInvoker<UpdatePoolRequest, UpdatePoolResponse>(request, ElbMeta.updatePool, hcClient);
     }
 
-    /** 计算预占IP数 计算创建一个负载均衡实例和第一个七层监听器需预占用的IP数
+    /** 更新自定义安全策略 更新自定义安全策略。
+     *
+     * @param UpdateSecurityPolicyRequest 请求对象
+     * @return UpdateSecurityPolicyResponse */
+    public UpdateSecurityPolicyResponse updateSecurityPolicy(UpdateSecurityPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.updateSecurityPolicy);
+    }
+
+    /** 更新自定义安全策略 更新自定义安全策略。
+     *
+     * @param UpdateSecurityPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse> */
+    public SyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse> updateSecurityPolicyInvoker(
+        UpdateSecurityPolicyRequest request) {
+        return new SyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>(request,
+            ElbMeta.updateSecurityPolicy, hcClient);
+    }
+
+    /** 查询API版本列表信息 返回ELB当前所有可用的API版本。
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return ListApiVersionsResponse */
+    public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.listApiVersions);
+    }
+
+    /** 查询API版本列表信息 返回ELB当前所有可用的API版本。
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> */
+    public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(
+        ListApiVersionsRequest request) {
+        return new SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, ElbMeta.listApiVersions,
+            hcClient);
+    }
+
+    /** 删除IP地址组的IP列表项 批量删除IP地址组的IP列表项。
+     *
+     * @param BatchDeleteIpListRequest 请求对象
+     * @return BatchDeleteIpListResponse */
+    public BatchDeleteIpListResponse batchDeleteIpList(BatchDeleteIpListRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.batchDeleteIpList);
+    }
+
+    /** 删除IP地址组的IP列表项 批量删除IP地址组的IP列表项。
+     *
+     * @param BatchDeleteIpListRequest 请求对象
+     * @return SyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse> */
+    public SyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse> batchDeleteIpListInvoker(
+        BatchDeleteIpListRequest request) {
+        return new SyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse>(request, ElbMeta.batchDeleteIpList,
+            hcClient);
+    }
+
+    /** 计算预占IP数 计算以下几种场景的预占用IP数量： - 计算创建LB的第一个七层监听器后总占用IP数量：传入loadbalancer_id、l7_flavor_id为空、ip_target_enable不传或为false。
+     * - 计算LB规格变更或开启跨VPC后总占用IP数量：传入参数loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。 -
+     * 计算创建LB所需IP数量：传入参数availability_zone_id，及可选参数l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。 &gt;
+     * 查询出的预占IP数大于等于最终实际占用的IP数。
      *
      * @param CountPreoccupyIpNumRequest 请求对象
      * @return CountPreoccupyIpNumResponse */
@@ -835,7 +1027,10 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.countPreoccupyIpNum);
     }
 
-    /** 计算预占IP数 计算创建一个负载均衡实例和第一个七层监听器需预占用的IP数
+    /** 计算预占IP数 计算以下几种场景的预占用IP数量： - 计算创建LB的第一个七层监听器后总占用IP数量：传入loadbalancer_id、l7_flavor_id为空、ip_target_enable不传或为false。
+     * - 计算LB规格变更或开启跨VPC后总占用IP数量：传入参数loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。 -
+     * 计算创建LB所需IP数量：传入参数availability_zone_id，及可选参数l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。 &gt;
+     * 查询出的预占IP数大于等于最终实际占用的IP数。
      *
      * @param CountPreoccupyIpNumRequest 请求对象
      * @return SyncInvoker<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse> */
@@ -845,7 +1040,8 @@ public class ElbClient {
             ElbMeta.countPreoccupyIpNum, hcClient);
     }
 
-    /** 创建IP地址组 创建ip地址组
+    /** 创建IP地址组
+     * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
      *
      * @param CreateIpGroupRequest 请求对象
      * @return CreateIpGroupResponse */
@@ -853,7 +1049,8 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.createIpGroup);
     }
 
-    /** 创建IP地址组 创建ip地址组
+    /** 创建IP地址组
+     * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
      *
      * @param CreateIpGroupRequest 请求对象
      * @return SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> */
@@ -877,7 +1074,7 @@ public class ElbClient {
         return new SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>(request, ElbMeta.deleteIpGroup, hcClient);
     }
 
-    /** 查询IP地址组列表 查询IP地址组列表
+    /** 查询IP地址组列表 查询IP地址组列表。
      *
      * @param ListIpGroupsRequest 请求对象
      * @return ListIpGroupsResponse */
@@ -885,7 +1082,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.listIpGroups);
     }
 
-    /** 查询IP地址组列表 查询IP地址组列表
+    /** 查询IP地址组列表 查询IP地址组列表。
      *
      * @param ListIpGroupsRequest 请求对象
      * @return SyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse> */
@@ -893,7 +1090,7 @@ public class ElbClient {
         return new SyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>(request, ElbMeta.listIpGroups, hcClient);
     }
 
-    /** 查询IP地址组详情 获取ip地址组详情
+    /** 查询IP地址组详情 获取IP地址组详情。
      *
      * @param ShowIpGroupRequest 请求对象
      * @return ShowIpGroupResponse */
@@ -901,7 +1098,7 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.showIpGroup);
     }
 
-    /** 查询IP地址组详情 获取ip地址组详情
+    /** 查询IP地址组详情 获取IP地址组详情。
      *
      * @param ShowIpGroupRequest 请求对象
      * @return SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse> */
@@ -909,7 +1106,8 @@ public class ElbClient {
         return new SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>(request, ElbMeta.showIpGroup, hcClient);
     }
 
-    /** 更新IP地址组 更新ip地址组，只支持全量更新ip。
+    /** 更新IP地址组
+     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return UpdateIpGroupResponse */
@@ -917,12 +1115,29 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.updateIpGroup);
     }
 
-    /** 更新IP地址组 更新ip地址组，只支持全量更新ip。
+    /** 更新IP地址组
+     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> */
     public SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroupInvoker(UpdateIpGroupRequest request) {
         return new SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>(request, ElbMeta.updateIpGroup, hcClient);
+    }
+
+    /** 更新IP地址组的IP列表项 更新IP地址组的IP列表信息。
+     *
+     * @param UpdateIpListRequest 请求对象
+     * @return UpdateIpListResponse */
+    public UpdateIpListResponse updateIpList(UpdateIpListRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.updateIpList);
+    }
+
+    /** 更新IP地址组的IP列表项 更新IP地址组的IP列表信息。
+     *
+     * @param UpdateIpListRequest 请求对象
+     * @return SyncInvoker<UpdateIpListRequest, UpdateIpListResponse> */
+    public SyncInvoker<UpdateIpListRequest, UpdateIpListResponse> updateIpListInvoker(UpdateIpListRequest request) {
+        return new SyncInvoker<UpdateIpListRequest, UpdateIpListResponse>(request, ElbMeta.updateIpList, hcClient);
     }
 
 }

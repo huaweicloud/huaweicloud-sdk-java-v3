@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** lb状态树的主机组状态信息 */
+/** LB状态树的后端服务器组状态信息。 */
 public class LoadBalancerStatusPool {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,7 +46,7 @@ public class LoadBalancerStatusPool {
         return this;
     }
 
-    /** provisioning的状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。说明：该字段为预留字段，暂未启用，默认为ACTIVE。
+    /** 后端服务器组的配置状态。取值： - ACTIVE：使用中。
      * 
      * @return provisioningStatus */
     public String getProvisioningStatus() {
@@ -119,7 +119,7 @@ public class LoadBalancerStatusPool {
         return this;
     }
 
-    /** 后端服务器。
+    /** 后端服务器状态信息。
      * 
      * @return members */
     public List<LoadBalancerStatusMember> getMembers() {
@@ -151,7 +151,9 @@ public class LoadBalancerStatusPool {
         return this;
     }
 
-    /** 操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。说明：该字段为预留字段，暂未启用，默认为ONLINE。
+    /** 后端服务器组的操作状态。取值： - ONLINE：创建时默认状态，表后端服务器组正常。 - DEGRADED：该后端服务器组下存在member为的operating_status=OFFLINE。 -
+     * DISABLED：负载均衡器或后端服务器组的admin_state_up=false。 使用说明： -
+     * DEGRADED和DISABLED仅在当前接口返回，查询后端服务器组详情等其他接口返回的operating_status字段不存在这两个状态值。
      * 
      * @return operatingStatus */
     public String getOperatingStatus() {

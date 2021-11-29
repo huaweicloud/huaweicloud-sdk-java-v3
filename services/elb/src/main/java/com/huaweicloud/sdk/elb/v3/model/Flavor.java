@@ -3,12 +3,10 @@ package com.huaweicloud.sdk.elb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 负载均衡器规格信息 */
+/** 负载均衡器规格信息。 */
 public class Flavor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +40,9 @@ public class Flavor {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "availability_zone_ids")
+    @JsonProperty(value = "flavor_sold_out")
 
-    private List<String> availabilityZoneIds = null;
+    private Boolean flavorSoldOut;
 
     public Flavor withId(String id) {
         this.id = id;
@@ -124,7 +122,7 @@ public class Flavor {
         return this;
     }
 
-    /** 项目ID
+    /** 项目ID。
      * 
      * @return projectId */
     public String getProjectId() {
@@ -140,7 +138,7 @@ public class Flavor {
         return this;
     }
 
-    /** L4和L7 分别表示四层和七层flavor。查询支持按type过滤
+    /** L4和L7 分别表示四层和七层flavor。查询支持按type过滤。
      * 
      * @return type */
     public String getType() {
@@ -151,38 +149,20 @@ public class Flavor {
         this.type = type;
     }
 
-    public Flavor withAvailabilityZoneIds(List<String> availabilityZoneIds) {
-        this.availabilityZoneIds = availabilityZoneIds;
+    public Flavor withFlavorSoldOut(Boolean flavorSoldOut) {
+        this.flavorSoldOut = flavorSoldOut;
         return this;
     }
 
-    public Flavor addAvailabilityZoneIdsItem(String availabilityZoneIdsItem) {
-        if (this.availabilityZoneIds == null) {
-            this.availabilityZoneIds = new ArrayList<>();
-        }
-        this.availabilityZoneIds.add(availabilityZoneIdsItem);
-        return this;
-    }
-
-    public Flavor withAvailabilityZoneIds(Consumer<List<String>> availabilityZoneIdsSetter) {
-        if (this.availabilityZoneIds == null) {
-            this.availabilityZoneIds = new ArrayList<>();
-        }
-        availabilityZoneIdsSetter.accept(this.availabilityZoneIds);
-        return this;
-    }
-
-    /** availability_zone_ids字段，标志ELB对应L7-flavor在对应可用区是否可以售卖。
-     * 若该字段为[]代表该flavor不可售卖；若该字段为[\"ALL\"]，代表所有可用区可售卖；若仅部分可用区可售卖则返回[\"cn-north-1a\",\"cn-north-1b\"]。
-     * 可通过/v3/{project_id}/elb/availability-zones接口查询所有可售卖的可用区接口。
+    /** 是否售罄。
      * 
-     * @return availabilityZoneIds */
-    public List<String> getAvailabilityZoneIds() {
-        return availabilityZoneIds;
+     * @return flavorSoldOut */
+    public Boolean getFlavorSoldOut() {
+        return flavorSoldOut;
     }
 
-    public void setAvailabilityZoneIds(List<String> availabilityZoneIds) {
-        this.availabilityZoneIds = availabilityZoneIds;
+    public void setFlavorSoldOut(Boolean flavorSoldOut) {
+        this.flavorSoldOut = flavorSoldOut;
     }
 
     @Override
@@ -197,12 +177,12 @@ public class Flavor {
         return Objects.equals(this.id, flavor.id) && Objects.equals(this.info, flavor.info)
             && Objects.equals(this.name, flavor.name) && Objects.equals(this.shared, flavor.shared)
             && Objects.equals(this.projectId, flavor.projectId) && Objects.equals(this.type, flavor.type)
-            && Objects.equals(this.availabilityZoneIds, flavor.availabilityZoneIds);
+            && Objects.equals(this.flavorSoldOut, flavor.flavorSoldOut);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, info, name, shared, projectId, type, availabilityZoneIds);
+        return Objects.hash(id, info, name, shared, projectId, type, flavorSoldOut);
     }
 
     @Override
@@ -215,7 +195,7 @@ public class Flavor {
         sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    availabilityZoneIds: ").append(toIndentedString(availabilityZoneIds)).append("\n");
+        sb.append("    flavorSoldOut: ").append(toIndentedString(flavorSoldOut)).append("\n");
         sb.append("}");
         return sb.toString();
     }

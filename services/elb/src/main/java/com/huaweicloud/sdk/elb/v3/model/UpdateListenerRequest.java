@@ -24,7 +24,7 @@ public class UpdateListenerRequest {
         return this;
     }
 
-    /** 监听器ID
+    /** 监听器ID。
      * 
      * @return listenerId */
     public String getListenerId() {

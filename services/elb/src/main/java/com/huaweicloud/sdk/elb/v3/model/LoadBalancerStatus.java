@@ -8,9 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/**
- * 
- */
+/** LoadBalancerStatus */
 public class LoadBalancerStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,7 +62,7 @@ public class LoadBalancerStatus {
         return this;
     }
 
-    /** 负载均衡器的配置状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。说明：该字段为预留字段，暂未启用，默认为ACTIVE。
+    /** 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
      * 
      * @return provisioningStatus */
     public String getProvisioningStatus() {
@@ -144,7 +142,7 @@ public class LoadBalancerStatus {
         return this;
     }
 
-    /** 负载均衡器ID
+    /** 负载均衡器ID。
      * 
      * @return id */
     public String getId() {
@@ -160,7 +158,9 @@ public class LoadBalancerStatus {
         return this;
     }
 
-    /** 负载均衡器的操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。说明：该字段为预留字段，暂未启用，默认为ONLINE。
+    /** 负载均衡器的操作状态。取值： - ONLINE：创建时默认状态，表示负载均衡器正常运行。 - FROZEN：已冻结。 -
+     * DEGRADED：负载均衡器下存在member的operating_status为OFFLINE时返回这个状态。 - DISABLED：负载均衡器的admin_state_up属性值为false。
+     * 说明：DEGRADED和DISABLED状态仅在当前接口中返回，LB详情等其他接口不返回这两个状态值。
      * 
      * @return operatingStatus */
     public String getOperatingStatus() {

@@ -43,6 +43,11 @@ public class ListApiGroupsV2Request {
 
     private String preciseSearch;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_name")
+
+    private String domainName;
+
     public ListApiGroupsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -144,7 +149,8 @@ public class ListApiGroupsV2Request {
         return this;
     }
 
-    /** 指定需要精确匹配查找的参数名称，目前仅支持API分组名称
+    /** 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。
+     * [当前支持name，domain_name。](tag:hws;hws_hk;hcs;fcs;g42;)[目前仅支持API分组名称](tag:Site)
      * 
      * @return preciseSearch */
     public String getPreciseSearch() {
@@ -153,6 +159,22 @@ public class ListApiGroupsV2Request {
 
     public void setPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
+    }
+
+    public ListApiGroupsV2Request withDomainName(String domainName) {
+        this.domainName = domainName;
+        return this;
+    }
+
+    /** 域名
+     * 
+     * @return domainName */
+    public String getDomainName() {
+        return domainName;
+    }
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
     }
 
     @Override
@@ -170,12 +192,13 @@ public class ListApiGroupsV2Request {
             && Objects.equals(this.id, listApiGroupsV2Request.id)
             && Objects.equals(this.name, listApiGroupsV2Request.name)
             && Objects.equals(this.romaAppId, listApiGroupsV2Request.romaAppId)
-            && Objects.equals(this.preciseSearch, listApiGroupsV2Request.preciseSearch);
+            && Objects.equals(this.preciseSearch, listApiGroupsV2Request.preciseSearch)
+            && Objects.equals(this.domainName, listApiGroupsV2Request.domainName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, id, name, romaAppId, preciseSearch);
+        return Objects.hash(instanceId, offset, limit, id, name, romaAppId, preciseSearch, domainName);
     }
 
     @Override
@@ -189,6 +212,7 @@ public class ListApiGroupsV2Request {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
+        sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

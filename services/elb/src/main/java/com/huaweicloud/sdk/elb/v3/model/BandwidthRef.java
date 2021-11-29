@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 带宽信息id引用对象 */
+/** 带宽对象ID，仅在创建或更新公网IPv6负载均衡器时有效。若选择创建新EIP并指定共享带宽时，此EIP会被分进共享带宽里面。 [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test) */
 public class BandwidthRef {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

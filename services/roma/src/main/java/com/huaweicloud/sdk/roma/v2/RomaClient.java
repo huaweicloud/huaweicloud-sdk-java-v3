@@ -2674,6 +2674,24 @@ public class RomaClient {
             request, RomaMeta.showDetailsOfEnvironmentVariableV2, hcClient);
     }
 
+    /** 查看ROMA Connect实例详情 查看ROMA Connect实例详情
+     *
+     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @return ShowDetailsOfInstanceV2Response */
+    public ShowDetailsOfInstanceV2Response showDetailsOfInstanceV2(ShowDetailsOfInstanceV2Request request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showDetailsOfInstanceV2);
+    }
+
+    /** 查看ROMA Connect实例详情 查看ROMA Connect实例详情
+     *
+     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @return SyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> */
+    public SyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2Invoker(
+        ShowDetailsOfInstanceV2Request request) {
+        return new SyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>(request,
+            RomaMeta.showDetailsOfInstanceV2, hcClient);
+    }
+
     /** 查看流控策略详情 查看指定流控策略的详细信息。
      *
      * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
@@ -3569,7 +3587,7 @@ public class RomaClient {
     }
 
     /** 创建ACL策略
-     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。
+     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws;hws_hk;hcs;fcs;g42;)
      *
      * @param CreateAclStrategyV2Request 请求对象
      * @return CreateAclStrategyV2Response */
@@ -3578,7 +3596,7 @@ public class RomaClient {
     }
 
     /** 创建ACL策略
-     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。
+     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws;hws_hk;hcs;fcs;g42;)
      *
      * @param CreateAclStrategyV2Request 请求对象
      * @return SyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response> */
@@ -3792,7 +3810,7 @@ public class RomaClient {
 
     /** 创建API 添加一个API，API即一个服务接口，具体的服务能力。
      * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了ROMA
-     * Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、函数工作流、MOCK。
+     * Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws;hws_hk;hcs;fcs;g42;)MOCK。
      *
      * @param CreateApiV2Request 请求对象
      * @return CreateApiV2Response */
@@ -3802,7 +3820,7 @@ public class RomaClient {
 
     /** 创建API 添加一个API，API即一个服务接口，具体的服务能力。
      * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了ROMA
-     * Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、函数工作流、MOCK。
+     * Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws;hws_hk;hcs;fcs;g42;)MOCK。
      *
      * @param CreateApiV2Request 请求对象
      * @return SyncInvoker<CreateApiV2Request, CreateApiV2Response> */
@@ -4782,7 +4800,7 @@ public class RomaClient {
             RomaMeta.importLiveDataApiDefinitionsV2, hcClient);
     }
 
-    /** 添加后端实例 为指定的VPC通道添加弹性云服务器
+    /** 添加或更新后端实例 为指定的VPC通道添加后端实例 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      *
      * @param AddingBackendInstancesV2Request 请求对象
      * @return AddingBackendInstancesV2Response */
@@ -4790,7 +4808,7 @@ public class RomaClient {
         return hcClient.syncInvokeHttp(request, RomaMeta.addingBackendInstancesV2);
     }
 
-    /** 添加后端实例 为指定的VPC通道添加弹性云服务器
+    /** 添加或更新后端实例 为指定的VPC通道添加后端实例 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      *
      * @param AddingBackendInstancesV2Request 请求对象
      * @return SyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> */
@@ -4800,8 +4818,101 @@ public class RomaClient {
             RomaMeta.addingBackendInstancesV2, hcClient);
     }
 
+    /** 批量修改后端服务器状态不可用 批量修改后端服务器状态不可用。
+     *
+     * @param BatchDisableMembersRequest 请求对象
+     * @return BatchDisableMembersResponse */
+    public BatchDisableMembersResponse batchDisableMembers(BatchDisableMembersRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.batchDisableMembers);
+    }
+
+    /** 批量修改后端服务器状态不可用 批量修改后端服务器状态不可用。
+     *
+     * @param BatchDisableMembersRequest 请求对象
+     * @return SyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse> */
+    public SyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse> batchDisableMembersInvoker(
+        BatchDisableMembersRequest request) {
+        return new SyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>(request,
+            RomaMeta.batchDisableMembers, hcClient);
+    }
+
+    /** 批量修改后端服务器状态可用 批量修改后端服务器状态可用。
+     *
+     * @param BatchEnableMembersRequest 请求对象
+     * @return BatchEnableMembersResponse */
+    public BatchEnableMembersResponse batchEnableMembers(BatchEnableMembersRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.batchEnableMembers);
+    }
+
+    /** 批量修改后端服务器状态可用 批量修改后端服务器状态可用。
+     *
+     * @param BatchEnableMembersRequest 请求对象
+     * @return SyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse> */
+    public SyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse> batchEnableMembersInvoker(
+        BatchEnableMembersRequest request) {
+        return new SyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>(request,
+            RomaMeta.batchEnableMembers, hcClient);
+    }
+
+    /** 添加或更新VPC通道后端服务器组 在ROMA Connect APIC中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
+     * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
+     *
+     * @param CreateMemberGroupRequest 请求对象
+     * @return CreateMemberGroupResponse */
+    public CreateMemberGroupResponse createMemberGroup(CreateMemberGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createMemberGroup);
+    }
+
+    /** 添加或更新VPC通道后端服务器组 在ROMA Connect APIC中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
+     * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
+     *
+     * @param CreateMemberGroupRequest 请求对象
+     * @return SyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse> */
+    public SyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse> createMemberGroupInvoker(
+        CreateMemberGroupRequest request) {
+        return new SyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>(request, RomaMeta.createMemberGroup,
+            hcClient);
+    }
+
+    /** 项目下创建VPC通道 创建相同的VPC通道关联到多个实例。同一个项目下VPC通道名称不可重复。注意：实例特性vpc_name_modifiable配置为off时才可使用。
+     *
+     * @param CreateProjectVpcChannelRequest 请求对象
+     * @return CreateProjectVpcChannelResponse */
+    public CreateProjectVpcChannelResponse createProjectVpcChannel(CreateProjectVpcChannelRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createProjectVpcChannel);
+    }
+
+    /** 项目下创建VPC通道 创建相同的VPC通道关联到多个实例。同一个项目下VPC通道名称不可重复。注意：实例特性vpc_name_modifiable配置为off时才可使用。
+     *
+     * @param CreateProjectVpcChannelRequest 请求对象
+     * @return SyncInvoker<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> */
+    public SyncInvoker<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> createProjectVpcChannelInvoker(
+        CreateProjectVpcChannelRequest request) {
+        return new SyncInvoker<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse>(request,
+            RomaMeta.createProjectVpcChannel, hcClient);
+    }
+
+    /** 项目下同步VPC通道 同步VPC通道到多个实例。注意：实例特性vpc_name_modifiable配置为off时才可使用。
+     *
+     * @param CreateProjectVpcChannelSyncsRequest 请求对象
+     * @return CreateProjectVpcChannelSyncsResponse */
+    public CreateProjectVpcChannelSyncsResponse createProjectVpcChannelSyncs(
+        CreateProjectVpcChannelSyncsRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createProjectVpcChannelSyncs);
+    }
+
+    /** 项目下同步VPC通道 同步VPC通道到多个实例。注意：实例特性vpc_name_modifiable配置为off时才可使用。
+     *
+     * @param CreateProjectVpcChannelSyncsRequest 请求对象
+     * @return SyncInvoker<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> */
+    public SyncInvoker<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> createProjectVpcChannelSyncsInvoker(
+        CreateProjectVpcChannelSyncsRequest request) {
+        return new SyncInvoker<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse>(request,
+            RomaMeta.createProjectVpcChannelSyncs, hcClient);
+    }
+
     /** 创建VPC通道 在ROMA Connect APIC中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便ROMA Connect APIC直接访问私有VPC资源。 &gt;
-     * 每个用户最多创建30个VPC通道。
+     * 每个用户默认最多创建200个VPC通道，如需支持更多请联系技术支持调整配额。
      *
      * @param CreateVpcChannelV2Request 请求对象
      * @return CreateVpcChannelV2Response */
@@ -4810,7 +4921,7 @@ public class RomaClient {
     }
 
     /** 创建VPC通道 在ROMA Connect APIC中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便ROMA Connect APIC直接访问私有VPC资源。 &gt;
-     * 每个用户最多创建30个VPC通道。
+     * 每个用户默认最多创建200个VPC通道，如需支持更多请联系技术支持调整配额。
      *
      * @param CreateVpcChannelV2Request 请求对象
      * @return SyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response> */
@@ -4820,7 +4931,7 @@ public class RomaClient {
             RomaMeta.createVpcChannelV2, hcClient);
     }
 
-    /** 删除后端实例 删除指定VPC通道中的弹性云服务器
+    /** 删除后端实例 删除指定VPC通道中的后端实例
      *
      * @param DeleteBackendInstanceV2Request 请求对象
      * @return DeleteBackendInstanceV2Response */
@@ -4828,7 +4939,7 @@ public class RomaClient {
         return hcClient.syncInvokeHttp(request, RomaMeta.deleteBackendInstanceV2);
     }
 
-    /** 删除后端实例 删除指定VPC通道中的弹性云服务器
+    /** 删除后端实例 删除指定VPC通道中的后端实例
      *
      * @param DeleteBackendInstanceV2Request 请求对象
      * @return SyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> */
@@ -4836,6 +4947,24 @@ public class RomaClient {
         DeleteBackendInstanceV2Request request) {
         return new SyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>(request,
             RomaMeta.deleteBackendInstanceV2, hcClient);
+    }
+
+    /** 删除VPC通道后端服务器组 删除指定的VPC通道后端服务器组
+     *
+     * @param DeleteMemberGroupRequest 请求对象
+     * @return DeleteMemberGroupResponse */
+    public DeleteMemberGroupResponse deleteMemberGroup(DeleteMemberGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.deleteMemberGroup);
+    }
+
+    /** 删除VPC通道后端服务器组 删除指定的VPC通道后端服务器组
+     *
+     * @param DeleteMemberGroupRequest 请求对象
+     * @return SyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse> */
+    public SyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse> deleteMemberGroupInvoker(
+        DeleteMemberGroupRequest request) {
+        return new SyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>(request, RomaMeta.deleteMemberGroup,
+            hcClient);
     }
 
     /** 删除VPC通道 删除指定的VPC通道
@@ -4856,7 +4985,7 @@ public class RomaClient {
             RomaMeta.deleteVpcChannelV2, hcClient);
     }
 
-    /** 查看后端实例列表 查看指定VPC通道的弹性云服务器列表。
+    /** 查看后端实例列表 查看指定VPC通道的后端实例列表。
      *
      * @param ListBackendInstancesV2Request 请求对象
      * @return ListBackendInstancesV2Response */
@@ -4864,7 +4993,7 @@ public class RomaClient {
         return hcClient.syncInvokeHttp(request, RomaMeta.listBackendInstancesV2);
     }
 
-    /** 查看后端实例列表 查看指定VPC通道的弹性云服务器列表。
+    /** 查看后端实例列表 查看指定VPC通道的后端实例列表。
      *
      * @param ListBackendInstancesV2Request 请求对象
      * @return SyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response> */
@@ -4872,6 +5001,42 @@ public class RomaClient {
         ListBackendInstancesV2Request request) {
         return new SyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>(request,
             RomaMeta.listBackendInstancesV2, hcClient);
+    }
+
+    /** 查询VPC通道后端云服务组列表 查询VPC通道后端云服务组列表
+     *
+     * @param ListMemberGroupsRequest 请求对象
+     * @return ListMemberGroupsResponse */
+    public ListMemberGroupsResponse listMemberGroups(ListMemberGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listMemberGroups);
+    }
+
+    /** 查询VPC通道后端云服务组列表 查询VPC通道后端云服务组列表
+     *
+     * @param ListMemberGroupsRequest 请求对象
+     * @return SyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse> */
+    public SyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse> listMemberGroupsInvoker(
+        ListMemberGroupsRequest request) {
+        return new SyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>(request, RomaMeta.listMemberGroups,
+            hcClient);
+    }
+
+    /** 查询项目下所有实例的VPC通道列表 查询项目下所有实例的VPC通道列表
+     *
+     * @param ListProjectVpcChannelsV2Request 请求对象
+     * @return ListProjectVpcChannelsV2Response */
+    public ListProjectVpcChannelsV2Response listProjectVpcChannelsV2(ListProjectVpcChannelsV2Request request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listProjectVpcChannelsV2);
+    }
+
+    /** 查询项目下所有实例的VPC通道列表 查询项目下所有实例的VPC通道列表
+     *
+     * @param ListProjectVpcChannelsV2Request 请求对象
+     * @return SyncInvoker<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> */
+    public SyncInvoker<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> listProjectVpcChannelsV2Invoker(
+        ListProjectVpcChannelsV2Request request) {
+        return new SyncInvoker<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response>(request,
+            RomaMeta.listProjectVpcChannelsV2, hcClient);
     }
 
     /** 查询VPC通道列表 查看VPC通道列表
@@ -4892,6 +5057,24 @@ public class RomaClient {
             hcClient);
     }
 
+    /** 查看VPC通道后端服务器组详情 查看指定的VPC通道后端服务器组详情
+     *
+     * @param ShowDetailsOfMemberGroupRequest 请求对象
+     * @return ShowDetailsOfMemberGroupResponse */
+    public ShowDetailsOfMemberGroupResponse showDetailsOfMemberGroup(ShowDetailsOfMemberGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showDetailsOfMemberGroup);
+    }
+
+    /** 查看VPC通道后端服务器组详情 查看指定的VPC通道后端服务器组详情
+     *
+     * @param ShowDetailsOfMemberGroupRequest 请求对象
+     * @return SyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> */
+    public SyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroupInvoker(
+        ShowDetailsOfMemberGroupRequest request) {
+        return new SyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>(request,
+            RomaMeta.showDetailsOfMemberGroup, hcClient);
+    }
+
     /** 查看VPC通道详情 查看指定的VPC通道详情
      *
      * @param ShowDetailsOfVpcChannelV2Request 请求对象
@@ -4910,7 +5093,80 @@ public class RomaClient {
             RomaMeta.showDetailsOfVpcChannelV2, hcClient);
     }
 
-    /** 更新VPC通道 更新指定VPC通道的参数
+    /** 更新后端实例 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
+     *
+     * @param UpdateBackendInstancesV2Request 请求对象
+     * @return UpdateBackendInstancesV2Response */
+    public UpdateBackendInstancesV2Response updateBackendInstancesV2(UpdateBackendInstancesV2Request request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateBackendInstancesV2);
+    }
+
+    /** 更新后端实例 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
+     *
+     * @param UpdateBackendInstancesV2Request 请求对象
+     * @return SyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> */
+    public SyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> updateBackendInstancesV2Invoker(
+        UpdateBackendInstancesV2Request request) {
+        return new SyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>(request,
+            RomaMeta.updateBackendInstancesV2, hcClient);
+    }
+
+    /** 修改VPC通道健康检查 修改VPC通道健康检查。
+     *
+     * @param UpdateHealthCheckRequest 请求对象
+     * @return UpdateHealthCheckResponse */
+    public UpdateHealthCheckResponse updateHealthCheck(UpdateHealthCheckRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateHealthCheck);
+    }
+
+    /** 修改VPC通道健康检查 修改VPC通道健康检查。
+     *
+     * @param UpdateHealthCheckRequest 请求对象
+     * @return SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse> */
+    public SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheckInvoker(
+        UpdateHealthCheckRequest request) {
+        return new SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>(request, RomaMeta.updateHealthCheck,
+            hcClient);
+    }
+
+    /** 更新VPC通道后端服务器组 更新指定VPC通道后端服务器组
+     *
+     * @param UpdateMemberGroupRequest 请求对象
+     * @return UpdateMemberGroupResponse */
+    public UpdateMemberGroupResponse updateMemberGroup(UpdateMemberGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateMemberGroup);
+    }
+
+    /** 更新VPC通道后端服务器组 更新指定VPC通道后端服务器组
+     *
+     * @param UpdateMemberGroupRequest 请求对象
+     * @return SyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse> */
+    public SyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse> updateMemberGroupInvoker(
+        UpdateMemberGroupRequest request) {
+        return new SyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>(request, RomaMeta.updateMemberGroup,
+            hcClient);
+    }
+
+    /** 项目下批量修改VPC通道 项目下根据VPC通道名称批量修改多个多个实例下的VPC通道。若实例下不存在该VPC通道则创建。注意：实例特性vpc_name_modifiable配置为off时才可使用。
+     *
+     * @param UpdateProjectVpcChannelRequest 请求对象
+     * @return UpdateProjectVpcChannelResponse */
+    public UpdateProjectVpcChannelResponse updateProjectVpcChannel(UpdateProjectVpcChannelRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateProjectVpcChannel);
+    }
+
+    /** 项目下批量修改VPC通道 项目下根据VPC通道名称批量修改多个多个实例下的VPC通道。若实例下不存在该VPC通道则创建。注意：实例特性vpc_name_modifiable配置为off时才可使用。
+     *
+     * @param UpdateProjectVpcChannelRequest 请求对象
+     * @return SyncInvoker<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> */
+    public SyncInvoker<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> updateProjectVpcChannelInvoker(
+        UpdateProjectVpcChannelRequest request) {
+        return new SyncInvoker<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse>(request,
+            RomaMeta.updateProjectVpcChannel, hcClient);
+    }
+
+    /** 更新VPC通道 更新指定VPC通道的参数 使用传入的后端实例列表对VPC通道进行全量覆盖，若后端实例列表为空，则会全量删除已有的后端实例；
+     * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
      *
      * @param UpdateVpcChannelV2Request 请求对象
      * @return UpdateVpcChannelV2Response */
@@ -4918,7 +5174,8 @@ public class RomaClient {
         return hcClient.syncInvokeHttp(request, RomaMeta.updateVpcChannelV2);
     }
 
-    /** 更新VPC通道 更新指定VPC通道的参数
+    /** 更新VPC通道 更新指定VPC通道的参数 使用传入的后端实例列表对VPC通道进行全量覆盖，若后端实例列表为空，则会全量删除已有的后端实例；
+     * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
      *
      * @param UpdateVpcChannelV2Request 请求对象
      * @return SyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> */

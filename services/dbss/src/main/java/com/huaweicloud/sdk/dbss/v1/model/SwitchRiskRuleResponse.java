@@ -21,13 +21,13 @@ public class SwitchRiskRuleResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
+    @JsonProperty(value="result")
     
     
-    private String status;
+    private String result;
 
-    public SwitchRiskRuleResponse withStatus(String status) {
-        this.status = status;
+    public SwitchRiskRuleResponse withResult(String result) {
+        this.result = result;
         return this;
     }
 
@@ -36,14 +36,14 @@ public class SwitchRiskRuleResponse extends SdkResponse {
 
     /**
      * 响应状态
-     * @return status
+     * @return result
      */
-    public String getStatus() {
-        return status;
+    public String getResult() {
+        return result;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setResult(String result) {
+        this.result = result;
     }
 
     
@@ -57,17 +57,17 @@ public class SwitchRiskRuleResponse extends SdkResponse {
             return false;
         }
         SwitchRiskRuleResponse switchRiskRuleResponse = (SwitchRiskRuleResponse) o;
-        return Objects.equals(this.status, switchRiskRuleResponse.status);
+        return Objects.equals(this.result, switchRiskRuleResponse.result);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(status);
+        return Objects.hash(result);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SwitchRiskRuleResponse {\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();
     }

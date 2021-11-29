@@ -26,22 +26,22 @@ public class DiskIntargetServer {
     /** 磁盘的作用 */
     public static final class DeviceUseEnum {
 
-        /** Enum BOOT_ for value: "BOOT：启动盘" */
-        public static final DeviceUseEnum BOOT_ = new DeviceUseEnum("BOOT：启动盘");
+        /** Enum BOOT for value: "BOOT" */
+        public static final DeviceUseEnum BOOT = new DeviceUseEnum("BOOT");
 
-        /** Enum OS_ for value: "OS：系统盘" */
-        public static final DeviceUseEnum OS_ = new DeviceUseEnum("OS：系统盘");
+        /** Enum OS for value: "OS" */
+        public static final DeviceUseEnum OS = new DeviceUseEnum("OS");
 
-        /** Enum NORMAL_ for value: "NORMAL：普通数据盘" */
-        public static final DeviceUseEnum NORMAL_ = new DeviceUseEnum("NORMAL：普通数据盘");
+        /** Enum NORMAL for value: "NORMAL" */
+        public static final DeviceUseEnum NORMAL = new DeviceUseEnum("NORMAL");
 
         private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DeviceUseEnum> createStaticFields() {
             Map<String, DeviceUseEnum> map = new HashMap<>();
-            map.put("BOOT：启动盘", BOOT_);
-            map.put("OS：系统盘", OS_);
-            map.put("NORMAL：普通数据盘", NORMAL_);
+            map.put("BOOT", BOOT);
+            map.put("OS", OS);
+            map.put("NORMAL", NORMAL);
             return Collections.unmodifiableMap(map);
         }
 

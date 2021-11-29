@@ -56,18 +56,18 @@ public class MigProject {
     /** 迁移项目类型 */
     public static final class TypeEnum {
 
-        /** Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块迁移" */
-        public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块迁移");
+        /** Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK" */
+        public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
 
-        /** Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移" */
-        public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级迁移");
+        /** Enum MIGRATE_FILE for value: "MIGRATE_FILE" */
+        public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("MIGRATE_BLOCK：块迁移", MIGRATE_BLOCK_);
-            map.put("MIGRATE_FILE：文件级迁移", MIGRATE_FILE_);
+            map.put("MIGRATE_BLOCK", MIGRATE_BLOCK);
+            map.put("MIGRATE_FILE", MIGRATE_FILE);
             return Collections.unmodifiableMap(map);
         }
 

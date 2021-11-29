@@ -134,6 +134,11 @@ public class ListKeysRequestBody {
     private KeySpecEnum keySpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
 
     private String sequence;
@@ -203,6 +208,24 @@ public class ListKeysRequestBody {
         this.keySpec = keySpec;
     }
 
+    public ListKeysRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。
+     * 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件. - 取值为“all” - 取值为“0” -
+     * 满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ListKeysRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -232,12 +255,13 @@ public class ListKeysRequestBody {
             && Objects.equals(this.marker, listKeysRequestBody.marker)
             && Objects.equals(this.keyState, listKeysRequestBody.keyState)
             && Objects.equals(this.keySpec, listKeysRequestBody.keySpec)
+            && Objects.equals(this.enterpriseProjectId, listKeysRequestBody.enterpriseProjectId)
             && Objects.equals(this.sequence, listKeysRequestBody.sequence);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, keyState, keySpec, sequence);
+        return Objects.hash(limit, marker, keyState, keySpec, enterpriseProjectId, sequence);
     }
 
     @Override
@@ -248,6 +272,7 @@ public class ListKeysRequestBody {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    keyState: ").append(toIndentedString(keyState)).append("\n");
         sb.append("    keySpec: ").append(toIndentedString(keySpec)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
         sb.append("}");
         return sb.toString();

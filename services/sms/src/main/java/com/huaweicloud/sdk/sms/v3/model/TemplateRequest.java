@@ -49,22 +49,22 @@ public class TemplateRequest {
     /** 磁盘类型 */
     public static final class VolumetypeEnum {
 
-        /** Enum SAS_I_O for value: "SAS：高I/O" */
-        public static final VolumetypeEnum SAS_I_O = new VolumetypeEnum("SAS：高I/O");
+        /** Enum SAS for value: "SAS" */
+        public static final VolumetypeEnum SAS = new VolumetypeEnum("SAS");
 
-        /** Enum SSD_I_O for value: "SSD：超高I/O" */
-        public static final VolumetypeEnum SSD_I_O = new VolumetypeEnum("SSD：超高I/O");
+        /** Enum SSD for value: "SSD" */
+        public static final VolumetypeEnum SSD = new VolumetypeEnum("SSD");
 
-        /** Enum SATA_I_O for value: "SATA：普通I/O" */
-        public static final VolumetypeEnum SATA_I_O = new VolumetypeEnum("SATA：普通I/O");
+        /** Enum SATA for value: "SATA" */
+        public static final VolumetypeEnum SATA = new VolumetypeEnum("SATA");
 
         private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumetypeEnum> createStaticFields() {
             Map<String, VolumetypeEnum> map = new HashMap<>();
-            map.put("SAS：高I/O", SAS_I_O);
-            map.put("SSD：超高I/O", SSD_I_O);
-            map.put("SATA：普通I/O", SATA_I_O);
+            map.put("SAS", SAS);
+            map.put("SSD", SSD);
+            map.put("SATA", SATA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -159,22 +159,22 @@ public class TemplateRequest {
     /** 数据盘磁盘类型 */
     public static final class DataVolumeTypeEnum {
 
-        /** Enum SAS_I_O for value: "SAS：高I/O" */
-        public static final DataVolumeTypeEnum SAS_I_O = new DataVolumeTypeEnum("SAS：高I/O");
+        /** Enum SAS for value: "SAS" */
+        public static final DataVolumeTypeEnum SAS = new DataVolumeTypeEnum("SAS");
 
-        /** Enum SSD_I_O for value: "SSD：超高I/O" */
-        public static final DataVolumeTypeEnum SSD_I_O = new DataVolumeTypeEnum("SSD：超高I/O");
+        /** Enum SSD for value: "SSD" */
+        public static final DataVolumeTypeEnum SSD = new DataVolumeTypeEnum("SSD");
 
-        /** Enum SATA_I_O for value: "SATA：普通I/O" */
-        public static final DataVolumeTypeEnum SATA_I_O = new DataVolumeTypeEnum("SATA：普通I/O");
+        /** Enum SATA for value: "SATA" */
+        public static final DataVolumeTypeEnum SATA = new DataVolumeTypeEnum("SATA");
 
         private static final Map<String, DataVolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DataVolumeTypeEnum> createStaticFields() {
             Map<String, DataVolumeTypeEnum> map = new HashMap<>();
-            map.put("SAS：高I/O", SAS_I_O);
-            map.put("SSD：超高I/O", SSD_I_O);
-            map.put("SATA：普通I/O", SATA_I_O);
+            map.put("SAS", SAS);
+            map.put("SSD", SSD);
+            map.put("SATA", SATA);
             return Collections.unmodifiableMap(map);
         }
 

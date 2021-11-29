@@ -27,7 +27,7 @@ public class AssociateCertificateV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DomainCertReq body;
+    private CertForm body;
 
     public AssociateCertificateV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -77,14 +77,14 @@ public class AssociateCertificateV2Request {
         this.domainId = domainId;
     }
 
-    public AssociateCertificateV2Request withBody(DomainCertReq body) {
+    public AssociateCertificateV2Request withBody(CertForm body) {
         this.body = body;
         return this;
     }
 
-    public AssociateCertificateV2Request withBody(Consumer<DomainCertReq> bodySetter) {
+    public AssociateCertificateV2Request withBody(Consumer<CertForm> bodySetter) {
         if (this.body == null) {
-            this.body = new DomainCertReq();
+            this.body = new CertForm();
             bodySetter.accept(this.body);
         }
 
@@ -94,11 +94,11 @@ public class AssociateCertificateV2Request {
     /** Get body
      * 
      * @return body */
-    public DomainCertReq getBody() {
+    public CertForm getBody() {
         return body;
     }
 
-    public void setBody(DomainCertReq body) {
+    public void setBody(CertForm body) {
         this.body = body;
     }
 

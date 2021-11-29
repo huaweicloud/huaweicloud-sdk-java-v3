@@ -18,9 +18,9 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private List<String> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_opentsdb")
+    @JsonProperty(value = "enable_openTSDB")
 
-    private Boolean enableOpentsdb;
+    private Boolean enableOpenTSDB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_lemon")
@@ -169,20 +169,20 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.actions = actions;
     }
 
-    public ShowClusterDetailResponse withEnableOpentsdb(Boolean enableOpentsdb) {
-        this.enableOpentsdb = enableOpentsdb;
+    public ShowClusterDetailResponse withEnableOpenTSDB(Boolean enableOpenTSDB) {
+        this.enableOpenTSDB = enableOpenTSDB;
         return this;
     }
 
     /** 是否打开openTSDB特性。 - false：不开启 - true：开启
      * 
-     * @return enableOpentsdb */
-    public Boolean getEnableOpentsdb() {
-        return enableOpentsdb;
+     * @return enableOpenTSDB */
+    public Boolean getEnableOpenTSDB() {
+        return enableOpenTSDB;
     }
 
-    public void setEnableOpentsdb(Boolean enableOpentsdb) {
-        this.enableOpentsdb = enableOpentsdb;
+    public void setEnableOpenTSDB(Boolean enableOpenTSDB) {
+        this.enableOpenTSDB = enableOpenTSDB;
     }
 
     public ShowClusterDetailResponse withEnableLemon(Boolean enableLemon) {
@@ -563,7 +563,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         }
         ShowClusterDetailResponse showClusterDetailResponse = (ShowClusterDetailResponse) o;
         return Objects.equals(this.actions, showClusterDetailResponse.actions)
-            && Objects.equals(this.enableOpentsdb, showClusterDetailResponse.enableOpentsdb)
+            && Objects.equals(this.enableOpenTSDB, showClusterDetailResponse.enableOpenTSDB)
             && Objects.equals(this.enableLemon, showClusterDetailResponse.enableLemon)
             && Objects.equals(this.clusterName, showClusterDetailResponse.clusterName)
             && Objects.equals(this.cuNum, showClusterDetailResponse.cuNum)
@@ -592,7 +592,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(actions,
-            enableOpentsdb,
+            enableOpenTSDB,
             enableLemon,
             clusterName,
             cuNum,
@@ -623,7 +623,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowClusterDetailResponse {\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
-        sb.append("    enableOpentsdb: ").append(toIndentedString(enableOpentsdb)).append("\n");
+        sb.append("    enableOpenTSDB: ").append(toIndentedString(enableOpenTSDB)).append("\n");
         sb.append("    enableLemon: ").append(toIndentedString(enableLemon)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    cuNum: ").append(toIndentedString(cuNum)).append("\n");

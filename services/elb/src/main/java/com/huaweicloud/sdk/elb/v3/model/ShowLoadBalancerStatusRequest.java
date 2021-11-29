@@ -18,7 +18,7 @@ public class ShowLoadBalancerStatusRequest {
         return this;
     }
 
-    /** 所属负载均衡器id
+    /** 负载均衡器ID。
      * 
      * @return loadbalancerId */
     public String getLoadbalancerId() {

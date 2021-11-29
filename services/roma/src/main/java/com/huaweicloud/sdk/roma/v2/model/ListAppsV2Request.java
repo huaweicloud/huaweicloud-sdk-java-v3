@@ -165,7 +165,7 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** 指定需要精确匹配查找的参数名称，目前仅支持name
+    /** 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。 目前仅支持name。
      * 
      * @return preciseSearch */
     public String getPreciseSearch() {

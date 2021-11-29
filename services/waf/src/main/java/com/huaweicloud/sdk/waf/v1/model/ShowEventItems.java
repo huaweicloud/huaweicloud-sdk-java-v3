@@ -61,7 +61,7 @@ public class ShowEventItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
-    private Object hostId;
+    private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -263,7 +263,7 @@ public class ShowEventItems {
         this.headers = headers;
     }
 
-    public ShowEventItems withHostId(Object hostId) {
+    public ShowEventItems withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
@@ -271,11 +271,11 @@ public class ShowEventItems {
     /** 被攻击的域名id
      * 
      * @return hostId */
-    public Object getHostId() {
+    public String getHostId() {
         return hostId;
     }
 
-    public void setHostId(Object hostId) {
+    public void setHostId(String hostId) {
         this.hostId = hostId;
     }
 

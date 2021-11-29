@@ -27,7 +27,7 @@ public class AclBindApiInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_type")
 
-    private String apiType;
+    private Integer apiType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_remark")
@@ -107,7 +107,7 @@ public class AclBindApiInfo {
         this.groupName = groupName;
     }
 
-    public AclBindApiInfo withApiType(String apiType) {
+    public AclBindApiInfo withApiType(Integer apiType) {
         this.apiType = apiType;
         return this;
     }
@@ -115,11 +115,11 @@ public class AclBindApiInfo {
     /** API类型
      * 
      * @return apiType */
-    public String getApiType() {
+    public Integer getApiType() {
         return apiType;
     }
 
-    public void setApiType(String apiType) {
+    public void setApiType(Integer apiType) {
         this.apiType = apiType;
     }
 

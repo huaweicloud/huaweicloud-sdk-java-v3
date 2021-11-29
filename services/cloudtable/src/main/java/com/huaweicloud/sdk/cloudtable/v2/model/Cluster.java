@@ -20,9 +20,9 @@ public class Cluster {
     private Boolean enableLemon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_opentsdb")
+    @JsonProperty(value = "enable_openTSDB")
 
-    private Boolean enableOpentsdb;
+    private Boolean enableOpenTSDB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance")
@@ -86,20 +86,20 @@ public class Cluster {
         this.enableLemon = enableLemon;
     }
 
-    public Cluster withEnableOpentsdb(Boolean enableOpentsdb) {
-        this.enableOpentsdb = enableOpentsdb;
+    public Cluster withEnableOpenTSDB(Boolean enableOpenTSDB) {
+        this.enableOpenTSDB = enableOpenTSDB;
         return this;
     }
 
     /** 是否开启OpenTSDB。 - false：不开启 - true：开启
      * 
-     * @return enableOpentsdb */
-    public Boolean getEnableOpentsdb() {
-        return enableOpentsdb;
+     * @return enableOpenTSDB */
+    public Boolean getEnableOpenTSDB() {
+        return enableOpenTSDB;
     }
 
-    public void setEnableOpentsdb(Boolean enableOpentsdb) {
-        this.enableOpentsdb = enableOpentsdb;
+    public void setEnableOpenTSDB(Boolean enableOpenTSDB) {
+        this.enableOpenTSDB = enableOpenTSDB;
     }
 
     public Cluster withInstance(Instance instance) {
@@ -226,7 +226,7 @@ public class Cluster {
         }
         Cluster cluster = (Cluster) o;
         return Objects.equals(this.authMode, cluster.authMode) && Objects.equals(this.enableLemon, cluster.enableLemon)
-            && Objects.equals(this.enableOpentsdb, cluster.enableOpentsdb)
+            && Objects.equals(this.enableOpenTSDB, cluster.enableOpenTSDB)
             && Objects.equals(this.instance, cluster.instance) && Objects.equals(this.name, cluster.name)
             && Objects.equals(this.storageSize, cluster.storageSize)
             && Objects.equals(this.storageType, cluster.storageType) && Objects.equals(this.vpcId, cluster.vpcId)
@@ -236,7 +236,7 @@ public class Cluster {
     @Override
     public int hashCode() {
         return Objects
-            .hash(authMode, enableLemon, enableOpentsdb, instance, name, storageSize, storageType, vpcId, datastore);
+            .hash(authMode, enableLemon, enableOpenTSDB, instance, name, storageSize, storageType, vpcId, datastore);
     }
 
     @Override
@@ -245,7 +245,7 @@ public class Cluster {
         sb.append("class Cluster {\n");
         sb.append("    authMode: ").append(toIndentedString(authMode)).append("\n");
         sb.append("    enableLemon: ").append(toIndentedString(enableLemon)).append("\n");
-        sb.append("    enableOpentsdb: ").append(toIndentedString(enableOpentsdb)).append("\n");
+        sb.append("    enableOpenTSDB: ").append(toIndentedString(enableOpenTSDB)).append("\n");
         sb.append("    instance: ").append(toIndentedString(instance)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    storageSize: ").append(toIndentedString(storageSize)).append("\n");

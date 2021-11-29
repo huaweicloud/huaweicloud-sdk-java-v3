@@ -118,10 +118,81 @@ public class ThrottleForApi {
 
     private Integer apiCallLimits;
 
+    /** 流控策略的类型 - 1：基础，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次。 */
+    public static final class TypeEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
+
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        TypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private Integer type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_adaptive_control")
@@ -153,10 +224,81 @@ public class ThrottleForApi {
 
     private Integer bindNum;
 
+    /** 是否包含特殊流控配置 - 1：包含 - 2：不包含 */
+    public static final class IsIncluSpecialThrottleEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final IsIncluSpecialThrottleEnum NUMBER_1 = new IsIncluSpecialThrottleEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final IsIncluSpecialThrottleEnum NUMBER_2 = new IsIncluSpecialThrottleEnum(2);
+
+        private static final Map<Integer, IsIncluSpecialThrottleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IsIncluSpecialThrottleEnum> createStaticFields() {
+            Map<Integer, IsIncluSpecialThrottleEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        IsIncluSpecialThrottleEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IsIncluSpecialThrottleEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IsIncluSpecialThrottleEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new IsIncluSpecialThrottleEnum(value);
+            }
+            return result;
+        }
+
+        public static IsIncluSpecialThrottleEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IsIncluSpecialThrottleEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IsIncluSpecialThrottleEnum) {
+                return this.value.equals(((IsIncluSpecialThrottleEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_inclu_special_throttle")
 
-    private Integer isIncluSpecialThrottle;
+    private IsIncluSpecialThrottleEnum isIncluSpecialThrottle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -258,7 +400,7 @@ public class ThrottleForApi {
         this.apiCallLimits = apiCallLimits;
     }
 
-    public ThrottleForApi withType(Integer type) {
+    public ThrottleForApi withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -266,11 +408,11 @@ public class ThrottleForApi {
     /** 流控策略的类型 - 1：基础，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次。
      * 
      * @return type */
-    public Integer getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -295,7 +437,7 @@ public class ThrottleForApi {
         return this;
     }
 
-    /** 用户流量限制是指一个API在时长之内每一个用户能访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。
+    /** [用户流量限制是指一个API在时长之内每一个用户能访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。](tag:hws;hws_hk;hcs;fcs;g42;)[site不支持用户流量限制,输入值为0](tag:Site)
      * 
      * @return userCallLimits */
     public Integer getUserCallLimits() {
@@ -370,7 +512,7 @@ public class ThrottleForApi {
         this.bindNum = bindNum;
     }
 
-    public ThrottleForApi withIsIncluSpecialThrottle(Integer isIncluSpecialThrottle) {
+    public ThrottleForApi withIsIncluSpecialThrottle(IsIncluSpecialThrottleEnum isIncluSpecialThrottle) {
         this.isIncluSpecialThrottle = isIncluSpecialThrottle;
         return this;
     }
@@ -378,11 +520,11 @@ public class ThrottleForApi {
     /** 是否包含特殊流控配置 - 1：包含 - 2：不包含
      * 
      * @return isIncluSpecialThrottle */
-    public Integer getIsIncluSpecialThrottle() {
+    public IsIncluSpecialThrottleEnum getIsIncluSpecialThrottle() {
         return isIncluSpecialThrottle;
     }
 
-    public void setIsIncluSpecialThrottle(Integer isIncluSpecialThrottle) {
+    public void setIsIncluSpecialThrottle(IsIncluSpecialThrottleEnum isIncluSpecialThrottle) {
         this.isIncluSpecialThrottle = isIncluSpecialThrottle;
     }
 

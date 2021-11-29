@@ -143,6 +143,11 @@ public class LdApiDeploy {
 
     private String romaAppId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
     public LdApiDeploy withDeployFrontApi(Boolean deployFrontApi) {
         this.deployFrontApi = deployFrontApi;
         return this;
@@ -164,7 +169,7 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+    /** 认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
      * 
      * @return authType */
     public String getAuthType() {
@@ -319,6 +324,22 @@ public class LdApiDeploy {
         this.romaAppId = romaAppId;
     }
 
+    public LdApiDeploy withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /** ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * 
+     * @return retryCount */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -335,7 +356,8 @@ public class LdApiDeploy {
             && Objects.equals(this.protocol, ldApiDeploy.protocol)
             && Objects.equals(this.backendTimeout, ldApiDeploy.backendTimeout)
             && Objects.equals(this.path, ldApiDeploy.path) && Objects.equals(this.method, ldApiDeploy.method)
-            && Objects.equals(this.cors, ldApiDeploy.cors) && Objects.equals(this.romaAppId, ldApiDeploy.romaAppId);
+            && Objects.equals(this.cors, ldApiDeploy.cors) && Objects.equals(this.romaAppId, ldApiDeploy.romaAppId)
+            && Objects.equals(this.retryCount, ldApiDeploy.retryCount);
     }
 
     @Override
@@ -350,7 +372,8 @@ public class LdApiDeploy {
             path,
             method,
             cors,
-            romaAppId);
+            romaAppId,
+            retryCount);
     }
 
     @Override
@@ -368,6 +391,7 @@ public class LdApiDeploy {
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    cors: ").append(toIndentedString(cors)).append("\n");
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -12,11 +12,14 @@ public class SFSTurboRegion {
 
     public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://sfs-turbo.cn-north-1.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://sfs-turbo.cn-south-2.myhuaweicloud.com");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-1", CN_NORTH_1);
+        map.put("cn-south-2", CN_SOUTH_2);
         return Collections.unmodifiableMap(map);
     }
 

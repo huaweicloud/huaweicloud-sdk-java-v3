@@ -20,7 +20,7 @@ public class PoolRef {
         return this;
     }
 
-    /** 功能描述：后端服务器组ID。
+    /** 后端服务器组ID。
      * 
      * @return id */
     public String getId() {

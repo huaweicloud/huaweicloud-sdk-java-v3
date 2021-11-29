@@ -11,9 +11,9 @@ public class ThrottleSpecialUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "call_limits")
 
-    private Integer callLimits;
+    private Long callLimits;
 
-    public ThrottleSpecialUpdate withCallLimits(Integer callLimits) {
+    public ThrottleSpecialUpdate withCallLimits(Long callLimits) {
         this.callLimits = callLimits;
         return this;
     }
@@ -21,11 +21,11 @@ public class ThrottleSpecialUpdate {
     /** 流控时间内特殊对象能够访问API的最大次数限制
      * 
      * @return callLimits */
-    public Integer getCallLimits() {
+    public Long getCallLimits() {
         return callLimits;
     }
 
-    public void setCallLimits(Integer callLimits) {
+    public void setCallLimits(Long callLimits) {
         this.callLimits = callLimits;
     }
 

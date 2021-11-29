@@ -734,6 +734,11 @@ public class NovaServer {
 
     private Integer progress;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os:scheduler_hints")
+
+    private NovaServerSchedulerHints osSchedulerHints;
+
     public NovaServer withName(String name) {
         this.name = name;
         return this;
@@ -1538,6 +1543,31 @@ public class NovaServer {
         this.progress = progress;
     }
 
+    public NovaServer withOsSchedulerHints(NovaServerSchedulerHints osSchedulerHints) {
+        this.osSchedulerHints = osSchedulerHints;
+        return this;
+    }
+
+    public NovaServer withOsSchedulerHints(Consumer<NovaServerSchedulerHints> osSchedulerHintsSetter) {
+        if (this.osSchedulerHints == null) {
+            this.osSchedulerHints = new NovaServerSchedulerHints();
+            osSchedulerHintsSetter.accept(this.osSchedulerHints);
+        }
+
+        return this;
+    }
+
+    /** Get osSchedulerHints
+     * 
+     * @return osSchedulerHints */
+    public NovaServerSchedulerHints getOsSchedulerHints() {
+        return osSchedulerHints;
+    }
+
+    public void setOsSchedulerHints(NovaServerSchedulerHints osSchedulerHints) {
+        this.osSchedulerHints = osSchedulerHints;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1580,7 +1610,8 @@ public class NovaServer {
             && Objects.equals(this.accessIPv4, novaServer.accessIPv4)
             && Objects.equals(this.accessIPv6, novaServer.accessIPv6)
             && Objects.equals(this.configDrive, novaServer.configDrive)
-            && Objects.equals(this.progress, novaServer.progress);
+            && Objects.equals(this.progress, novaServer.progress)
+            && Objects.equals(this.osSchedulerHints, novaServer.osSchedulerHints);
     }
 
     @Override
@@ -1626,7 +1657,8 @@ public class NovaServer {
             accessIPv4,
             accessIPv6,
             configDrive,
-            progress);
+            progress,
+            osSchedulerHints);
     }
 
     @Override
@@ -1679,6 +1711,7 @@ public class NovaServer {
         sb.append("    accessIPv6: ").append(toIndentedString(accessIPv6)).append("\n");
         sb.append("    configDrive: ").append(toIndentedString(configDrive)).append("\n");
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+        sb.append("    osSchedulerHints: ").append(toIndentedString(osSchedulerHints)).append("\n");
         sb.append("}");
         return sb.toString();
     }

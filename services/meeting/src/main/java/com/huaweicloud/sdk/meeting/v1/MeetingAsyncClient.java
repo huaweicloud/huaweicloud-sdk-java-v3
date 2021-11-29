@@ -86,7 +86,7 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<AddDeviceRequest, AddDeviceResponse>(request, MeetingMeta.addDevice, hcClient);
     }
 
-    /** 新增全球窗素材 新增全球窗素材（上传素材文件）
+    /** 新增信息窗素材 新增信息窗素材（上传素材文件）
      *
      * @param AddMaterialRequest 请求对象
      * @return CompletableFuture<AddMaterialResponse> */
@@ -94,7 +94,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.addMaterial);
     }
 
-    /** 新增全球窗素材 新增全球窗素材（上传素材文件）
+    /** 新增信息窗素材 新增信息窗素材（上传素材文件）
      *
      * @param AddMaterialRequest 请求对象
      * @return AsyncInvoker<AddMaterialRequest, AddMaterialResponse> */
@@ -102,7 +102,7 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<AddMaterialRequest, AddMaterialResponse>(request, MeetingMeta.addMaterial, hcClient);
     }
 
-    /** 新增全球窗节目 新增全球窗节目
+    /** 新增信息窗节目 新增信息窗节目
      *
      * @param AddProgramRequest 请求对象
      * @return CompletableFuture<AddProgramResponse> */
@@ -110,7 +110,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.addProgram);
     }
 
-    /** 新增全球窗节目 新增全球窗节目
+    /** 新增信息窗节目 新增信息窗节目
      *
      * @param AddProgramRequest 请求对象
      * @return AsyncInvoker<AddProgramRequest, AddProgramResponse> */
@@ -118,7 +118,7 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<AddProgramRequest, AddProgramResponse>(request, MeetingMeta.addProgram, hcClient);
     }
 
-    /** 新增全球窗发布 新增全球窗发布
+    /** 新增信息窗发布 新增信息窗发布
      *
      * @param AddPublicationRequest 请求对象
      * @return CompletableFuture<AddPublicationResponse> */
@@ -126,7 +126,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.addPublication);
     }
 
-    /** 新增全球窗发布 新增全球窗发布
+    /** 新增信息窗发布 新增信息窗发布
      *
      * @param AddPublicationRequest 请求对象
      * @return AsyncInvoker<AddPublicationRequest, AddPublicationResponse> */
@@ -264,7 +264,7 @@ public class MeetingAsyncClient {
             MeetingMeta.batchDeleteDevices, hcClient);
     }
 
-    /** 删除全球窗素材 删除全球窗素材
+    /** 删除信息窗素材 删除信息窗素材
      *
      * @param BatchDeleteMaterialsRequest 请求对象
      * @return CompletableFuture<BatchDeleteMaterialsResponse> */
@@ -273,7 +273,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.batchDeleteMaterials);
     }
 
-    /** 删除全球窗素材 删除全球窗素材
+    /** 删除信息窗素材 删除信息窗素材
      *
      * @param BatchDeleteMaterialsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> */
@@ -283,7 +283,7 @@ public class MeetingAsyncClient {
             MeetingMeta.batchDeleteMaterials, hcClient);
     }
 
-    /** 删除全球窗节目 删除全球窗节目
+    /** 删除信息窗节目 删除信息窗节目
      *
      * @param BatchDeleteProgramsRequest 请求对象
      * @return CompletableFuture<BatchDeleteProgramsResponse> */
@@ -291,7 +291,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.batchDeletePrograms);
     }
 
-    /** 删除全球窗节目 删除全球窗节目
+    /** 删除信息窗节目 删除信息窗节目
      *
      * @param BatchDeleteProgramsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> */
@@ -301,7 +301,7 @@ public class MeetingAsyncClient {
             MeetingMeta.batchDeletePrograms, hcClient);
     }
 
-    /** 删除全球窗发布 删除全球窗发布
+    /** 删除信息窗发布 删除信息窗发布
      *
      * @param BatchDeletePublicationsRequest 请求对象
      * @return CompletableFuture<BatchDeletePublicationsResponse> */
@@ -310,7 +310,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.batchDeletePublications);
     }
 
-    /** 删除全球窗发布 删除全球窗发布
+    /** 删除信息窗发布 删除信息窗发布
      *
      * @param BatchDeletePublicationsRequest 请求对象
      * @return AsyncInvoker<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> */
@@ -1416,7 +1416,7 @@ public class MeetingAsyncClient {
             MeetingMeta.searchHisMeetings, hcClient);
     }
 
-    /** 分页查询全球窗素材 分页查询全球窗素材
+    /** 分页查询信息窗素材 分页查询信息窗素材
      *
      * @param SearchMaterialsRequest 请求对象
      * @return CompletableFuture<SearchMaterialsResponse> */
@@ -1424,7 +1424,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchMaterials);
     }
 
-    /** 分页查询全球窗素材 分页查询全球窗素材
+    /** 分页查询信息窗素材 分页查询信息窗素材
      *
      * @param SearchMaterialsRequest 请求对象
      * @return AsyncInvoker<SearchMaterialsRequest, SearchMaterialsResponse> */
@@ -1508,7 +1508,7 @@ public class MeetingAsyncClient {
             MeetingMeta.searchOnlineMeetings, hcClient);
     }
 
-    /** 查询全球窗节目 获取全球窗节目
+    /** 查询信息窗节目 获取信息窗节目
      *
      * @param SearchProgramsRequest 请求对象
      * @return CompletableFuture<SearchProgramsResponse> */
@@ -1516,7 +1516,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchPrograms);
     }
 
-    /** 查询全球窗节目 获取全球窗节目
+    /** 查询信息窗节目 获取信息窗节目
      *
      * @param SearchProgramsRequest 请求对象
      * @return AsyncInvoker<SearchProgramsRequest, SearchProgramsResponse> */
@@ -1526,7 +1526,7 @@ public class MeetingAsyncClient {
             hcClient);
     }
 
-    /** 查询全球窗发布 获取全球窗发布
+    /** 查询信息窗发布 获取信息窗发布
      *
      * @param SearchPublicationsRequest 请求对象
      * @return CompletableFuture<SearchPublicationsResponse> */
@@ -1534,7 +1534,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchPublications);
     }
 
-    /** 查询全球窗发布 获取全球窗发布
+    /** 查询信息窗发布 获取信息窗发布
      *
      * @param SearchPublicationsRequest 请求对象
      * @return AsyncInvoker<SearchPublicationsRequest, SearchPublicationsResponse> */
@@ -2097,7 +2097,7 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<ShowProgramRequest, ShowProgramResponse>(request, MeetingMeta.showProgram, hcClient);
     }
 
-    /** 根据ID查询全球窗发布详情 根据ID获取发布详情
+    /** 根据ID查询信息窗发布详情 根据ID获取发布详情
      *
      * @param ShowPublicationRequest 请求对象
      * @return CompletableFuture<ShowPublicationResponse> */
@@ -2105,7 +2105,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.showPublication);
     }
 
-    /** 根据ID查询全球窗发布详情 根据ID获取发布详情
+    /** 根据ID查询信息窗发布详情 根据ID获取发布详情
      *
      * @param ShowPublicationRequest 请求对象
      * @return AsyncInvoker<ShowPublicationRequest, ShowPublicationResponse> */
@@ -2413,7 +2413,7 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, MeetingMeta.updateDevice, hcClient);
     }
 
-    /** 更新全球窗素材 更新全球窗素材
+    /** 更新信息窗素材 更新信息窗素材
      *
      * @param UpdateMaterialRequest 请求对象
      * @return CompletableFuture<UpdateMaterialResponse> */
@@ -2421,7 +2421,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.updateMaterial);
     }
 
-    /** 更新全球窗素材 更新全球窗素材
+    /** 更新信息窗素材 更新信息窗素材
      *
      * @param UpdateMaterialRequest 请求对象
      * @return AsyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse> */
@@ -2484,7 +2484,7 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<UpdateMyInfoRequest, UpdateMyInfoResponse>(request, MeetingMeta.updateMyInfo, hcClient);
     }
 
-    /** 更新全球窗节目 更新全球窗节目
+    /** 更新信息窗节目 更新信息窗节目
      *
      * @param UpdateProgramRequest 请求对象
      * @return CompletableFuture<UpdateProgramResponse> */
@@ -2492,7 +2492,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.updateProgram);
     }
 
-    /** 更新全球窗节目 更新全球窗节目
+    /** 更新信息窗节目 更新信息窗节目
      *
      * @param UpdateProgramRequest 请求对象
      * @return AsyncInvoker<UpdateProgramRequest, UpdateProgramResponse> */
@@ -2502,7 +2502,7 @@ public class MeetingAsyncClient {
             hcClient);
     }
 
-    /** 修改全球窗发布 修改全球窗发布
+    /** 修改信息窗发布 修改信息窗发布
      *
      * @param UpdatePublicationRequest 请求对象
      * @return CompletableFuture<UpdatePublicationResponse> */
@@ -2510,7 +2510,7 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.updatePublication);
     }
 
-    /** 修改全球窗发布 修改全球窗发布
+    /** 修改信息窗发布 修改信息窗发布
      *
      * @param UpdatePublicationRequest 请求对象
      * @return AsyncInvoker<UpdatePublicationRequest, UpdatePublicationResponse> */

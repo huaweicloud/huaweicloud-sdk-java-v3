@@ -11,14 +11,14 @@ public class NetworkTrafficStats {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_throughput")
 
-    private Integer outputThroughput;
+    private Long outputThroughput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_throughput")
 
-    private Integer inputThroughput;
+    private Long inputThroughput;
 
-    public NetworkTrafficStats withOutputThroughput(Integer outputThroughput) {
+    public NetworkTrafficStats withOutputThroughput(Long outputThroughput) {
         this.outputThroughput = outputThroughput;
         return this;
     }
@@ -26,15 +26,15 @@ public class NetworkTrafficStats {
     /** 下行吞吐量（byte）
      * 
      * @return outputThroughput */
-    public Integer getOutputThroughput() {
+    public Long getOutputThroughput() {
         return outputThroughput;
     }
 
-    public void setOutputThroughput(Integer outputThroughput) {
+    public void setOutputThroughput(Long outputThroughput) {
         this.outputThroughput = outputThroughput;
     }
 
-    public NetworkTrafficStats withInputThroughput(Integer inputThroughput) {
+    public NetworkTrafficStats withInputThroughput(Long inputThroughput) {
         this.inputThroughput = inputThroughput;
         return this;
     }
@@ -42,11 +42,11 @@ public class NetworkTrafficStats {
     /** 上行吞吐量（byte）
      * 
      * @return inputThroughput */
-    public Integer getInputThroughput() {
+    public Long getInputThroughput() {
         return inputThroughput;
     }
 
-    public void setInputThroughput(Integer inputThroughput) {
+    public void setInputThroughput(Long inputThroughput) {
         this.inputThroughput = inputThroughput;
     }
 

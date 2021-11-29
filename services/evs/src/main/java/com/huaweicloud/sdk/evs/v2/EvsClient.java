@@ -53,24 +53,6 @@ public class EvsClient {
             EvsMeta.batchDeleteVolumeTags, hcClient);
     }
 
-    /** 将云硬盘导出为镜像 将系统盘或数据盘的数据导出为IMS镜像，导出的镜像在IMS的私有镜像列表中可以查 看并使用。
-     *
-     * @param CinderExportToImageRequest 请求对象
-     * @return CinderExportToImageResponse */
-    public CinderExportToImageResponse cinderExportToImage(CinderExportToImageRequest request) {
-        return hcClient.syncInvokeHttp(request, EvsMeta.cinderExportToImage);
-    }
-
-    /** 将云硬盘导出为镜像 将系统盘或数据盘的数据导出为IMS镜像，导出的镜像在IMS的私有镜像列表中可以查 看并使用。
-     *
-     * @param CinderExportToImageRequest 请求对象
-     * @return SyncInvoker<CinderExportToImageRequest, CinderExportToImageResponse> */
-    public SyncInvoker<CinderExportToImageRequest, CinderExportToImageResponse> cinderExportToImageInvoker(
-        CinderExportToImageRequest request) {
-        return new SyncInvoker<CinderExportToImageRequest, CinderExportToImageResponse>(request,
-            EvsMeta.cinderExportToImage, hcClient);
-    }
-
     /** 查询所有的可用分区信息 查询所有的可用分区信息。
      *
      * @param CinderListAvailabilityZonesRequest 请求对象

@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
-/** 创建证书请求参数 */
+/** 创建证书请求参数。 */
 public class CreateCertificateOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,22 +48,103 @@ public class CreateCertificateOption {
 
     private String projectId;
 
+    /** SSL证书的类型。分为服务器证书(server)、CA证书(client)和服务器SM双证书(server_sm)。 默认值：server */
+    public static final class TypeEnum {
+
+        /** Enum SERVER for value: "server" */
+        public static final TypeEnum SERVER = new TypeEnum("server");
+
+        /** Enum CLIENT for value: "client" */
+        public static final TypeEnum CLIENT = new TypeEnum("client");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("server", SERVER);
+            map.put("client", CLIENT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_certificate")
+
+    private String encCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_private_key")
+
+    private String encPrivateKey;
+
     public CreateCertificateOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    /** SSL证书的管理状态；暂不支持。
+    /** 证书的管理状态。 不支持该字段，请勿使用。
      * 
      * @return adminStateUp */
     public Boolean getAdminStateUp() {
@@ -74,7 +160,7 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** HTTPS协议使用的证书内容。 取值范围：PEM编码格式。
+    /** HTTPS协议使用的证书内容。 如果type为server_sm时，该字段填写SM签名证书内容。 取值范围：PEM编码格式。
      * 
      * @return certificate */
     public String getCertificate() {
@@ -90,7 +176,7 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** SSL证书的描述。
+    /** 证书的描述。
      * 
      * @return description */
     public String getDescription() {
@@ -106,9 +192,9 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** 服务器证书所签域名。该字段仅type为server时有效。默认值：\"\" 总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。
+    /** 服务器证书所签域名。该字段仅type为server或server_sm时有效。 总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。
      * 普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；
-     * 泛域名：在普通域名的基础上仅允许首字母为\"*\"。例：*.test.com
+     * 泛域名：在普通域名的基础上仅允许首字母为\"\"。例：.test.com
      * 
      * @return domain */
     public String getDomain() {
@@ -124,7 +210,7 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** SSL证书的名称。
+    /** 证书的名称。
      * 
      * @return name */
     public String getName() {
@@ -140,7 +226,7 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** HTTPS协议使用的私钥。仅type为server时有效。type为server时必选。 取值范围：PEM编码格式。
+    /** HTTPS协议使用的私钥。仅type为server或server_sm时有效。type为server或server_sm时必选。 如果type为server_sm时，该字段填写SM签名证书的私钥。 取值范围：PEM编码格式。
      * 
      * @return privateKey */
     public String getPrivateKey() {
@@ -156,7 +242,7 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** SSL证书所在的项目ID。
+    /** 证书所在的项目ID。
      * 
      * @return projectId */
     public String getProjectId() {
@@ -167,19 +253,19 @@ public class CreateCertificateOption {
         this.projectId = projectId;
     }
 
-    public CreateCertificateOption withType(String type) {
+    public CreateCertificateOption withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    /** SSL证书的类型。分为服务器证书(server)和CA证书(client)。 默认值：server
+    /** SSL证书的类型。分为服务器证书(server)、CA证书(client)和服务器SM双证书(server_sm)。 默认值：server
      * 
      * @return type */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -188,7 +274,7 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** 企业项目ID。
+    /** 证书所属的企业项目ID。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -197,6 +283,38 @@ public class CreateCertificateOption {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CreateCertificateOption withEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+        return this;
+    }
+
+    /** HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 使用说明： - 仅type为server_sm时有效且必选。
+     * 
+     * @return encCertificate */
+    public String getEncCertificate() {
+        return encCertificate;
+    }
+
+    public void setEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+    }
+
+    public CreateCertificateOption withEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+        return this;
+    }
+
+    /** HTTPS协议使用的SM加密证书私钥。 取值：PEM编码格式。 使用说明： - 仅type为server_sm时有效且必选。
+     * 
+     * @return encPrivateKey */
+    public String getEncPrivateKey() {
+        return encPrivateKey;
+    }
+
+    public void setEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
     }
 
     @Override
@@ -216,7 +334,9 @@ public class CreateCertificateOption {
             && Objects.equals(this.privateKey, createCertificateOption.privateKey)
             && Objects.equals(this.projectId, createCertificateOption.projectId)
             && Objects.equals(this.type, createCertificateOption.type)
-            && Objects.equals(this.enterpriseProjectId, createCertificateOption.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, createCertificateOption.enterpriseProjectId)
+            && Objects.equals(this.encCertificate, createCertificateOption.encCertificate)
+            && Objects.equals(this.encPrivateKey, createCertificateOption.encPrivateKey);
     }
 
     @Override
@@ -229,7 +349,9 @@ public class CreateCertificateOption {
             privateKey,
             projectId,
             type,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            encCertificate,
+            encPrivateKey);
     }
 
     @Override
@@ -245,6 +367,8 @@ public class CreateCertificateOption {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
+        sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

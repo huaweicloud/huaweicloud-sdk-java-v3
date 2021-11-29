@@ -20,6 +20,11 @@ public class ModifyInstanceBody {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port")
+
+    private Integer port;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
 
     private String maintainBegin;
@@ -70,6 +75,23 @@ public class ModifyInstanceBody {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ModifyInstanceBody withPort(Integer port) {
+        this.port = port;
+        return this;
+    }
+
+    /** 修改Redis实例的访问端口。端口范围为1~65535的任意数字。 修改后，Redis实例的所有连接将会中断，业务需要重新连接Redis的新端口。
+     * 只有Redis4.0和Redis5.0支持修改端口号，Redis3.0[和Memcached](tag:hc,hk,ocb,sbc,tm,ctc,cmc)实例不支持。 minimum: 1 maximum: 65535
+     * 
+     * @return port */
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
     }
 
     public ModifyInstanceBody withMaintainBegin(String maintainBegin) {
@@ -160,6 +182,7 @@ public class ModifyInstanceBody {
         ModifyInstanceBody modifyInstanceBody = (ModifyInstanceBody) o;
         return Objects.equals(this.name, modifyInstanceBody.name)
             && Objects.equals(this.description, modifyInstanceBody.description)
+            && Objects.equals(this.port, modifyInstanceBody.port)
             && Objects.equals(this.maintainBegin, modifyInstanceBody.maintainBegin)
             && Objects.equals(this.maintainEnd, modifyInstanceBody.maintainEnd)
             && Objects.equals(this.securityGroupId, modifyInstanceBody.securityGroupId)
@@ -168,7 +191,7 @@ public class ModifyInstanceBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, maintainBegin, maintainEnd, securityGroupId, instanceBackupPolicy);
+        return Objects.hash(name, description, port, maintainBegin, maintainEnd, securityGroupId, instanceBackupPolicy);
     }
 
     @Override
@@ -177,6 +200,7 @@ public class ModifyInstanceBody {
         sb.append("class ModifyInstanceBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");

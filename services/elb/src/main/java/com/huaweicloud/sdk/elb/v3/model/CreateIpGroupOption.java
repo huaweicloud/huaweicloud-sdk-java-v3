@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建IP地址组请求参数对象 */
+/** 创建IP地址组请求参数。 */
 public class CreateIpGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,7 +41,7 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** IP地址组的租户id
+    /** IP地址组所在的项目ID。
      * 
      * @return projectId */
     public String getProjectId() {
@@ -57,7 +57,7 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** IP地址组的描述信息
+    /** IP地址组的描述。
      * 
      * @return description */
     public String getDescription() {
@@ -73,7 +73,7 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** IP地址组的名称
+    /** IP地址组的名称。
      * 
      * @return name */
     public String getName() {
@@ -105,7 +105,7 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** IP地址组中包含的ip或网段列表。[]表示任意ip。
+    /** IP地址组中包含的IP或网段列表。[]表示任意IP。
      * 
      * @return ipList */
     public List<CreateIpGroupIpOption> getIpList() {
@@ -121,7 +121,7 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** 企业项目id
+    /** IP地址组所在的企业项目ID。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {

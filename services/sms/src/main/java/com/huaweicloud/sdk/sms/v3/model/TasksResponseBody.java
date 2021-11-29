@@ -29,18 +29,18 @@ public class TasksResponseBody {
     /** 任务类型，创建迁移任务时必选，更新迁移任务时可选 */
     public static final class TypeEnum {
 
-        /** Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移" */
-        public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级迁移");
+        /** Enum MIGRATE_FILE for value: "MIGRATE_FILE" */
+        public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
 
-        /** Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块级迁移" */
-        public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块级迁移");
+        /** Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK" */
+        public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("MIGRATE_FILE：文件级迁移", MIGRATE_FILE_);
-            map.put("MIGRATE_BLOCK：块级迁移", MIGRATE_BLOCK_);
+            map.put("MIGRATE_FILE", MIGRATE_FILE);
+            map.put("MIGRATE_BLOCK", MIGRATE_BLOCK);
             return Collections.unmodifiableMap(map);
         }
 
@@ -193,10 +193,85 @@ public class TasksResponseBody {
 
     private Long createDate;
 
+    /** 进程优先级 0：低 1：标准 2：高 */
+    public static final class PriorityEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final PriorityEnum NUMBER_0 = new PriorityEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final PriorityEnum NUMBER_1 = new PriorityEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final PriorityEnum NUMBER_2 = new PriorityEnum(2);
+
+        private static final Map<Integer, PriorityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PriorityEnum> createStaticFields() {
+            Map<Integer, PriorityEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        PriorityEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PriorityEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PriorityEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PriorityEnum(value);
+            }
+            return result;
+        }
+
+        public static PriorityEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PriorityEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PriorityEnum) {
+                return this.value.equals(((PriorityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
-    private Integer priority;
+    private PriorityEnum priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_limit")
@@ -256,59 +331,56 @@ public class TasksResponseBody {
     /** 日志收集状态 */
     public static final class LogCollectStatusEnum {
 
-        /** Enum INIT_ for value: "INIT:等待搜集状态" */
-        public static final LogCollectStatusEnum INIT_ = new LogCollectStatusEnum("INIT:等待搜集状态");
+        /** Enum INIT for value: "INIT" */
+        public static final LogCollectStatusEnum INIT = new LogCollectStatusEnum("INIT");
 
-        /** Enum TELL_AGENT_TO_COLLECT_AGENT_ for value: "TELL_AGENT_TO_COLLECT:通知agent搜集日志" */
-        public static final LogCollectStatusEnum TELL_AGENT_TO_COLLECT_AGENT_ =
-            new LogCollectStatusEnum("TELL_AGENT_TO_COLLECT:通知agent搜集日志");
+        /** Enum TELL_AGENT_TO_COLLECT for value: "TELL_AGENT_TO_COLLECT" */
+        public static final LogCollectStatusEnum TELL_AGENT_TO_COLLECT =
+            new LogCollectStatusEnum("TELL_AGENT_TO_COLLECT");
 
-        /** Enum WAIT_AGENT_COLLECT_ACK_AGENT_ for value: "WAIT_AGENT_COLLECT_ACK:等待Agent确认搜集确认" */
-        public static final LogCollectStatusEnum WAIT_AGENT_COLLECT_ACK_AGENT_ =
-            new LogCollectStatusEnum("WAIT_AGENT_COLLECT_ACK:等待Agent确认搜集确认");
+        /** Enum WAIT_AGENT_COLLECT_ACK for value: "WAIT_AGENT_COLLECT_ACK" */
+        public static final LogCollectStatusEnum WAIT_AGENT_COLLECT_ACK =
+            new LogCollectStatusEnum("WAIT_AGENT_COLLECT_ACK");
 
-        /** Enum AGENT_COLLECT_FAIL_AGENT_ for value: "AGENT_COLLECT_FAIL:Agent搜集失败" */
-        public static final LogCollectStatusEnum AGENT_COLLECT_FAIL_AGENT_ =
-            new LogCollectStatusEnum("AGENT_COLLECT_FAIL:Agent搜集失败");
+        /** Enum AGENT_COLLECT_FAIL for value: "AGENT_COLLECT_FAIL" */
+        public static final LogCollectStatusEnum AGENT_COLLECT_FAIL = new LogCollectStatusEnum("AGENT_COLLECT_FAIL");
 
-        /** Enum AGENT_COLLECT_SUCCESS_AGENT_ for value: "AGENT_COLLECT_SUCCESS：Agent搜集成功" */
-        public static final LogCollectStatusEnum AGENT_COLLECT_SUCCESS_AGENT_ =
-            new LogCollectStatusEnum("AGENT_COLLECT_SUCCESS：Agent搜集成功");
+        /** Enum AGENT_COLLECT_SUCCESS for value: "AGENT_COLLECT_SUCCESS" */
+        public static final LogCollectStatusEnum AGENT_COLLECT_SUCCESS =
+            new LogCollectStatusEnum("AGENT_COLLECT_SUCCESS");
 
-        /** Enum WAIT_SERVER_COLLECT_SERVER_ for value: "WAIT_SERVER_COLLECT：等待Server端日志搜集" */
-        public static final LogCollectStatusEnum WAIT_SERVER_COLLECT_SERVER_ =
-            new LogCollectStatusEnum("WAIT_SERVER_COLLECT：等待Server端日志搜集");
+        /** Enum WAIT_SERVER_COLLECT for value: "WAIT_SERVER_COLLECT" */
+        public static final LogCollectStatusEnum WAIT_SERVER_COLLECT = new LogCollectStatusEnum("WAIT_SERVER_COLLECT");
 
-        /** Enum SERVER_COLLECT_FAIL_SERVER_ for value: "SERVER_COLLECT_FAIL：Server搜集失败" */
-        public static final LogCollectStatusEnum SERVER_COLLECT_FAIL_SERVER_ =
-            new LogCollectStatusEnum("SERVER_COLLECT_FAIL：Server搜集失败");
+        /** Enum SERVER_COLLECT_FAIL for value: "SERVER_COLLECT_FAIL" */
+        public static final LogCollectStatusEnum SERVER_COLLECT_FAIL = new LogCollectStatusEnum("SERVER_COLLECT_FAIL");
 
-        /** Enum SERVER_COLLECT_SUCCESS_SERVER_ for value: "SERVER_COLLECT_SUCCESS：Server搜集成功" */
-        public static final LogCollectStatusEnum SERVER_COLLECT_SUCCESS_SERVER_ =
-            new LogCollectStatusEnum("SERVER_COLLECT_SUCCESS：Server搜集成功");
+        /** Enum SERVER_COLLECT_SUCCESS for value: "SERVER_COLLECT_SUCCESS" */
+        public static final LogCollectStatusEnum SERVER_COLLECT_SUCCESS =
+            new LogCollectStatusEnum("SERVER_COLLECT_SUCCESS");
 
-        /** Enum TELL_AGENT_RESET_ACL_AGENT_ for value: "TELL_AGENT_RESET_ACL：通知Agent取消日志授权" */
-        public static final LogCollectStatusEnum TELL_AGENT_RESET_ACL_AGENT_ =
-            new LogCollectStatusEnum("TELL_AGENT_RESET_ACL：通知Agent取消日志授权");
+        /** Enum TELL_AGENT_RESET_ACL for value: "TELL_AGENT_RESET_ACL" */
+        public static final LogCollectStatusEnum TELL_AGENT_RESET_ACL =
+            new LogCollectStatusEnum("TELL_AGENT_RESET_ACL");
 
-        /** Enum WAIT_AGENT_RESET_ACL_ACK_AGENT_ for value: "WAIT_AGENT_RESET_ACL_ACK：等待Agent确认" */
-        public static final LogCollectStatusEnum WAIT_AGENT_RESET_ACL_ACK_AGENT_ =
-            new LogCollectStatusEnum("WAIT_AGENT_RESET_ACL_ACK：等待Agent确认");
+        /** Enum WAIT_AGENT_RESET_ACL_ACK for value: "WAIT_AGENT_RESET_ACL_ACK" */
+        public static final LogCollectStatusEnum WAIT_AGENT_RESET_ACL_ACK =
+            new LogCollectStatusEnum("WAIT_AGENT_RESET_ACL_ACK");
 
         private static final Map<String, LogCollectStatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LogCollectStatusEnum> createStaticFields() {
             Map<String, LogCollectStatusEnum> map = new HashMap<>();
-            map.put("INIT:等待搜集状态", INIT_);
-            map.put("TELL_AGENT_TO_COLLECT:通知agent搜集日志", TELL_AGENT_TO_COLLECT_AGENT_);
-            map.put("WAIT_AGENT_COLLECT_ACK:等待Agent确认搜集确认", WAIT_AGENT_COLLECT_ACK_AGENT_);
-            map.put("AGENT_COLLECT_FAIL:Agent搜集失败", AGENT_COLLECT_FAIL_AGENT_);
-            map.put("AGENT_COLLECT_SUCCESS：Agent搜集成功", AGENT_COLLECT_SUCCESS_AGENT_);
-            map.put("WAIT_SERVER_COLLECT：等待Server端日志搜集", WAIT_SERVER_COLLECT_SERVER_);
-            map.put("SERVER_COLLECT_FAIL：Server搜集失败", SERVER_COLLECT_FAIL_SERVER_);
-            map.put("SERVER_COLLECT_SUCCESS：Server搜集成功", SERVER_COLLECT_SUCCESS_SERVER_);
-            map.put("TELL_AGENT_RESET_ACL：通知Agent取消日志授权", TELL_AGENT_RESET_ACL_AGENT_);
-            map.put("WAIT_AGENT_RESET_ACL_ACK：等待Agent确认", WAIT_AGENT_RESET_ACL_ACK_AGENT_);
+            map.put("INIT", INIT);
+            map.put("TELL_AGENT_TO_COLLECT", TELL_AGENT_TO_COLLECT);
+            map.put("WAIT_AGENT_COLLECT_ACK", WAIT_AGENT_COLLECT_ACK);
+            map.put("AGENT_COLLECT_FAIL", AGENT_COLLECT_FAIL);
+            map.put("AGENT_COLLECT_SUCCESS", AGENT_COLLECT_SUCCESS);
+            map.put("WAIT_SERVER_COLLECT", WAIT_SERVER_COLLECT);
+            map.put("SERVER_COLLECT_FAIL", SERVER_COLLECT_FAIL);
+            map.put("SERVER_COLLECT_SUCCESS", SERVER_COLLECT_SUCCESS);
+            map.put("TELL_AGENT_RESET_ACL", TELL_AGENT_RESET_ACL);
+            map.put("WAIT_AGENT_RESET_ACL_ACK", WAIT_AGENT_RESET_ACL_ACK);
             return Collections.unmodifiableMap(map);
         }
 
@@ -492,7 +564,7 @@ public class TasksResponseBody {
         this.createDate = createDate;
     }
 
-    public TasksResponseBody withPriority(Integer priority) {
+    public TasksResponseBody withPriority(PriorityEnum priority) {
         this.priority = priority;
         return this;
     }
@@ -500,11 +572,11 @@ public class TasksResponseBody {
     /** 进程优先级 0：低 1：标准 2：高 minimum: 0 maximum: 2
      * 
      * @return priority */
-    public Integer getPriority() {
+    public PriorityEnum getPriority() {
         return priority;
     }
 
-    public void setPriority(Integer priority) {
+    public void setPriority(PriorityEnum priority) {
         this.priority = priority;
     }
 

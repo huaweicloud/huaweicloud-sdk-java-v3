@@ -14,6 +14,11 @@ public class CreateKmsTagRequestBody {
 
     private TagItem tag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sequence")
+
+    private String sequence;
+
     public CreateKmsTagRequestBody withTag(TagItem tag) {
         this.tag = tag;
         return this;
@@ -39,6 +44,22 @@ public class CreateKmsTagRequestBody {
         this.tag = tag;
     }
 
+    public CreateKmsTagRequestBody withSequence(String sequence) {
+        this.sequence = sequence;
+        return this;
+    }
+
+    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * 
+     * @return sequence */
+    public String getSequence() {
+        return sequence;
+    }
+
+    public void setSequence(String sequence) {
+        this.sequence = sequence;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -48,12 +69,13 @@ public class CreateKmsTagRequestBody {
             return false;
         }
         CreateKmsTagRequestBody createKmsTagRequestBody = (CreateKmsTagRequestBody) o;
-        return Objects.equals(this.tag, createKmsTagRequestBody.tag);
+        return Objects.equals(this.tag, createKmsTagRequestBody.tag)
+            && Objects.equals(this.sequence, createKmsTagRequestBody.sequence);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag);
+        return Objects.hash(tag, sequence);
     }
 
     @Override
@@ -61,6 +83,7 @@ public class CreateKmsTagRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateKmsTagRequestBody {\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
         sb.append("}");
         return sb.toString();
     }

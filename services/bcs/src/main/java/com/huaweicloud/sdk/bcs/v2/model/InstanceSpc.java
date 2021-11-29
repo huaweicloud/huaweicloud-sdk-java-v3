@@ -21,7 +21,7 @@ public class InstanceSpc {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_max_num")
 
-    private Long memberMaxNum;
+    private Integer memberMaxNum;
 
     public InstanceSpc withOrgPeerMaxNum(Long orgPeerMaxNum) {
         this.orgPeerMaxNum = orgPeerMaxNum;
@@ -55,7 +55,7 @@ public class InstanceSpc {
         this.ordererMaxNum = ordererMaxNum;
     }
 
-    public InstanceSpc withMemberMaxNum(Long memberMaxNum) {
+    public InstanceSpc withMemberMaxNum(Integer memberMaxNum) {
         this.memberMaxNum = memberMaxNum;
         return this;
     }
@@ -63,11 +63,11 @@ public class InstanceSpc {
     /** 单个联盟链支持的最大租户数量
      * 
      * @return memberMaxNum */
-    public Long getMemberMaxNum() {
+    public Integer getMemberMaxNum() {
         return memberMaxNum;
     }
 
-    public void setMemberMaxNum(Long memberMaxNum) {
+    public void setMemberMaxNum(Integer memberMaxNum) {
         this.memberMaxNum = memberMaxNum;
     }
 

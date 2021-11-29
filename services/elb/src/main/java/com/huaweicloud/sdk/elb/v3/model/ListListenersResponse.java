@@ -89,7 +89,7 @@ public class ListListenersResponse extends SdkResponse {
         return this;
     }
 
-    /** listener的列表。
+    /** Listener的列表。
      * 
      * @return listeners */
     public List<Listener> getListeners() {

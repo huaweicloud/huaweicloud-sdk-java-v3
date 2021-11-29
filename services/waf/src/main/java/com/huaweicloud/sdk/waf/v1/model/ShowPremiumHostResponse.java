@@ -65,7 +65,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificatename")
 
-    private Object certificatename;
+    private String certificatename;
 
     /** 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本 */
     public static final class TlsEnum {
@@ -459,7 +459,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
         this.certificateid = certificateid;
     }
 
-    public ShowPremiumHostResponse withCertificatename(Object certificatename) {
+    public ShowPremiumHostResponse withCertificatename(String certificatename) {
         this.certificatename = certificatename;
         return this;
     }
@@ -467,11 +467,11 @@ public class ShowPremiumHostResponse extends SdkResponse {
     /** 证书名 - 对外协议为HTTP时不需要填写 - 对外协议HTTPS时为必填参数
      * 
      * @return certificatename */
-    public Object getCertificatename() {
+    public String getCertificatename() {
         return certificatename;
     }
 
-    public void setCertificatename(Object certificatename) {
+    public void setCertificatename(String certificatename) {
         this.certificatename = certificatename;
     }
 

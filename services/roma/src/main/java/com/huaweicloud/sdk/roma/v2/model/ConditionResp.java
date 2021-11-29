@@ -18,6 +18,82 @@ public class ConditionResp {
 
     private String reqParamName;
 
+    /** 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET */
+    public static final class SysParamNameEnum {
+
+        /** Enum REQ_PATH for value: "req_path" */
+        public static final SysParamNameEnum REQ_PATH = new SysParamNameEnum("req_path");
+
+        /** Enum REQ_METHOD for value: "req_method" */
+        public static final SysParamNameEnum REQ_METHOD = new SysParamNameEnum("req_method");
+
+        private static final Map<String, SysParamNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SysParamNameEnum> createStaticFields() {
+            Map<String, SysParamNameEnum> map = new HashMap<>();
+            map.put("req_path", REQ_PATH);
+            map.put("req_method", REQ_METHOD);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SysParamNameEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SysParamNameEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            SysParamNameEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new SysParamNameEnum(value);
+            }
+            return result;
+        }
+
+        public static SysParamNameEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            SysParamNameEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SysParamNameEnum) {
+                return this.value.equals(((SysParamNameEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_param_name")
+
+    private SysParamNameEnum sysParamName;
+
     /** 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则 策略类型为param时必选 */
     public static final class ConditionTypeEnum {
 
@@ -98,7 +174,7 @@ public class ConditionResp {
 
     private ConditionTypeEnum conditionType;
 
-    /** 策略类型 - param：参数 - source：源IP */
+    /** 策略类型 - param：参数 - source：源IP - system：系统参数 */
     public static final class ConditionOriginEnum {
 
         /** Enum PARAM for value: "param" */
@@ -210,6 +286,22 @@ public class ConditionResp {
         this.reqParamName = reqParamName;
     }
 
+    public ConditionResp withSysParamName(SysParamNameEnum sysParamName) {
+        this.sysParamName = sysParamName;
+        return this;
+    }
+
+    /** 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET
+     * 
+     * @return sysParamName */
+    public SysParamNameEnum getSysParamName() {
+        return sysParamName;
+    }
+
+    public void setSysParamName(SysParamNameEnum sysParamName) {
+        this.sysParamName = sysParamName;
+    }
+
     public ConditionResp withConditionType(ConditionTypeEnum conditionType) {
         this.conditionType = conditionType;
         return this;
@@ -231,7 +323,7 @@ public class ConditionResp {
         return this;
     }
 
-    /** 策略类型 - param：参数 - source：源IP
+    /** 策略类型 - param：参数 - source：源IP - system：系统参数
      * 
      * @return conditionOrigin */
     public ConditionOriginEnum getConditionOrigin() {
@@ -316,6 +408,7 @@ public class ConditionResp {
         }
         ConditionResp conditionResp = (ConditionResp) o;
         return Objects.equals(this.reqParamName, conditionResp.reqParamName)
+            && Objects.equals(this.sysParamName, conditionResp.sysParamName)
             && Objects.equals(this.conditionType, conditionResp.conditionType)
             && Objects.equals(this.conditionOrigin, conditionResp.conditionOrigin)
             && Objects.equals(this.conditionValue, conditionResp.conditionValue)
@@ -325,8 +418,14 @@ public class ConditionResp {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(reqParamName, conditionType, conditionOrigin, conditionValue, id, reqParamId, reqParamLocation);
+        return Objects.hash(reqParamName,
+            sysParamName,
+            conditionType,
+            conditionOrigin,
+            conditionValue,
+            id,
+            reqParamId,
+            reqParamLocation);
     }
 
     @Override
@@ -334,6 +433,7 @@ public class ConditionResp {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConditionResp {\n");
         sb.append("    reqParamName: ").append(toIndentedString(reqParamName)).append("\n");
+        sb.append("    sysParamName: ").append(toIndentedString(sysParamName)).append("\n");
         sb.append("    conditionType: ").append(toIndentedString(conditionType)).append("\n");
         sb.append("    conditionOrigin: ").append(toIndentedString(conditionOrigin)).append("\n");
         sb.append("    conditionValue: ").append(toIndentedString(conditionValue)).append("\n");

@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
-/** CreateMemberOption */
+/** 创建后端服务器请求参数 */
 public class CreateMemberOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +28,77 @@ public class CreateMemberOption {
 
     private String name;
 
+    /** 后端云服务器所在的项目ID。 */
+    public static final class ProjectIdEnum {
+
+        /** Enum _0_9A_FA_F_32_ for value: "[0-9a-fA-F]{32}" */
+        public static final ProjectIdEnum _0_9A_FA_F_32_ = new ProjectIdEnum("[0-9a-fA-F]{32}");
+
+        private static final Map<String, ProjectIdEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProjectIdEnum> createStaticFields() {
+            Map<String, ProjectIdEnum> map = new HashMap<>();
+            map.put("[0-9a-fA-F]{32}", _0_9A_FA_F_32_);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProjectIdEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProjectIdEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProjectIdEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProjectIdEnum(value);
+            }
+            return result;
+        }
+
+        public static ProjectIdEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProjectIdEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProjectIdEnum) {
+                return this.value.equals(((ProjectIdEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    private String projectId;
+    private ProjectIdEnum projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_port")
@@ -48,8 +120,9 @@ public class CreateMemberOption {
         return this;
     }
 
-    /** 后端云服务器的对应的IP地址，这个IP必须在subnet_cidr_id字段的子网网段中。例如：192.168.3.11。只能指定为主网卡的IP。
-     * subnet_cidr_id为空代表添加跨VPC后端，此时address必须为ipv4地址
+    /** 后端服务器对应的IP地址。 使用说明： - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。 -
+     * 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。
+     * [不支持IPv6，请勿设置为IPv6地址。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return address */
     public String getAddress() {
@@ -65,7 +138,7 @@ public class CreateMemberOption {
         return this;
     }
 
-    /** 后端云服务器的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+    /** 后端云服务器的管理状态。取值：true、false。 虽然创建、更新请求支持该字段，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
      * 
      * @return adminStateUp */
     public Boolean getAdminStateUp() {
@@ -92,7 +165,7 @@ public class CreateMemberOption {
         this.name = name;
     }
 
-    public CreateMemberOption withProjectId(String projectId) {
+    public CreateMemberOption withProjectId(ProjectIdEnum projectId) {
         this.projectId = projectId;
         return this;
     }
@@ -100,11 +173,11 @@ public class CreateMemberOption {
     /** 后端云服务器所在的项目ID。
      * 
      * @return projectId */
-    public String getProjectId() {
+    public ProjectIdEnum getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(String projectId) {
+    public void setProjectId(ProjectIdEnum projectId) {
         this.projectId = projectId;
     }
 
@@ -113,7 +186,7 @@ public class CreateMemberOption {
         return this;
     }
 
-    /** 后端端口和协议号 minimum: 1 maximum: 65535
+    /** 后端服务器业务端口号。 minimum: 1 maximum: 65535
      * 
      * @return protocolPort */
     public Integer getProtocolPort() {
@@ -129,8 +202,9 @@ public class CreateMemberOption {
         return this;
     }
 
-    /** 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。只支持指定IPv4的子网ID。暂不支持IPv6。
-     * 可以不填，表示添加跨VPC后端，此时address必须为ipv4地址，pool的协议必须为TCP/HTTP/HTTPS，pool所属的LB的跨VPC后端转发能力必须打开
+    /** 后端云服务器所在的子网ID，可以是子网的IPv4子网ID或IPv6子网ID。 使用说明： - 该子网和关联的负载均衡器的子网必须在同一VPC下。 -
+     * 若所属LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。
+     * [不支持IPv6，请勿设置为IPv6子网ID。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return subnetCidrId */
     public String getSubnetCidrId() {
@@ -146,8 +220,8 @@ public class CreateMemberOption {
         return this;
     }
 
-    /** 后端云服务器的权重，请求按权重在同一后端云服务器组下的后端云服务器间分发。权重为0的后端不再接受新的请求。当后端云服务器所在的后端云服务器组的lb_algorithm的取值为SOURCE_IP时，该字段无效。
-     * minimum: 0 maximum: 100
+    /** 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明： -
+     * 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
      * 
      * @return weight */
     public Integer getWeight() {

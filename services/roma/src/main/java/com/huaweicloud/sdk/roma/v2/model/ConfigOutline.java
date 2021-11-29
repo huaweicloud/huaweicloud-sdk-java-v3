@@ -167,6 +167,26 @@ public class ConfigOutline {
         /** Enum API_TASK_NUM_LIMIT for value: "API_TASK_NUM_LIMIT" */
         public static final ConfigNameEnum API_TASK_NUM_LIMIT = new ConfigNameEnum("API_TASK_NUM_LIMIT");
 
+        /** Enum SET_HEADERS_NUM_LIMIT_PER_PLUGIN for value: "SET_HEADERS_NUM_LIMIT_PER_PLUGIN" */
+        public static final ConfigNameEnum SET_HEADERS_NUM_LIMIT_PER_PLUGIN =
+            new ConfigNameEnum("SET_HEADERS_NUM_LIMIT_PER_PLUGIN");
+
+        /** Enum API_TASK_SWITCH for value: "API_TASK_SWITCH" */
+        public static final ConfigNameEnum API_TASK_SWITCH = new ConfigNameEnum("API_TASK_SWITCH");
+
+        /** Enum THROTTLE_LOCAL_SWITCH for value: "THROTTLE_LOCAL_SWITCH" */
+        public static final ConfigNameEnum THROTTLE_LOCAL_SWITCH = new ConfigNameEnum("THROTTLE_LOCAL_SWITCH");
+
+        /** Enum LUA_SCRIPT_SWITCH for value: "LUA_SCRIPT_SWITCH" */
+        public static final ConfigNameEnum LUA_SCRIPT_SWITCH = new ConfigNameEnum("LUA_SCRIPT_SWITCH");
+
+        /** Enum SM_DICT_NUM_LIMIT for value: "SM_DICT_NUM_LIMIT" */
+        public static final ConfigNameEnum SM_DICT_NUM_LIMIT = new ConfigNameEnum("SM_DICT_NUM_LIMIT");
+
+        /** Enum BM_VPC_INSTANCE_GROUP_NUM_LIMIT for value: "BM_VPC_INSTANCE_GROUP_NUM_LIMIT" */
+        public static final ConfigNameEnum BM_VPC_INSTANCE_GROUP_NUM_LIMIT =
+            new ConfigNameEnum("BM_VPC_INSTANCE_GROUP_NUM_LIMIT");
+
         private static final Map<String, ConfigNameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ConfigNameEnum> createStaticFields() {
@@ -218,6 +238,12 @@ public class ConfigOutline {
             map.put("PLUGIN_NUM_LIMIT", PLUGIN_NUM_LIMIT);
             map.put("APICLIENT_FIRST_USE_X_HW_ID_SWITCH", APICLIENT_FIRST_USE_X_HW_ID_SWITCH);
             map.put("API_TASK_NUM_LIMIT", API_TASK_NUM_LIMIT);
+            map.put("SET_HEADERS_NUM_LIMIT_PER_PLUGIN", SET_HEADERS_NUM_LIMIT_PER_PLUGIN);
+            map.put("API_TASK_SWITCH", API_TASK_SWITCH);
+            map.put("THROTTLE_LOCAL_SWITCH", THROTTLE_LOCAL_SWITCH);
+            map.put("LUA_SCRIPT_SWITCH", LUA_SCRIPT_SWITCH);
+            map.put("SM_DICT_NUM_LIMIT", SM_DICT_NUM_LIMIT);
+            map.put("BM_VPC_INSTANCE_GROUP_NUM_LIMIT", BM_VPC_INSTANCE_GROUP_NUM_LIMIT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -382,7 +408,11 @@ public class ConfigOutline {
      * PUBLIC_KEY_SWITCH：是否启用PUBLIK_KEY后端认证方式 - APP_SECRET_SWITCH：是否启用APP_SECRET认证方式 - CASCADE_SWITCH：是否启用级联网关 -
      * IS_INIT_API_PATH_HASH：是否执行过API PATH HASH刷新 - APP_QUOTA_NUM_LIMIT：租户可以创建的客户端配额个数 - IS_INIT_API_VERSION：是否执行过API
      * VERSION CANONICAL PATH刷新 - PLUGIN_NUM_LIMIT：租户可以创建的插件个数 -
-     * APICLIENT_FIRST_USE_X_HW_ID_SWITCH：ApiClient是否优先使用x-hw-id校验权限 [- API_TASK_NUM_LIMIT：租户可以创建的API定时任务个数限制](tag:hws)
+     * APICLIENT_FIRST_USE_X_HW_ID_SWITCH：ApiClient是否优先使用x-hw-id校验权限 [- API_TASK_NUM_LIMIT：租户可以创建的API定时任务个数限制 -
+     * THROTTLE_LOCAL_SWITCH：是否启用本地流控模式 - API_TASK_SWITCH：租户是否支持定时任务 -
+     * SET_HEADERS_NUM_LIMIT_PER_PLUGIN：租户可以通过插件创建的HTTP头个数限制 - LUA_SCRIPT_SWITCH：租户是否允许使用lua_script插件 -
+     * LUA_SCRIPT_NUM_LIMIT：每个实例可以创建的lua_script类型插件个数限制 - SM_DICT_NUM_LIMIT：每个实例可以创建的数据字典个数限制 -
+     * BM_VPC_INSTANCE_GROUP_NUM_LIMIT：每个实例可以创建的VPC通道后端服务器组个数限制](tag:hws)
      * 
      * @return remark */
     public String getRemark() {

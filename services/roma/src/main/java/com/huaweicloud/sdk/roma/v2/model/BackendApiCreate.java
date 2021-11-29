@@ -226,14 +226,90 @@ public class BackendApiCreate {
     private Boolean enableClientSsl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_info")
 
     private VpcInfo vpcChannelInfo;
 
+    /** 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道 */
+    public static final class VpcChannelStatusEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final VpcChannelStatusEnum NUMBER_1 = new VpcChannelStatusEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final VpcChannelStatusEnum NUMBER_2 = new VpcChannelStatusEnum(2);
+
+        private static final Map<Integer, VpcChannelStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, VpcChannelStatusEnum> createStaticFields() {
+            Map<Integer, VpcChannelStatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        VpcChannelStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VpcChannelStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new VpcChannelStatusEnum(value);
+            }
+            return result;
+        }
+
+        public static VpcChannelStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VpcChannelStatusEnum) {
+                return this.value.equals(((VpcChannelStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_status")
 
-    private Integer vpcChannelStatus;
+    private VpcChannelStatusEnum vpcChannelStatus;
 
     public BackendApiCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
@@ -381,6 +457,22 @@ public class BackendApiCreate {
         this.enableClientSsl = enableClientSsl;
     }
 
+    public BackendApiCreate withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /** ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * 
+     * @return retryCount */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+    }
+
     public BackendApiCreate withVpcChannelInfo(VpcInfo vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
         return this;
@@ -406,7 +498,7 @@ public class BackendApiCreate {
         this.vpcChannelInfo = vpcChannelInfo;
     }
 
-    public BackendApiCreate withVpcChannelStatus(Integer vpcChannelStatus) {
+    public BackendApiCreate withVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
         return this;
     }
@@ -414,11 +506,11 @@ public class BackendApiCreate {
     /** 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
      * 
      * @return vpcChannelStatus */
-    public Integer getVpcChannelStatus() {
+    public VpcChannelStatusEnum getVpcChannelStatus() {
         return vpcChannelStatus;
     }
 
-    public void setVpcChannelStatus(Integer vpcChannelStatus) {
+    public void setVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
     }
 
@@ -440,6 +532,7 @@ public class BackendApiCreate {
             && Objects.equals(this.reqUri, backendApiCreate.reqUri)
             && Objects.equals(this.timeout, backendApiCreate.timeout)
             && Objects.equals(this.enableClientSsl, backendApiCreate.enableClientSsl)
+            && Objects.equals(this.retryCount, backendApiCreate.retryCount)
             && Objects.equals(this.vpcChannelInfo, backendApiCreate.vpcChannelInfo)
             && Objects.equals(this.vpcChannelStatus, backendApiCreate.vpcChannelStatus);
     }
@@ -455,6 +548,7 @@ public class BackendApiCreate {
             reqUri,
             timeout,
             enableClientSsl,
+            retryCount,
             vpcChannelInfo,
             vpcChannelStatus);
     }
@@ -472,6 +566,7 @@ public class BackendApiCreate {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("    vpcChannelInfo: ").append(toIndentedString(vpcChannelInfo)).append("\n");
         sb.append("    vpcChannelStatus: ").append(toIndentedString(vpcChannelStatus)).append("\n");
         sb.append("}");

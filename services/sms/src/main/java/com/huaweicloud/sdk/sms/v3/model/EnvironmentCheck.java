@@ -34,22 +34,22 @@ public class EnvironmentCheck {
     /** 检查结果 */
     public static final class ResultEnum {
 
-        /** Enum OK_ for value: "OK：检查通过" */
-        public static final ResultEnum OK_ = new ResultEnum("OK：检查通过");
+        /** Enum OK for value: "OK" */
+        public static final ResultEnum OK = new ResultEnum("OK");
 
-        /** Enum WARN_ for value: "WARN：告警" */
-        public static final ResultEnum WARN_ = new ResultEnum("WARN：告警");
+        /** Enum WARN for value: "WARN" */
+        public static final ResultEnum WARN = new ResultEnum("WARN");
 
-        /** Enum ERROR_ for value: "ERROR：检查不通过" */
-        public static final ResultEnum ERROR_ = new ResultEnum("ERROR：检查不通过");
+        /** Enum ERROR for value: "ERROR" */
+        public static final ResultEnum ERROR = new ResultEnum("ERROR");
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResultEnum> createStaticFields() {
             Map<String, ResultEnum> map = new HashMap<>();
-            map.put("OK：检查通过", OK_);
-            map.put("WARN：告警", WARN_);
-            map.put("ERROR：检查不通过", ERROR_);
+            map.put("OK", OK);
+            map.put("WARN", WARN);
+            map.put("ERROR", ERROR);
             return Collections.unmodifiableMap(map);
         }
 

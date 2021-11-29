@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 后端云服务器组列表查询返回对象。 */
+/** 后端服务器信息。 */
 public class Member {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,12 +78,22 @@ public class Member {
 
     private String loadbalancerId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_type")
+
+    private String memberType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
     public Member withId(String id) {
         this.id = id;
         return this;
     }
 
-    /** 后端云服务器ID。
+    /** 后端服务器ID。
      * 
      * @return id */
     public String getId() {
@@ -99,7 +109,7 @@ public class Member {
         return this;
     }
 
-    /** 后端云服务器名称。
+    /** 后端服务器名称。
      * 
      * @return name */
     public String getName() {
@@ -115,7 +125,7 @@ public class Member {
         return this;
     }
 
-    /** 后端云服务器所在的项目ID。
+    /** 后端服务器所在的项目ID。
      * 
      * @return projectId */
     public String getProjectId() {
@@ -131,7 +141,7 @@ public class Member {
         return this;
     }
 
-    /** 所属服务器组ID。 注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+    /** 所在后端服务器组ID。 注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
      * 
      * @return poolId */
     public String getPoolId() {
@@ -147,7 +157,7 @@ public class Member {
         return this;
     }
 
-    /** 后端云服务器的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+    /** 后端云服务器的管理状态。取值：true、false。 虽然创建、更新请求支持该字段，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
      * 
      * @return adminStateUp */
     public Boolean getAdminStateUp() {
@@ -163,7 +173,9 @@ public class Member {
         return this;
     }
 
-    /** 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。只支持指定IPv4的子网ID。暂不支持IPv6。 为空代表当前member为跨VPC后端
+    /** 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。
+     * 若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。 使用说明： -
+     * 该子网和关联的负载均衡器的子网必须在同一VPC下。 [不支持IPv6，请勿设置为IPv6子网ID。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return subnetCidrId */
     public String getSubnetCidrId() {
@@ -179,7 +191,7 @@ public class Member {
         return this;
     }
 
-    /** 后端服务器端口号 minimum: 1 maximum: 65535
+    /** 后端服务器业务端口号。 minimum: 1 maximum: 65535
      * 
      * @return protocolPort */
     public Integer getProtocolPort() {
@@ -195,8 +207,8 @@ public class Member {
         return this;
     }
 
-    /** 后端云服务器的权重，请求按权重在同一后端云服务器组下的后端云服务器间分发。权重为0的后端不再接受新的请求。当后端云服务器所在的后端云服务器组的lb_algorithm的取值为SOURCE_IP时，该字段无效。
-     * minimum: 0 maximum: 100
+    /** 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明： -
+     * 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。 minimum: 0 maximum: 100
      * 
      * @return weight */
     public Integer getWeight() {
@@ -212,7 +224,9 @@ public class Member {
         return this;
     }
 
-    /** 后端云服务器的对应的IP地址，这个IP必须在subnet_cidr_id字段的子网网段中。例如：192.168.3.11。只能指定为主网卡的IP。
+    /** 后端服务器对应的IP地址。 使用说明： - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。 -
+     * 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。
+     * [不支持IPv6，请勿设置为IPv6地址。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return address */
     public String getAddress() {
@@ -228,7 +242,7 @@ public class Member {
         return this;
     }
 
-    /** 只读属性，根据传入的address字段自动判断之后生成，取值范围(v4、v6)
+    /** 当前后端服务器的IP地址版本，由后端系统自动根据传入的address字段确定。取值：v4、v6。
      * 
      * @return ipVersion */
     public String getIpVersion() {
@@ -244,7 +258,8 @@ public class Member {
         return this;
     }
 
-    /** 设备使用者，为空表示后端服务器未关联到ECS。 注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+    /** 设备所有者，取值： - 空，表示后端服务器未关联到ECS。 - compute&#58;{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。 注意：该字段当前仅GET
+     * /v3/{project_id}/elb/members 接口可见。
      * 
      * @return deviceOwner */
     public String getDeviceOwner() {
@@ -276,7 +291,7 @@ public class Member {
         return this;
     }
 
-    /** 后端云服务器的健康状态，可以为ONLINE，NO_MONITOR，OFFLINE。
+    /** 后端云服务器的健康状态。取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
      * 
      * @return operatingStatus */
     public String getOperatingStatus() {
@@ -303,6 +318,38 @@ public class Member {
         this.loadbalancerId = loadbalancerId;
     }
 
+    public Member withMemberType(String memberType) {
+        this.memberType = memberType;
+        return this;
+    }
+
+    /** 后端云服务器的类型。取值： - ip：跨VPC的member。 - instance：关联到ECS的member。
+     * 
+     * @return memberType */
+    public String getMemberType() {
+        return memberType;
+    }
+
+    public void setMemberType(String memberType) {
+        this.memberType = memberType;
+    }
+
+    public Member withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /** member关联的实例ID。空表示member关联的实例为非真实设备 （如：跨VPC场景）
+     * 
+     * @return instanceId */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -320,7 +367,8 @@ public class Member {
             && Objects.equals(this.address, member.address) && Objects.equals(this.ipVersion, member.ipVersion)
             && Objects.equals(this.deviceOwner, member.deviceOwner) && Objects.equals(this.deviceId, member.deviceId)
             && Objects.equals(this.operatingStatus, member.operatingStatus)
-            && Objects.equals(this.loadbalancerId, member.loadbalancerId);
+            && Objects.equals(this.loadbalancerId, member.loadbalancerId)
+            && Objects.equals(this.memberType, member.memberType) && Objects.equals(this.instanceId, member.instanceId);
     }
 
     @Override
@@ -338,7 +386,9 @@ public class Member {
             deviceOwner,
             deviceId,
             operatingStatus,
-            loadbalancerId);
+            loadbalancerId,
+            memberType,
+            instanceId);
     }
 
     @Override
@@ -359,6 +409,8 @@ public class Member {
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    operatingStatus: ").append(toIndentedString(operatingStatus)).append("\n");
         sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -22,10 +22,81 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     private String name;
 
+    /** API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API */
+    public static final class TypeEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
+
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        TypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private Integer type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
@@ -217,7 +288,7 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     private String reqUri;
 
-    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 */
+    /** API的认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 */
     public static final class AuthTypeEnum {
 
         /** Enum NONE for value: "NONE" */
@@ -387,7 +458,7 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     private MatchModeEnum matchMode;
 
-    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 */
+    /** 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 */
     public static final class BackendTypeEnum {
 
         /** Enum HTTP for value: "HTTP" */
@@ -522,6 +593,90 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     private String tag;
 
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain */
+    public static final class ContentTypeEnum {
+
+        /** Enum APPLICATION_JSON for value: "application/json" */
+        public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
+
+        /** Enum APPLICATION_XML for value: "application/xml" */
+        public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
+
+        /** Enum MULTIPART_FORM_DATE for value: "multipart/form-date" */
+        public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
+
+        /** Enum TEXT_PLAIN for value: "text/plain" */
+        public static final ContentTypeEnum TEXT_PLAIN = new ContentTypeEnum("text/plain");
+
+        private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ContentTypeEnum> createStaticFields() {
+            Map<String, ContentTypeEnum> map = new HashMap<>();
+            map.put("application/json", APPLICATION_JSON);
+            map.put("application/xml", APPLICATION_XML);
+            map.put("multipart/form-date", MULTIPART_FORM_DATE);
+            map.put("text/plain", TEXT_PLAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ContentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ContentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ContentTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ContentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ContentTypeEnum) {
+                return this.value.equals(((ContentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_type")
+
+    private ContentTypeEnum contentType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
@@ -578,19 +733,19 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
         this.name = name;
     }
 
-    public ListApiRuntimeDefinitionV2Response withType(Integer type) {
+    public ListApiRuntimeDefinitionV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    /** API类型 - 1：公有API - 2：私有API
+    /** API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API
      * 
      * @return type */
-    public Integer getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -663,7 +818,7 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
         return this;
     }
 
-    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+    /** API的认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
      * 
      * @return authType */
     public AuthTypeEnum getAuthType() {
@@ -736,7 +891,7 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
         return this;
     }
 
-    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+    /** 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
      * 
      * @return backendType */
     public BackendTypeEnum getBackendType() {
@@ -864,7 +1019,7 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
         return this;
     }
 
-    /** 标签。 支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。
+    /** 标签。 支持英文，数字，中文，特殊符号（-*#%.:_），且只能以中文或英文开头。支持输入多个标签，不同标签以英文逗号分割。 默认支持10个标签，如需扩大配额请联系技术工程师修改API_TAG_NUM_LIMIT配置。
      * 
      * @return tags */
     public List<String> getTags() {
@@ -937,6 +1092,22 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public ListApiRuntimeDefinitionV2Response withContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain
+     * 
+     * @return contentType */
+    public ContentTypeEnum getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
     }
 
     public ListApiRuntimeDefinitionV2Response withId(String id) {
@@ -1130,6 +1301,7 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
             && Objects.equals(this.romaAppId, listApiRuntimeDefinitionV2Response.romaAppId)
             && Objects.equals(this.domainName, listApiRuntimeDefinitionV2Response.domainName)
             && Objects.equals(this.tag, listApiRuntimeDefinitionV2Response.tag)
+            && Objects.equals(this.contentType, listApiRuntimeDefinitionV2Response.contentType)
             && Objects.equals(this.id, listApiRuntimeDefinitionV2Response.id)
             && Objects.equals(this.groupName, listApiRuntimeDefinitionV2Response.groupName)
             && Objects.equals(this.runEnvName, listApiRuntimeDefinitionV2Response.runEnvName)
@@ -1164,6 +1336,7 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
             romaAppId,
             domainName,
             tag,
+            contentType,
             id,
             groupName,
             runEnvName,
@@ -1200,6 +1373,7 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    runEnvName: ").append(toIndentedString(runEnvName)).append("\n");

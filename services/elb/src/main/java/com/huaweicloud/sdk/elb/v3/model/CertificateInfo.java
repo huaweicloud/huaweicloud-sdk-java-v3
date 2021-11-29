@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建服务器证书请求返回对象 */
+/** 证书信息。 */
 public class CertificateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,12 +68,22 @@ public class CertificateInfo {
 
     private String projectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_certificate")
+
+    private String encCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_private_key")
+
+    private String encPrivateKey;
+
     public CertificateInfo withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    /** SSL证书的管理状态；暂不支持
+    /** 证书的管理状态。 不支持该字段，请勿使用。
      * 
      * @return adminStateUp */
     public Boolean getAdminStateUp() {
@@ -89,7 +99,7 @@ public class CertificateInfo {
         return this;
     }
 
-    /** HTTPS协议使用的证书内容。 取值范围：PEM编码格式。
+    /** 证书的内容。PEM编码格式。
      * 
      * @return certificate */
     public String getCertificate() {
@@ -105,7 +115,7 @@ public class CertificateInfo {
         return this;
     }
 
-    /** SSL证书的描述。
+    /** 证书的描述。
      * 
      * @return description */
     public String getDescription() {
@@ -155,7 +165,7 @@ public class CertificateInfo {
         return this;
     }
 
-    /** SSL证书的名称。
+    /** 证书的名称。
      * 
      * @return name */
     public String getName() {
@@ -171,7 +181,7 @@ public class CertificateInfo {
         return this;
     }
 
-    /** 服务器证书的私钥。仅type为server时有效。type为server时必选。
+    /** 服务器证书的私钥。PEM编码格式。 当type为client时，该参数被忽略，不影响证书的创建和使用。且若不符合格式，不报错但会被设置为空。 当type为server时，该字段必须符合格式要求，且私钥必须是有效的。
      * 
      * @return privateKey */
     public String getPrivateKey() {
@@ -187,7 +197,7 @@ public class CertificateInfo {
         return this;
     }
 
-    /** SSL证书的类型。分为服务器证书(server)和CA证书(client)。 默认值：server
+    /** 证书的类型。分为服务器证书(server)和CA证书(client)。默认值：server。
      * 
      * @return type */
     public String getType() {
@@ -251,7 +261,7 @@ public class CertificateInfo {
         return this;
     }
 
-    /** 项目ID。
+    /** 证书所在项目ID。
      * 
      * @return projectId */
     public String getProjectId() {
@@ -260,6 +270,38 @@ public class CertificateInfo {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
+    }
+
+    public CertificateInfo withEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+        return this;
+    }
+
+    /** HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
+     * 
+     * @return encCertificate */
+    public String getEncCertificate() {
+        return encCertificate;
+    }
+
+    public void setEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+    }
+
+    public CertificateInfo withEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+        return this;
+    }
+
+    /** HTTPS协议使用的SM加密证书私钥。 取值：PEM编码格式。 注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
+     * 
+     * @return encPrivateKey */
+    public String getEncPrivateKey() {
+        return encPrivateKey;
+    }
+
+    public void setEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
     }
 
     @Override
@@ -281,7 +323,9 @@ public class CertificateInfo {
             && Objects.equals(this.createdAt, certificateInfo.createdAt)
             && Objects.equals(this.updatedAt, certificateInfo.updatedAt)
             && Objects.equals(this.expireTime, certificateInfo.expireTime)
-            && Objects.equals(this.projectId, certificateInfo.projectId);
+            && Objects.equals(this.projectId, certificateInfo.projectId)
+            && Objects.equals(this.encCertificate, certificateInfo.encCertificate)
+            && Objects.equals(this.encPrivateKey, certificateInfo.encPrivateKey);
     }
 
     @Override
@@ -297,7 +341,9 @@ public class CertificateInfo {
             createdAt,
             updatedAt,
             expireTime,
-            projectId);
+            projectId,
+            encCertificate,
+            encPrivateKey);
     }
 
     @Override
@@ -316,6 +362,8 @@ public class CertificateInfo {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
+        sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

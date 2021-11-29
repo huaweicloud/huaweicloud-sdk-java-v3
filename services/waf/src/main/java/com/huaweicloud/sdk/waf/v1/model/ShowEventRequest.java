@@ -39,7 +39,7 @@ public class ShowEventRequest {
         return this;
     }
 
-    /** 事件ID
+    /** 防护事件id,通过调用查询攻击事件列表(ListEvent)接口获取防护事件id
      * 
      * @return eventid */
     public String getEventid() {

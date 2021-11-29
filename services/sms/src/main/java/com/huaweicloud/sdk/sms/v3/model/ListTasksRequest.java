@@ -16,50 +16,50 @@ public class ListTasksRequest {
     /** 迁移任务状态 */
     public static final class StateEnum {
 
-        /** Enum READY_ for value: "READY：准备就绪" */
-        public static final StateEnum READY_ = new StateEnum("READY：准备就绪");
+        /** Enum READY for value: "READY" */
+        public static final StateEnum READY = new StateEnum("READY");
 
-        /** Enum RUNNING_ for value: "RUNNING：迁移中" */
-        public static final StateEnum RUNNING_ = new StateEnum("RUNNING：迁移中");
+        /** Enum RUNNING for value: "RUNNING" */
+        public static final StateEnum RUNNING = new StateEnum("RUNNING");
 
-        /** Enum SYNCING_ for value: "SYNCING：同步中" */
-        public static final StateEnum SYNCING_ = new StateEnum("SYNCING：同步中");
+        /** Enum SYNCING for value: "SYNCING" */
+        public static final StateEnum SYNCING = new StateEnum("SYNCING");
 
-        /** Enum MIGRATE_SUCCESS_ for value: "MIGRATE_SUCCESS：迁移成功" */
-        public static final StateEnum MIGRATE_SUCCESS_ = new StateEnum("MIGRATE_SUCCESS：迁移成功");
+        /** Enum MIGRATE_SUCCESS for value: "MIGRATE_SUCCESS" */
+        public static final StateEnum MIGRATE_SUCCESS = new StateEnum("MIGRATE_SUCCESS");
 
-        /** Enum MIGRATE_FAIL_ for value: "MIGRATE_FAIL：迁移失败" */
-        public static final StateEnum MIGRATE_FAIL_ = new StateEnum("MIGRATE_FAIL：迁移失败");
+        /** Enum MIGRATE_FAIL for value: "MIGRATE_FAIL" */
+        public static final StateEnum MIGRATE_FAIL = new StateEnum("MIGRATE_FAIL");
 
-        /** Enum ABORTING_ for value: "ABORTING：任务中止中" */
-        public static final StateEnum ABORTING_ = new StateEnum("ABORTING：任务中止中");
+        /** Enum ABORTING for value: "ABORTING" */
+        public static final StateEnum ABORTING = new StateEnum("ABORTING");
 
-        /** Enum ABORT_ for value: "ABORT：任务中止" */
-        public static final StateEnum ABORT_ = new StateEnum("ABORT：任务中止");
+        /** Enum ABORT for value: "ABORT" */
+        public static final StateEnum ABORT = new StateEnum("ABORT");
 
-        /** Enum DELETING_ for value: "DELETING：删除中" */
-        public static final StateEnum DELETING_ = new StateEnum("DELETING：删除中");
+        /** Enum DELETING for value: "DELETING" */
+        public static final StateEnum DELETING = new StateEnum("DELETING");
 
-        /** Enum SYNC_F_ROLLBACKING_ for value: "SYNC_F_ROLLBACKING：同步失败回滚中" */
-        public static final StateEnum SYNC_F_ROLLBACKING_ = new StateEnum("SYNC_F_ROLLBACKING：同步失败回滚中");
+        /** Enum SYNC_F_ROLLBACKING for value: "SYNC_F_ROLLBACKING" */
+        public static final StateEnum SYNC_F_ROLLBACKING = new StateEnum("SYNC_F_ROLLBACKING");
 
-        /** Enum SYNC_F_ROLLBACK_SUCCESS_ for value: "SYNC_F_ROLLBACK_SUCCESS：同步失败回滚成功" */
-        public static final StateEnum SYNC_F_ROLLBACK_SUCCESS_ = new StateEnum("SYNC_F_ROLLBACK_SUCCESS：同步失败回滚成功");
+        /** Enum SYNC_F_ROLLBACK_SUCCESS for value: "SYNC_F_ROLLBACK_SUCCESS" */
+        public static final StateEnum SYNC_F_ROLLBACK_SUCCESS = new StateEnum("SYNC_F_ROLLBACK_SUCCESS");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
             Map<String, StateEnum> map = new HashMap<>();
-            map.put("READY：准备就绪", READY_);
-            map.put("RUNNING：迁移中", RUNNING_);
-            map.put("SYNCING：同步中", SYNCING_);
-            map.put("MIGRATE_SUCCESS：迁移成功", MIGRATE_SUCCESS_);
-            map.put("MIGRATE_FAIL：迁移失败", MIGRATE_FAIL_);
-            map.put("ABORTING：任务中止中", ABORTING_);
-            map.put("ABORT：任务中止", ABORT_);
-            map.put("DELETING：删除中", DELETING_);
-            map.put("SYNC_F_ROLLBACKING：同步失败回滚中", SYNC_F_ROLLBACKING_);
-            map.put("SYNC_F_ROLLBACK_SUCCESS：同步失败回滚成功", SYNC_F_ROLLBACK_SUCCESS_);
+            map.put("READY", READY);
+            map.put("RUNNING", RUNNING);
+            map.put("SYNCING", SYNCING);
+            map.put("MIGRATE_SUCCESS", MIGRATE_SUCCESS);
+            map.put("MIGRATE_FAIL", MIGRATE_FAIL);
+            map.put("ABORTING", ABORTING);
+            map.put("ABORT", ABORT);
+            map.put("DELETING", DELETING);
+            map.put("SYNC_F_ROLLBACKING", SYNC_F_ROLLBACKING);
+            map.put("SYNC_F_ROLLBACK_SUCCESS", SYNC_F_ROLLBACK_SUCCESS);
             return Collections.unmodifiableMap(map);
         }
 

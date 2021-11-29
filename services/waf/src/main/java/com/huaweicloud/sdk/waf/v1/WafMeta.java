@@ -959,6 +959,13 @@ public class WafMeta {
             f -> f.withMarshaller(ListEventRequest::getRecent, (req, v) -> {
                 req.setRecent(v);
             }));
+        builder.<List<String>>withRequestField("attacks",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getAttacks, (req, v) -> {
+                req.setAttacks(v);
+            }));
         builder.<Long>withRequestField("from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

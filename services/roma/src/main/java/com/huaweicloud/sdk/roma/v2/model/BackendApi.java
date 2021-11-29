@@ -227,14 +227,86 @@ public class BackendApi {
     private Boolean enableClientSsl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
 
+    /** 后端状态 - 1： 有效 */
+    public static final class StatusEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_time")
@@ -402,6 +474,22 @@ public class BackendApi {
         this.enableClientSsl = enableClientSsl;
     }
 
+    public BackendApi withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /** ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * 
+     * @return retryCount */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+    }
+
     public BackendApi withId(String id) {
         this.id = id;
         return this;
@@ -418,7 +506,7 @@ public class BackendApi {
         this.id = id;
     }
 
-    public BackendApi withStatus(Integer status) {
+    public BackendApi withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -426,11 +514,11 @@ public class BackendApi {
     /** 后端状态 - 1： 有效
      * 
      * @return status */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -523,7 +611,8 @@ public class BackendApi {
             && Objects.equals(this.version, backendApi.version) && Objects.equals(this.reqUri, backendApi.reqUri)
             && Objects.equals(this.timeout, backendApi.timeout)
             && Objects.equals(this.enableClientSsl, backendApi.enableClientSsl)
-            && Objects.equals(this.id, backendApi.id) && Objects.equals(this.status, backendApi.status)
+            && Objects.equals(this.retryCount, backendApi.retryCount) && Objects.equals(this.id, backendApi.id)
+            && Objects.equals(this.status, backendApi.status)
             && Objects.equals(this.registerTime, backendApi.registerTime)
             && Objects.equals(this.updateTime, backendApi.updateTime)
             && Objects.equals(this.vpcChannelInfo, backendApi.vpcChannelInfo)
@@ -541,6 +630,7 @@ public class BackendApi {
             reqUri,
             timeout,
             enableClientSsl,
+            retryCount,
             id,
             status,
             registerTime,
@@ -562,6 +652,7 @@ public class BackendApi {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");

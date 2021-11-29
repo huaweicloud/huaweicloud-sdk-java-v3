@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询IP地址组返回对象 */
+/** IP地址组信息。 */
 public class IpGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,7 +56,7 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组的创建时间
+    /** IP地址组的创建时间。
      * 
      * @return createdAt */
     public String getCreatedAt() {
@@ -88,7 +88,7 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组的id。
+    /** IP地址组的ID。
      * 
      * @return id */
     public String getId() {
@@ -120,7 +120,7 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组中包含的ip或网段列表。[]表示任意ip。
+    /** IP地址组中包含的IP或网段列表。[]表示任意IP。
      * 
      * @return ipList */
     public List<IpInfo> getIpList() {
@@ -152,7 +152,7 @@ public class IpGroup {
         return this;
     }
 
-    /** 与IP地址组关联的监听器的id列表。
+    /** 与IP地址组关联的监听器的ID列表。
      * 
      * @return listeners */
     public List<ListenerRef> getListeners() {
@@ -184,7 +184,7 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组的项目id。
+    /** IP地址组的项目ID。
      * 
      * @return projectId */
     public String getProjectId() {

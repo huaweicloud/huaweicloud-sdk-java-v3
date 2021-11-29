@@ -18,7 +18,7 @@ public class CustomerUpgradeDatabaseVersionReq {
         return this;
     }
 
-    /** 是否延迟升级。
+    /** 是否延迟至可维护时间段内升级。 取值范围： - true：延迟升级。表示实例将在设置的可维护时间段内升级。 - false：立即升级，默认该方式。
      * 
      * @return delay */
     public Boolean getDelay() {

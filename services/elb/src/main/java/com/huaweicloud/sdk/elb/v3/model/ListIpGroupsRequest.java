@@ -12,19 +12,9 @@ import java.util.function.Consumer;
 public class ListIpGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
+    @JsonProperty(value = "marker")
 
-    private List<String> description = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private List<String> id = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip_list")
-
-    private List<String> ipList = null;
+    private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -32,9 +22,14 @@ public class ListIpGroupsRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "marker")
+    @JsonProperty(value = "page_reverse")
 
-    private String marker;
+    private Boolean pageReverse;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -42,40 +37,61 @@ public class ListIpGroupsRequest {
     private List<String> name = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_reverse")
+    @JsonProperty(value = "description")
 
-    private Boolean pageReverse;
+    private List<String> description = null;
 
-    public ListIpGroupsRequest withDescription(List<String> description) {
-        this.description = description;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_list")
+
+    private List<String> ipList = null;
+
+    public ListIpGroupsRequest withMarker(String marker) {
+        this.marker = marker;
         return this;
     }
 
-    public ListIpGroupsRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
-        this.description.add(descriptionItem);
-        return this;
-    }
-
-    public ListIpGroupsRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
-        descriptionSetter.accept(this.description);
-        return this;
-    }
-
-    /** ip地址组的描述信息。
+    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * 
-     * @return description */
-    public List<String> getDescription() {
-        return description;
+     * @return marker */
+    public String getMarker() {
+        return marker;
     }
 
-    public void setDescription(List<String> description) {
-        this.description = description;
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ListIpGroupsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页返回的个数。 minimum: 0 maximum: 2000
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListIpGroupsRequest withPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
+        return this;
+    }
+
+    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明： - 必须与limit一起使用。
+     * 
+     * @return pageReverse */
+    public Boolean getPageReverse() {
+        return pageReverse;
+    }
+
+    public void setPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
     }
 
     public ListIpGroupsRequest withId(List<String> id) {
@@ -99,7 +115,7 @@ public class ListIpGroupsRequest {
         return this;
     }
 
-    /** ip地址组的id
+    /** IP地址组的ID。
      * 
      * @return id */
     public List<String> getId() {
@@ -108,70 +124,6 @@ public class ListIpGroupsRequest {
 
     public void setId(List<String> id) {
         this.id = id;
-    }
-
-    public ListIpGroupsRequest withIpList(List<String> ipList) {
-        this.ipList = ipList;
-        return this;
-    }
-
-    public ListIpGroupsRequest addIpListItem(String ipListItem) {
-        if (this.ipList == null) {
-            this.ipList = new ArrayList<>();
-        }
-        this.ipList.add(ipListItem);
-        return this;
-    }
-
-    public ListIpGroupsRequest withIpList(Consumer<List<String>> ipListSetter) {
-        if (this.ipList == null) {
-            this.ipList = new ArrayList<>();
-        }
-        ipListSetter.accept(this.ipList);
-        return this;
-    }
-
-    /** ip地址，多个用逗号分隔
-     * 
-     * @return ipList */
-    public List<String> getIpList() {
-        return ipList;
-    }
-
-    public void setIpList(List<String> ipList) {
-        this.ipList = ipList;
-    }
-
-    public ListIpGroupsRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /** 每页返回的个数。 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public ListIpGroupsRequest withMarker(String marker) {
-        this.marker = marker;
-        return this;
-    }
-
-    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * 
-     * @return marker */
-    public String getMarker() {
-        return marker;
-    }
-
-    public void setMarker(String marker) {
-        this.marker = marker;
     }
 
     public ListIpGroupsRequest withName(List<String> name) {
@@ -195,7 +147,7 @@ public class ListIpGroupsRequest {
         return this;
     }
 
-    /** ip地址组的名称
+    /** IP地址组的名称。
      * 
      * @return name */
     public List<String> getName() {
@@ -206,20 +158,68 @@ public class ListIpGroupsRequest {
         this.name = name;
     }
 
-    public ListIpGroupsRequest withPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
+    public ListIpGroupsRequest withDescription(List<String> description) {
+        this.description = description;
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
-     * 
-     * @return pageReverse */
-    public Boolean getPageReverse() {
-        return pageReverse;
+    public ListIpGroupsRequest addDescriptionItem(String descriptionItem) {
+        if (this.description == null) {
+            this.description = new ArrayList<>();
+        }
+        this.description.add(descriptionItem);
+        return this;
     }
 
-    public void setPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
+    public ListIpGroupsRequest withDescription(Consumer<List<String>> descriptionSetter) {
+        if (this.description == null) {
+            this.description = new ArrayList<>();
+        }
+        descriptionSetter.accept(this.description);
+        return this;
+    }
+
+    /** IP地址组的描述信息。
+     * 
+     * @return description */
+    public List<String> getDescription() {
+        return description;
+    }
+
+    public void setDescription(List<String> description) {
+        this.description = description;
+    }
+
+    public ListIpGroupsRequest withIpList(List<String> ipList) {
+        this.ipList = ipList;
+        return this;
+    }
+
+    public ListIpGroupsRequest addIpListItem(String ipListItem) {
+        if (this.ipList == null) {
+            this.ipList = new ArrayList<>();
+        }
+        this.ipList.add(ipListItem);
+        return this;
+    }
+
+    public ListIpGroupsRequest withIpList(Consumer<List<String>> ipListSetter) {
+        if (this.ipList == null) {
+            this.ipList = new ArrayList<>();
+        }
+        ipListSetter.accept(this.ipList);
+        return this;
+    }
+
+    /** IP地址，多个用逗号分隔。
+     * 
+     * @return ipList */
+    public List<String> getIpList() {
+        return ipList;
+    }
+
+    public void setIpList(List<String> ipList) {
+        this.ipList = ipList;
     }
 
     @Override
@@ -231,31 +231,30 @@ public class ListIpGroupsRequest {
             return false;
         }
         ListIpGroupsRequest listIpGroupsRequest = (ListIpGroupsRequest) o;
-        return Objects.equals(this.description, listIpGroupsRequest.description)
-            && Objects.equals(this.id, listIpGroupsRequest.id)
-            && Objects.equals(this.ipList, listIpGroupsRequest.ipList)
+        return Objects.equals(this.marker, listIpGroupsRequest.marker)
             && Objects.equals(this.limit, listIpGroupsRequest.limit)
-            && Objects.equals(this.marker, listIpGroupsRequest.marker)
-            && Objects.equals(this.name, listIpGroupsRequest.name)
-            && Objects.equals(this.pageReverse, listIpGroupsRequest.pageReverse);
+            && Objects.equals(this.pageReverse, listIpGroupsRequest.pageReverse)
+            && Objects.equals(this.id, listIpGroupsRequest.id) && Objects.equals(this.name, listIpGroupsRequest.name)
+            && Objects.equals(this.description, listIpGroupsRequest.description)
+            && Objects.equals(this.ipList, listIpGroupsRequest.ipList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, id, ipList, limit, marker, name, pageReverse);
+        return Objects.hash(marker, limit, pageReverse, id, name, description, ipList);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListIpGroupsRequest {\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

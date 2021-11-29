@@ -16,6 +16,16 @@ public class CreateLoadBalancerResponse extends SdkResponse {
     private LoadBalancer loadbalancer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_id")
+
+    private String loadbalancerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
     private String requestId;
@@ -45,6 +55,38 @@ public class CreateLoadBalancerResponse extends SdkResponse {
         this.loadbalancer = loadbalancer;
     }
 
+    public CreateLoadBalancerResponse withLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+        return this;
+    }
+
+    /** 负载均衡器的id（包周期场景返回该字段）
+     * 
+     * @return loadbalancerId */
+    public String getLoadbalancerId() {
+        return loadbalancerId;
+    }
+
+    public void setLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+    }
+
+    public CreateLoadBalancerResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /** 订单号（包周期场景返回该字段）
+     * 
+     * @return orderId */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     public CreateLoadBalancerResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -71,12 +113,14 @@ public class CreateLoadBalancerResponse extends SdkResponse {
         }
         CreateLoadBalancerResponse createLoadBalancerResponse = (CreateLoadBalancerResponse) o;
         return Objects.equals(this.loadbalancer, createLoadBalancerResponse.loadbalancer)
+            && Objects.equals(this.loadbalancerId, createLoadBalancerResponse.loadbalancerId)
+            && Objects.equals(this.orderId, createLoadBalancerResponse.orderId)
             && Objects.equals(this.requestId, createLoadBalancerResponse.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(loadbalancer, requestId);
+        return Objects.hash(loadbalancer, loadbalancerId, orderId, requestId);
     }
 
     @Override
@@ -84,6 +128,8 @@ public class CreateLoadBalancerResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateLoadBalancerResponse {\n");
         sb.append("    loadbalancer: ").append(toIndentedString(loadbalancer)).append("\n");
+        sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();

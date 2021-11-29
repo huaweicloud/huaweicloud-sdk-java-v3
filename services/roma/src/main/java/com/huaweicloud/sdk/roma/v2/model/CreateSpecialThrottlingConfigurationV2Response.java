@@ -172,7 +172,7 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
         return this;
     }
 
-    /** 作用的APP或租户的名称
+    /** [作用的APP或租户的名称](tag:hws;hws_hk;hcs;fcs;g42;)[作用的APP或租户ID](tag:Site)
      * 
      * @return objectName */
     public String getObjectName() {

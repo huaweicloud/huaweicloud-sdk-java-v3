@@ -117,10 +117,81 @@ public class ThrottleBaseInfo {
 
     private Integer apiCallLimits;
 
+    /** 流控策略的类型 - 1：基础，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次。 */
+    public static final class TypeEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
+
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        TypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private Integer type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_adaptive_control")
@@ -222,7 +293,7 @@ public class ThrottleBaseInfo {
         this.apiCallLimits = apiCallLimits;
     }
 
-    public ThrottleBaseInfo withType(Integer type) {
+    public ThrottleBaseInfo withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -230,11 +301,11 @@ public class ThrottleBaseInfo {
     /** 流控策略的类型 - 1：基础，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次。
      * 
      * @return type */
-    public Integer getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -259,7 +330,7 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** 用户流量限制是指一个API在时长之内每一个用户能访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。
+    /** [用户流量限制是指一个API在时长之内每一个用户能访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。](tag:hws;hws_hk;hcs;fcs;g42;)[site不支持用户流量限制,输入值为0](tag:Site)
      * 
      * @return userCallLimits */
     public Integer getUserCallLimits() {

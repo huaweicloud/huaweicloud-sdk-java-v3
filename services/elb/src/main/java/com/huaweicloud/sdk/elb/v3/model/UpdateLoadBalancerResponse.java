@@ -11,30 +11,24 @@ import java.util.function.Consumer;
 public class UpdateLoadBalancerResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
-
-    private String requestId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer")
 
     private LoadBalancer loadbalancer;
 
-    public UpdateLoadBalancerResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_id")
 
-    /** 请求ID。 注：自动生成 。
-     * 
-     * @return requestId */
-    public String getRequestId() {
-        return requestId;
-    }
+    private String loadbalancerId;
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
 
     public UpdateLoadBalancerResponse withLoadbalancer(LoadBalancer loadbalancer) {
         this.loadbalancer = loadbalancer;
@@ -61,6 +55,54 @@ public class UpdateLoadBalancerResponse extends SdkResponse {
         this.loadbalancer = loadbalancer;
     }
 
+    public UpdateLoadBalancerResponse withLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+        return this;
+    }
+
+    /** 负载均衡器的id（包周期场景返回该字段）
+     * 
+     * @return loadbalancerId */
+    public String getLoadbalancerId() {
+        return loadbalancerId;
+    }
+
+    public void setLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+    }
+
+    public UpdateLoadBalancerResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /** 订单号（包周期规格变更场景返回该字段）
+     * 
+     * @return orderId */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public UpdateLoadBalancerResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /** 请求ID。 注：自动生成 。
+     * 
+     * @return requestId */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -70,21 +112,25 @@ public class UpdateLoadBalancerResponse extends SdkResponse {
             return false;
         }
         UpdateLoadBalancerResponse updateLoadBalancerResponse = (UpdateLoadBalancerResponse) o;
-        return Objects.equals(this.requestId, updateLoadBalancerResponse.requestId)
-            && Objects.equals(this.loadbalancer, updateLoadBalancerResponse.loadbalancer);
+        return Objects.equals(this.loadbalancer, updateLoadBalancerResponse.loadbalancer)
+            && Objects.equals(this.loadbalancerId, updateLoadBalancerResponse.loadbalancerId)
+            && Objects.equals(this.orderId, updateLoadBalancerResponse.orderId)
+            && Objects.equals(this.requestId, updateLoadBalancerResponse.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, loadbalancer);
+        return Objects.hash(loadbalancer, loadbalancerId, orderId, requestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateLoadBalancerResponse {\n");
-        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    loadbalancer: ").append(toIndentedString(loadbalancer)).append("\n");
+        sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

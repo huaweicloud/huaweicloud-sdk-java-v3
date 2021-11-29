@@ -24,6 +24,11 @@ public class BackupDetail {
     private String checkpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "provider_id")
+
+    private String providerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -379,6 +384,23 @@ public class BackupDetail {
 
     public void setCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
+    }
+
+    public BackupDetail withProviderId(String providerId) {
+        this.providerId = providerId;
+        return this;
+    }
+
+    /** 备份提供商ID，用于区分备份对象。当前取值包含：0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，
+     * 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。
+     * 
+     * @return providerId */
+    public String getProviderId() {
+        return providerId;
+    }
+
+    public void setProviderId(String providerId) {
+        this.providerId = providerId;
     }
 
     public BackupDetail withCreatedAt(OffsetDateTime createdAt) {
@@ -766,6 +788,7 @@ public class BackupDetail {
         }
         BackupDetail backupDetail = (BackupDetail) o;
         return Objects.equals(this.checkpointId, backupDetail.checkpointId)
+            && Objects.equals(this.providerId, backupDetail.providerId)
             && Objects.equals(this.createdAt, backupDetail.createdAt)
             && Objects.equals(this.description, backupDetail.description)
             && Objects.equals(this.expiredAt, backupDetail.expiredAt)
@@ -790,6 +813,7 @@ public class BackupDetail {
     @Override
     public int hashCode() {
         return Objects.hash(checkpointId,
+            providerId,
             createdAt,
             description,
             expiredAt,
@@ -818,6 +842,7 @@ public class BackupDetail {
         StringBuilder sb = new StringBuilder();
         sb.append("class BackupDetail {\n");
         sb.append("    checkpointId: ").append(toIndentedString(checkpointId)).append("\n");
+        sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    expiredAt: ").append(toIndentedString(expiredAt)).append("\n");

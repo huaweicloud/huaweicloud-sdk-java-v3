@@ -82,7 +82,7 @@ public class MeetingClient {
         return new SyncInvoker<AddDeviceRequest, AddDeviceResponse>(request, MeetingMeta.addDevice, hcClient);
     }
 
-    /** 新增全球窗素材 新增全球窗素材（上传素材文件）
+    /** 新增信息窗素材 新增信息窗素材（上传素材文件）
      *
      * @param AddMaterialRequest 请求对象
      * @return AddMaterialResponse */
@@ -90,7 +90,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addMaterial);
     }
 
-    /** 新增全球窗素材 新增全球窗素材（上传素材文件）
+    /** 新增信息窗素材 新增信息窗素材（上传素材文件）
      *
      * @param AddMaterialRequest 请求对象
      * @return SyncInvoker<AddMaterialRequest, AddMaterialResponse> */
@@ -98,7 +98,7 @@ public class MeetingClient {
         return new SyncInvoker<AddMaterialRequest, AddMaterialResponse>(request, MeetingMeta.addMaterial, hcClient);
     }
 
-    /** 新增全球窗节目 新增全球窗节目
+    /** 新增信息窗节目 新增信息窗节目
      *
      * @param AddProgramRequest 请求对象
      * @return AddProgramResponse */
@@ -106,7 +106,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addProgram);
     }
 
-    /** 新增全球窗节目 新增全球窗节目
+    /** 新增信息窗节目 新增信息窗节目
      *
      * @param AddProgramRequest 请求对象
      * @return SyncInvoker<AddProgramRequest, AddProgramResponse> */
@@ -114,7 +114,7 @@ public class MeetingClient {
         return new SyncInvoker<AddProgramRequest, AddProgramResponse>(request, MeetingMeta.addProgram, hcClient);
     }
 
-    /** 新增全球窗发布 新增全球窗发布
+    /** 新增信息窗发布 新增信息窗发布
      *
      * @param AddPublicationRequest 请求对象
      * @return AddPublicationResponse */
@@ -122,7 +122,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addPublication);
     }
 
-    /** 新增全球窗发布 新增全球窗发布
+    /** 新增信息窗发布 新增信息窗发布
      *
      * @param AddPublicationRequest 请求对象
      * @return SyncInvoker<AddPublicationRequest, AddPublicationResponse> */
@@ -258,7 +258,7 @@ public class MeetingClient {
             MeetingMeta.batchDeleteDevices, hcClient);
     }
 
-    /** 删除全球窗素材 删除全球窗素材
+    /** 删除信息窗素材 删除信息窗素材
      *
      * @param BatchDeleteMaterialsRequest 请求对象
      * @return BatchDeleteMaterialsResponse */
@@ -266,7 +266,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeleteMaterials);
     }
 
-    /** 删除全球窗素材 删除全球窗素材
+    /** 删除信息窗素材 删除信息窗素材
      *
      * @param BatchDeleteMaterialsRequest 请求对象
      * @return SyncInvoker<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> */
@@ -276,7 +276,7 @@ public class MeetingClient {
             MeetingMeta.batchDeleteMaterials, hcClient);
     }
 
-    /** 删除全球窗节目 删除全球窗节目
+    /** 删除信息窗节目 删除信息窗节目
      *
      * @param BatchDeleteProgramsRequest 请求对象
      * @return BatchDeleteProgramsResponse */
@@ -284,7 +284,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeletePrograms);
     }
 
-    /** 删除全球窗节目 删除全球窗节目
+    /** 删除信息窗节目 删除信息窗节目
      *
      * @param BatchDeleteProgramsRequest 请求对象
      * @return SyncInvoker<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> */
@@ -294,7 +294,7 @@ public class MeetingClient {
             MeetingMeta.batchDeletePrograms, hcClient);
     }
 
-    /** 删除全球窗发布 删除全球窗发布
+    /** 删除信息窗发布 删除信息窗发布
      *
      * @param BatchDeletePublicationsRequest 请求对象
      * @return BatchDeletePublicationsResponse */
@@ -302,7 +302,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeletePublications);
     }
 
-    /** 删除全球窗发布 删除全球窗发布
+    /** 删除信息窗发布 删除信息窗发布
      *
      * @param BatchDeletePublicationsRequest 请求对象
      * @return SyncInvoker<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> */
@@ -1384,7 +1384,7 @@ public class MeetingClient {
             MeetingMeta.searchHisMeetings, hcClient);
     }
 
-    /** 分页查询全球窗素材 分页查询全球窗素材
+    /** 分页查询信息窗素材 分页查询信息窗素材
      *
      * @param SearchMaterialsRequest 请求对象
      * @return SearchMaterialsResponse */
@@ -1392,7 +1392,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchMaterials);
     }
 
-    /** 分页查询全球窗素材 分页查询全球窗素材
+    /** 分页查询信息窗素材 分页查询信息窗素材
      *
      * @param SearchMaterialsRequest 请求对象
      * @return SyncInvoker<SearchMaterialsRequest, SearchMaterialsResponse> */
@@ -1474,7 +1474,7 @@ public class MeetingClient {
             MeetingMeta.searchOnlineMeetings, hcClient);
     }
 
-    /** 查询全球窗节目 获取全球窗节目
+    /** 查询信息窗节目 获取信息窗节目
      *
      * @param SearchProgramsRequest 请求对象
      * @return SearchProgramsResponse */
@@ -1482,7 +1482,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchPrograms);
     }
 
-    /** 查询全球窗节目 获取全球窗节目
+    /** 查询信息窗节目 获取信息窗节目
      *
      * @param SearchProgramsRequest 请求对象
      * @return SyncInvoker<SearchProgramsRequest, SearchProgramsResponse> */
@@ -1492,7 +1492,7 @@ public class MeetingClient {
             hcClient);
     }
 
-    /** 查询全球窗发布 获取全球窗发布
+    /** 查询信息窗发布 获取信息窗发布
      *
      * @param SearchPublicationsRequest 请求对象
      * @return SearchPublicationsResponse */
@@ -1500,7 +1500,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchPublications);
     }
 
-    /** 查询全球窗发布 获取全球窗发布
+    /** 查询信息窗发布 获取信息窗发布
      *
      * @param SearchPublicationsRequest 请求对象
      * @return SyncInvoker<SearchPublicationsRequest, SearchPublicationsResponse> */
@@ -2054,7 +2054,7 @@ public class MeetingClient {
         return new SyncInvoker<ShowProgramRequest, ShowProgramResponse>(request, MeetingMeta.showProgram, hcClient);
     }
 
-    /** 根据ID查询全球窗发布详情 根据ID获取发布详情
+    /** 根据ID查询信息窗发布详情 根据ID获取发布详情
      *
      * @param ShowPublicationRequest 请求对象
      * @return ShowPublicationResponse */
@@ -2062,7 +2062,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showPublication);
     }
 
-    /** 根据ID查询全球窗发布详情 根据ID获取发布详情
+    /** 根据ID查询信息窗发布详情 根据ID获取发布详情
      *
      * @param ShowPublicationRequest 请求对象
      * @return SyncInvoker<ShowPublicationRequest, ShowPublicationResponse> */
@@ -2365,7 +2365,7 @@ public class MeetingClient {
         return new SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, MeetingMeta.updateDevice, hcClient);
     }
 
-    /** 更新全球窗素材 更新全球窗素材
+    /** 更新信息窗素材 更新信息窗素材
      *
      * @param UpdateMaterialRequest 请求对象
      * @return UpdateMaterialResponse */
@@ -2373,7 +2373,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateMaterial);
     }
 
-    /** 更新全球窗素材 更新全球窗素材
+    /** 更新信息窗素材 更新信息窗素材
      *
      * @param UpdateMaterialRequest 请求对象
      * @return SyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse> */
@@ -2434,7 +2434,7 @@ public class MeetingClient {
         return new SyncInvoker<UpdateMyInfoRequest, UpdateMyInfoResponse>(request, MeetingMeta.updateMyInfo, hcClient);
     }
 
-    /** 更新全球窗节目 更新全球窗节目
+    /** 更新信息窗节目 更新信息窗节目
      *
      * @param UpdateProgramRequest 请求对象
      * @return UpdateProgramResponse */
@@ -2442,7 +2442,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateProgram);
     }
 
-    /** 更新全球窗节目 更新全球窗节目
+    /** 更新信息窗节目 更新信息窗节目
      *
      * @param UpdateProgramRequest 请求对象
      * @return SyncInvoker<UpdateProgramRequest, UpdateProgramResponse> */
@@ -2451,7 +2451,7 @@ public class MeetingClient {
             hcClient);
     }
 
-    /** 修改全球窗发布 修改全球窗发布
+    /** 修改信息窗发布 修改信息窗发布
      *
      * @param UpdatePublicationRequest 请求对象
      * @return UpdatePublicationResponse */
@@ -2459,7 +2459,7 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updatePublication);
     }
 
-    /** 修改全球窗发布 修改全球窗发布
+    /** 修改信息窗发布 修改信息窗发布
      *
      * @param UpdatePublicationRequest 请求对象
      * @return SyncInvoker<UpdatePublicationRequest, UpdatePublicationResponse> */

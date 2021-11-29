@@ -15,14 +15,14 @@ public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "throttle_applys")
 
-    private List<ThrottleBindingResp> throttleApplys = null;
+    private List<ThrottleApiBinding> throttleApplys = null;
 
-    public AssociateRequestThrottlingPolicyV2Response withThrottleApplys(List<ThrottleBindingResp> throttleApplys) {
+    public AssociateRequestThrottlingPolicyV2Response withThrottleApplys(List<ThrottleApiBinding> throttleApplys) {
         this.throttleApplys = throttleApplys;
         return this;
     }
 
-    public AssociateRequestThrottlingPolicyV2Response addThrottleApplysItem(ThrottleBindingResp throttleApplysItem) {
+    public AssociateRequestThrottlingPolicyV2Response addThrottleApplysItem(ThrottleApiBinding throttleApplysItem) {
         if (this.throttleApplys == null) {
             this.throttleApplys = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
     }
 
     public AssociateRequestThrottlingPolicyV2Response withThrottleApplys(
-        Consumer<List<ThrottleBindingResp>> throttleApplysSetter) {
+        Consumer<List<ThrottleApiBinding>> throttleApplysSetter) {
         if (this.throttleApplys == null) {
             this.throttleApplys = new ArrayList<>();
         }
@@ -42,11 +42,11 @@ public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
     /** API与流控策略的绑定关系列表
      * 
      * @return throttleApplys */
-    public List<ThrottleBindingResp> getThrottleApplys() {
+    public List<ThrottleApiBinding> getThrottleApplys() {
         return throttleApplys;
     }
 
-    public void setThrottleApplys(List<ThrottleBindingResp> throttleApplys) {
+    public void setThrottleApplys(List<ThrottleApiBinding> throttleApplys) {
         this.throttleApplys = throttleApplys;
     }
 

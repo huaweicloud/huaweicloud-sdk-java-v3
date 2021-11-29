@@ -16,7 +16,7 @@ public class VpcInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_name")
 
-    private Integer ecsName;
+    private String ecsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cascade_flag")
@@ -36,7 +36,7 @@ public class VpcInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_port")
 
-    private String vpcChannelPort;
+    private Integer vpcChannelPort;
 
     public VpcInfo withEcsId(String ecsId) {
         this.ecsId = ecsId;
@@ -54,7 +54,7 @@ public class VpcInfo {
         this.ecsId = ecsId;
     }
 
-    public VpcInfo withEcsName(Integer ecsName) {
+    public VpcInfo withEcsName(String ecsName) {
         this.ecsName = ecsName;
         return this;
     }
@@ -62,11 +62,11 @@ public class VpcInfo {
     /** 云服务器名称
      * 
      * @return ecsName */
-    public Integer getEcsName() {
+    public String getEcsName() {
         return ecsName;
     }
 
-    public void setEcsName(Integer ecsName) {
+    public void setEcsName(String ecsName) {
         this.ecsName = ecsName;
     }
 
@@ -118,7 +118,7 @@ public class VpcInfo {
         this.vpcChannelId = vpcChannelId;
     }
 
-    public VpcInfo withVpcChannelPort(String vpcChannelPort) {
+    public VpcInfo withVpcChannelPort(Integer vpcChannelPort) {
         this.vpcChannelPort = vpcChannelPort;
         return this;
     }
@@ -126,11 +126,11 @@ public class VpcInfo {
     /** VPC通道端口
      * 
      * @return vpcChannelPort */
-    public String getVpcChannelPort() {
+    public Integer getVpcChannelPort() {
         return vpcChannelPort;
     }
 
-    public void setVpcChannelPort(String vpcChannelPort) {
+    public void setVpcChannelPort(Integer vpcChannelPort) {
         this.vpcChannelPort = vpcChannelPort;
     }
 

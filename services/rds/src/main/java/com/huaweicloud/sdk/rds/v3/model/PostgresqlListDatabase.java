@@ -31,7 +31,7 @@ public class PostgresqlListDatabase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Integer size;
+    private Long size;
 
     public PostgresqlListDatabase withName(String name) {
         this.name = name;
@@ -97,7 +97,7 @@ public class PostgresqlListDatabase {
         this.collateSet = collateSet;
     }
 
-    public PostgresqlListDatabase withSize(Integer size) {
+    public PostgresqlListDatabase withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -105,11 +105,11 @@ public class PostgresqlListDatabase {
     /** 数据库大小（单位：字节）。
      * 
      * @return size */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

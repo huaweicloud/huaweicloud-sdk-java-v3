@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 规格内容信息 */
+/** 规格内容信息。 */
 public class FlavorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,6 +27,11 @@ public class FlavorInfo {
     @JsonProperty(value = "bandwidth")
 
     private Integer bandwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lcu")
+
+    private Integer lcu;
 
     public FlavorInfo withConnection(Integer connection) {
         this.connection = connection;
@@ -65,7 +70,7 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 7层每秒查询数
+    /** 7层每秒查询数。
      * 
      * @return qps */
     public Integer getQps() {
@@ -81,7 +86,7 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 带宽
+    /** 带宽。
      * 
      * @return bandwidth */
     public Integer getBandwidth() {
@@ -90,6 +95,22 @@ public class FlavorInfo {
 
     public void setBandwidth(Integer bandwidth) {
         this.bandwidth = bandwidth;
+    }
+
+    public FlavorInfo withLcu(Integer lcu) {
+        this.lcu = lcu;
+        return this;
+    }
+
+    /** flavor对应的lcu数量。
+     * 
+     * @return lcu */
+    public Integer getLcu() {
+        return lcu;
+    }
+
+    public void setLcu(Integer lcu) {
+        this.lcu = lcu;
     }
 
     @Override
@@ -102,12 +123,13 @@ public class FlavorInfo {
         }
         FlavorInfo flavorInfo = (FlavorInfo) o;
         return Objects.equals(this.connection, flavorInfo.connection) && Objects.equals(this.cps, flavorInfo.cps)
-            && Objects.equals(this.qps, flavorInfo.qps) && Objects.equals(this.bandwidth, flavorInfo.bandwidth);
+            && Objects.equals(this.qps, flavorInfo.qps) && Objects.equals(this.bandwidth, flavorInfo.bandwidth)
+            && Objects.equals(this.lcu, flavorInfo.lcu);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(connection, cps, qps, bandwidth);
+        return Objects.hash(connection, cps, qps, bandwidth, lcu);
     }
 
     @Override
@@ -118,6 +140,7 @@ public class FlavorInfo {
         sb.append("    cps: ").append(toIndentedString(cps)).append("\n");
         sb.append("    qps: ").append(toIndentedString(qps)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
+        sb.append("    lcu: ").append(toIndentedString(lcu)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -241,6 +241,11 @@ public class ScanJob {
 
     private Boolean useNlp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private Long startTime;
+
     public ScanJob withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -433,6 +438,22 @@ public class ScanJob {
         this.useNlp = useNlp;
     }
 
+    public ScanJob withStartTime(Long startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /** 任务启动时间
+     * 
+     * @return startTime */
+    public Long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Long startTime) {
+        this.startTime = startTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -447,13 +468,23 @@ public class ScanJob {
             && Objects.equals(this.lastScanRisk, scanJob.lastScanRisk) && Objects.equals(this.name, scanJob.name)
             && Objects.equals(this.open, scanJob.open) && Objects.equals(this.ruleGroups, scanJob.ruleGroups)
             && Objects.equals(this.status, scanJob.status) && Objects.equals(this.topicUrn, scanJob.topicUrn)
-            && Objects.equals(this.useNlp, scanJob.useNlp);
+            && Objects.equals(this.useNlp, scanJob.useNlp) && Objects.equals(this.startTime, scanJob.startTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(createTime, cycle, id, lastRunTime, lastScanRisk, name, open, ruleGroups, status, topicUrn, useNlp);
+        return Objects.hash(createTime,
+            cycle,
+            id,
+            lastRunTime,
+            lastScanRisk,
+            name,
+            open,
+            ruleGroups,
+            status,
+            topicUrn,
+            useNlp,
+            startTime);
     }
 
     @Override
@@ -471,6 +502,7 @@ public class ScanJob {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
         sb.append("    useNlp: ").append(toIndentedString(useNlp)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

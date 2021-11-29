@@ -13,14 +13,30 @@ import java.util.function.Consumer;
 public class ListAvailabilityZonesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zones")
 
     private List<List<AvailabilityZone>> availabilityZones = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    public ListAvailabilityZonesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
 
-    private String requestId;
+    /** 请求ID。 注：自动生成。
+     * 
+     * @return requestId */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public ListAvailabilityZonesResponse withAvailabilityZones(List<List<AvailabilityZone>> availabilityZones) {
         this.availabilityZones = availabilityZones;
@@ -44,7 +60,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
         return this;
     }
 
-    /** 可用区列表。 > 获取可用区集合列表后，在（如创建LB时）设置可用区，选择的多个可用区必须同时在同一个集合中。
+    /** 返回创建LB时可使用的可用区集合列表。
      * 
      * @return availabilityZones */
     public List<List<AvailabilityZone>> getAvailabilityZones() {
@@ -53,22 +69,6 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
 
     public void setAvailabilityZones(List<List<AvailabilityZone>> availabilityZones) {
         this.availabilityZones = availabilityZones;
-    }
-
-    public ListAvailabilityZonesResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /** 请求ID。 注：自动生成。
-     * 
-     * @return requestId */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
     }
 
     @Override
@@ -80,21 +80,21 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
             return false;
         }
         ListAvailabilityZonesResponse listAvailabilityZonesResponse = (ListAvailabilityZonesResponse) o;
-        return Objects.equals(this.availabilityZones, listAvailabilityZonesResponse.availabilityZones)
-            && Objects.equals(this.requestId, listAvailabilityZonesResponse.requestId);
+        return Objects.equals(this.requestId, listAvailabilityZonesResponse.requestId)
+            && Objects.equals(this.availabilityZones, listAvailabilityZonesResponse.availabilityZones);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZones, requestId);
+        return Objects.hash(requestId, availabilityZones);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAvailabilityZonesResponse {\n");
-        sb.append("    availabilityZones: ").append(toIndentedString(availabilityZones)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    availabilityZones: ").append(toIndentedString(availabilityZones)).append("\n");
         sb.append("}");
         return sb.toString();
     }

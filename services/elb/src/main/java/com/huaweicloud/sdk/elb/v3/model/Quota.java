@@ -5,28 +5,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 查询配额限制去请求返回对象 */
+/** 负载均衡相关各类资源的配额信息。仅返回资源的总配额，不包括剩余可用配额。 */
 public class Quota {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "certificate")
+    @JsonProperty(value = "project_id")
 
-    private Integer certificate;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "healthmonitor")
-
-    private Integer healthmonitor;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "l7policy")
-
-    private Integer l7policy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "listener")
-
-    private Integer listener;
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer")
@@ -34,9 +19,19 @@ public class Quota {
     private Integer loadbalancer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "member")
+    @JsonProperty(value = "certificate")
 
-    private Integer member;
+    private Integer certificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "listener")
+
+    private Integer listener;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "l7policy")
+
+    private Integer l7policy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool")
@@ -44,121 +39,19 @@ public class Quota {
     private Integer pool;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
+    @JsonProperty(value = "healthmonitor")
 
-    private String projectId;
+    private Integer healthmonitor;
 
-    public Quota withCertificate(Integer certificate) {
-        this.certificate = certificate;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member")
 
-    /** 证书配额。 -1表示无配额限制。
-     * 
-     * @return certificate */
-    public Integer getCertificate() {
-        return certificate;
-    }
+    private Integer member;
 
-    public void setCertificate(Integer certificate) {
-        this.certificate = certificate;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "members_per_pool")
 
-    public Quota withHealthmonitor(Integer healthmonitor) {
-        this.healthmonitor = healthmonitor;
-        return this;
-    }
-
-    /** 健康检查配额。 -1表示无配额限制。
-     * 
-     * @return healthmonitor */
-    public Integer getHealthmonitor() {
-        return healthmonitor;
-    }
-
-    public void setHealthmonitor(Integer healthmonitor) {
-        this.healthmonitor = healthmonitor;
-    }
-
-    public Quota withL7policy(Integer l7policy) {
-        this.l7policy = l7policy;
-        return this;
-    }
-
-    /** 转发策略配额。 -1表示无配额限制。
-     * 
-     * @return l7policy */
-    public Integer getL7policy() {
-        return l7policy;
-    }
-
-    public void setL7policy(Integer l7policy) {
-        this.l7policy = l7policy;
-    }
-
-    public Quota withListener(Integer listener) {
-        this.listener = listener;
-        return this;
-    }
-
-    /** 监听器配额。 -1表示无配额限制。
-     * 
-     * @return listener */
-    public Integer getListener() {
-        return listener;
-    }
-
-    public void setListener(Integer listener) {
-        this.listener = listener;
-    }
-
-    public Quota withLoadbalancer(Integer loadbalancer) {
-        this.loadbalancer = loadbalancer;
-        return this;
-    }
-
-    /** 负载均衡器配额。 -1表示无配额限制。
-     * 
-     * @return loadbalancer */
-    public Integer getLoadbalancer() {
-        return loadbalancer;
-    }
-
-    public void setLoadbalancer(Integer loadbalancer) {
-        this.loadbalancer = loadbalancer;
-    }
-
-    public Quota withMember(Integer member) {
-        this.member = member;
-        return this;
-    }
-
-    /** 后端云服务器配额。 -1表示无配额限制。
-     * 
-     * @return member */
-    public Integer getMember() {
-        return member;
-    }
-
-    public void setMember(Integer member) {
-        this.member = member;
-    }
-
-    public Quota withPool(Integer pool) {
-        this.pool = pool;
-        return this;
-    }
-
-    /** 后端云服务器组配额。 -1表示无配额限制。
-     * 
-     * @return pool */
-    public Integer getPool() {
-        return pool;
-    }
-
-    public void setPool(Integer pool) {
-        this.pool = pool;
-    }
+    private Integer membersPerPool;
 
     public Quota withProjectId(String projectId) {
         this.projectId = projectId;
@@ -176,6 +69,134 @@ public class Quota {
         this.projectId = projectId;
     }
 
+    public Quota withLoadbalancer(Integer loadbalancer) {
+        this.loadbalancer = loadbalancer;
+        return this;
+    }
+
+    /** 负载均衡器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return loadbalancer */
+    public Integer getLoadbalancer() {
+        return loadbalancer;
+    }
+
+    public void setLoadbalancer(Integer loadbalancer) {
+        this.loadbalancer = loadbalancer;
+    }
+
+    public Quota withCertificate(Integer certificate) {
+        this.certificate = certificate;
+        return this;
+    }
+
+    /** 证书配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return certificate */
+    public Integer getCertificate() {
+        return certificate;
+    }
+
+    public void setCertificate(Integer certificate) {
+        this.certificate = certificate;
+    }
+
+    public Quota withListener(Integer listener) {
+        this.listener = listener;
+        return this;
+    }
+
+    /** 监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return listener */
+    public Integer getListener() {
+        return listener;
+    }
+
+    public void setListener(Integer listener) {
+        this.listener = listener;
+    }
+
+    public Quota withL7policy(Integer l7policy) {
+        this.l7policy = l7policy;
+        return this;
+    }
+
+    /** 转发策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return l7policy */
+    public Integer getL7policy() {
+        return l7policy;
+    }
+
+    public void setL7policy(Integer l7policy) {
+        this.l7policy = l7policy;
+    }
+
+    public Quota withPool(Integer pool) {
+        this.pool = pool;
+        return this;
+    }
+
+    /** 后端云服务器组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return pool */
+    public Integer getPool() {
+        return pool;
+    }
+
+    public void setPool(Integer pool) {
+        this.pool = pool;
+    }
+
+    public Quota withHealthmonitor(Integer healthmonitor) {
+        this.healthmonitor = healthmonitor;
+        return this;
+    }
+
+    /** 健康检查配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return healthmonitor */
+    public Integer getHealthmonitor() {
+        return healthmonitor;
+    }
+
+    public void setHealthmonitor(Integer healthmonitor) {
+        this.healthmonitor = healthmonitor;
+    }
+
+    public Quota withMember(Integer member) {
+        this.member = member;
+        return this;
+    }
+
+    /** 后端云服务器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return member */
+    public Integer getMember() {
+        return member;
+    }
+
+    public void setMember(Integer member) {
+        this.member = member;
+    }
+
+    public Quota withMembersPerPool(Integer membersPerPool) {
+        this.membersPerPool = membersPerPool;
+        return this;
+    }
+
+    /** 单个pool下的member的配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return membersPerPool */
+    public Integer getMembersPerPool() {
+        return membersPerPool;
+    }
+
+    public void setMembersPerPool(Integer membersPerPool) {
+        this.membersPerPool = membersPerPool;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -185,30 +206,39 @@ public class Quota {
             return false;
         }
         Quota quota = (Quota) o;
-        return Objects.equals(this.certificate, quota.certificate)
-            && Objects.equals(this.healthmonitor, quota.healthmonitor) && Objects.equals(this.l7policy, quota.l7policy)
-            && Objects.equals(this.listener, quota.listener) && Objects.equals(this.loadbalancer, quota.loadbalancer)
-            && Objects.equals(this.member, quota.member) && Objects.equals(this.pool, quota.pool)
-            && Objects.equals(this.projectId, quota.projectId);
+        return Objects.equals(this.projectId, quota.projectId) && Objects.equals(this.loadbalancer, quota.loadbalancer)
+            && Objects.equals(this.certificate, quota.certificate) && Objects.equals(this.listener, quota.listener)
+            && Objects.equals(this.l7policy, quota.l7policy) && Objects.equals(this.pool, quota.pool)
+            && Objects.equals(this.healthmonitor, quota.healthmonitor) && Objects.equals(this.member, quota.member)
+            && Objects.equals(this.membersPerPool, quota.membersPerPool);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificate, healthmonitor, l7policy, listener, loadbalancer, member, pool, projectId);
+        return Objects.hash(projectId,
+            loadbalancer,
+            certificate,
+            listener,
+            l7policy,
+            pool,
+            healthmonitor,
+            member,
+            membersPerPool);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Quota {\n");
-        sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
-        sb.append("    healthmonitor: ").append(toIndentedString(healthmonitor)).append("\n");
-        sb.append("    l7policy: ").append(toIndentedString(l7policy)).append("\n");
-        sb.append("    listener: ").append(toIndentedString(listener)).append("\n");
-        sb.append("    loadbalancer: ").append(toIndentedString(loadbalancer)).append("\n");
-        sb.append("    member: ").append(toIndentedString(member)).append("\n");
-        sb.append("    pool: ").append(toIndentedString(pool)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    loadbalancer: ").append(toIndentedString(loadbalancer)).append("\n");
+        sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+        sb.append("    listener: ").append(toIndentedString(listener)).append("\n");
+        sb.append("    l7policy: ").append(toIndentedString(l7policy)).append("\n");
+        sb.append("    pool: ").append(toIndentedString(pool)).append("\n");
+        sb.append("    healthmonitor: ").append(toIndentedString(healthmonitor)).append("\n");
+        sb.append("    member: ").append(toIndentedString(member)).append("\n");
+        sb.append("    membersPerPool: ").append(toIndentedString(membersPerPool)).append("\n");
         sb.append("}");
         return sb.toString();
     }

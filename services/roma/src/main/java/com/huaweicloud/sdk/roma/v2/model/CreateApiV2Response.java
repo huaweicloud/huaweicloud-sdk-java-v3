@@ -23,10 +23,81 @@ public class CreateApiV2Response extends SdkResponse {
 
     private String name;
 
+    /** API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API */
+    public static final class TypeEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
+
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        TypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private Integer type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
@@ -218,7 +289,7 @@ public class CreateApiV2Response extends SdkResponse {
 
     private String reqUri;
 
-    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 */
+    /** API的认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 */
     public static final class AuthTypeEnum {
 
         /** Enum NONE for value: "NONE" */
@@ -388,7 +459,7 @@ public class CreateApiV2Response extends SdkResponse {
 
     private MatchModeEnum matchMode;
 
-    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 */
+    /** 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 */
     public static final class BackendTypeEnum {
 
         /** Enum HTTP for value: "HTTP" */
@@ -523,15 +594,166 @@ public class CreateApiV2Response extends SdkResponse {
 
     private String tag;
 
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain */
+    public static final class ContentTypeEnum {
+
+        /** Enum APPLICATION_JSON for value: "application/json" */
+        public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
+
+        /** Enum APPLICATION_XML for value: "application/xml" */
+        public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
+
+        /** Enum MULTIPART_FORM_DATE for value: "multipart/form-date" */
+        public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
+
+        /** Enum TEXT_PLAIN for value: "text/plain" */
+        public static final ContentTypeEnum TEXT_PLAIN = new ContentTypeEnum("text/plain");
+
+        private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ContentTypeEnum> createStaticFields() {
+            Map<String, ContentTypeEnum> map = new HashMap<>();
+            map.put("application/json", APPLICATION_JSON);
+            map.put("application/xml", APPLICATION_XML);
+            map.put("multipart/form-date", MULTIPART_FORM_DATE);
+            map.put("text/plain", TEXT_PLAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ContentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ContentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ContentTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ContentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ContentTypeEnum) {
+                return this.value.equals(((ContentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_type")
+
+    private ContentTypeEnum contentType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
 
+    /** API状态 - 1： 有效 */
+    public static final class StatusEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arrange_necessary")
@@ -574,6 +796,11 @@ public class CreateApiV2Response extends SdkResponse {
     private String publishId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_time")
+
+    private String publishTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_name")
 
     private String romaAppName;
@@ -582,6 +809,16 @@ public class CreateApiV2Response extends SdkResponse {
     @JsonProperty(value = "ld_api_id")
 
     private String ldApiId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backend_api")
+
+    private BackendApi backendApi;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "api_group_info")
+
+    private ApiGroupCommonInfo apiGroupInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_info")
@@ -614,11 +851,6 @@ public class CreateApiV2Response extends SdkResponse {
     private List<ApiPolicyMockResp> policyMocks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backend_api")
-
-    private BackendApi backendApi;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_https")
 
     private List<ApiPolicyHttpResp> policyHttps = null;
@@ -639,19 +871,19 @@ public class CreateApiV2Response extends SdkResponse {
         this.name = name;
     }
 
-    public CreateApiV2Response withType(Integer type) {
+    public CreateApiV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    /** API类型 - 1：公有API - 2：私有API
+    /** API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API
      * 
      * @return type */
-    public Integer getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -724,7 +956,7 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+    /** API的认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
      * 
      * @return authType */
     public AuthTypeEnum getAuthType() {
@@ -797,7 +1029,7 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+    /** 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
      * 
      * @return backendType */
     public BackendTypeEnum getBackendType() {
@@ -925,7 +1157,7 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 标签。 支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。
+    /** 标签。 支持英文，数字，中文，特殊符号（-*#%.:_），且只能以中文或英文开头。支持输入多个标签，不同标签以英文逗号分割。 默认支持10个标签，如需扩大配额请联系技术工程师修改API_TAG_NUM_LIMIT配置。
      * 
      * @return tags */
     public List<String> getTags() {
@@ -1000,6 +1232,22 @@ public class CreateApiV2Response extends SdkResponse {
         this.tag = tag;
     }
 
+    public CreateApiV2Response withContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain
+     * 
+     * @return contentType */
+    public ContentTypeEnum getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+    }
+
     public CreateApiV2Response withId(String id) {
         this.id = id;
         return this;
@@ -1016,7 +1264,7 @@ public class CreateApiV2Response extends SdkResponse {
         this.id = id;
     }
 
-    public CreateApiV2Response withStatus(Integer status) {
+    public CreateApiV2Response withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -1024,11 +1272,11 @@ public class CreateApiV2Response extends SdkResponse {
     /** API状态 - 1： 有效
      * 
      * @return status */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -1160,6 +1408,22 @@ public class CreateApiV2Response extends SdkResponse {
         this.publishId = publishId;
     }
 
+    public CreateApiV2Response withPublishTime(String publishTime) {
+        this.publishTime = publishTime;
+        return this;
+    }
+
+    /** 发布时间 存在多个发布记录时，发布时间之间用|隔开
+     * 
+     * @return publishTime */
+    public String getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(String publishTime) {
+        this.publishTime = publishTime;
+    }
+
     public CreateApiV2Response withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -1190,6 +1454,56 @@ public class CreateApiV2Response extends SdkResponse {
 
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
+    }
+
+    public CreateApiV2Response withBackendApi(BackendApi backendApi) {
+        this.backendApi = backendApi;
+        return this;
+    }
+
+    public CreateApiV2Response withBackendApi(Consumer<BackendApi> backendApiSetter) {
+        if (this.backendApi == null) {
+            this.backendApi = new BackendApi();
+            backendApiSetter.accept(this.backendApi);
+        }
+
+        return this;
+    }
+
+    /** Get backendApi
+     * 
+     * @return backendApi */
+    public BackendApi getBackendApi() {
+        return backendApi;
+    }
+
+    public void setBackendApi(BackendApi backendApi) {
+        this.backendApi = backendApi;
+    }
+
+    public CreateApiV2Response withApiGroupInfo(ApiGroupCommonInfo apiGroupInfo) {
+        this.apiGroupInfo = apiGroupInfo;
+        return this;
+    }
+
+    public CreateApiV2Response withApiGroupInfo(Consumer<ApiGroupCommonInfo> apiGroupInfoSetter) {
+        if (this.apiGroupInfo == null) {
+            this.apiGroupInfo = new ApiGroupCommonInfo();
+            apiGroupInfoSetter.accept(this.apiGroupInfo);
+        }
+
+        return this;
+    }
+
+    /** Get apiGroupInfo
+     * 
+     * @return apiGroupInfo */
+    public ApiGroupCommonInfo getApiGroupInfo() {
+        return apiGroupInfo;
+    }
+
+    public void setApiGroupInfo(ApiGroupCommonInfo apiGroupInfo) {
+        this.apiGroupInfo = apiGroupInfo;
     }
 
     public CreateApiV2Response withFuncInfo(ApiFunc funcInfo) {
@@ -1327,7 +1641,7 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 函数工作流策略后端列表
+    /** [函数工作流策略后端列表](tag:hws;hws_hk;hcs;fcs;g42;)[暂不支持](tag:Site)
      * 
      * @return policyFunctions */
     public List<ApiPolicyFunctionResp> getPolicyFunctions() {
@@ -1368,31 +1682,6 @@ public class CreateApiV2Response extends SdkResponse {
 
     public void setPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
-    }
-
-    public CreateApiV2Response withBackendApi(BackendApi backendApi) {
-        this.backendApi = backendApi;
-        return this;
-    }
-
-    public CreateApiV2Response withBackendApi(Consumer<BackendApi> backendApiSetter) {
-        if (this.backendApi == null) {
-            this.backendApi = new BackendApi();
-            backendApiSetter.accept(this.backendApi);
-        }
-
-        return this;
-    }
-
-    /** Get backendApi
-     * 
-     * @return backendApi */
-    public BackendApi getBackendApi() {
-        return backendApi;
-    }
-
-    public void setBackendApi(BackendApi backendApi) {
-        this.backendApi = backendApi;
     }
 
     public CreateApiV2Response withPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
@@ -1457,7 +1746,9 @@ public class CreateApiV2Response extends SdkResponse {
             && Objects.equals(this.responseId, createApiV2Response.responseId)
             && Objects.equals(this.romaAppId, createApiV2Response.romaAppId)
             && Objects.equals(this.domainName, createApiV2Response.domainName)
-            && Objects.equals(this.tag, createApiV2Response.tag) && Objects.equals(this.id, createApiV2Response.id)
+            && Objects.equals(this.tag, createApiV2Response.tag)
+            && Objects.equals(this.contentType, createApiV2Response.contentType)
+            && Objects.equals(this.id, createApiV2Response.id)
             && Objects.equals(this.status, createApiV2Response.status)
             && Objects.equals(this.arrangeNecessary, createApiV2Response.arrangeNecessary)
             && Objects.equals(this.registerTime, createApiV2Response.registerTime)
@@ -1467,15 +1758,17 @@ public class CreateApiV2Response extends SdkResponse {
             && Objects.equals(this.runEnvName, createApiV2Response.runEnvName)
             && Objects.equals(this.runEnvId, createApiV2Response.runEnvId)
             && Objects.equals(this.publishId, createApiV2Response.publishId)
+            && Objects.equals(this.publishTime, createApiV2Response.publishTime)
             && Objects.equals(this.romaAppName, createApiV2Response.romaAppName)
             && Objects.equals(this.ldApiId, createApiV2Response.ldApiId)
+            && Objects.equals(this.backendApi, createApiV2Response.backendApi)
+            && Objects.equals(this.apiGroupInfo, createApiV2Response.apiGroupInfo)
             && Objects.equals(this.funcInfo, createApiV2Response.funcInfo)
             && Objects.equals(this.mockInfo, createApiV2Response.mockInfo)
             && Objects.equals(this.reqParams, createApiV2Response.reqParams)
             && Objects.equals(this.backendParams, createApiV2Response.backendParams)
             && Objects.equals(this.policyFunctions, createApiV2Response.policyFunctions)
             && Objects.equals(this.policyMocks, createApiV2Response.policyMocks)
-            && Objects.equals(this.backendApi, createApiV2Response.backendApi)
             && Objects.equals(this.policyHttps, createApiV2Response.policyHttps);
     }
 
@@ -1503,6 +1796,7 @@ public class CreateApiV2Response extends SdkResponse {
             romaAppId,
             domainName,
             tag,
+            contentType,
             id,
             status,
             arrangeNecessary,
@@ -1513,15 +1807,17 @@ public class CreateApiV2Response extends SdkResponse {
             runEnvName,
             runEnvId,
             publishId,
+            publishTime,
             romaAppName,
             ldApiId,
+            backendApi,
+            apiGroupInfo,
             funcInfo,
             mockInfo,
             reqParams,
             backendParams,
             policyFunctions,
             policyMocks,
-            backendApi,
             policyHttps);
     }
 
@@ -1551,6 +1847,7 @@ public class CreateApiV2Response extends SdkResponse {
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    arrangeNecessary: ").append(toIndentedString(arrangeNecessary)).append("\n");
@@ -1561,15 +1858,17 @@ public class CreateApiV2Response extends SdkResponse {
         sb.append("    runEnvName: ").append(toIndentedString(runEnvName)).append("\n");
         sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
+        sb.append("    publishTime: ").append(toIndentedString(publishTime)).append("\n");
         sb.append("    romaAppName: ").append(toIndentedString(romaAppName)).append("\n");
         sb.append("    ldApiId: ").append(toIndentedString(ldApiId)).append("\n");
+        sb.append("    backendApi: ").append(toIndentedString(backendApi)).append("\n");
+        sb.append("    apiGroupInfo: ").append(toIndentedString(apiGroupInfo)).append("\n");
         sb.append("    funcInfo: ").append(toIndentedString(funcInfo)).append("\n");
         sb.append("    mockInfo: ").append(toIndentedString(mockInfo)).append("\n");
         sb.append("    reqParams: ").append(toIndentedString(reqParams)).append("\n");
         sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");
         sb.append("    policyFunctions: ").append(toIndentedString(policyFunctions)).append("\n");
         sb.append("    policyMocks: ").append(toIndentedString(policyMocks)).append("\n");
-        sb.append("    backendApi: ").append(toIndentedString(backendApi)).append("\n");
         sb.append("    policyHttps: ").append(toIndentedString(policyHttps)).append("\n");
         sb.append("}");
         return sb.toString();

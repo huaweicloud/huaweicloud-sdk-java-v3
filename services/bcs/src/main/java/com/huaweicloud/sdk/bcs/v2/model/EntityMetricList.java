@@ -19,7 +19,7 @@ public class EntityMetricList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
-    private Object values;
+    private List<EntityMetricListItem> values = null;
 
     public EntityMetricList withDimensions(List<Dimension> dimensions) {
         this.dimensions = dimensions;
@@ -53,19 +53,35 @@ public class EntityMetricList {
         this.dimensions = dimensions;
     }
 
-    public EntityMetricList withValues(Object values) {
+    public EntityMetricList withValues(List<EntityMetricListItem> values) {
         this.values = values;
+        return this;
+    }
+
+    public EntityMetricList addValuesItem(EntityMetricListItem valuesItem) {
+        if (this.values == null) {
+            this.values = new ArrayList<>();
+        }
+        this.values.add(valuesItem);
+        return this;
+    }
+
+    public EntityMetricList withValues(Consumer<List<EntityMetricListItem>> valuesSetter) {
+        if (this.values == null) {
+            this.values = new ArrayList<>();
+        }
+        valuesSetter.accept(this.values);
         return this;
     }
 
     /** 监控数据列表项目。
      * 
      * @return values */
-    public Object getValues() {
+    public List<EntityMetricListItem> getValues() {
         return values;
     }
 
-    public void setValues(Object values) {
+    public void setValues(List<EntityMetricListItem> values) {
         this.values = values;
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建lb实例，支持创建或者绑定ipv4弹性公网和ipv6弹性公网 */
+/** 创建负载均衡器参数。 */
 public class CreateLoadBalancerOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -121,12 +121,22 @@ public class CreateLoadBalancerOption {
 
     private Boolean deletionProtectionEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prepaid_options")
+
+    private PrepaidCreateOption prepaidOptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "autoscaling")
+
+    private CreateLoadbalancerAutoscalingOption autoscaling;
+
     public CreateLoadBalancerOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    /** 负载均衡器名称。
+    /** 负载均衡器的名称。
      * 
      * @return name */
     public String getName() {
@@ -142,7 +152,7 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器功能说明。
+    /** 负载均衡器的描述。
      * 
      * @return description */
     public String getDescription() {
@@ -158,7 +168,9 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器的虚拟IP。 1.传入vip_address时必须传入vip_subnet_cidr_id 2.不传入vip_address，自动分配虚拟IP 3.传入vip_address，需要保证该ip地址在子网中未被占用
+    /** 负载均衡器的IPv4虚拟IP。该地址必须包含在所在子网的IPv4网段内，且未被占用。 使用说明： - 传入vip_address时必须传入vip_subnet_cidr_id。 -
+     * 不传入vip_address，但传入vip_subnet_cidr_id，则自动分配IPv4虚拟IP。 -
+     * 不传入vip_address，且不传vip_subnet_cidr_id，则不分配虚拟IP，vip_address=null。
      * 
      * @return vipAddress */
     public String getVipAddress() {
@@ -174,7 +186,9 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器所在的子网ID。 说明：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+    /** 负载均衡器所在子网的IPv4子网ID。若需要创建带IPv4虚拟IP的LB，该字段必须传入。 可以通过GET https&#58;//{VPC_Endpoint}/v1/{project_id}/subnets
+     * 响应参数中的neutron_subnet_id得到。 使用说明： - vpc_id, vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 -
+     * 若同时传入vpc_id和vip_subnet_cidr_id，则vip_subnet_cidr_id对应的子网必须属于vpc_id对应的VPC。
      * 
      * @return vipSubnetCidrId */
     public String getVipSubnetCidrId() {
@@ -190,7 +204,9 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 双栈实例对应v6的网络id 。注：默认为空，只有开启IPv6时才会传入。 说明：vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+    /** 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https&#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。 使用说明： -
+     * vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。
+     * [不支持IPv6，请勿使用](tag:otc,otc_test,dt,dt_test)
      * 
      * @return ipv6VipVirsubnetId */
     public String getIpv6VipVirsubnetId() {
@@ -206,7 +222,7 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器的生产者名称。只支持vlb。
+    /** 负载均衡器的生产者名称。固定为vlb。
      * 
      * @return provider */
     public String getProvider() {
@@ -222,7 +238,8 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 四层Flavor。
+    /** 四层Flavor ID。[创建负载均衡器时l4_flavor_id和l7_flavor_id不能都不传](tag:otc,otc_test,dt,dt_test)
+     * [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会选择默认flavor。
      * 
      * @return l4FlavorId */
     public String getL4FlavorId() {
@@ -254,7 +271,7 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 共享型：false 保障型：true，当前只支持true。
+    /** 是否独享型负载均衡器。取值： - true：独享型。 - false：共享型。 当前只支持设置为true，设置为false会返回400 Bad Request 。默认：true。
      * 
      * @return guaranteed */
     public Boolean getGuaranteed() {
@@ -270,7 +287,8 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 实例对应的vpc属性。 说明：vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+    /** 负载均衡器所在的VPC ID。可以通过GET https&#58;//{VPC_Endpoint}/v1/{project_id}/vpcs 响应参数中的id得到。 使用说明： -
+     * vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
      * 
      * @return vpcId */
     public String getVpcId() {
@@ -302,7 +320,8 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 可用区列表。默认指定所有可利用的AZ。 注： 可用AZ的查询方式可用通过调用nova接口查询 /v2/{project_id}/os-availability-zone
+    /** 可用区列表。可通过GET
+     * https&#58;//{ELB_Endponit}/v3/{project_id}/elb/availability-zones接口来查询可用区集合列表。创建负载均衡器时，从查询结果选择某一个可用区集合，并从中选择一个或多个可用区。
      * 
      * @return availabilityZoneList */
     public List<String> getAvailabilityZoneList() {
@@ -318,7 +337,8 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 企业项目ID。
+    /** 负载均衡器所属的企业项目ID。不能传入\"\"、\"0\"或不存在的企业项目ID，创建时不传则资源属于default企业项目，默认返回\"0\"。
+     * [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -350,7 +370,7 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡的标签列表。示例如下：\"tags\":[{\"key\":\"aaaa\",\"value\":\"mmmaaaaa\"}]
+    /** 负载均衡的标签列表。示例：\"tags\":[{\"key\":\"my_tag\",\"value\":\"my_tag_value\"}]
      * 
      * @return tags */
     public List<Tag> getTags() {
@@ -366,7 +386,7 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器的管理状态。说明：负载均衡器的管理状态。只支持设定为true。
+    /** 负载均衡器的管理状态。只能设置为true。默认：true。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return adminStateUp */
     public Boolean getAdminStateUp() {
@@ -382,7 +402,8 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 七层Flavor。
+    /** 七层Flavor ID。[创建负载均衡器时l4_flavor_id和l7_flavor_id不能都不传](tag:otc,otc_test,dt,dt_test)
+     * [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会选择默认flavor。
      * 
      * @return l7FlavorId */
     public String getL7FlavorId() {
@@ -398,7 +419,9 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 预留资源账单信息。
+    /** 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费。 包周期计费billing_info字段的格式为：order_id&#58;product_id&#58;region_id&#58;project_id，如：
+     * CS2107161019CDJZZ&#58;OFFI569702121789763584&#58;eu-de&#58;057ef081eb00d2732fd1c01a9be75e6f 使用说明： -
+     * admin权限才能更新此字段。 [不支持该字段，请勿使用](tag:otc,otc_test,dt,dt_test)
      * 
      * @return billingInfo */
     public String getBillingInfo() {
@@ -455,7 +478,7 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 公网EIP的ID，目前只支持一个
+    /** 负载均衡器绑定的公网IP ID。只支持绑定数组中的第一个EIP，其他将被忽略。
      * 
      * @return publicipIds */
     public List<String> getPublicipIds() {
@@ -512,7 +535,8 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 下联面网络id列表 若该字段不指定，在loadbalancer所属的VPC中任意选一个网络id，优选双栈网络
+    /** 下联面子网的网络ID列表。可以通过GET https&#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。
+     * 若不指定该字段，则会在当前负载均衡器所在的VPC中任意选一个子网，优选双栈网络。 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。 下联面子网必须属于该LB所在的VPC。
      * 
      * @return elbVirsubnetIds */
     public List<String> getElbVirsubnetIds() {
@@ -528,7 +552,8 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 是否启用跨VPC后端转发
+    /** 是否启用跨VPC后端转发。取值：true 表示开启，false 表示不开启。默认：false不开启。仅独享型负载均衡器支持该特性。
+     * 开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
      * 
      * @return ipTargetEnable */
     public Boolean getIpTargetEnable() {
@@ -544,7 +569,7 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 是否开启删除保护，默认不开启
+    /** 是否开启删除保护。取值：false不开启，true开启。默认false不开启。 > 退场时需要先关闭所有资源的删除保护开关。 [不支持该字段，请勿使用](tag:otc,otc_test,dt,dt_test)
      * 
      * @return deletionProtectionEnable */
     public Boolean getDeletionProtectionEnable() {
@@ -553,6 +578,56 @@ public class CreateLoadBalancerOption {
 
     public void setDeletionProtectionEnable(Boolean deletionProtectionEnable) {
         this.deletionProtectionEnable = deletionProtectionEnable;
+    }
+
+    public CreateLoadBalancerOption withPrepaidOptions(PrepaidCreateOption prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+        return this;
+    }
+
+    public CreateLoadBalancerOption withPrepaidOptions(Consumer<PrepaidCreateOption> prepaidOptionsSetter) {
+        if (this.prepaidOptions == null) {
+            this.prepaidOptions = new PrepaidCreateOption();
+            prepaidOptionsSetter.accept(this.prepaidOptions);
+        }
+
+        return this;
+    }
+
+    /** Get prepaidOptions
+     * 
+     * @return prepaidOptions */
+    public PrepaidCreateOption getPrepaidOptions() {
+        return prepaidOptions;
+    }
+
+    public void setPrepaidOptions(PrepaidCreateOption prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+    }
+
+    public CreateLoadBalancerOption withAutoscaling(CreateLoadbalancerAutoscalingOption autoscaling) {
+        this.autoscaling = autoscaling;
+        return this;
+    }
+
+    public CreateLoadBalancerOption withAutoscaling(Consumer<CreateLoadbalancerAutoscalingOption> autoscalingSetter) {
+        if (this.autoscaling == null) {
+            this.autoscaling = new CreateLoadbalancerAutoscalingOption();
+            autoscalingSetter.accept(this.autoscaling);
+        }
+
+        return this;
+    }
+
+    /** Get autoscaling
+     * 
+     * @return autoscaling */
+    public CreateLoadbalancerAutoscalingOption getAutoscaling() {
+        return autoscaling;
+    }
+
+    public void setAutoscaling(CreateLoadbalancerAutoscalingOption autoscaling) {
+        this.autoscaling = autoscaling;
     }
 
     @Override
@@ -585,7 +660,9 @@ public class CreateLoadBalancerOption {
             && Objects.equals(this.publicip, createLoadBalancerOption.publicip)
             && Objects.equals(this.elbVirsubnetIds, createLoadBalancerOption.elbVirsubnetIds)
             && Objects.equals(this.ipTargetEnable, createLoadBalancerOption.ipTargetEnable)
-            && Objects.equals(this.deletionProtectionEnable, createLoadBalancerOption.deletionProtectionEnable);
+            && Objects.equals(this.deletionProtectionEnable, createLoadBalancerOption.deletionProtectionEnable)
+            && Objects.equals(this.prepaidOptions, createLoadBalancerOption.prepaidOptions)
+            && Objects.equals(this.autoscaling, createLoadBalancerOption.autoscaling);
     }
 
     @Override
@@ -611,7 +688,9 @@ public class CreateLoadBalancerOption {
             publicip,
             elbVirsubnetIds,
             ipTargetEnable,
-            deletionProtectionEnable);
+            deletionProtectionEnable,
+            prepaidOptions,
+            autoscaling);
     }
 
     @Override
@@ -640,6 +719,8 @@ public class CreateLoadBalancerOption {
         sb.append("    elbVirsubnetIds: ").append(toIndentedString(elbVirsubnetIds)).append("\n");
         sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
+        sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
+        sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("}");
         return sb.toString();
     }

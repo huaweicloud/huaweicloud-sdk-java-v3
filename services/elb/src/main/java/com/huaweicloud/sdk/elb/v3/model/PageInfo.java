@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 翻页信息 */
+/** 分页信息 */
 public class PageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -212,6 +212,11 @@ public class ApiPolicyHttpCreate {
 
     private Boolean enableClientSsl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
     /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件 */
     public static final class EffectModeEnum {
 
@@ -313,10 +318,81 @@ public class ApiPolicyHttpCreate {
 
     private VpcInfo vpcChannelInfo;
 
+    /** 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道 */
+    public static final class VpcChannelStatusEnum {
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final VpcChannelStatusEnum NUMBER_1 = new VpcChannelStatusEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final VpcChannelStatusEnum NUMBER_2 = new VpcChannelStatusEnum(2);
+
+        private static final Map<Integer, VpcChannelStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, VpcChannelStatusEnum> createStaticFields() {
+            Map<Integer, VpcChannelStatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        VpcChannelStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VpcChannelStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new VpcChannelStatusEnum(value);
+            }
+            return result;
+        }
+
+        public static VpcChannelStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VpcChannelStatusEnum) {
+                return this.value.equals(((VpcChannelStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_status")
 
-    private Integer vpcChannelStatus;
+    private VpcChannelStatusEnum vpcChannelStatus;
 
     public ApiPolicyHttpCreate withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
@@ -414,6 +490,22 @@ public class ApiPolicyHttpCreate {
 
     public void setEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
+    }
+
+    public ApiPolicyHttpCreate withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /** ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * 
+     * @return retryCount */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
     }
 
     public ApiPolicyHttpCreate withEffectMode(EffectModeEnum effectMode) {
@@ -553,7 +645,7 @@ public class ApiPolicyHttpCreate {
         this.vpcChannelInfo = vpcChannelInfo;
     }
 
-    public ApiPolicyHttpCreate withVpcChannelStatus(Integer vpcChannelStatus) {
+    public ApiPolicyHttpCreate withVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
         return this;
     }
@@ -561,11 +653,11 @@ public class ApiPolicyHttpCreate {
     /** 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
      * 
      * @return vpcChannelStatus */
-    public Integer getVpcChannelStatus() {
+    public VpcChannelStatusEnum getVpcChannelStatus() {
         return vpcChannelStatus;
     }
 
-    public void setVpcChannelStatus(Integer vpcChannelStatus) {
+    public void setVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
     }
 
@@ -584,6 +676,7 @@ public class ApiPolicyHttpCreate {
             && Objects.equals(this.reqUri, apiPolicyHttpCreate.reqUri)
             && Objects.equals(this.timeout, apiPolicyHttpCreate.timeout)
             && Objects.equals(this.enableClientSsl, apiPolicyHttpCreate.enableClientSsl)
+            && Objects.equals(this.retryCount, apiPolicyHttpCreate.retryCount)
             && Objects.equals(this.effectMode, apiPolicyHttpCreate.effectMode)
             && Objects.equals(this.name, apiPolicyHttpCreate.name)
             && Objects.equals(this.backendParams, apiPolicyHttpCreate.backendParams)
@@ -601,6 +694,7 @@ public class ApiPolicyHttpCreate {
             reqUri,
             timeout,
             enableClientSsl,
+            retryCount,
             effectMode,
             name,
             backendParams,
@@ -620,6 +714,7 @@ public class ApiPolicyHttpCreate {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");

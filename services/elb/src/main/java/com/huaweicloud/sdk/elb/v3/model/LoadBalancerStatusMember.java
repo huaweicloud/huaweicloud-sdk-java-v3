@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** lb状态树的主机组的主机状态信息 */
+/** LB状态树的后端服务器组的后端服务器状态信息 */
 public class LoadBalancerStatusMember {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,7 +38,7 @@ public class LoadBalancerStatusMember {
         return this;
     }
 
-    /** provisioning的状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。 说明：该字段为预留字段，暂未启用，默认为ACTIVE。
+    /** 后端服务器配置状态。取值：ACTIVE表示使用中。
      * 
      * @return provisioningStatus */
     public String getProvisioningStatus() {
@@ -54,7 +54,7 @@ public class LoadBalancerStatusMember {
         return this;
     }
 
-    /** 后端服务器ip。
+    /** 后端服务器的IP地址。
      * 
      * @return address */
     public String getAddress() {
@@ -70,7 +70,7 @@ public class LoadBalancerStatusMember {
         return this;
     }
 
-    /** 后端协议号。 取值范围[1, 65535]。
+    /** 后端服务器的端口号。取值范围[1, 65535]。
      * 
      * @return protocolPort */
     public Integer getProtocolPort() {
@@ -102,7 +102,8 @@ public class LoadBalancerStatusMember {
         return this;
     }
 
-    /** 操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。默认为ONLINE。
+    /** 后端服务器的操作状态。取值： - ONLINE：后端服务器正常运行。 - NO_MONITOR：后端服务器健康检查未开启。 -
+     * DISABLED：后端服务器不可用。所属负载均衡器或后端服务器组或该后端服务器的admin_state_up=flase时，会出现该状态。注意该状态仅在当前接口中返回。 - OFFLINE：关联ECS已下线。
      * 
      * @return operatingStatus */
     public String getOperatingStatus() {

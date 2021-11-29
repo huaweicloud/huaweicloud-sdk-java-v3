@@ -329,7 +329,7 @@ public class ListStatisticsApiRequest {
     /** 统计时长格式：整数+单位（m、h），m：分钟，h：小时，可支持小时与分钟的组合。例如：1h或2h45m * 同时给定start_time和end_time优先查询[start_time, end_time] *
      * start_time不存在，end_time和duration存在且合法，则查询区间为[end_time - duration, end_time] *
      * start_time和end_time不存在，duration存在且合法，令end_time=now，则查询区间为[end_time - duration, end_time] *
-     * start_time，end_time和duration都不存在，报错missing time range parameters。
+     * start_time，end_time和duration都不存在，报错missing time range parameters。 * duration最长查询范围：小时最长支持72小时，分钟最长支持90分钟。
      * 
      * @return duration */
     public String getDuration() {

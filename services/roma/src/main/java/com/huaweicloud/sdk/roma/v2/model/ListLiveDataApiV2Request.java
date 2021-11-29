@@ -186,7 +186,7 @@ public class ListLiveDataApiV2Request {
         return this;
     }
 
-    /** 指明需要精准查询的参数，支持name、path、status
+    /** 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。 当前支持name，path，status。
      * 
      * @return preciseSearch */
     public String getPreciseSearch() {

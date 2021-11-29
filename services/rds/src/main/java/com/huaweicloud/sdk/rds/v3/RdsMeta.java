@@ -2120,6 +2120,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> showDrReplicaStatus =
+        genForshowDrReplicaStatus();
+
+    private static HttpRequestDef<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> genForshowDrReplicaStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDrReplicaStatusRequest.class, ShowDrReplicaStatusResponse.class)
+                .withName("ShowDrReplicaStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDrReplicaStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDrReplicaStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfiguration =
         genForshowInstanceConfiguration();
 
@@ -3376,6 +3408,84 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeProxyScaleRequest, ChangeProxyScaleResponse> changeProxyScale =
+        genForchangeProxyScale();
+
+    private static HttpRequestDef<ChangeProxyScaleRequest, ChangeProxyScaleResponse> genForchangeProxyScale() {
+        // basic
+        HttpRequestDef.Builder<ChangeProxyScaleRequest, ChangeProxyScaleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeProxyScaleRequest.class, ChangeProxyScaleResponse.class)
+                .withName("ChangeProxyScale")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/scale")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeProxyScaleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ChangeProxyScaleRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ChangeProxyScaleRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ChangeProxyScaleRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ScaleProxyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ScaleProxyRequestBody.class),
+            f -> f.withMarshaller(ChangeProxyScaleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> changeTheDelayThreshold =
+        genForchangeTheDelayThreshold();
+
+    private static HttpRequestDef<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> genForchangeTheDelayThreshold() {
+        // basic
+        HttpRequestDef.Builder<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ChangeTheDelayThresholdRequest.class, ChangeTheDelayThresholdResponse.class)
+            .withName("ChangeTheDelayThreshold")
+            .withUri("/v3/{project_id}/instances/{instance_id}/proxy/delay-threshold")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeTheDelayThresholdRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ChangeTheDelayThresholdRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ChangeTheDelayThresholdRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ChangeTheDelayThresholdRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ChangingTheDelayThresholdRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangingTheDelayThresholdRequestBody.class),
+            f -> f.withMarshaller(ChangeTheDelayThresholdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse> createPostgresqlDatabase =
         genForcreatePostgresqlDatabase();
 
@@ -3648,6 +3758,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse> searchQueryScaleFlavors =
+        genForsearchQueryScaleFlavors();
+
+    private static HttpRequestDef<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse> genForsearchQueryScaleFlavors() {
+        // basic
+        HttpRequestDef.Builder<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, SearchQueryScaleFlavorsRequest.class, SearchQueryScaleFlavorsResponse.class)
+            .withName("SearchQueryScaleFlavors")
+            .withUri("/v3/{project_id}/instances/{instance_id}/proxy/scale/flavors")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchQueryScaleFlavorsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchQueryScaleFlavorsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse> setPostgresqlDbUserPwd =
         genForsetPostgresqlDbUserPwd();
 
@@ -3679,6 +3821,151 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DbUserPwdRequest.class),
             f -> f.withMarshaller(SetPostgresqlDbUserPwdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> showInformationAboutDatabaseProxy =
+        genForshowInformationAboutDatabaseProxy();
+
+    private static HttpRequestDef<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> genForshowInformationAboutDatabaseProxy() {
+        // basic
+        HttpRequestDef.Builder<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowInformationAboutDatabaseProxyRequest.class,
+                    ShowInformationAboutDatabaseProxyResponse.class)
+                .withName("ShowInformationAboutDatabaseProxy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInformationAboutDatabaseProxyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ShowInformationAboutDatabaseProxyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowInformationAboutDatabaseProxyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowInformationAboutDatabaseProxyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartDatabaseProxyRequest, StartDatabaseProxyResponse> startDatabaseProxy =
+        genForstartDatabaseProxy();
+
+    private static HttpRequestDef<StartDatabaseProxyRequest, StartDatabaseProxyResponse> genForstartDatabaseProxy() {
+        // basic
+        HttpRequestDef.Builder<StartDatabaseProxyRequest, StartDatabaseProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartDatabaseProxyRequest.class, StartDatabaseProxyResponse.class)
+                .withName("StartDatabaseProxy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartDatabaseProxyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<StartDatabaseProxyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StartDatabaseProxyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StartDatabaseProxyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<OpenProxyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OpenProxyRequest.class),
+            f -> f.withMarshaller(StartDatabaseProxyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopDatabaseProxyRequest, StopDatabaseProxyResponse> stopDatabaseProxy =
+        genForstopDatabaseProxy();
+
+    private static HttpRequestDef<StopDatabaseProxyRequest, StopDatabaseProxyResponse> genForstopDatabaseProxy() {
+        // basic
+        HttpRequestDef.Builder<StopDatabaseProxyRequest, StopDatabaseProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, StopDatabaseProxyRequest.class, StopDatabaseProxyResponse.class)
+                .withName("StopDatabaseProxy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopDatabaseProxyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<StopDatabaseProxyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StopDatabaseProxyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StopDatabaseProxyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateReadWeightRequest, UpdateReadWeightResponse> updateReadWeight =
+        genForupdateReadWeight();
+
+    private static HttpRequestDef<UpdateReadWeightRequest, UpdateReadWeightResponse> genForupdateReadWeight() {
+        // basic
+        HttpRequestDef.Builder<UpdateReadWeightRequest, UpdateReadWeightResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateReadWeightRequest.class, UpdateReadWeightResponse.class)
+                .withName("UpdateReadWeight")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/weight")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateReadWeightRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateReadWeightRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateReadWeightRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateReadWeightRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ModifyProxyWeightRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyProxyWeightRequest.class),
+            f -> f.withMarshaller(UpdateReadWeightRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

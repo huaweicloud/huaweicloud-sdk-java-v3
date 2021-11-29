@@ -69,7 +69,7 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组的管理状态；该字段为预留字段，暂未启用。只支持更新为true。
+    /** 后端云服务器组的管理状态，只支持更新为true。 不支持该字段，请勿使用。
      * 
      * @return adminStateUp */
     public Boolean getAdminStateUp() {
@@ -85,7 +85,7 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组的描述信息
+    /** 后端云服务器组的描述信息。
      * 
      * @return description */
     public String getDescription() {
@@ -101,8 +101,8 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 描述：后端云服务器组的负载均衡算法 取值： 1、ROUND_ROBIN：加权轮询算法； 2、LEAST_CONNECTIONS：加权最少连接算法； 3、SOURCE_IP：源IP算法； 4、QUIC_CID：连接ID算法；
-     * 约束： 1、当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 2、只有pool的protocol为QUIC时，才支持QUIC_CID算法。
+    /** 后端云服务器组的负载均衡算法。 取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。
+     * 使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
      * 
      * @return lbAlgorithm */
     public String getLbAlgorithm() {
@@ -118,7 +118,7 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组关联的监听器的ID。listener_id和loadbalancer_id中至少指定一个。
+    /** 后端云服务器组关联的监听器的ID。 使用说明： - listener_id和loadbalancer_id至少指定一个。
      * 
      * @return listenerId */
     public String getListenerId() {
@@ -134,7 +134,7 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组关联的负载均衡器ID。listener_id和loadbalancer_id中至少指定一个。
+    /** 后端云服务器组关联的负载均衡器ID。 使用说明： - listener_id和loadbalancer_id中至少指定一个。
      * 
      * @return loadbalancerId */
     public String getLoadbalancerId() {
@@ -166,7 +166,7 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组所在的项目ID。
+    /** 后端云服务器组所属的项目ID。
      * 
      * @return projectId */
     public String getProjectId() {
@@ -182,8 +182,9 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 描述：后端云服务器组的后端协议。 使用说明：支持TCP、UDP、HTTP和QUIC。 约束： 1、listener的protocol为UDP时，pool的protocol必须为UDP或QUIC；
-     * 2、listener的protocol为TCP时pool的protocol必须为TCP； 3、listener的protocol为HTTP或TERMINATED_HTTPS时，pool的protocol必须为HTTP。
+    /** 后端云服务器组的后端协议。 取值：TCP、UDP、HTTP、HTTPS和QUIC。 使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； -
+     * listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 -
+     * listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。
      * 
      * @return protocol */
     public String getProtocol() {
@@ -250,7 +251,7 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 是否开启删除保护，默认不开启
+    /** 是否开启删除保护。取值：false不开启，true开启，默认false。 > 退场时需要先关闭所有资源的删除保护开关。
      * 
      * @return memberDeletionProtectionEnable */
     public Boolean getMemberDeletionProtectionEnable() {

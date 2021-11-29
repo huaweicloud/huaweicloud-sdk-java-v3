@@ -22,7 +22,7 @@ public class DebugApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latency")
 
-    private String latency;
+    private Integer latency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log")
@@ -61,7 +61,7 @@ public class DebugApiV2Response extends SdkResponse {
         this.response = response;
     }
 
-    public DebugApiV2Response withLatency(String latency) {
+    public DebugApiV2Response withLatency(Integer latency) {
         this.latency = latency;
         return this;
     }
@@ -69,11 +69,11 @@ public class DebugApiV2Response extends SdkResponse {
     /** 调试耗时，单位：毫秒
      * 
      * @return latency */
-    public String getLatency() {
+    public Integer getLatency() {
         return latency;
     }
 
-    public void setLatency(String latency) {
+    public void setLatency(Integer latency) {
         this.latency = latency;
     }
 

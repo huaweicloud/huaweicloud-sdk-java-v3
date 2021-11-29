@@ -54,9 +54,9 @@ public class ClusterDetail {
     private String enableLemon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_opentsdb")
+    @JsonProperty(value = "enable_openTSDB")
 
-    private String enableOpentsdb;
+    private String enableOpenTSDB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -222,20 +222,20 @@ public class ClusterDetail {
         this.enableLemon = enableLemon;
     }
 
-    public ClusterDetail withEnableOpentsdb(String enableOpentsdb) {
-        this.enableOpentsdb = enableOpentsdb;
+    public ClusterDetail withEnableOpenTSDB(String enableOpenTSDB) {
+        this.enableOpenTSDB = enableOpenTSDB;
         return this;
     }
 
     /** 是否开启OpenTSDB。 - false：不开启 - true：开启
      * 
-     * @return enableOpentsdb */
-    public String getEnableOpentsdb() {
-        return enableOpentsdb;
+     * @return enableOpenTSDB */
+    public String getEnableOpenTSDB() {
+        return enableOpenTSDB;
     }
 
-    public void setEnableOpentsdb(String enableOpentsdb) {
-        this.enableOpentsdb = enableOpentsdb;
+    public void setEnableOpenTSDB(String enableOpenTSDB) {
+        this.enableOpenTSDB = enableOpenTSDB;
     }
 
     public ClusterDetail withStatus(String status) {
@@ -320,7 +320,7 @@ public class ClusterDetail {
             && Objects.equals(this.enableDfv, clusterDetail.enableDfv)
             && Objects.equals(this.enableFree, clusterDetail.enableFree)
             && Objects.equals(this.enableLemon, clusterDetail.enableLemon)
-            && Objects.equals(this.enableOpentsdb, clusterDetail.enableOpentsdb)
+            && Objects.equals(this.enableOpenTSDB, clusterDetail.enableOpenTSDB)
             && Objects.equals(this.status, clusterDetail.status) && Objects.equals(this.tags, clusterDetail.tags)
             && Objects.equals(this.version, clusterDetail.version)
             && Objects.equals(this.zookeeperLink, clusterDetail.zookeeperLink);
@@ -337,7 +337,7 @@ public class ClusterDetail {
             enableDfv,
             enableFree,
             enableLemon,
-            enableOpentsdb,
+            enableOpenTSDB,
             status,
             tags,
             version,
@@ -357,7 +357,7 @@ public class ClusterDetail {
         sb.append("    enableDfv: ").append(toIndentedString(enableDfv)).append("\n");
         sb.append("    enableFree: ").append(toIndentedString(enableFree)).append("\n");
         sb.append("    enableLemon: ").append(toIndentedString(enableLemon)).append("\n");
-        sb.append("    enableOpentsdb: ").append(toIndentedString(enableOpentsdb)).append("\n");
+        sb.append("    enableOpenTSDB: ").append(toIndentedString(enableOpenTSDB)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");

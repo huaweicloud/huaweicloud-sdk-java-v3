@@ -276,7 +276,7 @@ public class AppInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_type")
 
-    private Object romaAppType;
+    private String romaAppType;
 
     public AppInfo withId(String id) {
         this.id = id;
@@ -438,7 +438,7 @@ public class AppInfo {
         this.appType = appType;
     }
 
-    public AppInfo withRomaAppType(Object romaAppType) {
+    public AppInfo withRomaAppType(String romaAppType) {
         this.romaAppType = romaAppType;
         return this;
     }
@@ -446,11 +446,11 @@ public class AppInfo {
     /** ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用 暂不支持
      * 
      * @return romaAppType */
-    public Object getRomaAppType() {
+    public String getRomaAppType() {
         return romaAppType;
     }
 
-    public void setRomaAppType(Object romaAppType) {
+    public void setRomaAppType(String romaAppType) {
         this.romaAppType = romaAppType;
     }
 

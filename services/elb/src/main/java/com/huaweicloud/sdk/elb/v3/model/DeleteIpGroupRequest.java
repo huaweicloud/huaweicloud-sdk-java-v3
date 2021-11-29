@@ -18,7 +18,7 @@ public class DeleteIpGroupRequest {
         return this;
     }
 
-    /** 待更新的IP地址组的id
+    /** IP地址组的ID。
      * 
      * @return ipgroupId */
     public String getIpgroupId() {
