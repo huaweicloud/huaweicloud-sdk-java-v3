@@ -49,7 +49,7 @@ public class AomMappingfilesInfo {
         return this;
     }
 
-    /** 接入规则详情
+    /** Get logStreamInfo
      * 
      * @return logStreamInfo */
     public AomMappingLogStreamInfo getLogStreamInfo() {

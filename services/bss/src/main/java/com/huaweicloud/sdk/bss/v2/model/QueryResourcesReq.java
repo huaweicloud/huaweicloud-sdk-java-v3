@@ -189,7 +189,7 @@ public class QueryResourcesReq {
         return this;
     }
 
-    /** 资源失效的开始时间，UTC时间。
+    /** 查询指定时间段内失效的资源列表，时间段的起始时间，UTC时间。
      * 
      * @return expireTimeBegin */
     public String getExpireTimeBegin() {
@@ -205,7 +205,7 @@ public class QueryResourcesReq {
         return this;
     }
 
-    /** 资源失效的结束时间，UTC时间。
+    /** 查询指定时间段内失效的资源列表，时间段的结束时间，UTC时间。
      * 
      * @return expireTimeEnd */
     public String getExpireTimeEnd() {

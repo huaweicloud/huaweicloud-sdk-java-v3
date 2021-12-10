@@ -2959,6 +2959,24 @@ public class RomaClient {
             RomaMeta.showResponseProperty, hcClient);
     }
 
+    /** 查看ROMA Connect实例约束信息 查看ROMA Connect实例约束信息
+     *
+     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @return ShowRestrictionOfInstanceV2Response */
+    public ShowRestrictionOfInstanceV2Response showRestrictionOfInstanceV2(ShowRestrictionOfInstanceV2Request request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showRestrictionOfInstanceV2);
+    }
+
+    /** 查看ROMA Connect实例约束信息 查看ROMA Connect实例约束信息
+     *
+     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @return SyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> */
+    public SyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2Invoker(
+        ShowRestrictionOfInstanceV2Request request) {
+        return new SyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>(request,
+            RomaMeta.showRestrictionOfInstanceV2, hcClient);
+    }
+
     /** 查询规则详情 查询规则详情
      *
      * @param ShowRuleRequest 请求对象

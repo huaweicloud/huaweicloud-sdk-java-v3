@@ -280,7 +280,7 @@ public class DomainBody {
         return this;
     }
 
-    /** 企业项目ID，创建域名归属的项目。
+    /** 企业项目ID，创建域名归属的项目。注意：当使用子账号调用接口时，该参数必传。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {

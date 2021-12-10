@@ -9,24 +9,24 @@ import java.util.Objects;
 public class DeleteStructTemplateReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "struct_template_id")
+    @JsonProperty(value = "id")
 
-    private String structTemplateId;
+    private String id;
 
-    public DeleteStructTemplateReqBody withStructTemplateId(String structTemplateId) {
-        this.structTemplateId = structTemplateId;
+    public DeleteStructTemplateReqBody withId(String id) {
+        this.id = id;
         return this;
     }
 
     /** 结构化规则ID
      * 
-     * @return structTemplateId */
-    public String getStructTemplateId() {
-        return structTemplateId;
+     * @return id */
+    public String getId() {
+        return id;
     }
 
-    public void setStructTemplateId(String structTemplateId) {
-        this.structTemplateId = structTemplateId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
@@ -38,19 +38,19 @@ public class DeleteStructTemplateReqBody {
             return false;
         }
         DeleteStructTemplateReqBody deleteStructTemplateReqBody = (DeleteStructTemplateReqBody) o;
-        return Objects.equals(this.structTemplateId, deleteStructTemplateReqBody.structTemplateId);
+        return Objects.equals(this.id, deleteStructTemplateReqBody.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(structTemplateId);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteStructTemplateReqBody {\n");
-        sb.append("    structTemplateId: ").append(toIndentedString(structTemplateId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

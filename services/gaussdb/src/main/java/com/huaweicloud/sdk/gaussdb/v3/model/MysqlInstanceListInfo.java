@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.gaussdb.v3.model.InstanceTagItem;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlBackupStrategy;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlChargeInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
@@ -185,6 +186,13 @@ public class MysqlInstanceListInfo  {
     
     private String dedicatedResourceId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    
+    private List<InstanceTagItem> tags = null;
+    
     public MysqlInstanceListInfo withId(String id) {
         this.id = id;
         return this;
@@ -754,6 +762,42 @@ public class MysqlInstanceListInfo  {
 
     
 
+    public MysqlInstanceListInfo withTags(List<InstanceTagItem> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+    public MysqlInstanceListInfo addTagsItem(InstanceTagItem tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public MysqlInstanceListInfo withTags(Consumer<List<InstanceTagItem>> tagsSetter) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表。
+     * @return tags
+     */
+    public List<InstanceTagItem> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<InstanceTagItem> tags) {
+        this.tags = tags;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -785,11 +829,12 @@ public class MysqlInstanceListInfo  {
             Objects.equals(this.enterpriseProjectId, mysqlInstanceListInfo.enterpriseProjectId) &&
             Objects.equals(this.timeZone, mysqlInstanceListInfo.timeZone) &&
             Objects.equals(this.chargeInfo, mysqlInstanceListInfo.chargeInfo) &&
-            Objects.equals(this.dedicatedResourceId, mysqlInstanceListInfo.dedicatedResourceId);
+            Objects.equals(this.dedicatedResourceId, mysqlInstanceListInfo.dedicatedResourceId) &&
+            Objects.equals(this.tags, mysqlInstanceListInfo.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, privateIps, publicIps, port, type, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, backupStrategy, enterpriseProjectId, timeZone, chargeInfo, dedicatedResourceId);
+        return Objects.hash(id, name, status, privateIps, publicIps, port, type, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, backupStrategy, enterpriseProjectId, timeZone, chargeInfo, dedicatedResourceId, tags);
     }
     @Override
     public String toString() {
@@ -818,6 +863,7 @@ public class MysqlInstanceListInfo  {
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

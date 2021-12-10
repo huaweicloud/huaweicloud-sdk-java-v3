@@ -28,11 +28,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     private String indexId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "key")
-
-    private String key;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
     private String language;
@@ -169,12 +164,12 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private Object createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private Object updateTime;
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
@@ -211,22 +206,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
 
     public void setIndexId(String indexId) {
         this.indexId = indexId;
-    }
-
-    public UpdateSqlAlarmRuleResponse withKey(String key) {
-        this.key = key;
-        return this;
-    }
-
-    /** 测试
-     * 
-     * @return key */
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
     }
 
     public UpdateSqlAlarmRuleResponse withLanguage(String language) {
@@ -430,35 +409,35 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
-    public UpdateSqlAlarmRuleResponse withCreateTime(Object createTime) {
+    public UpdateSqlAlarmRuleResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建时间(毫秒时间戳)
+    /** 创建时间(毫秒时间戳) minimum: 13 maximum: 13
      * 
      * @return createTime */
-    public Object getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Object createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public UpdateSqlAlarmRuleResponse withUpdateTime(Object updateTime) {
+    public UpdateSqlAlarmRuleResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    /** 更新时间(毫秒时间戳)
+    /** 更新时间(毫秒时间戳) minimum: 13 maximum: 13
      * 
      * @return updateTime */
-    public Object getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Object updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -505,7 +484,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         UpdateSqlAlarmRuleResponse updateSqlAlarmRuleResponse = (UpdateSqlAlarmRuleResponse) o;
         return Objects.equals(this.id, updateSqlAlarmRuleResponse.id)
             && Objects.equals(this.indexId, updateSqlAlarmRuleResponse.indexId)
-            && Objects.equals(this.key, updateSqlAlarmRuleResponse.key)
             && Objects.equals(this.language, updateSqlAlarmRuleResponse.language)
             && Objects.equals(this.projectId, updateSqlAlarmRuleResponse.projectId)
             && Objects.equals(this.sqlAlarmRuleName, updateSqlAlarmRuleResponse.sqlAlarmRuleName)
@@ -526,7 +504,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(id,
             indexId,
-            key,
             language,
             projectId,
             sqlAlarmRuleName,
@@ -549,7 +526,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         sb.append("class UpdateSqlAlarmRuleResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    indexId: ").append(toIndentedString(indexId)).append("\n");
-        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    sqlAlarmRuleName: ").append(toIndentedString(sqlAlarmRuleName)).append("\n");

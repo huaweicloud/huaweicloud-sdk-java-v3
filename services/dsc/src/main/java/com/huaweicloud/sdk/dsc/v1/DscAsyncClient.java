@@ -185,4 +185,23 @@ public class DscAsyncClient {
         return new AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse>(request, DscMeta.showScanJobs, hcClient);
     }
 
+    /** 查询OpenApi调用记录 查询OpenApi调用记录
+     *
+     * @param ShowOpenApiCalledRecordsRequest 请求对象
+     * @return CompletableFuture<ShowOpenApiCalledRecordsResponse> */
+    public CompletableFuture<ShowOpenApiCalledRecordsResponse> showOpenApiCalledRecordsAsync(
+        ShowOpenApiCalledRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.showOpenApiCalledRecords);
+    }
+
+    /** 查询OpenApi调用记录 查询OpenApi调用记录
+     *
+     * @param ShowOpenApiCalledRecordsRequest 请求对象
+     * @return AsyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> */
+    public AsyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> showOpenApiCalledRecordsAsyncInvoker(
+        ShowOpenApiCalledRecordsRequest request) {
+        return new AsyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse>(request,
+            DscMeta.showOpenApiCalledRecords, hcClient);
+    }
+
 }

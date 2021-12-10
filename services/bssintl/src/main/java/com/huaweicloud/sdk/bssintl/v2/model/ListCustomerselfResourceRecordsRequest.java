@@ -127,7 +127,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数的约束及描述：|
+    /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数的约束及描述：|
      * 
      * @return cloudServiceType */
     public String getCloudServiceType() {

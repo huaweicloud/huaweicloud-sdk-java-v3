@@ -368,7 +368,7 @@ public class GaussDBforNoSQLMeta {
         // requests
         builder.<String>withRequestField("region",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getRegion, (req, v) -> {
                 req.setRegion(v);

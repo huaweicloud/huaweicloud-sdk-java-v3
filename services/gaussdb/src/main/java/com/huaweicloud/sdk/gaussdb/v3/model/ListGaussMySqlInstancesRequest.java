@@ -68,6 +68,13 @@ public class ListGaussMySqlInstancesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="private_ip")
+    
+    
+    private String privateIp;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
     
@@ -79,6 +86,13 @@ public class ListGaussMySqlInstancesRequest  {
     
     
     private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    
+    private String tags;
 
     public ListGaussMySqlInstancesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -236,6 +250,28 @@ public class ListGaussMySqlInstancesRequest  {
 
     
 
+    public ListGaussMySqlInstancesRequest withPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 读写内网IP。
+     * @return privateIp
+     */
+    public String getPrivateIp() {
+        return privateIp;
+    }
+
+    public void setPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+    }
+
+    
+
     public ListGaussMySqlInstancesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -280,6 +316,28 @@ public class ListGaussMySqlInstancesRequest  {
 
     
 
+    public ListGaussMySqlInstancesRequest withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 根据实例标签键值对进行查询。{key}表示标签键，{value}表示标签值。如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，表示查询同时包含指定标签键值对的实例。key不能重复，key之间是与的关系。
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -296,12 +354,14 @@ public class ListGaussMySqlInstancesRequest  {
             Objects.equals(this.datastoreType, listGaussMySqlInstancesRequest.datastoreType) &&
             Objects.equals(this.vpcId, listGaussMySqlInstancesRequest.vpcId) &&
             Objects.equals(this.subnetId, listGaussMySqlInstancesRequest.subnetId) &&
+            Objects.equals(this.privateIp, listGaussMySqlInstancesRequest.privateIp) &&
             Objects.equals(this.offset, listGaussMySqlInstancesRequest.offset) &&
-            Objects.equals(this.limit, listGaussMySqlInstancesRequest.limit);
+            Objects.equals(this.limit, listGaussMySqlInstancesRequest.limit) &&
+            Objects.equals(this.tags, listGaussMySqlInstancesRequest.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, id, name, type, datastoreType, vpcId, subnetId, offset, limit);
+        return Objects.hash(xLanguage, id, name, type, datastoreType, vpcId, subnetId, privateIp, offset, limit, tags);
     }
     @Override
     public String toString() {
@@ -314,8 +374,10 @@ public class ListGaussMySqlInstancesRequest  {
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

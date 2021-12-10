@@ -17,7 +17,7 @@ public class ListStructuredLogsWithTimeRangeRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private QueryLTSStructLogParamsNew body;
+    private QueryLtsStructLogParamsNew body;
 
     public ListStructuredLogsWithTimeRangeRequest withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
@@ -35,14 +35,14 @@ public class ListStructuredLogsWithTimeRangeRequest {
         this.logStreamId = logStreamId;
     }
 
-    public ListStructuredLogsWithTimeRangeRequest withBody(QueryLTSStructLogParamsNew body) {
+    public ListStructuredLogsWithTimeRangeRequest withBody(QueryLtsStructLogParamsNew body) {
         this.body = body;
         return this;
     }
 
-    public ListStructuredLogsWithTimeRangeRequest withBody(Consumer<QueryLTSStructLogParamsNew> bodySetter) {
+    public ListStructuredLogsWithTimeRangeRequest withBody(Consumer<QueryLtsStructLogParamsNew> bodySetter) {
         if (this.body == null) {
-            this.body = new QueryLTSStructLogParamsNew();
+            this.body = new QueryLtsStructLogParamsNew();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class ListStructuredLogsWithTimeRangeRequest {
     /** Get body
      * 
      * @return body */
-    public QueryLTSStructLogParamsNew getBody() {
+    public QueryLtsStructLogParamsNew getBody() {
         return body;
     }
 
-    public void setBody(QueryLTSStructLogParamsNew body) {
+    public void setBody(QueryLtsStructLogParamsNew body) {
         this.body = body;
     }
 

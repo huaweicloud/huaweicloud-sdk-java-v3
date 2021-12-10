@@ -394,7 +394,9 @@ public class ShowReposResp {
         return this;
     }
 
-    /** @return totalRange */
+    /** 总记录条数
+     * 
+     * @return totalRange */
     public Long getTotalRange() {
         return totalRange;
     }

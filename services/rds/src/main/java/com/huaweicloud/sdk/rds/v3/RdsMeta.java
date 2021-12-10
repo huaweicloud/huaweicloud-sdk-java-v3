@@ -1651,6 +1651,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestoreExistInstanceRequest, RestoreExistInstanceResponse> restoreExistInstance =
+        genForrestoreExistInstance();
+
+    private static HttpRequestDef<RestoreExistInstanceRequest, RestoreExistInstanceResponse> genForrestoreExistInstance() {
+        // basic
+        HttpRequestDef.Builder<RestoreExistInstanceRequest, RestoreExistInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RestoreExistInstanceRequest.class, RestoreExistInstanceResponse.class)
+            .withName("RestoreExistInstance")
+            .withUri("/v3.1/{project_id}/instances/recovery")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreExistInstanceRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<RestoreToExistingInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestoreToExistingInstanceRequestBody.class),
+            f -> f.withMarshaller(RestoreExistInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestoreTablesRequest, RestoreTablesResponse> restoreTables =
         genForrestoreTables();
 

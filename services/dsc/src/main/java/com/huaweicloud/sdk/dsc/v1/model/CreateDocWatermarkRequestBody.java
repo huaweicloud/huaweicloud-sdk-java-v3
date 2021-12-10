@@ -113,6 +113,11 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
     private String markedFilePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "readonly_password")
+
+    private String readonlyPassword;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visible_watermark")
 
     private String visibleWatermark;
@@ -268,6 +273,22 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
 
     public void setMarkedFilePassword(String markedFilePassword) {
         this.markedFilePassword = markedFilePassword;
+    }
+
+    public CreateDocWatermarkRequestBody withReadonlyPassword(String readonlyPassword) {
+        this.readonlyPassword = readonlyPassword;
+        return this;
+    }
+
+    /** 添加水印后给文件设置只读密码， 最大支持长度256。
+     * 
+     * @return readonlyPassword */
+    public String getReadonlyPassword() {
+        return readonlyPassword;
+    }
+
+    public void setReadonlyPassword(String readonlyPassword) {
+        this.readonlyPassword = readonlyPassword;
     }
 
     public CreateDocWatermarkRequestBody withVisibleWatermark(String visibleWatermark) {
@@ -443,6 +464,9 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
                 if (markedFilePassword != null) {
                     put("marked_file_password", new FormDataPart<>(markedFilePassword));
                 }
+                if (readonlyPassword != null) {
+                    put("readonly_password", new FormDataPart<>(readonlyPassword));
+                }
                 if (visibleWatermark != null) {
                     put("visible_watermark", new FormDataPart<>(visibleWatermark));
                 }
@@ -481,6 +505,7 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return Objects.equals(this.docType, createDocWatermarkRequestBody.docType)
             && Objects.equals(this.filePassword, createDocWatermarkRequestBody.filePassword)
             && Objects.equals(this.markedFilePassword, createDocWatermarkRequestBody.markedFilePassword)
+            && Objects.equals(this.readonlyPassword, createDocWatermarkRequestBody.readonlyPassword)
             && Objects.equals(this.visibleWatermark, createDocWatermarkRequestBody.visibleWatermark)
             && Objects.equals(this.fontSize, createDocWatermarkRequestBody.fontSize)
             && Objects.equals(this.rotation, createDocWatermarkRequestBody.rotation)
@@ -496,6 +521,7 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return Objects.hash(docType,
             filePassword,
             markedFilePassword,
+            readonlyPassword,
             visibleWatermark,
             fontSize,
             rotation,
@@ -513,6 +539,7 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         sb.append("    docType: ").append(toIndentedString(docType)).append("\n");
         sb.append("    filePassword: ").append(toIndentedString(filePassword)).append("\n");
         sb.append("    markedFilePassword: ").append(toIndentedString(markedFilePassword)).append("\n");
+        sb.append("    readonlyPassword: ").append(toIndentedString(readonlyPassword)).append("\n");
         sb.append("    visibleWatermark: ").append(toIndentedString(visibleWatermark)).append("\n");
         sb.append("    fontSize: ").append(toIndentedString(fontSize)).append("\n");
         sb.append("    rotation: ").append(toIndentedString(rotation)).append("\n");

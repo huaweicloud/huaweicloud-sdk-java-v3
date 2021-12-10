@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 独享模式回源服务器配置 */
+/** 服务器配置 */
 public class PremiumWafServer {
 
     /** 对外协议 */
@@ -175,10 +175,81 @@ public class PremiumWafServer {
 
     private Integer port;
 
+    /** 源站地址为ipv4或ipv6 */
+    public static final class TypeEnum {
+
+        /** Enum IPV4 for value: "ipv4" */
+        public static final TypeEnum IPV4 = new TypeEnum("ipv4");
+
+        /** Enum IPV6 for value: "ipv6" */
+        public static final TypeEnum IPV6 = new TypeEnum("ipv6");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("ipv4", IPV4);
+            map.put("ipv6", IPV6);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -249,7 +320,7 @@ public class PremiumWafServer {
         this.port = port;
     }
 
-    public PremiumWafServer withType(String type) {
+    public PremiumWafServer withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -257,11 +328,11 @@ public class PremiumWafServer {
     /** 源站地址为ipv4或ipv6
      * 
      * @return type */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateKmsTagRequestBody */
+/** 创建KMS资源标签请求体。 */
 public class CreateKmsTagRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

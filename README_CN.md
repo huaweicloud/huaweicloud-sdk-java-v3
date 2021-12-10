@@ -174,6 +174,7 @@ public class Application {
     * [7.1 同步客户端请求重试](#71-同步客户端请求重试-top)
     * [7.2 异步客户端请求重试](#72-异步客户端请求重试-top)
     * [7.3 典型重试场景调用示例](#73-典型重试场景调用示例-top)
+* [8. 文件上传与下载](#8-文件上传与下载-top)
 
 ### 1. 客户端连接参数 [:top:](#用户手册-top)
 
@@ -637,5 +638,92 @@ try {
     logger.info(response.toString());
 } catch (SdkException e) {
     logger.error("", e);
+}
+```
+
+### 8. 文件上传与下载 [:top:](#用户手册-top)
+
+以数据安全中心服务的嵌入图片水印接口为例，该接口需要上传一个图片文件，并返回加过水印的图片文件流：
+
+```java
+package com.huaweicloud.sdk.test;
+
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.dsc.v1.DscClient;
+import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkRequest;
+import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkRequestBody;
+import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkResponse;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.function.Consumer;
+
+
+public class CreateImageWatermarkDemo {
+
+    public static void createImageWatermark(DscClient client) throws IOException {
+
+        CreateImageWatermarkRequest request = new CreateImageWatermarkRequest();
+
+        // 创建File对象和FileInputStream对象
+        File file = new File("demo.jpg");
+        FileInputStream fis = new FileInputStream(file);
+
+        CreateImageWatermarkRequestBody body = new CreateImageWatermarkRequestBody()
+                // 文件传参
+                .withFile(fis, file.getName())
+                .withBlindWatermark("test_watermark");
+        request.setBody(body);
+
+        CreateImageWatermarkResponse response = client.createImageWatermark(request);
+        fis.close();
+
+        //下载文件的consumer
+        Consumer<InputStream> consumer = inputStream -> {
+            try {
+                FileOutputStream out = new FileOutputStream("result.jpg");
+                byte[] data = new byte[1024];
+                int len = 0;
+                while ((len = inputStream.read(data))!= -1) {
+                    out.write(data, 0, len);
+                }
+
+                inputStream.close();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        };
+
+        //下载文件
+        response.consumeDownloadStream(consumer);
+    }
+
+    public static void main(String[] args) throws IOException {
+        String ak = "{your ak string}";
+        String sk = "{your sk string}";
+        String endpoint = "{your endpoint string}";
+        String projectId = "{your project id}";
+        HttpConfig config = HttpConfig.getDefaultHttpConfig();
+        config.withIgnoreSSLVerification(true);
+        BasicCredentials auth = new BasicCredentials()
+                .withAk(ak)
+                .withSk(sk)
+                .withProjectId(projectId);
+
+        DscClient client = DscClient.newBuilder()
+                .withHttpConfig(config)
+                .withCredential(auth)
+                .withEndpoint(endpoint)
+                .build();
+
+        createImageWatermark(client);
+
+    }
+    
 }
 ```

@@ -204,12 +204,12 @@ public class DscMeta {
             f -> f.withMarshaller(ShowScanJobResultsRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
-        builder.<Integer>withRequestField("page",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowScanJobResultsRequest::getPage, (req, v) -> {
-                req.setPage(v);
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -256,12 +256,12 @@ public class DscMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("page",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowScanJobsRequest::getPage, (req, v) -> {
-                req.setPage(v);
+            f -> f.withMarshaller(ShowScanJobsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -290,6 +290,60 @@ public class DscMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowScanJobsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> showOpenApiCalledRecords =
+        genForshowOpenApiCalledRecords();
+
+    private static HttpRequestDef<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> genForshowOpenApiCalledRecords() {
+        // basic
+        HttpRequestDef.Builder<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowOpenApiCalledRecordsRequest.class, ShowOpenApiCalledRecordsResponse.class)
+                .withName("ShowOpenApiCalledRecords")
+                .withUri("/v1/{project_id}/openapi/called-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("called_url",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getCalledUrl, (req, v) -> {
+                req.setCalledUrl(v);
+            }));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
             }));
 
         // response

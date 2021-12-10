@@ -68,7 +68,7 @@ public class ListActiveOrHistoryAlarmsResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页详情
+    /** Get pageInfo
      * 
      * @return pageInfo */
     public PageInfo getPageInfo() {

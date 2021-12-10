@@ -360,7 +360,7 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 账号ID
+    /** 帐号ID
      * 
      * @return domainId */
     public String getDomainId() {

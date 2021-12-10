@@ -56,41 +56,6 @@ public class GesMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckMetadataRequest, CheckMetadataResponse> checkMetadata = genForcheckMetadata();
-
-    private static HttpRequestDef<CheckMetadataRequest, CheckMetadataResponse> genForcheckMetadata() {
-        // basic
-        HttpRequestDef.Builder<CheckMetadataRequest, CheckMetadataResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CheckMetadataRequest.class, CheckMetadataResponse.class)
-                .withName("CheckMetadata")
-                .withUri("/v1.0/{project_id}/graphs/action")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CheckMetadataRequest.ActionIdEnum>withRequestField("action_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CheckMetadataRequest.ActionIdEnum.class),
-            f -> f.withMarshaller(CheckMetadataRequest::getActionId, (req, v) -> {
-                req.setActionId(v);
-            })
-        );
-        builder.<CheckMetadataReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CheckMetadataReq.class),
-            f -> f.withMarshaller(CheckMetadataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ClearGraphRequest, ClearGraphResponse> clearGraph = genForclearGraph();
 
     private static HttpRequestDef<ClearGraphRequest, ClearGraphResponse> genForclearGraph() {

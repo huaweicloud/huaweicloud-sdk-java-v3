@@ -70,6 +70,11 @@ public class ShowPlansResponseBody {
 
     private ShowPlansResponseReportStage reportStage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iteration")
+
+    private NameAndId iteration;
+
     public ShowPlansResponseBody withPlanId(String planId) {
         this.planId = planId;
         return this;
@@ -107,7 +112,7 @@ public class ShowPlansResponseBody {
         return this;
     }
 
-    /** 测试计划开始日期
+    /** 测试计划开始时间
      * 
      * @return startDate */
     public LocalDate getStartDate() {
@@ -123,7 +128,7 @@ public class ShowPlansResponseBody {
         return this;
     }
 
-    /** 测试计划截止日期
+    /** 测试计划截止时间
      * 
      * @return endDate */
     public LocalDate getEndDate() {
@@ -139,7 +144,7 @@ public class ShowPlansResponseBody {
         return this;
     }
 
-    /** 测试计划实际完成日期（测试计划实际完成指测试计划下所有测试用例处于完成状态）
+    /** 测试计划实际完成时间（测试计划实际完成指测试计划下所有测试用例处于完成状态）
      * 
      * @return finishDate */
     public LocalDate getFinishDate() {
@@ -298,6 +303,31 @@ public class ShowPlansResponseBody {
         this.reportStage = reportStage;
     }
 
+    public ShowPlansResponseBody withIteration(NameAndId iteration) {
+        this.iteration = iteration;
+        return this;
+    }
+
+    public ShowPlansResponseBody withIteration(Consumer<NameAndId> iterationSetter) {
+        if (this.iteration == null) {
+            this.iteration = new NameAndId();
+            iterationSetter.accept(this.iteration);
+        }
+
+        return this;
+    }
+
+    /** Get iteration
+     * 
+     * @return iteration */
+    public NameAndId getIteration() {
+        return iteration;
+    }
+
+    public void setIteration(NameAndId iteration) {
+        this.iteration = iteration;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -318,7 +348,8 @@ public class ShowPlansResponseBody {
             && Objects.equals(this.owner, showPlansResponseBody.owner)
             && Objects.equals(this.designStage, showPlansResponseBody.designStage)
             && Objects.equals(this.executeStage, showPlansResponseBody.executeStage)
-            && Objects.equals(this.reportStage, showPlansResponseBody.reportStage);
+            && Objects.equals(this.reportStage, showPlansResponseBody.reportStage)
+            && Objects.equals(this.iteration, showPlansResponseBody.iteration);
     }
 
     @Override
@@ -334,7 +365,8 @@ public class ShowPlansResponseBody {
             owner,
             designStage,
             executeStage,
-            reportStage);
+            reportStage,
+            iteration);
     }
 
     @Override
@@ -353,6 +385,7 @@ public class ShowPlansResponseBody {
         sb.append("    designStage: ").append(toIndentedString(designStage)).append("\n");
         sb.append("    executeStage: ").append(toIndentedString(executeStage)).append("\n");
         sb.append("    reportStage: ").append(toIndentedString(reportStage)).append("\n");
+        sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
         sb.append("}");
         return sb.toString();
     }

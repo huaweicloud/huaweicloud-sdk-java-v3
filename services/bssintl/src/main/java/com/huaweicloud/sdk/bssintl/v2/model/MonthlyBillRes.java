@@ -247,7 +247,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：云服务类型编码| |参数的约束及描述：该参数非必填,，例如ECS的云服务类型编码为“hws.service.type.ec2”|
+    /** |参数名称：云服务类型编码| |参数的约束及描述：该参数非必填,，例如OBS的云服务类型编码为“hws.service.type.obs”|
      * 
      * @return cloudServiceType */
     public String getCloudServiceType() {

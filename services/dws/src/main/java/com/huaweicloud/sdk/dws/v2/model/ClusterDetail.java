@@ -76,7 +76,7 @@ public class ClusterDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_reasons")
 
-    private Object failedReasons;
+    private FailedReason failedReasons;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
@@ -107,11 +107,6 @@ public class ClusterDetail {
     @JsonProperty(value = "node_type_id")
 
     private String nodeTypeId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "node_detail")
-
-    private NodeDetail nodeDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
@@ -422,19 +417,28 @@ public class ClusterDetail {
         this.id = id;
     }
 
-    public ClusterDetail withFailedReasons(Object failedReasons) {
+    public ClusterDetail withFailedReasons(FailedReason failedReasons) {
         this.failedReasons = failedReasons;
         return this;
     }
 
-    /** 失败原因。如果为空，则集群处于正常状态。
+    public ClusterDetail withFailedReasons(Consumer<FailedReason> failedReasonsSetter) {
+        if (this.failedReasons == null) {
+            this.failedReasons = new FailedReason();
+            failedReasonsSetter.accept(this.failedReasons);
+        }
+
+        return this;
+    }
+
+    /** Get failedReasons
      * 
      * @return failedReasons */
-    public Object getFailedReasons() {
+    public FailedReason getFailedReasons() {
         return failedReasons;
     }
 
-    public void setFailedReasons(Object failedReasons) {
+    public void setFailedReasons(FailedReason failedReasons) {
         this.failedReasons = failedReasons;
     }
 
@@ -555,31 +559,6 @@ public class ClusterDetail {
 
     public void setNodeTypeId(String nodeTypeId) {
         this.nodeTypeId = nodeTypeId;
-    }
-
-    public ClusterDetail withNodeDetail(NodeDetail nodeDetail) {
-        this.nodeDetail = nodeDetail;
-        return this;
-    }
-
-    public ClusterDetail withNodeDetail(Consumer<NodeDetail> nodeDetailSetter) {
-        if (this.nodeDetail == null) {
-            this.nodeDetail = new NodeDetail();
-            nodeDetailSetter.accept(this.nodeDetail);
-        }
-
-        return this;
-    }
-
-    /** Get nodeDetail
-     * 
-     * @return nodeDetail */
-    public NodeDetail getNodeDetail() {
-        return nodeDetail;
-    }
-
-    public void setNodeDetail(NodeDetail nodeDetail) {
-        this.nodeDetail = nodeDetail;
     }
 
     public ClusterDetail withVersion(String version) {
@@ -801,7 +780,6 @@ public class ClusterDetail {
             && Objects.equals(this.subStatus, clusterDetail.subStatus)
             && Objects.equals(this.created, clusterDetail.created)
             && Objects.equals(this.nodeTypeId, clusterDetail.nodeTypeId)
-            && Objects.equals(this.nodeDetail, clusterDetail.nodeDetail)
             && Objects.equals(this.version, clusterDetail.version)
             && Objects.equals(this.maintainWindow, clusterDetail.maintainWindow)
             && Objects.equals(this.tags, clusterDetail.tags)
@@ -833,7 +811,6 @@ public class ClusterDetail {
             subStatus,
             created,
             nodeTypeId,
-            nodeDetail,
             version,
             maintainWindow,
             tags,
@@ -869,7 +846,6 @@ public class ClusterDetail {
         sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    nodeTypeId: ").append(toIndentedString(nodeTypeId)).append("\n");
-        sb.append("    nodeDetail: ").append(toIndentedString(nodeDetail)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    maintainWindow: ").append(toIndentedString(maintainWindow)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

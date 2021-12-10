@@ -105,7 +105,7 @@ public class SwrClient {
         return new SyncInvoker<CreateRepoRequest, CreateRepoResponse>(request, SwrMeta.createRepo, hcClient);
     }
 
-    /** 创建共享账号 创建共享账号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
+    /** 创建共享帐号 创建共享帐号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
      *
      * @param CreateRepoDomainsRequest 请求对象
      * @return CreateRepoDomainsResponse */
@@ -113,7 +113,7 @@ public class SwrClient {
         return hcClient.syncInvokeHttp(request, SwrMeta.createRepoDomains);
     }
 
-    /** 创建共享账号 创建共享账号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
+    /** 创建共享帐号 创建共享帐号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
      *
      * @param CreateRepoDomainsRequest 请求对象
      * @return SyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse> */
@@ -261,7 +261,7 @@ public class SwrClient {
         return new SyncInvoker<DeleteRepoRequest, DeleteRepoResponse>(request, SwrMeta.deleteRepo, hcClient);
     }
 
-    /** 删除共享账号 删除共享账号
+    /** 删除共享帐号 删除共享帐号
      *
      * @param DeleteRepoDomainsRequest 请求对象
      * @return DeleteRepoDomainsResponse */
@@ -269,7 +269,7 @@ public class SwrClient {
         return hcClient.syncInvokeHttp(request, SwrMeta.deleteRepoDomains);
     }
 
-    /** 删除共享账号 删除共享账号
+    /** 删除共享帐号 删除共享帐号
      *
      * @param DeleteRepoDomainsRequest 请求对象
      * @return SyncInvoker<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse> */
@@ -384,7 +384,23 @@ public class SwrClient {
             hcClient);
     }
 
-    /** 获取共享账号列表 获取共享账号列表
+    /** 获取配额信息 获取配额信息
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return ListQuotasResponse */
+    public ListQuotasResponse listQuotas(ListQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.listQuotas);
+    }
+
+    /** 获取配额信息 获取配额信息
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse> */
+    public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
+        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, SwrMeta.listQuotas, hcClient);
+    }
+
+    /** 获取共享帐号列表 获取共享帐号列表
      *
      * @param ListRepoDomainsRequest 请求对象
      * @return ListRepoDomainsResponse */
@@ -392,7 +408,7 @@ public class SwrClient {
         return hcClient.syncInvokeHttp(request, SwrMeta.listRepoDomains);
     }
 
-    /** 获取共享账号列表 获取共享账号列表
+    /** 获取共享帐号列表 获取共享帐号列表
      *
      * @param ListRepoDomainsRequest 请求对象
      * @return SyncInvoker<ListRepoDomainsRequest, ListRepoDomainsResponse> */
@@ -402,7 +418,7 @@ public class SwrClient {
             hcClient);
     }
 
-    /** 查询镜像列表 查询镜像列表
+    /** 查询镜像仓库列表 查询镜像仓库列表
      *
      * @param ListReposDetailsRequest 请求对象
      * @return ListReposDetailsResponse */
@@ -410,7 +426,7 @@ public class SwrClient {
         return hcClient.syncInvokeHttp(request, SwrMeta.listReposDetails);
     }
 
-    /** 查询镜像列表 查询镜像列表
+    /** 查询镜像仓库列表 查询镜像仓库列表
      *
      * @param ListReposDetailsRequest 请求对象
      * @return SyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse> */
@@ -510,7 +526,7 @@ public class SwrClient {
             SwrMeta.listTriggersDetails, hcClient);
     }
 
-    /** 判断共享账号是否存在 判断共享租户是否存在
+    /** 判断共享帐号是否存在 判断共享租户是否存在
      *
      * @param ShowAccessDomainRequest 请求对象
      * @return ShowAccessDomainResponse */
@@ -518,7 +534,7 @@ public class SwrClient {
         return hcClient.syncInvokeHttp(request, SwrMeta.showAccessDomain);
     }
 
-    /** 判断共享账号是否存在 判断共享租户是否存在
+    /** 判断共享帐号是否存在 判断共享租户是否存在
      *
      * @param ShowAccessDomainRequest 请求对象
      * @return SyncInvoker<ShowAccessDomainRequest, ShowAccessDomainResponse> */
@@ -562,7 +578,7 @@ public class SwrClient {
             hcClient);
     }
 
-    /** 查询镜像概要信息 查询镜像概要信息
+    /** 查询镜像仓库概要信息 查询镜像仓库概要信息
      *
      * @param ShowRepositoryRequest 请求对象
      * @return ShowRepositoryResponse */
@@ -570,7 +586,7 @@ public class SwrClient {
         return hcClient.syncInvokeHttp(request, SwrMeta.showRepository);
     }
 
-    /** 查询镜像概要信息 查询镜像概要信息
+    /** 查询镜像仓库概要信息 查询镜像仓库概要信息
      *
      * @param ShowRepositoryRequest 请求对象
      * @return SyncInvoker<ShowRepositoryRequest, ShowRepositoryResponse> */
@@ -680,7 +696,7 @@ public class SwrClient {
         return new SyncInvoker<UpdateRepoRequest, UpdateRepoResponse>(request, SwrMeta.updateRepo, hcClient);
     }
 
-    /** 更新共享账号 更新共享账号
+    /** 更新共享帐号 更新共享帐号
      *
      * @param UpdateRepoDomainsRequest 请求对象
      * @return UpdateRepoDomainsResponse */
@@ -688,7 +704,7 @@ public class SwrClient {
         return hcClient.syncInvokeHttp(request, SwrMeta.updateRepoDomains);
     }
 
-    /** 更新共享账号 更新共享账号
+    /** 更新共享帐号 更新共享帐号
      *
      * @param UpdateRepoDomainsRequest 请求对象
      * @return SyncInvoker<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse> */

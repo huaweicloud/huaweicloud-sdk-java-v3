@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class KeywordsAlarmRuleRespList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
+    @JsonProperty(value = "projectId")
 
     private String projectId;
 
@@ -148,22 +148,93 @@ public class KeywordsAlarmRuleRespList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private Object createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private Object updateTime;
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
 
     private List<Topics> topics = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "whether_english")
+    /** 邮件附加信息是否英文 */
+    public static final class LanguageEnum {
 
-    private Boolean whetherEnglish;
+        /** Enum ZH_CN for value: "zh-cn" */
+        public static final LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
+
+        /** Enum EN_US for value: "en-us" */
+        public static final LanguageEnum EN_US = new LanguageEnum("en-us");
+
+        private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LanguageEnum> createStaticFields() {
+            Map<String, LanguageEnum> map = new HashMap<>();
+            map.put("zh-cn", ZH_CN);
+            map.put("en-us", EN_US);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LanguageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            LanguageEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new LanguageEnum(value);
+            }
+            return result;
+        }
+
+        public static LanguageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            LanguageEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LanguageEnum) {
+                return this.value.equals(((LanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
 
     public KeywordsAlarmRuleRespList withProjectId(String projectId) {
         this.projectId = projectId;
@@ -350,35 +421,35 @@ public class KeywordsAlarmRuleRespList {
         this.domainId = domainId;
     }
 
-    public KeywordsAlarmRuleRespList withCreateTime(Object createTime) {
+    public KeywordsAlarmRuleRespList withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建时间(毫秒时间戳)
+    /** 创建时间(毫秒时间戳) minimum: 13 maximum: 13
      * 
      * @return createTime */
-    public Object getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Object createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public KeywordsAlarmRuleRespList withUpdateTime(Object updateTime) {
+    public KeywordsAlarmRuleRespList withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    /** 更新时间(毫秒时间戳)
+    /** 更新时间(毫秒时间戳) minimum: 13 maximum: 13
      * 
      * @return updateTime */
-    public Object getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Object updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -414,20 +485,20 @@ public class KeywordsAlarmRuleRespList {
         this.topics = topics;
     }
 
-    public KeywordsAlarmRuleRespList withWhetherEnglish(Boolean whetherEnglish) {
-        this.whetherEnglish = whetherEnglish;
+    public KeywordsAlarmRuleRespList withLanguage(LanguageEnum language) {
+        this.language = language;
         return this;
     }
 
     /** 邮件附加信息是否英文
      * 
-     * @return whetherEnglish */
-    public Boolean getWhetherEnglish() {
-        return whetherEnglish;
+     * @return language */
+    public LanguageEnum getLanguage() {
+        return language;
     }
 
-    public void setWhetherEnglish(Boolean whetherEnglish) {
-        this.whetherEnglish = whetherEnglish;
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
     }
 
     @Override
@@ -452,7 +523,7 @@ public class KeywordsAlarmRuleRespList {
             && Objects.equals(this.createTime, keywordsAlarmRuleRespList.createTime)
             && Objects.equals(this.updateTime, keywordsAlarmRuleRespList.updateTime)
             && Objects.equals(this.topics, keywordsAlarmRuleRespList.topics)
-            && Objects.equals(this.whetherEnglish, keywordsAlarmRuleRespList.whetherEnglish);
+            && Objects.equals(this.language, keywordsAlarmRuleRespList.language);
     }
 
     @Override
@@ -470,7 +541,7 @@ public class KeywordsAlarmRuleRespList {
             createTime,
             updateTime,
             topics,
-            whetherEnglish);
+            language);
     }
 
     @Override
@@ -492,7 +563,7 @@ public class KeywordsAlarmRuleRespList {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
-        sb.append("    whetherEnglish: ").append(toIndentedString(whetherEnglish)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("}");
         return sb.toString();
     }

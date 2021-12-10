@@ -13,6 +13,56 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class LtsMeta {
 
+    public static final HttpRequestDef<CreateAccessConfigRequest, CreateAccessConfigResponse> createAccessConfig =
+        genForcreateAccessConfig();
+
+    private static HttpRequestDef<CreateAccessConfigRequest, CreateAccessConfigResponse> genForcreateAccessConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateAccessConfigRequest, CreateAccessConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAccessConfigRequest.class, CreateAccessConfigResponse.class)
+                .withName("CreateAccessConfig")
+                .withUri("/v3/{project_id}/lts/access-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateAccessConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAccessConfigRequestBody.class),
+            f -> f.withMarshaller(CreateAccessConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateHostGroupRequest, CreateHostGroupResponse> createHostGroup =
+        genForcreateHostGroup();
+
+    private static HttpRequestDef<CreateHostGroupRequest, CreateHostGroupResponse> genForcreateHostGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateHostGroupRequest, CreateHostGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateHostGroupRequest.class, CreateHostGroupResponse.class)
+                .withName("CreateHostGroup")
+                .withUri("/v3/{project_id}/lts/host-group")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateHostGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateHostGroupRequestBody.class),
+            f -> f.withMarshaller(CreateHostGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse> createKeywordsAlarmRule =
         genForcreateKeywordsAlarmRule();
 
@@ -167,10 +217,10 @@ public class LtsMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<LTSStructTemplateInfo>withRequestField("body",
+        builder.<LtsStructTemplateInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(LTSStructTemplateInfo.class),
+            TypeCasts.uncheckedConversion(LtsStructTemplateInfo.class),
             f -> f.withMarshaller(CreateStructTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -213,6 +263,31 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteAccessConfigRequest, DeleteAccessConfigResponse> deleteAccessConfig =
+        genFordeleteAccessConfig();
+
+    private static HttpRequestDef<DeleteAccessConfigRequest, DeleteAccessConfigResponse> genFordeleteAccessConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteAccessConfigRequest, DeleteAccessConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccessConfigRequest.class, DeleteAccessConfigResponse.class)
+                .withName("DeleteAccessConfig")
+                .withUri("/v3/{project_id}/lts/access-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DeleteAccessConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteAccessConfigRequestBody.class),
+            f -> f.withMarshaller(DeleteAccessConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse> deleteActiveAlarms =
         genFordeleteActiveAlarms();
 
@@ -237,6 +312,31 @@ public class LtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteActiveAlarmsRequestBody.class),
             f -> f.withMarshaller(DeleteActiveAlarmsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHostGroupRequest, DeleteHostGroupResponse> deleteHostGroup =
+        genFordeleteHostGroup();
+
+    private static HttpRequestDef<DeleteHostGroupRequest, DeleteHostGroupResponse> genFordeleteHostGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteHostGroupRequest, DeleteHostGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHostGroupRequest.class, DeleteHostGroupResponse.class)
+                .withName("DeleteHostGroup")
+                .withUri("/v3/{project_id}/lts/host-group")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DeleteHostGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteHostGroupRequestBody.class),
+            f -> f.withMarshaller(DeleteHostGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -472,6 +572,31 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAccessConfigRequest, ListAccessConfigResponse> listAccessConfig =
+        genForlistAccessConfig();
+
+    private static HttpRequestDef<ListAccessConfigRequest, ListAccessConfigResponse> genForlistAccessConfig() {
+        // basic
+        HttpRequestDef.Builder<ListAccessConfigRequest, ListAccessConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListAccessConfigRequest.class, ListAccessConfigResponse.class)
+                .withName("ListAccessConfig")
+                .withUri("/v3/{project_id}/lts/access-config-list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<GetAccessConfigListRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GetAccessConfigListRequestBody.class),
+            f -> f.withMarshaller(ListAccessConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse> listActiveOrHistoryAlarms =
         genForlistActiveOrHistoryAlarms();
 
@@ -559,6 +684,55 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListHostRequest, ListHostResponse> listHost = genForlistHost();
+
+    private static HttpRequestDef<ListHostRequest, ListHostResponse> genForlistHost() {
+        // basic
+        HttpRequestDef.Builder<ListHostRequest, ListHostResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListHostRequest.class, ListHostResponse.class)
+                .withName("ListHost")
+                .withUri("/v3/{project_id}/lts/host-list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<GetHostListRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GetHostListRequestBody.class),
+            f -> f.withMarshaller(ListHostRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHostGroupRequest, ListHostGroupResponse> listHostGroup =
+        genForlistHostGroup();
+
+    private static HttpRequestDef<ListHostGroupRequest, ListHostGroupResponse> genForlistHostGroup() {
+        // basic
+        HttpRequestDef.Builder<ListHostGroupRequest, ListHostGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListHostGroupRequest.class, ListHostGroupResponse.class)
+                .withName("ListHostGroup")
+                .withUri("/v3/{project_id}/lts/host-group-list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<GetHostGroupListRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GetHostGroupListRequestBody.class),
+            f -> f.withMarshaller(ListHostGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse> listKeywordsAlarmRules =
         genForlistKeywordsAlarmRules();
 
@@ -589,6 +763,31 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogHistogramRequest, ListLogHistogramResponse> listLogHistogram =
+        genForlistLogHistogram();
+
+    private static HttpRequestDef<ListLogHistogramRequest, ListLogHistogramResponse> genForlistLogHistogram() {
+        // basic
+        HttpRequestDef.Builder<ListLogHistogramRequest, ListLogHistogramResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListLogHistogramRequest.class, ListLogHistogramResponse.class)
+                .withName("ListLogHistogram")
+                .withUri("/v2/{project_id}/lts/keyword-count")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<QueryLogKeyWordCountRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryLogKeyWordCountRequestBody.class),
+            f -> f.withMarshaller(ListLogHistogramRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 
@@ -653,6 +852,20 @@ public class LtsMeta {
             f -> f.withMarshaller(ListLogStreamsRequest::getLogStreamName, (req, v) -> {
                 req.setLogStreamName(v);
             }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogStreamsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogStreamsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -684,10 +897,10 @@ public class LtsMeta {
             f -> f.withMarshaller(ListLogsRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
             }));
-        builder.<QueryLTSLogParams>withRequestField("body",
+        builder.<QueryLtsLogParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(QueryLTSLogParams.class),
+            TypeCasts.uncheckedConversion(QueryLtsLogParams.class),
             f -> f.withMarshaller(ListLogsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -816,10 +1029,10 @@ public class LtsMeta {
             f -> f.withMarshaller(ListQueryStructuredLogsRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
             }));
-        builder.<QueryLTSStructLogParams>withRequestField("body",
+        builder.<QueryLtsStructLogParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(QueryLTSStructLogParams.class),
+            TypeCasts.uncheckedConversion(QueryLtsStructLogParams.class),
             f -> f.withMarshaller(ListQueryStructuredLogsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -851,10 +1064,10 @@ public class LtsMeta {
             f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
             }));
-        builder.<QueryLTSStructLogParamsNew>withRequestField("body",
+        builder.<QueryLtsStructLogParamsNew>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(QueryLTSStructLogParamsNew.class),
+            TypeCasts.uncheckedConversion(QueryLtsStructLogParamsNew.class),
             f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -904,6 +1117,20 @@ public class LtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTransfersRequest::getLogStreamName, (req, v) -> {
                 req.setLogStreamName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTransfersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTransfersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -995,6 +1222,56 @@ public class LtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStructTemplateRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAccessConfigRequest, UpdateAccessConfigResponse> updateAccessConfig =
+        genForupdateAccessConfig();
+
+    private static HttpRequestDef<UpdateAccessConfigRequest, UpdateAccessConfigResponse> genForupdateAccessConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateAccessConfigRequest, UpdateAccessConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAccessConfigRequest.class, UpdateAccessConfigResponse.class)
+                .withName("UpdateAccessConfig")
+                .withUri("/v3/{project_id}/lts/access-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UpdateAccessConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAccessConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateAccessConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHostGroupRequest, UpdateHostGroupResponse> updateHostGroup =
+        genForupdateHostGroup();
+
+    private static HttpRequestDef<UpdateHostGroupRequest, UpdateHostGroupResponse> genForupdateHostGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateHostGroupRequest, UpdateHostGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHostGroupRequest.class, UpdateHostGroupResponse.class)
+                .withName("UpdateHostGroup")
+                .withUri("/v3/{project_id}/lts/host-group")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UpdateHostGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateHostGroupRequestBody.class),
+            f -> f.withMarshaller(UpdateHostGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1106,10 +1383,10 @@ public class LtsMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<LTSStructTemplateInfo>withRequestField("body",
+        builder.<LtsStructTemplateInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(LTSStructTemplateInfo.class),
+            TypeCasts.uncheckedConversion(LtsStructTemplateInfo.class),
             f -> f.withMarshaller(UpdateStructTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

@@ -61,6 +61,11 @@ public class CreateInstanceDetail {
 
     private String paramGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_zone")
+
+    private String timeZone;
+
     public CreateInstanceDetail withName(String name) {
         this.name = name;
         return this;
@@ -237,6 +242,25 @@ public class CreateInstanceDetail {
         this.paramGroupId = paramGroupId;
     }
 
+    public CreateInstanceDetail withTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+        return this;
+    }
+
+    /** UTC时区。默认为UTC。取值范围：\"UTC\",\"UTC-12:00\",\"UTC-11:00\",\"UTC-10:00\",\"UTC-09:00\", \"UTC-08:00\", \"UTC-07:00\",
+     * \"UTC-06:00\", \"UTC-05:00\", \"UTC-04:00\", \"UTC-03:00\", \"UTC-02:00\", \"UTC-01:00\", \"UTC+01:00\",
+     * \"UTC+02:00\", \"UTC+03:00\", \"UTC+04:00\", \"UTC+05:00\", \"UTC+06:00\", \"UTC+07:00\", \"UTC+08:00\",
+     * \"UTC+09:00\", \"UTC+10:00\", \"UTC+11:00\", \"UTC+12:00\"
+     * 
+     * @return timeZone */
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -255,7 +279,8 @@ public class CreateInstanceDetail {
             && Objects.equals(this.vpcId, createInstanceDetail.vpcId)
             && Objects.equals(this.securityGroupId, createInstanceDetail.securityGroupId)
             && Objects.equals(this.subnetId, createInstanceDetail.subnetId)
-            && Objects.equals(this.paramGroupId, createInstanceDetail.paramGroupId);
+            && Objects.equals(this.paramGroupId, createInstanceDetail.paramGroupId)
+            && Objects.equals(this.timeZone, createInstanceDetail.timeZone);
     }
 
     @Override
@@ -269,7 +294,8 @@ public class CreateInstanceDetail {
             vpcId,
             securityGroupId,
             subnetId,
-            paramGroupId);
+            paramGroupId,
+            timeZone);
     }
 
     @Override
@@ -286,6 +312,7 @@ public class CreateInstanceDetail {
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    paramGroupId: ").append(toIndentedString(paramGroupId)).append("\n");
+        sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

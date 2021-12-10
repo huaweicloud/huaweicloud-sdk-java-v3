@@ -19,6 +19,42 @@ public class LtsAsyncClient {
         return new ClientBuilder<>(LtsAsyncClient::new);
     }
 
+    /** 创建日志接入 创建日志接入
+     *
+     * @param CreateAccessConfigRequest 请求对象
+     * @return CompletableFuture<CreateAccessConfigResponse> */
+    public CompletableFuture<CreateAccessConfigResponse> createAccessConfigAsync(CreateAccessConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.createAccessConfig);
+    }
+
+    /** 创建日志接入 创建日志接入
+     *
+     * @param CreateAccessConfigRequest 请求对象
+     * @return AsyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse> */
+    public AsyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse> createAccessConfigAsyncInvoker(
+        CreateAccessConfigRequest request) {
+        return new AsyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse>(request,
+            LtsMeta.createAccessConfig, hcClient);
+    }
+
+    /** 创建主机组 创建主机组
+     *
+     * @param CreateHostGroupRequest 请求对象
+     * @return CompletableFuture<CreateHostGroupResponse> */
+    public CompletableFuture<CreateHostGroupResponse> createHostGroupAsync(CreateHostGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.createHostGroup);
+    }
+
+    /** 创建主机组 创建主机组
+     *
+     * @param CreateHostGroupRequest 请求对象
+     * @return AsyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse> */
+    public AsyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse> createHostGroupAsyncInvoker(
+        CreateHostGroupRequest request) {
+        return new AsyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse>(request, LtsMeta.createHostGroup,
+            hcClient);
+    }
+
     /** 创建关键词告警规则 该接口用于创建关键词告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警。
      *
      * @param CreateKeywordsAlarmRuleRequest 请求对象
@@ -148,6 +184,24 @@ public class LtsAsyncClient {
             hcClient);
     }
 
+    /** 删除日志接入 删除日志接入
+     *
+     * @param DeleteAccessConfigRequest 请求对象
+     * @return CompletableFuture<DeleteAccessConfigResponse> */
+    public CompletableFuture<DeleteAccessConfigResponse> deleteAccessConfigAsync(DeleteAccessConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.deleteAccessConfig);
+    }
+
+    /** 删除日志接入 删除日志接入
+     *
+     * @param DeleteAccessConfigRequest 请求对象
+     * @return AsyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse> */
+    public AsyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse> deleteAccessConfigAsyncInvoker(
+        DeleteAccessConfigRequest request) {
+        return new AsyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse>(request,
+            LtsMeta.deleteAccessConfig, hcClient);
+    }
+
     /** 删除活动告警 该接口用于删除活动告警
      *
      * @param DeleteActiveAlarmsRequest 请求对象
@@ -164,6 +218,24 @@ public class LtsAsyncClient {
         DeleteActiveAlarmsRequest request) {
         return new AsyncInvoker<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse>(request,
             LtsMeta.deleteActiveAlarms, hcClient);
+    }
+
+    /** 删除主机组 删除主机组
+     *
+     * @param DeleteHostGroupRequest 请求对象
+     * @return CompletableFuture<DeleteHostGroupResponse> */
+    public CompletableFuture<DeleteHostGroupResponse> deleteHostGroupAsync(DeleteHostGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.deleteHostGroup);
+    }
+
+    /** 删除主机组 删除主机组
+     *
+     * @param DeleteHostGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse> */
+    public AsyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse> deleteHostGroupAsyncInvoker(
+        DeleteHostGroupRequest request) {
+        return new AsyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse>(request, LtsMeta.deleteHostGroup,
+            hcClient);
     }
 
     /** 删除关键词告警规则 该接口用于删除关键词告警。
@@ -314,6 +386,24 @@ public class LtsAsyncClient {
             LtsMeta.enableLogCollection, hcClient);
     }
 
+    /** 查询日志接入 查询日志接入列表
+     *
+     * @param ListAccessConfigRequest 请求对象
+     * @return CompletableFuture<ListAccessConfigResponse> */
+    public CompletableFuture<ListAccessConfigResponse> listAccessConfigAsync(ListAccessConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.listAccessConfig);
+    }
+
+    /** 查询日志接入 查询日志接入列表
+     *
+     * @param ListAccessConfigRequest 请求对象
+     * @return AsyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse> */
+    public AsyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse> listAccessConfigAsyncInvoker(
+        ListAccessConfigRequest request) {
+        return new AsyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse>(request, LtsMeta.listAccessConfig,
+            hcClient);
+    }
+
     /** 查询活动或历史告警列表 该接口用于查询告警列表
      *
      * @param ListActiveOrHistoryAlarmsRequest 请求对象
@@ -347,6 +437,39 @@ public class LtsAsyncClient {
      * @return AsyncInvoker<ListChartsRequest, ListChartsResponse> */
     public AsyncInvoker<ListChartsRequest, ListChartsResponse> listChartsAsyncInvoker(ListChartsRequest request) {
         return new AsyncInvoker<ListChartsRequest, ListChartsResponse>(request, LtsMeta.listCharts, hcClient);
+    }
+
+    /** 查询主机信息 查询主机列表
+     *
+     * @param ListHostRequest 请求对象
+     * @return CompletableFuture<ListHostResponse> */
+    public CompletableFuture<ListHostResponse> listHostAsync(ListHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.listHost);
+    }
+
+    /** 查询主机信息 查询主机列表
+     *
+     * @param ListHostRequest 请求对象
+     * @return AsyncInvoker<ListHostRequest, ListHostResponse> */
+    public AsyncInvoker<ListHostRequest, ListHostResponse> listHostAsyncInvoker(ListHostRequest request) {
+        return new AsyncInvoker<ListHostRequest, ListHostResponse>(request, LtsMeta.listHost, hcClient);
+    }
+
+    /** 查询主机组 查询主机组列表
+     *
+     * @param ListHostGroupRequest 请求对象
+     * @return CompletableFuture<ListHostGroupResponse> */
+    public CompletableFuture<ListHostGroupResponse> listHostGroupAsync(ListHostGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.listHostGroup);
+    }
+
+    /** 查询主机组 查询主机组列表
+     *
+     * @param ListHostGroupRequest 请求对象
+     * @return AsyncInvoker<ListHostGroupRequest, ListHostGroupResponse> */
+    public AsyncInvoker<ListHostGroupRequest, ListHostGroupResponse> listHostGroupAsyncInvoker(
+        ListHostGroupRequest request) {
+        return new AsyncInvoker<ListHostGroupRequest, ListHostGroupResponse>(request, LtsMeta.listHostGroup, hcClient);
     }
 
     /** 查询关键词告警规则 该接口用于查询关键词告警。
@@ -383,6 +506,24 @@ public class LtsAsyncClient {
     public AsyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse> listLogGroupsAsyncInvoker(
         ListLogGroupsRequest request) {
         return new AsyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse>(request, LtsMeta.listLogGroups, hcClient);
+    }
+
+    /** 查询关键词搜索条数 查询关键词搜索条数
+     *
+     * @param ListLogHistogramRequest 请求对象
+     * @return CompletableFuture<ListLogHistogramResponse> */
+    public CompletableFuture<ListLogHistogramResponse> listLogHistogramAsync(ListLogHistogramRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.listLogHistogram);
+    }
+
+    /** 查询关键词搜索条数 查询关键词搜索条数
+     *
+     * @param ListLogHistogramRequest 请求对象
+     * @return AsyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse> */
+    public AsyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse> listLogHistogramAsyncInvoker(
+        ListLogHistogramRequest request) {
+        return new AsyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse>(request, LtsMeta.listLogHistogram,
+            hcClient);
     }
 
     /** 查询指定日志组下的所有日志流 该接口用于查询指定日志组下的所有日志流信息。
@@ -602,6 +743,42 @@ public class LtsAsyncClient {
         ShowStructTemplateRequest request) {
         return new AsyncInvoker<ShowStructTemplateRequest, ShowStructTemplateResponse>(request,
             LtsMeta.showStructTemplate, hcClient);
+    }
+
+    /** 修改日志接入 修改日志接入
+     *
+     * @param UpdateAccessConfigRequest 请求对象
+     * @return CompletableFuture<UpdateAccessConfigResponse> */
+    public CompletableFuture<UpdateAccessConfigResponse> updateAccessConfigAsync(UpdateAccessConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.updateAccessConfig);
+    }
+
+    /** 修改日志接入 修改日志接入
+     *
+     * @param UpdateAccessConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse> */
+    public AsyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse> updateAccessConfigAsyncInvoker(
+        UpdateAccessConfigRequest request) {
+        return new AsyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse>(request,
+            LtsMeta.updateAccessConfig, hcClient);
+    }
+
+    /** 更新主机组 更新主机组
+     *
+     * @param UpdateHostGroupRequest 请求对象
+     * @return CompletableFuture<UpdateHostGroupResponse> */
+    public CompletableFuture<UpdateHostGroupResponse> updateHostGroupAsync(UpdateHostGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.updateHostGroup);
+    }
+
+    /** 更新主机组 更新主机组
+     *
+     * @param UpdateHostGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse> */
+    public AsyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse> updateHostGroupAsyncInvoker(
+        UpdateHostGroupRequest request) {
+        return new AsyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse>(request, LtsMeta.updateHostGroup,
+            hcClient);
     }
 
     /** 修改关键词告警规则 该接口用于修改关键词告警。

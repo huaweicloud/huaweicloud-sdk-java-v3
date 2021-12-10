@@ -19,6 +19,25 @@ public class CloudIDEAsyncClient {
         return new ClientBuilder<>(CloudIDEAsyncClient::new);
     }
 
+    /** 设置ide实例对插件的授权 设置ide实例对插件的授权。同意、不同意、未知（下次重新询问）
+     *
+     * @param CreateExtensionAuthorizationRequest 请求对象
+     * @return CompletableFuture<CreateExtensionAuthorizationResponse> */
+    public CompletableFuture<CreateExtensionAuthorizationResponse> createExtensionAuthorizationAsync(
+        CreateExtensionAuthorizationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.createExtensionAuthorization);
+    }
+
+    /** 设置ide实例对插件的授权 设置ide实例对插件的授权。同意、不同意、未知（下次重新询问）
+     *
+     * @param CreateExtensionAuthorizationRequest 请求对象
+     * @return AsyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> */
+    public AsyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> createExtensionAuthorizationAsyncInvoker(
+        CreateExtensionAuthorizationRequest request) {
+        return new AsyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse>(request,
+            CloudIDEMeta.createExtensionAuthorization, hcClient);
+    }
+
     /** 查询技术栈模板工程 查询技术栈模板工程
      *
      * @param ListProjectTemplatesRequest 请求对象
@@ -74,6 +93,25 @@ public class CloudIDEAsyncClient {
             CloudIDEMeta.showAccountStatus, hcClient);
     }
 
+    /** 查询ide实例对插件的授权情况 查询ide实例对插件的授权情况，同意授权的插件能在ide实例内携带登陆用户的token调用第三方服务
+     *
+     * @param ShowExtensionAuthorizationRequest 请求对象
+     * @return CompletableFuture<ShowExtensionAuthorizationResponse> */
+    public CompletableFuture<ShowExtensionAuthorizationResponse> showExtensionAuthorizationAsync(
+        ShowExtensionAuthorizationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.showExtensionAuthorization);
+    }
+
+    /** 查询ide实例对插件的授权情况 查询ide实例对插件的授权情况，同意授权的插件能在ide实例内携带登陆用户的token调用第三方服务
+     *
+     * @param ShowExtensionAuthorizationRequest 请求对象
+     * @return AsyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> */
+    public AsyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> showExtensionAuthorizationAsyncInvoker(
+        ShowExtensionAuthorizationRequest request) {
+        return new AsyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse>(request,
+            CloudIDEMeta.showExtensionAuthorization, hcClient);
+    }
+
     /** 获取技术栈计费信息 获取技术栈计费信息
      *
      * @param ShowPriceRequest 请求对象
@@ -88,6 +126,24 @@ public class CloudIDEAsyncClient {
      * @return AsyncInvoker<ShowPriceRequest, ShowPriceResponse> */
     public AsyncInvoker<ShowPriceRequest, ShowPriceResponse> showPriceAsyncInvoker(ShowPriceRequest request) {
         return new AsyncInvoker<ShowPriceRequest, ShowPriceResponse>(request, CloudIDEMeta.showPrice, hcClient);
+    }
+
+    /** 查询用户是否有权限访问某个IDE实例 查询用户是否有权限访问某个IDE实例
+     *
+     * @param CheckInstanceAccessRequest 请求对象
+     * @return CompletableFuture<CheckInstanceAccessResponse> */
+    public CompletableFuture<CheckInstanceAccessResponse> checkInstanceAccessAsync(CheckInstanceAccessRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.checkInstanceAccess);
+    }
+
+    /** 查询用户是否有权限访问某个IDE实例 查询用户是否有权限访问某个IDE实例
+     *
+     * @param CheckInstanceAccessRequest 请求对象
+     * @return AsyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse> */
+    public AsyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse> checkInstanceAccessAsyncInvoker(
+        CheckInstanceAccessRequest request) {
+        return new AsyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse>(request,
+            CloudIDEMeta.checkInstanceAccess, hcClient);
     }
 
     /** 查询IDE实例名是否重复 查询IDE实例名是否重复
@@ -266,6 +322,25 @@ public class CloudIDEAsyncClient {
         UpdateInstanceRequest request) {
         return new AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, CloudIDEMeta.updateInstance,
             hcClient);
+    }
+
+    /** 刷新IDE实例活跃状态 刷新IDE实例活跃状态，超过该实例设置的过期时间后实例自动关闭。
+     *
+     * @param UpdateInstanceActivityRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceActivityResponse> */
+    public CompletableFuture<UpdateInstanceActivityResponse> updateInstanceActivityAsync(
+        UpdateInstanceActivityRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.updateInstanceActivity);
+    }
+
+    /** 刷新IDE实例活跃状态 刷新IDE实例活跃状态，超过该实例设置的过期时间后实例自动关闭。
+     *
+     * @param UpdateInstanceActivityRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> */
+    public AsyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> updateInstanceActivityAsyncInvoker(
+        UpdateInstanceActivityRequest request) {
+        return new AsyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse>(request,
+            CloudIDEMeta.updateInstanceActivity, hcClient);
     }
 
 }

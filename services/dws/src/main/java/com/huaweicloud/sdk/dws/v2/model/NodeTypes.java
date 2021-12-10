@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.dws.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -12,7 +14,7 @@ public class NodeTypes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    private Detail detail;
+    private List<Detail> detail = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -24,28 +26,35 @@ public class NodeTypes {
 
     private String specName;
 
-    public NodeTypes withDetail(Detail detail) {
+    public NodeTypes withDetail(List<Detail> detail) {
         this.detail = detail;
         return this;
     }
 
-    public NodeTypes withDetail(Consumer<Detail> detailSetter) {
+    public NodeTypes addDetailItem(Detail detailItem) {
         if (this.detail == null) {
-            this.detail = new Detail();
-            detailSetter.accept(this.detail);
+            this.detail = new ArrayList<>();
         }
-
+        this.detail.add(detailItem);
         return this;
     }
 
-    /** Get detail
+    public NodeTypes withDetail(Consumer<List<Detail>> detailSetter) {
+        if (this.detail == null) {
+            this.detail = new ArrayList<>();
+        }
+        detailSetter.accept(this.detail);
+        return this;
+    }
+
+    /** 节点类型详细
      * 
      * @return detail */
-    public Detail getDetail() {
+    public List<Detail> getDetail() {
         return detail;
     }
 
-    public void setDetail(Detail detail) {
+    public void setDetail(List<Detail> detail) {
         this.detail = detail;
     }
 

@@ -3,10 +3,10 @@ package com.huaweicloud.sdk.apm.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
-/** 参数项。 */
+/** 业务数据结构 */
 public class BusinessNodeModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,12 +27,12 @@ public class BusinessNodeModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_create")
 
-    private OffsetDateTime gmtCreate;
+    private LocalDate gmtCreate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_modify")
 
-    private OffsetDateTime gmtModify;
+    private LocalDate gmtModify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -102,7 +102,7 @@ public class BusinessNodeModel {
         this.epsId = epsId;
     }
 
-    public BusinessNodeModel withGmtCreate(OffsetDateTime gmtCreate) {
+    public BusinessNodeModel withGmtCreate(LocalDate gmtCreate) {
         this.gmtCreate = gmtCreate;
         return this;
     }
@@ -110,15 +110,15 @@ public class BusinessNodeModel {
     /** 创建时间
      * 
      * @return gmtCreate */
-    public OffsetDateTime getGmtCreate() {
+    public LocalDate getGmtCreate() {
         return gmtCreate;
     }
 
-    public void setGmtCreate(OffsetDateTime gmtCreate) {
+    public void setGmtCreate(LocalDate gmtCreate) {
         this.gmtCreate = gmtCreate;
     }
 
-    public BusinessNodeModel withGmtModify(OffsetDateTime gmtModify) {
+    public BusinessNodeModel withGmtModify(LocalDate gmtModify) {
         this.gmtModify = gmtModify;
         return this;
     }
@@ -126,11 +126,11 @@ public class BusinessNodeModel {
     /** 修改时间
      * 
      * @return gmtModify */
-    public OffsetDateTime getGmtModify() {
+    public LocalDate getGmtModify() {
         return gmtModify;
     }
 
-    public void setGmtModify(OffsetDateTime gmtModify) {
+    public void setGmtModify(LocalDate gmtModify) {
         this.gmtModify = gmtModify;
     }
 

@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.as.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -23,6 +25,11 @@ public class NetworksResult {
     @JsonProperty(value = "ipv6_bandwidth")
 
     private Ipv6Bandwidth ipv6Bandwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allowed_address_pairs")
+
+    private List<AllowedAddressPair> allowedAddressPairs = null;
 
     public NetworksResult withId(String id) {
         this.id = id;
@@ -81,6 +88,38 @@ public class NetworksResult {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
 
+    public NetworksResult withAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+        return this;
+    }
+
+    public NetworksResult addAllowedAddressPairsItem(AllowedAddressPair allowedAddressPairsItem) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        this.allowedAddressPairs.add(allowedAddressPairsItem);
+        return this;
+    }
+
+    public NetworksResult withAllowedAddressPairs(Consumer<List<AllowedAddressPair>> allowedAddressPairsSetter) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        allowedAddressPairsSetter.accept(this.allowedAddressPairs);
+        return this;
+    }
+
+    /** 是否开启源/目的检查开关。
+     * 
+     * @return allowedAddressPairs */
+    public List<AllowedAddressPair> getAllowedAddressPairs() {
+        return allowedAddressPairs;
+    }
+
+    public void setAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,12 +130,13 @@ public class NetworksResult {
         }
         NetworksResult networksResult = (NetworksResult) o;
         return Objects.equals(this.id, networksResult.id) && Objects.equals(this.ipv6Enable, networksResult.ipv6Enable)
-            && Objects.equals(this.ipv6Bandwidth, networksResult.ipv6Bandwidth);
+            && Objects.equals(this.ipv6Bandwidth, networksResult.ipv6Bandwidth)
+            && Objects.equals(this.allowedAddressPairs, networksResult.allowedAddressPairs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ipv6Enable, ipv6Bandwidth);
+        return Objects.hash(id, ipv6Enable, ipv6Bandwidth, allowedAddressPairs);
     }
 
     @Override
@@ -106,6 +146,7 @@ public class NetworksResult {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");
+        sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

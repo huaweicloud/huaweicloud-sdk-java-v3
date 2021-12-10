@@ -22,7 +22,7 @@ public class ListLogsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private QueryLTSLogParams body;
+    private QueryLtsLogParams body;
 
     public ListLogsRequest withLogGroupId(String logGroupId) {
         this.logGroupId = logGroupId;
@@ -56,14 +56,14 @@ public class ListLogsRequest {
         this.logStreamId = logStreamId;
     }
 
-    public ListLogsRequest withBody(QueryLTSLogParams body) {
+    public ListLogsRequest withBody(QueryLtsLogParams body) {
         this.body = body;
         return this;
     }
 
-    public ListLogsRequest withBody(Consumer<QueryLTSLogParams> bodySetter) {
+    public ListLogsRequest withBody(Consumer<QueryLtsLogParams> bodySetter) {
         if (this.body == null) {
-            this.body = new QueryLTSLogParams();
+            this.body = new QueryLtsLogParams();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class ListLogsRequest {
     /** Get body
      * 
      * @return body */
-    public QueryLTSLogParams getBody() {
+    public QueryLtsLogParams getBody() {
         return body;
     }
 
-    public void setBody(QueryLTSLogParams body) {
+    public void setBody(QueryLtsLogParams body) {
         this.body = body;
     }
 

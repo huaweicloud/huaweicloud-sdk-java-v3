@@ -214,7 +214,7 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 结构化方式
+    /** Get rule
      * 
      * @return rule */
     public ShowStructTemplateRule getRule() {
@@ -239,7 +239,7 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** kafka信息
+    /** Get clusterInfo
      * 
      * @return clusterInfo */
     public ShowStructTemplateclusterInfo getClusterInfo() {

@@ -3033,6 +3033,25 @@ public class RomaAsyncClient {
             RomaMeta.showResponseProperty, hcClient);
     }
 
+    /** 查看ROMA Connect实例约束信息 查看ROMA Connect实例约束信息
+     *
+     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @return CompletableFuture<ShowRestrictionOfInstanceV2Response> */
+    public CompletableFuture<ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2Async(
+        ShowRestrictionOfInstanceV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.showRestrictionOfInstanceV2);
+    }
+
+    /** 查看ROMA Connect实例约束信息 查看ROMA Connect实例约束信息
+     *
+     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @return AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> */
+    public AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2AsyncInvoker(
+        ShowRestrictionOfInstanceV2Request request) {
+        return new AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>(request,
+            RomaMeta.showRestrictionOfInstanceV2, hcClient);
+    }
+
     /** 查询规则详情 查询规则详情
      *
      * @param ShowRuleRequest 请求对象

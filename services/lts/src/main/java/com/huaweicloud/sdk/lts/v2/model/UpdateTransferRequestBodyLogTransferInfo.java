@@ -222,7 +222,7 @@ public class UpdateTransferRequestBodyLogTransferInfo {
         return this;
     }
 
-    /** 日志转储详细信息
+    /** Get logTransferDetail
      * 
      * @return logTransferDetail */
     public TransferDetail getLogTransferDetail() {

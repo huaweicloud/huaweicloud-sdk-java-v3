@@ -19,9 +19,9 @@ public class ShowScanJobResultsRequest {
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page")
+    @JsonProperty(value = "offset")
 
-    private Integer page;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -134,20 +134,20 @@ public class ShowScanJobResultsRequest {
         this.jobId = jobId;
     }
 
-    public ShowScanJobResultsRequest withPage(Integer page) {
-        this.page = page;
+    public ShowScanJobResultsRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /** 页码
      * 
-     * @return page */
-    public Integer getPage() {
-        return page;
+     * @return offset */
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPage(Integer page) {
-        this.page = page;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowScanJobResultsRequest withLimit(Integer limit) {
@@ -224,7 +224,7 @@ public class ShowScanJobResultsRequest {
         }
         ShowScanJobResultsRequest showScanJobResultsRequest = (ShowScanJobResultsRequest) o;
         return Objects.equals(this.jobId, showScanJobResultsRequest.jobId)
-            && Objects.equals(this.page, showScanJobResultsRequest.page)
+            && Objects.equals(this.offset, showScanJobResultsRequest.offset)
             && Objects.equals(this.limit, showScanJobResultsRequest.limit)
             && Objects.equals(this.type, showScanJobResultsRequest.type)
             && Objects.equals(this.startTime, showScanJobResultsRequest.startTime)
@@ -233,7 +233,7 @@ public class ShowScanJobResultsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, page, limit, type, startTime, endTime);
+        return Objects.hash(jobId, offset, limit, type, startTime, endTime);
     }
 
     @Override
@@ -241,7 +241,7 @@ public class ShowScanJobResultsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowScanJobResultsRequest {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-        sb.append("    page: ").append(toIndentedString(page)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

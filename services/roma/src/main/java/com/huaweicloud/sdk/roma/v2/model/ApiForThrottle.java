@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /** ApiForThrottle */
@@ -57,6 +58,26 @@ public class ApiForThrottle {
     @JsonProperty(value = "req_uri")
 
     private String reqUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throttle_apply_id")
+
+    private String throttleApplyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throttle_name")
+
+    private String throttleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apply_time")
+
+    private OffsetDateTime applyTime;
 
     public ApiForThrottle withAuthType(String authType) {
         this.authType = authType;
@@ -218,6 +239,70 @@ public class ApiForThrottle {
         this.reqUri = reqUri;
     }
 
+    public ApiForThrottle withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /** API类型
+     * 
+     * @return type */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public ApiForThrottle withThrottleApplyId(String throttleApplyId) {
+        this.throttleApplyId = throttleApplyId;
+        return this;
+    }
+
+    /** 与流控策略的绑定关系编号
+     * 
+     * @return throttleApplyId */
+    public String getThrottleApplyId() {
+        return throttleApplyId;
+    }
+
+    public void setThrottleApplyId(String throttleApplyId) {
+        this.throttleApplyId = throttleApplyId;
+    }
+
+    public ApiForThrottle withThrottleName(String throttleName) {
+        this.throttleName = throttleName;
+        return this;
+    }
+
+    /** 绑定的流控策略名称
+     * 
+     * @return throttleName */
+    public String getThrottleName() {
+        return throttleName;
+    }
+
+    public void setThrottleName(String throttleName) {
+        this.throttleName = throttleName;
+    }
+
+    public ApiForThrottle withApplyTime(OffsetDateTime applyTime) {
+        this.applyTime = applyTime;
+        return this;
+    }
+
+    /** 已绑定的流控策略的绑定时间
+     * 
+     * @return applyTime */
+    public OffsetDateTime getApplyTime() {
+        return applyTime;
+    }
+
+    public void setApplyTime(OffsetDateTime applyTime) {
+        this.applyTime = applyTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -234,12 +319,28 @@ public class ApiForThrottle {
             && Objects.equals(this.groupId, apiForThrottle.groupId) && Objects.equals(this.name, apiForThrottle.name)
             && Objects.equals(this.remark, apiForThrottle.remark)
             && Objects.equals(this.runEnvId, apiForThrottle.runEnvId) && Objects.equals(this.id, apiForThrottle.id)
-            && Objects.equals(this.reqUri, apiForThrottle.reqUri);
+            && Objects.equals(this.reqUri, apiForThrottle.reqUri) && Objects.equals(this.type, apiForThrottle.type)
+            && Objects.equals(this.throttleApplyId, apiForThrottle.throttleApplyId)
+            && Objects.equals(this.throttleName, apiForThrottle.throttleName)
+            && Objects.equals(this.applyTime, apiForThrottle.applyTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authType, runEnvName, groupName, publishId, groupId, name, remark, runEnvId, id, reqUri);
+        return Objects.hash(authType,
+            runEnvName,
+            groupName,
+            publishId,
+            groupId,
+            name,
+            remark,
+            runEnvId,
+            id,
+            reqUri,
+            type,
+            throttleApplyId,
+            throttleName,
+            applyTime);
     }
 
     @Override
@@ -256,6 +357,10 @@ public class ApiForThrottle {
         sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    throttleApplyId: ").append(toIndentedString(throttleApplyId)).append("\n");
+        sb.append("    throttleName: ").append(toIndentedString(throttleName)).append("\n");
+        sb.append("    applyTime: ").append(toIndentedString(applyTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

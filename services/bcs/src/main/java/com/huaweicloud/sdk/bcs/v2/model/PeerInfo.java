@@ -19,7 +19,7 @@ public class PeerInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_cnt")
 
-    private Integer nodeCnt;
+    private Long nodeCnt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -57,7 +57,7 @@ public class PeerInfo {
         this.name = name;
     }
 
-    public PeerInfo withNodeCnt(Integer nodeCnt) {
+    public PeerInfo withNodeCnt(Long nodeCnt) {
         this.nodeCnt = nodeCnt;
         return this;
     }
@@ -65,11 +65,11 @@ public class PeerInfo {
     /** 节点数量
      * 
      * @return nodeCnt */
-    public Integer getNodeCnt() {
+    public Long getNodeCnt() {
         return nodeCnt;
     }
 
-    public void setNodeCnt(Integer nodeCnt) {
+    public void setNodeCnt(Long nodeCnt) {
         this.nodeCnt = nodeCnt;
     }
 

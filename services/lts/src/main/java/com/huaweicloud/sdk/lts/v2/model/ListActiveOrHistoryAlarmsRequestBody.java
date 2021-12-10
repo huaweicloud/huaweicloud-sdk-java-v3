@@ -24,17 +24,17 @@ public class ListActiveOrHistoryAlarmsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private Object startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private Object endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_range")
 
-    private Integer timeRange;
+    private String timeRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search")
@@ -42,7 +42,7 @@ public class ListActiveOrHistoryAlarmsRequestBody {
     private String search;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alarmLevelIds")
+    @JsonProperty(value = "alarm_level_ids")
 
     private List<String> alarmLevelIds = null;
 
@@ -83,39 +83,39 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         this.whetherCustomField = whetherCustomField;
     }
 
-    public ListActiveOrHistoryAlarmsRequestBody withStartTime(Object startTime) {
+    public ListActiveOrHistoryAlarmsRequestBody withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    /** 自定义时间段开始时间(时间戳)
+    /** 自定义时间段开始时间(时间戳) minimum: 13 maximum: 13
      * 
      * @return startTime */
-    public Object getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Object startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public ListActiveOrHistoryAlarmsRequestBody withEndTime(Object endTime) {
+    public ListActiveOrHistoryAlarmsRequestBody withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    /** 自定义时间段结束时间(时间戳)
+    /** 自定义时间段结束时间(时间戳) minimum: 13 maximum: 13
      * 
      * @return endTime */
-    public Object getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Object endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
-    public ListActiveOrHistoryAlarmsRequestBody withTimeRange(Integer timeRange) {
+    public ListActiveOrHistoryAlarmsRequestBody withTimeRange(String timeRange) {
         this.timeRange = timeRange;
         return this;
     }
@@ -123,11 +123,11 @@ public class ListActiveOrHistoryAlarmsRequestBody {
     /** 非自定义时间段时间范围(单位为分钟)
      * 
      * @return timeRange */
-    public Integer getTimeRange() {
+    public String getTimeRange() {
         return timeRange;
     }
 
-    public void setTimeRange(Integer timeRange) {
+    public void setTimeRange(String timeRange) {
         this.timeRange = timeRange;
     }
 
@@ -193,7 +193,7 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 排序检索条件
+    /** Get sort
      * 
      * @return sort */
     public Sort getSort() {

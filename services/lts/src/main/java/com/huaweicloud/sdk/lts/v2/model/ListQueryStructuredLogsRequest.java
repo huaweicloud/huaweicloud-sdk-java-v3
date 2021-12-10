@@ -22,7 +22,7 @@ public class ListQueryStructuredLogsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private QueryLTSStructLogParams body;
+    private QueryLtsStructLogParams body;
 
     public ListQueryStructuredLogsRequest withLogGroupId(String logGroupId) {
         this.logGroupId = logGroupId;
@@ -56,14 +56,14 @@ public class ListQueryStructuredLogsRequest {
         this.logStreamId = logStreamId;
     }
 
-    public ListQueryStructuredLogsRequest withBody(QueryLTSStructLogParams body) {
+    public ListQueryStructuredLogsRequest withBody(QueryLtsStructLogParams body) {
         this.body = body;
         return this;
     }
 
-    public ListQueryStructuredLogsRequest withBody(Consumer<QueryLTSStructLogParams> bodySetter) {
+    public ListQueryStructuredLogsRequest withBody(Consumer<QueryLtsStructLogParams> bodySetter) {
         if (this.body == null) {
-            this.body = new QueryLTSStructLogParams();
+            this.body = new QueryLtsStructLogParams();
             bodySetter.accept(this.body);
         }
 
@@ -73,11 +73,11 @@ public class ListQueryStructuredLogsRequest {
     /** Get body
      * 
      * @return body */
-    public QueryLTSStructLogParams getBody() {
+    public QueryLtsStructLogParams getBody() {
         return body;
     }
 
-    public void setBody(QueryLTSStructLogParams body) {
+    public void setBody(QueryLtsStructLogParams body) {
         this.body = body;
     }
 

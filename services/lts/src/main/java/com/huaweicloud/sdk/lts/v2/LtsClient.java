@@ -17,6 +17,42 @@ public class LtsClient {
         return new ClientBuilder<>(LtsClient::new);
     }
 
+    /** 创建日志接入 创建日志接入
+     *
+     * @param CreateAccessConfigRequest 请求对象
+     * @return CreateAccessConfigResponse */
+    public CreateAccessConfigResponse createAccessConfig(CreateAccessConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createAccessConfig);
+    }
+
+    /** 创建日志接入 创建日志接入
+     *
+     * @param CreateAccessConfigRequest 请求对象
+     * @return SyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse> */
+    public SyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse> createAccessConfigInvoker(
+        CreateAccessConfigRequest request) {
+        return new SyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse>(request,
+            LtsMeta.createAccessConfig, hcClient);
+    }
+
+    /** 创建主机组 创建主机组
+     *
+     * @param CreateHostGroupRequest 请求对象
+     * @return CreateHostGroupResponse */
+    public CreateHostGroupResponse createHostGroup(CreateHostGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createHostGroup);
+    }
+
+    /** 创建主机组 创建主机组
+     *
+     * @param CreateHostGroupRequest 请求对象
+     * @return SyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse> */
+    public SyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse> createHostGroupInvoker(
+        CreateHostGroupRequest request) {
+        return new SyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse>(request, LtsMeta.createHostGroup,
+            hcClient);
+    }
+
     /** 创建关键词告警规则 该接口用于创建关键词告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警。
      *
      * @param CreateKeywordsAlarmRuleRequest 请求对象
@@ -143,6 +179,24 @@ public class LtsClient {
             hcClient);
     }
 
+    /** 删除日志接入 删除日志接入
+     *
+     * @param DeleteAccessConfigRequest 请求对象
+     * @return DeleteAccessConfigResponse */
+    public DeleteAccessConfigResponse deleteAccessConfig(DeleteAccessConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.deleteAccessConfig);
+    }
+
+    /** 删除日志接入 删除日志接入
+     *
+     * @param DeleteAccessConfigRequest 请求对象
+     * @return SyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse> */
+    public SyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse> deleteAccessConfigInvoker(
+        DeleteAccessConfigRequest request) {
+        return new SyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse>(request,
+            LtsMeta.deleteAccessConfig, hcClient);
+    }
+
     /** 删除活动告警 该接口用于删除活动告警
      *
      * @param DeleteActiveAlarmsRequest 请求对象
@@ -159,6 +213,24 @@ public class LtsClient {
         DeleteActiveAlarmsRequest request) {
         return new SyncInvoker<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse>(request,
             LtsMeta.deleteActiveAlarms, hcClient);
+    }
+
+    /** 删除主机组 删除主机组
+     *
+     * @param DeleteHostGroupRequest 请求对象
+     * @return DeleteHostGroupResponse */
+    public DeleteHostGroupResponse deleteHostGroup(DeleteHostGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.deleteHostGroup);
+    }
+
+    /** 删除主机组 删除主机组
+     *
+     * @param DeleteHostGroupRequest 请求对象
+     * @return SyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse> */
+    public SyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse> deleteHostGroupInvoker(
+        DeleteHostGroupRequest request) {
+        return new SyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse>(request, LtsMeta.deleteHostGroup,
+            hcClient);
     }
 
     /** 删除关键词告警规则 该接口用于删除关键词告警。
@@ -305,6 +377,24 @@ public class LtsClient {
             LtsMeta.enableLogCollection, hcClient);
     }
 
+    /** 查询日志接入 查询日志接入列表
+     *
+     * @param ListAccessConfigRequest 请求对象
+     * @return ListAccessConfigResponse */
+    public ListAccessConfigResponse listAccessConfig(ListAccessConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listAccessConfig);
+    }
+
+    /** 查询日志接入 查询日志接入列表
+     *
+     * @param ListAccessConfigRequest 请求对象
+     * @return SyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse> */
+    public SyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse> listAccessConfigInvoker(
+        ListAccessConfigRequest request) {
+        return new SyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse>(request, LtsMeta.listAccessConfig,
+            hcClient);
+    }
+
     /** 查询活动或历史告警列表 该接口用于查询告警列表
      *
      * @param ListActiveOrHistoryAlarmsRequest 请求对象
@@ -339,6 +429,38 @@ public class LtsClient {
         return new SyncInvoker<ListChartsRequest, ListChartsResponse>(request, LtsMeta.listCharts, hcClient);
     }
 
+    /** 查询主机信息 查询主机列表
+     *
+     * @param ListHostRequest 请求对象
+     * @return ListHostResponse */
+    public ListHostResponse listHost(ListHostRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listHost);
+    }
+
+    /** 查询主机信息 查询主机列表
+     *
+     * @param ListHostRequest 请求对象
+     * @return SyncInvoker<ListHostRequest, ListHostResponse> */
+    public SyncInvoker<ListHostRequest, ListHostResponse> listHostInvoker(ListHostRequest request) {
+        return new SyncInvoker<ListHostRequest, ListHostResponse>(request, LtsMeta.listHost, hcClient);
+    }
+
+    /** 查询主机组 查询主机组列表
+     *
+     * @param ListHostGroupRequest 请求对象
+     * @return ListHostGroupResponse */
+    public ListHostGroupResponse listHostGroup(ListHostGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listHostGroup);
+    }
+
+    /** 查询主机组 查询主机组列表
+     *
+     * @param ListHostGroupRequest 请求对象
+     * @return SyncInvoker<ListHostGroupRequest, ListHostGroupResponse> */
+    public SyncInvoker<ListHostGroupRequest, ListHostGroupResponse> listHostGroupInvoker(ListHostGroupRequest request) {
+        return new SyncInvoker<ListHostGroupRequest, ListHostGroupResponse>(request, LtsMeta.listHostGroup, hcClient);
+    }
+
     /** 查询关键词告警规则 该接口用于查询关键词告警。
      *
      * @param ListKeywordsAlarmRulesRequest 请求对象
@@ -371,6 +493,24 @@ public class LtsClient {
      * @return SyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse> */
     public SyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse> listLogGroupsInvoker(ListLogGroupsRequest request) {
         return new SyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse>(request, LtsMeta.listLogGroups, hcClient);
+    }
+
+    /** 查询关键词搜索条数 查询关键词搜索条数
+     *
+     * @param ListLogHistogramRequest 请求对象
+     * @return ListLogHistogramResponse */
+    public ListLogHistogramResponse listLogHistogram(ListLogHistogramRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listLogHistogram);
+    }
+
+    /** 查询关键词搜索条数 查询关键词搜索条数
+     *
+     * @param ListLogHistogramRequest 请求对象
+     * @return SyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse> */
+    public SyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse> listLogHistogramInvoker(
+        ListLogHistogramRequest request) {
+        return new SyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse>(request, LtsMeta.listLogHistogram,
+            hcClient);
     }
 
     /** 查询指定日志组下的所有日志流 该接口用于查询指定日志组下的所有日志流信息。
@@ -582,6 +722,42 @@ public class LtsClient {
         ShowStructTemplateRequest request) {
         return new SyncInvoker<ShowStructTemplateRequest, ShowStructTemplateResponse>(request,
             LtsMeta.showStructTemplate, hcClient);
+    }
+
+    /** 修改日志接入 修改日志接入
+     *
+     * @param UpdateAccessConfigRequest 请求对象
+     * @return UpdateAccessConfigResponse */
+    public UpdateAccessConfigResponse updateAccessConfig(UpdateAccessConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateAccessConfig);
+    }
+
+    /** 修改日志接入 修改日志接入
+     *
+     * @param UpdateAccessConfigRequest 请求对象
+     * @return SyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse> */
+    public SyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse> updateAccessConfigInvoker(
+        UpdateAccessConfigRequest request) {
+        return new SyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse>(request,
+            LtsMeta.updateAccessConfig, hcClient);
+    }
+
+    /** 更新主机组 更新主机组
+     *
+     * @param UpdateHostGroupRequest 请求对象
+     * @return UpdateHostGroupResponse */
+    public UpdateHostGroupResponse updateHostGroup(UpdateHostGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateHostGroup);
+    }
+
+    /** 更新主机组 更新主机组
+     *
+     * @param UpdateHostGroupRequest 请求对象
+     * @return SyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse> */
+    public SyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse> updateHostGroupInvoker(
+        UpdateHostGroupRequest request) {
+        return new SyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse>(request, LtsMeta.updateHostGroup,
+            hcClient);
     }
 
     /** 修改关键词告警规则 该接口用于修改关键词告警。

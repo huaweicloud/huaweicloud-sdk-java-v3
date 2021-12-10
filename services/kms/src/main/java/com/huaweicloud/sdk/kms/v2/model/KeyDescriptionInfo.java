@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** KeyDescriptionInfo */
+/** 密钥描述信息。 */
 public class KeyDescriptionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

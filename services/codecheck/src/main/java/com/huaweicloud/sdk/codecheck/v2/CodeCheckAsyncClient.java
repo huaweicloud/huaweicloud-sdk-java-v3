@@ -103,6 +103,42 @@ public class CodeCheckAsyncClient {
             hcClient);
     }
 
+    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+     *
+     * @param ListTaskRulesetRequest 请求对象
+     * @return CompletableFuture<ListTaskRulesetResponse> */
+    public CompletableFuture<ListTaskRulesetResponse> listTaskRulesetAsync(ListTaskRulesetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.listTaskRuleset);
+    }
+
+    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+     *
+     * @param ListTaskRulesetRequest 请求对象
+     * @return AsyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse> */
+    public AsyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse> listTaskRulesetAsyncInvoker(
+        ListTaskRulesetRequest request) {
+        return new AsyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse>(request, CodeCheckMeta.listTaskRuleset,
+            hcClient);
+    }
+
+    /** 查看规则集的规则列表 根据项目ID、规则集ID等条件查询规则列表。
+     *
+     * @param ListTemplateRulesRequest 请求对象
+     * @return CompletableFuture<ListTemplateRulesResponse> */
+    public CompletableFuture<ListTemplateRulesResponse> listTemplateRulesAsync(ListTemplateRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.listTemplateRules);
+    }
+
+    /** 查看规则集的规则列表 根据项目ID、规则集ID等条件查询规则列表。
+     *
+     * @param ListTemplateRulesRequest 请求对象
+     * @return AsyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse> */
+    public AsyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse> listTemplateRulesAsyncInvoker(
+        ListTemplateRulesRequest request) {
+        return new AsyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse>(request,
+            CodeCheckMeta.listTemplateRules, hcClient);
+    }
+
     /** 执行检查任务 执行检查任务。
      *
      * @param RunTaskRequest 请求对象
@@ -135,6 +171,24 @@ public class CodeCheckAsyncClient {
         ShowProgressDetailRequest request) {
         return new AsyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse>(request,
             CodeCheckMeta.showProgressDetail, hcClient);
+    }
+
+    /** 查询cmertrics缺陷概要 根据检查任务ID查询cmertrics缺陷概要。
+     *
+     * @param ShowTaskCmetricsRequest 请求对象
+     * @return CompletableFuture<ShowTaskCmetricsResponse> */
+    public CompletableFuture<ShowTaskCmetricsResponse> showTaskCmetricsAsync(ShowTaskCmetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.showTaskCmetrics);
+    }
+
+    /** 查询cmertrics缺陷概要 根据检查任务ID查询cmertrics缺陷概要。
+     *
+     * @param ShowTaskCmetricsRequest 请求对象
+     * @return AsyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> */
+    public AsyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> showTaskCmetricsAsyncInvoker(
+        ShowTaskCmetricsRequest request) {
+        return new AsyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse>(request,
+            CodeCheckMeta.showTaskCmetrics, hcClient);
     }
 
     /** 查询缺陷详情 根据检查任务ID分页查询缺陷结果详情。

@@ -22,7 +22,7 @@ public class BcsRegion {
         new Region("ap-southeast-1", "https://bcs.ap-southeast-1.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_2 =
-        new Region("ap-southeast-2", "https://cs.ap-southeast-2.myhuaweicloud.com");
+        new Region("ap-southeast-2", "https://bcs.ap-southeast-2.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://bcs.ap-southeast-3.myhuaweicloud.com");

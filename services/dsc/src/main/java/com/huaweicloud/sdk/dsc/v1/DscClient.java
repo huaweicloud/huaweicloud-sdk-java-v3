@@ -179,4 +179,22 @@ public class DscClient {
         return new SyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse>(request, DscMeta.showScanJobs, hcClient);
     }
 
+    /** 查询OpenApi调用记录 查询OpenApi调用记录
+     *
+     * @param ShowOpenApiCalledRecordsRequest 请求对象
+     * @return ShowOpenApiCalledRecordsResponse */
+    public ShowOpenApiCalledRecordsResponse showOpenApiCalledRecords(ShowOpenApiCalledRecordsRequest request) {
+        return hcClient.syncInvokeHttp(request, DscMeta.showOpenApiCalledRecords);
+    }
+
+    /** 查询OpenApi调用记录 查询OpenApi调用记录
+     *
+     * @param ShowOpenApiCalledRecordsRequest 请求对象
+     * @return SyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> */
+    public SyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> showOpenApiCalledRecordsInvoker(
+        ShowOpenApiCalledRecordsRequest request) {
+        return new SyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse>(request,
+            DscMeta.showOpenApiCalledRecords, hcClient);
+    }
+
 }

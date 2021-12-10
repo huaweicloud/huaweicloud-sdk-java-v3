@@ -763,6 +763,23 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
+                .withName("ListQuotas")
+                .withUri("/v2/manage/projects/{project_id}/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRepoDomainsRequest, ListRepoDomainsResponse> listRepoDomains =
         genForlistRepoDomains();
 

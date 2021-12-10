@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TagItem */
+/** 标签。 */
 public class TagItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

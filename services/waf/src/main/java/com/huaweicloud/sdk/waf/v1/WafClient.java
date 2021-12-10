@@ -423,7 +423,8 @@ public class WafClient {
             WafMeta.listCompositeHosts, hcClient);
     }
 
-    /** 查询攻击事件列表 查询攻击事件列表，该API暂时不支持查询全部防护事件，pagesize参数不可设为-1
+    /** 查询攻击事件列表
+     * 查询攻击事件列表，该API暂时不支持查询全部防护事件，pagesize参数不可设为-1，由于性能原因，数据量越大消耗的内存越大，后端最多限制查询10000条数据，例如：自定义时间段内的数据超过了10000条，就无法查出page为101，pagesize为100之后的数据，需要调整时间区间，再进行查询
      *
      * @param ListEventRequest 请求对象
      * @return ListEventResponse */
@@ -431,7 +432,8 @@ public class WafClient {
         return hcClient.syncInvokeHttp(request, WafMeta.listEvent);
     }
 
-    /** 查询攻击事件列表 查询攻击事件列表，该API暂时不支持查询全部防护事件，pagesize参数不可设为-1
+    /** 查询攻击事件列表
+     * 查询攻击事件列表，该API暂时不支持查询全部防护事件，pagesize参数不可设为-1，由于性能原因，数据量越大消耗的内存越大，后端最多限制查询10000条数据，例如：自定义时间段内的数据超过了10000条，就无法查出page为101，pagesize为100之后的数据，需要调整时间区间，再进行查询
      *
      * @param ListEventRequest 请求对象
      * @return SyncInvoker<ListEventRequest, ListEventResponse> */

@@ -12,6 +12,41 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CloudIDEMeta {
 
+    public static final HttpRequestDef<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> createExtensionAuthorization =
+        genForcreateExtensionAuthorization();
+
+    private static HttpRequestDef<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> genForcreateExtensionAuthorization() {
+        // basic
+        HttpRequestDef.Builder<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateExtensionAuthorizationRequest.class,
+                    CreateExtensionAuthorizationResponse.class)
+                .withName("CreateExtensionAuthorization")
+                .withUri("/v2/extension/authorization/{instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateExtensionAuthorizationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ExtensionAuthorization>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExtensionAuthorization.class),
+            f -> f.withMarshaller(CreateExtensionAuthorizationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectTemplatesRequest, ListProjectTemplatesResponse> listProjectTemplates =
         genForlistProjectTemplates();
 
@@ -87,6 +122,48 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> showExtensionAuthorization =
+        genForshowExtensionAuthorization();
+
+    private static HttpRequestDef<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> genForshowExtensionAuthorization() {
+        // basic
+        HttpRequestDef.Builder<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowExtensionAuthorizationRequest.class,
+                    ShowExtensionAuthorizationResponse.class)
+                .withName("ShowExtensionAuthorization")
+                .withUri("/v2/extension/authorization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("extension_version",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getExtensionVersion, (req, v) -> {
+                req.setExtensionVersion(v);
+            }));
+        builder.<String>withRequestField("identifier",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getIdentifier, (req, v) -> {
+                req.setIdentifier(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPriceRequest, ShowPriceResponse> showPrice = genForshowPrice();
 
     private static HttpRequestDef<ShowPriceRequest, ShowPriceResponse> genForshowPrice() {
@@ -98,6 +175,31 @@ public class CloudIDEMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckInstanceAccessRequest, CheckInstanceAccessResponse> checkInstanceAccess =
+        genForcheckInstanceAccess();
+
+    private static HttpRequestDef<CheckInstanceAccessRequest, CheckInstanceAccessResponse> genForcheckInstanceAccess() {
+        // basic
+        HttpRequestDef.Builder<CheckInstanceAccessRequest, CheckInstanceAccessResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckInstanceAccessRequest.class, CheckInstanceAccessResponse.class)
+                .withName("CheckInstanceAccess")
+                .withUri("/v2/instances/{instance_id}/access")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckInstanceAccessRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
 
         // response
 
@@ -442,6 +544,31 @@ public class CloudIDEMeta {
             TypeCasts.uncheckedConversion(InstanceUpdateParam.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> updateInstanceActivity =
+        genForupdateInstanceActivity();
+
+    private static HttpRequestDef<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> genForupdateInstanceActivity() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateInstanceActivityRequest.class, UpdateInstanceActivityResponse.class)
+            .withName("UpdateInstanceActivity")
+            .withUri("/v2/instances/{instance_id}/activity")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceActivityRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response

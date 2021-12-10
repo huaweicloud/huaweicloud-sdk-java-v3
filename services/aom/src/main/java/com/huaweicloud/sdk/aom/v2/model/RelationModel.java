@@ -43,22 +43,28 @@ public class RelationModel  {
 
         
         /**
-         * Enum MUST for value: "MUST"
+         * Enum AND for value: "AND"
          */
-        public static final RelationEnum MUST = new RelationEnum("MUST");
+        public static final RelationEnum AND = new RelationEnum("AND");
         
         /**
-         * Enum MUSTNOT for value: "MUSTNOT"
+         * Enum OR for value: "OR"
          */
-        public static final RelationEnum MUSTNOT = new RelationEnum("MUSTNOT");
+        public static final RelationEnum OR = new RelationEnum("OR");
+        
+        /**
+         * Enum NOT for value: "NOT"
+         */
+        public static final RelationEnum NOT = new RelationEnum("NOT");
         
 
         private static final Map<String, RelationEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RelationEnum> createStaticFields() {
             Map<String, RelationEnum> map = new HashMap<>();
-            map.put("MUST", MUST);
-            map.put("MUSTNOT", MUSTNOT);
+            map.put("AND", AND);
+            map.put("OR", OR);
+            map.put("NOT", NOT);
             return Collections.unmodifiableMap(map);
         }
 

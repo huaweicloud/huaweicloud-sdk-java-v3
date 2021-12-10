@@ -12,16 +12,16 @@ public class CreateStructTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private LTSStructTemplateInfo body;
+    private LtsStructTemplateInfo body;
 
-    public CreateStructTemplateRequest withBody(LTSStructTemplateInfo body) {
+    public CreateStructTemplateRequest withBody(LtsStructTemplateInfo body) {
         this.body = body;
         return this;
     }
 
-    public CreateStructTemplateRequest withBody(Consumer<LTSStructTemplateInfo> bodySetter) {
+    public CreateStructTemplateRequest withBody(Consumer<LtsStructTemplateInfo> bodySetter) {
         if (this.body == null) {
-            this.body = new LTSStructTemplateInfo();
+            this.body = new LtsStructTemplateInfo();
             bodySetter.accept(this.body);
         }
 
@@ -31,11 +31,11 @@ public class CreateStructTemplateRequest {
     /** Get body
      * 
      * @return body */
-    public LTSStructTemplateInfo getBody() {
+    public LtsStructTemplateInfo getBody() {
         return body;
     }
 
-    public void setBody(LTSStructTemplateInfo body) {
+    public void setBody(LtsStructTemplateInfo body) {
         this.body = body;
     }
 

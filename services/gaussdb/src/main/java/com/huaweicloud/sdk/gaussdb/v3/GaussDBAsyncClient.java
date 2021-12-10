@@ -20,6 +20,28 @@ public class GaussDBAsyncClient {
 
 
     /**
+     * 批量添加或删除标签
+     * 批量添加或删除指定实例的标签。
+     *
+     * @param BatchTagActionRequest 请求对象
+     * @return CompletableFuture<BatchTagActionResponse>
+     */
+    public CompletableFuture<BatchTagActionResponse> batchTagActionAsync(BatchTagActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.batchTagAction);
+    }
+
+    /**
+     * 批量添加或删除标签
+     * 批量添加或删除指定实例的标签。
+     *
+     * @param BatchTagActionRequest 请求对象
+     * @return AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
+     */
+    public AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionAsyncInvoker(BatchTagActionRequest request) {
+        return new AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse>(request, GaussDBMeta.batchTagAction, hcClient);
+    }
+
+    /**
      * 变更实例规格
      * 变更数据库实例的规格。
      *
@@ -350,6 +372,50 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 查询资源标签
+     * 查询指定实例的标签信息。
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return CompletableFuture<ListInstanceTagsResponse>
+     */
+    public CompletableFuture<ListInstanceTagsResponse> listInstanceTagsAsync(ListInstanceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.listInstanceTags);
+    }
+
+    /**
+     * 查询资源标签
+     * 查询指定实例的标签信息。
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
+     */
+    public AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsAsyncInvoker(ListInstanceTagsRequest request) {
+        return new AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, GaussDBMeta.listInstanceTags, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询指定project ID下实例的所有标签集合。
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return CompletableFuture<ListProjectTagsResponse>
+     */
+    public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.listProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询指定project ID下实例的所有标签集合。
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(ListProjectTagsRequest request) {
+        return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, GaussDBMeta.listProjectTags, hcClient);
+    }
+
+    /**
      * 重置数据库密码
      * 重置数据库密码
      *
@@ -614,6 +680,28 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 查询实例秒级监控频率
+     * 查询实例秒级监控频率。
+     *
+     * @param ShowInstanceMonitorExtendRequest 请求对象
+     * @return CompletableFuture<ShowInstanceMonitorExtendResponse>
+     */
+    public CompletableFuture<ShowInstanceMonitorExtendResponse> showInstanceMonitorExtendAsync(ShowInstanceMonitorExtendRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showInstanceMonitorExtend);
+    }
+
+    /**
+     * 查询实例秒级监控频率
+     * 查询实例秒级监控频率。
+     *
+     * @param ShowInstanceMonitorExtendRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>
+     */
+    public AsyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> showInstanceMonitorExtendAsyncInvoker(ShowInstanceMonitorExtendRequest request) {
+        return new AsyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>(request, GaussDBMeta.showInstanceMonitorExtend, hcClient);
+    }
+
+    /**
      * 修改备份策略
      * 修改备份策略
      *
@@ -677,6 +765,28 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> updateGaussMySqlQuotasAsyncInvoker(UpdateGaussMySqlQuotasRequest request) {
         return new AsyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>(request, GaussDBMeta.updateGaussMySqlQuotas, hcClient);
+    }
+
+    /**
+     * 修改实例秒级监控频率
+     * 打开/关闭/修改实例秒级监控。
+     *
+     * @param UpdateInstanceMonitorRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceMonitorResponse>
+     */
+    public CompletableFuture<UpdateInstanceMonitorResponse> updateInstanceMonitorAsync(UpdateInstanceMonitorRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateInstanceMonitor);
+    }
+
+    /**
+     * 修改实例秒级监控频率
+     * 打开/关闭/修改实例秒级监控。
+     *
+     * @param UpdateInstanceMonitorRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>
+     */
+    public AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitorAsyncInvoker(UpdateInstanceMonitorRequest request) {
+        return new AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
     }
 
 }

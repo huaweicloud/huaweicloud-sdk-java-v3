@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** KeyDetails */
+/** 密钥详情。 */
 public class KeyDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -28,7 +28,7 @@ public class CreateIpRequestBody {
         return this;
     }
 
-    /** 待扩容的对象类型。 - 扩容shard组时，取值为“shard”。 - 扩容config组时，取值为“config”。
+    /** 待打开IP开关的对象类型。 - 扩容shard组时，取值为“shard”。 - 扩容config组时，取值为“config”。
      * 
      * @return type */
     public String getType() {

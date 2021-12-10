@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -22,44 +20,14 @@ public class Attributes {
     private String glass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "gender")
-
-    private String gender;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "yaw_angle")
-
-    private Double yawAngle;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "roll_angle")
-
-    private Double rollAngle;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pitch_angle")
-
-    private Double pitchAngle;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hat")
 
     private String hat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "headpose")
-
-    private List<Double> headpose = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "age")
 
     private Integer age;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "smile")
-
-    private String smile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mask")
@@ -70,16 +38,6 @@ public class Attributes {
     @JsonProperty(value = "beard")
 
     private String beard;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "skin")
-
-    private String skin;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ethnic")
-
-    private String ethnic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phototype")
@@ -147,70 +105,6 @@ public class Attributes {
         this.glass = glass;
     }
 
-    public Attributes withGender(String gender) {
-        this.gender = gender;
-        return this;
-    }
-
-    /** 性别： • male：男 • female：女 • unknown：未知
-     * 
-     * @return gender */
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public Attributes withYawAngle(Double yawAngle) {
-        this.yawAngle = yawAngle;
-        return this;
-    }
-
-    /** 围绕Y轴旋转，偏航角，范围[-180,180]。
-     * 
-     * @return yawAngle */
-    public Double getYawAngle() {
-        return yawAngle;
-    }
-
-    public void setYawAngle(Double yawAngle) {
-        this.yawAngle = yawAngle;
-    }
-
-    public Attributes withRollAngle(Double rollAngle) {
-        this.rollAngle = rollAngle;
-        return this;
-    }
-
-    /** 围绕Z轴旋转，翻滚角，范围[-180,180]。
-     * 
-     * @return rollAngle */
-    public Double getRollAngle() {
-        return rollAngle;
-    }
-
-    public void setRollAngle(Double rollAngle) {
-        this.rollAngle = rollAngle;
-    }
-
-    public Attributes withPitchAngle(Double pitchAngle) {
-        this.pitchAngle = pitchAngle;
-        return this;
-    }
-
-    /** 围绕X轴旋转，俯仰角，范围[-180,180]。
-     * 
-     * @return pitchAngle */
-    public Double getPitchAngle() {
-        return pitchAngle;
-    }
-
-    public void setPitchAngle(Double pitchAngle) {
-        this.pitchAngle = pitchAngle;
-    }
-
     public Attributes withHat(String hat) {
         this.hat = hat;
         return this;
@@ -227,38 +121,6 @@ public class Attributes {
         this.hat = hat;
     }
 
-    public Attributes withHeadpose(List<Double> headpose) {
-        this.headpose = headpose;
-        return this;
-    }
-
-    public Attributes addHeadposeItem(Double headposeItem) {
-        if (this.headpose == null) {
-            this.headpose = new ArrayList<>();
-        }
-        this.headpose.add(headposeItem);
-        return this;
-    }
-
-    public Attributes withHeadpose(Consumer<List<Double>> headposeSetter) {
-        if (this.headpose == null) {
-            this.headpose = new ArrayList<>();
-        }
-        headposeSetter.accept(this.headpose);
-        return this;
-    }
-
-    /** 人脸轮廓坐标值。
-     * 
-     * @return headpose */
-    public List<Double> getHeadpose() {
-        return headpose;
-    }
-
-    public void setHeadpose(List<Double> headpose) {
-        this.headpose = headpose;
-    }
-
     public Attributes withAge(Integer age) {
         this.age = age;
         return this;
@@ -273,22 +135,6 @@ public class Attributes {
 
     public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public Attributes withSmile(String smile) {
-        this.smile = smile;
-        return this;
-    }
-
-    /** 笑脸。
-     * 
-     * @return smile */
-    public String getSmile() {
-        return smile;
-    }
-
-    public void setSmile(String smile) {
-        this.smile = smile;
     }
 
     public Attributes withMask(String mask) {
@@ -321,38 +167,6 @@ public class Attributes {
 
     public void setBeard(String beard) {
         this.beard = beard;
-    }
-
-    public Attributes withSkin(String skin) {
-        this.skin = skin;
-        return this;
-    }
-
-    /** 肤色： • brown：棕 • yellow：黄 • white：白 • black：黑 • unknown：未知
-     * 
-     * @return skin */
-    public String getSkin() {
-        return skin;
-    }
-
-    public void setSkin(String skin) {
-        this.skin = skin;
-    }
-
-    public Attributes withEthnic(String ethnic) {
-        this.ethnic = ethnic;
-        return this;
-    }
-
-    /** 民族： • han：汉族 • other：其他 • unknown：未知
-     * 
-     * @return ethnic */
-    public String getEthnic() {
-        return ethnic;
-    }
-
-    public void setEthnic(String ethnic) {
-        this.ethnic = ethnic;
     }
 
     public Attributes withPhototype(String phototype) {
@@ -463,39 +277,16 @@ public class Attributes {
         }
         Attributes attributes = (Attributes) o;
         return Objects.equals(this.dress, attributes.dress) && Objects.equals(this.glass, attributes.glass)
-            && Objects.equals(this.gender, attributes.gender) && Objects.equals(this.yawAngle, attributes.yawAngle)
-            && Objects.equals(this.rollAngle, attributes.rollAngle)
-            && Objects.equals(this.pitchAngle, attributes.pitchAngle) && Objects.equals(this.hat, attributes.hat)
-            && Objects.equals(this.headpose, attributes.headpose) && Objects.equals(this.age, attributes.age)
-            && Objects.equals(this.smile, attributes.smile) && Objects.equals(this.mask, attributes.mask)
-            && Objects.equals(this.beard, attributes.beard) && Objects.equals(this.skin, attributes.skin)
-            && Objects.equals(this.ethnic, attributes.ethnic) && Objects.equals(this.phototype, attributes.phototype)
-            && Objects.equals(this.quality, attributes.quality) && Objects.equals(this.hair, attributes.hair)
-            && Objects.equals(this.expression, attributes.expression)
+            && Objects.equals(this.hat, attributes.hat) && Objects.equals(this.age, attributes.age)
+            && Objects.equals(this.mask, attributes.mask) && Objects.equals(this.beard, attributes.beard)
+            && Objects.equals(this.phototype, attributes.phototype) && Objects.equals(this.quality, attributes.quality)
+            && Objects.equals(this.hair, attributes.hair) && Objects.equals(this.expression, attributes.expression)
             && Objects.equals(this.faceAngle, attributes.faceAngle);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dress,
-            glass,
-            gender,
-            yawAngle,
-            rollAngle,
-            pitchAngle,
-            hat,
-            headpose,
-            age,
-            smile,
-            mask,
-            beard,
-            skin,
-            ethnic,
-            phototype,
-            quality,
-            hair,
-            expression,
-            faceAngle);
+        return Objects.hash(dress, glass, hat, age, mask, beard, phototype, quality, hair, expression, faceAngle);
     }
 
     @Override
@@ -504,18 +295,10 @@ public class Attributes {
         sb.append("class Attributes {\n");
         sb.append("    dress: ").append(toIndentedString(dress)).append("\n");
         sb.append("    glass: ").append(toIndentedString(glass)).append("\n");
-        sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
-        sb.append("    yawAngle: ").append(toIndentedString(yawAngle)).append("\n");
-        sb.append("    rollAngle: ").append(toIndentedString(rollAngle)).append("\n");
-        sb.append("    pitchAngle: ").append(toIndentedString(pitchAngle)).append("\n");
         sb.append("    hat: ").append(toIndentedString(hat)).append("\n");
-        sb.append("    headpose: ").append(toIndentedString(headpose)).append("\n");
         sb.append("    age: ").append(toIndentedString(age)).append("\n");
-        sb.append("    smile: ").append(toIndentedString(smile)).append("\n");
         sb.append("    mask: ").append(toIndentedString(mask)).append("\n");
         sb.append("    beard: ").append(toIndentedString(beard)).append("\n");
-        sb.append("    skin: ").append(toIndentedString(skin)).append("\n");
-        sb.append("    ethnic: ").append(toIndentedString(ethnic)).append("\n");
         sb.append("    phototype: ").append(toIndentedString(phototype)).append("\n");
         sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
         sb.append("    hair: ").append(toIndentedString(hair)).append("\n");

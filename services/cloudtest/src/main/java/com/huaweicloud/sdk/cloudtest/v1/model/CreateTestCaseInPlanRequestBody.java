@@ -26,7 +26,7 @@ public class CreateTestCaseInPlanRequestBody {
         return this;
     }
 
-    /** 注册结果返回的服务id
+    /** 注册测试类型服务接口返回的服务id
      * 
      * @return serviceId */
     public Integer getServiceId() {

@@ -78,7 +78,7 @@ public class GroupResponseItem {
         return this;
     }
 
-    /** 组名组名称。节点类型为shard和config时，该参数有效。
+    /** 组名称。节点类型为shard和config时，该参数有效。
      * 
      * @return name */
     public String getName() {

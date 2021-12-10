@@ -1,0 +1,179 @@
+package com.huaweicloud.sdk.codecheck.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/** RuleItem */
+public class RuleItem {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_id")
+
+    private String ruleId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_language")
+
+    private String ruleLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_name")
+
+    private String ruleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_severity")
+
+    private String ruleSeverity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_tages")
+
+    private String ruleTages;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "checked")
+
+    private String checked;
+
+    public RuleItem withRuleId(String ruleId) {
+        this.ruleId = ruleId;
+        return this;
+    }
+
+    /** 规则id
+     * 
+     * @return ruleId */
+    public String getRuleId() {
+        return ruleId;
+    }
+
+    public void setRuleId(String ruleId) {
+        this.ruleId = ruleId;
+    }
+
+    public RuleItem withRuleLanguage(String ruleLanguage) {
+        this.ruleLanguage = ruleLanguage;
+        return this;
+    }
+
+    /** 规则所属语言
+     * 
+     * @return ruleLanguage */
+    public String getRuleLanguage() {
+        return ruleLanguage;
+    }
+
+    public void setRuleLanguage(String ruleLanguage) {
+        this.ruleLanguage = ruleLanguage;
+    }
+
+    public RuleItem withRuleName(String ruleName) {
+        this.ruleName = ruleName;
+        return this;
+    }
+
+    /** 规则名称
+     * 
+     * @return ruleName */
+    public String getRuleName() {
+        return ruleName;
+    }
+
+    public void setRuleName(String ruleName) {
+        this.ruleName = ruleName;
+    }
+
+    public RuleItem withRuleSeverity(String ruleSeverity) {
+        this.ruleSeverity = ruleSeverity;
+        return this;
+    }
+
+    /** 规则问题级别
+     * 
+     * @return ruleSeverity */
+    public String getRuleSeverity() {
+        return ruleSeverity;
+    }
+
+    public void setRuleSeverity(String ruleSeverity) {
+        this.ruleSeverity = ruleSeverity;
+    }
+
+    public RuleItem withRuleTages(String ruleTages) {
+        this.ruleTages = ruleTages;
+        return this;
+    }
+
+    /** 规则标签
+     * 
+     * @return ruleTages */
+    public String getRuleTages() {
+        return ruleTages;
+    }
+
+    public void setRuleTages(String ruleTages) {
+        this.ruleTages = ruleTages;
+    }
+
+    public RuleItem withChecked(String checked) {
+        this.checked = checked;
+        return this;
+    }
+
+    /** 规则状态0：未启用，1：已启用
+     * 
+     * @return checked */
+    public String getChecked() {
+        return checked;
+    }
+
+    public void setChecked(String checked) {
+        this.checked = checked;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        RuleItem ruleItem = (RuleItem) o;
+        return Objects.equals(this.ruleId, ruleItem.ruleId) && Objects.equals(this.ruleLanguage, ruleItem.ruleLanguage)
+            && Objects.equals(this.ruleName, ruleItem.ruleName)
+            && Objects.equals(this.ruleSeverity, ruleItem.ruleSeverity)
+            && Objects.equals(this.ruleTages, ruleItem.ruleTages) && Objects.equals(this.checked, ruleItem.checked);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ruleId, ruleLanguage, ruleName, ruleSeverity, ruleTages, checked);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class RuleItem {\n");
+        sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
+        sb.append("    ruleLanguage: ").append(toIndentedString(ruleLanguage)).append("\n");
+        sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");
+        sb.append("    ruleSeverity: ").append(toIndentedString(ruleSeverity)).append("\n");
+        sb.append("    ruleTages: ").append(toIndentedString(ruleTages)).append("\n");
+        sb.append("    checked: ").append(toIndentedString(checked)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

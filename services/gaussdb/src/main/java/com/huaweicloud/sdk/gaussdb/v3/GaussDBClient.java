@@ -18,6 +18,28 @@ public class GaussDBClient {
 
 
     /**
+     * 批量添加或删除标签
+     * 批量添加或删除指定实例的标签。
+     *
+     * @param BatchTagActionRequest 请求对象
+     * @return BatchTagActionResponse
+     */
+    public BatchTagActionResponse batchTagAction(BatchTagActionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.batchTagAction);
+    }
+
+    /**
+     * 批量添加或删除标签
+     * 批量添加或删除指定实例的标签。
+     *
+     * @param BatchTagActionRequest 请求对象
+     * @return SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
+     */
+    public SyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionInvoker(BatchTagActionRequest request) {
+        return new SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>(request, GaussDBMeta.batchTagAction, hcClient);
+    }
+
+    /**
      * 变更实例规格
      * 变更数据库实例的规格。
      *
@@ -348,6 +370,50 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询资源标签
+     * 查询指定实例的标签信息。
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return ListInstanceTagsResponse
+     */
+    public ListInstanceTagsResponse listInstanceTags(ListInstanceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listInstanceTags);
+    }
+
+    /**
+     * 查询资源标签
+     * 查询指定实例的标签信息。
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
+     */
+    public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(ListInstanceTagsRequest request) {
+        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, GaussDBMeta.listInstanceTags, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询指定project ID下实例的所有标签集合。
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return ListProjectTagsResponse
+     */
+    public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询指定project ID下实例的所有标签集合。
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(ListProjectTagsRequest request) {
+        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, GaussDBMeta.listProjectTags, hcClient);
+    }
+
+    /**
      * 重置数据库密码
      * 重置数据库密码
      *
@@ -612,6 +678,28 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询实例秒级监控频率
+     * 查询实例秒级监控频率。
+     *
+     * @param ShowInstanceMonitorExtendRequest 请求对象
+     * @return ShowInstanceMonitorExtendResponse
+     */
+    public ShowInstanceMonitorExtendResponse showInstanceMonitorExtend(ShowInstanceMonitorExtendRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showInstanceMonitorExtend);
+    }
+
+    /**
+     * 查询实例秒级监控频率
+     * 查询实例秒级监控频率。
+     *
+     * @param ShowInstanceMonitorExtendRequest 请求对象
+     * @return SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>
+     */
+    public SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> showInstanceMonitorExtendInvoker(ShowInstanceMonitorExtendRequest request) {
+        return new SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>(request, GaussDBMeta.showInstanceMonitorExtend, hcClient);
+    }
+
+    /**
      * 修改备份策略
      * 修改备份策略
      *
@@ -675,6 +763,28 @@ public class GaussDBClient {
      */
     public SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> updateGaussMySqlQuotasInvoker(UpdateGaussMySqlQuotasRequest request) {
         return new SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>(request, GaussDBMeta.updateGaussMySqlQuotas, hcClient);
+    }
+
+    /**
+     * 修改实例秒级监控频率
+     * 打开/关闭/修改实例秒级监控。
+     *
+     * @param UpdateInstanceMonitorRequest 请求对象
+     * @return UpdateInstanceMonitorResponse
+     */
+    public UpdateInstanceMonitorResponse updateInstanceMonitor(UpdateInstanceMonitorRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateInstanceMonitor);
+    }
+
+    /**
+     * 修改实例秒级监控频率
+     * 打开/关闭/修改实例秒级监控。
+     *
+     * @param UpdateInstanceMonitorRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>
+     */
+    public SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitorInvoker(UpdateInstanceMonitorRequest request) {
+        return new SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
     }
 
 }

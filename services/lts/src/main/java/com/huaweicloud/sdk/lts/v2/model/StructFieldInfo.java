@@ -29,6 +29,11 @@ public class StructFieldInfo {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "userDefinedName")
+
+    private String userDefinedName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index")
 
     private Integer index;
@@ -86,7 +91,7 @@ public class StructFieldInfo {
         return this;
     }
 
-    /** 字段数据类型
+    /** 字段数据类型,例：string，long，float
      * 
      * @return type */
     public String getType() {
@@ -95,6 +100,22 @@ public class StructFieldInfo {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public StructFieldInfo withUserDefinedName(String userDefinedName) {
+        this.userDefinedName = userDefinedName;
+        return this;
+    }
+
+    /** 自定义别名(json方式中按需添加)
+     * 
+     * @return userDefinedName */
+    public String getUserDefinedName() {
+        return userDefinedName;
+    }
+
+    public void setUserDefinedName(String userDefinedName) {
+        this.userDefinedName = userDefinedName;
     }
 
     public StructFieldInfo withIndex(Integer index) {
@@ -125,12 +146,14 @@ public class StructFieldInfo {
         return Objects.equals(this.isAnalysis, structFieldInfo.isAnalysis)
             && Objects.equals(this.content, structFieldInfo.content)
             && Objects.equals(this.fieldName, structFieldInfo.fieldName)
-            && Objects.equals(this.type, structFieldInfo.type) && Objects.equals(this.index, structFieldInfo.index);
+            && Objects.equals(this.type, structFieldInfo.type)
+            && Objects.equals(this.userDefinedName, structFieldInfo.userDefinedName)
+            && Objects.equals(this.index, structFieldInfo.index);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isAnalysis, content, fieldName, type, index);
+        return Objects.hash(isAnalysis, content, fieldName, type, userDefinedName, index);
     }
 
     @Override
@@ -141,6 +164,7 @@ public class StructFieldInfo {
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    userDefinedName: ").append(toIndentedString(userDefinedName)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
         sb.append("}");
         return sb.toString();

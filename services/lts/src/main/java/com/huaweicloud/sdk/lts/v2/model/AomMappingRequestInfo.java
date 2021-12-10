@@ -91,7 +91,7 @@ public class AomMappingRequestInfo {
         return this;
     }
 
-    /** 接入规则详情
+    /** Get ruleInfo
      * 
      * @return ruleInfo */
     public AomMappingRuleInfo getRuleInfo() {

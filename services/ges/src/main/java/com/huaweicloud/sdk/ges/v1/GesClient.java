@@ -40,28 +40,6 @@ public class GesClient {
     }
 
     /**
-     * 校验元数据文件(1.0.0)
-     * 校验用户选择的数据集和元数据文件。
-     *
-     * @param CheckMetadataRequest 请求对象
-     * @return CheckMetadataResponse
-     */
-    public CheckMetadataResponse checkMetadata(CheckMetadataRequest request) {
-        return hcClient.syncInvokeHttp(request, GesMeta.checkMetadata);
-    }
-
-    /**
-     * 校验元数据文件(1.0.0)
-     * 校验用户选择的数据集和元数据文件。
-     *
-     * @param CheckMetadataRequest 请求对象
-     * @return SyncInvoker<CheckMetadataRequest, CheckMetadataResponse>
-     */
-    public SyncInvoker<CheckMetadataRequest, CheckMetadataResponse> checkMetadataInvoker(CheckMetadataRequest request) {
-        return new SyncInvoker<CheckMetadataRequest, CheckMetadataResponse>(request, GesMeta.checkMetadata, hcClient);
-    }
-
-    /**
      * 清空图(2.1.2)
      * 清空图中所有数据。
      *

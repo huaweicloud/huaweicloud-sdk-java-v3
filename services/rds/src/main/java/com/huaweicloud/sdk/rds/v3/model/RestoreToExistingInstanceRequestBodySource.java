@@ -111,6 +111,11 @@ public class RestoreToExistingInstanceRequestBodySource {
 
     private Map<String, String> databaseName = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "restore_all_database")
+
+    private Boolean restoreAllDatabase;
+
     public RestoreToExistingInstanceRequestBodySource withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -211,6 +216,23 @@ public class RestoreToExistingInstanceRequestBodySource {
         this.databaseName = databaseName;
     }
 
+    public RestoreToExistingInstanceRequestBodySource withRestoreAllDatabase(Boolean restoreAllDatabase) {
+        this.restoreAllDatabase = restoreAllDatabase;
+        return this;
+    }
+
+    /** 该字段仅适用于SQL Server引擎。是否恢复所有数据库，不填写该字段默认为false，不会恢复所有数据库到目标实例。 - 须知：
+     * 如果您想恢复所有数据库到已有实例，必须设置restore_all_database为true。
+     * 
+     * @return restoreAllDatabase */
+    public Boolean getRestoreAllDatabase() {
+        return restoreAllDatabase;
+    }
+
+    public void setRestoreAllDatabase(Boolean restoreAllDatabase) {
+        this.restoreAllDatabase = restoreAllDatabase;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -225,12 +247,13 @@ public class RestoreToExistingInstanceRequestBodySource {
             && Objects.equals(this.type, restoreToExistingInstanceRequestBodySource.type)
             && Objects.equals(this.backupId, restoreToExistingInstanceRequestBodySource.backupId)
             && Objects.equals(this.restoreTime, restoreToExistingInstanceRequestBodySource.restoreTime)
-            && Objects.equals(this.databaseName, restoreToExistingInstanceRequestBodySource.databaseName);
+            && Objects.equals(this.databaseName, restoreToExistingInstanceRequestBodySource.databaseName)
+            && Objects.equals(this.restoreAllDatabase, restoreToExistingInstanceRequestBodySource.restoreAllDatabase);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, type, backupId, restoreTime, databaseName);
+        return Objects.hash(instanceId, type, backupId, restoreTime, databaseName, restoreAllDatabase);
     }
 
     @Override
@@ -242,6 +265,7 @@ public class RestoreToExistingInstanceRequestBodySource {
         sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
         sb.append("    restoreTime: ").append(toIndentedString(restoreTime)).append("\n");
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
+        sb.append("    restoreAllDatabase: ").append(toIndentedString(restoreAllDatabase)).append("\n");
         sb.append("}");
         return sb.toString();
     }

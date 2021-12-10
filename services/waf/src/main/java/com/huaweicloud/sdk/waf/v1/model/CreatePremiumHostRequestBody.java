@@ -142,7 +142,7 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 独享模式回源服务器配置
+    /** 服务器配置
      * 
      * @return server */
     public List<PremiumWafServer> getServer() {

@@ -24,6 +24,11 @@ public class ImportKeyMaterialRequestBody {
     private String encryptedKeyMaterial;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encrypted_privatekey")
+
+    private String encryptedPrivatekey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiration_time")
 
     private Long expirationTime;
@@ -71,7 +76,7 @@ public class ImportKeyMaterialRequestBody {
         return this;
     }
 
-    /** 加密后的密钥材料，base64格式，满足正则匹配“^[0-9a-zA-Z+/=]{344,360}$”。
+    /** 加密后的对称密钥材料，base64格式，满足正则匹配“^[0-9a-zA-Z+/=]{344,360}$”。若导入非对称密钥，则该参数为用于加密私钥的临时中间密钥。
      * 
      * @return encryptedKeyMaterial */
     public String getEncryptedKeyMaterial() {
@@ -80,6 +85,22 @@ public class ImportKeyMaterialRequestBody {
 
     public void setEncryptedKeyMaterial(String encryptedKeyMaterial) {
         this.encryptedKeyMaterial = encryptedKeyMaterial;
+    }
+
+    public ImportKeyMaterialRequestBody withEncryptedPrivatekey(String encryptedPrivatekey) {
+        this.encryptedPrivatekey = encryptedPrivatekey;
+        return this;
+    }
+
+    /** 使用临时中间密钥加密后的私钥，导入非对称密钥需要该参数，base64格式，满足正则匹配“^[0-9a-zA-Z+/=]{200,6144}$”。
+     * 
+     * @return encryptedPrivatekey */
+    public String getEncryptedPrivatekey() {
+        return encryptedPrivatekey;
+    }
+
+    public void setEncryptedPrivatekey(String encryptedPrivatekey) {
+        this.encryptedPrivatekey = encryptedPrivatekey;
     }
 
     public ImportKeyMaterialRequestBody withExpirationTime(Long expirationTime) {
@@ -126,13 +147,14 @@ public class ImportKeyMaterialRequestBody {
         return Objects.equals(this.keyId, importKeyMaterialRequestBody.keyId)
             && Objects.equals(this.importToken, importKeyMaterialRequestBody.importToken)
             && Objects.equals(this.encryptedKeyMaterial, importKeyMaterialRequestBody.encryptedKeyMaterial)
+            && Objects.equals(this.encryptedPrivatekey, importKeyMaterialRequestBody.encryptedPrivatekey)
             && Objects.equals(this.expirationTime, importKeyMaterialRequestBody.expirationTime)
             && Objects.equals(this.sequence, importKeyMaterialRequestBody.sequence);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, importToken, encryptedKeyMaterial, expirationTime, sequence);
+        return Objects.hash(keyId, importToken, encryptedKeyMaterial, encryptedPrivatekey, expirationTime, sequence);
     }
 
     @Override
@@ -142,6 +164,7 @@ public class ImportKeyMaterialRequestBody {
         sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
         sb.append("    importToken: ").append(toIndentedString(importToken)).append("\n");
         sb.append("    encryptedKeyMaterial: ").append(toIndentedString(encryptedKeyMaterial)).append("\n");
+        sb.append("    encryptedPrivatekey: ").append(toIndentedString(encryptedPrivatekey)).append("\n");
         sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
         sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
         sb.append("}");

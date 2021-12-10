@@ -235,7 +235,7 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。|
+    /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。| |参数约束及描述：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。|
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {

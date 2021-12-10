@@ -173,6 +173,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "readonly_domain_name")
+
+    private String readonlyDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_publicip")
 
     private Boolean enablePublicip;
@@ -749,6 +754,22 @@ public class ShowInstanceResponse extends SdkResponse {
         this.domainName = domainName;
     }
 
+    public ShowInstanceResponse withReadonlyDomainName(String readonlyDomainName) {
+        this.readonlyDomainName = readonlyDomainName;
+        return this;
+    }
+
+    /** 实例的只读域名，只有主备实例有该字段。
+     * 
+     * @return readonlyDomainName */
+    public String getReadonlyDomainName() {
+        return readonlyDomainName;
+    }
+
+    public void setReadonlyDomainName(String readonlyDomainName) {
+        this.readonlyDomainName = readonlyDomainName;
+    }
+
     public ShowInstanceResponse withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
         return this;
@@ -918,6 +939,7 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.orderId, showInstanceResponse.orderId)
             && Objects.equals(this.status, showInstanceResponse.status)
             && Objects.equals(this.domainName, showInstanceResponse.domainName)
+            && Objects.equals(this.readonlyDomainName, showInstanceResponse.readonlyDomainName)
             && Objects.equals(this.enablePublicip, showInstanceResponse.enablePublicip)
             && Objects.equals(this.publicipId, showInstanceResponse.publicipId)
             && Objects.equals(this.publicipAddress, showInstanceResponse.publicipAddress)
@@ -962,6 +984,7 @@ public class ShowInstanceResponse extends SdkResponse {
             orderId,
             status,
             domainName,
+            readonlyDomainName,
             enablePublicip,
             publicipId,
             publicipAddress,
@@ -1008,6 +1031,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+        sb.append("    readonlyDomainName: ").append(toIndentedString(readonlyDomainName)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("    publicipAddress: ").append(toIndentedString(publicipAddress)).append("\n");

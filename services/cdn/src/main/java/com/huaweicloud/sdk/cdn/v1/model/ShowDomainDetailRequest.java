@@ -39,7 +39,7 @@ public class ShowDomainDetailRequest {
         return this;
     }
 
-    /** 企业项目ID。该参数仅对开启了企业项目功能的用户生效，不传表示查询default项目。
+    /** 企业项目ID。该参数仅对开启了企业项目功能的用户生效，不传表示查询default项目。注意：当使用子账号调用接口时，该参数必传。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {

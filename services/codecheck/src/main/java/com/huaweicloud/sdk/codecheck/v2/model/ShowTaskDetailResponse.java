@@ -135,6 +135,16 @@ public class ShowTaskDetailResponse extends SdkResponse {
 
     private String suggestionCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_access")
+
+    private String isAccess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_type")
+
+    private String triggerType;
+
     public ShowTaskDetailResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -252,7 +262,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get codeLine
+    /** 代码有效行数
      * 
      * @return codeLine */
     public Integer getCodeLine() {
@@ -535,6 +545,38 @@ public class ShowTaskDetailResponse extends SdkResponse {
         this.suggestionCount = suggestionCount;
     }
 
+    public ShowTaskDetailResponse withIsAccess(String isAccess) {
+        this.isAccess = isAccess;
+        return this;
+    }
+
+    /** 门禁质量是否通过
+     * 
+     * @return isAccess */
+    public String getIsAccess() {
+        return isAccess;
+    }
+
+    public void setIsAccess(String isAccess) {
+        this.isAccess = isAccess;
+    }
+
+    public ShowTaskDetailResponse withTriggerType(String triggerType) {
+        this.triggerType = triggerType;
+        return this;
+    }
+
+    /** 任务触发方式
+     * 
+     * @return triggerType */
+    public String getTriggerType() {
+        return triggerType;
+    }
+
+    public void setTriggerType(String triggerType) {
+        this.triggerType = triggerType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -568,7 +610,9 @@ public class ShowTaskDetailResponse extends SdkResponse {
             && Objects.equals(this.criticalCount, showTaskDetailResponse.criticalCount)
             && Objects.equals(this.majorCount, showTaskDetailResponse.majorCount)
             && Objects.equals(this.minorCount, showTaskDetailResponse.minorCount)
-            && Objects.equals(this.suggestionCount, showTaskDetailResponse.suggestionCount);
+            && Objects.equals(this.suggestionCount, showTaskDetailResponse.suggestionCount)
+            && Objects.equals(this.isAccess, showTaskDetailResponse.isAccess)
+            && Objects.equals(this.triggerType, showTaskDetailResponse.triggerType);
     }
 
     @Override
@@ -597,7 +641,9 @@ public class ShowTaskDetailResponse extends SdkResponse {
             criticalCount,
             majorCount,
             minorCount,
-            suggestionCount);
+            suggestionCount,
+            isAccess,
+            triggerType);
     }
 
     @Override
@@ -631,6 +677,8 @@ public class ShowTaskDetailResponse extends SdkResponse {
         sb.append("    majorCount: ").append(toIndentedString(majorCount)).append("\n");
         sb.append("    minorCount: ").append(toIndentedString(minorCount)).append("\n");
         sb.append("    suggestionCount: ").append(toIndentedString(suggestionCount)).append("\n");
+        sb.append("    isAccess: ").append(toIndentedString(isAccess)).append("\n");
+        sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

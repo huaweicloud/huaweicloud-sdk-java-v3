@@ -81,7 +81,7 @@ public class UsageType {
         return this;
     }
 
-    /** 云服务类型编码。例如ECS的云服务类型编码为“hws.service.type.ec2”。
+    /** 云服务类型编码。例如OBS的云服务类型编码为“hws.service.type.obs”。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {

@@ -139,22 +139,12 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private Object createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private Object updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "notification_save_rule")
-
-    private NotificationSaveRule notificationSaveRule;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "whether_english")
-
-    private Boolean whetherEnglish;
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
@@ -177,19 +167,9 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
     private String conditionExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indexId")
 
     private String indexId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "key")
-
-    private String key;
 
     public UpdateKeywordsAlarmRuleResponse withKeywordsAlarmRuleId(String keywordsAlarmRuleId) {
         this.keywordsAlarmRuleId = keywordsAlarmRuleId;
@@ -286,7 +266,7 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 告警统计周期
+    /** Get frequency
      * 
      * @return frequency */
     public Frequency getFrequency() {
@@ -345,78 +325,36 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
-    public UpdateKeywordsAlarmRuleResponse withCreateTime(Object createTime) {
+    public UpdateKeywordsAlarmRuleResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建时间(毫秒时间戳)
+    /** 创建时间(毫秒时间戳) minimum: 13 maximum: 13
      * 
      * @return createTime */
-    public Object getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Object createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public UpdateKeywordsAlarmRuleResponse withUpdateTime(Object updateTime) {
+    public UpdateKeywordsAlarmRuleResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    /** 更新时间(毫秒时间戳)
+    /** 更新时间(毫秒时间戳) minimum: 13 maximum: 13
      * 
      * @return updateTime */
-    public Object getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Object updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public UpdateKeywordsAlarmRuleResponse withNotificationSaveRule(NotificationSaveRule notificationSaveRule) {
-        this.notificationSaveRule = notificationSaveRule;
-        return this;
-    }
-
-    public UpdateKeywordsAlarmRuleResponse withNotificationSaveRule(
-        Consumer<NotificationSaveRule> notificationSaveRuleSetter) {
-        if (this.notificationSaveRule == null) {
-            this.notificationSaveRule = new NotificationSaveRule();
-            notificationSaveRuleSetter.accept(this.notificationSaveRule);
-        }
-
-        return this;
-    }
-
-    /** 通知主题
-     * 
-     * @return notificationSaveRule */
-    public NotificationSaveRule getNotificationSaveRule() {
-        return notificationSaveRule;
-    }
-
-    public void setNotificationSaveRule(NotificationSaveRule notificationSaveRule) {
-        this.notificationSaveRule = notificationSaveRule;
-    }
-
-    public UpdateKeywordsAlarmRuleResponse withWhetherEnglish(Boolean whetherEnglish) {
-        this.whetherEnglish = whetherEnglish;
-        return this;
-    }
-
-    /** 邮件附加信息是否英文
-     * 
-     * @return whetherEnglish */
-    public Boolean getWhetherEnglish() {
-        return whetherEnglish;
-    }
-
-    public void setWhetherEnglish(Boolean whetherEnglish) {
-        this.whetherEnglish = whetherEnglish;
     }
 
     public UpdateKeywordsAlarmRuleResponse withLanguage(String language) {
@@ -499,22 +437,6 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         this.conditionExpression = conditionExpression;
     }
 
-    public UpdateKeywordsAlarmRuleResponse withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /** 暂无
-     * 
-     * @return id */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public UpdateKeywordsAlarmRuleResponse withIndexId(String indexId) {
         this.indexId = indexId;
         return this;
@@ -529,22 +451,6 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
 
     public void setIndexId(String indexId) {
         this.indexId = indexId;
-    }
-
-    public UpdateKeywordsAlarmRuleResponse withKey(String key) {
-        this.key = key;
-        return this;
-    }
-
-    /** 暂无
-     * 
-     * @return key */
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
     }
 
     @Override
@@ -567,15 +473,11 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
             && Objects.equals(this.domainId, updateKeywordsAlarmRuleResponse.domainId)
             && Objects.equals(this.createTime, updateKeywordsAlarmRuleResponse.createTime)
             && Objects.equals(this.updateTime, updateKeywordsAlarmRuleResponse.updateTime)
-            && Objects.equals(this.notificationSaveRule, updateKeywordsAlarmRuleResponse.notificationSaveRule)
-            && Objects.equals(this.whetherEnglish, updateKeywordsAlarmRuleResponse.whetherEnglish)
             && Objects.equals(this.language, updateKeywordsAlarmRuleResponse.language)
             && Objects.equals(this.projectId, updateKeywordsAlarmRuleResponse.projectId)
             && Objects.equals(this.topics, updateKeywordsAlarmRuleResponse.topics)
             && Objects.equals(this.conditionExpression, updateKeywordsAlarmRuleResponse.conditionExpression)
-            && Objects.equals(this.id, updateKeywordsAlarmRuleResponse.id)
-            && Objects.equals(this.indexId, updateKeywordsAlarmRuleResponse.indexId)
-            && Objects.equals(this.key, updateKeywordsAlarmRuleResponse.key);
+            && Objects.equals(this.indexId, updateKeywordsAlarmRuleResponse.indexId);
     }
 
     @Override
@@ -590,15 +492,11 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
             domainId,
             createTime,
             updateTime,
-            notificationSaveRule,
-            whetherEnglish,
             language,
             projectId,
             topics,
             conditionExpression,
-            id,
-            indexId,
-            key);
+            indexId);
     }
 
     @Override
@@ -617,15 +515,11 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    notificationSaveRule: ").append(toIndentedString(notificationSaveRule)).append("\n");
-        sb.append("    whetherEnglish: ").append(toIndentedString(whetherEnglish)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("    conditionExpression: ").append(toIndentedString(conditionExpression)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    indexId: ").append(toIndentedString(indexId)).append("\n");
-        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("}");
         return sb.toString();
     }

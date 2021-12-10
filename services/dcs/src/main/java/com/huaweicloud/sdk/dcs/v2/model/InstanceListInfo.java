@@ -157,6 +157,11 @@ public class InstanceListInfo {
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "readonly_domain_name")
+
+    private String readonlyDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -660,6 +665,22 @@ public class InstanceListInfo {
         this.domainName = domainName;
     }
 
+    public InstanceListInfo withReadonlyDomainName(String readonlyDomainName) {
+        this.readonlyDomainName = readonlyDomainName;
+        return this;
+    }
+
+    /** 实例的只读域名，只有主备实例有该字段。
+     * 
+     * @return readonlyDomainName */
+    public String getReadonlyDomainName() {
+        return readonlyDomainName;
+    }
+
+    public void setReadonlyDomainName(String readonlyDomainName) {
+        this.readonlyDomainName = readonlyDomainName;
+    }
+
     public InstanceListInfo withName(String name) {
         this.name = name;
         return this;
@@ -857,6 +878,7 @@ public class InstanceListInfo {
             && Objects.equals(this.port, instanceListInfo.port) && Objects.equals(this.userId, instanceListInfo.userId)
             && Objects.equals(this.userName, instanceListInfo.userName)
             && Objects.equals(this.domainName, instanceListInfo.domainName)
+            && Objects.equals(this.readonlyDomainName, instanceListInfo.readonlyDomainName)
             && Objects.equals(this.name, instanceListInfo.name)
             && Objects.equals(this.specCode, instanceListInfo.specCode)
             && Objects.equals(this.status, instanceListInfo.status) && Objects.equals(this.tags, instanceListInfo.tags)
@@ -897,6 +919,7 @@ public class InstanceListInfo {
             userId,
             userName,
             domainName,
+            readonlyDomainName,
             name,
             specCode,
             status,
@@ -940,6 +963,7 @@ public class InstanceListInfo {
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+        sb.append("    readonlyDomainName: ").append(toIndentedString(readonlyDomainName)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

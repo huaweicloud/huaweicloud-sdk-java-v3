@@ -42,28 +42,6 @@ public class GesAsyncClient {
     }
 
     /**
-     * 校验元数据文件(1.0.0)
-     * 校验用户选择的数据集和元数据文件。
-     *
-     * @param CheckMetadataRequest 请求对象
-     * @return CompletableFuture<CheckMetadataResponse>
-     */
-    public CompletableFuture<CheckMetadataResponse> checkMetadataAsync(CheckMetadataRequest request) {
-        return hcClient.asyncInvokeHttp(request, GesMeta.checkMetadata);
-    }
-
-    /**
-     * 校验元数据文件(1.0.0)
-     * 校验用户选择的数据集和元数据文件。
-     *
-     * @param CheckMetadataRequest 请求对象
-     * @return AsyncInvoker<CheckMetadataRequest, CheckMetadataResponse>
-     */
-    public AsyncInvoker<CheckMetadataRequest, CheckMetadataResponse> checkMetadataAsyncInvoker(CheckMetadataRequest request) {
-        return new AsyncInvoker<CheckMetadataRequest, CheckMetadataResponse>(request, GesMeta.checkMetadata, hcClient);
-    }
-
-    /**
      * 清空图(2.1.2)
      * 清空图中所有数据。
      *

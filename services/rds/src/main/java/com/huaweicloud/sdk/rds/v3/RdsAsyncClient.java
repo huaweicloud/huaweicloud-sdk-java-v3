@@ -677,6 +677,25 @@ public class RdsAsyncClient {
             hcClient);
     }
 
+    /** 恢复到已有实例 恢复到已有实例。
+     *
+     * @param RestoreExistInstanceRequest 请求对象
+     * @return CompletableFuture<RestoreExistInstanceResponse> */
+    public CompletableFuture<RestoreExistInstanceResponse> restoreExistInstanceAsync(
+        RestoreExistInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.restoreExistInstance);
+    }
+
+    /** 恢复到已有实例 恢复到已有实例。
+     *
+     * @param RestoreExistInstanceRequest 请求对象
+     * @return AsyncInvoker<RestoreExistInstanceRequest, RestoreExistInstanceResponse> */
+    public AsyncInvoker<RestoreExistInstanceRequest, RestoreExistInstanceResponse> restoreExistInstanceAsyncInvoker(
+        RestoreExistInstanceRequest request) {
+        return new AsyncInvoker<RestoreExistInstanceRequest, RestoreExistInstanceResponse>(request,
+            RdsMeta.restoreExistInstance, hcClient);
+    }
+
     /** 表级时间点恢复(MySQL) 表级时间点恢复(MySQL)。
      *
      * @param RestoreTablesRequest 请求对象

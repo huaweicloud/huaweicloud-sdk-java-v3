@@ -229,10 +229,81 @@ public class UpdateSqlAlarmRuleRequestBody {
 
     private NotificationSaveRule notificationSaveRule;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "whether_english")
+    /** 邮件附加信息是否英文 */
+    public static final class LanguageEnum {
 
-    private Boolean whetherEnglish;
+        /** Enum ZH_CN for value: "zh-cn" */
+        public static final LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
+
+        /** Enum EN_US for value: "en-us" */
+        public static final LanguageEnum EN_US = new LanguageEnum("en-us");
+
+        private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LanguageEnum> createStaticFields() {
+            Map<String, LanguageEnum> map = new HashMap<>();
+            map.put("zh-cn", ZH_CN);
+            map.put("en-us", EN_US);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LanguageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            LanguageEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new LanguageEnum(value);
+            }
+            return result;
+        }
+
+        public static LanguageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            LanguageEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LanguageEnum) {
+                return this.value.equals(((LanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
 
     public UpdateSqlAlarmRuleRequestBody withSqlAlarmRuleId(String sqlAlarmRuleId) {
         this.sqlAlarmRuleId = sqlAlarmRuleId;
@@ -445,20 +516,20 @@ public class UpdateSqlAlarmRuleRequestBody {
         this.notificationSaveRule = notificationSaveRule;
     }
 
-    public UpdateSqlAlarmRuleRequestBody withWhetherEnglish(Boolean whetherEnglish) {
-        this.whetherEnglish = whetherEnglish;
+    public UpdateSqlAlarmRuleRequestBody withLanguage(LanguageEnum language) {
+        this.language = language;
         return this;
     }
 
     /** 邮件附加信息是否英文
      * 
-     * @return whetherEnglish */
-    public Boolean getWhetherEnglish() {
-        return whetherEnglish;
+     * @return language */
+    public LanguageEnum getLanguage() {
+        return language;
     }
 
-    public void setWhetherEnglish(Boolean whetherEnglish) {
-        this.whetherEnglish = whetherEnglish;
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
     }
 
     @Override
@@ -481,7 +552,7 @@ public class UpdateSqlAlarmRuleRequestBody {
             && Objects.equals(this.sqlAlarmSendCode, updateSqlAlarmRuleRequestBody.sqlAlarmSendCode)
             && Objects.equals(this.domainId, updateSqlAlarmRuleRequestBody.domainId)
             && Objects.equals(this.notificationSaveRule, updateSqlAlarmRuleRequestBody.notificationSaveRule)
-            && Objects.equals(this.whetherEnglish, updateSqlAlarmRuleRequestBody.whetherEnglish);
+            && Objects.equals(this.language, updateSqlAlarmRuleRequestBody.language);
     }
 
     @Override
@@ -497,7 +568,7 @@ public class UpdateSqlAlarmRuleRequestBody {
             sqlAlarmSendCode,
             domainId,
             notificationSaveRule,
-            whetherEnglish);
+            language);
     }
 
     @Override
@@ -515,7 +586,7 @@ public class UpdateSqlAlarmRuleRequestBody {
         sb.append("    sqlAlarmSendCode: ").append(toIndentedString(sqlAlarmSendCode)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    notificationSaveRule: ").append(toIndentedString(notificationSaveRule)).append("\n");
-        sb.append("    whetherEnglish: ").append(toIndentedString(whetherEnglish)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -169,6 +169,16 @@ public class TransferDetail {
 
     private String kafkaTopic;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_time_zone")
+
+    private String obsTimeZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_time_zone_id")
+
+    private String obsTimeZoneId;
+
     public TransferDetail withObsPeriod(ObsPeriodEnum obsPeriod) {
         this.obsPeriod = obsPeriod;
         return this;
@@ -377,6 +387,38 @@ public class TransferDetail {
         this.kafkaTopic = kafkaTopic;
     }
 
+    public TransferDetail withObsTimeZone(String obsTimeZone) {
+        this.obsTimeZone = obsTimeZone;
+        return this;
+    }
+
+    /** OBS转储时区。如果选择该参数，则必须选择obs_time_zone_id。
+     * 
+     * @return obsTimeZone */
+    public String getObsTimeZone() {
+        return obsTimeZone;
+    }
+
+    public void setObsTimeZone(String obsTimeZone) {
+        this.obsTimeZone = obsTimeZone;
+    }
+
+    public TransferDetail withObsTimeZoneId(String obsTimeZoneId) {
+        this.obsTimeZoneId = obsTimeZoneId;
+        return this;
+    }
+
+    /** OBS转储时区ID。参数选择参考OBS转储时区表。如果选择该参数，则必须选择obs_time_zone。
+     * 
+     * @return obsTimeZoneId */
+    public String getObsTimeZoneId() {
+        return obsTimeZoneId;
+    }
+
+    public void setObsTimeZoneId(String obsTimeZoneId) {
+        this.obsTimeZoneId = obsTimeZoneId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -397,7 +439,9 @@ public class TransferDetail {
             && Objects.equals(this.obsDirPreFixName, transferDetail.obsDirPreFixName)
             && Objects.equals(this.disId, transferDetail.disId) && Objects.equals(this.disName, transferDetail.disName)
             && Objects.equals(this.kafkaId, transferDetail.kafkaId)
-            && Objects.equals(this.kafkaTopic, transferDetail.kafkaTopic);
+            && Objects.equals(this.kafkaTopic, transferDetail.kafkaTopic)
+            && Objects.equals(this.obsTimeZone, transferDetail.obsTimeZone)
+            && Objects.equals(this.obsTimeZoneId, transferDetail.obsTimeZoneId);
     }
 
     @Override
@@ -414,7 +458,9 @@ public class TransferDetail {
             disId,
             disName,
             kafkaId,
-            kafkaTopic);
+            kafkaTopic,
+            obsTimeZone,
+            obsTimeZoneId);
     }
 
     @Override
@@ -434,6 +480,8 @@ public class TransferDetail {
         sb.append("    disName: ").append(toIndentedString(disName)).append("\n");
         sb.append("    kafkaId: ").append(toIndentedString(kafkaId)).append("\n");
         sb.append("    kafkaTopic: ").append(toIndentedString(kafkaTopic)).append("\n");
+        sb.append("    obsTimeZone: ").append(toIndentedString(obsTimeZone)).append("\n");
+        sb.append("    obsTimeZoneId: ").append(toIndentedString(obsTimeZoneId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

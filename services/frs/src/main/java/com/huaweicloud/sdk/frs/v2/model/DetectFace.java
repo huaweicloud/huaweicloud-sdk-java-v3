@@ -19,11 +19,6 @@ public class DetectFace {
 
     private Attributes attributes;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "landmark")
-
-    private Landmark landmark;
-
     public DetectFace withBoundingBox(BoundingBox boundingBox) {
         this.boundingBox = boundingBox;
         return this;
@@ -74,31 +69,6 @@ public class DetectFace {
         this.attributes = attributes;
     }
 
-    public DetectFace withLandmark(Landmark landmark) {
-        this.landmark = landmark;
-        return this;
-    }
-
-    public DetectFace withLandmark(Consumer<Landmark> landmarkSetter) {
-        if (this.landmark == null) {
-            this.landmark = new Landmark();
-            landmarkSetter.accept(this.landmark);
-        }
-
-        return this;
-    }
-
-    /** Get landmark
-     * 
-     * @return landmark */
-    public Landmark getLandmark() {
-        return landmark;
-    }
-
-    public void setLandmark(Landmark landmark) {
-        this.landmark = landmark;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -109,13 +79,12 @@ public class DetectFace {
         }
         DetectFace detectFace = (DetectFace) o;
         return Objects.equals(this.boundingBox, detectFace.boundingBox)
-            && Objects.equals(this.attributes, detectFace.attributes)
-            && Objects.equals(this.landmark, detectFace.landmark);
+            && Objects.equals(this.attributes, detectFace.attributes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(boundingBox, attributes, landmark);
+        return Objects.hash(boundingBox, attributes);
     }
 
     @Override
@@ -124,7 +93,6 @@ public class DetectFace {
         sb.append("class DetectFace {\n");
         sb.append("    boundingBox: ").append(toIndentedString(boundingBox)).append("\n");
         sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
-        sb.append("    landmark: ").append(toIndentedString(landmark)).append("\n");
         sb.append("}");
         return sb.toString();
     }

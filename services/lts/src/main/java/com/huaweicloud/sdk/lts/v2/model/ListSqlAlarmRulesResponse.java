@@ -13,40 +13,40 @@ import java.util.function.Consumer;
 public class ListSqlAlarmRulesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sql_alarm_rule")
+    @JsonProperty(value = "sql_alarm_rules")
 
-    private List<SqlAlarmRuleRespList> sqlAlarmRule = null;
+    private List<SqlAlarmRuleRespList> sqlAlarmRules = null;
 
-    public ListSqlAlarmRulesResponse withSqlAlarmRule(List<SqlAlarmRuleRespList> sqlAlarmRule) {
-        this.sqlAlarmRule = sqlAlarmRule;
+    public ListSqlAlarmRulesResponse withSqlAlarmRules(List<SqlAlarmRuleRespList> sqlAlarmRules) {
+        this.sqlAlarmRules = sqlAlarmRules;
         return this;
     }
 
-    public ListSqlAlarmRulesResponse addSqlAlarmRuleItem(SqlAlarmRuleRespList sqlAlarmRuleItem) {
-        if (this.sqlAlarmRule == null) {
-            this.sqlAlarmRule = new ArrayList<>();
+    public ListSqlAlarmRulesResponse addSqlAlarmRulesItem(SqlAlarmRuleRespList sqlAlarmRulesItem) {
+        if (this.sqlAlarmRules == null) {
+            this.sqlAlarmRules = new ArrayList<>();
         }
-        this.sqlAlarmRule.add(sqlAlarmRuleItem);
+        this.sqlAlarmRules.add(sqlAlarmRulesItem);
         return this;
     }
 
-    public ListSqlAlarmRulesResponse withSqlAlarmRule(Consumer<List<SqlAlarmRuleRespList>> sqlAlarmRuleSetter) {
-        if (this.sqlAlarmRule == null) {
-            this.sqlAlarmRule = new ArrayList<>();
+    public ListSqlAlarmRulesResponse withSqlAlarmRules(Consumer<List<SqlAlarmRuleRespList>> sqlAlarmRulesSetter) {
+        if (this.sqlAlarmRules == null) {
+            this.sqlAlarmRules = new ArrayList<>();
         }
-        sqlAlarmRuleSetter.accept(this.sqlAlarmRule);
+        sqlAlarmRulesSetter.accept(this.sqlAlarmRules);
         return this;
     }
 
     /** SQL告警
      * 
-     * @return sqlAlarmRule */
-    public List<SqlAlarmRuleRespList> getSqlAlarmRule() {
-        return sqlAlarmRule;
+     * @return sqlAlarmRules */
+    public List<SqlAlarmRuleRespList> getSqlAlarmRules() {
+        return sqlAlarmRules;
     }
 
-    public void setSqlAlarmRule(List<SqlAlarmRuleRespList> sqlAlarmRule) {
-        this.sqlAlarmRule = sqlAlarmRule;
+    public void setSqlAlarmRules(List<SqlAlarmRuleRespList> sqlAlarmRules) {
+        this.sqlAlarmRules = sqlAlarmRules;
     }
 
     @Override
@@ -58,19 +58,19 @@ public class ListSqlAlarmRulesResponse extends SdkResponse {
             return false;
         }
         ListSqlAlarmRulesResponse listSqlAlarmRulesResponse = (ListSqlAlarmRulesResponse) o;
-        return Objects.equals(this.sqlAlarmRule, listSqlAlarmRulesResponse.sqlAlarmRule);
+        return Objects.equals(this.sqlAlarmRules, listSqlAlarmRulesResponse.sqlAlarmRules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sqlAlarmRule);
+        return Objects.hash(sqlAlarmRules);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSqlAlarmRulesResponse {\n");
-        sb.append("    sqlAlarmRule: ").append(toIndentedString(sqlAlarmRule)).append("\n");
+        sb.append("    sqlAlarmRules: ").append(toIndentedString(sqlAlarmRules)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -17,6 +17,11 @@ public class ListClustersResponse extends SdkResponse {
 
     private List<ClusterInfo> clusters = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public ListClustersResponse withClusters(List<ClusterInfo> clusters) {
         this.clusters = clusters;
         return this;
@@ -49,6 +54,22 @@ public class ListClustersResponse extends SdkResponse {
         this.clusters = clusters;
     }
 
+    public ListClustersResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /** 集群对象列表总数
+     * 
+     * @return count */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -58,12 +79,13 @@ public class ListClustersResponse extends SdkResponse {
             return false;
         }
         ListClustersResponse listClustersResponse = (ListClustersResponse) o;
-        return Objects.equals(this.clusters, listClustersResponse.clusters);
+        return Objects.equals(this.clusters, listClustersResponse.clusters)
+            && Objects.equals(this.count, listClustersResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusters);
+        return Objects.hash(clusters, count);
     }
 
     @Override
@@ -71,6 +93,7 @@ public class ListClustersResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListClustersResponse {\n");
         sb.append("    clusters: ").append(toIndentedString(clusters)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

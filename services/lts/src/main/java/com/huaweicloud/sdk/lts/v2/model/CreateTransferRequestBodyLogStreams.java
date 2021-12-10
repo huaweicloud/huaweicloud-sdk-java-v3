@@ -13,6 +13,11 @@ public class CreateTransferRequestBodyLogStreams {
 
     private String logStreamId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_name")
+
+    private String logStreamName;
+
     public CreateTransferRequestBodyLogStreams withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
         return this;
@@ -29,6 +34,22 @@ public class CreateTransferRequestBodyLogStreams {
         this.logStreamId = logStreamId;
     }
 
+    public CreateTransferRequestBodyLogStreams withLogStreamName(String logStreamName) {
+        this.logStreamName = logStreamName;
+        return this;
+    }
+
+    /** 日志流名称
+     * 
+     * @return logStreamName */
+    public String getLogStreamName() {
+        return logStreamName;
+    }
+
+    public void setLogStreamName(String logStreamName) {
+        this.logStreamName = logStreamName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -39,12 +60,13 @@ public class CreateTransferRequestBodyLogStreams {
         }
         CreateTransferRequestBodyLogStreams createTransferRequestBodyLogStreams =
             (CreateTransferRequestBodyLogStreams) o;
-        return Objects.equals(this.logStreamId, createTransferRequestBodyLogStreams.logStreamId);
+        return Objects.equals(this.logStreamId, createTransferRequestBodyLogStreams.logStreamId)
+            && Objects.equals(this.logStreamName, createTransferRequestBodyLogStreams.logStreamName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logStreamId);
+        return Objects.hash(logStreamId, logStreamName);
     }
 
     @Override
@@ -52,6 +74,7 @@ public class CreateTransferRequestBodyLogStreams {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateTransferRequestBodyLogStreams {\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
+        sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

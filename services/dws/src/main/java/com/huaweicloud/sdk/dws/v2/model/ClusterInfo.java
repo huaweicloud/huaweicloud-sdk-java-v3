@@ -3,7 +3,9 @@ package com.huaweicloud.sdk.dws.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -19,7 +21,7 @@ public class ClusterInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_reasons")
 
-    private Object failedReasons;
+    private FailedReason failedReasons;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
@@ -29,7 +31,7 @@ public class ClusterInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoints")
 
-    private Endpoints endpoints;
+    private List<Endpoints> endpoints = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_status")
@@ -82,11 +84,6 @@ public class ClusterInfo {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
-
-    private Tags tags;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -114,7 +111,7 @@ public class ClusterInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_endpoints")
 
-    private PublicEndpoints publicEndpoints;
+    private List<PublicEndpoints> publicEndpoints = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -164,19 +161,28 @@ public class ClusterInfo {
         this.actionProgress = actionProgress;
     }
 
-    public ClusterInfo withFailedReasons(Object failedReasons) {
+    public ClusterInfo withFailedReasons(FailedReason failedReasons) {
         this.failedReasons = failedReasons;
         return this;
     }
 
-    /** 失败原因。如果为空，则集群处于正常状态。
+    public ClusterInfo withFailedReasons(Consumer<FailedReason> failedReasonsSetter) {
+        if (this.failedReasons == null) {
+            this.failedReasons = new FailedReason();
+            failedReasonsSetter.accept(this.failedReasons);
+        }
+
+        return this;
+    }
+
+    /** Get failedReasons
      * 
      * @return failedReasons */
-    public Object getFailedReasons() {
+    public FailedReason getFailedReasons() {
         return failedReasons;
     }
 
-    public void setFailedReasons(Object failedReasons) {
+    public void setFailedReasons(FailedReason failedReasons) {
         this.failedReasons = failedReasons;
     }
 
@@ -196,28 +202,35 @@ public class ClusterInfo {
         this.availabilityZone = availabilityZone;
     }
 
-    public ClusterInfo withEndpoints(Endpoints endpoints) {
+    public ClusterInfo withEndpoints(List<Endpoints> endpoints) {
         this.endpoints = endpoints;
         return this;
     }
 
-    public ClusterInfo withEndpoints(Consumer<Endpoints> endpointsSetter) {
+    public ClusterInfo addEndpointsItem(Endpoints endpointsItem) {
         if (this.endpoints == null) {
-            this.endpoints = new Endpoints();
-            endpointsSetter.accept(this.endpoints);
+            this.endpoints = new ArrayList<>();
         }
-
+        this.endpoints.add(endpointsItem);
         return this;
     }
 
-    /** Get endpoints
+    public ClusterInfo withEndpoints(Consumer<List<Endpoints>> endpointsSetter) {
+        if (this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
+        endpointsSetter.accept(this.endpoints);
+        return this;
+    }
+
+    /** 集群的内网连接信息
      * 
      * @return endpoints */
-    public Endpoints getEndpoints() {
+    public List<Endpoints> getEndpoints() {
         return endpoints;
     }
 
-    public void setEndpoints(Endpoints endpoints) {
+    public void setEndpoints(List<Endpoints> endpoints) {
         this.endpoints = endpoints;
     }
 
@@ -397,31 +410,6 @@ public class ClusterInfo {
         this.version = version;
     }
 
-    public ClusterInfo withTags(Tags tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public ClusterInfo withTags(Consumer<Tags> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new Tags();
-            tagsSetter.accept(this.tags);
-        }
-
-        return this;
-    }
-
-    /** Get tags
-     * 
-     * @return tags */
-    public Tags getTags() {
-        return tags;
-    }
-
-    public void setTags(Tags tags) {
-        this.tags = tags;
-    }
-
     public ClusterInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -502,28 +490,35 @@ public class ClusterInfo {
         this.subnetId = subnetId;
     }
 
-    public ClusterInfo withPublicEndpoints(PublicEndpoints publicEndpoints) {
+    public ClusterInfo withPublicEndpoints(List<PublicEndpoints> publicEndpoints) {
         this.publicEndpoints = publicEndpoints;
         return this;
     }
 
-    public ClusterInfo withPublicEndpoints(Consumer<PublicEndpoints> publicEndpointsSetter) {
+    public ClusterInfo addPublicEndpointsItem(PublicEndpoints publicEndpointsItem) {
         if (this.publicEndpoints == null) {
-            this.publicEndpoints = new PublicEndpoints();
-            publicEndpointsSetter.accept(this.publicEndpoints);
+            this.publicEndpoints = new ArrayList<>();
         }
-
+        this.publicEndpoints.add(publicEndpointsItem);
         return this;
     }
 
-    /** Get publicEndpoints
+    public ClusterInfo withPublicEndpoints(Consumer<List<PublicEndpoints>> publicEndpointsSetter) {
+        if (this.publicEndpoints == null) {
+            this.publicEndpoints = new ArrayList<>();
+        }
+        publicEndpointsSetter.accept(this.publicEndpoints);
+        return this;
+    }
+
+    /** 集群的公网连接信息，如果未指定，则默认不使用公网连接信息。
      * 
      * @return publicEndpoints */
-    public PublicEndpoints getPublicEndpoints() {
+    public List<PublicEndpoints> getPublicEndpoints() {
         return publicEndpoints;
     }
 
-    public void setPublicEndpoints(PublicEndpoints publicEndpoints) {
+    public void setPublicEndpoints(List<PublicEndpoints> publicEndpoints) {
         this.publicEndpoints = publicEndpoints;
     }
 
@@ -596,7 +591,7 @@ public class ClusterInfo {
             && Objects.equals(this.vpcId, clusterInfo.vpcId) && Objects.equals(this.created, clusterInfo.created)
             && Objects.equals(this.userName, clusterInfo.userName)
             && Objects.equals(this.securityGroupId, clusterInfo.securityGroupId)
-            && Objects.equals(this.version, clusterInfo.version) && Objects.equals(this.tags, clusterInfo.tags)
+            && Objects.equals(this.version, clusterInfo.version)
             && Objects.equals(this.enterpriseProjectId, clusterInfo.enterpriseProjectId)
             && Objects.equals(this.nodeType, clusterInfo.nodeType) && Objects.equals(this.port, clusterInfo.port)
             && Objects.equals(this.name, clusterInfo.name) && Objects.equals(this.subnetId, clusterInfo.subnetId)
@@ -621,7 +616,6 @@ public class ClusterInfo {
             userName,
             securityGroupId,
             version,
-            tags,
             enterpriseProjectId,
             nodeType,
             port,
@@ -651,7 +645,6 @@ public class ClusterInfo {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");

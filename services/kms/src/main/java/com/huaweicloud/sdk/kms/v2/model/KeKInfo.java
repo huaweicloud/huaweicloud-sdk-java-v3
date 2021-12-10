@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** KeKInfo */
+/** 密钥详细信息。 */
 public class KeKInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

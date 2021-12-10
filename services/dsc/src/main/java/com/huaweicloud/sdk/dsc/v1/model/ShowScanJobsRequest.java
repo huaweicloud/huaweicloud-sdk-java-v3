@@ -9,9 +9,9 @@ import java.util.Objects;
 public class ShowScanJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page")
+    @JsonProperty(value = "offset")
 
-    private Integer page;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -33,20 +33,20 @@ public class ShowScanJobsRequest {
 
     private String endTime;
 
-    public ShowScanJobsRequest withPage(Integer page) {
-        this.page = page;
+    public ShowScanJobsRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /** 页码
      * 
-     * @return page */
-    public Integer getPage() {
-        return page;
+     * @return offset */
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPage(Integer page) {
-        this.page = page;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowScanJobsRequest withLimit(Integer limit) {
@@ -122,7 +122,7 @@ public class ShowScanJobsRequest {
             return false;
         }
         ShowScanJobsRequest showScanJobsRequest = (ShowScanJobsRequest) o;
-        return Objects.equals(this.page, showScanJobsRequest.page)
+        return Objects.equals(this.offset, showScanJobsRequest.offset)
             && Objects.equals(this.limit, showScanJobsRequest.limit)
             && Objects.equals(this.content, showScanJobsRequest.content)
             && Objects.equals(this.startTime, showScanJobsRequest.startTime)
@@ -131,14 +131,14 @@ public class ShowScanJobsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(page, limit, content, startTime, endTime);
+        return Objects.hash(offset, limit, content, startTime, endTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowScanJobsRequest {\n");
-        sb.append("    page: ").append(toIndentedString(page)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

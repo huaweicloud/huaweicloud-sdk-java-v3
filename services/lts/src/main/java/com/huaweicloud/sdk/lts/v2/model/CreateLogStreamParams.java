@@ -13,6 +13,11 @@ public class CreateLogStreamParams {
 
     private String logStreamName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_name")
+
+    private String enterpriseProjectName;
+
     public CreateLogStreamParams withLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
         return this;
@@ -29,6 +34,22 @@ public class CreateLogStreamParams {
         this.logStreamName = logStreamName;
     }
 
+    public CreateLogStreamParams withEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+        return this;
+    }
+
+    /** 企业项目名称。
+     * 
+     * @return enterpriseProjectName */
+    public String getEnterpriseProjectName() {
+        return enterpriseProjectName;
+    }
+
+    public void setEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -38,12 +59,13 @@ public class CreateLogStreamParams {
             return false;
         }
         CreateLogStreamParams createLogStreamParams = (CreateLogStreamParams) o;
-        return Objects.equals(this.logStreamName, createLogStreamParams.logStreamName);
+        return Objects.equals(this.logStreamName, createLogStreamParams.logStreamName)
+            && Objects.equals(this.enterpriseProjectName, createLogStreamParams.enterpriseProjectName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logStreamName);
+        return Objects.hash(logStreamName, enterpriseProjectName);
     }
 
     @Override
@@ -51,6 +73,7 @@ public class CreateLogStreamParams {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateLogStreamParams {\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

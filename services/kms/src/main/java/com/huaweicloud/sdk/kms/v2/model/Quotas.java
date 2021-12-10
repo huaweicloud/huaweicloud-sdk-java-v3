@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Quotas */
+/** 配额详情。 */
 public class Quotas {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

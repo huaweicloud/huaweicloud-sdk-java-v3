@@ -51,7 +51,7 @@ public class ShowEventItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cookie")
 
-    private Object cookie;
+    private String cookie;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "headers")
@@ -231,7 +231,7 @@ public class ShowEventItems {
         this.action = action;
     }
 
-    public ShowEventItems withCookie(Object cookie) {
+    public ShowEventItems withCookie(String cookie) {
         this.cookie = cookie;
         return this;
     }
@@ -239,11 +239,11 @@ public class ShowEventItems {
     /** 攻击请求的cookie
      * 
      * @return cookie */
-    public Object getCookie() {
+    public String getCookie() {
         return cookie;
     }
 
-    public void setCookie(Object cookie) {
+    public void setCookie(String cookie) {
         this.cookie = cookie;
     }
 

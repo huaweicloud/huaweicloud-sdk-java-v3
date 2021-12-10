@@ -99,6 +99,42 @@ public class CodeCheckClient {
             hcClient);
     }
 
+    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+     *
+     * @param ListTaskRulesetRequest 请求对象
+     * @return ListTaskRulesetResponse */
+    public ListTaskRulesetResponse listTaskRuleset(ListTaskRulesetRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.listTaskRuleset);
+    }
+
+    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+     *
+     * @param ListTaskRulesetRequest 请求对象
+     * @return SyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse> */
+    public SyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse> listTaskRulesetInvoker(
+        ListTaskRulesetRequest request) {
+        return new SyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse>(request, CodeCheckMeta.listTaskRuleset,
+            hcClient);
+    }
+
+    /** 查看规则集的规则列表 根据项目ID、规则集ID等条件查询规则列表。
+     *
+     * @param ListTemplateRulesRequest 请求对象
+     * @return ListTemplateRulesResponse */
+    public ListTemplateRulesResponse listTemplateRules(ListTemplateRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.listTemplateRules);
+    }
+
+    /** 查看规则集的规则列表 根据项目ID、规则集ID等条件查询规则列表。
+     *
+     * @param ListTemplateRulesRequest 请求对象
+     * @return SyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse> */
+    public SyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse> listTemplateRulesInvoker(
+        ListTemplateRulesRequest request) {
+        return new SyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse>(request,
+            CodeCheckMeta.listTemplateRules, hcClient);
+    }
+
     /** 执行检查任务 执行检查任务。
      *
      * @param RunTaskRequest 请求对象
@@ -131,6 +167,24 @@ public class CodeCheckClient {
         ShowProgressDetailRequest request) {
         return new SyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse>(request,
             CodeCheckMeta.showProgressDetail, hcClient);
+    }
+
+    /** 查询cmertrics缺陷概要 根据检查任务ID查询cmertrics缺陷概要。
+     *
+     * @param ShowTaskCmetricsRequest 请求对象
+     * @return ShowTaskCmetricsResponse */
+    public ShowTaskCmetricsResponse showTaskCmetrics(ShowTaskCmetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskCmetrics);
+    }
+
+    /** 查询cmertrics缺陷概要 根据检查任务ID查询cmertrics缺陷概要。
+     *
+     * @param ShowTaskCmetricsRequest 请求对象
+     * @return SyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> */
+    public SyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> showTaskCmetricsInvoker(
+        ShowTaskCmetricsRequest request) {
+        return new SyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse>(request,
+            CodeCheckMeta.showTaskCmetrics, hcClient);
     }
 
     /** 查询缺陷详情 根据检查任务ID分页查询缺陷结果详情。

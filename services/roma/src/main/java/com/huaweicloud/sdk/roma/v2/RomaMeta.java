@@ -7234,6 +7234,34 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2 =
+        genForshowRestrictionOfInstanceV2();
+
+    private static HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> genForshowRestrictionOfInstanceV2() {
+        // basic
+        HttpRequestDef.Builder<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRestrictionOfInstanceV2Request.class,
+                    ShowRestrictionOfInstanceV2Response.class)
+                .withName("ShowRestrictionOfInstanceV2")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/restriction")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestrictionOfInstanceV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRuleRequest, ShowRuleResponse> showRule = genForshowRule();
 
     private static HttpRequestDef<ShowRuleRequest, ShowRuleResponse> genForshowRule() {

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 独享模式回源服务器配置 */
+/** 服务器配置 */
 public class CloudWafServer {
 
     /** 对外协议 */

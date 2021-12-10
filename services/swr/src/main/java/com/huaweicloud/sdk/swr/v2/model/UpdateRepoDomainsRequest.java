@@ -66,7 +66,7 @@ public class UpdateRepoDomainsRequest {
         return this;
     }
 
-    /** 共享账号
+    /** 共享帐号
      * 
      * @return accessDomain */
     public String getAccessDomain() {

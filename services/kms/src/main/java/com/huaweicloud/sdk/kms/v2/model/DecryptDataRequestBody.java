@@ -116,7 +116,7 @@ public class DecryptDataRequestBody {
         return this;
     }
 
-    /** 被加密数据密文。取值为加密数据结果中的cipher_text的值，满足正则匹配“^[0-9a-zA-Z+/=]{188,5648}$”。
+    /** 被加密数据密文。取值为加密数据结果中的cipher_text的值，满足正则匹配“^[0-9a-zA-Z+/=]{128,5648}$”。
      * 
      * @return cipherText */
     public String getCipherText() {

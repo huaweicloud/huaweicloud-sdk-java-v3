@@ -17,7 +17,7 @@ public class Event {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "starts_at")
 
-    private Object startsAt;
+    private Long startsAt;
 
     public Event withMetadata(Metadata metadata) {
         this.metadata = metadata;
@@ -33,7 +33,7 @@ public class Event {
         return this;
     }
 
-    /** 告警信息
+    /** Get metadata
      * 
      * @return metadata */
     public Metadata getMetadata() {
@@ -44,7 +44,7 @@ public class Event {
         this.metadata = metadata;
     }
 
-    public Event withStartsAt(Object startsAt) {
+    public Event withStartsAt(Long startsAt) {
         this.startsAt = startsAt;
         return this;
     }
@@ -52,11 +52,11 @@ public class Event {
     /** 告警产生时间(时间戳)
      * 
      * @return startsAt */
-    public Object getStartsAt() {
+    public Long getStartsAt() {
         return startsAt;
     }
 
-    public void setStartsAt(Object startsAt) {
+    public void setStartsAt(Long startsAt) {
         this.startsAt = startsAt;
     }
 

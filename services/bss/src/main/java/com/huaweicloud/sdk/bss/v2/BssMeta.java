@@ -1358,7 +1358,7 @@ public class BssMeta {
             }));
         builder.<ListFreeResourceInfosReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFreeResourceInfosReq.class),
             f -> f.withMarshaller(ListFreeResourceInfosRequest::getBody, (req, v) -> {
                 req.setBody(v);

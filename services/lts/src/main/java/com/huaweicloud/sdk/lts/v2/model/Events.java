@@ -22,12 +22,12 @@ public class Events {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arrives_at")
 
-    private Object arrivesAt;
+    private Long arrivesAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ends_at")
 
-    private Object endsAt;
+    private Long endsAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -37,12 +37,12 @@ public class Events {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "starts_at")
 
-    private Object startsAt;
+    private Long startsAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
-    private Object timeout;
+    private Long timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -63,7 +63,7 @@ public class Events {
         return this;
     }
 
-    /** 告警详情
+    /** Get annotations
      * 
      * @return annotations */
     public Annotations getAnnotations() {
@@ -88,7 +88,7 @@ public class Events {
         return this;
     }
 
-    /** 告警信息
+    /** Get metadata
      * 
      * @return metadata */
     public Metadata getMetadata() {
@@ -99,35 +99,35 @@ public class Events {
         this.metadata = metadata;
     }
 
-    public Events withArrivesAt(Object arrivesAt) {
+    public Events withArrivesAt(Long arrivesAt) {
         this.arrivesAt = arrivesAt;
         return this;
     }
 
-    /** 到达时间(时间戳)
+    /** 到达时间(时间戳) minimum: 13 maximum: 13
      * 
      * @return arrivesAt */
-    public Object getArrivesAt() {
+    public Long getArrivesAt() {
         return arrivesAt;
     }
 
-    public void setArrivesAt(Object arrivesAt) {
+    public void setArrivesAt(Long arrivesAt) {
         this.arrivesAt = arrivesAt;
     }
 
-    public Events withEndsAt(Object endsAt) {
+    public Events withEndsAt(Long endsAt) {
         this.endsAt = endsAt;
         return this;
     }
 
-    /** 告警清除时间(时间戳)
+    /** 告警清除时间(时间戳) minimum: 13 maximum: 13
      * 
      * @return endsAt */
-    public Object getEndsAt() {
+    public Long getEndsAt() {
         return endsAt;
     }
 
-    public void setEndsAt(Object endsAt) {
+    public void setEndsAt(Long endsAt) {
         this.endsAt = endsAt;
     }
 
@@ -147,23 +147,23 @@ public class Events {
         this.id = id;
     }
 
-    public Events withStartsAt(Object startsAt) {
+    public Events withStartsAt(Long startsAt) {
         this.startsAt = startsAt;
         return this;
     }
 
-    /** 告警产生时间(时间戳)
+    /** 告警产生时间(时间戳) minimum: 13 maximum: 13
      * 
      * @return startsAt */
-    public Object getStartsAt() {
+    public Long getStartsAt() {
         return startsAt;
     }
 
-    public void setStartsAt(Object startsAt) {
+    public void setStartsAt(Long startsAt) {
         this.startsAt = startsAt;
     }
 
-    public Events withTimeout(Object timeout) {
+    public Events withTimeout(Long timeout) {
         this.timeout = timeout;
         return this;
     }
@@ -171,11 +171,11 @@ public class Events {
     /** 告警自动清除时间(时间戳)
      * 
      * @return timeout */
-    public Object getTimeout() {
+    public Long getTimeout() {
         return timeout;
     }
 
-    public void setTimeout(Object timeout) {
+    public void setTimeout(Long timeout) {
         this.timeout = timeout;
     }
 

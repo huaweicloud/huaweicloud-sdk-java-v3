@@ -182,6 +182,106 @@ public class CodeCheckMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTaskRulesetRequest, ListTaskRulesetResponse> listTaskRuleset =
+        genForlistTaskRuleset();
+
+    private static HttpRequestDef<ListTaskRulesetRequest, ListTaskRulesetResponse> genForlistTaskRuleset() {
+        // basic
+        HttpRequestDef.Builder<ListTaskRulesetRequest, ListTaskRulesetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTaskRulesetRequest.class, ListTaskRulesetResponse.class)
+                .withName("ListTaskRuleset")
+                .withUri("/v2/{project_id}/tasks/{task_id}/rulesets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskRulesetRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskRulesetRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        builder.<List<ListTaskRulesetRes>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTaskRulesetResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ListTaskRulesetRes.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTemplateRulesRequest, ListTemplateRulesResponse> listTemplateRules =
+        genForlistTemplateRules();
+
+    private static HttpRequestDef<ListTemplateRulesRequest, ListTemplateRulesResponse> genForlistTemplateRules() {
+        // basic
+        HttpRequestDef.Builder<ListTemplateRulesRequest, ListTemplateRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTemplateRulesRequest.class, ListTemplateRulesResponse.class)
+                .withName("ListTemplateRules")
+                .withUri("/v2/{project_id}/ruleset/{ruleset_id}/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplateRulesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("ruleset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplateRulesRequest::getRulesetId, (req, v) -> {
+                req.setRulesetId(v);
+            }));
+        builder.<String>withRequestField("types",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplateRulesRequest::getTypes, (req, v) -> {
+                req.setTypes(v);
+            }));
+        builder.<String>withRequestField("languages",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplateRulesRequest::getLanguages, (req, v) -> {
+                req.setLanguages(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTemplateRulesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTemplateRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunTaskRequest, RunTaskResponse> runTask = genForrunTask();
 
     private static HttpRequestDef<RunTaskRequest, RunTaskResponse> genForrunTask() {
@@ -230,6 +330,38 @@ public class CodeCheckMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProgressDetailRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> showTaskCmetrics =
+        genForshowTaskCmetrics();
+
+    private static HttpRequestDef<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> genForshowTaskCmetrics() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskCmetricsRequest.class, ShowTaskCmetricsResponse.class)
+                .withName("ShowTaskCmetrics")
+                .withUri("/v2/{project_id}/tasks/{task_id}/metrics-summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskCmetricsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskCmetricsRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
 

@@ -108,7 +108,7 @@ public class SwrAsyncClient {
         return new AsyncInvoker<CreateRepoRequest, CreateRepoResponse>(request, SwrMeta.createRepo, hcClient);
     }
 
-    /** 创建共享账号 创建共享账号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
+    /** 创建共享帐号 创建共享帐号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
      *
      * @param CreateRepoDomainsRequest 请求对象
      * @return CompletableFuture<CreateRepoDomainsResponse> */
@@ -116,7 +116,7 @@ public class SwrAsyncClient {
         return hcClient.asyncInvokeHttp(request, SwrMeta.createRepoDomains);
     }
 
-    /** 创建共享账号 创建共享账号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
+    /** 创建共享帐号 创建共享帐号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
      *
      * @param CreateRepoDomainsRequest 请求对象
      * @return AsyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse> */
@@ -267,7 +267,7 @@ public class SwrAsyncClient {
         return new AsyncInvoker<DeleteRepoRequest, DeleteRepoResponse>(request, SwrMeta.deleteRepo, hcClient);
     }
 
-    /** 删除共享账号 删除共享账号
+    /** 删除共享帐号 删除共享帐号
      *
      * @param DeleteRepoDomainsRequest 请求对象
      * @return CompletableFuture<DeleteRepoDomainsResponse> */
@@ -275,7 +275,7 @@ public class SwrAsyncClient {
         return hcClient.asyncInvokeHttp(request, SwrMeta.deleteRepoDomains);
     }
 
-    /** 删除共享账号 删除共享账号
+    /** 删除共享帐号 删除共享帐号
      *
      * @param DeleteRepoDomainsRequest 请求对象
      * @return AsyncInvoker<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse> */
@@ -393,7 +393,23 @@ public class SwrAsyncClient {
             hcClient);
     }
 
-    /** 获取共享账号列表 获取共享账号列表
+    /** 获取配额信息 获取配额信息
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return CompletableFuture<ListQuotasResponse> */
+    public CompletableFuture<ListQuotasResponse> listQuotasAsync(ListQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.listQuotas);
+    }
+
+    /** 获取配额信息 获取配额信息
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse> */
+    public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
+        return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, SwrMeta.listQuotas, hcClient);
+    }
+
+    /** 获取共享帐号列表 获取共享帐号列表
      *
      * @param ListRepoDomainsRequest 请求对象
      * @return CompletableFuture<ListRepoDomainsResponse> */
@@ -401,7 +417,7 @@ public class SwrAsyncClient {
         return hcClient.asyncInvokeHttp(request, SwrMeta.listRepoDomains);
     }
 
-    /** 获取共享账号列表 获取共享账号列表
+    /** 获取共享帐号列表 获取共享帐号列表
      *
      * @param ListRepoDomainsRequest 请求对象
      * @return AsyncInvoker<ListRepoDomainsRequest, ListRepoDomainsResponse> */
@@ -411,7 +427,7 @@ public class SwrAsyncClient {
             hcClient);
     }
 
-    /** 查询镜像列表 查询镜像列表
+    /** 查询镜像仓库列表 查询镜像仓库列表
      *
      * @param ListReposDetailsRequest 请求对象
      * @return CompletableFuture<ListReposDetailsResponse> */
@@ -419,7 +435,7 @@ public class SwrAsyncClient {
         return hcClient.asyncInvokeHttp(request, SwrMeta.listReposDetails);
     }
 
-    /** 查询镜像列表 查询镜像列表
+    /** 查询镜像仓库列表 查询镜像仓库列表
      *
      * @param ListReposDetailsRequest 请求对象
      * @return AsyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse> */
@@ -521,7 +537,7 @@ public class SwrAsyncClient {
             SwrMeta.listTriggersDetails, hcClient);
     }
 
-    /** 判断共享账号是否存在 判断共享租户是否存在
+    /** 判断共享帐号是否存在 判断共享租户是否存在
      *
      * @param ShowAccessDomainRequest 请求对象
      * @return CompletableFuture<ShowAccessDomainResponse> */
@@ -529,7 +545,7 @@ public class SwrAsyncClient {
         return hcClient.asyncInvokeHttp(request, SwrMeta.showAccessDomain);
     }
 
-    /** 判断共享账号是否存在 判断共享租户是否存在
+    /** 判断共享帐号是否存在 判断共享租户是否存在
      *
      * @param ShowAccessDomainRequest 请求对象
      * @return AsyncInvoker<ShowAccessDomainRequest, ShowAccessDomainResponse> */
@@ -574,7 +590,7 @@ public class SwrAsyncClient {
             hcClient);
     }
 
-    /** 查询镜像概要信息 查询镜像概要信息
+    /** 查询镜像仓库概要信息 查询镜像仓库概要信息
      *
      * @param ShowRepositoryRequest 请求对象
      * @return CompletableFuture<ShowRepositoryResponse> */
@@ -582,7 +598,7 @@ public class SwrAsyncClient {
         return hcClient.asyncInvokeHttp(request, SwrMeta.showRepository);
     }
 
-    /** 查询镜像概要信息 查询镜像概要信息
+    /** 查询镜像仓库概要信息 查询镜像仓库概要信息
      *
      * @param ShowRepositoryRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryRequest, ShowRepositoryResponse> */
@@ -694,7 +710,7 @@ public class SwrAsyncClient {
         return new AsyncInvoker<UpdateRepoRequest, UpdateRepoResponse>(request, SwrMeta.updateRepo, hcClient);
     }
 
-    /** 更新共享账号 更新共享账号
+    /** 更新共享帐号 更新共享帐号
      *
      * @param UpdateRepoDomainsRequest 请求对象
      * @return CompletableFuture<UpdateRepoDomainsResponse> */
@@ -702,7 +718,7 @@ public class SwrAsyncClient {
         return hcClient.asyncInvokeHttp(request, SwrMeta.updateRepoDomains);
     }
 
-    /** 更新共享账号 更新共享账号
+    /** 更新共享帐号 更新共享帐号
      *
      * @param UpdateRepoDomainsRequest 请求对象
      * @return AsyncInvoker<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse> */

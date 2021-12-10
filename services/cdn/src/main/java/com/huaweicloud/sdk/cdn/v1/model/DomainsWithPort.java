@@ -547,7 +547,7 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 当用户开启企业项目功能时返回该参数，表示域名资源所属企业项目ID。
+    /** 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
