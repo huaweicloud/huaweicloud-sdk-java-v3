@@ -14,11 +14,6 @@ import java.util.Objects;
 public class UpdateTopicAccessPolicyPoliciesObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "owner")
-
-    private Boolean owner;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
@@ -109,25 +104,14 @@ public class UpdateTopicAccessPolicyPoliciesObject {
     private AccessPolicyEnum accessPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner")
+
+    private Boolean owner;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
     private String tag;
-
-    public UpdateTopicAccessPolicyPoliciesObject withOwner(Boolean owner) {
-        this.owner = owner;
-        return this;
-    }
-
-    /** 是否为创建topic时所选择的应用。
-     * 
-     * @return owner */
-    public Boolean getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Boolean owner) {
-        this.owner = owner;
-    }
 
     public UpdateTopicAccessPolicyPoliciesObject withAppId(String appId) {
         this.appId = appId;
@@ -177,6 +161,22 @@ public class UpdateTopicAccessPolicyPoliciesObject {
         this.accessPolicy = accessPolicy;
     }
 
+    public UpdateTopicAccessPolicyPoliciesObject withOwner(Boolean owner) {
+        this.owner = owner;
+        return this;
+    }
+
+    /** 是否为创建topic时所选择的应用。 默认为false。
+     * 
+     * @return owner */
+    public Boolean getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Boolean owner) {
+        this.owner = owner;
+    }
+
     public UpdateTopicAccessPolicyPoliciesObject withTag(String tag) {
         this.tag = tag;
         return this;
@@ -203,26 +203,26 @@ public class UpdateTopicAccessPolicyPoliciesObject {
         }
         UpdateTopicAccessPolicyPoliciesObject updateTopicAccessPolicyPoliciesObject =
             (UpdateTopicAccessPolicyPoliciesObject) o;
-        return Objects.equals(this.owner, updateTopicAccessPolicyPoliciesObject.owner)
-            && Objects.equals(this.appId, updateTopicAccessPolicyPoliciesObject.appId)
+        return Objects.equals(this.appId, updateTopicAccessPolicyPoliciesObject.appId)
             && Objects.equals(this.appName, updateTopicAccessPolicyPoliciesObject.appName)
             && Objects.equals(this.accessPolicy, updateTopicAccessPolicyPoliciesObject.accessPolicy)
+            && Objects.equals(this.owner, updateTopicAccessPolicyPoliciesObject.owner)
             && Objects.equals(this.tag, updateTopicAccessPolicyPoliciesObject.tag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(owner, appId, appName, accessPolicy, tag);
+        return Objects.hash(appId, appName, accessPolicy, owner, tag);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateTopicAccessPolicyPoliciesObject {\n");
-        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    accessPolicy: ").append(toIndentedString(accessPolicy)).append("\n");
+        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");
         return sb.toString();

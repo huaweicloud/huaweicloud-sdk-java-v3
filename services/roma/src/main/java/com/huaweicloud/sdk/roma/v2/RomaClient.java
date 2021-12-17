@@ -251,6 +251,22 @@ public class RomaClient {
         return new SyncInvoker<CountDevicesRequest, CountDevicesResponse>(request, RomaMeta.countDevices, hcClient);
     }
 
+    /** 统计不同类型不同状态任务数量 统计不同类型不同状态任务数量
+     *
+     * @param CountTasksRequest 请求对象
+     * @return CountTasksResponse */
+    public CountTasksResponse countTasks(CountTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.countTasks);
+    }
+
+    /** 统计不同类型不同状态任务数量 统计不同类型不同状态任务数量
+     *
+     * @param CountTasksRequest 请求对象
+     * @return SyncInvoker<CountTasksRequest, CountTasksResponse> */
+    public SyncInvoker<CountTasksRequest, CountTasksResponse> countTasksInvoker(CountTasksRequest request) {
+        return new SyncInvoker<CountTasksRequest, CountTasksResponse>(request, RomaMeta.countTasks, hcClient);
+    }
+
     /** 自动生成APP Code 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
      *
      * @param CreateAppCodeAutoV2Request 请求对象
@@ -581,6 +597,42 @@ public class RomaClient {
         CreateMqsInstanceTopicRequest request) {
         return new SyncInvoker<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse>(request,
             RomaMeta.createMqsInstanceTopic, hcClient);
+    }
+
+    /** 创建组合任务映射 创建组合任务映射
+     *
+     * @param CreateMultiTaskMappingsRequest 请求对象
+     * @return CreateMultiTaskMappingsResponse */
+    public CreateMultiTaskMappingsResponse createMultiTaskMappings(CreateMultiTaskMappingsRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createMultiTaskMappings);
+    }
+
+    /** 创建组合任务映射 创建组合任务映射
+     *
+     * @param CreateMultiTaskMappingsRequest 请求对象
+     * @return SyncInvoker<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> */
+    public SyncInvoker<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> createMultiTaskMappingsInvoker(
+        CreateMultiTaskMappingsRequest request) {
+        return new SyncInvoker<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse>(request,
+            RomaMeta.createMultiTaskMappings, hcClient);
+    }
+
+    /** 创建组合任务 创建组合任务
+     *
+     * @param CreateMultiTasksRequest 请求对象
+     * @return CreateMultiTasksResponse */
+    public CreateMultiTasksResponse createMultiTasks(CreateMultiTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createMultiTasks);
+    }
+
+    /** 创建组合任务 创建组合任务
+     *
+     * @param CreateMultiTasksRequest 请求对象
+     * @return SyncInvoker<CreateMultiTasksRequest, CreateMultiTasksResponse> */
+    public SyncInvoker<CreateMultiTasksRequest, CreateMultiTasksResponse> createMultiTasksInvoker(
+        CreateMultiTasksRequest request) {
+        return new SyncInvoker<CreateMultiTasksRequest, CreateMultiTasksResponse>(request, RomaMeta.createMultiTasks,
+            hcClient);
     }
 
     /** 创建订阅管理 该接口用于创建指定实例下对应的应用下的设备操作，订阅到指定的topic
@@ -1120,6 +1172,24 @@ public class RomaClient {
             RomaMeta.deleteMqsInstanceTopic, hcClient);
     }
 
+    /** 删除指定任务映射 通过映射ID删除指定任务映射
+     *
+     * @param DeleteMultiTaskMappingRequest 请求对象
+     * @return DeleteMultiTaskMappingResponse */
+    public DeleteMultiTaskMappingResponse deleteMultiTaskMapping(DeleteMultiTaskMappingRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.deleteMultiTaskMapping);
+    }
+
+    /** 删除指定任务映射 通过映射ID删除指定任务映射
+     *
+     * @param DeleteMultiTaskMappingRequest 请求对象
+     * @return SyncInvoker<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> */
+    public SyncInvoker<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> deleteMultiTaskMappingInvoker(
+        DeleteMultiTaskMappingRequest request) {
+        return new SyncInvoker<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse>(request,
+            RomaMeta.deleteMultiTaskMapping, hcClient);
+    }
+
     /** 删除订阅管理 该接口用于删除指定订阅管理
      *
      * @param DeleteNotificationRequest 请求对象
@@ -1489,6 +1559,24 @@ public class RomaClient {
         ImportMqsInstanceTopicRequest request) {
         return new SyncInvoker<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse>(request,
             RomaMeta.importMqsInstanceTopic, hcClient);
+    }
+
+    /** 组合任务初始化 初始化组合任务，分配任务ID，初始化映射等
+     *
+     * @param InstallMultiTasksRequest 请求对象
+     * @return InstallMultiTasksResponse */
+    public InstallMultiTasksResponse installMultiTasks(InstallMultiTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.installMultiTasks);
+    }
+
+    /** 组合任务初始化 初始化组合任务，分配任务ID，初始化映射等
+     *
+     * @param InstallMultiTasksRequest 请求对象
+     * @return SyncInvoker<InstallMultiTasksRequest, InstallMultiTasksResponse> */
+    public SyncInvoker<InstallMultiTasksRequest, InstallMultiTasksResponse> installMultiTasksInvoker(
+        InstallMultiTasksRequest request) {
+        return new SyncInvoker<InstallMultiTasksRequest, InstallMultiTasksResponse>(request, RomaMeta.installMultiTasks,
+            hcClient);
     }
 
     /** 查看签名密钥绑定的API列表 查询某个签名密钥上已经绑定的API列表。
@@ -2409,6 +2497,24 @@ public class RomaClient {
         return new SyncInvoker<ResetMessagesRequest, ResetMessagesResponse>(request, RomaMeta.resetMessages, hcClient);
     }
 
+    /** 重置组合任务进度 重置组合任务进度
+     *
+     * @param ResetMultiTaskOffsetRequest 请求对象
+     * @return ResetMultiTaskOffsetResponse */
+    public ResetMultiTaskOffsetResponse resetMultiTaskOffset(ResetMultiTaskOffsetRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.resetMultiTaskOffset);
+    }
+
+    /** 重置组合任务进度 重置组合任务进度
+     *
+     * @param ResetMultiTaskOffsetRequest 请求对象
+     * @return SyncInvoker<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> */
+    public SyncInvoker<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> resetMultiTaskOffsetInvoker(
+        ResetMultiTaskOffsetRequest request) {
+        return new SyncInvoker<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse>(request,
+            RomaMeta.resetMultiTaskOffset, hcClient);
+    }
+
     /** 重置产品鉴权信息 重置产品鉴权信息
      *
      * @param ResetProductAuthenticationRequest 请求对象
@@ -2818,7 +2924,7 @@ public class RomaClient {
             hcClient);
     }
 
-    /** 查询消息 查询消息。
+    /** 查询消息 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      *
      * @param ShowMqsInstanceMessagesRequest 请求对象
      * @return ShowMqsInstanceMessagesResponse */
@@ -2826,7 +2932,7 @@ public class RomaClient {
         return hcClient.syncInvokeHttp(request, RomaMeta.showMqsInstanceMessages);
     }
 
-    /** 查询消息 查询消息。
+    /** 查询消息 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      *
      * @param ShowMqsInstanceMessagesRequest 请求对象
      * @return SyncInvoker<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse> */
@@ -3321,6 +3427,24 @@ public class RomaClient {
         UpdateMqsInstanceTopicRequest request) {
         return new SyncInvoker<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse>(request,
             RomaMeta.updateMqsInstanceTopic, hcClient);
+    }
+
+    /** 修改组合任务 修改组合任务
+     *
+     * @param UpdateMultiTasksRequest 请求对象
+     * @return UpdateMultiTasksResponse */
+    public UpdateMultiTasksResponse updateMultiTasks(UpdateMultiTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateMultiTasks);
+    }
+
+    /** 修改组合任务 修改组合任务
+     *
+     * @param UpdateMultiTasksRequest 请求对象
+     * @return SyncInvoker<UpdateMultiTasksRequest, UpdateMultiTasksResponse> */
+    public SyncInvoker<UpdateMultiTasksRequest, UpdateMultiTasksResponse> updateMultiTasksInvoker(
+        UpdateMultiTasksRequest request) {
+        return new SyncInvoker<UpdateMultiTasksRequest, UpdateMultiTasksResponse>(request, RomaMeta.updateMultiTasks,
+            hcClient);
     }
 
     /** 修改订阅管理 该接口用于修改指定的订阅管理

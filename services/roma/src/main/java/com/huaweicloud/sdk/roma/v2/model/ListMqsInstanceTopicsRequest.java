@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** Request Object */
@@ -22,6 +27,86 @@ public class ListMqsInstanceTopicsRequest {
     @JsonProperty(value = "name")
 
     private String name;
+
+    /** 权限类型。 - all：发布+订阅 - pub：发布 - sub：订阅 */
+    public static final class AccessPolicyEnum {
+
+        /** Enum ALL for value: "all" */
+        public static final AccessPolicyEnum ALL = new AccessPolicyEnum("all");
+
+        /** Enum PUB for value: "pub" */
+        public static final AccessPolicyEnum PUB = new AccessPolicyEnum("pub");
+
+        /** Enum SUB for value: "sub" */
+        public static final AccessPolicyEnum SUB = new AccessPolicyEnum("sub");
+
+        private static final Map<String, AccessPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AccessPolicyEnum> createStaticFields() {
+            Map<String, AccessPolicyEnum> map = new HashMap<>();
+            map.put("all", ALL);
+            map.put("pub", PUB);
+            map.put("sub", SUB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AccessPolicyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AccessPolicyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            AccessPolicyEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new AccessPolicyEnum(value);
+            }
+            return result;
+        }
+
+        public static AccessPolicyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            AccessPolicyEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AccessPolicyEnum) {
+                return this.value.equals(((AccessPolicyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_policy")
+
+    private AccessPolicyEnum accessPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -81,6 +166,22 @@ public class ListMqsInstanceTopicsRequest {
         this.name = name;
     }
 
+    public ListMqsInstanceTopicsRequest withAccessPolicy(AccessPolicyEnum accessPolicy) {
+        this.accessPolicy = accessPolicy;
+        return this;
+    }
+
+    /** 权限类型。 - all：发布+订阅 - pub：发布 - sub：订阅
+     * 
+     * @return accessPolicy */
+    public AccessPolicyEnum getAccessPolicy() {
+        return accessPolicy;
+    }
+
+    public void setAccessPolicy(AccessPolicyEnum accessPolicy) {
+        this.accessPolicy = accessPolicy;
+    }
+
     public ListMqsInstanceTopicsRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -125,13 +226,14 @@ public class ListMqsInstanceTopicsRequest {
         return Objects.equals(this.instanceId, listMqsInstanceTopicsRequest.instanceId)
             && Objects.equals(this.appName, listMqsInstanceTopicsRequest.appName)
             && Objects.equals(this.name, listMqsInstanceTopicsRequest.name)
+            && Objects.equals(this.accessPolicy, listMqsInstanceTopicsRequest.accessPolicy)
             && Objects.equals(this.limit, listMqsInstanceTopicsRequest.limit)
             && Objects.equals(this.offset, listMqsInstanceTopicsRequest.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, appName, name, limit, offset);
+        return Objects.hash(instanceId, appName, name, accessPolicy, limit, offset);
     }
 
     @Override
@@ -141,6 +243,7 @@ public class ListMqsInstanceTopicsRequest {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    accessPolicy: ").append(toIndentedString(accessPolicy)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

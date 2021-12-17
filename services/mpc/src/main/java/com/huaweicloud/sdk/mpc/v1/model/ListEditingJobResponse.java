@@ -13,40 +13,61 @@ import java.util.function.Consumer;
 public class ListEditingJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "total")
 
-    private List<QueryEditingJobRsp> body = null;
+    private Integer total;
 
-    public ListEditingJobResponse withBody(List<QueryEditingJobRsp> body) {
-        this.body = body;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "jobs")
+
+    private List<EditingJob> jobs = null;
+
+    public ListEditingJobResponse withTotal(Integer total) {
+        this.total = total;
         return this;
     }
 
-    public ListEditingJobResponse addBodyItem(QueryEditingJobRsp bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        this.body.add(bodyItem);
-        return this;
-    }
-
-    public ListEditingJobResponse withBody(Consumer<List<QueryEditingJobRsp>> bodySetter) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        bodySetter.accept(this.body);
-        return this;
-    }
-
-    /** Get body
+    /** 任务总数 minimum: 0 maximum: 2147483647
      * 
-     * @return body */
-    public List<QueryEditingJobRsp> getBody() {
-        return body;
+     * @return total */
+    public Integer getTotal() {
+        return total;
     }
 
-    public void setBody(List<QueryEditingJobRsp> body) {
-        this.body = body;
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public ListEditingJobResponse withJobs(List<EditingJob> jobs) {
+        this.jobs = jobs;
+        return this;
+    }
+
+    public ListEditingJobResponse addJobsItem(EditingJob jobsItem) {
+        if (this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
+        this.jobs.add(jobsItem);
+        return this;
+    }
+
+    public ListEditingJobResponse withJobs(Consumer<List<EditingJob>> jobsSetter) {
+        if (this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
+        jobsSetter.accept(this.jobs);
+        return this;
+    }
+
+    /** 任务列表
+     * 
+     * @return jobs */
+    public List<EditingJob> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(List<EditingJob> jobs) {
+        this.jobs = jobs;
     }
 
     @Override
@@ -58,19 +79,21 @@ public class ListEditingJobResponse extends SdkResponse {
             return false;
         }
         ListEditingJobResponse listEditingJobResponse = (ListEditingJobResponse) o;
-        return Objects.equals(this.body, listEditingJobResponse.body);
+        return Objects.equals(this.total, listEditingJobResponse.total)
+            && Objects.equals(this.jobs, listEditingJobResponse.jobs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(total, jobs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEditingJobResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

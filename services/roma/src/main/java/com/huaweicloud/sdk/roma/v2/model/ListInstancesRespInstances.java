@@ -22,6 +22,11 @@ public class ListInstancesRespInstances {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
     private String engine;
@@ -125,6 +130,11 @@ public class ListInstancesRespInstances {
     @JsonProperty(value = "enable_publicip")
 
     private Boolean enablePublicip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicip_address")
+
+    private String publicipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "management_connect_address")
@@ -458,6 +468,46 @@ public class ListInstancesRespInstances {
 
     private String cesVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mqs_connector_enable")
+
+    private Boolean mqsConnectorEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_num")
+
+    private Integer nodeNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_boundwidth")
+
+    private Integer publicBoundwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_access_enabled")
+
+    private String publicAccessEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plugin_enable")
+
+    private Boolean pluginEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_enable")
+
+    private Boolean agentEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_user")
+
+    private String accessUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connect_dn")
+
+    private String connectDn;
+
     public ListInstancesRespInstances withName(String name) {
         this.name = name;
         return this;
@@ -472,6 +522,22 @@ public class ListInstancesRespInstances {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ListInstancesRespInstances withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /** 描述信息。
+     * 
+     * @return description */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public ListInstancesRespInstances withEngine(String engine) {
@@ -543,7 +609,7 @@ public class ListInstancesRespInstances {
         return this;
     }
 
-    /** Kafka实例的最大topic数。
+    /** 最大分区数。不同规格的ROMA Connect实例的最大分区数不相同。
      * 
      * @return partitionNum */
     public Integer getPartitionNum() {
@@ -658,7 +724,7 @@ public class ListInstancesRespInstances {
         return this;
     }
 
-    /** 付费模式，1表示按需计费，0表示包年/包月计费。
+    /** 付费模式，1表示按需计费，0表示包周期计费。
      * 
      * @return chargingMode */
     public Integer getChargingMode() {
@@ -811,6 +877,22 @@ public class ListInstancesRespInstances {
 
     public void setEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
+    }
+
+    public ListInstancesRespInstances withPublicipAddress(String publicipAddress) {
+        this.publicipAddress = publicipAddress;
+        return this;
+    }
+
+    /** 公网连接地址。
+     * 
+     * @return publicipAddress */
+    public String getPublicipAddress() {
+        return publicipAddress;
+    }
+
+    public void setPublicipAddress(String publicipAddress) {
+        this.publicipAddress = publicipAddress;
     }
 
     public ListInstancesRespInstances withManagementConnectAddress(String managementConnectAddress) {
@@ -1453,6 +1535,134 @@ public class ListInstancesRespInstances {
         this.cesVersion = cesVersion;
     }
 
+    public ListInstancesRespInstances withMqsConnectorEnable(Boolean mqsConnectorEnable) {
+        this.mqsConnectorEnable = mqsConnectorEnable;
+        return this;
+    }
+
+    /** mqs connector开关。
+     * 
+     * @return mqsConnectorEnable */
+    public Boolean getMqsConnectorEnable() {
+        return mqsConnectorEnable;
+    }
+
+    public void setMqsConnectorEnable(Boolean mqsConnectorEnable) {
+        this.mqsConnectorEnable = mqsConnectorEnable;
+    }
+
+    public ListInstancesRespInstances withNodeNum(Integer nodeNum) {
+        this.nodeNum = nodeNum;
+        return this;
+    }
+
+    /** 节点数量。
+     * 
+     * @return nodeNum */
+    public Integer getNodeNum() {
+        return nodeNum;
+    }
+
+    public void setNodeNum(Integer nodeNum) {
+        this.nodeNum = nodeNum;
+    }
+
+    public ListInstancesRespInstances withPublicBoundwidth(Integer publicBoundwidth) {
+        this.publicBoundwidth = publicBoundwidth;
+        return this;
+    }
+
+    /** 公网访问带宽。
+     * 
+     * @return publicBoundwidth */
+    public Integer getPublicBoundwidth() {
+        return publicBoundwidth;
+    }
+
+    public void setPublicBoundwidth(Integer publicBoundwidth) {
+        this.publicBoundwidth = publicBoundwidth;
+    }
+
+    public ListInstancesRespInstances withPublicAccessEnabled(String publicAccessEnabled) {
+        this.publicAccessEnabled = publicAccessEnabled;
+        return this;
+    }
+
+    /** 是否开启公网访问。用于区分何时开启的公网访问。
+     * 
+     * @return publicAccessEnabled */
+    public String getPublicAccessEnabled() {
+        return publicAccessEnabled;
+    }
+
+    public void setPublicAccessEnabled(String publicAccessEnabled) {
+        this.publicAccessEnabled = publicAccessEnabled;
+    }
+
+    public ListInstancesRespInstances withPluginEnable(Boolean pluginEnable) {
+        this.pluginEnable = pluginEnable;
+        return this;
+    }
+
+    /** 是否开启插件功能。
+     * 
+     * @return pluginEnable */
+    public Boolean getPluginEnable() {
+        return pluginEnable;
+    }
+
+    public void setPluginEnable(Boolean pluginEnable) {
+        this.pluginEnable = pluginEnable;
+    }
+
+    public ListInstancesRespInstances withAgentEnable(Boolean agentEnable) {
+        this.agentEnable = agentEnable;
+        return this;
+    }
+
+    /** 是否开启代理。
+     * 
+     * @return agentEnable */
+    public Boolean getAgentEnable() {
+        return agentEnable;
+    }
+
+    public void setAgentEnable(Boolean agentEnable) {
+        this.agentEnable = agentEnable;
+    }
+
+    public ListInstancesRespInstances withAccessUser(String accessUser) {
+        this.accessUser = accessUser;
+        return this;
+    }
+
+    /** 认证用户名。
+     * 
+     * @return accessUser */
+    public String getAccessUser() {
+        return accessUser;
+    }
+
+    public void setAccessUser(String accessUser) {
+        this.accessUser = accessUser;
+    }
+
+    public ListInstancesRespInstances withConnectDn(String connectDn) {
+        this.connectDn = connectDn;
+        return this;
+    }
+
+    /** 实例连接地址。
+     * 
+     * @return connectDn */
+    public String getConnectDn() {
+        return connectDn;
+    }
+
+    public void setConnectDn(String connectDn) {
+        this.connectDn = connectDn;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1463,6 +1673,7 @@ public class ListInstancesRespInstances {
         }
         ListInstancesRespInstances listInstancesRespInstances = (ListInstancesRespInstances) o;
         return Objects.equals(this.name, listInstancesRespInstances.name)
+            && Objects.equals(this.description, listInstancesRespInstances.description)
             && Objects.equals(this.engine, listInstancesRespInstances.engine)
             && Objects.equals(this.engineVersion, listInstancesRespInstances.engineVersion)
             && Objects.equals(this.specification, listInstancesRespInstances.specification)
@@ -1484,6 +1695,7 @@ public class ListInstancesRespInstances {
             && Objects.equals(this.maintainBegin, listInstancesRespInstances.maintainBegin)
             && Objects.equals(this.maintainEnd, listInstancesRespInstances.maintainEnd)
             && Objects.equals(this.enablePublicip, listInstancesRespInstances.enablePublicip)
+            && Objects.equals(this.publicipAddress, listInstancesRespInstances.publicipAddress)
             && Objects.equals(this.managementConnectAddress, listInstancesRespInstances.managementConnectAddress)
             && Objects.equals(this.sslEnable, listInstancesRespInstances.sslEnable)
             && Objects.equals(this.enterpriseProjectId, listInstancesRespInstances.enterpriseProjectId)
@@ -1521,12 +1733,21 @@ public class ListInstancesRespInstances {
             && Objects.equals(this.podConnectAddress, listInstancesRespInstances.podConnectAddress)
             && Objects.equals(this.diskEncrypted, listInstancesRespInstances.diskEncrypted)
             && Objects.equals(this.kafkaPrivateConnectAddress, listInstancesRespInstances.kafkaPrivateConnectAddress)
-            && Objects.equals(this.cesVersion, listInstancesRespInstances.cesVersion);
+            && Objects.equals(this.cesVersion, listInstancesRespInstances.cesVersion)
+            && Objects.equals(this.mqsConnectorEnable, listInstancesRespInstances.mqsConnectorEnable)
+            && Objects.equals(this.nodeNum, listInstancesRespInstances.nodeNum)
+            && Objects.equals(this.publicBoundwidth, listInstancesRespInstances.publicBoundwidth)
+            && Objects.equals(this.publicAccessEnabled, listInstancesRespInstances.publicAccessEnabled)
+            && Objects.equals(this.pluginEnable, listInstancesRespInstances.pluginEnable)
+            && Objects.equals(this.agentEnable, listInstancesRespInstances.agentEnable)
+            && Objects.equals(this.accessUser, listInstancesRespInstances.accessUser)
+            && Objects.equals(this.connectDn, listInstancesRespInstances.connectDn);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name,
+            description,
             engine,
             engineVersion,
             specification,
@@ -1548,6 +1769,7 @@ public class ListInstancesRespInstances {
             maintainBegin,
             maintainEnd,
             enablePublicip,
+            publicipAddress,
             managementConnectAddress,
             sslEnable,
             enterpriseProjectId,
@@ -1585,7 +1807,15 @@ public class ListInstancesRespInstances {
             podConnectAddress,
             diskEncrypted,
             kafkaPrivateConnectAddress,
-            cesVersion);
+            cesVersion,
+            mqsConnectorEnable,
+            nodeNum,
+            publicBoundwidth,
+            publicAccessEnabled,
+            pluginEnable,
+            agentEnable,
+            accessUser,
+            connectDn);
     }
 
     @Override
@@ -1593,6 +1823,7 @@ public class ListInstancesRespInstances {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstancesRespInstances {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    specification: ").append(toIndentedString(specification)).append("\n");
@@ -1614,6 +1845,7 @@ public class ListInstancesRespInstances {
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
+        sb.append("    publicipAddress: ").append(toIndentedString(publicipAddress)).append("\n");
         sb.append("    managementConnectAddress: ").append(toIndentedString(managementConnectAddress)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
@@ -1652,6 +1884,14 @@ public class ListInstancesRespInstances {
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
+        sb.append("    mqsConnectorEnable: ").append(toIndentedString(mqsConnectorEnable)).append("\n");
+        sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
+        sb.append("    publicBoundwidth: ").append(toIndentedString(publicBoundwidth)).append("\n");
+        sb.append("    publicAccessEnabled: ").append(toIndentedString(publicAccessEnabled)).append("\n");
+        sb.append("    pluginEnable: ").append(toIndentedString(pluginEnable)).append("\n");
+        sb.append("    agentEnable: ").append(toIndentedString(agentEnable)).append("\n");
+        sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
+        sb.append("    connectDn: ").append(toIndentedString(connectDn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

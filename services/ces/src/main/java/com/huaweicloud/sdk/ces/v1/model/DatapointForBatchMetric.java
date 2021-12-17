@@ -33,7 +33,7 @@ public class DatapointForBatchMetric {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variance")
 
-    private String variance;
+    private Double variance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
@@ -104,7 +104,7 @@ public class DatapointForBatchMetric {
         this.sum = sum;
     }
 
-    public DatapointForBatchMetric withVariance(String variance) {
+    public DatapointForBatchMetric withVariance(Double variance) {
         this.variance = variance;
         return this;
     }
@@ -112,11 +112,11 @@ public class DatapointForBatchMetric {
     /** 聚合周期内指标数据的方差。
      * 
      * @return variance */
-    public String getVariance() {
+    public Double getVariance() {
         return variance;
     }
 
-    public void setVariance(String variance) {
+    public void setVariance(Double variance) {
         this.variance = variance;
     }
 

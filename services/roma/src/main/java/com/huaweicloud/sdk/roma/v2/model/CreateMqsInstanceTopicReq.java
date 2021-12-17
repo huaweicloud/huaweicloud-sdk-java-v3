@@ -180,7 +180,7 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** topic分区数，设置消费的并发数。取值范围：1-50。
+    /** topic分区数，设置消费的并发数。 取值范围：1-50。 默认值：3。
      * 
      * @return partition */
     public Integer getPartition() {
@@ -196,7 +196,7 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 副本数，配置数据的可靠性。取值范围：1-3。
+    /** 副本数，配置数据的可靠性。 取值范围：1-3。 默认值：3。 > 体验版实例的副本数只能为1。
      * 
      * @return replication */
     public Integer getReplication() {

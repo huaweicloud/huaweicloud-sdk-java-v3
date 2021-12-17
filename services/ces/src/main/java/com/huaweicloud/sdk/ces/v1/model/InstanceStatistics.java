@@ -21,7 +21,7 @@ public class InstanceStatistics {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type_statistics")
 
-    private String typeStatistics;
+    private Integer typeStatistics;
 
     public InstanceStatistics withUnhealth(Integer unhealth) {
         this.unhealth = unhealth;
@@ -55,7 +55,7 @@ public class InstanceStatistics {
         this.total = total;
     }
 
-    public InstanceStatistics withTypeStatistics(String typeStatistics) {
+    public InstanceStatistics withTypeStatistics(Integer typeStatistics) {
         this.typeStatistics = typeStatistics;
         return this;
     }
@@ -63,11 +63,11 @@ public class InstanceStatistics {
     /** 该资源分组中选择的资源类型个数，如资源分组添加了弹性云服务、弹性公网IP和带宽则值为2。
      * 
      * @return typeStatistics */
-    public String getTypeStatistics() {
+    public Integer getTypeStatistics() {
         return typeStatistics;
     }
 
-    public void setTypeStatistics(String typeStatistics) {
+    public void setTypeStatistics(Integer typeStatistics) {
         this.typeStatistics = typeStatistics;
     }
 

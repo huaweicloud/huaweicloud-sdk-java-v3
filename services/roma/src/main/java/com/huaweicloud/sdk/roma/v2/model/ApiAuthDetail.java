@@ -242,6 +242,16 @@ public class ApiAuthDetail {
     private String accessTokenUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_id")
+
+    private String clientId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_secret")
+
+    private String clientSecret;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
     private String scope;
@@ -401,6 +411,38 @@ public class ApiAuthDetail {
         this.accessTokenUrl = accessTokenUrl;
     }
 
+    public ApiAuthDetail withClientId(String clientId) {
+        this.clientId = clientId;
+        return this;
+    }
+
+    /** 访问API服务的客户端标识 - 认证方式为Oauth2时填写
+     * 
+     * @return clientId */
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    public ApiAuthDetail withClientSecret(String clientSecret) {
+        this.clientSecret = clientSecret;
+        return this;
+    }
+
+    /** 访问API服务的客户端密钥 - 认证方式为Oauth2时填写
+     * 
+     * @return clientSecret */
+    public String getClientSecret() {
+        return clientSecret;
+    }
+
+    public void setClientSecret(String clientSecret) {
+        this.clientSecret = clientSecret;
+    }
+
     public ApiAuthDetail withScope(String scope) {
         this.scope = scope;
         return this;
@@ -466,6 +508,8 @@ public class ApiAuthDetail {
             && Objects.equals(this.appSecret, apiAuthDetail.appSecret)
             && Objects.equals(this.secret, apiAuthDetail.secret) && Objects.equals(this.altIp, apiAuthDetail.altIp)
             && Objects.equals(this.accessTokenUrl, apiAuthDetail.accessTokenUrl)
+            && Objects.equals(this.clientId, apiAuthDetail.clientId)
+            && Objects.equals(this.clientSecret, apiAuthDetail.clientSecret)
             && Objects.equals(this.scope, apiAuthDetail.scope)
             && Objects.equals(this.authorization, apiAuthDetail.authorization)
             && Objects.equals(this.grantType, apiAuthDetail.grantType);
@@ -482,6 +526,8 @@ public class ApiAuthDetail {
             secret,
             altIp,
             accessTokenUrl,
+            clientId,
+            clientSecret,
             scope,
             authorization,
             grantType);
@@ -500,6 +546,8 @@ public class ApiAuthDetail {
         sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
         sb.append("    altIp: ").append(toIndentedString(altIp)).append("\n");
         sb.append("    accessTokenUrl: ").append(toIndentedString(accessTokenUrl)).append("\n");
+        sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+        sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
         sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
         sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    grantType: ").append(toIndentedString(grantType)).append("\n");

@@ -30,117 +30,117 @@ public class ShowDataourceDetailResponse extends SdkResponse {
     /** 数据源类型 - DWS - MYSQL - KAFKA - API - OBS - SAP - MRSHBASE - MRSHDFS - MRSHIVE - WEBSOCKET - SQLSERVER - ORACLE -
      * POSTGRESQL - REDIS - MONGODB - DIS - HL7 - RABBITMQ - SNMP - IBMMQ - CUSTOMIZED (自定义类型) - ACTIVEMQ - ARTEMISMQ -
      * FTP - HIVE - HANA - FIKAFKA - MRSKAFKA - FIHDFS - FIHIVE - GAUSS200 - GAUSS100 - LDAP - DB2 - TAURUS */
-    public static final class TypeEnum {
+    public static final class DatasourceTypeEnum {
 
         /** Enum DWS for value: "DWS" */
-        public static final TypeEnum DWS = new TypeEnum("DWS");
+        public static final DatasourceTypeEnum DWS = new DatasourceTypeEnum("DWS");
 
         /** Enum MYSQL for value: "MYSQL" */
-        public static final TypeEnum MYSQL = new TypeEnum("MYSQL");
+        public static final DatasourceTypeEnum MYSQL = new DatasourceTypeEnum("MYSQL");
 
         /** Enum KAFKA for value: "KAFKA" */
-        public static final TypeEnum KAFKA = new TypeEnum("KAFKA");
+        public static final DatasourceTypeEnum KAFKA = new DatasourceTypeEnum("KAFKA");
 
         /** Enum API for value: "API" */
-        public static final TypeEnum API = new TypeEnum("API");
+        public static final DatasourceTypeEnum API = new DatasourceTypeEnum("API");
 
         /** Enum OBS for value: "OBS" */
-        public static final TypeEnum OBS = new TypeEnum("OBS");
+        public static final DatasourceTypeEnum OBS = new DatasourceTypeEnum("OBS");
 
         /** Enum SAP for value: "SAP" */
-        public static final TypeEnum SAP = new TypeEnum("SAP");
+        public static final DatasourceTypeEnum SAP = new DatasourceTypeEnum("SAP");
 
         /** Enum MRSHBASE for value: "MRSHBASE" */
-        public static final TypeEnum MRSHBASE = new TypeEnum("MRSHBASE");
+        public static final DatasourceTypeEnum MRSHBASE = new DatasourceTypeEnum("MRSHBASE");
 
         /** Enum MRSHDFS for value: "MRSHDFS" */
-        public static final TypeEnum MRSHDFS = new TypeEnum("MRSHDFS");
+        public static final DatasourceTypeEnum MRSHDFS = new DatasourceTypeEnum("MRSHDFS");
 
         /** Enum MRSHIVE for value: "MRSHIVE" */
-        public static final TypeEnum MRSHIVE = new TypeEnum("MRSHIVE");
+        public static final DatasourceTypeEnum MRSHIVE = new DatasourceTypeEnum("MRSHIVE");
 
         /** Enum WEBSOCKET for value: "WEBSOCKET" */
-        public static final TypeEnum WEBSOCKET = new TypeEnum("WEBSOCKET");
+        public static final DatasourceTypeEnum WEBSOCKET = new DatasourceTypeEnum("WEBSOCKET");
 
         /** Enum SQLSERVER for value: "SQLSERVER" */
-        public static final TypeEnum SQLSERVER = new TypeEnum("SQLSERVER");
+        public static final DatasourceTypeEnum SQLSERVER = new DatasourceTypeEnum("SQLSERVER");
 
         /** Enum ORACLE for value: "ORACLE" */
-        public static final TypeEnum ORACLE = new TypeEnum("ORACLE");
+        public static final DatasourceTypeEnum ORACLE = new DatasourceTypeEnum("ORACLE");
 
         /** Enum POSTGRESQL for value: "POSTGRESQL" */
-        public static final TypeEnum POSTGRESQL = new TypeEnum("POSTGRESQL");
+        public static final DatasourceTypeEnum POSTGRESQL = new DatasourceTypeEnum("POSTGRESQL");
 
         /** Enum REDIS for value: "REDIS" */
-        public static final TypeEnum REDIS = new TypeEnum("REDIS");
+        public static final DatasourceTypeEnum REDIS = new DatasourceTypeEnum("REDIS");
 
         /** Enum MONGODB for value: "MONGODB" */
-        public static final TypeEnum MONGODB = new TypeEnum("MONGODB");
+        public static final DatasourceTypeEnum MONGODB = new DatasourceTypeEnum("MONGODB");
 
         /** Enum DIS for value: "DIS" */
-        public static final TypeEnum DIS = new TypeEnum("DIS");
+        public static final DatasourceTypeEnum DIS = new DatasourceTypeEnum("DIS");
 
         /** Enum HL7 for value: "HL7" */
-        public static final TypeEnum HL7 = new TypeEnum("HL7");
+        public static final DatasourceTypeEnum HL7 = new DatasourceTypeEnum("HL7");
 
         /** Enum RABBITMQ for value: "RABBITMQ" */
-        public static final TypeEnum RABBITMQ = new TypeEnum("RABBITMQ");
+        public static final DatasourceTypeEnum RABBITMQ = new DatasourceTypeEnum("RABBITMQ");
 
         /** Enum SNMP for value: "SNMP" */
-        public static final TypeEnum SNMP = new TypeEnum("SNMP");
+        public static final DatasourceTypeEnum SNMP = new DatasourceTypeEnum("SNMP");
 
         /** Enum IBMMQ for value: "IBMMQ" */
-        public static final TypeEnum IBMMQ = new TypeEnum("IBMMQ");
+        public static final DatasourceTypeEnum IBMMQ = new DatasourceTypeEnum("IBMMQ");
 
         /** Enum CUSTOMIZED for value: "CUSTOMIZED" */
-        public static final TypeEnum CUSTOMIZED = new TypeEnum("CUSTOMIZED");
+        public static final DatasourceTypeEnum CUSTOMIZED = new DatasourceTypeEnum("CUSTOMIZED");
 
         /** Enum ACTIVEMQ for value: "ACTIVEMQ" */
-        public static final TypeEnum ACTIVEMQ = new TypeEnum("ACTIVEMQ");
+        public static final DatasourceTypeEnum ACTIVEMQ = new DatasourceTypeEnum("ACTIVEMQ");
 
         /** Enum ARTEMISMQ for value: "ARTEMISMQ" */
-        public static final TypeEnum ARTEMISMQ = new TypeEnum("ARTEMISMQ");
+        public static final DatasourceTypeEnum ARTEMISMQ = new DatasourceTypeEnum("ARTEMISMQ");
 
         /** Enum FTP for value: "FTP" */
-        public static final TypeEnum FTP = new TypeEnum("FTP");
+        public static final DatasourceTypeEnum FTP = new DatasourceTypeEnum("FTP");
 
         /** Enum HIVE for value: "HIVE" */
-        public static final TypeEnum HIVE = new TypeEnum("HIVE");
+        public static final DatasourceTypeEnum HIVE = new DatasourceTypeEnum("HIVE");
 
         /** Enum HANA for value: "HANA" */
-        public static final TypeEnum HANA = new TypeEnum("HANA");
+        public static final DatasourceTypeEnum HANA = new DatasourceTypeEnum("HANA");
 
         /** Enum FIKAFKA for value: "FIKAFKA" */
-        public static final TypeEnum FIKAFKA = new TypeEnum("FIKAFKA");
+        public static final DatasourceTypeEnum FIKAFKA = new DatasourceTypeEnum("FIKAFKA");
 
         /** Enum MRSKAFKA for value: "MRSKAFKA" */
-        public static final TypeEnum MRSKAFKA = new TypeEnum("MRSKAFKA");
+        public static final DatasourceTypeEnum MRSKAFKA = new DatasourceTypeEnum("MRSKAFKA");
 
         /** Enum FIHDFS for value: "FIHDFS" */
-        public static final TypeEnum FIHDFS = new TypeEnum("FIHDFS");
+        public static final DatasourceTypeEnum FIHDFS = new DatasourceTypeEnum("FIHDFS");
 
         /** Enum FIHIVE for value: "FIHIVE" */
-        public static final TypeEnum FIHIVE = new TypeEnum("FIHIVE");
+        public static final DatasourceTypeEnum FIHIVE = new DatasourceTypeEnum("FIHIVE");
 
         /** Enum GAUSS200 for value: "GAUSS200" */
-        public static final TypeEnum GAUSS200 = new TypeEnum("GAUSS200");
+        public static final DatasourceTypeEnum GAUSS200 = new DatasourceTypeEnum("GAUSS200");
 
         /** Enum GAUSS100 for value: "GAUSS100" */
-        public static final TypeEnum GAUSS100 = new TypeEnum("GAUSS100");
+        public static final DatasourceTypeEnum GAUSS100 = new DatasourceTypeEnum("GAUSS100");
 
         /** Enum LDAP for value: "LDAP" */
-        public static final TypeEnum LDAP = new TypeEnum("LDAP");
+        public static final DatasourceTypeEnum LDAP = new DatasourceTypeEnum("LDAP");
 
         /** Enum DB2 for value: "DB2" */
-        public static final TypeEnum DB2 = new TypeEnum("DB2");
+        public static final DatasourceTypeEnum DB2 = new DatasourceTypeEnum("DB2");
 
         /** Enum TAURUS for value: "TAURUS" */
-        public static final TypeEnum TAURUS = new TypeEnum("TAURUS");
+        public static final DatasourceTypeEnum TAURUS = new DatasourceTypeEnum("TAURUS");
 
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<String, DatasourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
+        private static Map<String, DatasourceTypeEnum> createStaticFields() {
+            Map<String, DatasourceTypeEnum> map = new HashMap<>();
             map.put("DWS", DWS);
             map.put("MYSQL", MYSQL);
             map.put("KAFKA", KAFKA);
@@ -181,7 +181,7 @@ public class ShowDataourceDetailResponse extends SdkResponse {
 
         private String value;
 
-        TypeEnum(String value) {
+        DatasourceTypeEnum(String value) {
             this.value = value;
         }
 
@@ -196,22 +196,22 @@ public class ShowDataourceDetailResponse extends SdkResponse {
         }
 
         @JsonCreator
-        public static TypeEnum fromValue(String value) {
+        public static DatasourceTypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
+            DatasourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = new TypeEnum(value);
+                result = new DatasourceTypeEnum(value);
             }
             return result;
         }
 
-        public static TypeEnum valueOf(String value) {
+        public static DatasourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
+            DatasourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -220,8 +220,8 @@ public class ShowDataourceDetailResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
+            if (obj instanceof DatasourceTypeEnum) {
+                return this.value.equals(((DatasourceTypeEnum) obj).value);
             }
             return false;
         }
@@ -233,9 +233,9 @@ public class ShowDataourceDetailResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
+    @JsonProperty(value = "datasource_type")
 
-    private TypeEnum type;
+    private DatasourceTypeEnum datasourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -398,8 +398,8 @@ public class ShowDataourceDetailResponse extends SdkResponse {
         this.datasourceName = datasourceName;
     }
 
-    public ShowDataourceDetailResponse withType(TypeEnum type) {
-        this.type = type;
+    public ShowDataourceDetailResponse withDatasourceType(DatasourceTypeEnum datasourceType) {
+        this.datasourceType = datasourceType;
         return this;
     }
 
@@ -407,13 +407,13 @@ public class ShowDataourceDetailResponse extends SdkResponse {
      * POSTGRESQL - REDIS - MONGODB - DIS - HL7 - RABBITMQ - SNMP - IBMMQ - CUSTOMIZED (自定义类型) - ACTIVEMQ - ARTEMISMQ -
      * FTP - HIVE - HANA - FIKAFKA - MRSKAFKA - FIHDFS - FIHIVE - GAUSS200 - GAUSS100 - LDAP - DB2 - TAURUS
      * 
-     * @return type */
-    public TypeEnum getType() {
-        return type;
+     * @return datasourceType */
+    public DatasourceTypeEnum getDatasourceType() {
+        return datasourceType;
     }
 
-    public void setType(TypeEnum type) {
-        this.type = type;
+    public void setDatasourceType(DatasourceTypeEnum datasourceType) {
+        this.datasourceType = datasourceType;
     }
 
     public ShowDataourceDetailResponse withVpcId(String vpcId) {
@@ -612,7 +612,7 @@ public class ShowDataourceDetailResponse extends SdkResponse {
         ShowDataourceDetailResponse showDataourceDetailResponse = (ShowDataourceDetailResponse) o;
         return Objects.equals(this.datasourceId, showDataourceDetailResponse.datasourceId)
             && Objects.equals(this.datasourceName, showDataourceDetailResponse.datasourceName)
-            && Objects.equals(this.type, showDataourceDetailResponse.type)
+            && Objects.equals(this.datasourceType, showDataourceDetailResponse.datasourceType)
             && Objects.equals(this.vpcId, showDataourceDetailResponse.vpcId)
             && Objects.equals(this.appId, showDataourceDetailResponse.appId)
             && Objects.equals(this.appName, showDataourceDetailResponse.appName)
@@ -629,7 +629,7 @@ public class ShowDataourceDetailResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(datasourceId,
             datasourceName,
-            type,
+            datasourceType,
             vpcId,
             appId,
             appName,
@@ -648,7 +648,7 @@ public class ShowDataourceDetailResponse extends SdkResponse {
         sb.append("class ShowDataourceDetailResponse {\n");
         sb.append("    datasourceId: ").append(toIndentedString(datasourceId)).append("\n");
         sb.append("    datasourceName: ").append(toIndentedString(datasourceName)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    datasourceType: ").append(toIndentedString(datasourceType)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");

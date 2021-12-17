@@ -141,7 +141,8 @@ public class ResourcePrice {
         return this;
     }
 
-    /** 规格。 类型为'storage'时，size值可以为5GB，10GB，20GB。 类型为'cpuMemory'时，arch为'x86'，size值可以为1U1G，2U4G；arch为'arm'，size值可以为4U8G。
+    /** 规格。 类型为'storage'时，size值可以为5GB，10GB，20GB。
+     * 类型为'cpuMemory'时，arch为'x86'，size值可以为1U1G，2U4G，4U8G；arch为'arm'，size值可以为4U8G。
      * 
      * @return size */
     public String getSize() {

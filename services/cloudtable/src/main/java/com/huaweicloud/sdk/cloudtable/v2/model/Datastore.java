@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建集群数据库参数 */
+/** 创建集群数据库参数。 */
 public class Datastore {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

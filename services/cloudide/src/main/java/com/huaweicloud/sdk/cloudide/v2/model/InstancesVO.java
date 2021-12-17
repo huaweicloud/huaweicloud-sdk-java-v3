@@ -5,21 +5,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /** InstancesVO */
 public class InstancesVO {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "action_list")
-
-    private List<RoleAction> actionList = null;
 
     /** cpu架构 x86|arm */
     public static final class ArchEnum {
@@ -348,16 +341,6 @@ public class InstancesVO {
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "role")
-
-    private Role role;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "role_id")
-
-    private String roleId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_map")
 
     private Map<String, String> serverMap = null;
@@ -474,46 +457,24 @@ public class InstancesVO {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sub_org")
-
-    private String subOrg;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
 
     private String updatedTime;
 
-    public InstancesVO withActionList(List<RoleAction> actionList) {
-        this.actionList = actionList;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "visitor_id")
 
-    public InstancesVO addActionListItem(RoleAction actionListItem) {
-        if (this.actionList == null) {
-            this.actionList = new ArrayList<>();
-        }
-        this.actionList.add(actionListItem);
-        return this;
-    }
+    private String visitorId;
 
-    public InstancesVO withActionList(Consumer<List<RoleAction>> actionListSetter) {
-        if (this.actionList == null) {
-            this.actionList = new ArrayList<>();
-        }
-        actionListSetter.accept(this.actionList);
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "visitor_name")
 
-    /** 角色权限列表
-     * 
-     * @return actionList */
-    public List<RoleAction> getActionList() {
-        return actionList;
-    }
+    private String visitorName;
 
-    public void setActionList(List<RoleAction> actionList) {
-        this.actionList = actionList;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "visitor_domain_name")
+
+    private String visitorDomainName;
 
     public InstancesVO withArch(ArchEnum arch) {
         this.arch = arch;
@@ -847,47 +808,6 @@ public class InstancesVO {
         this.region = region;
     }
 
-    public InstancesVO withRole(Role role) {
-        this.role = role;
-        return this;
-    }
-
-    public InstancesVO withRole(Consumer<Role> roleSetter) {
-        if (this.role == null) {
-            this.role = new Role();
-            roleSetter.accept(this.role);
-        }
-
-        return this;
-    }
-
-    /** Get role
-     * 
-     * @return role */
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public InstancesVO withRoleId(String roleId) {
-        this.roleId = roleId;
-        return this;
-    }
-
-    /** 角色id
-     * 
-     * @return roleId */
-    public String getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(String roleId) {
-        this.roleId = roleId;
-    }
-
     public InstancesVO withServerMap(Map<String, String> serverMap) {
         this.serverMap = serverMap;
         return this;
@@ -969,22 +889,6 @@ public class InstancesVO {
         this.status = status;
     }
 
-    public InstancesVO withSubOrg(String subOrg) {
-        this.subOrg = subOrg;
-        return this;
-    }
-
-    /** 子组织
-     * 
-     * @return subOrg */
-    public String getSubOrg() {
-        return subOrg;
-    }
-
-    public void setSubOrg(String subOrg) {
-        this.subOrg = subOrg;
-    }
-
     public InstancesVO withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
         return this;
@@ -1001,6 +905,54 @@ public class InstancesVO {
         this.updatedTime = updatedTime;
     }
 
+    public InstancesVO withVisitorId(String visitorId) {
+        this.visitorId = visitorId;
+        return this;
+    }
+
+    /** 访问者id
+     * 
+     * @return visitorId */
+    public String getVisitorId() {
+        return visitorId;
+    }
+
+    public void setVisitorId(String visitorId) {
+        this.visitorId = visitorId;
+    }
+
+    public InstancesVO withVisitorName(String visitorName) {
+        this.visitorName = visitorName;
+        return this;
+    }
+
+    /** 访问者名称
+     * 
+     * @return visitorName */
+    public String getVisitorName() {
+        return visitorName;
+    }
+
+    public void setVisitorName(String visitorName) {
+        this.visitorName = visitorName;
+    }
+
+    public InstancesVO withVisitorDomainName(String visitorDomainName) {
+        this.visitorDomainName = visitorDomainName;
+        return this;
+    }
+
+    /** 访问者租户名称
+     * 
+     * @return visitorDomainName */
+    public String getVisitorDomainName() {
+        return visitorDomainName;
+    }
+
+    public void setVisitorDomainName(String visitorDomainName) {
+        this.visitorDomainName = visitorDomainName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1010,8 +962,7 @@ public class InstancesVO {
             return false;
         }
         InstancesVO instancesVO = (InstancesVO) o;
-        return Objects.equals(this.actionList, instancesVO.actionList) && Objects.equals(this.arch, instancesVO.arch)
-            && Objects.equals(this.attributes, instancesVO.attributes)
+        return Objects.equals(this.arch, instancesVO.arch) && Objects.equals(this.attributes, instancesVO.attributes)
             && Objects.equals(this.cpuMemory, instancesVO.cpuMemory)
             && Objects.equals(this.createdTime, instancesVO.createdTime)
             && Objects.equals(this.description, instancesVO.description)
@@ -1027,18 +978,18 @@ public class InstancesVO {
             && Objects.equals(this._private, instancesVO._private)
             && Objects.equals(this.pvcQuantity, instancesVO.pvcQuantity)
             && Objects.equals(this.refreshInterval, instancesVO.refreshInterval)
-            && Objects.equals(this.region, instancesVO.region) && Objects.equals(this.role, instancesVO.role)
-            && Objects.equals(this.roleId, instancesVO.roleId) && Objects.equals(this.serverMap, instancesVO.serverMap)
+            && Objects.equals(this.region, instancesVO.region) && Objects.equals(this.serverMap, instancesVO.serverMap)
             && Objects.equals(this.serverUrl, instancesVO.serverUrl)
             && Objects.equals(this.stackId, instancesVO.stackId) && Objects.equals(this.status, instancesVO.status)
-            && Objects.equals(this.subOrg, instancesVO.subOrg)
-            && Objects.equals(this.updatedTime, instancesVO.updatedTime);
+            && Objects.equals(this.updatedTime, instancesVO.updatedTime)
+            && Objects.equals(this.visitorId, instancesVO.visitorId)
+            && Objects.equals(this.visitorName, instancesVO.visitorName)
+            && Objects.equals(this.visitorDomainName, instancesVO.visitorDomainName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(actionList,
-            arch,
+        return Objects.hash(arch,
             attributes,
             cpuMemory,
             createdTime,
@@ -1058,21 +1009,20 @@ public class InstancesVO {
             pvcQuantity,
             refreshInterval,
             region,
-            role,
-            roleId,
             serverMap,
             serverUrl,
             stackId,
             status,
-            subOrg,
-            updatedTime);
+            updatedTime,
+            visitorId,
+            visitorName,
+            visitorDomainName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstancesVO {\n");
-        sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
         sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
         sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
         sb.append("    cpuMemory: ").append(toIndentedString(cpuMemory)).append("\n");
@@ -1093,14 +1043,14 @@ public class InstancesVO {
         sb.append("    pvcQuantity: ").append(toIndentedString(pvcQuantity)).append("\n");
         sb.append("    refreshInterval: ").append(toIndentedString(refreshInterval)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
-        sb.append("    role: ").append(toIndentedString(role)).append("\n");
-        sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("    serverMap: ").append(toIndentedString(serverMap)).append("\n");
         sb.append("    serverUrl: ").append(toIndentedString(serverUrl)).append("\n");
         sb.append("    stackId: ").append(toIndentedString(stackId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    subOrg: ").append(toIndentedString(subOrg)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    visitorId: ").append(toIndentedString(visitorId)).append("\n");
+        sb.append("    visitorName: ").append(toIndentedString(visitorName)).append("\n");
+        sb.append("    visitorDomainName: ").append(toIndentedString(visitorDomainName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

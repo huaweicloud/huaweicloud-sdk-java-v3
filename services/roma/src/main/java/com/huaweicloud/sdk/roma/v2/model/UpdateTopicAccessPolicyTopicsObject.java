@@ -21,6 +21,16 @@ public class UpdateTopicAccessPolicyTopicsObject {
 
     private List<UpdateTopicAccessPolicyPoliciesObject> policies = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sensitive_word")
+
+    private String sensitiveWord;
+
     public UpdateTopicAccessPolicyTopicsObject withName(String name) {
         this.name = name;
         return this;
@@ -70,6 +80,38 @@ public class UpdateTopicAccessPolicyTopicsObject {
         this.policies = policies;
     }
 
+    public UpdateTopicAccessPolicyTopicsObject withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /** 描述。
+     * 
+     * @return description */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public UpdateTopicAccessPolicyTopicsObject withSensitiveWord(String sensitiveWord) {
+        this.sensitiveWord = sensitiveWord;
+        return this;
+    }
+
+    /** 敏感字段。
+     * 
+     * @return sensitiveWord */
+    public String getSensitiveWord() {
+        return sensitiveWord;
+    }
+
+    public void setSensitiveWord(String sensitiveWord) {
+        this.sensitiveWord = sensitiveWord;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -81,12 +123,14 @@ public class UpdateTopicAccessPolicyTopicsObject {
         UpdateTopicAccessPolicyTopicsObject updateTopicAccessPolicyTopicsObject =
             (UpdateTopicAccessPolicyTopicsObject) o;
         return Objects.equals(this.name, updateTopicAccessPolicyTopicsObject.name)
-            && Objects.equals(this.policies, updateTopicAccessPolicyTopicsObject.policies);
+            && Objects.equals(this.policies, updateTopicAccessPolicyTopicsObject.policies)
+            && Objects.equals(this.description, updateTopicAccessPolicyTopicsObject.description)
+            && Objects.equals(this.sensitiveWord, updateTopicAccessPolicyTopicsObject.sensitiveWord);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, policies);
+        return Objects.hash(name, policies, description, sensitiveWord);
     }
 
     @Override
@@ -95,6 +139,8 @@ public class UpdateTopicAccessPolicyTopicsObject {
         sb.append("class UpdateTopicAccessPolicyTopicsObject {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    sensitiveWord: ").append(toIndentedString(sensitiveWord)).append("\n");
         sb.append("}");
         return sb.toString();
     }

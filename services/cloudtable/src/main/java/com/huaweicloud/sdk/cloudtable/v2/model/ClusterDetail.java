@@ -3,20 +3,28 @@ package com.huaweicloud.sdk.cloudtable.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/** ClusterDetail */
+/** 集群详情信息对象。 */
 public class ClusterDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_progress")
 
-    private String actionProgress;
+    private ActionProgress actionProgress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "actions")
+
+    private List<String> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_mode")
 
-    private Boolean authMode;
+    private String authMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_code")
@@ -78,23 +86,64 @@ public class ClusterDetail {
 
     private String zookeeperLink;
 
-    public ClusterDetail withActionProgress(String actionProgress) {
+    public ClusterDetail withActionProgress(ActionProgress actionProgress) {
         this.actionProgress = actionProgress;
         return this;
     }
 
-    /** 集群当前状态列表： - 创建中 - 扩容中 - 重启中 - 开启opentsdb - 扩容失败 - 重启失败 - 开启opentsdb失败
+    public ClusterDetail withActionProgress(Consumer<ActionProgress> actionProgressSetter) {
+        if (this.actionProgress == null) {
+            this.actionProgress = new ActionProgress();
+            actionProgressSetter.accept(this.actionProgress);
+        }
+
+        return this;
+    }
+
+    /** Get actionProgress
      * 
      * @return actionProgress */
-    public String getActionProgress() {
+    public ActionProgress getActionProgress() {
         return actionProgress;
     }
 
-    public void setActionProgress(String actionProgress) {
+    public void setActionProgress(ActionProgress actionProgress) {
         this.actionProgress = actionProgress;
     }
 
-    public ClusterDetail withAuthMode(Boolean authMode) {
+    public ClusterDetail withActions(List<String> actions) {
+        this.actions = actions;
+        return this;
+    }
+
+    public ClusterDetail addActionsItem(String actionsItem) {
+        if (this.actions == null) {
+            this.actions = new ArrayList<>();
+        }
+        this.actions.add(actionsItem);
+        return this;
+    }
+
+    public ClusterDetail withActions(Consumer<List<String>> actionsSetter) {
+        if (this.actions == null) {
+            this.actions = new ArrayList<>();
+        }
+        actionsSetter.accept(this.actions);
+        return this;
+    }
+
+    /** 集群操作记录
+     * 
+     * @return actions */
+    public List<String> getActions() {
+        return actions;
+    }
+
+    public void setActions(List<String> actions) {
+        this.actions = actions;
+    }
+
+    public ClusterDetail withAuthMode(String authMode) {
         this.authMode = authMode;
         return this;
     }
@@ -102,11 +151,11 @@ public class ClusterDetail {
     /** 是否开启IAM权限认证。 - false：不开启 - true：开启
      * 
      * @return authMode */
-    public Boolean getAuthMode() {
+    public String getAuthMode() {
         return authMode;
     }
 
-    public void setAuthMode(Boolean authMode) {
+    public void setAuthMode(String authMode) {
         this.authMode = authMode;
     }
 
@@ -312,6 +361,7 @@ public class ClusterDetail {
         }
         ClusterDetail clusterDetail = (ClusterDetail) o;
         return Objects.equals(this.actionProgress, clusterDetail.actionProgress)
+            && Objects.equals(this.actions, clusterDetail.actions)
             && Objects.equals(this.authMode, clusterDetail.authMode)
             && Objects.equals(this.azCode, clusterDetail.azCode)
             && Objects.equals(this.clusterId, clusterDetail.clusterId)
@@ -329,6 +379,7 @@ public class ClusterDetail {
     @Override
     public int hashCode() {
         return Objects.hash(actionProgress,
+            actions,
             authMode,
             azCode,
             clusterId,
@@ -349,6 +400,7 @@ public class ClusterDetail {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterDetail {\n");
         sb.append("    actionProgress: ").append(toIndentedString(actionProgress)).append("\n");
+        sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    authMode: ").append(toIndentedString(authMode)).append("\n");
         sb.append("    azCode: ").append(toIndentedString(azCode)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");

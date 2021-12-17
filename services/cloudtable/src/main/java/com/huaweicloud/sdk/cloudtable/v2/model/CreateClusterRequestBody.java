@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/** 创建集群发起的请求的请求体对象。 */
 public class CreateClusterRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

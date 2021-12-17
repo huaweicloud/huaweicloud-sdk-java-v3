@@ -27,6 +27,16 @@ public class TaskMonitorLog {
 
     private Long startTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dispatch_time")
+
+    private Long dispatchTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private Long endTime;
+
     /** 任务本次执行状态，允许如下值：UNSTARTED-未启动, WAITING-等待调度中, RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常 */
     public static final class ExecuteStatusEnum {
 
@@ -403,7 +413,22 @@ public class TaskMonitorLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spend_time")
 
-    private Integer spendTime;
+    private Long spendTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "read_spend_time")
+
+    private Long readSpendTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "write_spend_time")
+
+    private Long writeSpendTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remarks")
+
+    private String remarks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_logs")
@@ -440,6 +465,38 @@ public class TaskMonitorLog {
 
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
+    }
+
+    public TaskMonitorLog withDispatchTime(Long dispatchTime) {
+        this.dispatchTime = dispatchTime;
+        return this;
+    }
+
+    /** 计划执行时间，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 9999999999999
+     * 
+     * @return dispatchTime */
+    public Long getDispatchTime() {
+        return dispatchTime;
+    }
+
+    public void setDispatchTime(Long dispatchTime) {
+        this.dispatchTime = dispatchTime;
+    }
+
+    public TaskMonitorLog withEndTime(Long endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /** 写入结束时间，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 9999999999999
+     * 
+     * @return endTime */
+    public Long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Long endTime) {
+        this.endTime = endTime;
     }
 
     public TaskMonitorLog withExecuteStatus(ExecuteStatusEnum executeStatus) {
@@ -609,7 +666,7 @@ public class TaskMonitorLog {
         this.dataSizeUnit = dataSizeUnit;
     }
 
-    public TaskMonitorLog withSpendTime(Integer spendTime) {
+    public TaskMonitorLog withSpendTime(Long spendTime) {
         this.spendTime = spendTime;
         return this;
     }
@@ -617,12 +674,60 @@ public class TaskMonitorLog {
     /** 执行时长，单位：ms minimum: 0 maximum: 9999999999999
      * 
      * @return spendTime */
-    public Integer getSpendTime() {
+    public Long getSpendTime() {
         return spendTime;
     }
 
-    public void setSpendTime(Integer spendTime) {
+    public void setSpendTime(Long spendTime) {
         this.spendTime = spendTime;
+    }
+
+    public TaskMonitorLog withReadSpendTime(Long readSpendTime) {
+        this.readSpendTime = readSpendTime;
+        return this;
+    }
+
+    /** 读取执行时长，单位：ms，只有在定时任务时存在该属性 minimum: 0 maximum: 9999999999999
+     * 
+     * @return readSpendTime */
+    public Long getReadSpendTime() {
+        return readSpendTime;
+    }
+
+    public void setReadSpendTime(Long readSpendTime) {
+        this.readSpendTime = readSpendTime;
+    }
+
+    public TaskMonitorLog withWriteSpendTime(Long writeSpendTime) {
+        this.writeSpendTime = writeSpendTime;
+        return this;
+    }
+
+    /** 写入执行时长，单位：ms minimum: 0 maximum: 9999999999999
+     * 
+     * @return writeSpendTime */
+    public Long getWriteSpendTime() {
+        return writeSpendTime;
+    }
+
+    public void setWriteSpendTime(Long writeSpendTime) {
+        this.writeSpendTime = writeSpendTime;
+    }
+
+    public TaskMonitorLog withRemarks(String remarks) {
+        this.remarks = remarks;
+        return this;
+    }
+
+    /** 本次执行结果简要信息
+     * 
+     * @return remarks */
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
     }
 
     public TaskMonitorLog withDetailLogs(List<TaskMonitorDetailLog> detailLogs) {
@@ -667,6 +772,8 @@ public class TaskMonitorLog {
         }
         TaskMonitorLog taskMonitorLog = (TaskMonitorLog) o;
         return Objects.equals(this.id, taskMonitorLog.id) && Objects.equals(this.startTime, taskMonitorLog.startTime)
+            && Objects.equals(this.dispatchTime, taskMonitorLog.dispatchTime)
+            && Objects.equals(this.endTime, taskMonitorLog.endTime)
             && Objects.equals(this.executeStatus, taskMonitorLog.executeStatus)
             && Objects.equals(this.position, taskMonitorLog.position)
             && Objects.equals(this.positionStatus, taskMonitorLog.positionStatus)
@@ -676,6 +783,9 @@ public class TaskMonitorLog {
             && Objects.equals(this.dataSize, taskMonitorLog.dataSize)
             && Objects.equals(this.dataSizeUnit, taskMonitorLog.dataSizeUnit)
             && Objects.equals(this.spendTime, taskMonitorLog.spendTime)
+            && Objects.equals(this.readSpendTime, taskMonitorLog.readSpendTime)
+            && Objects.equals(this.writeSpendTime, taskMonitorLog.writeSpendTime)
+            && Objects.equals(this.remarks, taskMonitorLog.remarks)
             && Objects.equals(this.detailLogs, taskMonitorLog.detailLogs);
     }
 
@@ -683,6 +793,8 @@ public class TaskMonitorLog {
     public int hashCode() {
         return Objects.hash(id,
             startTime,
+            dispatchTime,
+            endTime,
             executeStatus,
             position,
             positionStatus,
@@ -692,6 +804,9 @@ public class TaskMonitorLog {
             dataSize,
             dataSizeUnit,
             spendTime,
+            readSpendTime,
+            writeSpendTime,
+            remarks,
             detailLogs);
     }
 
@@ -701,6 +816,8 @@ public class TaskMonitorLog {
         sb.append("class TaskMonitorLog {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    dispatchTime: ").append(toIndentedString(dispatchTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    executeStatus: ").append(toIndentedString(executeStatus)).append("\n");
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
         sb.append("    positionStatus: ").append(toIndentedString(positionStatus)).append("\n");
@@ -710,6 +827,9 @@ public class TaskMonitorLog {
         sb.append("    dataSize: ").append(toIndentedString(dataSize)).append("\n");
         sb.append("    dataSizeUnit: ").append(toIndentedString(dataSizeUnit)).append("\n");
         sb.append("    spendTime: ").append(toIndentedString(spendTime)).append("\n");
+        sb.append("    readSpendTime: ").append(toIndentedString(readSpendTime)).append("\n");
+        sb.append("    writeSpendTime: ").append(toIndentedString(writeSpendTime)).append("\n");
+        sb.append("    remarks: ").append(toIndentedString(remarks)).append("\n");
         sb.append("    detailLogs: ").append(toIndentedString(detailLogs)).append("\n");
         sb.append("}");
         return sb.toString();

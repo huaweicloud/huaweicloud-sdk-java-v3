@@ -13,7 +13,7 @@ import java.util.Objects;
 /** ImportMqsInstanceTopicRequestBody */
 public class ImportMqsInstanceTopicRequestBody implements SdkFormDataBody {
 
-    @JsonProperty(value = "upload-file-name", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "upload_file_name", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart uploadFileName;
 
@@ -55,7 +55,7 @@ public class ImportMqsInstanceTopicRequestBody implements SdkFormDataBody {
         return new LinkedHashMap<String, FormDataPart>() {
 
             {
-                put("upload-file-name", uploadFileName);
+                put("upload_file_name", uploadFileName);
             }
         };
     }

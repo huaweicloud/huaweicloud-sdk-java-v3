@@ -100,6 +100,25 @@ public class OcrAsyncClient {
             OcrMeta.recognizeBusinessLicense, hcClient);
     }
 
+    /** 智利身份证识别 识别智利身份证图片中的文字内容，并返回识别的结构化结果。
+     *
+     * @param RecognizeChileIdCardRequest 请求对象
+     * @return CompletableFuture<RecognizeChileIdCardResponse> */
+    public CompletableFuture<RecognizeChileIdCardResponse> recognizeChileIdCardAsync(
+        RecognizeChileIdCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeChileIdCard);
+    }
+
+    /** 智利身份证识别 识别智利身份证图片中的文字内容，并返回识别的结构化结果。
+     *
+     * @param RecognizeChileIdCardRequest 请求对象
+     * @return AsyncInvoker<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse> */
+    public AsyncInvoker<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse> recognizeChileIdCardAsyncInvoker(
+        RecognizeChileIdCardRequest request) {
+        return new AsyncInvoker<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse>(request,
+            OcrMeta.recognizeChileIdCard, hcClient);
+    }
+
     /** 驾驶证识别 识别用户上传的驾驶证图片（或者用户提供的华为云上OBS的驾驶证图片文件的URL）中主页与副页的文字内容，并将识别的结果返回给用户。 说明： 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      *
      * @param RecognizeDriverLicenseRequest 请求对象
@@ -313,6 +332,44 @@ public class OcrAsyncClient {
             OcrMeta.recognizeMvsInvoice, hcClient);
     }
 
+    /** 缅文驾驶证识别 识别缅甸驾驶证中的文字信息，并返回识别的结构化结果。
+     *
+     * @param RecognizeMyanmarDriverLicenseRequest 请求对象
+     * @return CompletableFuture<RecognizeMyanmarDriverLicenseResponse> */
+    public CompletableFuture<RecognizeMyanmarDriverLicenseResponse> recognizeMyanmarDriverLicenseAsync(
+        RecognizeMyanmarDriverLicenseRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeMyanmarDriverLicense);
+    }
+
+    /** 缅文驾驶证识别 识别缅甸驾驶证中的文字信息，并返回识别的结构化结果。
+     *
+     * @param RecognizeMyanmarDriverLicenseRequest 请求对象
+     * @return AsyncInvoker<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse> */
+    public AsyncInvoker<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse> recognizeMyanmarDriverLicenseAsyncInvoker(
+        RecognizeMyanmarDriverLicenseRequest request) {
+        return new AsyncInvoker<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse>(request,
+            OcrMeta.recognizeMyanmarDriverLicense, hcClient);
+    }
+
+    /** 缅文身份证识别 识别缅文身份证中的文字信息，并返回识别的结构化结果。
+     *
+     * @param RecognizeMyanmarIdcardRequest 请求对象
+     * @return CompletableFuture<RecognizeMyanmarIdcardResponse> */
+    public CompletableFuture<RecognizeMyanmarIdcardResponse> recognizeMyanmarIdcardAsync(
+        RecognizeMyanmarIdcardRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeMyanmarIdcard);
+    }
+
+    /** 缅文身份证识别 识别缅文身份证中的文字信息，并返回识别的结构化结果。
+     *
+     * @param RecognizeMyanmarIdcardRequest 请求对象
+     * @return AsyncInvoker<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse> */
+    public AsyncInvoker<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse> recognizeMyanmarIdcardAsyncInvoker(
+        RecognizeMyanmarIdcardRequest request) {
+        return new AsyncInvoker<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse>(request,
+            OcrMeta.recognizeMyanmarIdcard, hcClient);
+    }
+
     /** 护照识别 识别用户上传的护照首页图片中的文字信息，并返回识别的结构化结果。当前版本支持中国护照的全字段识别。外国护照支持护照下方两行国际标准化的机读码识别，并可从中提取6-7个关键字段信息。 说明：
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      *
@@ -392,6 +449,44 @@ public class OcrAsyncClient {
         RecognizeTaxiInvoiceRequest request) {
         return new AsyncInvoker<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse>(request,
             OcrMeta.recognizeTaxiInvoice, hcClient);
+    }
+
+    /** 泰文身份证识别 识别泰国身份证中的文字信息，并返回识别的结构化结果。
+     *
+     * @param RecognizeThailandIdcardRequest 请求对象
+     * @return CompletableFuture<RecognizeThailandIdcardResponse> */
+    public CompletableFuture<RecognizeThailandIdcardResponse> recognizeThailandIdcardAsync(
+        RecognizeThailandIdcardRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeThailandIdcard);
+    }
+
+    /** 泰文身份证识别 识别泰国身份证中的文字信息，并返回识别的结构化结果。
+     *
+     * @param RecognizeThailandIdcardRequest 请求对象
+     * @return AsyncInvoker<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse> */
+    public AsyncInvoker<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse> recognizeThailandIdcardAsyncInvoker(
+        RecognizeThailandIdcardRequest request) {
+        return new AsyncInvoker<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse>(request,
+            OcrMeta.recognizeThailandIdcard, hcClient);
+    }
+
+    /** 泰国车牌识别 识别泰国车牌图片中的车牌信息，并返回识别的结构化结果。
+     *
+     * @param RecognizeThailandLicensePlateRequest 请求对象
+     * @return CompletableFuture<RecognizeThailandLicensePlateResponse> */
+    public CompletableFuture<RecognizeThailandLicensePlateResponse> recognizeThailandLicensePlateAsync(
+        RecognizeThailandLicensePlateRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeThailandLicensePlate);
+    }
+
+    /** 泰国车牌识别 识别泰国车牌图片中的车牌信息，并返回识别的结构化结果。
+     *
+     * @param RecognizeThailandLicensePlateRequest 请求对象
+     * @return AsyncInvoker<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse> */
+    public AsyncInvoker<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse> recognizeThailandLicensePlateAsyncInvoker(
+        RecognizeThailandLicensePlateRequest request) {
+        return new AsyncInvoker<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse>(request,
+            OcrMeta.recognizeThailandLicensePlate, hcClient);
     }
 
     /** 车辆通行费发票识别 识别车辆通行费发票中的文字信息，并返回识别的结构化结果。 说明：

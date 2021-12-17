@@ -1,48 +1,49 @@
-package com.huaweicloud.sdk.mpc.v1.model;
+package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryEditingJobRsp */
-public class QueryEditingJobRsp {
+/** Response Object */
+public class ShowJobsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
+    @JsonProperty(value = "count")
 
-    private Integer total;
+    private Long count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<EditingJob> jobs = null;
+    private List<StreamingJobInfoDto> jobs = null;
 
-    public QueryEditingJobRsp withTotal(Integer total) {
-        this.total = total;
+    public ShowJobsResponse withCount(Long count) {
+        this.count = count;
         return this;
     }
 
-    /** 任务总数 minimum: 0 maximum: 2147483647
+    /** 总数 minimum: 0 maximum: 2147483647
      * 
-     * @return total */
-    public Integer getTotal() {
-        return total;
+     * @return count */
+    public Long getCount() {
+        return count;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setCount(Long count) {
+        this.count = count;
     }
 
-    public QueryEditingJobRsp withJobs(List<EditingJob> jobs) {
+    public ShowJobsResponse withJobs(List<StreamingJobInfoDto> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public QueryEditingJobRsp addJobsItem(EditingJob jobsItem) {
+    public ShowJobsResponse addJobsItem(StreamingJobInfoDto jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -50,7 +51,7 @@ public class QueryEditingJobRsp {
         return this;
     }
 
-    public QueryEditingJobRsp withJobs(Consumer<List<EditingJob>> jobsSetter) {
+    public ShowJobsResponse withJobs(Consumer<List<StreamingJobInfoDto>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -58,14 +59,14 @@ public class QueryEditingJobRsp {
         return this;
     }
 
-    /** 任务列表
+    /** 作业列表
      * 
      * @return jobs */
-    public List<EditingJob> getJobs() {
+    public List<StreamingJobInfoDto> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<EditingJob> jobs) {
+    public void setJobs(List<StreamingJobInfoDto> jobs) {
         this.jobs = jobs;
     }
 
@@ -77,21 +78,20 @@ public class QueryEditingJobRsp {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        QueryEditingJobRsp queryEditingJobRsp = (QueryEditingJobRsp) o;
-        return Objects.equals(this.total, queryEditingJobRsp.total)
-            && Objects.equals(this.jobs, queryEditingJobRsp.jobs);
+        ShowJobsResponse showJobsResponse = (ShowJobsResponse) o;
+        return Objects.equals(this.count, showJobsResponse.count) && Objects.equals(this.jobs, showJobsResponse.jobs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, jobs);
+        return Objects.hash(count, jobs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class QueryEditingJobRsp {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("class ShowJobsResponse {\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
         sb.append("}");
         return sb.toString();

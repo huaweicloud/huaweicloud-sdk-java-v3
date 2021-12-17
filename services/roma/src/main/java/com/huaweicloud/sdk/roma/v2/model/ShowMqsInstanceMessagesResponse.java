@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,16 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
     @JsonProperty(value = "messages")
 
     private List<ShowMqsInstanceMessagesRespMessages> messages = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private BigDecimal total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private BigDecimal size;
 
     public ShowMqsInstanceMessagesResponse withMessages(List<ShowMqsInstanceMessagesRespMessages> messages) {
         this.messages = messages;
@@ -50,6 +61,38 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
         this.messages = messages;
     }
 
+    public ShowMqsInstanceMessagesResponse withTotal(BigDecimal total) {
+        this.total = total;
+        return this;
+    }
+
+    /** 消息总数。
+     * 
+     * @return total */
+    public BigDecimal getTotal() {
+        return total;
+    }
+
+    public void setTotal(BigDecimal total) {
+        this.total = total;
+    }
+
+    public ShowMqsInstanceMessagesResponse withSize(BigDecimal size) {
+        this.size = size;
+        return this;
+    }
+
+    /** 返回总条数。
+     * 
+     * @return size */
+    public BigDecimal getSize() {
+        return size;
+    }
+
+    public void setSize(BigDecimal size) {
+        this.size = size;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -59,12 +102,14 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
             return false;
         }
         ShowMqsInstanceMessagesResponse showMqsInstanceMessagesResponse = (ShowMqsInstanceMessagesResponse) o;
-        return Objects.equals(this.messages, showMqsInstanceMessagesResponse.messages);
+        return Objects.equals(this.messages, showMqsInstanceMessagesResponse.messages)
+            && Objects.equals(this.total, showMqsInstanceMessagesResponse.total)
+            && Objects.equals(this.size, showMqsInstanceMessagesResponse.size);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(messages);
+        return Objects.hash(messages, total, size);
     }
 
     @Override
@@ -72,6 +117,8 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMqsInstanceMessagesResponse {\n");
         sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("}");
         return sb.toString();
     }

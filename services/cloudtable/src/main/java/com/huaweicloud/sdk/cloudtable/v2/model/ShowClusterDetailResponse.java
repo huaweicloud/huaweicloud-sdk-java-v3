@@ -18,6 +18,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private List<String> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "datastore")
+
+    private Datastore datastore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_openTSDB")
 
     private Boolean enableOpenTSDB;
@@ -35,17 +40,17 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_num")
 
-    private Integer cuNum;
+    private String cuNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tsd_num")
 
-    private Integer tsdNum;
+    private String tsdNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lemon_num")
 
-    private Integer lemonNum;
+    private String lemonNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_type")
@@ -55,17 +60,22 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_quota")
 
-    private Integer storageQuota;
+    private String storageQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_storage_size")
 
-    private Integer usedStorageSize;
+    private String usedStorageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_mode")
 
     private Boolean authMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_dfv")
+
+    private Boolean enableDfv;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
@@ -88,9 +98,9 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "opentsdb_link")
+    @JsonProperty(value = "openTSDB_link")
 
-    private String opentsdbLink;
+    private String openTSDBLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tsd_public_endpoint")
@@ -115,7 +125,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_frozen")
 
-    private Integer isFrozen;
+    private String isFrozen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -169,6 +179,31 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.actions = actions;
     }
 
+    public ShowClusterDetailResponse withDatastore(Datastore datastore) {
+        this.datastore = datastore;
+        return this;
+    }
+
+    public ShowClusterDetailResponse withDatastore(Consumer<Datastore> datastoreSetter) {
+        if (this.datastore == null) {
+            this.datastore = new Datastore();
+            datastoreSetter.accept(this.datastore);
+        }
+
+        return this;
+    }
+
+    /** Get datastore
+     * 
+     * @return datastore */
+    public Datastore getDatastore() {
+        return datastore;
+    }
+
+    public void setDatastore(Datastore datastore) {
+        this.datastore = datastore;
+    }
+
     public ShowClusterDetailResponse withEnableOpenTSDB(Boolean enableOpenTSDB) {
         this.enableOpenTSDB = enableOpenTSDB;
         return this;
@@ -217,7 +252,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.clusterName = clusterName;
     }
 
-    public ShowClusterDetailResponse withCuNum(Integer cuNum) {
+    public ShowClusterDetailResponse withCuNum(String cuNum) {
         this.cuNum = cuNum;
         return this;
     }
@@ -225,15 +260,15 @@ public class ShowClusterDetailResponse extends SdkResponse {
     /** RegionServer个数。
      * 
      * @return cuNum */
-    public Integer getCuNum() {
+    public String getCuNum() {
         return cuNum;
     }
 
-    public void setCuNum(Integer cuNum) {
+    public void setCuNum(String cuNum) {
         this.cuNum = cuNum;
     }
 
-    public ShowClusterDetailResponse withTsdNum(Integer tsdNum) {
+    public ShowClusterDetailResponse withTsdNum(String tsdNum) {
         this.tsdNum = tsdNum;
         return this;
     }
@@ -241,15 +276,15 @@ public class ShowClusterDetailResponse extends SdkResponse {
     /** TSD节点个数。
      * 
      * @return tsdNum */
-    public Integer getTsdNum() {
+    public String getTsdNum() {
         return tsdNum;
     }
 
-    public void setTsdNum(Integer tsdNum) {
+    public void setTsdNum(String tsdNum) {
         this.tsdNum = tsdNum;
     }
 
-    public ShowClusterDetailResponse withLemonNum(Integer lemonNum) {
+    public ShowClusterDetailResponse withLemonNum(String lemonNum) {
         this.lemonNum = lemonNum;
         return this;
     }
@@ -257,11 +292,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
     /** Lemon节点个数。
      * 
      * @return lemonNum */
-    public Integer getLemonNum() {
+    public String getLemonNum() {
         return lemonNum;
     }
 
-    public void setLemonNum(Integer lemonNum) {
+    public void setLemonNum(String lemonNum) {
         this.lemonNum = lemonNum;
     }
 
@@ -281,7 +316,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.storageType = storageType;
     }
 
-    public ShowClusterDetailResponse withStorageQuota(Integer storageQuota) {
+    public ShowClusterDetailResponse withStorageQuota(String storageQuota) {
         this.storageQuota = storageQuota;
         return this;
     }
@@ -289,15 +324,15 @@ public class ShowClusterDetailResponse extends SdkResponse {
     /** 集群存储配额。
      * 
      * @return storageQuota */
-    public Integer getStorageQuota() {
+    public String getStorageQuota() {
         return storageQuota;
     }
 
-    public void setStorageQuota(Integer storageQuota) {
+    public void setStorageQuota(String storageQuota) {
         this.storageQuota = storageQuota;
     }
 
-    public ShowClusterDetailResponse withUsedStorageSize(Integer usedStorageSize) {
+    public ShowClusterDetailResponse withUsedStorageSize(String usedStorageSize) {
         this.usedStorageSize = usedStorageSize;
         return this;
     }
@@ -305,11 +340,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
     /** 当前使用存储空间。
      * 
      * @return usedStorageSize */
-    public Integer getUsedStorageSize() {
+    public String getUsedStorageSize() {
         return usedStorageSize;
     }
 
-    public void setUsedStorageSize(Integer usedStorageSize) {
+    public void setUsedStorageSize(String usedStorageSize) {
         this.usedStorageSize = usedStorageSize;
     }
 
@@ -327,6 +362,22 @@ public class ShowClusterDetailResponse extends SdkResponse {
 
     public void setAuthMode(Boolean authMode) {
         this.authMode = authMode;
+    }
+
+    public ShowClusterDetailResponse withEnableDfv(Boolean enableDfv) {
+        this.enableDfv = enableDfv;
+        return this;
+    }
+
+    /** 是否打开dfv
+     * 
+     * @return enableDfv */
+    public Boolean getEnableDfv() {
+        return enableDfv;
+    }
+
+    public void setEnableDfv(Boolean enableDfv) {
+        this.enableDfv = enableDfv;
     }
 
     public ShowClusterDetailResponse withUpdated(String updated) {
@@ -393,20 +444,20 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ShowClusterDetailResponse withOpentsdbLink(String opentsdbLink) {
-        this.opentsdbLink = opentsdbLink;
+    public ShowClusterDetailResponse withOpenTSDBLink(String openTSDBLink) {
+        this.openTSDBLink = openTSDBLink;
         return this;
     }
 
     /** 内网OpenTSDB连接访问地址。
      * 
-     * @return opentsdbLink */
-    public String getOpentsdbLink() {
-        return opentsdbLink;
+     * @return openTSDBLink */
+    public String getOpenTSDBLink() {
+        return openTSDBLink;
     }
 
-    public void setOpentsdbLink(String opentsdbLink) {
-        this.opentsdbLink = opentsdbLink;
+    public void setOpenTSDBLink(String openTSDBLink) {
+        this.openTSDBLink = openTSDBLink;
     }
 
     public ShowClusterDetailResponse withTsdPublicEndpoint(String tsdPublicEndpoint) {
@@ -414,7 +465,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 公网OpenTSDB连接访问地址。
+    /** OpenTSDB公网endpoint地址
      * 
      * @return tsdPublicEndpoint */
     public String getTsdPublicEndpoint() {
@@ -473,7 +524,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.hbasePublicEndpoint = hbasePublicEndpoint;
     }
 
-    public ShowClusterDetailResponse withIsFrozen(Integer isFrozen) {
+    public ShowClusterDetailResponse withIsFrozen(String isFrozen) {
         this.isFrozen = isFrozen;
         return this;
     }
@@ -481,11 +532,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
     /** 集群是否被冻结。 - false：不冻结 - true：冻结
      * 
      * @return isFrozen */
-    public Integer getIsFrozen() {
+    public String getIsFrozen() {
         return isFrozen;
     }
 
-    public void setIsFrozen(Integer isFrozen) {
+    public void setIsFrozen(String isFrozen) {
         this.isFrozen = isFrozen;
     }
 
@@ -563,6 +614,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         }
         ShowClusterDetailResponse showClusterDetailResponse = (ShowClusterDetailResponse) o;
         return Objects.equals(this.actions, showClusterDetailResponse.actions)
+            && Objects.equals(this.datastore, showClusterDetailResponse.datastore)
             && Objects.equals(this.enableOpenTSDB, showClusterDetailResponse.enableOpenTSDB)
             && Objects.equals(this.enableLemon, showClusterDetailResponse.enableLemon)
             && Objects.equals(this.clusterName, showClusterDetailResponse.clusterName)
@@ -573,11 +625,12 @@ public class ShowClusterDetailResponse extends SdkResponse {
             && Objects.equals(this.storageQuota, showClusterDetailResponse.storageQuota)
             && Objects.equals(this.usedStorageSize, showClusterDetailResponse.usedStorageSize)
             && Objects.equals(this.authMode, showClusterDetailResponse.authMode)
+            && Objects.equals(this.enableDfv, showClusterDetailResponse.enableDfv)
             && Objects.equals(this.updated, showClusterDetailResponse.updated)
             && Objects.equals(this.created, showClusterDetailResponse.created)
             && Objects.equals(this.clusterId, showClusterDetailResponse.clusterId)
             && Objects.equals(this.status, showClusterDetailResponse.status)
-            && Objects.equals(this.opentsdbLink, showClusterDetailResponse.opentsdbLink)
+            && Objects.equals(this.openTSDBLink, showClusterDetailResponse.openTSDBLink)
             && Objects.equals(this.tsdPublicEndpoint, showClusterDetailResponse.tsdPublicEndpoint)
             && Objects.equals(this.lemonLink, showClusterDetailResponse.lemonLink)
             && Objects.equals(this.zookeeperLink, showClusterDetailResponse.zookeeperLink)
@@ -592,6 +645,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(actions,
+            datastore,
             enableOpenTSDB,
             enableLemon,
             clusterName,
@@ -602,11 +656,12 @@ public class ShowClusterDetailResponse extends SdkResponse {
             storageQuota,
             usedStorageSize,
             authMode,
+            enableDfv,
             updated,
             created,
             clusterId,
             status,
-            opentsdbLink,
+            openTSDBLink,
             tsdPublicEndpoint,
             lemonLink,
             zookeeperLink,
@@ -623,6 +678,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowClusterDetailResponse {\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    enableOpenTSDB: ").append(toIndentedString(enableOpenTSDB)).append("\n");
         sb.append("    enableLemon: ").append(toIndentedString(enableLemon)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
@@ -633,11 +689,12 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("    storageQuota: ").append(toIndentedString(storageQuota)).append("\n");
         sb.append("    usedStorageSize: ").append(toIndentedString(usedStorageSize)).append("\n");
         sb.append("    authMode: ").append(toIndentedString(authMode)).append("\n");
+        sb.append("    enableDfv: ").append(toIndentedString(enableDfv)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    opentsdbLink: ").append(toIndentedString(opentsdbLink)).append("\n");
+        sb.append("    openTSDBLink: ").append(toIndentedString(openTSDBLink)).append("\n");
         sb.append("    tsdPublicEndpoint: ").append(toIndentedString(tsdPublicEndpoint)).append("\n");
         sb.append("    lemonLink: ").append(toIndentedString(lemonLink)).append("\n");
         sb.append("    zookeeperLink: ").append(toIndentedString(zookeeperLink)).append("\n");

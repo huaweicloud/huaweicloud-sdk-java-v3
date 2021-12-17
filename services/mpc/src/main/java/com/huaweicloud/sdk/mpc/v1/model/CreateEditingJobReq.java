@@ -37,6 +37,11 @@ public class CreateEditingJobReq {
     private MixInfo mix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "input")
+
+    private ObsObjInfo input;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_setting")
 
     private OutputSetting outputSetting;
@@ -45,6 +50,11 @@ public class CreateEditingJobReq {
     @JsonProperty(value = "image_watermark_settings")
 
     private List<ImageWatermarkSetting> imageWatermarkSettings = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "edit_settings")
+
+    private List<EditSetting> editSettings = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
@@ -197,6 +207,31 @@ public class CreateEditingJobReq {
         this.mix = mix;
     }
 
+    public CreateEditingJobReq withInput(ObsObjInfo input) {
+        this.input = input;
+        return this;
+    }
+
+    public CreateEditingJobReq withInput(Consumer<ObsObjInfo> inputSetter) {
+        if (this.input == null) {
+            this.input = new ObsObjInfo();
+            inputSetter.accept(this.input);
+        }
+
+        return this;
+    }
+
+    /** Get input
+     * 
+     * @return input */
+    public ObsObjInfo getInput() {
+        return input;
+    }
+
+    public void setInput(ObsObjInfo input) {
+        this.input = input;
+    }
+
     public CreateEditingJobReq withOutputSetting(OutputSetting outputSetting) {
         this.outputSetting = outputSetting;
         return this;
@@ -255,6 +290,38 @@ public class CreateEditingJobReq {
         this.imageWatermarkSettings = imageWatermarkSettings;
     }
 
+    public CreateEditingJobReq withEditSettings(List<EditSetting> editSettings) {
+        this.editSettings = editSettings;
+        return this;
+    }
+
+    public CreateEditingJobReq addEditSettingsItem(EditSetting editSettingsItem) {
+        if (this.editSettings == null) {
+            this.editSettings = new ArrayList<>();
+        }
+        this.editSettings.add(editSettingsItem);
+        return this;
+    }
+
+    public CreateEditingJobReq withEditSettings(Consumer<List<EditSetting>> editSettingsSetter) {
+        if (this.editSettings == null) {
+            this.editSettings = new ArrayList<>();
+        }
+        editSettingsSetter.accept(this.editSettings);
+        return this;
+    }
+
+    /** 媒体处理配置，当edit_type为空时该参数生效。会根据该参数配置，对input参数指定的源文件进行处理
+     * 
+     * @return editSettings */
+    public List<EditSetting> getEditSettings() {
+        return editSettings;
+    }
+
+    public void setEditSettings(List<EditSetting> editSettings) {
+        this.editSettings = editSettings;
+    }
+
     public CreateEditingJobReq withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -285,14 +352,25 @@ public class CreateEditingJobReq {
             && Objects.equals(this.concats, createEditingJobReq.concats)
             && Objects.equals(this.concat, createEditingJobReq.concat)
             && Objects.equals(this.mix, createEditingJobReq.mix)
+            && Objects.equals(this.input, createEditingJobReq.input)
             && Objects.equals(this.outputSetting, createEditingJobReq.outputSetting)
             && Objects.equals(this.imageWatermarkSettings, createEditingJobReq.imageWatermarkSettings)
+            && Objects.equals(this.editSettings, createEditingJobReq.editSettings)
             && Objects.equals(this.userData, createEditingJobReq.userData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(editType, clips, concats, concat, mix, outputSetting, imageWatermarkSettings, userData);
+        return Objects.hash(editType,
+            clips,
+            concats,
+            concat,
+            mix,
+            input,
+            outputSetting,
+            imageWatermarkSettings,
+            editSettings,
+            userData);
     }
 
     @Override
@@ -304,8 +382,10 @@ public class CreateEditingJobReq {
         sb.append("    concats: ").append(toIndentedString(concats)).append("\n");
         sb.append("    concat: ").append(toIndentedString(concat)).append("\n");
         sb.append("    mix: ").append(toIndentedString(mix)).append("\n");
+        sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    outputSetting: ").append(toIndentedString(outputSetting)).append("\n");
         sb.append("    imageWatermarkSettings: ").append(toIndentedString(imageWatermarkSettings)).append("\n");
+        sb.append("    editSettings: ").append(toIndentedString(editSettings)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("}");
         return sb.toString();

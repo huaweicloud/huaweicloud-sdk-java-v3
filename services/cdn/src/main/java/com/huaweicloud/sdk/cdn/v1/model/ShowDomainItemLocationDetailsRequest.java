@@ -80,7 +80,7 @@ public class ShowDomainItemLocationDetailsRequest {
         return this;
     }
 
-    /** 查询结束时间戳，必须设为5分钟整时刻点，与开始时间戳时间差不可以超过一天
+    /** 查询结束时间戳，必须设为5分钟整时刻点
      * 
      * @return endTime */
     public Long getEndTime() {

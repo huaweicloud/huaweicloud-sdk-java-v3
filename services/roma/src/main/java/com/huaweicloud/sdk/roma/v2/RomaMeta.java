@@ -475,6 +475,30 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CountTasksRequest, CountTasksResponse> countTasks = genForcountTasks();
+
+    private static HttpRequestDef<CountTasksRequest, CountTasksResponse> genForcountTasks() {
+        // basic
+        HttpRequestDef.Builder<CountTasksRequest, CountTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountTasksRequest.class, CountTasksResponse.class)
+                .withName("CountTasks")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/statistics/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTasksRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2 =
         genForcreateAppCodeAutoV2();
 
@@ -1091,6 +1115,77 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMqsInstanceTopicReq.class),
             f -> f.withMarshaller(CreateMqsInstanceTopicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> createMultiTaskMappings =
+        genForcreateMultiTaskMappings();
+
+    private static HttpRequestDef<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> genForcreateMultiTaskMappings() {
+        // basic
+        HttpRequestDef.Builder<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateMultiTaskMappingsRequest.class, CreateMultiTaskMappingsResponse.class)
+            .withName("CreateMultiTaskMappings")
+            .withUri("/v2/{project_id}/fdi/instances/{instance_id}/multi-tasks/{task_id}/mappings")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMultiTaskMappingsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMultiTaskMappingsRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<MultiTaskMappingCreateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MultiTaskMappingCreateBody.class),
+            f -> f.withMarshaller(CreateMultiTaskMappingsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMultiTasksRequest, CreateMultiTasksResponse> createMultiTasks =
+        genForcreateMultiTasks();
+
+    private static HttpRequestDef<CreateMultiTasksRequest, CreateMultiTasksResponse> genForcreateMultiTasks() {
+        // basic
+        HttpRequestDef.Builder<CreateMultiTasksRequest, CreateMultiTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMultiTasksRequest.class, CreateMultiTasksResponse.class)
+                .withName("CreateMultiTasks")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/multi-tasks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMultiTasksRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<MultiTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MultiTaskRequestBody.class),
+            f -> f.withMarshaller(CreateMultiTasksRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2177,6 +2272,45 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> deleteMultiTaskMapping =
+        genFordeleteMultiTaskMapping();
+
+    private static HttpRequestDef<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> genFordeleteMultiTaskMapping() {
+        // basic
+        HttpRequestDef.Builder<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteMultiTaskMappingRequest.class, DeleteMultiTaskMappingResponse.class)
+            .withName("DeleteMultiTaskMapping")
+            .withUri("/v2/{project_id}/fdi/instances/{instance_id}/multi-tasks/{task_id}/mappings/{mapping_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMultiTaskMappingRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMultiTaskMappingRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("mapping_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMultiTaskMappingRequest::getMappingId, (req, v) -> {
+                req.setMappingId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> deleteNotification =
         genFordeleteNotification();
 
@@ -2959,6 +3093,46 @@ public class RomaMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InstallMultiTasksRequest, InstallMultiTasksResponse> installMultiTasks =
+        genForinstallMultiTasks();
+
+    private static HttpRequestDef<InstallMultiTasksRequest, InstallMultiTasksResponse> genForinstallMultiTasks() {
+        // basic
+        HttpRequestDef.Builder<InstallMultiTasksRequest, InstallMultiTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InstallMultiTasksRequest.class, InstallMultiTasksResponse.class)
+                .withName("InstallMultiTasks")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/multi-tasks/init")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InstallMultiTasksRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<MultiTaskInitBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MultiTaskInitBody.class),
+            f -> f.withMarshaller(InstallMultiTasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<List<MultiTaskInitElement>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(InstallMultiTasksResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(MultiTaskInitElement.class));
 
         return builder.build();
     }
@@ -4544,6 +4718,13 @@ public class RomaMeta {
             f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getName, (req, v) -> {
                 req.setName(v);
             }));
+        builder.<ListMqsInstanceTopicsRequest.AccessPolicyEnum>withRequestField("access_policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListMqsInstanceTopicsRequest.AccessPolicyEnum.class),
+            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getAccessPolicy, (req, v) -> {
+                req.setAccessPolicy(v);
+            }));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -6056,6 +6237,45 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> resetMultiTaskOffset =
+        genForresetMultiTaskOffset();
+
+    private static HttpRequestDef<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> genForresetMultiTaskOffset() {
+        // basic
+        HttpRequestDef.Builder<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResetMultiTaskOffsetRequest.class, ResetMultiTaskOffsetResponse.class)
+            .withName("ResetMultiTaskOffset")
+            .withUri("/v2/{project_id}/fdi/instances/{instance_id}/multi-tasks/{task_id}/reset")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetMultiTaskOffsetRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetMultiTaskOffsetRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<MultiTaskResetBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(MultiTaskResetBody.class),
+            f -> f.withMarshaller(ResetMultiTaskOffsetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse> resetProductAuthentication =
         genForresetProductAuthentication();
 
@@ -6902,14 +7122,14 @@ public class RomaMeta {
             }));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
             }));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
@@ -6948,6 +7168,27 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getPartition, (req, v) -> {
                 req.setPartition(v);
+            }));
+        builder.<String>withRequestField("key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            }));
+        builder.<String>withRequestField("message_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getMessageId, (req, v) -> {
+                req.setMessageId(v);
+            }));
+        builder.<String>withRequestField("tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getTag, (req, v) -> {
+                req.setTag(v);
             }));
 
         // response
@@ -8018,6 +8259,45 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateMqsInstanceTopicReq.class),
             f -> f.withMarshaller(UpdateMqsInstanceTopicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMultiTasksRequest, UpdateMultiTasksResponse> updateMultiTasks =
+        genForupdateMultiTasks();
+
+    private static HttpRequestDef<UpdateMultiTasksRequest, UpdateMultiTasksResponse> genForupdateMultiTasks() {
+        // basic
+        HttpRequestDef.Builder<UpdateMultiTasksRequest, UpdateMultiTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateMultiTasksRequest.class, UpdateMultiTasksResponse.class)
+                .withName("UpdateMultiTasks")
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/multi-tasks/{task_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMultiTasksRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMultiTasksRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<MultiTaskUpdateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MultiTaskUpdateBody.class),
+            f -> f.withMarshaller(UpdateMultiTasksRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -11456,6 +11736,13 @@ public class RomaMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<ListMqsInstanceRequest.IncludeInternalEnum>withRequestField("include_internal",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListMqsInstanceRequest.IncludeInternalEnum.class),
+            f -> f.withMarshaller(ListMqsInstanceRequest::getIncludeInternal, (req, v) -> {
+                req.setIncludeInternal(v);
+            }));
 
         // response
 

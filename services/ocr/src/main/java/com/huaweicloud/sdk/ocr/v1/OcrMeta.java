@@ -114,6 +114,31 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse> recognizeChileIdCard =
+        genForrecognizeChileIdCard();
+
+    private static HttpRequestDef<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse> genForrecognizeChileIdCard() {
+        // basic
+        HttpRequestDef.Builder<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeChileIdCardRequest.class, RecognizeChileIdCardResponse.class)
+            .withName("RecognizeChileIdCard")
+            .withUri("/v2/{project_id}/ocr/chile-id-card")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ChileIdCardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChileIdCardRequestBody.class),
+            f -> f.withMarshaller(RecognizeChileIdCardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse> recognizeDriverLicense =
         genForrecognizeDriverLicense();
 
@@ -397,6 +422,59 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse> recognizeMyanmarDriverLicense =
+        genForrecognizeMyanmarDriverLicense();
+
+    private static HttpRequestDef<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse> genForrecognizeMyanmarDriverLicense() {
+        // basic
+        HttpRequestDef.Builder<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeMyanmarDriverLicenseRequest.class,
+                    RecognizeMyanmarDriverLicenseResponse.class)
+                .withName("RecognizeMyanmarDriverLicense")
+                .withUri("/v2/{project_id}/ocr/myanmar-driver-license")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<MyanmarDriverLicenseRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MyanmarDriverLicenseRequestBody.class),
+            f -> f.withMarshaller(RecognizeMyanmarDriverLicenseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse> recognizeMyanmarIdcard =
+        genForrecognizeMyanmarIdcard();
+
+    private static HttpRequestDef<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse> genForrecognizeMyanmarIdcard() {
+        // basic
+        HttpRequestDef.Builder<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeMyanmarIdcardRequest.class, RecognizeMyanmarIdcardResponse.class)
+            .withName("RecognizeMyanmarIdcard")
+            .withUri("/v2/{project_id}/ocr/myanmar-id-card")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<MyanmarIdcardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MyanmarIdcardRequestBody.class),
+            f -> f.withMarshaller(RecognizeMyanmarIdcardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizePassportRequest, RecognizePassportResponse> recognizePassport =
         genForrecognizePassport();
 
@@ -492,6 +570,59 @@ public class OcrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaxiInvoiceRequestBody.class),
             f -> f.withMarshaller(RecognizeTaxiInvoiceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse> recognizeThailandIdcard =
+        genForrecognizeThailandIdcard();
+
+    private static HttpRequestDef<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse> genForrecognizeThailandIdcard() {
+        // basic
+        HttpRequestDef.Builder<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeThailandIdcardRequest.class, RecognizeThailandIdcardResponse.class)
+            .withName("RecognizeThailandIdcard")
+            .withUri("/v2/{project_id}/ocr/thailand-id-card")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ThailandIdcardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ThailandIdcardRequestBody.class),
+            f -> f.withMarshaller(RecognizeThailandIdcardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse> recognizeThailandLicensePlate =
+        genForrecognizeThailandLicensePlate();
+
+    private static HttpRequestDef<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse> genForrecognizeThailandLicensePlate() {
+        // basic
+        HttpRequestDef.Builder<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeThailandLicensePlateRequest.class,
+                    RecognizeThailandLicensePlateResponse.class)
+                .withName("RecognizeThailandLicensePlate")
+                .withUri("/v2/{project_id}/ocr/thailand-license-plate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ThailandLicensePlateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ThailandLicensePlateRequestBody.class),
+            f -> f.withMarshaller(RecognizeThailandLicensePlateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -250,14 +250,6 @@ public class MpcMeta {
 
         // response
 
-        builder.<List<QueryEditingJobRsp>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEditingJobResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(QueryEditingJobRsp.class));
-
         return builder.build();
     }
 

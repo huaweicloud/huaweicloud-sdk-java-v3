@@ -23,6 +23,11 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
     private String engine;
@@ -254,6 +259,16 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_name")
+
+    private String subnetName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_cidr")
+
+    private String subnetCidr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
 
     private List<String> availableZones = null;
@@ -410,6 +425,21 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     private String connectorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mqs_connector_enable")
+
+    private Boolean mqsConnectorEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mqs_connector_address")
+
+    private String mqsConnectorAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plugin_enable")
+
+    private Boolean pluginEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rest_enable")
 
     private Boolean restEnable;
@@ -459,6 +489,41 @@ public class ShowMqsInstanceResponse extends SdkResponse {
 
     private String cesVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_num")
+
+    private Integer nodeNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicip_address")
+
+    private String publicipAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "listeners")
+
+    private Object listeners;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_access_enabled")
+
+    private String publicAccessEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_boundwidth")
+
+    private Integer publicBoundwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connect_dn")
+
+    private String connectDn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_enable")
+
+    private Boolean agentEnable;
+
     public ShowMqsInstanceResponse withName(String name) {
         this.name = name;
         return this;
@@ -473,6 +538,22 @@ public class ShowMqsInstanceResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ShowMqsInstanceResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /** 描述信息。
+     * 
+     * @return description */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public ShowMqsInstanceResponse withEngine(String engine) {
@@ -544,7 +625,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Kafka实例的最大topic数。
+    /** 最大分区数。不同规格的ROMA Connect实例的最大分区数不相同。
      * 
      * @return partitionNum */
     public Integer getPartitionNum() {
@@ -659,7 +740,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 付费模式，1表示按需计费，0表示包年/包月计费。
+    /** 付费模式，1表示按需计费，0表示包周期计费。
      * 
      * @return chargingMode */
     public Integer getChargingMode() {
@@ -990,6 +1071,38 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.subnetId = subnetId;
     }
 
+    public ShowMqsInstanceResponse withSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+        return this;
+    }
+
+    /** 子网名称。
+     * 
+     * @return subnetName */
+    public String getSubnetName() {
+        return subnetName;
+    }
+
+    public void setSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+    }
+
+    public ShowMqsInstanceResponse withSubnetCidr(String subnetCidr) {
+        this.subnetCidr = subnetCidr;
+        return this;
+    }
+
+    /** 子网网段。
+     * 
+     * @return subnetCidr */
+    public String getSubnetCidr() {
+        return subnetCidr;
+    }
+
+    public void setSubnetCidr(String subnetCidr) {
+        this.subnetCidr = subnetCidr;
+    }
+
     public ShowMqsInstanceResponse withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -1294,6 +1407,54 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.connectorId = connectorId;
     }
 
+    public ShowMqsInstanceResponse withMqsConnectorEnable(Boolean mqsConnectorEnable) {
+        this.mqsConnectorEnable = mqsConnectorEnable;
+        return this;
+    }
+
+    /** 是否开启MQS connector。
+     * 
+     * @return mqsConnectorEnable */
+    public Boolean getMqsConnectorEnable() {
+        return mqsConnectorEnable;
+    }
+
+    public void setMqsConnectorEnable(Boolean mqsConnectorEnable) {
+        this.mqsConnectorEnable = mqsConnectorEnable;
+    }
+
+    public ShowMqsInstanceResponse withMqsConnectorAddress(String mqsConnectorAddress) {
+        this.mqsConnectorAddress = mqsConnectorAddress;
+        return this;
+    }
+
+    /** MQS connector地址。
+     * 
+     * @return mqsConnectorAddress */
+    public String getMqsConnectorAddress() {
+        return mqsConnectorAddress;
+    }
+
+    public void setMqsConnectorAddress(String mqsConnectorAddress) {
+        this.mqsConnectorAddress = mqsConnectorAddress;
+    }
+
+    public ShowMqsInstanceResponse withPluginEnable(Boolean pluginEnable) {
+        this.pluginEnable = pluginEnable;
+        return this;
+    }
+
+    /** 是否开启插件功能。
+     * 
+     * @return pluginEnable */
+    public Boolean getPluginEnable() {
+        return pluginEnable;
+    }
+
+    public void setPluginEnable(Boolean pluginEnable) {
+        this.pluginEnable = pluginEnable;
+    }
+
     public ShowMqsInstanceResponse withRestEnable(Boolean restEnable) {
         this.restEnable = restEnable;
         return this;
@@ -1315,7 +1476,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Kafka rest连接地址。
+    /** Kafka rest地址。
      * 
      * @return restConnectAddress */
     public String getRestConnectAddress() {
@@ -1454,6 +1615,118 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.cesVersion = cesVersion;
     }
 
+    public ShowMqsInstanceResponse withNodeNum(Integer nodeNum) {
+        this.nodeNum = nodeNum;
+        return this;
+    }
+
+    /** 节点数量。
+     * 
+     * @return nodeNum */
+    public Integer getNodeNum() {
+        return nodeNum;
+    }
+
+    public void setNodeNum(Integer nodeNum) {
+        this.nodeNum = nodeNum;
+    }
+
+    public ShowMqsInstanceResponse withPublicipAddress(String publicipAddress) {
+        this.publicipAddress = publicipAddress;
+        return this;
+    }
+
+    /** 公网连接地址。
+     * 
+     * @return publicipAddress */
+    public String getPublicipAddress() {
+        return publicipAddress;
+    }
+
+    public void setPublicipAddress(String publicipAddress) {
+        this.publicipAddress = publicipAddress;
+    }
+
+    public ShowMqsInstanceResponse withListeners(Object listeners) {
+        this.listeners = listeners;
+        return this;
+    }
+
+    /** 监听信息。
+     * 
+     * @return listeners */
+    public Object getListeners() {
+        return listeners;
+    }
+
+    public void setListeners(Object listeners) {
+        this.listeners = listeners;
+    }
+
+    public ShowMqsInstanceResponse withPublicAccessEnabled(String publicAccessEnabled) {
+        this.publicAccessEnabled = publicAccessEnabled;
+        return this;
+    }
+
+    /** 是否开启公网访问。用于区分何时开启的公网访问。
+     * 
+     * @return publicAccessEnabled */
+    public String getPublicAccessEnabled() {
+        return publicAccessEnabled;
+    }
+
+    public void setPublicAccessEnabled(String publicAccessEnabled) {
+        this.publicAccessEnabled = publicAccessEnabled;
+    }
+
+    public ShowMqsInstanceResponse withPublicBoundwidth(Integer publicBoundwidth) {
+        this.publicBoundwidth = publicBoundwidth;
+        return this;
+    }
+
+    /** 公网访问带宽。
+     * 
+     * @return publicBoundwidth */
+    public Integer getPublicBoundwidth() {
+        return publicBoundwidth;
+    }
+
+    public void setPublicBoundwidth(Integer publicBoundwidth) {
+        this.publicBoundwidth = publicBoundwidth;
+    }
+
+    public ShowMqsInstanceResponse withConnectDn(String connectDn) {
+        this.connectDn = connectDn;
+        return this;
+    }
+
+    /** 实例连接地址。
+     * 
+     * @return connectDn */
+    public String getConnectDn() {
+        return connectDn;
+    }
+
+    public void setConnectDn(String connectDn) {
+        this.connectDn = connectDn;
+    }
+
+    public ShowMqsInstanceResponse withAgentEnable(Boolean agentEnable) {
+        this.agentEnable = agentEnable;
+        return this;
+    }
+
+    /** 是否开启代理。
+     * 
+     * @return agentEnable */
+    public Boolean getAgentEnable() {
+        return agentEnable;
+    }
+
+    public void setAgentEnable(Boolean agentEnable) {
+        this.agentEnable = agentEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1464,6 +1737,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         }
         ShowMqsInstanceResponse showMqsInstanceResponse = (ShowMqsInstanceResponse) o;
         return Objects.equals(this.name, showMqsInstanceResponse.name)
+            && Objects.equals(this.description, showMqsInstanceResponse.description)
             && Objects.equals(this.engine, showMqsInstanceResponse.engine)
             && Objects.equals(this.engineVersion, showMqsInstanceResponse.engineVersion)
             && Objects.equals(this.specification, showMqsInstanceResponse.specification)
@@ -1496,6 +1770,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             && Objects.equals(this.securityGroupId, showMqsInstanceResponse.securityGroupId)
             && Objects.equals(this.securityGroupName, showMqsInstanceResponse.securityGroupName)
             && Objects.equals(this.subnetId, showMqsInstanceResponse.subnetId)
+            && Objects.equals(this.subnetName, showMqsInstanceResponse.subnetName)
+            && Objects.equals(this.subnetCidr, showMqsInstanceResponse.subnetCidr)
             && Objects.equals(this.availableZones, showMqsInstanceResponse.availableZones)
             && Objects.equals(this.totalStorageSpace, showMqsInstanceResponse.totalStorageSpace)
             && Objects.equals(this.publicConnectAddress, showMqsInstanceResponse.publicConnectAddress)
@@ -1513,6 +1789,9 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             && Objects.equals(this.ipv6ConnectAddresses, showMqsInstanceResponse.ipv6ConnectAddresses)
             && Objects.equals(this.connectorEnable, showMqsInstanceResponse.connectorEnable)
             && Objects.equals(this.connectorId, showMqsInstanceResponse.connectorId)
+            && Objects.equals(this.mqsConnectorEnable, showMqsInstanceResponse.mqsConnectorEnable)
+            && Objects.equals(this.mqsConnectorAddress, showMqsInstanceResponse.mqsConnectorAddress)
+            && Objects.equals(this.pluginEnable, showMqsInstanceResponse.pluginEnable)
             && Objects.equals(this.restEnable, showMqsInstanceResponse.restEnable)
             && Objects.equals(this.restConnectAddress, showMqsInstanceResponse.restConnectAddress)
             && Objects.equals(this.messageQueryInstEnable, showMqsInstanceResponse.messageQueryInstEnable)
@@ -1522,12 +1801,20 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             && Objects.equals(this.podConnectAddress, showMqsInstanceResponse.podConnectAddress)
             && Objects.equals(this.diskEncrypted, showMqsInstanceResponse.diskEncrypted)
             && Objects.equals(this.kafkaPrivateConnectAddress, showMqsInstanceResponse.kafkaPrivateConnectAddress)
-            && Objects.equals(this.cesVersion, showMqsInstanceResponse.cesVersion);
+            && Objects.equals(this.cesVersion, showMqsInstanceResponse.cesVersion)
+            && Objects.equals(this.nodeNum, showMqsInstanceResponse.nodeNum)
+            && Objects.equals(this.publicipAddress, showMqsInstanceResponse.publicipAddress)
+            && Objects.equals(this.listeners, showMqsInstanceResponse.listeners)
+            && Objects.equals(this.publicAccessEnabled, showMqsInstanceResponse.publicAccessEnabled)
+            && Objects.equals(this.publicBoundwidth, showMqsInstanceResponse.publicBoundwidth)
+            && Objects.equals(this.connectDn, showMqsInstanceResponse.connectDn)
+            && Objects.equals(this.agentEnable, showMqsInstanceResponse.agentEnable);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name,
+            description,
             engine,
             engineVersion,
             specification,
@@ -1560,6 +1847,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             securityGroupId,
             securityGroupName,
             subnetId,
+            subnetName,
+            subnetCidr,
             availableZones,
             totalStorageSpace,
             publicConnectAddress,
@@ -1577,6 +1866,9 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             ipv6ConnectAddresses,
             connectorEnable,
             connectorId,
+            mqsConnectorEnable,
+            mqsConnectorAddress,
+            pluginEnable,
             restEnable,
             restConnectAddress,
             messageQueryInstEnable,
@@ -1586,7 +1878,14 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             podConnectAddress,
             diskEncrypted,
             kafkaPrivateConnectAddress,
-            cesVersion);
+            cesVersion,
+            nodeNum,
+            publicipAddress,
+            listeners,
+            publicAccessEnabled,
+            publicBoundwidth,
+            connectDn,
+            agentEnable);
     }
 
     @Override
@@ -1594,6 +1893,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMqsInstanceResponse {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    specification: ").append(toIndentedString(specification)).append("\n");
@@ -1626,6 +1926,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    securityGroupName: ").append(toIndentedString(securityGroupName)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
+        sb.append("    subnetCidr: ").append(toIndentedString(subnetCidr)).append("\n");
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("    totalStorageSpace: ").append(toIndentedString(totalStorageSpace)).append("\n");
         sb.append("    publicConnectAddress: ").append(toIndentedString(publicConnectAddress)).append("\n");
@@ -1643,6 +1945,9 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         sb.append("    ipv6ConnectAddresses: ").append(toIndentedString(ipv6ConnectAddresses)).append("\n");
         sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");
         sb.append("    connectorId: ").append(toIndentedString(connectorId)).append("\n");
+        sb.append("    mqsConnectorEnable: ").append(toIndentedString(mqsConnectorEnable)).append("\n");
+        sb.append("    mqsConnectorAddress: ").append(toIndentedString(mqsConnectorAddress)).append("\n");
+        sb.append("    pluginEnable: ").append(toIndentedString(pluginEnable)).append("\n");
         sb.append("    restEnable: ").append(toIndentedString(restEnable)).append("\n");
         sb.append("    restConnectAddress: ").append(toIndentedString(restConnectAddress)).append("\n");
         sb.append("    messageQueryInstEnable: ").append(toIndentedString(messageQueryInstEnable)).append("\n");
@@ -1653,6 +1958,13 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
+        sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
+        sb.append("    publicipAddress: ").append(toIndentedString(publicipAddress)).append("\n");
+        sb.append("    listeners: ").append(toIndentedString(listeners)).append("\n");
+        sb.append("    publicAccessEnabled: ").append(toIndentedString(publicAccessEnabled)).append("\n");
+        sb.append("    publicBoundwidth: ").append(toIndentedString(publicBoundwidth)).append("\n");
+        sb.append("    connectDn: ").append(toIndentedString(connectDn)).append("\n");
+        sb.append("    agentEnable: ").append(toIndentedString(agentEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

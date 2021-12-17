@@ -21,12 +21,12 @@ public class EventInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_count")
 
-    private String eventCount;
+    private Integer eventCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest_occur_time")
 
-    private String latestOccurTime;
+    private Long latestOccurTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest_event_source")
@@ -65,7 +65,7 @@ public class EventInfo {
         this.eventType = eventType;
     }
 
-    public EventInfo withEventCount(String eventCount) {
+    public EventInfo withEventCount(Integer eventCount) {
         this.eventCount = eventCount;
         return this;
     }
@@ -73,15 +73,15 @@ public class EventInfo {
     /** 选择查询的时间范围内，此事件发生的数量。
      * 
      * @return eventCount */
-    public String getEventCount() {
+    public Integer getEventCount() {
         return eventCount;
     }
 
-    public void setEventCount(String eventCount) {
+    public void setEventCount(Integer eventCount) {
         this.eventCount = eventCount;
     }
 
-    public EventInfo withLatestOccurTime(String latestOccurTime) {
+    public EventInfo withLatestOccurTime(Long latestOccurTime) {
         this.latestOccurTime = latestOccurTime;
         return this;
     }
@@ -89,11 +89,11 @@ public class EventInfo {
     /** 此事件最近一次发生的时间。
      * 
      * @return latestOccurTime */
-    public String getLatestOccurTime() {
+    public Long getLatestOccurTime() {
         return latestOccurTime;
     }
 
-    public void setLatestOccurTime(String latestOccurTime) {
+    public void setLatestOccurTime(Long latestOccurTime) {
         this.latestOccurTime = latestOccurTime;
     }
 

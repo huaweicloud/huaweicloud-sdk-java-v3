@@ -24,9 +24,9 @@ public class ColumnInfo {
     private String fieldLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nullable")
+    @JsonProperty(value = "null_able")
 
-    private String nullable;
+    private String nullAble;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_partition")
@@ -96,20 +96,20 @@ public class ColumnInfo {
         this.fieldLength = fieldLength;
     }
 
-    public ColumnInfo withNullable(String nullable) {
-        this.nullable = nullable;
+    public ColumnInfo withNullAble(String nullAble) {
+        this.nullAble = nullAble;
         return this;
     }
 
     /** 是否允许为空
      * 
-     * @return nullable */
-    public String getNullable() {
-        return nullable;
+     * @return nullAble */
+    public String getNullAble() {
+        return nullAble;
     }
 
-    public void setNullable(String nullable) {
-        this.nullable = nullable;
+    public void setNullAble(String nullAble) {
+        this.nullAble = nullAble;
     }
 
     public ColumnInfo withIsPartition(Boolean isPartition) {
@@ -188,7 +188,7 @@ public class ColumnInfo {
         return Objects.equals(this.fieldName, columnInfo.fieldName)
             && Objects.equals(this.fieldType, columnInfo.fieldType)
             && Objects.equals(this.fieldLength, columnInfo.fieldLength)
-            && Objects.equals(this.nullable, columnInfo.nullable)
+            && Objects.equals(this.nullAble, columnInfo.nullAble)
             && Objects.equals(this.isPartition, columnInfo.isPartition)
             && Objects.equals(this.primary, columnInfo.primary) && Objects.equals(this.unique, columnInfo.unique)
             && Objects.equals(this.decimalDigits, columnInfo.decimalDigits);
@@ -196,7 +196,7 @@ public class ColumnInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(fieldName, fieldType, fieldLength, nullable, isPartition, primary, unique, decimalDigits);
+        return Objects.hash(fieldName, fieldType, fieldLength, nullAble, isPartition, primary, unique, decimalDigits);
     }
 
     @Override
@@ -206,7 +206,7 @@ public class ColumnInfo {
         sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
         sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
         sb.append("    fieldLength: ").append(toIndentedString(fieldLength)).append("\n");
-        sb.append("    nullable: ").append(toIndentedString(nullable)).append("\n");
+        sb.append("    nullAble: ").append(toIndentedString(nullAble)).append("\n");
         sb.append("    isPartition: ").append(toIndentedString(isPartition)).append("\n");
         sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
         sb.append("    unique: ").append(toIndentedString(unique)).append("\n");

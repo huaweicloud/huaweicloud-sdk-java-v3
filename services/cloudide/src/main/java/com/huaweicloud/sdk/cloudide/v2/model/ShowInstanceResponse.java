@@ -20,6 +20,11 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bundle_url")
+
+    private String bundleUrl;
+
     public ShowInstanceResponse withInstance(InstancesVO instance) {
         this.instance = instance;
         return this;
@@ -61,6 +66,22 @@ public class ShowInstanceResponse extends SdkResponse {
         this.status = status;
     }
 
+    public ShowInstanceResponse withBundleUrl(String bundleUrl) {
+        this.bundleUrl = bundleUrl;
+        return this;
+    }
+
+    /** 静态资源链接
+     * 
+     * @return bundleUrl */
+    public String getBundleUrl() {
+        return bundleUrl;
+    }
+
+    public void setBundleUrl(String bundleUrl) {
+        this.bundleUrl = bundleUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -71,12 +92,13 @@ public class ShowInstanceResponse extends SdkResponse {
         }
         ShowInstanceResponse showInstanceResponse = (ShowInstanceResponse) o;
         return Objects.equals(this.instance, showInstanceResponse.instance)
-            && Objects.equals(this.status, showInstanceResponse.status);
+            && Objects.equals(this.status, showInstanceResponse.status)
+            && Objects.equals(this.bundleUrl, showInstanceResponse.bundleUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instance, status);
+        return Objects.hash(instance, status, bundleUrl);
     }
 
     @Override
@@ -85,6 +107,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("class ShowInstanceResponse {\n");
         sb.append("    instance: ").append(toIndentedString(instance)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    bundleUrl: ").append(toIndentedString(bundleUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

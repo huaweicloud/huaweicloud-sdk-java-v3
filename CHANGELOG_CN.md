@@ -1,3 +1,140 @@
+# 3.0.72 2021-12-17
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 支持接口`ShowVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CloudIDE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowInstance`:
+    - 新增响应参数 `bundle_url`、`visitor_id`、`visitor_name`、`visitor_domain_name`
+    - 移除响应参数 `action_list`、`role`、`role_id`、`sub_org`
+  - 接口`ListOrgInstances`:
+    - 新增响应参数 `visitor_id`、`visitor_name`、`visitor_domain_name`
+    - 移除响应参数 `action_list`、`role`、`role_id`、`sub_org`
+  - 接口`ListInstances`:
+    - 新增响应参数 `visitor_id`、`visitor_name`、`visitor_domain_name`
+    - 移除响应参数 `action_list`、`role`、`role_id`、`sub_org`
+
+### HuaweiCloud SDK CloudRTC
+
+- _新增特性_
+  - 支持接口`ListRtcAbnormalEvents`、`ListRtcAbnormalEventDimension`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CES
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListEvents`:
+    - 响应参数`event_count`类型调整 `string` -> `int32`
+    - 响应参数`latest_occur_time`类型调整 `string` -> `int64`
+  - 接口`BatchListMetricData`响应参数`variance`类型调整 `string` -> `double`
+  - 接口`ListResourceGroup`响应参数`type_statistics`类型调整 `string` -> `int32`
+  - 接口`ListEventDetail`:
+    - 响应参数`event_users`类型调整 `string` -> `array`
+    - 响应参数`event_sources`类型调整 `string` -> `array`
+
+### HuaweiCloud SDK IoTAnalytics
+
+- _新增特性_
+  - 支持物联网数据分析服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK MPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateEditingJob`新增请求参数 `input`、`edit_settings`
+  - 接口`ListEditingJob`新增响应参数 `input`、`edit_settings`
+  
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持以下接口：
+    - `RecognizeThailandIdcard`
+    - `RecognizeMyanmarIdcard`
+    - `RecognizeMyanmarDriverLicense`
+    - `RecognizeChileIdCard`
+    - `RecognizeThailandLicensePlate`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ROMA
+
+- _新增特性_
+  - 支持以下接口：
+    - `CountTasks`
+    - `CreateMultiTasks`
+    - `InstallMultiTasks`
+    - `UpdateMultiTasks`
+    - `ResetMultiTaskOffset`
+    - `CreateMultiTaskMappings`
+    - `DeleteMultiTaskMapping`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListMonitorLog`:
+    - 新增响应参数 `dispatch_time`、`end_time`、`read_spend_time`、`write_spend_time`、`remarks`
+    - 响应参数`spend_time`类型调整 `int32` -> `int64`
+  - 接口`CreateDatasourceInfo`新增请求参数 `client_id`、`client_secret`
+  - 接口`ListDatasources`:
+    - 新增响应参数 `datasource_type`、`client_id`、`client_secret`
+    - 移除响应参数 `type`
+  - 接口`UpdateDatasourceInfo`:
+    - 新增请求参数 `client_id`、`client_secret`
+    - 新增响应参数 `datasource_type`、`client_id`、`client_secret`
+    - 移除响应参数 `type`
+  - 接口`ShowDataourceDetail`:
+    - 新增响应参数 `datasource_type`、`client_id`、`client_secret`
+    - 移除响应参数 `type`
+  - 接口`ListDatasourceColumns`:
+    - 新增响应参数 `null_able`
+    - 移除响应参数 `nullable`
+  - 接口`StartTestDatasource`新增请求参数 `client_id`、`client_secret`
+  - 接口`ListMqsInstance`新增请求参数 `include_internal`
+  - 接口`ShowMqsInstance`新增响应参数 `description`、`subnet_name`、`subnet_cidr`、`mqs_connector_enable`、`mqs_connector_address`、`plugin_enable`、`node_num`、`publicip_address`、`listeners`、`public_access_enabled`、`public_boundwidth`、`connect_dn`、`agent_enable`
+  - 接口`ListMqsInstanceTopics`:
+    - 新增请求参数 `access_policy`
+    - 新增响应参数 `policies`
+  - 接口`ImportMqsInstanceTopic`:
+    - 新增请求参数 `upload_file_name`
+    - 移除请求参数 `upload-file-name`
+  - 接口`UpdateTopicAccessPolicy`:
+    - 新增请求参数 `description`、`sensitive_word`
+    - 请求参数`owner`改为非必填
+  - 接口`ShowMqsInstanceMessages`:
+    - 新增请求参数 `key`、`message_id`、`tag`
+    - 新增响应参数 `total`、`size`
+    - 请求参数`end_time`、`start_time`改为非必填
+  - 接口`ResetMessages`:
+    - 新增请求参数 `consumer_key`
+    - 新增响应参数 `consumer_key`
+
 # 3.0.71 2021-12-10
 
 ### HuaweiCloud SDK AOM

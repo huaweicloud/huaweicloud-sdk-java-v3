@@ -24,6 +24,11 @@ public class ResetMessagesResponse extends SdkResponse {
 
     private Long messageOffset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consumer_key")
+
+    private String consumerKey;
+
     public ResetMessagesResponse withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -72,6 +77,22 @@ public class ResetMessagesResponse extends SdkResponse {
         this.messageOffset = messageOffset;
     }
 
+    public ResetMessagesResponse withConsumerKey(String consumerKey) {
+        this.consumerKey = consumerKey;
+        return this;
+    }
+
+    /** 应用key。在该消息头中添加一个consumer_key的消息头。
+     * 
+     * @return consumerKey */
+    public String getConsumerKey() {
+        return consumerKey;
+    }
+
+    public void setConsumerKey(String consumerKey) {
+        this.consumerKey = consumerKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,12 +104,13 @@ public class ResetMessagesResponse extends SdkResponse {
         ResetMessagesResponse resetMessagesResponse = (ResetMessagesResponse) o;
         return Objects.equals(this.topic, resetMessagesResponse.topic)
             && Objects.equals(this.partition, resetMessagesResponse.partition)
-            && Objects.equals(this.messageOffset, resetMessagesResponse.messageOffset);
+            && Objects.equals(this.messageOffset, resetMessagesResponse.messageOffset)
+            && Objects.equals(this.consumerKey, resetMessagesResponse.consumerKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topic, partition, messageOffset);
+        return Objects.hash(topic, partition, messageOffset, consumerKey);
     }
 
     @Override
@@ -98,6 +120,7 @@ public class ResetMessagesResponse extends SdkResponse {
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
+        sb.append("    consumerKey: ").append(toIndentedString(consumerKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -101,12 +101,12 @@ public class ListEventDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_users")
 
-    private String eventUsers;
+    private List<String> eventUsers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_sources")
 
-    private String eventSources;
+    private List<String> eventSources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_info")
@@ -150,35 +150,67 @@ public class ListEventDetailResponse extends SdkResponse {
         this.eventType = eventType;
     }
 
-    public ListEventDetailResponse withEventUsers(String eventUsers) {
+    public ListEventDetailResponse withEventUsers(List<String> eventUsers) {
         this.eventUsers = eventUsers;
+        return this;
+    }
+
+    public ListEventDetailResponse addEventUsersItem(String eventUsersItem) {
+        if (this.eventUsers == null) {
+            this.eventUsers = new ArrayList<>();
+        }
+        this.eventUsers.add(eventUsersItem);
+        return this;
+    }
+
+    public ListEventDetailResponse withEventUsers(Consumer<List<String>> eventUsersSetter) {
+        if (this.eventUsers == null) {
+            this.eventUsers = new ArrayList<>();
+        }
+        eventUsersSetter.accept(this.eventUsers);
         return this;
     }
 
     /** 上报事件时用户的名称，也可能为projectID。
      * 
      * @return eventUsers */
-    public String getEventUsers() {
+    public List<String> getEventUsers() {
         return eventUsers;
     }
 
-    public void setEventUsers(String eventUsers) {
+    public void setEventUsers(List<String> eventUsers) {
         this.eventUsers = eventUsers;
     }
 
-    public ListEventDetailResponse withEventSources(String eventSources) {
+    public ListEventDetailResponse withEventSources(List<String> eventSources) {
         this.eventSources = eventSources;
+        return this;
+    }
+
+    public ListEventDetailResponse addEventSourcesItem(String eventSourcesItem) {
+        if (this.eventSources == null) {
+            this.eventSources = new ArrayList<>();
+        }
+        this.eventSources.add(eventSourcesItem);
+        return this;
+    }
+
+    public ListEventDetailResponse withEventSources(Consumer<List<String>> eventSourcesSetter) {
+        if (this.eventSources == null) {
+            this.eventSources = new ArrayList<>();
+        }
+        eventSourcesSetter.accept(this.eventSources);
         return this;
     }
 
     /** 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
      * 
      * @return eventSources */
-    public String getEventSources() {
+    public List<String> getEventSources() {
         return eventSources;
     }
 
-    public void setEventSources(String eventSources) {
+    public void setEventSources(List<String> eventSources) {
         this.eventSources = eventSources;
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Instance */
+/** 集群的实例对象。 */
 public class Instance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +57,7 @@ public class Instance {
         return this;
     }
 
-    /** CloudTable集群计算单元节点数目，默认为2。
+    /** CloudTable集群计算单元节点数目，至少为2。
      * 
      * @return cuNum */
     public Integer getCuNum() {
@@ -73,7 +73,7 @@ public class Instance {
         return this;
     }
 
-    /** CloudTable集群Lemon节点数目，默认为2。
+    /** CloudTable集群Lemon节点数目。
      * 
      * @return lemonNum */
     public Integer getLemonNum() {
@@ -121,7 +121,7 @@ public class Instance {
         return this;
     }
 
-    /** CloudTable集群TSD节点数目，默认为2。
+    /** CloudTable集群TSD节点数目，至少为2。
      * 
      * @return tsdNum */
     public Integer getTsdNum() {

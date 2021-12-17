@@ -33,6 +33,11 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
     private List<ListInstanceTopicsRespTopics> topics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policies")
+
+    private List<ListInstanceTopicsRespPolicies> policies = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remain_partitions")
 
     private Integer remainPartitions;
@@ -138,6 +143,38 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.topics = topics;
     }
 
+    public ListMqsInstanceTopicsResponse withPolicies(List<ListInstanceTopicsRespPolicies> policies) {
+        this.policies = policies;
+        return this;
+    }
+
+    public ListMqsInstanceTopicsResponse addPoliciesItem(ListInstanceTopicsRespPolicies policiesItem) {
+        if (this.policies == null) {
+            this.policies = new ArrayList<>();
+        }
+        this.policies.add(policiesItem);
+        return this;
+    }
+
+    public ListMqsInstanceTopicsResponse withPolicies(Consumer<List<ListInstanceTopicsRespPolicies>> policiesSetter) {
+        if (this.policies == null) {
+            this.policies = new ArrayList<>();
+        }
+        policiesSetter.accept(this.policies);
+        return this;
+    }
+
+    /** 权限列表。
+     * 
+     * @return policies */
+    public List<ListInstanceTopicsRespPolicies> getPolicies() {
+        return policies;
+    }
+
+    public void setPolicies(List<ListInstanceTopicsRespPolicies> policies) {
+        this.policies = policies;
+    }
+
     public ListMqsInstanceTopicsResponse withRemainPartitions(Integer remainPartitions) {
         this.remainPartitions = remainPartitions;
         return this;
@@ -183,13 +220,14 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
             && Objects.equals(this.size, listMqsInstanceTopicsResponse.size)
             && Objects.equals(this.permissions, listMqsInstanceTopicsResponse.permissions)
             && Objects.equals(this.topics, listMqsInstanceTopicsResponse.topics)
+            && Objects.equals(this.policies, listMqsInstanceTopicsResponse.policies)
             && Objects.equals(this.remainPartitions, listMqsInstanceTopicsResponse.remainPartitions)
             && Objects.equals(this.maxPartitions, listMqsInstanceTopicsResponse.maxPartitions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, size, permissions, topics, remainPartitions, maxPartitions);
+        return Objects.hash(total, size, permissions, topics, policies, remainPartitions, maxPartitions);
     }
 
     @Override
@@ -200,6 +238,7 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
+        sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
         sb.append("    remainPartitions: ").append(toIndentedString(remainPartitions)).append("\n");
         sb.append("    maxPartitions: ").append(toIndentedString(maxPartitions)).append("\n");
         sb.append("}");

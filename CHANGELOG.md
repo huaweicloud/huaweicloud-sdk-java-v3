@@ -1,3 +1,140 @@
+# 3.0.72 2021-12-17
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - Support the interface `ShowVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CloudIDE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ShowInstance`:
+    - Add the response parameters `bundle_url`, `visitor_id`, `visitor_name`, `visitor_domain_name`
+    - Remove the response parameters `action_list`, `role`, `role_id`, `sub_org`
+  - Changes of the interface `ListOrgInstances`:
+    - Add the response parameters `visitor_id`, `visitor_name`, `visitor_domain_name`
+    - Remove the response parameters `action_list`, `role`, `role_id`, `sub_org`
+  - Changes of the interface `ListInstances`:
+    - Add the response parameters `visitor_id`, `visitor_name`, `visitor_domain_name`
+    - Remove the response parameters `action_list`, `role`, `role_id`, `sub_org`
+
+### HuaweiCloud SDK CloudRTC
+
+- _Features_
+  - Support the interfaces `ListRtcAbnormalEvents`, `ListRtcAbnormalEventDimension`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListEvents`:
+    - Modify the type `string` -> `int32` of the response parameter `event_count`
+    - Modify the type `string` -> `int64` of the response parameter `latest_occur_time`
+  - Modify the type `string` -> `double` of the response parameter `variance` of the interface `BatchListMetricData`
+  - Modify the type `string` -> `int32` of the response parameter `type_statistics` of the interface `ListResourceGroup`
+  - Changes of the interface `ListEventDetail`:
+    - Modify the type `string` -> `array` of the response parameter `event_users`
+    - Modify the type `string` -> `array` of the response parameter `event_sources`
+
+### HuaweiCloud SDK IoTAnalytics
+
+- _Features_
+  - Support the service `IoTAnalytics`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK MPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `input`, `edit_settings` to the interface `CreateEditingJob`
+  - Add the response parameters `input`, `edit_settings` to the interface `ListEditingJob`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the following interfaces：
+    - `RecognizeThailandIdcard`
+    - `RecognizeMyanmarIdcard`
+    - `RecognizeMyanmarDriverLicense`
+    - `RecognizeChileIdCard`
+    - `RecognizeThailandLicensePlate`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ROMA
+
+- _Features_
+  - Support the following interfaces：
+    - `CountTasks`
+    - `CreateMultiTasks`
+    - `InstallMultiTasks`
+    - `UpdateMultiTasks`
+    - `ResetMultiTaskOffset`
+    - `CreateMultiTaskMappings`
+    - `DeleteMultiTaskMapping`
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListMonitorLog`:
+    - Add the response parameters `dispatch_time`, `end_time`, `read_spend_time`, `write_spend_time`, `remarks`
+    - Modify the type `int32` -> `int64` of the response parameter `spend_time`
+  - Add the request parameters `client_id`, `client_secret` to the interface `CreateDatasourceInfo`
+  - Changes of the interface `ListDatasources`:
+    - Add the response parameters `datasource_type`, `client_id`, `client_secret`
+    - Remove the response parameter `type`
+  - Changes of the interface `UpdateDatasourceInfo`:
+    - Add the request parameters `client_id`, `client_secret`
+    - Add the response parameters `datasource_type`, `client_id`, `client_secret`
+    - Remove the response parameter `type`
+  - Changes of the interface `ShowDataourceDetail`:
+    - Add the response parameters `datasource_type`, `client_id`, `client_secret`
+    - Remove the response parameter `type`
+  - Changes of the interface `ListDatasourceColumns`:
+    - Add the response parameter `null_able`
+    - Remove the response parameter `nullable`
+  - Add the request parameters `client_id`, `client_secret` to the interface `StartTestDatasource`
+  - Add the request parameter `include_internal` to the interface `ListMqsInstance`
+  - Add the response parameters `description`, `subnet_name`, `subnet_cidr`, `mqs_connector_enable`, `mqs_connector_address`, `plugin_enable`, `node_num`, `publicip_address`, `listeners`, `public_access_enabled`, `public_boundwidth`, `connect_dn`, `agent_enable` to the interface `ShowMqsInstance`
+  - Changes of the interface `ListMqsInstanceTopics`:
+    - Add the request parameter `access_policy`
+    - Add the response parameter `policies`
+  - Changes of the interface `ImportMqsInstanceTopic`:
+    - Add the request parameter `upload_file_name`
+    - Remove the request parameter `upload-file-name`
+  - Changes of the interface `UpdateTopicAccessPolicy`:
+    - Add the request parameters `description`, `sensitive_word`
+    - The request parameter `owner` changed to not required
+  - Changes of the interface `ShowMqsInstanceMessages`:
+    - Add the request parameters `key`, `message_id`, `tag`
+    - Add the response parameters `total`, `size`
+    - The request parameter `end_time`, `start_time` changed to not required
+  - Changes of the interface `ResetMessages`:
+    - Add the request parameter `consumer_key`
+    - Add the response parameter `consumer_key`
+
 # 3.0.71 2021-12-10
 
 ### HuaweiCloud SDK AOM

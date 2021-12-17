@@ -24,6 +24,11 @@ public class ResetMessagesReq {
 
     private BigDecimal messageOffset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consumer_key")
+
+    private String consumerKey;
+
     public ResetMessagesReq withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -72,6 +77,22 @@ public class ResetMessagesReq {
         this.messageOffset = messageOffset;
     }
 
+    public ResetMessagesReq withConsumerKey(String consumerKey) {
+        this.consumerKey = consumerKey;
+        return this;
+    }
+
+    /** 应用key。在该消息头中添加一个consumer_key的消息头。
+     * 
+     * @return consumerKey */
+    public String getConsumerKey() {
+        return consumerKey;
+    }
+
+    public void setConsumerKey(String consumerKey) {
+        this.consumerKey = consumerKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,12 +104,13 @@ public class ResetMessagesReq {
         ResetMessagesReq resetMessagesReq = (ResetMessagesReq) o;
         return Objects.equals(this.topic, resetMessagesReq.topic)
             && Objects.equals(this.partition, resetMessagesReq.partition)
-            && Objects.equals(this.messageOffset, resetMessagesReq.messageOffset);
+            && Objects.equals(this.messageOffset, resetMessagesReq.messageOffset)
+            && Objects.equals(this.consumerKey, resetMessagesReq.consumerKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topic, partition, messageOffset);
+        return Objects.hash(topic, partition, messageOffset, consumerKey);
     }
 
     @Override
@@ -98,6 +120,7 @@ public class ResetMessagesReq {
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
+        sb.append("    consumerKey: ").append(toIndentedString(consumerKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

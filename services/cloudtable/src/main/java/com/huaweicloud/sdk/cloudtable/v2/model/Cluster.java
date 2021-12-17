@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Cluster */
+/** 创建集群参数对象实体。 */
 public class Cluster {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,7 +75,7 @@ public class Cluster {
         return this;
     }
 
-    /** 是否开启Lemon。 - false：不开启 - true：开启
+    /** 是否开启Lemon(目前已关闭该参数，填false即可) - false：不开启 - true：开启
      * 
      * @return enableLemon */
     public Boolean getEnableLemon() {

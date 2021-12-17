@@ -58,6 +58,21 @@ public class ShowMqsInstanceMessagesRequest {
 
     private String partition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key")
+
+    private String key;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message_id")
+
+    private String messageId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag")
+
+    private String tag;
+
     public ShowMqsInstanceMessagesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -111,7 +126,7 @@ public class ShowMqsInstanceMessagesRequest {
         return this;
     }
 
-    /** 开始时间。Unix毫秒时间戳。
+    /** 开始时间。Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
      * 
      * @return startTime */
     public String getStartTime() {
@@ -127,7 +142,7 @@ public class ShowMqsInstanceMessagesRequest {
         return this;
     }
 
-    /** 开始时间。Unix毫秒时间戳。
+    /** 结束时间。Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
      * 
      * @return endTime */
     public String getEndTime() {
@@ -191,7 +206,7 @@ public class ShowMqsInstanceMessagesRequest {
         return this;
     }
 
-    /** 消息偏移量。
+    /** 消息偏移量。 查询消息内容时，为必选参数。 若start_time、end_time参数不为空，该参数无效。
      * 
      * @return messageOffset */
     public String getMessageOffset() {
@@ -207,7 +222,7 @@ public class ShowMqsInstanceMessagesRequest {
         return this;
     }
 
-    /** 分区。
+    /** 分区。 查询消息内容时，为必选参数。 若start_time、end_time参数不为空，该参数无效。
      * 
      * @return partition */
     public String getPartition() {
@@ -216,6 +231,54 @@ public class ShowMqsInstanceMessagesRequest {
 
     public void setPartition(String partition) {
         this.partition = partition;
+    }
+
+    public ShowMqsInstanceMessagesRequest withKey(String key) {
+        this.key = key;
+        return this;
+    }
+
+    /** 消息key。
+     * 
+     * @return key */
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public ShowMqsInstanceMessagesRequest withMessageId(String messageId) {
+        this.messageId = messageId;
+        return this;
+    }
+
+    /** 消息ID。
+     * 
+     * @return messageId */
+    public String getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(String messageId) {
+        this.messageId = messageId;
+    }
+
+    public ShowMqsInstanceMessagesRequest withTag(String tag) {
+        this.tag = tag;
+        return this;
+    }
+
+    /** 消息标签。
+     * 
+     * @return tag */
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     @Override
@@ -236,13 +299,27 @@ public class ShowMqsInstanceMessagesRequest {
             && Objects.equals(this.offset, showMqsInstanceMessagesRequest.offset)
             && Objects.equals(this.download, showMqsInstanceMessagesRequest.download)
             && Objects.equals(this.messageOffset, showMqsInstanceMessagesRequest.messageOffset)
-            && Objects.equals(this.partition, showMqsInstanceMessagesRequest.partition);
+            && Objects.equals(this.partition, showMqsInstanceMessagesRequest.partition)
+            && Objects.equals(this.key, showMqsInstanceMessagesRequest.key)
+            && Objects.equals(this.messageId, showMqsInstanceMessagesRequest.messageId)
+            && Objects.equals(this.tag, showMqsInstanceMessagesRequest.tag);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(instanceId, topic, asc, startTime, endTime, limit, offset, download, messageOffset, partition);
+        return Objects.hash(instanceId,
+            topic,
+            asc,
+            startTime,
+            endTime,
+            limit,
+            offset,
+            download,
+            messageOffset,
+            partition,
+            key,
+            messageId,
+            tag);
     }
 
     @Override
@@ -259,6 +336,9 @@ public class ShowMqsInstanceMessagesRequest {
         sb.append("    download: ").append(toIndentedString(download)).append("\n");
         sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");
         return sb.toString();
     }
