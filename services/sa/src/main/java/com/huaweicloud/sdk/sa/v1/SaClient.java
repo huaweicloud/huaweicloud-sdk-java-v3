@@ -35,7 +35,7 @@ public class SaClient {
             SaMeta.checkProductHealthy, hcClient);
     }
 
-    /** 上报安全产品数据 批量数据上报，每批次最多不超过50条。
+    /** 上报安全产品数据(V2) 批量数据上报，每批次最多不超过50条。
      *
      * @param ImportEventsRequest 请求对象
      * @return ImportEventsResponse */
@@ -43,7 +43,7 @@ public class SaClient {
         return hcClient.syncInvokeHttp(request, SaMeta.importEvents);
     }
 
-    /** 上报安全产品数据 批量数据上报，每批次最多不超过50条。
+    /** 上报安全产品数据(V2) 批量数据上报，每批次最多不超过50条。
      *
      * @param ImportEventsRequest 请求对象
      * @return SyncInvoker<ImportEventsRequest, ImportEventsResponse> */

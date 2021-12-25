@@ -1248,6 +1248,42 @@ public class RdsClient {
             hcClient);
     }
 
+    /** 查询API版本列表 查询API版本列表。
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return ListApiVersionResponse */
+    public ListApiVersionResponse listApiVersion(ListApiVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listApiVersion);
+    }
+
+    /** 查询API版本列表 查询API版本列表。
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return SyncInvoker<ListApiVersionRequest, ListApiVersionResponse> */
+    public SyncInvoker<ListApiVersionRequest, ListApiVersionResponse> listApiVersionInvoker(
+        ListApiVersionRequest request) {
+        return new SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>(request, RdsMeta.listApiVersion,
+            hcClient);
+    }
+
+    /** 查询指定的API版本信息 查询指定的API版本信息。
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return ShowApiVersionResponse */
+    public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showApiVersion);
+    }
+
+    /** 查询指定的API版本信息 查询指定的API版本信息。
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> */
+    public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
+        ShowApiVersionRequest request) {
+        return new SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, RdsMeta.showApiVersion,
+            hcClient);
+    }
+
     /** 授权数据库帐号 授权数据库帐号。
      *
      * @param AllowDbUserPrivilegeRequest 请求对象
@@ -1631,6 +1667,25 @@ public class RdsClient {
         ListPostgresqlDbUserPaginatedRequest request) {
         return new SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse>(request,
             RdsMeta.listPostgresqlDbUserPaginated, hcClient);
+    }
+
+    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+     *
+     * @param SearchQueryScaleComputeFlavorsRequest 请求对象
+     * @return SearchQueryScaleComputeFlavorsResponse */
+    public SearchQueryScaleComputeFlavorsResponse searchQueryScaleComputeFlavors(
+        SearchQueryScaleComputeFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.searchQueryScaleComputeFlavors);
+    }
+
+    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+     *
+     * @param SearchQueryScaleComputeFlavorsRequest 请求对象
+     * @return SyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse> */
+    public SyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse> searchQueryScaleComputeFlavorsInvoker(
+        SearchQueryScaleComputeFlavorsRequest request) {
+        return new SyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse>(request,
+            RdsMeta.searchQueryScaleComputeFlavors, hcClient);
     }
 
     /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。

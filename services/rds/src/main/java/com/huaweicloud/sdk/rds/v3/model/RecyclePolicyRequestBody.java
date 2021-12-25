@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** RecyclePolicyRequestBody */
 public class RecyclePolicyRequestBody {
@@ -11,21 +12,30 @@ public class RecyclePolicyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recycle_policy")
 
-    private Object recyclePolicy;
+    private RecyclePolicy recyclePolicy;
 
-    public RecyclePolicyRequestBody withRecyclePolicy(Object recyclePolicy) {
+    public RecyclePolicyRequestBody withRecyclePolicy(RecyclePolicy recyclePolicy) {
         this.recyclePolicy = recyclePolicy;
         return this;
     }
 
-    /** 每个元素都是与回收站相关信息。
+    public RecyclePolicyRequestBody withRecyclePolicy(Consumer<RecyclePolicy> recyclePolicySetter) {
+        if (this.recyclePolicy == null) {
+            this.recyclePolicy = new RecyclePolicy();
+            recyclePolicySetter.accept(this.recyclePolicy);
+        }
+
+        return this;
+    }
+
+    /** Get recyclePolicy
      * 
      * @return recyclePolicy */
-    public Object getRecyclePolicy() {
+    public RecyclePolicy getRecyclePolicy() {
         return recyclePolicy;
     }
 
-    public void setRecyclePolicy(Object recyclePolicy) {
+    public void setRecyclePolicy(RecyclePolicy recyclePolicy) {
         this.recyclePolicy = recyclePolicy;
     }
 

@@ -13,62 +13,41 @@ import java.util.function.Consumer;
 public class CreateAndStartRandomClusterJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "submissions")
 
-    private String name;
+    private List<StartJobSubmission> submissions = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "validation-result")
-
-    private List<JobValidationResult> validationResult = null;
-
-    public CreateAndStartRandomClusterJobResponse withName(String name) {
-        this.name = name;
+    public CreateAndStartRandomClusterJobResponse withSubmissions(List<StartJobSubmission> submissions) {
+        this.submissions = submissions;
         return this;
     }
 
-    /** 作业名称。
-     * 
-     * @return name */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public CreateAndStartRandomClusterJobResponse withValidationResult(List<JobValidationResult> validationResult) {
-        this.validationResult = validationResult;
-        return this;
-    }
-
-    public CreateAndStartRandomClusterJobResponse addValidationResultItem(JobValidationResult validationResultItem) {
-        if (this.validationResult == null) {
-            this.validationResult = new ArrayList<>();
+    public CreateAndStartRandomClusterJobResponse addSubmissionsItem(StartJobSubmission submissionsItem) {
+        if (this.submissions == null) {
+            this.submissions = new ArrayList<>();
         }
-        this.validationResult.add(validationResultItem);
+        this.submissions.add(submissionsItem);
         return this;
     }
 
-    public CreateAndStartRandomClusterJobResponse withValidationResult(
-        Consumer<List<JobValidationResult>> validationResultSetter) {
-        if (this.validationResult == null) {
-            this.validationResult = new ArrayList<>();
+    public CreateAndStartRandomClusterJobResponse withSubmissions(
+        Consumer<List<StartJobSubmission>> submissionsSetter) {
+        if (this.submissions == null) {
+            this.submissions = new ArrayList<>();
         }
-        validationResultSetter.accept(this.validationResult);
+        submissionsSetter.accept(this.submissions);
         return this;
     }
 
-    /** 校验结果： - 如果修改失败，返回失败原因。 - 如果修改成功，返回空列表。
+    /** 作业运行信息，请参见submission参数说明
      * 
-     * @return validationResult */
-    public List<JobValidationResult> getValidationResult() {
-        return validationResult;
+     * @return submissions */
+    public List<StartJobSubmission> getSubmissions() {
+        return submissions;
     }
 
-    public void setValidationResult(List<JobValidationResult> validationResult) {
-        this.validationResult = validationResult;
+    public void setSubmissions(List<StartJobSubmission> submissions) {
+        this.submissions = submissions;
     }
 
     @Override
@@ -81,21 +60,19 @@ public class CreateAndStartRandomClusterJobResponse extends SdkResponse {
         }
         CreateAndStartRandomClusterJobResponse createAndStartRandomClusterJobResponse =
             (CreateAndStartRandomClusterJobResponse) o;
-        return Objects.equals(this.name, createAndStartRandomClusterJobResponse.name)
-            && Objects.equals(this.validationResult, createAndStartRandomClusterJobResponse.validationResult);
+        return Objects.equals(this.submissions, createAndStartRandomClusterJobResponse.submissions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, validationResult);
+        return Objects.hash(submissions);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAndStartRandomClusterJobResponse {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    validationResult: ").append(toIndentedString(validationResult)).append("\n");
+        sb.append("    submissions: ").append(toIndentedString(submissions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -17,41 +17,22 @@ public class CloudtestClient {
         return new ClientBuilder<>(CloudtestClient::new);
     }
 
-    /** 通过导入仓库中的文件生成接口测试套 通过导入仓库中的文件生成接口测试套
+    /** 批量删除测试用例 批量删除测试用例
      *
-     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
-     * @return CreateApiTestSuiteByRepoFileResponse */
-    public CreateApiTestSuiteByRepoFileResponse createApiTestSuiteByRepoFile(
-        CreateApiTestSuiteByRepoFileRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudtestMeta.createApiTestSuiteByRepoFile);
+     * @param BatchDeleteTestCaseRequest 请求对象
+     * @return BatchDeleteTestCaseResponse */
+    public BatchDeleteTestCaseResponse batchDeleteTestCase(BatchDeleteTestCaseRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.batchDeleteTestCase);
     }
 
-    /** 通过导入仓库中的文件生成接口测试套 通过导入仓库中的文件生成接口测试套
+    /** 批量删除测试用例 批量删除测试用例
      *
-     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
-     * @return SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> */
-    public SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFileInvoker(
-        CreateApiTestSuiteByRepoFileRequest request) {
-        return new SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>(request,
-            CloudtestMeta.createApiTestSuiteByRepoFile, hcClient);
-    }
-
-    /** 获取云测的环境参数分组列表 获取云测的环境参数分组列表
-     *
-     * @param ListEnvironmentsRequest 请求对象
-     * @return ListEnvironmentsResponse */
-    public ListEnvironmentsResponse listEnvironments(ListEnvironmentsRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudtestMeta.listEnvironments);
-    }
-
-    /** 获取云测的环境参数分组列表 获取云测的环境参数分组列表
-     *
-     * @param ListEnvironmentsRequest 请求对象
-     * @return SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> */
-    public SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironmentsInvoker(
-        ListEnvironmentsRequest request) {
-        return new SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>(request,
-            CloudtestMeta.listEnvironments, hcClient);
+     * @param BatchDeleteTestCaseRequest 请求对象
+     * @return SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> */
+    public SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> batchDeleteTestCaseInvoker(
+        BatchDeleteTestCaseRequest request) {
+        return new SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse>(request,
+            CloudtestMeta.batchDeleteTestCase, hcClient);
     }
 
     /** 项目下创建计划 项目下创建计划
@@ -70,40 +51,6 @@ public class CloudtestClient {
         return new SyncInvoker<CreatePlanRequest, CreatePlanResponse>(request, CloudtestMeta.createPlan, hcClient);
     }
 
-    /** 计划中批量添加测试用例 计划中批量添加测试用例
-     *
-     * @param CreateTestCaseInPlanRequest 请求对象
-     * @return CreateTestCaseInPlanResponse */
-    public CreateTestCaseInPlanResponse createTestCaseInPlan(CreateTestCaseInPlanRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudtestMeta.createTestCaseInPlan);
-    }
-
-    /** 计划中批量添加测试用例 计划中批量添加测试用例
-     *
-     * @param CreateTestCaseInPlanRequest 请求对象
-     * @return SyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse> */
-    public SyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse> createTestCaseInPlanInvoker(
-        CreateTestCaseInPlanRequest request) {
-        return new SyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse>(request,
-            CloudtestMeta.createTestCaseInPlan, hcClient);
-    }
-
-    /** 项目下查询测试计划列表 项目下查询测试计划列表
-     *
-     * @param ShowPlansRequest 请求对象
-     * @return ShowPlansResponse */
-    public ShowPlansResponse showPlans(ShowPlansRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudtestMeta.showPlans);
-    }
-
-    /** 项目下查询测试计划列表 项目下查询测试计划列表
-     *
-     * @param ShowPlansRequest 请求对象
-     * @return SyncInvoker<ShowPlansRequest, ShowPlansResponse> */
-    public SyncInvoker<ShowPlansRequest, ShowPlansResponse> showPlansInvoker(ShowPlansRequest request) {
-        return new SyncInvoker<ShowPlansRequest, ShowPlansResponse>(request, CloudtestMeta.showPlans, hcClient);
-    }
-
     /** 新测试类型服务注册到云测 新测试类型服务注册到云测
      *
      * @param CreateServiceRequest 请求对象
@@ -119,76 +66,6 @@ public class CloudtestClient {
     public SyncInvoker<CreateServiceRequest, CreateServiceResponse> createServiceInvoker(CreateServiceRequest request) {
         return new SyncInvoker<CreateServiceRequest, CreateServiceResponse>(request, CloudtestMeta.createService,
             hcClient);
-    }
-
-    /** 删除已注册服务 删除已注册服务
-     *
-     * @param DeleteServiceRequest 请求对象
-     * @return DeleteServiceResponse */
-    public DeleteServiceResponse deleteService(DeleteServiceRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudtestMeta.deleteService);
-    }
-
-    /** 删除已注册服务 删除已注册服务
-     *
-     * @param DeleteServiceRequest 请求对象
-     * @return SyncInvoker<DeleteServiceRequest, DeleteServiceResponse> */
-    public SyncInvoker<DeleteServiceRequest, DeleteServiceResponse> deleteServiceInvoker(DeleteServiceRequest request) {
-        return new SyncInvoker<DeleteServiceRequest, DeleteServiceResponse>(request, CloudtestMeta.deleteService,
-            hcClient);
-    }
-
-    /** 用户获取自己当前已经注册的服务 用户获取自己当前已经注册的服务
-     *
-     * @param ShowRegisterServiceRequest 请求对象
-     * @return ShowRegisterServiceResponse */
-    public ShowRegisterServiceResponse showRegisterService(ShowRegisterServiceRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudtestMeta.showRegisterService);
-    }
-
-    /** 用户获取自己当前已经注册的服务 用户获取自己当前已经注册的服务
-     *
-     * @param ShowRegisterServiceRequest 请求对象
-     * @return SyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse> */
-    public SyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse> showRegisterServiceInvoker(
-        ShowRegisterServiceRequest request) {
-        return new SyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse>(request,
-            CloudtestMeta.showRegisterService, hcClient);
-    }
-
-    /** 更新已注册服务 更新已注册服务
-     *
-     * @param UpdateServiceRequest 请求对象
-     * @return UpdateServiceResponse */
-    public UpdateServiceResponse updateService(UpdateServiceRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudtestMeta.updateService);
-    }
-
-    /** 更新已注册服务 更新已注册服务
-     *
-     * @param UpdateServiceRequest 请求对象
-     * @return SyncInvoker<UpdateServiceRequest, UpdateServiceResponse> */
-    public SyncInvoker<UpdateServiceRequest, UpdateServiceResponse> updateServiceInvoker(UpdateServiceRequest request) {
-        return new SyncInvoker<UpdateServiceRequest, UpdateServiceResponse>(request, CloudtestMeta.updateService,
-            hcClient);
-    }
-
-    /** 批量删除测试用例 批量删除测试用例
-     *
-     * @param BatchDeleteTestCaseRequest 请求对象
-     * @return BatchDeleteTestCaseResponse */
-    public BatchDeleteTestCaseResponse batchDeleteTestCase(BatchDeleteTestCaseRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudtestMeta.batchDeleteTestCase);
-    }
-
-    /** 批量删除测试用例 批量删除测试用例
-     *
-     * @param BatchDeleteTestCaseRequest 请求对象
-     * @return SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> */
-    public SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> batchDeleteTestCaseInvoker(
-        BatchDeleteTestCaseRequest request) {
-        return new SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse>(request,
-            CloudtestMeta.batchDeleteTestCase, hcClient);
     }
 
     /** 创建测试用例 创建测试用例
@@ -209,6 +86,41 @@ public class CloudtestClient {
             hcClient);
     }
 
+    /** 计划中批量添加测试用例 计划中批量添加测试用例
+     *
+     * @param CreateTestCaseInPlanRequest 请求对象
+     * @return CreateTestCaseInPlanResponse */
+    public CreateTestCaseInPlanResponse createTestCaseInPlan(CreateTestCaseInPlanRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.createTestCaseInPlan);
+    }
+
+    /** 计划中批量添加测试用例 计划中批量添加测试用例
+     *
+     * @param CreateTestCaseInPlanRequest 请求对象
+     * @return SyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse> */
+    public SyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse> createTestCaseInPlanInvoker(
+        CreateTestCaseInPlanRequest request) {
+        return new SyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse>(request,
+            CloudtestMeta.createTestCaseInPlan, hcClient);
+    }
+
+    /** 删除已注册服务 删除已注册服务
+     *
+     * @param DeleteServiceRequest 请求对象
+     * @return DeleteServiceResponse */
+    public DeleteServiceResponse deleteService(DeleteServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.deleteService);
+    }
+
+    /** 删除已注册服务 删除已注册服务
+     *
+     * @param DeleteServiceRequest 请求对象
+     * @return SyncInvoker<DeleteServiceRequest, DeleteServiceResponse> */
+    public SyncInvoker<DeleteServiceRequest, DeleteServiceResponse> deleteServiceInvoker(DeleteServiceRequest request) {
+        return new SyncInvoker<DeleteServiceRequest, DeleteServiceResponse>(request, CloudtestMeta.deleteService,
+            hcClient);
+    }
+
     /** 批量执行测试用例 批量执行测试用例
      *
      * @param RunTestCaseRequest 请求对象
@@ -223,6 +135,76 @@ public class CloudtestClient {
      * @return SyncInvoker<RunTestCaseRequest, RunTestCaseResponse> */
     public SyncInvoker<RunTestCaseRequest, RunTestCaseResponse> runTestCaseInvoker(RunTestCaseRequest request) {
         return new SyncInvoker<RunTestCaseRequest, RunTestCaseResponse>(request, CloudtestMeta.runTestCase, hcClient);
+    }
+
+    /** 查询某个测试计划下的需求树 查询某个测试计划下的需求列表
+     *
+     * @param ShowIssuesByPlanIdRequest 请求对象
+     * @return ShowIssuesByPlanIdResponse */
+    public ShowIssuesByPlanIdResponse showIssuesByPlanId(ShowIssuesByPlanIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showIssuesByPlanId);
+    }
+
+    /** 查询某个测试计划下的需求树 查询某个测试计划下的需求列表
+     *
+     * @param ShowIssuesByPlanIdRequest 请求对象
+     * @return SyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse> */
+    public SyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse> showIssuesByPlanIdInvoker(
+        ShowIssuesByPlanIdRequest request) {
+        return new SyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse>(request,
+            CloudtestMeta.showIssuesByPlanId, hcClient);
+    }
+
+    /** 查询某测试计划下的操作历史 查询某测试计划下的操作历史
+     *
+     * @param ShowPlanJournalsRequest 请求对象
+     * @return ShowPlanJournalsResponse */
+    public ShowPlanJournalsResponse showPlanJournals(ShowPlanJournalsRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showPlanJournals);
+    }
+
+    /** 查询某测试计划下的操作历史 查询某测试计划下的操作历史
+     *
+     * @param ShowPlanJournalsRequest 请求对象
+     * @return SyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse> */
+    public SyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse> showPlanJournalsInvoker(
+        ShowPlanJournalsRequest request) {
+        return new SyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse>(request,
+            CloudtestMeta.showPlanJournals, hcClient);
+    }
+
+    /** 项目下查询测试计划列表 项目下查询测试计划列表
+     *
+     * @param ShowPlansRequest 请求对象
+     * @return ShowPlansResponse */
+    public ShowPlansResponse showPlans(ShowPlansRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showPlans);
+    }
+
+    /** 项目下查询测试计划列表 项目下查询测试计划列表
+     *
+     * @param ShowPlansRequest 请求对象
+     * @return SyncInvoker<ShowPlansRequest, ShowPlansResponse> */
+    public SyncInvoker<ShowPlansRequest, ShowPlansResponse> showPlansInvoker(ShowPlansRequest request) {
+        return new SyncInvoker<ShowPlansRequest, ShowPlansResponse>(request, CloudtestMeta.showPlans, hcClient);
+    }
+
+    /** 用户获取自己当前已经注册的服务 用户获取自己当前已经注册的服务
+     *
+     * @param ShowRegisterServiceRequest 请求对象
+     * @return ShowRegisterServiceResponse */
+    public ShowRegisterServiceResponse showRegisterService(ShowRegisterServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showRegisterService);
+    }
+
+    /** 用户获取自己当前已经注册的服务 用户获取自己当前已经注册的服务
+     *
+     * @param ShowRegisterServiceRequest 请求对象
+     * @return SyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse> */
+    public SyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse> showRegisterServiceInvoker(
+        ShowRegisterServiceRequest request) {
+        return new SyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse>(request,
+            CloudtestMeta.showRegisterService, hcClient);
     }
 
     /** 获取测试用例详情 获取测试用例详情
@@ -261,6 +243,23 @@ public class CloudtestClient {
             CloudtestMeta.showTestCaseDetailV2, hcClient);
     }
 
+    /** 更新已注册服务 更新已注册服务
+     *
+     * @param UpdateServiceRequest 请求对象
+     * @return UpdateServiceResponse */
+    public UpdateServiceResponse updateService(UpdateServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.updateService);
+    }
+
+    /** 更新已注册服务 更新已注册服务
+     *
+     * @param UpdateServiceRequest 请求对象
+     * @return SyncInvoker<UpdateServiceRequest, UpdateServiceResponse> */
+    public SyncInvoker<UpdateServiceRequest, UpdateServiceResponse> updateServiceInvoker(UpdateServiceRequest request) {
+        return new SyncInvoker<UpdateServiceRequest, UpdateServiceResponse>(request, CloudtestMeta.updateService,
+            hcClient);
+    }
+
     /** 更新测试用例接口 更新测试用例接口
      *
      * @param UpdateTestCaseRequest 请求对象
@@ -295,6 +294,43 @@ public class CloudtestClient {
         UpdateTestCaseResultRequest request) {
         return new SyncInvoker<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse>(request,
             CloudtestMeta.updateTestCaseResult, hcClient);
+    }
+
+    /** 通过导入仓库中的文件生成接口测试套 通过导入仓库中的文件生成接口测试套
+     *
+     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @return CreateApiTestSuiteByRepoFileResponse */
+    public CreateApiTestSuiteByRepoFileResponse createApiTestSuiteByRepoFile(
+        CreateApiTestSuiteByRepoFileRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.createApiTestSuiteByRepoFile);
+    }
+
+    /** 通过导入仓库中的文件生成接口测试套 通过导入仓库中的文件生成接口测试套
+     *
+     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @return SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> */
+    public SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFileInvoker(
+        CreateApiTestSuiteByRepoFileRequest request) {
+        return new SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>(request,
+            CloudtestMeta.createApiTestSuiteByRepoFile, hcClient);
+    }
+
+    /** 获取云测的环境参数分组列表 获取云测的环境参数分组列表
+     *
+     * @param ListEnvironmentsRequest 请求对象
+     * @return ListEnvironmentsResponse */
+    public ListEnvironmentsResponse listEnvironments(ListEnvironmentsRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.listEnvironments);
+    }
+
+    /** 获取云测的环境参数分组列表 获取云测的环境参数分组列表
+     *
+     * @param ListEnvironmentsRequest 请求对象
+     * @return SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> */
+    public SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironmentsInvoker(
+        ListEnvironmentsRequest request) {
+        return new SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>(request,
+            CloudtestMeta.listEnvironments, hcClient);
     }
 
 }

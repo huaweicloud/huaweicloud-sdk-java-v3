@@ -73,7 +73,7 @@ public class ShowCeshierarchyRespDimensions {
         return this;
     }
 
-    /** 监控指标名称。请参考[支持的监控指标](https://support.huaweicloud.com/usermanual-kafka/kafka-ug-180413002.html)。
+    /** 监控指标名称。
      * 
      * @return metrics */
     public List<String> getMetrics() {

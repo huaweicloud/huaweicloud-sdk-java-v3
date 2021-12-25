@@ -94,7 +94,7 @@ public class CycleParams {
         return this;
     }
 
-    /** - cycle选择了Day，表示每几天召开一次，取值范围[1,60] - cycle选择了Week，表示每几周召开一次，取值范围[1,5] - cycle选择了Month，Interval表示隔几月，取值范围[1,12]
+    /** - cycle选择了Day，表示每几天召开一次，取值范围[1,15] - cycle选择了Week，表示每几周召开一次，取值范围[1,5] - cycle选择了Month，Interval表示隔几月，取值范围[1,3]
      * 
      * @return interval */
     public Integer getInterval() {

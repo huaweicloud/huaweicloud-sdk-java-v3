@@ -88,9 +88,19 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private String azName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endpointDomainName")
+
+    private String endpointDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicEndpointStatus")
 
     private CdmQueryClusterDetailsRepsonsePublicEndpointStatus publicEndpointStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isScheduleBootOff")
+
+    private Boolean isScheduleBootOff;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
@@ -101,6 +111,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonProperty(value = "eipId")
 
     private String eipId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failedReasons")
+
+    private FailedReasons failedReasons;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dbuser")
@@ -456,6 +471,22 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.azName = azName;
     }
 
+    public ShowClusterDetailResponse withEndpointDomainName(String endpointDomainName) {
+        this.endpointDomainName = endpointDomainName;
+        return this;
+    }
+
+    /** 对端域名
+     * 
+     * @return endpointDomainName */
+    public String getEndpointDomainName() {
+        return endpointDomainName;
+    }
+
+    public void setEndpointDomainName(String endpointDomainName) {
+        this.endpointDomainName = endpointDomainName;
+    }
+
     public ShowClusterDetailResponse withPublicEndpointStatus(
         CdmQueryClusterDetailsRepsonsePublicEndpointStatus publicEndpointStatus) {
         this.publicEndpointStatus = publicEndpointStatus;
@@ -481,6 +512,22 @@ public class ShowClusterDetailResponse extends SdkResponse {
 
     public void setPublicEndpointStatus(CdmQueryClusterDetailsRepsonsePublicEndpointStatus publicEndpointStatus) {
         this.publicEndpointStatus = publicEndpointStatus;
+    }
+
+    public ShowClusterDetailResponse withIsScheduleBootOff(Boolean isScheduleBootOff) {
+        this.isScheduleBootOff = isScheduleBootOff;
+        return this;
+    }
+
+    /** 选择是否启用定时开关机功能。定时开关机功能和自动关机功能不可同时开启
+     * 
+     * @return isScheduleBootOff */
+    public Boolean getIsScheduleBootOff() {
+        return isScheduleBootOff;
+    }
+
+    public void setIsScheduleBootOff(Boolean isScheduleBootOff) {
+        this.isScheduleBootOff = isScheduleBootOff;
     }
 
     public ShowClusterDetailResponse withNamespace(String namespace) {
@@ -513,6 +560,31 @@ public class ShowClusterDetailResponse extends SdkResponse {
 
     public void setEipId(String eipId) {
         this.eipId = eipId;
+    }
+
+    public ShowClusterDetailResponse withFailedReasons(FailedReasons failedReasons) {
+        this.failedReasons = failedReasons;
+        return this;
+    }
+
+    public ShowClusterDetailResponse withFailedReasons(Consumer<FailedReasons> failedReasonsSetter) {
+        if (this.failedReasons == null) {
+            this.failedReasons = new FailedReasons();
+            failedReasonsSetter.accept(this.failedReasons);
+        }
+
+        return this;
+    }
+
+    /** Get failedReasons
+     * 
+     * @return failedReasons */
+    public FailedReasons getFailedReasons() {
+        return failedReasons;
+    }
+
+    public void setFailedReasons(FailedReasons failedReasons) {
+        this.failedReasons = failedReasons;
     }
 
     public ShowClusterDetailResponse withDbuser(String dbuser) {
@@ -813,9 +885,12 @@ public class ShowClusterDetailResponse extends SdkResponse {
             && Objects.equals(this.recentEvent, showClusterDetailResponse.recentEvent)
             && Objects.equals(this.flavorName, showClusterDetailResponse.flavorName)
             && Objects.equals(this.azName, showClusterDetailResponse.azName)
+            && Objects.equals(this.endpointDomainName, showClusterDetailResponse.endpointDomainName)
             && Objects.equals(this.publicEndpointStatus, showClusterDetailResponse.publicEndpointStatus)
+            && Objects.equals(this.isScheduleBootOff, showClusterDetailResponse.isScheduleBootOff)
             && Objects.equals(this.namespace, showClusterDetailResponse.namespace)
             && Objects.equals(this.eipId, showClusterDetailResponse.eipId)
+            && Objects.equals(this.failedReasons, showClusterDetailResponse.failedReasons)
             && Objects.equals(this.dbuser, showClusterDetailResponse.dbuser)
             && Objects.equals(this.links, showClusterDetailResponse.links)
             && Objects.equals(this.clusterMode, showClusterDetailResponse.clusterMode)
@@ -849,9 +924,12 @@ public class ShowClusterDetailResponse extends SdkResponse {
             recentEvent,
             flavorName,
             azName,
+            endpointDomainName,
             publicEndpointStatus,
+            isScheduleBootOff,
             namespace,
             eipId,
+            failedReasons,
             dbuser,
             links,
             clusterMode,
@@ -887,9 +965,12 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("    recentEvent: ").append(toIndentedString(recentEvent)).append("\n");
         sb.append("    flavorName: ").append(toIndentedString(flavorName)).append("\n");
         sb.append("    azName: ").append(toIndentedString(azName)).append("\n");
+        sb.append("    endpointDomainName: ").append(toIndentedString(endpointDomainName)).append("\n");
         sb.append("    publicEndpointStatus: ").append(toIndentedString(publicEndpointStatus)).append("\n");
+        sb.append("    isScheduleBootOff: ").append(toIndentedString(isScheduleBootOff)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    eipId: ").append(toIndentedString(eipId)).append("\n");
+        sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
         sb.append("    dbuser: ").append(toIndentedString(dbuser)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    clusterMode: ").append(toIndentedString(clusterMode)).append("\n");

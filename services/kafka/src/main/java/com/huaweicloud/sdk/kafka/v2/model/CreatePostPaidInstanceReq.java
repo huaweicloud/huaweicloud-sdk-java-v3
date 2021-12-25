@@ -263,10 +263,86 @@ public class CreatePostPaidInstanceReq {
 
     private Integer storageSpace;
 
+    /** Kafka实例的最大分区数量。 - 参数specification为100MB时，取值300 - 参数specification为300MB时，取值900 - 参数specification为600MB时，取值1800 -
+     * 参数specification为1200MB时，取值1800 */
+    public static final class PartitionNumEnum {
+
+        /** Enum NUMBER_300 for value: 300 */
+        public static final PartitionNumEnum NUMBER_300 = new PartitionNumEnum(300);
+
+        /** Enum NUMBER_900 for value: 900 */
+        public static final PartitionNumEnum NUMBER_900 = new PartitionNumEnum(900);
+
+        /** Enum NUMBER_1800 for value: 1800 */
+        public static final PartitionNumEnum NUMBER_1800 = new PartitionNumEnum(1800);
+
+        private static final Map<Integer, PartitionNumEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PartitionNumEnum> createStaticFields() {
+            Map<Integer, PartitionNumEnum> map = new HashMap<>();
+            map.put(300, NUMBER_300);
+            map.put(900, NUMBER_900);
+            map.put(1800, NUMBER_1800);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        PartitionNumEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PartitionNumEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PartitionNumEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PartitionNumEnum(value);
+            }
+            return result;
+        }
+
+        public static PartitionNumEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PartitionNumEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PartitionNumEnum) {
+                return this.value.equals(((PartitionNumEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_num")
 
-    private Integer partitionNum;
+    private PartitionNumEnum partitionNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_user")
@@ -429,8 +505,7 @@ public class CreatePostPaidInstanceReq {
 
     private Boolean enableAutoTopic;
 
-    /** 存储IO规格。如何选择磁盘类型请参考[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
-     * 取值范围： - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
+    /** 存储IO规格。 取值范围： - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
      * 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
      * 参数specification为600MB时，取值dms.physical.storage.ultra -
      * 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。 */
@@ -623,7 +698,7 @@ public class CreatePostPaidInstanceReq {
         this.storageSpace = storageSpace;
     }
 
-    public CreatePostPaidInstanceReq withPartitionNum(Integer partitionNum) {
+    public CreatePostPaidInstanceReq withPartitionNum(PartitionNumEnum partitionNum) {
         this.partitionNum = partitionNum;
         return this;
     }
@@ -632,11 +707,11 @@ public class CreatePostPaidInstanceReq {
      * 参数specification为1200MB时，取值1800
      * 
      * @return partitionNum */
-    public Integer getPartitionNum() {
+    public PartitionNumEnum getPartitionNum() {
         return partitionNum;
     }
 
-    public void setPartitionNum(Integer partitionNum) {
+    public void setPartitionNum(PartitionNumEnum partitionNum) {
         this.partitionNum = partitionNum;
     }
 
@@ -678,8 +753,7 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 虚拟私有云ID。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 -
-     * 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。
+    /** 虚拟私有云ID。 获取方法如下：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。
      * 
      * @return vpcId */
     public String getVpcId() {
@@ -695,8 +769,7 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 指定实例所属的安全组。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 -
-     * 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0002.html)。
+    /** 指定实例所属的安全组。 获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
      * 
      * @return securityGroupId */
     public String getSecurityGroupId() {
@@ -712,8 +785,7 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 子网信息。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 -
-     * 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
+    /** 子网信息。 获取方法如下：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。
      * 
      * @return subnetId */
     public String getSubnetId() {
@@ -745,8 +817,7 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空，详情请参考[查询可用区信息](https://support.huaweicloud.com/api-kafka/ListAvailableZones.html)查询得到。在查询时，请注意查看该可用区是否有资源。
-     * 创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
+    /** 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空。 创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
      * 
      * @return availableZones */
     public List<String> getAvailableZones() {
@@ -762,7 +833,7 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 产品标识。 获取方法，请参考查询[产品规格列表](https://support.huaweicloud.com/api-kafka/ListProducts.html)。
+    /** 产品标识。
      * 
      * @return productId */
     public String getProductId() {
@@ -811,9 +882,8 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 维护时间窗开始时间，格式为HH:mm。 -
-     * 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-kafka/ShowMaintainWindows.html)获取。 -
-     * 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
+    /** 维护时间窗开始时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 -
+     * 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
      * 
      * @return maintainBegin */
     public String getMaintainBegin() {
@@ -829,9 +899,8 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 维护时间窗结束时间，格式为HH:mm。 -
-     * 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-kafka/ShowMaintainWindows.html)获取。 -
-     * 结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。
+    /** 维护时间窗结束时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。 -
+     * 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。
      * 
      * @return maintainEnd */
     public String getMaintainEnd() {
@@ -961,8 +1030,7 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 存储IO规格。如何选择磁盘类型请参考[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
-     * 取值范围： - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
+    /** 存储IO规格。 取值范围： - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
      * 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
      * 参数specification为600MB时，取值dms.physical.storage.ultra -
      * 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。

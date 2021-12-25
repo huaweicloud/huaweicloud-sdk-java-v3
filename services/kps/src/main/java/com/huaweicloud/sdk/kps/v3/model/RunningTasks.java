@@ -101,7 +101,7 @@ public class RunningTasks {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_time")
 
-    private Long taskTime;
+    private String taskTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_name")
@@ -150,19 +150,19 @@ public class RunningTasks {
         this.operateType = operateType;
     }
 
-    public RunningTasks withTaskTime(Long taskTime) {
+    public RunningTasks withTaskTime(String taskTime) {
         this.taskTime = taskTime;
         return this;
     }
 
-    /** 任务时间 minimum: 0 maximum: 10000000000000
+    /** 任务时间
      * 
      * @return taskTime */
-    public Long getTaskTime() {
+    public String getTaskTime() {
         return taskTime;
     }
 
-    public void setTaskTime(Long taskTime) {
+    public void setTaskTime(String taskTime) {
         this.taskTime = taskTime;
     }
 

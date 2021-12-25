@@ -17,7 +17,7 @@ public class CgsClient {
         return new ClientBuilder<>(CgsClient::new);
     }
 
-    /** 查询容器节点列表 查询容器节点列表
+    /** 查询容器节点列表 查询容器节点列表（仅新版本容器安全支持，即将上线，敬请期待！）
      *
      * @param ListContainerNodesRequest 请求对象
      * @return ListContainerNodesResponse */
@@ -25,7 +25,7 @@ public class CgsClient {
         return hcClient.syncInvokeHttp(request, CgsMeta.listContainerNodes);
     }
 
-    /** 查询容器节点列表 查询容器节点列表
+    /** 查询容器节点列表 查询容器节点列表（仅新版本容器安全支持，即将上线，敬请期待！）
      *
      * @param ListContainerNodesRequest 请求对象
      * @return SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse> */

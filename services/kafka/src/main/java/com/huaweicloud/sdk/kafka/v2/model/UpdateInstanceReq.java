@@ -124,7 +124,7 @@ public class UpdateInstanceReq {
         return this;
     }
 
-    /** 实例名称。 由英文字符开头，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+    /** 实例名称。 由英文字符开头，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
      * 
      * @return name */
     public String getName() {
@@ -156,9 +156,8 @@ public class UpdateInstanceReq {
         return this;
     }
 
-    /** 维护时间窗开始时间，格式为HH:mm:ss。 -
-     * 维护时间窗开始和结束时间必须为指定的时间段，可参考查[询维护时间窗时间段](https://support.huaweicloud.com/api-kafka/ShowMaintainWindows.html)。 -
-     * 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00:00。
+    /** 维护时间窗开始时间，格式为HH:mm:ss。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。
+     * - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00:00。
      * 
      * @return maintainBegin */
     public String getMaintainBegin() {
@@ -174,9 +173,8 @@ public class UpdateInstanceReq {
         return this;
     }
 
-    /** 维护时间窗结束时间，格式为HH:mm:ss。 -
-     * 维护时间窗开始和结束时间必须为指定的时间段，可参考查[询维护时间窗时间段](https://support.huaweicloud.com/api-kafka/ShowMaintainWindows.html)。 -
-     * 结束时间在开始时间基础上加四个小时，即当开始时间为22:00:00时，结束时间为02:00:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空。系统分配一个默认结束时间06:00:00。
+    /** 维护时间窗结束时间，格式为HH:mm:ss。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00:00时，结束时间为02:00:00。 -
+     * 该参数不能单独为空，若该值为空，则开始时间也为空。系统分配一个默认结束时间06:00:00。
      * 
      * @return maintainEnd */
     public String getMaintainEnd() {

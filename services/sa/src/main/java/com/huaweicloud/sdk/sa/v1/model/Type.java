@@ -4,14 +4,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** Type */
 public class Type {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace")
+    @JsonProperty(value = "business")
 
-    private String namespace;
+    private String business;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
@@ -23,21 +24,31 @@ public class Type {
 
     private String classifier;
 
-    public Type withNamespace(String namespace) {
-        this.namespace = namespace;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tech_domain")
+
+    private String techDomain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "properties")
+
+    private TypeProperties properties;
+
+    public Type withBusiness(String business) {
+        this.business = business;
         return this;
     }
 
-    /** 命名空间，只能使用预定义的命名空间值，有效取值如下： Compliance Checks、Vulnerabilities、Attack、Illegal and Violation、Risk、Public
-     * Opinion、TTPs、Killchain、Effects、Sensitive Data Identifications、Unusual Behaviors
+    /** 事件所属业务领域标签，可选类别如下： attack – 攻击 vulnerability – 漏洞 compliance check – 合规检查 risk - 风险 public opinion - 舆情
+     * illegal&violation - 违法违规 security bulletin - 公告
      * 
-     * @return namespace */
-    public String getNamespace() {
-        return namespace;
+     * @return business */
+    public String getBusiness() {
+        return business;
     }
 
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
+    public void setBusiness(String business) {
+        this.business = business;
     }
 
     public Type withCategory(String category) {
@@ -72,6 +83,47 @@ public class Type {
         this.classifier = classifier;
     }
 
+    public Type withTechDomain(String techDomain) {
+        this.techDomain = techDomain;
+        return this;
+    }
+
+    /** 技术领域标签： OS：主机 APP：应用 NET：网络 OPS：运维 CS：云服务 CSP：平台云服务
+     * 
+     * @return techDomain */
+    public String getTechDomain() {
+        return techDomain;
+    }
+
+    public void setTechDomain(String techDomain) {
+        this.techDomain = techDomain;
+    }
+
+    public Type withProperties(TypeProperties properties) {
+        this.properties = properties;
+        return this;
+    }
+
+    public Type withProperties(Consumer<TypeProperties> propertiesSetter) {
+        if (this.properties == null) {
+            this.properties = new TypeProperties();
+            propertiesSetter.accept(this.properties);
+        }
+
+        return this;
+    }
+
+    /** Get properties
+     * 
+     * @return properties */
+    public TypeProperties getProperties() {
+        return properties;
+    }
+
+    public void setProperties(TypeProperties properties) {
+        this.properties = properties;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -81,22 +133,25 @@ public class Type {
             return false;
         }
         Type type = (Type) o;
-        return Objects.equals(this.namespace, type.namespace) && Objects.equals(this.category, type.category)
-            && Objects.equals(this.classifier, type.classifier);
+        return Objects.equals(this.business, type.business) && Objects.equals(this.category, type.category)
+            && Objects.equals(this.classifier, type.classifier) && Objects.equals(this.techDomain, type.techDomain)
+            && Objects.equals(this.properties, type.properties);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(namespace, category, classifier);
+        return Objects.hash(business, category, classifier, techDomain, properties);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Type {\n");
-        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    business: ").append(toIndentedString(business)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    classifier: ").append(toIndentedString(classifier)).append("\n");
+        sb.append("    techDomain: ").append(toIndentedString(techDomain)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("}");
         return sb.toString();
     }

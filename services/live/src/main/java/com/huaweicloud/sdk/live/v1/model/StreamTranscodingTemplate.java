@@ -31,7 +31,7 @@ public class StreamTranscodingTemplate {
         return this;
     }
 
-    /** 播放域名
+    /** 推流域名
      * 
      * @return domain */
     public String getDomain() {

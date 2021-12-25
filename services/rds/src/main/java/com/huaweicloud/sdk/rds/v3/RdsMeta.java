@@ -1670,10 +1670,10 @@ public class RdsMeta {
             f -> f.withMarshaller(RestoreExistInstanceRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
-        builder.<RestoreToExistingInstanceRequestBody>withRequestField("body",
+        builder.<RestoreExistingInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RestoreToExistingInstanceRequestBody.class),
+            TypeCasts.uncheckedConversion(RestoreExistingInstanceRequestBody.class),
             f -> f.withMarshaller(RestoreExistInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -2858,6 +2858,49 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
+        genForlistApiVersion();
+
+    private static HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> genForlistApiVersion() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionRequest, ListApiVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionRequest.class, ListApiVersionResponse.class)
+                .withName("ListApiVersion")
+                .withUri("/rds")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
+        genForshowApiVersion();
+
+    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
+                .withName("ShowApiVersion")
+                .withUri("/rds/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApiVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AllowDbUserPrivilegeRequest, AllowDbUserPrivilegeResponse> allowDbUserPrivilege =
         genForallowDbUserPrivilege();
 
@@ -3782,6 +3825,55 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPostgresqlDbUserPaginatedRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse> searchQueryScaleComputeFlavors =
+        genForsearchQueryScaleComputeFlavors();
+
+    private static HttpRequestDef<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse> genForsearchQueryScaleComputeFlavors() {
+        // basic
+        HttpRequestDef.Builder<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    SearchQueryScaleComputeFlavorsRequest.class,
+                    SearchQueryScaleComputeFlavorsResponse.class)
+                .withName("SearchQueryScaleComputeFlavors")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/proxy/scale/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchQueryScaleComputeFlavorsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchQueryScaleComputeFlavorsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchQueryScaleComputeFlavorsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchQueryScaleComputeFlavorsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

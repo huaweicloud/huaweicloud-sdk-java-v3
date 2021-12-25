@@ -3,13 +3,25 @@ package com.huaweicloud.sdk.sa.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /** Compliance */
 public class Compliance {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "checkitem_id")
+
+    private String checkitemId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "checkpoint_id")
+
+    private String checkpointId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spec_id")
+
+    private String specId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -17,14 +29,57 @@ public class Compliance {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "related_requirements")
+    @JsonProperty(value = "properties")
 
-    private List<String> relatedRequirements = null;
+    private String properties;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status_reasons")
+    public Compliance withCheckitemId(String checkitemId) {
+        this.checkitemId = checkitemId;
+        return this;
+    }
 
-    private List<String> statusReasons = null;
+    /** 检查项（检查规则）编号
+     * 
+     * @return checkitemId */
+    public String getCheckitemId() {
+        return checkitemId;
+    }
+
+    public void setCheckitemId(String checkitemId) {
+        this.checkitemId = checkitemId;
+    }
+
+    public Compliance withCheckpointId(String checkpointId) {
+        this.checkpointId = checkpointId;
+        return this;
+    }
+
+    /** 检查点（检查结果）编号，检查项对同一个资源的检查结果
+     * 
+     * @return checkpointId */
+    public String getCheckpointId() {
+        return checkpointId;
+    }
+
+    public void setCheckpointId(String checkpointId) {
+        this.checkpointId = checkpointId;
+    }
+
+    public Compliance withSpecId(String specId) {
+        this.specId = specId;
+        return this;
+    }
+
+    /** 检查规范编号，默认选第一个
+     * 
+     * @return specId */
+    public String getSpecId() {
+        return specId;
+    }
+
+    public void setSpecId(String specId) {
+        this.specId = specId;
+    }
 
     public Compliance withStatus(String status) {
         this.status = status;
@@ -43,68 +98,20 @@ public class Compliance {
         this.status = status;
     }
 
-    public Compliance withRelatedRequirements(List<String> relatedRequirements) {
-        this.relatedRequirements = relatedRequirements;
+    public Compliance withProperties(String properties) {
+        this.properties = properties;
         return this;
     }
 
-    public Compliance addRelatedRequirementsItem(String relatedRequirementsItem) {
-        if (this.relatedRequirements == null) {
-            this.relatedRequirements = new ArrayList<>();
-        }
-        this.relatedRequirements.add(relatedRequirementsItem);
-        return this;
-    }
-
-    public Compliance withRelatedRequirements(Consumer<List<String>> relatedRequirementsSetter) {
-        if (this.relatedRequirements == null) {
-            this.relatedRequirements = new ArrayList<>();
-        }
-        relatedRequirementsSetter.accept(this.relatedRequirements);
-        return this;
-    }
-
-    /** 与该合规检查相关的行业或监管要求，最多可以提供32个相关的要求。用规范要求的识别码来标识。
+    /** 属性信息
      * 
-     * @return relatedRequirements */
-    public List<String> getRelatedRequirements() {
-        return relatedRequirements;
+     * @return properties */
+    public String getProperties() {
+        return properties;
     }
 
-    public void setRelatedRequirements(List<String> relatedRequirements) {
-        this.relatedRequirements = relatedRequirements;
-    }
-
-    public Compliance withStatusReasons(List<String> statusReasons) {
-        this.statusReasons = statusReasons;
-        return this;
-    }
-
-    public Compliance addStatusReasonsItem(String statusReasonsItem) {
-        if (this.statusReasons == null) {
-            this.statusReasons = new ArrayList<>();
-        }
-        this.statusReasons.add(statusReasonsItem);
-        return this;
-    }
-
-    public Compliance withStatusReasons(Consumer<List<String>> statusReasonsSetter) {
-        if (this.statusReasons == null) {
-            this.statusReasons = new ArrayList<>();
-        }
-        statusReasonsSetter.accept(this.statusReasons);
-        return this;
-    }
-
-    /** 与该合规检查相关的原因。
-     * 
-     * @return statusReasons */
-    public List<String> getStatusReasons() {
-        return statusReasons;
-    }
-
-    public void setStatusReasons(List<String> statusReasons) {
-        this.statusReasons = statusReasons;
+    public void setProperties(String properties) {
+        this.properties = properties;
     }
 
     @Override
@@ -116,23 +123,26 @@ public class Compliance {
             return false;
         }
         Compliance compliance = (Compliance) o;
-        return Objects.equals(this.status, compliance.status)
-            && Objects.equals(this.relatedRequirements, compliance.relatedRequirements)
-            && Objects.equals(this.statusReasons, compliance.statusReasons);
+        return Objects.equals(this.checkitemId, compliance.checkitemId)
+            && Objects.equals(this.checkpointId, compliance.checkpointId)
+            && Objects.equals(this.specId, compliance.specId) && Objects.equals(this.status, compliance.status)
+            && Objects.equals(this.properties, compliance.properties);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, relatedRequirements, statusReasons);
+        return Objects.hash(checkitemId, checkpointId, specId, status, properties);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Compliance {\n");
+        sb.append("    checkitemId: ").append(toIndentedString(checkitemId)).append("\n");
+        sb.append("    checkpointId: ").append(toIndentedString(checkpointId)).append("\n");
+        sb.append("    specId: ").append(toIndentedString(specId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    relatedRequirements: ").append(toIndentedString(relatedRequirements)).append("\n");
-        sb.append("    statusReasons: ").append(toIndentedString(statusReasons)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("}");
         return sb.toString();
     }

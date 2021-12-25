@@ -23,8 +23,8 @@ public class CreateLoadBalancerBandwidthOption {
 
     private Integer size;
 
-    /** 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
-     * [当前仅支持traffic按流量计费](tag:otc,otc_test,dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。 */
+    /** 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * [当前仅支持traffic按流量计费](tag:dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。 */
     public static final class ChargeModeEnum {
 
         /** Enum BANDWIDTH for value: "bandwidth" */
@@ -226,8 +226,8 @@ public class CreateLoadBalancerBandwidthOption {
         return this;
     }
 
-    /** 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
-     * [当前仅支持traffic按流量计费](tag:otc,otc_test,dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。
+    /** 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * [当前仅支持traffic按流量计费](tag:dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。
      * 
      * @return chargeMode */
     public ChargeModeEnum getChargeMode() {

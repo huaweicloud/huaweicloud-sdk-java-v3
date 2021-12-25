@@ -53,6 +53,16 @@ public class Quota {
 
     private Integer membersPerPool;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipgroup")
+
+    private Integer ipgroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_policy")
+
+    private Integer securityPolicy;
+
     public Quota withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -197,6 +207,38 @@ public class Quota {
         this.membersPerPool = membersPerPool;
     }
 
+    public Quota withIpgroup(Integer ipgroup) {
+        this.ipgroup = ipgroup;
+        return this;
+    }
+
+    /** IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return ipgroup */
+    public Integer getIpgroup() {
+        return ipgroup;
+    }
+
+    public void setIpgroup(Integer ipgroup) {
+        this.ipgroup = ipgroup;
+    }
+
+    public Quota withSecurityPolicy(Integer securityPolicy) {
+        this.securityPolicy = securityPolicy;
+        return this;
+    }
+
+    /** 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 
+     * @return securityPolicy */
+    public Integer getSecurityPolicy() {
+        return securityPolicy;
+    }
+
+    public void setSecurityPolicy(Integer securityPolicy) {
+        this.securityPolicy = securityPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -210,7 +252,8 @@ public class Quota {
             && Objects.equals(this.certificate, quota.certificate) && Objects.equals(this.listener, quota.listener)
             && Objects.equals(this.l7policy, quota.l7policy) && Objects.equals(this.pool, quota.pool)
             && Objects.equals(this.healthmonitor, quota.healthmonitor) && Objects.equals(this.member, quota.member)
-            && Objects.equals(this.membersPerPool, quota.membersPerPool);
+            && Objects.equals(this.membersPerPool, quota.membersPerPool) && Objects.equals(this.ipgroup, quota.ipgroup)
+            && Objects.equals(this.securityPolicy, quota.securityPolicy);
     }
 
     @Override
@@ -223,7 +266,9 @@ public class Quota {
             pool,
             healthmonitor,
             member,
-            membersPerPool);
+            membersPerPool,
+            ipgroup,
+            securityPolicy);
     }
 
     @Override
@@ -239,6 +284,8 @@ public class Quota {
         sb.append("    healthmonitor: ").append(toIndentedString(healthmonitor)).append("\n");
         sb.append("    member: ").append(toIndentedString(member)).append("\n");
         sb.append("    membersPerPool: ").append(toIndentedString(membersPerPool)).append("\n");
+        sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
+        sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

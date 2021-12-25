@@ -17,7 +17,7 @@ public class RestoreExistInstanceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private RestoreToExistingInstanceRequestBody body;
+    private RestoreExistingInstanceRequestBody body;
 
     public RestoreExistInstanceRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -37,14 +37,14 @@ public class RestoreExistInstanceRequest {
         this.xLanguage = xLanguage;
     }
 
-    public RestoreExistInstanceRequest withBody(RestoreToExistingInstanceRequestBody body) {
+    public RestoreExistInstanceRequest withBody(RestoreExistingInstanceRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public RestoreExistInstanceRequest withBody(Consumer<RestoreToExistingInstanceRequestBody> bodySetter) {
+    public RestoreExistInstanceRequest withBody(Consumer<RestoreExistingInstanceRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new RestoreToExistingInstanceRequestBody();
+            this.body = new RestoreExistingInstanceRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -54,11 +54,11 @@ public class RestoreExistInstanceRequest {
     /** Get body
      * 
      * @return body */
-    public RestoreToExistingInstanceRequestBody getBody() {
+    public RestoreExistingInstanceRequestBody getBody() {
         return body;
     }
 
-    public void setBody(RestoreToExistingInstanceRequestBody body) {
+    public void setBody(RestoreExistingInstanceRequestBody body) {
         this.body = body;
     }
 

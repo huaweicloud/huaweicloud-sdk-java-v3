@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 测试计划迭代编号与迭代名称 */
+/** 对象编号与名称 */
 public class NameAndId {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

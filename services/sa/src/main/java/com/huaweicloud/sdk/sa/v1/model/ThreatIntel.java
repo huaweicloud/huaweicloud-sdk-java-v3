@@ -3,26 +3,41 @@ package com.huaweicloud.sdk.sa.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** ThreatIntel */
 public class ThreatIntel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
+    @JsonProperty(value = "id")
 
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
-
-    private String value;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "source")
+    @JsonProperty(value = "indicator_type")
 
-    private String source;
+    private String indicatorType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private String labels;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confidence")
+
+    private Integer confidence;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "information_source")
+
+    private String informationSource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity")
+
+    private Integer severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -30,61 +45,119 @@ public class ThreatIntel {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
+    @JsonProperty(value = "modified")
 
-    private OffsetDateTime updateTime;
+    private String modified;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "source_url")
+    @JsonProperty(value = "valid_from")
 
-    private String sourceUrl;
+    private String validFrom;
 
-    public ThreatIntel withType(String type) {
-        this.type = type;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "valid_until")
+
+    private String validUntil;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "properties")
+
+    private ThreatIntelProperties properties;
+
+    public ThreatIntel withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /** 情报Id。
+     * 
+     * @return id */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ThreatIntel withIndicatorType(String indicatorType) {
+        this.indicatorType = indicatorType;
         return this;
     }
 
     /** 威胁情报类型，Domain、Email_Address、Hash_MD5、Hash_SHA1、Hash_SHA256、 Hash_SHA512、IPv4_Address、IPv6_Address、URL。
      * 
-     * @return type */
-    public String getType() {
-        return type;
+     * @return indicatorType */
+    public String getIndicatorType() {
+        return indicatorType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setIndicatorType(String indicatorType) {
+        this.indicatorType = indicatorType;
     }
 
-    public ThreatIntel withValue(String value) {
-        this.value = value;
+    public ThreatIntel withLabels(String labels) {
+        this.labels = labels;
         return this;
     }
 
-    /** 威胁情报指标值，最大512个字符。
+    /** 标签，如'矿池','外联'等，\"Directory Scan|Directory Traversal\"。
      * 
-     * @return value */
-    public String getValue() {
-        return value;
+     * @return labels */
+    public String getLabels() {
+        return labels;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setLabels(String labels) {
+        this.labels = labels;
     }
 
-    public ThreatIntel withSource(String source) {
-        this.source = source;
+    public ThreatIntel withConfidence(Integer confidence) {
+        this.confidence = confidence;
+        return this;
+    }
+
+    /** 置信度，不同来源目前置信度分值定义不一样（分数）。 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return confidence */
+    public Integer getConfidence() {
+        return confidence;
+    }
+
+    public void setConfidence(Integer confidence) {
+        this.confidence = confidence;
+    }
+
+    public ThreatIntel withInformationSource(String informationSource) {
+        this.informationSource = informationSource;
         return this;
     }
 
     /** 威胁情报源，最大64个字符。
      * 
-     * @return source */
-    public String getSource() {
-        return source;
+     * @return informationSource */
+    public String getInformationSource() {
+        return informationSource;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setInformationSource(String informationSource) {
+        this.informationSource = informationSource;
+    }
+
+    public ThreatIntel withSeverity(Integer severity) {
+        this.severity = severity;
+        return this;
+    }
+
+    /** 严重程度，不同渠道定义值不一样（分数）。 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return severity */
+    public Integer getSeverity() {
+        return severity;
+    }
+
+    public void setSeverity(Integer severity) {
+        this.severity = severity;
     }
 
     public ThreatIntel withDescription(String description) {
@@ -103,36 +176,77 @@ public class ThreatIntel {
         this.description = description;
     }
 
-    public ThreatIntel withUpdateTime(OffsetDateTime updateTime) {
-        this.updateTime = updateTime;
+    public ThreatIntel withModified(String modified) {
+        this.modified = modified;
         return this;
     }
 
     /** 威胁情报的更新时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
      * 
-     * @return updateTime */
-    public OffsetDateTime getUpdateTime() {
-        return updateTime;
+     * @return modified */
+    public String getModified() {
+        return modified;
     }
 
-    public void setUpdateTime(OffsetDateTime updateTime) {
-        this.updateTime = updateTime;
+    public void setModified(String modified) {
+        this.modified = modified;
     }
 
-    public ThreatIntel withSourceUrl(String sourceUrl) {
-        this.sourceUrl = sourceUrl;
+    public ThreatIntel withValidFrom(String validFrom) {
+        this.validFrom = validFrom;
         return this;
     }
 
-    /** 链接，提供有关威胁情报源的更多详细信息。
+    /** 有效期开始（可读字符串）。
      * 
-     * @return sourceUrl */
-    public String getSourceUrl() {
-        return sourceUrl;
+     * @return validFrom */
+    public String getValidFrom() {
+        return validFrom;
     }
 
-    public void setSourceUrl(String sourceUrl) {
-        this.sourceUrl = sourceUrl;
+    public void setValidFrom(String validFrom) {
+        this.validFrom = validFrom;
+    }
+
+    public ThreatIntel withValidUntil(String validUntil) {
+        this.validUntil = validUntil;
+        return this;
+    }
+
+    /** 有效期结束（可读字符串）。
+     * 
+     * @return validUntil */
+    public String getValidUntil() {
+        return validUntil;
+    }
+
+    public void setValidUntil(String validUntil) {
+        this.validUntil = validUntil;
+    }
+
+    public ThreatIntel withProperties(ThreatIntelProperties properties) {
+        this.properties = properties;
+        return this;
+    }
+
+    public ThreatIntel withProperties(Consumer<ThreatIntelProperties> propertiesSetter) {
+        if (this.properties == null) {
+            this.properties = new ThreatIntelProperties();
+            propertiesSetter.accept(this.properties);
+        }
+
+        return this;
+    }
+
+    /** Get properties
+     * 
+     * @return properties */
+    public ThreatIntelProperties getProperties() {
+        return properties;
+    }
+
+    public void setProperties(ThreatIntelProperties properties) {
+        this.properties = properties;
     }
 
     @Override
@@ -144,28 +258,48 @@ public class ThreatIntel {
             return false;
         }
         ThreatIntel threatIntel = (ThreatIntel) o;
-        return Objects.equals(this.type, threatIntel.type) && Objects.equals(this.value, threatIntel.value)
-            && Objects.equals(this.source, threatIntel.source)
+        return Objects.equals(this.id, threatIntel.id) && Objects.equals(this.indicatorType, threatIntel.indicatorType)
+            && Objects.equals(this.labels, threatIntel.labels)
+            && Objects.equals(this.confidence, threatIntel.confidence)
+            && Objects.equals(this.informationSource, threatIntel.informationSource)
+            && Objects.equals(this.severity, threatIntel.severity)
             && Objects.equals(this.description, threatIntel.description)
-            && Objects.equals(this.updateTime, threatIntel.updateTime)
-            && Objects.equals(this.sourceUrl, threatIntel.sourceUrl);
+            && Objects.equals(this.modified, threatIntel.modified)
+            && Objects.equals(this.validFrom, threatIntel.validFrom)
+            && Objects.equals(this.validUntil, threatIntel.validUntil)
+            && Objects.equals(this.properties, threatIntel.properties);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, value, source, description, updateTime, sourceUrl);
+        return Objects.hash(id,
+            indicatorType,
+            labels,
+            confidence,
+            informationSource,
+            severity,
+            description,
+            modified,
+            validFrom,
+            validUntil,
+            properties);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ThreatIntel {\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
-        sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    indicatorType: ").append(toIndentedString(indicatorType)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    informationSource: ").append(toIndentedString(informationSource)).append("\n");
+        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    sourceUrl: ").append(toIndentedString(sourceUrl)).append("\n");
+        sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
+        sb.append("    validFrom: ").append(toIndentedString(validFrom)).append("\n");
+        sb.append("    validUntil: ").append(toIndentedString(validUntil)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -678,6 +678,20 @@ public class LtsMeta {
             f -> f.withMarshaller(ListChartsRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
             }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListChartsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListChartsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -964,6 +978,20 @@ public class LtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNotificationTemplatesRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotificationTemplatesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotificationTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1586,39 +1614,6 @@ public class LtsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatus =
-        genForupdateAlarmRuleStatus();
-
-    private static HttpRequestDef<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> genForupdateAlarmRuleStatus() {
-        // basic
-        HttpRequestDef.Builder<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateAlarmRuleStatusRequest.class, UpdateAlarmRuleStatusResponse.class)
-            .withName("UpdateAlarmRuleStatus")
-            .withUri("/v2/{project_id}/lts/alarms/status")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<ChangeAlarmRuleStatus>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ChangeAlarmRuleStatus.class),
-            f -> f.withMarshaller(UpdateAlarmRuleStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateAlarmRuleStatusResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse> createSqlAlarmRule =
         genForcreateSqlAlarmRule();
 
@@ -1683,6 +1678,39 @@ public class LtsMeta {
         // requests
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatus =
+        genForupdateAlarmRuleStatus();
+
+    private static HttpRequestDef<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> genForupdateAlarmRuleStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAlarmRuleStatusRequest.class, UpdateAlarmRuleStatusResponse.class)
+            .withName("UpdateAlarmRuleStatus")
+            .withUri("/v2/{project_id}/lts/alarms/status")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ChangeAlarmRuleStatus>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ChangeAlarmRuleStatus.class),
+            f -> f.withMarshaller(UpdateAlarmRuleStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAlarmRuleStatusResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

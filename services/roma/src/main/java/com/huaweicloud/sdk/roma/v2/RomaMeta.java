@@ -11490,6 +11490,131 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> deleteAsset = genFordeleteAsset();
+
+    private static HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> genFordeleteAsset() {
+        // basic
+        HttpRequestDef.Builder<DeleteAssetRequest, DeleteAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteAssetRequest.class, DeleteAssetResponse.class)
+                .withName("DeleteAsset")
+                .withUri("/v2/{project_id}/instances/{instance_id}/assets/delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AssetOperateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssetOperateRequest.class),
+            f -> f.withMarshaller(DeleteAssetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> downloadAssetArchive =
+        genFordownloadAssetArchive();
+
+    private static HttpRequestDef<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> genFordownloadAssetArchive() {
+        // basic
+        HttpRequestDef.Builder<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadAssetArchiveRequest.class, DownloadAssetArchiveResponse.class)
+            .withName("DownloadAssetArchive")
+            .withUri("/v2/{project_id}/instances/{instance_id}/assets/archives/{archive_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAssetArchiveRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("archive_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAssetArchiveRequest::getArchiveId, (req, v) -> {
+                req.setArchiveId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportAssetRequest, ExportAssetResponse> exportAsset = genForexportAsset();
+
+    private static HttpRequestDef<ExportAssetRequest, ExportAssetResponse> genForexportAsset() {
+        // basic
+        HttpRequestDef.Builder<ExportAssetRequest, ExportAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportAssetRequest.class, ExportAssetResponse.class)
+                .withName("ExportAsset")
+                .withUri("/v2/{project_id}/instances/{instance_id}/assets/export")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportAssetRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AssetExportRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssetExportRequest.class),
+            f -> f.withMarshaller(ExportAssetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportAssetRequest, ImportAssetResponse> importAsset = genForimportAsset();
+
+    private static HttpRequestDef<ImportAssetRequest, ImportAssetResponse> genForimportAsset() {
+        // basic
+        HttpRequestDef.Builder<ImportAssetRequest, ImportAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportAssetRequest.class, ImportAssetResponse.class)
+                .withName("ImportAsset")
+                .withUri("/v2/{project_id}/instances/{instance_id}/assets/import")
+                .withContentType("application/zip");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportAssetRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AppAsset>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppAsset.class),
+            f -> f.withMarshaller(ImportAssetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckDictionaryRequest, CheckDictionaryResponse> checkDictionary =
         genForcheckDictionary();
 
@@ -11717,6 +11842,45 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ValidateDictionaryRequest::getCode, (req, v) -> {
                 req.setCode(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> checkRomaInstanceListV2 =
+        genForcheckRomaInstanceListV2();
+
+    private static HttpRequestDef<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> genForcheckRomaInstanceListV2() {
+        // basic
+        HttpRequestDef.Builder<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CheckRomaInstanceListV2Request.class, CheckRomaInstanceListV2Response.class)
+            .withName("CheckRomaInstanceListV2")
+            .withUri("/v2/{project_id}/instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRomaInstanceListV2Request::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CheckRomaInstanceListV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CheckRomaInstanceListV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

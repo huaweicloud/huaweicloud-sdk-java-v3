@@ -7,8 +7,348 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.devstar.v1.model.*;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class DevStarMeta {
+
+    public static final HttpRequestDef<ShowApplicationReleaseRepositoriesRequest, ShowApplicationReleaseRepositoriesResponse> showApplicationReleaseRepositories =
+        genForshowApplicationReleaseRepositories();
+
+    private static HttpRequestDef<ShowApplicationReleaseRepositoriesRequest, ShowApplicationReleaseRepositoriesResponse> genForshowApplicationReleaseRepositories() {
+        // basic
+        HttpRequestDef.Builder<ShowApplicationReleaseRepositoriesRequest, ShowApplicationReleaseRepositoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowApplicationReleaseRepositoriesRequest.class,
+                    ShowApplicationReleaseRepositoriesResponse.class)
+                .withName("ShowApplicationReleaseRepositories")
+                .withUri("/v1/applications/{application_id}/release-repositories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApplicationReleaseRepositoriesRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<String>withRequestField("parent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApplicationReleaseRepositoriesRequest::getParentId, (req, v) -> {
+                req.setParentId(v);
+            }));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApplicationReleaseRepositoriesRequest::getKeyword, (req, v) -> {
+                req.setKeyword(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowApplicationReleaseRepositoriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowApplicationReleaseRepositoriesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ShowApplicationReleaseRepositoriesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowApplicationReleaseRepositoriesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowApplicationReleaseRepositoriesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApplicationResDeleteStatusRequest, ShowApplicationResDeleteStatusResponse> showApplicationResDeleteStatus =
+        genForshowApplicationResDeleteStatus();
+
+    private static HttpRequestDef<ShowApplicationResDeleteStatusRequest, ShowApplicationResDeleteStatusResponse> genForshowApplicationResDeleteStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowApplicationResDeleteStatusRequest, ShowApplicationResDeleteStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowApplicationResDeleteStatusRequest.class,
+                    ShowApplicationResDeleteStatusResponse.class)
+                .withName("ShowApplicationResDeleteStatus")
+                .withUri("/v1/application-resources/{application_id}/delete-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApplicationResDeleteStatusRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<ShowApplicationResDeleteStatusRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowApplicationResDeleteStatusRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowApplicationResDeleteStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApplicationDependentResourcesRequest, ShowApplicationDependentResourcesResponse> showApplicationDependentResources =
+        genForshowApplicationDependentResources();
+
+    private static HttpRequestDef<ShowApplicationDependentResourcesRequest, ShowApplicationDependentResourcesResponse> genForshowApplicationDependentResources() {
+        // basic
+        HttpRequestDef.Builder<ShowApplicationDependentResourcesRequest, ShowApplicationDependentResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowApplicationDependentResourcesRequest.class,
+                    ShowApplicationDependentResourcesResponse.class)
+                .withName("ShowApplicationDependentResources")
+                .withUri("/v3/applications/{application_id}/dependent-resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApplicationDependentResourcesRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<ShowApplicationDependentResourcesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowApplicationDependentResourcesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowApplicationDependentResourcesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApplicationV3Request, ShowApplicationV3Response> showApplicationV3 =
+        genForshowApplicationV3();
+
+    private static HttpRequestDef<ShowApplicationV3Request, ShowApplicationV3Response> genForshowApplicationV3() {
+        // basic
+        HttpRequestDef.Builder<ShowApplicationV3Request, ShowApplicationV3Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowApplicationV3Request.class, ShowApplicationV3Response.class)
+                .withName("ShowApplicationV3")
+                .withUri("/v3/applications/{application_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApplicationV3Request::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<ShowApplicationV3Request.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowApplicationV3Request.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowApplicationV3Request::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateApplicationRequest, UpdateApplicationResponse> updateApplication =
+        genForupdateApplication();
+
+    private static HttpRequestDef<UpdateApplicationRequest, UpdateApplicationResponse> genForupdateApplication() {
+        // basic
+        HttpRequestDef.Builder<UpdateApplicationRequest, UpdateApplicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateApplicationRequest.class, UpdateApplicationResponse.class)
+                .withName("UpdateApplication")
+                .withUri("/v3/applications/{application_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateApplicationRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<UpdateApplicationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateApplicationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateApplicationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ApplicationModifyInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApplicationModifyInfo.class),
+            f -> f.withMarshaller(UpdateApplicationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteApplicationV4Request, DeleteApplicationV4Response> deleteApplicationV4 =
+        genFordeleteApplicationV4();
+
+    private static HttpRequestDef<DeleteApplicationV4Request, DeleteApplicationV4Response> genFordeleteApplicationV4() {
+        // basic
+        HttpRequestDef.Builder<DeleteApplicationV4Request, DeleteApplicationV4Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteApplicationV4Request.class, DeleteApplicationV4Response.class)
+            .withName("DeleteApplicationV4")
+            .withUri("/v4/applications/{application_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteApplicationV4Request::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<Boolean>withRequestField("is_delete_repository",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteApplicationV4Request::getIsDeleteRepository, (req, v) -> {
+                req.setIsDeleteRepository(v);
+            }));
+        builder.<String>withRequestField("pipeline_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteApplicationV4Request::getPipelineIds, (req, v) -> {
+                req.setPipelineIds(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApplicationsV6Request, ListApplicationsV6Response> listApplicationsV6 =
+        genForlistApplicationsV6();
+
+    private static HttpRequestDef<ListApplicationsV6Request, ListApplicationsV6Response> genForlistApplicationsV6() {
+        // basic
+        HttpRequestDef.Builder<ListApplicationsV6Request, ListApplicationsV6Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApplicationsV6Request.class, ListApplicationsV6Response.class)
+                .withName("ListApplicationsV6")
+                .withUri("/v6/applications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("attention",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getAttention, (req, v) -> {
+                req.setAttention(v);
+            }));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getKeyword, (req, v) -> {
+                req.setKeyword(v);
+            }));
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("topic_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getTopicId, (req, v) -> {
+                req.setTopicId(v);
+            }));
+        builder.<Boolean>withRequestField("is_created_by_self",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getIsCreatedBySelf, (req, v) -> {
+                req.setIsCreatedBySelf(v);
+            }));
+        builder.<List<ListApplicationsV6Request.SortKeyEnum>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<List<ListApplicationsV6Request.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ListApplicationsV6Request.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListApplicationsV6Request.XLanguageEnum.class),
+            f -> f.withMarshaller(ListApplicationsV6Request::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse> downloadApplicationCode =
         genFordownloadApplicationCode();
@@ -34,6 +374,91 @@ public class DevStarMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DownloadApplicationCodeRequest.XLanguageEnum.class),
             f -> f.withMarshaller(DownloadApplicationCodeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDeploymentJobsRequest, CreateDeploymentJobsResponse> createDeploymentJobs =
+        genForcreateDeploymentJobs();
+
+    private static HttpRequestDef<CreateDeploymentJobsRequest, CreateDeploymentJobsResponse> genForcreateDeploymentJobs() {
+        // basic
+        HttpRequestDef.Builder<CreateDeploymentJobsRequest, CreateDeploymentJobsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDeploymentJobsRequest.class, CreateDeploymentJobsResponse.class)
+            .withName("CreateDeploymentJobs")
+            .withUri("/v1/applications/{application_id}/environments/{environment_tag}/deployment-jobs")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDeploymentJobsRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<String>withRequestField("environment_tag",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDeploymentJobsRequest::getEnvironmentTag, (req, v) -> {
+                req.setEnvironmentTag(v);
+            }));
+        builder.<CreateDeploymentJobsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDeploymentJobsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateDeploymentJobsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CreateDeploymentJobsParams>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDeploymentJobsParams.class),
+            f -> f.withMarshaller(CreateDeploymentJobsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDeploymentJobsRequest, ShowDeploymentJobsResponse> showDeploymentJobs =
+        genForshowDeploymentJobs();
+
+    private static HttpRequestDef<ShowDeploymentJobsRequest, ShowDeploymentJobsResponse> genForshowDeploymentJobs() {
+        // basic
+        HttpRequestDef.Builder<ShowDeploymentJobsRequest, ShowDeploymentJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDeploymentJobsRequest.class, ShowDeploymentJobsResponse.class)
+                .withName("ShowDeploymentJobs")
+                .withUri("/v1/applications/{application_id}/environments/{environment_tag}/deployment-jobs/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentJobsRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<String>withRequestField("environment_tag",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentJobsRequest::getEnvironmentTag, (req, v) -> {
+                req.setEnvironmentTag(v);
+            }));
+        builder.<ShowDeploymentJobsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowDeploymentJobsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowDeploymentJobsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -130,6 +555,247 @@ public class DevStarMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowJobDetailRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowJobDetailRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> listPipelineTemplates =
+        genForlistPipelineTemplates();
+
+    private static HttpRequestDef<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> genForlistPipelineTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPipelineTemplatesRequest.class, ListPipelineTemplatesResponse.class)
+            .withName("ListPipelineTemplates")
+            .withUri("/v1/pipeline-templates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelineTemplatesRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPipelineTemplatesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPipelineTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelineTemplatesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPipelineLastStatusV2Request, ShowPipelineLastStatusV2Response> showPipelineLastStatusV2 =
+        genForshowPipelineLastStatusV2();
+
+    private static HttpRequestDef<ShowPipelineLastStatusV2Request, ShowPipelineLastStatusV2Response> genForshowPipelineLastStatusV2() {
+        // basic
+        HttpRequestDef.Builder<ShowPipelineLastStatusV2Request, ShowPipelineLastStatusV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowPipelineLastStatusV2Request.class, ShowPipelineLastStatusV2Response.class)
+                .withName("ShowPipelineLastStatusV2")
+                .withUri("/v2/pipelines/{pipeline_id}/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineLastStatusV2Request::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<ShowPipelineLastStatusV2Request.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowPipelineLastStatusV2Request.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowPipelineLastStatusV2Request::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartPipelineRequest, StartPipelineResponse> startPipeline =
+        genForstartPipeline();
+
+    private static HttpRequestDef<StartPipelineRequest, StartPipelineResponse> genForstartPipeline() {
+        // basic
+        HttpRequestDef.Builder<StartPipelineRequest, StartPipelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartPipelineRequest.class, StartPipelineResponse.class)
+                .withName("StartPipeline")
+                .withUri("/v2/pipelines/{pipeline_id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartPipelineRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<StartPipelineRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StartPipelineRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StartPipelineRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectsV4Request, ListProjectsV4Response> listProjectsV4 =
+        genForlistProjectsV4();
+
+    private static HttpRequestDef<ListProjectsV4Request, ListProjectsV4Response> genForlistProjectsV4() {
+        // basic
+        HttpRequestDef.Builder<ListProjectsV4Request, ListProjectsV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectsV4Request.class, ListProjectsV4Response.class)
+                .withName("ListProjectsV4")
+                .withUri("/v4/projects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectsV4Request::getKeyword, (req, v) -> {
+                req.setKeyword(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectsV4Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectsV4Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ListProjectsV4Request.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListProjectsV4Request.XLanguageEnum.class),
+            f -> f.withMarshaller(ListProjectsV4Request::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckRepositoryDuplicateNameRequest, CheckRepositoryDuplicateNameResponse> checkRepositoryDuplicateName =
+        genForcheckRepositoryDuplicateName();
+
+    private static HttpRequestDef<CheckRepositoryDuplicateNameRequest, CheckRepositoryDuplicateNameResponse> genForcheckRepositoryDuplicateName() {
+        // basic
+        HttpRequestDef.Builder<CheckRepositoryDuplicateNameRequest, CheckRepositoryDuplicateNameResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckRepositoryDuplicateNameRequest.class,
+                    CheckRepositoryDuplicateNameResponse.class)
+                .withName("CheckRepositoryDuplicateName")
+                .withUri("/v1/check-repository-duplicate-name")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRepositoryDuplicateNameRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRepositoryDuplicateNameRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRepositoryDuplicateNameRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRepositoryDuplicateNameRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRepositoryStatisticalDataV2Request, ShowRepositoryStatisticalDataV2Response> showRepositoryStatisticalDataV2 =
+        genForshowRepositoryStatisticalDataV2();
+
+    private static HttpRequestDef<ShowRepositoryStatisticalDataV2Request, ShowRepositoryStatisticalDataV2Response> genForshowRepositoryStatisticalDataV2() {
+        // basic
+        HttpRequestDef.Builder<ShowRepositoryStatisticalDataV2Request, ShowRepositoryStatisticalDataV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRepositoryStatisticalDataV2Request.class,
+                    ShowRepositoryStatisticalDataV2Response.class)
+                .withName("ShowRepositoryStatisticalDataV2")
+                .withUri("/v2/repositories/{repository_id}/statistical-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepositoryStatisticalDataV2Request::getRepositoryId, (req, v) -> {
+                req.setRepositoryId(v);
+            }));
+        builder.<ShowRepositoryStatisticalDataV2Request.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowRepositoryStatisticalDataV2Request.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowRepositoryStatisticalDataV2Request::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

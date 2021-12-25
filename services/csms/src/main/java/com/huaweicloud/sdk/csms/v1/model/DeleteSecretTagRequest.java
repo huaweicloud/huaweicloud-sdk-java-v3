@@ -18,11 +18,6 @@ public class DeleteSecretTagRequest {
 
     private String key;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version_id")
-
-    private String versionId;
-
     public DeleteSecretTagRequest withSecretId(String secretId) {
         this.secretId = secretId;
         return this;
@@ -55,22 +50,6 @@ public class DeleteSecretTagRequest {
         this.key = key;
     }
 
-    public DeleteSecretTagRequest withVersionId(String versionId) {
-        this.versionId = versionId;
-        return this;
-    }
-
-    /** API版本号
-     * 
-     * @return versionId */
-    public String getVersionId() {
-        return versionId;
-    }
-
-    public void setVersionId(String versionId) {
-        this.versionId = versionId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -81,13 +60,12 @@ public class DeleteSecretTagRequest {
         }
         DeleteSecretTagRequest deleteSecretTagRequest = (DeleteSecretTagRequest) o;
         return Objects.equals(this.secretId, deleteSecretTagRequest.secretId)
-            && Objects.equals(this.key, deleteSecretTagRequest.key)
-            && Objects.equals(this.versionId, deleteSecretTagRequest.versionId);
+            && Objects.equals(this.key, deleteSecretTagRequest.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(secretId, key, versionId);
+        return Objects.hash(secretId, key);
     }
 
     @Override
@@ -96,7 +74,6 @@ public class DeleteSecretTagRequest {
         sb.append("class DeleteSecretTagRequest {\n");
         sb.append("    secretId: ").append(toIndentedString(secretId)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
-        sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

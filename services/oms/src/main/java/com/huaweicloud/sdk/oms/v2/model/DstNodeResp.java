@@ -20,6 +20,11 @@ public class DstNodeResp {
 
     private String region;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "save_prefix")
+
+    private String savePrefix;
+
     public DstNodeResp withBucket(String bucket) {
         this.bucket = bucket;
         return this;
@@ -52,6 +57,22 @@ public class DstNodeResp {
         this.region = region;
     }
 
+    public DstNodeResp withSavePrefix(String savePrefix) {
+        this.savePrefix = savePrefix;
+        return this;
+    }
+
+    /** 目的端桶内路径前缀（拼接在对象key前面,组成新的key,拼接后不能超过1024个字符）。
+     * 
+     * @return savePrefix */
+    public String getSavePrefix() {
+        return savePrefix;
+    }
+
+    public void setSavePrefix(String savePrefix) {
+        this.savePrefix = savePrefix;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +82,13 @@ public class DstNodeResp {
             return false;
         }
         DstNodeResp dstNodeResp = (DstNodeResp) o;
-        return Objects.equals(this.bucket, dstNodeResp.bucket) && Objects.equals(this.region, dstNodeResp.region);
+        return Objects.equals(this.bucket, dstNodeResp.bucket) && Objects.equals(this.region, dstNodeResp.region)
+            && Objects.equals(this.savePrefix, dstNodeResp.savePrefix);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucket, region);
+        return Objects.hash(bucket, region, savePrefix);
     }
 
     @Override
@@ -75,6 +97,7 @@ public class DstNodeResp {
         sb.append("class DstNodeResp {\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    savePrefix: ").append(toIndentedString(savePrefix)).append("\n");
         sb.append("}");
         return sb.toString();
     }

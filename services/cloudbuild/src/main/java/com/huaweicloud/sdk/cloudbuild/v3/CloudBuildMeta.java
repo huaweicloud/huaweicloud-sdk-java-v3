@@ -66,6 +66,38 @@ public class CloudBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse> showHistoryDetails =
+        genForshowHistoryDetails();
+
+    private static HttpRequestDef<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse> genForshowHistoryDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHistoryDetailsRequest.class, ShowHistoryDetailsResponse.class)
+                .withName("ShowHistoryDetails")
+                .withUri("/v3/jobs/{job_id}/{build_number}/history-details")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryDetailsRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<Integer>withRequestField("build_number",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowHistoryDetailsRequest::getBuildNumber, (req, v) -> {
+                req.setBuildNumber(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> showJobListByProjectId =
         genForshowJobListByProjectId();
 

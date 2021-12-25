@@ -12,18 +12,15 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CloudtestMeta {
 
-    public static final HttpRequestDef<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFile =
-        genForcreateApiTestSuiteByRepoFile();
+    public static final HttpRequestDef<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> batchDeleteTestCase =
+        genForbatchDeleteTestCase();
 
-    private static HttpRequestDef<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> genForcreateApiTestSuiteByRepoFile() {
+    private static HttpRequestDef<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> genForbatchDeleteTestCase() {
         // basic
-        HttpRequestDef.Builder<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CreateApiTestSuiteByRepoFileRequest.class,
-                    CreateApiTestSuiteByRepoFileResponse.class)
-                .withName("CreateApiTestSuiteByRepoFile")
-                .withUri("/v1/projects/{project_id}/repository/testsuites")
+        HttpRequestDef.Builder<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTestCaseRequest.class, BatchDeleteTestCaseResponse.class)
+                .withName("BatchDeleteTestCase")
+                .withUri("/v1/projects/{project_id}/testcases/batch-delete")
                 .withContentType("application/json");
 
         // requests
@@ -31,54 +28,15 @@ public class CloudtestMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApiTestSuiteByRepoFileRequest::getProjectId, (req, v) -> {
+            f -> f.withMarshaller(BatchDeleteTestCaseRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
             }));
-        builder.<CreateTestSuitByRepoFileInfo>withRequestField("body",
+        builder.<BatchDeleteTestCaseRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateTestSuitByRepoFileInfo.class),
-            f -> f.withMarshaller(CreateApiTestSuiteByRepoFileRequest::getBody, (req, v) -> {
+            TypeCasts.uncheckedConversion(BatchDeleteTestCaseRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteTestCaseRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironments =
-        genForlistEnvironments();
-
-    private static HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> genForlistEnvironments() {
-        // basic
-        HttpRequestDef.Builder<ListEnvironmentsRequest, ListEnvironmentsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentsRequest.class, ListEnvironmentsResponse.class)
-                .withName("ListEnvironments")
-                .withUri("/v1/projects/{project_id}/environments")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentsRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvironmentsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Long>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvironmentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
             }));
 
         // response
@@ -109,6 +67,63 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePlanRequestBody.class),
             f -> f.withMarshaller(CreatePlanRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateServiceRequest, CreateServiceResponse> createService =
+        genForcreateService();
+
+    private static HttpRequestDef<CreateServiceRequest, CreateServiceResponse> genForcreateService() {
+        // basic
+        HttpRequestDef.Builder<CreateServiceRequest, CreateServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateServiceRequest.class, CreateServiceResponse.class)
+                .withName("CreateService")
+                .withUri("/v1/services")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ServiceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServiceRequestBody.class),
+            f -> f.withMarshaller(CreateServiceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTestCaseRequest, CreateTestCaseResponse> createTestCase =
+        genForcreateTestCase();
+
+    private static HttpRequestDef<CreateTestCaseRequest, CreateTestCaseResponse> genForcreateTestCase() {
+        // basic
+        HttpRequestDef.Builder<CreateTestCaseRequest, CreateTestCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTestCaseRequest.class, CreateTestCaseResponse.class)
+                .withName("CreateTestCase")
+                .withUri("/v1/projects/{project_id}/testcases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTestCaseRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<CreateTestCaseRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTestCaseRequestBody.class),
+            f -> f.withMarshaller(CreateTestCaseRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -152,6 +167,170 @@ public class CloudtestMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> deleteService =
+        genFordeleteService();
+
+    private static HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> genFordeleteService() {
+        // basic
+        HttpRequestDef.Builder<DeleteServiceRequest, DeleteServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteServiceRequest.class, DeleteServiceResponse.class)
+                .withName("DeleteService")
+                .withUri("/v1/services/{service_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteServiceRequest::getServiceId, (req, v) -> {
+                req.setServiceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunTestCaseRequest, RunTestCaseResponse> runTestCase = genForrunTestCase();
+
+    private static HttpRequestDef<RunTestCaseRequest, RunTestCaseResponse> genForrunTestCase() {
+        // basic
+        HttpRequestDef.Builder<RunTestCaseRequest, RunTestCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunTestCaseRequest.class, RunTestCaseResponse.class)
+                .withName("RunTestCase")
+                .withUri("/v1/projects/{project_id}/testcases/execution")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunTestCaseRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<RunTestCaseRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunTestCaseRequestBody.class),
+            f -> f.withMarshaller(RunTestCaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse> showIssuesByPlanId =
+        genForshowIssuesByPlanId();
+
+    private static HttpRequestDef<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse> genForshowIssuesByPlanId() {
+        // basic
+        HttpRequestDef.Builder<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowIssuesByPlanIdRequest.class, ShowIssuesByPlanIdResponse.class)
+                .withName("ShowIssuesByPlanId")
+                .withUri("/v1/projects/{project_id}/plans/{plan_id}/issues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIssuesByPlanIdRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIssuesByPlanIdRequest::getPlanId, (req, v) -> {
+                req.setPlanId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowIssuesByPlanIdRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowIssuesByPlanIdRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        builder.<List<ShowIssuesByPlanIdResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowIssuesByPlanIdResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ShowIssuesByPlanIdResponseBody.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPlanJournalsRequest, ShowPlanJournalsResponse> showPlanJournals =
+        genForshowPlanJournals();
+
+    private static HttpRequestDef<ShowPlanJournalsRequest, ShowPlanJournalsResponse> genForshowPlanJournals() {
+        // basic
+        HttpRequestDef.Builder<ShowPlanJournalsRequest, ShowPlanJournalsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPlanJournalsRequest.class, ShowPlanJournalsResponse.class)
+                .withName("ShowPlanJournals")
+                .withUri("/v1/projects/{project_id}/plans/{plan_id}/journals")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPlanJournalsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPlanJournalsRequest::getPlanId, (req, v) -> {
+                req.setPlanId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowPlanJournalsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowPlanJournalsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        builder.<List<ShowPlanJournalsResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowPlanJournalsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ShowPlanJournalsResponseBody.class));
 
         return builder.build();
     }
@@ -216,56 +395,6 @@ public class CloudtestMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateServiceRequest, CreateServiceResponse> createService =
-        genForcreateService();
-
-    private static HttpRequestDef<CreateServiceRequest, CreateServiceResponse> genForcreateService() {
-        // basic
-        HttpRequestDef.Builder<CreateServiceRequest, CreateServiceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateServiceRequest.class, CreateServiceResponse.class)
-                .withName("CreateService")
-                .withUri("/v1/services")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ServiceRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ServiceRequestBody.class),
-            f -> f.withMarshaller(CreateServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> deleteService =
-        genFordeleteService();
-
-    private static HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> genFordeleteService() {
-        // basic
-        HttpRequestDef.Builder<DeleteServiceRequest, DeleteServiceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteServiceRequest.class, DeleteServiceResponse.class)
-                .withName("DeleteService")
-                .withUri("/v1/services/{service_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("service_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteServiceRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowRegisterServiceRequest, ShowRegisterServiceResponse> showRegisterService =
         genForshowRegisterService();
 
@@ -278,133 +407,6 @@ public class CloudtestMeta {
                 .withContentType("application/json");
 
         // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> updateService =
-        genForupdateService();
-
-    private static HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> genForupdateService() {
-        // basic
-        HttpRequestDef.Builder<UpdateServiceRequest, UpdateServiceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateServiceRequest.class, UpdateServiceResponse.class)
-                .withName("UpdateService")
-                .withUri("/v1/services/{service_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("service_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateServiceRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
-        builder.<ServiceRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ServiceRequestBody.class),
-            f -> f.withMarshaller(UpdateServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> batchDeleteTestCase =
-        genForbatchDeleteTestCase();
-
-    private static HttpRequestDef<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> genForbatchDeleteTestCase() {
-        // basic
-        HttpRequestDef.Builder<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTestCaseRequest.class, BatchDeleteTestCaseResponse.class)
-                .withName("BatchDeleteTestCase")
-                .withUri("/v1/projects/{project_id}/testcases/batch-delete")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteTestCaseRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<BatchDeleteTestCaseRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDeleteTestCaseRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteTestCaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateTestCaseRequest, CreateTestCaseResponse> createTestCase =
-        genForcreateTestCase();
-
-    private static HttpRequestDef<CreateTestCaseRequest, CreateTestCaseResponse> genForcreateTestCase() {
-        // basic
-        HttpRequestDef.Builder<CreateTestCaseRequest, CreateTestCaseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateTestCaseRequest.class, CreateTestCaseResponse.class)
-                .withName("CreateTestCase")
-                .withUri("/v1/projects/{project_id}/testcases")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTestCaseRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<CreateTestCaseRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateTestCaseRequestBody.class),
-            f -> f.withMarshaller(CreateTestCaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<RunTestCaseRequest, RunTestCaseResponse> runTestCase = genForrunTestCase();
-
-    private static HttpRequestDef<RunTestCaseRequest, RunTestCaseResponse> genForrunTestCase() {
-        // basic
-        HttpRequestDef.Builder<RunTestCaseRequest, RunTestCaseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RunTestCaseRequest.class, RunTestCaseResponse.class)
-                .withName("RunTestCase")
-                .withUri("/v1/projects/{project_id}/testcases/execution")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunTestCaseRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<RunTestCaseRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RunTestCaseRequestBody.class),
-            f -> f.withMarshaller(RunTestCaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
 
         // response
 
@@ -468,6 +470,38 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTestCaseDetailV2Request::getTestcaseNumber, (req, v) -> {
                 req.setTestcaseNumber(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> updateService =
+        genForupdateService();
+
+    private static HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> genForupdateService() {
+        // basic
+        HttpRequestDef.Builder<UpdateServiceRequest, UpdateServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateServiceRequest.class, UpdateServiceResponse.class)
+                .withName("UpdateService")
+                .withUri("/v1/services/{service_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateServiceRequest::getServiceId, (req, v) -> {
+                req.setServiceId(v);
+            }));
+        builder.<ServiceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServiceRequestBody.class),
+            f -> f.withMarshaller(UpdateServiceRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -539,6 +573,80 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(UpdateTestCaseResultRequestBody.class),
             f -> f.withMarshaller(UpdateTestCaseResultRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFile =
+        genForcreateApiTestSuiteByRepoFile();
+
+    private static HttpRequestDef<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> genForcreateApiTestSuiteByRepoFile() {
+        // basic
+        HttpRequestDef.Builder<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateApiTestSuiteByRepoFileRequest.class,
+                    CreateApiTestSuiteByRepoFileResponse.class)
+                .withName("CreateApiTestSuiteByRepoFile")
+                .withUri("/v1/projects/{project_id}/repository/testsuites")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateApiTestSuiteByRepoFileRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<CreateTestSuitByRepoFileInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTestSuitByRepoFileInfo.class),
+            f -> f.withMarshaller(CreateApiTestSuiteByRepoFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironments =
+        genForlistEnvironments();
+
+    private static HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> genForlistEnvironments() {
+        // basic
+        HttpRequestDef.Builder<ListEnvironmentsRequest, ListEnvironmentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentsRequest.class, ListEnvironmentsResponse.class)
+                .withName("ListEnvironments")
+                .withUri("/v1/projects/{project_id}/environments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnvironmentsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEnvironmentsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEnvironmentsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

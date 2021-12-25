@@ -25,6 +25,11 @@ public class Links {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation-date")
 
     private Long creationDate;
@@ -104,6 +109,22 @@ public class Links {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Links withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    /** 连接ID
+     * 
+     * @return id */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Links withCreationDate(Long creationDate) {
@@ -199,7 +220,7 @@ public class Links {
         Links links = (Links) o;
         return Objects.equals(this.linkConfigValues, links.linkConfigValues)
             && Objects.equals(this.creationUser, links.creationUser) && Objects.equals(this.name, links.name)
-            && Objects.equals(this.creationDate, links.creationDate)
+            && Objects.equals(this.id, links.id) && Objects.equals(this.creationDate, links.creationDate)
             && Objects.equals(this.connectorName, links.connectorName)
             && Objects.equals(this.updateDate, links.updateDate) && Objects.equals(this.enabled, links.enabled)
             && Objects.equals(this.updateUser, links.updateUser);
@@ -207,8 +228,15 @@ public class Links {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(linkConfigValues, creationUser, name, creationDate, connectorName, updateDate, enabled, updateUser);
+        return Objects.hash(linkConfigValues,
+            creationUser,
+            name,
+            id,
+            creationDate,
+            connectorName,
+            updateDate,
+            enabled,
+            updateUser);
     }
 
     @Override
@@ -218,6 +246,7 @@ public class Links {
         sb.append("    linkConfigValues: ").append(toIndentedString(linkConfigValues)).append("\n");
         sb.append("    creationUser: ").append(toIndentedString(creationUser)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");
         sb.append("    connectorName: ").append(toIndentedString(connectorName)).append("\n");
         sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");

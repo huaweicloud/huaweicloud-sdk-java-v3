@@ -33,6 +33,31 @@ public class CustomerConfig {
 
     private String ssl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "createFrom")
+
+    private String createFrom;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resourceId")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavorType")
+
+    private String flavorType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workSpaceId")
+
+    private String workSpaceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trial")
+
+    private String trial;
+
     public CustomerConfig withFailureRemind(String failureRemind) {
         this.failureRemind = failureRemind;
         return this;
@@ -113,6 +138,86 @@ public class CustomerConfig {
         this.ssl = ssl;
     }
 
+    public CustomerConfig withCreateFrom(String createFrom) {
+        this.createFrom = createFrom;
+        return this;
+    }
+
+    /** 创建来源
+     * 
+     * @return createFrom */
+    public String getCreateFrom() {
+        return createFrom;
+    }
+
+    public void setCreateFrom(String createFrom) {
+        this.createFrom = createFrom;
+    }
+
+    public CustomerConfig withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /** 资源ID
+     * 
+     * @return resourceId */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public CustomerConfig withFlavorType(String flavorType) {
+        this.flavorType = flavorType;
+        return this;
+    }
+
+    /** 规格类型
+     * 
+     * @return flavorType */
+    public String getFlavorType() {
+        return flavorType;
+    }
+
+    public void setFlavorType(String flavorType) {
+        this.flavorType = flavorType;
+    }
+
+    public CustomerConfig withWorkSpaceId(String workSpaceId) {
+        this.workSpaceId = workSpaceId;
+        return this;
+    }
+
+    /** 工作空间ID
+     * 
+     * @return workSpaceId */
+    public String getWorkSpaceId() {
+        return workSpaceId;
+    }
+
+    public void setWorkSpaceId(String workSpaceId) {
+        this.workSpaceId = workSpaceId;
+    }
+
+    public CustomerConfig withTrial(String trial) {
+        this.trial = trial;
+        return this;
+    }
+
+    /** 适用
+     * 
+     * @return trial */
+    public String getTrial() {
+        return trial;
+    }
+
+    public void setTrial(String trial) {
+        this.trial = trial;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -125,12 +230,26 @@ public class CustomerConfig {
         return Objects.equals(this.failureRemind, customerConfig.failureRemind)
             && Objects.equals(this.clusterName, customerConfig.clusterName)
             && Objects.equals(this.serviceProvider, customerConfig.serviceProvider)
-            && Objects.equals(this.localDisk, customerConfig.localDisk) && Objects.equals(this.ssl, customerConfig.ssl);
+            && Objects.equals(this.localDisk, customerConfig.localDisk) && Objects.equals(this.ssl, customerConfig.ssl)
+            && Objects.equals(this.createFrom, customerConfig.createFrom)
+            && Objects.equals(this.resourceId, customerConfig.resourceId)
+            && Objects.equals(this.flavorType, customerConfig.flavorType)
+            && Objects.equals(this.workSpaceId, customerConfig.workSpaceId)
+            && Objects.equals(this.trial, customerConfig.trial);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(failureRemind, clusterName, serviceProvider, localDisk, ssl);
+        return Objects.hash(failureRemind,
+            clusterName,
+            serviceProvider,
+            localDisk,
+            ssl,
+            createFrom,
+            resourceId,
+            flavorType,
+            workSpaceId,
+            trial);
     }
 
     @Override
@@ -142,6 +261,11 @@ public class CustomerConfig {
         sb.append("    serviceProvider: ").append(toIndentedString(serviceProvider)).append("\n");
         sb.append("    localDisk: ").append(toIndentedString(localDisk)).append("\n");
         sb.append("    ssl: ").append(toIndentedString(ssl)).append("\n");
+        sb.append("    createFrom: ").append(toIndentedString(createFrom)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    flavorType: ").append(toIndentedString(flavorType)).append("\n");
+        sb.append("    workSpaceId: ").append(toIndentedString(workSpaceId)).append("\n");
+        sb.append("    trial: ").append(toIndentedString(trial)).append("\n");
         sb.append("}");
         return sb.toString();
     }

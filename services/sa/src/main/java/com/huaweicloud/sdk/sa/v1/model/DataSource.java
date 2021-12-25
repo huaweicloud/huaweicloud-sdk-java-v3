@@ -24,9 +24,9 @@ public class DataSource {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
+    @JsonProperty(value = "region_id")
 
-    private String region;
+    private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "company_name")
@@ -91,20 +91,20 @@ public class DataSource {
         this.projectId = projectId;
     }
 
-    public DataSource withRegion(String region) {
-        this.region = region;
+    public DataSource withRegionId(String regionId) {
+        this.regionId = regionId;
         return this;
     }
 
     /** 数据源产品所在区域，具体取值范围查看华为云地区和终端节点定义。
      * 
-     * @return region */
-    public String getRegion() {
-        return region;
+     * @return regionId */
+    public String getRegionId() {
+        return regionId;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
     }
 
     public DataSource withCompanyName(String companyName) {
@@ -165,7 +165,8 @@ public class DataSource {
         }
         DataSource dataSource = (DataSource) o;
         return Objects.equals(this.type, dataSource.type) && Objects.equals(this.domainId, dataSource.domainId)
-            && Objects.equals(this.projectId, dataSource.projectId) && Objects.equals(this.region, dataSource.region)
+            && Objects.equals(this.projectId, dataSource.projectId)
+            && Objects.equals(this.regionId, dataSource.regionId)
             && Objects.equals(this.companyName, dataSource.companyName)
             && Objects.equals(this.productName, dataSource.productName)
             && Objects.equals(this.productFeature, dataSource.productFeature);
@@ -173,7 +174,7 @@ public class DataSource {
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, domainId, projectId, region, companyName, productName, productFeature);
+        return Objects.hash(type, domainId, projectId, regionId, companyName, productName, productFeature);
     }
 
     @Override
@@ -183,7 +184,7 @@ public class DataSource {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
         sb.append("    productFeature: ").append(toIndentedString(productFeature)).append("\n");

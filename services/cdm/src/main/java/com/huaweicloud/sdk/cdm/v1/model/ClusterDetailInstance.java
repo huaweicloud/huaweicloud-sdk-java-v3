@@ -52,6 +52,11 @@ public class ClusterDetailInstance {
     private String isFrozen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "components")
+
+    private String components;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_status")
 
     private String configStatus;
@@ -276,6 +281,22 @@ public class ClusterDetailInstance {
 
     public void setIsFrozen(String isFrozen) {
         this.isFrozen = isFrozen;
+    }
+
+    public ClusterDetailInstance withComponents(String components) {
+        this.components = components;
+        return this;
+    }
+
+    /** 组件
+     * 
+     * @return components */
+    public String getComponents() {
+        return components;
+    }
+
+    public void setComponents(String components) {
+        this.components = components;
     }
 
     public ClusterDetailInstance withConfigStatus(String configStatus) {
@@ -535,6 +556,7 @@ public class ClusterDetailInstance {
             && Objects.equals(this.id, clusterDetailInstance.id)
             && Objects.equals(this.name, clusterDetailInstance.name)
             && Objects.equals(this.isFrozen, clusterDetailInstance.isFrozen)
+            && Objects.equals(this.components, clusterDetailInstance.components)
             && Objects.equals(this.configStatus, clusterDetailInstance.configStatus)
             && Objects.equals(this.role, clusterDetailInstance.role)
             && Objects.equals(this.group, clusterDetailInstance.group)
@@ -560,6 +582,7 @@ public class ClusterDetailInstance {
             id,
             name,
             isFrozen,
+            components,
             configStatus,
             role,
             group,
@@ -587,6 +610,7 @@ public class ClusterDetailInstance {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
+        sb.append("    components: ").append(toIndentedString(components)).append("\n");
         sb.append("    configStatus: ").append(toIndentedString(configStatus)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("    group: ").append(toIndentedString(group)).append("\n");

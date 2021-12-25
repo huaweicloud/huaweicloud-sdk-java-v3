@@ -4724,6 +4724,72 @@ public class RomaClient {
             RomaMeta.checkAssetJobStatus, hcClient);
     }
 
+    /** 批量删除资产 批量删除资产 - 创建批量删除指定条件的资产的作业任务 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产删除作业任务，没有Running状态的作业任务存在
+     *
+     * @param DeleteAssetRequest 请求对象
+     * @return DeleteAssetResponse */
+    public DeleteAssetResponse deleteAsset(DeleteAssetRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.deleteAsset);
+    }
+
+    /** 批量删除资产 批量删除资产 - 创建批量删除指定条件的资产的作业任务 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产删除作业任务，没有Running状态的作业任务存在
+     *
+     * @param DeleteAssetRequest 请求对象
+     * @return SyncInvoker<DeleteAssetRequest, DeleteAssetResponse> */
+    public SyncInvoker<DeleteAssetRequest, DeleteAssetResponse> deleteAssetInvoker(DeleteAssetRequest request) {
+        return new SyncInvoker<DeleteAssetRequest, DeleteAssetResponse>(request, RomaMeta.deleteAsset, hcClient);
+    }
+
+    /** 下载资产包 - 导出作业执行成功后，通过该接口获取导出作业产生的资产包，仅能下载一次 - 可先压缩后存在数据库，下载后删除
+     *
+     * @param DownloadAssetArchiveRequest 请求对象
+     * @return DownloadAssetArchiveResponse */
+    public DownloadAssetArchiveResponse downloadAssetArchive(DownloadAssetArchiveRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.downloadAssetArchive);
+    }
+
+    /** 下载资产包 - 导出作业执行成功后，通过该接口获取导出作业产生的资产包，仅能下载一次 - 可先压缩后存在数据库，下载后删除
+     *
+     * @param DownloadAssetArchiveRequest 请求对象
+     * @return SyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> */
+    public SyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> downloadAssetArchiveInvoker(
+        DownloadAssetArchiveRequest request) {
+        return new SyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse>(request,
+            RomaMeta.downloadAssetArchive, hcClient);
+    }
+
+    /** 批量导出资产 批量导出资产 - 创建批量导出指定条件的资产的作业任务 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产导出作业任务，没有Running状态的作业任务存在
+     *
+     * @param ExportAssetRequest 请求对象
+     * @return ExportAssetResponse */
+    public ExportAssetResponse exportAsset(ExportAssetRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.exportAsset);
+    }
+
+    /** 批量导出资产 批量导出资产 - 创建批量导出指定条件的资产的作业任务 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产导出作业任务，没有Running状态的作业任务存在
+     *
+     * @param ExportAssetRequest 请求对象
+     * @return SyncInvoker<ExportAssetRequest, ExportAssetResponse> */
+    public SyncInvoker<ExportAssetRequest, ExportAssetResponse> exportAssetInvoker(ExportAssetRequest request) {
+        return new SyncInvoker<ExportAssetRequest, ExportAssetResponse>(request, RomaMeta.exportAsset, hcClient);
+    }
+
+    /** 导入资产 - 创建导入资产作业任务，资产版本和具体哪些资产从资产内容里读取 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产导入作业任务，没有Running状态的作业任务存在
+     *
+     * @param ImportAssetRequest 请求对象
+     * @return ImportAssetResponse */
+    public ImportAssetResponse importAsset(ImportAssetRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.importAsset);
+    }
+
+    /** 导入资产 - 创建导入资产作业任务，资产版本和具体哪些资产从资产内容里读取 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产导入作业任务，没有Running状态的作业任务存在
+     *
+     * @param ImportAssetRequest 请求对象
+     * @return SyncInvoker<ImportAssetRequest, ImportAssetResponse> */
+    public SyncInvoker<ImportAssetRequest, ImportAssetResponse> importAssetInvoker(ImportAssetRequest request) {
+        return new SyncInvoker<ImportAssetRequest, ImportAssetResponse>(request, RomaMeta.importAsset, hcClient);
+    }
+
     /** 查询字典详情 查询字典详情,
      *
      * @param CheckDictionaryRequest 请求对象
@@ -4830,6 +4896,24 @@ public class RomaClient {
         ValidateDictionaryRequest request) {
         return new SyncInvoker<ValidateDictionaryRequest, ValidateDictionaryResponse>(request,
             RomaMeta.validateDictionary, hcClient);
+    }
+
+    /** 查询实例列表 获取符合条件的服务实例列表。
+     *
+     * @param CheckRomaInstanceListV2Request 请求对象
+     * @return CheckRomaInstanceListV2Response */
+    public CheckRomaInstanceListV2Response checkRomaInstanceListV2(CheckRomaInstanceListV2Request request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.checkRomaInstanceListV2);
+    }
+
+    /** 查询实例列表 获取符合条件的服务实例列表。
+     *
+     * @param CheckRomaInstanceListV2Request 请求对象
+     * @return SyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> */
+    public SyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> checkRomaInstanceListV2Invoker(
+        CheckRomaInstanceListV2Request request) {
+        return new SyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response>(request,
+            RomaMeta.checkRomaInstanceListV2, hcClient);
     }
 
     /** 查询MQS实例列表 查询MQS实例列表。

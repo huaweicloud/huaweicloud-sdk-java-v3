@@ -18,7 +18,7 @@ public class CsmsMeta {
         HttpRequestDef.Builder<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateOrDeleteTagsRequest.class, BatchCreateOrDeleteTagsResponse.class)
             .withName("BatchCreateOrDeleteTags")
-            .withUri("/{version_id}/{project_id}/csms/{secret_id}/tags/action")
+            .withUri("/v1/{project_id}/csms/{secret_id}/tags/action")
             .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -28,13 +28,6 @@ public class CsmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getSecretId, (req, v) -> {
                 req.setSecretId(v);
-            }));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
             }));
         builder.<BatchCreateOrDeleteTagsRequestBody>withRequestField("body",
             LocationType.Body,
@@ -81,17 +74,10 @@ public class CsmsMeta {
         HttpRequestDef.Builder<CreateSecretTagRequest, CreateSecretTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecretTagRequest.class, CreateSecretTagResponse.class)
                 .withName("CreateSecretTag")
-                .withUri("/{version_id}/{project_id}/csms/{secret_id}/tags")
+                .withUri("/v1/{project_id}/csms/{secret_id}/tags")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecretTagRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
         builder.<String>withRequestField("secret_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -240,7 +226,7 @@ public class CsmsMeta {
         HttpRequestDef.Builder<DeleteSecretTagRequest, DeleteSecretTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretTagRequest.class, DeleteSecretTagResponse.class)
                 .withName("DeleteSecretTag")
-                .withUri("/{version_id}/{project_id}/csms/{secret_id}/tags/{key}")
+                .withUri("/v1/{project_id}/csms/{secret_id}/tags/{key}")
                 .withContentType("application/json");
 
         // requests
@@ -258,13 +244,6 @@ public class CsmsMeta {
             f -> f.withMarshaller(DeleteSecretTagRequest::getKey, (req, v) -> {
                 req.setKey(v);
             }));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretTagRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
 
         // response
 
@@ -279,17 +258,10 @@ public class CsmsMeta {
         HttpRequestDef.Builder<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProjectSecretsTagsRequest.class, ListProjectSecretsTagsResponse.class)
             .withName("ListProjectSecretsTags")
-            .withUri("/{version_id}/{project_id}/csms/tags")
+            .withUri("/v1/{project_id}/csms/tags")
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectSecretsTagsRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
 
         // response
 
@@ -304,7 +276,7 @@ public class CsmsMeta {
         HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
             .withName("ListResourceInstances")
-            .withUri("/{version_id}/{project_id}/csms/{resource_instances}/action")
+            .withUri("/v1/{project_id}/csms/{resource_instances}/action")
             .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -314,13 +286,6 @@ public class CsmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceInstancesRequest::getResourceInstances, (req, v) -> {
                 req.setResourceInstances(v);
-            }));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
             }));
         builder.<ListResourceInstancesRequestBody>withRequestField("body",
             LocationType.Body,
@@ -375,17 +340,10 @@ public class CsmsMeta {
         HttpRequestDef.Builder<ListSecretTagsRequest, ListSecretTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecretTagsRequest.class, ListSecretTagsResponse.class)
                 .withName("ListSecretTags")
-                .withUri("/{version_id}/{project_id}/csms/{secret_id}/tags")
+                .withUri("/v1/{project_id}/csms/{secret_id}/tags")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretTagsRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
         builder.<String>withRequestField("secret_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,

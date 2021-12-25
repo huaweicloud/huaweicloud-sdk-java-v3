@@ -1768,6 +1768,13 @@ public class ElbMeta {
             f -> f.withMarshaller(ListMembersRequest::getMemberType, (req, v) -> {
                 req.setMemberType(v);
             }));
+        builder.<List<String>>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMembersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
 
         // response
 

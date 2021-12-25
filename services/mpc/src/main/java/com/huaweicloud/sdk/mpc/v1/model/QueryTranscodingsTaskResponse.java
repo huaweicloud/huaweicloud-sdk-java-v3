@@ -187,6 +187,11 @@ public class QueryTranscodingsTaskResponse {
 
     private List<PicInfo> picInfo = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "av_parameters")
+
+    private List<AvParameters> avParameters = null;
+
     public QueryTranscodingsTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -527,6 +532,38 @@ public class QueryTranscodingsTaskResponse {
         this.picInfo = picInfo;
     }
 
+    public QueryTranscodingsTaskResponse withAvParameters(List<AvParameters> avParameters) {
+        this.avParameters = avParameters;
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse addAvParametersItem(AvParameters avParametersItem) {
+        if (this.avParameters == null) {
+            this.avParameters = new ArrayList<>();
+        }
+        this.avParameters.add(avParametersItem);
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse withAvParameters(Consumer<List<AvParameters>> avParametersSetter) {
+        if (this.avParameters == null) {
+            this.avParameters = new ArrayList<>();
+        }
+        avParametersSetter.accept(this.avParameters);
+        return this;
+    }
+
+    /** 转码参数。 若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码。
+     * 
+     * @return avParameters */
+    public List<AvParameters> getAvParameters() {
+        return avParameters;
+    }
+
+    public void setAvParameters(List<AvParameters> avParameters) {
+        this.avParameters = avParameters;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -551,7 +588,8 @@ public class QueryTranscodingsTaskResponse {
             && Objects.equals(this.transcodeDetail, queryTranscodingsTaskResponse.transcodeDetail)
             && Objects.equals(this.thumbnailOutput, queryTranscodingsTaskResponse.thumbnailOutput)
             && Objects.equals(this.thumbnailOutputname, queryTranscodingsTaskResponse.thumbnailOutputname)
-            && Objects.equals(this.picInfo, queryTranscodingsTaskResponse.picInfo);
+            && Objects.equals(this.picInfo, queryTranscodingsTaskResponse.picInfo)
+            && Objects.equals(this.avParameters, queryTranscodingsTaskResponse.avParameters);
     }
 
     @Override
@@ -571,7 +609,8 @@ public class QueryTranscodingsTaskResponse {
             transcodeDetail,
             thumbnailOutput,
             thumbnailOutputname,
-            picInfo);
+            picInfo,
+            avParameters);
     }
 
     @Override
@@ -594,6 +633,7 @@ public class QueryTranscodingsTaskResponse {
         sb.append("    thumbnailOutput: ").append(toIndentedString(thumbnailOutput)).append("\n");
         sb.append("    thumbnailOutputname: ").append(toIndentedString(thumbnailOutputname)).append("\n");
         sb.append("    picInfo: ").append(toIndentedString(picInfo)).append("\n");
+        sb.append("    avParameters: ").append(toIndentedString(avParameters)).append("\n");
         sb.append("}");
         return sb.toString();
     }

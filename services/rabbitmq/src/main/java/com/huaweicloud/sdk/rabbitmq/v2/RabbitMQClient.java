@@ -212,7 +212,7 @@ public class RabbitMQClient {
             hcClient);
     }
 
-    /** 实例规格变更 实例规格变更。
+    /** 实例规格变更 实例规格变更。 [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
      *
      * @param ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse */
@@ -220,7 +220,7 @@ public class RabbitMQClient {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.resizeInstance);
     }
 
-    /** 实例规格变更 实例规格变更。
+    /** 实例规格变更 实例规格变更。 [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
      *
      * @param ResizeInstanceRequest 请求对象
      * @return SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> */

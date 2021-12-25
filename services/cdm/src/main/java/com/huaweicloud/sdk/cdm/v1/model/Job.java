@@ -150,9 +150,104 @@ public class Job {
     private Long updateDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_incre_job")
+
+    private Boolean isIncreJob;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flag")
+
+    private Integer flag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "files_read")
+
+    private Integer filesRead;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update-user")
 
     private String updateUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_id")
+
+    private String externalId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execute_start_date")
+
+    private Long executeStartDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_rows")
+
+    private Integer deleteRows;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enabled")
+
+    private Boolean enabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bytes_written")
+
+    private Long bytesWritten;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_use_sql")
+
+    private Boolean isUseSql;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_rows")
+
+    private Integer updateRows;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bytes_read")
+
+    private Long bytesRead;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execute_update_date")
+
+    private Long executeUpdateDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "write_rows")
+
+    private Integer writeRows;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "files_writte")
+
+    private Integer filesWritte;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_incrementing")
+
+    private Boolean isIncrementing;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execute_create_date")
+
+    private Long executeCreateDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -378,6 +473,54 @@ public class Job {
         this.updateDate = updateDate;
     }
 
+    public Job withIsIncreJob(Boolean isIncreJob) {
+        this.isIncreJob = isIncreJob;
+        return this;
+    }
+
+    /** 是否增量
+     * 
+     * @return isIncreJob */
+    public Boolean getIsIncreJob() {
+        return isIncreJob;
+    }
+
+    public void setIsIncreJob(Boolean isIncreJob) {
+        this.isIncreJob = isIncreJob;
+    }
+
+    public Job withFlag(Integer flag) {
+        this.flag = flag;
+        return this;
+    }
+
+    /** 标记
+     * 
+     * @return flag */
+    public Integer getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Integer flag) {
+        this.flag = flag;
+    }
+
+    public Job withFilesRead(Integer filesRead) {
+        this.filesRead = filesRead;
+        return this;
+    }
+
+    /** 已读文件数
+     * 
+     * @return filesRead */
+    public Integer getFilesRead() {
+        return filesRead;
+    }
+
+    public void setFilesRead(Integer filesRead) {
+        this.filesRead = filesRead;
+    }
+
     public Job withUpdateUser(String updateUser) {
         this.updateUser = updateUser;
         return this;
@@ -392,6 +535,262 @@ public class Job {
 
     public void setUpdateUser(String updateUser) {
         this.updateUser = updateUser;
+    }
+
+    public Job withExternalId(String externalId) {
+        this.externalId = externalId;
+        return this;
+    }
+
+    /** 外部ID。
+     * 
+     * @return externalId */
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    public Job withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /** 作业类型
+     * 
+     * @return type */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Job withExecuteStartDate(Long executeStartDate) {
+        this.executeStartDate = executeStartDate;
+        return this;
+    }
+
+    /** 执行_开始_日期。
+     * 
+     * @return executeStartDate */
+    public Long getExecuteStartDate() {
+        return executeStartDate;
+    }
+
+    public void setExecuteStartDate(Long executeStartDate) {
+        this.executeStartDate = executeStartDate;
+    }
+
+    public Job withDeleteRows(Integer deleteRows) {
+        this.deleteRows = deleteRows;
+        return this;
+    }
+
+    /** 删除行数
+     * 
+     * @return deleteRows */
+    public Integer getDeleteRows() {
+        return deleteRows;
+    }
+
+    public void setDeleteRows(Integer deleteRows) {
+        this.deleteRows = deleteRows;
+    }
+
+    public Job withEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    /** 是否激活连接
+     * 
+     * @return enabled */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public Job withBytesWritten(Long bytesWritten) {
+        this.bytesWritten = bytesWritten;
+        return this;
+    }
+
+    /** 写入字节
+     * 
+     * @return bytesWritten */
+    public Long getBytesWritten() {
+        return bytesWritten;
+    }
+
+    public void setBytesWritten(Long bytesWritten) {
+        this.bytesWritten = bytesWritten;
+    }
+
+    public Job withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    /** 作业ID
+     * 
+     * @return id */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Job withIsUseSql(Boolean isUseSql) {
+        this.isUseSql = isUseSql;
+        return this;
+    }
+
+    /** 用户是否使用sql
+     * 
+     * @return isUseSql */
+    public Boolean getIsUseSql() {
+        return isUseSql;
+    }
+
+    public void setIsUseSql(Boolean isUseSql) {
+        this.isUseSql = isUseSql;
+    }
+
+    public Job withUpdateRows(Integer updateRows) {
+        this.updateRows = updateRows;
+        return this;
+    }
+
+    /** 更新行数
+     * 
+     * @return updateRows */
+    public Integer getUpdateRows() {
+        return updateRows;
+    }
+
+    public void setUpdateRows(Integer updateRows) {
+        this.updateRows = updateRows;
+    }
+
+    public Job withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /** 组_名称
+     * 
+     * @return groupName */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public Job withBytesRead(Long bytesRead) {
+        this.bytesRead = bytesRead;
+        return this;
+    }
+
+    /** 读取字节
+     * 
+     * @return bytesRead */
+    public Long getBytesRead() {
+        return bytesRead;
+    }
+
+    public void setBytesRead(Long bytesRead) {
+        this.bytesRead = bytesRead;
+    }
+
+    public Job withExecuteUpdateDate(Long executeUpdateDate) {
+        this.executeUpdateDate = executeUpdateDate;
+        return this;
+    }
+
+    /** 执行_更新_日期。
+     * 
+     * @return executeUpdateDate */
+    public Long getExecuteUpdateDate() {
+        return executeUpdateDate;
+    }
+
+    public void setExecuteUpdateDate(Long executeUpdateDate) {
+        this.executeUpdateDate = executeUpdateDate;
+    }
+
+    public Job withWriteRows(Integer writeRows) {
+        this.writeRows = writeRows;
+        return this;
+    }
+
+    /** 写入行数
+     * 
+     * @return writeRows */
+    public Integer getWriteRows() {
+        return writeRows;
+    }
+
+    public void setWriteRows(Integer writeRows) {
+        this.writeRows = writeRows;
+    }
+
+    public Job withFilesWritte(Integer filesWritte) {
+        this.filesWritte = filesWritte;
+        return this;
+    }
+
+    /** 写入文件数
+     * 
+     * @return filesWritte */
+    public Integer getFilesWritte() {
+        return filesWritte;
+    }
+
+    public void setFilesWritte(Integer filesWritte) {
+        this.filesWritte = filesWritte;
+    }
+
+    public Job withIsIncrementing(Boolean isIncrementing) {
+        this.isIncrementing = isIncrementing;
+        return this;
+    }
+
+    /** 是否增量
+     * 
+     * @return isIncrementing */
+    public Boolean getIsIncrementing() {
+        return isIncrementing;
+    }
+
+    public void setIsIncrementing(Boolean isIncrementing) {
+        this.isIncrementing = isIncrementing;
+    }
+
+    public Job withExecuteCreateDate(Long executeCreateDate) {
+        this.executeCreateDate = executeCreateDate;
+        return this;
+    }
+
+    /** 执行_创建_日期
+     * 
+     * @return executeCreateDate */
+    public Long getExecuteCreateDate() {
+        return executeCreateDate;
+    }
+
+    public void setExecuteCreateDate(Long executeCreateDate) {
+        this.executeCreateDate = executeCreateDate;
     }
 
     public Job withStatus(String status) {
@@ -429,7 +828,18 @@ public class Job {
             && Objects.equals(this.fromLinkName, job.fromLinkName)
             && Objects.equals(this.creationUser, job.creationUser)
             && Objects.equals(this.creationDate, job.creationDate) && Objects.equals(this.updateDate, job.updateDate)
-            && Objects.equals(this.updateUser, job.updateUser) && Objects.equals(this.status, job.status);
+            && Objects.equals(this.isIncreJob, job.isIncreJob) && Objects.equals(this.flag, job.flag)
+            && Objects.equals(this.filesRead, job.filesRead) && Objects.equals(this.updateUser, job.updateUser)
+            && Objects.equals(this.externalId, job.externalId) && Objects.equals(this.type, job.type)
+            && Objects.equals(this.executeStartDate, job.executeStartDate)
+            && Objects.equals(this.deleteRows, job.deleteRows) && Objects.equals(this.enabled, job.enabled)
+            && Objects.equals(this.bytesWritten, job.bytesWritten) && Objects.equals(this.id, job.id)
+            && Objects.equals(this.isUseSql, job.isUseSql) && Objects.equals(this.updateRows, job.updateRows)
+            && Objects.equals(this.groupName, job.groupName) && Objects.equals(this.bytesRead, job.bytesRead)
+            && Objects.equals(this.executeUpdateDate, job.executeUpdateDate)
+            && Objects.equals(this.writeRows, job.writeRows) && Objects.equals(this.filesWritte, job.filesWritte)
+            && Objects.equals(this.isIncrementing, job.isIncrementing)
+            && Objects.equals(this.executeCreateDate, job.executeCreateDate) && Objects.equals(this.status, job.status);
     }
 
     @Override
@@ -446,7 +856,26 @@ public class Job {
             creationUser,
             creationDate,
             updateDate,
+            isIncreJob,
+            flag,
+            filesRead,
             updateUser,
+            externalId,
+            type,
+            executeStartDate,
+            deleteRows,
+            enabled,
+            bytesWritten,
+            id,
+            isUseSql,
+            updateRows,
+            groupName,
+            bytesRead,
+            executeUpdateDate,
+            writeRows,
+            filesWritte,
+            isIncrementing,
+            executeCreateDate,
             status);
     }
 
@@ -466,7 +895,26 @@ public class Job {
         sb.append("    creationUser: ").append(toIndentedString(creationUser)).append("\n");
         sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");
         sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
+        sb.append("    isIncreJob: ").append(toIndentedString(isIncreJob)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+        sb.append("    filesRead: ").append(toIndentedString(filesRead)).append("\n");
         sb.append("    updateUser: ").append(toIndentedString(updateUser)).append("\n");
+        sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    executeStartDate: ").append(toIndentedString(executeStartDate)).append("\n");
+        sb.append("    deleteRows: ").append(toIndentedString(deleteRows)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    bytesWritten: ").append(toIndentedString(bytesWritten)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    isUseSql: ").append(toIndentedString(isUseSql)).append("\n");
+        sb.append("    updateRows: ").append(toIndentedString(updateRows)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    bytesRead: ").append(toIndentedString(bytesRead)).append("\n");
+        sb.append("    executeUpdateDate: ").append(toIndentedString(executeUpdateDate)).append("\n");
+        sb.append("    writeRows: ").append(toIndentedString(writeRows)).append("\n");
+        sb.append("    filesWritte: ").append(toIndentedString(filesWritte)).append("\n");
+        sb.append("    isIncrementing: ").append(toIndentedString(isIncrementing)).append("\n");
+        sb.append("    executeCreateDate: ").append(toIndentedString(executeCreateDate)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -49,7 +49,7 @@ public class DeleteStreamForbiddenRequest {
         return this;
     }
 
-    /** 播放或推流域名
+    /** 推流域名
      * 
      * @return domain */
     public String getDomain() {

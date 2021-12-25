@@ -13,14 +13,14 @@ import java.util.function.Consumer;
 public class ListProductsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Hourly")
+    @JsonProperty(value = "hourly")
 
     private List<ListProductsRespHourly> hourly = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Monthly")
+    @JsonProperty(value = "honthly")
 
-    private List<ListProductsRespHourly> monthly = null;
+    private List<ListProductsRespHourly> honthly = null;
 
     public ListProductsResponse withHourly(List<ListProductsRespHourly> hourly) {
         this.hourly = hourly;
@@ -54,36 +54,36 @@ public class ListProductsResponse extends SdkResponse {
         this.hourly = hourly;
     }
 
-    public ListProductsResponse withMonthly(List<ListProductsRespHourly> monthly) {
-        this.monthly = monthly;
+    public ListProductsResponse withHonthly(List<ListProductsRespHourly> honthly) {
+        this.honthly = honthly;
         return this;
     }
 
-    public ListProductsResponse addMonthlyItem(ListProductsRespHourly monthlyItem) {
-        if (this.monthly == null) {
-            this.monthly = new ArrayList<>();
+    public ListProductsResponse addHonthlyItem(ListProductsRespHourly honthlyItem) {
+        if (this.honthly == null) {
+            this.honthly = new ArrayList<>();
         }
-        this.monthly.add(monthlyItem);
+        this.honthly.add(honthlyItem);
         return this;
     }
 
-    public ListProductsResponse withMonthly(Consumer<List<ListProductsRespHourly>> monthlySetter) {
-        if (this.monthly == null) {
-            this.monthly = new ArrayList<>();
+    public ListProductsResponse withHonthly(Consumer<List<ListProductsRespHourly>> honthlySetter) {
+        if (this.honthly == null) {
+            this.honthly = new ArrayList<>();
         }
-        monthlySetter.accept(this.monthly);
+        honthlySetter.accept(this.honthly);
         return this;
     }
 
     /** 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Kafka实例。
      * 
-     * @return monthly */
-    public List<ListProductsRespHourly> getMonthly() {
-        return monthly;
+     * @return honthly */
+    public List<ListProductsRespHourly> getHonthly() {
+        return honthly;
     }
 
-    public void setMonthly(List<ListProductsRespHourly> monthly) {
-        this.monthly = monthly;
+    public void setHonthly(List<ListProductsRespHourly> honthly) {
+        this.honthly = honthly;
     }
 
     @Override
@@ -96,12 +96,12 @@ public class ListProductsResponse extends SdkResponse {
         }
         ListProductsResponse listProductsResponse = (ListProductsResponse) o;
         return Objects.equals(this.hourly, listProductsResponse.hourly)
-            && Objects.equals(this.monthly, listProductsResponse.monthly);
+            && Objects.equals(this.honthly, listProductsResponse.honthly);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hourly, monthly);
+        return Objects.hash(hourly, honthly);
     }
 
     @Override
@@ -109,7 +109,7 @@ public class ListProductsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProductsResponse {\n");
         sb.append("    hourly: ").append(toIndentedString(hourly)).append("\n");
-        sb.append("    monthly: ").append(toIndentedString(monthly)).append("\n");
+        sb.append("    honthly: ").append(toIndentedString(honthly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

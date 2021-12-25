@@ -60,7 +60,7 @@ public class EipInfo {
         return this;
     }
 
-    /** IP版本号，取值：4表示IPv4,6表示IPv6。 [不支持IPv6，请勿设置为6。](tag:otc,otc_test,dt,dt_test)
+    /** IP版本号，取值：4表示IPv4,6表示IPv6。 [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
      * 
      * @return ipVersion */
     public Integer getIpVersion() {

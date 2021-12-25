@@ -13,7 +13,7 @@ import java.util.Objects;
 /** ResizeInstanceReq */
 public class ResizeInstanceReq {
 
-    /** 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。 */
+    /** 规格变更后的规格ID。 */
     public static final class NewSpecCodeEnum {
 
         /** Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.3" */
@@ -106,7 +106,7 @@ public class ResizeInstanceReq {
         return this;
     }
 
-    /** 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
+    /** 规格变更后的规格ID。
      * 
      * @return newSpecCode */
     public NewSpecCodeEnum getNewSpecCode() {
@@ -122,7 +122,7 @@ public class ResizeInstanceReq {
         return this;
     }
 
-    /** 规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
+    /** 规格变更后的消息存储空间，单位：GB。
      * 
      * @return newStorageSpace */
     public Integer getNewStorageSpace() {

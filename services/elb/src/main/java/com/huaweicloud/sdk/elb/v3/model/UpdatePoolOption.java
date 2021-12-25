@@ -49,7 +49,7 @@ public class UpdatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组的管理状态，只支持更新为true。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+    /** 后端云服务器组的管理状态，只支持更新为true。 [不支持该字段，请勿使用。](tag:dt,dt_test)
      * 
      * @return adminStateUp */
     public Boolean getAdminStateUp() {

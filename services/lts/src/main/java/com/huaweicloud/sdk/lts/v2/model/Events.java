@@ -104,7 +104,7 @@ public class Events {
         return this;
     }
 
-    /** 到达时间(时间戳) minimum: 13 maximum: 13
+    /** 到达时间(时间戳)
      * 
      * @return arrivesAt */
     public Long getArrivesAt() {
@@ -120,7 +120,7 @@ public class Events {
         return this;
     }
 
-    /** 告警清除时间(时间戳) minimum: 13 maximum: 13
+    /** 告警清除时间(时间戳)
      * 
      * @return endsAt */
     public Long getEndsAt() {
@@ -152,7 +152,7 @@ public class Events {
         return this;
     }
 
-    /** 告警产生时间(时间戳) minimum: 13 maximum: 13
+    /** 告警产生时间(时间戳)
      * 
      * @return startsAt */
     public Long getStartsAt() {

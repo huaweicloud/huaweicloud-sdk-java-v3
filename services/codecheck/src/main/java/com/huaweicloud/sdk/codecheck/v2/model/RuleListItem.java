@@ -48,6 +48,11 @@ public class RuleListItem {
 
     private String reviseOpinion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_desc")
+
+    private String ruleDesc;
+
     public RuleListItem withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -176,6 +181,22 @@ public class RuleListItem {
         this.reviseOpinion = reviseOpinion;
     }
 
+    public RuleListItem withRuleDesc(String ruleDesc) {
+        this.ruleDesc = ruleDesc;
+        return this;
+    }
+
+    /** 规则描述
+     * 
+     * @return ruleDesc */
+    public String getRuleDesc() {
+        return ruleDesc;
+    }
+
+    public void setRuleDesc(String ruleDesc) {
+        this.ruleDesc = ruleDesc;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -192,13 +213,21 @@ public class RuleListItem {
             && Objects.equals(this.ruleTages, ruleListItem.ruleTages)
             && Objects.equals(this.rightExample, ruleListItem.rightExample)
             && Objects.equals(this.errorExample, ruleListItem.errorExample)
-            && Objects.equals(this.reviseOpinion, ruleListItem.reviseOpinion);
+            && Objects.equals(this.reviseOpinion, ruleListItem.reviseOpinion)
+            && Objects.equals(this.ruleDesc, ruleListItem.ruleDesc);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(ruleId, ruleLanguage, ruleName, ruleSeverity, ruleTages, rightExample, errorExample, reviseOpinion);
+        return Objects.hash(ruleId,
+            ruleLanguage,
+            ruleName,
+            ruleSeverity,
+            ruleTages,
+            rightExample,
+            errorExample,
+            reviseOpinion,
+            ruleDesc);
     }
 
     @Override
@@ -213,6 +242,7 @@ public class RuleListItem {
         sb.append("    rightExample: ").append(toIndentedString(rightExample)).append("\n");
         sb.append("    errorExample: ").append(toIndentedString(errorExample)).append("\n");
         sb.append("    reviseOpinion: ").append(toIndentedString(reviseOpinion)).append("\n");
+        sb.append("    ruleDesc: ").append(toIndentedString(ruleDesc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

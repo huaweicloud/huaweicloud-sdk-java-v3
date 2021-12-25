@@ -49,6 +49,11 @@ public class StartJobSubmission {
     private Long creationDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execute-date")
+
+    private Long executeDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
     private Integer progress;
@@ -211,6 +216,22 @@ public class StartJobSubmission {
         this.creationDate = creationDate;
     }
 
+    public StartJobSubmission withExecuteDate(Long executeDate) {
+        this.executeDate = executeDate;
+        return this;
+    }
+
+    /** 执行时间
+     * 
+     * @return executeDate */
+    public Long getExecuteDate() {
+        return executeDate;
+    }
+
+    public void setExecuteDate(Long executeDate) {
+        this.executeDate = executeDate;
+    }
+
     public StartJobSubmission withProgress(Integer progress) {
         this.progress = progress;
         return this;
@@ -341,6 +362,7 @@ public class StartJobSubmission {
             && Objects.equals(this.jobName, startJobSubmission.jobName)
             && Objects.equals(this.creationUser, startJobSubmission.creationUser)
             && Objects.equals(this.creationDate, startJobSubmission.creationDate)
+            && Objects.equals(this.executeDate, startJobSubmission.executeDate)
             && Objects.equals(this.progress, startJobSubmission.progress)
             && Objects.equals(this.status, startJobSubmission.status)
             && Objects.equals(this.isStopingIncrement, startJobSubmission.isStopingIncrement)
@@ -360,6 +382,7 @@ public class StartJobSubmission {
             jobName,
             creationUser,
             creationDate,
+            executeDate,
             progress,
             status,
             isStopingIncrement,
@@ -381,6 +404,7 @@ public class StartJobSubmission {
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("    creationUser: ").append(toIndentedString(creationUser)).append("\n");
         sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");
+        sb.append("    executeDate: ").append(toIndentedString(executeDate)).append("\n");
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    isStopingIncrement: ").append(toIndentedString(isStopingIncrement)).append("\n");

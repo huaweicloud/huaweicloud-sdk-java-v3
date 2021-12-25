@@ -10,8 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** listener对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。若需要绑定访问控制组，则ipgroup_id是必须的。
- * [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test) */
+/** listener对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。若需要绑定访问控制组，则ipgroup_id是必须的。 [不支持该字段，请勿使用。](tag:dt,dt_test) */
 public class CreateListenerIpGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

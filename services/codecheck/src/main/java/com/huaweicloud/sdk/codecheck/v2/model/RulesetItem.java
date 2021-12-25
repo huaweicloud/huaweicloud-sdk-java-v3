@@ -53,6 +53,16 @@ public class RulesetItem {
 
     private String isDefault;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_devcloud_project_default")
+
+    private String isDevcloudProjectDefault;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_default_template")
+
+    private String isDefaultTemplate;
+
     public RulesetItem withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -197,6 +207,38 @@ public class RulesetItem {
         this.isDefault = isDefault;
     }
 
+    public RulesetItem withIsDevcloudProjectDefault(String isDevcloudProjectDefault) {
+        this.isDevcloudProjectDefault = isDevcloudProjectDefault;
+        return this;
+    }
+
+    /** 是否是项目下语言默认规则集，0不是，1是
+     * 
+     * @return isDevcloudProjectDefault */
+    public String getIsDevcloudProjectDefault() {
+        return isDevcloudProjectDefault;
+    }
+
+    public void setIsDevcloudProjectDefault(String isDevcloudProjectDefault) {
+        this.isDevcloudProjectDefault = isDevcloudProjectDefault;
+    }
+
+    public RulesetItem withIsDefaultTemplate(String isDefaultTemplate) {
+        this.isDefaultTemplate = isDefaultTemplate;
+        return this;
+    }
+
+    /** 是否该语言默认规则集，0不是，1是
+     * 
+     * @return isDefaultTemplate */
+    public String getIsDefaultTemplate() {
+        return isDefaultTemplate;
+    }
+
+    public void setIsDefaultTemplate(String isDefaultTemplate) {
+        this.isDefaultTemplate = isDefaultTemplate;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -213,7 +255,9 @@ public class RulesetItem {
             && Objects.equals(this.creatorName, rulesetItem.creatorName)
             && Objects.equals(this.templateCreateTime, rulesetItem.templateCreateTime)
             && Objects.equals(this.isUsed, rulesetItem.isUsed) && Objects.equals(this.ruleIds, rulesetItem.ruleIds)
-            && Objects.equals(this.isDefault, rulesetItem.isDefault);
+            && Objects.equals(this.isDefault, rulesetItem.isDefault)
+            && Objects.equals(this.isDevcloudProjectDefault, rulesetItem.isDevcloudProjectDefault)
+            && Objects.equals(this.isDefaultTemplate, rulesetItem.isDefaultTemplate);
     }
 
     @Override
@@ -226,7 +270,9 @@ public class RulesetItem {
             templateCreateTime,
             isUsed,
             ruleIds,
-            isDefault);
+            isDefault,
+            isDevcloudProjectDefault,
+            isDefaultTemplate);
     }
 
     @Override
@@ -242,6 +288,8 @@ public class RulesetItem {
         sb.append("    isUsed: ").append(toIndentedString(isUsed)).append("\n");
         sb.append("    ruleIds: ").append(toIndentedString(ruleIds)).append("\n");
         sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
+        sb.append("    isDevcloudProjectDefault: ").append(toIndentedString(isDevcloudProjectDefault)).append("\n");
+        sb.append("    isDefaultTemplate: ").append(toIndentedString(isDefaultTemplate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

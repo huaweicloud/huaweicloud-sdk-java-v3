@@ -15,11 +15,6 @@ public class ListResourceInstancesRequest {
     private String resourceInstances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version_id")
-
-    private String versionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ListResourceInstancesRequestBody body;
@@ -38,22 +33,6 @@ public class ListResourceInstancesRequest {
 
     public void setResourceInstances(String resourceInstances) {
         this.resourceInstances = resourceInstances;
-    }
-
-    public ListResourceInstancesRequest withVersionId(String versionId) {
-        this.versionId = versionId;
-        return this;
-    }
-
-    /** API版本号
-     * 
-     * @return versionId */
-    public String getVersionId() {
-        return versionId;
-    }
-
-    public void setVersionId(String versionId) {
-        this.versionId = versionId;
     }
 
     public ListResourceInstancesRequest withBody(ListResourceInstancesRequestBody body) {
@@ -91,13 +70,12 @@ public class ListResourceInstancesRequest {
         }
         ListResourceInstancesRequest listResourceInstancesRequest = (ListResourceInstancesRequest) o;
         return Objects.equals(this.resourceInstances, listResourceInstancesRequest.resourceInstances)
-            && Objects.equals(this.versionId, listResourceInstancesRequest.versionId)
             && Objects.equals(this.body, listResourceInstancesRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceInstances, versionId, body);
+        return Objects.hash(resourceInstances, body);
     }
 
     @Override
@@ -105,7 +83,6 @@ public class ListResourceInstancesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourceInstancesRequest {\n");
         sb.append("    resourceInstances: ").append(toIndentedString(resourceInstances)).append("\n");
-        sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

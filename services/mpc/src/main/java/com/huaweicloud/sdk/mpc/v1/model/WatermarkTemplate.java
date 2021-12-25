@@ -130,6 +130,11 @@ public class WatermarkTemplate {
     private BaseEnum base;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_id")
+
+    private Integer templateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
 
     private String templateName;
@@ -287,6 +292,22 @@ public class WatermarkTemplate {
         this.base = base;
     }
 
+    public WatermarkTemplate withTemplateId(Integer templateId) {
+        this.templateId = templateId;
+        return this;
+    }
+
+    /** 水印模板ID minimum: 0 maximum: 2147483647
+     * 
+     * @return templateId */
+    public Integer getTemplateId() {
+        return templateId;
+    }
+
+    public void setTemplateId(Integer templateId) {
+        this.templateId = templateId;
+    }
+
     public WatermarkTemplate withTemplateName(String templateName) {
         this.templateName = templateName;
         return this;
@@ -336,6 +357,7 @@ public class WatermarkTemplate {
             && Objects.equals(this.width, watermarkTemplate.width)
             && Objects.equals(this.height, watermarkTemplate.height)
             && Objects.equals(this.base, watermarkTemplate.base)
+            && Objects.equals(this.templateId, watermarkTemplate.templateId)
             && Objects.equals(this.templateName, watermarkTemplate.templateName)
             && Objects.equals(this.type, watermarkTemplate.type);
     }
@@ -351,6 +373,7 @@ public class WatermarkTemplate {
             width,
             height,
             base,
+            templateId,
             templateName,
             type);
     }
@@ -368,6 +391,7 @@ public class WatermarkTemplate {
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    base: ").append(toIndentedString(base)).append("\n");
+        sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");

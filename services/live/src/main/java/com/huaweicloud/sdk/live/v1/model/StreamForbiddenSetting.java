@@ -34,7 +34,7 @@ public class StreamForbiddenSetting {
         return this;
     }
 
-    /** 直播播放域名或推流域名
+    /** 推流域名
      * 
      * @return domain */
     public String getDomain() {

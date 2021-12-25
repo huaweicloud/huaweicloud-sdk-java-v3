@@ -22,12 +22,16 @@ public class AudioProcess {
         /** Enum DYNAMIC for value: "dynamic" */
         public static final VolumeEnum DYNAMIC = new VolumeEnum("dynamic");
 
+        /** Enum ORIGINAL for value: "original" */
+        public static final VolumeEnum ORIGINAL = new VolumeEnum("original");
+
         private static final Map<String, VolumeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumeEnum> createStaticFields() {
             Map<String, VolumeEnum> map = new HashMap<>();
             map.put("auto", AUTO);
             map.put("dynamic", DYNAMIC);
+            map.put("original", ORIGINAL);
             return Collections.unmodifiableMap(map);
         }
 

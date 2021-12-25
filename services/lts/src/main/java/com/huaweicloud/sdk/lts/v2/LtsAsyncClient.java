@@ -74,7 +74,7 @@ public class LtsAsyncClient {
             LtsMeta.createKeywordsAlarmRule, hcClient);
     }
 
-    /** 日志转储 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
+    /** 创建日志转储（旧版） 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
      *
      * @param CreateLogDumpObsRequest 请求对象
      * @return CompletableFuture<CreateLogDumpObsResponse> */
@@ -82,7 +82,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.createLogDumpObs);
     }
 
-    /** 日志转储 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
+    /** 创建日志转储（旧版） 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
      *
      * @param CreateLogDumpObsRequest 请求对象
      * @return AsyncInvoker<CreateLogDumpObsRequest, CreateLogDumpObsResponse> */
@@ -128,7 +128,7 @@ public class LtsAsyncClient {
             hcClient);
     }
 
-    /** 创建通知模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
+    /** 创建消息模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
      *
      * @param CreateNotificationTemplateRequest 请求对象
      * @return CompletableFuture<CreateNotificationTemplateResponse> */
@@ -137,7 +137,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.createNotificationTemplate);
     }
 
-    /** 创建通知模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
+    /** 创建消息模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
      *
      * @param CreateNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> */
@@ -166,7 +166,7 @@ public class LtsAsyncClient {
             LtsMeta.createStructTemplate, hcClient);
     }
 
-    /** 创建日志转储 该接口用于创建OBS转储，DIS转储，DMS转储。
+    /** 创建日志转储（新版） 该接口用于创建OBS转储，DIS转储，DMS转储。
      *
      * @param CreateTransferRequest 请求对象
      * @return CompletableFuture<CreateTransferResponse> */
@@ -174,7 +174,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.createTransfer);
     }
 
-    /** 创建日志转储 该接口用于创建OBS转储，DIS转储，DMS转储。
+    /** 创建日志转储（新版） 该接口用于创建OBS转储，DIS转储，DMS转储。
      *
      * @param CreateTransferRequest 请求对象
      * @return AsyncInvoker<CreateTransferRequest, CreateTransferResponse> */
@@ -293,7 +293,7 @@ public class LtsAsyncClient {
             hcClient);
     }
 
-    /** 删除通知模板 该接口用于删除通知模板。
+    /** 删除消息模板 该接口用于删除通知模板。
      *
      * @param DeleteNotificationTemplateRequest 请求对象
      * @return CompletableFuture<DeleteNotificationTemplateResponse> */
@@ -302,7 +302,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.deleteNotificationTemplate);
     }
 
-    /** 删除通知模板 该接口用于删除通知模板。
+    /** 删除消息模板 该接口用于删除通知模板。
      *
      * @param DeleteNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> */
@@ -508,7 +508,7 @@ public class LtsAsyncClient {
         return new AsyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse>(request, LtsMeta.listLogGroups, hcClient);
     }
 
-    /** 查询关键词搜索条数 查询关键词搜索条数
+    /** 查询日志直方图 查询关键词搜索条数
      *
      * @param ListLogHistogramRequest 请求对象
      * @return CompletableFuture<ListLogHistogramResponse> */
@@ -516,7 +516,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.listLogHistogram);
     }
 
-    /** 查询关键词搜索条数 查询关键词搜索条数
+    /** 查询日志直方图 查询关键词搜索条数
      *
      * @param ListLogHistogramRequest 请求对象
      * @return AsyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse> */
@@ -577,7 +577,7 @@ public class LtsAsyncClient {
         return new AsyncInvoker<ListLogsRequest, ListLogsResponse>(request, LtsMeta.listLogs, hcClient);
     }
 
-    /** 预览通知模板邮件格式 该接口用于预览通知模板邮件格式
+    /** 预览消息模板邮件格式 该接口用于预览通知模板邮件格式
      *
      * @param ListNotificationTemplateRequest 请求对象
      * @return CompletableFuture<ListNotificationTemplateResponse> */
@@ -586,7 +586,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.listNotificationTemplate);
     }
 
-    /** 预览通知模板邮件格式 该接口用于预览通知模板邮件格式
+    /** 预览消息模板邮件格式 该接口用于预览通知模板邮件格式
      *
      * @param ListNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse> */
@@ -596,7 +596,7 @@ public class LtsAsyncClient {
             LtsMeta.listNotificationTemplate, hcClient);
     }
 
-    /** 查询通知模板 该接口用于查询通知模板。
+    /** 查询消息模板 该接口用于查询通知模板。
      *
      * @param ListNotificationTemplatesRequest 请求对象
      * @return CompletableFuture<ListNotificationTemplatesResponse> */
@@ -605,7 +605,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.listNotificationTemplates);
     }
 
-    /** 查询通知模板 该接口用于查询通知模板。
+    /** 查询消息模板 该接口用于查询通知模板。
      *
      * @param ListNotificationTemplatesRequest 请求对象
      * @return AsyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> */
@@ -708,7 +708,7 @@ public class LtsAsyncClient {
             LtsMeta.registerDmsKafkaInstance, hcClient);
     }
 
-    /** 查询单个通知模板 该接口用于查询单个通知模板
+    /** 查询单个消息模板 该接口用于查询单个通知模板
      *
      * @param ShowNotificationTemplateRequest 请求对象
      * @return CompletableFuture<ShowNotificationTemplateResponse> */
@@ -717,7 +717,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.showNotificationTemplate);
     }
 
-    /** 查询单个通知模板 该接口用于查询单个通知模板
+    /** 查询单个消息模板 该接口用于查询单个通知模板
      *
      * @param ShowNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> */
@@ -763,7 +763,7 @@ public class LtsAsyncClient {
             LtsMeta.updateAccessConfig, hcClient);
     }
 
-    /** 更新主机组 更新主机组
+    /** 修改主机组 修改主机组
      *
      * @param UpdateHostGroupRequest 请求对象
      * @return CompletableFuture<UpdateHostGroupResponse> */
@@ -771,7 +771,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.updateHostGroup);
     }
 
-    /** 更新主机组 更新主机组
+    /** 修改主机组 修改主机组
      *
      * @param UpdateHostGroupRequest 请求对象
      * @return AsyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse> */
@@ -818,7 +818,7 @@ public class LtsAsyncClient {
             hcClient);
     }
 
-    /** 修改通知模板 该接口用于修改通知模板,根据名称进行修改。
+    /** 修改消息模板 该接口用于修改通知模板,根据名称进行修改。
      *
      * @param UpdateNotificationTemplateRequest 请求对象
      * @return CompletableFuture<UpdateNotificationTemplateResponse> */
@@ -827,7 +827,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.updateNotificationTemplate);
     }
 
-    /** 修改通知模板 该接口用于修改通知模板,根据名称进行修改。
+    /** 修改消息模板 该接口用于修改通知模板,根据名称进行修改。
      *
      * @param UpdateNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> */
@@ -874,7 +874,7 @@ public class LtsAsyncClient {
             hcClient);
     }
 
-    /** 创建日志接入lts规则 该接口用于创建aom日志接入lts规则
+    /** 创建接入规则 该接口用于创建aom日志接入lts规则
      *
      * @param CreateAomMappingRulesRequest 请求对象
      * @return CompletableFuture<CreateAomMappingRulesResponse> */
@@ -883,7 +883,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.createAomMappingRules);
     }
 
-    /** 创建日志接入lts规则 该接口用于创建aom日志接入lts规则
+    /** 创建接入规则 该接口用于创建aom日志接入lts规则
      *
      * @param CreateAomMappingRulesRequest 请求对象
      * @return AsyncInvoker<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse> */
@@ -912,7 +912,7 @@ public class LtsAsyncClient {
             LtsMeta.deleteAomMappingRules, hcClient);
     }
 
-    /** 查询接入规则 该接口用于查询单个aom日志接入lts
+    /** 查询单个接入规则 该接口用于查询单个aom日志接入lts
      *
      * @param ShowAomMappingRuleRequest 请求对象
      * @return CompletableFuture<ShowAomMappingRuleResponse> */
@@ -920,7 +920,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.showAomMappingRule);
     }
 
-    /** 查询接入规则 该接口用于查询单个aom日志接入lts
+    /** 查询单个接入规则 该接口用于查询单个aom日志接入lts
      *
      * @param ShowAomMappingRuleRequest 请求对象
      * @return AsyncInvoker<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse> */
@@ -930,7 +930,7 @@ public class LtsAsyncClient {
             LtsMeta.showAomMappingRule, hcClient);
     }
 
-    /** 查询接入规则 该接口用于查询aom日志所有接入lts规则
+    /** 查询所有接入规则 该接口用于查询aom日志所有接入lts规则
      *
      * @param ShowAomMappingRulesRequest 请求对象
      * @return CompletableFuture<ShowAomMappingRulesResponse> */
@@ -938,7 +938,7 @@ public class LtsAsyncClient {
         return hcClient.asyncInvokeHttp(request, LtsMeta.showAomMappingRules);
     }
 
-    /** 查询接入规则 该接口用于查询aom日志所有接入lts规则
+    /** 查询所有接入规则 该接口用于查询aom日志所有接入lts规则
      *
      * @param ShowAomMappingRulesRequest 请求对象
      * @return AsyncInvoker<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse> */
@@ -965,25 +965,6 @@ public class LtsAsyncClient {
         UpdateAomMappingRulesRequest request) {
         return new AsyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse>(request,
             LtsMeta.updateAomMappingRules, hcClient);
-    }
-
-    /** 改变告警规则状态 改变告警规则状态
-     *
-     * @param UpdateAlarmRuleStatusRequest 请求对象
-     * @return CompletableFuture<UpdateAlarmRuleStatusResponse> */
-    public CompletableFuture<UpdateAlarmRuleStatusResponse> updateAlarmRuleStatusAsync(
-        UpdateAlarmRuleStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, LtsMeta.updateAlarmRuleStatus);
-    }
-
-    /** 改变告警规则状态 改变告警规则状态
-     *
-     * @param UpdateAlarmRuleStatusRequest 请求对象
-     * @return AsyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> */
-    public AsyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatusAsyncInvoker(
-        UpdateAlarmRuleStatusRequest request) {
-        return new AsyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse>(request,
-            LtsMeta.updateAlarmRuleStatus, hcClient);
     }
 
     /** 创建SQL告警规则 该接口用于创建SQL告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警
@@ -1038,6 +1019,25 @@ public class LtsAsyncClient {
         ListSqlAlarmRulesRequest request) {
         return new AsyncInvoker<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse>(request, LtsMeta.listSqlAlarmRules,
             hcClient);
+    }
+
+    /** 切换告警规则状态 改变告警规则状态
+     *
+     * @param UpdateAlarmRuleStatusRequest 请求对象
+     * @return CompletableFuture<UpdateAlarmRuleStatusResponse> */
+    public CompletableFuture<UpdateAlarmRuleStatusResponse> updateAlarmRuleStatusAsync(
+        UpdateAlarmRuleStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.updateAlarmRuleStatus);
+    }
+
+    /** 切换告警规则状态 改变告警规则状态
+     *
+     * @param UpdateAlarmRuleStatusRequest 请求对象
+     * @return AsyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> */
+    public AsyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatusAsyncInvoker(
+        UpdateAlarmRuleStatusRequest request) {
+        return new AsyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse>(request,
+            LtsMeta.updateAlarmRuleStatus, hcClient);
     }
 
     /** 修改SQL告警规则 该接口用于修改SQL告警

@@ -426,7 +426,7 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 创建时间(毫秒时间戳) minimum: 13 maximum: 13
+    /** 创建时间(毫秒时间戳)
      * 
      * @return createTime */
     public Long getCreateTime() {
@@ -442,7 +442,7 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 更新时间(毫秒时间戳) minimum: 13 maximum: 13
+    /** 更新时间(毫秒时间戳)
      * 
      * @return updateTime */
     public Long getUpdateTime() {

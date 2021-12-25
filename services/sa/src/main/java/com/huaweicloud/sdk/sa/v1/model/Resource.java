@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /** Resource */
 public class Resource {
@@ -25,19 +24,14 @@ public class Resource {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "service")
-
-    private String service;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider")
 
     private String provider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
+    @JsonProperty(value = "region_id")
 
-    private String region;
+    private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
@@ -50,19 +44,19 @@ public class Resource {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "idc_id")
+    @JsonProperty(value = "ep_id")
 
-    private String idcId;
+    private String epId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ep_name")
+
+    private String epName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private Object tags;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "details")
-
-    private Detail details;
 
     public Resource withId(String id) {
         this.id = id;
@@ -101,7 +95,7 @@ public class Resource {
         return this;
     }
 
-    /** 资源类型；cloud_servers、vpcs、security_groups、public_ips、volumes、containers、websites、hws_account、iam_user、firewall、security_group_rules、elb_loadbalancers、elb_listeners、cts、obs_buckets、rds_instances、dds_instances、dcs_instances、certificates、anti_ddos_eip、dns、other。
+    /** 资源类型。
      * 
      * @return type */
     public String getType() {
@@ -112,28 +106,12 @@ public class Resource {
         this.type = type;
     }
 
-    public Resource withService(String service) {
-        this.service = service;
-        return this;
-    }
-
-    /** 资源所属服务名称。
-     * 
-     * @return service */
-    public String getService() {
-        return service;
-    }
-
-    public void setService(String service) {
-        this.service = service;
-    }
-
     public Resource withProvider(String provider) {
         this.provider = provider;
         return this;
     }
 
-    /** 资源提供商名称。
+    /** 云服务名称。
      * 
      * @return provider */
     public String getProvider() {
@@ -144,20 +122,20 @@ public class Resource {
         this.provider = provider;
     }
 
-    public Resource withRegion(String region) {
-        this.region = region;
+    public Resource withRegionId(String regionId) {
+        this.regionId = regionId;
         return this;
     }
 
     /** 区域。
      * 
-     * @return region */
-    public String getRegion() {
-        return region;
+     * @return regionId */
+    public String getRegionId() {
+        return regionId;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
     }
 
     public Resource withDomainId(String domainId) {
@@ -165,7 +143,7 @@ public class Resource {
         return this;
     }
 
-    /** 资源所属账号ID。
+    /** 资源所属租户账号ID。
      * 
      * @return domainId */
     public String getDomainId() {
@@ -192,20 +170,36 @@ public class Resource {
         this.projectId = projectId;
     }
 
-    public Resource withIdcId(String idcId) {
-        this.idcId = idcId;
+    public Resource withEpId(String epId) {
+        this.epId = epId;
         return this;
     }
 
-    /** 线下机房ID。
+    /** 企业项目ID。
      * 
-     * @return idcId */
-    public String getIdcId() {
-        return idcId;
+     * @return epId */
+    public String getEpId() {
+        return epId;
     }
 
-    public void setIdcId(String idcId) {
-        this.idcId = idcId;
+    public void setEpId(String epId) {
+        this.epId = epId;
+    }
+
+    public Resource withEpName(String epName) {
+        this.epName = epName;
+        return this;
+    }
+
+    /** 企业项目名称。
+     * 
+     * @return epName */
+    public String getEpName() {
+        return epName;
+    }
+
+    public void setEpName(String epName) {
+        this.epName = epName;
     }
 
     public Resource withTags(Object tags) {
@@ -224,31 +218,6 @@ public class Resource {
         this.tags = tags;
     }
 
-    public Resource withDetails(Detail details) {
-        this.details = details;
-        return this;
-    }
-
-    public Resource withDetails(Consumer<Detail> detailsSetter) {
-        if (this.details == null) {
-            this.details = new Detail();
-            detailsSetter.accept(this.details);
-        }
-
-        return this;
-    }
-
-    /** Get details
-     * 
-     * @return details */
-    public Detail getDetails() {
-        return details;
-    }
-
-    public void setDetails(Detail details) {
-        this.details = details;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -259,16 +228,15 @@ public class Resource {
         }
         Resource resource = (Resource) o;
         return Objects.equals(this.id, resource.id) && Objects.equals(this.name, resource.name)
-            && Objects.equals(this.type, resource.type) && Objects.equals(this.service, resource.service)
-            && Objects.equals(this.provider, resource.provider) && Objects.equals(this.region, resource.region)
-            && Objects.equals(this.domainId, resource.domainId) && Objects.equals(this.projectId, resource.projectId)
-            && Objects.equals(this.idcId, resource.idcId) && Objects.equals(this.tags, resource.tags)
-            && Objects.equals(this.details, resource.details);
+            && Objects.equals(this.type, resource.type) && Objects.equals(this.provider, resource.provider)
+            && Objects.equals(this.regionId, resource.regionId) && Objects.equals(this.domainId, resource.domainId)
+            && Objects.equals(this.projectId, resource.projectId) && Objects.equals(this.epId, resource.epId)
+            && Objects.equals(this.epName, resource.epName) && Objects.equals(this.tags, resource.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, service, provider, region, domainId, projectId, idcId, tags, details);
+        return Objects.hash(id, name, type, provider, regionId, domainId, projectId, epId, epName, tags);
     }
 
     @Override
@@ -278,14 +246,13 @@ public class Resource {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    service: ").append(toIndentedString(service)).append("\n");
         sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    idcId: ").append(toIndentedString(idcId)).append("\n");
+        sb.append("    epId: ").append(toIndentedString(epId)).append("\n");
+        sb.append("    epName: ").append(toIndentedString(epName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    details: ").append(toIndentedString(details)).append("\n");
         sb.append("}");
         return sb.toString();
     }

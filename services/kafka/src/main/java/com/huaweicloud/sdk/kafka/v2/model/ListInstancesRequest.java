@@ -28,7 +28,7 @@ public class ListInstancesRequest {
 
     private String instanceId;
 
-    /** 实例状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。 */
+    /** 实例状态。 */
     public static final class StatusEnum {
 
         /** Enum CREATING for value: "CREATING" */
@@ -334,7 +334,7 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 实例状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。
+    /** 实例状态。
      * 
      * @return status */
     public StatusEnum getStatus() {

@@ -101,7 +101,7 @@ public class FailedTasks {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_time")
 
-    private Long taskTime;
+    private String taskTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_error_code")
@@ -160,19 +160,19 @@ public class FailedTasks {
         this.operateType = operateType;
     }
 
-    public FailedTasks withTaskTime(Long taskTime) {
+    public FailedTasks withTaskTime(String taskTime) {
         this.taskTime = taskTime;
         return this;
     }
 
-    /** 任务时间 minimum: 0 maximum: 10000000000000
+    /** 任务时间
      * 
      * @return taskTime */
-    public Long getTaskTime() {
+    public String getTaskTime() {
         return taskTime;
     }
 
-    public void setTaskTime(Long taskTime) {
+    public void setTaskTime(String taskTime) {
         this.taskTime = taskTime;
     }
 

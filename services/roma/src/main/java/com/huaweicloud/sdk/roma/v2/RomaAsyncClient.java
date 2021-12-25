@@ -4840,6 +4840,73 @@ public class RomaAsyncClient {
             RomaMeta.checkAssetJobStatus, hcClient);
     }
 
+    /** 批量删除资产 批量删除资产 - 创建批量删除指定条件的资产的作业任务 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产删除作业任务，没有Running状态的作业任务存在
+     *
+     * @param DeleteAssetRequest 请求对象
+     * @return CompletableFuture<DeleteAssetResponse> */
+    public CompletableFuture<DeleteAssetResponse> deleteAssetAsync(DeleteAssetRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.deleteAsset);
+    }
+
+    /** 批量删除资产 批量删除资产 - 创建批量删除指定条件的资产的作业任务 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产删除作业任务，没有Running状态的作业任务存在
+     *
+     * @param DeleteAssetRequest 请求对象
+     * @return AsyncInvoker<DeleteAssetRequest, DeleteAssetResponse> */
+    public AsyncInvoker<DeleteAssetRequest, DeleteAssetResponse> deleteAssetAsyncInvoker(DeleteAssetRequest request) {
+        return new AsyncInvoker<DeleteAssetRequest, DeleteAssetResponse>(request, RomaMeta.deleteAsset, hcClient);
+    }
+
+    /** 下载资产包 - 导出作业执行成功后，通过该接口获取导出作业产生的资产包，仅能下载一次 - 可先压缩后存在数据库，下载后删除
+     *
+     * @param DownloadAssetArchiveRequest 请求对象
+     * @return CompletableFuture<DownloadAssetArchiveResponse> */
+    public CompletableFuture<DownloadAssetArchiveResponse> downloadAssetArchiveAsync(
+        DownloadAssetArchiveRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.downloadAssetArchive);
+    }
+
+    /** 下载资产包 - 导出作业执行成功后，通过该接口获取导出作业产生的资产包，仅能下载一次 - 可先压缩后存在数据库，下载后删除
+     *
+     * @param DownloadAssetArchiveRequest 请求对象
+     * @return AsyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> */
+    public AsyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> downloadAssetArchiveAsyncInvoker(
+        DownloadAssetArchiveRequest request) {
+        return new AsyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse>(request,
+            RomaMeta.downloadAssetArchive, hcClient);
+    }
+
+    /** 批量导出资产 批量导出资产 - 创建批量导出指定条件的资产的作业任务 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产导出作业任务，没有Running状态的作业任务存在
+     *
+     * @param ExportAssetRequest 请求对象
+     * @return CompletableFuture<ExportAssetResponse> */
+    public CompletableFuture<ExportAssetResponse> exportAssetAsync(ExportAssetRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.exportAsset);
+    }
+
+    /** 批量导出资产 批量导出资产 - 创建批量导出指定条件的资产的作业任务 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产导出作业任务，没有Running状态的作业任务存在
+     *
+     * @param ExportAssetRequest 请求对象
+     * @return AsyncInvoker<ExportAssetRequest, ExportAssetResponse> */
+    public AsyncInvoker<ExportAssetRequest, ExportAssetResponse> exportAssetAsyncInvoker(ExportAssetRequest request) {
+        return new AsyncInvoker<ExportAssetRequest, ExportAssetResponse>(request, RomaMeta.exportAsset, hcClient);
+    }
+
+    /** 导入资产 - 创建导入资产作业任务，资产版本和具体哪些资产从资产内容里读取 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产导入作业任务，没有Running状态的作业任务存在
+     *
+     * @param ImportAssetRequest 请求对象
+     * @return CompletableFuture<ImportAssetResponse> */
+    public CompletableFuture<ImportAssetResponse> importAssetAsync(ImportAssetRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.importAsset);
+    }
+
+    /** 导入资产 - 创建导入资产作业任务，资产版本和具体哪些资产从资产内容里读取 - 最大支持100个应用和任务 - 一个用户同一时刻只能创建一个资产导入作业任务，没有Running状态的作业任务存在
+     *
+     * @param ImportAssetRequest 请求对象
+     * @return AsyncInvoker<ImportAssetRequest, ImportAssetResponse> */
+    public AsyncInvoker<ImportAssetRequest, ImportAssetResponse> importAssetAsyncInvoker(ImportAssetRequest request) {
+        return new AsyncInvoker<ImportAssetRequest, ImportAssetResponse>(request, RomaMeta.importAsset, hcClient);
+    }
+
     /** 查询字典详情 查询字典详情,
      *
      * @param CheckDictionaryRequest 请求对象
@@ -4946,6 +5013,25 @@ public class RomaAsyncClient {
         ValidateDictionaryRequest request) {
         return new AsyncInvoker<ValidateDictionaryRequest, ValidateDictionaryResponse>(request,
             RomaMeta.validateDictionary, hcClient);
+    }
+
+    /** 查询实例列表 获取符合条件的服务实例列表。
+     *
+     * @param CheckRomaInstanceListV2Request 请求对象
+     * @return CompletableFuture<CheckRomaInstanceListV2Response> */
+    public CompletableFuture<CheckRomaInstanceListV2Response> checkRomaInstanceListV2Async(
+        CheckRomaInstanceListV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.checkRomaInstanceListV2);
+    }
+
+    /** 查询实例列表 获取符合条件的服务实例列表。
+     *
+     * @param CheckRomaInstanceListV2Request 请求对象
+     * @return AsyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> */
+    public AsyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> checkRomaInstanceListV2AsyncInvoker(
+        CheckRomaInstanceListV2Request request) {
+        return new AsyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response>(request,
+            RomaMeta.checkRomaInstanceListV2, hcClient);
     }
 
     /** 查询MQS实例列表 查询MQS实例列表。

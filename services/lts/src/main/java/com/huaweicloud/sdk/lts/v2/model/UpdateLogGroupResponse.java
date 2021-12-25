@@ -34,7 +34,7 @@ public class UpdateLogGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建该日志组的时间， 毫秒级。 minimum: 946656000000000000 maximum: 4102416000000000000
+    /** 创建该日志组的时间， 毫秒级。
      * 
      * @return creationTime */
     public Long getCreationTime() {

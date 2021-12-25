@@ -167,7 +167,7 @@ public class Listener {
         return this;
     }
 
-    /** 监听器使用的CA证书ID。当且仅当type=client时，才会使用该字段对应的证书。
+    /** 监听器使用的CA证书ID。仅客户端证书有效，其他类型证书无效。
      * 
      * @return clientCaTlsContainerRef */
     public String getClientCaTlsContainerRef() {
@@ -496,10 +496,10 @@ public class Listener {
         return this;
     }
 
-    /** 监听器使用的安全策略，仅对HTTPS协议类型的监听器有效。 [取值：tls-1-0-inherit,tls-1-0,
-     * tls-1-1,tls-1-2,tls-1-2-strict，tls-1-2-fs，tls-1-0-with-1-3, tls-1-2-fs-with-1-3,
-     * hybrid-policy-1-0，默认：tls-1-0。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [取值：tls-1-0, tls-1-1,
-     * tls-1-2, tls-1-2-strict，默认：tls-1-0。](tag:otc,otc_test,dt,dt_test) 使用说明： -
+    /** 监听器使用的安全策略，仅对HTTPS协议类型的监听器有效。 [取值：tls-1-0-inherit, tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，tls-1-2-fs,
+     * tls-1-0-with-1-3, tls-1-2-fs-with-1-3,
+     * hybrid-policy-1-0，默认：tls-1-0。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [取值：tls-1-0, tls-1-1, tls-1-2,
+     * tls-1-2-strict，默认：tls-1-0。](tag:dt,dt_test) 使用说明： -
      * 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。
      * 
      * @return tlsCiphersPolicy */
@@ -627,7 +627,7 @@ public class Listener {
 
     /** 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。仅作用于共享型LB的TCP/UDP监听器。取值： - 共享型LB的TCP/UDP监听器可设置为true或false，不传默认为false。 -
      * 共享型LB的HTTP/HTTPS监听器只支持设置为true，不传默认为true。 - 独享型负载均衡器所有协议的监听器只支持设置为true，不传默认为true。 使用说明： -
-     * 开启特性后，ELB和后端服务器之间直接使用真实的IP访问，需确保置服务器的安全组以及访问控制策略设置正确。 - 开启特性后，不支持同一台服务器既作为后端服务器又作为客户端的场景。 - 开启特性后，暂不支持变更后端服务器规格。
+     * 开启特性后，ELB和后端服务器之间直接使用真实的IP访问，需要确保已正确设置服务器的安全组以及访问控制策略。 - 开启特性后，不支持同一台服务器既作为后端服务器又作为客户端的场景。 - 开启特性后，暂不支持变更后端服务器规格。
      * 
      * @return transparentClientIpEnable */
     public Boolean getTransparentClientIpEnable() {

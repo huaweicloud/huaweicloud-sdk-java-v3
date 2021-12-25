@@ -191,6 +191,16 @@ public class TemplateInfo {
 
     private Boolean hasNotices;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dependents")
+
+    private List<Dependent> dependents = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dependent_services")
+
+    private String dependentServices;
+
     public TemplateInfo withId(String id) {
         this.id = id;
         return this;
@@ -888,6 +898,54 @@ public class TemplateInfo {
         this.hasNotices = hasNotices;
     }
 
+    public TemplateInfo withDependents(List<Dependent> dependents) {
+        this.dependents = dependents;
+        return this;
+    }
+
+    public TemplateInfo addDependentsItem(Dependent dependentsItem) {
+        if (this.dependents == null) {
+            this.dependents = new ArrayList<>();
+        }
+        this.dependents.add(dependentsItem);
+        return this;
+    }
+
+    public TemplateInfo withDependents(Consumer<List<Dependent>> dependentsSetter) {
+        if (this.dependents == null) {
+            this.dependents = new ArrayList<>();
+        }
+        dependentsSetter.accept(this.dependents);
+        return this;
+    }
+
+    /** 模板部署方式依赖信息
+     * 
+     * @return dependents */
+    public List<Dependent> getDependents() {
+        return dependents;
+    }
+
+    public void setDependents(List<Dependent> dependents) {
+        this.dependents = dependents;
+    }
+
+    public TemplateInfo withDependentServices(String dependentServices) {
+        this.dependentServices = dependentServices;
+        return this;
+    }
+
+    /** 模板关联云服务。
+     * 
+     * @return dependentServices */
+    public String getDependentServices() {
+        return dependentServices;
+    }
+
+    public void setDependentServices(String dependentServices) {
+        this.dependentServices = dependentServices;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -927,7 +985,9 @@ public class TemplateInfo {
             && Objects.equals(this.deployment, templateInfo.deployment)
             && Objects.equals(this.updateId, templateInfo.updateId)
             && Objects.equals(this.isSupportCloudide, templateInfo.isSupportCloudide)
-            && Objects.equals(this.hasNotices, templateInfo.hasNotices);
+            && Objects.equals(this.hasNotices, templateInfo.hasNotices)
+            && Objects.equals(this.dependents, templateInfo.dependents)
+            && Objects.equals(this.dependentServices, templateInfo.dependentServices);
     }
 
     @Override
@@ -967,7 +1027,9 @@ public class TemplateInfo {
             deployment,
             updateId,
             isSupportCloudide,
-            hasNotices);
+            hasNotices,
+            dependents,
+            dependentServices);
     }
 
     @Override
@@ -1010,6 +1072,8 @@ public class TemplateInfo {
         sb.append("    updateId: ").append(toIndentedString(updateId)).append("\n");
         sb.append("    isSupportCloudide: ").append(toIndentedString(isSupportCloudide)).append("\n");
         sb.append("    hasNotices: ").append(toIndentedString(hasNotices)).append("\n");
+        sb.append("    dependents: ").append(toIndentedString(dependents)).append("\n");
+        sb.append("    dependentServices: ").append(toIndentedString(dependentServices)).append("\n");
         sb.append("}");
         return sb.toString();
     }

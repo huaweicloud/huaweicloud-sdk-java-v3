@@ -12,6 +12,60 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CodeCheckMeta {
 
+    public static final HttpRequestDef<CheckParametersRequest, CheckParametersResponse> checkParameters =
+        genForcheckParameters();
+
+    private static HttpRequestDef<CheckParametersRequest, CheckParametersResponse> genForcheckParameters() {
+        // basic
+        HttpRequestDef.Builder<CheckParametersRequest, CheckParametersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckParametersRequest.class, CheckParametersResponse.class)
+                .withName("CheckParameters")
+                .withUri("/v2/{project_id}/tasks/{task_id}/ruleset/{ruleset_id}/check-parameters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckParametersRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckParametersRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("ruleset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckParametersRequest::getRulesetId, (req, v) -> {
+                req.setRulesetId(v);
+            }));
+        builder.<String>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckParametersRequest::getLanguage, (req, v) -> {
+                req.setLanguage(v);
+            }));
+
+        // response
+
+        builder.<List<CheckParametersRes>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CheckParametersResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(CheckParametersRes.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRulesetRequest, CreateRulesetResponse> createRuleset =
         genForcreateRuleset();
 
@@ -175,6 +229,45 @@ public class CodeCheckMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRulesetsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskParameterRequest, ListTaskParameterResponse> listTaskParameter =
+        genForlistTaskParameter();
+
+    private static HttpRequestDef<ListTaskParameterRequest, ListTaskParameterResponse> genForlistTaskParameter() {
+        // basic
+        HttpRequestDef.Builder<ListTaskParameterRequest, ListTaskParameterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTaskParameterRequest.class, ListTaskParameterResponse.class)
+                .withName("ListTaskParameter")
+                .withUri("/v2/{project_id}/tasks/{task_id}/config-parameters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskParameterRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskParameterRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<ConfigTaskParameterBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConfigTaskParameterBody.class),
+            f -> f.withMarshaller(ListTaskParameterRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

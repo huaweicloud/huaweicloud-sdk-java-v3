@@ -51,6 +51,24 @@ public class CloudBuildClient {
         return new SyncInvoker<RunJobRequest, RunJobResponse>(request, CloudBuildMeta.runJob, hcClient);
     }
 
+    /** 获取构建历史详情信息接口 获取构建历史详情信息接口
+     *
+     * @param ShowHistoryDetailsRequest 请求对象
+     * @return ShowHistoryDetailsResponse */
+    public ShowHistoryDetailsResponse showHistoryDetails(ShowHistoryDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudBuildMeta.showHistoryDetails);
+    }
+
+    /** 获取构建历史详情信息接口 获取构建历史详情信息接口
+     *
+     * @param ShowHistoryDetailsRequest 请求对象
+     * @return SyncInvoker<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse> */
+    public SyncInvoker<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse> showHistoryDetailsInvoker(
+        ShowHistoryDetailsRequest request) {
+        return new SyncInvoker<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse>(request,
+            CloudBuildMeta.showHistoryDetails, hcClient);
+    }
+
     /** 查看项目下用户的构建任务列表 查看项目下用户的构建任务列表
      *
      * @param ShowJobListByProjectIdRequest 请求对象

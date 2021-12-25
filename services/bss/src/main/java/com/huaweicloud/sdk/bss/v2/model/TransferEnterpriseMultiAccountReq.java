@@ -38,7 +38,7 @@ public class TransferEnterpriseMultiAccountReq {
         return this;
     }
 
-    /** 企业子账号的客户ID。
+    /** 企业子账号的客户ID。您可以调用查询企业子账号列表接口，获取响应参数“id”的返回值。
      * 
      * @return customerId */
     public String getCustomerId() {

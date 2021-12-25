@@ -142,11 +142,11 @@ public class ElbClient {
             hcClient);
     }
 
-    /** 创建负载均衡器 创建负载均衡器。 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id和vip_address。
+    /** 创建负载均衡器 创建负载均衡器。 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id。
      * 2.若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
      * 3.若要绑定有已有公网IPv4地址，需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
      * 4.若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。 5.若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
-     * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。 [&gt;不支持创建IPv6地址负载均衡器](tag:otc,otc_test,dt,dt_test)
+     * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。 [&gt;不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
      *
      * @param CreateLoadBalancerRequest 请求对象
      * @return CreateLoadBalancerResponse */
@@ -154,11 +154,11 @@ public class ElbClient {
         return hcClient.syncInvokeHttp(request, ElbMeta.createLoadBalancer);
     }
 
-    /** 创建负载均衡器 创建负载均衡器。 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id和vip_address。
+    /** 创建负载均衡器 创建负载均衡器。 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id。
      * 2.若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
      * 3.若要绑定有已有公网IPv4地址，需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
      * 4.若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。 5.若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
-     * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。 [&gt;不支持创建IPv6地址负载均衡器](tag:otc,otc_test,dt,dt_test)
+     * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。 [&gt;不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
      *
      * @param CreateLoadBalancerRequest 请求对象
      * @return SyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse> */
@@ -394,7 +394,7 @@ public class ElbClient {
 
     /** 查询可用区列表 返回租户创建LB时可使用的可用区集合列表情况。 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
      * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
-     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return ListAvailabilityZonesResponse */
@@ -404,7 +404,7 @@ public class ElbClient {
 
     /** 查询可用区列表 返回租户创建LB时可使用的可用区集合列表情况。 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
      * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
-     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return SyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> */

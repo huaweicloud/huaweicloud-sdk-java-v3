@@ -220,7 +220,7 @@ public class RabbitMQAsyncClient {
             hcClient);
     }
 
-    /** 实例规格变更 实例规格变更。
+    /** 实例规格变更 实例规格变更。 [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
      *
      * @param ResizeInstanceRequest 请求对象
      * @return CompletableFuture<ResizeInstanceResponse> */
@@ -228,7 +228,7 @@ public class RabbitMQAsyncClient {
         return hcClient.asyncInvokeHttp(request, RabbitMQMeta.resizeInstance);
     }
 
-    /** 实例规格变更 实例规格变更。
+    /** 实例规格变更 实例规格变更。 [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
      *
      * @param ResizeInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> */

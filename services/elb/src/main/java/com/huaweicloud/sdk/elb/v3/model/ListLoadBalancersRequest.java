@@ -562,7 +562,7 @@ public class ListLoadBalancersRequest {
     }
 
     /** 双栈类型负载均衡器的IPv6对应的port ID。 支持多值查询，查询条件格式：*ipv6_vip_port_id=xxx&ipv6_vip_port_id=xxx*。
-     * [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
+     * [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * 
      * @return ipv6VipPortId */
     public List<String> getIpv6VipPortId() {
@@ -594,8 +594,7 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 双栈类型负载均衡器的IPv6地址。 支持多值查询，查询条件格式：*ipv6_vip_address=xxx&ipv6_vip_address=xxx*。
-     * [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
+    /** 双栈类型负载均衡器的IPv6地址。 支持多值查询，查询条件格式：*ipv6_vip_address=xxx&ipv6_vip_address=xxx*。 [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * 
      * @return ipv6VipAddress */
     public List<String> getIpv6VipAddress() {
@@ -628,7 +627,7 @@ public class ListLoadBalancersRequest {
     }
 
     /** 双栈类型负载均衡器所在的子网IPv6网络ID。 支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id=xxx&ipv6_vip_virsubnet_id=xxx*。
-     * [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
+     * [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * 
      * @return ipv6VipVirsubnetId */
     public List<String> getIpv6VipVirsubnetId() {
@@ -891,8 +890,7 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 资源账单信息。admin权限才能更新此字段。 支持多值查询，查询条件格式：*billing_info=xxx&billing_info=xxx*。
-     * [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+    /** 资源账单信息。admin权限才能更新此字段。 支持多值查询，查询条件格式：*billing_info=xxx&billing_info=xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test)
      * 
      * @return billingInfo */
     public List<String> getBillingInfo() {
@@ -988,9 +986,8 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器所属的企业项目ID。
-     * 查询时若不传，则查询default企业项目下的资源，鉴权按照default企业项目鉴权。如果传值，则必须传已存在的企业项目ID（不可为\"0\"）或传all_granted_eps表示查询所有企业项目。
-     * 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+    /** 负载均衡器所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。
+     * [不支持该字段，请勿使用。](tag:dt,dt_test)
      * 
      * @return enterpriseProjectId */
     public List<String> getEnterpriseProjectId() {
@@ -1022,8 +1019,7 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** IP版本信息。 取值：4代表IPv4，6代表IPv6。 支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。
-     * [不支持IPv6，请勿设置为6。](tag:otc,otc_test,dt,dt_test)
+    /** IP版本信息。 取值：4代表IPv4，6代表IPv6。 支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。 [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
      * 
      * @return ipVersion */
     public List<Integer> getIpVersion() {

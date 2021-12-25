@@ -50,7 +50,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_num")
 
-    private Integer partitionNum;
+    private String partitionNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_storage_space")
@@ -620,7 +620,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.storageSpace = storageSpace;
     }
 
-    public ShowMqsInstanceResponse withPartitionNum(Integer partitionNum) {
+    public ShowMqsInstanceResponse withPartitionNum(String partitionNum) {
         this.partitionNum = partitionNum;
         return this;
     }
@@ -628,11 +628,11 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     /** 最大分区数。不同规格的ROMA Connect实例的最大分区数不相同。
      * 
      * @return partitionNum */
-    public Integer getPartitionNum() {
+    public String getPartitionNum() {
         return partitionNum;
     }
 
-    public void setPartitionNum(Integer partitionNum) {
+    public void setPartitionNum(String partitionNum) {
         this.partitionNum = partitionNum;
     }
 

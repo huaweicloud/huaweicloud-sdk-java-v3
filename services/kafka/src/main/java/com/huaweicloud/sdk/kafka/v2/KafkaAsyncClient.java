@@ -95,7 +95,7 @@ public class KafkaAsyncClient {
             KafkaMeta.batchRestartOrDeleteInstances, hcClient);
     }
 
-    /** 创建实例的转储节点 创建实例的转储节点。
+    /** 创建实例的转储节点 创建实例的转储节点。 [**当前通过调用API，只支持按需实例创建转储节点。**](tag:hws,ctc)
      *
      * @param CreateConnectorRequest 请求对象
      * @return CompletableFuture<CreateConnectorResponse> */
@@ -103,7 +103,7 @@ public class KafkaAsyncClient {
         return hcClient.asyncInvokeHttp(request, KafkaMeta.createConnector);
     }
 
-    /** 创建实例的转储节点 创建实例的转储节点。
+    /** 创建实例的转储节点 创建实例的转储节点。 [**当前通过调用API，只支持按需实例创建转储节点。**](tag:hws,ctc)
      *
      * @param CreateConnectorRequest 请求对象
      * @return AsyncInvoker<CreateConnectorRequest, CreateConnectorResponse> */
@@ -447,7 +447,7 @@ public class KafkaAsyncClient {
             KafkaMeta.resetUserPasswrod, hcClient);
     }
 
-    /** 实例规格变更 实例规格变更。
+    /** 实例规格变更 实例规格变更。 [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
      *
      * @param ResizeInstanceRequest 请求对象
      * @return CompletableFuture<ResizeInstanceResponse> */
@@ -455,7 +455,7 @@ public class KafkaAsyncClient {
         return hcClient.asyncInvokeHttp(request, KafkaMeta.resizeInstance);
     }
 
-    /** 实例规格变更 实例规格变更。
+    /** 实例规格变更 实例规格变更。 [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
      *
      * @param ResizeInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> */

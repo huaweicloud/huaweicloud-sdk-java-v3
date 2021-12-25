@@ -1276,6 +1276,42 @@ public class RdsAsyncClient {
             hcClient);
     }
 
+    /** 查询API版本列表 查询API版本列表。
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return CompletableFuture<ListApiVersionResponse> */
+    public CompletableFuture<ListApiVersionResponse> listApiVersionAsync(ListApiVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listApiVersion);
+    }
+
+    /** 查询API版本列表 查询API版本列表。
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return AsyncInvoker<ListApiVersionRequest, ListApiVersionResponse> */
+    public AsyncInvoker<ListApiVersionRequest, ListApiVersionResponse> listApiVersionAsyncInvoker(
+        ListApiVersionRequest request) {
+        return new AsyncInvoker<ListApiVersionRequest, ListApiVersionResponse>(request, RdsMeta.listApiVersion,
+            hcClient);
+    }
+
+    /** 查询指定的API版本信息 查询指定的API版本信息。
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return CompletableFuture<ShowApiVersionResponse> */
+    public CompletableFuture<ShowApiVersionResponse> showApiVersionAsync(ShowApiVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showApiVersion);
+    }
+
+    /** 查询指定的API版本信息 查询指定的API版本信息。
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> */
+    public AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionAsyncInvoker(
+        ShowApiVersionRequest request) {
+        return new AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, RdsMeta.showApiVersion,
+            hcClient);
+    }
+
     /** 授权数据库帐号 授权数据库帐号。
      *
      * @param AllowDbUserPrivilegeRequest 请求对象
@@ -1670,6 +1706,25 @@ public class RdsAsyncClient {
         ListPostgresqlDbUserPaginatedRequest request) {
         return new AsyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse>(request,
             RdsMeta.listPostgresqlDbUserPaginated, hcClient);
+    }
+
+    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+     *
+     * @param SearchQueryScaleComputeFlavorsRequest 请求对象
+     * @return CompletableFuture<SearchQueryScaleComputeFlavorsResponse> */
+    public CompletableFuture<SearchQueryScaleComputeFlavorsResponse> searchQueryScaleComputeFlavorsAsync(
+        SearchQueryScaleComputeFlavorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.searchQueryScaleComputeFlavors);
+    }
+
+    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+     *
+     * @param SearchQueryScaleComputeFlavorsRequest 请求对象
+     * @return AsyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse> */
+    public AsyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse> searchQueryScaleComputeFlavorsAsyncInvoker(
+        SearchQueryScaleComputeFlavorsRequest request) {
+        return new AsyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse>(request,
+            RdsMeta.searchQueryScaleComputeFlavors, hcClient);
     }
 
     /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。

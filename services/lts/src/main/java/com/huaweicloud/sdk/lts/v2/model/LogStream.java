@@ -33,7 +33,7 @@ public class LogStream {
         return this;
     }
 
-    /** 创建时间 minimum: 946656000000000000 maximum: 4102416000000000000
+    /** 创建时间
      * 
      * @return creationTime */
     public Long getCreationTime() {

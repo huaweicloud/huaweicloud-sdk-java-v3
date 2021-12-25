@@ -117,7 +117,7 @@ public class ShowJobDetailRequest {
         return this;
     }
 
-    /** 任务id。
+    /** 任务 ID: 可以通过调用 RunDevstarTemplateJob 返回结果获取
      * 
      * @return jobId */
     public String getJobId() {

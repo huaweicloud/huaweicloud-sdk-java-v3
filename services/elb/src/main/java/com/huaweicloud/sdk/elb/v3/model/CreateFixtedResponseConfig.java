@@ -11,8 +11,8 @@ import java.util.Map;
 import java.util.Objects;
 
 /** 固定返回页面的配置。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段，传入会报错。
- * [当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
- * [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test) */
+ * [当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+ * [不支持该字段，请勿使用。](tag:dt,dt_test) */
 public class CreateFixtedResponseConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

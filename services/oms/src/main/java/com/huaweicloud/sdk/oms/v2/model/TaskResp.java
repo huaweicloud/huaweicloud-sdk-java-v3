@@ -222,6 +222,86 @@ public class TaskResp {
 
     private TaskTypeEnum taskType;
 
+    /** 分组类型 NORMAL_TASK：一般迁移任务 SYNC_TASK：同步任务所属迁移任务 GROUP_TASK：任务组所属迁移任务 */
+    public static final class GroupTypeEnum {
+
+        /** Enum NORMAL_TASK for value: "NORMAL_TASK" */
+        public static final GroupTypeEnum NORMAL_TASK = new GroupTypeEnum("NORMAL_TASK");
+
+        /** Enum SYNC_TASK for value: "SYNC_TASK" */
+        public static final GroupTypeEnum SYNC_TASK = new GroupTypeEnum("SYNC_TASK");
+
+        /** Enum GROUP_TASK for value: "GROUP_TASK" */
+        public static final GroupTypeEnum GROUP_TASK = new GroupTypeEnum("GROUP_TASK");
+
+        private static final Map<String, GroupTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, GroupTypeEnum> createStaticFields() {
+            Map<String, GroupTypeEnum> map = new HashMap<>();
+            map.put("NORMAL_TASK", NORMAL_TASK);
+            map.put("SYNC_TASK", SYNC_TASK);
+            map.put("GROUP_TASK", GROUP_TASK);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        GroupTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static GroupTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            GroupTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new GroupTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static GroupTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            GroupTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof GroupTypeEnum) {
+                return this.value.equals(((GroupTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_type")
+
+    private GroupTypeEnum groupType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
 
@@ -246,6 +326,16 @@ public class TaskResp {
     @JsonProperty(value = "source_cdn")
 
     private SourceCdnResp sourceCdn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success_record_error_reason")
+
+    private String successRecordErrorReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "skip_record_error_reason")
+
+    private String skipRecordErrorReason;
 
     public TaskResp withBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
@@ -472,7 +562,7 @@ public class TaskResp {
         return this;
     }
 
-    /** 任务ID。 minimum: 0 maximum: 9223372036854775807
+    /** 任务ID。 minimum: 0 maximum: 999999999999999
      * 
      * @return id */
     public Long getId() {
@@ -700,6 +790,22 @@ public class TaskResp {
         this.taskType = taskType;
     }
 
+    public TaskResp withGroupType(GroupTypeEnum groupType) {
+        this.groupType = groupType;
+        return this;
+    }
+
+    /** 分组类型 NORMAL_TASK：一般迁移任务 SYNC_TASK：同步任务所属迁移任务 GROUP_TASK：任务组所属迁移任务
+     * 
+     * @return groupType */
+    public GroupTypeEnum getGroupType() {
+        return groupType;
+    }
+
+    public void setGroupType(GroupTypeEnum groupType) {
+        this.groupType = groupType;
+    }
+
     public TaskResp withTotalNum(Long totalNum) {
         this.totalNum = totalNum;
         return this;
@@ -798,6 +904,38 @@ public class TaskResp {
         this.sourceCdn = sourceCdn;
     }
 
+    public TaskResp withSuccessRecordErrorReason(String successRecordErrorReason) {
+        this.successRecordErrorReason = successRecordErrorReason;
+        return this;
+    }
+
+    /** 迁移成功对象列表记录失败错误码，记录成功时为空
+     * 
+     * @return successRecordErrorReason */
+    public String getSuccessRecordErrorReason() {
+        return successRecordErrorReason;
+    }
+
+    public void setSuccessRecordErrorReason(String successRecordErrorReason) {
+        this.successRecordErrorReason = successRecordErrorReason;
+    }
+
+    public TaskResp withSkipRecordErrorReason(String skipRecordErrorReason) {
+        this.skipRecordErrorReason = skipRecordErrorReason;
+        return this;
+    }
+
+    /** 迁移忽略对象列表记录失败错误码,记录记录成功时为空。
+     * 
+     * @return skipRecordErrorReason */
+    public String getSkipRecordErrorReason() {
+        return skipRecordErrorReason;
+    }
+
+    public void setSkipRecordErrorReason(String skipRecordErrorReason) {
+        this.skipRecordErrorReason = skipRecordErrorReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -825,9 +963,12 @@ public class TaskResp {
             && Objects.equals(this.skippedNum, taskResp.skippedNum) && Objects.equals(this.srcNode, taskResp.srcNode)
             && Objects.equals(this.startTime, taskResp.startTime) && Objects.equals(this.status, taskResp.status)
             && Objects.equals(this.successfulNum, taskResp.successfulNum)
-            && Objects.equals(this.taskType, taskResp.taskType) && Objects.equals(this.totalNum, taskResp.totalNum)
-            && Objects.equals(this.totalSize, taskResp.totalSize) && Objects.equals(this.totalTime, taskResp.totalTime)
-            && Objects.equals(this.smnInfo, taskResp.smnInfo) && Objects.equals(this.sourceCdn, taskResp.sourceCdn);
+            && Objects.equals(this.taskType, taskResp.taskType) && Objects.equals(this.groupType, taskResp.groupType)
+            && Objects.equals(this.totalNum, taskResp.totalNum) && Objects.equals(this.totalSize, taskResp.totalSize)
+            && Objects.equals(this.totalTime, taskResp.totalTime) && Objects.equals(this.smnInfo, taskResp.smnInfo)
+            && Objects.equals(this.sourceCdn, taskResp.sourceCdn)
+            && Objects.equals(this.successRecordErrorReason, taskResp.successRecordErrorReason)
+            && Objects.equals(this.skipRecordErrorReason, taskResp.skipRecordErrorReason);
     }
 
     @Override
@@ -857,11 +998,14 @@ public class TaskResp {
             status,
             successfulNum,
             taskType,
+            groupType,
             totalNum,
             totalSize,
             totalTime,
             smnInfo,
-            sourceCdn);
+            sourceCdn,
+            successRecordErrorReason,
+            skipRecordErrorReason);
     }
 
     @Override
@@ -895,11 +1039,14 @@ public class TaskResp {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    successfulNum: ").append(toIndentedString(successfulNum)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+        sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
         sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
         sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("    totalTime: ").append(toIndentedString(totalTime)).append("\n");
         sb.append("    smnInfo: ").append(toIndentedString(smnInfo)).append("\n");
         sb.append("    sourceCdn: ").append(toIndentedString(sourceCdn)).append("\n");
+        sb.append("    successRecordErrorReason: ").append(toIndentedString(successRecordErrorReason)).append("\n");
+        sb.append("    skipRecordErrorReason: ").append(toIndentedString(skipRecordErrorReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -12,29 +12,29 @@ import java.util.function.Consumer;
 public class NodeContentRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
+    @JsonProperty(value = "site_id")
 
-    private String instanceId;
+    private String siteId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sqllist")
 
     private List<String> sqllist = null;
 
-    public NodeContentRsp withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public NodeContentRsp withSiteId(String siteId) {
+        this.siteId = siteId;
         return this;
     }
 
     /** 节点实例ID
      * 
-     * @return instanceId */
-    public String getInstanceId() {
-        return instanceId;
+     * @return siteId */
+    public String getSiteId() {
+        return siteId;
     }
 
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public void setSiteId(String siteId) {
+        this.siteId = siteId;
     }
 
     public NodeContentRsp withSqllist(List<String> sqllist) {
@@ -78,20 +78,20 @@ public class NodeContentRsp {
             return false;
         }
         NodeContentRsp nodeContentRsp = (NodeContentRsp) o;
-        return Objects.equals(this.instanceId, nodeContentRsp.instanceId)
+        return Objects.equals(this.siteId, nodeContentRsp.siteId)
             && Objects.equals(this.sqllist, nodeContentRsp.sqllist);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, sqllist);
+        return Objects.hash(siteId, sqllist);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodeContentRsp {\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
         sb.append("    sqllist: ").append(toIndentedString(sqllist)).append("\n");
         sb.append("}");
         return sb.toString();

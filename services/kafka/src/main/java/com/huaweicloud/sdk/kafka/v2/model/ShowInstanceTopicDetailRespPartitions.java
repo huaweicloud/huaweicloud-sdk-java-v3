@@ -131,7 +131,7 @@ public class ShowInstanceTopicDetailRespPartitions {
         return this;
     }
 
-    /** 分区上次写入消息的时间。
+    /** 分区上次写入消息的时间。 格式为Unix时间戳。 单位：毫秒。
      * 
      * @return lastUpdateTimestamp */
     public Long getLastUpdateTimestamp() {

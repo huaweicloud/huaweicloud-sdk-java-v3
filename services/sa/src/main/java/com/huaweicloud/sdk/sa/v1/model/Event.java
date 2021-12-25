@@ -3,9 +3,6 @@ package com.huaweicloud.sdk.sa.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -19,14 +16,9 @@ public class Event {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_id")
+    @JsonProperty(value = "environment")
 
-    private String domainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
+    private Environment environment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source")
@@ -36,22 +28,22 @@ public class Event {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_observed_time")
 
-    private OffsetDateTime firstObservedTime;
+    private String firstObservedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_observed_time")
 
-    private OffsetDateTime lastObservedTime;
+    private String lastObservedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private OffsetDateTime createTime;
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arrive_time")
 
-    private OffsetDateTime arriveTime;
+    private String arriveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
@@ -94,14 +86,9 @@ public class Event {
     private Integer criticality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "business_code")
+    @JsonProperty(value = "type")
 
-    private String businessCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "types")
-
-    private List<Type> types = null;
+    private Type type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compliance")
@@ -114,39 +101,29 @@ public class Event {
     private Network network;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "process")
+    @JsonProperty(value = "vulnerability_patch")
 
-    private Process process;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vulnerabilities")
-
-    private Vulnerabilities vulnerabilities;
+    private VulnerabilityPatch vulnerabilityPatch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "malware")
 
-    private List<Malware> malware = null;
+    private Malware malware;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "threat_intel")
 
-    private List<ThreatIntel> threatIntel = null;
+    private ThreatIntel threatIntel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resources")
+    @JsonProperty(value = "resource")
 
-    private List<Resource> resources = null;
+    private Resource resource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remediation")
 
-    private EventRemediation remediation;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "related_events")
-
-    private List<RelatedEvent> relatedEvents = null;
+    private Remediation remediation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source_fields")
@@ -162,6 +139,16 @@ public class Event {
     @JsonProperty(value = "handle_status")
 
     private String handleStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phase")
+
+    private String phase;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sla")
+
+    private Integer sla;
 
     public Event withVersion(String version) {
         this.version = version;
@@ -179,36 +166,29 @@ public class Event {
         this.version = version;
     }
 
-    public Event withDomainId(String domainId) {
-        this.domainId = domainId;
+    public Event withEnvironment(Environment environment) {
+        this.environment = environment;
         return this;
     }
 
-    /** 租户账号ID，用来标识事件所属租户。
-     * 
-     * @return domainId */
-    public String getDomainId() {
-        return domainId;
-    }
+    public Event withEnvironment(Consumer<Environment> environmentSetter) {
+        if (this.environment == null) {
+            this.environment = new Environment();
+            environmentSetter.accept(this.environment);
+        }
 
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
-
-    public Event withProjectId(String projectId) {
-        this.projectId = projectId;
         return this;
     }
 
-    /** 项目ID，用来标识事件所属项目区域。
+    /** Get environment
      * 
-     * @return projectId */
-    public String getProjectId() {
-        return projectId;
+     * @return environment */
+    public Environment getEnvironment() {
+        return environment;
     }
 
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
     }
 
     public Event withDataSource(DataSource dataSource) {
@@ -236,7 +216,7 @@ public class Event {
         this.dataSource = dataSource;
     }
 
-    public Event withFirstObservedTime(OffsetDateTime firstObservedTime) {
+    public Event withFirstObservedTime(String firstObservedTime) {
         this.firstObservedTime = firstObservedTime;
         return this;
     }
@@ -244,15 +224,15 @@ public class Event {
     /** 首次发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
      * 
      * @return firstObservedTime */
-    public OffsetDateTime getFirstObservedTime() {
+    public String getFirstObservedTime() {
         return firstObservedTime;
     }
 
-    public void setFirstObservedTime(OffsetDateTime firstObservedTime) {
+    public void setFirstObservedTime(String firstObservedTime) {
         this.firstObservedTime = firstObservedTime;
     }
 
-    public Event withLastObservedTime(OffsetDateTime lastObservedTime) {
+    public Event withLastObservedTime(String lastObservedTime) {
         this.lastObservedTime = lastObservedTime;
         return this;
     }
@@ -260,15 +240,15 @@ public class Event {
     /** 最新发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
      * 
      * @return lastObservedTime */
-    public OffsetDateTime getLastObservedTime() {
+    public String getLastObservedTime() {
         return lastObservedTime;
     }
 
-    public void setLastObservedTime(OffsetDateTime lastObservedTime) {
+    public void setLastObservedTime(String lastObservedTime) {
         this.lastObservedTime = lastObservedTime;
     }
 
-    public Event withCreateTime(OffsetDateTime createTime) {
+    public Event withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -276,15 +256,15 @@ public class Event {
     /** 记录时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
      * 
      * @return createTime */
-    public OffsetDateTime getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(OffsetDateTime createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public Event withArriveTime(OffsetDateTime arriveTime) {
+    public Event withArriveTime(String arriveTime) {
         this.arriveTime = arriveTime;
         return this;
     }
@@ -293,11 +273,11 @@ public class Event {
      * 是指事件数据被SA侧接收的时间，由SA接收时填写，产品上报数据时不用填写。
      * 
      * @return arriveTime */
-    public OffsetDateTime getArriveTime() {
+    public String getArriveTime() {
         return arriveTime;
     }
 
-    public void setArriveTime(OffsetDateTime arriveTime) {
+    public void setArriveTime(String arriveTime) {
         this.arriveTime = arriveTime;
     }
 
@@ -438,53 +418,29 @@ public class Event {
         this.criticality = criticality;
     }
 
-    public Event withBusinessCode(String businessCode) {
-        this.businessCode = businessCode;
+    public Event withType(Type type) {
+        this.type = type;
         return this;
     }
 
-    /** 业务类型。 attack：攻击；vulnerability：漏洞；compliance check：合规检查； risk：风险；public
-     * opinion：舆情；illegal&violation：违法违规；security bulletin：公告。
-     * 
-     * @return businessCode */
-    public String getBusinessCode() {
-        return businessCode;
-    }
-
-    public void setBusinessCode(String businessCode) {
-        this.businessCode = businessCode;
-    }
-
-    public Event withTypes(List<Type> types) {
-        this.types = types;
-        return this;
-    }
-
-    public Event addTypesItem(Type typesItem) {
-        if (this.types == null) {
-            this.types = new ArrayList<>();
+    public Event withType(Consumer<Type> typeSetter) {
+        if (this.type == null) {
+            this.type = new Type();
+            typeSetter.accept(this.type);
         }
-        this.types.add(typesItem);
+
         return this;
     }
 
-    public Event withTypes(Consumer<List<Type>> typesSetter) {
-        if (this.types == null) {
-            this.types = new ArrayList<>();
-        }
-        typesSetter.accept(this.types);
-        return this;
-    }
-
-    /** 事件分类，最多50个。
+    /** Get type
      * 
-     * @return types */
-    public List<Type> getTypes() {
-        return types;
+     * @return type */
+    public Type getType() {
+        return type;
     }
 
-    public void setTypes(List<Type> types) {
-        this.types = types;
+    public void setType(Type type) {
+        this.type = type;
     }
 
     public Event withCompliance(Compliance compliance) {
@@ -537,160 +493,114 @@ public class Event {
         this.network = network;
     }
 
-    public Event withProcess(Process process) {
-        this.process = process;
+    public Event withVulnerabilityPatch(VulnerabilityPatch vulnerabilityPatch) {
+        this.vulnerabilityPatch = vulnerabilityPatch;
         return this;
     }
 
-    public Event withProcess(Consumer<Process> processSetter) {
-        if (this.process == null) {
-            this.process = new Process();
-            processSetter.accept(this.process);
+    public Event withVulnerabilityPatch(Consumer<VulnerabilityPatch> vulnerabilityPatchSetter) {
+        if (this.vulnerabilityPatch == null) {
+            this.vulnerabilityPatch = new VulnerabilityPatch();
+            vulnerabilityPatchSetter.accept(this.vulnerabilityPatch);
         }
 
         return this;
     }
 
-    /** Get process
+    /** Get vulnerabilityPatch
      * 
-     * @return process */
-    public Process getProcess() {
-        return process;
+     * @return vulnerabilityPatch */
+    public VulnerabilityPatch getVulnerabilityPatch() {
+        return vulnerabilityPatch;
     }
 
-    public void setProcess(Process process) {
-        this.process = process;
+    public void setVulnerabilityPatch(VulnerabilityPatch vulnerabilityPatch) {
+        this.vulnerabilityPatch = vulnerabilityPatch;
     }
 
-    public Event withVulnerabilities(Vulnerabilities vulnerabilities) {
-        this.vulnerabilities = vulnerabilities;
-        return this;
-    }
-
-    public Event withVulnerabilities(Consumer<Vulnerabilities> vulnerabilitiesSetter) {
-        if (this.vulnerabilities == null) {
-            this.vulnerabilities = new Vulnerabilities();
-            vulnerabilitiesSetter.accept(this.vulnerabilities);
-        }
-
-        return this;
-    }
-
-    /** Get vulnerabilities
-     * 
-     * @return vulnerabilities */
-    public Vulnerabilities getVulnerabilities() {
-        return vulnerabilities;
-    }
-
-    public void setVulnerabilities(Vulnerabilities vulnerabilities) {
-        this.vulnerabilities = vulnerabilities;
-    }
-
-    public Event withMalware(List<Malware> malware) {
+    public Event withMalware(Malware malware) {
         this.malware = malware;
         return this;
     }
 
-    public Event addMalwareItem(Malware malwareItem) {
+    public Event withMalware(Consumer<Malware> malwareSetter) {
         if (this.malware == null) {
-            this.malware = new ArrayList<>();
+            this.malware = new Malware();
+            malwareSetter.accept(this.malware);
         }
-        this.malware.add(malwareItem);
+
         return this;
     }
 
-    public Event withMalware(Consumer<List<Malware>> malwareSetter) {
-        if (this.malware == null) {
-            this.malware = new ArrayList<>();
-        }
-        malwareSetter.accept(this.malware);
-        return this;
-    }
-
-    /** 恶意软件，最多5个。
+    /** Get malware
      * 
      * @return malware */
-    public List<Malware> getMalware() {
+    public Malware getMalware() {
         return malware;
     }
 
-    public void setMalware(List<Malware> malware) {
+    public void setMalware(Malware malware) {
         this.malware = malware;
     }
 
-    public Event withThreatIntel(List<ThreatIntel> threatIntel) {
+    public Event withThreatIntel(ThreatIntel threatIntel) {
         this.threatIntel = threatIntel;
         return this;
     }
 
-    public Event addThreatIntelItem(ThreatIntel threatIntelItem) {
+    public Event withThreatIntel(Consumer<ThreatIntel> threatIntelSetter) {
         if (this.threatIntel == null) {
-            this.threatIntel = new ArrayList<>();
+            this.threatIntel = new ThreatIntel();
+            threatIntelSetter.accept(this.threatIntel);
         }
-        this.threatIntel.add(threatIntelItem);
+
         return this;
     }
 
-    public Event withThreatIntel(Consumer<List<ThreatIntel>> threatIntelSetter) {
-        if (this.threatIntel == null) {
-            this.threatIntel = new ArrayList<>();
-        }
-        threatIntelSetter.accept(this.threatIntel);
-        return this;
-    }
-
-    /** 威胁情报，最多5个。
+    /** Get threatIntel
      * 
      * @return threatIntel */
-    public List<ThreatIntel> getThreatIntel() {
+    public ThreatIntel getThreatIntel() {
         return threatIntel;
     }
 
-    public void setThreatIntel(List<ThreatIntel> threatIntel) {
+    public void setThreatIntel(ThreatIntel threatIntel) {
         this.threatIntel = threatIntel;
     }
 
-    public Event withResources(List<Resource> resources) {
-        this.resources = resources;
+    public Event withResource(Resource resource) {
+        this.resource = resource;
         return this;
     }
 
-    public Event addResourcesItem(Resource resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
+    public Event withResource(Consumer<Resource> resourceSetter) {
+        if (this.resource == null) {
+            this.resource = new Resource();
+            resourceSetter.accept(this.resource);
         }
-        this.resources.add(resourcesItem);
+
         return this;
     }
 
-    public Event withResources(Consumer<List<Resource>> resourcesSetter) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
-        resourcesSetter.accept(this.resources);
-        return this;
-    }
-
-    /** 受影响资源，最多10个。
+    /** Get resource
      * 
-     * @return resources */
-    public List<Resource> getResources() {
-        return resources;
+     * @return resource */
+    public Resource getResource() {
+        return resource;
     }
 
-    public void setResources(List<Resource> resources) {
-        this.resources = resources;
+    public void setResource(Resource resource) {
+        this.resource = resource;
     }
 
-    public Event withRemediation(EventRemediation remediation) {
+    public Event withRemediation(Remediation remediation) {
         this.remediation = remediation;
         return this;
     }
 
-    public Event withRemediation(Consumer<EventRemediation> remediationSetter) {
+    public Event withRemediation(Consumer<Remediation> remediationSetter) {
         if (this.remediation == null) {
-            this.remediation = new EventRemediation();
+            this.remediation = new Remediation();
             remediationSetter.accept(this.remediation);
         }
 
@@ -700,44 +610,12 @@ public class Event {
     /** Get remediation
      * 
      * @return remediation */
-    public EventRemediation getRemediation() {
+    public Remediation getRemediation() {
         return remediation;
     }
 
-    public void setRemediation(EventRemediation remediation) {
+    public void setRemediation(Remediation remediation) {
         this.remediation = remediation;
-    }
-
-    public Event withRelatedEvents(List<RelatedEvent> relatedEvents) {
-        this.relatedEvents = relatedEvents;
-        return this;
-    }
-
-    public Event addRelatedEventsItem(RelatedEvent relatedEventsItem) {
-        if (this.relatedEvents == null) {
-            this.relatedEvents = new ArrayList<>();
-        }
-        this.relatedEvents.add(relatedEventsItem);
-        return this;
-    }
-
-    public Event withRelatedEvents(Consumer<List<RelatedEvent>> relatedEventsSetter) {
-        if (this.relatedEvents == null) {
-            this.relatedEvents = new ArrayList<>();
-        }
-        relatedEventsSetter.accept(this.relatedEvents);
-        return this;
-    }
-
-    /** 相关事件。
-     * 
-     * @return relatedEvents */
-    public List<RelatedEvent> getRelatedEvents() {
-        return relatedEvents;
-    }
-
-    public void setRelatedEvents(List<RelatedEvent> relatedEvents) {
-        this.relatedEvents = relatedEvents;
     }
 
     public Event withDataSourceFields(Object dataSourceFields) {
@@ -789,6 +667,38 @@ public class Event {
         this.handleStatus = handleStatus;
     }
 
+    public Event withPhase(String phase) {
+        this.phase = phase;
+        return this;
+    }
+
+    /** 阶段：Prepartion|Detection and Analysis|Containm，Eradication& Recovery| Post-Incident-Activity。
+     * 
+     * @return phase */
+    public String getPhase() {
+        return phase;
+    }
+
+    public void setPhase(String phase) {
+        this.phase = phase;
+    }
+
+    public Event withSla(Integer sla) {
+        this.sla = sla;
+        return this;
+    }
+
+    /** 约束闭环时间：单位：天。 minimum: 1 maximum: 90
+     * 
+     * @return sla */
+    public Integer getSla() {
+        return sla;
+    }
+
+    public void setSla(Integer sla) {
+        this.sla = sla;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -798,8 +708,8 @@ public class Event {
             return false;
         }
         Event event = (Event) o;
-        return Objects.equals(this.version, event.version) && Objects.equals(this.domainId, event.domainId)
-            && Objects.equals(this.projectId, event.projectId) && Objects.equals(this.dataSource, event.dataSource)
+        return Objects.equals(this.version, event.version) && Objects.equals(this.environment, event.environment)
+            && Objects.equals(this.dataSource, event.dataSource)
             && Objects.equals(this.firstObservedTime, event.firstObservedTime)
             && Objects.equals(this.lastObservedTime, event.lastObservedTime)
             && Objects.equals(this.createTime, event.createTime) && Objects.equals(this.arriveTime, event.arriveTime)
@@ -807,23 +717,21 @@ public class Event {
             && Objects.equals(this.description, event.description) && Objects.equals(this.sourceUrl, event.sourceUrl)
             && Objects.equals(this.count, event.count) && Objects.equals(this.confidence, event.confidence)
             && Objects.equals(this.severity, event.severity) && Objects.equals(this.criticality, event.criticality)
-            && Objects.equals(this.businessCode, event.businessCode) && Objects.equals(this.types, event.types)
-            && Objects.equals(this.compliance, event.compliance) && Objects.equals(this.network, event.network)
-            && Objects.equals(this.process, event.process)
-            && Objects.equals(this.vulnerabilities, event.vulnerabilities)
+            && Objects.equals(this.type, event.type) && Objects.equals(this.compliance, event.compliance)
+            && Objects.equals(this.network, event.network)
+            && Objects.equals(this.vulnerabilityPatch, event.vulnerabilityPatch)
             && Objects.equals(this.malware, event.malware) && Objects.equals(this.threatIntel, event.threatIntel)
-            && Objects.equals(this.resources, event.resources) && Objects.equals(this.remediation, event.remediation)
-            && Objects.equals(this.relatedEvents, event.relatedEvents)
+            && Objects.equals(this.resource, event.resource) && Objects.equals(this.remediation, event.remediation)
             && Objects.equals(this.dataSourceFields, event.dataSourceFields)
             && Objects.equals(this.verificationState, event.verificationState)
-            && Objects.equals(this.handleStatus, event.handleStatus);
+            && Objects.equals(this.handleStatus, event.handleStatus) && Objects.equals(this.phase, event.phase)
+            && Objects.equals(this.sla, event.sla);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(version,
-            domainId,
-            projectId,
+            environment,
             dataSource,
             firstObservedTime,
             lastObservedTime,
@@ -837,20 +745,19 @@ public class Event {
             confidence,
             severity,
             criticality,
-            businessCode,
-            types,
+            type,
             compliance,
             network,
-            process,
-            vulnerabilities,
+            vulnerabilityPatch,
             malware,
             threatIntel,
-            resources,
+            resource,
             remediation,
-            relatedEvents,
             dataSourceFields,
             verificationState,
-            handleStatus);
+            handleStatus,
+            phase,
+            sla);
     }
 
     @Override
@@ -858,8 +765,7 @@ public class Event {
         StringBuilder sb = new StringBuilder();
         sb.append("class Event {\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
         sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
         sb.append("    firstObservedTime: ").append(toIndentedString(firstObservedTime)).append("\n");
         sb.append("    lastObservedTime: ").append(toIndentedString(lastObservedTime)).append("\n");
@@ -873,20 +779,19 @@ public class Event {
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    criticality: ").append(toIndentedString(criticality)).append("\n");
-        sb.append("    businessCode: ").append(toIndentedString(businessCode)).append("\n");
-        sb.append("    types: ").append(toIndentedString(types)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    compliance: ").append(toIndentedString(compliance)).append("\n");
         sb.append("    network: ").append(toIndentedString(network)).append("\n");
-        sb.append("    process: ").append(toIndentedString(process)).append("\n");
-        sb.append("    vulnerabilities: ").append(toIndentedString(vulnerabilities)).append("\n");
+        sb.append("    vulnerabilityPatch: ").append(toIndentedString(vulnerabilityPatch)).append("\n");
         sb.append("    malware: ").append(toIndentedString(malware)).append("\n");
         sb.append("    threatIntel: ").append(toIndentedString(threatIntel)).append("\n");
-        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
         sb.append("    remediation: ").append(toIndentedString(remediation)).append("\n");
-        sb.append("    relatedEvents: ").append(toIndentedString(relatedEvents)).append("\n");
         sb.append("    dataSourceFields: ").append(toIndentedString(dataSourceFields)).append("\n");
         sb.append("    verificationState: ").append(toIndentedString(verificationState)).append("\n");
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
+        sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
+        sb.append("    sla: ").append(toIndentedString(sla)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -10,11 +10,6 @@ import java.util.function.Consumer;
 public class CreateSecretTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version_id")
-
-    private String versionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret_id")
 
     private String secretId;
@@ -23,22 +18,6 @@ public class CreateSecretTagRequest {
     @JsonProperty(value = "body")
 
     private CreateSecretTagRequestBody body;
-
-    public CreateSecretTagRequest withVersionId(String versionId) {
-        this.versionId = versionId;
-        return this;
-    }
-
-    /** API版本号
-     * 
-     * @return versionId */
-    public String getVersionId() {
-        return versionId;
-    }
-
-    public void setVersionId(String versionId) {
-        this.versionId = versionId;
-    }
 
     public CreateSecretTagRequest withSecretId(String secretId) {
         this.secretId = secretId;
@@ -90,21 +69,19 @@ public class CreateSecretTagRequest {
             return false;
         }
         CreateSecretTagRequest createSecretTagRequest = (CreateSecretTagRequest) o;
-        return Objects.equals(this.versionId, createSecretTagRequest.versionId)
-            && Objects.equals(this.secretId, createSecretTagRequest.secretId)
+        return Objects.equals(this.secretId, createSecretTagRequest.secretId)
             && Objects.equals(this.body, createSecretTagRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(versionId, secretId, body);
+        return Objects.hash(secretId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateSecretTagRequest {\n");
-        sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("    secretId: ").append(toIndentedString(secretId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

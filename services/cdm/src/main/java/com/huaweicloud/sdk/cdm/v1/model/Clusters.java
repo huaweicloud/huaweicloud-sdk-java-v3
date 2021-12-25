@@ -87,6 +87,16 @@ public class Clusters {
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bakExpectedStartTime")
+
+    private String bakExpectedStartTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bakKeepDay")
+
+    private Integer bakKeepDay;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -115,11 +125,6 @@ public class Clusters {
     @JsonProperty(value = "updated")
 
     private String updated;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
-
-    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -423,6 +428,38 @@ public class Clusters {
         this.created = created;
     }
 
+    public Clusters withBakExpectedStartTime(String bakExpectedStartTime) {
+        this.bakExpectedStartTime = bakExpectedStartTime;
+        return this;
+    }
+
+    /** 开始时间
+     * 
+     * @return bakExpectedStartTime */
+    public String getBakExpectedStartTime() {
+        return bakExpectedStartTime;
+    }
+
+    public void setBakExpectedStartTime(String bakExpectedStartTime) {
+        this.bakExpectedStartTime = bakExpectedStartTime;
+    }
+
+    public Clusters withBakKeepDay(Integer bakKeepDay) {
+        this.bakKeepDay = bakKeepDay;
+        return this;
+    }
+
+    /** 保留时间
+     * 
+     * @return bakKeepDay */
+    public Integer getBakKeepDay() {
+        return bakKeepDay;
+    }
+
+    public void setBakKeepDay(Integer bakKeepDay) {
+        this.bakKeepDay = bakKeepDay;
+    }
+
     public Clusters withName(String name) {
         this.name = name;
         return this;
@@ -519,22 +556,6 @@ public class Clusters {
         this.updated = updated;
     }
 
-    public Clusters withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    /** 集群版本
-     * 
-     * @return version */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
     public Clusters withStatus(String status) {
         this.status = status;
         return this;
@@ -596,12 +617,13 @@ public class Clusters {
             && Objects.equals(this.namespace, clusters.namespace) && Objects.equals(this.task, clusters.task)
             && Objects.equals(this.publicEndpoint, clusters.publicEndpoint)
             && Objects.equals(this.actionProgress, clusters.actionProgress)
-            && Objects.equals(this.created, clusters.created) && Objects.equals(this.name, clusters.name)
+            && Objects.equals(this.created, clusters.created)
+            && Objects.equals(this.bakExpectedStartTime, clusters.bakExpectedStartTime)
+            && Objects.equals(this.bakKeepDay, clusters.bakKeepDay) && Objects.equals(this.name, clusters.name)
             && Objects.equals(this.statusDetail, clusters.statusDetail) && Objects.equals(this.id, clusters.id)
             && Objects.equals(this.isFrozen, clusters.isFrozen)
             && Objects.equals(this.configStatus, clusters.configStatus)
-            && Objects.equals(this.updated, clusters.updated) && Objects.equals(this.version, clusters.version)
-            && Objects.equals(this.status, clusters.status)
+            && Objects.equals(this.updated, clusters.updated) && Objects.equals(this.status, clusters.status)
             && Objects.equals(this.failedReasons, clusters.failedReasons);
     }
 
@@ -622,13 +644,14 @@ public class Clusters {
             publicEndpoint,
             actionProgress,
             created,
+            bakExpectedStartTime,
+            bakKeepDay,
             name,
             statusDetail,
             id,
             isFrozen,
             configStatus,
             updated,
-            version,
             status,
             failedReasons);
     }
@@ -652,13 +675,14 @@ public class Clusters {
         sb.append("    publicEndpoint: ").append(toIndentedString(publicEndpoint)).append("\n");
         sb.append("    actionProgress: ").append(toIndentedString(actionProgress)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
+        sb.append("    bakExpectedStartTime: ").append(toIndentedString(bakExpectedStartTime)).append("\n");
+        sb.append("    bakKeepDay: ").append(toIndentedString(bakKeepDay)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    statusDetail: ").append(toIndentedString(statusDetail)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
         sb.append("    configStatus: ").append(toIndentedString(configStatus)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
         sb.append("}");

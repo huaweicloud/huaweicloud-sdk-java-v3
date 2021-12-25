@@ -88,7 +88,7 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 自定义时间段开始时间(时间戳) minimum: 13 maximum: 13
+    /** 自定义时间段开始时间(时间戳)
      * 
      * @return startTime */
     public Long getStartTime() {
@@ -104,7 +104,7 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 自定义时间段结束时间(时间戳) minimum: 13 maximum: 13
+    /** 自定义时间段结束时间(时间戳)
      * 
      * @return endTime */
     public Long getEndTime() {

@@ -612,7 +612,7 @@ public class ShowInstanceResp {
         return this;
     }
 
-    /** 实例的状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。
+    /** 实例的状态。
      * 
      * @return status */
     public String getStatus() {

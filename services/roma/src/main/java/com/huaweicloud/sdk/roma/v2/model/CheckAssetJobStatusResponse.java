@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -202,12 +201,12 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
-    private BigDecimal beginTime;
+    private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private BigDecimal endTime;
+    private String endTime;
 
     public CheckAssetJobStatusResponse withId(String id) {
         this.id = id;
@@ -322,35 +321,35 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.archiveId = archiveId;
     }
 
-    public CheckAssetJobStatusResponse withBeginTime(BigDecimal beginTime) {
+    public CheckAssetJobStatusResponse withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
 
-    /** 作业开始时间 minimum: 1 maximum: 128
+    /** 作业开始时间
      * 
      * @return beginTime */
-    public BigDecimal getBeginTime() {
+    public String getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(BigDecimal beginTime) {
+    public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
 
-    public CheckAssetJobStatusResponse withEndTime(BigDecimal endTime) {
+    public CheckAssetJobStatusResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    /** 作业结束时间 minimum: 1 maximum: 128
+    /** 作业结束时间
      * 
      * @return endTime */
-    public BigDecimal getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(BigDecimal endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.elb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 可用区。 */
 public class AvailabilityZone {
@@ -17,6 +20,11 @@ public class AvailabilityZone {
     @JsonProperty(value = "state")
 
     private String state;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol")
+
+    private List<String> protocol = null;
 
     public AvailabilityZone withCode(String code) {
         this.code = code;
@@ -50,6 +58,38 @@ public class AvailabilityZone {
         this.state = state;
     }
 
+    public AvailabilityZone withProtocol(List<String> protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    public AvailabilityZone addProtocolItem(String protocolItem) {
+        if (this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
+        this.protocol.add(protocolItem);
+        return this;
+    }
+
+    public AvailabilityZone withProtocol(Consumer<List<String>> protocolSetter) {
+        if (this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
+        protocolSetter.accept(this.protocol);
+        return this;
+    }
+
+    /** 未售罄的LB规格类别。取值： - L4 表示网络型LB未售罄； - L7 表示应用型LB未售罄。
+     * 
+     * @return protocol */
+    public List<String> getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(List<String> protocol) {
+        this.protocol = protocol;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -59,12 +99,13 @@ public class AvailabilityZone {
             return false;
         }
         AvailabilityZone availabilityZone = (AvailabilityZone) o;
-        return Objects.equals(this.code, availabilityZone.code) && Objects.equals(this.state, availabilityZone.state);
+        return Objects.equals(this.code, availabilityZone.code) && Objects.equals(this.state, availabilityZone.state)
+            && Objects.equals(this.protocol, availabilityZone.protocol);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, state);
+        return Objects.hash(code, state, protocol);
     }
 
     @Override
@@ -73,6 +114,7 @@ public class AvailabilityZone {
         sb.append("class AvailabilityZone {\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("}");
         return sb.toString();
     }

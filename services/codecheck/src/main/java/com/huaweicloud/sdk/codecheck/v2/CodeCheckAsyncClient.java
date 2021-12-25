@@ -19,6 +19,24 @@ public class CodeCheckAsyncClient {
         return new ClientBuilder<>(CodeCheckAsyncClient::new);
     }
 
+    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+     *
+     * @param CheckParametersRequest 请求对象
+     * @return CompletableFuture<CheckParametersResponse> */
+    public CompletableFuture<CheckParametersResponse> checkParametersAsync(CheckParametersRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.checkParameters);
+    }
+
+    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+     *
+     * @param CheckParametersRequest 请求对象
+     * @return AsyncInvoker<CheckParametersRequest, CheckParametersResponse> */
+    public AsyncInvoker<CheckParametersRequest, CheckParametersResponse> checkParametersAsyncInvoker(
+        CheckParametersRequest request) {
+        return new AsyncInvoker<CheckParametersRequest, CheckParametersResponse>(request, CodeCheckMeta.checkParameters,
+            hcClient);
+    }
+
     /** 创建自定义规则集 可根据需求灵活的组合规则。
      *
      * @param CreateRulesetRequest 请求对象
@@ -101,6 +119,24 @@ public class CodeCheckAsyncClient {
         ListRulesetsRequest request) {
         return new AsyncInvoker<ListRulesetsRequest, ListRulesetsResponse>(request, CodeCheckMeta.listRulesets,
             hcClient);
+    }
+
+    /** 任务配置检查参数 任务配置检查参数
+     *
+     * @param ListTaskParameterRequest 请求对象
+     * @return CompletableFuture<ListTaskParameterResponse> */
+    public CompletableFuture<ListTaskParameterResponse> listTaskParameterAsync(ListTaskParameterRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.listTaskParameter);
+    }
+
+    /** 任务配置检查参数 任务配置检查参数
+     *
+     * @param ListTaskParameterRequest 请求对象
+     * @return AsyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse> */
+    public AsyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse> listTaskParameterAsyncInvoker(
+        ListTaskParameterRequest request) {
+        return new AsyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse>(request,
+            CodeCheckMeta.listTaskParameter, hcClient);
     }
 
     /** 查询任务的已选规则集列表 查询任务的已选规则集列表。

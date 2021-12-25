@@ -324,7 +324,7 @@ public class L7Rule {
     }
 
     /** 转发规则的匹配条件。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效。 配置了conditions后，字段key、字段value的值无意义。
-     * 若指定了conditons，该rule的条件数为conditons列表长度。 列表中key必须相同，value不允许重复。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+     * 若指定了conditons，该rule的条件数为conditons列表长度。 列表中key必须相同，value不允许重复。 [不支持该字段，请勿使用。](tag:dt,dt_test)
      * 
      * @return conditions */
     public List<RuleCondition> getConditions() {

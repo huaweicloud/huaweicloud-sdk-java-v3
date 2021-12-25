@@ -147,6 +147,11 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     private List<TagInfo> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dependents")
+
+    private List<Dependent> dependents = null;
+
     public ShowTemplateV3Response withId(String id) {
         this.id = id;
         return this;
@@ -643,6 +648,38 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.tags = tags;
     }
 
+    public ShowTemplateV3Response withDependents(List<Dependent> dependents) {
+        this.dependents = dependents;
+        return this;
+    }
+
+    public ShowTemplateV3Response addDependentsItem(Dependent dependentsItem) {
+        if (this.dependents == null) {
+            this.dependents = new ArrayList<>();
+        }
+        this.dependents.add(dependentsItem);
+        return this;
+    }
+
+    public ShowTemplateV3Response withDependents(Consumer<List<Dependent>> dependentsSetter) {
+        if (this.dependents == null) {
+            this.dependents = new ArrayList<>();
+        }
+        dependentsSetter.accept(this.dependents);
+        return this;
+    }
+
+    /** 模板部署支持方式信息
+     * 
+     * @return dependents */
+    public List<Dependent> getDependents() {
+        return dependents;
+    }
+
+    public void setDependents(List<Dependent> dependents) {
+        this.dependents = dependents;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -678,7 +715,8 @@ public class ShowTemplateV3Response extends SdkResponse {
             && Objects.equals(this.isStatic, showTemplateV3Response.isStatic)
             && Objects.equals(this.updateId, showTemplateV3Response.updateId)
             && Objects.equals(this.topic, showTemplateV3Response.topic)
-            && Objects.equals(this.tags, showTemplateV3Response.tags);
+            && Objects.equals(this.tags, showTemplateV3Response.tags)
+            && Objects.equals(this.dependents, showTemplateV3Response.dependents);
     }
 
     @Override
@@ -709,7 +747,8 @@ public class ShowTemplateV3Response extends SdkResponse {
             isStatic,
             updateId,
             topic,
-            tags);
+            tags,
+            dependents);
     }
 
     @Override
@@ -743,6 +782,7 @@ public class ShowTemplateV3Response extends SdkResponse {
         sb.append("    updateId: ").append(toIndentedString(updateId)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    dependents: ").append(toIndentedString(dependents)).append("\n");
         sb.append("}");
         return sb.toString();
     }

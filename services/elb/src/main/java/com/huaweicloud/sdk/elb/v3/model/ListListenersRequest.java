@@ -563,10 +563,10 @@ public class ListListenersRequest {
         return this;
     }
 
-    /** 监听器使用的安全策略，仅对HTTPS协议类型的监听器有效。 [取值：tls-1-0-inherit,tls-1-0, tls-1-1,
-     * tls-1-2,tls-1-2-strict，tls-1-2-fs，tls-1-0-with-1-3,
-     * tls-1-2-fs-with-1-3。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [取值：tls-1-0, tls-1-1, tls-1-2,
-     * tls-1-2-strict。](tag:otc,otc_test,dt,dt_test) 支持多值查询，查询条件格式：*tls_ciphers_policy=xxx&tls_ciphers_policy=xxx*。
+    /** 监听器使用的安全策略，仅对HTTPS协议类型的监听器有效。 [取值：tls-1-0-inherit, tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，tls-1-2-fs,
+     * tls-1-0-with-1-3, tls-1-2-fs-with-1-3, hybrid-policy-1-0。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * [取值：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict。](tag:dt,dt_test)
+     * 支持多值查询，查询条件格式：*tls_ciphers_policy=xxx&tls_ciphers_policy=xxx*。
      * 
      * @return tlsCiphersPolicy */
     public List<String> getTlsCiphersPolicy() {
@@ -662,8 +662,7 @@ public class ListListenersRequest {
         return this;
     }
 
-    /** 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。
-     * 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+    /** 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test)
      * 
      * @return enterpriseProjectId */
     public List<String> getEnterpriseProjectId() {

@@ -49,7 +49,7 @@ public class SaMeta {
         HttpRequestDef.Builder<ImportEventsRequest, ImportEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportEventsRequest.class, ImportEventsResponse.class)
                 .withName("ImportEvents")
-                .withUri("/v1/{project_id}/events/import")
+                .withUri("/v2/{project_id}/events/import")
                 .withContentType("application/json");
 
         // requests

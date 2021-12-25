@@ -17,6 +17,24 @@ public class CodeCheckClient {
         return new ClientBuilder<>(CodeCheckClient::new);
     }
 
+    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+     *
+     * @param CheckParametersRequest 请求对象
+     * @return CheckParametersResponse */
+    public CheckParametersResponse checkParameters(CheckParametersRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.checkParameters);
+    }
+
+    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+     *
+     * @param CheckParametersRequest 请求对象
+     * @return SyncInvoker<CheckParametersRequest, CheckParametersResponse> */
+    public SyncInvoker<CheckParametersRequest, CheckParametersResponse> checkParametersInvoker(
+        CheckParametersRequest request) {
+        return new SyncInvoker<CheckParametersRequest, CheckParametersResponse>(request, CodeCheckMeta.checkParameters,
+            hcClient);
+    }
+
     /** 创建自定义规则集 可根据需求灵活的组合规则。
      *
      * @param CreateRulesetRequest 请求对象
@@ -97,6 +115,24 @@ public class CodeCheckClient {
     public SyncInvoker<ListRulesetsRequest, ListRulesetsResponse> listRulesetsInvoker(ListRulesetsRequest request) {
         return new SyncInvoker<ListRulesetsRequest, ListRulesetsResponse>(request, CodeCheckMeta.listRulesets,
             hcClient);
+    }
+
+    /** 任务配置检查参数 任务配置检查参数
+     *
+     * @param ListTaskParameterRequest 请求对象
+     * @return ListTaskParameterResponse */
+    public ListTaskParameterResponse listTaskParameter(ListTaskParameterRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.listTaskParameter);
+    }
+
+    /** 任务配置检查参数 任务配置检查参数
+     *
+     * @param ListTaskParameterRequest 请求对象
+     * @return SyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse> */
+    public SyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse> listTaskParameterInvoker(
+        ListTaskParameterRequest request) {
+        return new SyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse>(request,
+            CodeCheckMeta.listTaskParameter, hcClient);
     }
 
     /** 查询任务的已选规则集列表 查询任务的已选规则集列表。

@@ -15,11 +15,6 @@ public class BatchCreateOrDeleteTagsRequest {
     private String secretId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version_id")
-
-    private String versionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private BatchCreateOrDeleteTagsRequestBody body;
@@ -38,22 +33,6 @@ public class BatchCreateOrDeleteTagsRequest {
 
     public void setSecretId(String secretId) {
         this.secretId = secretId;
-    }
-
-    public BatchCreateOrDeleteTagsRequest withVersionId(String versionId) {
-        this.versionId = versionId;
-        return this;
-    }
-
-    /** API版本号
-     * 
-     * @return versionId */
-    public String getVersionId() {
-        return versionId;
-    }
-
-    public void setVersionId(String versionId) {
-        this.versionId = versionId;
     }
 
     public BatchCreateOrDeleteTagsRequest withBody(BatchCreateOrDeleteTagsRequestBody body) {
@@ -91,13 +70,12 @@ public class BatchCreateOrDeleteTagsRequest {
         }
         BatchCreateOrDeleteTagsRequest batchCreateOrDeleteTagsRequest = (BatchCreateOrDeleteTagsRequest) o;
         return Objects.equals(this.secretId, batchCreateOrDeleteTagsRequest.secretId)
-            && Objects.equals(this.versionId, batchCreateOrDeleteTagsRequest.versionId)
             && Objects.equals(this.body, batchCreateOrDeleteTagsRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(secretId, versionId, body);
+        return Objects.hash(secretId, body);
     }
 
     @Override
@@ -105,7 +83,6 @@ public class BatchCreateOrDeleteTagsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchCreateOrDeleteTagsRequest {\n");
         sb.append("    secretId: ").append(toIndentedString(secretId)).append("\n");
-        sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

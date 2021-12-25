@@ -86,7 +86,7 @@ public class ShowInstanceTopicDetailRespReplicas {
         return this;
     }
 
-    /** 该副本当前日志大小。
+    /** 该副本当前日志大小。单位：Byte。
      * 
      * @return size */
     public Integer getSize() {

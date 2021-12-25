@@ -38,7 +38,7 @@ public class ListLiveStreamsOnlineRequest {
         return this;
     }
 
-    /** 域名
+    /** 推流域名
      * 
      * @return publishDomain */
     public String getPublishDomain() {

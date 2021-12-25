@@ -283,7 +283,7 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_oracle_address")
 
-    private List<ContentMultiOracleAddress> multiOracleAddress = null;
+    private List<MultiOracleAddress> multiOracleAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "oracle_service_name")
@@ -1872,12 +1872,12 @@ public class Content {
         this.cdcMode = cdcMode;
     }
 
-    public Content withMultiOracleAddress(List<ContentMultiOracleAddress> multiOracleAddress) {
+    public Content withMultiOracleAddress(List<MultiOracleAddress> multiOracleAddress) {
         this.multiOracleAddress = multiOracleAddress;
         return this;
     }
 
-    public Content addMultiOracleAddressItem(ContentMultiOracleAddress multiOracleAddressItem) {
+    public Content addMultiOracleAddressItem(MultiOracleAddress multiOracleAddressItem) {
         if (this.multiOracleAddress == null) {
             this.multiOracleAddress = new ArrayList<>();
         }
@@ -1885,7 +1885,7 @@ public class Content {
         return this;
     }
 
-    public Content withMultiOracleAddress(Consumer<List<ContentMultiOracleAddress>> multiOracleAddressSetter) {
+    public Content withMultiOracleAddress(Consumer<List<MultiOracleAddress>> multiOracleAddressSetter) {
         if (this.multiOracleAddress == null) {
             this.multiOracleAddress = new ArrayList<>();
         }
@@ -1896,11 +1896,11 @@ public class Content {
     /** ORACLE集群地址，当mode为multiAddress时需要配置
      * 
      * @return multiOracleAddress */
-    public List<ContentMultiOracleAddress> getMultiOracleAddress() {
+    public List<MultiOracleAddress> getMultiOracleAddress() {
         return multiOracleAddress;
     }
 
-    public void setMultiOracleAddress(List<ContentMultiOracleAddress> multiOracleAddress) {
+    public void setMultiOracleAddress(List<MultiOracleAddress> multiOracleAddress) {
         this.multiOracleAddress = multiOracleAddress;
     }
 

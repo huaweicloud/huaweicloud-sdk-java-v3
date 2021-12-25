@@ -23,7 +23,7 @@ public class IpInfo {
         return this;
     }
 
-    /** IP地址组中的IP地址。 [不支持IPv6，请勿设置为IPv6地址。](tag:otc,otc_test,dt,dt_test)
+    /** IP地址组中的IP地址。 [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
      * 
      * @return ip */
     public String getIp() {

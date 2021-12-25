@@ -165,8 +165,7 @@ public class ListL7PoliciesRequest {
         return this;
     }
 
-    /** 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。
-     * 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+    /** 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test)
      * 
      * @return enterpriseProjectId */
     public List<String> getEnterpriseProjectId() {
@@ -553,7 +552,7 @@ public class ListL7PoliciesRequest {
         return this;
     }
 
-    /** 转发策略的优先级。数值越小，优先级越高。 支持多值查询，查询条件格式：*priority=xxx&priority=xxx*。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+    /** 转发策略的优先级。数值越小，优先级越高。 支持多值查询，查询条件格式：*priority=xxx&priority=xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test)
      * 
      * @return priority */
     public List<Integer> getPriority() {

@@ -21,6 +21,16 @@ public class Configs {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public Configs withInputs(List<Input> inputs) {
         this.inputs = inputs;
         return this;
@@ -69,6 +79,38 @@ public class Configs {
         this.name = name;
     }
 
+    public Configs withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    /** 配置ID
+     * 
+     * @return id */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Configs withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /** 配置类型
+     * 
+     * @return type */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -78,12 +120,13 @@ public class Configs {
             return false;
         }
         Configs configs = (Configs) o;
-        return Objects.equals(this.inputs, configs.inputs) && Objects.equals(this.name, configs.name);
+        return Objects.equals(this.inputs, configs.inputs) && Objects.equals(this.name, configs.name)
+            && Objects.equals(this.id, configs.id) && Objects.equals(this.type, configs.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(inputs, name);
+        return Objects.hash(inputs, name, id, type);
     }
 
     @Override
@@ -92,6 +135,8 @@ public class Configs {
         sb.append("class Configs {\n");
         sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

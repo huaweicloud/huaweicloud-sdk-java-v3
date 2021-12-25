@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 结构化配置 */
+/** 删除结构化配置参数 */
 public class DeleteStructTemplateReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

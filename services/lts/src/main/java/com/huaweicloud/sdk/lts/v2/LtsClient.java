@@ -71,7 +71,7 @@ public class LtsClient {
             LtsMeta.createKeywordsAlarmRule, hcClient);
     }
 
-    /** 日志转储 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
+    /** 创建日志转储（旧版） 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
      *
      * @param CreateLogDumpObsRequest 请求对象
      * @return CreateLogDumpObsResponse */
@@ -79,7 +79,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.createLogDumpObs);
     }
 
-    /** 日志转储 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
+    /** 创建日志转储（旧版） 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
      *
      * @param CreateLogDumpObsRequest 请求对象
      * @return SyncInvoker<CreateLogDumpObsRequest, CreateLogDumpObsResponse> */
@@ -125,7 +125,7 @@ public class LtsClient {
             hcClient);
     }
 
-    /** 创建通知模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
+    /** 创建消息模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
      *
      * @param CreateNotificationTemplateRequest 请求对象
      * @return CreateNotificationTemplateResponse */
@@ -133,7 +133,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.createNotificationTemplate);
     }
 
-    /** 创建通知模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
+    /** 创建消息模板 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
      *
      * @param CreateNotificationTemplateRequest 请求对象
      * @return SyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> */
@@ -161,7 +161,7 @@ public class LtsClient {
             LtsMeta.createStructTemplate, hcClient);
     }
 
-    /** 创建日志转储 该接口用于创建OBS转储，DIS转储，DMS转储。
+    /** 创建日志转储（新版） 该接口用于创建OBS转储，DIS转储，DMS转储。
      *
      * @param CreateTransferRequest 请求对象
      * @return CreateTransferResponse */
@@ -169,7 +169,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.createTransfer);
     }
 
-    /** 创建日志转储 该接口用于创建OBS转储，DIS转储，DMS转储。
+    /** 创建日志转储（新版） 该接口用于创建OBS转储，DIS转储，DMS转储。
      *
      * @param CreateTransferRequest 请求对象
      * @return SyncInvoker<CreateTransferRequest, CreateTransferResponse> */
@@ -287,7 +287,7 @@ public class LtsClient {
             hcClient);
     }
 
-    /** 删除通知模板 该接口用于删除通知模板。
+    /** 删除消息模板 该接口用于删除通知模板。
      *
      * @param DeleteNotificationTemplateRequest 请求对象
      * @return DeleteNotificationTemplateResponse */
@@ -295,7 +295,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.deleteNotificationTemplate);
     }
 
-    /** 删除通知模板 该接口用于删除通知模板。
+    /** 删除消息模板 该接口用于删除通知模板。
      *
      * @param DeleteNotificationTemplateRequest 请求对象
      * @return SyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> */
@@ -495,7 +495,7 @@ public class LtsClient {
         return new SyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse>(request, LtsMeta.listLogGroups, hcClient);
     }
 
-    /** 查询关键词搜索条数 查询关键词搜索条数
+    /** 查询日志直方图 查询关键词搜索条数
      *
      * @param ListLogHistogramRequest 请求对象
      * @return ListLogHistogramResponse */
@@ -503,7 +503,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.listLogHistogram);
     }
 
-    /** 查询关键词搜索条数 查询关键词搜索条数
+    /** 查询日志直方图 查询关键词搜索条数
      *
      * @param ListLogHistogramRequest 请求对象
      * @return SyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse> */
@@ -563,7 +563,7 @@ public class LtsClient {
         return new SyncInvoker<ListLogsRequest, ListLogsResponse>(request, LtsMeta.listLogs, hcClient);
     }
 
-    /** 预览通知模板邮件格式 该接口用于预览通知模板邮件格式
+    /** 预览消息模板邮件格式 该接口用于预览通知模板邮件格式
      *
      * @param ListNotificationTemplateRequest 请求对象
      * @return ListNotificationTemplateResponse */
@@ -571,7 +571,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.listNotificationTemplate);
     }
 
-    /** 预览通知模板邮件格式 该接口用于预览通知模板邮件格式
+    /** 预览消息模板邮件格式 该接口用于预览通知模板邮件格式
      *
      * @param ListNotificationTemplateRequest 请求对象
      * @return SyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse> */
@@ -581,7 +581,7 @@ public class LtsClient {
             LtsMeta.listNotificationTemplate, hcClient);
     }
 
-    /** 查询通知模板 该接口用于查询通知模板。
+    /** 查询消息模板 该接口用于查询通知模板。
      *
      * @param ListNotificationTemplatesRequest 请求对象
      * @return ListNotificationTemplatesResponse */
@@ -589,7 +589,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.listNotificationTemplates);
     }
 
-    /** 查询通知模板 该接口用于查询通知模板。
+    /** 查询消息模板 该接口用于查询通知模板。
      *
      * @param ListNotificationTemplatesRequest 请求对象
      * @return SyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> */
@@ -688,7 +688,7 @@ public class LtsClient {
             LtsMeta.registerDmsKafkaInstance, hcClient);
     }
 
-    /** 查询单个通知模板 该接口用于查询单个通知模板
+    /** 查询单个消息模板 该接口用于查询单个通知模板
      *
      * @param ShowNotificationTemplateRequest 请求对象
      * @return ShowNotificationTemplateResponse */
@@ -696,7 +696,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.showNotificationTemplate);
     }
 
-    /** 查询单个通知模板 该接口用于查询单个通知模板
+    /** 查询单个消息模板 该接口用于查询单个通知模板
      *
      * @param ShowNotificationTemplateRequest 请求对象
      * @return SyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> */
@@ -742,7 +742,7 @@ public class LtsClient {
             LtsMeta.updateAccessConfig, hcClient);
     }
 
-    /** 更新主机组 更新主机组
+    /** 修改主机组 修改主机组
      *
      * @param UpdateHostGroupRequest 请求对象
      * @return UpdateHostGroupResponse */
@@ -750,7 +750,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.updateHostGroup);
     }
 
-    /** 更新主机组 更新主机组
+    /** 修改主机组 修改主机组
      *
      * @param UpdateHostGroupRequest 请求对象
      * @return SyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse> */
@@ -796,7 +796,7 @@ public class LtsClient {
             hcClient);
     }
 
-    /** 修改通知模板 该接口用于修改通知模板,根据名称进行修改。
+    /** 修改消息模板 该接口用于修改通知模板,根据名称进行修改。
      *
      * @param UpdateNotificationTemplateRequest 请求对象
      * @return UpdateNotificationTemplateResponse */
@@ -804,7 +804,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.updateNotificationTemplate);
     }
 
-    /** 修改通知模板 该接口用于修改通知模板,根据名称进行修改。
+    /** 修改消息模板 该接口用于修改通知模板,根据名称进行修改。
      *
      * @param UpdateNotificationTemplateRequest 请求对象
      * @return SyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> */
@@ -850,7 +850,7 @@ public class LtsClient {
             hcClient);
     }
 
-    /** 创建日志接入lts规则 该接口用于创建aom日志接入lts规则
+    /** 创建接入规则 该接口用于创建aom日志接入lts规则
      *
      * @param CreateAomMappingRulesRequest 请求对象
      * @return CreateAomMappingRulesResponse */
@@ -858,7 +858,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.createAomMappingRules);
     }
 
-    /** 创建日志接入lts规则 该接口用于创建aom日志接入lts规则
+    /** 创建接入规则 该接口用于创建aom日志接入lts规则
      *
      * @param CreateAomMappingRulesRequest 请求对象
      * @return SyncInvoker<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse> */
@@ -886,7 +886,7 @@ public class LtsClient {
             LtsMeta.deleteAomMappingRules, hcClient);
     }
 
-    /** 查询接入规则 该接口用于查询单个aom日志接入lts
+    /** 查询单个接入规则 该接口用于查询单个aom日志接入lts
      *
      * @param ShowAomMappingRuleRequest 请求对象
      * @return ShowAomMappingRuleResponse */
@@ -894,7 +894,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.showAomMappingRule);
     }
 
-    /** 查询接入规则 该接口用于查询单个aom日志接入lts
+    /** 查询单个接入规则 该接口用于查询单个aom日志接入lts
      *
      * @param ShowAomMappingRuleRequest 请求对象
      * @return SyncInvoker<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse> */
@@ -904,7 +904,7 @@ public class LtsClient {
             LtsMeta.showAomMappingRule, hcClient);
     }
 
-    /** 查询接入规则 该接口用于查询aom日志所有接入lts规则
+    /** 查询所有接入规则 该接口用于查询aom日志所有接入lts规则
      *
      * @param ShowAomMappingRulesRequest 请求对象
      * @return ShowAomMappingRulesResponse */
@@ -912,7 +912,7 @@ public class LtsClient {
         return hcClient.syncInvokeHttp(request, LtsMeta.showAomMappingRules);
     }
 
-    /** 查询接入规则 该接口用于查询aom日志所有接入lts规则
+    /** 查询所有接入规则 该接口用于查询aom日志所有接入lts规则
      *
      * @param ShowAomMappingRulesRequest 请求对象
      * @return SyncInvoker<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse> */
@@ -938,24 +938,6 @@ public class LtsClient {
         UpdateAomMappingRulesRequest request) {
         return new SyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse>(request,
             LtsMeta.updateAomMappingRules, hcClient);
-    }
-
-    /** 改变告警规则状态 改变告警规则状态
-     *
-     * @param UpdateAlarmRuleStatusRequest 请求对象
-     * @return UpdateAlarmRuleStatusResponse */
-    public UpdateAlarmRuleStatusResponse updateAlarmRuleStatus(UpdateAlarmRuleStatusRequest request) {
-        return hcClient.syncInvokeHttp(request, LtsMeta.updateAlarmRuleStatus);
-    }
-
-    /** 改变告警规则状态 改变告警规则状态
-     *
-     * @param UpdateAlarmRuleStatusRequest 请求对象
-     * @return SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> */
-    public SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatusInvoker(
-        UpdateAlarmRuleStatusRequest request) {
-        return new SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse>(request,
-            LtsMeta.updateAlarmRuleStatus, hcClient);
     }
 
     /** 创建SQL告警规则 该接口用于创建SQL告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警
@@ -1010,6 +992,24 @@ public class LtsClient {
         ListSqlAlarmRulesRequest request) {
         return new SyncInvoker<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse>(request, LtsMeta.listSqlAlarmRules,
             hcClient);
+    }
+
+    /** 切换告警规则状态 改变告警规则状态
+     *
+     * @param UpdateAlarmRuleStatusRequest 请求对象
+     * @return UpdateAlarmRuleStatusResponse */
+    public UpdateAlarmRuleStatusResponse updateAlarmRuleStatus(UpdateAlarmRuleStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateAlarmRuleStatus);
+    }
+
+    /** 切换告警规则状态 改变告警规则状态
+     *
+     * @param UpdateAlarmRuleStatusRequest 请求对象
+     * @return SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> */
+    public SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatusInvoker(
+        UpdateAlarmRuleStatusRequest request) {
+        return new SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse>(request,
+            LtsMeta.updateAlarmRuleStatus, hcClient);
     }
 
     /** 修改SQL告警规则 该接口用于修改SQL告警
