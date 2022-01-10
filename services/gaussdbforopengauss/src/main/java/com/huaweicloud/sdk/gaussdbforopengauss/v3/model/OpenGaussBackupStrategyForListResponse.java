@@ -62,7 +62,7 @@ public class OpenGaussBackupStrategyForListResponse  {
 
 
     /**
-     * 已生成的备份文件可以保存的天数。  取值范围：0～732。为0时，表示未设置自动备份策略或备份策略已关闭。
+     * 已生成的备份文件可以保存的天数。  取值范围：1～732。
      * @return keepDays
      */
     public Integer getKeepDays() {

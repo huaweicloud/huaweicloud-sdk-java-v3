@@ -204,6 +204,11 @@ public class UpdateFunctionConfigRequestBody {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_stateful_function")
+
+    private Boolean isStatefulFunction;
+
     public UpdateFunctionConfigRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -490,6 +495,22 @@ public class UpdateFunctionConfigRequestBody {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public UpdateFunctionConfigRequestBody withIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+        return this;
+    }
+
+    /** 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+     * 
+     * @return isStatefulFunction */
+    public Boolean getIsStatefulFunction() {
+        return isStatefulFunction;
+    }
+
+    public void setIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -514,7 +535,8 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.extendConfig, updateFunctionConfigRequestBody.extendConfig)
             && Objects.equals(this.initializerHandler, updateFunctionConfigRequestBody.initializerHandler)
             && Objects.equals(this.initializerTimeout, updateFunctionConfigRequestBody.initializerTimeout)
-            && Objects.equals(this.enterpriseProjectId, updateFunctionConfigRequestBody.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, updateFunctionConfigRequestBody.enterpriseProjectId)
+            && Objects.equals(this.isStatefulFunction, updateFunctionConfigRequestBody.isStatefulFunction);
     }
 
     @Override
@@ -534,7 +556,8 @@ public class UpdateFunctionConfigRequestBody {
             extendConfig,
             initializerHandler,
             initializerTimeout,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            isStatefulFunction);
     }
 
     @Override
@@ -557,6 +580,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
         sb.append("}");
         return sb.toString();
     }

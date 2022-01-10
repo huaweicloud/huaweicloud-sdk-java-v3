@@ -124,7 +124,7 @@ public class ListErrorLogsRequest {
         return this;
     }
 
-    /** 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+    /** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
      * 
      * @return instanceId */
     public String getInstanceId() {
@@ -172,7 +172,7 @@ public class ListErrorLogsRequest {
         return this;
     }
 
-    /** 节点ID，取空值，表示查询实例下所有允许查询的节点。 使用请参考《DDS API参考》的“查询实例列表”响应消息表“nodes 数据结构说明”的“id”。允许查询的节点如下： - 集群实例下面的
+    /** 节点ID，取空值，表示查询实例下所有允许查询的节点。 使用请参考《DDS API参考》的“查询实例列表和详情”响应消息表“nodes 数据结构说明”的“id”。允许查询的节点如下： - 集群实例下面的
      * mongos、shard、config节点 - 副本集、单节点实例下面的所有节点
      * 
      * @return nodeId */

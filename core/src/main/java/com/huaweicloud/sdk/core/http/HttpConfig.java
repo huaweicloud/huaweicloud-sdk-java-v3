@@ -23,18 +23,32 @@ package com.huaweicloud.sdk.core.http;
 
 import com.huaweicloud.sdk.core.HttpListener;
 import com.huaweicloud.sdk.core.ssl.DefaultSSLSocketFactory;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+import okhttp3.internal.Util;
 
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author HuaweiCloud_SDK
  */
 public class HttpConfig {
     private static final int DEFAULT_CONNECTION_TIMEOUT = 60;
+
+    private static final int MAXIMUM_POOL_SIZE = 16;
+
+    private static final long KEEP_ALIVE_TIME = 60L;
+
+    private static final ExecutorService DEFAULT_EXECUTOR_SERVICE = new ThreadPoolExecutor(0, MAXIMUM_POOL_SIZE,
+            KEEP_ALIVE_TIME, TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkHttp Dispatcher", false));
 
     private int timeout = DEFAULT_CONNECTION_TIMEOUT;
 
@@ -55,6 +69,10 @@ public class HttpConfig {
     private X509TrustManager trustManager = DefaultSSLSocketFactory.getDefaultX509TrustManager();
 
     private List<HttpListener> httpListeners = new ArrayList<>();
+
+    private ConnectionPool connectionPool = new ConnectionPool(5, 5L, TimeUnit.MINUTES);
+
+    private Dispatcher dispatcher = new Dispatcher(DEFAULT_EXECUTOR_SERVICE);
 
     public int getTimeout() {
         return timeout;
@@ -198,4 +216,29 @@ public class HttpConfig {
         return this;
     }
 
+    public ConnectionPool getConnectionPool() {
+        return connectionPool;
+    }
+
+    public void setConnectionPool(ConnectionPool connectionPool) {
+        this.connectionPool = connectionPool;
+    }
+
+    public HttpConfig withConnectionPool(ConnectionPool connectionPool) {
+        this.connectionPool = connectionPool;
+        return this;
+    }
+
+    public Dispatcher getDispatcher() {
+        return dispatcher;
+    }
+
+    public void setDispatcher(Dispatcher dispatcher) {
+        this.dispatcher = dispatcher;
+    }
+
+    public HttpConfig withDispatcher(Dispatcher dispatcher) {
+        this.dispatcher = dispatcher;
+        return this;
+    }
 }

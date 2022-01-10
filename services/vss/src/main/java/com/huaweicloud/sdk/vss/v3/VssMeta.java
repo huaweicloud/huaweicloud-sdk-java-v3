@@ -10,6 +10,31 @@ import com.huaweicloud.sdk.vss.v3.model.*;
 @SuppressWarnings("unchecked")
 public class VssMeta {
 
+    public static final HttpRequestDef<AuthorizeDomainsRequest, AuthorizeDomainsResponse> authorizeDomains =
+        genForauthorizeDomains();
+
+    private static HttpRequestDef<AuthorizeDomainsRequest, AuthorizeDomainsResponse> genForauthorizeDomains() {
+        // basic
+        HttpRequestDef.Builder<AuthorizeDomainsRequest, AuthorizeDomainsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AuthorizeDomainsRequest.class, AuthorizeDomainsResponse.class)
+                .withName("AuthorizeDomains")
+                .withUri("/v3/{project_id}/webscan/domains/authenticate")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<AuthorizeDomainsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AuthorizeDomainsRequestBody.class),
+            f -> f.withMarshaller(AuthorizeDomainsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDomainsRequest, CreateDomainsResponse> createDomains =
         genForcreateDomains();
 
@@ -91,6 +116,99 @@ public class VssMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDomainsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResultsRequest, ShowResultsResponse> showResults = genForshowResults();
+
+    private static HttpRequestDef<ShowResultsRequest, ShowResultsResponse> genForshowResults() {
+        // basic
+        HttpRequestDef.Builder<ShowResultsRequest, ShowResultsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResultsRequest.class, ShowResultsResponse.class)
+                .withName("ShowResults")
+                .withUri("/v3/{project_id}/webscan/results")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResultsRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowResultsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowResultsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTasksRequest, CreateTasksResponse> createTasks = genForcreateTasks();
+
+    private static HttpRequestDef<CreateTasksRequest, CreateTasksResponse> genForcreateTasks() {
+        // basic
+        HttpRequestDef.Builder<CreateTasksRequest, CreateTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTasksRequest.class, CreateTasksResponse.class)
+                .withName("CreateTasks")
+                .withUri("/v3/{project_id}/webscan/tasks")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<Boolean>withRequestField("upgrade",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(CreateTasksRequest::getUpgrade, (req, v) -> {
+                req.setUpgrade(v);
+            }));
+        builder.<CreateTasksRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTasksRequestBody.class),
+            f -> f.withMarshaller(CreateTasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTasksRequest, ShowTasksResponse> showTasks = genForshowTasks();
+
+    private static HttpRequestDef<ShowTasksRequest, ShowTasksResponse> genForshowTasks() {
+        // basic
+        HttpRequestDef.Builder<ShowTasksRequest, ShowTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTasksRequest.class, ShowTasksResponse.class)
+                .withName("ShowTasks")
+                .withUri("/v3/{project_id}/webscan/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response

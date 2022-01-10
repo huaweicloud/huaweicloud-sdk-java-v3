@@ -36,9 +36,7 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.ConnectionPool;
 import okhttp3.Credentials;
-import okhttp3.Dispatcher;
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -47,7 +45,6 @@ import okhttp3.Protocol;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import okhttp3.internal.Util;
 import okhttp3.internal.http.HttpMethod;
 import okio.BufferedSink;
 import okio.Okio;
@@ -62,9 +59,6 @@ import java.net.UnknownHostException;
 import java.util.Collections;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -80,25 +74,7 @@ public class DefaultHttpClient implements HttpClient {
 
     private static final int PROXY_AUTHENTICATION_REQUIRED = 407;
 
-    private static final int MAXIMUM_POOL_SIZE = 16;
-
-    private static final long KEEP_ALIVE_TIME = 60L;
-
     private static final int DEFAULT_READ_TIMEOUT = 120;
-
-    /**
-     * Set unique connection pool for synchronous and asynchronous requests
-     */
-    private static final ConnectionPool CONNECTION_POOL = new ConnectionPool(5, 5L, TimeUnit.MINUTES);
-
-    /**
-     * Set number of maximum threads for asynchronous requests.
-     * If threads number hasn't been limited, each client will occupy one thread which may leads to out of memory.
-     */
-    private static ExecutorService executorService = new ThreadPoolExecutor(0, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME,
-            TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkHttp Dispatcher", false));
-
-    private static final Dispatcher DISPATCHER = new Dispatcher(executorService);
 
     private OkHttpClient client;
 
@@ -115,14 +91,14 @@ public class DefaultHttpClient implements HttpClient {
     public DefaultHttpClient withHttpConfig(HttpConfig httpConfig) {
         this.httpConfig = httpConfig;
         OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
-        clientBuilder.connectionPool(CONNECTION_POOL);
-        clientBuilder.dispatcher(DISPATCHER);
-        clientBuilder.connectTimeout(httpConfig.getTimeout(), TimeUnit.SECONDS)
-                .readTimeout(DEFAULT_READ_TIMEOUT, TimeUnit.SECONDS);
+        clientBuilder.connectionPool(httpConfig.getConnectionPool());
+        clientBuilder.dispatcher(httpConfig.getDispatcher());
+        clientBuilder.connectTimeout(httpConfig.getTimeout(), TimeUnit.SECONDS).readTimeout(DEFAULT_READ_TIMEOUT,
+                TimeUnit.SECONDS);
         if (httpConfig.isIgnoreSSLVerification()) {
-            clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
-                    .sslSocketFactory(IgnoreSSLVerificationFactory.getSSLContext().getSocketFactory(),
-                            IgnoreSSLVerificationFactory.getTrustAllManager());
+            clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier()).sslSocketFactory(
+                    IgnoreSSLVerificationFactory.getSSLContext().getSocketFactory(),
+                    IgnoreSSLVerificationFactory.getTrustAllManager());
         } else {
             clientBuilder.sslSocketFactory(httpConfig.getSSLSocketFactory(), httpConfig.getX509TrustManager());
         }

@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -112,6 +114,11 @@ public class NodePoolSpec {
 
     private NodeManagement nodeManagement;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "podSecurityGroups")
+
+    private List<Object> podSecurityGroups = null;
+
     public NodePoolSpec withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -158,7 +165,7 @@ public class NodePoolSpec {
         return this;
     }
 
-    /** 节点池初始化节点个数。
+    /** 节点池初始化节点个数。查询时为节点池目标节点数量。
      * 
      * @return initialNodeCount */
     public Integer getInitialNodeCount() {
@@ -219,6 +226,38 @@ public class NodePoolSpec {
         this.nodeManagement = nodeManagement;
     }
 
+    public NodePoolSpec withPodSecurityGroups(List<Object> podSecurityGroups) {
+        this.podSecurityGroups = podSecurityGroups;
+        return this;
+    }
+
+    public NodePoolSpec addPodSecurityGroupsItem(Object podSecurityGroupsItem) {
+        if (this.podSecurityGroups == null) {
+            this.podSecurityGroups = new ArrayList<>();
+        }
+        this.podSecurityGroups.add(podSecurityGroupsItem);
+        return this;
+    }
+
+    public NodePoolSpec withPodSecurityGroups(Consumer<List<Object>> podSecurityGroupsSetter) {
+        if (this.podSecurityGroups == null) {
+            this.podSecurityGroups = new ArrayList<>();
+        }
+        podSecurityGroupsSetter.accept(this.podSecurityGroups);
+        return this;
+    }
+
+    /** 1.21版本集群节点池支持绑定安全组，最多五个。
+     * 
+     * @return podSecurityGroups */
+    public List<Object> getPodSecurityGroups() {
+        return podSecurityGroups;
+    }
+
+    public void setPodSecurityGroups(List<Object> podSecurityGroups) {
+        this.podSecurityGroups = podSecurityGroups;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -232,12 +271,13 @@ public class NodePoolSpec {
             && Objects.equals(this.nodeTemplate, nodePoolSpec.nodeTemplate)
             && Objects.equals(this.initialNodeCount, nodePoolSpec.initialNodeCount)
             && Objects.equals(this.autoscaling, nodePoolSpec.autoscaling)
-            && Objects.equals(this.nodeManagement, nodePoolSpec.nodeManagement);
+            && Objects.equals(this.nodeManagement, nodePoolSpec.nodeManagement)
+            && Objects.equals(this.podSecurityGroups, nodePoolSpec.podSecurityGroups);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, nodeTemplate, initialNodeCount, autoscaling, nodeManagement);
+        return Objects.hash(type, nodeTemplate, initialNodeCount, autoscaling, nodeManagement, podSecurityGroups);
     }
 
     @Override
@@ -249,6 +289,7 @@ public class NodePoolSpec {
         sb.append("    initialNodeCount: ").append(toIndentedString(initialNodeCount)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    nodeManagement: ").append(toIndentedString(nodeManagement)).append("\n");
+        sb.append("    podSecurityGroups: ").append(toIndentedString(podSecurityGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

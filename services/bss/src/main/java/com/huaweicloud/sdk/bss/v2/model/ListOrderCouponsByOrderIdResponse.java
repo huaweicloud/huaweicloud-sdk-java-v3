@@ -22,6 +22,11 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
 
     private List<CouponInfoV2> userCoupons = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "coupon_max_use_quantity")
+
+    private List<CouponMaxUseQuantity> couponMaxUseQuantity = null;
+
     public ListOrderCouponsByOrderIdResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -70,6 +75,40 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
         this.userCoupons = userCoupons;
     }
 
+    public ListOrderCouponsByOrderIdResponse withCouponMaxUseQuantity(List<CouponMaxUseQuantity> couponMaxUseQuantity) {
+        this.couponMaxUseQuantity = couponMaxUseQuantity;
+        return this;
+    }
+
+    public ListOrderCouponsByOrderIdResponse addCouponMaxUseQuantityItem(
+        CouponMaxUseQuantity couponMaxUseQuantityItem) {
+        if (this.couponMaxUseQuantity == null) {
+            this.couponMaxUseQuantity = new ArrayList<>();
+        }
+        this.couponMaxUseQuantity.add(couponMaxUseQuantityItem);
+        return this;
+    }
+
+    public ListOrderCouponsByOrderIdResponse withCouponMaxUseQuantity(
+        Consumer<List<CouponMaxUseQuantity>> couponMaxUseQuantitySetter) {
+        if (this.couponMaxUseQuantity == null) {
+            this.couponMaxUseQuantity = new ArrayList<>();
+        }
+        couponMaxUseQuantitySetter.accept(this.couponMaxUseQuantity);
+        return this;
+    }
+
+    /** 优惠券使用的最大数量。
+     * 
+     * @return couponMaxUseQuantity */
+    public List<CouponMaxUseQuantity> getCouponMaxUseQuantity() {
+        return couponMaxUseQuantity;
+    }
+
+    public void setCouponMaxUseQuantity(List<CouponMaxUseQuantity> couponMaxUseQuantity) {
+        this.couponMaxUseQuantity = couponMaxUseQuantity;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -80,12 +119,13 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
         }
         ListOrderCouponsByOrderIdResponse listOrderCouponsByOrderIdResponse = (ListOrderCouponsByOrderIdResponse) o;
         return Objects.equals(this.count, listOrderCouponsByOrderIdResponse.count)
-            && Objects.equals(this.userCoupons, listOrderCouponsByOrderIdResponse.userCoupons);
+            && Objects.equals(this.userCoupons, listOrderCouponsByOrderIdResponse.userCoupons)
+            && Objects.equals(this.couponMaxUseQuantity, listOrderCouponsByOrderIdResponse.couponMaxUseQuantity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, userCoupons);
+        return Objects.hash(count, userCoupons, couponMaxUseQuantity);
     }
 
     @Override
@@ -94,6 +134,7 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
         sb.append("class ListOrderCouponsByOrderIdResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    userCoupons: ").append(toIndentedString(userCoupons)).append("\n");
+        sb.append("    couponMaxUseQuantity: ").append(toIndentedString(couponMaxUseQuantity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

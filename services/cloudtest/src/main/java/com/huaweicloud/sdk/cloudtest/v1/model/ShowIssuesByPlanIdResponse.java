@@ -15,14 +15,14 @@ public class ShowIssuesByPlanIdResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<ShowIssuesByPlanIdResponseBody> body = null;
+    private List<TestPlanIssueDetail> body = null;
 
-    public ShowIssuesByPlanIdResponse withBody(List<ShowIssuesByPlanIdResponseBody> body) {
+    public ShowIssuesByPlanIdResponse withBody(List<TestPlanIssueDetail> body) {
         this.body = body;
         return this;
     }
 
-    public ShowIssuesByPlanIdResponse addBodyItem(ShowIssuesByPlanIdResponseBody bodyItem) {
+    public ShowIssuesByPlanIdResponse addBodyItem(TestPlanIssueDetail bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class ShowIssuesByPlanIdResponse extends SdkResponse {
         return this;
     }
 
-    public ShowIssuesByPlanIdResponse withBody(Consumer<List<ShowIssuesByPlanIdResponseBody>> bodySetter) {
+    public ShowIssuesByPlanIdResponse withBody(Consumer<List<TestPlanIssueDetail>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -38,14 +38,14 @@ public class ShowIssuesByPlanIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询某个测试计划关联的需求列表
+    /** 项目下某个测试计划关联的需求列表的返回结构
      * 
      * @return body */
-    public List<ShowIssuesByPlanIdResponseBody> getBody() {
+    public List<TestPlanIssueDetail> getBody() {
         return body;
     }
 
-    public void setBody(List<ShowIssuesByPlanIdResponseBody> body) {
+    public void setBody(List<TestPlanIssueDetail> body) {
         this.body = body;
     }
 

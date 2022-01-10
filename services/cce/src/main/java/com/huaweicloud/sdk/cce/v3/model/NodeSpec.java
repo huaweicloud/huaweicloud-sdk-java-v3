@@ -331,7 +331,7 @@ public class NodeSpec {
         return this;
     }
 
-    /** 节点的计费模式：取值为 0（按需付费）、1（包周期）、2（自动付费包周期）
+    /** 节点的计费模式：取值为 0（按需付费）、1（包周期）、2（已废弃：自动付费包周期）
      * 
      * @return billingMode */
     public Integer getBillingMode() {
@@ -465,7 +465,7 @@ public class NodeSpec {
         return this;
     }
 
-    /** 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限最少为5个。
+    /** 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为5个。
      * 
      * @return userTags */
     public List<UserTag> getUserTags() {

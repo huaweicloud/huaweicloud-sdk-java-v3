@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 单机转主备时必填。 */
 public class Single2HaObject {
@@ -14,11 +15,6 @@ public class Single2HaObject {
     private String azCodeNewNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "password")
-
-    private String password;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dsspool_id")
 
     private String dsspoolId;
@@ -27,6 +23,11 @@ public class Single2HaObject {
     @JsonProperty(value = "is_auto_pay")
 
     private Boolean isAutoPay;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ad_domain_info")
+
+    private ADDomainInfo adDomainInfo;
 
     public Single2HaObject withAzCodeNewNode(String azCodeNewNode) {
         this.azCodeNewNode = azCodeNewNode;
@@ -42,22 +43,6 @@ public class Single2HaObject {
 
     public void setAzCodeNewNode(String azCodeNewNode) {
         this.azCodeNewNode = azCodeNewNode;
-    }
-
-    public Single2HaObject withPassword(String password) {
-        this.password = password;
-        return this;
-    }
-
-    /** 仅在支持SQL Server数据库实例进行单机转主备时可选，指定时会验证密码有效性。
-     * 
-     * @return password */
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Single2HaObject withDsspoolId(String dsspoolId) {
@@ -92,6 +77,31 @@ public class Single2HaObject {
         this.isAutoPay = isAutoPay;
     }
 
+    public Single2HaObject withAdDomainInfo(ADDomainInfo adDomainInfo) {
+        this.adDomainInfo = adDomainInfo;
+        return this;
+    }
+
+    public Single2HaObject withAdDomainInfo(Consumer<ADDomainInfo> adDomainInfoSetter) {
+        if (this.adDomainInfo == null) {
+            this.adDomainInfo = new ADDomainInfo();
+            adDomainInfoSetter.accept(this.adDomainInfo);
+        }
+
+        return this;
+    }
+
+    /** Get adDomainInfo
+     * 
+     * @return adDomainInfo */
+    public ADDomainInfo getAdDomainInfo() {
+        return adDomainInfo;
+    }
+
+    public void setAdDomainInfo(ADDomainInfo adDomainInfo) {
+        this.adDomainInfo = adDomainInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -102,14 +112,14 @@ public class Single2HaObject {
         }
         Single2HaObject single2HaObject = (Single2HaObject) o;
         return Objects.equals(this.azCodeNewNode, single2HaObject.azCodeNewNode)
-            && Objects.equals(this.password, single2HaObject.password)
             && Objects.equals(this.dsspoolId, single2HaObject.dsspoolId)
-            && Objects.equals(this.isAutoPay, single2HaObject.isAutoPay);
+            && Objects.equals(this.isAutoPay, single2HaObject.isAutoPay)
+            && Objects.equals(this.adDomainInfo, single2HaObject.adDomainInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(azCodeNewNode, password, dsspoolId, isAutoPay);
+        return Objects.hash(azCodeNewNode, dsspoolId, isAutoPay, adDomainInfo);
     }
 
     @Override
@@ -117,9 +127,9 @@ public class Single2HaObject {
         StringBuilder sb = new StringBuilder();
         sb.append("class Single2HaObject {\n");
         sb.append("    azCodeNewNode: ").append(toIndentedString(azCodeNewNode)).append("\n");
-        sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    dsspoolId: ").append(toIndentedString(dsspoolId)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    adDomainInfo: ").append(toIndentedString(adDomainInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

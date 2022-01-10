@@ -46,7 +46,7 @@ public class ListInstancesRequest  {
     
     private String name;
     /**
-     * 按照实例类型查询。目前仅支持取值“Enterprise”（区分大小写），对应分布式实例（企业版）。
+     * 按照实例类型查询。目前仅支持取值“Enterprise”（区分大小写），对应分布式实例（企业版）。当前支持取值\"Ha\"（区分大小写），对应主备式实例。
      */
     public static final class TypeEnum {
 
@@ -125,22 +125,22 @@ public class ListInstancesRequest  {
     
     private TypeEnum type;
     /**
-     * 数据库类型，区分大小写。  - GaussDB(openGauss)
+     * 数据库类型，区分大小写。  - GaussDB(for openGauss)
      */
     public static final class DatastoreTypeEnum {
 
         
         /**
-         * Enum GAUSSDB_OPENGAUSS_ for value: "GaussDB(openGauss)"
+         * Enum GAUSSDB_FOR_OPENGAUSS_ for value: "GaussDB(for openGauss)"
          */
-        public static final DatastoreTypeEnum GAUSSDB_OPENGAUSS_ = new DatastoreTypeEnum("GaussDB(openGauss)");
+        public static final DatastoreTypeEnum GAUSSDB_FOR_OPENGAUSS_ = new DatastoreTypeEnum("GaussDB(for openGauss)");
         
 
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatastoreTypeEnum> createStaticFields() {
             Map<String, DatastoreTypeEnum> map = new HashMap<>();
-            map.put("GaussDB(openGauss)", GAUSSDB_OPENGAUSS_);
+            map.put("GaussDB(for openGauss)", GAUSSDB_FOR_OPENGAUSS_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -316,7 +316,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * 按照实例类型查询。目前仅支持取值“Enterprise”（区分大小写），对应分布式实例（企业版）。
+     * 按照实例类型查询。目前仅支持取值“Enterprise”（区分大小写），对应分布式实例（企业版）。当前支持取值\"Ha\"（区分大小写），对应主备式实例。
      * @return type
      */
     public TypeEnum getType() {
@@ -338,7 +338,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * 数据库类型，区分大小写。  - GaussDB(openGauss)
+     * 数据库类型，区分大小写。  - GaussDB(for openGauss)
      * @return datastoreType
      */
     public DatastoreTypeEnum getDatastoreType() {
@@ -462,7 +462,7 @@ public class ListInstancesRequest  {
     }
 
     /**
-     * 根据实例标签键值对进行查询。  {key}表示标签键，不可以为空或重复。 {value}表示标签值，可以为空。 如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，最多包含10组。
+     * 根据实例标签键值对进行查询。  {key}表示标签键，不可以为空或重复。最大长度127个unicode字符。key不能为空或者空字符串，不能为空格，使用之前先trim前后半角空格。不能包含+/?#&=,%特殊字符。  {value}表示标签值，可以为空。最大长度255个unicode字符，使用之前先trim 前后半角空格。不能包含+/?#&=,%特殊字符。  如果value为空，则表示any_value（查询任意value）。  如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，最多包含10组。
      * @return tags
      */
     public List<String> getTags() {

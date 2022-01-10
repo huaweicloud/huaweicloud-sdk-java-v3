@@ -30,7 +30,7 @@ public class JobMetadata {
         return this;
     }
 
-    /** 作业的ID。
+    /** 任务的ID。
      * 
      * @return uid */
     public String getUid() {
@@ -46,7 +46,7 @@ public class JobMetadata {
         return this;
     }
 
-    /** 作业的创建时间。
+    /** 任务的创建时间。
      * 
      * @return creationTimestamp */
     public String getCreationTimestamp() {
@@ -62,7 +62,7 @@ public class JobMetadata {
         return this;
     }
 
-    /** 作业的更新时间。
+    /** 任务的更新时间。
      * 
      * @return updateTimestamp */
     public String getUpdateTimestamp() {

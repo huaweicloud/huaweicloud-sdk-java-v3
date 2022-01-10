@@ -1185,7 +1185,7 @@ public class RomaAsyncClient {
             RomaMeta.deleteLiveDataApiV2, hcClient);
     }
 
-    /** 批量删除Topic 批量删除Topic。
+    /** 删除Topic 删除Topic。
      *
      * @param DeleteMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<DeleteMqsInstanceTopicResponse> */
@@ -1194,7 +1194,7 @@ public class RomaAsyncClient {
         return hcClient.asyncInvokeHttp(request, RomaMeta.deleteMqsInstanceTopic);
     }
 
-    /** 批量删除Topic 批量删除Topic。
+    /** 删除Topic 删除Topic。
      *
      * @param DeleteMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse> */

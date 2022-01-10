@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 创建分布式实例时可见。
+ * 实例部署形态。
  */
 public class OpenGaussHaResponse  {
 

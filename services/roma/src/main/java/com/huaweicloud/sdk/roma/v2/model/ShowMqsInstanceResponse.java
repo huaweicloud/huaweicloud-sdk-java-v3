@@ -515,11 +515,6 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     private Integer publicBoundwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "connect_dn")
-
-    private String connectDn;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_enable")
 
     private Boolean agentEnable;
@@ -1695,22 +1690,6 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.publicBoundwidth = publicBoundwidth;
     }
 
-    public ShowMqsInstanceResponse withConnectDn(String connectDn) {
-        this.connectDn = connectDn;
-        return this;
-    }
-
-    /** 实例连接地址。
-     * 
-     * @return connectDn */
-    public String getConnectDn() {
-        return connectDn;
-    }
-
-    public void setConnectDn(String connectDn) {
-        this.connectDn = connectDn;
-    }
-
     public ShowMqsInstanceResponse withAgentEnable(Boolean agentEnable) {
         this.agentEnable = agentEnable;
         return this;
@@ -1807,7 +1786,6 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             && Objects.equals(this.listeners, showMqsInstanceResponse.listeners)
             && Objects.equals(this.publicAccessEnabled, showMqsInstanceResponse.publicAccessEnabled)
             && Objects.equals(this.publicBoundwidth, showMqsInstanceResponse.publicBoundwidth)
-            && Objects.equals(this.connectDn, showMqsInstanceResponse.connectDn)
             && Objects.equals(this.agentEnable, showMqsInstanceResponse.agentEnable);
     }
 
@@ -1884,7 +1862,6 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             listeners,
             publicAccessEnabled,
             publicBoundwidth,
-            connectDn,
             agentEnable);
     }
 
@@ -1963,7 +1940,6 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         sb.append("    listeners: ").append(toIndentedString(listeners)).append("\n");
         sb.append("    publicAccessEnabled: ").append(toIndentedString(publicAccessEnabled)).append("\n");
         sb.append("    publicBoundwidth: ").append(toIndentedString(publicBoundwidth)).append("\n");
-        sb.append("    connectDn: ").append(toIndentedString(connectDn)).append("\n");
         sb.append("    agentEnable: ").append(toIndentedString(agentEnable)).append("\n");
         sb.append("}");
         return sb.toString();

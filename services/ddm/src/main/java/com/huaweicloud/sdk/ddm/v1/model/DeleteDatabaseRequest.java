@@ -23,7 +23,7 @@ public class DeleteDatabaseRequest {
 
     private String ddmDbname;
 
-    /** 是否同时删除关联RDS上存储的数据。 - 取值为“true”：删除。 - 取值为空或“false”：不删除。 默认值为空。 */
+    /** 是否同时删除关联后端数据库实例上存储的数据。 - 取值为“true”：删除。 - 取值为空或“false”：不删除。 默认值为空。 */
     public static final class DeleteRdsDataEnum {
 
         /** Enum TRUE for value: "true" */
@@ -136,7 +136,7 @@ public class DeleteDatabaseRequest {
         return this;
     }
 
-    /** 是否同时删除关联RDS上存储的数据。 - 取值为“true”：删除。 - 取值为空或“false”：不删除。 默认值为空。
+    /** 是否同时删除关联后端数据库实例上存储的数据。 - 取值为“true”：删除。 - 取值为空或“false”：不删除。 默认值为空。
      * 
      * @return deleteRdsData */
     public DeleteRdsDataEnum getDeleteRdsData() {

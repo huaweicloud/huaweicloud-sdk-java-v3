@@ -458,6 +458,11 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
 
     private Boolean enableDynamicMemory;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_stateful_function")
+
+    private Boolean isStatefulFunction;
+
     public UpdateFunctionConfigResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
         return this;
@@ -1081,6 +1086,22 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         this.enableDynamicMemory = enableDynamicMemory;
     }
 
+    public UpdateFunctionConfigResponse withIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+        return this;
+    }
+
+    /** 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+     * 
+     * @return isStatefulFunction */
+    public Boolean getIsStatefulFunction() {
+        return isStatefulFunction;
+    }
+
+    public void setIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1125,7 +1146,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.logGroupId, updateFunctionConfigResponse.logGroupId)
             && Objects.equals(this.logStreamId, updateFunctionConfigResponse.logStreamId)
             && Objects.equals(this.type, updateFunctionConfigResponse.type)
-            && Objects.equals(this.enableDynamicMemory, updateFunctionConfigResponse.enableDynamicMemory);
+            && Objects.equals(this.enableDynamicMemory, updateFunctionConfigResponse.enableDynamicMemory)
+            && Objects.equals(this.isStatefulFunction, updateFunctionConfigResponse.isStatefulFunction);
     }
 
     @Override
@@ -1165,7 +1187,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             logGroupId,
             logStreamId,
             type,
-            enableDynamicMemory);
+            enableDynamicMemory,
+            isStatefulFunction);
     }
 
     @Override
@@ -1208,6 +1231,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
+        sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
         sb.append("}");
         return sb.toString();
     }

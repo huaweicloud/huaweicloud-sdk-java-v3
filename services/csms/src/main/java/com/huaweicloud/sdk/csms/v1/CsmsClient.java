@@ -199,24 +199,6 @@ public class CsmsClient {
             CsmsMeta.listResourceInstances, hcClient);
     }
 
-    /** 查询凭据的版本状态 查询指定凭据版本状态标记的版本信息。
-     *
-     * @param ListSecretStageRequest 请求对象
-     * @return ListSecretStageResponse */
-    public ListSecretStageResponse listSecretStage(ListSecretStageRequest request) {
-        return hcClient.syncInvokeHttp(request, CsmsMeta.listSecretStage);
-    }
-
-    /** 查询凭据的版本状态 查询指定凭据版本状态标记的版本信息。
-     *
-     * @param ListSecretStageRequest 请求对象
-     * @return SyncInvoker<ListSecretStageRequest, ListSecretStageResponse> */
-    public SyncInvoker<ListSecretStageRequest, ListSecretStageResponse> listSecretStageInvoker(
-        ListSecretStageRequest request) {
-        return new SyncInvoker<ListSecretStageRequest, ListSecretStageResponse>(request, CsmsMeta.listSecretStage,
-            hcClient);
-    }
-
     /** 查询凭据标签 - 功能介绍：查询凭据标签。
      *
      * @param ListSecretTagsRequest 请求对象
@@ -299,6 +281,24 @@ public class CsmsClient {
      * @return SyncInvoker<ShowSecretRequest, ShowSecretResponse> */
     public SyncInvoker<ShowSecretRequest, ShowSecretResponse> showSecretInvoker(ShowSecretRequest request) {
         return new SyncInvoker<ShowSecretRequest, ShowSecretResponse>(request, CsmsMeta.showSecret, hcClient);
+    }
+
+    /** 查询凭据的版本状态 查询指定凭据版本状态标记的版本信息。
+     *
+     * @param ShowSecretStageRequest 请求对象
+     * @return ShowSecretStageResponse */
+    public ShowSecretStageResponse showSecretStage(ShowSecretStageRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.showSecretStage);
+    }
+
+    /** 查询凭据的版本状态 查询指定凭据版本状态标记的版本信息。
+     *
+     * @param ShowSecretStageRequest 请求对象
+     * @return SyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse> */
+    public SyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse> showSecretStageInvoker(
+        ShowSecretStageRequest request) {
+        return new SyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse>(request, CsmsMeta.showSecretStage,
+            hcClient);
     }
 
     /** 查询凭据的版本与凭据值 查询指定凭据版本的信息和版本中的明文凭据值，只能查询ENABLED状态的凭据。

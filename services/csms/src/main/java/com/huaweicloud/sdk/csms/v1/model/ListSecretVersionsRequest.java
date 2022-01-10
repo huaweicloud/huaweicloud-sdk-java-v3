@@ -13,6 +13,16 @@ public class ListSecretVersionsRequest {
 
     private String secretName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListSecretVersionsRequest withSecretName(String secretName) {
         this.secretName = secretName;
         return this;
@@ -29,6 +39,38 @@ public class ListSecretVersionsRequest {
         this.secretName = secretName;
     }
 
+    public ListSecretVersionsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /** 分页参数，取值为上一页数据的最后一条记录的版本号。
+     * 
+     * @return marker */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ListSecretVersionsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量。默认值50。 minimum: 1 maximum: 1000
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -38,12 +80,14 @@ public class ListSecretVersionsRequest {
             return false;
         }
         ListSecretVersionsRequest listSecretVersionsRequest = (ListSecretVersionsRequest) o;
-        return Objects.equals(this.secretName, listSecretVersionsRequest.secretName);
+        return Objects.equals(this.secretName, listSecretVersionsRequest.secretName)
+            && Objects.equals(this.marker, listSecretVersionsRequest.marker)
+            && Objects.equals(this.limit, listSecretVersionsRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(secretName);
+        return Objects.hash(secretName, marker, limit);
     }
 
     @Override
@@ -51,6 +95,8 @@ public class ListSecretVersionsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSecretVersionsRequest {\n");
         sb.append("    secretName: ").append(toIndentedString(secretName)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -269,6 +269,11 @@ public class StopMigrationTaskResponse extends SdkResponse {
     private MigrationMethodEnum migrationMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ecs_tenant_private_ip")
+
+    private String ecsTenantPrivateIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_files")
 
     private BackupFilesBody backupFiles;
@@ -465,6 +470,22 @@ public class StopMigrationTaskResponse extends SdkResponse {
         this.migrationMethod = migrationMethod;
     }
 
+    public StopMigrationTaskResponse withEcsTenantPrivateIp(String ecsTenantPrivateIp) {
+        this.ecsTenantPrivateIp = ecsTenantPrivateIp;
+        return this;
+    }
+
+    /** 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单
+     * 
+     * @return ecsTenantPrivateIp */
+    public String getEcsTenantPrivateIp() {
+        return ecsTenantPrivateIp;
+    }
+
+    public void setEcsTenantPrivateIp(String ecsTenantPrivateIp) {
+        this.ecsTenantPrivateIp = ecsTenantPrivateIp;
+    }
+
     public StopMigrationTaskResponse withBackupFiles(BackupFilesBody backupFiles) {
         this.backupFiles = backupFiles;
         return this;
@@ -603,6 +624,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
             && Objects.equals(this.status, stopMigrationTaskResponse.status)
             && Objects.equals(this.migrationType, stopMigrationTaskResponse.migrationType)
             && Objects.equals(this.migrationMethod, stopMigrationTaskResponse.migrationMethod)
+            && Objects.equals(this.ecsTenantPrivateIp, stopMigrationTaskResponse.ecsTenantPrivateIp)
             && Objects.equals(this.backupFiles, stopMigrationTaskResponse.backupFiles)
             && Objects.equals(this.networkType, stopMigrationTaskResponse.networkType)
             && Objects.equals(this.sourceInstance, stopMigrationTaskResponse.sourceInstance)
@@ -619,6 +641,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
             status,
             migrationType,
             migrationMethod,
+            ecsTenantPrivateIp,
             backupFiles,
             networkType,
             sourceInstance,
@@ -637,6 +660,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    migrationType: ").append(toIndentedString(migrationType)).append("\n");
         sb.append("    migrationMethod: ").append(toIndentedString(migrationMethod)).append("\n");
+        sb.append("    ecsTenantPrivateIp: ").append(toIndentedString(ecsTenantPrivateIp)).append("\n");
         sb.append("    backupFiles: ").append(toIndentedString(backupFiles)).append("\n");
         sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    sourceInstance: ").append(toIndentedString(sourceInstance)).append("\n");

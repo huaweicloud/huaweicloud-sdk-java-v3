@@ -15,14 +15,14 @@ public class ShowPlanJournalsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<ShowPlanJournalsResponseBody> body = null;
+    private List<TestPlanJournalList> body = null;
 
-    public ShowPlanJournalsResponse withBody(List<ShowPlanJournalsResponseBody> body) {
+    public ShowPlanJournalsResponse withBody(List<TestPlanJournalList> body) {
         this.body = body;
         return this;
     }
 
-    public ShowPlanJournalsResponse addBodyItem(ShowPlanJournalsResponseBody bodyItem) {
+    public ShowPlanJournalsResponse addBodyItem(TestPlanJournalList bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -30,7 +30,7 @@ public class ShowPlanJournalsResponse extends SdkResponse {
         return this;
     }
 
-    public ShowPlanJournalsResponse withBody(Consumer<List<ShowPlanJournalsResponseBody>> bodySetter) {
+    public ShowPlanJournalsResponse withBody(Consumer<List<TestPlanJournalList>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -38,14 +38,14 @@ public class ShowPlanJournalsResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目下查询测试计划列表返回结构
+    /** 项目下查询测试计划操作历史返回结构
      * 
      * @return body */
-    public List<ShowPlanJournalsResponseBody> getBody() {
+    public List<TestPlanJournalList> getBody() {
         return body;
     }
 
-    public void setBody(List<ShowPlanJournalsResponseBody> body) {
+    public void setBody(List<TestPlanJournalList> body) {
         this.body = body;
     }
 

@@ -42,7 +42,7 @@ public class Storage {
         return this;
     }
 
-    /** 磁盘选择，根据matchLabels和storageType对匹配的磁盘进行管理。
+    /** 磁盘选择，根据matchLabels和storageType对匹配的磁盘进行管理。磁盘匹配存在先后顺序，靠前的匹配规则优先匹配。
      * 
      * @return storageSelectors */
     public List<StorageSelectors> getStorageSelectors() {

@@ -25,7 +25,7 @@ public class JobStatus {
         return this;
     }
 
-    /** 作业的状态，有如下四种状态： - JobPhaseInitializing JobPhase = \"Initializing\" - JobPhaseRunning JobPhase = \"Running\" -
+    /** 任务的状态，有如下四种状态： - JobPhaseInitializing JobPhase = \"Initializing\" - JobPhaseRunning JobPhase = \"Running\" -
      * JobPhaseFailed JobPhase = \"Failed\" - JobPhaseSuccess JobPhase = \"Success\"
      * 
      * @return phase */
@@ -42,7 +42,7 @@ public class JobStatus {
         return this;
     }
 
-    /** 作业变为当前状态的原因
+    /** 任务变为当前状态的原因
      * 
      * @return reason */
     public String getReason() {

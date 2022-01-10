@@ -39,7 +39,7 @@ public class ListProjectTemplatesRequest {
         return this;
     }
 
-    /** 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
+    /** 技术栈ID，通过技术栈管理ListStacks接口获取。
      * 
      * @return stackId */
     public String getStackId() {

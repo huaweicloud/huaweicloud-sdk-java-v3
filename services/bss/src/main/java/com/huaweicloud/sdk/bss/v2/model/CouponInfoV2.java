@@ -101,6 +101,11 @@ public class CouponInfoV2 {
 
     private String couponUsage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "coupon_group")
+
+    private Integer couponGroup;
+
     public CouponInfoV2 withCouponId(String couponId) {
         this.couponId = couponId;
         return this;
@@ -405,6 +410,22 @@ public class CouponInfoV2 {
         this.couponUsage = couponUsage;
     }
 
+    public CouponInfoV2 withCouponGroup(Integer couponGroup) {
+        this.couponGroup = couponGroup;
+        return this;
+    }
+
+    /** 优惠券分组。 1：云市场发放的券2：华为云券-1024-专用代金券3：华为云券-使用限制-抵扣硬件的券0：华为云服务券（排除上述取值之外的券）
+     * 
+     * @return couponGroup */
+    public Integer getCouponGroup() {
+        return couponGroup;
+    }
+
+    public void setCouponGroup(Integer couponGroup) {
+        this.couponGroup = couponGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -431,7 +452,8 @@ public class CouponInfoV2 {
             && Objects.equals(this.couponVersion, couponInfoV2.couponVersion)
             && Objects.equals(this.balance, couponInfoV2.balance)
             && Objects.equals(this.usedByOrderId, couponInfoV2.usedByOrderId)
-            && Objects.equals(this.couponUsage, couponInfoV2.couponUsage);
+            && Objects.equals(this.couponUsage, couponInfoV2.couponUsage)
+            && Objects.equals(this.couponGroup, couponInfoV2.couponGroup);
     }
 
     @Override
@@ -453,7 +475,8 @@ public class CouponInfoV2 {
             couponVersion,
             balance,
             usedByOrderId,
-            couponUsage);
+            couponUsage,
+            couponGroup);
     }
 
     @Override
@@ -478,6 +501,7 @@ public class CouponInfoV2 {
         sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
         sb.append("    usedByOrderId: ").append(toIndentedString(usedByOrderId)).append("\n");
         sb.append("    couponUsage: ").append(toIndentedString(couponUsage)).append("\n");
+        sb.append("    couponGroup: ").append(toIndentedString(couponGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

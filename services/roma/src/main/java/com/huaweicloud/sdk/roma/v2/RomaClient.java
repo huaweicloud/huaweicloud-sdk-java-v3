@@ -1154,7 +1154,7 @@ public class RomaClient {
             RomaMeta.deleteLiveDataApiV2, hcClient);
     }
 
-    /** 批量删除Topic 批量删除Topic。
+    /** 删除Topic 删除Topic。
      *
      * @param DeleteMqsInstanceTopicRequest 请求对象
      * @return DeleteMqsInstanceTopicResponse */
@@ -1162,7 +1162,7 @@ public class RomaClient {
         return hcClient.syncInvokeHttp(request, RomaMeta.deleteMqsInstanceTopic);
     }
 
-    /** 批量删除Topic 批量删除Topic。
+    /** 删除Topic 删除Topic。
      *
      * @param DeleteMqsInstanceTopicRequest 请求对象
      * @return SyncInvoker<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse> */

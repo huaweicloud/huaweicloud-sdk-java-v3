@@ -57,22 +57,20 @@ public class CloudIDEAsyncClient {
             CloudIDEMeta.listProjectTemplates, hcClient);
     }
 
-    /** 获取标签所有技术栈 获取标签所有技术栈
+    /** 按region获取标签所有技术栈 按region获取标签所有技术栈
      *
-     * @param ListStacksByTagRequest 请求对象
-     * @return CompletableFuture<ListStacksByTagResponse> */
-    public CompletableFuture<ListStacksByTagResponse> listStacksByTagAsync(ListStacksByTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.listStacksByTag);
+     * @param ListStacksRequest 请求对象
+     * @return CompletableFuture<ListStacksResponse> */
+    public CompletableFuture<ListStacksResponse> listStacksAsync(ListStacksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.listStacks);
     }
 
-    /** 获取标签所有技术栈 获取标签所有技术栈
+    /** 按region获取标签所有技术栈 按region获取标签所有技术栈
      *
-     * @param ListStacksByTagRequest 请求对象
-     * @return AsyncInvoker<ListStacksByTagRequest, ListStacksByTagResponse> */
-    public AsyncInvoker<ListStacksByTagRequest, ListStacksByTagResponse> listStacksByTagAsyncInvoker(
-        ListStacksByTagRequest request) {
-        return new AsyncInvoker<ListStacksByTagRequest, ListStacksByTagResponse>(request, CloudIDEMeta.listStacksByTag,
-            hcClient);
+     * @param ListStacksRequest 请求对象
+     * @return AsyncInvoker<ListStacksRequest, ListStacksResponse> */
+    public AsyncInvoker<ListStacksRequest, ListStacksResponse> listStacksAsyncInvoker(ListStacksRequest request) {
+        return new AsyncInvoker<ListStacksRequest, ListStacksResponse>(request, CloudIDEMeta.listStacks, hcClient);
     }
 
     /** 查询当前帐号访问权限 查询当前帐号访问权限

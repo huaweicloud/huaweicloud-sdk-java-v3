@@ -14,16 +14,6 @@ public class ShowPlansRequest {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Long offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Long limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -32,6 +22,16 @@ public class ShowPlansRequest {
     @JsonProperty(value = "current_stage")
 
     private String currentStage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
 
     public ShowPlansRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -47,38 +47,6 @@ public class ShowPlansRequest {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public ShowPlansRequest withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /** 起始偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999
-     * 
-     * @return offset */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    public ShowPlansRequest withLimit(Long limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /** 每页显示的条目数量,最大支持200条 minimum: 1 maximum: 200
-     * 
-     * @return limit */
-    public Long getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Long limit) {
-        this.limit = limit;
     }
 
     public ShowPlansRequest withName(String name) {
@@ -113,6 +81,38 @@ public class ShowPlansRequest {
         this.currentStage = currentStage;
     }
 
+    public ShowPlansRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** 页号，取值范围为1-20000
+     * 
+     * @return offset */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ShowPlansRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量，取值范围为1-200
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -123,14 +123,15 @@ public class ShowPlansRequest {
         }
         ShowPlansRequest showPlansRequest = (ShowPlansRequest) o;
         return Objects.equals(this.projectId, showPlansRequest.projectId)
+            && Objects.equals(this.name, showPlansRequest.name)
+            && Objects.equals(this.currentStage, showPlansRequest.currentStage)
             && Objects.equals(this.offset, showPlansRequest.offset)
-            && Objects.equals(this.limit, showPlansRequest.limit) && Objects.equals(this.name, showPlansRequest.name)
-            && Objects.equals(this.currentStage, showPlansRequest.currentStage);
+            && Objects.equals(this.limit, showPlansRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, offset, limit, name, currentStage);
+        return Objects.hash(projectId, name, currentStage, offset, limit);
     }
 
     @Override
@@ -138,10 +139,10 @@ public class ShowPlansRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPlansRequest {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    currentStage: ").append(toIndentedString(currentStage)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

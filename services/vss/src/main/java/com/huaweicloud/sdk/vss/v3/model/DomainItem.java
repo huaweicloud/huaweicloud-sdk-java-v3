@@ -58,7 +58,7 @@ public class DomainItem {
 
     private String createTime;
 
-    /** 域名的认证状态: * unauth - 未认证 * auth - 已认证 * invalid - 认证文件无效 * manual - 人工认证 */
+    /** 域名的认证状态: * unauth - 未认证 * auth - 已认证 * invalid - 认证文件无效 * manual - 人工认证 * skip - 免认证 */
     public static final class AuthStatusEnum {
 
         /** Enum UNAUTH for value: "unauth" */
@@ -73,6 +73,9 @@ public class DomainItem {
         /** Enum MANUAL for value: "manual" */
         public static final AuthStatusEnum MANUAL = new AuthStatusEnum("manual");
 
+        /** Enum SKIP for value: "skip" */
+        public static final AuthStatusEnum SKIP = new AuthStatusEnum("skip");
+
         private static final Map<String, AuthStatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AuthStatusEnum> createStaticFields() {
@@ -81,6 +84,7 @@ public class DomainItem {
             map.put("auth", AUTH);
             map.put("invalid", INVALID);
             map.put("manual", MANUAL);
+            map.put("skip", SKIP);
             return Collections.unmodifiableMap(map);
         }
 
@@ -367,7 +371,7 @@ public class DomainItem {
         return this;
     }
 
-    /** 域名的认证状态: * unauth - 未认证 * auth - 已认证 * invalid - 认证文件无效 * manual - 人工认证
+    /** 域名的认证状态: * unauth - 未认证 * auth - 已认证 * invalid - 认证文件无效 * manual - 人工认证 * skip - 免认证
      * 
      * @return authStatus */
     public AuthStatusEnum getAuthStatus() {

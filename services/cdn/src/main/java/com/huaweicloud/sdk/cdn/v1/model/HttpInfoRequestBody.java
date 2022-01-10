@@ -70,7 +70,7 @@ public class HttpInfoRequestBody {
         return this;
     }
 
-    /** HTTPS证书是否启用。0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源，首次配置证书需要传递证书及私钥，如已有证书可不用传证书及私钥。
+    /** HTTPS证书是否启用。0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源；3：启用HTTPS加速并HTTPS回源，首次配置证书需要传递证书及私钥，如已有证书可不用传证书及私钥。
      * 
      * @return httpsStatus */
     public Integer getHttpsStatus() {

@@ -169,7 +169,7 @@ public class NodeExtendParam {
         return this;
     }
 
-    /** 订购周期类型，取值范围： - month：月 - year：年 > billingMode为2（自动付费包周期）时生效，且为必选。
+    /** - month：月 - year：年 > billingMode为1（包周期）或2（已废弃：自动付费包周期）时生效，且为必选。
      * 
      * @return periodType */
     public String getPeriodType() {
@@ -185,7 +185,8 @@ public class NodeExtendParam {
         return this;
     }
 
-    /** 订购周期数，取值范围： - periodType=month（周期类型为月）时，取值为[1-9]。 - periodType=year（周期类型为年）时，取值为1。 > billingMode为2时生效，且为必选。
+    /** 订购周期数，取值范围： - periodType=month（周期类型为月）时，取值为[1-9]。 - periodType=year（周期类型为年）时，取值为1。 >
+     * billingMode为1或2（已废弃）时生效，且为必选。
      * 
      * @return periodNum */
     public Integer getPeriodNum() {
@@ -201,7 +202,7 @@ public class NodeExtendParam {
         return this;
     }
 
-    /** 是否自动续订 - “true”：自动续订 - “false”：不自动续订 > billingMode为2时生效，且为必选。
+    /** 是否自动续订 - “true”：自动续订 - “false”：不自动续订 > billingMode为1或2（已废弃）时生效，不填写此参数时默认不会自动续费。
      * 
      * @return isAutoRenew */
     public String getIsAutoRenew() {
@@ -217,7 +218,8 @@ public class NodeExtendParam {
         return this;
     }
 
-    /** 是否自动扣款 - “true”：自动扣款 - “false”：不自动扣款 > billingMode为2时生效，不填写此参数时默认会自动扣款。
+    /** 是否自动扣款 - “true”：自动扣款 - “false”：不自动扣款 >
+     * billingMode为1或2（已废弃）时生效，billingMode为1时不填写此参数时默认不会自动扣款。（已废弃：billingMode为2时不填写此参数时默认会自动扣款）
      * 
      * @return isAutoPay */
     public String getIsAutoPay() {
@@ -255,7 +257,8 @@ public class NodeExtendParam {
 
     /** Device mapper模式下，节点上Docker单容器的可用磁盘空间大小，OverlayFS模式(CCE Turbo集群中CentOS 7.6和Ubuntu 18.04节点，以及混合集群中Ubuntu
      * 18.04节点)下不支持此字段。Device
-     * mapper模式下建议dockerBaseSize配置不超过80G，设置过大时可能会导致docker初始化时间过长而启动失败，若对容器磁盘大小有特殊要求，可考虑使用挂载外部或本地存储方式代替。
+     * mapper模式下建议dockerBaseSize配置不超过80G，设置过大时可能会导致docker初始化时间过长而启动失败，若对容器磁盘大小有特殊要求，可考虑使用挂载外部或本地存储方式代替。 minimum: 10
+     * maximum: 500
      * 
      * @return dockerBaseSize */
     public Integer getDockerBaseSize() {

@@ -121,6 +121,11 @@ public class ListInstancesResult {
 
     private List<String> actions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lb_ip_address")
+
+    private String lbIpAddress;
+
     public ListInstancesResult withId(String id) {
         this.id = id;
         return this;
@@ -524,6 +529,22 @@ public class ListInstancesResult {
         this.actions = actions;
     }
 
+    public ListInstancesResult withLbIpAddress(String lbIpAddress) {
+        this.lbIpAddress = lbIpAddress;
+        return this;
+    }
+
+    /** 负载均衡ip，只有存在负载均衡ip才会返回该参数。
+     * 
+     * @return lbIpAddress */
+    public String getLbIpAddress() {
+        return lbIpAddress;
+    }
+
+    public void setLbIpAddress(String lbIpAddress) {
+        this.lbIpAddress = lbIpAddress;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -553,7 +574,8 @@ public class ListInstancesResult {
             && Objects.equals(this.enterpriseProjectId, listInstancesResult.enterpriseProjectId)
             && Objects.equals(this.dedicatedResourceId, listInstancesResult.dedicatedResourceId)
             && Objects.equals(this.timeZone, listInstancesResult.timeZone)
-            && Objects.equals(this.actions, listInstancesResult.actions);
+            && Objects.equals(this.actions, listInstancesResult.actions)
+            && Objects.equals(this.lbIpAddress, listInstancesResult.lbIpAddress);
     }
 
     @Override
@@ -579,7 +601,8 @@ public class ListInstancesResult {
             enterpriseProjectId,
             dedicatedResourceId,
             timeZone,
-            actions);
+            actions,
+            lbIpAddress);
     }
 
     @Override
@@ -608,6 +631,7 @@ public class ListInstancesResult {
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    lbIpAddress: ").append(toIndentedString(lbIpAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

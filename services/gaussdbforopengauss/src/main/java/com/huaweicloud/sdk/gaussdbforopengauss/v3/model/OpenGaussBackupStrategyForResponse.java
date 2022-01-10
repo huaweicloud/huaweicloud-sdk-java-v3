@@ -40,7 +40,7 @@ public class OpenGaussBackupStrategyForResponse  {
 
 
     /**
-     * 备份时间段。自动备份将在该时间段内触发。  取值范围：非空，格式必须为hh:mm-HH:MM且有效，当前时间指UTC时间。  - HH取值必须比hh大1。 - mm和MM取值必须相同，且取值必须为00、15、30或45。 取值示例：  - 08:15-09:15 - 23:00-00:00 如果请求体中不填写“backup_strategy”字段，则响应体中 “start_time”默认返回“02:00-03:00”。
+     * 备份时间段。自动备份将在该时间段内触发。  取值范围：非空，格式必须为hh:mm-HH:MM且有效，当前时间指UTC时间。  - HH取值必须比hh大1。 - mm和MM取值必须相同，且取值必须为00。 取值示例：  - 08:00-09:00 - 23:00-00:00
      * @return startTime
      */
     public String getStartTime() {

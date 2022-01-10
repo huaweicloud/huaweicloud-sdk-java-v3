@@ -29,11 +29,6 @@ public class Dictionary {
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order")
-
-    private Integer order;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_one")
 
     private String extendOne;
@@ -125,22 +120,6 @@ public class Dictionary {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public Dictionary withOrder(Integer order) {
-        this.order = order;
-        return this;
-    }
-
-    /** 字典排序，值越小顺序越靠前 minimum: 1 maximum: 100
-     * 
-     * @return order */
-    public Integer getOrder() {
-        return order;
-    }
-
-    public void setOrder(Integer order) {
-        this.order = order;
     }
 
     public Dictionary withExtendOne(String extendOne) {
@@ -250,7 +229,7 @@ public class Dictionary {
         Dictionary dictionary = (Dictionary) o;
         return Objects.equals(this.id, dictionary.id) && Objects.equals(this.name, dictionary.name)
             && Objects.equals(this.remark, dictionary.remark) && Objects.equals(this.code, dictionary.code)
-            && Objects.equals(this.order, dictionary.order) && Objects.equals(this.extendOne, dictionary.extendOne)
+            && Objects.equals(this.extendOne, dictionary.extendOne)
             && Objects.equals(this.extendTwo, dictionary.extendTwo)
             && Objects.equals(this.parentCode, dictionary.parentCode) && Objects.equals(this.type, dictionary.type)
             && Objects.equals(this.createTime, dictionary.createTime)
@@ -259,8 +238,7 @@ public class Dictionary {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, remark, code, order, extendOne, extendTwo, parentCode, type, createTime, updateTime);
+        return Objects.hash(id, name, remark, code, extendOne, extendTwo, parentCode, type, createTime, updateTime);
     }
 
     @Override
@@ -271,7 +249,6 @@ public class Dictionary {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
-        sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("    extendOne: ").append(toIndentedString(extendOne)).append("\n");
         sb.append("    extendTwo: ").append(toIndentedString(extendTwo)).append("\n");
         sb.append("    parentCode: ").append(toIndentedString(parentCode)).append("\n");

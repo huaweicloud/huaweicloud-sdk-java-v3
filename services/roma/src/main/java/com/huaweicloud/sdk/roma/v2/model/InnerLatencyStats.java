@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** InnerLatencyStats */
@@ -17,7 +16,7 @@ public class InnerLatencyStats {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_inner_latency")
 
-    private BigDecimal avgInnerLatency;
+    private Float avgInnerLatency;
 
     public InnerLatencyStats withMaxInnerLatency(Integer maxInnerLatency) {
         this.maxInnerLatency = maxInnerLatency;
@@ -35,7 +34,7 @@ public class InnerLatencyStats {
         this.maxInnerLatency = maxInnerLatency;
     }
 
-    public InnerLatencyStats withAvgInnerLatency(BigDecimal avgInnerLatency) {
+    public InnerLatencyStats withAvgInnerLatency(Float avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
         return this;
     }
@@ -43,11 +42,11 @@ public class InnerLatencyStats {
     /** 平均网关内部延时
      * 
      * @return avgInnerLatency */
-    public BigDecimal getAvgInnerLatency() {
+    public Float getAvgInnerLatency() {
         return avgInnerLatency;
     }
 
-    public void setAvgInnerLatency(BigDecimal avgInnerLatency) {
+    public void setAvgInnerLatency(Float avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
     }
 

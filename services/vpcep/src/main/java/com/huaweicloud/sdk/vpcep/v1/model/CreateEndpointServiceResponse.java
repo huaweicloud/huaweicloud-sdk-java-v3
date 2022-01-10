@@ -123,6 +123,11 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_id")
+
+    private String poolId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approval_enabled")
 
     private Boolean approvalEnabled;
@@ -497,6 +502,22 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         this.vpcId = vpcId;
     }
 
+    public CreateEndpointServiceResponse withPoolId(String poolId) {
+        this.poolId = poolId;
+        return this;
+    }
+
+    /** 终端节点服务对应的集群id
+     * 
+     * @return poolId */
+    public String getPoolId() {
+        return poolId;
+    }
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
     public CreateEndpointServiceResponse withApprovalEnabled(Boolean approvalEnabled) {
         this.approvalEnabled = approvalEnabled;
         return this;
@@ -709,6 +730,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             && Objects.equals(this.serviceName, createEndpointServiceResponse.serviceName)
             && Objects.equals(this.serverType, createEndpointServiceResponse.serverType)
             && Objects.equals(this.vpcId, createEndpointServiceResponse.vpcId)
+            && Objects.equals(this.poolId, createEndpointServiceResponse.poolId)
             && Objects.equals(this.approvalEnabled, createEndpointServiceResponse.approvalEnabled)
             && Objects.equals(this.status, createEndpointServiceResponse.status)
             && Objects.equals(this.serviceType, createEndpointServiceResponse.serviceType)
@@ -729,6 +751,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             serviceName,
             serverType,
             vpcId,
+            poolId,
             approvalEnabled,
             status,
             serviceType,
@@ -751,6 +774,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
         sb.append("    serverType: ").append(toIndentedString(serverType)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    approvalEnabled: ").append(toIndentedString(approvalEnabled)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");

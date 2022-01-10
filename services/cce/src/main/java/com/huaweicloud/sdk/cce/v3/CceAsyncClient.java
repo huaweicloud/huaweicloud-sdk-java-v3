@@ -157,7 +157,9 @@ public class CceAsyncClient {
         return new AsyncInvoker<CreateNodeRequest, CreateNodeResponse>(request, CceMeta.createNode, hcClient);
     }
 
-    /** 创建节点池 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。 &gt;
+    /** 创建节点池
+     * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。1.21版本的集群创建节点池时支持绑定安全组，每个节点池最多绑定五个安全组。更新节点池的安全组后，只针对新创的pod生效，建议驱逐节点上原有的pod。
+     * &gt;
      * 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      *
@@ -167,7 +169,9 @@ public class CceAsyncClient {
         return hcClient.asyncInvokeHttp(request, CceMeta.createNodePool);
     }
 
-    /** 创建节点池 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。 &gt;
+    /** 创建节点池
+     * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。1.21版本的集群创建节点池时支持绑定安全组，每个节点池最多绑定五个安全组。更新节点池的安全组后，只针对新创的pod生效，建议驱逐节点上原有的pod。
+     * &gt;
      * 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      *
@@ -506,6 +510,22 @@ public class CceAsyncClient {
     public AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse> showNodePoolAsyncInvoker(
         ShowNodePoolRequest request) {
         return new AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse>(request, CceMeta.showNodePool, hcClient);
+    }
+
+    /** 查询CCE服务下的资源配额。 该API用于查询CCE服务下的资源配额。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return CompletableFuture<ShowQuotasResponse> */
+    public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showQuotas);
+    }
+
+    /** 查询CCE服务下的资源配额。 该API用于查询CCE服务下的资源配额。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> */
+    public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
+        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, CceMeta.showQuotas, hcClient);
     }
 
     /** 更新AddonInstance 更新插件实例的功能。

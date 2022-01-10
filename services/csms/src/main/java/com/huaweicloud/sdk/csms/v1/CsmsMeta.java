@@ -300,38 +300,6 @@ public class CsmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSecretStageRequest, ListSecretStageResponse> listSecretStage =
-        genForlistSecretStage();
-
-    private static HttpRequestDef<ListSecretStageRequest, ListSecretStageResponse> genForlistSecretStage() {
-        // basic
-        HttpRequestDef.Builder<ListSecretStageRequest, ListSecretStageResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSecretStageRequest.class, ListSecretStageResponse.class)
-                .withName("ListSecretStage")
-                .withUri("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("secret_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretStageRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
-        builder.<String>withRequestField("stage_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretStageRequest::getStageName, (req, v) -> {
-                req.setStageName(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListSecretTagsRequest, ListSecretTagsResponse> listSecretTags =
         genForlistSecretTags();
 
@@ -375,6 +343,20 @@ public class CsmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecretVersionsRequest::getSecretName, (req, v) -> {
                 req.setSecretName(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecretVersionsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecretVersionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -455,6 +437,38 @@ public class CsmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecretRequest::getSecretName, (req, v) -> {
                 req.setSecretName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecretStageRequest, ShowSecretStageResponse> showSecretStage =
+        genForshowSecretStage();
+
+    private static HttpRequestDef<ShowSecretStageRequest, ShowSecretStageResponse> genForshowSecretStage() {
+        // basic
+        HttpRequestDef.Builder<ShowSecretStageRequest, ShowSecretStageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSecretStageRequest.class, ShowSecretStageResponse.class)
+                .withName("ShowSecretStage")
+                .withUri("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("secret_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecretStageRequest::getSecretName, (req, v) -> {
+                req.setSecretName(v);
+            }));
+        builder.<String>withRequestField("stage_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecretStageRequest::getStageName, (req, v) -> {
+                req.setStageName(v);
             }));
 
         // response

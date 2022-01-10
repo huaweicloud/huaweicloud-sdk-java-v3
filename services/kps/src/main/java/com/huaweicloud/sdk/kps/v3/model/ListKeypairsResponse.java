@@ -17,6 +17,11 @@ public class ListKeypairsResponse extends SdkResponse {
 
     private List<Keypairs> keypairs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListKeypairsResponse withKeypairs(List<Keypairs> keypairs) {
         this.keypairs = keypairs;
         return this;
@@ -49,6 +54,31 @@ public class ListKeypairsResponse extends SdkResponse {
         this.keypairs = keypairs;
     }
 
+    public ListKeypairsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListKeypairsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /** Get pageInfo
+     * 
+     * @return pageInfo */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -58,12 +88,13 @@ public class ListKeypairsResponse extends SdkResponse {
             return false;
         }
         ListKeypairsResponse listKeypairsResponse = (ListKeypairsResponse) o;
-        return Objects.equals(this.keypairs, listKeypairsResponse.keypairs);
+        return Objects.equals(this.keypairs, listKeypairsResponse.keypairs)
+            && Objects.equals(this.pageInfo, listKeypairsResponse.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keypairs);
+        return Objects.hash(keypairs, pageInfo);
     }
 
     @Override
@@ -71,6 +102,7 @@ public class ListKeypairsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListKeypairsResponse {\n");
         sb.append("    keypairs: ").append(toIndentedString(keypairs)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

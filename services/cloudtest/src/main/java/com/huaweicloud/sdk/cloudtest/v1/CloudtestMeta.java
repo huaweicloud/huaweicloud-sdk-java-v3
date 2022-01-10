@@ -270,13 +270,13 @@ public class CloudtestMeta {
 
         // response
 
-        builder.<List<ShowIssuesByPlanIdResponseBody>>withResponseField("body",
+        builder.<List<TestPlanIssueDetail>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowIssuesByPlanIdResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(ShowIssuesByPlanIdResponseBody.class));
+            }).withInnerContainerType(TestPlanIssueDetail.class));
 
         return builder.build();
     }
@@ -324,13 +324,73 @@ public class CloudtestMeta {
 
         // response
 
-        builder.<List<ShowPlanJournalsResponseBody>>withResponseField("body",
+        builder.<List<TestPlanJournalList>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowPlanJournalsResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(ShowPlanJournalsResponseBody.class));
+            }).withInnerContainerType(TestPlanJournalList.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPlanListRequest, ShowPlanListResponse> showPlanList = genForshowPlanList();
+
+    private static HttpRequestDef<ShowPlanListRequest, ShowPlanListResponse> genForshowPlanList() {
+        // basic
+        HttpRequestDef.Builder<ShowPlanListRequest, ShowPlanListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPlanListRequest.class, ShowPlanListResponse.class)
+                .withName("ShowPlanList")
+                .withUri("/v2/projects/{project_id}/plans")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPlanListRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowPlanListRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowPlanListRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPlanListRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("current_stage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPlanListRequest::getCurrentStage, (req, v) -> {
+                req.setCurrentStage(v);
+            }));
+
+        // response
+
+        builder.<List<TestPlanDetail>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowPlanListResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(TestPlanDetail.class));
 
         return builder.build();
     }
@@ -353,20 +413,6 @@ public class CloudtestMeta {
             f -> f.withMarshaller(ShowPlansRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
             }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowPlansRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Long>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowPlansRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -381,16 +427,30 @@ public class CloudtestMeta {
             f -> f.withMarshaller(ShowPlansRequest::getCurrentStage, (req, v) -> {
                 req.setCurrentStage(v);
             }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPlansRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPlansRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
-        builder.<List<ShowPlansResponseBody>>withResponseField("body",
+        builder.<List<TestPlanDetail>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowPlansResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(ShowPlansResponseBody.class));
+            }).withInnerContainerType(TestPlanDetail.class));
 
         return builder.build();
     }

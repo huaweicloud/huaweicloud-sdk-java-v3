@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 创建分布式实例时使用。
+ * 实例部署形态。
  */
 public class OpenGaussHa  {
 
@@ -103,85 +103,6 @@ public class OpenGaussHa  {
     
     
     private ModeEnum mode;
-    /**
-     * 备机同步参数。  取值：  GaussDB(for openGauss)为“sync\"  说明： - “sync”为同步模式。
-     */
-    public static final class ReplicationModeEnum {
-
-        
-        /**
-         * Enum SYNC for value: "sync"
-         */
-        public static final ReplicationModeEnum SYNC = new ReplicationModeEnum("sync");
-        
-
-        private static final Map<String, ReplicationModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ReplicationModeEnum> createStaticFields() {
-            Map<String, ReplicationModeEnum> map = new HashMap<>();
-            map.put("sync", SYNC);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ReplicationModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ReplicationModeEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            ReplicationModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReplicationModeEnum(value);
-            }
-            return result;
-        }
-
-        public static ReplicationModeEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            ReplicationModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ReplicationModeEnum) {
-                return this.value.equals(((ReplicationModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication_mode")
-    
-    
-    private ReplicationModeEnum replicationMode;
     /**
      * 指定实例一致性类型，取值范围：strong（强一致性） | eventual(最终一致性)，不分区大小写。
      */
@@ -267,6 +188,85 @@ public class OpenGaussHa  {
     
     
     private ConsistencyEnum consistency;
+    /**
+     * 备机同步参数。  取值：  GaussDB(for openGauss)为“sync\"  说明： - “sync”为同步模式。
+     */
+    public static final class ReplicationModeEnum {
+
+        
+        /**
+         * Enum SYNC for value: "sync"
+         */
+        public static final ReplicationModeEnum SYNC = new ReplicationModeEnum("sync");
+        
+
+        private static final Map<String, ReplicationModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReplicationModeEnum> createStaticFields() {
+            Map<String, ReplicationModeEnum> map = new HashMap<>();
+            map.put("sync", SYNC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ReplicationModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ReplicationModeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ReplicationModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ReplicationModeEnum(value);
+            }
+            return result;
+        }
+
+        public static ReplicationModeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ReplicationModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ReplicationModeEnum) {
+                return this.value.equals(((ReplicationModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="replication_mode")
+    
+    
+    private ReplicationModeEnum replicationMode;
 
     public OpenGaussHa withMode(ModeEnum mode) {
         this.mode = mode;
@@ -286,28 +286,6 @@ public class OpenGaussHa  {
 
     public void setMode(ModeEnum mode) {
         this.mode = mode;
-    }
-
-    
-
-    public OpenGaussHa withReplicationMode(ReplicationModeEnum replicationMode) {
-        this.replicationMode = replicationMode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 备机同步参数。  取值：  GaussDB(for openGauss)为“sync\"  说明： - “sync”为同步模式。
-     * @return replicationMode
-     */
-    public ReplicationModeEnum getReplicationMode() {
-        return replicationMode;
-    }
-
-    public void setReplicationMode(ReplicationModeEnum replicationMode) {
-        this.replicationMode = replicationMode;
     }
 
     
@@ -334,6 +312,28 @@ public class OpenGaussHa  {
 
     
 
+    public OpenGaussHa withReplicationMode(ReplicationModeEnum replicationMode) {
+        this.replicationMode = replicationMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 备机同步参数。  取值：  GaussDB(for openGauss)为“sync\"  说明： - “sync”为同步模式。
+     * @return replicationMode
+     */
+    public ReplicationModeEnum getReplicationMode() {
+        return replicationMode;
+    }
+
+    public void setReplicationMode(ReplicationModeEnum replicationMode) {
+        this.replicationMode = replicationMode;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -344,20 +344,20 @@ public class OpenGaussHa  {
         }
         OpenGaussHa openGaussHa = (OpenGaussHa) o;
         return Objects.equals(this.mode, openGaussHa.mode) &&
-            Objects.equals(this.replicationMode, openGaussHa.replicationMode) &&
-            Objects.equals(this.consistency, openGaussHa.consistency);
+            Objects.equals(this.consistency, openGaussHa.consistency) &&
+            Objects.equals(this.replicationMode, openGaussHa.replicationMode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(mode, replicationMode, consistency);
+        return Objects.hash(mode, consistency, replicationMode);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OpenGaussHa {\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-        sb.append("    replicationMode: ").append(toIndentedString(replicationMode)).append("\n");
         sb.append("    consistency: ").append(toIndentedString(consistency)).append("\n");
+        sb.append("    replicationMode: ").append(toIndentedString(replicationMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

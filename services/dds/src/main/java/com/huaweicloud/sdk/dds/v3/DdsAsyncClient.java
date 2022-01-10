@@ -528,7 +528,7 @@ public class DdsAsyncClient {
             hcClient);
     }
 
-    /** 查询实例列表 根据指定条件查询实例列表。
+    /** 查询实例列表和详情 根据指定条件查询实例列表和详情。
      *
      * @param ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse> */
@@ -536,7 +536,7 @@ public class DdsAsyncClient {
         return hcClient.asyncInvokeHttp(request, DdsMeta.listInstances);
     }
 
-    /** 查询实例列表 根据指定条件查询实例列表。
+    /** 查询实例列表和详情 根据指定条件查询实例列表和详情。
      *
      * @param ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse> */

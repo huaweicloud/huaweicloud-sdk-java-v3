@@ -19,6 +19,24 @@ public class VssAsyncClient {
         return new ClientBuilder<>(VssAsyncClient::new);
     }
 
+    /** 认证域名资产 认证租户的域名资产
+     *
+     * @param AuthorizeDomainsRequest 请求对象
+     * @return CompletableFuture<AuthorizeDomainsResponse> */
+    public CompletableFuture<AuthorizeDomainsResponse> authorizeDomainsAsync(AuthorizeDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.authorizeDomains);
+    }
+
+    /** 认证域名资产 认证租户的域名资产
+     *
+     * @param AuthorizeDomainsRequest 请求对象
+     * @return AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse> */
+    public AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse> authorizeDomainsAsyncInvoker(
+        AuthorizeDomainsRequest request) {
+        return new AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>(request, VssMeta.authorizeDomains,
+            hcClient);
+    }
+
     /** 创建域名资产 创建租户的域名资产
      *
      * @param CreateDomainsRequest 请求对象
@@ -67,6 +85,54 @@ public class VssAsyncClient {
      * @return AsyncInvoker<ListDomainsRequest, ListDomainsResponse> */
     public AsyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsAsyncInvoker(ListDomainsRequest request) {
         return new AsyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, VssMeta.listDomains, hcClient);
+    }
+
+    /** 获取扫描结果 获取域名漏洞扫描结果
+     *
+     * @param ShowResultsRequest 请求对象
+     * @return CompletableFuture<ShowResultsResponse> */
+    public CompletableFuture<ShowResultsResponse> showResultsAsync(ShowResultsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.showResults);
+    }
+
+    /** 获取扫描结果 获取域名漏洞扫描结果
+     *
+     * @param ShowResultsRequest 请求对象
+     * @return AsyncInvoker<ShowResultsRequest, ShowResultsResponse> */
+    public AsyncInvoker<ShowResultsRequest, ShowResultsResponse> showResultsAsyncInvoker(ShowResultsRequest request) {
+        return new AsyncInvoker<ShowResultsRequest, ShowResultsResponse>(request, VssMeta.showResults, hcClient);
+    }
+
+    /** 创建扫描任务并启动 创建域名漏洞扫描任务并启动
+     *
+     * @param CreateTasksRequest 请求对象
+     * @return CompletableFuture<CreateTasksResponse> */
+    public CompletableFuture<CreateTasksResponse> createTasksAsync(CreateTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.createTasks);
+    }
+
+    /** 创建扫描任务并启动 创建域名漏洞扫描任务并启动
+     *
+     * @param CreateTasksRequest 请求对象
+     * @return AsyncInvoker<CreateTasksRequest, CreateTasksResponse> */
+    public AsyncInvoker<CreateTasksRequest, CreateTasksResponse> createTasksAsyncInvoker(CreateTasksRequest request) {
+        return new AsyncInvoker<CreateTasksRequest, CreateTasksResponse>(request, VssMeta.createTasks, hcClient);
+    }
+
+    /** 获取扫描任务详情 获取域名漏洞扫描任务详情
+     *
+     * @param ShowTasksRequest 请求对象
+     * @return CompletableFuture<ShowTasksResponse> */
+    public CompletableFuture<ShowTasksResponse> showTasksAsync(ShowTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.showTasks);
+    }
+
+    /** 获取扫描任务详情 获取域名漏洞扫描任务详情
+     *
+     * @param ShowTasksRequest 请求对象
+     * @return AsyncInvoker<ShowTasksRequest, ShowTasksResponse> */
+    public AsyncInvoker<ShowTasksRequest, ShowTasksResponse> showTasksAsyncInvoker(ShowTasksRequest request) {
+        return new AsyncInvoker<ShowTasksRequest, ShowTasksResponse>(request, VssMeta.showTasks, hcClient);
     }
 
 }

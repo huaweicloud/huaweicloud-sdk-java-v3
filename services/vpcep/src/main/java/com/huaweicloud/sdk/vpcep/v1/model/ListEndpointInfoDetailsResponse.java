@@ -196,6 +196,87 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
 
     private List<String> activeStatus = null;
 
+    /** 终端节点是否可用。 ● enable：启用 ● disable：不启用 */
+    public static final class EnableStatusEnum {
+
+        /** Enum ENABLE for value: "enable" */
+        public static final EnableStatusEnum ENABLE = new EnableStatusEnum("enable");
+
+        /** Enum DISABLE for value: "disable" */
+        public static final EnableStatusEnum DISABLE = new EnableStatusEnum("disable");
+
+        private static final Map<String, EnableStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EnableStatusEnum> createStaticFields() {
+            Map<String, EnableStatusEnum> map = new HashMap<>();
+            map.put("enable", ENABLE);
+            map.put("disable", DISABLE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EnableStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EnableStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            EnableStatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new EnableStatusEnum(value);
+            }
+            return result;
+        }
+
+        public static EnableStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            EnableStatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EnableStatusEnum) {
+                return this.value.equals(((EnableStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_status")
+
+    private EnableStatusEnum enableStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "specification_name")
+
+    private String specificationName;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_service_name")
 
@@ -355,6 +436,38 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
 
     public void setActiveStatus(List<String> activeStatus) {
         this.activeStatus = activeStatus;
+    }
+
+    public ListEndpointInfoDetailsResponse withEnableStatus(EnableStatusEnum enableStatus) {
+        this.enableStatus = enableStatus;
+        return this;
+    }
+
+    /** 终端节点是否可用。 ● enable：启用 ● disable：不启用
+     * 
+     * @return enableStatus */
+    public EnableStatusEnum getEnableStatus() {
+        return enableStatus;
+    }
+
+    public void setEnableStatus(EnableStatusEnum enableStatus) {
+        this.enableStatus = enableStatus;
+    }
+
+    public ListEndpointInfoDetailsResponse withSpecificationName(String specificationName) {
+        this.specificationName = specificationName;
+        return this;
+    }
+
+    /** 终端节点服务规格的名称。
+     * 
+     * @return specificationName */
+    public String getSpecificationName() {
+        return specificationName;
+    }
+
+    public void setSpecificationName(String specificationName) {
+        this.specificationName = specificationName;
     }
 
     public ListEndpointInfoDetailsResponse withEndpointServiceName(String endpointServiceName) {
@@ -700,6 +813,8 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             && Objects.equals(this.serviceType, listEndpointInfoDetailsResponse.serviceType)
             && Objects.equals(this.status, listEndpointInfoDetailsResponse.status)
             && Objects.equals(this.activeStatus, listEndpointInfoDetailsResponse.activeStatus)
+            && Objects.equals(this.enableStatus, listEndpointInfoDetailsResponse.enableStatus)
+            && Objects.equals(this.specificationName, listEndpointInfoDetailsResponse.specificationName)
             && Objects.equals(this.endpointServiceName, listEndpointInfoDetailsResponse.endpointServiceName)
             && Objects.equals(this.markerId, listEndpointInfoDetailsResponse.markerId)
             && Objects.equals(this.endpointServiceId, listEndpointInfoDetailsResponse.endpointServiceId)
@@ -724,6 +839,8 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             serviceType,
             status,
             activeStatus,
+            enableStatus,
+            specificationName,
             endpointServiceName,
             markerId,
             endpointServiceId,
@@ -750,6 +867,8 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    activeStatus: ").append(toIndentedString(activeStatus)).append("\n");
+        sb.append("    enableStatus: ").append(toIndentedString(enableStatus)).append("\n");
+        sb.append("    specificationName: ").append(toIndentedString(specificationName)).append("\n");
         sb.append("    endpointServiceName: ").append(toIndentedString(endpointServiceName)).append("\n");
         sb.append("    markerId: ").append(toIndentedString(markerId)).append("\n");
         sb.append("    endpointServiceId: ").append(toIndentedString(endpointServiceId)).append("\n");

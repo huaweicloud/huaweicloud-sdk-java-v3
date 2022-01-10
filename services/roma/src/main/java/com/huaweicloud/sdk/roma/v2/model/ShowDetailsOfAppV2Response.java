@@ -277,7 +277,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_type")
 
-    private Object romaAppType;
+    private String romaAppType;
 
     public ShowDetailsOfAppV2Response withId(String id) {
         this.id = id;
@@ -439,7 +439,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.appType = appType;
     }
 
-    public ShowDetailsOfAppV2Response withRomaAppType(Object romaAppType) {
+    public ShowDetailsOfAppV2Response withRomaAppType(String romaAppType) {
         this.romaAppType = romaAppType;
         return this;
     }
@@ -447,11 +447,11 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     /** ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用
      * 
      * @return romaAppType */
-    public Object getRomaAppType() {
+    public String getRomaAppType() {
         return romaAppType;
     }
 
-    public void setRomaAppType(Object romaAppType) {
+    public void setRomaAppType(String romaAppType) {
         this.romaAppType = romaAppType;
     }
 

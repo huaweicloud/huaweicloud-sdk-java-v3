@@ -17,6 +17,24 @@ public class VssClient {
         return new ClientBuilder<>(VssClient::new);
     }
 
+    /** 认证域名资产 认证租户的域名资产
+     *
+     * @param AuthorizeDomainsRequest 请求对象
+     * @return AuthorizeDomainsResponse */
+    public AuthorizeDomainsResponse authorizeDomains(AuthorizeDomainsRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.authorizeDomains);
+    }
+
+    /** 认证域名资产 认证租户的域名资产
+     *
+     * @param AuthorizeDomainsRequest 请求对象
+     * @return SyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse> */
+    public SyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse> authorizeDomainsInvoker(
+        AuthorizeDomainsRequest request) {
+        return new SyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>(request, VssMeta.authorizeDomains,
+            hcClient);
+    }
+
     /** 创建域名资产 创建租户的域名资产
      *
      * @param CreateDomainsRequest 请求对象
@@ -63,6 +81,54 @@ public class VssClient {
      * @return SyncInvoker<ListDomainsRequest, ListDomainsResponse> */
     public SyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsInvoker(ListDomainsRequest request) {
         return new SyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, VssMeta.listDomains, hcClient);
+    }
+
+    /** 获取扫描结果 获取域名漏洞扫描结果
+     *
+     * @param ShowResultsRequest 请求对象
+     * @return ShowResultsResponse */
+    public ShowResultsResponse showResults(ShowResultsRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.showResults);
+    }
+
+    /** 获取扫描结果 获取域名漏洞扫描结果
+     *
+     * @param ShowResultsRequest 请求对象
+     * @return SyncInvoker<ShowResultsRequest, ShowResultsResponse> */
+    public SyncInvoker<ShowResultsRequest, ShowResultsResponse> showResultsInvoker(ShowResultsRequest request) {
+        return new SyncInvoker<ShowResultsRequest, ShowResultsResponse>(request, VssMeta.showResults, hcClient);
+    }
+
+    /** 创建扫描任务并启动 创建域名漏洞扫描任务并启动
+     *
+     * @param CreateTasksRequest 请求对象
+     * @return CreateTasksResponse */
+    public CreateTasksResponse createTasks(CreateTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.createTasks);
+    }
+
+    /** 创建扫描任务并启动 创建域名漏洞扫描任务并启动
+     *
+     * @param CreateTasksRequest 请求对象
+     * @return SyncInvoker<CreateTasksRequest, CreateTasksResponse> */
+    public SyncInvoker<CreateTasksRequest, CreateTasksResponse> createTasksInvoker(CreateTasksRequest request) {
+        return new SyncInvoker<CreateTasksRequest, CreateTasksResponse>(request, VssMeta.createTasks, hcClient);
+    }
+
+    /** 获取扫描任务详情 获取域名漏洞扫描任务详情
+     *
+     * @param ShowTasksRequest 请求对象
+     * @return ShowTasksResponse */
+    public ShowTasksResponse showTasks(ShowTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.showTasks);
+    }
+
+    /** 获取扫描任务详情 获取域名漏洞扫描任务详情
+     *
+     * @param ShowTasksRequest 请求对象
+     * @return SyncInvoker<ShowTasksRequest, ShowTasksResponse> */
+    public SyncInvoker<ShowTasksRequest, ShowTasksResponse> showTasksInvoker(ShowTasksRequest request) {
+        return new SyncInvoker<ShowTasksRequest, ShowTasksResponse>(request, VssMeta.showTasks, hcClient);
     }
 
 }

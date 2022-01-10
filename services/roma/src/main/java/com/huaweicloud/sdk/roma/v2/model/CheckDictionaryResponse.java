@@ -30,11 +30,6 @@ public class CheckDictionaryResponse extends SdkResponse {
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order")
-
-    private Integer order;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_one")
 
     private String extendOne;
@@ -126,22 +121,6 @@ public class CheckDictionaryResponse extends SdkResponse {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public CheckDictionaryResponse withOrder(Integer order) {
-        this.order = order;
-        return this;
-    }
-
-    /** 字典排序，值越小顺序越靠前 minimum: 1 maximum: 100
-     * 
-     * @return order */
-    public Integer getOrder() {
-        return order;
-    }
-
-    public void setOrder(Integer order) {
-        this.order = order;
     }
 
     public CheckDictionaryResponse withExtendOne(String extendOne) {
@@ -253,7 +232,6 @@ public class CheckDictionaryResponse extends SdkResponse {
             && Objects.equals(this.name, checkDictionaryResponse.name)
             && Objects.equals(this.remark, checkDictionaryResponse.remark)
             && Objects.equals(this.code, checkDictionaryResponse.code)
-            && Objects.equals(this.order, checkDictionaryResponse.order)
             && Objects.equals(this.extendOne, checkDictionaryResponse.extendOne)
             && Objects.equals(this.extendTwo, checkDictionaryResponse.extendTwo)
             && Objects.equals(this.parentCode, checkDictionaryResponse.parentCode)
@@ -264,8 +242,7 @@ public class CheckDictionaryResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, remark, code, order, extendOne, extendTwo, parentCode, type, createTime, updateTime);
+        return Objects.hash(id, name, remark, code, extendOne, extendTwo, parentCode, type, createTime, updateTime);
     }
 
     @Override
@@ -276,7 +253,6 @@ public class CheckDictionaryResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
-        sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("    extendOne: ").append(toIndentedString(extendOne)).append("\n");
         sb.append("    extendTwo: ").append(toIndentedString(extendTwo)).append("\n");
         sb.append("    parentCode: ").append(toIndentedString(parentCode)).append("\n");

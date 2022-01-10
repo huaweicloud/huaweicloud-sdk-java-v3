@@ -7,8 +7,6 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
-import java.util.List;
-
 @SuppressWarnings("unchecked")
 public class CloudIDEMeta {
 
@@ -79,23 +77,22 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListStacksByTagRequest, ListStacksByTagResponse> listStacksByTag =
-        genForlistStacksByTag();
+    public static final HttpRequestDef<ListStacksRequest, ListStacksResponse> listStacks = genForlistStacks();
 
-    private static HttpRequestDef<ListStacksByTagRequest, ListStacksByTagResponse> genForlistStacksByTag() {
+    private static HttpRequestDef<ListStacksRequest, ListStacksResponse> genForlistStacks() {
         // basic
-        HttpRequestDef.Builder<ListStacksByTagRequest, ListStacksByTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListStacksByTagRequest.class, ListStacksByTagResponse.class)
-                .withName("ListStacksByTag")
-                .withUri("/v2/stacks")
+        HttpRequestDef.Builder<ListStacksRequest, ListStacksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStacksRequest.class, ListStacksResponse.class)
+                .withName("ListStacks")
+                .withUri("/v2/stacks/tag")
                 .withContentType("application/json");
 
         // requests
-        builder.<List<String>>withRequestField("tags",
+        builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStacksByTagRequest::getTags, (req, v) -> {
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStacksRequest::getTags, (req, v) -> {
                 req.setTags(v);
             }));
 

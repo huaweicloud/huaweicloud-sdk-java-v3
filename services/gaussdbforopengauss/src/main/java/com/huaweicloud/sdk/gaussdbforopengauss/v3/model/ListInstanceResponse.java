@@ -188,13 +188,6 @@ public class ListInstanceResponse  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="related_instance")
-    
-    
-    private List<Object> relatedInstance = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
     
@@ -295,7 +288,7 @@ public class ListInstanceResponse  {
 
 
     /**
-     * 实例状态。  取值：  值为“BUILD”，表示实例正在创建。  值为“ACTIVE”，表示实例正常。  值为“FAILED”，表示实例异常。  值为“FROZEN”，表示实例冻结。  值为“EXPANDING”，表示实例正在扩容CN或DN。  值为“REBOOTING”，表示实例正在重启。  值为“UPGRADING”，表示实例正在升级。  值为“BACKING UP”，表示实例正在进行备份。  值为“STORAGE FULL”，表示实例磁盘空间满。
+     * 实例状态。  取值：  值为“BUILD”，表示实例正在创建。  值为“ACTIVE”，表示实例正常。  值为“FAILED”，表示实例异常。  值为“FROZEN”，表示实例冻结。  值为“EXPANDING”，表示实例正在扩容CN或DN。  值为“REBOOTING”，表示实例正在重启。  值为“UPGRADING”，表示实例正在升级。  值为“BACKING UP”，表示实例正在进行备份。  值为“REDUCING REPLICATION”，表示实例正在降副本。  值为“STORAGE FULL”，表示实例磁盘空间满。
      * @return status
      */
     public String getStatus() {
@@ -331,7 +324,7 @@ public class ListInstanceResponse  {
     }
 
     /**
-     * 实例内网IP地址列表。CN在的弹性云服务器创建成功后该值存在，其他情况下为空字符串。
+     * 实例内网IP地址列表。绑定弹性公网IP后，该值不为空。
      * @return privateIps
      */
     public List<String> getPrivateIps() {
@@ -411,7 +404,7 @@ public class ListInstanceResponse  {
 
 
     /**
-     * 实例类型，取值为 \"Enterprise\"，对应于分布式实例（企业版）。
+     * 实例类型，取值为 \"enterprise\"，对应于分布式实例（企业版）。取值为\"Ha\"，对应于主备版实例。
      * @return type
      */
     public String getType() {
@@ -462,7 +455,7 @@ public class ListInstanceResponse  {
 
 
     /**
-     * 实例副本数。说明：需添加白名单，才会开放显示。
+     * 实例副本数。
      * @return replicaNum
      */
     public Integer getReplicaNum() {
@@ -747,7 +740,7 @@ public class ListInstanceResponse  {
 
 
     /**
-     * 数据库切换策略。取值为“reliability”或“availability”，分别对应于可靠性优先和可用性优先。
+     * 数据库切换策略。取值为“reliability”或“availability”，分别对应于可靠性优先和可用性优先。 若创建时没有选择切换策略，则不予显示。
      * @return switchStrategy
      */
     public String getSwitchStrategy() {
@@ -807,42 +800,6 @@ public class ListInstanceResponse  {
 
     public void setMaintenanceWindow(String maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
-    }
-
-    
-
-    public ListInstanceResponse withRelatedInstance(List<Object> relatedInstance) {
-        this.relatedInstance = relatedInstance;
-        return this;
-    }
-
-    
-    public ListInstanceResponse addRelatedInstanceItem(Object relatedInstanceItem) {
-        if(this.relatedInstance == null) {
-            this.relatedInstance = new ArrayList<>();
-        }
-        this.relatedInstance.add(relatedInstanceItem);
-        return this;
-    }
-
-    public ListInstanceResponse withRelatedInstance(Consumer<List<Object>> relatedInstanceSetter) {
-        if(this.relatedInstance == null) {
-            this.relatedInstance = new ArrayList<>();
-        }
-        relatedInstanceSetter.accept(this.relatedInstance);
-        return this;
-    }
-
-    /**
-     * 所关联的数据库实例列表。GaussDB(for openGauss)不涉及该参数。
-     * @return relatedInstance
-     */
-    public List<Object> getRelatedInstance() {
-        return relatedInstance;
-    }
-
-    public void setRelatedInstance(List<Object> relatedInstance) {
-        this.relatedInstance = relatedInstance;
     }
 
     
@@ -936,7 +893,7 @@ public class ListInstanceResponse  {
 
 
     /**
-     * 磁盘加密密钥ID。
+     * 磁盘加密密钥ID。只有创建磁盘加密实例才会显示该参数。
      * @return diskEncryptionId
      */
     public String getDiskEncryptionId() {
@@ -1023,7 +980,7 @@ public class ListInstanceResponse  {
     }
 
     /**
-     * 标签列表，没有标签默认为空数组。
+     * 标签列表，没有标签不返回该参数。
      * @return tags
      */
     public List<Object> getTags() {
@@ -1068,7 +1025,6 @@ public class ListInstanceResponse  {
             Objects.equals(this.switchStrategy, listInstanceResponse.switchStrategy) &&
             Objects.equals(this.backupStrategy, listInstanceResponse.backupStrategy) &&
             Objects.equals(this.maintenanceWindow, listInstanceResponse.maintenanceWindow) &&
-            Objects.equals(this.relatedInstance, listInstanceResponse.relatedInstance) &&
             Objects.equals(this.nodes, listInstanceResponse.nodes) &&
             Objects.equals(this.enterpriseProjectId, listInstanceResponse.enterpriseProjectId) &&
             Objects.equals(this.instanceMode, listInstanceResponse.instanceMode) &&
@@ -1079,7 +1035,7 @@ public class ListInstanceResponse  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, privateIps, publicIps, port, type, ha, replicaNum, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, switchStrategy, backupStrategy, maintenanceWindow, relatedInstance, nodes, enterpriseProjectId, instanceMode, diskEncryptionId, chargeInfo, timeZone, tags);
+        return Objects.hash(id, name, status, privateIps, publicIps, port, type, ha, replicaNum, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, switchStrategy, backupStrategy, maintenanceWindow, nodes, enterpriseProjectId, instanceMode, diskEncryptionId, chargeInfo, timeZone, tags);
     }
     @Override
     public String toString() {
@@ -1108,7 +1064,6 @@ public class ListInstanceResponse  {
         sb.append("    switchStrategy: ").append(toIndentedString(switchStrategy)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    maintenanceWindow: ").append(toIndentedString(maintenanceWindow)).append("\n");
-        sb.append("    relatedInstance: ").append(toIndentedString(relatedInstance)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    instanceMode: ").append(toIndentedString(instanceMode)).append("\n");

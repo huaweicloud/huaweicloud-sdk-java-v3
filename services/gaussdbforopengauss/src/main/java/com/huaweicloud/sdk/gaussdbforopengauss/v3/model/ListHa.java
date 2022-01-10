@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 获取分布式实例时返回。
+ * 获取分布式/主备版实例时返回。
  */
 public class ListHa  {
 

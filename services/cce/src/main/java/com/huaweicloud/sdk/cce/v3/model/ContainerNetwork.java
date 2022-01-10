@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** Container network parameters. */
 public class ContainerNetwork {
@@ -103,6 +106,11 @@ public class ContainerNetwork {
 
     private String cidr;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cidrs")
+
+    private List<ContainerCIDR> cidrs = null;
+
     public ContainerNetwork withMode(ModeEnum mode) {
         this.mode = mode;
         return this;
@@ -129,8 +137,8 @@ public class ContainerNetwork {
         return this;
     }
 
-    /** 容器网络网段，建议使用网段10.0.0.0/12~19，172.16.0.0/16~19，192.168.0.0/16~19，如存在网段冲突，将自动重新选择。
-     * 当节点最大实例数为默认值110时，当前容器网段至少支持582个节点，此参数在集群创建后不可更改，请谨慎选择。
+    /** 容器网络网段，建议使用网段10.0.0.0/12~19，172.16.0.0/16~19，192.168.0.0/16~19，如存在网段冲突，将会报错。
+     * 此参数在集群创建后不可更改，请谨慎选择。（已废弃，如填写cidrs将忽略该cidr）
      * 
      * @return cidr */
     public String getCidr() {
@@ -139,6 +147,39 @@ public class ContainerNetwork {
 
     public void setCidr(String cidr) {
         this.cidr = cidr;
+    }
+
+    public ContainerNetwork withCidrs(List<ContainerCIDR> cidrs) {
+        this.cidrs = cidrs;
+        return this;
+    }
+
+    public ContainerNetwork addCidrsItem(ContainerCIDR cidrsItem) {
+        if (this.cidrs == null) {
+            this.cidrs = new ArrayList<>();
+        }
+        this.cidrs.add(cidrsItem);
+        return this;
+    }
+
+    public ContainerNetwork withCidrs(Consumer<List<ContainerCIDR>> cidrsSetter) {
+        if (this.cidrs == null) {
+            this.cidrs = new ArrayList<>();
+        }
+        cidrsSetter.accept(this.cidrs);
+        return this;
+    }
+
+    /** 容器网络网段列表。1.21及新版本集群使用cidrs字段，当集群网络类型为vpc-router类型时，支持多个容器网段；1.21之前版本若使用cidrs字段，则取值cidrs数组中的第一个cidr元素作为容器网络网段地址。
+     * 此参数在集群创建后不可更改，请谨慎选择。
+     * 
+     * @return cidrs */
+    public List<ContainerCIDR> getCidrs() {
+        return cidrs;
+    }
+
+    public void setCidrs(List<ContainerCIDR> cidrs) {
+        this.cidrs = cidrs;
     }
 
     @Override
@@ -150,12 +191,13 @@ public class ContainerNetwork {
             return false;
         }
         ContainerNetwork containerNetwork = (ContainerNetwork) o;
-        return Objects.equals(this.mode, containerNetwork.mode) && Objects.equals(this.cidr, containerNetwork.cidr);
+        return Objects.equals(this.mode, containerNetwork.mode) && Objects.equals(this.cidr, containerNetwork.cidr)
+            && Objects.equals(this.cidrs, containerNetwork.cidrs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mode, cidr);
+        return Objects.hash(mode, cidr, cidrs);
     }
 
     @Override
@@ -164,6 +206,7 @@ public class ContainerNetwork {
         sb.append("class ContainerNetwork {\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
+        sb.append("    cidrs: ").append(toIndentedString(cidrs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

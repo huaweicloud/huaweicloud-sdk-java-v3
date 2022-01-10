@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** BackendLatencyStats */
@@ -17,7 +16,7 @@ public class BackendLatencyStats {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_backend_latency")
 
-    private BigDecimal avgBackendLatency;
+    private Float avgBackendLatency;
 
     public BackendLatencyStats withMaxBackendLatency(Integer maxBackendLatency) {
         this.maxBackendLatency = maxBackendLatency;
@@ -35,7 +34,7 @@ public class BackendLatencyStats {
         this.maxBackendLatency = maxBackendLatency;
     }
 
-    public BackendLatencyStats withAvgBackendLatency(BigDecimal avgBackendLatency) {
+    public BackendLatencyStats withAvgBackendLatency(Float avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
         return this;
     }
@@ -43,11 +42,11 @@ public class BackendLatencyStats {
     /** 平均后端延时
      * 
      * @return avgBackendLatency */
-    public BigDecimal getAvgBackendLatency() {
+    public Float getAvgBackendLatency() {
         return avgBackendLatency;
     }
 
-    public void setAvgBackendLatency(BigDecimal avgBackendLatency) {
+    public void setAvgBackendLatency(Float avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
     }
 

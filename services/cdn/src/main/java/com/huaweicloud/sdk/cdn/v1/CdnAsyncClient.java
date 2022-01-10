@@ -496,6 +496,25 @@ public class CdnAsyncClient {
             hcClient);
     }
 
+    /** 修改域名全量配置接口 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权
+     *
+     * @param UpdateDomainFullConfigRequest 请求对象
+     * @return CompletableFuture<UpdateDomainFullConfigResponse> */
+    public CompletableFuture<UpdateDomainFullConfigResponse> updateDomainFullConfigAsync(
+        UpdateDomainFullConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.updateDomainFullConfig);
+    }
+
+    /** 修改域名全量配置接口 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权
+     *
+     * @param UpdateDomainFullConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> */
+    public AsyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> updateDomainFullConfigAsyncInvoker(
+        UpdateDomainFullConfigRequest request) {
+        return new AsyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse>(request,
+            CdnMeta.updateDomainFullConfig, hcClient);
+    }
+
     /** 一个证书批量设置多个域名 一个证书配置多个域名，设置域名强制https回源参数。
      *
      * @param UpdateDomainMultiCertificatesRequest 请求对象

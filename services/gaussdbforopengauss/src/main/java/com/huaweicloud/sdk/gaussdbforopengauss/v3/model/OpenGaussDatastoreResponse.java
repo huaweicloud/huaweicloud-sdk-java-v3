@@ -21,22 +21,22 @@ import java.util.Objects;
 public class OpenGaussDatastoreResponse  {
 
     /**
-     * 数据库引擎，返回值如下：  GaussDB(openGauss)
+     * 数据库引擎，返回值如下：  GaussDB(for openGauss)
      */
     public static final class TypeEnum {
 
         
         /**
-         * Enum GAUSSDB_OPENGAUSS_ for value: "GaussDB(openGauss)"
+         * Enum GAUSSDB_FOR_OPENGAUSS_ for value: "GaussDB(for openGauss)"
          */
-        public static final TypeEnum GAUSSDB_OPENGAUSS_ = new TypeEnum("GaussDB(openGauss)");
+        public static final TypeEnum GAUSSDB_FOR_OPENGAUSS_ = new TypeEnum("GaussDB(for openGauss)");
         
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("GaussDB(openGauss)", GAUSSDB_OPENGAUSS_);
+            map.put("GaussDB(for openGauss)", GAUSSDB_FOR_OPENGAUSS_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -116,7 +116,7 @@ public class OpenGaussDatastoreResponse  {
 
 
     /**
-     * 数据库引擎，返回值如下：  GaussDB(openGauss)
+     * 数据库引擎，返回值如下：  GaussDB(for openGauss)
      * @return type
      */
     public TypeEnum getType() {

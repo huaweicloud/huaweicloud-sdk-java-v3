@@ -165,6 +165,20 @@ public class KpsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFailedTaskRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFailedTaskRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
 
         // response
 
@@ -232,6 +246,20 @@ public class KpsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKeypairsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKeypairsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
 
         // response
 
@@ -250,6 +278,20 @@ public class KpsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRunningTaskRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRunningTaskRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
 
         // response
 

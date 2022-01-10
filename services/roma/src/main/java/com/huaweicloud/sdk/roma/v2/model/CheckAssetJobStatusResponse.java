@@ -98,30 +98,26 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
 
     private TypeEnum type;
 
-    /** 作业状态 - Running : 作业正在执行 - Success : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - Failed : 作业执行失败，通过reason字段查看具体错误原因 -
-     * Finished : 作业完成，针对导出作业，如果在有效期内下载了资产包，则作业状态从Success转换到Finished，此时不再返回archive_id字段 */
+    /** 作业状态 - RUNNING : 作业正在执行 - SUCCEEDED : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - FAILED :
+     * 作业执行失败，通过reason字段查看具体错误原因 */
     public static final class StatusEnum {
 
-        /** Enum RUNNING for value: "Running" */
-        public static final StatusEnum RUNNING = new StatusEnum("Running");
+        /** Enum RUNNING for value: "RUNNING" */
+        public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum SUCCESS for value: "Success" */
-        public static final StatusEnum SUCCESS = new StatusEnum("Success");
+        /** Enum SUCCEEDED for value: "SUCCEEDED" */
+        public static final StatusEnum SUCCEEDED = new StatusEnum("SUCCEEDED");
 
-        /** Enum FAILED for value: "Failed" */
-        public static final StatusEnum FAILED = new StatusEnum("Failed");
-
-        /** Enum FINISHED for value: "finished" */
-        public static final StatusEnum FINISHED = new StatusEnum("finished");
+        /** Enum FAILED for value: "FAILED" */
+        public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("Running", RUNNING);
-            map.put("Success", SUCCESS);
-            map.put("Failed", FAILED);
-            map.put("finished", FINISHED);
+            map.put("RUNNING", RUNNING);
+            map.put("SUCCEEDED", SUCCEEDED);
+            map.put("FAILED", FAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -245,8 +241,7 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业状态 - Running : 作业正在执行 - Success : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - Failed : 作业执行失败，通过reason字段查看具体错误原因 -
-     * Finished : 作业完成，针对导出作业，如果在有效期内下载了资产包，则作业状态从Success转换到Finished，此时不再返回archive_id字段
+    /** 作业状态 - RUNNING : 作业正在执行 - SUCCEEDED : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - FAILED : 作业执行失败，通过reason字段查看具体错误原因
      * 
      * @return status */
     public StatusEnum getStatus() {

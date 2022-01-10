@@ -64,7 +64,7 @@ public class LimitInfoV2 {
         return this;
     }
 
-    /** 折扣限制，key的取值请参考表4。
+    /** 折扣限制，key的取值请参考表5。
      * 
      * @return limitKey */
     public String getLimitKey() {

@@ -92,7 +92,7 @@ public class InstanceEdgeParam {
 
     private ArchEnum arch;
 
-    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。
+    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。
      * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G */
     public static final class CpuMemoryEnum {
 
@@ -328,7 +328,7 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。
+    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。
      * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
      * 
      * @return cpuMemory */
@@ -522,7 +522,7 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
+    /** 技术栈ID，通过技术栈管理ListStacks接口获取。
      * 
      * @return stackId */
     public String getStackId() {

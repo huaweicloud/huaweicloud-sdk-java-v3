@@ -229,6 +229,11 @@ public class ServiceList {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
     private List<PortList> ports = null;
@@ -529,6 +534,22 @@ public class ServiceList {
         this.projectId = projectId;
     }
 
+    public ServiceList withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /** Domain ID
+     * 
+     * @return domainId */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
     public ServiceList withPorts(List<PortList> ports) {
         this.ports = ports;
         return this;
@@ -680,7 +701,8 @@ public class ServiceList {
             && Objects.equals(this.serverType, serviceList.serverType)
             && Objects.equals(this.createdAt, serviceList.createdAt)
             && Objects.equals(this.updatedAt, serviceList.updatedAt)
-            && Objects.equals(this.projectId, serviceList.projectId) && Objects.equals(this.ports, serviceList.ports)
+            && Objects.equals(this.projectId, serviceList.projectId)
+            && Objects.equals(this.domainId, serviceList.domainId) && Objects.equals(this.ports, serviceList.ports)
             && Objects.equals(this.tags, serviceList.tags)
             && Objects.equals(this.connectionCount, serviceList.connectionCount)
             && Objects.equals(this.tcpProxy, serviceList.tcpProxy) && Objects.equals(this.error, serviceList.error);
@@ -700,6 +722,7 @@ public class ServiceList {
             createdAt,
             updatedAt,
             projectId,
+            domainId,
             ports,
             tags,
             connectionCount,
@@ -723,6 +746,7 @@ public class ServiceList {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    connectionCount: ").append(toIndentedString(connectionCount)).append("\n");

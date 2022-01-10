@@ -268,7 +268,7 @@ public class GaussDBforNoSQLClient {
             GaussDBforNoSQLMeta.listInstanceTags, hcClient);
     }
 
-    /** 查询实例列表 根据指定条件查询数据库实例列表。
+    /** 查询实例列表和详情 根据指定条件查询数据库实例列表和详情。
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse */
@@ -276,7 +276,7 @@ public class GaussDBforNoSQLClient {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listInstances);
     }
 
-    /** 查询实例列表 根据指定条件查询数据库实例列表。
+    /** 查询实例列表和详情 根据指定条件查询数据库实例列表和详情。
      *
      * @param ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse> */

@@ -173,6 +173,23 @@ public class CloudtestClient {
             CloudtestMeta.showPlanJournals, hcClient);
     }
 
+    /** 项目下查询测试计划列表v2 项目下查询测试计划列表v2
+     *
+     * @param ShowPlanListRequest 请求对象
+     * @return ShowPlanListResponse */
+    public ShowPlanListResponse showPlanList(ShowPlanListRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showPlanList);
+    }
+
+    /** 项目下查询测试计划列表v2 项目下查询测试计划列表v2
+     *
+     * @param ShowPlanListRequest 请求对象
+     * @return SyncInvoker<ShowPlanListRequest, ShowPlanListResponse> */
+    public SyncInvoker<ShowPlanListRequest, ShowPlanListResponse> showPlanListInvoker(ShowPlanListRequest request) {
+        return new SyncInvoker<ShowPlanListRequest, ShowPlanListResponse>(request, CloudtestMeta.showPlanList,
+            hcClient);
+    }
+
     /** 项目下查询测试计划列表 项目下查询测试计划列表
      *
      * @param ShowPlansRequest 请求对象

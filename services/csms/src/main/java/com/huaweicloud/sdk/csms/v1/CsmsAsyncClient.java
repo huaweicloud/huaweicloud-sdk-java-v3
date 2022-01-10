@@ -207,24 +207,6 @@ public class CsmsAsyncClient {
             CsmsMeta.listResourceInstances, hcClient);
     }
 
-    /** 查询凭据的版本状态 查询指定凭据版本状态标记的版本信息。
-     *
-     * @param ListSecretStageRequest 请求对象
-     * @return CompletableFuture<ListSecretStageResponse> */
-    public CompletableFuture<ListSecretStageResponse> listSecretStageAsync(ListSecretStageRequest request) {
-        return hcClient.asyncInvokeHttp(request, CsmsMeta.listSecretStage);
-    }
-
-    /** 查询凭据的版本状态 查询指定凭据版本状态标记的版本信息。
-     *
-     * @param ListSecretStageRequest 请求对象
-     * @return AsyncInvoker<ListSecretStageRequest, ListSecretStageResponse> */
-    public AsyncInvoker<ListSecretStageRequest, ListSecretStageResponse> listSecretStageAsyncInvoker(
-        ListSecretStageRequest request) {
-        return new AsyncInvoker<ListSecretStageRequest, ListSecretStageResponse>(request, CsmsMeta.listSecretStage,
-            hcClient);
-    }
-
     /** 查询凭据标签 - 功能介绍：查询凭据标签。
      *
      * @param ListSecretTagsRequest 请求对象
@@ -308,6 +290,24 @@ public class CsmsAsyncClient {
      * @return AsyncInvoker<ShowSecretRequest, ShowSecretResponse> */
     public AsyncInvoker<ShowSecretRequest, ShowSecretResponse> showSecretAsyncInvoker(ShowSecretRequest request) {
         return new AsyncInvoker<ShowSecretRequest, ShowSecretResponse>(request, CsmsMeta.showSecret, hcClient);
+    }
+
+    /** 查询凭据的版本状态 查询指定凭据版本状态标记的版本信息。
+     *
+     * @param ShowSecretStageRequest 请求对象
+     * @return CompletableFuture<ShowSecretStageResponse> */
+    public CompletableFuture<ShowSecretStageResponse> showSecretStageAsync(ShowSecretStageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.showSecretStage);
+    }
+
+    /** 查询凭据的版本状态 查询指定凭据版本状态标记的版本信息。
+     *
+     * @param ShowSecretStageRequest 请求对象
+     * @return AsyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse> */
+    public AsyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse> showSecretStageAsyncInvoker(
+        ShowSecretStageRequest request) {
+        return new AsyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse>(request, CsmsMeta.showSecretStage,
+            hcClient);
     }
 
     /** 查询凭据的版本与凭据值 查询指定凭据版本的信息和版本中的明文凭据值，只能查询ENABLED状态的凭据。

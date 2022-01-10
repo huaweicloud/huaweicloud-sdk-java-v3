@@ -54,22 +54,20 @@ public class CloudIDEClient {
             CloudIDEMeta.listProjectTemplates, hcClient);
     }
 
-    /** 获取标签所有技术栈 获取标签所有技术栈
+    /** 按region获取标签所有技术栈 按region获取标签所有技术栈
      *
-     * @param ListStacksByTagRequest 请求对象
-     * @return ListStacksByTagResponse */
-    public ListStacksByTagResponse listStacksByTag(ListStacksByTagRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudIDEMeta.listStacksByTag);
+     * @param ListStacksRequest 请求对象
+     * @return ListStacksResponse */
+    public ListStacksResponse listStacks(ListStacksRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.listStacks);
     }
 
-    /** 获取标签所有技术栈 获取标签所有技术栈
+    /** 按region获取标签所有技术栈 按region获取标签所有技术栈
      *
-     * @param ListStacksByTagRequest 请求对象
-     * @return SyncInvoker<ListStacksByTagRequest, ListStacksByTagResponse> */
-    public SyncInvoker<ListStacksByTagRequest, ListStacksByTagResponse> listStacksByTagInvoker(
-        ListStacksByTagRequest request) {
-        return new SyncInvoker<ListStacksByTagRequest, ListStacksByTagResponse>(request, CloudIDEMeta.listStacksByTag,
-            hcClient);
+     * @param ListStacksRequest 请求对象
+     * @return SyncInvoker<ListStacksRequest, ListStacksResponse> */
+    public SyncInvoker<ListStacksRequest, ListStacksResponse> listStacksInvoker(ListStacksRequest request) {
+        return new SyncInvoker<ListStacksRequest, ListStacksResponse>(request, CloudIDEMeta.listStacks, hcClient);
     }
 
     /** 查询当前帐号访问权限 查询当前帐号访问权限

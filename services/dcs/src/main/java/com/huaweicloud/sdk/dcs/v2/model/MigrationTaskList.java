@@ -262,6 +262,11 @@ public class MigrationTaskList {
     private MigrationMethodEnum migrationMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ecs_tenant_private_ip")
+
+    private String ecsTenantPrivateIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source")
 
     private String dataSource;
@@ -374,6 +379,22 @@ public class MigrationTaskList {
 
     public void setMigrationMethod(MigrationMethodEnum migrationMethod) {
         this.migrationMethod = migrationMethod;
+    }
+
+    public MigrationTaskList withEcsTenantPrivateIp(String ecsTenantPrivateIp) {
+        this.ecsTenantPrivateIp = ecsTenantPrivateIp;
+        return this;
+    }
+
+    /** 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单
+     * 
+     * @return ecsTenantPrivateIp */
+    public String getEcsTenantPrivateIp() {
+        return ecsTenantPrivateIp;
+    }
+
+    public void setEcsTenantPrivateIp(String ecsTenantPrivateIp) {
+        this.ecsTenantPrivateIp = ecsTenantPrivateIp;
     }
 
     public MigrationTaskList withDataSource(String dataSource) {
@@ -502,6 +523,7 @@ public class MigrationTaskList {
             && Objects.equals(this.status, migrationTaskList.status)
             && Objects.equals(this.migrationType, migrationTaskList.migrationType)
             && Objects.equals(this.migrationMethod, migrationTaskList.migrationMethod)
+            && Objects.equals(this.ecsTenantPrivateIp, migrationTaskList.ecsTenantPrivateIp)
             && Objects.equals(this.dataSource, migrationTaskList.dataSource)
             && Objects.equals(this.sourceInstanceName, migrationTaskList.sourceInstanceName)
             && Objects.equals(this.sourceInstanceId, migrationTaskList.sourceInstanceId)
@@ -518,6 +540,7 @@ public class MigrationTaskList {
             status,
             migrationType,
             migrationMethod,
+            ecsTenantPrivateIp,
             dataSource,
             sourceInstanceName,
             sourceInstanceId,
@@ -536,6 +559,7 @@ public class MigrationTaskList {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    migrationType: ").append(toIndentedString(migrationType)).append("\n");
         sb.append("    migrationMethod: ").append(toIndentedString(migrationMethod)).append("\n");
+        sb.append("    ecsTenantPrivateIp: ").append(toIndentedString(ecsTenantPrivateIp)).append("\n");
         sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
         sb.append("    sourceInstanceName: ").append(toIndentedString(sourceInstanceName)).append("\n");
         sb.append("    sourceInstanceId: ").append(toIndentedString(sourceInstanceId)).append("\n");
