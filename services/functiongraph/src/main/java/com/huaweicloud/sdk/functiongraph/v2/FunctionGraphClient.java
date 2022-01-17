@@ -341,6 +341,25 @@ public class FunctionGraphClient {
         return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, FunctionGraphMeta.listEvents, hcClient);
     }
 
+    /** 获取函数异步调用请求列表 获取函数异步调用请求列表
+     *
+     * @param ListFunctionAsyncInvocationsRequest 请求对象
+     * @return ListFunctionAsyncInvocationsResponse */
+    public ListFunctionAsyncInvocationsResponse listFunctionAsyncInvocations(
+        ListFunctionAsyncInvocationsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listFunctionAsyncInvocations);
+    }
+
+    /** 获取函数异步调用请求列表 获取函数异步调用请求列表
+     *
+     * @param ListFunctionAsyncInvocationsRequest 请求对象
+     * @return SyncInvoker<ListFunctionAsyncInvocationsRequest, ListFunctionAsyncInvocationsResponse> */
+    public SyncInvoker<ListFunctionAsyncInvocationsRequest, ListFunctionAsyncInvocationsResponse> listFunctionAsyncInvocationsInvoker(
+        ListFunctionAsyncInvocationsRequest request) {
+        return new SyncInvoker<ListFunctionAsyncInvocationsRequest, ListFunctionAsyncInvocationsResponse>(request,
+            FunctionGraphMeta.listFunctionAsyncInvocations, hcClient);
+    }
+
     /** 获取函数异步配置列表 获取函数异步配置列表。
      *
      * @param ListFunctionAsyncInvokeConfigRequest 请求对象

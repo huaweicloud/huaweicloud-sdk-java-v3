@@ -2876,6 +2876,24 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListApiVersionNewRequest, ListApiVersionNewResponse> listApiVersionNew =
+        genForlistApiVersionNew();
+
+    private static HttpRequestDef<ListApiVersionNewRequest, ListApiVersionNewResponse> genForlistApiVersionNew() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionNewRequest, ListApiVersionNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionNewRequest.class, ListApiVersionNewResponse.class)
+                .withName("ListApiVersionNew")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
         genForshowApiVersion();
 

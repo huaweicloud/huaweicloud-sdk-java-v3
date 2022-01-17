@@ -19,7 +19,7 @@ public class AssetOperateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tasks")
 
-    private List<AppAssetTasks> tasks = null;
+    private List<AssetOperateRequestTasks> tasks = null;
 
     public AssetOperateRequest withApps(List<String> apps) {
         this.apps = apps;
@@ -53,12 +53,12 @@ public class AssetOperateRequest {
         this.apps = apps;
     }
 
-    public AssetOperateRequest withTasks(List<AppAssetTasks> tasks) {
+    public AssetOperateRequest withTasks(List<AssetOperateRequestTasks> tasks) {
         this.tasks = tasks;
         return this;
     }
 
-    public AssetOperateRequest addTasksItem(AppAssetTasks tasksItem) {
+    public AssetOperateRequest addTasksItem(AssetOperateRequestTasks tasksItem) {
         if (this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
@@ -66,7 +66,7 @@ public class AssetOperateRequest {
         return this;
     }
 
-    public AssetOperateRequest withTasks(Consumer<List<AppAssetTasks>> tasksSetter) {
+    public AssetOperateRequest withTasks(Consumer<List<AssetOperateRequestTasks>> tasksSetter) {
         if (this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
@@ -77,11 +77,11 @@ public class AssetOperateRequest {
     /** 任务列表
      * 
      * @return tasks */
-    public List<AppAssetTasks> getTasks() {
+    public List<AssetOperateRequestTasks> getTasks() {
         return tasks;
     }
 
-    public void setTasks(List<AppAssetTasks> tasks) {
+    public void setTasks(List<AssetOperateRequestTasks> tasks) {
         this.tasks = tasks;
     }
 

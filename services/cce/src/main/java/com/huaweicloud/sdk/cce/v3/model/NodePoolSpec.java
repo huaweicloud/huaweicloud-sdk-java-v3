@@ -117,7 +117,7 @@ public class NodePoolSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "podSecurityGroups")
 
-    private List<Object> podSecurityGroups = null;
+    private List<SecurityID> podSecurityGroups = null;
 
     public NodePoolSpec withType(TypeEnum type) {
         this.type = type;
@@ -226,12 +226,12 @@ public class NodePoolSpec {
         this.nodeManagement = nodeManagement;
     }
 
-    public NodePoolSpec withPodSecurityGroups(List<Object> podSecurityGroups) {
+    public NodePoolSpec withPodSecurityGroups(List<SecurityID> podSecurityGroups) {
         this.podSecurityGroups = podSecurityGroups;
         return this;
     }
 
-    public NodePoolSpec addPodSecurityGroupsItem(Object podSecurityGroupsItem) {
+    public NodePoolSpec addPodSecurityGroupsItem(SecurityID podSecurityGroupsItem) {
         if (this.podSecurityGroups == null) {
             this.podSecurityGroups = new ArrayList<>();
         }
@@ -239,7 +239,7 @@ public class NodePoolSpec {
         return this;
     }
 
-    public NodePoolSpec withPodSecurityGroups(Consumer<List<Object>> podSecurityGroupsSetter) {
+    public NodePoolSpec withPodSecurityGroups(Consumer<List<SecurityID>> podSecurityGroupsSetter) {
         if (this.podSecurityGroups == null) {
             this.podSecurityGroups = new ArrayList<>();
         }
@@ -250,11 +250,11 @@ public class NodePoolSpec {
     /** 1.21版本集群节点池支持绑定安全组，最多五个。
      * 
      * @return podSecurityGroups */
-    public List<Object> getPodSecurityGroups() {
+    public List<SecurityID> getPodSecurityGroups() {
         return podSecurityGroups;
     }
 
-    public void setPodSecurityGroups(List<Object> podSecurityGroups) {
+    public void setPodSecurityGroups(List<SecurityID> podSecurityGroups) {
         this.podSecurityGroups = podSecurityGroups;
     }
 

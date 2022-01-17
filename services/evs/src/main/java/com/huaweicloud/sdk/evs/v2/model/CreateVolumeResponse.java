@@ -49,7 +49,7 @@ public class CreateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单ID，云硬盘为包周期计费时返回该参数。 > 说明： > > -
+    /** 订单ID，云硬盘为包周期计费时返回该参数。 > 说明： > 直接在包周期云服务器上新增云硬盘，系统会自动将云硬盘挂载到包周期云服务器上。该情形下也会返回该参数。 > -
      * 如果您需要支付订单，请参考：\"[支付包周期产品订单](https://support.huaweicloud.com/api-oce/zh-cn_topic_0075746561.html)\"。
      * 
      * @return orderId */

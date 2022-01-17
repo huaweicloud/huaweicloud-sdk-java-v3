@@ -1294,6 +1294,24 @@ public class RdsAsyncClient {
             hcClient);
     }
 
+    /** 查询API版本列表 查询API版本列表。
+     *
+     * @param ListApiVersionNewRequest 请求对象
+     * @return CompletableFuture<ListApiVersionNewResponse> */
+    public CompletableFuture<ListApiVersionNewResponse> listApiVersionNewAsync(ListApiVersionNewRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listApiVersionNew);
+    }
+
+    /** 查询API版本列表 查询API版本列表。
+     *
+     * @param ListApiVersionNewRequest 请求对象
+     * @return AsyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse> */
+    public AsyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse> listApiVersionNewAsyncInvoker(
+        ListApiVersionNewRequest request) {
+        return new AsyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse>(request, RdsMeta.listApiVersionNew,
+            hcClient);
+    }
+
     /** 查询指定的API版本信息 查询指定的API版本信息。
      *
      * @param ShowApiVersionRequest 请求对象

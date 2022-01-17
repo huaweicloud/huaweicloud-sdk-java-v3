@@ -21,12 +21,41 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="monitor_switch")
+    
+    
+    private Boolean monitorSwitch;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
     
-    private String period;
+    private Integer period;
 
-    public ShowInstanceMonitorExtendResponse withPeriod(String period) {
+    public ShowInstanceMonitorExtendResponse withMonitorSwitch(Boolean monitorSwitch) {
+        this.monitorSwitch = monitorSwitch;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例秒级监控开关。为true时表示开启，为false时表示关闭。
+     * @return monitorSwitch
+     */
+    public Boolean getMonitorSwitch() {
+        return monitorSwitch;
+    }
+
+    public void setMonitorSwitch(Boolean monitorSwitch) {
+        this.monitorSwitch = monitorSwitch;
+    }
+
+    
+
+    public ShowInstanceMonitorExtendResponse withPeriod(Integer period) {
         this.period = period;
         return this;
     }
@@ -35,14 +64,14 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
 
 
     /**
-     * 采集周期。  取值： 0表示实例秒级监控关闭； 1表示实例秒级监控开启，采集周期为1s； 5表示实例秒级监控开启，采集周期为5s。
+     * 采集周期，仅在monitor_switch为true时返回。1：采集周期为1s； 5：采集周期为5s。
      * @return period
      */
-    public String getPeriod() {
+    public Integer getPeriod() {
         return period;
     }
 
-    public void setPeriod(String period) {
+    public void setPeriod(Integer period) {
         this.period = period;
     }
 
@@ -57,16 +86,18 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
             return false;
         }
         ShowInstanceMonitorExtendResponse showInstanceMonitorExtendResponse = (ShowInstanceMonitorExtendResponse) o;
-        return Objects.equals(this.period, showInstanceMonitorExtendResponse.period);
+        return Objects.equals(this.monitorSwitch, showInstanceMonitorExtendResponse.monitorSwitch) &&
+            Objects.equals(this.period, showInstanceMonitorExtendResponse.period);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(period);
+        return Objects.hash(monitorSwitch, period);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceMonitorExtendResponse {\n");
+        sb.append("    monitorSwitch: ").append(toIndentedString(monitorSwitch)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("}");
         return sb.toString();

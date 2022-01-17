@@ -11602,10 +11602,10 @@ public class RomaMeta {
             f -> f.withMarshaller(ImportAssetRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<AppAsset>withRequestField("body",
+        builder.<byte[]>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppAsset.class),
+            TypeCasts.uncheckedConversion(byte[].class),
             f -> f.withMarshaller(ImportAssetRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

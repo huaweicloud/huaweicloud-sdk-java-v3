@@ -515,6 +515,11 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     private Integer publicBoundwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_user")
+
+    private String accessUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_enable")
 
     private Boolean agentEnable;
@@ -1690,6 +1695,22 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.publicBoundwidth = publicBoundwidth;
     }
 
+    public ShowMqsInstanceResponse withAccessUser(String accessUser) {
+        this.accessUser = accessUser;
+        return this;
+    }
+
+    /** 认证用户名。
+     * 
+     * @return accessUser */
+    public String getAccessUser() {
+        return accessUser;
+    }
+
+    public void setAccessUser(String accessUser) {
+        this.accessUser = accessUser;
+    }
+
     public ShowMqsInstanceResponse withAgentEnable(Boolean agentEnable) {
         this.agentEnable = agentEnable;
         return this;
@@ -1786,6 +1807,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             && Objects.equals(this.listeners, showMqsInstanceResponse.listeners)
             && Objects.equals(this.publicAccessEnabled, showMqsInstanceResponse.publicAccessEnabled)
             && Objects.equals(this.publicBoundwidth, showMqsInstanceResponse.publicBoundwidth)
+            && Objects.equals(this.accessUser, showMqsInstanceResponse.accessUser)
             && Objects.equals(this.agentEnable, showMqsInstanceResponse.agentEnable);
     }
 
@@ -1862,6 +1884,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             listeners,
             publicAccessEnabled,
             publicBoundwidth,
+            accessUser,
             agentEnable);
     }
 
@@ -1940,6 +1963,7 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         sb.append("    listeners: ").append(toIndentedString(listeners)).append("\n");
         sb.append("    publicAccessEnabled: ").append(toIndentedString(publicAccessEnabled)).append("\n");
         sb.append("    publicBoundwidth: ").append(toIndentedString(publicBoundwidth)).append("\n");
+        sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
         sb.append("    agentEnable: ").append(toIndentedString(agentEnable)).append("\n");
         sb.append("}");
         return sb.toString();

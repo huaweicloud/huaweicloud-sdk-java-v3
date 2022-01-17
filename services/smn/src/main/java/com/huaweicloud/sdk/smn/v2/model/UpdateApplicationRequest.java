@@ -24,7 +24,7 @@ public class UpdateApplicationRequest {
         return this;
     }
 
-    /** Application的唯一资源标识，可通过[查询Application](https://support.huaweicloud.com/api-smn/smn_api_57004.html)获取该标识。
+    /** Application的唯一资源标识，可通过[查询Application](https://support.huaweicloud.com/api-smn/ListApplications.html)获取该标识。
      * 
      * @return applicationUrn */
     public String getApplicationUrn() {

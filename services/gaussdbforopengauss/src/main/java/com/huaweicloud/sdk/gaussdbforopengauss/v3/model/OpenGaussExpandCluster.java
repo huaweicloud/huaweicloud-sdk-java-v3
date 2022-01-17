@@ -58,7 +58,7 @@ public class OpenGaussExpandCluster  {
     }
 
     /**
-     * Get coordinators
+     * CN横向扩容时必填
      * @return coordinators
      */
     public List<OpenGaussCoordinators> getCoordinators() {

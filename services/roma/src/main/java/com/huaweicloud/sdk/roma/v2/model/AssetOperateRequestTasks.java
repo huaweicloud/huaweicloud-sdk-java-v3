@@ -5,15 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AppAssetTasks */
-public class AppAssetTasks {
+/** AssetOperateRequestTasks */
+public class AssetOperateRequestTasks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
     private String taskId;
 
-    public AppAssetTasks withTaskId(String taskId) {
+    public AssetOperateRequestTasks withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
@@ -37,8 +37,8 @@ public class AppAssetTasks {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        AppAssetTasks appAssetTasks = (AppAssetTasks) o;
-        return Objects.equals(this.taskId, appAssetTasks.taskId);
+        AssetOperateRequestTasks assetOperateRequestTasks = (AssetOperateRequestTasks) o;
+        return Objects.equals(this.taskId, assetOperateRequestTasks.taskId);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AppAssetTasks {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AppAssetTasks {\n");
+        sb.append("class AssetOperateRequestTasks {\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();

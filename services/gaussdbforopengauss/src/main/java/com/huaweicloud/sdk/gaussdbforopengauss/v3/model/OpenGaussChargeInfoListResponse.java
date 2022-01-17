@@ -16,12 +16,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 计费类型信息，支持按需，默认为按需。
+ * 计费类型信息，支持按需和包周期。
  */
 public class OpenGaussChargeInfoListResponse  {
 
     /**
-     * 计费模式。  取值范围：  postPaid：后付费，即按需付费。
+     * 计费模式。  取值范围：  postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
      */
     public static final class ChargeModeEnum {
 
@@ -109,7 +109,7 @@ public class OpenGaussChargeInfoListResponse  {
 
 
     /**
-     * 计费模式。  取值范围：  postPaid：后付费，即按需付费。
+     * 计费模式。  取值范围：  postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {

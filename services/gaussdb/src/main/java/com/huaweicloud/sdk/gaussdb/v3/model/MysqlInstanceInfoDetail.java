@@ -12,7 +12,6 @@ import com.huaweicloud.sdk.gaussdb.v3.model.MysqlBackupStrategy;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlInstanceNodeInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlTags;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlVolumeInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -149,13 +148,6 @@ public class MysqlInstanceInfoDetail  {
     
     
     private String configurationId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
-    
-    private MysqlVolumeInfo volume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -637,35 +629,6 @@ public class MysqlInstanceInfoDetail  {
 
     
 
-    public MysqlInstanceInfoDetail withVolume(MysqlVolumeInfo volume) {
-        this.volume = volume;
-        return this;
-    }
-
-    public MysqlInstanceInfoDetail withVolume(Consumer<MysqlVolumeInfo> volumeSetter) {
-        if(this.volume == null ){
-            this.volume = new MysqlVolumeInfo();
-            volumeSetter.accept(this.volume);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get volume
-     * @return volume
-     */
-    public MysqlVolumeInfo getVolume() {
-        return volume;
-    }
-
-    public void setVolume(MysqlVolumeInfo volume) {
-        this.volume = volume;
-    }
-
-    
-
     public MysqlInstanceInfoDetail withBackupStrategy(MysqlBackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
@@ -926,7 +889,6 @@ public class MysqlInstanceInfoDetail  {
             Objects.equals(this.subnetId, mysqlInstanceInfoDetail.subnetId) &&
             Objects.equals(this.securityGroupId, mysqlInstanceInfoDetail.securityGroupId) &&
             Objects.equals(this.configurationId, mysqlInstanceInfoDetail.configurationId) &&
-            Objects.equals(this.volume, mysqlInstanceInfoDetail.volume) &&
             Objects.equals(this.backupStrategy, mysqlInstanceInfoDetail.backupStrategy) &&
             Objects.equals(this.nodes, mysqlInstanceInfoDetail.nodes) &&
             Objects.equals(this.enterpriseProjectId, mysqlInstanceInfoDetail.enterpriseProjectId) &&
@@ -939,7 +901,7 @@ public class MysqlInstanceInfoDetail  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, projectId, status, port, type, nodeCount, datastore, backupUsedSpace, created, updated, privateWriteIps, publicIps, dbUserName, vpcId, subnetId, securityGroupId, configurationId, volume, backupStrategy, nodes, enterpriseProjectId, timeZone, azMode, masterAzCode, maintenanceWindow, tags, dedicatedResourceId);
+        return Objects.hash(id, name, projectId, status, port, type, nodeCount, datastore, backupUsedSpace, created, updated, privateWriteIps, publicIps, dbUserName, vpcId, subnetId, securityGroupId, configurationId, backupStrategy, nodes, enterpriseProjectId, timeZone, azMode, masterAzCode, maintenanceWindow, tags, dedicatedResourceId);
     }
     @Override
     public String toString() {
@@ -963,7 +925,6 @@ public class MysqlInstanceInfoDetail  {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    configurationId: ").append(toIndentedString(configurationId)).append("\n");
-        sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

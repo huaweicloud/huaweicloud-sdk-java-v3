@@ -138,7 +138,7 @@ public class OpenGaussDatastore  {
 
 
     /**
-     * 数据库版本。不填时，默认为当前最新版本。  GaussDB(for openGauss)支持如下版本：  - 1.1 - 1.2 - 1.3
+     * 数据库版本。不填时，默认为当前最新版本。  GaussDB(for openGauss)支持如下版本：  - 1.1 - 1.2 - 1.3 - 1.4
      * @return version
      */
     public String getVersion() {

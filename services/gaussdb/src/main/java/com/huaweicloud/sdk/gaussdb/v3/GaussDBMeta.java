@@ -1430,7 +1430,7 @@ public class GaussDBMeta {
         HttpRequestDef.Builder<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceMonitorExtendRequest.class, ShowInstanceMonitorExtendResponse.class)
                 .withName("ShowInstanceMonitorExtend")
-                .withUri("/v3/{project_id}/instances/{instance_id}/monitorPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/monitor-policy")
                 .withContentType("application/json");
 
         // requests
@@ -1586,7 +1586,7 @@ public class GaussDBMeta {
         HttpRequestDef.Builder<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceMonitorRequest.class, UpdateInstanceMonitorResponse.class)
                 .withName("UpdateInstanceMonitor")
-                .withUri("/v3/{project_id}/instances/{instance_id}/monitorPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/monitor-policy")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests

@@ -1266,6 +1266,24 @@ public class RdsClient {
             hcClient);
     }
 
+    /** 查询API版本列表 查询API版本列表。
+     *
+     * @param ListApiVersionNewRequest 请求对象
+     * @return ListApiVersionNewResponse */
+    public ListApiVersionNewResponse listApiVersionNew(ListApiVersionNewRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listApiVersionNew);
+    }
+
+    /** 查询API版本列表 查询API版本列表。
+     *
+     * @param ListApiVersionNewRequest 请求对象
+     * @return SyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse> */
+    public SyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse> listApiVersionNewInvoker(
+        ListApiVersionNewRequest request) {
+        return new SyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse>(request, RdsMeta.listApiVersionNew,
+            hcClient);
+    }
+
     /** 查询指定的API版本信息 查询指定的API版本信息。
      *
      * @param ShowApiVersionRequest 请求对象

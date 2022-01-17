@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /** Request Object */
 public class ImportAssetRequest {
@@ -17,7 +16,7 @@ public class ImportAssetRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AppAsset body;
+    private byte[] body;
 
     public ImportAssetRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -35,28 +34,19 @@ public class ImportAssetRequest {
         this.instanceId = instanceId;
     }
 
-    public ImportAssetRequest withBody(AppAsset body) {
+    public ImportAssetRequest withBody(byte[] body) {
         this.body = body;
-        return this;
-    }
-
-    public ImportAssetRequest withBody(Consumer<AppAsset> bodySetter) {
-        if (this.body == null) {
-            this.body = new AppAsset();
-            bodySetter.accept(this.body);
-        }
-
         return this;
     }
 
     /** Get body
      * 
      * @return body */
-    public AppAsset getBody() {
+    public byte[] getBody() {
         return body;
     }
 
-    public void setBody(AppAsset body) {
+    public void setBody(byte[] body) {
         this.body = body;
     }
 

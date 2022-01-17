@@ -7,6 +7,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.functiongraph.v2.model.*;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -571,6 +572,69 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventsRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFunctionAsyncInvocationsRequest, ListFunctionAsyncInvocationsResponse> listFunctionAsyncInvocations =
+        genForlistFunctionAsyncInvocations();
+
+    private static HttpRequestDef<ListFunctionAsyncInvocationsRequest, ListFunctionAsyncInvocationsResponse> genForlistFunctionAsyncInvocations() {
+        // basic
+        HttpRequestDef.Builder<ListFunctionAsyncInvocationsRequest, ListFunctionAsyncInvocationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListFunctionAsyncInvocationsRequest.class,
+                    ListFunctionAsyncInvocationsResponse.class)
+                .withName("ListFunctionAsyncInvocations")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/async-invocations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+        builder.<String>withRequestField("request_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getRequestId, (req, v) -> {
+                req.setRequestId(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ListFunctionAsyncInvocationsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFunctionAsyncInvocationsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("query_begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getQueryBeginTime, (req, v) -> {
+                req.setQueryBeginTime(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("query_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getQueryEndTime, (req, v) -> {
+                req.setQueryEndTime(v);
             }));
 
         // response

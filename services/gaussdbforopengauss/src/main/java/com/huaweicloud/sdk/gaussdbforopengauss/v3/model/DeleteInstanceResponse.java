@@ -35,7 +35,7 @@ public class DeleteInstanceResponse extends SdkResponse {
 
 
     /**
-     * 实例删除的任务id。
+     * 任务id。
      * @return jobId
      */
     public String getJobId() {

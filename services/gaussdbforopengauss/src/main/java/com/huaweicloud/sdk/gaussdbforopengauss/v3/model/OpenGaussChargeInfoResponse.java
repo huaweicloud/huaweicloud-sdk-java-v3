@@ -21,7 +21,7 @@ import java.util.Objects;
 public class OpenGaussChargeInfoResponse  {
 
     /**
-     * 计费模式。 取值范围： postPaid：后付费，即按需付费。 取值：postPaid，后付费，即按需付费。
+     * 计费模式。 取值范围： postPaid：后付费，即按需付费。
      */
     public static final class ChargeModeEnum {
 
@@ -109,7 +109,7 @@ public class OpenGaussChargeInfoResponse  {
 
 
     /**
-     * 计费模式。 取值范围： postPaid：后付费，即按需付费。 取值：postPaid，后付费，即按需付费。
+     * 计费模式。 取值范围： postPaid：后付费，即按需付费。
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {

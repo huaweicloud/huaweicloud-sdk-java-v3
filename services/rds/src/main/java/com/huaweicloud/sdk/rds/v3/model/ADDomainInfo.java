@@ -23,7 +23,7 @@ public class ADDomainInfo {
         return this;
     }
 
-    /** 域账号名
+    /** 域管理员账号名
      * 
      * @return domainAdminAccountName */
     public String getDomainAdminAccountName() {
@@ -39,7 +39,7 @@ public class ADDomainInfo {
         return this;
     }
 
-    /** 域账号密码
+    /** 域管理员密码
      * 
      * @return domainAdminPwd */
     public String getDomainAdminPwd() {

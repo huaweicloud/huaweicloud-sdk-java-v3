@@ -14,14 +14,14 @@ public class AddUserToApp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
-    private List<Object> users = null;
+    private List<User> users = null;
 
-    public AddUserToApp withUsers(List<Object> users) {
+    public AddUserToApp withUsers(List<User> users) {
         this.users = users;
         return this;
     }
 
-    public AddUserToApp addUsersItem(Object usersItem) {
+    public AddUserToApp addUsersItem(User usersItem) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -29,7 +29,7 @@ public class AddUserToApp {
         return this;
     }
 
-    public AddUserToApp withUsers(Consumer<List<Object>> usersSetter) {
+    public AddUserToApp withUsers(Consumer<List<User>> usersSetter) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -40,11 +40,11 @@ public class AddUserToApp {
     /** 要添加的用户成员列表，空列表时代表清空应用的所有成员
      * 
      * @return users */
-    public List<Object> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(List<Object> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 

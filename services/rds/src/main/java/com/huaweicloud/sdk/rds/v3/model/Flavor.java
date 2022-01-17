@@ -44,6 +44,11 @@ public class Flavor {
     private Map<String, String> azStatus = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az_desc")
+
+    private Map<String, String> azDesc = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_name")
 
     private List<String> versionName = null;
@@ -166,6 +171,38 @@ public class Flavor {
         this.azStatus = azStatus;
     }
 
+    public Flavor withAzDesc(Map<String, String> azDesc) {
+        this.azDesc = azDesc;
+        return this;
+    }
+
+    public Flavor putAzDescItem(String key, String azDescItem) {
+        if (this.azDesc == null) {
+            this.azDesc = new HashMap<>();
+        }
+        this.azDesc.put(key, azDescItem);
+        return this;
+    }
+
+    public Flavor withAzDesc(Consumer<Map<String, String>> azDescSetter) {
+        if (this.azDesc == null) {
+            this.azDesc = new HashMap<>();
+        }
+        azDescSetter.accept(this.azDesc);
+        return this;
+    }
+
+    /** 规格所在az的描述。
+     * 
+     * @return azDesc */
+    public Map<String, String> getAzDesc() {
+        return azDesc;
+    }
+
+    public void setAzDesc(Map<String, String> azDesc) {
+        this.azDesc = azDesc;
+    }
+
     public Flavor withVersionName(List<String> versionName) {
         this.versionName = versionName;
         return this;
@@ -228,12 +265,13 @@ public class Flavor {
         return Objects.equals(this.id, flavor.id) && Objects.equals(this.vcpus, flavor.vcpus)
             && Objects.equals(this.ram, flavor.ram) && Objects.equals(this.specCode, flavor.specCode)
             && Objects.equals(this.instanceMode, flavor.instanceMode) && Objects.equals(this.azStatus, flavor.azStatus)
-            && Objects.equals(this.versionName, flavor.versionName) && Objects.equals(this.groupType, flavor.groupType);
+            && Objects.equals(this.azDesc, flavor.azDesc) && Objects.equals(this.versionName, flavor.versionName)
+            && Objects.equals(this.groupType, flavor.groupType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, vcpus, ram, specCode, instanceMode, azStatus, versionName, groupType);
+        return Objects.hash(id, vcpus, ram, specCode, instanceMode, azStatus, azDesc, versionName, groupType);
     }
 
     @Override
@@ -246,6 +284,7 @@ public class Flavor {
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    instanceMode: ").append(toIndentedString(instanceMode)).append("\n");
         sb.append("    azStatus: ").append(toIndentedString(azStatus)).append("\n");
+        sb.append("    azDesc: ").append(toIndentedString(azDesc)).append("\n");
         sb.append("    versionName: ").append(toIndentedString(versionName)).append("\n");
         sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
         sb.append("}");

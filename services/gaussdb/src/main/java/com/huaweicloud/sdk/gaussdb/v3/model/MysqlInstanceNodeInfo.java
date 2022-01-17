@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlVolumeInfo;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlInstanceNodeVolumeInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -67,7 +67,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonProperty(value="volume")
     
     
-    private MysqlVolumeInfo volume;
+    private MysqlInstanceNodeVolumeInfo volume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -285,14 +285,14 @@ public class MysqlInstanceNodeInfo  {
 
     
 
-    public MysqlInstanceNodeInfo withVolume(MysqlVolumeInfo volume) {
+    public MysqlInstanceNodeInfo withVolume(MysqlInstanceNodeVolumeInfo volume) {
         this.volume = volume;
         return this;
     }
 
-    public MysqlInstanceNodeInfo withVolume(Consumer<MysqlVolumeInfo> volumeSetter) {
+    public MysqlInstanceNodeInfo withVolume(Consumer<MysqlInstanceNodeVolumeInfo> volumeSetter) {
         if(this.volume == null ){
-            this.volume = new MysqlVolumeInfo();
+            this.volume = new MysqlInstanceNodeVolumeInfo();
             volumeSetter.accept(this.volume);
         }
         
@@ -304,11 +304,11 @@ public class MysqlInstanceNodeInfo  {
      * Get volume
      * @return volume
      */
-    public MysqlVolumeInfo getVolume() {
+    public MysqlInstanceNodeVolumeInfo getVolume() {
         return volume;
     }
 
-    public void setVolume(MysqlVolumeInfo volume) {
+    public void setVolume(MysqlInstanceNodeVolumeInfo volume) {
         this.volume = volume;
     }
 
