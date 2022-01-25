@@ -71,7 +71,7 @@ public class QuerySampleParam  {
     }
 
     /**
-     * 取值范围 JSON数组大小不超过20 时序数据对象列表。 
+     * 时序数据对象列表。  取值范围：JSON数组大小不超过20。
      * @return samples
      */
     public List<QuerySample> getSamples() {
@@ -107,7 +107,7 @@ public class QuerySampleParam  {
     }
 
     /**
-     * 统计方式。 取值范围 maximum，minimum，sum，average，sampleCount 
+     * 统计方式。 取值范围： maximum，minimum，sum，average，sampleCount。
      * @return statistics
      */
     public List<String> getStatistics() {
@@ -129,7 +129,7 @@ public class QuerySampleParam  {
 
 
     /**
-     * 监控数据粒度。 取值范围 枚举值，取值范围： 60，1分钟粒度 300，5分钟粒度 900，15分钟粒度 3600，1小时粒度 
+     * 监控数据粒度。 取值范围 枚举值，取值范围： 60，1分钟粒度； 300，5分钟粒度； 900，15分钟粒度； 3600，1小时粒度。
      * @return period
      */
     public Integer getPeriod() {
@@ -151,7 +151,7 @@ public class QuerySampleParam  {
 
 
     /**
-     * 说明： time_range/period≤1440 计算时，time_range和period需换算为相同的单位。 取值范围 格式：开始时间UTC毫秒.结束时间UTC毫秒.时间范围分钟数。开始和结束时间为-1时，表示最近N分钟，N为时间范围分钟取值。 查询时间段，如最近五分钟可以表示为-1.-1.5，固定的时间范围（2017-08-01 08:00 :00到2017-08-02 08:00:00）可以表示为1501545600000.1501632000000.1440。 
+     * 说明： time_range/period≤1440 计算时，time_range和period需换算为相同的单位。 取值范围 格式：开始时间UTC毫秒.结束时间UTC毫秒.时间范围分钟数。开始和结束时间为-1时，表示最近N分钟，N为时间范围分钟取值。 查询时间段，如最近五分钟可以表示为-1.-1.5，固定的时间范围（2017-08-01 08:00 :00到2017-08-02 08:00:00）可以表示为1501545600000.1501632000000.1440。
      * @return timeRange
      */
     public String getTimeRange() {

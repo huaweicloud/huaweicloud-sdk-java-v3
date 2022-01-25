@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * nameType取值cmdLine时args格式为[\&quot;start\&quot;,\&quot;end\&quot;],表示抽取命令行中start、end之间的字符。 nameType取值cmdLine时args格式为 [\&quot;aa\&quot;],表示抽取环境变量名为aa对应的环境变量值。 nameType取值str时,args格式为[\&quot;fix\&quot;],表示服务名称最后拼接固定文字fix。 nameType取值cmdLineHash时,args格式为[\&quot;0001\&quot;],value格式为[\&quot;ser\&quot;],表示当启动命令是0001时,应用名称为ser。 应用命名部分。
+ * 应用命名部分。 nameType取值cmdLine时args格式为[\&quot;start\&quot;,\&quot;end\&quot;],表示抽取命令行中start、end之间的字符。 nameType取值cmdLine时args格式为 [\&quot;aa\&quot;],表示抽取环境变量名为aa对应的环境变量值。 nameType取值str时,args格式为[\&quot;fix\&quot;],表示服务名称最后拼接固定文字fix。 nameType取值cmdLineHash时,args格式为[\&quot;0001\&quot;],value格式为[\&quot;ser\&quot;],表示当启动命令是0001时,应用名称为ser。
  */
 public class ApplicationNameRule  {
 
@@ -49,7 +49,7 @@ public class ApplicationNameRule  {
 
 
     /**
-     * cmdLineHash、cmdLine、env、str 取值类型。
+     * 取值类型。 从cmdLineHash、cmdLine、env、str里面选取。
      * @return nameType
      */
     public String getNameType() {

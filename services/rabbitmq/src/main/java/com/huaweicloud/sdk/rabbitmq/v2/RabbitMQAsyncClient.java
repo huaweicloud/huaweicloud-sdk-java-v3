@@ -149,6 +149,24 @@ public class RabbitMQAsyncClient {
             RabbitMQMeta.listBackgroundTasks, hcClient);
     }
 
+    /** 查询产品规格列表 查询产品规格列表。
+     *
+     * @param ListEngineProductsRequest 请求对象
+     * @return CompletableFuture<ListEngineProductsResponse> */
+    public CompletableFuture<ListEngineProductsResponse> listEngineProductsAsync(ListEngineProductsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.listEngineProducts);
+    }
+
+    /** 查询产品规格列表 查询产品规格列表。
+     *
+     * @param ListEngineProductsRequest 请求对象
+     * @return AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse> */
+    public AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProductsAsyncInvoker(
+        ListEngineProductsRequest request) {
+        return new AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>(request,
+            RabbitMQMeta.listEngineProducts, hcClient);
+    }
+
     /** 查询所有实例列表 查询租户的实例列表，支持按照条件查询。
      *
      * @param ListInstancesDetailsRequest 请求对象

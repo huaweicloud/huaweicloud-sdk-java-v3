@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Data
+ * 数据信息详情
  */
 public class Data  {
 
@@ -42,7 +42,7 @@ public class Data  {
 
 
     /**
-     * Get resultType
+     * 返回值类型。
      * @return resultType
      */
     public String getResultType() {
@@ -78,7 +78,7 @@ public class Data  {
     }
 
     /**
-     * Get result
+     * 数据信息。
      * @return result
      */
     public List<String> getResult() {

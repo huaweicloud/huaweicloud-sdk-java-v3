@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.meeting.v1.utils.HmacSHA256;
@@ -18,6 +19,10 @@ public class AppAuthInfoV2 implements Serializable {
     private String userId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("corpId")
+    private String corpId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("expireTime")
     private Long expireTime = null;
 
@@ -25,9 +30,24 @@ public class AppAuthInfoV2 implements Serializable {
     @JsonProperty("nonce")
     private String nonce = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("key")
+    @JsonIgnore
     private String key = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("clientType")
+    private Integer clientType = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("deptCode")
+    private String deptCode = null;
+
+    /**
+     * 租户场景 (默认单租户场景)
+     * 1、单租户场景下必须填写appId和appKey，选填userId。如果userId不填默认以企业管理员身份调用
+     * 2、单租户场景下不能填写corpId
+     * 3、多租户场景下必须填写appId和appKey，选填corpId和userId。如果corpId和userId都不填默认以SP管理员身份调用；如果corpId填写，userId不填，以企业管理员身份调用
+     */
+    private TenantSceneEnum tenantSceneEnum;
 
     /**
      * APPID
@@ -115,9 +135,53 @@ public class AppAuthInfoV2 implements Serializable {
         return this;
     }
 
+    public String getCorpId() {
+        return corpId;
+    }
+
+    public void setCorpId(String corpId) {
+        this.corpId = corpId;
+    }
+
+    public AppAuthInfoV2 withCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+
+    public Integer getClientType() {
+        return clientType;
+    }
+
+    public void setClientType(Integer clientType) {
+        this.clientType = clientType;
+    }
+
+    public AppAuthInfoV2 withDeptCode(String deptCode) {
+        this.deptCode = deptCode;
+        return this;
+    }
+
+    public String getDeptCode() {
+        return deptCode;
+    }
+
+    public void setDeptCode(String deptCode) {
+        this.deptCode = deptCode;
+    }
+
+    public AppAuthInfoV2 withClientType(Integer clientType) {
+        this.clientType = clientType;
+        return this;
+    }
+
+    public AppAuthInfoV2 withTenantScene(TenantSceneEnum tenantSceneEnum) {
+        this.tenantSceneEnum = tenantSceneEnum;
+        return this;
+    }
+
     /**
      * 计算签名
-     *
+     * <p>
      * 计算公式：
      * <p>
      * userId为null或者空字符串：
@@ -131,16 +195,26 @@ public class AppAuthInfoV2 implements Serializable {
      * @return
      */
     public String build() {
-
         StringBuilder sb = new StringBuilder(this.appId).append(":");
-        if (this.userId != null && !"".equals(this.userId)) {
-            sb.append(this.userId).append(":");
-        } else {
-            sb.append(":");
+        if (userId == null) {
+            userId = "";
         }
-        String data = sb.append(this.expireTime).append(":")
-            .append(this.nonce).toString();
-        return HmacSHA256.encode(data, this.key);
-    }
+        if (tenantSceneEnum == TenantSceneEnum.MULTI_TENANT) {
+            // 多租户场景
+            if (corpId == null) {
+                corpId = "";
+            }
+            sb.append(corpId).append(":")
+                .append(userId).append(":")
+                .append(expireTime).append(":")
+                .append(nonce).toString();
+        } else {
+            // 单租户场景
+            sb.append(userId).append(":")
+                .append(expireTime).append(":")
+                .append(nonce).toString();
+        }
 
+        return HmacSHA256.encode(sb.toString(), this.key);
+    }
 }

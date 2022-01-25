@@ -257,7 +257,7 @@ public class AlarmRuleParam  {
 
 
     /**
-     * 告警级别。
+     * 告警级别。1：紧急，2：重要，3：一般，4：提示。
      * @return alarmLevel
      */
     public Integer getAlarmLevel() {
@@ -301,7 +301,7 @@ public class AlarmRuleParam  {
 
 
     /**
-     * 极限条件。
+     * 超限条件。
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -439,7 +439,7 @@ public class AlarmRuleParam  {
 
 
     /**
-     * | 取值范围 名称长度为1~255个字符 时间序列名称。
+     * 时间序列名称。名称长度取值范围为1~255个字符。
      * @return metricName
      */
     public String getMetricName() {
@@ -541,7 +541,7 @@ public class AlarmRuleParam  {
 
 
     /**
-     * 取值范围 \"maximum\",\"minimum\",\"average\", \"sum\",\"sampleCount\" 统计方式
+     * 统计方式。
      * @return statistic
      */
     public String getStatistic() {
@@ -563,7 +563,7 @@ public class AlarmRuleParam  {
 
 
     /**
-     * 临界值。
+     * 超限值。
      * @return threshold
      */
     public String getThreshold() {
@@ -585,7 +585,7 @@ public class AlarmRuleParam  {
 
 
     /**
-     * 阈值单元。
+     * 时间序列单位
      * @return unit
      */
     public String getUnit() {

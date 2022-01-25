@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -105,6 +107,11 @@ public class CreateAccessConfigRequestBody {
     @JsonProperty(value = "host_group_info")
 
     private AccessConfigHostGroupIdListCreate hostGroupInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_config_tag")
+
+    private List<AccessConfigTag> accessConfigTag = null;
 
     public CreateAccessConfigRequestBody withAccessConfigName(String accessConfigName) {
         this.accessConfigName = accessConfigName;
@@ -215,6 +222,38 @@ public class CreateAccessConfigRequestBody {
         this.hostGroupInfo = hostGroupInfo;
     }
 
+    public CreateAccessConfigRequestBody withAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
+        this.accessConfigTag = accessConfigTag;
+        return this;
+    }
+
+    public CreateAccessConfigRequestBody addAccessConfigTagItem(AccessConfigTag accessConfigTagItem) {
+        if (this.accessConfigTag == null) {
+            this.accessConfigTag = new ArrayList<>();
+        }
+        this.accessConfigTag.add(accessConfigTagItem);
+        return this;
+    }
+
+    public CreateAccessConfigRequestBody withAccessConfigTag(Consumer<List<AccessConfigTag>> accessConfigTagSetter) {
+        if (this.accessConfigTag == null) {
+            this.accessConfigTag = new ArrayList<>();
+        }
+        accessConfigTagSetter.accept(this.accessConfigTag);
+        return this;
+    }
+
+    /** Get accessConfigTag
+     * 
+     * @return accessConfigTag */
+    public List<AccessConfigTag> getAccessConfigTag() {
+        return accessConfigTag;
+    }
+
+    public void setAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
+        this.accessConfigTag = accessConfigTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -228,12 +267,14 @@ public class CreateAccessConfigRequestBody {
             && Objects.equals(this.accessConfigType, createAccessConfigRequestBody.accessConfigType)
             && Objects.equals(this.accessConfigDetail, createAccessConfigRequestBody.accessConfigDetail)
             && Objects.equals(this.logInfo, createAccessConfigRequestBody.logInfo)
-            && Objects.equals(this.hostGroupInfo, createAccessConfigRequestBody.hostGroupInfo);
+            && Objects.equals(this.hostGroupInfo, createAccessConfigRequestBody.hostGroupInfo)
+            && Objects.equals(this.accessConfigTag, createAccessConfigRequestBody.accessConfigTag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accessConfigName, accessConfigType, accessConfigDetail, logInfo, hostGroupInfo);
+        return Objects
+            .hash(accessConfigName, accessConfigType, accessConfigDetail, logInfo, hostGroupInfo, accessConfigTag);
     }
 
     @Override
@@ -245,6 +286,7 @@ public class CreateAccessConfigRequestBody {
         sb.append("    accessConfigDetail: ").append(toIndentedString(accessConfigDetail)).append("\n");
         sb.append("    logInfo: ").append(toIndentedString(logInfo)).append("\n");
         sb.append("    hostGroupInfo: ").append(toIndentedString(hostGroupInfo)).append("\n");
+        sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,6 +31,11 @@ public class GetAccessConfigListRequestBody {
 
     private List<String> logStreamNameList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_config_tag_list")
+
+    private List<AccessConfigTag> accessConfigTagList = null;
+
     public GetAccessConfigListRequestBody withAccessConfigNameList(List<String> accessConfigNameList) {
         this.accessConfigNameList = accessConfigNameList;
         return this;
@@ -159,6 +164,39 @@ public class GetAccessConfigListRequestBody {
         this.logStreamNameList = logStreamNameList;
     }
 
+    public GetAccessConfigListRequestBody withAccessConfigTagList(List<AccessConfigTag> accessConfigTagList) {
+        this.accessConfigTagList = accessConfigTagList;
+        return this;
+    }
+
+    public GetAccessConfigListRequestBody addAccessConfigTagListItem(AccessConfigTag accessConfigTagListItem) {
+        if (this.accessConfigTagList == null) {
+            this.accessConfigTagList = new ArrayList<>();
+        }
+        this.accessConfigTagList.add(accessConfigTagListItem);
+        return this;
+    }
+
+    public GetAccessConfigListRequestBody withAccessConfigTagList(
+        Consumer<List<AccessConfigTag>> accessConfigTagListSetter) {
+        if (this.accessConfigTagList == null) {
+            this.accessConfigTagList = new ArrayList<>();
+        }
+        accessConfigTagListSetter.accept(this.accessConfigTagList);
+        return this;
+    }
+
+    /** Get accessConfigTagList
+     * 
+     * @return accessConfigTagList */
+    public List<AccessConfigTag> getAccessConfigTagList() {
+        return accessConfigTagList;
+    }
+
+    public void setAccessConfigTagList(List<AccessConfigTag> accessConfigTagList) {
+        this.accessConfigTagList = accessConfigTagList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -171,12 +209,14 @@ public class GetAccessConfigListRequestBody {
         return Objects.equals(this.accessConfigNameList, getAccessConfigListRequestBody.accessConfigNameList)
             && Objects.equals(this.hostGroupNameList, getAccessConfigListRequestBody.hostGroupNameList)
             && Objects.equals(this.logGroupNameList, getAccessConfigListRequestBody.logGroupNameList)
-            && Objects.equals(this.logStreamNameList, getAccessConfigListRequestBody.logStreamNameList);
+            && Objects.equals(this.logStreamNameList, getAccessConfigListRequestBody.logStreamNameList)
+            && Objects.equals(this.accessConfigTagList, getAccessConfigListRequestBody.accessConfigTagList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accessConfigNameList, hostGroupNameList, logGroupNameList, logStreamNameList);
+        return Objects
+            .hash(accessConfigNameList, hostGroupNameList, logGroupNameList, logStreamNameList, accessConfigTagList);
     }
 
     @Override
@@ -187,6 +227,7 @@ public class GetAccessConfigListRequestBody {
         sb.append("    hostGroupNameList: ").append(toIndentedString(hostGroupNameList)).append("\n");
         sb.append("    logGroupNameList: ").append(toIndentedString(logGroupNameList)).append("\n");
         sb.append("    logStreamNameList: ").append(toIndentedString(logStreamNameList)).append("\n");
+        sb.append("    accessConfigTagList: ").append(toIndentedString(accessConfigTagList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

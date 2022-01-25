@@ -43,7 +43,7 @@ public class ListInstantQueryAomPromPostResponse extends SdkResponse {
 
 
     /**
-     * Get status
+     * 响应状态。
      * @return status
      */
     public String getStatus() {

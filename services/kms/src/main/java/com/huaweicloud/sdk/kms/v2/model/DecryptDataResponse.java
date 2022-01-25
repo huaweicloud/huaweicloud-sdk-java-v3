@@ -19,6 +19,11 @@ public class DecryptDataResponse extends SdkResponse {
 
     private String plainText;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plain_text_base64")
+
+    private String plainTextBase64;
+
     public DecryptDataResponse withKeyId(String keyId) {
         this.keyId = keyId;
         return this;
@@ -51,6 +56,22 @@ public class DecryptDataResponse extends SdkResponse {
         this.plainText = plainText;
     }
 
+    public DecryptDataResponse withPlainTextBase64(String plainTextBase64) {
+        this.plainTextBase64 = plainTextBase64;
+        return this;
+    }
+
+    /** 明文的Base64值，在非对称加密场景下，若加密的明文中含有不可见字符，则解密结果以该值为准。
+     * 
+     * @return plainTextBase64 */
+    public String getPlainTextBase64() {
+        return plainTextBase64;
+    }
+
+    public void setPlainTextBase64(String plainTextBase64) {
+        this.plainTextBase64 = plainTextBase64;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +82,13 @@ public class DecryptDataResponse extends SdkResponse {
         }
         DecryptDataResponse decryptDataResponse = (DecryptDataResponse) o;
         return Objects.equals(this.keyId, decryptDataResponse.keyId)
-            && Objects.equals(this.plainText, decryptDataResponse.plainText);
+            && Objects.equals(this.plainText, decryptDataResponse.plainText)
+            && Objects.equals(this.plainTextBase64, decryptDataResponse.plainTextBase64);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, plainText);
+        return Objects.hash(keyId, plainText, plainTextBase64);
     }
 
     @Override
@@ -75,6 +97,7 @@ public class DecryptDataResponse extends SdkResponse {
         sb.append("class DecryptDataResponse {\n");
         sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
         sb.append("    plainText: ").append(toIndentedString(plainText)).append("\n");
+        sb.append("    plainTextBase64: ").append(toIndentedString(plainTextBase64)).append("\n");
         sb.append("}");
         return sb.toString();
     }

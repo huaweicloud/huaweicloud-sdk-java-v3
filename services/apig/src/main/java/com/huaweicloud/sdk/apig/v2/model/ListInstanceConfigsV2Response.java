@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /** Response Object */
-public class ListInstanceCofigsV2Response extends SdkResponse {
+public class ListInstanceConfigsV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
@@ -27,7 +27,7 @@ public class ListInstanceCofigsV2Response extends SdkResponse {
 
     private List<InstanceConfig> configs = null;
 
-    public ListInstanceCofigsV2Response withSize(Integer size) {
+    public ListInstanceConfigsV2Response withSize(Integer size) {
         this.size = size;
         return this;
     }
@@ -43,7 +43,7 @@ public class ListInstanceCofigsV2Response extends SdkResponse {
         this.size = size;
     }
 
-    public ListInstanceCofigsV2Response withTotal(Long total) {
+    public ListInstanceConfigsV2Response withTotal(Long total) {
         this.total = total;
         return this;
     }
@@ -59,12 +59,12 @@ public class ListInstanceCofigsV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListInstanceCofigsV2Response withConfigs(List<InstanceConfig> configs) {
+    public ListInstanceConfigsV2Response withConfigs(List<InstanceConfig> configs) {
         this.configs = configs;
         return this;
     }
 
-    public ListInstanceCofigsV2Response addConfigsItem(InstanceConfig configsItem) {
+    public ListInstanceConfigsV2Response addConfigsItem(InstanceConfig configsItem) {
         if (this.configs == null) {
             this.configs = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ListInstanceCofigsV2Response extends SdkResponse {
         return this;
     }
 
-    public ListInstanceCofigsV2Response withConfigs(Consumer<List<InstanceConfig>> configsSetter) {
+    public ListInstanceConfigsV2Response withConfigs(Consumer<List<InstanceConfig>> configsSetter) {
         if (this.configs == null) {
             this.configs = new ArrayList<>();
         }
@@ -99,10 +99,10 @@ public class ListInstanceCofigsV2Response extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListInstanceCofigsV2Response listInstanceCofigsV2Response = (ListInstanceCofigsV2Response) o;
-        return Objects.equals(this.size, listInstanceCofigsV2Response.size)
-            && Objects.equals(this.total, listInstanceCofigsV2Response.total)
-            && Objects.equals(this.configs, listInstanceCofigsV2Response.configs);
+        ListInstanceConfigsV2Response listInstanceConfigsV2Response = (ListInstanceConfigsV2Response) o;
+        return Objects.equals(this.size, listInstanceConfigsV2Response.size)
+            && Objects.equals(this.total, listInstanceConfigsV2Response.total)
+            && Objects.equals(this.configs, listInstanceConfigsV2Response.configs);
     }
 
     @Override
@@ -113,7 +113,7 @@ public class ListInstanceCofigsV2Response extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListInstanceCofigsV2Response {\n");
+        sb.append("class ListInstanceConfigsV2Response {\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    configs: ").append(toIndentedString(configs)).append("\n");

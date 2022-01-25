@@ -37,7 +37,7 @@ public class RelationModel  {
     
     private List<String> value = null;
         /**
-     * 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。  枚举值：  AND OR NOT
+     * 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。
      */
     public static final class RelationEnum {
 
@@ -195,7 +195,7 @@ public class RelationModel  {
 
 
     /**
-     * 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。  枚举值：  AND OR NOT
+     * 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。
      * @return relation
      */
     public RelationEnum getRelation() {

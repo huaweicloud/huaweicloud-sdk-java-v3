@@ -42,7 +42,7 @@ public class ListMetadataAomPromGetResponse extends SdkResponse {
 
 
     /**
-     * Get status
+     * 响应状态。
      * @return status
      */
     public String getStatus() {
@@ -64,7 +64,7 @@ public class ListMetadataAomPromGetResponse extends SdkResponse {
 
 
     /**
-     * Get data
+     * 元数据信息。
      * @return data
      */
     public Object getData() {

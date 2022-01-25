@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.lts.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -23,6 +25,11 @@ public class UpdateAccessConfigRequestBody {
     @JsonProperty(value = "host_group_info")
 
     private AccessConfigHostGroupIdList hostGroupInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_config_tag")
+
+    private List<AccessConfigTag> accessConfigTag = null;
 
     public UpdateAccessConfigRequestBody withAccessConfigId(String accessConfigId) {
         this.accessConfigId = accessConfigId;
@@ -90,6 +97,38 @@ public class UpdateAccessConfigRequestBody {
         this.hostGroupInfo = hostGroupInfo;
     }
 
+    public UpdateAccessConfigRequestBody withAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
+        this.accessConfigTag = accessConfigTag;
+        return this;
+    }
+
+    public UpdateAccessConfigRequestBody addAccessConfigTagItem(AccessConfigTag accessConfigTagItem) {
+        if (this.accessConfigTag == null) {
+            this.accessConfigTag = new ArrayList<>();
+        }
+        this.accessConfigTag.add(accessConfigTagItem);
+        return this;
+    }
+
+    public UpdateAccessConfigRequestBody withAccessConfigTag(Consumer<List<AccessConfigTag>> accessConfigTagSetter) {
+        if (this.accessConfigTag == null) {
+            this.accessConfigTag = new ArrayList<>();
+        }
+        accessConfigTagSetter.accept(this.accessConfigTag);
+        return this;
+    }
+
+    /** Get accessConfigTag
+     * 
+     * @return accessConfigTag */
+    public List<AccessConfigTag> getAccessConfigTag() {
+        return accessConfigTag;
+    }
+
+    public void setAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
+        this.accessConfigTag = accessConfigTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -101,12 +140,13 @@ public class UpdateAccessConfigRequestBody {
         UpdateAccessConfigRequestBody updateAccessConfigRequestBody = (UpdateAccessConfigRequestBody) o;
         return Objects.equals(this.accessConfigId, updateAccessConfigRequestBody.accessConfigId)
             && Objects.equals(this.accessConfigDetail, updateAccessConfigRequestBody.accessConfigDetail)
-            && Objects.equals(this.hostGroupInfo, updateAccessConfigRequestBody.hostGroupInfo);
+            && Objects.equals(this.hostGroupInfo, updateAccessConfigRequestBody.hostGroupInfo)
+            && Objects.equals(this.accessConfigTag, updateAccessConfigRequestBody.accessConfigTag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accessConfigId, accessConfigDetail, hostGroupInfo);
+        return Objects.hash(accessConfigId, accessConfigDetail, hostGroupInfo, accessConfigTag);
     }
 
     @Override
@@ -116,6 +156,7 @@ public class UpdateAccessConfigRequestBody {
         sb.append("    accessConfigId: ").append(toIndentedString(accessConfigId)).append("\n");
         sb.append("    accessConfigDetail: ").append(toIndentedString(accessConfigDetail)).append("\n");
         sb.append("    hostGroupInfo: ").append(toIndentedString(hostGroupInfo)).append("\n");
+        sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

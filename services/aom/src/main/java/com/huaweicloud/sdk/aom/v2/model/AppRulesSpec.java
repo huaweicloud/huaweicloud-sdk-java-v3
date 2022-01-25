@@ -137,7 +137,7 @@ public class AppRulesSpec  {
     }
 
     /**
-     * cmdLine、env 属性列表(暂不使用,可不传)。
+     * 属性列表(暂不使用,可不传)。 cmdLine、env
      * @return attrList
      */
     public List<String> getAttrList() {
@@ -159,7 +159,7 @@ public class AppRulesSpec  {
 
 
     /**
-     * true、false 是否开启日志采集。
+     * 是否开启日志采集。 true、false
      * @return detectLog
      */
     public String getDetectLog() {
@@ -195,7 +195,7 @@ public class AppRulesSpec  {
     }
 
     /**
-     * checkType为cmdLine时checkMode填contain,checkContent格式为[“xxx”]表示进程命令行参数中需要包含xxx。checkType为env时checkMode填contain,checkContent格式为 [\"k1\",\"v1\"]表示进程环境变量中需要包含名为k1值为v1的环境变量。checkType为scope时checkMode填equals,checkContent格式为节点ID数组[\"hostId1”,”hostId2”],表示规则仅会在这些节点上生效(如果不指定节点范围,规则将下发到该项目所有的节点)。 规则发现部分,数组中有多个对象时表示需要同时满足所有条件的进程才会被匹配到。
+     * 规则发现部分,数组中有多个对象时表示需要同时满足所有条件的进程才会被匹配到。 checkType为cmdLine时checkMode填contain,checkContent格式为[“xxx”]表示进程命令行参数中需要包含xxx。checkType为env时checkMode填contain,checkContent格式为 [\"k1\",\"v1\"]表示进程环境变量中需要包含名为k1值为v1的环境变量。checkType为scope时checkMode填equals,checkContent格式为节点ID数组[\"hostId1”,”hostId2”],表示规则仅会在这些节点上生效(如果不指定节点范围,规则将下发到该项目所有的节点)。
      * @return discoveryRule
      */
     public List<DiscoveryRule> getDiscoveryRule() {
@@ -217,7 +217,7 @@ public class AppRulesSpec  {
 
 
     /**
-     * true、false 是否为默认规则。
+     * 是否为默认规则。 true、false
      * @return isDefaultRule
      */
     public String getIsDefaultRule() {
@@ -239,7 +239,7 @@ public class AppRulesSpec  {
 
 
     /**
-     * true、false 是否为规则预探测场景(预探测场景不会保存规则,仅用于规则下发之前对规则正确性的检测)。
+     * 是否为规则预探测场景(预探测场景不会保存规则,仅用于规则下发之前验证该规则能否有效发现节点上的进程)。 true、false
      * @return isDetect
      */
     public String getIsDetect() {
@@ -275,7 +275,7 @@ public class AppRulesSpec  {
     }
 
     /**
-     * log、trace、out 日志文件的后缀。
+     * 日志文件的后缀。 log、trace、out
      * @return logFileFix
      */
     public List<String> getLogFileFix() {
@@ -311,7 +311,7 @@ public class AppRulesSpec  {
     }
 
     /**
-     * 当cmdLineHash为固定字符串时,指定日志路径或者日志文件。否则只采集进程当前打开的以.log和.trace结尾的文件。nameType取值cmdLineHash时,args格式为[\"00001\"],value格式为[\"/xxx/xx.log\"],表示当启动命令是00001时,日志路径为/xxx/xx.log。 日志路径配置规则。
+     * 日志路径配置规则。 当cmdLineHash为固定字符串时,指定日志路径或者日志文件。否则只采集进程当前打开的以.log和.trace结尾的文件。nameType取值cmdLineHash时,args格式为[\"00001\"],value格式为[\"/xxx/xx.log\"],表示当启动命令是00001时,日志路径为/xxx/xx.log。
      * @return logPathRule
      */
     public List<LogPathRule> getLogPathRule() {
@@ -362,7 +362,7 @@ public class AppRulesSpec  {
 
 
     /**
-     * 1~9999的整数字符串,默认取值为9999 规则优先级。
+     * 规则优先级。 1~9999的整数字符串,默认取值为9999
      * @return priority
      */
     public String getPriority() {

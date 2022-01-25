@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 失败原因。如果为空，则集群处于正常状态。 */
+/** 失败原因。集群处于正常状态时不返回。 */
 public class FailedReasons {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -44,7 +44,7 @@ public class ListLabelValuesAomPromGetResponse extends SdkResponse {
 
 
     /**
-     * Get status
+     * 响应状态。
      * @return status
      */
     public String getStatus() {
@@ -80,7 +80,7 @@ public class ListLabelValuesAomPromGetResponse extends SdkResponse {
     }
 
     /**
-     * Get data
+     * 标签值信息。
      * @return data
      */
     public List<String> getData() {

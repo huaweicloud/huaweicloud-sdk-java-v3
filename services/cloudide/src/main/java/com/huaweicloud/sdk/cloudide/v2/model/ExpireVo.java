@@ -60,7 +60,7 @@ public class ExpireVo {
         return this;
     }
 
-    /** CloudIDE实例生命周期，单位‘分钟’ minimum: -1 maximum: 1440
+    /** CloudIDE实例自动休眠时长，单位‘分钟’ minimum: -1 maximum: 1440
      * 
      * @return interval */
     public Long getInterval() {

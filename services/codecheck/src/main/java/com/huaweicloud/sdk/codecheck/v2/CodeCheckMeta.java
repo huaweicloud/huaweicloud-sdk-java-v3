@@ -122,6 +122,38 @@ public class CodeCheckMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteRulesetRequest, DeleteRulesetResponse> deleteRuleset =
+        genFordeleteRuleset();
+
+    private static HttpRequestDef<DeleteRulesetRequest, DeleteRulesetResponse> genFordeleteRuleset() {
+        // basic
+        HttpRequestDef.Builder<DeleteRulesetRequest, DeleteRulesetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRulesetRequest.class, DeleteRulesetResponse.class)
+                .withName("DeleteRuleset")
+                .withUri("/v2/{project_id}/ruleset/{ruleset_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRulesetRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("ruleset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRulesetRequest::getRulesetId, (req, v) -> {
+                req.setRulesetId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
 
     private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
@@ -355,6 +387,13 @@ public class CodeCheckMeta {
             f -> f.withMarshaller(ListTemplateRulesRequest::getLanguages, (req, v) -> {
                 req.setLanguages(v);
             }));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplateRulesRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -399,6 +438,45 @@ public class CodeCheckMeta {
             TypeCasts.uncheckedConversion(RunRequestV2.class),
             f -> f.withMarshaller(RunTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetDefaulTemplateRequest, SetDefaulTemplateResponse> setDefaulTemplate =
+        genForsetDefaulTemplate();
+
+    private static HttpRequestDef<SetDefaulTemplateRequest, SetDefaulTemplateResponse> genForsetDefaulTemplate() {
+        // basic
+        HttpRequestDef.Builder<SetDefaulTemplateRequest, SetDefaulTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetDefaulTemplateRequest.class, SetDefaulTemplateResponse.class)
+                .withName("SetDefaulTemplate")
+                .withUri("/v2/{project_id}/ruleset/{ruleset_id}/{language}/default")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDefaulTemplateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("ruleset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDefaulTemplateRequest::getRulesetId, (req, v) -> {
+                req.setRulesetId(v);
+            }));
+        builder.<String>withRequestField("language",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDefaulTemplateRequest::getLanguage, (req, v) -> {
+                req.setLanguage(v);
             }));
 
         // response
@@ -599,6 +677,44 @@ public class CodeCheckMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTaskListByProjectIdRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTasklogRequest, ShowTasklogResponse> showTasklog = genForshowTasklog();
+
+    private static HttpRequestDef<ShowTasklogRequest, ShowTasklogResponse> genForshowTasklog() {
+        // basic
+        HttpRequestDef.Builder<ShowTasklogRequest, ShowTasklogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTasklogRequest.class, ShowTasklogResponse.class)
+                .withName("ShowTasklog")
+                .withUri("/v2/{project_id}/tasks/{task_id}/log-detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasklogRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasklogRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("execute_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasklogRequest::getExecuteId, (req, v) -> {
+                req.setExecuteId(v);
             }));
 
         // response

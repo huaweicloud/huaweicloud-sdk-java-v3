@@ -159,7 +159,7 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 优惠券类型： 300：折扣券301：代金券302：现金券303：储值卡
+    /** 优惠券类型。 1：代金券2：折扣券3：产品券4：现金券
      * 
      * @return couponType */
     public Integer getCouponType() {

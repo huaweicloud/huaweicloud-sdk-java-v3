@@ -56,7 +56,7 @@ public class SearchCorpAdminsRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh_CN, 英文为en_US
+    /** 语言参数，默认为中文zh-CN, 英文为en-US
      * 
      * @return acceptLanguage */
     public String getAcceptLanguage() {

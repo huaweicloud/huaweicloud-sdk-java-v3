@@ -52,6 +52,11 @@ public class CreateTaskRequestV2 {
     private String accessToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endpoint_id")
+
+    private String endpointId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inc_config")
 
     private IncConfigV2 incConfig;
@@ -242,6 +247,22 @@ public class CreateTaskRequestV2 {
         this.accessToken = accessToken;
     }
 
+    public CreateTaskRequestV2 withEndpointId(String endpointId) {
+        this.endpointId = endpointId;
+        return this;
+    }
+
+    /** 仓库有权限的用户endpointId
+     * 
+     * @return endpointId */
+    public String getEndpointId() {
+        return endpointId;
+    }
+
+    public void setEndpointId(String endpointId) {
+        this.endpointId = endpointId;
+    }
+
     public CreateTaskRequestV2 withIncConfig(IncConfigV2 incConfig) {
         this.incConfig = incConfig;
         return this;
@@ -316,6 +337,7 @@ public class CreateTaskRequestV2 {
             && Objects.equals(this.taskType, createTaskRequestV2.taskType)
             && Objects.equals(this.username, createTaskRequestV2.username)
             && Objects.equals(this.accessToken, createTaskRequestV2.accessToken)
+            && Objects.equals(this.endpointId, createTaskRequestV2.endpointId)
             && Objects.equals(this.incConfig, createTaskRequestV2.incConfig)
             && Objects.equals(this.enableFossbot, createTaskRequestV2.enableFossbot)
             && Objects.equals(this.resourcePoolId, createTaskRequestV2.resourcePoolId);
@@ -331,6 +353,7 @@ public class CreateTaskRequestV2 {
             taskType,
             username,
             accessToken,
+            endpointId,
             incConfig,
             enableFossbot,
             resourcePoolId);
@@ -348,6 +371,7 @@ public class CreateTaskRequestV2 {
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+        sb.append("    endpointId: ").append(toIndentedString(endpointId)).append("\n");
         sb.append("    incConfig: ").append(toIndentedString(incConfig)).append("\n");
         sb.append("    enableFossbot: ").append(toIndentedString(enableFossbot)).append("\n");
         sb.append("    resourcePoolId: ").append(toIndentedString(resourcePoolId)).append("\n");

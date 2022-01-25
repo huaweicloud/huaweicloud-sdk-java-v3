@@ -593,6 +593,90 @@ public class ApiCommon {
 
     private String tag;
 
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持 */
+    public static final class ContentTypeEnum {
+
+        /** Enum APPLICATION_JSON for value: "application/json" */
+        public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
+
+        /** Enum APPLICATION_XML for value: "application/xml" */
+        public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
+
+        /** Enum MULTIPART_FORM_DATE for value: "multipart/form-date" */
+        public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
+
+        /** Enum TEXT_PLAIN for value: "text/plain" */
+        public static final ContentTypeEnum TEXT_PLAIN = new ContentTypeEnum("text/plain");
+
+        private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ContentTypeEnum> createStaticFields() {
+            Map<String, ContentTypeEnum> map = new HashMap<>();
+            map.put("application/json", APPLICATION_JSON);
+            map.put("application/xml", APPLICATION_XML);
+            map.put("multipart/form-date", MULTIPART_FORM_DATE);
+            map.put("text/plain", TEXT_PLAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ContentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ContentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ContentTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ContentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ContentTypeEnum) {
+                return this.value.equals(((ContentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_type")
+
+    private ContentTypeEnum contentType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
@@ -642,6 +726,31 @@ public class ApiCommon {
     @JsonProperty(value = "publish_id")
 
     private String publishId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_time")
+
+    private String publishTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roma_app_name")
+
+    private String romaAppName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ld_api_id")
+
+    private String ldApiId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backend_api")
+
+    private BackendApi backendApi;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "api_group_info")
+
+    private ApiGroupCommonInfo apiGroupInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_info")
@@ -1050,6 +1159,22 @@ public class ApiCommon {
         this.tag = tag;
     }
 
+    public ApiCommon withContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持
+     * 
+     * @return contentType */
+    public ContentTypeEnum getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+    }
+
     public ApiCommon withId(String id) {
         this.id = id;
         return this;
@@ -1208,6 +1333,104 @@ public class ApiCommon {
 
     public void setPublishId(String publishId) {
         this.publishId = publishId;
+    }
+
+    public ApiCommon withPublishTime(String publishTime) {
+        this.publishTime = publishTime;
+        return this;
+    }
+
+    /** 发布时间 存在多个发布记录时，发布时间之间用|隔开
+     * 
+     * @return publishTime */
+    public String getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(String publishTime) {
+        this.publishTime = publishTime;
+    }
+
+    public ApiCommon withRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+        return this;
+    }
+
+    /** API归属的集成应用名称 暂不支持
+     * 
+     * @return romaAppName */
+    public String getRomaAppName() {
+        return romaAppName;
+    }
+
+    public void setRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+    }
+
+    public ApiCommon withLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
+        return this;
+    }
+
+    /** 当API的后端为自定义后端时，对应的自定义后端API编号 暂不支持
+     * 
+     * @return ldApiId */
+    public String getLdApiId() {
+        return ldApiId;
+    }
+
+    public void setLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
+    }
+
+    public ApiCommon withBackendApi(BackendApi backendApi) {
+        this.backendApi = backendApi;
+        return this;
+    }
+
+    public ApiCommon withBackendApi(Consumer<BackendApi> backendApiSetter) {
+        if (this.backendApi == null) {
+            this.backendApi = new BackendApi();
+            backendApiSetter.accept(this.backendApi);
+        }
+
+        return this;
+    }
+
+    /** Get backendApi
+     * 
+     * @return backendApi */
+    public BackendApi getBackendApi() {
+        return backendApi;
+    }
+
+    public void setBackendApi(BackendApi backendApi) {
+        this.backendApi = backendApi;
+    }
+
+    public ApiCommon withApiGroupInfo(ApiGroupCommonInfo apiGroupInfo) {
+        this.apiGroupInfo = apiGroupInfo;
+        return this;
+    }
+
+    public ApiCommon withApiGroupInfo(Consumer<ApiGroupCommonInfo> apiGroupInfoSetter) {
+        if (this.apiGroupInfo == null) {
+            this.apiGroupInfo = new ApiGroupCommonInfo();
+            apiGroupInfoSetter.accept(this.apiGroupInfo);
+        }
+
+        return this;
+    }
+
+    /** Get apiGroupInfo
+     * 
+     * @return apiGroupInfo */
+    public ApiGroupCommonInfo getApiGroupInfo() {
+        return apiGroupInfo;
+    }
+
+    public void setApiGroupInfo(ApiGroupCommonInfo apiGroupInfo) {
+        this.apiGroupInfo = apiGroupInfo;
     }
 
     public ApiCommon withFuncInfo(ApiFunc funcInfo) {
@@ -1411,7 +1634,8 @@ public class ApiCommon {
             && Objects.equals(this.responseId, apiCommon.responseId)
             && Objects.equals(this.romaAppId, apiCommon.romaAppId)
             && Objects.equals(this.domainName, apiCommon.domainName) && Objects.equals(this.tag, apiCommon.tag)
-            && Objects.equals(this.id, apiCommon.id) && Objects.equals(this.status, apiCommon.status)
+            && Objects.equals(this.contentType, apiCommon.contentType) && Objects.equals(this.id, apiCommon.id)
+            && Objects.equals(this.status, apiCommon.status)
             && Objects.equals(this.arrangeNecessary, apiCommon.arrangeNecessary)
             && Objects.equals(this.registerTime, apiCommon.registerTime)
             && Objects.equals(this.updateTime, apiCommon.updateTime)
@@ -1419,8 +1643,13 @@ public class ApiCommon {
             && Objects.equals(this.groupVersion, apiCommon.groupVersion)
             && Objects.equals(this.runEnvId, apiCommon.runEnvId)
             && Objects.equals(this.runEnvName, apiCommon.runEnvName)
-            && Objects.equals(this.publishId, apiCommon.publishId) && Objects.equals(this.funcInfo, apiCommon.funcInfo)
-            && Objects.equals(this.mockInfo, apiCommon.mockInfo) && Objects.equals(this.reqParams, apiCommon.reqParams)
+            && Objects.equals(this.publishId, apiCommon.publishId)
+            && Objects.equals(this.publishTime, apiCommon.publishTime)
+            && Objects.equals(this.romaAppName, apiCommon.romaAppName)
+            && Objects.equals(this.ldApiId, apiCommon.ldApiId) && Objects.equals(this.backendApi, apiCommon.backendApi)
+            && Objects.equals(this.apiGroupInfo, apiCommon.apiGroupInfo)
+            && Objects.equals(this.funcInfo, apiCommon.funcInfo) && Objects.equals(this.mockInfo, apiCommon.mockInfo)
+            && Objects.equals(this.reqParams, apiCommon.reqParams)
             && Objects.equals(this.backendParams, apiCommon.backendParams)
             && Objects.equals(this.policyFunctions, apiCommon.policyFunctions)
             && Objects.equals(this.policyMocks, apiCommon.policyMocks);
@@ -1450,6 +1679,7 @@ public class ApiCommon {
             romaAppId,
             domainName,
             tag,
+            contentType,
             id,
             status,
             arrangeNecessary,
@@ -1460,6 +1690,11 @@ public class ApiCommon {
             runEnvId,
             runEnvName,
             publishId,
+            publishTime,
+            romaAppName,
+            ldApiId,
+            backendApi,
+            apiGroupInfo,
             funcInfo,
             mockInfo,
             reqParams,
@@ -1494,6 +1729,7 @@ public class ApiCommon {
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    arrangeNecessary: ").append(toIndentedString(arrangeNecessary)).append("\n");
@@ -1504,6 +1740,11 @@ public class ApiCommon {
         sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    runEnvName: ").append(toIndentedString(runEnvName)).append("\n");
         sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
+        sb.append("    publishTime: ").append(toIndentedString(publishTime)).append("\n");
+        sb.append("    romaAppName: ").append(toIndentedString(romaAppName)).append("\n");
+        sb.append("    ldApiId: ").append(toIndentedString(ldApiId)).append("\n");
+        sb.append("    backendApi: ").append(toIndentedString(backendApi)).append("\n");
+        sb.append("    apiGroupInfo: ").append(toIndentedString(apiGroupInfo)).append("\n");
         sb.append("    funcInfo: ").append(toIndentedString(funcInfo)).append("\n");
         sb.append("    mockInfo: ").append(toIndentedString(mockInfo)).append("\n");
         sb.append("    reqParams: ").append(toIndentedString(reqParams)).append("\n");

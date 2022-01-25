@@ -97,7 +97,7 @@ public class QueryBodyParam  {
 
 
     /**
-     * 取值范国 app_log,node _log,custom_log 日志类型字段:app_log:应用日志 node_log:主机日志 custom_log:自定义配置路径日志。
+     * 取值范围 app_log,node _log,custom_log 日志类型字段:app_log:应用日志 node_log:主机日志 custom_log:自定义配置路径日志。
      * @return category
      */
     public String getCategory() {
@@ -141,7 +141,7 @@ public class QueryBodyParam  {
 
 
     /**
-     * 取值范围 0、1 。搜索时是否隐藏系统日志(icagentjkubectl )默认0为隐藏为显示。
+     * 取值范围 0、1 。搜索时是否隐藏系统日志，默认0为隐藏1为显示。
      * @return hideSyslog
      */
     public Integer getHideSyslog() {

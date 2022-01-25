@@ -1839,6 +1839,31 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> deleteWebHookConfig =
+        genFordeleteWebHookConfig();
+
+    private static HttpRequestDef<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> genFordeleteWebHookConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteWebHookConfigRequest.class, DeleteWebHookConfigResponse.class)
+            .withName("DeleteWebHookConfig")
+            .withUri("/v1/mmc/management/webhook/link-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWebHookConfigRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteWebinarRequest, DeleteWebinarResponse> deleteWebinar =
         genFordeleteWebinar();
 
@@ -4894,6 +4919,31 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetWebHookConfigRequest, SetWebHookConfigResponse> setWebHookConfig =
+        genForsetWebHookConfig();
+
+    private static HttpRequestDef<SetWebHookConfigRequest, SetWebHookConfigResponse> genForsetWebHookConfig() {
+        // basic
+        HttpRequestDef.Builder<SetWebHookConfigRequest, SetWebHookConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetWebHookConfigRequest.class, SetWebHookConfigResponse.class)
+                .withName("SetWebHookConfig")
+                .withUri("/v1/mmc/management/webhook/link-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<WebHookConfigRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WebHookConfigRequest.class),
+            f -> f.withMarshaller(SetWebHookConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> showConfOrg = genForshowConfOrg();
 
     private static HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> genForshowConfOrg() {
@@ -6012,6 +6062,38 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowWebHookConfigRequest, ShowWebHookConfigResponse> showWebHookConfig =
+        genForshowWebHookConfig();
+
+    private static HttpRequestDef<ShowWebHookConfigRequest, ShowWebHookConfigResponse> genForshowWebHookConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowWebHookConfigRequest, ShowWebHookConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWebHookConfigRequest.class, ShowWebHookConfigResponse.class)
+                .withName("ShowWebHookConfig")
+                .withUri("/v1/mmc/management/webhook/link-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("corpId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWebHookConfigRequest::getCorpId, (req, v) -> {
+                req.setCorpId(v);
+            }));
+        builder.<String>withRequestField("spId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWebHookConfigRequest::getSpId, (req, v) -> {
+                req.setSpId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowWebinarRequest, ShowWebinarResponse> showWebinar = genForshowWebinar();
 
     private static HttpRequestDef<ShowWebinarRequest, ShowWebinarResponse> genForshowWebinar() {
@@ -6978,6 +7060,41 @@ public class MeetingMeta {
             TypeCasts.uncheckedConversion(ModUserDTO.class),
             f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> updateWebHookConfigStatus =
+        genForupdateWebHookConfigStatus();
+
+    private static HttpRequestDef<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> genForupdateWebHookConfigStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateWebHookConfigStatusRequest.class,
+                    UpdateWebHookConfigStatusResponse.class)
+                .withName("UpdateWebHookConfigStatus")
+                .withUri("/v1/mmc/management/webhook/change-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWebHookConfigStatusRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateWebHookConfigStatusRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
             }));
 
         // response

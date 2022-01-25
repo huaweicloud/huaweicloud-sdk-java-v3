@@ -367,6 +367,25 @@ public class DevStarAsyncClient {
             DevStarMeta.checkRepositoryDuplicateName, hcClient);
     }
 
+    /** 使用 CloudIDE 实例打开应用代码 使用 CloudIDE 实例打开应用代码。CloudIDE会保存用户项目数据，相同用户使用同一个CloudIDE 使用要求：1.用户需为登录状态； 2.拥有仓库权限
+     *
+     * @param ShowRepositoryByCloudIdeRequest 请求对象
+     * @return CompletableFuture<ShowRepositoryByCloudIdeResponse> */
+    public CompletableFuture<ShowRepositoryByCloudIdeResponse> showRepositoryByCloudIdeAsync(
+        ShowRepositoryByCloudIdeRequest request) {
+        return hcClient.asyncInvokeHttp(request, DevStarMeta.showRepositoryByCloudIde);
+    }
+
+    /** 使用 CloudIDE 实例打开应用代码 使用 CloudIDE 实例打开应用代码。CloudIDE会保存用户项目数据，相同用户使用同一个CloudIDE 使用要求：1.用户需为登录状态； 2.拥有仓库权限
+     *
+     * @param ShowRepositoryByCloudIdeRequest 请求对象
+     * @return AsyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse> */
+    public AsyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse> showRepositoryByCloudIdeAsyncInvoker(
+        ShowRepositoryByCloudIdeRequest request) {
+        return new AsyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse>(request,
+            DevStarMeta.showRepositoryByCloudIde, hcClient);
+    }
+
     /** 应用代码仓库统计信息 查询代码仓库的统计信息,包括代码仓的名称,代码行数等信息
      *
      * @param ShowRepositoryStatisticalDataV2Request 请求对象
@@ -459,6 +478,24 @@ public class DevStarAsyncClient {
         ListTemplateViewHistoriesRequest request) {
         return new AsyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse>(request,
             DevStarMeta.listTemplateViewHistories, hcClient);
+    }
+
+    /** 查询模板列表 查询模板列表。
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return CompletableFuture<ListTemplatesResponse> */
+    public CompletableFuture<ListTemplatesResponse> listTemplatesAsync(ListTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DevStarMeta.listTemplates);
+    }
+
+    /** 查询模板列表 查询模板列表。
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> */
+    public AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesAsyncInvoker(
+        ListTemplatesRequest request) {
+        return new AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, DevStarMeta.listTemplates,
+            hcClient);
     }
 
     /** 查询模板列表（V2） 查询模板列表。

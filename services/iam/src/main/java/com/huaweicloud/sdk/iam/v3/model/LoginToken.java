@@ -42,6 +42,11 @@ public class LoginToken {
     private String sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_user_id")
+
+    private String sessionUserId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_name")
 
     private String sessionName;
@@ -147,6 +152,22 @@ public class LoginToken {
         this.sessionId = sessionId;
     }
 
+    public LoginToken withSessionUserId(String sessionUserId) {
+        this.sessionUserId = sessionUserId;
+        return this;
+    }
+
+    /** 自定义代理用户ID。
+     * 
+     * @return sessionUserId */
+    public String getSessionUserId() {
+        return sessionUserId;
+    }
+
+    public void setSessionUserId(String sessionUserId) {
+        this.sessionUserId = sessionUserId;
+    }
+
     public LoginToken withSessionName(String sessionName) {
         this.sessionName = sessionName;
         return this;
@@ -202,13 +223,15 @@ public class LoginToken {
             && Objects.equals(this.expiresAt, loginToken.expiresAt) && Objects.equals(this.method, loginToken.method)
             && Objects.equals(this.userId, loginToken.userId) && Objects.equals(this.userName, loginToken.userName)
             && Objects.equals(this.sessionId, loginToken.sessionId)
+            && Objects.equals(this.sessionUserId, loginToken.sessionUserId)
             && Objects.equals(this.sessionName, loginToken.sessionName)
             && Objects.equals(this.assumedBy, loginToken.assumedBy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, expiresAt, method, userId, userName, sessionId, sessionName, assumedBy);
+        return Objects
+            .hash(domainId, expiresAt, method, userId, userName, sessionId, sessionUserId, sessionName, assumedBy);
     }
 
     @Override
@@ -221,6 +244,7 @@ public class LoginToken {
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+        sb.append("    sessionUserId: ").append(toIndentedString(sessionUserId)).append("\n");
         sb.append("    sessionName: ").append(toIndentedString(sessionName)).append("\n");
         sb.append("    assumedBy: ").append(toIndentedString(assumedBy)).append("\n");
         sb.append("}");

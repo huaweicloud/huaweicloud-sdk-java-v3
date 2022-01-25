@@ -17,7 +17,7 @@ public class CloudtestClient {
         return new ClientBuilder<>(CloudtestClient::new);
     }
 
-    /** 批量删除测试用例 批量删除测试用例
+    /** 批量删除自定义测试服务类型用例 批量删除自定义测试服务类型用例
      *
      * @param BatchDeleteTestCaseRequest 请求对象
      * @return BatchDeleteTestCaseResponse */
@@ -25,7 +25,7 @@ public class CloudtestClient {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.batchDeleteTestCase);
     }
 
-    /** 批量删除测试用例 批量删除测试用例
+    /** 批量删除自定义测试服务类型用例 批量删除自定义测试服务类型用例
      *
      * @param BatchDeleteTestCaseRequest 请求对象
      * @return SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> */
@@ -51,7 +51,7 @@ public class CloudtestClient {
         return new SyncInvoker<CreatePlanRequest, CreatePlanResponse>(request, CloudtestMeta.createPlan, hcClient);
     }
 
-    /** 新测试类型服务注册到云测 新测试类型服务注册到云测
+    /** 新测试类型服务注册到云测 通过接口CreateService注册成为云测的自定义服务。 注册完成后云测界面将会出现此自定义测试类型。
      *
      * @param CreateServiceRequest 请求对象
      * @return CreateServiceResponse */
@@ -59,7 +59,7 @@ public class CloudtestClient {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.createService);
     }
 
-    /** 新测试类型服务注册到云测 新测试类型服务注册到云测
+    /** 新测试类型服务注册到云测 通过接口CreateService注册成为云测的自定义服务。 注册完成后云测界面将会出现此自定义测试类型。
      *
      * @param CreateServiceRequest 请求对象
      * @return SyncInvoker<CreateServiceRequest, CreateServiceResponse> */
@@ -68,7 +68,7 @@ public class CloudtestClient {
             hcClient);
     }
 
-    /** 创建测试用例 创建测试用例
+    /** 创建自定义测试服务类型用例 创建自定义测试服务类型用例
      *
      * @param CreateTestCaseRequest 请求对象
      * @return CreateTestCaseResponse */
@@ -76,7 +76,7 @@ public class CloudtestClient {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.createTestCase);
     }
 
-    /** 创建测试用例 创建测试用例
+    /** 创建自定义测试服务类型用例 创建自定义测试服务类型用例
      *
      * @param CreateTestCaseRequest 请求对象
      * @return SyncInvoker<CreateTestCaseRequest, CreateTestCaseResponse> */
@@ -242,7 +242,7 @@ public class CloudtestClient {
             CloudtestMeta.showTestCaseDetail, hcClient);
     }
 
-    /** 通过用例编号或用例ID获取测试用例详情 通过用例编号或用例ID获取测试用例详情
+    /** 通过用例编号获取测试用例详情 通过用例编号获取测试用例详情
      *
      * @param ShowTestCaseDetailV2Request 请求对象
      * @return ShowTestCaseDetailV2Response */
@@ -250,7 +250,7 @@ public class CloudtestClient {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.showTestCaseDetailV2);
     }
 
-    /** 通过用例编号或用例ID获取测试用例详情 通过用例编号或用例ID获取测试用例详情
+    /** 通过用例编号获取测试用例详情 通过用例编号获取测试用例详情
      *
      * @param ShowTestCaseDetailV2Request 请求对象
      * @return SyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response> */
@@ -277,7 +277,7 @@ public class CloudtestClient {
             hcClient);
     }
 
-    /** 更新测试用例接口 更新测试用例接口
+    /** 更新自定义测试服务类型用例 更新自定义测试服务类型用例
      *
      * @param UpdateTestCaseRequest 请求对象
      * @return UpdateTestCaseResponse */
@@ -285,7 +285,7 @@ public class CloudtestClient {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.updateTestCase);
     }
 
-    /** 更新测试用例接口 更新测试用例接口
+    /** 更新自定义测试服务类型用例 更新自定义测试服务类型用例
      *
      * @param UpdateTestCaseRequest 请求对象
      * @return SyncInvoker<UpdateTestCaseRequest, UpdateTestCaseResponse> */

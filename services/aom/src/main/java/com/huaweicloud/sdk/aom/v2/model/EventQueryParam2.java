@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.EventQueryParamSort;
+import com.huaweicloud.sdk.aom.v2.model.EventQueryParam2Sort;
 import com.huaweicloud.sdk.aom.v2.model.RelationModel;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +47,7 @@ public class EventQueryParam2  {
     @JsonProperty(value="sort")
     
     
-    private EventQueryParamSort sort;
+    private EventQueryParam2Sort sort;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -109,7 +109,7 @@ public class EventQueryParam2  {
 
 
     /**
-     * 模糊查询匹配字段，可以为空。如果值不为空，可以模糊匹配metadata字段必选字段。
+     * 模糊查询匹配字段，可以为空。如果值不为空，可以模糊匹配。metadata字段为必选字段。
      * @return search
      */
     public String getSearch() {
@@ -122,14 +122,14 @@ public class EventQueryParam2  {
 
     
 
-    public EventQueryParam2 withSort(EventQueryParamSort sort) {
+    public EventQueryParam2 withSort(EventQueryParam2Sort sort) {
         this.sort = sort;
         return this;
     }
 
-    public EventQueryParam2 withSort(Consumer<EventQueryParamSort> sortSetter) {
+    public EventQueryParam2 withSort(Consumer<EventQueryParam2Sort> sortSetter) {
         if(this.sort == null ){
-            this.sort = new EventQueryParamSort();
+            this.sort = new EventQueryParam2Sort();
             sortSetter.accept(this.sort);
         }
         
@@ -141,11 +141,11 @@ public class EventQueryParam2  {
      * Get sort
      * @return sort
      */
-    public EventQueryParamSort getSort() {
+    public EventQueryParam2Sort getSort() {
         return sort;
     }
 
-    public void setSort(EventQueryParamSort sort) {
+    public void setSort(EventQueryParam2Sort sort) {
         this.sort = sort;
     }
 

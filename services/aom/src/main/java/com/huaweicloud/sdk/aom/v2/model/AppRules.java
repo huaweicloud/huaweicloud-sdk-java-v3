@@ -85,7 +85,7 @@ public class AppRules  {
 
 
     /**
-     * 创建时间(创建时不传,修改时传查询返回的createTime)。
+     * 规则创建时间(创建时不传,修改时传查询返回的createTime)。
      * @return createTime
      */
     public String getCreateTime() {
@@ -209,7 +209,7 @@ public class AppRules  {
 
 
     /**
-     * 字符长度小于64位,以小写字母(a-z)开头,只能包含0-9/a-z/-,不能以-结尾。 规则名称。
+     * 规则名称。 字符长度小于64位,以小写字母(a-z)开头,只能包含0-9/a-z/-,不能以-结尾。
      * @return name
      */
     public String getName() {

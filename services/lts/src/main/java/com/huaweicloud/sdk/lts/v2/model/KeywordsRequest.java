@@ -14,16 +14,6 @@ import java.util.Objects;
 public class KeywordsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eps_id")
-
-    private String epsId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eps_name")
-
-    private String epsName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_id")
 
     private String logStreamId;
@@ -214,43 +204,6 @@ public class KeywordsRequest {
 
     private SearchTimeRangeUnitEnum searchTimeRangeUnit;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_time_range_relative")
-
-    private Boolean isTimeRangeRelative;
-
-    public KeywordsRequest withEpsId(String epsId) {
-        this.epsId = epsId;
-        return this;
-    }
-
-    /** 企业项目id
-     * 
-     * @return epsId */
-    public String getEpsId() {
-        return epsId;
-    }
-
-    public void setEpsId(String epsId) {
-        this.epsId = epsId;
-    }
-
-    public KeywordsRequest withEpsName(String epsName) {
-        this.epsName = epsName;
-        return this;
-    }
-
-    /** 企业项目名称
-     * 
-     * @return epsName */
-    public String getEpsName() {
-        return epsName;
-    }
-
-    public void setEpsName(String epsName) {
-        this.epsName = epsName;
-    }
-
     public KeywordsRequest withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
         return this;
@@ -395,22 +348,6 @@ public class KeywordsRequest {
         this.searchTimeRangeUnit = searchTimeRangeUnit;
     }
 
-    public KeywordsRequest withIsTimeRangeRelative(Boolean isTimeRangeRelative) {
-        this.isTimeRangeRelative = isTimeRangeRelative;
-        return this;
-    }
-
-    /** 是否发送
-     * 
-     * @return isTimeRangeRelative */
-    public Boolean getIsTimeRangeRelative() {
-        return isTimeRangeRelative;
-    }
-
-    public void setIsTimeRangeRelative(Boolean isTimeRangeRelative) {
-        this.isTimeRangeRelative = isTimeRangeRelative;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -420,9 +357,7 @@ public class KeywordsRequest {
             return false;
         }
         KeywordsRequest keywordsRequest = (KeywordsRequest) o;
-        return Objects.equals(this.epsId, keywordsRequest.epsId)
-            && Objects.equals(this.epsName, keywordsRequest.epsName)
-            && Objects.equals(this.logStreamId, keywordsRequest.logStreamId)
+        return Objects.equals(this.logStreamId, keywordsRequest.logStreamId)
             && Objects.equals(this.logStreamName, keywordsRequest.logStreamName)
             && Objects.equals(this.logGroupId, keywordsRequest.logGroupId)
             && Objects.equals(this.logGroupName, keywordsRequest.logGroupName)
@@ -430,15 +365,12 @@ public class KeywordsRequest {
             && Objects.equals(this.condition, keywordsRequest.condition)
             && Objects.equals(this.number, keywordsRequest.number)
             && Objects.equals(this.searchTimeRange, keywordsRequest.searchTimeRange)
-            && Objects.equals(this.searchTimeRangeUnit, keywordsRequest.searchTimeRangeUnit)
-            && Objects.equals(this.isTimeRangeRelative, keywordsRequest.isTimeRangeRelative);
+            && Objects.equals(this.searchTimeRangeUnit, keywordsRequest.searchTimeRangeUnit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(epsId,
-            epsName,
-            logStreamId,
+        return Objects.hash(logStreamId,
             logStreamName,
             logGroupId,
             logGroupName,
@@ -446,16 +378,13 @@ public class KeywordsRequest {
             condition,
             number,
             searchTimeRange,
-            searchTimeRangeUnit,
-            isTimeRangeRelative);
+            searchTimeRangeUnit);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeywordsRequest {\n");
-        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
-        sb.append("    epsName: ").append(toIndentedString(epsName)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
@@ -465,7 +394,6 @@ public class KeywordsRequest {
         sb.append("    number: ").append(toIndentedString(number)).append("\n");
         sb.append("    searchTimeRange: ").append(toIndentedString(searchTimeRange)).append("\n");
         sb.append("    searchTimeRangeUnit: ").append(toIndentedString(searchTimeRangeUnit)).append("\n");
-        sb.append("    isTimeRangeRelative: ").append(toIndentedString(isTimeRangeRelative)).append("\n");
         sb.append("}");
         return sb.toString();
     }

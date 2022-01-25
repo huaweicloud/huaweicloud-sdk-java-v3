@@ -833,20 +833,20 @@ public class ApigClient {
 
     /** 查询租户实例配置列表 查询租户实例配置列表
      *
-     * @param ListInstanceCofigsV2Request 请求对象
-     * @return ListInstanceCofigsV2Response */
-    public ListInstanceCofigsV2Response listInstanceCofigsV2(ListInstanceCofigsV2Request request) {
-        return hcClient.syncInvokeHttp(request, ApigMeta.listInstanceCofigsV2);
+     * @param ListInstanceConfigsV2Request 请求对象
+     * @return ListInstanceConfigsV2Response */
+    public ListInstanceConfigsV2Response listInstanceConfigsV2(ListInstanceConfigsV2Request request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listInstanceConfigsV2);
     }
 
     /** 查询租户实例配置列表 查询租户实例配置列表
      *
-     * @param ListInstanceCofigsV2Request 请求对象
-     * @return SyncInvoker<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response> */
-    public SyncInvoker<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response> listInstanceCofigsV2Invoker(
-        ListInstanceCofigsV2Request request) {
-        return new SyncInvoker<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response>(request,
-            ApigMeta.listInstanceCofigsV2, hcClient);
+     * @param ListInstanceConfigsV2Request 请求对象
+     * @return SyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> */
+    public SyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> listInstanceConfigsV2Invoker(
+        ListInstanceConfigsV2Request request) {
+        return new SyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response>(request,
+            ApigMeta.listInstanceConfigsV2, hcClient);
     }
 
     /** 查询专享版实例列表 查询专享版实例列表

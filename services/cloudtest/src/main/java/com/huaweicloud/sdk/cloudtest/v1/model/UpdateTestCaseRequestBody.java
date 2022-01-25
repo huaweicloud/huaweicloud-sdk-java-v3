@@ -55,7 +55,7 @@ public class UpdateTestCaseRequestBody {
         return this;
     }
 
-    /** 注册测试类型服务接口返回的服务id
+    /** 注册测试类型服务接口返回的服务id，取值范围为10-9999
      * 
      * @return serviceId */
     public Integer getServiceId() {

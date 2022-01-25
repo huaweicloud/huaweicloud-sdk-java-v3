@@ -214,7 +214,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码仓分支
+    /** 代码仓分支,如果是MR模式，为源分支
      * 
      * @return gitBranch */
     public String getGitBranch() {

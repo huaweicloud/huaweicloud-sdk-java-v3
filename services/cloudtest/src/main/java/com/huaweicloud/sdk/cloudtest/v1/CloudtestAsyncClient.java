@@ -19,7 +19,7 @@ public class CloudtestAsyncClient {
         return new ClientBuilder<>(CloudtestAsyncClient::new);
     }
 
-    /** 批量删除测试用例 批量删除测试用例
+    /** 批量删除自定义测试服务类型用例 批量删除自定义测试服务类型用例
      *
      * @param BatchDeleteTestCaseRequest 请求对象
      * @return CompletableFuture<BatchDeleteTestCaseResponse> */
@@ -27,7 +27,7 @@ public class CloudtestAsyncClient {
         return hcClient.asyncInvokeHttp(request, CloudtestMeta.batchDeleteTestCase);
     }
 
-    /** 批量删除测试用例 批量删除测试用例
+    /** 批量删除自定义测试服务类型用例 批量删除自定义测试服务类型用例
      *
      * @param BatchDeleteTestCaseRequest 请求对象
      * @return AsyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> */
@@ -53,7 +53,7 @@ public class CloudtestAsyncClient {
         return new AsyncInvoker<CreatePlanRequest, CreatePlanResponse>(request, CloudtestMeta.createPlan, hcClient);
     }
 
-    /** 新测试类型服务注册到云测 新测试类型服务注册到云测
+    /** 新测试类型服务注册到云测 通过接口CreateService注册成为云测的自定义服务。 注册完成后云测界面将会出现此自定义测试类型。
      *
      * @param CreateServiceRequest 请求对象
      * @return CompletableFuture<CreateServiceResponse> */
@@ -61,7 +61,7 @@ public class CloudtestAsyncClient {
         return hcClient.asyncInvokeHttp(request, CloudtestMeta.createService);
     }
 
-    /** 新测试类型服务注册到云测 新测试类型服务注册到云测
+    /** 新测试类型服务注册到云测 通过接口CreateService注册成为云测的自定义服务。 注册完成后云测界面将会出现此自定义测试类型。
      *
      * @param CreateServiceRequest 请求对象
      * @return AsyncInvoker<CreateServiceRequest, CreateServiceResponse> */
@@ -71,7 +71,7 @@ public class CloudtestAsyncClient {
             hcClient);
     }
 
-    /** 创建测试用例 创建测试用例
+    /** 创建自定义测试服务类型用例 创建自定义测试服务类型用例
      *
      * @param CreateTestCaseRequest 请求对象
      * @return CompletableFuture<CreateTestCaseResponse> */
@@ -79,7 +79,7 @@ public class CloudtestAsyncClient {
         return hcClient.asyncInvokeHttp(request, CloudtestMeta.createTestCase);
     }
 
-    /** 创建测试用例 创建测试用例
+    /** 创建自定义测试服务类型用例 创建自定义测试服务类型用例
      *
      * @param CreateTestCaseRequest 请求对象
      * @return AsyncInvoker<CreateTestCaseRequest, CreateTestCaseResponse> */
@@ -248,7 +248,7 @@ public class CloudtestAsyncClient {
             CloudtestMeta.showTestCaseDetail, hcClient);
     }
 
-    /** 通过用例编号或用例ID获取测试用例详情 通过用例编号或用例ID获取测试用例详情
+    /** 通过用例编号获取测试用例详情 通过用例编号获取测试用例详情
      *
      * @param ShowTestCaseDetailV2Request 请求对象
      * @return CompletableFuture<ShowTestCaseDetailV2Response> */
@@ -257,7 +257,7 @@ public class CloudtestAsyncClient {
         return hcClient.asyncInvokeHttp(request, CloudtestMeta.showTestCaseDetailV2);
     }
 
-    /** 通过用例编号或用例ID获取测试用例详情 通过用例编号或用例ID获取测试用例详情
+    /** 通过用例编号获取测试用例详情 通过用例编号获取测试用例详情
      *
      * @param ShowTestCaseDetailV2Request 请求对象
      * @return AsyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response> */
@@ -285,7 +285,7 @@ public class CloudtestAsyncClient {
             hcClient);
     }
 
-    /** 更新测试用例接口 更新测试用例接口
+    /** 更新自定义测试服务类型用例 更新自定义测试服务类型用例
      *
      * @param UpdateTestCaseRequest 请求对象
      * @return CompletableFuture<UpdateTestCaseResponse> */
@@ -293,7 +293,7 @@ public class CloudtestAsyncClient {
         return hcClient.asyncInvokeHttp(request, CloudtestMeta.updateTestCase);
     }
 
-    /** 更新测试用例接口 更新测试用例接口
+    /** 更新自定义测试服务类型用例 更新自定义测试服务类型用例
      *
      * @param UpdateTestCaseRequest 请求对象
      * @return AsyncInvoker<UpdateTestCaseRequest, UpdateTestCaseResponse> */

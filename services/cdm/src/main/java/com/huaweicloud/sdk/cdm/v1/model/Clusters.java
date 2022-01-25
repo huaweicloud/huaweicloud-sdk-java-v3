@@ -117,11 +117,6 @@ public class Clusters {
     private String isFrozen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "config_status")
-
-    private String configStatus;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
     private String updated;
@@ -524,22 +519,6 @@ public class Clusters {
         this.isFrozen = isFrozen;
     }
 
-    public Clusters withConfigStatus(String configStatus) {
-        this.configStatus = configStatus;
-        return this;
-    }
-
-    /** 集群配置状态：In-Sync：配置已同步。Applying：配置中。Sync-Failure：配置失败
-     * 
-     * @return configStatus */
-    public String getConfigStatus() {
-        return configStatus;
-    }
-
-    public void setConfigStatus(String configStatus) {
-        this.configStatus = configStatus;
-    }
-
     public Clusters withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -561,7 +540,7 @@ public class Clusters {
         return this;
     }
 
-    /** 集群状态： - 100：创建中 - 200：正常 - 300：失败 - 303：创建失败 - 800：冻结 - 900：已关机 - 910：正在关机 - 920：正在开机
+    /** 集群状态： - 100：创建中 - 200：正常 - 300：失败 - 303：创建失败 - 500：重启中 - 800：冻结 - 900：已关机 - 910：正在关机 - 920：正在开机
      * 
      * @return status */
     public String getStatus() {
@@ -621,9 +600,8 @@ public class Clusters {
             && Objects.equals(this.bakExpectedStartTime, clusters.bakExpectedStartTime)
             && Objects.equals(this.bakKeepDay, clusters.bakKeepDay) && Objects.equals(this.name, clusters.name)
             && Objects.equals(this.statusDetail, clusters.statusDetail) && Objects.equals(this.id, clusters.id)
-            && Objects.equals(this.isFrozen, clusters.isFrozen)
-            && Objects.equals(this.configStatus, clusters.configStatus)
-            && Objects.equals(this.updated, clusters.updated) && Objects.equals(this.status, clusters.status)
+            && Objects.equals(this.isFrozen, clusters.isFrozen) && Objects.equals(this.updated, clusters.updated)
+            && Objects.equals(this.status, clusters.status)
             && Objects.equals(this.failedReasons, clusters.failedReasons);
     }
 
@@ -650,7 +628,6 @@ public class Clusters {
             statusDetail,
             id,
             isFrozen,
-            configStatus,
             updated,
             status,
             failedReasons);
@@ -681,7 +658,6 @@ public class Clusters {
         sb.append("    statusDetail: ").append(toIndentedString(statusDetail)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
-        sb.append("    configStatus: ").append(toIndentedString(configStatus)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");

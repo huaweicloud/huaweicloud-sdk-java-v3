@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * checkType为cmdLine时checkMode填contain,checkContent格式为[“xxx”]表示进程命令行参数中需要包含xxx。checkType为env时checkMode填contain,checkContent格式为 [\&quot;k1\&quot;,\&quot;v1\&quot;]表示进程环境变量中需要包含名为k1值为v1的环境变量。checkType为scope时checkMode填equals,checkContent格式为节点ID数组[\&quot;hostId1”,”hostId2”],表示规则仅会在这些节点上生效(如果不指定节点范围,规则将下发到该项目所有的节点)。 规则发现部分,数组中有多个对象时表示需要同时满足所有条件的进程才会被匹配到。
+ * 规则发现部分,数组中有多个对象时表示需要同时满足所有条件的进程才会被匹配到。 checkType为cmdLine时checkMode填contain,checkContent格式为[“xxx”]表示进程命令行参数中需要包含xxx。checkType为env时checkMode填contain,checkContent格式为 [\&quot;k1\&quot;,\&quot;v1\&quot;]表示进程环境变量中需要包含名为k1值为v1的环境变量。checkType为scope时checkMode填equals,checkContent格式为节点ID数组[\&quot;hostId1”,”hostId2”],表示规则仅会在这些节点上生效(如果不指定节点范围,规则将下发到该项目所有的节点)。
  */
 public class DiscoveryRule  {
 
@@ -85,7 +85,7 @@ public class DiscoveryRule  {
 
 
     /**
-     * contain、equals 匹配条件。
+     * 匹配条件。 contain、equals
      * @return checkMode
      */
     public String getCheckMode() {
@@ -107,7 +107,7 @@ public class DiscoveryRule  {
 
 
     /**
-     * cmdLine、env、scope 匹配类型。
+     * 匹配类型。 cmdLine、env、scope
      * @return checkType
      */
     public String getCheckType() {

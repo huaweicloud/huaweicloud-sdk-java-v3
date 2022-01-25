@@ -491,6 +491,38 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProducts =
+        genForlistEngineProducts();
+
+    private static HttpRequestDef<ListEngineProductsRequest, ListEngineProductsResponse> genForlistEngineProducts() {
+        // basic
+        HttpRequestDef.Builder<ListEngineProductsRequest, ListEngineProductsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEngineProductsRequest.class, ListEngineProductsResponse.class)
+                .withName("ListEngineProducts")
+                .withUri("/v2/{engine}/products")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListEngineProductsRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListEngineProductsRequest.EngineEnum.class),
+            f -> f.withMarshaller(ListEngineProductsRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("product_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEngineProductsRequest::getProductId, (req, v) -> {
+                req.setProductId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceTopicsRequest, ListInstanceTopicsResponse> listInstanceTopics =
         genForlistInstanceTopics();
 

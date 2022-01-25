@@ -285,6 +285,8 @@ public class CreateVolumeOption {
      * metadata中的表示加密功能的字段,0代表不加密,1代表加密。不指定该字段时,云硬盘的加密属性与数据源保持一致,如果不是从数据源创建的场景,则默认不加密。 [full_clone]
      * 从快照创建云硬盘时，如需使用link克隆方式，请指定该字段的值为0。 [hw:passthrough] * true表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令。 *
      * false表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，即为默认类型，VBD只能支持简单的SCSI读写命令。 * 该字段不存在时，云硬盘默认为VBD类型。
+     * [create\\_for\\_volume\\_id] * true表示接口响应中会通过volume_ids字段返回本次创建的云硬盘ID。 * false表示接口响应中不会返回本次创建的云硬盘ID。
+     * 该字段不存在时，默认为false。
      * 
      * @return metadata */
     public Map<String, String> getMetadata() {

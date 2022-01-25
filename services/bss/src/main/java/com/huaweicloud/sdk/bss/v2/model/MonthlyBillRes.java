@@ -566,7 +566,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 金额单位： 1：元
+    /** 金额单位。 1：元
      * 
      * @return measureId */
     public Integer getMeasureId() {

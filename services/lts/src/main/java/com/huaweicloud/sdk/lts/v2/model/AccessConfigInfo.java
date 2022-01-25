@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -115,6 +117,11 @@ public class AccessConfigInfo {
     @JsonProperty(value = "host_group_info")
 
     private AccessConfigHostGroupIdList hostGroupInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_config_tag")
+
+    private List<AccessConfigTag> accessConfigTag = null;
 
     public AccessConfigInfo withAccessConfigId(String accessConfigId) {
         this.accessConfigId = accessConfigId;
@@ -255,6 +262,38 @@ public class AccessConfigInfo {
         this.hostGroupInfo = hostGroupInfo;
     }
 
+    public AccessConfigInfo withAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
+        this.accessConfigTag = accessConfigTag;
+        return this;
+    }
+
+    public AccessConfigInfo addAccessConfigTagItem(AccessConfigTag accessConfigTagItem) {
+        if (this.accessConfigTag == null) {
+            this.accessConfigTag = new ArrayList<>();
+        }
+        this.accessConfigTag.add(accessConfigTagItem);
+        return this;
+    }
+
+    public AccessConfigInfo withAccessConfigTag(Consumer<List<AccessConfigTag>> accessConfigTagSetter) {
+        if (this.accessConfigTag == null) {
+            this.accessConfigTag = new ArrayList<>();
+        }
+        accessConfigTagSetter.accept(this.accessConfigTag);
+        return this;
+    }
+
+    /** Get accessConfigTag
+     * 
+     * @return accessConfigTag */
+    public List<AccessConfigTag> getAccessConfigTag() {
+        return accessConfigTag;
+    }
+
+    public void setAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
+        this.accessConfigTag = accessConfigTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -270,7 +309,8 @@ public class AccessConfigInfo {
             && Objects.equals(this.createTime, accessConfigInfo.createTime)
             && Objects.equals(this.accessConfigDetail, accessConfigInfo.accessConfigDetail)
             && Objects.equals(this.logInfo, accessConfigInfo.logInfo)
-            && Objects.equals(this.hostGroupInfo, accessConfigInfo.hostGroupInfo);
+            && Objects.equals(this.hostGroupInfo, accessConfigInfo.hostGroupInfo)
+            && Objects.equals(this.accessConfigTag, accessConfigInfo.accessConfigTag);
     }
 
     @Override
@@ -281,7 +321,8 @@ public class AccessConfigInfo {
             createTime,
             accessConfigDetail,
             logInfo,
-            hostGroupInfo);
+            hostGroupInfo,
+            accessConfigTag);
     }
 
     @Override
@@ -295,6 +336,7 @@ public class AccessConfigInfo {
         sb.append("    accessConfigDetail: ").append(toIndentedString(accessConfigDetail)).append("\n");
         sb.append("    logInfo: ").append(toIndentedString(logInfo)).append("\n");
         sb.append("    hostGroupInfo: ").append(toIndentedString(hostGroupInfo)).append("\n");
+        sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

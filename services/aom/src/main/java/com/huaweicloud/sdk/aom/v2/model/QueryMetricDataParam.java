@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 变换数据查询参数。
+ * 该参数用来指定需要查询的数据维度，数据周期等。
  */
 public class QueryMetricDataParam  {
 
@@ -71,7 +71,7 @@ public class QueryMetricDataParam  {
     }
 
     /**
-     * 取值范围 JSON数组大小不超过20 指标对象列表。
+     * 指标对象列表。 取值范围 JSON数组大小不超过20
      * @return metrics
      */
     public List<MetricQueryMeritcParam> getMetrics() {

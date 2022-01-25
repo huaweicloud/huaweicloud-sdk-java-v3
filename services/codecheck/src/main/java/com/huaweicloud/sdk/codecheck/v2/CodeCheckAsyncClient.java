@@ -71,6 +71,24 @@ public class CodeCheckAsyncClient {
         return new AsyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, CodeCheckMeta.createTask, hcClient);
     }
 
+    /** 删除自定义规则集 删除自定义规则集，正在使用中的或默认规则集不能删除
+     *
+     * @param DeleteRulesetRequest 请求对象
+     * @return CompletableFuture<DeleteRulesetResponse> */
+    public CompletableFuture<DeleteRulesetResponse> deleteRulesetAsync(DeleteRulesetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.deleteRuleset);
+    }
+
+    /** 删除自定义规则集 删除自定义规则集，正在使用中的或默认规则集不能删除
+     *
+     * @param DeleteRulesetRequest 请求对象
+     * @return AsyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse> */
+    public AsyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse> deleteRulesetAsyncInvoker(
+        DeleteRulesetRequest request) {
+        return new AsyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse>(request, CodeCheckMeta.deleteRuleset,
+            hcClient);
+    }
+
     /** 删除检查任务 删除检查任务，执行中的任务删除无法再查看
      *
      * @param DeleteTaskRequest 请求对象
@@ -191,6 +209,24 @@ public class CodeCheckAsyncClient {
         return new AsyncInvoker<RunTaskRequest, RunTaskResponse>(request, CodeCheckMeta.runTask, hcClient);
     }
 
+    /** 设置每个项目对应语言的默认规则集配置 设置每个项目对应语言的默认规则集配置。
+     *
+     * @param SetDefaulTemplateRequest 请求对象
+     * @return CompletableFuture<SetDefaulTemplateResponse> */
+    public CompletableFuture<SetDefaulTemplateResponse> setDefaulTemplateAsync(SetDefaulTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.setDefaulTemplate);
+    }
+
+    /** 设置每个项目对应语言的默认规则集配置 设置每个项目对应语言的默认规则集配置。
+     *
+     * @param SetDefaulTemplateRequest 请求对象
+     * @return AsyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse> */
+    public AsyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse> setDefaulTemplateAsyncInvoker(
+        SetDefaulTemplateRequest request) {
+        return new AsyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse>(request,
+            CodeCheckMeta.setDefaulTemplate, hcClient);
+    }
+
     /** 查询任务执行状态 根据任务ID查询任务执行状态。任务状态：0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止。只有正在检查中才有进度的详细信息。
      *
      * @param ShowProgressDetailRequest 请求对象
@@ -299,6 +335,22 @@ public class CodeCheckAsyncClient {
         ShowTaskListByProjectIdRequest request) {
         return new AsyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse>(request,
             CodeCheckMeta.showTaskListByProjectId, hcClient);
+    }
+
+    /** 查询任务检查失败日志 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
+     *
+     * @param ShowTasklogRequest 请求对象
+     * @return CompletableFuture<ShowTasklogResponse> */
+    public CompletableFuture<ShowTasklogResponse> showTasklogAsync(ShowTasklogRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.showTasklog);
+    }
+
+    /** 查询任务检查失败日志 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
+     *
+     * @param ShowTasklogRequest 请求对象
+     * @return AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse> */
+    public AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse> showTasklogAsyncInvoker(ShowTasklogRequest request) {
+        return new AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse>(request, CodeCheckMeta.showTasklog, hcClient);
     }
 
     /** 终止检查任务 根据任务ID终止检查任务。

@@ -368,7 +368,7 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 链接信息
+    /** 链接信息（查询集群列表时返回值为null）
      * 
      * @return links */
     public List<ClusterLinks> getLinks() {

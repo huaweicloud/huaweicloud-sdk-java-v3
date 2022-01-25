@@ -225,7 +225,7 @@ public class ApiGroupCommonInfo {
         return this;
     }
 
-    /** 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中 ROMAConnect暂未对接云市场，此字段默认返回2
+    /** 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中
      * 
      * @return onSellStatus */
     public Integer getOnSellStatus() {

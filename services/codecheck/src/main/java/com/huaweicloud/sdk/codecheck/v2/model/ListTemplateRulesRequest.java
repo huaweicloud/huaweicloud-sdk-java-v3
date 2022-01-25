@@ -29,6 +29,11 @@ public class ListTemplateRulesRequest {
     private String languages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -102,6 +107,22 @@ public class ListTemplateRulesRequest {
         this.languages = languages;
     }
 
+    public ListTemplateRulesRequest withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /** 规则所属标签
+     * 
+     * @return tags */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     public ListTemplateRulesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -147,13 +168,14 @@ public class ListTemplateRulesRequest {
             && Objects.equals(this.rulesetId, listTemplateRulesRequest.rulesetId)
             && Objects.equals(this.types, listTemplateRulesRequest.types)
             && Objects.equals(this.languages, listTemplateRulesRequest.languages)
+            && Objects.equals(this.tags, listTemplateRulesRequest.tags)
             && Objects.equals(this.offset, listTemplateRulesRequest.offset)
             && Objects.equals(this.limit, listTemplateRulesRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, rulesetId, types, languages, offset, limit);
+        return Objects.hash(projectId, rulesetId, types, languages, tags, offset, limit);
     }
 
     @Override
@@ -164,6 +186,7 @@ public class ListTemplateRulesRequest {
         sb.append("    rulesetId: ").append(toIndentedString(rulesetId)).append("\n");
         sb.append("    types: ").append(toIndentedString(types)).append("\n");
         sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

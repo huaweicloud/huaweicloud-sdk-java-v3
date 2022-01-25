@@ -463,6 +463,11 @@ public class ShowInstanceResp {
 
     private List<TagEntity> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dr_enable")
+
+    private Boolean drEnable;
+
     public ShowInstanceResp withName(String name) {
         this.name = name;
         return this;
@@ -1490,6 +1495,22 @@ public class ShowInstanceResp {
         this.tags = tags;
     }
 
+    public ShowInstanceResp withDrEnable(Boolean drEnable) {
+        this.drEnable = drEnable;
+        return this;
+    }
+
+    /** 是否为容灾实例。
+     * 
+     * @return drEnable */
+    public Boolean getDrEnable() {
+        return drEnable;
+    }
+
+    public void setDrEnable(Boolean drEnable) {
+        this.drEnable = drEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1557,7 +1578,8 @@ public class ShowInstanceResp {
             && Objects.equals(this.diskEncrypted, showInstanceResp.diskEncrypted)
             && Objects.equals(this.kafkaPrivateConnectAddress, showInstanceResp.kafkaPrivateConnectAddress)
             && Objects.equals(this.cesVersion, showInstanceResp.cesVersion)
-            && Objects.equals(this.tags, showInstanceResp.tags);
+            && Objects.equals(this.tags, showInstanceResp.tags)
+            && Objects.equals(this.drEnable, showInstanceResp.drEnable);
     }
 
     @Override
@@ -1622,7 +1644,8 @@ public class ShowInstanceResp {
             diskEncrypted,
             kafkaPrivateConnectAddress,
             cesVersion,
-            tags);
+            tags,
+            drEnable);
     }
 
     @Override
@@ -1690,6 +1713,7 @@ public class ShowInstanceResp {
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    drEnable: ").append(toIndentedString(drEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

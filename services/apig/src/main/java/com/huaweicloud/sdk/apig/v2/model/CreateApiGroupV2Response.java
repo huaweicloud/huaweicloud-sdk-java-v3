@@ -271,7 +271,7 @@ public class CreateApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中 ROMAConnect暂未对接云市场，此字段默认返回2
+    /** 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中
      * 
      * @return onSellStatus */
     public Integer getOnSellStatus() {
@@ -431,7 +431,7 @@ public class CreateApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 分组版本 - V1：全局分组 - V2：应用级分组
+    /** 分组版本 - V1：全局分组 - V2：应用级分组 暂不支持，默认为V1
      * 
      * @return version */
     public String getVersion() {
@@ -447,7 +447,7 @@ public class CreateApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 分组归属的集成应用编号。 分组版本V2时必填。
+    /** 分组归属的集成应用编号。 分组版本V2时必填。 暂不支持
      * 
      * @return romaAppId */
     public String getRomaAppId() {
@@ -463,7 +463,7 @@ public class CreateApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 分组归属的集成应用名称
+    /** 分组归属的集成应用名称 暂不支持
      * 
      * @return romaAppName */
     public String getRomaAppName() {

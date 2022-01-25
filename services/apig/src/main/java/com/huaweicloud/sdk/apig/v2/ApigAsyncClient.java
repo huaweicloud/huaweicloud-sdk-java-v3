@@ -854,21 +854,21 @@ public class ApigAsyncClient {
 
     /** 查询租户实例配置列表 查询租户实例配置列表
      *
-     * @param ListInstanceCofigsV2Request 请求对象
-     * @return CompletableFuture<ListInstanceCofigsV2Response> */
-    public CompletableFuture<ListInstanceCofigsV2Response> listInstanceCofigsV2Async(
-        ListInstanceCofigsV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.listInstanceCofigsV2);
+     * @param ListInstanceConfigsV2Request 请求对象
+     * @return CompletableFuture<ListInstanceConfigsV2Response> */
+    public CompletableFuture<ListInstanceConfigsV2Response> listInstanceConfigsV2Async(
+        ListInstanceConfigsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listInstanceConfigsV2);
     }
 
     /** 查询租户实例配置列表 查询租户实例配置列表
      *
-     * @param ListInstanceCofigsV2Request 请求对象
-     * @return AsyncInvoker<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response> */
-    public AsyncInvoker<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response> listInstanceCofigsV2AsyncInvoker(
-        ListInstanceCofigsV2Request request) {
-        return new AsyncInvoker<ListInstanceCofigsV2Request, ListInstanceCofigsV2Response>(request,
-            ApigMeta.listInstanceCofigsV2, hcClient);
+     * @param ListInstanceConfigsV2Request 请求对象
+     * @return AsyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> */
+    public AsyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> listInstanceConfigsV2AsyncInvoker(
+        ListInstanceConfigsV2Request request) {
+        return new AsyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response>(request,
+            ApigMeta.listInstanceConfigsV2, hcClient);
     }
 
     /** 查询专享版实例列表 查询专享版实例列表

@@ -23,11 +23,6 @@ public class ShowJobsResponse extends SdkResponse {
     private List<Job> jobs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "simple")
-
-    private Boolean simple;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_no")
 
     private Integer pageNo;
@@ -42,7 +37,7 @@ public class ShowJobsResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业数
+    /** 作业数,查询单个作业时为0
      * 
      * @return total */
     public Integer getTotal() {
@@ -83,22 +78,6 @@ public class ShowJobsResponse extends SdkResponse {
 
     public void setJobs(List<Job> jobs) {
         this.jobs = jobs;
-    }
-
-    public ShowJobsResponse withSimple(Boolean simple) {
-        this.simple = simple;
-        return this;
-    }
-
-    /** 当为“true”时返回精简消息，即作业参数只返回参数名和值，不返回参数的“size”、“type”、“id”等属性
-     * 
-     * @return simple */
-    public Boolean getSimple() {
-        return simple;
-    }
-
-    public void setSimple(Boolean simple) {
-        this.simple = simple;
     }
 
     public ShowJobsResponse withPageNo(Integer pageNo) {
@@ -143,14 +122,13 @@ public class ShowJobsResponse extends SdkResponse {
         }
         ShowJobsResponse showJobsResponse = (ShowJobsResponse) o;
         return Objects.equals(this.total, showJobsResponse.total) && Objects.equals(this.jobs, showJobsResponse.jobs)
-            && Objects.equals(this.simple, showJobsResponse.simple)
             && Objects.equals(this.pageNo, showJobsResponse.pageNo)
             && Objects.equals(this.pageSize, showJobsResponse.pageSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, jobs, simple, pageNo, pageSize);
+        return Objects.hash(total, jobs, pageNo, pageSize);
     }
 
     @Override
@@ -159,7 +137,6 @@ public class ShowJobsResponse extends SdkResponse {
         sb.append("class ShowJobsResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
-        sb.append("    simple: ").append(toIndentedString(simple)).append("\n");
         sb.append("    pageNo: ").append(toIndentedString(pageNo)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
         sb.append("}");

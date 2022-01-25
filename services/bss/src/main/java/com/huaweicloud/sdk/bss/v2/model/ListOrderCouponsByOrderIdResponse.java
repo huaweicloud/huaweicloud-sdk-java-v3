@@ -98,7 +98,7 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 优惠券使用的最大数量。
+    /** 优惠券使用的最大数量。 具体请参见表4。
      * 
      * @return couponMaxUseQuantity */
     public List<CouponMaxUseQuantity> getCouponMaxUseQuantity() {

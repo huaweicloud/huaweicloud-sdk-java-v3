@@ -82,7 +82,7 @@ public class CreateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 待创建的磁盘ID列表。
+    /** 待创建的云硬盘ID列表，在请求体的metadata字段中指定create_for_volume_id为true时才返回该参数。
      * 
      * @return volumeIds */
     public List<String> getVolumeIds() {

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 创建规则集信息 */
 public class Ruleset {
@@ -42,6 +45,11 @@ public class Ruleset {
     @JsonProperty(value = "template_id")
 
     private String templateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_attributes")
+
+    private List<CustomAttributes> customAttributes = null;
 
     public Ruleset withProjectId(String projectId) {
         this.projectId = projectId;
@@ -155,6 +163,38 @@ public class Ruleset {
         this.templateId = templateId;
     }
 
+    public Ruleset withCustomAttributes(List<CustomAttributes> customAttributes) {
+        this.customAttributes = customAttributes;
+        return this;
+    }
+
+    public Ruleset addCustomAttributesItem(CustomAttributes customAttributesItem) {
+        if (this.customAttributes == null) {
+            this.customAttributes = new ArrayList<>();
+        }
+        this.customAttributes.add(customAttributesItem);
+        return this;
+    }
+
+    public Ruleset withCustomAttributes(Consumer<List<CustomAttributes>> customAttributesSetter) {
+        if (this.customAttributes == null) {
+            this.customAttributes = new ArrayList<>();
+        }
+        customAttributesSetter.accept(this.customAttributes);
+        return this;
+    }
+
+    /** 自定义规则参数项，支持修改规则阈值
+     * 
+     * @return customAttributes */
+    public List<CustomAttributes> getCustomAttributes() {
+        return customAttributes;
+    }
+
+    public void setCustomAttributes(List<CustomAttributes> customAttributes) {
+        this.customAttributes = customAttributes;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -168,12 +208,14 @@ public class Ruleset {
             && Objects.equals(this.templateName, ruleset.templateName)
             && Objects.equals(this.language, ruleset.language) && Objects.equals(this.isDefault, ruleset.isDefault)
             && Objects.equals(this.ruleIds, ruleset.ruleIds) && Objects.equals(this.uncheckIds, ruleset.uncheckIds)
-            && Objects.equals(this.templateId, ruleset.templateId);
+            && Objects.equals(this.templateId, ruleset.templateId)
+            && Objects.equals(this.customAttributes, ruleset.customAttributes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, templateName, language, isDefault, ruleIds, uncheckIds, templateId);
+        return Objects
+            .hash(projectId, templateName, language, isDefault, ruleIds, uncheckIds, templateId, customAttributes);
     }
 
     @Override
@@ -187,6 +229,7 @@ public class Ruleset {
         sb.append("    ruleIds: ").append(toIndentedString(ruleIds)).append("\n");
         sb.append("    uncheckIds: ").append(toIndentedString(uncheckIds)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+        sb.append("    customAttributes: ").append(toIndentedString(customAttributes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

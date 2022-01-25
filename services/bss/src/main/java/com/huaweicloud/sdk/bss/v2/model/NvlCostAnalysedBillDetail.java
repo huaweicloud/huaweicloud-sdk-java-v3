@@ -193,7 +193,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：分摊月，格式为YYYY-MM，按照东八区截取。| |参数约束及描述：|
+    /** 查询分摊成本的月份。 格式为YYYY-MM，按照东八区截取。
      * 
      * @return sharedMonth */
     public String getSharedMonth() {
@@ -209,7 +209,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：账期。格式：YYYY-MM。按照东八区截取。| |参数约束及描述：|
+    /** 账期。 格式：YYYY-MM。按照东八区截取。
      * 
      * @return billCycle */
     public String getBillCycle() {
@@ -225,8 +225,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴推荐类子客户，且为后付费用户。100：退款-退订税金101：调账-补偿税金102：调账-扣费税金|
-     * |参数的约束及描述：|
+    /** 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费
      * 
      * @return billType */
     public Integer getBillType() {
@@ -242,8 +241,8 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：消费的客户账号ID。如果是普通客户或者企业子查询消费记录，只能查询到自身的消费记录，则这个地方显示的是自身的客户ID如果是企业主查询消费记录，可以查询到自身以及企业子的消费记录，这个地方是消费的实际客户ID，如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。|
-     * |参数约束及描述：|
+    /** 消费的客户账号ID。
+     * 如果是普通客户或者企业子查询消费记录，只能查询到自身的消费记录，则这个地方显示的是自身的客户ID。如果是企业主查询消费记录，可以查询到自身以及企业子的消费记录，这个地方是消费的实际客户ID，如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。
      * 
      * @return customerId */
     public String getCustomerId() {
@@ -259,7 +258,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：|
+    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return regionCode */
     public String getRegionCode() {
@@ -275,7 +274,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。| |参数约束及描述：|
+    /** 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
      * 
      * @return regionName */
     public String getRegionName() {
@@ -291,7 +290,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。| |参数约束及描述：|
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -307,7 +306,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。| |参数约束及描述：|
+    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * 
      * @return resourceTypeCode */
     public String getResourceTypeCode() {
@@ -323,7 +322,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：费用对应的资源使用的开始时间，按需为资源使用时间，包周期为下单后，对应那一单的资源生效时间。| |参数约束及描述：|
+    /** 费用对应的资源使用的开始时间，按需有效，包年/包月该字段保留。
      * 
      * @return effectiveTime */
     public String getEffectiveTime() {
@@ -339,7 +338,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：费用对应的资源使用的结束时间，按需为资源使用时间，包周期为下单后，对应那一单的资源失效时间。| |参数约束及描述：|
+    /** 费用对应的资源使用的结束时间，按需有效，包年/包月该字段保留。
      * 
      * @return expireTime */
     public String getExpireTime() {
@@ -355,7 +354,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：资源ID。| |参数约束及描述：|
+    /** 资源ID。
      * 
      * @return resourceId */
     public String getResourceId() {
@@ -371,7 +370,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：资源名称。| |参数约束及描述：|
+    /** 资源名称。
      * 
      * @return resourceName */
     public String getResourceName() {
@@ -387,7 +386,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：资源标签。| |参数约束及描述：|
+    /** 资源标签。
      * 
      * @return resourceTag */
     public String getResourceTag() {
@@ -403,7 +402,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：产品的规格描述。| |参数约束及描述：|
+    /** 产品的规格描述。
      * 
      * @return productSpecDesc */
     public String getProductSpecDesc() {
@@ -419,7 +418,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。| |参数约束及描述：|
+    /** 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -435,7 +434,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：企业项目的名称| |参数约束及描述：|
+    /** 企业项目的名称。
      * 
      * @return enterpriseProjectName */
     public String getEnterpriseProjectName() {
@@ -451,7 +450,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：计费模式。1：包年/包月3：按需10：预留实例| |参数约束及描述：|
+    /** 计费模式。 1：包年/包月3：按需10：预留实例
      * 
      * @return chargingMode */
     public Integer getChargingMode() {
@@ -467,7 +466,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：订单ID。包年/包月资源的使用记录才有该字段，按需资源则为空。| |参数约束及描述：|
+    /** 订单ID。 说明： 包年/包月资源的使用记录才有该字段，按需资源则为空。
      * 
      * @return orderId */
     public String getOrderId() {
@@ -483,7 +482,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：周期类型：19：年20：月24：天25：小时5：一次性| |参数约束及描述：|
+    /** 周期类型。 19：年20：月24：天25：小时5：一次性
      * 
      * @return periodType */
     public Integer getPeriodType() {
@@ -499,7 +498,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：资源使用量的类型，您可以调用查询使用量类型列表接口获取。| |参数约束及描述：|
+    /** 资源使用量的类型，您可以调用查询使用量类型列表接口获取。
      * 
      * @return usageType */
     public String getUsageType() {
@@ -515,7 +514,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：资源的使用量。| |参数的约束及描述：|
+    /** 资源的使用量。
      * 
      * @return usage */
     public Double getUsage() {
@@ -531,7 +530,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：资源使用量的度量单位，您可以调用查询使用量单位列表接口获取。| |参数的约束及描述：|
+    /** 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
      * 
      * @return usageMeasureId */
     public Integer getUsageMeasureId() {
@@ -547,7 +546,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：套餐内使用量| |参数的约束及描述：
+    /** 套餐内使用量。
      * 
      * @return freeResourceUsage */
     public Double getFreeResourceUsage() {
@@ -563,7 +562,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：套餐内使用量的度量单位，您可以调用查询使用量单位列表接口获取。| |参数的约束及描述：|
+    /** 套餐内使用量的度量单位，您可以调用查询度量单位列表接口获取。
      * 
      * @return freeResourceMeasureId */
     public Integer getFreeResourceMeasureId() {
@@ -579,7 +578,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：预留实例使用量。| |参数的约束及描述：|
+    /** 预留实例使用量。
      * 
      * @return riUsage */
     public Double getRiUsage() {
@@ -595,7 +594,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：预留实例使用量单位。| |参数的约束及描述：|
+    /** 预留实例使用量单位。
      * 
      * @return riUsageMeasureId */
     public Integer getRiUsageMeasureId() {
@@ -611,7 +610,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：消费金额（应付金额）| |参数的约束及描述：|
+    /** 消费金额（应付金额）。 消费金额=期初已分摊金额+当月分摊金额+期末未分摊金额
      * 
      * @return consumeAmount */
     public Double getConsumeAmount() {
@@ -627,7 +626,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：期初已分摊金额（包周期和预留实例预付时有效，计费类型为按需，预留实例按时计费时为0）| |参数的约束及描述：|
+    /** 期初已分摊金额。 说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
      * 
      * @return pastMonthsAmortizedAmount */
     public Double getPastMonthsAmortizedAmount() {
@@ -643,7 +642,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：当月分摊金额| |参数的约束及描述：|
+    /** 当月分摊金额。 当月分摊金额=现金分摊金额+信用额度分摊金额+代金券分摊金额+现金券分摊金额+储值卡分摊金额+奖励金分摊金额
      * 
      * @return currentMonthAmortizedAmount */
     public Double getCurrentMonthAmortizedAmount() {
@@ -659,7 +658,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：期末未分摊金额（包周期和预留实例预付时有效，计费类型为按需，预留实例按时计费时为0）| |参数的约束及描述：|
+    /** 期末未分摊金额。月度成本分摊时，当月以后还未分摊的金额。 说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
      * 
      * @return futureMonthsAmortizedAmount */
     public Double getFutureMonthsAmortizedAmount() {
@@ -675,7 +674,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：现金分摊金额| |参数的约束及描述：|
+    /** 月度成本分摊时，当月已分摊金额中包含的现金金额。
      * 
      * @return amortizedCashAmount */
     public Double getAmortizedCashAmount() {
@@ -691,7 +690,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：信用额度分摊金额| |参数的约束及描述：|
+    /** 月度成本分摊时，当月已分摊金额中包含的信用额度分摊金额。
      * 
      * @return amortizedCreditAmount */
     public Double getAmortizedCreditAmount() {
@@ -707,7 +706,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：代金券分摊金额| |参数的约束及描述：|
+    /** 月度成本分摊时，当月已分摊金额中包含的代金券分摊金额。
      * 
      * @return amortizedCouponAmount */
     public Double getAmortizedCouponAmount() {
@@ -723,7 +722,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：现金券分摊金额| |参数的约束及描述：|
+    /** 月度成本分摊时，当月已分摊金额中包含的现金券分摊金额。
      * 
      * @return amortizedFlexipurchaseCouponAmount */
     public Double getAmortizedFlexipurchaseCouponAmount() {
@@ -739,7 +738,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：储值卡分摊金额| |参数的约束及描述：|
+    /** 月度成本分摊时，当月已分摊金额中包含的储值卡分摊金额。
      * 
      * @return amortizedStoredValueCardAmount */
     public Double getAmortizedStoredValueCardAmount() {
@@ -755,7 +754,7 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** |参数名称：奖励金分摊金额（用于现网未清干净的奖励金）| |参数的约束及描述：|
+    /** 月度成本分摊时，当月已分摊金额中包含的奖励金分摊金额（用于现网未清干净的奖励金）。
      * 
      * @return amortizedBonusAmount */
     public Double getAmortizedBonusAmount() {

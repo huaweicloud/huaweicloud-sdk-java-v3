@@ -160,27 +160,32 @@ public class KeywordsAlarmRuleRespList {
 
     private List<Topics> topics = null;
 
-    /** 邮件附加信息是否英文 */
-    public static final class LanguageEnum {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_name")
 
-        /** Enum ZH_CN for value: "zh-cn" */
-        public static final LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
+    private String templateName;
 
-        /** Enum EN_US for value: "en-us" */
-        public static final LanguageEnum EN_US = new LanguageEnum("en-us");
+    /** Gets or Sets status */
+    public static final class StatusEnum {
 
-        private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
+        /** Enum RUNNING for value: "RUNNING" */
+        public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        private static Map<String, LanguageEnum> createStaticFields() {
-            Map<String, LanguageEnum> map = new HashMap<>();
-            map.put("zh-cn", ZH_CN);
-            map.put("en-us", EN_US);
+        /** Enum STOPPING for value: "STOPPING" */
+        public static final StatusEnum STOPPING = new StatusEnum("STOPPING");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("RUNNING", RUNNING);
+            map.put("STOPPING", STOPPING);
             return Collections.unmodifiableMap(map);
         }
 
         private String value;
 
-        LanguageEnum(String value) {
+        StatusEnum(String value) {
             this.value = value;
         }
 
@@ -195,22 +200,22 @@ public class KeywordsAlarmRuleRespList {
         }
 
         @JsonCreator
-        public static LanguageEnum fromValue(String value) {
+        public static StatusEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = new LanguageEnum(value);
+                result = new StatusEnum(value);
             }
             return result;
         }
 
-        public static LanguageEnum valueOf(String value) {
+        public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -219,8 +224,8 @@ public class KeywordsAlarmRuleRespList {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof LanguageEnum) {
-                return this.value.equals(((LanguageEnum) obj).value);
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
         }
@@ -232,9 +237,9 @@ public class KeywordsAlarmRuleRespList {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "language")
+    @JsonProperty(value = "status")
 
-    private LanguageEnum language;
+    private StatusEnum status;
 
     public KeywordsAlarmRuleRespList withProjectId(String projectId) {
         this.projectId = projectId;
@@ -485,20 +490,36 @@ public class KeywordsAlarmRuleRespList {
         this.topics = topics;
     }
 
-    public KeywordsAlarmRuleRespList withLanguage(LanguageEnum language) {
-        this.language = language;
+    public KeywordsAlarmRuleRespList withTemplateName(String templateName) {
+        this.templateName = templateName;
         return this;
     }
 
-    /** 邮件附加信息是否英文
+    /** Get templateName
      * 
-     * @return language */
-    public LanguageEnum getLanguage() {
-        return language;
+     * @return templateName */
+    public String getTemplateName() {
+        return templateName;
     }
 
-    public void setLanguage(LanguageEnum language) {
-        this.language = language;
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
+    }
+
+    public KeywordsAlarmRuleRespList withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /** Get status
+     * 
+     * @return status */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
     }
 
     @Override
@@ -523,7 +544,8 @@ public class KeywordsAlarmRuleRespList {
             && Objects.equals(this.createTime, keywordsAlarmRuleRespList.createTime)
             && Objects.equals(this.updateTime, keywordsAlarmRuleRespList.updateTime)
             && Objects.equals(this.topics, keywordsAlarmRuleRespList.topics)
-            && Objects.equals(this.language, keywordsAlarmRuleRespList.language);
+            && Objects.equals(this.templateName, keywordsAlarmRuleRespList.templateName)
+            && Objects.equals(this.status, keywordsAlarmRuleRespList.status);
     }
 
     @Override
@@ -541,7 +563,8 @@ public class KeywordsAlarmRuleRespList {
             createTime,
             updateTime,
             topics,
-            language);
+            templateName,
+            status);
     }
 
     @Override
@@ -563,7 +586,8 @@ public class KeywordsAlarmRuleRespList {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
-        sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

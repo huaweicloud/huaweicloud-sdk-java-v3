@@ -90,7 +90,7 @@ public class KafkaClient {
             KafkaMeta.batchRestartOrDeleteInstances, hcClient);
     }
 
-    /** 创建实例的转储节点 创建实例的转储节点。 [**当前通过调用API，只支持按需实例创建转储节点。**](tag:hws,ctc)
+    /** 创建实例的转储节点 创建实例的转储节点。 **当前通过调用API，只支持按需实例创建转储节点。**
      *
      * @param CreateConnectorRequest 请求对象
      * @return CreateConnectorResponse */
@@ -98,7 +98,7 @@ public class KafkaClient {
         return hcClient.syncInvokeHttp(request, KafkaMeta.createConnector);
     }
 
-    /** 创建实例的转储节点 创建实例的转储节点。 [**当前通过调用API，只支持按需实例创建转储节点。**](tag:hws,ctc)
+    /** 创建实例的转储节点 创建实例的转储节点。 **当前通过调用API，只支持按需实例创建转储节点。**
      *
      * @param CreateConnectorRequest 请求对象
      * @return SyncInvoker<CreateConnectorRequest, CreateConnectorResponse> */
@@ -288,6 +288,24 @@ public class KafkaClient {
             KafkaMeta.listBackgroundTasks, hcClient);
     }
 
+    /** 查询产品规格列表 查询产品规格列表。
+     *
+     * @param ListEngineProductsRequest 请求对象
+     * @return ListEngineProductsResponse */
+    public ListEngineProductsResponse listEngineProducts(ListEngineProductsRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.listEngineProducts);
+    }
+
+    /** 查询产品规格列表 查询产品规格列表。
+     *
+     * @param ListEngineProductsRequest 请求对象
+     * @return SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse> */
+    public SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProductsInvoker(
+        ListEngineProductsRequest request) {
+        return new SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>(request,
+            KafkaMeta.listEngineProducts, hcClient);
+    }
+
     /** Kafka实例查询Topic 该接口用于查询指定Kafka实例的Topic详情。
      *
      * @param ListInstanceTopicsRequest 请求对象
@@ -432,7 +450,7 @@ public class KafkaClient {
             KafkaMeta.resetUserPasswrod, hcClient);
     }
 
-    /** 实例规格变更 实例规格变更。 [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
+    /** 实例规格变更 实例规格变更。 **当前通过调用API，只支持按需实例进行实例规格变更。**
      *
      * @param ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse */
@@ -440,7 +458,7 @@ public class KafkaClient {
         return hcClient.syncInvokeHttp(request, KafkaMeta.resizeInstance);
     }
 
-    /** 实例规格变更 实例规格变更。 [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
+    /** 实例规格变更 实例规格变更。 **当前通过调用API，只支持按需实例进行实例规格变更。**
      *
      * @param ResizeInstanceRequest 请求对象
      * @return SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> */
@@ -589,7 +607,7 @@ public class KafkaClient {
             KafkaMeta.showInstanceExtendProductInfo, hcClient);
     }
 
-    /** 查询消息 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。 **注意：调用接口时message_offset和partition查询参数二选一。**
+    /** 查询消息 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      *
      * @param ShowInstanceMessagesRequest 请求对象
      * @return ShowInstanceMessagesResponse */
@@ -597,7 +615,7 @@ public class KafkaClient {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showInstanceMessages);
     }
 
-    /** 查询消息 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。 **注意：调用接口时message_offset和partition查询参数二选一。**
+    /** 查询消息 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      *
      * @param ShowInstanceMessagesRequest 请求对象
      * @return SyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> */

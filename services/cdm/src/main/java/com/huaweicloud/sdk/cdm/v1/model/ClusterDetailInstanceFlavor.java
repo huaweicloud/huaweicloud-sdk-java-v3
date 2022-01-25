@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点的虚拟机规格，请参见flavor参数说明。 */
+/** 节点的虚拟机规格，请参见flavor参数说明（查询集群列表时返回值为null）。 */
 public class ClusterDetailInstanceFlavor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

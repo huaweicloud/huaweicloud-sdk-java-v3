@@ -592,6 +592,90 @@ public class ApiBaseInfo {
 
     private String tag;
 
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持 */
+    public static final class ContentTypeEnum {
+
+        /** Enum APPLICATION_JSON for value: "application/json" */
+        public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
+
+        /** Enum APPLICATION_XML for value: "application/xml" */
+        public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
+
+        /** Enum MULTIPART_FORM_DATE for value: "multipart/form-date" */
+        public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
+
+        /** Enum TEXT_PLAIN for value: "text/plain" */
+        public static final ContentTypeEnum TEXT_PLAIN = new ContentTypeEnum("text/plain");
+
+        private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ContentTypeEnum> createStaticFields() {
+            Map<String, ContentTypeEnum> map = new HashMap<>();
+            map.put("application/json", APPLICATION_JSON);
+            map.put("application/xml", APPLICATION_XML);
+            map.put("multipart/form-date", MULTIPART_FORM_DATE);
+            map.put("text/plain", TEXT_PLAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ContentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ContentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ContentTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ContentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ContentTypeEnum) {
+                return this.value.equals(((ContentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_type")
+
+    private ContentTypeEnum contentType;
+
     public ApiBaseInfo withName(String name) {
         this.name = name;
         return this;
@@ -969,6 +1053,22 @@ public class ApiBaseInfo {
         this.tag = tag;
     }
 
+    public ApiBaseInfo withContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持
+     * 
+     * @return contentType */
+    public ContentTypeEnum getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -992,7 +1092,8 @@ public class ApiBaseInfo {
             && Objects.equals(this.authorizerId, apiBaseInfo.authorizerId)
             && Objects.equals(this.tags, apiBaseInfo.tags) && Objects.equals(this.responseId, apiBaseInfo.responseId)
             && Objects.equals(this.romaAppId, apiBaseInfo.romaAppId)
-            && Objects.equals(this.domainName, apiBaseInfo.domainName) && Objects.equals(this.tag, apiBaseInfo.tag);
+            && Objects.equals(this.domainName, apiBaseInfo.domainName) && Objects.equals(this.tag, apiBaseInfo.tag)
+            && Objects.equals(this.contentType, apiBaseInfo.contentType);
     }
 
     @Override
@@ -1018,7 +1119,8 @@ public class ApiBaseInfo {
             responseId,
             romaAppId,
             domainName,
-            tag);
+            tag,
+            contentType);
     }
 
     @Override
@@ -1047,6 +1149,7 @@ public class ApiBaseInfo {
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

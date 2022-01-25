@@ -7,6 +7,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
  */
 public class CreatTokenMeta {
     public static final String URI = "/v1/usg/acs/auth/account";
+    public static final String APP_ID_AUTH_URL = "/v2/usg/acs/auth/appauth";
     public static final String CONTENT_TYPE = "application/json; charset=UTF-8";
 
 }

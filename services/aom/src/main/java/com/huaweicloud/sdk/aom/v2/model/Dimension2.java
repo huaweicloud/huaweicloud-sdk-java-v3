@@ -40,7 +40,7 @@ public class Dimension2  {
 
 
     /**
-     * 名称。
+     * 维度名称。
      * @return name
      */
     public String getName() {

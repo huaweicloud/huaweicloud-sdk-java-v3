@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点的磁盘信息，请参见volume参数说明。 */
+/** 节点的磁盘信息，请参见volume参数说明（查询集群列表时返回值为null）。 */
 public class ClusterDetailInstanceVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

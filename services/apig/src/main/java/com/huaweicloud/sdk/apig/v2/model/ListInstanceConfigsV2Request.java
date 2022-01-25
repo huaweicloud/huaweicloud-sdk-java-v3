@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /** Request Object */
-public class ListInstanceCofigsV2Request {
+public class ListInstanceConfigsV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
@@ -18,7 +18,7 @@ public class ListInstanceCofigsV2Request {
 
     private Integer limit;
 
-    public ListInstanceCofigsV2Request withOffset(Long offset) {
+    public ListInstanceConfigsV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
     }
@@ -34,7 +34,7 @@ public class ListInstanceCofigsV2Request {
         this.offset = offset;
     }
 
-    public ListInstanceCofigsV2Request withLimit(Integer limit) {
+    public ListInstanceConfigsV2Request withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -58,9 +58,9 @@ public class ListInstanceCofigsV2Request {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListInstanceCofigsV2Request listInstanceCofigsV2Request = (ListInstanceCofigsV2Request) o;
-        return Objects.equals(this.offset, listInstanceCofigsV2Request.offset)
-            && Objects.equals(this.limit, listInstanceCofigsV2Request.limit);
+        ListInstanceConfigsV2Request listInstanceConfigsV2Request = (ListInstanceConfigsV2Request) o;
+        return Objects.equals(this.offset, listInstanceConfigsV2Request.offset)
+            && Objects.equals(this.limit, listInstanceConfigsV2Request.limit);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class ListInstanceCofigsV2Request {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListInstanceCofigsV2Request {\n");
+        sb.append("class ListInstanceConfigsV2Request {\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

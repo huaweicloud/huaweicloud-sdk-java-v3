@@ -101,7 +101,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：分摊月| |参数的约束及描述：格式：YYYY-MM。|
+    /** 查询分摊成本的月份，格式：YYYY-MM。
      * 
      * @return sharedMonth */
     public String getSharedMonth() {
@@ -117,7 +117,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：计费模式| |参数的约束及描述：枚举型，1、包周期；3、按需；10、预留实例,不传查询全部| minimum: 0 maximum: 10
+    /** 计费模式。1：包年/包月3：按需10：预留实例 minimum: 0 maximum: 10
      * 
      * @return chargingMode */
     public Integer getChargingMode() {
@@ -133,7 +133,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：云服务类型编码| |参数的约束及描述：例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。|
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -149,7 +149,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：资源类型编码| |参数的约束及描述：|
+    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * 
      * @return resourceTypeCode */
     public String getResourceTypeCode() {
@@ -165,7 +165,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：云服务区编码，| |参数的约束及描述：例如：“cn-north-1”。具体请参见地区和终端节点地区对应云服务的“区域”列的值。|
+    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return regionCode */
     public String getRegionCode() {
@@ -181,8 +181,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴推荐类子客户，且为后付费用户。100：退款-退订税金101：调账-补偿税金102：调账-扣费税金|
-     * |参数的约束及描述：| minimum: 1 maximum: 102
+    /** 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费 minimum: 1 maximum: 102
      * 
      * @return billType */
     public Integer getBillType() {
@@ -198,7 +197,9 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：偏移量，从0开始。默认值为0| |参数的约束及描述：| minimum: 0 maximum: 2147483647
+    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
+     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
+     * 2147483647
      * 
      * @return offset */
     public Integer getOffset() {
@@ -214,7 +215,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：每次查询的数量限制。默认值为10。| |参数的约束及描述：| minimum: 1 maximum: 1000
+    /** 每次查询的数量限制。默认值为10。 minimum: 1 maximum: 1000
      * 
      * @return limit */
     public Integer getLimit() {
@@ -230,7 +231,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：资源ID。| |参数的约束及描述：|
+    /** 资源ID。
      * 
      * @return resourceId */
     public String getResourceId() {
@@ -246,7 +247,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：资源名称| |参数的约束及描述：|
+    /** 资源名称
      * 
      * @return resourceName */
     public String getResourceName() {
@@ -262,7 +263,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。| |参数的约束及描述：|
+    /** 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -278,8 +279,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：查询资源消费记录的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的资源消费记录。|
-     * |参数的约束及描述：|
+    /** 查询资源消费记录的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的资源消费记录。
      * 
      * @return method */
     public String getMethod() {
@@ -295,7 +295,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |参数名称：企业子账号ID。如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。| |参数的约束及描述：|
+    /** 企业子账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
      * 
      * @return subCustomerId */
     public String getSubCustomerId() {

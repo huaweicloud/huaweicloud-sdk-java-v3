@@ -55,7 +55,7 @@ public class CreateTestCaseRequestBody {
         return this;
     }
 
-    /** 该值由注册接口返回
+    /** 该值由注册接口返回,取值范围为10-9999
      * 
      * @return serviceId */
     public Integer getServiceId() {

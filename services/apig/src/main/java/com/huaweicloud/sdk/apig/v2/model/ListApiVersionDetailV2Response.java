@@ -594,6 +594,90 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
 
     private String tag;
 
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持 */
+    public static final class ContentTypeEnum {
+
+        /** Enum APPLICATION_JSON for value: "application/json" */
+        public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
+
+        /** Enum APPLICATION_XML for value: "application/xml" */
+        public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
+
+        /** Enum MULTIPART_FORM_DATE for value: "multipart/form-date" */
+        public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
+
+        /** Enum TEXT_PLAIN for value: "text/plain" */
+        public static final ContentTypeEnum TEXT_PLAIN = new ContentTypeEnum("text/plain");
+
+        private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ContentTypeEnum> createStaticFields() {
+            Map<String, ContentTypeEnum> map = new HashMap<>();
+            map.put("application/json", APPLICATION_JSON);
+            map.put("application/xml", APPLICATION_XML);
+            map.put("multipart/form-date", MULTIPART_FORM_DATE);
+            map.put("text/plain", TEXT_PLAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ContentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ContentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ContentTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ContentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ContentTypeEnum) {
+                return this.value.equals(((ContentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_type")
+
+    private ContentTypeEnum contentType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
@@ -645,6 +729,31 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     private String publishId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_time")
+
+    private OffsetDateTime publishTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roma_app_name")
+
+    private String romaAppName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ld_api_id")
+
+    private String ldApiId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backend_api")
+
+    private BackendApi backendApi;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "api_group_info")
+
+    private ApiGroupCommonInfo apiGroupInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_info")
 
     private ApiFunc funcInfo;
@@ -675,11 +784,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     private List<ApiPolicyMockResp> policyMocks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backend_api")
-
-    private BackendApi backendApi;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_https")
 
     private List<ApiPolicyHttpResp> policyHttps = null;
@@ -698,11 +802,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     @JsonProperty(value = "version_id")
 
     private String versionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publish_time")
-
-    private OffsetDateTime publishTime;
 
     public ListApiVersionDetailV2Response withName(String name) {
         this.name = name;
@@ -1081,6 +1180,22 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.tag = tag;
     }
 
+    public ListApiVersionDetailV2Response withContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持
+     * 
+     * @return contentType */
+    public ContentTypeEnum getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+    }
+
     public ListApiVersionDetailV2Response withId(String id) {
         this.id = id;
         return this;
@@ -1239,6 +1354,104 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
 
     public void setPublishId(String publishId) {
         this.publishId = publishId;
+    }
+
+    public ListApiVersionDetailV2Response withPublishTime(OffsetDateTime publishTime) {
+        this.publishTime = publishTime;
+        return this;
+    }
+
+    /** 版本发布时间
+     * 
+     * @return publishTime */
+    public OffsetDateTime getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(OffsetDateTime publishTime) {
+        this.publishTime = publishTime;
+    }
+
+    public ListApiVersionDetailV2Response withRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+        return this;
+    }
+
+    /** API归属的集成应用名称 暂不支持
+     * 
+     * @return romaAppName */
+    public String getRomaAppName() {
+        return romaAppName;
+    }
+
+    public void setRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+    }
+
+    public ListApiVersionDetailV2Response withLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
+        return this;
+    }
+
+    /** 当API的后端为自定义后端时，对应的自定义后端API编号 暂不支持
+     * 
+     * @return ldApiId */
+    public String getLdApiId() {
+        return ldApiId;
+    }
+
+    public void setLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
+    }
+
+    public ListApiVersionDetailV2Response withBackendApi(BackendApi backendApi) {
+        this.backendApi = backendApi;
+        return this;
+    }
+
+    public ListApiVersionDetailV2Response withBackendApi(Consumer<BackendApi> backendApiSetter) {
+        if (this.backendApi == null) {
+            this.backendApi = new BackendApi();
+            backendApiSetter.accept(this.backendApi);
+        }
+
+        return this;
+    }
+
+    /** Get backendApi
+     * 
+     * @return backendApi */
+    public BackendApi getBackendApi() {
+        return backendApi;
+    }
+
+    public void setBackendApi(BackendApi backendApi) {
+        this.backendApi = backendApi;
+    }
+
+    public ListApiVersionDetailV2Response withApiGroupInfo(ApiGroupCommonInfo apiGroupInfo) {
+        this.apiGroupInfo = apiGroupInfo;
+        return this;
+    }
+
+    public ListApiVersionDetailV2Response withApiGroupInfo(Consumer<ApiGroupCommonInfo> apiGroupInfoSetter) {
+        if (this.apiGroupInfo == null) {
+            this.apiGroupInfo = new ApiGroupCommonInfo();
+            apiGroupInfoSetter.accept(this.apiGroupInfo);
+        }
+
+        return this;
+    }
+
+    /** Get apiGroupInfo
+     * 
+     * @return apiGroupInfo */
+    public ApiGroupCommonInfo getApiGroupInfo() {
+        return apiGroupInfo;
+    }
+
+    public void setApiGroupInfo(ApiGroupCommonInfo apiGroupInfo) {
+        this.apiGroupInfo = apiGroupInfo;
     }
 
     public ListApiVersionDetailV2Response withFuncInfo(ApiFunc funcInfo) {
@@ -1420,31 +1633,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.policyMocks = policyMocks;
     }
 
-    public ListApiVersionDetailV2Response withBackendApi(BackendApi backendApi) {
-        this.backendApi = backendApi;
-        return this;
-    }
-
-    public ListApiVersionDetailV2Response withBackendApi(Consumer<BackendApi> backendApiSetter) {
-        if (this.backendApi == null) {
-            this.backendApi = new BackendApi();
-            backendApiSetter.accept(this.backendApi);
-        }
-
-        return this;
-    }
-
-    /** Get backendApi
-     * 
-     * @return backendApi */
-    public BackendApi getBackendApi() {
-        return backendApi;
-    }
-
-    public void setBackendApi(BackendApi backendApi) {
-        this.backendApi = backendApi;
-    }
-
     public ListApiVersionDetailV2Response withPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
         this.policyHttps = policyHttps;
         return this;
@@ -1541,22 +1729,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.versionId = versionId;
     }
 
-    public ListApiVersionDetailV2Response withPublishTime(OffsetDateTime publishTime) {
-        this.publishTime = publishTime;
-        return this;
-    }
-
-    /** 版本发布时间
-     * 
-     * @return publishTime */
-    public OffsetDateTime getPublishTime() {
-        return publishTime;
-    }
-
-    public void setPublishTime(OffsetDateTime publishTime) {
-        this.publishTime = publishTime;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1588,6 +1760,7 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
             && Objects.equals(this.romaAppId, listApiVersionDetailV2Response.romaAppId)
             && Objects.equals(this.domainName, listApiVersionDetailV2Response.domainName)
             && Objects.equals(this.tag, listApiVersionDetailV2Response.tag)
+            && Objects.equals(this.contentType, listApiVersionDetailV2Response.contentType)
             && Objects.equals(this.id, listApiVersionDetailV2Response.id)
             && Objects.equals(this.status, listApiVersionDetailV2Response.status)
             && Objects.equals(this.arrangeNecessary, listApiVersionDetailV2Response.arrangeNecessary)
@@ -1598,18 +1771,21 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
             && Objects.equals(this.runEnvId, listApiVersionDetailV2Response.runEnvId)
             && Objects.equals(this.runEnvName, listApiVersionDetailV2Response.runEnvName)
             && Objects.equals(this.publishId, listApiVersionDetailV2Response.publishId)
+            && Objects.equals(this.publishTime, listApiVersionDetailV2Response.publishTime)
+            && Objects.equals(this.romaAppName, listApiVersionDetailV2Response.romaAppName)
+            && Objects.equals(this.ldApiId, listApiVersionDetailV2Response.ldApiId)
+            && Objects.equals(this.backendApi, listApiVersionDetailV2Response.backendApi)
+            && Objects.equals(this.apiGroupInfo, listApiVersionDetailV2Response.apiGroupInfo)
             && Objects.equals(this.funcInfo, listApiVersionDetailV2Response.funcInfo)
             && Objects.equals(this.mockInfo, listApiVersionDetailV2Response.mockInfo)
             && Objects.equals(this.reqParams, listApiVersionDetailV2Response.reqParams)
             && Objects.equals(this.backendParams, listApiVersionDetailV2Response.backendParams)
             && Objects.equals(this.policyFunctions, listApiVersionDetailV2Response.policyFunctions)
             && Objects.equals(this.policyMocks, listApiVersionDetailV2Response.policyMocks)
-            && Objects.equals(this.backendApi, listApiVersionDetailV2Response.backendApi)
             && Objects.equals(this.policyHttps, listApiVersionDetailV2Response.policyHttps)
             && Objects.equals(this.slDomain, listApiVersionDetailV2Response.slDomain)
             && Objects.equals(this.slDomains, listApiVersionDetailV2Response.slDomains)
-            && Objects.equals(this.versionId, listApiVersionDetailV2Response.versionId)
-            && Objects.equals(this.publishTime, listApiVersionDetailV2Response.publishTime);
+            && Objects.equals(this.versionId, listApiVersionDetailV2Response.versionId);
     }
 
     @Override
@@ -1636,6 +1812,7 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
             romaAppId,
             domainName,
             tag,
+            contentType,
             id,
             status,
             arrangeNecessary,
@@ -1646,18 +1823,21 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
             runEnvId,
             runEnvName,
             publishId,
+            publishTime,
+            romaAppName,
+            ldApiId,
+            backendApi,
+            apiGroupInfo,
             funcInfo,
             mockInfo,
             reqParams,
             backendParams,
             policyFunctions,
             policyMocks,
-            backendApi,
             policyHttps,
             slDomain,
             slDomains,
-            versionId,
-            publishTime);
+            versionId);
     }
 
     @Override
@@ -1686,6 +1866,7 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    arrangeNecessary: ").append(toIndentedString(arrangeNecessary)).append("\n");
@@ -1696,18 +1877,21 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    runEnvName: ").append(toIndentedString(runEnvName)).append("\n");
         sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
+        sb.append("    publishTime: ").append(toIndentedString(publishTime)).append("\n");
+        sb.append("    romaAppName: ").append(toIndentedString(romaAppName)).append("\n");
+        sb.append("    ldApiId: ").append(toIndentedString(ldApiId)).append("\n");
+        sb.append("    backendApi: ").append(toIndentedString(backendApi)).append("\n");
+        sb.append("    apiGroupInfo: ").append(toIndentedString(apiGroupInfo)).append("\n");
         sb.append("    funcInfo: ").append(toIndentedString(funcInfo)).append("\n");
         sb.append("    mockInfo: ").append(toIndentedString(mockInfo)).append("\n");
         sb.append("    reqParams: ").append(toIndentedString(reqParams)).append("\n");
         sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");
         sb.append("    policyFunctions: ").append(toIndentedString(policyFunctions)).append("\n");
         sb.append("    policyMocks: ").append(toIndentedString(policyMocks)).append("\n");
-        sb.append("    backendApi: ").append(toIndentedString(backendApi)).append("\n");
         sb.append("    policyHttps: ").append(toIndentedString(policyHttps)).append("\n");
         sb.append("    slDomain: ").append(toIndentedString(slDomain)).append("\n");
         sb.append("    slDomains: ").append(toIndentedString(slDomains)).append("\n");
         sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
-        sb.append("    publishTime: ").append(toIndentedString(publishTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

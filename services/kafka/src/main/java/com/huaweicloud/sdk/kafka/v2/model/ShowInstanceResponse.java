@@ -464,6 +464,11 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private List<TagEntity> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dr_enable")
+
+    private Boolean drEnable;
+
     public ShowInstanceResponse withName(String name) {
         this.name = name;
         return this;
@@ -1491,6 +1496,22 @@ public class ShowInstanceResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public ShowInstanceResponse withDrEnable(Boolean drEnable) {
+        this.drEnable = drEnable;
+        return this;
+    }
+
+    /** 是否为容灾实例。
+     * 
+     * @return drEnable */
+    public Boolean getDrEnable() {
+        return drEnable;
+    }
+
+    public void setDrEnable(Boolean drEnable) {
+        this.drEnable = drEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1560,7 +1581,8 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.diskEncrypted, showInstanceResponse.diskEncrypted)
             && Objects.equals(this.kafkaPrivateConnectAddress, showInstanceResponse.kafkaPrivateConnectAddress)
             && Objects.equals(this.cesVersion, showInstanceResponse.cesVersion)
-            && Objects.equals(this.tags, showInstanceResponse.tags);
+            && Objects.equals(this.tags, showInstanceResponse.tags)
+            && Objects.equals(this.drEnable, showInstanceResponse.drEnable);
     }
 
     @Override
@@ -1625,7 +1647,8 @@ public class ShowInstanceResponse extends SdkResponse {
             diskEncrypted,
             kafkaPrivateConnectAddress,
             cesVersion,
-            tags);
+            tags,
+            drEnable);
     }
 
     @Override
@@ -1693,6 +1716,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    drEnable: ").append(toIndentedString(drEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

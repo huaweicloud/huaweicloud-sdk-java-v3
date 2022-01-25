@@ -769,6 +769,74 @@ public class DevStarMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse> showRepositoryByCloudIde =
+        genForshowRepositoryByCloudIde();
+
+    private static HttpRequestDef<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse> genForshowRepositoryByCloudIde() {
+        // basic
+        HttpRequestDef.Builder<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowRepositoryByCloudIdeRequest.class, ShowRepositoryByCloudIdeResponse.class)
+                .withName("ShowRepositoryByCloudIde")
+                .withUri("/v1/repositories/{repository_id}/show/cloudide")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepositoryByCloudIdeRequest::getRepositoryId, (req, v) -> {
+                req.setRepositoryId(v);
+            }));
+        builder.<String>withRequestField("repository_ssh_url",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepositoryByCloudIdeRequest::getRepositorySshUrl, (req, v) -> {
+                req.setRepositorySshUrl(v);
+            }));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepositoryByCloudIdeRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<String>withRequestField("space_prefix",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepositoryByCloudIdeRequest::getSpacePrefix, (req, v) -> {
+                req.setSpacePrefix(v);
+            }));
+        builder.<Boolean>withRequestField("is_open_last",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowRepositoryByCloudIdeRequest::getIsOpenLast, (req, v) -> {
+                req.setIsOpenLast(v);
+            }));
+        builder.<Boolean>withRequestField("is_free",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowRepositoryByCloudIdeRequest::getIsFree, (req, v) -> {
+                req.setIsFree(v);
+            }));
+        builder.<ShowRepositoryByCloudIdeRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowRepositoryByCloudIdeRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowRepositoryByCloudIdeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRepositoryStatisticalDataV2Request, ShowRepositoryStatisticalDataV2Response> showRepositoryStatisticalDataV2 =
         genForshowRepositoryStatisticalDataV2();
 
@@ -959,6 +1027,38 @@ public class DevStarMeta {
             TypeCasts.uncheckedConversion(ListTemplateViewHistoriesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListTemplateViewHistoriesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates =
+        genForlistTemplates();
+
+    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForlistTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTemplatesRequest.class, ListTemplatesResponse.class)
+                .withName("ListTemplates")
+                .withUri("/v1/templates/query")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ListTemplatesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTemplatesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<TemplateQuery>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(TemplateQuery.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

@@ -18,7 +18,7 @@ public class AppResetCreate {
         return this;
     }
 
-    /** 密钥支持英文，数字，“_”,“-”,“_”,“!”,“@”,“#”,“$”,“%”,且只能以英文或数字开头，8 ~ 64个字符。用户自定义APP的密钥需要开启配额开关
+    /** 密钥支持英文，数字，“_”,“-”,“!”,“@”,“#”,“$”,“%”,且只能以英文或数字开头，8 ~ 64个字符。用户自定义APP的密钥需要开启配额开关
      * 
      * @return appSecret */
     public String getAppSecret() {

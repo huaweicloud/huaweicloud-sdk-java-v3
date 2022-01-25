@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -116,6 +118,11 @@ public class UpdateAccessConfigResponse extends SdkResponse {
     @JsonProperty(value = "host_group_info")
 
     private AccessConfigHostGroupIdList hostGroupInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_config_tag")
+
+    private List<AccessConfigTag> accessConfigTag = null;
 
     public UpdateAccessConfigResponse withAccessConfigId(String accessConfigId) {
         this.accessConfigId = accessConfigId;
@@ -256,6 +263,38 @@ public class UpdateAccessConfigResponse extends SdkResponse {
         this.hostGroupInfo = hostGroupInfo;
     }
 
+    public UpdateAccessConfigResponse withAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
+        this.accessConfigTag = accessConfigTag;
+        return this;
+    }
+
+    public UpdateAccessConfigResponse addAccessConfigTagItem(AccessConfigTag accessConfigTagItem) {
+        if (this.accessConfigTag == null) {
+            this.accessConfigTag = new ArrayList<>();
+        }
+        this.accessConfigTag.add(accessConfigTagItem);
+        return this;
+    }
+
+    public UpdateAccessConfigResponse withAccessConfigTag(Consumer<List<AccessConfigTag>> accessConfigTagSetter) {
+        if (this.accessConfigTag == null) {
+            this.accessConfigTag = new ArrayList<>();
+        }
+        accessConfigTagSetter.accept(this.accessConfigTag);
+        return this;
+    }
+
+    /** Get accessConfigTag
+     * 
+     * @return accessConfigTag */
+    public List<AccessConfigTag> getAccessConfigTag() {
+        return accessConfigTag;
+    }
+
+    public void setAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
+        this.accessConfigTag = accessConfigTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -271,7 +310,8 @@ public class UpdateAccessConfigResponse extends SdkResponse {
             && Objects.equals(this.createTime, updateAccessConfigResponse.createTime)
             && Objects.equals(this.accessConfigDetail, updateAccessConfigResponse.accessConfigDetail)
             && Objects.equals(this.logInfo, updateAccessConfigResponse.logInfo)
-            && Objects.equals(this.hostGroupInfo, updateAccessConfigResponse.hostGroupInfo);
+            && Objects.equals(this.hostGroupInfo, updateAccessConfigResponse.hostGroupInfo)
+            && Objects.equals(this.accessConfigTag, updateAccessConfigResponse.accessConfigTag);
     }
 
     @Override
@@ -282,7 +322,8 @@ public class UpdateAccessConfigResponse extends SdkResponse {
             createTime,
             accessConfigDetail,
             logInfo,
-            hostGroupInfo);
+            hostGroupInfo,
+            accessConfigTag);
     }
 
     @Override
@@ -296,6 +337,7 @@ public class UpdateAccessConfigResponse extends SdkResponse {
         sb.append("    accessConfigDetail: ").append(toIndentedString(accessConfigDetail)).append("\n");
         sb.append("    logInfo: ").append(toIndentedString(logInfo)).append("\n");
         sb.append("    hostGroupInfo: ").append(toIndentedString(hostGroupInfo)).append("\n");
+        sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

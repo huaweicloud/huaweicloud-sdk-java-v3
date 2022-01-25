@@ -357,6 +357,24 @@ public class DevStarClient {
             DevStarMeta.checkRepositoryDuplicateName, hcClient);
     }
 
+    /** 使用 CloudIDE 实例打开应用代码 使用 CloudIDE 实例打开应用代码。CloudIDE会保存用户项目数据，相同用户使用同一个CloudIDE 使用要求：1.用户需为登录状态； 2.拥有仓库权限
+     *
+     * @param ShowRepositoryByCloudIdeRequest 请求对象
+     * @return ShowRepositoryByCloudIdeResponse */
+    public ShowRepositoryByCloudIdeResponse showRepositoryByCloudIde(ShowRepositoryByCloudIdeRequest request) {
+        return hcClient.syncInvokeHttp(request, DevStarMeta.showRepositoryByCloudIde);
+    }
+
+    /** 使用 CloudIDE 实例打开应用代码 使用 CloudIDE 实例打开应用代码。CloudIDE会保存用户项目数据，相同用户使用同一个CloudIDE 使用要求：1.用户需为登录状态； 2.拥有仓库权限
+     *
+     * @param ShowRepositoryByCloudIdeRequest 请求对象
+     * @return SyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse> */
+    public SyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse> showRepositoryByCloudIdeInvoker(
+        ShowRepositoryByCloudIdeRequest request) {
+        return new SyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse>(request,
+            DevStarMeta.showRepositoryByCloudIde, hcClient);
+    }
+
     /** 应用代码仓库统计信息 查询代码仓库的统计信息,包括代码仓的名称,代码行数等信息
      *
      * @param ShowRepositoryStatisticalDataV2Request 请求对象
@@ -446,6 +464,23 @@ public class DevStarClient {
         ListTemplateViewHistoriesRequest request) {
         return new SyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse>(request,
             DevStarMeta.listTemplateViewHistories, hcClient);
+    }
+
+    /** 查询模板列表 查询模板列表。
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return ListTemplatesResponse */
+    public ListTemplatesResponse listTemplates(ListTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, DevStarMeta.listTemplates);
+    }
+
+    /** 查询模板列表 查询模板列表。
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return SyncInvoker<ListTemplatesRequest, ListTemplatesResponse> */
+    public SyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesInvoker(ListTemplatesRequest request) {
+        return new SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, DevStarMeta.listTemplates,
+            hcClient);
     }
 
     /** 查询模板列表（V2） 查询模板列表。

@@ -13,7 +13,7 @@ import java.util.Objects;
 /** 授权结果 */
 public class AuthResult {
 
-    /** 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败 */
+    /** 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FAILED：授权失败 */
     public static final class StatusEnum {
 
         /** Enum SUCCESS for value: "SUCCESS" */
@@ -118,7 +118,7 @@ public class AuthResult {
         return this;
     }
 
-    /** 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败
+    /** 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FAILED：授权失败
      * 
      * @return status */
     public StatusEnum getStatus() {

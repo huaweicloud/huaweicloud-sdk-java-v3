@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** RuleItem */
 public class RuleItem {
@@ -37,6 +40,11 @@ public class RuleItem {
     @JsonProperty(value = "checked")
 
     private String checked;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_config_list")
+
+    private List<RuleConfig> ruleConfigList = null;
 
     public RuleItem withRuleId(String ruleId) {
         this.ruleId = ruleId;
@@ -134,6 +142,38 @@ public class RuleItem {
         this.checked = checked;
     }
 
+    public RuleItem withRuleConfigList(List<RuleConfig> ruleConfigList) {
+        this.ruleConfigList = ruleConfigList;
+        return this;
+    }
+
+    public RuleItem addRuleConfigListItem(RuleConfig ruleConfigListItem) {
+        if (this.ruleConfigList == null) {
+            this.ruleConfigList = new ArrayList<>();
+        }
+        this.ruleConfigList.add(ruleConfigListItem);
+        return this;
+    }
+
+    public RuleItem withRuleConfigList(Consumer<List<RuleConfig>> ruleConfigListSetter) {
+        if (this.ruleConfigList == null) {
+            this.ruleConfigList = new ArrayList<>();
+        }
+        ruleConfigListSetter.accept(this.ruleConfigList);
+        return this;
+    }
+
+    /** 规则配置参数阈值相关信息
+     * 
+     * @return ruleConfigList */
+    public List<RuleConfig> getRuleConfigList() {
+        return ruleConfigList;
+    }
+
+    public void setRuleConfigList(List<RuleConfig> ruleConfigList) {
+        this.ruleConfigList = ruleConfigList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -146,12 +186,13 @@ public class RuleItem {
         return Objects.equals(this.ruleId, ruleItem.ruleId) && Objects.equals(this.ruleLanguage, ruleItem.ruleLanguage)
             && Objects.equals(this.ruleName, ruleItem.ruleName)
             && Objects.equals(this.ruleSeverity, ruleItem.ruleSeverity)
-            && Objects.equals(this.ruleTages, ruleItem.ruleTages) && Objects.equals(this.checked, ruleItem.checked);
+            && Objects.equals(this.ruleTages, ruleItem.ruleTages) && Objects.equals(this.checked, ruleItem.checked)
+            && Objects.equals(this.ruleConfigList, ruleItem.ruleConfigList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ruleId, ruleLanguage, ruleName, ruleSeverity, ruleTages, checked);
+        return Objects.hash(ruleId, ruleLanguage, ruleName, ruleSeverity, ruleTages, checked, ruleConfigList);
     }
 
     @Override
@@ -164,6 +205,7 @@ public class RuleItem {
         sb.append("    ruleSeverity: ").append(toIndentedString(ruleSeverity)).append("\n");
         sb.append("    ruleTages: ").append(toIndentedString(ruleTages)).append("\n");
         sb.append("    checked: ").append(toIndentedString(checked)).append("\n");
+        sb.append("    ruleConfigList: ").append(toIndentedString(ruleConfigList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

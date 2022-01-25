@@ -195,7 +195,7 @@ public class AomClient {
 
     /**
      * 查询事件告警信息
-     * 该接口用于查询对应用户的事件、告警
+     * 该接口用于查询对应用户的事件、告警。
      *
      * @param ListEventsRequest 请求对象
      * @return ListEventsResponse
@@ -206,7 +206,7 @@ public class AomClient {
 
     /**
      * 查询事件告警信息
-     * 该接口用于查询对应用户的事件、告警
+     * 该接口用于查询对应用户的事件、告警。
      *
      * @param ListEventsRequest 请求对象
      * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
@@ -415,7 +415,7 @@ public class AomClient {
 
     /**
      * 瞬时数据查询
-     * 该接口用于查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询PromQL(Prometheus Query Language)。 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListInstantQueryAomPromGetRequest 请求对象
      * @return ListInstantQueryAomPromGetResponse
@@ -426,7 +426,7 @@ public class AomClient {
 
     /**
      * 瞬时数据查询
-     * 该接口用于查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询PromQL(Prometheus Query Language)。 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListInstantQueryAomPromGetRequest 请求对象
      * @return SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>
@@ -459,7 +459,7 @@ public class AomClient {
 
     /**
      * 查询标签值
-     * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListLabelValuesAomPromGetRequest 请求对象
      * @return ListLabelValuesAomPromGetResponse
@@ -470,7 +470,7 @@ public class AomClient {
 
     /**
      * 查询标签值
-     * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListLabelValuesAomPromGetRequest 请求对象
      * @return SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>
@@ -481,7 +481,7 @@ public class AomClient {
 
     /**
      * 获取标签名列表
-     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListLabelsAomPromGetRequest 请求对象
      * @return ListLabelsAomPromGetResponse
@@ -492,7 +492,7 @@ public class AomClient {
 
     /**
      * 获取标签名列表
-     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListLabelsAomPromGetRequest 请求对象
      * @return SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>
@@ -503,7 +503,7 @@ public class AomClient {
 
     /**
      * 获取标签名列表
-     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListLabelsAomPromPostRequest 请求对象
      * @return ListLabelsAomPromPostResponse
@@ -514,7 +514,7 @@ public class AomClient {
 
     /**
      * 获取标签名列表
-     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListLabelsAomPromPostRequest 请求对象
      * @return SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>
@@ -525,7 +525,7 @@ public class AomClient {
 
     /**
      * 元数据查询
-     * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListMetadataAomPromGetRequest 请求对象
      * @return ListMetadataAomPromGetResponse
@@ -536,7 +536,7 @@ public class AomClient {
 
     /**
      * 元数据查询
-     * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListMetadataAomPromGetRequest 请求对象
      * @return SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>
@@ -547,7 +547,7 @@ public class AomClient {
 
     /**
      * 区间数据查询
-     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListRangeQueryAomPromGetRequest 请求对象
      * @return ListRangeQueryAomPromGetResponse
@@ -558,7 +558,7 @@ public class AomClient {
 
     /**
      * 区间数据查询
-     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListRangeQueryAomPromGetRequest 请求对象
      * @return SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>
@@ -569,7 +569,7 @@ public class AomClient {
 
     /**
      * 区间数据查询
-     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListRangeQueryAomPromPostRequest 请求对象
      * @return ListRangeQueryAomPromPostResponse
@@ -580,7 +580,7 @@ public class AomClient {
 
     /**
      * 区间数据查询
-     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      *
      * @param ListRangeQueryAomPromPostRequest 请求对象
      * @return SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>

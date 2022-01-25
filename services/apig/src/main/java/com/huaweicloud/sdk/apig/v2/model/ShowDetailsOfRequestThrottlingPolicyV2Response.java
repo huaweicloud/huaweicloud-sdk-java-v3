@@ -423,7 +423,7 @@ public class ShowDetailsOfRequestThrottlingPolicyV2Response extends SdkResponse 
         return this;
     }
 
-    /** [用户流量限制是指一个API在时长之内每一个用户能访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。](tag:hws;hws_hk;hcs;fcs;g42;)[site不支持用户流量限制,输入值为0](tag:Site)
+    /** [用户流量限制是指一个API在时长之内每一个用户能访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。](tag:hws,hws_hk,hcs,fcs,g42)[site不支持用户流量限制,输入值为0](tag:Site)
      * 
      * @return userCallLimits */
     public Integer getUserCallLimits() {

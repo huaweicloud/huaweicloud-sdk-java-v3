@@ -48,7 +48,7 @@ public class ListSeriesRequest  {
 
 
     /**
-     * 取值范围(0,1000]，默认值为1000。用于限制本次返回的结果数据条数。
+     * 用于限制本次返回的结果数据条数。 取值范围(0,1000]，默认值为1000。
      * @return limit
      */
     public String getLimit() {

@@ -799,6 +799,24 @@ public class MeetingAsyncClient {
             MeetingMeta.deleteVisionActiveCode, hcClient);
     }
 
+    /** 删除事件订阅配置信息 管理员可以通过该接口删除事件订阅(webhook)配置
+     *
+     * @param DeleteWebHookConfigRequest 请求对象
+     * @return CompletableFuture<DeleteWebHookConfigResponse> */
+    public CompletableFuture<DeleteWebHookConfigResponse> deleteWebHookConfigAsync(DeleteWebHookConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.deleteWebHookConfig);
+    }
+
+    /** 删除事件订阅配置信息 管理员可以通过该接口删除事件订阅(webhook)配置
+     *
+     * @param DeleteWebHookConfigRequest 请求对象
+     * @return AsyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> */
+    public AsyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> deleteWebHookConfigAsyncInvoker(
+        DeleteWebHookConfigRequest request) {
+        return new AsyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse>(request,
+            MeetingMeta.deleteWebHookConfig, hcClient);
+    }
+
     /** 取消网络研讨会 您可根据需要取消网络研讨会。
      *
      * @param DeleteWebinarRequest 请求对象
@@ -1794,6 +1812,24 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse>(request, MeetingMeta.setSsoConfig, hcClient);
     }
 
+    /** 设置事件订阅配置信息 设置企业事件订阅配置设置
+     *
+     * @param SetWebHookConfigRequest 请求对象
+     * @return CompletableFuture<SetWebHookConfigResponse> */
+    public CompletableFuture<SetWebHookConfigResponse> setWebHookConfigAsync(SetWebHookConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setWebHookConfig);
+    }
+
+    /** 设置事件订阅配置信息 设置企业事件订阅配置设置
+     *
+     * @param SetWebHookConfigRequest 请求对象
+     * @return AsyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse> */
+    public AsyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse> setWebHookConfigAsyncInvoker(
+        SetWebHookConfigRequest request) {
+        return new AsyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse>(request,
+            MeetingMeta.setWebHookConfig, hcClient);
+    }
+
     /** 通过会议ID查询企业ID 与某个会议在同一个SP下的用户，可以通过会议ID查询到该会议对应的企业ID。
      *
      * @param ShowConfOrgRequest 请求对象
@@ -2278,6 +2314,24 @@ public class MeetingAsyncClient {
             hcClient);
     }
 
+    /** 查询事件订阅配置信息 查询企业事件订阅配置
+     *
+     * @param ShowWebHookConfigRequest 请求对象
+     * @return CompletableFuture<ShowWebHookConfigResponse> */
+    public CompletableFuture<ShowWebHookConfigResponse> showWebHookConfigAsync(ShowWebHookConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showWebHookConfig);
+    }
+
+    /** 查询事件订阅配置信息 查询企业事件订阅配置
+     *
+     * @param ShowWebHookConfigRequest 请求对象
+     * @return AsyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse> */
+    public AsyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse> showWebHookConfigAsyncInvoker(
+        ShowWebHookConfigRequest request) {
+        return new AsyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse>(request,
+            MeetingMeta.showWebHookConfig, hcClient);
+    }
+
     /** 查询网络研讨会详情 根据conference_id查询网络研讨会详情。
      *
      * @param ShowWebinarRequest 请求对象
@@ -2659,6 +2713,25 @@ public class MeetingAsyncClient {
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse> */
     public AsyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserAsyncInvoker(UpdateUserRequest request) {
         return new AsyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, MeetingMeta.updateUser, hcClient);
+    }
+
+    /** 变更订阅配置使用状态 变更订阅配置使用状态
+     *
+     * @param UpdateWebHookConfigStatusRequest 请求对象
+     * @return CompletableFuture<UpdateWebHookConfigStatusResponse> */
+    public CompletableFuture<UpdateWebHookConfigStatusResponse> updateWebHookConfigStatusAsync(
+        UpdateWebHookConfigStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.updateWebHookConfigStatus);
+    }
+
+    /** 变更订阅配置使用状态 变更订阅配置使用状态
+     *
+     * @param UpdateWebHookConfigStatusRequest 请求对象
+     * @return AsyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> */
+    public AsyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> updateWebHookConfigStatusAsyncInvoker(
+        UpdateWebHookConfigStatusRequest request) {
+        return new AsyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse>(request,
+            MeetingMeta.updateWebHookConfigStatus, hcClient);
     }
 
     /** 编辑网络研讨会 您可根据需要修改普通网络研讨会和周期网络研讨会。注意：暂不支持添加外部联系人作为与会嘉宾

@@ -593,6 +593,90 @@ public class ApiInfo {
 
     private String tag;
 
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持 */
+    public static final class ContentTypeEnum {
+
+        /** Enum APPLICATION_JSON for value: "application/json" */
+        public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
+
+        /** Enum APPLICATION_XML for value: "application/xml" */
+        public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
+
+        /** Enum MULTIPART_FORM_DATE for value: "multipart/form-date" */
+        public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
+
+        /** Enum TEXT_PLAIN for value: "text/plain" */
+        public static final ContentTypeEnum TEXT_PLAIN = new ContentTypeEnum("text/plain");
+
+        private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ContentTypeEnum> createStaticFields() {
+            Map<String, ContentTypeEnum> map = new HashMap<>();
+            map.put("application/json", APPLICATION_JSON);
+            map.put("application/xml", APPLICATION_XML);
+            map.put("multipart/form-date", MULTIPART_FORM_DATE);
+            map.put("text/plain", TEXT_PLAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ContentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ContentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ContentTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ContentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ContentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ContentTypeEnum) {
+                return this.value.equals(((ContentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_type")
+
+    private ContentTypeEnum contentType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
@@ -644,6 +728,31 @@ public class ApiInfo {
     private String publishId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_time")
+
+    private String publishTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roma_app_name")
+
+    private String romaAppName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ld_api_id")
+
+    private String ldApiId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backend_api")
+
+    private BackendApi backendApi;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "api_group_info")
+
+    private ApiGroupCommonInfo apiGroupInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_info")
 
     private ApiFunc funcInfo;
@@ -672,11 +781,6 @@ public class ApiInfo {
     @JsonProperty(value = "policy_mocks")
 
     private List<ApiPolicyMockResp> policyMocks = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backend_api")
-
-    private BackendApi backendApi;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_https")
@@ -1060,6 +1164,22 @@ public class ApiInfo {
         this.tag = tag;
     }
 
+    public ApiInfo withContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持
+     * 
+     * @return contentType */
+    public ContentTypeEnum getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+    }
+
     public ApiInfo withId(String id) {
         this.id = id;
         return this;
@@ -1218,6 +1338,104 @@ public class ApiInfo {
 
     public void setPublishId(String publishId) {
         this.publishId = publishId;
+    }
+
+    public ApiInfo withPublishTime(String publishTime) {
+        this.publishTime = publishTime;
+        return this;
+    }
+
+    /** 发布时间 存在多个发布记录时，发布时间之间用|隔开
+     * 
+     * @return publishTime */
+    public String getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(String publishTime) {
+        this.publishTime = publishTime;
+    }
+
+    public ApiInfo withRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+        return this;
+    }
+
+    /** API归属的集成应用名称 暂不支持
+     * 
+     * @return romaAppName */
+    public String getRomaAppName() {
+        return romaAppName;
+    }
+
+    public void setRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+    }
+
+    public ApiInfo withLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
+        return this;
+    }
+
+    /** 当API的后端为自定义后端时，对应的自定义后端API编号 暂不支持
+     * 
+     * @return ldApiId */
+    public String getLdApiId() {
+        return ldApiId;
+    }
+
+    public void setLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
+    }
+
+    public ApiInfo withBackendApi(BackendApi backendApi) {
+        this.backendApi = backendApi;
+        return this;
+    }
+
+    public ApiInfo withBackendApi(Consumer<BackendApi> backendApiSetter) {
+        if (this.backendApi == null) {
+            this.backendApi = new BackendApi();
+            backendApiSetter.accept(this.backendApi);
+        }
+
+        return this;
+    }
+
+    /** Get backendApi
+     * 
+     * @return backendApi */
+    public BackendApi getBackendApi() {
+        return backendApi;
+    }
+
+    public void setBackendApi(BackendApi backendApi) {
+        this.backendApi = backendApi;
+    }
+
+    public ApiInfo withApiGroupInfo(ApiGroupCommonInfo apiGroupInfo) {
+        this.apiGroupInfo = apiGroupInfo;
+        return this;
+    }
+
+    public ApiInfo withApiGroupInfo(Consumer<ApiGroupCommonInfo> apiGroupInfoSetter) {
+        if (this.apiGroupInfo == null) {
+            this.apiGroupInfo = new ApiGroupCommonInfo();
+            apiGroupInfoSetter.accept(this.apiGroupInfo);
+        }
+
+        return this;
+    }
+
+    /** Get apiGroupInfo
+     * 
+     * @return apiGroupInfo */
+    public ApiGroupCommonInfo getApiGroupInfo() {
+        return apiGroupInfo;
+    }
+
+    public void setApiGroupInfo(ApiGroupCommonInfo apiGroupInfo) {
+        this.apiGroupInfo = apiGroupInfo;
     }
 
     public ApiInfo withFuncInfo(ApiFunc funcInfo) {
@@ -1398,31 +1616,6 @@ public class ApiInfo {
         this.policyMocks = policyMocks;
     }
 
-    public ApiInfo withBackendApi(BackendApi backendApi) {
-        this.backendApi = backendApi;
-        return this;
-    }
-
-    public ApiInfo withBackendApi(Consumer<BackendApi> backendApiSetter) {
-        if (this.backendApi == null) {
-            this.backendApi = new BackendApi();
-            backendApiSetter.accept(this.backendApi);
-        }
-
-        return this;
-    }
-
-    /** Get backendApi
-     * 
-     * @return backendApi */
-    public BackendApi getBackendApi() {
-        return backendApi;
-    }
-
-    public void setBackendApi(BackendApi backendApi) {
-        this.backendApi = backendApi;
-    }
-
     public ApiInfo withPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
         this.policyHttps = policyHttps;
         return this;
@@ -1476,18 +1669,23 @@ public class ApiInfo {
             && Objects.equals(this.authorizerId, apiInfo.authorizerId) && Objects.equals(this.tags, apiInfo.tags)
             && Objects.equals(this.responseId, apiInfo.responseId) && Objects.equals(this.romaAppId, apiInfo.romaAppId)
             && Objects.equals(this.domainName, apiInfo.domainName) && Objects.equals(this.tag, apiInfo.tag)
-            && Objects.equals(this.id, apiInfo.id) && Objects.equals(this.status, apiInfo.status)
+            && Objects.equals(this.contentType, apiInfo.contentType) && Objects.equals(this.id, apiInfo.id)
+            && Objects.equals(this.status, apiInfo.status)
             && Objects.equals(this.arrangeNecessary, apiInfo.arrangeNecessary)
             && Objects.equals(this.registerTime, apiInfo.registerTime)
             && Objects.equals(this.updateTime, apiInfo.updateTime) && Objects.equals(this.groupName, apiInfo.groupName)
             && Objects.equals(this.groupVersion, apiInfo.groupVersion)
             && Objects.equals(this.runEnvId, apiInfo.runEnvId) && Objects.equals(this.runEnvName, apiInfo.runEnvName)
-            && Objects.equals(this.publishId, apiInfo.publishId) && Objects.equals(this.funcInfo, apiInfo.funcInfo)
-            && Objects.equals(this.mockInfo, apiInfo.mockInfo) && Objects.equals(this.reqParams, apiInfo.reqParams)
+            && Objects.equals(this.publishId, apiInfo.publishId)
+            && Objects.equals(this.publishTime, apiInfo.publishTime)
+            && Objects.equals(this.romaAppName, apiInfo.romaAppName) && Objects.equals(this.ldApiId, apiInfo.ldApiId)
+            && Objects.equals(this.backendApi, apiInfo.backendApi)
+            && Objects.equals(this.apiGroupInfo, apiInfo.apiGroupInfo)
+            && Objects.equals(this.funcInfo, apiInfo.funcInfo) && Objects.equals(this.mockInfo, apiInfo.mockInfo)
+            && Objects.equals(this.reqParams, apiInfo.reqParams)
             && Objects.equals(this.backendParams, apiInfo.backendParams)
             && Objects.equals(this.policyFunctions, apiInfo.policyFunctions)
             && Objects.equals(this.policyMocks, apiInfo.policyMocks)
-            && Objects.equals(this.backendApi, apiInfo.backendApi)
             && Objects.equals(this.policyHttps, apiInfo.policyHttps);
     }
 
@@ -1515,6 +1713,7 @@ public class ApiInfo {
             romaAppId,
             domainName,
             tag,
+            contentType,
             id,
             status,
             arrangeNecessary,
@@ -1525,13 +1724,17 @@ public class ApiInfo {
             runEnvId,
             runEnvName,
             publishId,
+            publishTime,
+            romaAppName,
+            ldApiId,
+            backendApi,
+            apiGroupInfo,
             funcInfo,
             mockInfo,
             reqParams,
             backendParams,
             policyFunctions,
             policyMocks,
-            backendApi,
             policyHttps);
     }
 
@@ -1561,6 +1764,7 @@ public class ApiInfo {
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    arrangeNecessary: ").append(toIndentedString(arrangeNecessary)).append("\n");
@@ -1571,13 +1775,17 @@ public class ApiInfo {
         sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    runEnvName: ").append(toIndentedString(runEnvName)).append("\n");
         sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
+        sb.append("    publishTime: ").append(toIndentedString(publishTime)).append("\n");
+        sb.append("    romaAppName: ").append(toIndentedString(romaAppName)).append("\n");
+        sb.append("    ldApiId: ").append(toIndentedString(ldApiId)).append("\n");
+        sb.append("    backendApi: ").append(toIndentedString(backendApi)).append("\n");
+        sb.append("    apiGroupInfo: ").append(toIndentedString(apiGroupInfo)).append("\n");
         sb.append("    funcInfo: ").append(toIndentedString(funcInfo)).append("\n");
         sb.append("    mockInfo: ").append(toIndentedString(mockInfo)).append("\n");
         sb.append("    reqParams: ").append(toIndentedString(reqParams)).append("\n");
         sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");
         sb.append("    policyFunctions: ").append(toIndentedString(policyFunctions)).append("\n");
         sb.append("    policyMocks: ").append(toIndentedString(policyMocks)).append("\n");
-        sb.append("    backendApi: ").append(toIndentedString(backendApi)).append("\n");
         sb.append("    policyHttps: ").append(toIndentedString(policyHttps)).append("\n");
         sb.append("}");
         return sb.toString();

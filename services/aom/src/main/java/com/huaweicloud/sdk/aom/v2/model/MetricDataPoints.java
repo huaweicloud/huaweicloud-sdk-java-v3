@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 查询结果要点。
+ * 查询重点指标。
  */
 public class MetricDataPoints  {
 

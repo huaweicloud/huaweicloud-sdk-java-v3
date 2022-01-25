@@ -196,7 +196,7 @@ public class RulesetItem {
         return this;
     }
 
-    /** 是否默认规则集，0不是，1是
+    /** 是否该语言默认规则集，0不是，1是
      * 
      * @return isDefault */
     public String getIsDefault() {
@@ -228,7 +228,7 @@ public class RulesetItem {
         return this;
     }
 
-    /** 是否该语言默认规则集，0不是，1是
+    /** 是否是系统规则集，0不是，1是
      * 
      * @return isDefaultTemplate */
     public String getIsDefaultTemplate() {

@@ -12,15 +12,19 @@ import com.huaweicloud.sdk.core.http.HttpRequest.HttpRequestBuilder;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
+import com.huaweicloud.sdk.meeting.v1.model.AppAuthInfoV2;
 import com.huaweicloud.sdk.meeting.v1.model.AuthReqDTOV1;
+import com.huaweicloud.sdk.meeting.v1.model.AuthTypeEnum;
 import com.huaweicloud.sdk.meeting.v1.model.CreatTokenMeta;
 import com.huaweicloud.sdk.meeting.v1.model.CreateTokenResponse;
+import com.huaweicloud.sdk.meeting.v1.model.TenantSceneEnum;
 
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.util.Base64;
 import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 public class MeetingCredentials implements ICredential {
@@ -33,7 +37,31 @@ public class MeetingCredentials implements ICredential {
     private long lastTokenDate;
 
     private final static int EXPIRE_HOUR = 24;
+
     private final static int EXPIRE_HOUR_HALF = EXPIRE_HOUR / 2;
+
+    private String appId;
+
+    private String appKey;
+
+    private String corpId;
+
+    private String userId;
+
+    private String deptCode;
+
+    /**
+     * 租户场景
+     * 1、单租户场景下必须填写appId和appKey，选填userId。如果userId不填默认以企业管理员身份调用
+     * 2、单租户场景下不能填写corpId
+     * 3、多租户场景下必须填写appId和appKey，选填corpId和userId。如果corpId和userId都不填默认以SP管理员身份调用；如果corpId填写，userId不填，以企业管理员身份调用
+     */
+    private TenantSceneEnum tenantSceneEnum;
+
+    /**
+     * 鉴权类型
+     */
+    private AuthTypeEnum authTypeEnum;
 
     /**
      * 客户端类型：API调用类型
@@ -67,8 +95,13 @@ public class MeetingCredentials implements ICredential {
                 () -> httpRequest.builder().addHeader("X-Access-Token", this.token).build());
         }
 
-        if (Objects.isNull(userName) || Objects.isNull(userPassword)) {
+        if ((authTypeEnum == null || authTypeEnum == AuthTypeEnum.ACCOUNT) && (Objects.isNull(userName)
+            || Objects.isNull(userPassword))) {
             throw new SdkException("Input your user name and password");
+        }
+
+        if (authTypeEnum == AuthTypeEnum.APP_ID && (Objects.isNull(appId) || Objects.isNull(appKey))) {
+            throw new SdkException("Input your appId and appKey");
         }
 
         long exp = Instant.now().getEpochSecond() - this.lastTokenDate;
@@ -91,22 +124,43 @@ public class MeetingCredentials implements ICredential {
     @Override
     public MeetingCredentials deepClone() {
         return new MeetingCredentials()
-                .withToken(this.token)
-                .withUserName(this.userName)
-                .withUserPassword(this.userPassword);
+            .withToken(this.token)
+            .withUserName(this.userName)
+            .withUserPassword(this.userPassword);
     }
 
     private CompletableFuture<String> createToken(HttpRequest httpRequest, HttpClient httpClient) {
-        byte[] bytes =
-            (userName + ":" + userPassword).getBytes(StandardCharsets.UTF_8);
-        String authorization =
-            "Basic " + Base64.getEncoder().encodeToString(bytes);
+        String requestBody;
+        String authorization;
+        String url;
+        if (authTypeEnum == null || authTypeEnum == AuthTypeEnum.ACCOUNT) {
+            url = CreatTokenMeta.URI;
+            byte[] bytes = (userName + ":" + userPassword).getBytes(StandardCharsets.UTF_8);
+            authorization = "Basic " + Base64.getEncoder().encodeToString(bytes);
+            requestBody = JsonUtils.toJSON(new AuthReqDTOV1().withAccount(userName).withClientType(CLIENT_TYPE_API));
+        } else {
+            url = CreatTokenMeta.APP_ID_AUTH_URL;
+            String nonce = UUID.randomUUID().toString().replace("-", "");
+            // token有效期为10分钟
+            long expireTime = System.currentTimeMillis() / 1000 + 60 * 10;
+            AppAuthInfoV2 appAuthInfoV2 = new AppAuthInfoV2()
+                .withAppId(appId)
+                .withKey(appKey)
+                .withNonce(nonce)
+                .withCorpId(corpId)
+                .withUserId(userId)
+                .withExpireTime(expireTime)
+                .withDeptCode(deptCode)
+                .withClientType(CLIENT_TYPE_API)
+                .withTenantScene(tenantSceneEnum);
+            authorization = "HMAC-SHA256 signature=" + appAuthInfoV2.build();
+            requestBody = JsonUtils.toJSON(appAuthInfoV2);
+        }
 
-        String requestBody = JsonUtils.toJSON(new AuthReqDTOV1().withAccount(userName).withClientType(CLIENT_TYPE_API));
         HttpRequest createTokenRequest = HttpRequest.newBuilder()
             .withEndpoint(httpRequest.getEndpoint())
             .withMethod(HttpMethod.POST)
-            .withPath(CreatTokenMeta.URI)
+            .withPath(url)
             .withContentType(CreatTokenMeta.CONTENT_TYPE)
             .addHeader("Authorization", authorization)
             .withBodyAsString(requestBody).build();
@@ -172,6 +226,41 @@ public class MeetingCredentials implements ICredential {
 
     public MeetingCredentials withToken(String token) {
         this.token = token;
+        return this;
+    }
+
+    public MeetingCredentials withAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+
+    public MeetingCredentials withAppKey(String appKey) {
+        this.appKey = appKey;
+        return this;
+    }
+
+    public MeetingCredentials withAuthType(AuthTypeEnum authTypeEnum) {
+        this.authTypeEnum = authTypeEnum;
+        return this;
+    }
+
+    public MeetingCredentials withTenantScene(TenantSceneEnum tenantSceneEnum) {
+        this.tenantSceneEnum = tenantSceneEnum;
+        return this;
+    }
+
+    public MeetingCredentials withCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+
+    public MeetingCredentials withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    public MeetingCredentials withDeptCode(String deptCode) {
+        this.deptCode = deptCode;
         return this;
     }
 }
