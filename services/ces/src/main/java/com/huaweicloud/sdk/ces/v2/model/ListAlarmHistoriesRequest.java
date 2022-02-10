@@ -159,7 +159,7 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 通过时间筛选traces的起始时间(不包括传入时间)，UTC时间
+    /** 通过时间筛选traces的起始时间(不包括传入时间) 例如：2022-02-10T10:05:46+08:00
      * 
      * @return from */
     public String getFrom() {
@@ -175,7 +175,7 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 通过时间筛选traces的终止时间(不包括传入时间)，UTC时间
+    /** 通过时间筛选traces的终止时间(不包括传入时间) 例如：2022-02-10T10:05:47+08:00
      * 
      * @return to */
     public String getTo() {

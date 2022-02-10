@@ -132,6 +132,20 @@ public class DevStarMeta {
             f -> f.withMarshaller(ShowApplicationDependentResourcesRequest::getApplicationId, (req, v) -> {
                 req.setApplicationId(v);
             }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowApplicationDependentResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowApplicationDependentResourcesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
         builder.<ShowApplicationDependentResourcesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

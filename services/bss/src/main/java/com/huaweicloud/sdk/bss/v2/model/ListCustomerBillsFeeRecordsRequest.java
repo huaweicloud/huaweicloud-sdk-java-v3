@@ -207,7 +207,8 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 账单类型：1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费 minimum: 1 maximum: 17
+    /** 账单类型：1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更 minimum: 1
+     * maximum: 20
      * 
      * @return billType */
     public Integer getBillType() {

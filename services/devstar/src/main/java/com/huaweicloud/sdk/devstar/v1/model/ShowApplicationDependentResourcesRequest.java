@@ -94,6 +94,16 @@ public class ShowApplicationDependentResourcesRequest {
 
     private String applicationId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ShowApplicationDependentResourcesRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -128,6 +138,38 @@ public class ShowApplicationDependentResourcesRequest {
         this.applicationId = applicationId;
     }
 
+    public ShowApplicationDependentResourcesRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量 minimum: 1 maximum: 100
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ShowApplicationDependentResourcesRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** 偏移量，表示从此偏移量开始查询 minimum: 0 maximum: 1000000
+     * 
+     * @return offset */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -139,12 +181,14 @@ public class ShowApplicationDependentResourcesRequest {
         ShowApplicationDependentResourcesRequest showApplicationDependentResourcesRequest =
             (ShowApplicationDependentResourcesRequest) o;
         return Objects.equals(this.xLanguage, showApplicationDependentResourcesRequest.xLanguage)
-            && Objects.equals(this.applicationId, showApplicationDependentResourcesRequest.applicationId);
+            && Objects.equals(this.applicationId, showApplicationDependentResourcesRequest.applicationId)
+            && Objects.equals(this.limit, showApplicationDependentResourcesRequest.limit)
+            && Objects.equals(this.offset, showApplicationDependentResourcesRequest.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, applicationId);
+        return Objects.hash(xLanguage, applicationId, limit, offset);
     }
 
     @Override
@@ -153,6 +197,8 @@ public class ShowApplicationDependentResourcesRequest {
         sb.append("class ShowApplicationDependentResourcesRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

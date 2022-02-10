@@ -605,10 +605,10 @@ public class AomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<AlarmRuleParam>withRequestField("body",
+        builder.<UpdateAlarmRuleParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AlarmRuleParam.class),
+            TypeCasts.uncheckedConversion(UpdateAlarmRuleParam.class),
             f -> f.withMarshaller(UpdateAlarmRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })

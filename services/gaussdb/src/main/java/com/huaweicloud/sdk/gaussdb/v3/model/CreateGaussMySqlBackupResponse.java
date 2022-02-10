@@ -27,6 +27,13 @@ public class CreateGaussMySqlBackupResponse extends SdkResponse {
     
     private Backup backup;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="job_id")
+    
+    
+    private String jobId;
+
     public CreateGaussMySqlBackupResponse withBackup(Backup backup) {
         this.backup = backup;
         return this;
@@ -56,6 +63,28 @@ public class CreateGaussMySqlBackupResponse extends SdkResponse {
 
     
 
+    public CreateGaussMySqlBackupResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 任务ID。
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -65,17 +94,19 @@ public class CreateGaussMySqlBackupResponse extends SdkResponse {
             return false;
         }
         CreateGaussMySqlBackupResponse createGaussMySqlBackupResponse = (CreateGaussMySqlBackupResponse) o;
-        return Objects.equals(this.backup, createGaussMySqlBackupResponse.backup);
+        return Objects.equals(this.backup, createGaussMySqlBackupResponse.backup) &&
+            Objects.equals(this.jobId, createGaussMySqlBackupResponse.jobId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(backup);
+        return Objects.hash(backup, jobId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateGaussMySqlBackupResponse {\n");
         sb.append("    backup: ").append(toIndentedString(backup)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -124,11 +124,6 @@ public class RecordRule {
     private RecordTypeEnum recordType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "plan_record_time")
-
-    private PlanRecordTime planRecordTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_record_config")
 
     private DefaultRecordConfig defaultRecordConfig;
@@ -227,31 +222,6 @@ public class RecordRule {
         this.recordType = recordType;
     }
 
-    public RecordRule withPlanRecordTime(PlanRecordTime planRecordTime) {
-        this.planRecordTime = planRecordTime;
-        return this;
-    }
-
-    public RecordRule withPlanRecordTime(Consumer<PlanRecordTime> planRecordTimeSetter) {
-        if (this.planRecordTime == null) {
-            this.planRecordTime = new PlanRecordTime();
-            planRecordTimeSetter.accept(this.planRecordTime);
-        }
-
-        return this;
-    }
-
-    /** Get planRecordTime
-     * 
-     * @return planRecordTime */
-    public PlanRecordTime getPlanRecordTime() {
-        return planRecordTime;
-    }
-
-    public void setPlanRecordTime(PlanRecordTime planRecordTime) {
-        this.planRecordTime = planRecordTime;
-    }
-
     public RecordRule withDefaultRecordConfig(DefaultRecordConfig defaultRecordConfig) {
         this.defaultRecordConfig = defaultRecordConfig;
         return this;
@@ -321,7 +291,6 @@ public class RecordRule {
         return Objects.equals(this.id, recordRule.id) && Objects.equals(this.publishDomain, recordRule.publishDomain)
             && Objects.equals(this.app, recordRule.app) && Objects.equals(this.stream, recordRule.stream)
             && Objects.equals(this.recordType, recordRule.recordType)
-            && Objects.equals(this.planRecordTime, recordRule.planRecordTime)
             && Objects.equals(this.defaultRecordConfig, recordRule.defaultRecordConfig)
             && Objects.equals(this.createTime, recordRule.createTime)
             && Objects.equals(this.updateTime, recordRule.updateTime);
@@ -329,15 +298,7 @@ public class RecordRule {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            publishDomain,
-            app,
-            stream,
-            recordType,
-            planRecordTime,
-            defaultRecordConfig,
-            createTime,
-            updateTime);
+        return Objects.hash(id, publishDomain, app, stream, recordType, defaultRecordConfig, createTime, updateTime);
     }
 
     @Override
@@ -349,7 +310,6 @@ public class RecordRule {
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
         sb.append("    recordType: ").append(toIndentedString(recordType)).append("\n");
-        sb.append("    planRecordTime: ").append(toIndentedString(planRecordTime)).append("\n");
         sb.append("    defaultRecordConfig: ").append(toIndentedString(defaultRecordConfig)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

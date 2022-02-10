@@ -17,6 +17,11 @@ public class ShowApplicationDependentResourcesResponse extends SdkResponse {
 
     private List<ResouceInfo> dependentServices = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public ShowApplicationDependentResourcesResponse withDependentServices(List<ResouceInfo> dependentServices) {
         this.dependentServices = dependentServices;
         return this;
@@ -50,6 +55,22 @@ public class ShowApplicationDependentResourcesResponse extends SdkResponse {
         this.dependentServices = dependentServices;
     }
 
+    public ShowApplicationDependentResourcesResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /** 资源总个数 minimum: 0 maximum: 1000100
+     * 
+     * @return count */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -60,12 +81,13 @@ public class ShowApplicationDependentResourcesResponse extends SdkResponse {
         }
         ShowApplicationDependentResourcesResponse showApplicationDependentResourcesResponse =
             (ShowApplicationDependentResourcesResponse) o;
-        return Objects.equals(this.dependentServices, showApplicationDependentResourcesResponse.dependentServices);
+        return Objects.equals(this.dependentServices, showApplicationDependentResourcesResponse.dependentServices)
+            && Objects.equals(this.count, showApplicationDependentResourcesResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dependentServices);
+        return Objects.hash(dependentServices, count);
     }
 
     @Override
@@ -73,6 +95,7 @@ public class ShowApplicationDependentResourcesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowApplicationDependentResourcesResponse {\n");
         sb.append("    dependentServices: ").append(toIndentedString(dependentServices)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

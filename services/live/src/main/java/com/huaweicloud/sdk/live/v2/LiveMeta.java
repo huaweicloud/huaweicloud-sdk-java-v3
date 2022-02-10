@@ -12,6 +12,99 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class LiveMeta {
 
+    public static final HttpRequestDef<ListAreaDetailRequest, ListAreaDetailResponse> listAreaDetail =
+        genForlistAreaDetail();
+
+    private static HttpRequestDef<ListAreaDetailRequest, ListAreaDetailResponse> genForlistAreaDetail() {
+        // basic
+        HttpRequestDef.Builder<ListAreaDetailRequest, ListAreaDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAreaDetailRequest.class, ListAreaDetailResponse.class)
+                .withName("ListAreaDetail")
+                .withUri("/v2/{project_id}/stats/area/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<List<String>>withRequestField("play_domains",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getPlayDomains, (req, v) -> {
+                req.setPlayDomains(v);
+            }));
+        builder.<String>withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getApp, (req, v) -> {
+                req.setApp(v);
+            }));
+        builder.<String>withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getStream, (req, v) -> {
+                req.setStream(v);
+            }));
+        builder.<ListAreaDetailRequest.IntervalEnum>withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAreaDetailRequest.IntervalEnum.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getInterval, (req, v) -> {
+                req.setInterval(v);
+            }));
+        builder.<List<String>>withRequestField("isp",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getIsp, (req, v) -> {
+                req.setIsp(v);
+            }));
+        builder.<List<String>>withRequestField("area",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getArea, (req, v) -> {
+                req.setArea(v);
+            }));
+        builder.<String>withRequestField("metric",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getMetric, (req, v) -> {
+                req.setMetric(v);
+            }));
+        builder.<String>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAreaDetailRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAreaDetailResponse::getXRequestId, ListAreaDetailResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBandwidthDetailRequest, ListBandwidthDetailResponse> listBandwidthDetail =
         genForlistBandwidthDetail();
 
@@ -504,6 +597,13 @@ public class LiveMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("publish_domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordDataRequest::getPublishDomain, (req, v) -> {
+                req.setPublishDomain(v);
+            }));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -621,6 +721,58 @@ public class LiveMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListTranscodeDataResponse::getXRequestId, ListTranscodeDataResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> listTranscodeTaskCount =
+        genForlistTranscodeTaskCount();
+
+    private static HttpRequestDef<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> genForlistTranscodeTaskCount() {
+        // basic
+        HttpRequestDef.Builder<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTranscodeTaskCountRequest.class, ListTranscodeTaskCountResponse.class)
+            .withName("ListTranscodeTaskCount")
+            .withUri("/v2/{project_id}/stats/transcode/task-count")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("publish_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTaskCountRequest::getPublishDomain, (req, v) -> {
+                req.setPublishDomain(v);
+            }));
+        builder.<String>withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTaskCountRequest::getApp, (req, v) -> {
+                req.setApp(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTaskCountRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTaskCountRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTranscodeTaskCountResponse::getXRequestId,
+                ListTranscodeTaskCountResponse::setXRequestId));
         return builder.build();
     }
 

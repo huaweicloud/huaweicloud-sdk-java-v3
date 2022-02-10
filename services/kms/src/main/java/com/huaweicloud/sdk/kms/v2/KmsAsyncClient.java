@@ -351,7 +351,7 @@ public class KmsAsyncClient {
         return new AsyncInvoker<EnableKeyRequest, EnableKeyResponse>(request, KmsMeta.enableKey, hcClient);
     }
 
-    /** 开启密钥轮换 - 功能介绍：开启用户主密钥轮换。 - 说明： - 开启密钥轮换后，默认轮询间隔时间为365天。 - 默认主密钥及外部导入密钥不支持轮换操作。
+    /** 开启密钥轮换 - 功能介绍：开启用户主密钥轮换。 - 说明： - 开启密钥轮换后，默认轮换间隔时间为365天。 - 默认主密钥及外部导入密钥不支持轮换操作。
      *
      * @param EnableKeyRotationRequest 请求对象
      * @return CompletableFuture<EnableKeyRotationResponse> */
@@ -359,7 +359,7 @@ public class KmsAsyncClient {
         return hcClient.asyncInvokeHttp(request, KmsMeta.enableKeyRotation);
     }
 
-    /** 开启密钥轮换 - 功能介绍：开启用户主密钥轮换。 - 说明： - 开启密钥轮换后，默认轮询间隔时间为365天。 - 默认主密钥及外部导入密钥不支持轮换操作。
+    /** 开启密钥轮换 - 功能介绍：开启用户主密钥轮换。 - 说明： - 开启密钥轮换后，默认轮换间隔时间为365天。 - 默认主密钥及外部导入密钥不支持轮换操作。
      *
      * @param EnableKeyRotationRequest 请求对象
      * @return AsyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse> */
@@ -681,7 +681,7 @@ public class KmsAsyncClient {
             KmsMeta.updateKeyRotationInterval, hcClient);
     }
 
-    /** 验证签名 - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行数字签名。
+    /** 验证签名 - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行签名验证。
      *
      * @param ValidateSignatureRequest 请求对象
      * @return CompletableFuture<ValidateSignatureResponse> */
@@ -689,7 +689,7 @@ public class KmsAsyncClient {
         return hcClient.asyncInvokeHttp(request, KmsMeta.validateSignature);
     }
 
-    /** 验证签名 - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行数字签名。
+    /** 验证签名 - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行签名验证。
      *
      * @param ValidateSignatureRequest 请求对象
      * @return AsyncInvoker<ValidateSignatureRequest, ValidateSignatureResponse> */

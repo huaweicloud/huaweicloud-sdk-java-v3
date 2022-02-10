@@ -142,7 +142,7 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 仓库id
+    /** 仓库id。
      * 
      * @return repositoryId */
     public String getRepositoryId() {
@@ -158,7 +158,7 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 仓库下载地址
+    /** 仓库下载地址。
      * 
      * @return repositorySshUrl */
     public String getRepositorySshUrl() {
@@ -174,7 +174,7 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 区域ID
+    /** 区域ID，目前仅支持北京四：cn-north-4及北京一：cn-north-1。
      * 
      * @return regionId */
     public String getRegionId() {
@@ -190,7 +190,7 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 工作空间名称前缀
+    /** 工作空间名称前缀，仅在is_open_last为false时生效，由用户自定义，支持大小写字母、中文、_、-，长度1-256。
      * 
      * @return spacePrefix */
     public String getSpacePrefix() {
@@ -206,7 +206,7 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 是否打开上一次的工作空间
+    /** 是否打开上一次的工作空间，true表示打开上一次工作空间，如果没有上一次工作空间会返回空，false代表打开一个全新的工作空间。
      * 
      * @return isOpenLast */
     public Boolean getIsOpenLast() {
@@ -222,7 +222,7 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 是否创建免费实例链接
+    /** 是否创建 CloudIDE 免费实例链接，true表示创建一个 CloudIDE 免费实例链接，false表示创建一个 CloudIDE 收费实例链接。
      * 
      * @return isFree */
     public Boolean getIsFree() {

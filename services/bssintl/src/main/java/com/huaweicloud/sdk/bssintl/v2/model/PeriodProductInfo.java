@@ -63,6 +63,11 @@ public class PeriodProductInfo {
 
     private Integer subscriptionNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fee_installment_mode")
+
+    private String feeInstallmentMode;
+
     public PeriodProductInfo withId(String id) {
         this.id = id;
         return this;
@@ -240,6 +245,22 @@ public class PeriodProductInfo {
         this.subscriptionNum = subscriptionNum;
     }
 
+    public PeriodProductInfo withFeeInstallmentMode(String feeInstallmentMode) {
+        this.feeInstallmentMode = feeInstallmentMode;
+        return this;
+    }
+
+    /** |参数名称：费用分期模式| |参数约束及描述：HALF_PAY：半付；ZERO_PAY：零付；NA：不支持费用分期模式；不传默认为空，效果等同于NA|
+     * 
+     * @return feeInstallmentMode */
+    public String getFeeInstallmentMode() {
+        return feeInstallmentMode;
+    }
+
+    public void setFeeInstallmentMode(String feeInstallmentMode) {
+        this.feeInstallmentMode = feeInstallmentMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -259,7 +280,8 @@ public class PeriodProductInfo {
             && Objects.equals(this.sizeMeasureId, periodProductInfo.sizeMeasureId)
             && Objects.equals(this.periodType, periodProductInfo.periodType)
             && Objects.equals(this.periodNum, periodProductInfo.periodNum)
-            && Objects.equals(this.subscriptionNum, periodProductInfo.subscriptionNum);
+            && Objects.equals(this.subscriptionNum, periodProductInfo.subscriptionNum)
+            && Objects.equals(this.feeInstallmentMode, periodProductInfo.feeInstallmentMode);
     }
 
     @Override
@@ -274,7 +296,8 @@ public class PeriodProductInfo {
             sizeMeasureId,
             periodType,
             periodNum,
-            subscriptionNum);
+            subscriptionNum,
+            feeInstallmentMode);
     }
 
     @Override
@@ -292,6 +315,7 @@ public class PeriodProductInfo {
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    subscriptionNum: ").append(toIndentedString(subscriptionNum)).append("\n");
+        sb.append("    feeInstallmentMode: ").append(toIndentedString(feeInstallmentMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

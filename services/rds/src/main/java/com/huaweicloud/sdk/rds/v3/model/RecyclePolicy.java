@@ -9,37 +9,16 @@ import java.util.Objects;
 public class RecyclePolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_open_recycle_policy")
-
-    private Boolean isOpenRecyclePolicy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_period_in_days")
 
     private String retentionPeriodInDays;
-
-    public RecyclePolicy withIsOpenRecyclePolicy(Boolean isOpenRecyclePolicy) {
-        this.isOpenRecyclePolicy = isOpenRecyclePolicy;
-        return this;
-    }
-
-    /** 是否打开回收策略，取值为“true”或“false”。
-     * 
-     * @return isOpenRecyclePolicy */
-    public Boolean getIsOpenRecyclePolicy() {
-        return isOpenRecyclePolicy;
-    }
-
-    public void setIsOpenRecyclePolicy(Boolean isOpenRecyclePolicy) {
-        this.isOpenRecyclePolicy = isOpenRecyclePolicy;
-    }
 
     public RecyclePolicy withRetentionPeriodInDays(String retentionPeriodInDays) {
         this.retentionPeriodInDays = retentionPeriodInDays;
         return this;
     }
 
-    /** 保留时间，设置已删除实例保留天数，支持整数，可设置范围为1~7天。 当“is_open_recycle_policy”取值为“true”时且“retention_period_in_days”为空，保留时间默认是7天。
+    /** 保留时间，设置已删除实例保留天数，支持整数，可设置范围为1~7天。 当“retention_period_in_days”为空，保留时间默认是7天。
      * 
      * @return retentionPeriodInDays */
     public String getRetentionPeriodInDays() {
@@ -59,20 +38,18 @@ public class RecyclePolicy {
             return false;
         }
         RecyclePolicy recyclePolicy = (RecyclePolicy) o;
-        return Objects.equals(this.isOpenRecyclePolicy, recyclePolicy.isOpenRecyclePolicy)
-            && Objects.equals(this.retentionPeriodInDays, recyclePolicy.retentionPeriodInDays);
+        return Objects.equals(this.retentionPeriodInDays, recyclePolicy.retentionPeriodInDays);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isOpenRecyclePolicy, retentionPeriodInDays);
+        return Objects.hash(retentionPeriodInDays);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RecyclePolicy {\n");
-        sb.append("    isOpenRecyclePolicy: ").append(toIndentedString(isOpenRecyclePolicy)).append("\n");
         sb.append("    retentionPeriodInDays: ").append(toIndentedString(retentionPeriodInDays)).append("\n");
         sb.append("}");
         return sb.toString();

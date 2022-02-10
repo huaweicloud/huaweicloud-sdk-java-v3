@@ -367,7 +367,7 @@ public class DevStarAsyncClient {
             DevStarMeta.checkRepositoryDuplicateName, hcClient);
     }
 
-    /** 使用 CloudIDE 实例打开应用代码 使用 CloudIDE 实例打开应用代码。CloudIDE会保存用户项目数据，相同用户使用同一个CloudIDE 使用要求：1.用户需为登录状态； 2.拥有仓库权限
+    /** 使用 CloudIDE 实例打开应用代码 使用 CloudIDE 实例打开应用代码。CloudIDE会保存用户项目数据，相同用户使用同一个CloudIDE，使用要求： - 用户需为登录状态。 - 拥有仓库权限。
      *
      * @param ShowRepositoryByCloudIdeRequest 请求对象
      * @return CompletableFuture<ShowRepositoryByCloudIdeResponse> */
@@ -376,7 +376,7 @@ public class DevStarAsyncClient {
         return hcClient.asyncInvokeHttp(request, DevStarMeta.showRepositoryByCloudIde);
     }
 
-    /** 使用 CloudIDE 实例打开应用代码 使用 CloudIDE 实例打开应用代码。CloudIDE会保存用户项目数据，相同用户使用同一个CloudIDE 使用要求：1.用户需为登录状态； 2.拥有仓库权限
+    /** 使用 CloudIDE 实例打开应用代码 使用 CloudIDE 实例打开应用代码。CloudIDE会保存用户项目数据，相同用户使用同一个CloudIDE，使用要求： - 用户需为登录状态。 - 拥有仓库权限。
      *
      * @param ShowRepositoryByCloudIdeRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse> */
@@ -442,7 +442,7 @@ public class DevStarAsyncClient {
             DevStarMeta.createTemplateViewHistories, hcClient);
     }
 
-    /** 查询模板列表（V1） 查询模板列表，推荐使用V2版本接口。
+    /** 查询模板列表（V1） 查询模板列表，推荐使用/v1/templates/query接口。
      *
      * @param ListPublishedTemplatesRequest 请求对象
      * @return CompletableFuture<ListPublishedTemplatesResponse> */
@@ -451,7 +451,7 @@ public class DevStarAsyncClient {
         return hcClient.asyncInvokeHttp(request, DevStarMeta.listPublishedTemplates);
     }
 
-    /** 查询模板列表（V1） 查询模板列表，推荐使用V2版本接口。
+    /** 查询模板列表（V1） 查询模板列表，推荐使用/v1/templates/query接口。
      *
      * @param ListPublishedTemplatesRequest 请求对象
      * @return AsyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse> */

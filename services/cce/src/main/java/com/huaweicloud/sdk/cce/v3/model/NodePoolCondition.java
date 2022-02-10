@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点池每次扩容的动作结果记录，用于确定节点池是否还能继续扩容。 */
+/** 节点池详细状态。 */
 public class NodePoolCondition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,7 +43,10 @@ public class NodePoolCondition {
         return this;
     }
 
-    /** Condition类型。
+    /** Condition类型，当前支持类型如下 - \"Scalable\"：节点池实际的可扩容状态，如果状态为\"False\"时则不会再次触发节点池扩容行为。 -
+     * \"QuotaInsufficient\"：节点池扩容依赖的配额不足，影响节点池可扩容状态。 - \"ResourceInsufficient\"：节点池扩容依赖的资源不足，影响节点池可扩容状态。 -
+     * \"UnexpectedError\"：节点池非预期扩容失败，影响节点池可扩容状态。 - \"LockedByOrder\"：包周期节点池被订单锁定，此时Reason为待支付订单ID。 -
+     * \"Error\"：节点池错误，通常由于删除失败触发。
      * 
      * @return type */
     public String getType() {
@@ -59,7 +62,7 @@ public class NodePoolCondition {
         return this;
     }
 
-    /** Condition当前状态。
+    /** Condition当前状态，取值如下 - \"True\" - \"False\"
      * 
      * @return status */
     public String getStatus() {

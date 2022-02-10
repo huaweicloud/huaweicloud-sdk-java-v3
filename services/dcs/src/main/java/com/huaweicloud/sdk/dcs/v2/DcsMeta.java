@@ -74,6 +74,31 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> batchStopMigrationTasks =
+        genForbatchStopMigrationTasks();
+
+    private static HttpRequestDef<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> genForbatchStopMigrationTasks() {
+        // basic
+        HttpRequestDef.Builder<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchStopMigrationTasksRequest.class, BatchStopMigrationTasksResponse.class)
+            .withName("BatchStopMigrationTasks")
+            .withUri("/v2/{project_id}/migration-task/batch-stop")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchStopMigrationTasksBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchStopMigrationTasksBody.class),
+            f -> f.withMarshaller(BatchStopMigrationTasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> changeMasterStandby =
         genForchangeMasterStandby();
 
@@ -254,6 +279,34 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMigrationTaskBody.class),
             f -> f.withMarshaller(CreateMigrationTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> createOnlineMigrationTask =
+        genForcreateOnlineMigrationTask();
+
+    private static HttpRequestDef<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> genForcreateOnlineMigrationTask() {
+        // basic
+        HttpRequestDef.Builder<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateOnlineMigrationTaskRequest.class,
+                    CreateOnlineMigrationTaskResponse.class)
+                .withName("CreateOnlineMigrationTask")
+                .withUri("/v2/{project_id}/migration/instance")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateOnlineMigrationTaskBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOnlineMigrationTaskBody.class),
+            f -> f.withMarshaller(CreateOnlineMigrationTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1503,6 +1556,38 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> setOnlineMigrationTask =
+        genForsetOnlineMigrationTask();
+
+    private static HttpRequestDef<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> genForsetOnlineMigrationTask() {
+        // basic
+        HttpRequestDef.Builder<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetOnlineMigrationTaskRequest.class, SetOnlineMigrationTaskResponse.class)
+            .withName("SetOnlineMigrationTask")
+            .withUri("/v2/{project_id}/migration/{task_id}/task")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetOnlineMigrationTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<SetOnlineMigrationTaskBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetOnlineMigrationTaskBody.class),
+            f -> f.withMarshaller(SetOnlineMigrationTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> showBigkeyAutoscanConfig =
         genForshowBigkeyAutoscanConfig();
 
@@ -1781,6 +1866,31 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopMigrationTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> stopMigrationTaskSync =
+        genForstopMigrationTaskSync();
+
+    private static HttpRequestDef<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> genForstopMigrationTaskSync() {
+        // basic
+        HttpRequestDef.Builder<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StopMigrationTaskSyncRequest.class, StopMigrationTaskSyncResponse.class)
+            .withName("StopMigrationTaskSync")
+            .withUri("/v2/{project_id}/migration-task/{task_id}/sync-stop")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopMigrationTaskSyncRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
 

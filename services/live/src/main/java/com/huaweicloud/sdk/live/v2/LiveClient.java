@@ -17,6 +17,24 @@ public class LiveClient {
         return new ClientBuilder<>(LiveClient::new);
     }
 
+    /** 查询直播各区域指标分布接口 查询直播全球区域维度的详细数据接口。 最大查询跨度1天，最大查询周期90天。 支持查询当天，当前数据延时少于1分钟。
+     *
+     * @param ListAreaDetailRequest 请求对象
+     * @return ListAreaDetailResponse */
+    public ListAreaDetailResponse listAreaDetail(ListAreaDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listAreaDetail);
+    }
+
+    /** 查询直播各区域指标分布接口 查询直播全球区域维度的详细数据接口。 最大查询跨度1天，最大查询周期90天。 支持查询当天，当前数据延时少于1分钟。
+     *
+     * @param ListAreaDetailRequest 请求对象
+     * @return SyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse> */
+    public SyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse> listAreaDetailInvoker(
+        ListAreaDetailRequest request) {
+        return new SyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse>(request, LiveMeta.listAreaDetail,
+            hcClient);
+    }
+
     /** 查询播放带宽趋势接口 查询播放域名带宽数据。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListBandwidthDetailRequest 请求对象
@@ -89,7 +107,7 @@ public class LiveClient {
             LiveMeta.listDomainTrafficSummary, hcClient);
     }
 
-    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天。
      *
      * @param ListHistoryStreamsRequest 请求对象
      * @return ListHistoryStreamsResponse */
@@ -97,7 +115,7 @@ public class LiveClient {
         return hcClient.syncInvokeHttp(request, LiveMeta.listHistoryStreams);
     }
 
-    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天。
      *
      * @param ListHistoryStreamsRequest 请求对象
      * @return SyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse> */
@@ -179,6 +197,24 @@ public class LiveClient {
             hcClient);
     }
 
+    /** 查询直播转码任务数接口 查询5分钟粒度的各档位转码任务数。 仅支持查询视频转码任务数。 最大查询跨度7天，最大查询周期90天。
+     *
+     * @param ListTranscodeTaskCountRequest 请求对象
+     * @return ListTranscodeTaskCountResponse */
+    public ListTranscodeTaskCountResponse listTranscodeTaskCount(ListTranscodeTaskCountRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listTranscodeTaskCount);
+    }
+
+    /** 查询直播转码任务数接口 查询5分钟粒度的各档位转码任务数。 仅支持查询视频转码任务数。 最大查询跨度7天，最大查询周期90天。
+     *
+     * @param ListTranscodeTaskCountRequest 请求对象
+     * @return SyncInvoker<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> */
+    public SyncInvoker<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> listTranscodeTaskCountInvoker(
+        ListTranscodeTaskCountRequest request) {
+        return new SyncInvoker<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse>(request,
+            LiveMeta.listTranscodeTaskCount, hcClient);
+    }
+
     /** 查询观众趋势接口 查询观众趋势。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListUsersOfStreamRequest 请求对象
@@ -251,7 +287,7 @@ public class LiveClient {
             hcClient);
     }
 
-    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。 返回的码率数据列表粒度为1秒钟。
      *
      * @param ListSingleStreamBitrateRequest 请求对象
      * @return ListSingleStreamBitrateResponse */
@@ -259,7 +295,7 @@ public class LiveClient {
         return hcClient.syncInvokeHttp(request, LiveMeta.listSingleStreamBitrate);
     }
 
-    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。 返回的码率数据列表粒度为1秒钟。
      *
      * @param ListSingleStreamBitrateRequest 请求对象
      * @return SyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> */
@@ -269,7 +305,7 @@ public class LiveClient {
             LiveMeta.listSingleStreamBitrate, hcClient);
     }
 
-    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。 返回的帧率数据列表粒度为1秒钟。
      *
      * @param ListSingleStreamFramerateRequest 请求对象
      * @return ListSingleStreamFramerateResponse */
@@ -277,7 +313,7 @@ public class LiveClient {
         return hcClient.syncInvokeHttp(request, LiveMeta.listSingleStreamFramerate);
     }
 
-    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。 返回的帧率数据列表粒度为1秒钟。
      *
      * @param ListSingleStreamFramerateRequest 请求对象
      * @return SyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> */

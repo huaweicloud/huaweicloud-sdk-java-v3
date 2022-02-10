@@ -125,11 +125,6 @@ public class ShowRecordRuleResponse extends SdkResponse {
     private RecordTypeEnum recordType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "plan_record_time")
-
-    private PlanRecordTime planRecordTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_record_config")
 
     private DefaultRecordConfig defaultRecordConfig;
@@ -228,31 +223,6 @@ public class ShowRecordRuleResponse extends SdkResponse {
         this.recordType = recordType;
     }
 
-    public ShowRecordRuleResponse withPlanRecordTime(PlanRecordTime planRecordTime) {
-        this.planRecordTime = planRecordTime;
-        return this;
-    }
-
-    public ShowRecordRuleResponse withPlanRecordTime(Consumer<PlanRecordTime> planRecordTimeSetter) {
-        if (this.planRecordTime == null) {
-            this.planRecordTime = new PlanRecordTime();
-            planRecordTimeSetter.accept(this.planRecordTime);
-        }
-
-        return this;
-    }
-
-    /** Get planRecordTime
-     * 
-     * @return planRecordTime */
-    public PlanRecordTime getPlanRecordTime() {
-        return planRecordTime;
-    }
-
-    public void setPlanRecordTime(PlanRecordTime planRecordTime) {
-        this.planRecordTime = planRecordTime;
-    }
-
     public ShowRecordRuleResponse withDefaultRecordConfig(DefaultRecordConfig defaultRecordConfig) {
         this.defaultRecordConfig = defaultRecordConfig;
         return this;
@@ -324,7 +294,6 @@ public class ShowRecordRuleResponse extends SdkResponse {
             && Objects.equals(this.app, showRecordRuleResponse.app)
             && Objects.equals(this.stream, showRecordRuleResponse.stream)
             && Objects.equals(this.recordType, showRecordRuleResponse.recordType)
-            && Objects.equals(this.planRecordTime, showRecordRuleResponse.planRecordTime)
             && Objects.equals(this.defaultRecordConfig, showRecordRuleResponse.defaultRecordConfig)
             && Objects.equals(this.createTime, showRecordRuleResponse.createTime)
             && Objects.equals(this.updateTime, showRecordRuleResponse.updateTime);
@@ -332,15 +301,7 @@ public class ShowRecordRuleResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            publishDomain,
-            app,
-            stream,
-            recordType,
-            planRecordTime,
-            defaultRecordConfig,
-            createTime,
-            updateTime);
+        return Objects.hash(id, publishDomain, app, stream, recordType, defaultRecordConfig, createTime, updateTime);
     }
 
     @Override
@@ -352,7 +313,6 @@ public class ShowRecordRuleResponse extends SdkResponse {
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
         sb.append("    recordType: ").append(toIndentedString(recordType)).append("\n");
-        sb.append("    planRecordTime: ").append(toIndentedString(planRecordTime)).append("\n");
         sb.append("    defaultRecordConfig: ").append(toIndentedString(defaultRecordConfig)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

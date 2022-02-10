@@ -29,7 +29,7 @@ public class StorageGroups {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virtualSpaces")
 
-    private VirtualSpace virtualSpaces;
+    private List<VirtualSpace> virtualSpaces = null;
 
     public StorageGroups withName(String name) {
         this.name = name;
@@ -95,28 +95,35 @@ public class StorageGroups {
         this.selectorNames = selectorNames;
     }
 
-    public StorageGroups withVirtualSpaces(VirtualSpace virtualSpaces) {
+    public StorageGroups withVirtualSpaces(List<VirtualSpace> virtualSpaces) {
         this.virtualSpaces = virtualSpaces;
         return this;
     }
 
-    public StorageGroups withVirtualSpaces(Consumer<VirtualSpace> virtualSpacesSetter) {
+    public StorageGroups addVirtualSpacesItem(VirtualSpace virtualSpacesItem) {
         if (this.virtualSpaces == null) {
-            this.virtualSpaces = new VirtualSpace();
-            virtualSpacesSetter.accept(this.virtualSpaces);
+            this.virtualSpaces = new ArrayList<>();
         }
-
+        this.virtualSpaces.add(virtualSpacesItem);
         return this;
     }
 
-    /** Get virtualSpaces
+    public StorageGroups withVirtualSpaces(Consumer<List<VirtualSpace>> virtualSpacesSetter) {
+        if (this.virtualSpaces == null) {
+            this.virtualSpaces = new ArrayList<>();
+        }
+        virtualSpacesSetter.accept(this.virtualSpaces);
+        return this;
+    }
+
+    /** group中空间配置的详细管理。
      * 
      * @return virtualSpaces */
-    public VirtualSpace getVirtualSpaces() {
+    public List<VirtualSpace> getVirtualSpaces() {
         return virtualSpaces;
     }
 
-    public void setVirtualSpaces(VirtualSpace virtualSpaces) {
+    public void setVirtualSpaces(List<VirtualSpace> virtualSpaces) {
         this.virtualSpaces = virtualSpaces;
     }
 

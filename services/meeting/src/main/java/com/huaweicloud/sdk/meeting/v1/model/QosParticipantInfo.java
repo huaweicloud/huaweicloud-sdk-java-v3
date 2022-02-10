@@ -158,6 +158,11 @@ public class QosParticipantInfo {
 
     private Integer leftReason;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "existQos")
+
+    private Boolean existQos;
+
     public QosParticipantInfo withConfUUID(String confUUID) {
         this.confUUID = confUUID;
         return this;
@@ -639,6 +644,22 @@ public class QosParticipantInfo {
         this.leftReason = leftReason;
     }
 
+    public QosParticipantInfo withExistQos(Boolean existQos) {
+        this.existQos = existQos;
+        return this;
+    }
+
+    /** 与会者是否存在QoS数据。 true：存在QoS数据。 false：不存在QoS数据。
+     * 
+     * @return existQos */
+    public Boolean getExistQos() {
+        return existQos;
+    }
+
+    public void setExistQos(Boolean existQos) {
+        this.existQos = existQos;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -677,7 +698,8 @@ public class QosParticipantInfo {
             && Objects.equals(this.speakerInfo, qosParticipantInfo.speakerInfo)
             && Objects.equals(this.cameraInfo, qosParticipantInfo.cameraInfo)
             && Objects.equals(this.dataCenter, qosParticipantInfo.dataCenter)
-            && Objects.equals(this.leftReason, qosParticipantInfo.leftReason);
+            && Objects.equals(this.leftReason, qosParticipantInfo.leftReason)
+            && Objects.equals(this.existQos, qosParticipantInfo.existQos);
     }
 
     @Override
@@ -711,7 +733,8 @@ public class QosParticipantInfo {
             speakerInfo,
             cameraInfo,
             dataCenter,
-            leftReason);
+            leftReason,
+            existQos);
     }
 
     @Override
@@ -748,6 +771,7 @@ public class QosParticipantInfo {
         sb.append("    cameraInfo: ").append(toIndentedString(cameraInfo)).append("\n");
         sb.append("    dataCenter: ").append(toIndentedString(dataCenter)).append("\n");
         sb.append("    leftReason: ").append(toIndentedString(leftReason)).append("\n");
+        sb.append("    existQos: ").append(toIndentedString(existQos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

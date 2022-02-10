@@ -151,9 +151,7 @@ public class ShowDomainStatsRequest {
     }
 
     /** 网络资源消耗： - bw（带宽） - flux（流量） HTTP状态码（组合指标）： - status_code_2xx（状态码详情2xx） - status_code_3xx（状态码详情3xx） -
-     * status_code_4xx（状态码详情4xx） - status_code_5xx（状态码详情5xx） - bs_status_code_2xx（回源状态码详情2xx） -
-     * bs_status_code_3xx（回源状态码详情3xx） - bs_status_code_4xx（回源状态码详情4xx） - bs_status_code_5xx（回源状态码详情5xx） -
-     * status_code和bs_status_code不能一起查询，否则数据会不准确，status_code不支持指定服务区域
+     * status_code_4xx（状态码详情4xx） - status_code_5xx（状态码详情5xx）
      * 
      * @return statType */
     public String getStatType() {

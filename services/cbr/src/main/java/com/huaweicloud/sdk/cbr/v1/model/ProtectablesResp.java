@@ -44,7 +44,7 @@ public class ProtectablesResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private String size;
+    private Integer size;
 
     /** 资源状态 */
     public static final class StatusEnum {
@@ -236,7 +236,7 @@ public class ProtectablesResp {
         this.protectable = protectable;
     }
 
-    public ProtectablesResp withSize(String size) {
+    public ProtectablesResp withSize(Integer size) {
         this.size = size;
         return this;
     }
@@ -244,11 +244,11 @@ public class ProtectablesResp {
     /** 大小，单位GB
      * 
      * @return size */
-    public String getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 

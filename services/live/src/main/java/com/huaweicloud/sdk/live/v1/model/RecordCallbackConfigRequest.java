@@ -118,11 +118,6 @@ public class RecordCallbackConfigRequest {
 
     private List<NotifyEventSubscriptionEnum> notifyEventSubscription = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "on_demand_callback_url")
-
-    private String onDemandCallbackUrl;
-
     /** 加密类型 */
     public static final class SignTypeEnum {
 
@@ -282,22 +277,6 @@ public class RecordCallbackConfigRequest {
         this.notifyEventSubscription = notifyEventSubscription;
     }
 
-    public RecordCallbackConfigRequest withOnDemandCallbackUrl(String onDemandCallbackUrl) {
-        this.onDemandCallbackUrl = onDemandCallbackUrl;
-        return this;
-    }
-
-    /** 按需录制回调url地址
-     * 
-     * @return onDemandCallbackUrl */
-    public String getOnDemandCallbackUrl() {
-        return onDemandCallbackUrl;
-    }
-
-    public void setOnDemandCallbackUrl(String onDemandCallbackUrl) {
-        this.onDemandCallbackUrl = onDemandCallbackUrl;
-    }
-
     public RecordCallbackConfigRequest withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
@@ -327,14 +306,12 @@ public class RecordCallbackConfigRequest {
             && Objects.equals(this.app, recordCallbackConfigRequest.app)
             && Objects.equals(this.notifyCallbackUrl, recordCallbackConfigRequest.notifyCallbackUrl)
             && Objects.equals(this.notifyEventSubscription, recordCallbackConfigRequest.notifyEventSubscription)
-            && Objects.equals(this.onDemandCallbackUrl, recordCallbackConfigRequest.onDemandCallbackUrl)
             && Objects.equals(this.signType, recordCallbackConfigRequest.signType);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(publishDomain, app, notifyCallbackUrl, notifyEventSubscription, onDemandCallbackUrl, signType);
+        return Objects.hash(publishDomain, app, notifyCallbackUrl, notifyEventSubscription, signType);
     }
 
     @Override
@@ -345,7 +322,6 @@ public class RecordCallbackConfigRequest {
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    notifyCallbackUrl: ").append(toIndentedString(notifyCallbackUrl)).append("\n");
         sb.append("    notifyEventSubscription: ").append(toIndentedString(notifyEventSubscription)).append("\n");
-        sb.append("    onDemandCallbackUrl: ").append(toIndentedString(onDemandCallbackUrl)).append("\n");
         sb.append("    signType: ").append(toIndentedString(signType)).append("\n");
         sb.append("}");
         return sb.toString();

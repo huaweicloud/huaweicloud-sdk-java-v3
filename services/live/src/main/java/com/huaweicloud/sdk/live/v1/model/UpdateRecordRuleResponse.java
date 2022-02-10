@@ -125,11 +125,6 @@ public class UpdateRecordRuleResponse extends SdkResponse {
     private RecordTypeEnum recordType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "plan_record_time")
-
-    private PlanRecordTime planRecordTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_record_config")
 
     private DefaultRecordConfig defaultRecordConfig;
@@ -228,31 +223,6 @@ public class UpdateRecordRuleResponse extends SdkResponse {
         this.recordType = recordType;
     }
 
-    public UpdateRecordRuleResponse withPlanRecordTime(PlanRecordTime planRecordTime) {
-        this.planRecordTime = planRecordTime;
-        return this;
-    }
-
-    public UpdateRecordRuleResponse withPlanRecordTime(Consumer<PlanRecordTime> planRecordTimeSetter) {
-        if (this.planRecordTime == null) {
-            this.planRecordTime = new PlanRecordTime();
-            planRecordTimeSetter.accept(this.planRecordTime);
-        }
-
-        return this;
-    }
-
-    /** Get planRecordTime
-     * 
-     * @return planRecordTime */
-    public PlanRecordTime getPlanRecordTime() {
-        return planRecordTime;
-    }
-
-    public void setPlanRecordTime(PlanRecordTime planRecordTime) {
-        this.planRecordTime = planRecordTime;
-    }
-
     public UpdateRecordRuleResponse withDefaultRecordConfig(DefaultRecordConfig defaultRecordConfig) {
         this.defaultRecordConfig = defaultRecordConfig;
         return this;
@@ -324,7 +294,6 @@ public class UpdateRecordRuleResponse extends SdkResponse {
             && Objects.equals(this.app, updateRecordRuleResponse.app)
             && Objects.equals(this.stream, updateRecordRuleResponse.stream)
             && Objects.equals(this.recordType, updateRecordRuleResponse.recordType)
-            && Objects.equals(this.planRecordTime, updateRecordRuleResponse.planRecordTime)
             && Objects.equals(this.defaultRecordConfig, updateRecordRuleResponse.defaultRecordConfig)
             && Objects.equals(this.createTime, updateRecordRuleResponse.createTime)
             && Objects.equals(this.updateTime, updateRecordRuleResponse.updateTime);
@@ -332,15 +301,7 @@ public class UpdateRecordRuleResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            publishDomain,
-            app,
-            stream,
-            recordType,
-            planRecordTime,
-            defaultRecordConfig,
-            createTime,
-            updateTime);
+        return Objects.hash(id, publishDomain, app, stream, recordType, defaultRecordConfig, createTime, updateTime);
     }
 
     @Override
@@ -352,7 +313,6 @@ public class UpdateRecordRuleResponse extends SdkResponse {
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
         sb.append("    recordType: ").append(toIndentedString(recordType)).append("\n");
-        sb.append("    planRecordTime: ").append(toIndentedString(planRecordTime)).append("\n");
         sb.append("    defaultRecordConfig: ").append(toIndentedString(defaultRecordConfig)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

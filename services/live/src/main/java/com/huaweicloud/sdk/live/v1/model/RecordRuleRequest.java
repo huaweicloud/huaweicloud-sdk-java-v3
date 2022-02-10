@@ -117,11 +117,6 @@ public class RecordRuleRequest {
     private RecordTypeEnum recordType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "plan_record_time")
-
-    private PlanRecordTime planRecordTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_record_config")
 
     private DefaultRecordConfig defaultRecordConfig;
@@ -193,31 +188,6 @@ public class RecordRuleRequest {
         this.recordType = recordType;
     }
 
-    public RecordRuleRequest withPlanRecordTime(PlanRecordTime planRecordTime) {
-        this.planRecordTime = planRecordTime;
-        return this;
-    }
-
-    public RecordRuleRequest withPlanRecordTime(Consumer<PlanRecordTime> planRecordTimeSetter) {
-        if (this.planRecordTime == null) {
-            this.planRecordTime = new PlanRecordTime();
-            planRecordTimeSetter.accept(this.planRecordTime);
-        }
-
-        return this;
-    }
-
-    /** Get planRecordTime
-     * 
-     * @return planRecordTime */
-    public PlanRecordTime getPlanRecordTime() {
-        return planRecordTime;
-    }
-
-    public void setPlanRecordTime(PlanRecordTime planRecordTime) {
-        this.planRecordTime = planRecordTime;
-    }
-
     public RecordRuleRequest withDefaultRecordConfig(DefaultRecordConfig defaultRecordConfig) {
         this.defaultRecordConfig = defaultRecordConfig;
         return this;
@@ -255,13 +225,12 @@ public class RecordRuleRequest {
         return Objects.equals(this.publishDomain, recordRuleRequest.publishDomain)
             && Objects.equals(this.app, recordRuleRequest.app) && Objects.equals(this.stream, recordRuleRequest.stream)
             && Objects.equals(this.recordType, recordRuleRequest.recordType)
-            && Objects.equals(this.planRecordTime, recordRuleRequest.planRecordTime)
             && Objects.equals(this.defaultRecordConfig, recordRuleRequest.defaultRecordConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishDomain, app, stream, recordType, planRecordTime, defaultRecordConfig);
+        return Objects.hash(publishDomain, app, stream, recordType, defaultRecordConfig);
     }
 
     @Override
@@ -272,7 +241,6 @@ public class RecordRuleRequest {
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
         sb.append("    recordType: ").append(toIndentedString(recordType)).append("\n");
-        sb.append("    planRecordTime: ").append(toIndentedString(planRecordTime)).append("\n");
         sb.append("    defaultRecordConfig: ").append(toIndentedString(defaultRecordConfig)).append("\n");
         sb.append("}");
         return sb.toString();

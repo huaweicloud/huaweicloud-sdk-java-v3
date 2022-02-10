@@ -22,7 +22,7 @@ public class ProtectableResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private String result;
+    private Boolean result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault")
@@ -61,7 +61,7 @@ public class ProtectableResult {
         this.reason = reason;
     }
 
-    public ProtectableResult withResult(String result) {
+    public ProtectableResult withResult(Boolean result) {
         this.result = result;
         return this;
     }
@@ -69,11 +69,11 @@ public class ProtectableResult {
     /** 是否可备份
      * 
      * @return result */
-    public String getResult() {
+    public Boolean getResult() {
         return result;
     }
 
-    public void setResult(String result) {
+    public void setResult(Boolean result) {
         this.result = result;
     }
 

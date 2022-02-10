@@ -60,6 +60,13 @@ public class MysqlInstanceInfoDetail  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="alias")
+    
+    
+    private String alias;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
     
@@ -318,6 +325,28 @@ public class MysqlInstanceInfoDetail  {
 
     public void setPort(String port) {
         this.port = port;
+    }
+
+    
+
+    public MysqlInstanceInfoDetail withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例备注
+     * @return alias
+     */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     
@@ -876,6 +905,7 @@ public class MysqlInstanceInfoDetail  {
             Objects.equals(this.projectId, mysqlInstanceInfoDetail.projectId) &&
             Objects.equals(this.status, mysqlInstanceInfoDetail.status) &&
             Objects.equals(this.port, mysqlInstanceInfoDetail.port) &&
+            Objects.equals(this.alias, mysqlInstanceInfoDetail.alias) &&
             Objects.equals(this.type, mysqlInstanceInfoDetail.type) &&
             Objects.equals(this.nodeCount, mysqlInstanceInfoDetail.nodeCount) &&
             Objects.equals(this.datastore, mysqlInstanceInfoDetail.datastore) &&
@@ -901,7 +931,7 @@ public class MysqlInstanceInfoDetail  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, projectId, status, port, type, nodeCount, datastore, backupUsedSpace, created, updated, privateWriteIps, publicIps, dbUserName, vpcId, subnetId, securityGroupId, configurationId, backupStrategy, nodes, enterpriseProjectId, timeZone, azMode, masterAzCode, maintenanceWindow, tags, dedicatedResourceId);
+        return Objects.hash(id, name, projectId, status, port, alias, type, nodeCount, datastore, backupUsedSpace, created, updated, privateWriteIps, publicIps, dbUserName, vpcId, subnetId, securityGroupId, configurationId, backupStrategy, nodes, enterpriseProjectId, timeZone, azMode, masterAzCode, maintenanceWindow, tags, dedicatedResourceId);
     }
     @Override
     public String toString() {
@@ -912,6 +942,7 @@ public class MysqlInstanceInfoDetail  {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    nodeCount: ").append(toIndentedString(nodeCount)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");

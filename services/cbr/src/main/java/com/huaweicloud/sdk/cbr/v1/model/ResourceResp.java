@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ResourceResp */
+/** Response body of resource */
 public class ResourceResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

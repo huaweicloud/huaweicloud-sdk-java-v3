@@ -38,6 +38,26 @@ public class PeriodProductRatingResult {
 
     private Integer measureId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "installment_official_website_amount")
+
+    private String installmentOfficialWebsiteAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "installment_official_discount_amount")
+
+    private String installmentOfficialDiscountAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "installment_amount")
+
+    private String installmentAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "installment_period_type")
+
+    private Integer installmentPeriodType;
+
     public PeriodProductRatingResult withId(String id) {
         this.id = id;
         return this;
@@ -134,6 +154,70 @@ public class PeriodProductRatingResult {
         this.measureId = measureId;
     }
 
+    public PeriodProductRatingResult withInstallmentOfficialWebsiteAmount(String installmentOfficialWebsiteAmount) {
+        this.installmentOfficialWebsiteAmount = installmentOfficialWebsiteAmount;
+        return this;
+    }
+
+    /** 分期金额的官网价。 说明： 暂只支持IES产品。
+     * 
+     * @return installmentOfficialWebsiteAmount */
+    public String getInstallmentOfficialWebsiteAmount() {
+        return installmentOfficialWebsiteAmount;
+    }
+
+    public void setInstallmentOfficialWebsiteAmount(String installmentOfficialWebsiteAmount) {
+        this.installmentOfficialWebsiteAmount = installmentOfficialWebsiteAmount;
+    }
+
+    public PeriodProductRatingResult withInstallmentOfficialDiscountAmount(String installmentOfficialDiscountAmount) {
+        this.installmentOfficialDiscountAmount = installmentOfficialDiscountAmount;
+        return this;
+    }
+
+    /** 分期金额的折扣价。 说明： 暂只支持IES产品。
+     * 
+     * @return installmentOfficialDiscountAmount */
+    public String getInstallmentOfficialDiscountAmount() {
+        return installmentOfficialDiscountAmount;
+    }
+
+    public void setInstallmentOfficialDiscountAmount(String installmentOfficialDiscountAmount) {
+        this.installmentOfficialDiscountAmount = installmentOfficialDiscountAmount;
+    }
+
+    public PeriodProductRatingResult withInstallmentAmount(String installmentAmount) {
+        this.installmentAmount = installmentAmount;
+        return this;
+    }
+
+    /** 分期金额的成交价。 说明： 分期金额的成交价=分期金额的官网价-分期金额的折扣价。暂只支持IES产品。
+     * 
+     * @return installmentAmount */
+    public String getInstallmentAmount() {
+        return installmentAmount;
+    }
+
+    public void setInstallmentAmount(String installmentAmount) {
+        this.installmentAmount = installmentAmount;
+    }
+
+    public PeriodProductRatingResult withInstallmentPeriodType(Integer installmentPeriodType) {
+        this.installmentPeriodType = installmentPeriodType;
+        return this;
+    }
+
+    /** 分期付款的周期类型。 2：月 说明： 暂只支持IES产品。
+     * 
+     * @return installmentPeriodType */
+    public Integer getInstallmentPeriodType() {
+        return installmentPeriodType;
+    }
+
+    public void setInstallmentPeriodType(Integer installmentPeriodType) {
+        this.installmentPeriodType = installmentPeriodType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -148,12 +232,27 @@ public class PeriodProductRatingResult {
             && Objects.equals(this.amount, periodProductRatingResult.amount)
             && Objects.equals(this.officialWebsiteAmount, periodProductRatingResult.officialWebsiteAmount)
             && Objects.equals(this.discountAmount, periodProductRatingResult.discountAmount)
-            && Objects.equals(this.measureId, periodProductRatingResult.measureId);
+            && Objects.equals(this.measureId, periodProductRatingResult.measureId)
+            && Objects.equals(this.installmentOfficialWebsiteAmount,
+                periodProductRatingResult.installmentOfficialWebsiteAmount)
+            && Objects.equals(this.installmentOfficialDiscountAmount,
+                periodProductRatingResult.installmentOfficialDiscountAmount)
+            && Objects.equals(this.installmentAmount, periodProductRatingResult.installmentAmount)
+            && Objects.equals(this.installmentPeriodType, periodProductRatingResult.installmentPeriodType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, productId, amount, officialWebsiteAmount, discountAmount, measureId);
+        return Objects.hash(id,
+            productId,
+            amount,
+            officialWebsiteAmount,
+            discountAmount,
+            measureId,
+            installmentOfficialWebsiteAmount,
+            installmentOfficialDiscountAmount,
+            installmentAmount,
+            installmentPeriodType);
     }
 
     @Override
@@ -166,6 +265,14 @@ public class PeriodProductRatingResult {
         sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    installmentOfficialWebsiteAmount: ")
+            .append(toIndentedString(installmentOfficialWebsiteAmount))
+            .append("\n");
+        sb.append("    installmentOfficialDiscountAmount: ")
+            .append(toIndentedString(installmentOfficialDiscountAmount))
+            .append("\n");
+        sb.append("    installmentAmount: ").append(toIndentedString(installmentAmount)).append("\n");
+        sb.append("    installmentPeriodType: ").append(toIndentedString(installmentPeriodType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -63,6 +63,11 @@ public class PeriodProductInfo {
 
     private Integer subscriptionNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fee_installment_mode")
+
+    private String feeInstallmentMode;
+
     public PeriodProductInfo withId(String id) {
         this.id = id;
         return this;
@@ -120,7 +125,7 @@ public class PeriodProductInfo {
     /** 云服务类型的资源规格，部分云服务类型和资源规格举例如下：
      * 弹性云服务器：根据操作系统类型在云服务器规格的ID后添加“.win”或“.linux”，例如“s2.small.1.linux”。云服务器规格的ID字段，您可以调用查询规格详情和规格扩展信息列表接口获取。
      * 带宽：12_bgp：动态BGP按流量计费带宽12_sbgp：静态BGP按流量计费带宽19_bgp：动态BGP按带宽计费带宽19_sbgp：静态BGP按带宽计费带宽19_share：按带宽计费共享带宽
-     * IP：5_bgp：动态BGP公网IP5_sbgp：静态BGP公网IP
+     * IP：5_bgp：动态BGP公网IP5_sbgp：静态BGP公网IP 云数据库：云数据库的资源规格信息，您可以调用查询数据库规格接口获取。 分布式缓存服务：分布式缓存服务的资源规格信息，您可以调用查询产品规格接口获取。
      * 
      * @return resourceSpec */
     public String getResourceSpec() {
@@ -244,6 +249,22 @@ public class PeriodProductInfo {
         this.subscriptionNum = subscriptionNum;
     }
 
+    public PeriodProductInfo withFeeInstallmentMode(String feeInstallmentMode) {
+        this.feeInstallmentMode = feeInstallmentMode;
+        return this;
+    }
+
+    /** 费用分期模式。 HALF_PAY：半付ZERO_PAY：零付NA：不支持费用分期模式 说明： 此参数不传则默认为空，效果等同于“NA：不支持费用分期模式”。暂只支持IES产品。
+     * 
+     * @return feeInstallmentMode */
+    public String getFeeInstallmentMode() {
+        return feeInstallmentMode;
+    }
+
+    public void setFeeInstallmentMode(String feeInstallmentMode) {
+        this.feeInstallmentMode = feeInstallmentMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -263,7 +284,8 @@ public class PeriodProductInfo {
             && Objects.equals(this.sizeMeasureId, periodProductInfo.sizeMeasureId)
             && Objects.equals(this.periodType, periodProductInfo.periodType)
             && Objects.equals(this.periodNum, periodProductInfo.periodNum)
-            && Objects.equals(this.subscriptionNum, periodProductInfo.subscriptionNum);
+            && Objects.equals(this.subscriptionNum, periodProductInfo.subscriptionNum)
+            && Objects.equals(this.feeInstallmentMode, periodProductInfo.feeInstallmentMode);
     }
 
     @Override
@@ -278,7 +300,8 @@ public class PeriodProductInfo {
             sizeMeasureId,
             periodType,
             periodNum,
-            subscriptionNum);
+            subscriptionNum,
+            feeInstallmentMode);
     }
 
     @Override
@@ -296,6 +319,7 @@ public class PeriodProductInfo {
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    subscriptionNum: ").append(toIndentedString(subscriptionNum)).append("\n");
+        sb.append("    feeInstallmentMode: ").append(toIndentedString(feeInstallmentMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

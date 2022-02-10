@@ -1,0 +1,66 @@
+package com.huaweicloud.sdk.css.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/** StartLogAutoBackupPolicyReq */
+public class StartLogAutoBackupPolicyReq {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period")
+
+    private String period;
+
+    public StartLogAutoBackupPolicyReq withPeriod(String period) {
+        this.period = period;
+        return this;
+    }
+
+    /** 备份开始时间。
+     * 
+     * @return period */
+    public String getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(String period) {
+        this.period = period;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        StartLogAutoBackupPolicyReq startLogAutoBackupPolicyReq = (StartLogAutoBackupPolicyReq) o;
+        return Objects.equals(this.period, startLogAutoBackupPolicyReq.period);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(period);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class StartLogAutoBackupPolicyReq {\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

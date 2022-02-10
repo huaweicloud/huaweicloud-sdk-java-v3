@@ -39,7 +39,7 @@ public class UpdateWebHookConfigStatusRequest {
         return this;
     }
 
-    /** 0:启用, 1:未启用, 2:锁定
+    /** 连接状态： 0表示已启用 ；1表示未启动； 2表示已锁定
      * 
      * @return status */
     public Integer getStatus() {

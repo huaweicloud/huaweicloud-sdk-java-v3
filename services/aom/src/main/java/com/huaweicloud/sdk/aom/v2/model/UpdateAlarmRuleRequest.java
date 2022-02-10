@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.AlarmRuleParam;
+import com.huaweicloud.sdk.aom.v2.model.UpdateAlarmRuleParam;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,16 +23,16 @@ public class UpdateAlarmRuleRequest  {
     @JsonProperty(value="body")
     
     
-    private AlarmRuleParam body;
+    private UpdateAlarmRuleParam body;
 
-    public UpdateAlarmRuleRequest withBody(AlarmRuleParam body) {
+    public UpdateAlarmRuleRequest withBody(UpdateAlarmRuleParam body) {
         this.body = body;
         return this;
     }
 
-    public UpdateAlarmRuleRequest withBody(Consumer<AlarmRuleParam> bodySetter) {
+    public UpdateAlarmRuleRequest withBody(Consumer<UpdateAlarmRuleParam> bodySetter) {
         if(this.body == null ){
-            this.body = new AlarmRuleParam();
+            this.body = new UpdateAlarmRuleParam();
             bodySetter.accept(this.body);
         }
         
@@ -44,11 +44,11 @@ public class UpdateAlarmRuleRequest  {
      * Get body
      * @return body
      */
-    public AlarmRuleParam getBody() {
+    public UpdateAlarmRuleParam getBody() {
         return body;
     }
 
-    public void setBody(AlarmRuleParam body) {
+    public void setBody(UpdateAlarmRuleParam body) {
         this.body = body;
     }
 

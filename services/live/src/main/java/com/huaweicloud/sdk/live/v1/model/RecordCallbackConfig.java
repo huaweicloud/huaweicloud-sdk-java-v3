@@ -124,11 +124,6 @@ public class RecordCallbackConfig {
 
     private List<NotifyEventSubscriptionEnum> notifyEventSubscription = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "on_demand_callback_url")
-
-    private String onDemandCallbackUrl;
-
     /** 加密类型 */
     public static final class SignTypeEnum {
 
@@ -313,22 +308,6 @@ public class RecordCallbackConfig {
         this.notifyEventSubscription = notifyEventSubscription;
     }
 
-    public RecordCallbackConfig withOnDemandCallbackUrl(String onDemandCallbackUrl) {
-        this.onDemandCallbackUrl = onDemandCallbackUrl;
-        return this;
-    }
-
-    /** 按需录制回调url地址
-     * 
-     * @return onDemandCallbackUrl */
-    public String getOnDemandCallbackUrl() {
-        return onDemandCallbackUrl;
-    }
-
-    public void setOnDemandCallbackUrl(String onDemandCallbackUrl) {
-        this.onDemandCallbackUrl = onDemandCallbackUrl;
-    }
-
     public RecordCallbackConfig withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
@@ -391,7 +370,6 @@ public class RecordCallbackConfig {
             && Objects.equals(this.app, recordCallbackConfig.app)
             && Objects.equals(this.notifyCallbackUrl, recordCallbackConfig.notifyCallbackUrl)
             && Objects.equals(this.notifyEventSubscription, recordCallbackConfig.notifyEventSubscription)
-            && Objects.equals(this.onDemandCallbackUrl, recordCallbackConfig.onDemandCallbackUrl)
             && Objects.equals(this.signType, recordCallbackConfig.signType)
             && Objects.equals(this.createTime, recordCallbackConfig.createTime)
             && Objects.equals(this.updateTime, recordCallbackConfig.updateTime);
@@ -399,15 +377,8 @@ public class RecordCallbackConfig {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            publishDomain,
-            app,
-            notifyCallbackUrl,
-            notifyEventSubscription,
-            onDemandCallbackUrl,
-            signType,
-            createTime,
-            updateTime);
+        return Objects
+            .hash(id, publishDomain, app, notifyCallbackUrl, notifyEventSubscription, signType, createTime, updateTime);
     }
 
     @Override
@@ -419,7 +390,6 @@ public class RecordCallbackConfig {
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    notifyCallbackUrl: ").append(toIndentedString(notifyCallbackUrl)).append("\n");
         sb.append("    notifyEventSubscription: ").append(toIndentedString(notifyEventSubscription)).append("\n");
-        sb.append("    onDemandCallbackUrl: ").append(toIndentedString(onDemandCallbackUrl)).append("\n");
         sb.append("    signType: ").append(toIndentedString(signType)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

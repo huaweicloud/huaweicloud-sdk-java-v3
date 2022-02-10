@@ -17,6 +17,16 @@ public class OfficialWebsiteRatingResult {
     private Double officialWebsiteAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "installment_official_website_amount")
+
+    private String installmentOfficialWebsiteAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "installment_period_type")
+
+    private Integer installmentPeriodType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
 
     private Integer measureId;
@@ -40,6 +50,38 @@ public class OfficialWebsiteRatingResult {
 
     public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
+    }
+
+    public OfficialWebsiteRatingResult withInstallmentOfficialWebsiteAmount(String installmentOfficialWebsiteAmount) {
+        this.installmentOfficialWebsiteAmount = installmentOfficialWebsiteAmount;
+        return this;
+    }
+
+    /** 分期金额的官网价。 说明： 暂只支持IES产品。
+     * 
+     * @return installmentOfficialWebsiteAmount */
+    public String getInstallmentOfficialWebsiteAmount() {
+        return installmentOfficialWebsiteAmount;
+    }
+
+    public void setInstallmentOfficialWebsiteAmount(String installmentOfficialWebsiteAmount) {
+        this.installmentOfficialWebsiteAmount = installmentOfficialWebsiteAmount;
+    }
+
+    public OfficialWebsiteRatingResult withInstallmentPeriodType(Integer installmentPeriodType) {
+        this.installmentPeriodType = installmentPeriodType;
+        return this;
+    }
+
+    /** 分期付款的周期类型。 2：月 说明： 暂只支持IES产品。
+     * 
+     * @return installmentPeriodType */
+    public Integer getInstallmentPeriodType() {
+        return installmentPeriodType;
+    }
+
+    public void setInstallmentPeriodType(Integer installmentPeriodType) {
+        this.installmentPeriodType = installmentPeriodType;
     }
 
     public OfficialWebsiteRatingResult withMeasureId(Integer measureId) {
@@ -103,13 +145,20 @@ public class OfficialWebsiteRatingResult {
         }
         OfficialWebsiteRatingResult officialWebsiteRatingResult = (OfficialWebsiteRatingResult) o;
         return Objects.equals(this.officialWebsiteAmount, officialWebsiteRatingResult.officialWebsiteAmount)
+            && Objects.equals(this.installmentOfficialWebsiteAmount,
+                officialWebsiteRatingResult.installmentOfficialWebsiteAmount)
+            && Objects.equals(this.installmentPeriodType, officialWebsiteRatingResult.installmentPeriodType)
             && Objects.equals(this.measureId, officialWebsiteRatingResult.measureId)
             && Objects.equals(this.productRatingResults, officialWebsiteRatingResult.productRatingResults);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(officialWebsiteAmount, measureId, productRatingResults);
+        return Objects.hash(officialWebsiteAmount,
+            installmentOfficialWebsiteAmount,
+            installmentPeriodType,
+            measureId,
+            productRatingResults);
     }
 
     @Override
@@ -117,6 +166,10 @@ public class OfficialWebsiteRatingResult {
         StringBuilder sb = new StringBuilder();
         sb.append("class OfficialWebsiteRatingResult {\n");
         sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
+        sb.append("    installmentOfficialWebsiteAmount: ")
+            .append(toIndentedString(installmentOfficialWebsiteAmount))
+            .append("\n");
+        sb.append("    installmentPeriodType: ").append(toIndentedString(installmentPeriodType)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    productRatingResults: ").append(toIndentedString(productRatingResults)).append("\n");
         sb.append("}");

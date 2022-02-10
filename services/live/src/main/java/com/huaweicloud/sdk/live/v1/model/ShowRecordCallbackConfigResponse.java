@@ -125,11 +125,6 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
 
     private List<NotifyEventSubscriptionEnum> notifyEventSubscription = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "on_demand_callback_url")
-
-    private String onDemandCallbackUrl;
-
     /** 加密类型 */
     public static final class SignTypeEnum {
 
@@ -315,22 +310,6 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
         this.notifyEventSubscription = notifyEventSubscription;
     }
 
-    public ShowRecordCallbackConfigResponse withOnDemandCallbackUrl(String onDemandCallbackUrl) {
-        this.onDemandCallbackUrl = onDemandCallbackUrl;
-        return this;
-    }
-
-    /** 按需录制回调url地址
-     * 
-     * @return onDemandCallbackUrl */
-    public String getOnDemandCallbackUrl() {
-        return onDemandCallbackUrl;
-    }
-
-    public void setOnDemandCallbackUrl(String onDemandCallbackUrl) {
-        this.onDemandCallbackUrl = onDemandCallbackUrl;
-    }
-
     public ShowRecordCallbackConfigResponse withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
@@ -393,7 +372,6 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
             && Objects.equals(this.app, showRecordCallbackConfigResponse.app)
             && Objects.equals(this.notifyCallbackUrl, showRecordCallbackConfigResponse.notifyCallbackUrl)
             && Objects.equals(this.notifyEventSubscription, showRecordCallbackConfigResponse.notifyEventSubscription)
-            && Objects.equals(this.onDemandCallbackUrl, showRecordCallbackConfigResponse.onDemandCallbackUrl)
             && Objects.equals(this.signType, showRecordCallbackConfigResponse.signType)
             && Objects.equals(this.createTime, showRecordCallbackConfigResponse.createTime)
             && Objects.equals(this.updateTime, showRecordCallbackConfigResponse.updateTime);
@@ -401,15 +379,8 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            publishDomain,
-            app,
-            notifyCallbackUrl,
-            notifyEventSubscription,
-            onDemandCallbackUrl,
-            signType,
-            createTime,
-            updateTime);
+        return Objects
+            .hash(id, publishDomain, app, notifyCallbackUrl, notifyEventSubscription, signType, createTime, updateTime);
     }
 
     @Override
@@ -421,7 +392,6 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    notifyCallbackUrl: ").append(toIndentedString(notifyCallbackUrl)).append("\n");
         sb.append("    notifyEventSubscription: ").append(toIndentedString(notifyEventSubscription)).append("\n");
-        sb.append("    onDemandCallbackUrl: ").append(toIndentedString(onDemandCallbackUrl)).append("\n");
         sb.append("    signType: ").append(toIndentedString(signType)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

@@ -34,7 +34,7 @@ public class VaultCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<ResourceCreate> resources = null;
+    private List<ResourceResp> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -134,12 +134,12 @@ public class VaultCreate {
         this.name = name;
     }
 
-    public VaultCreate withResources(List<ResourceCreate> resources) {
+    public VaultCreate withResources(List<ResourceResp> resources) {
         this.resources = resources;
         return this;
     }
 
-    public VaultCreate addResourcesItem(ResourceCreate resourcesItem) {
+    public VaultCreate addResourcesItem(ResourceResp resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -147,7 +147,7 @@ public class VaultCreate {
         return this;
     }
 
-    public VaultCreate withResources(Consumer<List<ResourceCreate>> resourcesSetter) {
+    public VaultCreate withResources(Consumer<List<ResourceResp>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -158,11 +158,11 @@ public class VaultCreate {
     /** 绑定的备份资源，未在创建时绑定资源填[]
      * 
      * @return resources */
-    public List<ResourceCreate> getResources() {
+    public List<ResourceResp> getResources() {
         return resources;
     }
 
-    public void setResources(List<ResourceCreate> resources) {
+    public void setResources(List<ResourceResp> resources) {
         this.resources = resources;
     }
 

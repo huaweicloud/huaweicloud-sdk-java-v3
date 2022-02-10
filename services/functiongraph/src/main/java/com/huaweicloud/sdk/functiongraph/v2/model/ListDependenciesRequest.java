@@ -120,6 +120,9 @@ public class ListDependenciesRequest {
         /** Enum GO_1_8 for value: "Go 1.8" */
         public static final RuntimeEnum GO_1_8 = new RuntimeEnum("Go 1.8");
 
+        /** Enum GO_1_X for value: "Go 1.x" */
+        public static final RuntimeEnum GO_1_X = new RuntimeEnum("Go 1.x");
+
         /** Enum C_NET_CORE_2_0_ for value: "C#(.NET Core 2.0)" */
         public static final RuntimeEnum C_NET_CORE_2_0_ = new RuntimeEnum("C#(.NET Core 2.0)");
 
@@ -144,6 +147,7 @@ public class ListDependenciesRequest {
             map.put("Python 2.7", PYTHON_2_7);
             map.put("Python 3.6", PYTHON_3_6);
             map.put("Go 1.8", GO_1_8);
+            map.put("Go 1.x", GO_1_X);
             map.put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
             map.put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);

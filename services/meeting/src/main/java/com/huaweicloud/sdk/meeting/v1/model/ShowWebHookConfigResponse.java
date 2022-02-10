@@ -124,7 +124,7 @@ public class ShowWebHookConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 连接状态 0 启用 1、未启动
+    /** 连接状态： 0表示已启用 ；1表示未启动； 2表示已锁定
      * 
      * @return status */
     public Integer getStatus() {

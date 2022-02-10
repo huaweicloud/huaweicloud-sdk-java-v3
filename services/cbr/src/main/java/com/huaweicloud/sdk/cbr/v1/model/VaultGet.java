@@ -44,7 +44,7 @@ public class VaultGet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<CheckpointResourceResp> resources = null;
+    private List<ResourceResp> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -204,12 +204,12 @@ public class VaultGet {
         this.providerId = providerId;
     }
 
-    public VaultGet withResources(List<CheckpointResourceResp> resources) {
+    public VaultGet withResources(List<ResourceResp> resources) {
         this.resources = resources;
         return this;
     }
 
-    public VaultGet addResourcesItem(CheckpointResourceResp resourcesItem) {
+    public VaultGet addResourcesItem(ResourceResp resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -217,7 +217,7 @@ public class VaultGet {
         return this;
     }
 
-    public VaultGet withResources(Consumer<List<CheckpointResourceResp>> resourcesSetter) {
+    public VaultGet withResources(Consumer<List<ResourceResp>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -228,11 +228,11 @@ public class VaultGet {
     /** 资源
      * 
      * @return resources */
-    public List<CheckpointResourceResp> getResources() {
+    public List<ResourceResp> getResources() {
         return resources;
     }
 
-    public void setResources(List<CheckpointResourceResp> resources) {
+    public void setResources(List<ResourceResp> resources) {
         this.resources = resources;
     }
 

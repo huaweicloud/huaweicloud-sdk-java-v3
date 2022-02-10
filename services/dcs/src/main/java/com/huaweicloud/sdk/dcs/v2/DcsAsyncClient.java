@@ -57,6 +57,25 @@ public class DcsAsyncClient {
             DcsMeta.batchDeleteInstances, hcClient);
     }
 
+    /** 批量停止数据迁移任务 批量停止数据迁移任务，接口响应成功，仅表示下发任务成功。查询到迁移任务状态为TERMINATED时，即停止成功。
+     *
+     * @param BatchStopMigrationTasksRequest 请求对象
+     * @return CompletableFuture<BatchStopMigrationTasksResponse> */
+    public CompletableFuture<BatchStopMigrationTasksResponse> batchStopMigrationTasksAsync(
+        BatchStopMigrationTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.batchStopMigrationTasks);
+    }
+
+    /** 批量停止数据迁移任务 批量停止数据迁移任务，接口响应成功，仅表示下发任务成功。查询到迁移任务状态为TERMINATED时，即停止成功。
+     *
+     * @param BatchStopMigrationTasksRequest 请求对象
+     * @return AsyncInvoker<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> */
+    public AsyncInvoker<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> batchStopMigrationTasksAsyncInvoker(
+        BatchStopMigrationTasksRequest request) {
+        return new AsyncInvoker<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse>(request,
+            DcsMeta.batchStopMigrationTasks, hcClient);
+    }
+
     /** 主备切换 切换实例主备节点，只有主备实例支持该操作。
      *
      * @param ChangeMasterStandbyRequest 请求对象
@@ -182,6 +201,25 @@ public class DcsAsyncClient {
         CreateMigrationTaskRequest request) {
         return new AsyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse>(request,
             DcsMeta.createMigrationTask, hcClient);
+    }
+
+    /** 创建在线数据迁移任务 创建在线数据迁移任务。
+     *
+     * @param CreateOnlineMigrationTaskRequest 请求对象
+     * @return CompletableFuture<CreateOnlineMigrationTaskResponse> */
+    public CompletableFuture<CreateOnlineMigrationTaskResponse> createOnlineMigrationTaskAsync(
+        CreateOnlineMigrationTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.createOnlineMigrationTask);
+    }
+
+    /** 创建在线数据迁移任务 创建在线数据迁移任务。
+     *
+     * @param CreateOnlineMigrationTaskRequest 请求对象
+     * @return AsyncInvoker<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> */
+    public AsyncInvoker<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> createOnlineMigrationTaskAsyncInvoker(
+        CreateOnlineMigrationTaskRequest request) {
+        return new AsyncInvoker<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse>(request,
+            DcsMeta.createOnlineMigrationTask, hcClient);
     }
 
     /** 采集Redis运行日志 采集Redis运行日志。
@@ -788,6 +826,25 @@ public class DcsAsyncClient {
             hcClient);
     }
 
+    /** 配置在线数据迁移任务 配置在线数据迁移任务。
+     *
+     * @param SetOnlineMigrationTaskRequest 请求对象
+     * @return CompletableFuture<SetOnlineMigrationTaskResponse> */
+    public CompletableFuture<SetOnlineMigrationTaskResponse> setOnlineMigrationTaskAsync(
+        SetOnlineMigrationTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.setOnlineMigrationTask);
+    }
+
+    /** 配置在线数据迁移任务 配置在线数据迁移任务。
+     *
+     * @param SetOnlineMigrationTaskRequest 请求对象
+     * @return AsyncInvoker<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> */
+    public AsyncInvoker<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> setOnlineMigrationTaskAsyncInvoker(
+        SetOnlineMigrationTaskRequest request) {
+        return new AsyncInvoker<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse>(request,
+            DcsMeta.setOnlineMigrationTask, hcClient);
+    }
+
     /** 查询大key自动分析配置 查询大key自动分析配置。
      *
      * @param ShowBigkeyAutoscanConfigRequest 请求对象
@@ -987,6 +1044,25 @@ public class DcsAsyncClient {
         StopMigrationTaskRequest request) {
         return new AsyncInvoker<StopMigrationTaskRequest, StopMigrationTaskResponse>(request, DcsMeta.stopMigrationTask,
             hcClient);
+    }
+
+    /** 同步停止数据迁移任务 同步停止数据迁移任务。
+     *
+     * @param StopMigrationTaskSyncRequest 请求对象
+     * @return CompletableFuture<StopMigrationTaskSyncResponse> */
+    public CompletableFuture<StopMigrationTaskSyncResponse> stopMigrationTaskSyncAsync(
+        StopMigrationTaskSyncRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.stopMigrationTaskSync);
+    }
+
+    /** 同步停止数据迁移任务 同步停止数据迁移任务。
+     *
+     * @param StopMigrationTaskSyncRequest 请求对象
+     * @return AsyncInvoker<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> */
+    public AsyncInvoker<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> stopMigrationTaskSyncAsyncInvoker(
+        StopMigrationTaskSyncRequest request) {
+        return new AsyncInvoker<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse>(request,
+            DcsMeta.stopMigrationTaskSync, hcClient);
     }
 
     /** 设置大key自动分析配置 设置大key自动分析配置。

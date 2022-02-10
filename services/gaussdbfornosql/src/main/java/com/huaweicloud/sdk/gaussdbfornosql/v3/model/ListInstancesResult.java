@@ -29,7 +29,7 @@ public class ListInstancesResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    private Integer port;
+    private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
@@ -175,7 +175,7 @@ public class ListInstancesResult {
         this.status = status;
     }
 
-    public ListInstancesResult withPort(Integer port) {
+    public ListInstancesResult withPort(String port) {
         this.port = port;
         return this;
     }
@@ -183,11 +183,11 @@ public class ListInstancesResult {
     /** 数据库端口。
      * 
      * @return port */
-    public Integer getPort() {
+    public String getPort() {
         return port;
     }
 
-    public void setPort(Integer port) {
+    public void setPort(String port) {
         this.port = port;
     }
 

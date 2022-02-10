@@ -55,6 +55,9 @@ public class CreateDependencyRequestBody {
         /** Enum GO1_8 for value: "Go1.8" */
         public static final RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
 
+        /** Enum GO1_X for value: "Go1.x" */
+        public static final RuntimeEnum GO1_X = new RuntimeEnum("Go1.x");
+
         /** Enum C_NET_CORE_2_0_ for value: "C#(.NET Core 2.0)" */
         public static final RuntimeEnum C_NET_CORE_2_0_ = new RuntimeEnum("C#(.NET Core 2.0)");
 
@@ -79,6 +82,7 @@ public class CreateDependencyRequestBody {
             map.put("Python2.7", PYTHON2_7);
             map.put("Python3.6", PYTHON3_6);
             map.put("Go1.8", GO1_8);
+            map.put("Go1.x", GO1_X);
             map.put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
             map.put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);

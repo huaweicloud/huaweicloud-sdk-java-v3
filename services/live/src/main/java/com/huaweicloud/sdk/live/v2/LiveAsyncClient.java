@@ -19,6 +19,24 @@ public class LiveAsyncClient {
         return new ClientBuilder<>(LiveAsyncClient::new);
     }
 
+    /** 查询直播各区域指标分布接口 查询直播全球区域维度的详细数据接口。 最大查询跨度1天，最大查询周期90天。 支持查询当天，当前数据延时少于1分钟。
+     *
+     * @param ListAreaDetailRequest 请求对象
+     * @return CompletableFuture<ListAreaDetailResponse> */
+    public CompletableFuture<ListAreaDetailResponse> listAreaDetailAsync(ListAreaDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listAreaDetail);
+    }
+
+    /** 查询直播各区域指标分布接口 查询直播全球区域维度的详细数据接口。 最大查询跨度1天，最大查询周期90天。 支持查询当天，当前数据延时少于1分钟。
+     *
+     * @param ListAreaDetailRequest 请求对象
+     * @return AsyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse> */
+    public AsyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse> listAreaDetailAsyncInvoker(
+        ListAreaDetailRequest request) {
+        return new AsyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse>(request, LiveMeta.listAreaDetail,
+            hcClient);
+    }
+
     /** 查询播放带宽趋势接口 查询播放域名带宽数据。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListBandwidthDetailRequest 请求对象
@@ -94,7 +112,7 @@ public class LiveAsyncClient {
             LiveMeta.listDomainTrafficSummary, hcClient);
     }
 
-    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天。
      *
      * @param ListHistoryStreamsRequest 请求对象
      * @return CompletableFuture<ListHistoryStreamsResponse> */
@@ -102,7 +120,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listHistoryStreams);
     }
 
-    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询历史推流列表接口 查询历史推流列表。 不能查询现推流。 最大查询跨度1天。
      *
      * @param ListHistoryStreamsRequest 请求对象
      * @return AsyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse> */
@@ -184,6 +202,25 @@ public class LiveAsyncClient {
             LiveMeta.listTranscodeData, hcClient);
     }
 
+    /** 查询直播转码任务数接口 查询5分钟粒度的各档位转码任务数。 仅支持查询视频转码任务数。 最大查询跨度7天，最大查询周期90天。
+     *
+     * @param ListTranscodeTaskCountRequest 请求对象
+     * @return CompletableFuture<ListTranscodeTaskCountResponse> */
+    public CompletableFuture<ListTranscodeTaskCountResponse> listTranscodeTaskCountAsync(
+        ListTranscodeTaskCountRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listTranscodeTaskCount);
+    }
+
+    /** 查询直播转码任务数接口 查询5分钟粒度的各档位转码任务数。 仅支持查询视频转码任务数。 最大查询跨度7天，最大查询周期90天。
+     *
+     * @param ListTranscodeTaskCountRequest 请求对象
+     * @return AsyncInvoker<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> */
+    public AsyncInvoker<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> listTranscodeTaskCountAsyncInvoker(
+        ListTranscodeTaskCountRequest request) {
+        return new AsyncInvoker<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse>(request,
+            LiveMeta.listTranscodeTaskCount, hcClient);
+    }
+
     /** 查询观众趋势接口 查询观众趋势。 最大查询跨度31天，最大查询周期一年。
      *
      * @param ListUsersOfStreamRequest 请求对象
@@ -256,7 +293,7 @@ public class LiveAsyncClient {
             hcClient);
     }
 
-    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。 返回的码率数据列表粒度为1秒钟。
      *
      * @param ListSingleStreamBitrateRequest 请求对象
      * @return CompletableFuture<ListSingleStreamBitrateResponse> */
@@ -265,7 +302,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listSingleStreamBitrate);
     }
 
-    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询推流码率数据接口 查询推流监控码率数据接口。 最大查询跨度1天，最大查询周期1个月。 返回的码率数据列表粒度为1秒钟。
      *
      * @param ListSingleStreamBitrateRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> */
@@ -275,7 +312,7 @@ public class LiveAsyncClient {
             LiveMeta.listSingleStreamBitrate, hcClient);
     }
 
-    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。 返回的帧率数据列表粒度为1秒钟。
      *
      * @param ListSingleStreamFramerateRequest 请求对象
      * @return CompletableFuture<ListSingleStreamFramerateResponse> */
@@ -284,7 +321,7 @@ public class LiveAsyncClient {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listSingleStreamFramerate);
     }
 
-    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。
+    /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。 返回的帧率数据列表粒度为1秒钟。
      *
      * @param ListSingleStreamFramerateRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> */

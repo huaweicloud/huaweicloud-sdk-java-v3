@@ -9,6 +9,11 @@ import java.util.Objects;
 public class ListRecordDataRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_domain")
+
+    private String publishDomain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -17,6 +22,22 @@ public class ListRecordDataRequest {
     @JsonProperty(value = "end_time")
 
     private String endTime;
+
+    public ListRecordDataRequest withPublishDomain(String publishDomain) {
+        this.publishDomain = publishDomain;
+        return this;
+    }
+
+    /** 推流域名。
+     * 
+     * @return publishDomain */
+    public String getPublishDomain() {
+        return publishDomain;
+    }
+
+    public void setPublishDomain(String publishDomain) {
+        this.publishDomain = publishDomain;
+    }
 
     public ListRecordDataRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -61,19 +82,21 @@ public class ListRecordDataRequest {
             return false;
         }
         ListRecordDataRequest listRecordDataRequest = (ListRecordDataRequest) o;
-        return Objects.equals(this.startTime, listRecordDataRequest.startTime)
+        return Objects.equals(this.publishDomain, listRecordDataRequest.publishDomain)
+            && Objects.equals(this.startTime, listRecordDataRequest.startTime)
             && Objects.equals(this.endTime, listRecordDataRequest.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime);
+        return Objects.hash(publishDomain, startTime, endTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRecordDataRequest {\n");
+        sb.append("    publishDomain: ").append(toIndentedString(publishDomain)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
