@@ -26,6 +26,11 @@ public class Configs {
 
     private UrlAuth urlAuth;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "https")
+
+    private HttpPutBody https;
+
     public Configs withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
         this.originRequestHeader = originRequestHeader;
         return this;
@@ -115,6 +120,31 @@ public class Configs {
         this.urlAuth = urlAuth;
     }
 
+    public Configs withHttps(HttpPutBody https) {
+        this.https = https;
+        return this;
+    }
+
+    public Configs withHttps(Consumer<HttpPutBody> httpsSetter) {
+        if (this.https == null) {
+            this.https = new HttpPutBody();
+            httpsSetter.accept(this.https);
+        }
+
+        return this;
+    }
+
+    /** Get https
+     * 
+     * @return https */
+    public HttpPutBody getHttps() {
+        return https;
+    }
+
+    public void setHttps(HttpPutBody https) {
+        this.https = https;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -126,12 +156,12 @@ public class Configs {
         Configs configs = (Configs) o;
         return Objects.equals(this.originRequestHeader, configs.originRequestHeader)
             && Objects.equals(this.httpResponseHeader, configs.httpResponseHeader)
-            && Objects.equals(this.urlAuth, configs.urlAuth);
+            && Objects.equals(this.urlAuth, configs.urlAuth) && Objects.equals(this.https, configs.https);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(originRequestHeader, httpResponseHeader, urlAuth);
+        return Objects.hash(originRequestHeader, httpResponseHeader, urlAuth, https);
     }
 
     @Override
@@ -141,6 +171,7 @@ public class Configs {
         sb.append("    originRequestHeader: ").append(toIndentedString(originRequestHeader)).append("\n");
         sb.append("    httpResponseHeader: ").append(toIndentedString(httpResponseHeader)).append("\n");
         sb.append("    urlAuth: ").append(toIndentedString(urlAuth)).append("\n");
+        sb.append("    https: ").append(toIndentedString(https)).append("\n");
         sb.append("}");
         return sb.toString();
     }

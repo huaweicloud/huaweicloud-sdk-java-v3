@@ -14,19 +14,19 @@ public class TpsBrokens {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "average")
 
-    private List<Integer> average = null;
+    private List<Double> average = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tps")
 
-    private List<Integer> tps = null;
+    private List<Double> tps = null;
 
-    public TpsBrokens withAverage(List<Integer> average) {
+    public TpsBrokens withAverage(List<Double> average) {
         this.average = average;
         return this;
     }
 
-    public TpsBrokens addAverageItem(Integer averageItem) {
+    public TpsBrokens addAverageItem(Double averageItem) {
         if (this.average == null) {
             this.average = new ArrayList<>();
         }
@@ -34,7 +34,7 @@ public class TpsBrokens {
         return this;
     }
 
-    public TpsBrokens withAverage(Consumer<List<Integer>> averageSetter) {
+    public TpsBrokens withAverage(Consumer<List<Double>> averageSetter) {
         if (this.average == null) {
             this.average = new ArrayList<>();
         }
@@ -42,23 +42,23 @@ public class TpsBrokens {
         return this;
     }
 
-    /** average
+    /** 平均响应时间
      * 
      * @return average */
-    public List<Integer> getAverage() {
+    public List<Double> getAverage() {
         return average;
     }
 
-    public void setAverage(List<Integer> average) {
+    public void setAverage(List<Double> average) {
         this.average = average;
     }
 
-    public TpsBrokens withTps(List<Integer> tps) {
+    public TpsBrokens withTps(List<Double> tps) {
         this.tps = tps;
         return this;
     }
 
-    public TpsBrokens addTpsItem(Integer tpsItem) {
+    public TpsBrokens addTpsItem(Double tpsItem) {
         if (this.tps == null) {
             this.tps = new ArrayList<>();
         }
@@ -66,7 +66,7 @@ public class TpsBrokens {
         return this;
     }
 
-    public TpsBrokens withTps(Consumer<List<Integer>> tpsSetter) {
+    public TpsBrokens withTps(Consumer<List<Double>> tpsSetter) {
         if (this.tps == null) {
             this.tps = new ArrayList<>();
         }
@@ -77,11 +77,11 @@ public class TpsBrokens {
     /** tps
      * 
      * @return tps */
-    public List<Integer> getTps() {
+    public List<Double> getTps() {
         return tps;
     }
 
-    public void setTps(List<Integer> tps) {
+    public void setTps(List<Double> tps) {
         this.tps = tps;
     }
 

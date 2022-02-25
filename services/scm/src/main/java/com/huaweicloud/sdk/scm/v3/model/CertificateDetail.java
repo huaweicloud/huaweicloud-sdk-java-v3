@@ -24,6 +24,21 @@ public class CertificateDetail {
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sans")
+
+    private String sans;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "signature_algorithm")
+
+    private String signatureAlgorithm;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_support")
+
+    private Boolean deploySupport;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -114,6 +129,54 @@ public class CertificateDetail {
 
     public void setDomain(String domain) {
         this.domain = domain;
+    }
+
+    public CertificateDetail withSans(String sans) {
+        this.sans = sans;
+        return this;
+    }
+
+    /** 多域名证书绑定的附加域名。
+     * 
+     * @return sans */
+    public String getSans() {
+        return sans;
+    }
+
+    public void setSans(String sans) {
+        this.sans = sans;
+    }
+
+    public CertificateDetail withSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+        return this;
+    }
+
+    /** 签名算法。
+     * 
+     * @return signatureAlgorithm */
+    public String getSignatureAlgorithm() {
+        return signatureAlgorithm;
+    }
+
+    public void setSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+    }
+
+    public CertificateDetail withDeploySupport(Boolean deploySupport) {
+        this.deploySupport = deploySupport;
+        return this;
+    }
+
+    /** 是否支持部署。
+     * 
+     * @return deploySupport */
+    public Boolean getDeploySupport() {
+        return deploySupport;
+    }
+
+    public void setDeploySupport(Boolean deploySupport) {
+        this.deploySupport = deploySupport;
     }
 
     public CertificateDetail withType(String type) {
@@ -273,6 +336,9 @@ public class CertificateDetail {
         CertificateDetail certificateDetail = (CertificateDetail) o;
         return Objects.equals(this.id, certificateDetail.id) && Objects.equals(this.name, certificateDetail.name)
             && Objects.equals(this.domain, certificateDetail.domain)
+            && Objects.equals(this.sans, certificateDetail.sans)
+            && Objects.equals(this.signatureAlgorithm, certificateDetail.signatureAlgorithm)
+            && Objects.equals(this.deploySupport, certificateDetail.deploySupport)
             && Objects.equals(this.type, certificateDetail.type) && Objects.equals(this.brand, certificateDetail.brand)
             && Objects.equals(this.expireTime, certificateDetail.expireTime)
             && Objects.equals(this.domainType, certificateDetail.domainType)
@@ -288,6 +354,9 @@ public class CertificateDetail {
         return Objects.hash(id,
             name,
             domain,
+            sans,
+            signatureAlgorithm,
+            deploySupport,
             type,
             brand,
             expireTime,
@@ -306,6 +375,9 @@ public class CertificateDetail {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    sans: ").append(toIndentedString(sans)).append("\n");
+        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
+        sb.append("    deploySupport: ").append(toIndentedString(deploySupport)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");

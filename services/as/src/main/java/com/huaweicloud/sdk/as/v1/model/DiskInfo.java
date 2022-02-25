@@ -19,8 +19,10 @@ public class DiskInfo {
 
     private Integer size;
 
-    /** 云服务器数据盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。磁盘类型枚举值：SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。co-pl：高IO (性能优化Ⅰ型)磁盘类型。uh-l1：超高
-     * IO (时延优化)磁盘类型。说明：对于HANA云服务器和HL1型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。 */
+    /** 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。 SATA：普通IO磁盘类型。 SAS：高IO磁盘类型。 SSD：超高IO磁盘类型。 GPSSD：通用型SSD磁盘类型。 co-p1：高IO (性能优化Ⅰ型)
+     * uh-l1：超高IO (时延优化) 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明：
+     * 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
+     * 了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 */
     public static final class VolumeTypeEnum {
 
         /** Enum SATA for value: "SATA" */
@@ -38,6 +40,9 @@ public class DiskInfo {
         /** Enum UH_11 for value: "uh-11" */
         public static final VolumeTypeEnum UH_11 = new VolumeTypeEnum("uh-11");
 
+        /** Enum GPSSD for value: "GPSSD" */
+        public static final VolumeTypeEnum GPSSD = new VolumeTypeEnum("GPSSD");
+
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumeTypeEnum> createStaticFields() {
@@ -47,6 +52,7 @@ public class DiskInfo {
             map.put("SSD", SSD);
             map.put("co-pl", CO_PL);
             map.put("uh-11", UH_11);
+            map.put("GPSSD", GPSSD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -108,7 +114,7 @@ public class DiskInfo {
 
     private VolumeTypeEnum volumeType;
 
-    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。 */
+    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。 说明： 系统盘不支持加密。 */
     public static final class DiskTypeEnum {
 
         /** Enum SYS for value: "SYS" */
@@ -209,7 +215,7 @@ public class DiskInfo {
         return this;
     }
 
-    /** 磁盘大小，容量单位为GB。系统盘输入最大为32768，且不小于镜像中系统盘的最小(min_disk属性)值。数据盘输入大小范围为10~32768。 minimum: 10 maximum: 32768
+    /** 磁盘大小，容量单位为GB。系统盘输入大小范围为1~1024，且不小于镜像中系统盘的最小(min_disk属性)值。数据盘输入大小范围为10~32768。 minimum: 10 maximum: 32768
      * 
      * @return size */
     public Integer getSize() {
@@ -225,8 +231,10 @@ public class DiskInfo {
         return this;
     }
 
-    /** 云服务器数据盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。磁盘类型枚举值：SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。co-pl：高IO (性能优化Ⅰ型)磁盘类型。uh-l1：超高
-     * IO (时延优化)磁盘类型。说明：对于HANA云服务器和HL1型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
+    /** 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。 SATA：普通IO磁盘类型。 SAS：高IO磁盘类型。 SSD：超高IO磁盘类型。 GPSSD：通用型SSD磁盘类型。 co-p1：高IO (性能优化Ⅰ型)
+     * uh-l1：超高IO (时延优化) 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明：
+     * 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
+     * 了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
      * 
      * @return volumeType */
     public VolumeTypeEnum getVolumeType() {
@@ -242,7 +250,7 @@ public class DiskInfo {
         return this;
     }
 
-    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。
+    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。 说明： 系统盘不支持加密。
      * 
      * @return diskType */
     public DiskTypeEnum getDiskType() {

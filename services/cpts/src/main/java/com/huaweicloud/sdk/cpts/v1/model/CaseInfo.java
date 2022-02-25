@@ -27,9 +27,9 @@ public class CaseInfo {
     private Integer caseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "content")
+    @JsonProperty(value = "contents")
 
-    private List<Contents> content = null;
+    private List<Contents> contents = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "for_loop_params")
@@ -55,6 +55,11 @@ public class CaseInfo {
     @JsonProperty(value = "temp_id")
 
     private Integer tempId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort")
+
+    private Integer sort;
 
     public CaseInfo withCaseId(Integer caseId) {
         this.caseId = caseId;
@@ -104,36 +109,36 @@ public class CaseInfo {
         this.caseType = caseType;
     }
 
-    public CaseInfo withContent(List<Contents> content) {
-        this.content = content;
+    public CaseInfo withContents(List<Contents> contents) {
+        this.contents = contents;
         return this;
     }
 
-    public CaseInfo addContentItem(Contents contentItem) {
-        if (this.content == null) {
-            this.content = new ArrayList<>();
+    public CaseInfo addContentsItem(Contents contentsItem) {
+        if (this.contents == null) {
+            this.contents = new ArrayList<>();
         }
-        this.content.add(contentItem);
+        this.contents.add(contentsItem);
         return this;
     }
 
-    public CaseInfo withContent(Consumer<List<Contents>> contentSetter) {
-        if (this.content == null) {
-            this.content = new ArrayList<>();
+    public CaseInfo withContents(Consumer<List<Contents>> contentsSetter) {
+        if (this.contents == null) {
+            this.contents = new ArrayList<>();
         }
-        contentSetter.accept(this.content);
+        contentsSetter.accept(this.contents);
         return this;
     }
 
     /** contents
      * 
-     * @return content */
-    public List<Contents> getContent() {
-        return content;
+     * @return contents */
+    public List<Contents> getContents() {
+        return contents;
     }
 
-    public void setContent(List<Contents> content) {
-        this.content = content;
+    public void setContents(List<Contents> contents) {
+        this.contents = contents;
     }
 
     public CaseInfo withForLoopParams(List<Object> forLoopParams) {
@@ -264,6 +269,22 @@ public class CaseInfo {
         this.tempId = tempId;
     }
 
+    public CaseInfo withSort(Integer sort) {
+        this.sort = sort;
+        return this;
+    }
+
+    /** sort
+     * 
+     * @return sort */
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -274,17 +295,17 @@ public class CaseInfo {
         }
         CaseInfo caseInfo = (CaseInfo) o;
         return Objects.equals(this.caseId, caseInfo.caseId) && Objects.equals(this.caseName, caseInfo.caseName)
-            && Objects.equals(this.caseType, caseInfo.caseType) && Objects.equals(this.content, caseInfo.content)
+            && Objects.equals(this.caseType, caseInfo.caseType) && Objects.equals(this.contents, caseInfo.contents)
             && Objects.equals(this.forLoopParams, caseInfo.forLoopParams)
             && Objects.equals(this.increaseSetting, caseInfo.increaseSetting)
             && Objects.equals(this.stages, caseInfo.stages) && Objects.equals(this.status, caseInfo.status)
-            && Objects.equals(this.tempId, caseInfo.tempId);
+            && Objects.equals(this.tempId, caseInfo.tempId) && Objects.equals(this.sort, caseInfo.sort);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(caseId, caseName, caseType, content, forLoopParams, increaseSetting, stages, status, tempId);
+            .hash(caseId, caseName, caseType, contents, forLoopParams, increaseSetting, stages, status, tempId, sort);
     }
 
     @Override
@@ -294,12 +315,13 @@ public class CaseInfo {
         sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
         sb.append("    caseName: ").append(toIndentedString(caseName)).append("\n");
         sb.append("    caseType: ").append(toIndentedString(caseType)).append("\n");
-        sb.append("    content: ").append(toIndentedString(content)).append("\n");
+        sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
         sb.append("    forLoopParams: ").append(toIndentedString(forLoopParams)).append("\n");
         sb.append("    increaseSetting: ").append(toIndentedString(increaseSetting)).append("\n");
         sb.append("    stages: ").append(toIndentedString(stages)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tempId: ").append(toIndentedString(tempId)).append("\n");
+        sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,7 +24,7 @@ public class ResetPasswordRequest {
         return this;
     }
 
-    /** 指定待查询的集群ID。
+    /** 指定待更改的集群ID。
      * 
      * @return clusterId */
     public String getClusterId() {

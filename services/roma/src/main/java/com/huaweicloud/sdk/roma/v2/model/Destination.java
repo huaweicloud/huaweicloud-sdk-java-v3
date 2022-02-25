@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** Destination */
@@ -13,10 +18,81 @@ public class Destination {
 
     private Integer destinationId;
 
+    /** 操作类型，枚举值:0-目标端为本ROMA实例内MQS； 7-目标端为设备 */
+    public static final class DestinationTypeEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final DestinationTypeEnum NUMBER_0 = new DestinationTypeEnum(0);
+
+        /** Enum NUMBER_7 for value: 7 */
+        public static final DestinationTypeEnum NUMBER_7 = new DestinationTypeEnum(7);
+
+        private static final Map<Integer, DestinationTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, DestinationTypeEnum> createStaticFields() {
+            Map<Integer, DestinationTypeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(7, NUMBER_7);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        DestinationTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DestinationTypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            DestinationTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new DestinationTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static DestinationTypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            DestinationTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DestinationTypeEnum) {
+                return this.value.equals(((DestinationTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_type")
 
-    private Integer destinationType;
+    private DestinationTypeEnum destinationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
@@ -79,7 +155,7 @@ public class Destination {
         this.destinationId = destinationId;
     }
 
-    public Destination withDestinationType(Integer destinationType) {
+    public Destination withDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
         return this;
     }
@@ -87,11 +163,11 @@ public class Destination {
     /** 操作类型，枚举值:0-目标端为本ROMA实例内MQS； 7-目标端为设备 minimum: 0 maximum: 10
      * 
      * @return destinationType */
-    public Integer getDestinationType() {
+    public DestinationTypeEnum getDestinationType() {
         return destinationType;
     }
 
-    public void setDestinationType(Integer destinationType) {
+    public void setDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
     }
 

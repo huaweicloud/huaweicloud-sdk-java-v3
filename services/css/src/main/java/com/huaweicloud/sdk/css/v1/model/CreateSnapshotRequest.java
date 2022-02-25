@@ -24,7 +24,7 @@ public class CreateSnapshotRequest {
         return this;
     }
 
-    /** 指定要备份的集群ID。
+    /** 指定要创建快照的集群ID。
      * 
      * @return clusterId */
     public String getClusterId() {

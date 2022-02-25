@@ -59,7 +59,8 @@ public class CdmRestartClusterReqRestart {
         return this;
     }
 
-    /** 重启类型： - IMMEDIATELY：立即重启。 - GRACEFULL：优雅重启。 - FORCELY：强制重启。 - SOFTLY：一般重启。 默认值为“IMMEDIATELY”
+    /** 重启类型： - IMMEDIATELY：立即重启。 - GRACEFULL：优雅重启。 - FORCELY：强制重启。 - SOFTLY：一般重启。
+     * 默认值为“IMMEDIATELY”。优雅重启等作业执行完后，有序的释放资源再重启，并且只重启CDM服务的进程，不会重启集群虚拟机。强制重启业务进程会中断，并重启集群的虚拟机。
      * 
      * @return restartMode */
     public String getRestartMode() {

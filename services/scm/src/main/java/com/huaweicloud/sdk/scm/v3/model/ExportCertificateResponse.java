@@ -24,6 +24,16 @@ public class ExportCertificateResponse extends SdkResponse {
 
     private String privateKey;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_certificate")
+
+    private String encCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_private_key")
+
+    private String encPrivateKey;
+
     public ExportCertificateResponse withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
@@ -72,6 +82,38 @@ public class ExportCertificateResponse extends SdkResponse {
         this.privateKey = privateKey;
     }
 
+    public ExportCertificateResponse withEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+        return this;
+    }
+
+    /** 国密证书返回，加密证书内容。
+     * 
+     * @return encCertificate */
+    public String getEncCertificate() {
+        return encCertificate;
+    }
+
+    public void setEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+    }
+
+    public ExportCertificateResponse withEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+        return this;
+    }
+
+    /** 国密证书返回，加密证书私钥。
+     * 
+     * @return encPrivateKey */
+    public String getEncPrivateKey() {
+        return encPrivateKey;
+    }
+
+    public void setEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,12 +125,14 @@ public class ExportCertificateResponse extends SdkResponse {
         ExportCertificateResponse exportCertificateResponse = (ExportCertificateResponse) o;
         return Objects.equals(this.certificate, exportCertificateResponse.certificate)
             && Objects.equals(this.certificateChain, exportCertificateResponse.certificateChain)
-            && Objects.equals(this.privateKey, exportCertificateResponse.privateKey);
+            && Objects.equals(this.privateKey, exportCertificateResponse.privateKey)
+            && Objects.equals(this.encCertificate, exportCertificateResponse.encCertificate)
+            && Objects.equals(this.encPrivateKey, exportCertificateResponse.encPrivateKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificate, certificateChain, privateKey);
+        return Objects.hash(certificate, certificateChain, privateKey, encCertificate, encPrivateKey);
     }
 
     @Override
@@ -98,6 +142,8 @@ public class ExportCertificateResponse extends SdkResponse {
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    certificateChain: ").append(toIndentedString(certificateChain)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
+        sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
+        sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -18,7 +18,7 @@ public class StopLogsRequest {
         return this;
     }
 
-    /** 指定查询集群ID。
+    /** 指定待关闭的集群ID。
      * 
      * @return clusterId */
     public String getClusterId() {

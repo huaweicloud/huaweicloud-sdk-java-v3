@@ -66,6 +66,65 @@ public class CodeCheckMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckRecordRequest, CheckRecordResponse> checkRecord = genForcheckRecord();
+
+    private static HttpRequestDef<CheckRecordRequest, CheckRecordResponse> genForcheckRecord() {
+        // basic
+        HttpRequestDef.Builder<CheckRecordRequest, CheckRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckRecordRequest.class, CheckRecordResponse.class)
+                .withName("CheckRecord")
+                .withUri("/v2/{project_id}/tasks/{task_id}/checkrecord")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRecordRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRecordRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CheckRecordRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CheckRecordRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRecordRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRecordRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRulesetRequest, CreateRulesetResponse> createRuleset =
         genForcreateRuleset();
 

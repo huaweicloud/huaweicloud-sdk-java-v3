@@ -587,7 +587,7 @@ public class InstancesVO {
         return this;
     }
 
-    /** 组织名
+    /** 租户名
      * 
      * @return domainName */
     public String getDomainName() {
@@ -683,7 +683,7 @@ public class InstancesVO {
         return this;
     }
 
-    /** 组织id（对应华为云帐号的domainId）
+    /** 租户id（对应华为云帐号的domainId）
      * 
      * @return organizationId */
     public String getOrganizationId() {

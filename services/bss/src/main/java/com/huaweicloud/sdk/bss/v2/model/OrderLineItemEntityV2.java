@@ -174,7 +174,7 @@ public class OrderLineItemEntityV2 {
         return this;
     }
 
-    /** 周期数量。 说明： 当订单为退订资源的订单时，参数取值为null。
+    /** 周期数量。 说明： 当订单为退订资源的订单时，参数取值为null。当订单为变更/一次性/订购中的新增附属资源的订单时，参数取值为null。
      * 
      * @return periodNum */
     public Integer getPeriodNum() {

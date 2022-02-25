@@ -304,7 +304,7 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 节点配置状态： - In-Sync：配置已同步。 - Applying：配置中。 - Sync-Failure：配置失败。
+    /** 节点配置状态（查询集群列表时为null）： - In-Sync：配置已同步。 - Applying：配置中。 - Sync-Failure：配置失败。
      * 
      * @return configStatus */
     public String getConfigStatus() {
@@ -528,7 +528,7 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 资源信息
+    /** 资源信息（查询集群列表时返回值为null）
      * 
      * @return resource */
     public List<Resource> getResource() {

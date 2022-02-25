@@ -180,7 +180,9 @@ public class BandwidthInfo {
         return this;
     }
 
-    /** 带宽（Mbit/s），取值范围为[1,300]。 minimum: 1 maximum: 300
+    /** 带宽（Mbit/s），按带宽分配取值范围为[1,2000]，按流量分配取值范围为[1,300]。 说明： - 若share_type是PER，该参数为必选项。若share_type是WHOLE，会忽略该参数。 -
+     * 具体范围以各区域配置为准，请参见控制台对应页面显示。 - 创建带宽时的最小单位会根据带宽取值范围不同存在差异。 - 小于等于300Mbit/s：默认最小单位为1Mbit/s。 -
+     * 300Mbit/s~1000Mbit/s：默认最小单位为50Mbit/s。 - 大于1000Mbit/s：默认最小单位为500Mbit/s。 minimum: 1 maximum: 300
      * 
      * @return size */
     public Integer getSize() {

@@ -34,9 +34,9 @@ public class WhiteBlackIpResponseBody {
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip")
+    @JsonProperty(value = "addr")
 
-    private String ip;
+    private String addr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "white")
@@ -123,20 +123,20 @@ public class WhiteBlackIpResponseBody {
         this.status = status;
     }
 
-    public WhiteBlackIpResponseBody withIp(String ip) {
-        this.ip = ip;
+    public WhiteBlackIpResponseBody withAddr(String addr) {
+        this.addr = addr;
         return this;
     }
 
     /** 黑白名单
      * 
-     * @return ip */
-    public String getIp() {
-        return ip;
+     * @return addr */
+    public String getAddr() {
+        return addr;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip;
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
 
     public WhiteBlackIpResponseBody withWhite(Integer white) {
@@ -169,13 +169,13 @@ public class WhiteBlackIpResponseBody {
             && Objects.equals(this.timestamp, whiteBlackIpResponseBody.timestamp)
             && Objects.equals(this.description, whiteBlackIpResponseBody.description)
             && Objects.equals(this.status, whiteBlackIpResponseBody.status)
-            && Objects.equals(this.ip, whiteBlackIpResponseBody.ip)
+            && Objects.equals(this.addr, whiteBlackIpResponseBody.addr)
             && Objects.equals(this.white, whiteBlackIpResponseBody.white);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, timestamp, description, status, ip, white);
+        return Objects.hash(id, policyid, timestamp, description, status, addr, white);
     }
 
     @Override
@@ -187,7 +187,7 @@ public class WhiteBlackIpResponseBody {
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
         sb.append("}");
         return sb.toString();

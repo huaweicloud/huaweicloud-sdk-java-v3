@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cpts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** CreateTempRequestBody */
 public class CreateTempRequestBody {
@@ -27,6 +30,11 @@ public class CreateTempRequestBody {
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "contents")
+
+    private List<Object> contents = null;
 
     public CreateTempRequestBody withProjectId(Integer projectId) {
         this.projectId = projectId;
@@ -92,6 +100,38 @@ public class CreateTempRequestBody {
         this.description = description;
     }
 
+    public CreateTempRequestBody withContents(List<Object> contents) {
+        this.contents = contents;
+        return this;
+    }
+
+    public CreateTempRequestBody addContentsItem(Object contentsItem) {
+        if (this.contents == null) {
+            this.contents = new ArrayList<>();
+        }
+        this.contents.add(contentsItem);
+        return this;
+    }
+
+    public CreateTempRequestBody withContents(Consumer<List<Object>> contentsSetter) {
+        if (this.contents == null) {
+            this.contents = new ArrayList<>();
+        }
+        contentsSetter.accept(this.contents);
+        return this;
+    }
+
+    /** contents
+     * 
+     * @return contents */
+    public List<Object> getContents() {
+        return contents;
+    }
+
+    public void setContents(List<Object> contents) {
+        this.contents = contents;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +144,13 @@ public class CreateTempRequestBody {
         return Objects.equals(this.projectId, createTempRequestBody.projectId)
             && Objects.equals(this.tempType, createTempRequestBody.tempType)
             && Objects.equals(this.name, createTempRequestBody.name)
-            && Objects.equals(this.description, createTempRequestBody.description);
+            && Objects.equals(this.description, createTempRequestBody.description)
+            && Objects.equals(this.contents, createTempRequestBody.contents);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, tempType, name, description);
+        return Objects.hash(projectId, tempType, name, description, contents);
     }
 
     @Override
@@ -120,6 +161,7 @@ public class CreateTempRequestBody {
         sb.append("    tempType: ").append(toIndentedString(tempType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
         sb.append("}");
         return sb.toString();
     }

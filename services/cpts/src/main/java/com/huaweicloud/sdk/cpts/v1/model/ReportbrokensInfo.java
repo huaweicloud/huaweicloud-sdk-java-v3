@@ -82,7 +82,7 @@ public class ReportbrokensInfo {
         return this;
     }
 
-    /** commonTimestamps
+    /** 时间戳
      * 
      * @return commonTimestamps */
     public List<String> getCommonTimestamps() {

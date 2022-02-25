@@ -1096,6 +1096,65 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> listSingleStreamDetail =
+        genForlistSingleStreamDetail();
+
+    private static HttpRequestDef<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> genForlistSingleStreamDetail() {
+        // basic
+        HttpRequestDef.Builder<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSingleStreamDetailRequest.class, ListSingleStreamDetailResponse.class)
+            .withName("ListSingleStreamDetail")
+            .withUri("/v2/{project_id}/stats/stream-detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("publish_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getPublishDomain, (req, v) -> {
+                req.setPublishDomain(v);
+            }));
+        builder.<String>withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getApp, (req, v) -> {
+                req.setApp(v);
+            }));
+        builder.<String>withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getStream, (req, v) -> {
+                req.setStream(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSingleStreamDetailResponse::getXRequestId,
+                ListSingleStreamDetailResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> listSingleStreamFramerate =
         genForlistSingleStreamFramerate();
 

@@ -21,6 +21,11 @@ public class ReportdetailItemInfo {
 
     private List<DetailDataInfo> detailDatas = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "performance")
+
+    private PerformanceInfo performance;
+
     public ReportdetailItemInfo withCustomTransactions(List<String> customTransactions) {
         this.customTransactions = customTransactions;
         return this;
@@ -42,7 +47,7 @@ public class ReportdetailItemInfo {
         return this;
     }
 
-    /** customTransactions
+    /** 自定义事务数据
      * 
      * @return customTransactions */
     public List<String> getCustomTransactions() {
@@ -74,7 +79,7 @@ public class ReportdetailItemInfo {
         return this;
     }
 
-    /** detailDatas
+    /** aw数据
      * 
      * @return detailDatas */
     public List<DetailDataInfo> getDetailDatas() {
@@ -83,6 +88,31 @@ public class ReportdetailItemInfo {
 
     public void setDetailDatas(List<DetailDataInfo> detailDatas) {
         this.detailDatas = detailDatas;
+    }
+
+    public ReportdetailItemInfo withPerformance(PerformanceInfo performance) {
+        this.performance = performance;
+        return this;
+    }
+
+    public ReportdetailItemInfo withPerformance(Consumer<PerformanceInfo> performanceSetter) {
+        if (this.performance == null) {
+            this.performance = new PerformanceInfo();
+            performanceSetter.accept(this.performance);
+        }
+
+        return this;
+    }
+
+    /** Get performance
+     * 
+     * @return performance */
+    public PerformanceInfo getPerformance() {
+        return performance;
+    }
+
+    public void setPerformance(PerformanceInfo performance) {
+        this.performance = performance;
     }
 
     @Override
@@ -95,12 +125,13 @@ public class ReportdetailItemInfo {
         }
         ReportdetailItemInfo reportdetailItemInfo = (ReportdetailItemInfo) o;
         return Objects.equals(this.customTransactions, reportdetailItemInfo.customTransactions)
-            && Objects.equals(this.detailDatas, reportdetailItemInfo.detailDatas);
+            && Objects.equals(this.detailDatas, reportdetailItemInfo.detailDatas)
+            && Objects.equals(this.performance, reportdetailItemInfo.performance);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customTransactions, detailDatas);
+        return Objects.hash(customTransactions, detailDatas, performance);
     }
 
     @Override
@@ -109,6 +140,7 @@ public class ReportdetailItemInfo {
         sb.append("class ReportdetailItemInfo {\n");
         sb.append("    customTransactions: ").append(toIndentedString(customTransactions)).append("\n");
         sb.append("    detailDatas: ").append(toIndentedString(detailDatas)).append("\n");
+        sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
         sb.append("}");
         return sb.toString();
     }

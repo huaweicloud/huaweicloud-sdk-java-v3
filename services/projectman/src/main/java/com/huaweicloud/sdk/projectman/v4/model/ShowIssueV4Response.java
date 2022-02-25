@@ -132,6 +132,21 @@ public class ShowIssueV4Response extends SdkResponse {
 
     private String closedTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order")
+
+    private IssueOrder order;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "accessories")
+
+    private List<IssueAccessory> accessories = null;
+
     public ShowIssueV4Response withActualWorkHours(Double actualWorkHours) {
         this.actualWorkHours = actualWorkHours;
         return this;
@@ -656,6 +671,79 @@ public class ShowIssueV4Response extends SdkResponse {
         this.closedTime = closedTime;
     }
 
+    public ShowIssueV4Response withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /** 工作项描述
+     * 
+     * @return description */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ShowIssueV4Response withOrder(IssueOrder order) {
+        this.order = order;
+        return this;
+    }
+
+    public ShowIssueV4Response withOrder(Consumer<IssueOrder> orderSetter) {
+        if (this.order == null) {
+            this.order = new IssueOrder();
+            orderSetter.accept(this.order);
+        }
+
+        return this;
+    }
+
+    /** Get order
+     * 
+     * @return order */
+    public IssueOrder getOrder() {
+        return order;
+    }
+
+    public void setOrder(IssueOrder order) {
+        this.order = order;
+    }
+
+    public ShowIssueV4Response withAccessories(List<IssueAccessory> accessories) {
+        this.accessories = accessories;
+        return this;
+    }
+
+    public ShowIssueV4Response addAccessoriesItem(IssueAccessory accessoriesItem) {
+        if (this.accessories == null) {
+            this.accessories = new ArrayList<>();
+        }
+        this.accessories.add(accessoriesItem);
+        return this;
+    }
+
+    public ShowIssueV4Response withAccessories(Consumer<List<IssueAccessory>> accessoriesSetter) {
+        if (this.accessories == null) {
+            this.accessories = new ArrayList<>();
+        }
+        accessoriesSetter.accept(this.accessories);
+        return this;
+    }
+
+    /** 附近列表
+     * 
+     * @return accessories */
+    public List<IssueAccessory> getAccessories() {
+        return accessories;
+    }
+
+    public void setAccessories(List<IssueAccessory> accessories) {
+        this.accessories = accessories;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -688,7 +776,10 @@ public class ShowIssueV4Response extends SdkResponse {
             && Objects.equals(this.status, showIssueV4Response.status)
             && Objects.equals(this.tracker, showIssueV4Response.tracker)
             && Objects.equals(this.updatedTime, showIssueV4Response.updatedTime)
-            && Objects.equals(this.closedTime, showIssueV4Response.closedTime);
+            && Objects.equals(this.closedTime, showIssueV4Response.closedTime)
+            && Objects.equals(this.description, showIssueV4Response.description)
+            && Objects.equals(this.order, showIssueV4Response.order)
+            && Objects.equals(this.accessories, showIssueV4Response.accessories);
     }
 
     @Override
@@ -716,7 +807,10 @@ public class ShowIssueV4Response extends SdkResponse {
             status,
             tracker,
             updatedTime,
-            closedTime);
+            closedTime,
+            description,
+            order,
+            accessories);
     }
 
     @Override
@@ -747,6 +841,9 @@ public class ShowIssueV4Response extends SdkResponse {
         sb.append("    tracker: ").append(toIndentedString(tracker)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
         sb.append("    closedTime: ").append(toIndentedString(closedTime)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    order: ").append(toIndentedString(order)).append("\n");
+        sb.append("    accessories: ").append(toIndentedString(accessories)).append("\n");
         sb.append("}");
         return sb.toString();
     }

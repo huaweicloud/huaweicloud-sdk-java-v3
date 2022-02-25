@@ -625,6 +625,13 @@ public class VodMeta {
             f -> f.withMarshaller(DeleteAssetsRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
             }));
+        builder.<String>withRequestField("delete_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetsRequest::getDeleteType, (req, v) -> {
+                req.setDeleteType(v);
+            }));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -871,6 +878,66 @@ public class VodMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetListRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDomainLogsRequest, ListDomainLogsResponse> listDomainLogs =
+        genForlistDomainLogs();
+
+    private static HttpRequestDef<ListDomainLogsRequest, ListDomainLogsResponse> genForlistDomainLogs() {
+        // basic
+        HttpRequestDef.Builder<ListDomainLogsRequest, ListDomainLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDomainLogsRequest.class, ListDomainLogsResponse.class)
+                .withName("ListDomainLogs")
+                .withUri("/v1.0/{project_id}/vod/cdn/logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainLogsRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<String>withRequestField("query_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainLogsRequest::getQueryDate, (req, v) -> {
+                req.setQueryDate(v);
+            }));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainLogsRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            }));
+        builder.<Integer>withRequestField("page_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainLogsRequest::getPageNumber, (req, v) -> {
+                req.setPageNumber(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainLogsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainLogsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
             }));
 

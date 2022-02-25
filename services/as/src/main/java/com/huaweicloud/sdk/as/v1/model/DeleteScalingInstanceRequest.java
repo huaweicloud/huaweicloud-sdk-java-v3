@@ -99,7 +99,7 @@ public class DeleteScalingInstanceRequest {
         return this;
     }
 
-    /** 实例ID。
+    /** 实例ID，可参考[查询弹性伸缩组中的实例列表](https://support.huaweicloud.com/api-as/as_06_0301.html)获取。
      * 
      * @return instanceId */
     public String getInstanceId() {

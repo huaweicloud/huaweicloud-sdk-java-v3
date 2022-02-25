@@ -147,6 +147,24 @@ public class LtsAsyncClient {
             LtsMeta.createNotificationTemplate, hcClient);
     }
 
+    /** 通过结构化模板创建结构化配置（新） 该接口通过结构化模板创建结构化配置。
+     *
+     * @param CreateStructConfigRequest 请求对象
+     * @return CompletableFuture<CreateStructConfigResponse> */
+    public CompletableFuture<CreateStructConfigResponse> createStructConfigAsync(CreateStructConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.createStructConfig);
+    }
+
+    /** 通过结构化模板创建结构化配置（新） 该接口通过结构化模板创建结构化配置。
+     *
+     * @param CreateStructConfigRequest 请求对象
+     * @return AsyncInvoker<CreateStructConfigRequest, CreateStructConfigResponse> */
+    public AsyncInvoker<CreateStructConfigRequest, CreateStructConfigResponse> createStructConfigAsyncInvoker(
+        CreateStructConfigRequest request) {
+        return new AsyncInvoker<CreateStructConfigRequest, CreateStructConfigResponse>(request,
+            LtsMeta.createStructConfig, hcClient);
+    }
+
     /** 创建结构化配置 该接口用于创建指定日志流下的结构化配置。
      *
      * @param CreateStructTemplateRequest 请求对象
@@ -423,6 +441,25 @@ public class LtsAsyncClient {
             LtsMeta.listActiveOrHistoryAlarms, hcClient);
     }
 
+    /** 查询结构化模板简略列表 该接口用于查询结构化模板简略列表。
+     *
+     * @param ListBreifStructTemplateRequest 请求对象
+     * @return CompletableFuture<ListBreifStructTemplateResponse> */
+    public CompletableFuture<ListBreifStructTemplateResponse> listBreifStructTemplateAsync(
+        ListBreifStructTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.listBreifStructTemplate);
+    }
+
+    /** 查询结构化模板简略列表 该接口用于查询结构化模板简略列表。
+     *
+     * @param ListBreifStructTemplateRequest 请求对象
+     * @return AsyncInvoker<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> */
+    public AsyncInvoker<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> listBreifStructTemplateAsyncInvoker(
+        ListBreifStructTemplateRequest request) {
+        return new AsyncInvoker<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse>(request,
+            LtsMeta.listBreifStructTemplate, hcClient);
+    }
+
     /** 查询日志流图表 该接口用于查询日志流图表
      *
      * @param ListChartsRequest 请求对象
@@ -653,6 +690,24 @@ public class LtsAsyncClient {
             LtsMeta.listQueryStructuredLogs, hcClient);
     }
 
+    /** 查询结构化模板 该接口用于查询结构化模板。
+     *
+     * @param ListStructTemplateRequest 请求对象
+     * @return CompletableFuture<ListStructTemplateResponse> */
+    public CompletableFuture<ListStructTemplateResponse> listStructTemplateAsync(ListStructTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.listStructTemplate);
+    }
+
+    /** 查询结构化模板 该接口用于查询结构化模板。
+     *
+     * @param ListStructTemplateRequest 请求对象
+     * @return AsyncInvoker<ListStructTemplateRequest, ListStructTemplateResponse> */
+    public AsyncInvoker<ListStructTemplateRequest, ListStructTemplateResponse> listStructTemplateAsyncInvoker(
+        ListStructTemplateRequest request) {
+        return new AsyncInvoker<ListStructTemplateRequest, ListStructTemplateResponse>(request,
+            LtsMeta.listStructTemplate, hcClient);
+    }
+
     /** 查询结构化日志（新版） 该接口用于查询指定日志流下的结构化日志内容（新版）。
      *
      * @param ListStructuredLogsWithTimeRangeRequest 请求对象
@@ -835,6 +890,24 @@ public class LtsAsyncClient {
         UpdateNotificationTemplateRequest request) {
         return new AsyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse>(request,
             LtsMeta.updateNotificationTemplate, hcClient);
+    }
+
+    /** 通过结构化模板修改结构化配置（新） 该接口通过结构化模板修改结构化配置
+     *
+     * @param UpdateStructConfigRequest 请求对象
+     * @return CompletableFuture<UpdateStructConfigResponse> */
+    public CompletableFuture<UpdateStructConfigResponse> updateStructConfigAsync(UpdateStructConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.updateStructConfig);
+    }
+
+    /** 通过结构化模板修改结构化配置（新） 该接口通过结构化模板修改结构化配置
+     *
+     * @param UpdateStructConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateStructConfigRequest, UpdateStructConfigResponse> */
+    public AsyncInvoker<UpdateStructConfigRequest, UpdateStructConfigResponse> updateStructConfigAsyncInvoker(
+        UpdateStructConfigRequest request) {
+        return new AsyncInvoker<UpdateStructConfigRequest, UpdateStructConfigResponse>(request,
+            LtsMeta.updateStructConfig, hcClient);
     }
 
     /** 修改结构化配置 该接口用于修改指定日志流下的结构化配置。

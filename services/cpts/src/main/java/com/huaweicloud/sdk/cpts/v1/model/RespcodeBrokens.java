@@ -14,44 +14,44 @@ public class RespcodeBrokens {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkPointFailed")
 
-    private List<Integer> checkPointFailed = null;
+    private List<Double> checkPointFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
 
-    private List<Integer> error = null;
+    private List<Double> error = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "othersFailed")
 
-    private List<Integer> othersFailed = null;
+    private List<Double> othersFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parsedFailed")
 
-    private List<Integer> parsedFailed = null;
+    private List<Double> parsedFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refusedFailed")
 
-    private List<Integer> refusedFailed = null;
+    private List<Double> refusedFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
 
-    private List<Integer> success = null;
+    private List<Double> success = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
-    private List<Integer> timeout = null;
+    private List<Double> timeout = null;
 
-    public RespcodeBrokens withCheckPointFailed(List<Integer> checkPointFailed) {
+    public RespcodeBrokens withCheckPointFailed(List<Double> checkPointFailed) {
         this.checkPointFailed = checkPointFailed;
         return this;
     }
 
-    public RespcodeBrokens addCheckPointFailedItem(Integer checkPointFailedItem) {
+    public RespcodeBrokens addCheckPointFailedItem(Double checkPointFailedItem) {
         if (this.checkPointFailed == null) {
             this.checkPointFailed = new ArrayList<>();
         }
@@ -59,7 +59,7 @@ public class RespcodeBrokens {
         return this;
     }
 
-    public RespcodeBrokens withCheckPointFailed(Consumer<List<Integer>> checkPointFailedSetter) {
+    public RespcodeBrokens withCheckPointFailed(Consumer<List<Double>> checkPointFailedSetter) {
         if (this.checkPointFailed == null) {
             this.checkPointFailed = new ArrayList<>();
         }
@@ -67,23 +67,23 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** checkPointFailed
+    /** 校验失败
      * 
      * @return checkPointFailed */
-    public List<Integer> getCheckPointFailed() {
+    public List<Double> getCheckPointFailed() {
         return checkPointFailed;
     }
 
-    public void setCheckPointFailed(List<Integer> checkPointFailed) {
+    public void setCheckPointFailed(List<Double> checkPointFailed) {
         this.checkPointFailed = checkPointFailed;
     }
 
-    public RespcodeBrokens withError(List<Integer> error) {
+    public RespcodeBrokens withError(List<Double> error) {
         this.error = error;
         return this;
     }
 
-    public RespcodeBrokens addErrorItem(Integer errorItem) {
+    public RespcodeBrokens addErrorItem(Double errorItem) {
         if (this.error == null) {
             this.error = new ArrayList<>();
         }
@@ -91,7 +91,7 @@ public class RespcodeBrokens {
         return this;
     }
 
-    public RespcodeBrokens withError(Consumer<List<Integer>> errorSetter) {
+    public RespcodeBrokens withError(Consumer<List<Double>> errorSetter) {
         if (this.error == null) {
             this.error = new ArrayList<>();
         }
@@ -99,23 +99,23 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** error
+    /** 异常请求
      * 
      * @return error */
-    public List<Integer> getError() {
+    public List<Double> getError() {
         return error;
     }
 
-    public void setError(List<Integer> error) {
+    public void setError(List<Double> error) {
         this.error = error;
     }
 
-    public RespcodeBrokens withOthersFailed(List<Integer> othersFailed) {
+    public RespcodeBrokens withOthersFailed(List<Double> othersFailed) {
         this.othersFailed = othersFailed;
         return this;
     }
 
-    public RespcodeBrokens addOthersFailedItem(Integer othersFailedItem) {
+    public RespcodeBrokens addOthersFailedItem(Double othersFailedItem) {
         if (this.othersFailed == null) {
             this.othersFailed = new ArrayList<>();
         }
@@ -123,7 +123,7 @@ public class RespcodeBrokens {
         return this;
     }
 
-    public RespcodeBrokens withOthersFailed(Consumer<List<Integer>> othersFailedSetter) {
+    public RespcodeBrokens withOthersFailed(Consumer<List<Double>> othersFailedSetter) {
         if (this.othersFailed == null) {
             this.othersFailed = new ArrayList<>();
         }
@@ -131,23 +131,23 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** othersFailed
+    /** 其他失败
      * 
      * @return othersFailed */
-    public List<Integer> getOthersFailed() {
+    public List<Double> getOthersFailed() {
         return othersFailed;
     }
 
-    public void setOthersFailed(List<Integer> othersFailed) {
+    public void setOthersFailed(List<Double> othersFailed) {
         this.othersFailed = othersFailed;
     }
 
-    public RespcodeBrokens withParsedFailed(List<Integer> parsedFailed) {
+    public RespcodeBrokens withParsedFailed(List<Double> parsedFailed) {
         this.parsedFailed = parsedFailed;
         return this;
     }
 
-    public RespcodeBrokens addParsedFailedItem(Integer parsedFailedItem) {
+    public RespcodeBrokens addParsedFailedItem(Double parsedFailedItem) {
         if (this.parsedFailed == null) {
             this.parsedFailed = new ArrayList<>();
         }
@@ -155,7 +155,7 @@ public class RespcodeBrokens {
         return this;
     }
 
-    public RespcodeBrokens withParsedFailed(Consumer<List<Integer>> parsedFailedSetter) {
+    public RespcodeBrokens withParsedFailed(Consumer<List<Double>> parsedFailedSetter) {
         if (this.parsedFailed == null) {
             this.parsedFailed = new ArrayList<>();
         }
@@ -163,23 +163,23 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** parsedFailed
+    /** 解析失败
      * 
      * @return parsedFailed */
-    public List<Integer> getParsedFailed() {
+    public List<Double> getParsedFailed() {
         return parsedFailed;
     }
 
-    public void setParsedFailed(List<Integer> parsedFailed) {
+    public void setParsedFailed(List<Double> parsedFailed) {
         this.parsedFailed = parsedFailed;
     }
 
-    public RespcodeBrokens withRefusedFailed(List<Integer> refusedFailed) {
+    public RespcodeBrokens withRefusedFailed(List<Double> refusedFailed) {
         this.refusedFailed = refusedFailed;
         return this;
     }
 
-    public RespcodeBrokens addRefusedFailedItem(Integer refusedFailedItem) {
+    public RespcodeBrokens addRefusedFailedItem(Double refusedFailedItem) {
         if (this.refusedFailed == null) {
             this.refusedFailed = new ArrayList<>();
         }
@@ -187,7 +187,7 @@ public class RespcodeBrokens {
         return this;
     }
 
-    public RespcodeBrokens withRefusedFailed(Consumer<List<Integer>> refusedFailedSetter) {
+    public RespcodeBrokens withRefusedFailed(Consumer<List<Double>> refusedFailedSetter) {
         if (this.refusedFailed == null) {
             this.refusedFailed = new ArrayList<>();
         }
@@ -195,23 +195,23 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** refusedFailed
+    /** 连接被拒
      * 
      * @return refusedFailed */
-    public List<Integer> getRefusedFailed() {
+    public List<Double> getRefusedFailed() {
         return refusedFailed;
     }
 
-    public void setRefusedFailed(List<Integer> refusedFailed) {
+    public void setRefusedFailed(List<Double> refusedFailed) {
         this.refusedFailed = refusedFailed;
     }
 
-    public RespcodeBrokens withSuccess(List<Integer> success) {
+    public RespcodeBrokens withSuccess(List<Double> success) {
         this.success = success;
         return this;
     }
 
-    public RespcodeBrokens addSuccessItem(Integer successItem) {
+    public RespcodeBrokens addSuccessItem(Double successItem) {
         if (this.success == null) {
             this.success = new ArrayList<>();
         }
@@ -219,7 +219,7 @@ public class RespcodeBrokens {
         return this;
     }
 
-    public RespcodeBrokens withSuccess(Consumer<List<Integer>> successSetter) {
+    public RespcodeBrokens withSuccess(Consumer<List<Double>> successSetter) {
         if (this.success == null) {
             this.success = new ArrayList<>();
         }
@@ -227,23 +227,23 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** success
+    /** 成功请求
      * 
      * @return success */
-    public List<Integer> getSuccess() {
+    public List<Double> getSuccess() {
         return success;
     }
 
-    public void setSuccess(List<Integer> success) {
+    public void setSuccess(List<Double> success) {
         this.success = success;
     }
 
-    public RespcodeBrokens withTimeout(List<Integer> timeout) {
+    public RespcodeBrokens withTimeout(List<Double> timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    public RespcodeBrokens addTimeoutItem(Integer timeoutItem) {
+    public RespcodeBrokens addTimeoutItem(Double timeoutItem) {
         if (this.timeout == null) {
             this.timeout = new ArrayList<>();
         }
@@ -251,7 +251,7 @@ public class RespcodeBrokens {
         return this;
     }
 
-    public RespcodeBrokens withTimeout(Consumer<List<Integer>> timeoutSetter) {
+    public RespcodeBrokens withTimeout(Consumer<List<Double>> timeoutSetter) {
         if (this.timeout == null) {
             this.timeout = new ArrayList<>();
         }
@@ -259,14 +259,14 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** timeout
+    /** 超时失败
      * 
      * @return timeout */
-    public List<Integer> getTimeout() {
+    public List<Double> getTimeout() {
         return timeout;
     }
 
-    public void setTimeout(List<Integer> timeout) {
+    public void setTimeout(List<Double> timeout) {
         this.timeout = timeout;
     }
 

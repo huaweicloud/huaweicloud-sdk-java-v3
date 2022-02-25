@@ -379,6 +379,24 @@ public class VodClient {
         return new SyncInvoker<ListAssetListRequest, ListAssetListResponse>(request, VodMeta.listAssetList, hcClient);
     }
 
+    /** 查询域名播放日志 查询指定点播域名某段时间内在CDN的相关日志。
+     *
+     * @param ListDomainLogsRequest 请求对象
+     * @return ListDomainLogsResponse */
+    public ListDomainLogsResponse listDomainLogs(ListDomainLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.listDomainLogs);
+    }
+
+    /** 查询域名播放日志 查询指定点播域名某段时间内在CDN的相关日志。
+     *
+     * @param ListDomainLogsRequest 请求对象
+     * @return SyncInvoker<ListDomainLogsRequest, ListDomainLogsResponse> */
+    public SyncInvoker<ListDomainLogsRequest, ListDomainLogsResponse> listDomainLogsInvoker(
+        ListDomainLogsRequest request) {
+        return new SyncInvoker<ListDomainLogsRequest, ListDomainLogsResponse>(request, VodMeta.listDomainLogs,
+            hcClient);
+    }
+
     /** 查询转码模板组列表 查询转码模板组列表。
      *
      * @param ListTemplateGroupRequest 请求对象

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.lts.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 返回的日志组信息 */
 public class LogGroup {
@@ -27,6 +30,11 @@ public class LogGroup {
     @JsonProperty(value = "ttl_in_days")
 
     private Integer ttlInDays;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag")
+
+    private Map<String, String> tag = null;
 
     public LogGroup withCreationTime(Long creationTime) {
         this.creationTime = creationTime;
@@ -92,6 +100,38 @@ public class LogGroup {
         this.ttlInDays = ttlInDays;
     }
 
+    public LogGroup withTag(Map<String, String> tag) {
+        this.tag = tag;
+        return this;
+    }
+
+    public LogGroup putTagItem(String key, String tagItem) {
+        if (this.tag == null) {
+            this.tag = new HashMap<>();
+        }
+        this.tag.put(key, tagItem);
+        return this;
+    }
+
+    public LogGroup withTag(Consumer<Map<String, String>> tagSetter) {
+        if (this.tag == null) {
+            this.tag = new HashMap<>();
+        }
+        tagSetter.accept(this.tag);
+        return this;
+    }
+
+    /** 日志流所属标签
+     * 
+     * @return tag */
+    public Map<String, String> getTag() {
+        return tag;
+    }
+
+    public void setTag(Map<String, String> tag) {
+        this.tag = tag;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +144,12 @@ public class LogGroup {
         return Objects.equals(this.creationTime, logGroup.creationTime)
             && Objects.equals(this.logGroupName, logGroup.logGroupName)
             && Objects.equals(this.logGroupId, logGroup.logGroupId)
-            && Objects.equals(this.ttlInDays, logGroup.ttlInDays);
+            && Objects.equals(this.ttlInDays, logGroup.ttlInDays) && Objects.equals(this.tag, logGroup.tag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(creationTime, logGroupName, logGroupId, ttlInDays);
+        return Objects.hash(creationTime, logGroupName, logGroupId, ttlInDays, tag);
     }
 
     @Override
@@ -120,6 +160,7 @@ public class LogGroup {
         sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

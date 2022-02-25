@@ -731,10 +731,10 @@ public class BmsMeta {
             f -> f.withMarshaller(UpdateBaremetalServerMetadataRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
             }));
-        builder.<MetaData>withRequestField("body",
+        builder.<UpdateBaremetalServerMetadataReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(MetaData.class),
+            TypeCasts.uncheckedConversion(UpdateBaremetalServerMetadataReq.class),
             f -> f.withMarshaller(UpdateBaremetalServerMetadataRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

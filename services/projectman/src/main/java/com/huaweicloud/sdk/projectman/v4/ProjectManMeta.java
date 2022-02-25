@@ -147,6 +147,34 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse> batchUpdateChildNickNames =
+        genForbatchUpdateChildNickNames();
+
+    private static HttpRequestDef<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse> genForbatchUpdateChildNickNames() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateChildNickNamesRequest.class,
+                    BatchUpdateChildNickNamesResponse.class)
+                .withName("BatchUpdateChildNickNames")
+                .withUri("/v4/domain/child-users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchUpdateChildUserNickNamesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateChildUserNickNamesRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateChildNickNamesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckProjectNameV4Request, CheckProjectNameV4Response> checkProjectNameV4 =
         genForcheckProjectNameV4();
 
@@ -1130,6 +1158,45 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListIterationHistoriesRequest, ListIterationHistoriesResponse> listIterationHistories =
+        genForlistIterationHistories();
+
+    private static HttpRequestDef<ListIterationHistoriesRequest, ListIterationHistoriesResponse> genForlistIterationHistories() {
+        // basic
+        HttpRequestDef.Builder<ListIterationHistoriesRequest, ListIterationHistoriesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListIterationHistoriesRequest.class, ListIterationHistoriesResponse.class)
+            .withName("ListIterationHistories")
+            .withUri("/v4/iterations/{iteration_id}/histories")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("iteration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIterationHistoriesRequest::getIterationId, (req, v) -> {
+                req.setIterationId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIterationHistoriesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIterationHistoriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectIterationsV4Request, ListProjectIterationsV4Response> listProjectIterationsV4 =
         genForlistProjectIterationsV4();
 
@@ -1148,6 +1215,20 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProjectIterationsV4Request::getProjectId, (req, v) -> {
                 req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("updated_time_interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectIterationsV4Request::getUpdatedTimeInterval, (req, v) -> {
+                req.setUpdatedTimeInterval(v);
+            }));
+        builder.<Boolean>withRequestField("include_deleted",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListProjectIterationsV4Request::getIncludeDeleted, (req, v) -> {
+                req.setIncludeDeleted(v);
             }));
 
         // response

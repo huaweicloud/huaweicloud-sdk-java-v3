@@ -38,6 +38,16 @@ public class ListProjectVersionsV4ResponseBodyIterations {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_time")
+
+    private Long updatedTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deleted")
+
+    private Boolean deleted;
+
     public ListProjectVersionsV4ResponseBodyIterations withDescription(String description) {
         this.description = description;
         return this;
@@ -134,6 +144,38 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         this.status = status;
     }
 
+    public ListProjectVersionsV4ResponseBodyIterations withUpdatedTime(Long updatedTime) {
+        this.updatedTime = updatedTime;
+        return this;
+    }
+
+    /** 迭代更新时间，长整型时间戳
+     * 
+     * @return updatedTime */
+    public Long getUpdatedTime() {
+        return updatedTime;
+    }
+
+    public void setUpdatedTime(Long updatedTime) {
+        this.updatedTime = updatedTime;
+    }
+
+    public ListProjectVersionsV4ResponseBodyIterations withDeleted(Boolean deleted) {
+        this.deleted = deleted;
+        return this;
+    }
+
+    /** 迭代是否已经删除，false, 未删除， true已经删除
+     * 
+     * @return deleted */
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -149,12 +191,14 @@ public class ListProjectVersionsV4ResponseBodyIterations {
             && Objects.equals(this.id, listProjectVersionsV4ResponseBodyIterations.id)
             && Objects.equals(this.name, listProjectVersionsV4ResponseBodyIterations.name)
             && Objects.equals(this.beginTime, listProjectVersionsV4ResponseBodyIterations.beginTime)
-            && Objects.equals(this.status, listProjectVersionsV4ResponseBodyIterations.status);
+            && Objects.equals(this.status, listProjectVersionsV4ResponseBodyIterations.status)
+            && Objects.equals(this.updatedTime, listProjectVersionsV4ResponseBodyIterations.updatedTime)
+            && Objects.equals(this.deleted, listProjectVersionsV4ResponseBodyIterations.deleted);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, endTime, id, name, beginTime, status);
+        return Objects.hash(description, endTime, id, name, beginTime, status, updatedTime, deleted);
     }
 
     @Override
@@ -167,6 +211,8 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
         sb.append("}");
         return sb.toString();
     }

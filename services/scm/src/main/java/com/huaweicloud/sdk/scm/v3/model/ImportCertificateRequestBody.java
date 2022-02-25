@@ -28,6 +28,16 @@ public class ImportCertificateRequestBody {
 
     private String privateKey;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_certificate")
+
+    private String encCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_private_key")
+
+    private String encPrivateKey;
+
     public ImportCertificateRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -92,6 +102,38 @@ public class ImportCertificateRequestBody {
         this.privateKey = privateKey;
     }
 
+    public ImportCertificateRequestBody withEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+        return this;
+    }
+
+    /** 可选参数，国密证书的加密证书内容。书回车换行需要使用转义字符\\n或者\\r\\n替换。
+     * 
+     * @return encCertificate */
+    public String getEncCertificate() {
+        return encCertificate;
+    }
+
+    public void setEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+    }
+
+    public ImportCertificateRequestBody withEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+        return this;
+    }
+
+    /** 可选参数，国密证书的加密私钥。 不能上传带有口令保护的私钥，回车换行需要使用转义字符\\n或者\\r\\n替换。
+     * 
+     * @return encPrivateKey */
+    public String getEncPrivateKey() {
+        return encPrivateKey;
+    }
+
+    public void setEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +146,14 @@ public class ImportCertificateRequestBody {
         return Objects.equals(this.name, importCertificateRequestBody.name)
             && Objects.equals(this.certificate, importCertificateRequestBody.certificate)
             && Objects.equals(this.certificateChain, importCertificateRequestBody.certificateChain)
-            && Objects.equals(this.privateKey, importCertificateRequestBody.privateKey);
+            && Objects.equals(this.privateKey, importCertificateRequestBody.privateKey)
+            && Objects.equals(this.encCertificate, importCertificateRequestBody.encCertificate)
+            && Objects.equals(this.encPrivateKey, importCertificateRequestBody.encPrivateKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, certificate, certificateChain, privateKey);
+        return Objects.hash(name, certificate, certificateChain, privateKey, encCertificate, encPrivateKey);
     }
 
     @Override
@@ -120,6 +164,8 @@ public class ImportCertificateRequestBody {
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    certificateChain: ").append(toIndentedString(certificateChain)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
+        sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
+        sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

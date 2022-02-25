@@ -985,6 +985,41 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLog = genForshowAuditLog();
+
+    private static HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> genForshowAuditLog() {
+        // basic
+        HttpRequestDef.Builder<ShowAuditLogRequest, ShowAuditLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAuditLogRequest.class, ShowAuditLogResponse.class)
+                .withName("ShowAuditLog")
+                .withUri("/v3/{project_id}/instance/{instance_id}/audit-log/switch-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAuditLogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAuditLogRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> showGaussMySqlBackupList = genForshowGaussMySqlBackupList();
 
     private static HttpRequestDef<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> genForshowGaussMySqlBackupList() {
@@ -1448,6 +1483,49 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMonitorExtendRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAuditLogRequest, UpdateAuditLogResponse> updateAuditLog = genForupdateAuditLog();
+
+    private static HttpRequestDef<UpdateAuditLogRequest, UpdateAuditLogResponse> genForupdateAuditLog() {
+        // basic
+        HttpRequestDef.Builder<UpdateAuditLogRequest, UpdateAuditLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateAuditLogRequest.class, UpdateAuditLogResponse.class)
+                .withName("UpdateAuditLog")
+                .withUri("/v3/{project_id}/instance/{instance_id}/audit-log/switch")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAuditLogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAuditLogRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<OperateAuditLogRequestV3Body>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateAuditLogRequestV3Body.class),
+            f -> f.withMarshaller(UpdateAuditLogRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

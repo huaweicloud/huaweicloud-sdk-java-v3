@@ -1,17 +1,93 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** CreateProductTopicRequestBody */
 public class CreateProductTopicRequestBody {
 
+    /** 主题权限 0-发布 1-订阅 */
+    public static final class PermissionEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final PermissionEnum NUMBER_0 = new PermissionEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final PermissionEnum NUMBER_1 = new PermissionEnum(1);
+
+        private static final Map<Integer, PermissionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PermissionEnum> createStaticFields() {
+            Map<Integer, PermissionEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        PermissionEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PermissionEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PermissionEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PermissionEnum(value);
+            }
+            return result;
+        }
+
+        public static PermissionEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PermissionEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PermissionEnum) {
+                return this.value.equals(((PermissionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
 
-    private Integer permission;
+    private PermissionEnum permission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -28,7 +104,7 @@ public class CreateProductTopicRequestBody {
 
     private String description;
 
-    public CreateProductTopicRequestBody withPermission(Integer permission) {
+    public CreateProductTopicRequestBody withPermission(PermissionEnum permission) {
         this.permission = permission;
         return this;
     }
@@ -36,11 +112,11 @@ public class CreateProductTopicRequestBody {
     /** 主题权限 0-发布 1-订阅 minimum: 0 maximum: 10
      * 
      * @return permission */
-    public Integer getPermission() {
+    public PermissionEnum getPermission() {
         return permission;
     }
 
-    public void setPermission(Integer permission) {
+    public void setPermission(PermissionEnum permission) {
         this.permission = permission;
     }
 

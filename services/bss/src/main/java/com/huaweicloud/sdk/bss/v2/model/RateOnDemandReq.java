@@ -31,7 +31,8 @@ public class RateOnDemandReq {
         return this;
     }
 
-    /** 项目ID。 使用客户Token，可以调用通过assume_role方式获取用户token接口获取“regionId”的取值对应的“project id”。具体请参见如何将合作伙伴Token置换为客户Token的步骤2。
+    /** 项目ID。 说明： 使用客户Token，可以调用通过assume_role方式获取用户token接口获取“regionId”的取值对应的“project
+     * id”。具体请参见如何将合作伙伴Token置换为客户Token的步骤2。IAM子用户调用此接口，需要IAM主账号授权，具体请参考创建用户组并授权。
      * 
      * @return projectId */
     public String getProjectId() {

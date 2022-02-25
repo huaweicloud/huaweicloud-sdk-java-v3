@@ -1359,6 +1359,52 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSlowLogFileRequest, ListSlowLogFileResponse> listSlowLogFile =
+        genForlistSlowLogFile();
+
+    private static HttpRequestDef<ListSlowLogFileRequest, ListSlowLogFileResponse> genForlistSlowLogFile() {
+        // basic
+        HttpRequestDef.Builder<ListSlowLogFileRequest, ListSlowLogFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSlowLogFileRequest.class, ListSlowLogFileResponse.class)
+                .withName("ListSlowLogFile")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog-files")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogFileRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSlowLogFileRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSlowLogFileRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogFileRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogs = genForlistSlowLogs();
 
     private static HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> genForlistSlowLogs() {
@@ -2497,6 +2543,69 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(ResizeFlavorRequest.class),
             f -> f.withMarshaller(StartResizeFlavorActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartupInstanceRequest, StartupInstanceResponse> startupInstance =
+        genForstartupInstance();
+
+    private static HttpRequestDef<StartupInstanceRequest, StartupInstanceResponse> genForstartupInstance() {
+        // basic
+        HttpRequestDef.Builder<StartupInstanceRequest, StartupInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartupInstanceRequest.class, StartupInstanceResponse.class)
+                .withName("StartupInstance")
+                .withUri("/v3/{project_id}/instances/{instance_id}/action/startup")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartupInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<StartupInstanceRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StartupInstanceRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StartupInstanceRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopInstanceRequest, StopInstanceResponse> stopInstance = genForstopInstance();
+
+    private static HttpRequestDef<StopInstanceRequest, StopInstanceResponse> genForstopInstance() {
+        // basic
+        HttpRequestDef.Builder<StopInstanceRequest, StopInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopInstanceRequest.class, StopInstanceResponse.class)
+                .withName("StopInstance")
+                .withUri("/v3/{project_id}/instances/{instance_id}/action/shutdown")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<StopInstanceRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StopInstanceRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StopInstanceRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             }));
 
         // response

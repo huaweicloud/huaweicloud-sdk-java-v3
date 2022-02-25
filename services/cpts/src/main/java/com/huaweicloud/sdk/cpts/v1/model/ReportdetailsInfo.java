@@ -52,7 +52,7 @@ public class ReportdetailsInfo {
         return this;
     }
 
-    /** data
+    /** 表格数据
      * 
      * @return data */
     public List<ReportdetailItemInfo> getData() {
@@ -68,7 +68,7 @@ public class ReportdetailsInfo {
         return this;
     }
 
-    /** pageIndex
+    /** 页码
      * 
      * @return pageIndex */
     public Integer getPageIndex() {
@@ -84,7 +84,7 @@ public class ReportdetailsInfo {
         return this;
     }
 
-    /** pageSize
+    /** 每页大小
      * 
      * @return pageSize */
     public Integer getPageSize() {
@@ -100,7 +100,7 @@ public class ReportdetailsInfo {
         return this;
     }
 
-    /** total
+    /** 总记录数
      * 
      * @return total */
     public Integer getTotal() {

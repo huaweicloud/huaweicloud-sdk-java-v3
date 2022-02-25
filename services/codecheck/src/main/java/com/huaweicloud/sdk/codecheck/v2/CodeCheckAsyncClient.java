@@ -37,6 +37,22 @@ public class CodeCheckAsyncClient {
             hcClient);
     }
 
+    /** 历史扫描结果查询 提供每次扫描的问题数量统计
+     *
+     * @param CheckRecordRequest 请求对象
+     * @return CompletableFuture<CheckRecordResponse> */
+    public CompletableFuture<CheckRecordResponse> checkRecordAsync(CheckRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.checkRecord);
+    }
+
+    /** 历史扫描结果查询 提供每次扫描的问题数量统计
+     *
+     * @param CheckRecordRequest 请求对象
+     * @return AsyncInvoker<CheckRecordRequest, CheckRecordResponse> */
+    public AsyncInvoker<CheckRecordRequest, CheckRecordResponse> checkRecordAsyncInvoker(CheckRecordRequest request) {
+        return new AsyncInvoker<CheckRecordRequest, CheckRecordResponse>(request, CodeCheckMeta.checkRecord, hcClient);
+    }
+
     /** 创建自定义规则集 可根据需求灵活的组合规则。
      *
      * @param CreateRulesetRequest 请求对象

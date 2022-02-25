@@ -114,7 +114,7 @@ public class ReportInfo {
         return this;
     }
 
-    /** rtproportion
+    /** 响应时间分布
      * 
      * @return rtproportion */
     public String getRtproportion() {

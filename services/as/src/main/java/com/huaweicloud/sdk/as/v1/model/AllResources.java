@@ -116,6 +116,11 @@ public class AllResources {
 
     private Integer max;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min")
+
+    private Integer min;
+
     public AllResources withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -180,6 +185,22 @@ public class AllResources {
         this.max = max;
     }
 
+    public AllResources withMin(Integer min) {
+        this.min = min;
+        return this;
+    }
+
+    /** 配额下限。
+     * 
+     * @return min */
+    public Integer getMin() {
+        return min;
+    }
+
+    public void setMin(Integer min) {
+        this.min = min;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -190,12 +211,13 @@ public class AllResources {
         }
         AllResources allResources = (AllResources) o;
         return Objects.equals(this.type, allResources.type) && Objects.equals(this.used, allResources.used)
-            && Objects.equals(this.quota, allResources.quota) && Objects.equals(this.max, allResources.max);
+            && Objects.equals(this.quota, allResources.quota) && Objects.equals(this.max, allResources.max)
+            && Objects.equals(this.min, allResources.min);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, used, quota, max);
+        return Objects.hash(type, used, quota, max, min);
     }
 
     @Override
@@ -206,6 +228,7 @@ public class AllResources {
         sb.append("    used: ").append(toIndentedString(used)).append("\n");
         sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
         sb.append("    max: ").append(toIndentedString(max)).append("\n");
+        sb.append("    min: ").append(toIndentedString(min)).append("\n");
         sb.append("}");
         return sb.toString();
     }

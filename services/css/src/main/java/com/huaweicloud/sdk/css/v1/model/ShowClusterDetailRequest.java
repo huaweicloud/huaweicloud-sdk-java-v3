@@ -1,32 +1,32 @@
-package com.huaweicloud.sdk.bms.v1.model;
+package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** metadata数据结构说明 */
-public class KeyValue {
+/** Request Object */
+public class ShowClusterDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "key")
+    @JsonProperty(value = "cluster_id")
 
-    private String key;
+    private String clusterId;
 
-    public KeyValue withKey(String key) {
-        this.key = key;
+    public ShowClusterDetailRequest withClusterId(String clusterId) {
+        this.clusterId = clusterId;
         return this;
     }
 
-    /** 键。最大长度255个Unicode字符，不能为空。可以为大写字母（A-Z）、小写字母（a-z）、数字（0-9）、中划线（-）、下划线（_）、冒号（:）和小数点（.）。
+    /** 指定查询集群ID。
      * 
-     * @return key */
-    public String getKey() {
-        return key;
+     * @return clusterId */
+    public String getClusterId() {
+        return clusterId;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
     }
 
     @Override
@@ -37,20 +37,20 @@ public class KeyValue {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        KeyValue keyValue = (KeyValue) o;
-        return Objects.equals(this.key, keyValue.key);
+        ShowClusterDetailRequest showClusterDetailRequest = (ShowClusterDetailRequest) o;
+        return Objects.equals(this.clusterId, showClusterDetailRequest.clusterId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key);
+        return Objects.hash(clusterId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class KeyValue {\n");
-        sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("class ShowClusterDetailRequest {\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

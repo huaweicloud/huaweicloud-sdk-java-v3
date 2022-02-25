@@ -13,7 +13,7 @@ import java.util.Objects;
 /** 对私钥进行加密存储的方式。 */
 public class Encryption {
 
-    /** 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。 若局点没有kms服务，请填“default”。 */
+    /** 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。若局点没有kms服务，请填“default”。 */
     public static final class TypeEnum {
 
         /** Enum DEFAULT for value: "default" */
@@ -99,7 +99,7 @@ public class Encryption {
         return this;
     }
 
-    /** 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。 若局点没有kms服务，请填“default”。
+    /** 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。若局点没有kms服务，请填“default”。
      * 
      * @return type */
     public TypeEnum getType() {

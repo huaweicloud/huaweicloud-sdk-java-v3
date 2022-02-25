@@ -1585,6 +1585,52 @@ public class CodeHubMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> showStatisticCommitV3 =
+        genForshowStatisticCommitV3();
+
+    private static HttpRequestDef<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> genForshowStatisticCommitV3() {
+        // basic
+        HttpRequestDef.Builder<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowStatisticCommitV3Request.class, ShowStatisticCommitV3Response.class)
+            .withName("ShowStatisticCommitV3")
+            .withUri("/v3/repositories/{repository_id}/commit-lines")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStatisticCommitV3Request::getRepositoryId, (req, v) -> {
+                req.setRepositoryId(v);
+            }));
+        builder.<String>withRequestField("ref_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStatisticCommitV3Request::getRefName, (req, v) -> {
+                req.setRefName(v);
+            }));
+        builder.<String>withRequestField("begin_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStatisticCommitV3Request::getBeginDate, (req, v) -> {
+                req.setBeginDate(v);
+            }));
+        builder.<String>withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStatisticCommitV3Request::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowStatisticalDataRequest, ShowStatisticalDataResponse> showStatisticalData =
         genForshowStatisticalData();
 

@@ -13,6 +13,11 @@ public class ReduceRequest {
 
     private Integer nodeNumber;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public ReduceRequest withNodeNumber(Integer nodeNumber) {
         this.nodeNumber = nodeNumber;
         return this;
@@ -29,6 +34,22 @@ public class ReduceRequest {
         this.nodeNumber = nodeNumber;
     }
 
+    public ReduceRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /** 组id，指定当前进行节点扩容的组。当实例的组>1时，必填。
+     * 
+     * @return groupId */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -38,12 +59,13 @@ public class ReduceRequest {
             return false;
         }
         ReduceRequest reduceRequest = (ReduceRequest) o;
-        return Objects.equals(this.nodeNumber, reduceRequest.nodeNumber);
+        return Objects.equals(this.nodeNumber, reduceRequest.nodeNumber)
+            && Objects.equals(this.groupId, reduceRequest.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nodeNumber);
+        return Objects.hash(nodeNumber, groupId);
     }
 
     @Override
@@ -51,6 +73,7 @@ public class ReduceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ReduceRequest {\n");
         sb.append("    nodeNumber: ").append(toIndentedString(nodeNumber)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

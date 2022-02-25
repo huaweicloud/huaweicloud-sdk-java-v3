@@ -460,6 +460,28 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 查询审计日志开关状态
+     * 查询审计日志开关状态
+     *
+     * @param ShowAuditLogRequest 请求对象
+     * @return CompletableFuture<ShowAuditLogResponse>
+     */
+    public CompletableFuture<ShowAuditLogResponse> showAuditLogAsync(ShowAuditLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showAuditLog);
+    }
+
+    /**
+     * 查询审计日志开关状态
+     * 查询审计日志开关状态
+     *
+     * @param ShowAuditLogRequest 请求对象
+     * @return AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>
+     */
+    public AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLogAsyncInvoker(ShowAuditLogRequest request) {
+        return new AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>(request, GaussDBMeta.showAuditLog, hcClient);
+    }
+
+    /**
      * 查询备份列表
      * 查询备份列表
      *
@@ -699,6 +721,28 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> showInstanceMonitorExtendAsyncInvoker(ShowInstanceMonitorExtendRequest request) {
         return new AsyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>(request, GaussDBMeta.showInstanceMonitorExtend, hcClient);
+    }
+
+    /**
+     * 开启或者关闭审计日志
+     * 开启或者关闭审计日志
+     *
+     * @param UpdateAuditLogRequest 请求对象
+     * @return CompletableFuture<UpdateAuditLogResponse>
+     */
+    public CompletableFuture<UpdateAuditLogResponse> updateAuditLogAsync(UpdateAuditLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateAuditLog);
+    }
+
+    /**
+     * 开启或者关闭审计日志
+     * 开启或者关闭审计日志
+     *
+     * @param UpdateAuditLogRequest 请求对象
+     * @return AsyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>
+     */
+    public AsyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse> updateAuditLogAsyncInvoker(UpdateAuditLogRequest request) {
+        return new AsyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>(request, GaussDBMeta.updateAuditLog, hcClient);
     }
 
     /**

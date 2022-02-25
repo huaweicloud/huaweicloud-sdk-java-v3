@@ -86,7 +86,7 @@ public class ListOrgInstancesRequest {
         return this;
     }
 
-    /** 组织id（对应华为云帐号的domainId）
+    /** 租户id（对应华为云帐号的domainId）
      * 
      * @return orgId */
     public String getOrgId() {

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** Source */
@@ -38,15 +43,157 @@ public class Source {
 
     private String productName;
 
+    /** 是否payload使用base64，0-是 1-否 */
+    public static final class IsBase64Enum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final IsBase64Enum NUMBER_0 = new IsBase64Enum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final IsBase64Enum NUMBER_1 = new IsBase64Enum(1);
+
+        private static final Map<Integer, IsBase64Enum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IsBase64Enum> createStaticFields() {
+            Map<Integer, IsBase64Enum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        IsBase64Enum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IsBase64Enum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IsBase64Enum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new IsBase64Enum(value);
+            }
+            return result;
+        }
+
+        public static IsBase64Enum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IsBase64Enum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IsBase64Enum) {
+                return this.value.equals(((IsBase64Enum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_base64")
 
-    private Integer isBase64;
+    private IsBase64Enum isBase64;
+
+    /** 是否包含设备信息，0-是，1-否 */
+    public static final class ContainDeviceInfoEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final ContainDeviceInfoEnum NUMBER_0 = new ContainDeviceInfoEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final ContainDeviceInfoEnum NUMBER_1 = new ContainDeviceInfoEnum(1);
+
+        private static final Map<Integer, ContainDeviceInfoEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ContainDeviceInfoEnum> createStaticFields() {
+            Map<Integer, ContainDeviceInfoEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ContainDeviceInfoEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ContainDeviceInfoEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            ContainDeviceInfoEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ContainDeviceInfoEnum(value);
+            }
+            return result;
+        }
+
+        public static ContainDeviceInfoEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            ContainDeviceInfoEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ContainDeviceInfoEnum) {
+                return this.value.equals(((ContainDeviceInfoEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contain_device_info")
 
-    private Integer containDeviceInfo;
+    private ContainDeviceInfoEnum containDeviceInfo;
 
     public Source withSourceId(Integer sourceId) {
         this.sourceId = sourceId;
@@ -144,7 +291,7 @@ public class Source {
         this.productName = productName;
     }
 
-    public Source withIsBase64(Integer isBase64) {
+    public Source withIsBase64(IsBase64Enum isBase64) {
         this.isBase64 = isBase64;
         return this;
     }
@@ -152,15 +299,15 @@ public class Source {
     /** 是否payload使用base64，0-是 1-否 minimum: 0 maximum: 10
      * 
      * @return isBase64 */
-    public Integer getIsBase64() {
+    public IsBase64Enum getIsBase64() {
         return isBase64;
     }
 
-    public void setIsBase64(Integer isBase64) {
+    public void setIsBase64(IsBase64Enum isBase64) {
         this.isBase64 = isBase64;
     }
 
-    public Source withContainDeviceInfo(Integer containDeviceInfo) {
+    public Source withContainDeviceInfo(ContainDeviceInfoEnum containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
         return this;
     }
@@ -168,11 +315,11 @@ public class Source {
     /** 是否包含设备信息，0-是，1-否 minimum: 0 maximum: 10
      * 
      * @return containDeviceInfo */
-    public Integer getContainDeviceInfo() {
+    public ContainDeviceInfoEnum getContainDeviceInfo() {
         return containDeviceInfo;
     }
 
-    public void setContainDeviceInfo(Integer containDeviceInfo) {
+    public void setContainDeviceInfo(ContainDeviceInfoEnum containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
     }
 

@@ -263,6 +263,22 @@ public class CssClient {
         return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, CssMeta.listFlavors, hcClient);
     }
 
+    /** 查询作业列表 该接口用于查询具体某个集群的日志任务记录列表。
+     *
+     * @param ListLogsJobRequest 请求对象
+     * @return ListLogsJobResponse */
+    public ListLogsJobResponse listLogsJob(ListLogsJobRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.listLogsJob);
+    }
+
+    /** 查询作业列表 该接口用于查询具体某个集群的日志任务记录列表。
+     *
+     * @param ListLogsJobRequest 请求对象
+     * @return SyncInvoker<ListLogsJobRequest, ListLogsJobResponse> */
+    public SyncInvoker<ListLogsJobRequest, ListLogsJobResponse> listLogsJobInvoker(ListLogsJobRequest request) {
+        return new SyncInvoker<ListLogsJobRequest, ListLogsJobResponse>(request, CssMeta.listLogsJob, hcClient);
+    }
+
     /** 查询快照列表 该接口用于查询集群的所有快照。
      *
      * @param ListSnapshotsRequest 请求对象
@@ -379,6 +395,24 @@ public class CssClient {
         ShowAutoCreatePolicyRequest request) {
         return new SyncInvoker<ShowAutoCreatePolicyRequest, ShowAutoCreatePolicyResponse>(request,
             CssMeta.showAutoCreatePolicy, hcClient);
+    }
+
+    /** 查询集群详情 该接口用于查询并显示单个集群详情。
+     *
+     * @param ShowClusterDetailRequest 请求对象
+     * @return ShowClusterDetailResponse */
+    public ShowClusterDetailResponse showClusterDetail(ShowClusterDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.showClusterDetail);
+    }
+
+    /** 查询集群详情 该接口用于查询并显示单个集群详情。
+     *
+     * @param ShowClusterDetailRequest 请求对象
+     * @return SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse> */
+    public SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetailInvoker(
+        ShowClusterDetailRequest request) {
+        return new SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse>(request, CssMeta.showClusterDetail,
+            hcClient);
     }
 
     /** 查询指定集群的标签 该接口用于查询指定集群的标签信息。
@@ -719,6 +753,40 @@ public class CssClient {
             CssMeta.updateExtendInstanceStorage, hcClient);
     }
 
+    /** 变更规格 该接口用于变更集群规格。只支持变更ess节点类型。
+     *
+     * @param UpdateFlavorRequest 请求对象
+     * @return UpdateFlavorResponse */
+    public UpdateFlavorResponse updateFlavor(UpdateFlavorRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.updateFlavor);
+    }
+
+    /** 变更规格 该接口用于变更集群规格。只支持变更ess节点类型。
+     *
+     * @param UpdateFlavorRequest 请求对象
+     * @return SyncInvoker<UpdateFlavorRequest, UpdateFlavorResponse> */
+    public SyncInvoker<UpdateFlavorRequest, UpdateFlavorResponse> updateFlavorInvoker(UpdateFlavorRequest request) {
+        return new SyncInvoker<UpdateFlavorRequest, UpdateFlavorResponse>(request, CssMeta.updateFlavor, hcClient);
+    }
+
+    /** 全规格集群变更 修改集群规格。支持修改ess， ess-cold， ess-client， ess-master节点类型。
+     *
+     * @param UpdateFlavorByTypeRequest 请求对象
+     * @return UpdateFlavorByTypeResponse */
+    public UpdateFlavorByTypeResponse updateFlavorByType(UpdateFlavorByTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.updateFlavorByType);
+    }
+
+    /** 全规格集群变更 修改集群规格。支持修改ess， ess-cold， ess-client， ess-master节点类型。
+     *
+     * @param UpdateFlavorByTypeRequest 请求对象
+     * @return SyncInvoker<UpdateFlavorByTypeRequest, UpdateFlavorByTypeResponse> */
+    public SyncInvoker<UpdateFlavorByTypeRequest, UpdateFlavorByTypeResponse> updateFlavorByTypeInvoker(
+        UpdateFlavorByTypeRequest request) {
+        return new SyncInvoker<UpdateFlavorByTypeRequest, UpdateFlavorByTypeResponse>(request,
+            CssMeta.updateFlavorByType, hcClient);
+    }
+
     /** 修改日志基础配置 该接口用于修改日志基础配置。
      *
      * @param UpdateLogSettingRequest 请求对象
@@ -772,6 +840,42 @@ public class CssClient {
         UpdatePublicBandWidthRequest request) {
         return new SyncInvoker<UpdatePublicBandWidthRequest, UpdatePublicBandWidthResponse>(request,
             CssMeta.updatePublicBandWidth, hcClient);
+    }
+
+    /** 缩容集群 该接口用于集群缩容不同类型实例的个数以及存储容量。
+     *
+     * @param UpdateShrinkClusterRequest 请求对象
+     * @return UpdateShrinkClusterResponse */
+    public UpdateShrinkClusterResponse updateShrinkCluster(UpdateShrinkClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.updateShrinkCluster);
+    }
+
+    /** 缩容集群 该接口用于集群缩容不同类型实例的个数以及存储容量。
+     *
+     * @param UpdateShrinkClusterRequest 请求对象
+     * @return SyncInvoker<UpdateShrinkClusterRequest, UpdateShrinkClusterResponse> */
+    public SyncInvoker<UpdateShrinkClusterRequest, UpdateShrinkClusterResponse> updateShrinkClusterInvoker(
+        UpdateShrinkClusterRequest request) {
+        return new SyncInvoker<UpdateShrinkClusterRequest, UpdateShrinkClusterResponse>(request,
+            CssMeta.updateShrinkCluster, hcClient);
+    }
+
+    /** 指定角色下线 该接口用于下线集群指定角色。
+     *
+     * @param UpdateShrinkNodesRequest 请求对象
+     * @return UpdateShrinkNodesResponse */
+    public UpdateShrinkNodesResponse updateShrinkNodes(UpdateShrinkNodesRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.updateShrinkNodes);
+    }
+
+    /** 指定角色下线 该接口用于下线集群指定角色。
+     *
+     * @param UpdateShrinkNodesRequest 请求对象
+     * @return SyncInvoker<UpdateShrinkNodesRequest, UpdateShrinkNodesResponse> */
+    public SyncInvoker<UpdateShrinkNodesRequest, UpdateShrinkNodesResponse> updateShrinkNodesInvoker(
+        UpdateShrinkNodesRequest request) {
+        return new SyncInvoker<UpdateShrinkNodesRequest, UpdateShrinkNodesResponse>(request, CssMeta.updateShrinkNodes,
+            hcClient);
     }
 
     /** 修改集群快照的基础配置 该接口用于修改集群快照的基础配置，可修改OBS桶和IAM委托。 说明：如果未开启快照功能，使用该接口后，将会开启快照。

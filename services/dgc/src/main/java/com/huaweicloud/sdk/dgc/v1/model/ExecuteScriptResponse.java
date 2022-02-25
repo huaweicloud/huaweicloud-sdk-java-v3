@@ -10,24 +10,24 @@ import java.util.Objects;
 public class ExecuteScriptResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "jobId")
+    @JsonProperty(value = "instanceId")
 
-    private String jobId;
+    private String instanceId;
 
-    public ExecuteScriptResponse withJobId(String jobId) {
-        this.jobId = jobId;
+    public ExecuteScriptResponse withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
-    /** Get jobId
+    /** Get instanceId
      * 
-     * @return jobId */
-    public String getJobId() {
-        return jobId;
+     * @return instanceId */
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     @Override
@@ -39,19 +39,19 @@ public class ExecuteScriptResponse extends SdkResponse {
             return false;
         }
         ExecuteScriptResponse executeScriptResponse = (ExecuteScriptResponse) o;
-        return Objects.equals(this.jobId, executeScriptResponse.jobId);
+        return Objects.equals(this.instanceId, executeScriptResponse.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(instanceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExecuteScriptResponse {\n");
-        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -63,7 +63,7 @@ public class BatchAddOrDeleteTagOnClusterReq {
         return this;
     }
 
-    /** 标签列表
+    /** 标签列表。
      * 
      * @return tags */
     public List<TagList> getTags() {
@@ -95,7 +95,7 @@ public class BatchAddOrDeleteTagOnClusterReq {
         return this;
     }
 
-    /** 标签列表
+    /** 标签列表。
      * 
      * @return sysTags */
     public List<SysTags> getSysTags() {

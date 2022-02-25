@@ -75,7 +75,7 @@ public class ListScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 策略类型。
+    /** 策略类型： - 告警策略：ALARM - 定时策略：SCHEDULED - 周期策略：RECURRENCE
      * 
      * @return scalingPolicyType */
     public String getScalingPolicyType() {

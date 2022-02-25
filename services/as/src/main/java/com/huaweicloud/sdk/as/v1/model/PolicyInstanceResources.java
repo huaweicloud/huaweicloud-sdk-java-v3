@@ -28,6 +28,11 @@ public class PolicyInstanceResources {
 
     private Integer max;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min")
+
+    private Integer min;
+
     public PolicyInstanceResources withType(String type) {
         this.type = type;
         return this;
@@ -92,6 +97,22 @@ public class PolicyInstanceResources {
         this.max = max;
     }
 
+    public PolicyInstanceResources withMin(Integer min) {
+        this.min = min;
+        return this;
+    }
+
+    /** 配额下限。
+     * 
+     * @return min */
+    public Integer getMin() {
+        return min;
+    }
+
+    public void setMin(Integer min) {
+        this.min = min;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +125,13 @@ public class PolicyInstanceResources {
         return Objects.equals(this.type, policyInstanceResources.type)
             && Objects.equals(this.used, policyInstanceResources.used)
             && Objects.equals(this.quota, policyInstanceResources.quota)
-            && Objects.equals(this.max, policyInstanceResources.max);
+            && Objects.equals(this.max, policyInstanceResources.max)
+            && Objects.equals(this.min, policyInstanceResources.min);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, used, quota, max);
+        return Objects.hash(type, used, quota, max, min);
     }
 
     @Override
@@ -120,6 +142,7 @@ public class PolicyInstanceResources {
         sb.append("    used: ").append(toIndentedString(used)).append("\n");
         sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
         sb.append("    max: ").append(toIndentedString(max)).append("\n");
+        sb.append("    min: ").append(toIndentedString(min)).append("\n");
         sb.append("}");
         return sb.toString();
     }

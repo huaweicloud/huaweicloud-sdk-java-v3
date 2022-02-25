@@ -35,6 +35,22 @@ public class CodeCheckClient {
             hcClient);
     }
 
+    /** 历史扫描结果查询 提供每次扫描的问题数量统计
+     *
+     * @param CheckRecordRequest 请求对象
+     * @return CheckRecordResponse */
+    public CheckRecordResponse checkRecord(CheckRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.checkRecord);
+    }
+
+    /** 历史扫描结果查询 提供每次扫描的问题数量统计
+     *
+     * @param CheckRecordRequest 请求对象
+     * @return SyncInvoker<CheckRecordRequest, CheckRecordResponse> */
+    public SyncInvoker<CheckRecordRequest, CheckRecordResponse> checkRecordInvoker(CheckRecordRequest request) {
+        return new SyncInvoker<CheckRecordRequest, CheckRecordResponse>(request, CodeCheckMeta.checkRecord, hcClient);
+    }
+
     /** 创建自定义规则集 可根据需求灵活的组合规则。
      *
      * @param CreateRulesetRequest 请求对象

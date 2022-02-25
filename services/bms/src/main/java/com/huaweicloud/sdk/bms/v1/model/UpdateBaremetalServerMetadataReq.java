@@ -3,39 +3,48 @@ package com.huaweicloud.sdk.bms.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新裸金属服务器元数据 */
-public class MetaData {
+/** This is a auto create Body Object */
+public class UpdateBaremetalServerMetadataReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private KeyValue metadata;
+    private Map<String, String> metadata = null;
 
-    public MetaData withMetadata(KeyValue metadata) {
+    public UpdateBaremetalServerMetadataReq withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public MetaData withMetadata(Consumer<KeyValue> metadataSetter) {
+    public UpdateBaremetalServerMetadataReq putMetadataItem(String key, String metadataItem) {
         if (this.metadata == null) {
-            this.metadata = new KeyValue();
-            metadataSetter.accept(this.metadata);
+            this.metadata = new HashMap<>();
         }
-
+        this.metadata.put(key, metadataItem);
         return this;
     }
 
-    /** Get metadata
+    public UpdateBaremetalServerMetadataReq withMetadata(Consumer<Map<String, String>> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
+        metadataSetter.accept(this.metadata);
+        return this;
+    }
+
+    /** 用户自定义metadata键值对。 结构体允许为空，取值为空时不更新数据。
      * 
      * @return metadata */
-    public KeyValue getMetadata() {
+    public Map<String, String> getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(KeyValue metadata) {
+    public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
 
@@ -47,8 +56,8 @@ public class MetaData {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        MetaData metaData = (MetaData) o;
-        return Objects.equals(this.metadata, metaData.metadata);
+        UpdateBaremetalServerMetadataReq updateBaremetalServerMetadataReq = (UpdateBaremetalServerMetadataReq) o;
+        return Objects.equals(this.metadata, updateBaremetalServerMetadataReq.metadata);
     }
 
     @Override
@@ -59,7 +68,7 @@ public class MetaData {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class MetaData {\n");
+        sb.append("class UpdateBaremetalServerMetadataReq {\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -18,6 +18,11 @@ public class EnlargeRequest {
 
     private Integer nodeNumber;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public EnlargeRequest withFlavorId(String flavorId) {
         this.flavorId = flavorId;
         return this;
@@ -50,6 +55,22 @@ public class EnlargeRequest {
         this.nodeNumber = nodeNumber;
     }
 
+    public EnlargeRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /** 组id，指定当前进行节点扩容的组。当实例的组>1时，必填。
+     * 
+     * @return groupId */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -60,12 +81,13 @@ public class EnlargeRequest {
         }
         EnlargeRequest enlargeRequest = (EnlargeRequest) o;
         return Objects.equals(this.flavorId, enlargeRequest.flavorId)
-            && Objects.equals(this.nodeNumber, enlargeRequest.nodeNumber);
+            && Objects.equals(this.nodeNumber, enlargeRequest.nodeNumber)
+            && Objects.equals(this.groupId, enlargeRequest.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorId, nodeNumber);
+        return Objects.hash(flavorId, nodeNumber, groupId);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class EnlargeRequest {
         sb.append("class EnlargeRequest {\n");
         sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    nodeNumber: ").append(toIndentedString(nodeNumber)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

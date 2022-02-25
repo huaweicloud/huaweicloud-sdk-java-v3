@@ -410,6 +410,38 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> showDomainFullConfig =
+        genForshowDomainFullConfig();
+
+    private static HttpRequestDef<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> genForshowDomainFullConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDomainFullConfigRequest.class, ShowDomainFullConfigResponse.class)
+            .withName("ShowDomainFullConfig")
+            .withUri("/v1.1/cdn/configuration/domains/{domain_name}/configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainFullConfigRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainFullConfigRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse> showDomainItemDetails =
         genForshowDomainItemDetails();
 
@@ -540,6 +572,101 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> showDomainLocationStats =
+        genForshowDomainLocationStats();
+
+    private static HttpRequestDef<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> genForshowDomainLocationStats() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDomainLocationStatsRequest.class, ShowDomainLocationStatsResponse.class)
+            .withName("ShowDomainLocationStats")
+            .withUri("/v1.0/cdn/statistics/domain-location-stats")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Long>withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getInterval, (req, v) -> {
+                req.setInterval(v);
+            }));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<String>withRequestField("stat_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getStatType, (req, v) -> {
+                req.setStatType(v);
+            }));
+        builder.<String>withRequestField("group_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getGroupBy, (req, v) -> {
+                req.setGroupBy(v);
+            }));
+        builder.<String>withRequestField("country",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getCountry, (req, v) -> {
+                req.setCountry(v);
+            }));
+        builder.<String>withRequestField("province",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getProvince, (req, v) -> {
+                req.setProvince(v);
+            }));
+        builder.<String>withRequestField("isp",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getIsp, (req, v) -> {
+                req.setIsp(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDomainStatsRequest, ShowDomainStatsResponse> showDomainStats =
         genForshowDomainStats();
 
@@ -573,13 +700,6 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowDomainStatsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             }));
-        builder.<Long>withRequestField("interval",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -594,6 +714,13 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowDomainStatsRequest::getStatType, (req, v) -> {
                 req.setStatType(v);
             }));
+        builder.<Long>withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowDomainStatsRequest::getInterval, (req, v) -> {
+                req.setInterval(v);
+            }));
         builder.<String>withRequestField("group_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -601,26 +728,12 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowDomainStatsRequest::getGroupBy, (req, v) -> {
                 req.setGroupBy(v);
             }));
-        builder.<String>withRequestField("country",
+        builder.<String>withRequestField("service_area",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getCountry, (req, v) -> {
-                req.setCountry(v);
-            }));
-        builder.<String>withRequestField("district",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getDistrict, (req, v) -> {
-                req.setDistrict(v);
-            }));
-        builder.<String>withRequestField("isp",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
+            f -> f.withMarshaller(ShowDomainStatsRequest::getServiceArea, (req, v) -> {
+                req.setServiceArea(v);
             }));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,

@@ -14,14 +14,14 @@ public class VusersBrokens {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vusers")
 
-    private List<Integer> vusers = null;
+    private List<Double> vusers = null;
 
-    public VusersBrokens withVusers(List<Integer> vusers) {
+    public VusersBrokens withVusers(List<Double> vusers) {
         this.vusers = vusers;
         return this;
     }
 
-    public VusersBrokens addVusersItem(Integer vusersItem) {
+    public VusersBrokens addVusersItem(Double vusersItem) {
         if (this.vusers == null) {
             this.vusers = new ArrayList<>();
         }
@@ -29,7 +29,7 @@ public class VusersBrokens {
         return this;
     }
 
-    public VusersBrokens withVusers(Consumer<List<Integer>> vusersSetter) {
+    public VusersBrokens withVusers(Consumer<List<Double>> vusersSetter) {
         if (this.vusers == null) {
             this.vusers = new ArrayList<>();
         }
@@ -40,11 +40,11 @@ public class VusersBrokens {
     /** vusers
      * 
      * @return vusers */
-    public List<Integer> getVusers() {
+    public List<Double> getVusers() {
         return vusers;
     }
 
-    public void setVusers(List<Integer> vusers) {
+    public void setVusers(List<Double> vusers) {
         this.vusers = vusers;
     }
 

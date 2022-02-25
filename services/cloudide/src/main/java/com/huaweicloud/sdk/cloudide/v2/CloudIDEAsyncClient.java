@@ -232,7 +232,7 @@ public class CloudIDEAsyncClient {
             hcClient);
     }
 
-    /** 查询某个组织下的IDE实例列表 查询某个组织下的IDE实例列表
+    /** 查询某个租户下的IDE实例列表 查询某个租户下的IDE实例列表
      *
      * @param ListOrgInstancesRequest 请求对象
      * @return CompletableFuture<ListOrgInstancesResponse> */
@@ -240,7 +240,7 @@ public class CloudIDEAsyncClient {
         return hcClient.asyncInvokeHttp(request, CloudIDEMeta.listOrgInstances);
     }
 
-    /** 查询某个组织下的IDE实例列表 查询某个组织下的IDE实例列表
+    /** 查询某个租户下的IDE实例列表 查询某个租户下的IDE实例列表
      *
      * @param ListOrgInstancesRequest 请求对象
      * @return AsyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse> */

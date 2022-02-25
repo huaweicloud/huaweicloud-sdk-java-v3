@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,30 +15,35 @@ public class UpdateBaremetalServerMetadataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private KeyValue metadata;
+    private Map<String, String> metadata = null;
 
-    public UpdateBaremetalServerMetadataResponse withMetadata(KeyValue metadata) {
+    public UpdateBaremetalServerMetadataResponse withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public UpdateBaremetalServerMetadataResponse withMetadata(Consumer<KeyValue> metadataSetter) {
+    public UpdateBaremetalServerMetadataResponse putMetadataItem(String key, String metadataItem) {
         if (this.metadata == null) {
-            this.metadata = new KeyValue();
-            metadataSetter.accept(this.metadata);
+            this.metadata = new HashMap<>();
         }
-
+        this.metadata.put(key, metadataItem);
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
-    public KeyValue getMetadata() {
+    public UpdateBaremetalServerMetadataResponse withMetadata(Consumer<Map<String, String>> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
+        metadataSetter.accept(this.metadata);
+        return this;
+    }
+
+    /** @return metadata */
+    public Map<String, String> getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(KeyValue metadata) {
+    public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
 

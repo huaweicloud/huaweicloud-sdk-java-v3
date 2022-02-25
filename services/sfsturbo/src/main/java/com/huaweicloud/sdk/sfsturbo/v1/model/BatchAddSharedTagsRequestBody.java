@@ -16,21 +16,17 @@ import java.util.function.Consumer;
 /** BatchAddSharedTagsRequestBody */
 public class BatchAddSharedTagsRequestBody {
 
-    /** 操作标识，取值范围为：“create”和“delete”。 为指定共享批量添加标签时使用“create”。 */
+    /** 操作标识，取值范围为：\"create\"。 为指定共享批量添加标签时使用\"create\"。 */
     public static final class ActionEnum {
 
-        /** Enum _CREATE_ for value: "“create”" */
-        public static final ActionEnum _CREATE_ = new ActionEnum("“create”");
-
-        /** Enum _DELETE_ for value: "“delete”" */
-        public static final ActionEnum _DELETE_ = new ActionEnum("“delete”");
+        /** Enum CREATE for value: "create" */
+        public static final ActionEnum CREATE = new ActionEnum("create");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ActionEnum> createStaticFields() {
             Map<String, ActionEnum> map = new HashMap<>();
-            map.put("“create”", _CREATE_);
-            map.put("“delete”", _DELETE_);
+            map.put("create", CREATE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -107,7 +103,7 @@ public class BatchAddSharedTagsRequestBody {
         return this;
     }
 
-    /** 操作标识，取值范围为：“create”和“delete”。 为指定共享批量添加标签时使用“create”。
+    /** 操作标识，取值范围为：\"create\"。 为指定共享批量添加标签时使用\"create\"。
      * 
      * @return action */
     public ActionEnum getAction() {

@@ -21,41 +21,41 @@ public class CreateNotificationRequestBody {
     /** 通知类型 0-设备上线通知 1-设备下线通知 2-设备添加通知 3-设备删除通知 4-设备变更通知 */
     public static final class TypeEnum {
 
-        /** Enum NUMBER_0 for value: 0l */
-        public static final TypeEnum NUMBER_0 = new TypeEnum(0l);
+        /** Enum NUMBER_0 for value: 0 */
+        public static final TypeEnum NUMBER_0 = new TypeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1l */
-        public static final TypeEnum NUMBER_1 = new TypeEnum(1l);
+        /** Enum NUMBER_1 for value: 1 */
+        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2l */
-        public static final TypeEnum NUMBER_2 = new TypeEnum(2l);
+        /** Enum NUMBER_2 for value: 2 */
+        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
 
-        /** Enum NUMBER_3 for value: 3l */
-        public static final TypeEnum NUMBER_3 = new TypeEnum(3l);
+        /** Enum NUMBER_3 for value: 3 */
+        public static final TypeEnum NUMBER_3 = new TypeEnum(3);
 
-        /** Enum NUMBER_4 for value: 4l */
-        public static final TypeEnum NUMBER_4 = new TypeEnum(4l);
+        /** Enum NUMBER_4 for value: 4 */
+        public static final TypeEnum NUMBER_4 = new TypeEnum(4);
 
-        private static final Map<Long, TypeEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<Long, TypeEnum> createStaticFields() {
-            Map<Long, TypeEnum> map = new HashMap<>();
-            map.put(0l, NUMBER_0);
-            map.put(1l, NUMBER_1);
-            map.put(2l, NUMBER_2);
-            map.put(3l, NUMBER_3);
-            map.put(4l, NUMBER_4);
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            map.put(4, NUMBER_4);
             return Collections.unmodifiableMap(map);
         }
 
-        private Long value;
+        private Integer value;
 
-        TypeEnum(Long value) {
+        TypeEnum(Integer value) {
             this.value = value;
         }
 
         @JsonValue
-        public Long getValue() {
+        public Integer getValue() {
             return value;
         }
 
@@ -65,7 +65,7 @@ public class CreateNotificationRequestBody {
         }
 
         @JsonCreator
-        public static TypeEnum fromValue(Long value) {
+        public static TypeEnum fromValue(Integer value) {
             if (value == null) {
                 return null;
             }
@@ -76,7 +76,7 @@ public class CreateNotificationRequestBody {
             return result;
         }
 
-        public static TypeEnum valueOf(Long value) {
+        public static TypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
@@ -114,29 +114,29 @@ public class CreateNotificationRequestBody {
     /** 启停状态 0-启用 1-停用 */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0l */
-        public static final StatusEnum NUMBER_0 = new StatusEnum(0l);
+        /** Enum NUMBER_0 for value: 0 */
+        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1l */
-        public static final StatusEnum NUMBER_1 = new StatusEnum(1l);
+        /** Enum NUMBER_1 for value: 1 */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
-        private static final Map<Long, StatusEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<Long, StatusEnum> createStaticFields() {
-            Map<Long, StatusEnum> map = new HashMap<>();
-            map.put(0l, NUMBER_0);
-            map.put(1l, NUMBER_1);
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
             return Collections.unmodifiableMap(map);
         }
 
-        private Long value;
+        private Integer value;
 
-        StatusEnum(Long value) {
+        StatusEnum(Integer value) {
             this.value = value;
         }
 
         @JsonValue
-        public Long getValue() {
+        public Integer getValue() {
             return value;
         }
 
@@ -146,7 +146,7 @@ public class CreateNotificationRequestBody {
         }
 
         @JsonCreator
-        public static StatusEnum fromValue(Long value) {
+        public static StatusEnum fromValue(Integer value) {
             if (value == null) {
                 return null;
             }
@@ -157,7 +157,7 @@ public class CreateNotificationRequestBody {
             return result;
         }
 
-        public static StatusEnum valueOf(Long value) {
+        public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }

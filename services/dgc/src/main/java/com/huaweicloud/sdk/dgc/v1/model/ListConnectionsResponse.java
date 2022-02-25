@@ -15,14 +15,14 @@ public class ListConnectionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
-    private String total;
+    private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connections")
 
     private List<ConnectionInfo> connections = null;
 
-    public ListConnectionsResponse withTotal(String total) {
+    public ListConnectionsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
@@ -30,11 +30,11 @@ public class ListConnectionsResponse extends SdkResponse {
     /** Get total
      * 
      * @return total */
-    public String getTotal() {
+    public Integer getTotal() {
         return total;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(Integer total) {
         this.total = total;
     }
 

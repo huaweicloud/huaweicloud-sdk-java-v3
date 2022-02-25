@@ -12,6 +12,70 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class ElbMeta {
 
+    public static final HttpRequestDef<BatchCreateMembersRequest, BatchCreateMembersResponse> batchCreateMembers =
+        genForbatchCreateMembers();
+
+    private static HttpRequestDef<BatchCreateMembersRequest, BatchCreateMembersResponse> genForbatchCreateMembers() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateMembersRequest, BatchCreateMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateMembersRequest.class, BatchCreateMembersResponse.class)
+                .withName("BatchCreateMembers")
+                .withUri("/v3/{project_id}/elb/pools/{pool_id}/members/batch-add")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateMembersRequest::getPoolId, (req, v) -> {
+                req.setPoolId(v);
+            }));
+        builder.<BatchCreateMembersRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateMembersRequestBody.class),
+            f -> f.withMarshaller(BatchCreateMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteMembersRequest, BatchDeleteMembersResponse> batchDeleteMembers =
+        genForbatchDeleteMembers();
+
+    private static HttpRequestDef<BatchDeleteMembersRequest, BatchDeleteMembersResponse> genForbatchDeleteMembers() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteMembersRequest, BatchDeleteMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteMembersRequest.class, BatchDeleteMembersResponse.class)
+                .withName("BatchDeleteMembers")
+                .withUri("/v3/{project_id}/elb/pools/{pool_id}/members/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteMembersRequest::getPoolId, (req, v) -> {
+                req.setPoolId(v);
+            }));
+        builder.<BatchDeleteMemberRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteMemberRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse> batchUpdatePoliciesPriority =
         genForbatchUpdatePoliciesPriority();
 

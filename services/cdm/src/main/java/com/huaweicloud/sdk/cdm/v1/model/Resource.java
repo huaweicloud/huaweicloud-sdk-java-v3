@@ -39,7 +39,7 @@ public class Resource {
         return this;
     }
 
-    /** 资源类型
+    /** 资源类型：server(服务器)
      * 
      * @return resourceType */
     public String getResourceType() {

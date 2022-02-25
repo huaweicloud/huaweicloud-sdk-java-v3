@@ -11,22 +11,22 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "averageRespTime")
 
-    private Float averageRespTime;
+    private Double averageRespTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgRecBytes")
 
-    private Float avgRecBytes;
+    private Double avgRecBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgSentBytes")
 
-    private Integer avgSentBytes;
+    private Double avgSentBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgTranRespTime")
 
-    private String avgTranRespTime;
+    private Double avgTranRespTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "caseUri")
@@ -41,7 +41,7 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currentThreadNum")
 
-    private Integer currentThreadNum;
+    private Double currentThreadNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detailId")
@@ -56,37 +56,37 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "errorCount")
 
-    private Integer errorCount;
+    private Double errorCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "errorEventsCount")
 
-    private Integer errorEventsCount;
+    private Double errorEventsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedAssert")
 
-    private Integer failedAssert;
+    private Double failedAssert;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedOthers")
 
-    private Integer failedOthers;
+    private Double failedOthers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedParsed")
 
-    private Integer failedParsed;
+    private Double failedParsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedRefused")
 
-    private Integer failedRefused;
+    private Double failedRefused;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedTimeout")
 
-    private Integer failedTimeout;
+    private Double failedTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -101,32 +101,37 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
-    private Integer max;
+    private Double max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxRecBytes")
 
-    private Integer maxRecBytes;
+    private Double maxRecBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxRespTime")
 
-    private Integer maxRespTime;
+    private Double maxRespTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxSentBytes")
 
-    private Integer maxSentBytes;
+    private Double maxSentBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTranRespTime")
 
-    private Integer maxTranRespTime;
+    private Double maxTranRespTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
 
-    private Integer min;
+    private Double min;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "minNetworkTraffic")
+
+    private Double minNetworkTraffic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -136,12 +141,12 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requests")
 
-    private Integer requests;
+    private Double requests;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private Integer result;
+    private Double result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
@@ -151,42 +156,42 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private Double status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "successCount")
 
-    private Integer successCount;
+    private Double successCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "successRate")
 
-    private Integer successRate;
+    private Double successRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum1xx")
 
-    private Integer sum1xx;
+    private Double sum1xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum2xx")
 
-    private Integer sum2xx;
+    private Double sum2xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum3xx")
 
-    private Integer sum3xx;
+    private Double sum3xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum4xx")
 
-    private Integer sum4xx;
+    private Double sum4xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum5xx")
 
-    private Integer sum5xx;
+    private Double sum5xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taskId")
@@ -201,7 +206,7 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taskStatus")
 
-    private Integer taskStatus;
+    private Double taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "testCaseUri")
@@ -211,37 +216,37 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp50")
 
-    private Integer tp50;
+    private Double tp50;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp75")
 
-    private Integer tp75;
+    private Double tp75;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp90")
 
-    private Integer tp90;
+    private Double tp90;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp95")
 
-    private Integer tp95;
+    private Double tp95;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp99")
 
-    private Integer tp99;
+    private Double tp99;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tps")
 
-    private Float tps;
+    private Double tps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tranTPS")
 
-    private String tranTPS;
+    private Double tranTPS;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionId")
@@ -251,27 +256,27 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionSuccess")
 
-    private String transactionSuccess;
+    private Double transactionSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionalSuccessRate")
 
-    private Integer transactionalSuccessRate;
+    private Double transactionalSuccessRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionalTps")
 
-    private Integer transactionalTps;
+    private Double transactionalTps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionalTpsSuccess")
 
-    private Integer transactionalTpsSuccess;
+    private Double transactionalTpsSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactions")
 
-    private String transactions;
+    private Double transactions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTime")
@@ -281,69 +286,79 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vum")
 
-    private Integer vum;
+    private Double vum;
 
-    public DetailDataInfo withAverageRespTime(Float averageRespTime) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "avgNetworkTraffic")
+
+    private Double avgNetworkTraffic;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maxNetworkTraffic")
+
+    private Double maxNetworkTraffic;
+
+    public DetailDataInfo withAverageRespTime(Double averageRespTime) {
         this.averageRespTime = averageRespTime;
         return this;
     }
 
-    /** averageRespTime
+    /** 平均响应时间
      * 
      * @return averageRespTime */
-    public Float getAverageRespTime() {
+    public Double getAverageRespTime() {
         return averageRespTime;
     }
 
-    public void setAverageRespTime(Float averageRespTime) {
+    public void setAverageRespTime(Double averageRespTime) {
         this.averageRespTime = averageRespTime;
     }
 
-    public DetailDataInfo withAvgRecBytes(Float avgRecBytes) {
+    public DetailDataInfo withAvgRecBytes(Double avgRecBytes) {
         this.avgRecBytes = avgRecBytes;
         return this;
     }
 
-    /** avgRecBytes
+    /** 平均接收字节数
      * 
      * @return avgRecBytes */
-    public Float getAvgRecBytes() {
+    public Double getAvgRecBytes() {
         return avgRecBytes;
     }
 
-    public void setAvgRecBytes(Float avgRecBytes) {
+    public void setAvgRecBytes(Double avgRecBytes) {
         this.avgRecBytes = avgRecBytes;
     }
 
-    public DetailDataInfo withAvgSentBytes(Integer avgSentBytes) {
+    public DetailDataInfo withAvgSentBytes(Double avgSentBytes) {
         this.avgSentBytes = avgSentBytes;
         return this;
     }
 
-    /** avgSentBytes
+    /** 平均发送字节数
      * 
      * @return avgSentBytes */
-    public Integer getAvgSentBytes() {
+    public Double getAvgSentBytes() {
         return avgSentBytes;
     }
 
-    public void setAvgSentBytes(Integer avgSentBytes) {
+    public void setAvgSentBytes(Double avgSentBytes) {
         this.avgSentBytes = avgSentBytes;
     }
 
-    public DetailDataInfo withAvgTranRespTime(String avgTranRespTime) {
+    public DetailDataInfo withAvgTranRespTime(Double avgTranRespTime) {
         this.avgTranRespTime = avgTranRespTime;
         return this;
     }
 
-    /** avgTranRespTime
+    /** 事务平均响应时间
      * 
      * @return avgTranRespTime */
-    public String getAvgTranRespTime() {
+    public Double getAvgTranRespTime() {
         return avgTranRespTime;
     }
 
-    public void setAvgTranRespTime(String avgTranRespTime) {
+    public void setAvgTranRespTime(Double avgTranRespTime) {
         this.avgTranRespTime = avgTranRespTime;
     }
 
@@ -352,7 +367,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** caseUri
+    /** 用例Uri
      * 
      * @return caseUri */
     public String getCaseUri() {
@@ -368,7 +383,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** createTime
+    /** 创建时间
      * 
      * @return createTime */
     public String getCreateTime() {
@@ -379,19 +394,19 @@ public class DetailDataInfo {
         this.createTime = createTime;
     }
 
-    public DetailDataInfo withCurrentThreadNum(Integer currentThreadNum) {
+    public DetailDataInfo withCurrentThreadNum(Double currentThreadNum) {
         this.currentThreadNum = currentThreadNum;
         return this;
     }
 
-    /** currentThreadNum
+    /** 最大并发数
      * 
      * @return currentThreadNum */
-    public Integer getCurrentThreadNum() {
+    public Double getCurrentThreadNum() {
         return currentThreadNum;
     }
 
-    public void setCurrentThreadNum(Integer currentThreadNum) {
+    public void setCurrentThreadNum(Double currentThreadNum) {
         this.currentThreadNum = currentThreadNum;
     }
 
@@ -400,7 +415,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** detailId
+    /** 详情id
      * 
      * @return detailId */
     public String getDetailId() {
@@ -416,7 +431,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** endTime
+    /** 结束时间
      * 
      * @return endTime */
     public String getEndTime() {
@@ -427,115 +442,115 @@ public class DetailDataInfo {
         this.endTime = endTime;
     }
 
-    public DetailDataInfo withErrorCount(Integer errorCount) {
+    public DetailDataInfo withErrorCount(Double errorCount) {
         this.errorCount = errorCount;
         return this;
     }
 
-    /** errorCount
+    /** 失败请求数
      * 
      * @return errorCount */
-    public Integer getErrorCount() {
+    public Double getErrorCount() {
         return errorCount;
     }
 
-    public void setErrorCount(Integer errorCount) {
+    public void setErrorCount(Double errorCount) {
         this.errorCount = errorCount;
     }
 
-    public DetailDataInfo withErrorEventsCount(Integer errorEventsCount) {
+    public DetailDataInfo withErrorEventsCount(Double errorEventsCount) {
         this.errorEventsCount = errorEventsCount;
         return this;
     }
 
-    /** errorEventsCount
+    /** ERROR级别的事件个数
      * 
      * @return errorEventsCount */
-    public Integer getErrorEventsCount() {
+    public Double getErrorEventsCount() {
         return errorEventsCount;
     }
 
-    public void setErrorEventsCount(Integer errorEventsCount) {
+    public void setErrorEventsCount(Double errorEventsCount) {
         this.errorEventsCount = errorEventsCount;
     }
 
-    public DetailDataInfo withFailedAssert(Integer failedAssert) {
+    public DetailDataInfo withFailedAssert(Double failedAssert) {
         this.failedAssert = failedAssert;
         return this;
     }
 
-    /** failedAssert
+    /** 断言失败
      * 
      * @return failedAssert */
-    public Integer getFailedAssert() {
+    public Double getFailedAssert() {
         return failedAssert;
     }
 
-    public void setFailedAssert(Integer failedAssert) {
+    public void setFailedAssert(Double failedAssert) {
         this.failedAssert = failedAssert;
     }
 
-    public DetailDataInfo withFailedOthers(Integer failedOthers) {
+    public DetailDataInfo withFailedOthers(Double failedOthers) {
         this.failedOthers = failedOthers;
         return this;
     }
 
-    /** failedOthers
+    /** 其他失败
      * 
      * @return failedOthers */
-    public Integer getFailedOthers() {
+    public Double getFailedOthers() {
         return failedOthers;
     }
 
-    public void setFailedOthers(Integer failedOthers) {
+    public void setFailedOthers(Double failedOthers) {
         this.failedOthers = failedOthers;
     }
 
-    public DetailDataInfo withFailedParsed(Integer failedParsed) {
+    public DetailDataInfo withFailedParsed(Double failedParsed) {
         this.failedParsed = failedParsed;
         return this;
     }
 
-    /** failedParsed
+    /** 解析失败
      * 
      * @return failedParsed */
-    public Integer getFailedParsed() {
+    public Double getFailedParsed() {
         return failedParsed;
     }
 
-    public void setFailedParsed(Integer failedParsed) {
+    public void setFailedParsed(Double failedParsed) {
         this.failedParsed = failedParsed;
     }
 
-    public DetailDataInfo withFailedRefused(Integer failedRefused) {
+    public DetailDataInfo withFailedRefused(Double failedRefused) {
         this.failedRefused = failedRefused;
         return this;
     }
 
-    /** failedRefused
+    /** 连接被拒
      * 
      * @return failedRefused */
-    public Integer getFailedRefused() {
+    public Double getFailedRefused() {
         return failedRefused;
     }
 
-    public void setFailedRefused(Integer failedRefused) {
+    public void setFailedRefused(Double failedRefused) {
         this.failedRefused = failedRefused;
     }
 
-    public DetailDataInfo withFailedTimeout(Integer failedTimeout) {
+    public DetailDataInfo withFailedTimeout(Double failedTimeout) {
         this.failedTimeout = failedTimeout;
         return this;
     }
 
-    /** failedTimeout
+    /** 超时失败
      * 
      * @return failedTimeout */
-    public Integer getFailedTimeout() {
+    public Double getFailedTimeout() {
         return failedTimeout;
     }
 
-    public void setFailedTimeout(Integer failedTimeout) {
+    public void setFailedTimeout(Double failedTimeout) {
         this.failedTimeout = failedTimeout;
     }
 
@@ -560,7 +575,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** isAW
+    /** 是否aw
      * 
      * @return isAW */
     public Boolean getIsAW() {
@@ -571,100 +586,116 @@ public class DetailDataInfo {
         this.isAW = isAW;
     }
 
-    public DetailDataInfo withMax(Integer max) {
+    public DetailDataInfo withMax(Double max) {
         this.max = max;
         return this;
     }
 
-    /** max
+    /** 最大响应时间
      * 
      * @return max */
-    public Integer getMax() {
+    public Double getMax() {
         return max;
     }
 
-    public void setMax(Integer max) {
+    public void setMax(Double max) {
         this.max = max;
     }
 
-    public DetailDataInfo withMaxRecBytes(Integer maxRecBytes) {
+    public DetailDataInfo withMaxRecBytes(Double maxRecBytes) {
         this.maxRecBytes = maxRecBytes;
         return this;
     }
 
-    /** maxRecBytes
+    /** 最大接收字节数
      * 
      * @return maxRecBytes */
-    public Integer getMaxRecBytes() {
+    public Double getMaxRecBytes() {
         return maxRecBytes;
     }
 
-    public void setMaxRecBytes(Integer maxRecBytes) {
+    public void setMaxRecBytes(Double maxRecBytes) {
         this.maxRecBytes = maxRecBytes;
     }
 
-    public DetailDataInfo withMaxRespTime(Integer maxRespTime) {
+    public DetailDataInfo withMaxRespTime(Double maxRespTime) {
         this.maxRespTime = maxRespTime;
         return this;
     }
 
-    /** maxRespTime
+    /** 探底最大响应时间
      * 
      * @return maxRespTime */
-    public Integer getMaxRespTime() {
+    public Double getMaxRespTime() {
         return maxRespTime;
     }
 
-    public void setMaxRespTime(Integer maxRespTime) {
+    public void setMaxRespTime(Double maxRespTime) {
         this.maxRespTime = maxRespTime;
     }
 
-    public DetailDataInfo withMaxSentBytes(Integer maxSentBytes) {
+    public DetailDataInfo withMaxSentBytes(Double maxSentBytes) {
         this.maxSentBytes = maxSentBytes;
         return this;
     }
 
-    /** maxSentBytes
+    /** 最大发送字节数
      * 
      * @return maxSentBytes */
-    public Integer getMaxSentBytes() {
+    public Double getMaxSentBytes() {
         return maxSentBytes;
     }
 
-    public void setMaxSentBytes(Integer maxSentBytes) {
+    public void setMaxSentBytes(Double maxSentBytes) {
         this.maxSentBytes = maxSentBytes;
     }
 
-    public DetailDataInfo withMaxTranRespTime(Integer maxTranRespTime) {
+    public DetailDataInfo withMaxTranRespTime(Double maxTranRespTime) {
         this.maxTranRespTime = maxTranRespTime;
         return this;
     }
 
-    /** maxTranRespTime
+    /** 事务最大响应时间
      * 
      * @return maxTranRespTime */
-    public Integer getMaxTranRespTime() {
+    public Double getMaxTranRespTime() {
         return maxTranRespTime;
     }
 
-    public void setMaxTranRespTime(Integer maxTranRespTime) {
+    public void setMaxTranRespTime(Double maxTranRespTime) {
         this.maxTranRespTime = maxTranRespTime;
     }
 
-    public DetailDataInfo withMin(Integer min) {
+    public DetailDataInfo withMin(Double min) {
         this.min = min;
         return this;
     }
 
-    /** min
+    /** 最小响应时间
      * 
      * @return min */
-    public Integer getMin() {
+    public Double getMin() {
         return min;
     }
 
-    public void setMin(Integer min) {
+    public void setMin(Double min) {
         this.min = min;
+    }
+
+    public DetailDataInfo withMinNetworkTraffic(Double minNetworkTraffic) {
+        this.minNetworkTraffic = minNetworkTraffic;
+        return this;
+    }
+
+    /** 最小带宽
+     * 
+     * @return minNetworkTraffic */
+    public Double getMinNetworkTraffic() {
+        return minNetworkTraffic;
+    }
+
+    public void setMinNetworkTraffic(Double minNetworkTraffic) {
+        this.minNetworkTraffic = minNetworkTraffic;
     }
 
     public DetailDataInfo withName(String name) {
@@ -672,7 +703,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** name
+    /** 名字
      * 
      * @return name */
     public String getName() {
@@ -683,35 +714,35 @@ public class DetailDataInfo {
         this.name = name;
     }
 
-    public DetailDataInfo withRequests(Integer requests) {
+    public DetailDataInfo withRequests(Double requests) {
         this.requests = requests;
         return this;
     }
 
-    /** requests
+    /** 请求数
      * 
      * @return requests */
-    public Integer getRequests() {
+    public Double getRequests() {
         return requests;
     }
 
-    public void setRequests(Integer requests) {
+    public void setRequests(Double requests) {
         this.requests = requests;
     }
 
-    public DetailDataInfo withResult(Integer result) {
+    public DetailDataInfo withResult(Double result) {
         this.result = result;
         return this;
     }
 
-    /** result
+    /** aw执行结果
      * 
      * @return result */
-    public Integer getResult() {
+    public Double getResult() {
         return result;
     }
 
-    public void setResult(Integer result) {
+    public void setResult(Double result) {
         this.result = result;
     }
 
@@ -720,7 +751,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** startTime
+    /** 开始时间
      * 
      * @return startTime */
     public String getStartTime() {
@@ -731,131 +762,131 @@ public class DetailDataInfo {
         this.startTime = startTime;
     }
 
-    public DetailDataInfo withStatus(Integer status) {
+    public DetailDataInfo withStatus(Double status) {
         this.status = status;
         return this;
     }
 
-    /** status
+    /** 用例状态
      * 
      * @return status */
-    public Integer getStatus() {
+    public Double getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(Double status) {
         this.status = status;
     }
 
-    public DetailDataInfo withSuccessCount(Integer successCount) {
+    public DetailDataInfo withSuccessCount(Double successCount) {
         this.successCount = successCount;
         return this;
     }
 
-    /** successCount
+    /** 成功请求数
      * 
      * @return successCount */
-    public Integer getSuccessCount() {
+    public Double getSuccessCount() {
         return successCount;
     }
 
-    public void setSuccessCount(Integer successCount) {
+    public void setSuccessCount(Double successCount) {
         this.successCount = successCount;
     }
 
-    public DetailDataInfo withSuccessRate(Integer successRate) {
+    public DetailDataInfo withSuccessRate(Double successRate) {
         this.successRate = successRate;
         return this;
     }
 
-    /** successRate
+    /** 成功率
      * 
      * @return successRate */
-    public Integer getSuccessRate() {
+    public Double getSuccessRate() {
         return successRate;
     }
 
-    public void setSuccessRate(Integer successRate) {
+    public void setSuccessRate(Double successRate) {
         this.successRate = successRate;
     }
 
-    public DetailDataInfo withSum1xx(Integer sum1xx) {
+    public DetailDataInfo withSum1xx(Double sum1xx) {
         this.sum1xx = sum1xx;
         return this;
     }
 
-    /** sum1xx
+    /** 1xx请求数
      * 
      * @return sum1xx */
-    public Integer getSum1xx() {
+    public Double getSum1xx() {
         return sum1xx;
     }
 
-    public void setSum1xx(Integer sum1xx) {
+    public void setSum1xx(Double sum1xx) {
         this.sum1xx = sum1xx;
     }
 
-    public DetailDataInfo withSum2xx(Integer sum2xx) {
+    public DetailDataInfo withSum2xx(Double sum2xx) {
         this.sum2xx = sum2xx;
         return this;
     }
 
-    /** sum2xx
+    /** 2xx请求数
      * 
      * @return sum2xx */
-    public Integer getSum2xx() {
+    public Double getSum2xx() {
         return sum2xx;
     }
 
-    public void setSum2xx(Integer sum2xx) {
+    public void setSum2xx(Double sum2xx) {
         this.sum2xx = sum2xx;
     }
 
-    public DetailDataInfo withSum3xx(Integer sum3xx) {
+    public DetailDataInfo withSum3xx(Double sum3xx) {
         this.sum3xx = sum3xx;
         return this;
     }
 
-    /** sum3xx
+    /** 3xx请求数
      * 
      * @return sum3xx */
-    public Integer getSum3xx() {
+    public Double getSum3xx() {
         return sum3xx;
     }
 
-    public void setSum3xx(Integer sum3xx) {
+    public void setSum3xx(Double sum3xx) {
         this.sum3xx = sum3xx;
     }
 
-    public DetailDataInfo withSum4xx(Integer sum4xx) {
+    public DetailDataInfo withSum4xx(Double sum4xx) {
         this.sum4xx = sum4xx;
         return this;
     }
 
-    /** sum4xx
+    /** 4xx请求数
      * 
      * @return sum4xx */
-    public Integer getSum4xx() {
+    public Double getSum4xx() {
         return sum4xx;
     }
 
-    public void setSum4xx(Integer sum4xx) {
+    public void setSum4xx(Double sum4xx) {
         this.sum4xx = sum4xx;
     }
 
-    public DetailDataInfo withSum5xx(Integer sum5xx) {
+    public DetailDataInfo withSum5xx(Double sum5xx) {
         this.sum5xx = sum5xx;
         return this;
     }
 
-    /** sum5xx
+    /** 5xx请求数
      * 
      * @return sum5xx */
-    public Integer getSum5xx() {
+    public Double getSum5xx() {
         return sum5xx;
     }
 
-    public void setSum5xx(Integer sum5xx) {
+    public void setSum5xx(Double sum5xx) {
         this.sum5xx = sum5xx;
     }
 
@@ -864,7 +895,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** taskId
+    /** 任务id_轮次
      * 
      * @return taskId */
     public String getTaskId() {
@@ -880,7 +911,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** taskProjectId
+    /** 任务id
      * 
      * @return taskProjectId */
     public String getTaskProjectId() {
@@ -891,19 +922,19 @@ public class DetailDataInfo {
         this.taskProjectId = taskProjectId;
     }
 
-    public DetailDataInfo withTaskStatus(Integer taskStatus) {
+    public DetailDataInfo withTaskStatus(Double taskStatus) {
         this.taskStatus = taskStatus;
         return this;
     }
 
-    /** taskStatus
+    /** 任务状态
      * 
      * @return taskStatus */
-    public Integer getTaskStatus() {
+    public Double getTaskStatus() {
         return taskStatus;
     }
 
-    public void setTaskStatus(Integer taskStatus) {
+    public void setTaskStatus(Double taskStatus) {
         this.taskStatus = taskStatus;
     }
 
@@ -912,7 +943,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** testCaseUri
+    /** 用例uri
      * 
      * @return testCaseUri */
     public String getTestCaseUri() {
@@ -923,7 +954,7 @@ public class DetailDataInfo {
         this.testCaseUri = testCaseUri;
     }
 
-    public DetailDataInfo withTp50(Integer tp50) {
+    public DetailDataInfo withTp50(Double tp50) {
         this.tp50 = tp50;
         return this;
     }
@@ -931,15 +962,15 @@ public class DetailDataInfo {
     /** tp50
      * 
      * @return tp50 */
-    public Integer getTp50() {
+    public Double getTp50() {
         return tp50;
     }
 
-    public void setTp50(Integer tp50) {
+    public void setTp50(Double tp50) {
         this.tp50 = tp50;
     }
 
-    public DetailDataInfo withTp75(Integer tp75) {
+    public DetailDataInfo withTp75(Double tp75) {
         this.tp75 = tp75;
         return this;
     }
@@ -947,15 +978,15 @@ public class DetailDataInfo {
     /** tp75
      * 
      * @return tp75 */
-    public Integer getTp75() {
+    public Double getTp75() {
         return tp75;
     }
 
-    public void setTp75(Integer tp75) {
+    public void setTp75(Double tp75) {
         this.tp75 = tp75;
     }
 
-    public DetailDataInfo withTp90(Integer tp90) {
+    public DetailDataInfo withTp90(Double tp90) {
         this.tp90 = tp90;
         return this;
     }
@@ -963,15 +994,15 @@ public class DetailDataInfo {
     /** tp90
      * 
      * @return tp90 */
-    public Integer getTp90() {
+    public Double getTp90() {
         return tp90;
     }
 
-    public void setTp90(Integer tp90) {
+    public void setTp90(Double tp90) {
         this.tp90 = tp90;
     }
 
-    public DetailDataInfo withTp95(Integer tp95) {
+    public DetailDataInfo withTp95(Double tp95) {
         this.tp95 = tp95;
         return this;
     }
@@ -979,15 +1010,15 @@ public class DetailDataInfo {
     /** tp95
      * 
      * @return tp95 */
-    public Integer getTp95() {
+    public Double getTp95() {
         return tp95;
     }
 
-    public void setTp95(Integer tp95) {
+    public void setTp95(Double tp95) {
         this.tp95 = tp95;
     }
 
-    public DetailDataInfo withTp99(Integer tp99) {
+    public DetailDataInfo withTp99(Double tp99) {
         this.tp99 = tp99;
         return this;
     }
@@ -995,15 +1026,15 @@ public class DetailDataInfo {
     /** tp99
      * 
      * @return tp99 */
-    public Integer getTp99() {
+    public Double getTp99() {
         return tp99;
     }
 
-    public void setTp99(Integer tp99) {
+    public void setTp99(Double tp99) {
         this.tp99 = tp99;
     }
 
-    public DetailDataInfo withTps(Float tps) {
+    public DetailDataInfo withTps(Double tps) {
         this.tps = tps;
         return this;
     }
@@ -1011,27 +1042,27 @@ public class DetailDataInfo {
     /** tps
      * 
      * @return tps */
-    public Float getTps() {
+    public Double getTps() {
         return tps;
     }
 
-    public void setTps(Float tps) {
+    public void setTps(Double tps) {
         this.tps = tps;
     }
 
-    public DetailDataInfo withTranTPS(String tranTPS) {
+    public DetailDataInfo withTranTPS(Double tranTPS) {
         this.tranTPS = tranTPS;
         return this;
     }
 
-    /** tranTPS
+    /** 事务tps
      * 
      * @return tranTPS */
-    public String getTranTPS() {
+    public Double getTranTPS() {
         return tranTPS;
     }
 
-    public void setTranTPS(String tranTPS) {
+    public void setTranTPS(Double tranTPS) {
         this.tranTPS = tranTPS;
     }
 
@@ -1040,7 +1071,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** transactionId
+    /** 事务id
      * 
      * @return transactionId */
     public String getTransactionId() {
@@ -1051,83 +1082,83 @@ public class DetailDataInfo {
         this.transactionId = transactionId;
     }
 
-    public DetailDataInfo withTransactionSuccess(String transactionSuccess) {
+    public DetailDataInfo withTransactionSuccess(Double transactionSuccess) {
         this.transactionSuccess = transactionSuccess;
         return this;
     }
 
-    /** transactionSuccess
+    /** 事务成功率
      * 
      * @return transactionSuccess */
-    public String getTransactionSuccess() {
+    public Double getTransactionSuccess() {
         return transactionSuccess;
     }
 
-    public void setTransactionSuccess(String transactionSuccess) {
+    public void setTransactionSuccess(Double transactionSuccess) {
         this.transactionSuccess = transactionSuccess;
     }
 
-    public DetailDataInfo withTransactionalSuccessRate(Integer transactionalSuccessRate) {
+    public DetailDataInfo withTransactionalSuccessRate(Double transactionalSuccessRate) {
         this.transactionalSuccessRate = transactionalSuccessRate;
         return this;
     }
 
-    /** transactionalSuccessRate
+    /** 事务成功率
      * 
      * @return transactionalSuccessRate */
-    public Integer getTransactionalSuccessRate() {
+    public Double getTransactionalSuccessRate() {
         return transactionalSuccessRate;
     }
 
-    public void setTransactionalSuccessRate(Integer transactionalSuccessRate) {
+    public void setTransactionalSuccessRate(Double transactionalSuccessRate) {
         this.transactionalSuccessRate = transactionalSuccessRate;
     }
 
-    public DetailDataInfo withTransactionalTps(Integer transactionalTps) {
+    public DetailDataInfo withTransactionalTps(Double transactionalTps) {
         this.transactionalTps = transactionalTps;
         return this;
     }
 
-    /** transactionalTps
+    /** 自定义事务tps
      * 
      * @return transactionalTps */
-    public Integer getTransactionalTps() {
+    public Double getTransactionalTps() {
         return transactionalTps;
     }
 
-    public void setTransactionalTps(Integer transactionalTps) {
+    public void setTransactionalTps(Double transactionalTps) {
         this.transactionalTps = transactionalTps;
     }
 
-    public DetailDataInfo withTransactionalTpsSuccess(Integer transactionalTpsSuccess) {
+    public DetailDataInfo withTransactionalTpsSuccess(Double transactionalTpsSuccess) {
         this.transactionalTpsSuccess = transactionalTpsSuccess;
         return this;
     }
 
-    /** transactionalTpsSuccess
+    /** 自定义事务成功率
      * 
      * @return transactionalTpsSuccess */
-    public Integer getTransactionalTpsSuccess() {
+    public Double getTransactionalTpsSuccess() {
         return transactionalTpsSuccess;
     }
 
-    public void setTransactionalTpsSuccess(Integer transactionalTpsSuccess) {
+    public void setTransactionalTpsSuccess(Double transactionalTpsSuccess) {
         this.transactionalTpsSuccess = transactionalTpsSuccess;
     }
 
-    public DetailDataInfo withTransactions(String transactions) {
+    public DetailDataInfo withTransactions(Double transactions) {
         this.transactions = transactions;
         return this;
     }
 
-    /** transactions
+    /** 事务数
      * 
      * @return transactions */
-    public String getTransactions() {
+    public Double getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(String transactions) {
+    public void setTransactions(Double transactions) {
         this.transactions = transactions;
     }
 
@@ -1136,7 +1167,7 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** updateTime
+    /** 更新时间
      * 
      * @return updateTime */
     public String getUpdateTime() {
@@ -1147,20 +1178,52 @@ public class DetailDataInfo {
         this.updateTime = updateTime;
     }
 
-    public DetailDataInfo withVum(Integer vum) {
+    public DetailDataInfo withVum(Double vum) {
         this.vum = vum;
         return this;
     }
 
-    /** vum
+    /** 分钟*并发数
      * 
      * @return vum */
-    public Integer getVum() {
+    public Double getVum() {
         return vum;
     }
 
-    public void setVum(Integer vum) {
+    public void setVum(Double vum) {
         this.vum = vum;
+    }
+
+    public DetailDataInfo withAvgNetworkTraffic(Double avgNetworkTraffic) {
+        this.avgNetworkTraffic = avgNetworkTraffic;
+        return this;
+    }
+
+    /** 平均带宽
+     * 
+     * @return avgNetworkTraffic */
+    public Double getAvgNetworkTraffic() {
+        return avgNetworkTraffic;
+    }
+
+    public void setAvgNetworkTraffic(Double avgNetworkTraffic) {
+        this.avgNetworkTraffic = avgNetworkTraffic;
+    }
+
+    public DetailDataInfo withMaxNetworkTraffic(Double maxNetworkTraffic) {
+        this.maxNetworkTraffic = maxNetworkTraffic;
+        return this;
+    }
+
+    /** 最大带宽
+     * 
+     * @return maxNetworkTraffic */
+    public Double getMaxNetworkTraffic() {
+        return maxNetworkTraffic;
+    }
+
+    public void setMaxNetworkTraffic(Double maxNetworkTraffic) {
+        this.maxNetworkTraffic = maxNetworkTraffic;
     }
 
     @Override
@@ -1194,8 +1257,9 @@ public class DetailDataInfo {
             && Objects.equals(this.maxRespTime, detailDataInfo.maxRespTime)
             && Objects.equals(this.maxSentBytes, detailDataInfo.maxSentBytes)
             && Objects.equals(this.maxTranRespTime, detailDataInfo.maxTranRespTime)
-            && Objects.equals(this.min, detailDataInfo.min) && Objects.equals(this.name, detailDataInfo.name)
-            && Objects.equals(this.requests, detailDataInfo.requests)
+            && Objects.equals(this.min, detailDataInfo.min)
+            && Objects.equals(this.minNetworkTraffic, detailDataInfo.minNetworkTraffic)
+            && Objects.equals(this.name, detailDataInfo.name) && Objects.equals(this.requests, detailDataInfo.requests)
             && Objects.equals(this.result, detailDataInfo.result)
             && Objects.equals(this.startTime, detailDataInfo.startTime)
             && Objects.equals(this.status, detailDataInfo.status)
@@ -1218,7 +1282,9 @@ public class DetailDataInfo {
             && Objects.equals(this.transactionalTpsSuccess, detailDataInfo.transactionalTpsSuccess)
             && Objects.equals(this.transactions, detailDataInfo.transactions)
             && Objects.equals(this.updateTime, detailDataInfo.updateTime)
-            && Objects.equals(this.vum, detailDataInfo.vum);
+            && Objects.equals(this.vum, detailDataInfo.vum)
+            && Objects.equals(this.avgNetworkTraffic, detailDataInfo.avgNetworkTraffic)
+            && Objects.equals(this.maxNetworkTraffic, detailDataInfo.maxNetworkTraffic);
     }
 
     @Override
@@ -1247,6 +1313,7 @@ public class DetailDataInfo {
             maxSentBytes,
             maxTranRespTime,
             min,
+            minNetworkTraffic,
             name,
             requests,
             result,
@@ -1277,7 +1344,9 @@ public class DetailDataInfo {
             transactionalTpsSuccess,
             transactions,
             updateTime,
-            vum);
+            vum,
+            avgNetworkTraffic,
+            maxNetworkTraffic);
     }
 
     @Override
@@ -1308,6 +1377,7 @@ public class DetailDataInfo {
         sb.append("    maxSentBytes: ").append(toIndentedString(maxSentBytes)).append("\n");
         sb.append("    maxTranRespTime: ").append(toIndentedString(maxTranRespTime)).append("\n");
         sb.append("    min: ").append(toIndentedString(min)).append("\n");
+        sb.append("    minNetworkTraffic: ").append(toIndentedString(minNetworkTraffic)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    requests: ").append(toIndentedString(requests)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
@@ -1339,6 +1409,8 @@ public class DetailDataInfo {
         sb.append("    transactions: ").append(toIndentedString(transactions)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    vum: ").append(toIndentedString(vum)).append("\n");
+        sb.append("    avgNetworkTraffic: ").append(toIndentedString(avgNetworkTraffic)).append("\n");
+        sb.append("    maxNetworkTraffic: ").append(toIndentedString(maxNetworkTraffic)).append("\n");
         sb.append("}");
         return sb.toString();
     }

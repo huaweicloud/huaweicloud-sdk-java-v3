@@ -24,7 +24,7 @@ public class UpdateSnapshotSettingRequest {
         return this;
     }
 
-    /** 指定要备份的集群ID。
+    /** 指定待修改的集群ID。
      * 
      * @return clusterId */
     public String getClusterId() {

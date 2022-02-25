@@ -1656,10 +1656,85 @@ public class Content {
 
     private SnmpNetworkProtocolEnum snmpNetworkProtocol;
 
+    /** SNMP版本号 */
+    public static final class SnmpVersionEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final SnmpVersionEnum NUMBER_0 = new SnmpVersionEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final SnmpVersionEnum NUMBER_1 = new SnmpVersionEnum(1);
+
+        /** Enum NUMBER_3 for value: 3 */
+        public static final SnmpVersionEnum NUMBER_3 = new SnmpVersionEnum(3);
+
+        private static final Map<Integer, SnmpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, SnmpVersionEnum> createStaticFields() {
+            Map<Integer, SnmpVersionEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(3, NUMBER_3);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        SnmpVersionEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SnmpVersionEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            SnmpVersionEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new SnmpVersionEnum(value);
+            }
+            return result;
+        }
+
+        public static SnmpVersionEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            SnmpVersionEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SnmpVersionEnum) {
+                return this.value.equals(((SnmpVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snmp_version")
 
-    private Integer snmpVersion;
+    private SnmpVersionEnum snmpVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snmp_community")
@@ -2622,7 +2697,7 @@ public class Content {
         this.snmpNetworkProtocol = snmpNetworkProtocol;
     }
 
-    public Content withSnmpVersion(Integer snmpVersion) {
+    public Content withSnmpVersion(SnmpVersionEnum snmpVersion) {
         this.snmpVersion = snmpVersion;
         return this;
     }
@@ -2630,11 +2705,11 @@ public class Content {
     /** SNMP版本号 minimum: 0 maximum: 3
      * 
      * @return snmpVersion */
-    public Integer getSnmpVersion() {
+    public SnmpVersionEnum getSnmpVersion() {
         return snmpVersion;
     }
 
-    public void setSnmpVersion(Integer snmpVersion) {
+    public void setSnmpVersion(SnmpVersionEnum snmpVersion) {
         this.snmpVersion = snmpVersion;
     }
 

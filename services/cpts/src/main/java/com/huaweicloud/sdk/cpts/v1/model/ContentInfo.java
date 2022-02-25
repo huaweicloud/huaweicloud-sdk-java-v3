@@ -19,7 +19,7 @@ public class ContentInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bodys")
 
-    private List<String> bodys = null;
+    private String bodys;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_end_length")
@@ -102,35 +102,19 @@ public class ContentInfo {
         this.bodyType = bodyType;
     }
 
-    public ContentInfo withBodys(List<String> bodys) {
+    public ContentInfo withBodys(String bodys) {
         this.bodys = bodys;
-        return this;
-    }
-
-    public ContentInfo addBodysItem(String bodysItem) {
-        if (this.bodys == null) {
-            this.bodys = new ArrayList<>();
-        }
-        this.bodys.add(bodysItem);
-        return this;
-    }
-
-    public ContentInfo withBodys(Consumer<List<String>> bodysSetter) {
-        if (this.bodys == null) {
-            this.bodys = new ArrayList<>();
-        }
-        bodysSetter.accept(this.bodys);
         return this;
     }
 
     /** bodys
      * 
      * @return bodys */
-    public List<String> getBodys() {
+    public String getBodys() {
         return bodys;
     }
 
-    public void setBodys(List<String> bodys) {
+    public void setBodys(String bodys) {
         this.bodys = bodys;
     }
 

@@ -15,19 +15,19 @@ public class ListIssuesV4Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issues")
 
-    private List<IssueResponseV4> issues = null;
+    private List<ListIssueItemResponse> issues = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
 
-    public ListIssuesV4Response withIssues(List<IssueResponseV4> issues) {
+    public ListIssuesV4Response withIssues(List<ListIssueItemResponse> issues) {
         this.issues = issues;
         return this;
     }
 
-    public ListIssuesV4Response addIssuesItem(IssueResponseV4 issuesItem) {
+    public ListIssuesV4Response addIssuesItem(ListIssueItemResponse issuesItem) {
         if (this.issues == null) {
             this.issues = new ArrayList<>();
         }
@@ -35,7 +35,7 @@ public class ListIssuesV4Response extends SdkResponse {
         return this;
     }
 
-    public ListIssuesV4Response withIssues(Consumer<List<IssueResponseV4>> issuesSetter) {
+    public ListIssuesV4Response withIssues(Consumer<List<ListIssueItemResponse>> issuesSetter) {
         if (this.issues == null) {
             this.issues = new ArrayList<>();
         }
@@ -46,11 +46,11 @@ public class ListIssuesV4Response extends SdkResponse {
     /** 工作项列表
      * 
      * @return issues */
-    public List<IssueResponseV4> getIssues() {
+    public List<ListIssueItemResponse> getIssues() {
         return issues;
     }
 
-    public void setIssues(List<IssueResponseV4> issues) {
+    public void setIssues(List<ListIssueItemResponse> issues) {
         this.issues = issues;
     }
 

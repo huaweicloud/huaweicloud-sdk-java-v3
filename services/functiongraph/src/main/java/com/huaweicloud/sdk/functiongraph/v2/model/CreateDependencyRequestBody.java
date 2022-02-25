@@ -28,11 +28,14 @@ public class CreateDependencyRequestBody {
 
     private String dependType;
 
-    /** 运行时语言。 */
+    /** 运行时语言，Java11、Nodejs14:、Python3:在type为v2时支持。 */
     public static final class RuntimeEnum {
 
         /** Enum JAVA8 for value: "Java8" */
         public static final RuntimeEnum JAVA8 = new RuntimeEnum("Java8");
+
+        /** Enum JAVA11 for value: "Java11" */
+        public static final RuntimeEnum JAVA11 = new RuntimeEnum("Java11");
 
         /** Enum NODE_JS6_10 for value: "Node.js6.10" */
         public static final RuntimeEnum NODE_JS6_10 = new RuntimeEnum("Node.js6.10");
@@ -46,11 +49,17 @@ public class CreateDependencyRequestBody {
         /** Enum NODE_JS12_13 for value: "Node.js12.13" */
         public static final RuntimeEnum NODE_JS12_13 = new RuntimeEnum("Node.js12.13");
 
+        /** Enum NODE_JS14_18 for value: "Node.js14.18" */
+        public static final RuntimeEnum NODE_JS14_18 = new RuntimeEnum("Node.js14.18");
+
         /** Enum PYTHON2_7 for value: "Python2.7" */
         public static final RuntimeEnum PYTHON2_7 = new RuntimeEnum("Python2.7");
 
         /** Enum PYTHON3_6 for value: "Python3.6" */
         public static final RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
+
+        /** Enum PYTHON3_9 for value: "Python3.9" */
+        public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /** Enum GO1_8 for value: "Go1.8" */
         public static final RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
@@ -75,12 +84,15 @@ public class CreateDependencyRequestBody {
         private static Map<String, RuntimeEnum> createStaticFields() {
             Map<String, RuntimeEnum> map = new HashMap<>();
             map.put("Java8", JAVA8);
+            map.put("Java11", JAVA11);
             map.put("Node.js6.10", NODE_JS6_10);
             map.put("Node.js8.10", NODE_JS8_10);
             map.put("Node.js10.16", NODE_JS10_16);
             map.put("Node.js12.13", NODE_JS12_13);
+            map.put("Node.js14.18", NODE_JS14_18);
             map.put("Python2.7", PYTHON2_7);
             map.put("Python3.6", PYTHON3_6);
+            map.put("Python3.9", PYTHON3_9);
             map.put("Go1.8", GO1_8);
             map.put("Go1.x", GO1_X);
             map.put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
@@ -211,7 +223,7 @@ public class CreateDependencyRequestBody {
         return this;
     }
 
-    /** 运行时语言。
+    /** 运行时语言，Java11、Nodejs14:、Python3:在type为v2时支持。
      * 
      * @return runtime */
     public RuntimeEnum getRuntime() {

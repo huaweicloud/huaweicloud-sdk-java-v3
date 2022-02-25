@@ -18,11 +18,6 @@ public class AddressAndPorts {
 
     private Integer port;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private Integer status;
-
     public AddressAndPorts withAddress(String address) {
         this.address = address;
         return this;
@@ -55,22 +50,6 @@ public class AddressAndPorts {
         this.port = port;
     }
 
-    public AddressAndPorts withStatus(Integer status) {
-        this.status = status;
-        return this;
-    }
-
-    /** 联通状态
-     * 
-     * @return status */
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -80,13 +59,12 @@ public class AddressAndPorts {
             return false;
         }
         AddressAndPorts addressAndPorts = (AddressAndPorts) o;
-        return Objects.equals(this.address, addressAndPorts.address) && Objects.equals(this.port, addressAndPorts.port)
-            && Objects.equals(this.status, addressAndPorts.status);
+        return Objects.equals(this.address, addressAndPorts.address) && Objects.equals(this.port, addressAndPorts.port);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(address, port, status);
+        return Objects.hash(address, port);
     }
 
     @Override
@@ -95,7 +73,6 @@ public class AddressAndPorts {
         sb.append("class AddressAndPorts {\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

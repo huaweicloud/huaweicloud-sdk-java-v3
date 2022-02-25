@@ -640,7 +640,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群模式
+    /** 集群模式：sharding(分片集群)
      * 
      * @return clusterMode */
     public String getClusterMode() {
@@ -697,7 +697,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群状态描述
+    /** 集群状态描述：Normal（正常）
      * 
      * @return statusDetail */
     public String getStatusDetail() {

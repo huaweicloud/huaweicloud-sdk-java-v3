@@ -4,18 +4,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** ProjectsSet */
 public class ProjectsSet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
+    @JsonProperty(value = "CreateTime")
 
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
+    @JsonProperty(value = "UpdateTime")
 
     private OffsetDateTime updateTime;
 
@@ -40,9 +43,14 @@ public class ProjectsSet {
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group")
+    @JsonProperty(value = "external_params")
 
-    private String group;
+    private Object externalParams;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "variables_no_file")
+
+    private List<String> variablesNoFile = null;
 
     public ProjectsSet withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
@@ -140,20 +148,52 @@ public class ProjectsSet {
         this.status = status;
     }
 
-    public ProjectsSet withGroup(String group) {
-        this.group = group;
+    public ProjectsSet withExternalParams(Object externalParams) {
+        this.externalParams = externalParams;
         return this;
     }
 
-    /** 工程所属组
+    /** 外部参数
      * 
-     * @return group */
-    public String getGroup() {
-        return group;
+     * @return externalParams */
+    public Object getExternalParams() {
+        return externalParams;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setExternalParams(Object externalParams) {
+        this.externalParams = externalParams;
+    }
+
+    public ProjectsSet withVariablesNoFile(List<String> variablesNoFile) {
+        this.variablesNoFile = variablesNoFile;
+        return this;
+    }
+
+    public ProjectsSet addVariablesNoFileItem(String variablesNoFileItem) {
+        if (this.variablesNoFile == null) {
+            this.variablesNoFile = new ArrayList<>();
+        }
+        this.variablesNoFile.add(variablesNoFileItem);
+        return this;
+    }
+
+    public ProjectsSet withVariablesNoFile(Consumer<List<String>> variablesNoFileSetter) {
+        if (this.variablesNoFile == null) {
+            this.variablesNoFile = new ArrayList<>();
+        }
+        variablesNoFileSetter.accept(this.variablesNoFile);
+        return this;
+    }
+
+    /** 文件变量
+     * 
+     * @return variablesNoFile */
+    public List<String> getVariablesNoFile() {
+        return variablesNoFile;
+    }
+
+    public void setVariablesNoFile(List<String> variablesNoFile) {
+        this.variablesNoFile = variablesNoFile;
     }
 
     @Override
@@ -169,12 +209,13 @@ public class ProjectsSet {
             && Objects.equals(this.updateTime, projectsSet.updateTime)
             && Objects.equals(this.description, projectsSet.description) && Objects.equals(this.id, projectsSet.id)
             && Objects.equals(this.name, projectsSet.name) && Objects.equals(this.status, projectsSet.status)
-            && Objects.equals(this.group, projectsSet.group);
+            && Objects.equals(this.externalParams, projectsSet.externalParams)
+            && Objects.equals(this.variablesNoFile, projectsSet.variablesNoFile);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createTime, updateTime, description, id, name, status, group);
+        return Objects.hash(createTime, updateTime, description, id, name, status, externalParams, variablesNoFile);
     }
 
     @Override
@@ -187,7 +228,8 @@ public class ProjectsSet {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    group: ").append(toIndentedString(group)).append("\n");
+        sb.append("    externalParams: ").append(toIndentedString(externalParams)).append("\n");
+        sb.append("    variablesNoFile: ").append(toIndentedString(variablesNoFile)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cpts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** RelatedTempRunningData */
 public class RelatedTempRunningData {
@@ -27,6 +30,11 @@ public class RelatedTempRunningData {
     @JsonProperty(value = "temp_name")
 
     private String tempName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_temp_running_data")
+
+    private List<TempRunningData> relatedTempRunningData = null;
 
     public RelatedTempRunningData withTaskRunInfoId(Integer taskRunInfoId) {
         this.taskRunInfoId = taskRunInfoId;
@@ -92,6 +100,39 @@ public class RelatedTempRunningData {
         this.tempName = tempName;
     }
 
+    public RelatedTempRunningData withRelatedTempRunningData(List<TempRunningData> relatedTempRunningData) {
+        this.relatedTempRunningData = relatedTempRunningData;
+        return this;
+    }
+
+    public RelatedTempRunningData addRelatedTempRunningDataItem(TempRunningData relatedTempRunningDataItem) {
+        if (this.relatedTempRunningData == null) {
+            this.relatedTempRunningData = new ArrayList<>();
+        }
+        this.relatedTempRunningData.add(relatedTempRunningDataItem);
+        return this;
+    }
+
+    public RelatedTempRunningData withRelatedTempRunningData(
+        Consumer<List<TempRunningData>> relatedTempRunningDataSetter) {
+        if (this.relatedTempRunningData == null) {
+            this.relatedTempRunningData = new ArrayList<>();
+        }
+        relatedTempRunningDataSetter.accept(this.relatedTempRunningData);
+        return this;
+    }
+
+    /** related_temp_running_data
+     * 
+     * @return relatedTempRunningData */
+    public List<TempRunningData> getRelatedTempRunningData() {
+        return relatedTempRunningData;
+    }
+
+    public void setRelatedTempRunningData(List<TempRunningData> relatedTempRunningData) {
+        this.relatedTempRunningData = relatedTempRunningData;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +145,13 @@ public class RelatedTempRunningData {
         return Objects.equals(this.taskRunInfoId, relatedTempRunningData.taskRunInfoId)
             && Objects.equals(this.relatedTempRunningId, relatedTempRunningData.relatedTempRunningId)
             && Objects.equals(this.tempId, relatedTempRunningData.tempId)
-            && Objects.equals(this.tempName, relatedTempRunningData.tempName);
+            && Objects.equals(this.tempName, relatedTempRunningData.tempName)
+            && Objects.equals(this.relatedTempRunningData, relatedTempRunningData.relatedTempRunningData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskRunInfoId, relatedTempRunningId, tempId, tempName);
+        return Objects.hash(taskRunInfoId, relatedTempRunningId, tempId, tempName, relatedTempRunningData);
     }
 
     @Override
@@ -120,6 +162,7 @@ public class RelatedTempRunningData {
         sb.append("    relatedTempRunningId: ").append(toIndentedString(relatedTempRunningId)).append("\n");
         sb.append("    tempId: ").append(toIndentedString(tempId)).append("\n");
         sb.append("    tempName: ").append(toIndentedString(tempName)).append("\n");
+        sb.append("    relatedTempRunningData: ").append(toIndentedString(relatedTempRunningData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

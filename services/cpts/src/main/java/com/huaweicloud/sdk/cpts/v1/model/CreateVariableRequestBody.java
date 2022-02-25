@@ -31,6 +31,11 @@ public class CreateVariableRequestBody {
 
     private List<Object> variable = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_quoted")
+
+    private Boolean isQuoted;
+
     public CreateVariableRequestBody withId(Integer id) {
         this.id = id;
         return this;
@@ -111,6 +116,22 @@ public class CreateVariableRequestBody {
         this.variable = variable;
     }
 
+    public CreateVariableRequestBody withIsQuoted(Boolean isQuoted) {
+        this.isQuoted = isQuoted;
+        return this;
+    }
+
+    /** 是否被引用
+     * 
+     * @return isQuoted */
+    public Boolean getIsQuoted() {
+        return isQuoted;
+    }
+
+    public void setIsQuoted(Boolean isQuoted) {
+        this.isQuoted = isQuoted;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -123,12 +144,13 @@ public class CreateVariableRequestBody {
         return Objects.equals(this.id, createVariableRequestBody.id)
             && Objects.equals(this.name, createVariableRequestBody.name)
             && Objects.equals(this.variableType, createVariableRequestBody.variableType)
-            && Objects.equals(this.variable, createVariableRequestBody.variable);
+            && Objects.equals(this.variable, createVariableRequestBody.variable)
+            && Objects.equals(this.isQuoted, createVariableRequestBody.isQuoted);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, variableType, variable);
+        return Objects.hash(id, name, variableType, variable, isQuoted);
     }
 
     @Override
@@ -139,6 +161,7 @@ public class CreateVariableRequestBody {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    variableType: ").append(toIndentedString(variableType)).append("\n");
         sb.append("    variable: ").append(toIndentedString(variable)).append("\n");
+        sb.append("    isQuoted: ").append(toIndentedString(isQuoted)).append("\n");
         sb.append("}");
         return sb.toString();
     }

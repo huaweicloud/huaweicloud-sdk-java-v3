@@ -24,7 +24,7 @@ public class UpdateLogSettingRequest {
         return this;
     }
 
-    /** 指定查询集群ID。
+    /** 指定待更改的集群ID。
      * 
      * @return clusterId */
     public String getClusterId() {

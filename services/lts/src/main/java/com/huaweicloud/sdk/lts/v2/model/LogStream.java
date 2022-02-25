@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.lts.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 返回的日志流信息 */
 public class LogStream {
@@ -27,6 +30,11 @@ public class LogStream {
     @JsonProperty(value = "filter_count")
 
     private Integer filterCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag")
+
+    private Map<String, String> tag = null;
 
     public LogStream withCreationTime(Long creationTime) {
         this.creationTime = creationTime;
@@ -92,6 +100,38 @@ public class LogStream {
         this.filterCount = filterCount;
     }
 
+    public LogStream withTag(Map<String, String> tag) {
+        this.tag = tag;
+        return this;
+    }
+
+    public LogStream putTagItem(String key, String tagItem) {
+        if (this.tag == null) {
+            this.tag = new HashMap<>();
+        }
+        this.tag.put(key, tagItem);
+        return this;
+    }
+
+    public LogStream withTag(Consumer<Map<String, String>> tagSetter) {
+        if (this.tag == null) {
+            this.tag = new HashMap<>();
+        }
+        tagSetter.accept(this.tag);
+        return this;
+    }
+
+    /** 日志流所属标签
+     * 
+     * @return tag */
+    public Map<String, String> getTag() {
+        return tag;
+    }
+
+    public void setTag(Map<String, String> tag) {
+        this.tag = tag;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +144,12 @@ public class LogStream {
         return Objects.equals(this.creationTime, logStream.creationTime)
             && Objects.equals(this.logStreamName, logStream.logStreamName)
             && Objects.equals(this.logStreamId, logStream.logStreamId)
-            && Objects.equals(this.filterCount, logStream.filterCount);
+            && Objects.equals(this.filterCount, logStream.filterCount) && Objects.equals(this.tag, logStream.tag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(creationTime, logStreamName, logStreamId, filterCount);
+        return Objects.hash(creationTime, logStreamName, logStreamId, filterCount, tag);
     }
 
     @Override
@@ -120,6 +160,7 @@ public class LogStream {
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    filterCount: ").append(toIndentedString(filterCount)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -39,7 +39,7 @@ public class UpdateTaskStatusRequestBody {
         return this;
     }
 
-    /** cluster_id minimum: 0 maximum: 2147483647
+    /** cluster_id minimum: -1 maximum: 2147483647
      * 
      * @return clusterId */
     public Integer getClusterId() {

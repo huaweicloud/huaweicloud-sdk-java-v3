@@ -17,6 +17,42 @@ public class ElbClient {
         return new ClientBuilder<>(ElbClient::new);
     }
 
+    /** 批量创建后端服务器 在指定pool下批量创建后端服务器。
+     *
+     * @param BatchCreateMembersRequest 请求对象
+     * @return BatchCreateMembersResponse */
+    public BatchCreateMembersResponse batchCreateMembers(BatchCreateMembersRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.batchCreateMembers);
+    }
+
+    /** 批量创建后端服务器 在指定pool下批量创建后端服务器。
+     *
+     * @param BatchCreateMembersRequest 请求对象
+     * @return SyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse> */
+    public SyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse> batchCreateMembersInvoker(
+        BatchCreateMembersRequest request) {
+        return new SyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse>(request,
+            ElbMeta.batchCreateMembers, hcClient);
+    }
+
+    /** 批量删除后端服务器 在指定pool下批量删除后端服务器。
+     *
+     * @param BatchDeleteMembersRequest 请求对象
+     * @return BatchDeleteMembersResponse */
+    public BatchDeleteMembersResponse batchDeleteMembers(BatchDeleteMembersRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.batchDeleteMembers);
+    }
+
+    /** 批量删除后端服务器 在指定pool下批量删除后端服务器。
+     *
+     * @param BatchDeleteMembersRequest 请求对象
+     * @return SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse> */
+    public SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse> batchDeleteMembersInvoker(
+        BatchDeleteMembersRequest request) {
+        return new SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>(request,
+            ElbMeta.batchDeleteMembers, hcClient);
+    }
+
     /** 批量更新转发策略优先级 批量更新转发策略的优先级。
      *
      * @param BatchUpdatePoliciesPriorityRequest 请求对象

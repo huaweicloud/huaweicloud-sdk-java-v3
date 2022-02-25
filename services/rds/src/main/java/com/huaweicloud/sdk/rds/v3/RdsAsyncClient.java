@@ -587,6 +587,24 @@ public class RdsAsyncClient {
             hcClient);
     }
 
+    /** 查询慢日志文件列表 查询慢日志文件列表。 调用该接口取到慢日志文件名后，可以调用接口/v3/{project_id}/instances/{instance_id}/slowlog-download 获取慢日志文件下载链接
+     *
+     * @param ListSlowLogFileRequest 请求对象
+     * @return CompletableFuture<ListSlowLogFileResponse> */
+    public CompletableFuture<ListSlowLogFileResponse> listSlowLogFileAsync(ListSlowLogFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSlowLogFile);
+    }
+
+    /** 查询慢日志文件列表 查询慢日志文件列表。 调用该接口取到慢日志文件名后，可以调用接口/v3/{project_id}/instances/{instance_id}/slowlog-download 获取慢日志文件下载链接
+     *
+     * @param ListSlowLogFileRequest 请求对象
+     * @return AsyncInvoker<ListSlowLogFileRequest, ListSlowLogFileResponse> */
+    public AsyncInvoker<ListSlowLogFileRequest, ListSlowLogFileResponse> listSlowLogFileAsyncInvoker(
+        ListSlowLogFileRequest request) {
+        return new AsyncInvoker<ListSlowLogFileRequest, ListSlowLogFileResponse>(request, RdsMeta.listSlowLogFile,
+            hcClient);
+    }
+
     /** 查询数据库慢日志 查询数据库慢日志。
      *
      * @param ListSlowLogsRequest 请求对象
@@ -1116,6 +1134,41 @@ public class RdsAsyncClient {
         StartResizeFlavorActionRequest request) {
         return new AsyncInvoker<StartResizeFlavorActionRequest, StartResizeFlavorActionResponse>(request,
             RdsMeta.startResizeFlavorAction, hcClient);
+    }
+
+    /** 开启实例 停止实例以节省费用，在停止数据库实例后，支持手动重新开启实例。
+     *
+     * @param StartupInstanceRequest 请求对象
+     * @return CompletableFuture<StartupInstanceResponse> */
+    public CompletableFuture<StartupInstanceResponse> startupInstanceAsync(StartupInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.startupInstance);
+    }
+
+    /** 开启实例 停止实例以节省费用，在停止数据库实例后，支持手动重新开启实例。
+     *
+     * @param StartupInstanceRequest 请求对象
+     * @return AsyncInvoker<StartupInstanceRequest, StartupInstanceResponse> */
+    public AsyncInvoker<StartupInstanceRequest, StartupInstanceResponse> startupInstanceAsyncInvoker(
+        StartupInstanceRequest request) {
+        return new AsyncInvoker<StartupInstanceRequest, StartupInstanceResponse>(request, RdsMeta.startupInstance,
+            hcClient);
+    }
+
+    /** 停止实例 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
+     *
+     * @param StopInstanceRequest 请求对象
+     * @return CompletableFuture<StopInstanceResponse> */
+    public CompletableFuture<StopInstanceResponse> stopInstanceAsync(StopInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.stopInstance);
+    }
+
+    /** 停止实例 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
+     *
+     * @param StopInstanceRequest 请求对象
+     * @return AsyncInvoker<StopInstanceRequest, StopInstanceResponse> */
+    public AsyncInvoker<StopInstanceRequest, StopInstanceResponse> stopInstanceAsyncInvoker(
+        StopInstanceRequest request) {
+        return new AsyncInvoker<StopInstanceRequest, StopInstanceResponse>(request, RdsMeta.stopInstance, hcClient);
     }
 
     /** 设置SSL数据加密 设置SSL数据加密。

@@ -86,6 +86,16 @@ public class ListIssueRequestV4 {
 
     private List<Integer> trackerIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "include_deleted")
+
+    private Boolean includeDeleted;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_time_interval")
+
+    private String updatedTimeInterval;
+
     public ListIssueRequestV4 withAssignedIds(List<Integer> assignedIds) {
         this.assignedIds = assignedIds;
         return this;
@@ -518,6 +528,38 @@ public class ListIssueRequestV4 {
         this.trackerIds = trackerIds;
     }
 
+    public ListIssueRequestV4 withIncludeDeleted(Boolean includeDeleted) {
+        this.includeDeleted = includeDeleted;
+        return this;
+    }
+
+    /** true 查询的工作项包含已经逻辑删除的，false 查询的工作项不包含已经删除的
+     * 
+     * @return includeDeleted */
+    public Boolean getIncludeDeleted() {
+        return includeDeleted;
+    }
+
+    public void setIncludeDeleted(Boolean includeDeleted) {
+        this.includeDeleted = includeDeleted;
+    }
+
+    public ListIssueRequestV4 withUpdatedTimeInterval(String updatedTimeInterval) {
+        this.updatedTimeInterval = updatedTimeInterval;
+        return this;
+    }
+
+    /** 根据工作项的更新时间查询工作项，(查询的起始时间,查询的结束时间)
+     * 
+     * @return updatedTimeInterval */
+    public String getUpdatedTimeInterval() {
+        return updatedTimeInterval;
+    }
+
+    public void setUpdatedTimeInterval(String updatedTimeInterval) {
+        this.updatedTimeInterval = updatedTimeInterval;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -541,7 +583,9 @@ public class ListIssueRequestV4 {
             && Objects.equals(this.severityIds, listIssueRequestV4.severityIds)
             && Objects.equals(this.statusIds, listIssueRequestV4.statusIds)
             && Objects.equals(this.storyPointIds, listIssueRequestV4.storyPointIds)
-            && Objects.equals(this.trackerIds, listIssueRequestV4.trackerIds);
+            && Objects.equals(this.trackerIds, listIssueRequestV4.trackerIds)
+            && Objects.equals(this.includeDeleted, listIssueRequestV4.includeDeleted)
+            && Objects.equals(this.updatedTimeInterval, listIssueRequestV4.updatedTimeInterval);
     }
 
     @Override
@@ -560,7 +604,9 @@ public class ListIssueRequestV4 {
             severityIds,
             statusIds,
             storyPointIds,
-            trackerIds);
+            trackerIds,
+            includeDeleted,
+            updatedTimeInterval);
     }
 
     @Override
@@ -582,6 +628,8 @@ public class ListIssueRequestV4 {
         sb.append("    statusIds: ").append(toIndentedString(statusIds)).append("\n");
         sb.append("    storyPointIds: ").append(toIndentedString(storyPointIds)).append("\n");
         sb.append("    trackerIds: ").append(toIndentedString(trackerIds)).append("\n");
+        sb.append("    includeDeleted: ").append(toIndentedString(includeDeleted)).append("\n");
+        sb.append("    updatedTimeInterval: ").append(toIndentedString(updatedTimeInterval)).append("\n");
         sb.append("}");
         return sb.toString();
     }

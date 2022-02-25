@@ -1953,6 +1953,13 @@ public class AsMeta {
             f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             }));
+        builder.<String>withRequestField("alarm_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getAlarmId, (req, v) -> {
+                req.setAlarmId(v);
+            }));
 
         // response
 

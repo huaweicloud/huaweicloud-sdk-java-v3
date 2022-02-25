@@ -355,6 +355,11 @@ public class ListAllScalingV2PoliciesRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_id")
+
+    private String alarmId;
+
     public ListAllScalingV2PoliciesRequest withScalingResourceId(String scalingResourceId) {
         this.scalingResourceId = scalingResourceId;
         return this;
@@ -504,7 +509,13 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表。
+    /** 企业项目ID。 当scaling_resource_type指定为：SCALING_GROUP 传入all_granted_eps时： 华为云帐号和拥有全局权限的IAM用户可以查询该用户所有的伸缩组对应的伸缩策略。
+     * 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的伸缩组对应的伸缩策略。 说明： 如果授予部分企业项目的IAM用户拥有超过100个企业项目，则只能返回有权限的前100个企业项目对应伸缩组的伸缩策略列表。
+     * 当scaling_resource_type指定为：BANDWIDTH 传入all_granted_eps时: 华为云帐号和拥有全局权限的IAM用户可以查询该用户所有带宽对应的伸缩策略。
+     * 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的带宽对应的伸缩策略，带宽在all_granted_eps场景下返回策略请参见[《EIP接口参口》查询带宽列表](https://support.huaweicloud.com/api-eip/eip_apiBandwidth_0002.html)。
+     * 不指定scaling_resource_type 当传入all_granted_eps时： 华为云帐号和拥有全局权限的IAM用户可以查询该用户所有的伸缩组和带宽对应的伸缩策略。
+     * 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的伸缩组和带宽对应的伸缩策略。 说明：
+     * 如果授予部分企业项目的IAM用户拥有超过100个企业项目，则只能返回有权限的前100个企业项目对应伸缩组的伸缩策略列表；带宽在all_granted_eps场景下返回策略请参见[《EIP接口参口》查询带宽列表](https://support.huaweicloud.com/api-eip/eip_apiBandwidth_0002.html)。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -513,6 +524,22 @@ public class ListAllScalingV2PoliciesRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListAllScalingV2PoliciesRequest withAlarmId(String alarmId) {
+        this.alarmId = alarmId;
+        return this;
+    }
+
+    /** 告警ID，即告警规则的ID。
+     * 
+     * @return alarmId */
+    public String getAlarmId() {
+        return alarmId;
+    }
+
+    public void setAlarmId(String alarmId) {
+        this.alarmId = alarmId;
     }
 
     @Override
@@ -533,7 +560,8 @@ public class ListAllScalingV2PoliciesRequest {
             && Objects.equals(this.limit, listAllScalingV2PoliciesRequest.limit)
             && Objects.equals(this.sortBy, listAllScalingV2PoliciesRequest.sortBy)
             && Objects.equals(this.order, listAllScalingV2PoliciesRequest.order)
-            && Objects.equals(this.enterpriseProjectId, listAllScalingV2PoliciesRequest.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, listAllScalingV2PoliciesRequest.enterpriseProjectId)
+            && Objects.equals(this.alarmId, listAllScalingV2PoliciesRequest.alarmId);
     }
 
     @Override
@@ -547,7 +575,8 @@ public class ListAllScalingV2PoliciesRequest {
             limit,
             sortBy,
             order,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            alarmId);
     }
 
     @Override
@@ -564,6 +593,7 @@ public class ListAllScalingV2PoliciesRequest {
         sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
         sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

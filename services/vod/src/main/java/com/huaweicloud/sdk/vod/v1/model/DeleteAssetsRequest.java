@@ -26,6 +26,11 @@ public class DeleteAssetsRequest {
 
     private List<String> assetId = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_type")
+
+    private String deleteType;
+
     public DeleteAssetsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -92,6 +97,22 @@ public class DeleteAssetsRequest {
         this.assetId = assetId;
     }
 
+    public DeleteAssetsRequest withDeleteType(String deleteType) {
+        this.deleteType = deleteType;
+        return this;
+    }
+
+    /** 删除类型，当值为origin时只删除源文件，保留转码后文件。
+     * 
+     * @return deleteType */
+    public String getDeleteType() {
+        return deleteType;
+    }
+
+    public void setDeleteType(String deleteType) {
+        this.deleteType = deleteType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -103,12 +124,13 @@ public class DeleteAssetsRequest {
         DeleteAssetsRequest deleteAssetsRequest = (DeleteAssetsRequest) o;
         return Objects.equals(this.authorization, deleteAssetsRequest.authorization)
             && Objects.equals(this.xSdkDate, deleteAssetsRequest.xSdkDate)
-            && Objects.equals(this.assetId, deleteAssetsRequest.assetId);
+            && Objects.equals(this.assetId, deleteAssetsRequest.assetId)
+            && Objects.equals(this.deleteType, deleteAssetsRequest.deleteType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, assetId);
+        return Objects.hash(authorization, xSdkDate, assetId, deleteType);
     }
 
     @Override
@@ -118,6 +140,7 @@ public class DeleteAssetsRequest {
         sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    deleteType: ").append(toIndentedString(deleteType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

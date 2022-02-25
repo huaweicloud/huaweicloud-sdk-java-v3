@@ -401,6 +401,30 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLogsJobRequest, ListLogsJobResponse> listLogsJob = genForlistLogsJob();
+
+    private static HttpRequestDef<ListLogsJobRequest, ListLogsJobResponse> genForlistLogsJob() {
+        // basic
+        HttpRequestDef.Builder<ListLogsJobRequest, ListLogsJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogsJobRequest.class, ListLogsJobResponse.class)
+                .withName("ListLogsJob")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/logs/records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogsJobRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshots =
         genForlistSnapshots();
 
@@ -587,6 +611,31 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAutoCreatePolicyRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetail =
+        genForshowClusterDetail();
+
+    private static HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> genForshowClusterDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterDetailRequest, ShowClusterDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClusterDetailRequest.class, ShowClusterDetailResponse.class)
+                .withName("ShowClusterDetail")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterDetailRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
 
@@ -1132,6 +1181,76 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateFlavorRequest, UpdateFlavorResponse> updateFlavor = genForupdateFlavor();
+
+    private static HttpRequestDef<UpdateFlavorRequest, UpdateFlavorResponse> genForupdateFlavor() {
+        // basic
+        HttpRequestDef.Builder<UpdateFlavorRequest, UpdateFlavorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateFlavorRequest.class, UpdateFlavorResponse.class)
+                .withName("UpdateFlavor")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/flavor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFlavorRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<UpdateFlavorReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFlavorReq.class),
+            f -> f.withMarshaller(UpdateFlavorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFlavorByTypeRequest, UpdateFlavorByTypeResponse> updateFlavorByType =
+        genForupdateFlavorByType();
+
+    private static HttpRequestDef<UpdateFlavorByTypeRequest, UpdateFlavorByTypeResponse> genForupdateFlavorByType() {
+        // basic
+        HttpRequestDef.Builder<UpdateFlavorByTypeRequest, UpdateFlavorByTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateFlavorByTypeRequest.class, UpdateFlavorByTypeResponse.class)
+                .withName("UpdateFlavorByType")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/{types}/flavor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFlavorByTypeRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("types",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFlavorByTypeRequest::getTypes, (req, v) -> {
+                req.setTypes(v);
+            }));
+        builder.<UpdateFlavorReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFlavorReq.class),
+            f -> f.withMarshaller(UpdateFlavorByTypeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateLogSettingRequest, UpdateLogSettingResponse> updateLogSetting =
         genForupdateLogSetting();
 
@@ -1223,6 +1342,70 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BindPublicReqEip.class),
             f -> f.withMarshaller(UpdatePublicBandWidthRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateShrinkClusterRequest, UpdateShrinkClusterResponse> updateShrinkCluster =
+        genForupdateShrinkCluster();
+
+    private static HttpRequestDef<UpdateShrinkClusterRequest, UpdateShrinkClusterResponse> genForupdateShrinkCluster() {
+        // basic
+        HttpRequestDef.Builder<UpdateShrinkClusterRequest, UpdateShrinkClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateShrinkClusterRequest.class, UpdateShrinkClusterResponse.class)
+                .withName("UpdateShrinkCluster")
+                .withUri("/v1.0/extend/{project_id}/clusters/{cluster_id}/role/shrink")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateShrinkClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ShrinkClusterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShrinkClusterReq.class),
+            f -> f.withMarshaller(UpdateShrinkClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateShrinkNodesRequest, UpdateShrinkNodesResponse> updateShrinkNodes =
+        genForupdateShrinkNodes();
+
+    private static HttpRequestDef<UpdateShrinkNodesRequest, UpdateShrinkNodesResponse> genForupdateShrinkNodes() {
+        // basic
+        HttpRequestDef.Builder<UpdateShrinkNodesRequest, UpdateShrinkNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateShrinkNodesRequest.class, UpdateShrinkNodesResponse.class)
+                .withName("UpdateShrinkNodes")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/node/offline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateShrinkNodesRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ShrinkNodesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShrinkNodesReq.class),
+            f -> f.withMarshaller(UpdateShrinkNodesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

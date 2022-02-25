@@ -67,7 +67,7 @@ public class Submission {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
-    private Double progress;
+    private Float progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "submission-id")
@@ -294,7 +294,7 @@ public class Submission {
         this.externalId = externalId;
     }
 
-    public Submission withProgress(Double progress) {
+    public Submission withProgress(Float progress) {
         this.progress = progress;
         return this;
     }
@@ -302,11 +302,11 @@ public class Submission {
     /** 作业进度，失败时为“-1”，其它情况为0～100
      * 
      * @return progress */
-    public Double getProgress() {
+    public Float getProgress() {
         return progress;
     }
 
-    public void setProgress(Double progress) {
+    public void setProgress(Float progress) {
         this.progress = progress;
     }
 

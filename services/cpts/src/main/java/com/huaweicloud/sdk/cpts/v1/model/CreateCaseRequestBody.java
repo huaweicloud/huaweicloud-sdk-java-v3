@@ -44,7 +44,7 @@ public class CreateCaseRequestBody {
         return this;
     }
 
-    /** type minimum: 0 maximum: 2147483647
+    /** type (0-常规用例,1-视频流用例,2-预制用例) minimum: 0 maximum: 2
      * 
      * @return type */
     public Integer getType() {

@@ -56,7 +56,7 @@ public class StartJobSubmission {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
-    private Integer progress;
+    private Float progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -66,7 +66,7 @@ public class StartJobSubmission {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isStopingIncrement")
 
-    private Boolean isStopingIncrement;
+    private String isStopingIncrement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is-execute-auto")
@@ -232,7 +232,7 @@ public class StartJobSubmission {
         this.executeDate = executeDate;
     }
 
-    public StartJobSubmission withProgress(Integer progress) {
+    public StartJobSubmission withProgress(Float progress) {
         this.progress = progress;
         return this;
     }
@@ -240,11 +240,11 @@ public class StartJobSubmission {
     /** 作业进度，失败时为“-1”，其它情况为0～100
      * 
      * @return progress */
-    public Integer getProgress() {
+    public Float getProgress() {
         return progress;
     }
 
-    public void setProgress(Integer progress) {
+    public void setProgress(Float progress) {
         this.progress = progress;
     }
 
@@ -265,7 +265,7 @@ public class StartJobSubmission {
         this.status = status;
     }
 
-    public StartJobSubmission withIsStopingIncrement(Boolean isStopingIncrement) {
+    public StartJobSubmission withIsStopingIncrement(String isStopingIncrement) {
         this.isStopingIncrement = isStopingIncrement;
         return this;
     }
@@ -273,11 +273,11 @@ public class StartJobSubmission {
     /** 是否停止增量迁移
      * 
      * @return isStopingIncrement */
-    public Boolean getIsStopingIncrement() {
+    public String getIsStopingIncrement() {
         return isStopingIncrement;
     }
 
-    public void setIsStopingIncrement(Boolean isStopingIncrement) {
+    public void setIsStopingIncrement(String isStopingIncrement) {
         this.isStopingIncrement = isStopingIncrement;
     }
 

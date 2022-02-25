@@ -117,7 +117,7 @@ public class CreateDatabaseDetail {
         return this;
     }
 
-    /** 逻辑库名称，需要满足以下条件： - 长度为2-24个字符。 - 必须以字母开头，且不区分大小写。 - 可以包含字母、数字、下划线，不能包含其它特殊字符。 - 禁用关键字：
+    /** 逻辑库名称，需要满足以下条件： - 长度为2-48个字符。 - 必须以字母开头，且不区分大小写。 - 可以包含字母、数字、下划线，不能包含其它特殊字符。 - 禁用关键字：
      * \"information_schema\"、\"mysql\"、\"performance_schema\"、\"sys\"。
      * 
      * @return name */
@@ -150,7 +150,7 @@ public class CreateDatabaseDetail {
         return this;
     }
 
-    /** 同一种工作模式下逻辑库分片的数量，shard_unit与关联rds数量的乘积。
+    /** 同一种工作模式下逻辑库分片的数量。 - shard_unit不为空， shard_unit与关联rds数量的乘积 - shard_unit为空，大于关联的RDS数量，小于等于关联rds数量*64。
      * 
      * @return shardNumber */
     public Integer getShardNumber() {
@@ -166,7 +166,7 @@ public class CreateDatabaseDetail {
         return this;
     }
 
-    /** 单个RDS上的逻辑库分片数。 - 非拆分逻辑库，固定为1。 - 拆分逻辑库缺省为8，可以根据需要配置为8、16。
+    /** 单个RDS上的逻辑库分片数。非必选 - 非拆分逻辑库，固定为1。 - 拆分逻辑库，大于等于1，小于等于64。 minimum: 1 maximum: 64
      * 
      * @return shardUnit */
     public Integer getShardUnit() {

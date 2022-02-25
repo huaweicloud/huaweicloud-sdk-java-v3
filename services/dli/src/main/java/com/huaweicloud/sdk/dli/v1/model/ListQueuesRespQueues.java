@@ -101,6 +101,21 @@ public class ListQueuesRespQueues {
 
     private String queueResourceType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cu_spec")
+
+    private Long cuSpec;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cu_scale_out_limit")
+
+    private Long cuScaleOutLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cu_scale_in_limit")
+
+    private Long cuScaleInLimit;
+
     public ListQueuesRespQueues withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -405,6 +420,54 @@ public class ListQueuesRespQueues {
         this.queueResourceType = queueResourceType;
     }
 
+    public ListQueuesRespQueues withCuSpec(Long cuSpec) {
+        this.cuSpec = cuSpec;
+        return this;
+    }
+
+    /** 队列的规格大小。对于包周期队列，表示包周期部分的CU值；对于按需队列，表示用户购买队列时的初始值。
+     * 
+     * @return cuSpec */
+    public Long getCuSpec() {
+        return cuSpec;
+    }
+
+    public void setCuSpec(Long cuSpec) {
+        this.cuSpec = cuSpec;
+    }
+
+    public ListQueuesRespQueues withCuScaleOutLimit(Long cuScaleOutLimit) {
+        this.cuScaleOutLimit = cuScaleOutLimit;
+        return this;
+    }
+
+    /** 当前队列弹性扩缩容的CU值上限。
+     * 
+     * @return cuScaleOutLimit */
+    public Long getCuScaleOutLimit() {
+        return cuScaleOutLimit;
+    }
+
+    public void setCuScaleOutLimit(Long cuScaleOutLimit) {
+        this.cuScaleOutLimit = cuScaleOutLimit;
+    }
+
+    public ListQueuesRespQueues withCuScaleInLimit(Long cuScaleInLimit) {
+        this.cuScaleInLimit = cuScaleInLimit;
+        return this;
+    }
+
+    /** 当前队列弹性扩缩容的CU值下限。
+     * 
+     * @return cuScaleInLimit */
+    public Long getCuScaleInLimit() {
+        return cuScaleInLimit;
+    }
+
+    public void setCuScaleInLimit(Long cuScaleInLimit) {
+        this.cuScaleInLimit = cuScaleInLimit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -431,7 +494,10 @@ public class ListQueuesRespQueues {
             && Objects.equals(this.isRestarting, listQueuesRespQueues.isRestarting)
             && Objects.equals(this.labels, listQueuesRespQueues.labels)
             && Objects.equals(this.feature, listQueuesRespQueues.feature)
-            && Objects.equals(this.queueResourceType, listQueuesRespQueues.queueResourceType);
+            && Objects.equals(this.queueResourceType, listQueuesRespQueues.queueResourceType)
+            && Objects.equals(this.cuSpec, listQueuesRespQueues.cuSpec)
+            && Objects.equals(this.cuScaleOutLimit, listQueuesRespQueues.cuScaleOutLimit)
+            && Objects.equals(this.cuScaleInLimit, listQueuesRespQueues.cuScaleInLimit);
     }
 
     @Override
@@ -453,7 +519,10 @@ public class ListQueuesRespQueues {
             isRestarting,
             labels,
             feature,
-            queueResourceType);
+            queueResourceType,
+            cuSpec,
+            cuScaleOutLimit,
+            cuScaleInLimit);
     }
 
     @Override
@@ -478,6 +547,9 @@ public class ListQueuesRespQueues {
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
         sb.append("    queueResourceType: ").append(toIndentedString(queueResourceType)).append("\n");
+        sb.append("    cuSpec: ").append(toIndentedString(cuSpec)).append("\n");
+        sb.append("    cuScaleOutLimit: ").append(toIndentedString(cuScaleOutLimit)).append("\n");
+        sb.append("    cuScaleInLimit: ").append(toIndentedString(cuScaleInLimit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

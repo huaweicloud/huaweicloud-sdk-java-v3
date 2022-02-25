@@ -91,6 +91,25 @@ public class ProjectManAsyncClient {
             ProjectManMeta.batchDeleteMembersV4, hcClient);
     }
 
+    /** 更新子用户昵称 拥有te_admin角色的用户可以更新其他用户的昵称
+     *
+     * @param BatchUpdateChildNickNamesRequest 请求对象
+     * @return CompletableFuture<BatchUpdateChildNickNamesResponse> */
+    public CompletableFuture<BatchUpdateChildNickNamesResponse> batchUpdateChildNickNamesAsync(
+        BatchUpdateChildNickNamesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.batchUpdateChildNickNames);
+    }
+
+    /** 更新子用户昵称 拥有te_admin角色的用户可以更新其他用户的昵称
+     *
+     * @param BatchUpdateChildNickNamesRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse> */
+    public AsyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse> batchUpdateChildNickNamesAsyncInvoker(
+        BatchUpdateChildNickNamesRequest request) {
+        return new AsyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse>(request,
+            ProjectManMeta.batchUpdateChildNickNames, hcClient);
+    }
+
     /** 检查项目名称是否存在 检查项目名称是否存在
      *
      * @param CheckProjectNameV4Request 请求对象
@@ -654,6 +673,25 @@ public class ProjectManAsyncClient {
         ListIssuesV4Request request) {
         return new AsyncInvoker<ListIssuesV4Request, ListIssuesV4Response>(request, ProjectManMeta.listIssuesV4,
             hcClient);
+    }
+
+    /** 查看迭代历史记录 查看迭代历史记录
+     *
+     * @param ListIterationHistoriesRequest 请求对象
+     * @return CompletableFuture<ListIterationHistoriesResponse> */
+    public CompletableFuture<ListIterationHistoriesResponse> listIterationHistoriesAsync(
+        ListIterationHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listIterationHistories);
+    }
+
+    /** 查看迭代历史记录 查看迭代历史记录
+     *
+     * @param ListIterationHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse> */
+    public AsyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse> listIterationHistoriesAsyncInvoker(
+        ListIterationHistoriesRequest request) {
+        return new AsyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse>(request,
+            ProjectManMeta.listIterationHistories, hcClient);
     }
 
     /** 获取指定项目的迭代列表 获取项目迭代

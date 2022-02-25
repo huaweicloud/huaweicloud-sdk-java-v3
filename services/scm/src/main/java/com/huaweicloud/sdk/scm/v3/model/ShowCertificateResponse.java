@@ -53,9 +53,9 @@ public class ShowCertificateResponse extends SdkResponse {
     private String revokeReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "signature_algrithm")
+    @JsonProperty(value = "signature_algorithm")
 
-    private String signatureAlgrithm;
+    private String signatureAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_time")
@@ -242,20 +242,20 @@ public class ShowCertificateResponse extends SdkResponse {
         this.revokeReason = revokeReason;
     }
 
-    public ShowCertificateResponse withSignatureAlgrithm(String signatureAlgrithm) {
-        this.signatureAlgrithm = signatureAlgrithm;
+    public ShowCertificateResponse withSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
         return this;
     }
 
     /** 签名算法。
      * 
-     * @return signatureAlgrithm */
-    public String getSignatureAlgrithm() {
-        return signatureAlgrithm;
+     * @return signatureAlgorithm */
+    public String getSignatureAlgorithm() {
+        return signatureAlgorithm;
     }
 
-    public void setSignatureAlgrithm(String signatureAlgrithm) {
-        this.signatureAlgrithm = signatureAlgrithm;
+    public void setSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
     }
 
     public ShowCertificateResponse withIssueTime(String issueTime) {
@@ -467,7 +467,7 @@ public class ShowCertificateResponse extends SdkResponse {
             && Objects.equals(this.brand, showCertificateResponse.brand)
             && Objects.equals(this.pushSupport, showCertificateResponse.pushSupport)
             && Objects.equals(this.revokeReason, showCertificateResponse.revokeReason)
-            && Objects.equals(this.signatureAlgrithm, showCertificateResponse.signatureAlgrithm)
+            && Objects.equals(this.signatureAlgorithm, showCertificateResponse.signatureAlgorithm)
             && Objects.equals(this.issueTime, showCertificateResponse.issueTime)
             && Objects.equals(this.notBefore, showCertificateResponse.notBefore)
             && Objects.equals(this.notAfter, showCertificateResponse.notAfter)
@@ -491,7 +491,7 @@ public class ShowCertificateResponse extends SdkResponse {
             brand,
             pushSupport,
             revokeReason,
-            signatureAlgrithm,
+            signatureAlgorithm,
             issueTime,
             notBefore,
             notAfter,
@@ -517,7 +517,7 @@ public class ShowCertificateResponse extends SdkResponse {
         sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
         sb.append("    pushSupport: ").append(toIndentedString(pushSupport)).append("\n");
         sb.append("    revokeReason: ").append(toIndentedString(revokeReason)).append("\n");
-        sb.append("    signatureAlgrithm: ").append(toIndentedString(signatureAlgrithm)).append("\n");
+        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    issueTime: ").append(toIndentedString(issueTime)).append("\n");
         sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
         sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");

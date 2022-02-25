@@ -118,10 +118,81 @@ public class UpdateResponsePropertyResponse extends SdkResponse {
 
     private DataTypeEnum dataType;
 
+    /** 是否必填 0-非必填 1-必填 */
+    public static final class RequiredEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final RequiredEnum NUMBER_0 = new RequiredEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final RequiredEnum NUMBER_1 = new RequiredEnum(1);
+
+        private static final Map<Integer, RequiredEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, RequiredEnum> createStaticFields() {
+            Map<Integer, RequiredEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        RequiredEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RequiredEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            RequiredEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new RequiredEnum(value);
+            }
+            return result;
+        }
+
+        public static RequiredEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            RequiredEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RequiredEnum) {
+                return this.value.equals(((RequiredEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required")
 
-    private Integer required;
+    private RequiredEnum required;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
@@ -218,7 +289,7 @@ public class UpdateResponsePropertyResponse extends SdkResponse {
         this.dataType = dataType;
     }
 
-    public UpdateResponsePropertyResponse withRequired(Integer required) {
+    public UpdateResponsePropertyResponse withRequired(RequiredEnum required) {
         this.required = required;
         return this;
     }
@@ -226,11 +297,11 @@ public class UpdateResponsePropertyResponse extends SdkResponse {
     /** 是否必填 0-非必填 1-必填 minimum: 0 maximum: 10
      * 
      * @return required */
-    public Integer getRequired() {
+    public RequiredEnum getRequired() {
         return required;
     }
 
-    public void setRequired(Integer required) {
+    public void setRequired(RequiredEnum required) {
         this.required = required;
     }
 

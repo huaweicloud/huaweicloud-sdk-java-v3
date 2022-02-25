@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** Response Object */
 public class CreateClusterResponse extends SdkResponse {
@@ -18,6 +21,21 @@ public class CreateClusterResponse extends SdkResponse {
     @JsonProperty(value = "id")
 
     private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task")
+
+    private Task task;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "datastore")
+
+    private Datastore datastore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instances")
+
+    private List<ClusterInstance> instances = null;
 
     public CreateClusterResponse withName(String name) {
         this.name = name;
@@ -51,6 +69,88 @@ public class CreateClusterResponse extends SdkResponse {
         this.id = id;
     }
 
+    public CreateClusterResponse withTask(Task task) {
+        this.task = task;
+        return this;
+    }
+
+    public CreateClusterResponse withTask(Consumer<Task> taskSetter) {
+        if (this.task == null) {
+            this.task = new Task();
+            taskSetter.accept(this.task);
+        }
+
+        return this;
+    }
+
+    /** Get task
+     * 
+     * @return task */
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
+    }
+
+    public CreateClusterResponse withDatastore(Datastore datastore) {
+        this.datastore = datastore;
+        return this;
+    }
+
+    public CreateClusterResponse withDatastore(Consumer<Datastore> datastoreSetter) {
+        if (this.datastore == null) {
+            this.datastore = new Datastore();
+            datastoreSetter.accept(this.datastore);
+        }
+
+        return this;
+    }
+
+    /** Get datastore
+     * 
+     * @return datastore */
+    public Datastore getDatastore() {
+        return datastore;
+    }
+
+    public void setDatastore(Datastore datastore) {
+        this.datastore = datastore;
+    }
+
+    public CreateClusterResponse withInstances(List<ClusterInstance> instances) {
+        this.instances = instances;
+        return this;
+    }
+
+    public CreateClusterResponse addInstancesItem(ClusterInstance instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        this.instances.add(instancesItem);
+        return this;
+    }
+
+    public CreateClusterResponse withInstances(Consumer<List<ClusterInstance>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        instancesSetter.accept(this.instances);
+        return this;
+    }
+
+    /** 集群的节点信息
+     * 
+     * @return instances */
+    public List<ClusterInstance> getInstances() {
+        return instances;
+    }
+
+    public void setInstances(List<ClusterInstance> instances) {
+        this.instances = instances;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +161,15 @@ public class CreateClusterResponse extends SdkResponse {
         }
         CreateClusterResponse createClusterResponse = (CreateClusterResponse) o;
         return Objects.equals(this.name, createClusterResponse.name)
-            && Objects.equals(this.id, createClusterResponse.id);
+            && Objects.equals(this.id, createClusterResponse.id)
+            && Objects.equals(this.task, createClusterResponse.task)
+            && Objects.equals(this.datastore, createClusterResponse.datastore)
+            && Objects.equals(this.instances, createClusterResponse.instances);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, id);
+        return Objects.hash(name, id, task, datastore, instances);
     }
 
     @Override
@@ -75,6 +178,9 @@ public class CreateClusterResponse extends SdkResponse {
         sb.append("class CreateClusterResponse {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    task: ").append(toIndentedString(task)).append("\n");
+        sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
         sb.append("}");
         return sb.toString();
     }

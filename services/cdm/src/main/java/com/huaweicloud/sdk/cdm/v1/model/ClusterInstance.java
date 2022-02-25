@@ -1,12 +1,12 @@
-package com.huaweicloud.sdk.css.v1.model;
+package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 扩容实例。 */
-public class ExtendClusterInstancesResp {
+/** 集群的节点信息 */
+public class ClusterInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -28,12 +28,12 @@ public class ExtendClusterInstancesResp {
 
     private String shardId;
 
-    public ExtendClusterInstancesResp withId(String id) {
+    public ClusterInstance withId(String id) {
         this.id = id;
         return this;
     }
 
-    /** 实例ID。
+    /** 节点的虚拟机ID。
      * 
      * @return id */
     public String getId() {
@@ -44,12 +44,12 @@ public class ExtendClusterInstancesResp {
         this.id = id;
     }
 
-    public ExtendClusterInstancesResp withName(String name) {
+    public ClusterInstance withName(String name) {
         this.name = name;
         return this;
     }
 
-    /** 实例名字。
+    /** 节点的虚拟机名称。
      * 
      * @return name */
     public String getName() {
@@ -60,12 +60,12 @@ public class ExtendClusterInstancesResp {
         this.name = name;
     }
 
-    public ExtendClusterInstancesResp withType(String type) {
+    public ClusterInstance withType(String type) {
         this.type = type;
         return this;
     }
 
-    /** 实例类型。
+    /** 节点类型，只支持一种类型“cdm”。
      * 
      * @return type */
     public String getType() {
@@ -76,12 +76,12 @@ public class ExtendClusterInstancesResp {
         this.type = type;
     }
 
-    public ExtendClusterInstancesResp withShardId(String shardId) {
+    public ClusterInstance withShardId(String shardId) {
         this.shardId = shardId;
         return this;
     }
 
-    /** 实例组名。
+    /** 分片ID
      * 
      * @return shardId */
     public String getShardId() {
@@ -100,11 +100,9 @@ public class ExtendClusterInstancesResp {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ExtendClusterInstancesResp extendClusterInstancesResp = (ExtendClusterInstancesResp) o;
-        return Objects.equals(this.id, extendClusterInstancesResp.id)
-            && Objects.equals(this.name, extendClusterInstancesResp.name)
-            && Objects.equals(this.type, extendClusterInstancesResp.type)
-            && Objects.equals(this.shardId, extendClusterInstancesResp.shardId);
+        ClusterInstance clusterInstance = (ClusterInstance) o;
+        return Objects.equals(this.id, clusterInstance.id) && Objects.equals(this.name, clusterInstance.name)
+            && Objects.equals(this.type, clusterInstance.type) && Objects.equals(this.shardId, clusterInstance.shardId);
     }
 
     @Override
@@ -115,7 +113,7 @@ public class ExtendClusterInstancesResp {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ExtendClusterInstancesResp {\n");
+        sb.append("class ClusterInstance {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

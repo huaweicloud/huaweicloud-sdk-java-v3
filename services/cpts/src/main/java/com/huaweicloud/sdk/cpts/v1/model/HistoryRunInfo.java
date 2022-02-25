@@ -19,12 +19,12 @@ public class HistoryRunInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_id")
 
-    private Integer runId;
+    private Double runId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_type")
 
-    private Integer runType;
+    private Double runType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -34,7 +34,7 @@ public class HistoryRunInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "continue_time")
 
-    private Integer continueTime;
+    private Double continueTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "temp_names")
@@ -57,7 +57,7 @@ public class HistoryRunInfo {
         this.name = name;
     }
 
-    public HistoryRunInfo withRunId(Integer runId) {
+    public HistoryRunInfo withRunId(Double runId) {
         this.runId = runId;
         return this;
     }
@@ -65,15 +65,15 @@ public class HistoryRunInfo {
     /** run_id
      * 
      * @return runId */
-    public Integer getRunId() {
+    public Double getRunId() {
         return runId;
     }
 
-    public void setRunId(Integer runId) {
+    public void setRunId(Double runId) {
         this.runId = runId;
     }
 
-    public HistoryRunInfo withRunType(Integer runType) {
+    public HistoryRunInfo withRunType(Double runType) {
         this.runType = runType;
         return this;
     }
@@ -81,11 +81,11 @@ public class HistoryRunInfo {
     /** run_type
      * 
      * @return runType */
-    public Integer getRunType() {
+    public Double getRunType() {
         return runType;
     }
 
-    public void setRunType(Integer runType) {
+    public void setRunType(Double runType) {
         this.runType = runType;
     }
 
@@ -105,7 +105,7 @@ public class HistoryRunInfo {
         this.startTime = startTime;
     }
 
-    public HistoryRunInfo withContinueTime(Integer continueTime) {
+    public HistoryRunInfo withContinueTime(Double continueTime) {
         this.continueTime = continueTime;
         return this;
     }
@@ -113,11 +113,11 @@ public class HistoryRunInfo {
     /** continue_time
      * 
      * @return continueTime */
-    public Integer getContinueTime() {
+    public Double getContinueTime() {
         return continueTime;
     }
 
-    public void setContinueTime(Integer continueTime) {
+    public void setContinueTime(Double continueTime) {
         this.continueTime = continueTime;
     }
 

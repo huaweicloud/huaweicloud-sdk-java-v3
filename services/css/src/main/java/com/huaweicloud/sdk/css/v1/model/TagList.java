@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 标签对象列表。 */
+/** TagList */
 public class TagList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

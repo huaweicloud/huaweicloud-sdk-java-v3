@@ -734,6 +734,25 @@ public class CodeHubAsyncClient {
             CodeHubMeta.showStatisticCommit, hcClient);
     }
 
+    /** 获取代码提交行数 获取指定日期内代码仓指定分支的代码提交行数
+     *
+     * @param ShowStatisticCommitV3Request 请求对象
+     * @return CompletableFuture<ShowStatisticCommitV3Response> */
+    public CompletableFuture<ShowStatisticCommitV3Response> showStatisticCommitV3Async(
+        ShowStatisticCommitV3Request request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.showStatisticCommitV3);
+    }
+
+    /** 获取代码提交行数 获取指定日期内代码仓指定分支的代码提交行数
+     *
+     * @param ShowStatisticCommitV3Request 请求对象
+     * @return AsyncInvoker<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> */
+    public AsyncInvoker<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> showStatisticCommitV3AsyncInvoker(
+        ShowStatisticCommitV3Request request) {
+        return new AsyncInvoker<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response>(request,
+            CodeHubMeta.showStatisticCommitV3, hcClient);
+    }
+
     /** 获取仓库统计数据 获取仓库统计数据
      *
      * @param ShowStatisticalDataRequest 请求对象

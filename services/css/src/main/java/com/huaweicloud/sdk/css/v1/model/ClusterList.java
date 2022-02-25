@@ -426,7 +426,7 @@ public class ClusterList {
         return this;
     }
 
-    /** Get period
+    /** 是为包周期集群。
      * 
      * @return period */
     public Boolean getPeriod() {
@@ -442,7 +442,7 @@ public class ClusterList {
         return this;
     }
 
-    /** 是否开启https访问
+    /** 是否开启https访问。
      * 
      * @return httpsEnable */
     public Boolean getHttpsEnable() {

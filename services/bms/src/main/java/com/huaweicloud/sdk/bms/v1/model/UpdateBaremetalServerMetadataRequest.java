@@ -17,7 +17,7 @@ public class UpdateBaremetalServerMetadataRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private MetaData body;
+    private UpdateBaremetalServerMetadataReq body;
 
     public UpdateBaremetalServerMetadataRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -35,14 +35,14 @@ public class UpdateBaremetalServerMetadataRequest {
         this.serverId = serverId;
     }
 
-    public UpdateBaremetalServerMetadataRequest withBody(MetaData body) {
+    public UpdateBaremetalServerMetadataRequest withBody(UpdateBaremetalServerMetadataReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateBaremetalServerMetadataRequest withBody(Consumer<MetaData> bodySetter) {
+    public UpdateBaremetalServerMetadataRequest withBody(Consumer<UpdateBaremetalServerMetadataReq> bodySetter) {
         if (this.body == null) {
-            this.body = new MetaData();
+            this.body = new UpdateBaremetalServerMetadataReq();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +52,11 @@ public class UpdateBaremetalServerMetadataRequest {
     /** Get body
      * 
      * @return body */
-    public MetaData getBody() {
+    public UpdateBaremetalServerMetadataReq getBody() {
         return body;
     }
 
-    public void setBody(MetaData body) {
+    public void setBody(UpdateBaremetalServerMetadataReq body) {
         this.body = body;
     }
 

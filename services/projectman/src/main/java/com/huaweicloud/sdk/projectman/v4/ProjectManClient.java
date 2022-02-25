@@ -87,6 +87,24 @@ public class ProjectManClient {
             ProjectManMeta.batchDeleteMembersV4, hcClient);
     }
 
+    /** 更新子用户昵称 拥有te_admin角色的用户可以更新其他用户的昵称
+     *
+     * @param BatchUpdateChildNickNamesRequest 请求对象
+     * @return BatchUpdateChildNickNamesResponse */
+    public BatchUpdateChildNickNamesResponse batchUpdateChildNickNames(BatchUpdateChildNickNamesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.batchUpdateChildNickNames);
+    }
+
+    /** 更新子用户昵称 拥有te_admin角色的用户可以更新其他用户的昵称
+     *
+     * @param BatchUpdateChildNickNamesRequest 请求对象
+     * @return SyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse> */
+    public SyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse> batchUpdateChildNickNamesInvoker(
+        BatchUpdateChildNickNamesRequest request) {
+        return new SyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse>(request,
+            ProjectManMeta.batchUpdateChildNickNames, hcClient);
+    }
+
     /** 检查项目名称是否存在 检查项目名称是否存在
      *
      * @param CheckProjectNameV4Request 请求对象
@@ -640,6 +658,24 @@ public class ProjectManClient {
     public SyncInvoker<ListIssuesV4Request, ListIssuesV4Response> listIssuesV4Invoker(ListIssuesV4Request request) {
         return new SyncInvoker<ListIssuesV4Request, ListIssuesV4Response>(request, ProjectManMeta.listIssuesV4,
             hcClient);
+    }
+
+    /** 查看迭代历史记录 查看迭代历史记录
+     *
+     * @param ListIterationHistoriesRequest 请求对象
+     * @return ListIterationHistoriesResponse */
+    public ListIterationHistoriesResponse listIterationHistories(ListIterationHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIterationHistories);
+    }
+
+    /** 查看迭代历史记录 查看迭代历史记录
+     *
+     * @param ListIterationHistoriesRequest 请求对象
+     * @return SyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse> */
+    public SyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse> listIterationHistoriesInvoker(
+        ListIterationHistoriesRequest request) {
+        return new SyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse>(request,
+            ProjectManMeta.listIterationHistories, hcClient);
     }
 
     /** 获取指定项目的迭代列表 获取项目迭代

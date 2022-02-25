@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -61,15 +66,161 @@ public class Device {
 
     private String appName;
 
+    /** 设备状态 0-启用 1-禁用 */
+    public static final class StatusEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private StatusEnum status;
+
+    /** 是否在线 0-未连接 1-在线 2-离线 */
+    public static final class OnlineStatusEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final OnlineStatusEnum NUMBER_0 = new OnlineStatusEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final OnlineStatusEnum NUMBER_1 = new OnlineStatusEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final OnlineStatusEnum NUMBER_2 = new OnlineStatusEnum(2);
+
+        private static final Map<Integer, OnlineStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, OnlineStatusEnum> createStaticFields() {
+            Map<Integer, OnlineStatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        OnlineStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OnlineStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            OnlineStatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new OnlineStatusEnum(value);
+            }
+            return result;
+        }
+
+        public static OnlineStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            OnlineStatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OnlineStatusEnum) {
+                return this.value.equals(((OnlineStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "online_status")
 
-    private Integer onlineStatus;
+    private OnlineStatusEnum onlineStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -136,10 +287,88 @@ public class Device {
 
     private Integer nodeType;
 
+    /** 设备类型<br>
+     * 0-普通设备（无子设备也无父设备）<br>
+     * 1-网关设备(可挂载子设备)<br>
+     * 2-子设备(归属于某个网关设备) */
+    public static final class DeviceTypeEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final DeviceTypeEnum NUMBER_0 = new DeviceTypeEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final DeviceTypeEnum NUMBER_1 = new DeviceTypeEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final DeviceTypeEnum NUMBER_2 = new DeviceTypeEnum(2);
+
+        private static final Map<Integer, DeviceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, DeviceTypeEnum> createStaticFields() {
+            Map<Integer, DeviceTypeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        DeviceTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DeviceTypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            DeviceTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new DeviceTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static DeviceTypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            DeviceTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DeviceTypeEnum) {
+                return this.value.equals(((DeviceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_type")
 
-    private Integer deviceType;
+    private DeviceTypeEnum deviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ip")
@@ -161,10 +390,85 @@ public class Device {
 
     private String version;
 
+    /** modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品 */
+    public static final class PluginIdEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final PluginIdEnum NUMBER_0 = new PluginIdEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final PluginIdEnum NUMBER_1 = new PluginIdEnum(1);
+
+        /** Enum NUMBER_2 for value: 2 */
+        public static final PluginIdEnum NUMBER_2 = new PluginIdEnum(2);
+
+        private static final Map<Integer, PluginIdEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PluginIdEnum> createStaticFields() {
+            Map<Integer, PluginIdEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        PluginIdEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PluginIdEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PluginIdEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PluginIdEnum(value);
+            }
+            return result;
+        }
+
+        public static PluginIdEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PluginIdEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PluginIdEnum) {
+                return this.value.equals(((PluginIdEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_id")
 
-    private Integer pluginId;
+    private PluginIdEnum pluginId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
@@ -356,7 +660,7 @@ public class Device {
         this.appName = appName;
     }
 
-    public Device withStatus(Integer status) {
+    public Device withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -364,15 +668,15 @@ public class Device {
     /** 设备状态 0-启用 1-禁用 minimum: 0 maximum: 10
      * 
      * @return status */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
-    public Device withOnlineStatus(Integer onlineStatus) {
+    public Device withOnlineStatus(OnlineStatusEnum onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
     }
@@ -380,11 +684,11 @@ public class Device {
     /** 是否在线 0-未连接 1-在线 2-离线 minimum: 0 maximum: 10
      * 
      * @return onlineStatus */
-    public Integer getOnlineStatus() {
+    public OnlineStatusEnum getOnlineStatus() {
         return onlineStatus;
     }
 
-    public void setOnlineStatus(Integer onlineStatus) {
+    public void setOnlineStatus(OnlineStatusEnum onlineStatus) {
         this.onlineStatus = onlineStatus;
     }
 
@@ -639,7 +943,7 @@ public class Device {
         this.nodeType = nodeType;
     }
 
-    public Device withDeviceType(Integer deviceType) {
+    public Device withDeviceType(DeviceTypeEnum deviceType) {
         this.deviceType = deviceType;
         return this;
     }
@@ -650,11 +954,11 @@ public class Device {
      * 2-子设备(归属于某个网关设备) minimum: 0 maximum: 10
      * 
      * @return deviceType */
-    public Integer getDeviceType() {
+    public DeviceTypeEnum getDeviceType() {
         return deviceType;
     }
 
-    public void setDeviceType(Integer deviceType) {
+    public void setDeviceType(DeviceTypeEnum deviceType) {
         this.deviceType = deviceType;
     }
 
@@ -722,7 +1026,7 @@ public class Device {
         this.version = version;
     }
 
-    public Device withPluginId(Integer pluginId) {
+    public Device withPluginId(PluginIdEnum pluginId) {
         this.pluginId = pluginId;
         return this;
     }
@@ -730,11 +1034,11 @@ public class Device {
     /** modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品 minimum: 1 maximum: 999999999999999999
      * 
      * @return pluginId */
-    public Integer getPluginId() {
+    public PluginIdEnum getPluginId() {
         return pluginId;
     }
 
-    public void setPluginId(Integer pluginId) {
+    public void setPluginId(PluginIdEnum pluginId) {
         this.pluginId = pluginId;
     }
 

@@ -205,6 +205,39 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateStructConfigRequest, CreateStructConfigResponse> createStructConfig =
+        genForcreateStructConfig();
+
+    private static HttpRequestDef<CreateStructConfigRequest, CreateStructConfigResponse> genForcreateStructConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateStructConfigRequest, CreateStructConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateStructConfigRequest.class, CreateStructConfigResponse.class)
+                .withName("CreateStructConfig")
+                .withUri("/v3/{project_id}/lts/struct/template")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<StructConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StructConfig.class),
+            f -> f.withMarshaller(CreateStructConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateStructConfigResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateStructTemplateRequest, CreateStructTemplateResponse> createStructTemplate =
         genForcreateStructTemplate();
 
@@ -653,6 +686,24 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> listBreifStructTemplate =
+        genForlistBreifStructTemplate();
+
+    private static HttpRequestDef<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> genForlistBreifStructTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListBreifStructTemplateRequest.class, ListBreifStructTemplateResponse.class)
+            .withName("ListBreifStructTemplate")
+            .withUri("/v3/{project_id}/lts/struct/customtemplate/list")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListChartsRequest, ListChartsResponse> listCharts = genForlistCharts();
 
     private static HttpRequestDef<ListChartsRequest, ListChartsResponse> genForlistCharts() {
@@ -1070,6 +1121,31 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListStructTemplateRequest, ListStructTemplateResponse> listStructTemplate =
+        genForlistStructTemplate();
+
+    private static HttpRequestDef<ListStructTemplateRequest, ListStructTemplateResponse> genForlistStructTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListStructTemplateRequest, ListStructTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStructTemplateRequest.class, ListStructTemplateResponse.class)
+                .withName("ListStructTemplate")
+                .withUri("/v3/{project_id}/lts/struct/customtemplate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStructTemplateRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRange =
         genForlistStructuredLogsWithTimeRange();
 
@@ -1395,6 +1471,39 @@ public class LtsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStructConfigRequest, UpdateStructConfigResponse> updateStructConfig =
+        genForupdateStructConfig();
+
+    private static HttpRequestDef<UpdateStructConfigRequest, UpdateStructConfigResponse> genForupdateStructConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateStructConfigRequest, UpdateStructConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateStructConfigRequest.class, UpdateStructConfigResponse.class)
+                .withName("UpdateStructConfig")
+                .withUri("/v3/{project_id}/lts/struct/template")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<StructConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StructConfig.class),
+            f -> f.withMarshaller(UpdateStructConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateStructConfigResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

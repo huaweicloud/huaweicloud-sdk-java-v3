@@ -5,27 +5,27 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ReportTaskInfo */
+/** 报告任务信息 */
 public class ReportTaskInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vum")
 
-    private Integer vum;
+    private Double vum;
 
-    public ReportTaskInfo withVum(Integer vum) {
+    public ReportTaskInfo withVum(Double vum) {
         this.vum = vum;
         return this;
     }
 
-    /** vum
+    /** 分钟*并发数
      * 
      * @return vum */
-    public Integer getVum() {
+    public Double getVum() {
         return vum;
     }
 
-    public void setVum(Integer vum) {
+    public void setVum(Double vum) {
         this.vum = vum;
     }
 

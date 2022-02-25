@@ -11,22 +11,32 @@ public class ReportoutlineInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgResponseTime")
 
-    private Float avgResponseTime;
+    private Double avgResponseTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "branchId")
+
+    private String branchId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "branchName")
+
+    private String branchName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "caseRetry")
 
-    private Integer caseRetry;
+    private Double caseRetry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "completeNum")
 
-    private Integer completeNum;
+    private Double completeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
-    private Integer duration;
+    private Double duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
@@ -36,7 +46,7 @@ public class ReportoutlineInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executedNum")
 
-    private Integer executedNum;
+    private Double executedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iterationUri")
@@ -46,37 +56,32 @@ public class ReportoutlineInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kpiCaseCount")
 
-    private Integer kpiCaseCount;
+    private Double kpiCaseCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kpiCaseExecuteCount")
 
-    private Integer kpiCaseExecuteCount;
+    private Double kpiCaseExecuteCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kpiCasePassCount")
 
-    private Integer kpiCasePassCount;
+    private Double kpiCasePassCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxUsers")
 
-    private Integer maxUsers;
+    private Double maxUsers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "passNum")
 
-    private Integer passNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "progressState")
-
-    private String progressState;
+    private Double passNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage")
 
-    private Integer stage;
+    private Double stage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stageName")
@@ -89,96 +94,133 @@ public class ReportoutlineInfo {
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "statusValue")
-
-    private String statusValue;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "successRate")
 
-    private Integer successRate;
+    private Double successRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taskStatus")
 
-    private Integer taskStatus;
+    private Double taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalNum")
 
-    private Integer totalNum;
+    private Double totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tps")
 
-    private Float tps;
+    private Double tps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "versionUri")
 
     private String versionUri;
 
-    public ReportoutlineInfo withAvgResponseTime(Float avgResponseTime) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "projectId")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serviceId")
+
+    private String serviceId;
+
+    public ReportoutlineInfo withAvgResponseTime(Double avgResponseTime) {
         this.avgResponseTime = avgResponseTime;
         return this;
     }
 
-    /** avgResponseTime
+    /** 平均响应时间
      * 
      * @return avgResponseTime */
-    public Float getAvgResponseTime() {
+    public Double getAvgResponseTime() {
         return avgResponseTime;
     }
 
-    public void setAvgResponseTime(Float avgResponseTime) {
+    public void setAvgResponseTime(Double avgResponseTime) {
         this.avgResponseTime = avgResponseTime;
     }
 
-    public ReportoutlineInfo withCaseRetry(Integer caseRetry) {
+    public ReportoutlineInfo withBranchId(String branchId) {
+        this.branchId = branchId;
+        return this;
+    }
+
+    /** 分支id
+     * 
+     * @return branchId */
+    public String getBranchId() {
+        return branchId;
+    }
+
+    public void setBranchId(String branchId) {
+        this.branchId = branchId;
+    }
+
+    public ReportoutlineInfo withBranchName(String branchName) {
+        this.branchName = branchName;
+        return this;
+    }
+
+    /** 分支名称
+     * 
+     * @return branchName */
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public void setBranchName(String branchName) {
+        this.branchName = branchName;
+    }
+
+    public ReportoutlineInfo withCaseRetry(Double caseRetry) {
         this.caseRetry = caseRetry;
         return this;
     }
 
-    /** caseRetry
+    /** 用例重试次数
      * 
      * @return caseRetry */
-    public Integer getCaseRetry() {
+    public Double getCaseRetry() {
         return caseRetry;
     }
 
-    public void setCaseRetry(Integer caseRetry) {
+    public void setCaseRetry(Double caseRetry) {
         this.caseRetry = caseRetry;
     }
 
-    public ReportoutlineInfo withCompleteNum(Integer completeNum) {
+    public ReportoutlineInfo withCompleteNum(Double completeNum) {
         this.completeNum = completeNum;
         return this;
     }
 
-    /** completeNum
+    /** 已完成的用例数
      * 
      * @return completeNum */
-    public Integer getCompleteNum() {
+    public Double getCompleteNum() {
         return completeNum;
     }
 
-    public void setCompleteNum(Integer completeNum) {
+    public void setCompleteNum(Double completeNum) {
         this.completeNum = completeNum;
     }
 
-    public ReportoutlineInfo withDuration(Integer duration) {
+    public ReportoutlineInfo withDuration(Double duration) {
         this.duration = duration;
         return this;
     }
 
-    /** duration
+    /** 持续时间
      * 
      * @return duration */
-    public Integer getDuration() {
+    public Double getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(Double duration) {
         this.duration = duration;
     }
 
@@ -187,7 +229,7 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** endTime
+    /** 结束时间
      * 
      * @return endTime */
     public String getEndTime() {
@@ -198,19 +240,19 @@ public class ReportoutlineInfo {
         this.endTime = endTime;
     }
 
-    public ReportoutlineInfo withExecutedNum(Integer executedNum) {
+    public ReportoutlineInfo withExecutedNum(Double executedNum) {
         this.executedNum = executedNum;
         return this;
     }
 
-    /** executedNum
+    /** 已执行用例数
      * 
      * @return executedNum */
-    public Integer getExecutedNum() {
+    public Double getExecutedNum() {
         return executedNum;
     }
 
-    public void setExecutedNum(Integer executedNum) {
+    public void setExecutedNum(Double executedNum) {
         this.executedNum = executedNum;
     }
 
@@ -219,7 +261,7 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** iterationUri
+    /** 迭代id
      * 
      * @return iterationUri */
     public String getIterationUri() {
@@ -230,115 +272,99 @@ public class ReportoutlineInfo {
         this.iterationUri = iterationUri;
     }
 
-    public ReportoutlineInfo withKpiCaseCount(Integer kpiCaseCount) {
+    public ReportoutlineInfo withKpiCaseCount(Double kpiCaseCount) {
         this.kpiCaseCount = kpiCaseCount;
         return this;
     }
 
-    /** kpiCaseCount
+    /** kpi用例数
      * 
      * @return kpiCaseCount */
-    public Integer getKpiCaseCount() {
+    public Double getKpiCaseCount() {
         return kpiCaseCount;
     }
 
-    public void setKpiCaseCount(Integer kpiCaseCount) {
+    public void setKpiCaseCount(Double kpiCaseCount) {
         this.kpiCaseCount = kpiCaseCount;
     }
 
-    public ReportoutlineInfo withKpiCaseExecuteCount(Integer kpiCaseExecuteCount) {
+    public ReportoutlineInfo withKpiCaseExecuteCount(Double kpiCaseExecuteCount) {
         this.kpiCaseExecuteCount = kpiCaseExecuteCount;
         return this;
     }
 
-    /** kpiCaseExecuteCount
+    /** kpi用例执行次数
      * 
      * @return kpiCaseExecuteCount */
-    public Integer getKpiCaseExecuteCount() {
+    public Double getKpiCaseExecuteCount() {
         return kpiCaseExecuteCount;
     }
 
-    public void setKpiCaseExecuteCount(Integer kpiCaseExecuteCount) {
+    public void setKpiCaseExecuteCount(Double kpiCaseExecuteCount) {
         this.kpiCaseExecuteCount = kpiCaseExecuteCount;
     }
 
-    public ReportoutlineInfo withKpiCasePassCount(Integer kpiCasePassCount) {
+    public ReportoutlineInfo withKpiCasePassCount(Double kpiCasePassCount) {
         this.kpiCasePassCount = kpiCasePassCount;
         return this;
     }
 
-    /** kpiCasePassCount
+    /** kpi用例通过次数
      * 
      * @return kpiCasePassCount */
-    public Integer getKpiCasePassCount() {
+    public Double getKpiCasePassCount() {
         return kpiCasePassCount;
     }
 
-    public void setKpiCasePassCount(Integer kpiCasePassCount) {
+    public void setKpiCasePassCount(Double kpiCasePassCount) {
         this.kpiCasePassCount = kpiCasePassCount;
     }
 
-    public ReportoutlineInfo withMaxUsers(Integer maxUsers) {
+    public ReportoutlineInfo withMaxUsers(Double maxUsers) {
         this.maxUsers = maxUsers;
         return this;
     }
 
-    /** maxUsers
+    /** 最大并发数
      * 
      * @return maxUsers */
-    public Integer getMaxUsers() {
+    public Double getMaxUsers() {
         return maxUsers;
     }
 
-    public void setMaxUsers(Integer maxUsers) {
+    public void setMaxUsers(Double maxUsers) {
         this.maxUsers = maxUsers;
     }
 
-    public ReportoutlineInfo withPassNum(Integer passNum) {
+    public ReportoutlineInfo withPassNum(Double passNum) {
         this.passNum = passNum;
         return this;
     }
 
-    /** passNum
+    /** 结果为pass的用例数
      * 
      * @return passNum */
-    public Integer getPassNum() {
+    public Double getPassNum() {
         return passNum;
     }
 
-    public void setPassNum(Integer passNum) {
+    public void setPassNum(Double passNum) {
         this.passNum = passNum;
     }
 
-    public ReportoutlineInfo withProgressState(String progressState) {
-        this.progressState = progressState;
-        return this;
-    }
-
-    /** progressState
-     * 
-     * @return progressState */
-    public String getProgressState() {
-        return progressState;
-    }
-
-    public void setProgressState(String progressState) {
-        this.progressState = progressState;
-    }
-
-    public ReportoutlineInfo withStage(Integer stage) {
+    public ReportoutlineInfo withStage(Double stage) {
         this.stage = stage;
         return this;
     }
 
-    /** stage
+    /** 阶段id
      * 
      * @return stage */
-    public Integer getStage() {
+    public Double getStage() {
         return stage;
     }
 
-    public void setStage(Integer stage) {
+    public void setStage(Double stage) {
         this.stage = stage;
     }
 
@@ -347,7 +373,7 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** stageName
+    /** 阶段名称
      * 
      * @return stageName */
     public String getStageName() {
@@ -363,7 +389,7 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** startTime
+    /** 开始时间
      * 
      * @return startTime */
     public String getStartTime() {
@@ -374,83 +400,67 @@ public class ReportoutlineInfo {
         this.startTime = startTime;
     }
 
-    public ReportoutlineInfo withStatusValue(String statusValue) {
-        this.statusValue = statusValue;
-        return this;
-    }
-
-    /** statusValue
-     * 
-     * @return statusValue */
-    public String getStatusValue() {
-        return statusValue;
-    }
-
-    public void setStatusValue(String statusValue) {
-        this.statusValue = statusValue;
-    }
-
-    public ReportoutlineInfo withSuccessRate(Integer successRate) {
+    public ReportoutlineInfo withSuccessRate(Double successRate) {
         this.successRate = successRate;
         return this;
     }
 
-    /** successRate
+    /** 成功率
      * 
      * @return successRate */
-    public Integer getSuccessRate() {
+    public Double getSuccessRate() {
         return successRate;
     }
 
-    public void setSuccessRate(Integer successRate) {
+    public void setSuccessRate(Double successRate) {
         this.successRate = successRate;
     }
 
-    public ReportoutlineInfo withTaskStatus(Integer taskStatus) {
+    public ReportoutlineInfo withTaskStatus(Double taskStatus) {
         this.taskStatus = taskStatus;
         return this;
     }
 
-    /** taskStatus
+    /** 任务状态
      * 
      * @return taskStatus */
-    public Integer getTaskStatus() {
+    public Double getTaskStatus() {
         return taskStatus;
     }
 
-    public void setTaskStatus(Integer taskStatus) {
+    public void setTaskStatus(Double taskStatus) {
         this.taskStatus = taskStatus;
     }
 
-    public ReportoutlineInfo withTotalNum(Integer totalNum) {
+    public ReportoutlineInfo withTotalNum(Double totalNum) {
         this.totalNum = totalNum;
         return this;
     }
 
-    /** totalNum
+    /** 总用例数
      * 
      * @return totalNum */
-    public Integer getTotalNum() {
+    public Double getTotalNum() {
         return totalNum;
     }
 
-    public void setTotalNum(Integer totalNum) {
+    public void setTotalNum(Double totalNum) {
         this.totalNum = totalNum;
     }
 
-    public ReportoutlineInfo withTps(Float tps) {
+    public ReportoutlineInfo withTps(Double tps) {
         this.tps = tps;
         return this;
     }
 
-    /** tps
+    /** 性能tps指标
      * 
      * @return tps */
-    public Float getTps() {
+    public Double getTps() {
         return tps;
     }
 
-    public void setTps(Float tps) {
+    public void setTps(Double tps) {
         this.tps = tps;
     }
 
@@ -459,7 +469,7 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** versionUri
+    /** 分支uri
      * 
      * @return versionUri */
     public String getVersionUri() {
@@ -468,6 +478,38 @@ public class ReportoutlineInfo {
 
     public void setVersionUri(String versionUri) {
         this.versionUri = versionUri;
+    }
+
+    public ReportoutlineInfo withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /** 工程id
+     * 
+     * @return projectId */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public ReportoutlineInfo withServiceId(String serviceId) {
+        this.serviceId = serviceId;
+        return this;
+    }
+
+    /** 服务id
+     * 
+     * @return serviceId */
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
     }
 
     @Override
@@ -480,6 +522,8 @@ public class ReportoutlineInfo {
         }
         ReportoutlineInfo reportoutlineInfo = (ReportoutlineInfo) o;
         return Objects.equals(this.avgResponseTime, reportoutlineInfo.avgResponseTime)
+            && Objects.equals(this.branchId, reportoutlineInfo.branchId)
+            && Objects.equals(this.branchName, reportoutlineInfo.branchName)
             && Objects.equals(this.caseRetry, reportoutlineInfo.caseRetry)
             && Objects.equals(this.completeNum, reportoutlineInfo.completeNum)
             && Objects.equals(this.duration, reportoutlineInfo.duration)
@@ -491,21 +535,23 @@ public class ReportoutlineInfo {
             && Objects.equals(this.kpiCasePassCount, reportoutlineInfo.kpiCasePassCount)
             && Objects.equals(this.maxUsers, reportoutlineInfo.maxUsers)
             && Objects.equals(this.passNum, reportoutlineInfo.passNum)
-            && Objects.equals(this.progressState, reportoutlineInfo.progressState)
             && Objects.equals(this.stage, reportoutlineInfo.stage)
             && Objects.equals(this.stageName, reportoutlineInfo.stageName)
             && Objects.equals(this.startTime, reportoutlineInfo.startTime)
-            && Objects.equals(this.statusValue, reportoutlineInfo.statusValue)
             && Objects.equals(this.successRate, reportoutlineInfo.successRate)
             && Objects.equals(this.taskStatus, reportoutlineInfo.taskStatus)
             && Objects.equals(this.totalNum, reportoutlineInfo.totalNum)
             && Objects.equals(this.tps, reportoutlineInfo.tps)
-            && Objects.equals(this.versionUri, reportoutlineInfo.versionUri);
+            && Objects.equals(this.versionUri, reportoutlineInfo.versionUri)
+            && Objects.equals(this.projectId, reportoutlineInfo.projectId)
+            && Objects.equals(this.serviceId, reportoutlineInfo.serviceId);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(avgResponseTime,
+            branchId,
+            branchName,
             caseRetry,
             completeNum,
             duration,
@@ -517,16 +563,16 @@ public class ReportoutlineInfo {
             kpiCasePassCount,
             maxUsers,
             passNum,
-            progressState,
             stage,
             stageName,
             startTime,
-            statusValue,
             successRate,
             taskStatus,
             totalNum,
             tps,
-            versionUri);
+            versionUri,
+            projectId,
+            serviceId);
     }
 
     @Override
@@ -534,6 +580,8 @@ public class ReportoutlineInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class ReportoutlineInfo {\n");
         sb.append("    avgResponseTime: ").append(toIndentedString(avgResponseTime)).append("\n");
+        sb.append("    branchId: ").append(toIndentedString(branchId)).append("\n");
+        sb.append("    branchName: ").append(toIndentedString(branchName)).append("\n");
         sb.append("    caseRetry: ").append(toIndentedString(caseRetry)).append("\n");
         sb.append("    completeNum: ").append(toIndentedString(completeNum)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
@@ -545,16 +593,16 @@ public class ReportoutlineInfo {
         sb.append("    kpiCasePassCount: ").append(toIndentedString(kpiCasePassCount)).append("\n");
         sb.append("    maxUsers: ").append(toIndentedString(maxUsers)).append("\n");
         sb.append("    passNum: ").append(toIndentedString(passNum)).append("\n");
-        sb.append("    progressState: ").append(toIndentedString(progressState)).append("\n");
         sb.append("    stage: ").append(toIndentedString(stage)).append("\n");
         sb.append("    stageName: ").append(toIndentedString(stageName)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("    statusValue: ").append(toIndentedString(statusValue)).append("\n");
         sb.append("    successRate: ").append(toIndentedString(successRate)).append("\n");
         sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
         sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
         sb.append("    tps: ").append(toIndentedString(tps)).append("\n");
         sb.append("    versionUri: ").append(toIndentedString(versionUri)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

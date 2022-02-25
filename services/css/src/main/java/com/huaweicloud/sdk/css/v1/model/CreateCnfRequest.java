@@ -24,7 +24,7 @@ public class CreateCnfRequest {
         return this;
     }
 
-    /** 指定查询集群ID。
+    /** 指定待创建的集群ID。
      * 
      * @return clusterId */
     public String getClusterId() {

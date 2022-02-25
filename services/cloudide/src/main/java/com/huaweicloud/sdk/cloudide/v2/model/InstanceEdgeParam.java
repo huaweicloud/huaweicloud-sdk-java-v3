@@ -377,7 +377,7 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 组织id（对应华为云帐号的domainId）
+    /** 租户id（对应华为云帐号的domainId）
      * 
      * @return instanceUserDomainId */
     public String getInstanceUserDomainId() {
@@ -393,7 +393,7 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 用户组织名
+    /** 用户租户名
      * 
      * @return instanceUserDomainName */
     public String getInstanceUserDomainName() {

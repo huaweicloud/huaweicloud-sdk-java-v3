@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** Topic */
@@ -23,15 +28,157 @@ public class Topic {
 
     private String description;
 
+    /** TOPIC权限, 主题权限 0-发布 1-订阅 */
+    public static final class PermissionEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final PermissionEnum NUMBER_0 = new PermissionEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final PermissionEnum NUMBER_1 = new PermissionEnum(1);
+
+        private static final Map<Integer, PermissionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PermissionEnum> createStaticFields() {
+            Map<Integer, PermissionEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        PermissionEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PermissionEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PermissionEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PermissionEnum(value);
+            }
+            return result;
+        }
+
+        public static PermissionEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            PermissionEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PermissionEnum) {
+                return this.value.equals(((PermissionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
 
-    private Integer permission;
+    private PermissionEnum permission;
+
+    /** TOPIC类型 0-基础TOPIC 1-用户自定义TOPIC */
+    public static final class IsPrivateEnum {
+
+        /** Enum NUMBER_0 for value: 0 */
+        public static final IsPrivateEnum NUMBER_0 = new IsPrivateEnum(0);
+
+        /** Enum NUMBER_1 for value: 1 */
+        public static final IsPrivateEnum NUMBER_1 = new IsPrivateEnum(1);
+
+        private static final Map<Integer, IsPrivateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IsPrivateEnum> createStaticFields() {
+            Map<Integer, IsPrivateEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        IsPrivateEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IsPrivateEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IsPrivateEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new IsPrivateEnum(value);
+            }
+            return result;
+        }
+
+        public static IsPrivateEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IsPrivateEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IsPrivateEnum) {
+                return this.value.equals(((IsPrivateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_private")
 
-    private Integer isPrivate;
+    private IsPrivateEnum isPrivate;
 
     public Topic withId(Integer id) {
         this.id = id;
@@ -81,7 +228,7 @@ public class Topic {
         this.description = description;
     }
 
-    public Topic withPermission(Integer permission) {
+    public Topic withPermission(PermissionEnum permission) {
         this.permission = permission;
         return this;
     }
@@ -89,15 +236,15 @@ public class Topic {
     /** TOPIC权限, 主题权限 0-发布 1-订阅 minimum: 0 maximum: 10
      * 
      * @return permission */
-    public Integer getPermission() {
+    public PermissionEnum getPermission() {
         return permission;
     }
 
-    public void setPermission(Integer permission) {
+    public void setPermission(PermissionEnum permission) {
         this.permission = permission;
     }
 
-    public Topic withIsPrivate(Integer isPrivate) {
+    public Topic withIsPrivate(IsPrivateEnum isPrivate) {
         this.isPrivate = isPrivate;
         return this;
     }
@@ -105,11 +252,11 @@ public class Topic {
     /** TOPIC类型 0-基础TOPIC 1-用户自定义TOPIC minimum: 0 maximum: 10
      * 
      * @return isPrivate */
-    public Integer getIsPrivate() {
+    public IsPrivateEnum getIsPrivate() {
         return isPrivate;
     }
 
-    public void setIsPrivate(Integer isPrivate) {
+    public void setIsPrivate(IsPrivateEnum isPrivate) {
         this.isPrivate = isPrivate;
     }
 

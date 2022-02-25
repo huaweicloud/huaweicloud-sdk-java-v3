@@ -24,7 +24,7 @@ public class StartConnectivityTestRequest {
         return this;
     }
 
-    /** 指定查询集群ID。
+    /** 指定待测试的集群ID。
      * 
      * @return clusterId */
     public String getClusterId() {

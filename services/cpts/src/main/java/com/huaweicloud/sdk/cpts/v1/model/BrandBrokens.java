@@ -14,19 +14,19 @@ public class BrandBrokens {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recBytes")
 
-    private List<Integer> recBytes = null;
+    private List<Double> recBytes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sentBytes")
 
-    private List<Integer> sentBytes = null;
+    private List<Double> sentBytes = null;
 
-    public BrandBrokens withRecBytes(List<Integer> recBytes) {
+    public BrandBrokens withRecBytes(List<Double> recBytes) {
         this.recBytes = recBytes;
         return this;
     }
 
-    public BrandBrokens addRecBytesItem(Integer recBytesItem) {
+    public BrandBrokens addRecBytesItem(Double recBytesItem) {
         if (this.recBytes == null) {
             this.recBytes = new ArrayList<>();
         }
@@ -34,7 +34,7 @@ public class BrandBrokens {
         return this;
     }
 
-    public BrandBrokens withRecBytes(Consumer<List<Integer>> recBytesSetter) {
+    public BrandBrokens withRecBytes(Consumer<List<Double>> recBytesSetter) {
         if (this.recBytes == null) {
             this.recBytes = new ArrayList<>();
         }
@@ -42,23 +42,23 @@ public class BrandBrokens {
         return this;
     }
 
-    /** Get recBytes
+    /** 接收字节数
      * 
      * @return recBytes */
-    public List<Integer> getRecBytes() {
+    public List<Double> getRecBytes() {
         return recBytes;
     }
 
-    public void setRecBytes(List<Integer> recBytes) {
+    public void setRecBytes(List<Double> recBytes) {
         this.recBytes = recBytes;
     }
 
-    public BrandBrokens withSentBytes(List<Integer> sentBytes) {
+    public BrandBrokens withSentBytes(List<Double> sentBytes) {
         this.sentBytes = sentBytes;
         return this;
     }
 
-    public BrandBrokens addSentBytesItem(Integer sentBytesItem) {
+    public BrandBrokens addSentBytesItem(Double sentBytesItem) {
         if (this.sentBytes == null) {
             this.sentBytes = new ArrayList<>();
         }
@@ -66,7 +66,7 @@ public class BrandBrokens {
         return this;
     }
 
-    public BrandBrokens withSentBytes(Consumer<List<Integer>> sentBytesSetter) {
+    public BrandBrokens withSentBytes(Consumer<List<Double>> sentBytesSetter) {
         if (this.sentBytes == null) {
             this.sentBytes = new ArrayList<>();
         }
@@ -74,14 +74,14 @@ public class BrandBrokens {
         return this;
     }
 
-    /** Get sentBytes
+    /** 发送字节数
      * 
      * @return sentBytes */
-    public List<Integer> getSentBytes() {
+    public List<Double> getSentBytes() {
         return sentBytes;
     }
 
-    public void setSentBytes(List<Integer> sentBytes) {
+    public void setSentBytes(List<Double> sentBytes) {
         this.sentBytes = sentBytes;
     }
 

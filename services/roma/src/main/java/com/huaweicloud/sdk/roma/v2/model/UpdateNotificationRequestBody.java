@@ -21,29 +21,29 @@ public class UpdateNotificationRequestBody {
     /** 启停状态 0-启用 1-停用 */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0l */
-        public static final StatusEnum NUMBER_0 = new StatusEnum(0l);
+        /** Enum NUMBER_0 for value: 0 */
+        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1l */
-        public static final StatusEnum NUMBER_1 = new StatusEnum(1l);
+        /** Enum NUMBER_1 for value: 1 */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
-        private static final Map<Long, StatusEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<Long, StatusEnum> createStaticFields() {
-            Map<Long, StatusEnum> map = new HashMap<>();
-            map.put(0l, NUMBER_0);
-            map.put(1l, NUMBER_1);
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
             return Collections.unmodifiableMap(map);
         }
 
-        private Long value;
+        private Integer value;
 
-        StatusEnum(Long value) {
+        StatusEnum(Integer value) {
             this.value = value;
         }
 
         @JsonValue
-        public Long getValue() {
+        public Integer getValue() {
             return value;
         }
 
@@ -53,7 +53,7 @@ public class UpdateNotificationRequestBody {
         }
 
         @JsonCreator
-        public static StatusEnum fromValue(Long value) {
+        public static StatusEnum fromValue(Integer value) {
             if (value == null) {
                 return null;
             }
@@ -64,7 +64,7 @@ public class UpdateNotificationRequestBody {
             return result;
         }
 
-        public static StatusEnum valueOf(Long value) {
+        public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }

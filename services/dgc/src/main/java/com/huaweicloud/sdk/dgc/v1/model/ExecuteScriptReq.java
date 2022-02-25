@@ -11,9 +11,9 @@ public class ExecuteScriptReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
 
-    private String params;
+    private Object params;
 
-    public ExecuteScriptReq withParams(String params) {
+    public ExecuteScriptReq withParams(Object params) {
         this.params = params;
         return this;
     }
@@ -21,11 +21,11 @@ public class ExecuteScriptReq {
     /** 脚本的执行参数
      * 
      * @return params */
-    public String getParams() {
+    public Object getParams() {
         return params;
     }
 
-    public void setParams(String params) {
+    public void setParams(Object params) {
         this.params = params;
     }
 

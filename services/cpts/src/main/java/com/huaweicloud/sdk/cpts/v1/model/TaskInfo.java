@@ -62,6 +62,11 @@ public class TaskInfo {
 
     private String updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parallel")
+
+    private Boolean parallel;
+
     public TaskInfo withBenchConcurrent(Integer benchConcurrent) {
         this.benchConcurrent = benchConcurrent;
         return this;
@@ -254,6 +259,22 @@ public class TaskInfo {
         this.updateTime = updateTime;
     }
 
+    public TaskInfo withParallel(Boolean parallel) {
+        this.parallel = parallel;
+        return this;
+    }
+
+    /** parallel
+     * 
+     * @return parallel */
+    public Boolean getParallel() {
+        return parallel;
+    }
+
+    public void setParallel(Boolean parallel) {
+        this.parallel = parallel;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -270,7 +291,7 @@ public class TaskInfo {
             && Objects.equals(this.projectId, taskInfo.projectId)
             && Objects.equals(this.relatedTempRunningData, taskInfo.relatedTempRunningData)
             && Objects.equals(this.runStatus, taskInfo.runStatus)
-            && Objects.equals(this.updateTime, taskInfo.updateTime);
+            && Objects.equals(this.updateTime, taskInfo.updateTime) && Objects.equals(this.parallel, taskInfo.parallel);
     }
 
     @Override
@@ -284,7 +305,8 @@ public class TaskInfo {
             projectId,
             relatedTempRunningData,
             runStatus,
-            updateTime);
+            updateTime,
+            parallel);
     }
 
     @Override
@@ -301,6 +323,7 @@ public class TaskInfo {
         sb.append("    relatedTempRunningData: ").append(toIndentedString(relatedTempRunningData)).append("\n");
         sb.append("    runStatus: ").append(toIndentedString(runStatus)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    parallel: ").append(toIndentedString(parallel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

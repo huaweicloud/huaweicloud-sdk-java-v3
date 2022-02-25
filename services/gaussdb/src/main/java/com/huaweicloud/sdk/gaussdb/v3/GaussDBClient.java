@@ -458,6 +458,28 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询审计日志开关状态
+     * 查询审计日志开关状态
+     *
+     * @param ShowAuditLogRequest 请求对象
+     * @return ShowAuditLogResponse
+     */
+    public ShowAuditLogResponse showAuditLog(ShowAuditLogRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showAuditLog);
+    }
+
+    /**
+     * 查询审计日志开关状态
+     * 查询审计日志开关状态
+     *
+     * @param ShowAuditLogRequest 请求对象
+     * @return SyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>
+     */
+    public SyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLogInvoker(ShowAuditLogRequest request) {
+        return new SyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>(request, GaussDBMeta.showAuditLog, hcClient);
+    }
+
+    /**
      * 查询备份列表
      * 查询备份列表
      *
@@ -697,6 +719,28 @@ public class GaussDBClient {
      */
     public SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> showInstanceMonitorExtendInvoker(ShowInstanceMonitorExtendRequest request) {
         return new SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>(request, GaussDBMeta.showInstanceMonitorExtend, hcClient);
+    }
+
+    /**
+     * 开启或者关闭审计日志
+     * 开启或者关闭审计日志
+     *
+     * @param UpdateAuditLogRequest 请求对象
+     * @return UpdateAuditLogResponse
+     */
+    public UpdateAuditLogResponse updateAuditLog(UpdateAuditLogRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateAuditLog);
+    }
+
+    /**
+     * 开启或者关闭审计日志
+     * 开启或者关闭审计日志
+     *
+     * @param UpdateAuditLogRequest 请求对象
+     * @return SyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>
+     */
+    public SyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse> updateAuditLogInvoker(UpdateAuditLogRequest request) {
+        return new SyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>(request, GaussDBMeta.updateAuditLog, hcClient);
     }
 
     /**

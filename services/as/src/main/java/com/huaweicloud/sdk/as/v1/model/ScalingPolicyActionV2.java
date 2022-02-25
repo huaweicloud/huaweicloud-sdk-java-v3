@@ -13,7 +13,8 @@ import java.util.Objects;
 /** 策略执行具体动作。 */
 public class ScalingPolicyActionV2 {
 
-    /** 操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为 */
+    /** 操作选项，默认为ADD。 当scaling_resource_type为SCALING_GROUP，支持如下操作： - ADD：增加 - REMOVE/REDUCE：减少 - SET：设置为
+     * 当scaling_resource_type为BANDWIDTH，支持如下操作： - ADD：增加 - REDUCE：减少 - SET：设置为 */
     public static final class OperationEnum {
 
         /** Enum ADD for value: "ADD" */
@@ -117,7 +118,8 @@ public class ScalingPolicyActionV2 {
         return this;
     }
 
-    /** 操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为
+    /** 操作选项，默认为ADD。 当scaling_resource_type为SCALING_GROUP，支持如下操作： - ADD：增加 - REMOVE/REDUCE：减少 - SET：设置为
+     * 当scaling_resource_type为BANDWIDTH，支持如下操作： - ADD：增加 - REDUCE：减少 - SET：设置为
      * 
      * @return operation */
     public OperationEnum getOperation() {

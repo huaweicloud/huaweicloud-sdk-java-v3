@@ -305,6 +305,24 @@ public class LiveClient {
             LiveMeta.listSingleStreamBitrate, hcClient);
     }
 
+    /** 查询流监控数据接口 查询流监控数据接口，包括帧率码率断流情况。 最大查询跨度1天，最大查询周期1个月。 返回的码率数据列表粒度为1秒钟。
+     *
+     * @param ListSingleStreamDetailRequest 请求对象
+     * @return ListSingleStreamDetailResponse */
+    public ListSingleStreamDetailResponse listSingleStreamDetail(ListSingleStreamDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listSingleStreamDetail);
+    }
+
+    /** 查询流监控数据接口 查询流监控数据接口，包括帧率码率断流情况。 最大查询跨度1天，最大查询周期1个月。 返回的码率数据列表粒度为1秒钟。
+     *
+     * @param ListSingleStreamDetailRequest 请求对象
+     * @return SyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> */
+    public SyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> listSingleStreamDetailInvoker(
+        ListSingleStreamDetailRequest request) {
+        return new SyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse>(request,
+            LiveMeta.listSingleStreamDetail, hcClient);
+    }
+
     /** 查询推流帧率数据接口 查询推流帧率数据接口。 最大查询跨度1天，最大查询周期1个月。 返回的帧率数据列表粒度为1秒钟。
      *
      * @param ListSingleStreamFramerateRequest 请求对象

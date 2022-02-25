@@ -392,6 +392,24 @@ public class VodAsyncClient {
         return new AsyncInvoker<ListAssetListRequest, ListAssetListResponse>(request, VodMeta.listAssetList, hcClient);
     }
 
+    /** 查询域名播放日志 查询指定点播域名某段时间内在CDN的相关日志。
+     *
+     * @param ListDomainLogsRequest 请求对象
+     * @return CompletableFuture<ListDomainLogsResponse> */
+    public CompletableFuture<ListDomainLogsResponse> listDomainLogsAsync(ListDomainLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.listDomainLogs);
+    }
+
+    /** 查询域名播放日志 查询指定点播域名某段时间内在CDN的相关日志。
+     *
+     * @param ListDomainLogsRequest 请求对象
+     * @return AsyncInvoker<ListDomainLogsRequest, ListDomainLogsResponse> */
+    public AsyncInvoker<ListDomainLogsRequest, ListDomainLogsResponse> listDomainLogsAsyncInvoker(
+        ListDomainLogsRequest request) {
+        return new AsyncInvoker<ListDomainLogsRequest, ListDomainLogsResponse>(request, VodMeta.listDomainLogs,
+            hcClient);
+    }
+
     /** 查询转码模板组列表 查询转码模板组列表。
      *
      * @param ListTemplateGroupRequest 请求对象

@@ -78,7 +78,7 @@ public class VariableDetail {
         return this;
     }
 
-    /** is_quoted
+    /** 是否被引用
      * 
      * @return isQuoted */
     public Boolean getIsQuoted() {

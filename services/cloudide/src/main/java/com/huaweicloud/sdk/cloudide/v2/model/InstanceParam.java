@@ -342,6 +342,16 @@ public class InstanceParam {
 
     private String instanceUserName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_domain_id")
+
+    private String instanceDomainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_user_id")
+
+    private String instanceUserId;
+
     public InstanceParam withAgentId(String agentId) {
         this.agentId = agentId;
         return this;
@@ -669,7 +679,7 @@ public class InstanceParam {
         return this;
     }
 
-    /** 实例授权用户组织名
+    /** 实例授权用户租户名
      * 
      * @return instanceUserDomainName */
     public String getInstanceUserDomainName() {
@@ -694,6 +704,38 @@ public class InstanceParam {
 
     public void setInstanceUserName(String instanceUserName) {
         this.instanceUserName = instanceUserName;
+    }
+
+    public InstanceParam withInstanceDomainId(String instanceDomainId) {
+        this.instanceDomainId = instanceDomainId;
+        return this;
+    }
+
+    /** 实例授权用户租户ID
+     * 
+     * @return instanceDomainId */
+    public String getInstanceDomainId() {
+        return instanceDomainId;
+    }
+
+    public void setInstanceDomainId(String instanceDomainId) {
+        this.instanceDomainId = instanceDomainId;
+    }
+
+    public InstanceParam withInstanceUserId(String instanceUserId) {
+        this.instanceUserId = instanceUserId;
+        return this;
+    }
+
+    /** 实例授权用户ID
+     * 
+     * @return instanceUserId */
+    public String getInstanceUserId() {
+        return instanceUserId;
+    }
+
+    public void setInstanceUserId(String instanceUserId) {
+        this.instanceUserId = instanceUserId;
     }
 
     @Override
@@ -722,7 +764,9 @@ public class InstanceParam {
             && Objects.equals(this.taskType, instanceParam.taskType) && Objects.equals(this.token, instanceParam.token)
             && Objects.equals(this.vpcId, instanceParam.vpcId)
             && Objects.equals(this.instanceUserDomainName, instanceParam.instanceUserDomainName)
-            && Objects.equals(this.instanceUserName, instanceParam.instanceUserName);
+            && Objects.equals(this.instanceUserName, instanceParam.instanceUserName)
+            && Objects.equals(this.instanceDomainId, instanceParam.instanceDomainId)
+            && Objects.equals(this.instanceUserId, instanceParam.instanceUserId);
     }
 
     @Override
@@ -746,7 +790,9 @@ public class InstanceParam {
             token,
             vpcId,
             instanceUserDomainName,
-            instanceUserName);
+            instanceUserName,
+            instanceDomainId,
+            instanceUserId);
     }
 
     @Override
@@ -773,6 +819,8 @@ public class InstanceParam {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    instanceUserDomainName: ").append(toIndentedString(instanceUserDomainName)).append("\n");
         sb.append("    instanceUserName: ").append(toIndentedString(instanceUserName)).append("\n");
+        sb.append("    instanceDomainId: ").append(toIndentedString(instanceDomainId)).append("\n");
+        sb.append("    instanceUserId: ").append(toIndentedString(instanceUserId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
