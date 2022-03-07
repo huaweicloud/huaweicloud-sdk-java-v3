@@ -76,7 +76,7 @@ public class ShowTaskResponse extends SdkResponse {
 
     private OffsetDateTime updatedAt;
 
-    /** 作业当前的状态 */
+    /** 作业当前的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结） */
     public static final class StateEnum {
 
         /** Enum PENDING for value: "PENDING" */
@@ -435,7 +435,7 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业当前的状态
+    /** 作业当前的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结）
      * 
      * @return state */
     public StateEnum getState() {

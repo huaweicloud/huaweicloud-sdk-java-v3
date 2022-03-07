@@ -21,6 +21,7 @@
 
 package com.huaweicloud.sdk.core;
 
+import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.EnvCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
@@ -53,7 +54,9 @@ public class ClientBuilder<T> {
     private String endpoint;
 
     private List<String> credentialType = new ArrayList<>(
-        Collections.singletonList(BasicCredentials.class.getSimpleName()));
+            Collections.singletonList(BasicCredentials.class.getSimpleName()));
+
+    private String derivedAuthServiceName;
 
     public ClientBuilder(Function<HcClient, T> creator) {
         this.creator = creator;
@@ -62,6 +65,11 @@ public class ClientBuilder<T> {
     public ClientBuilder(Function<HcClient, T> creator, String credentialType) {
         this.creator = creator;
         this.credentialType = Arrays.asList(credentialType.split(","));
+    }
+
+    public ClientBuilder<T> withDerivedAuthServiceName(String derivedAuthServiceName) {
+        this.derivedAuthServiceName = derivedAuthServiceName;
+        return this;
     }
 
     public ClientBuilder<T> withCredential(ICredential credential) {
@@ -85,42 +93,46 @@ public class ClientBuilder<T> {
     }
 
     public T build() {
-        if (Objects.isNull(this.httpConfig)) {
-            this.httpConfig = HttpConfig.getDefaultHttpConfig();
+        if (Objects.isNull(httpConfig)) {
+            httpConfig = HttpConfig.getDefaultHttpConfig();
         }
 
-        HttpClient httpClient = new DefaultHttpClient(this.httpConfig);
-        HcClient hcClient = new HcClient(this.httpConfig, httpClient);
+        HttpClient httpClient = new DefaultHttpClient(httpConfig);
+        HcClient hcClient = new HcClient(httpConfig, httpClient);
 
         // If credential hasn't been assigned when initialing, SDK will try to load credential from environment variable
-        if (Objects.isNull(this.credential)) {
+        if (Objects.isNull(credential)) {
             credential = EnvCredentials.loadCredentialFromEnv(credentialType.get(0));
         }
 
-        if (Objects.isNull(this.credential)) {
+        if (Objects.isNull(credential)) {
             throw new SdkException(
-                "credential can not be null, " + credentialType.toString() + "credential objects are required");
+                    "credential can not be null, " + credentialType.toString() + "credential objects are required");
         }
 
         if (!credentialType.contains(credential.getClass().getSimpleName())) {
-            throw new SdkException("credential type error, supported credential type is " + credentialType.toString());
+            throw new SdkException("credential type error, supported credential type is " + credentialType);
         }
 
         if (Objects.nonNull(region)) {
-            this.endpoint = region.getEndpoint();
+            endpoint = region.getEndpoint();
             try {
                 hcClient.withCredential(credential);
-                this.credential = credential.processAuthParams(hcClient, region.getId()).get();
+                credential = credential.processAuthParams(hcClient, region.getId()).get();
             } catch (InterruptedException | ExecutionException e) {
                 throw new SdkException(e);
+            }
+
+            if (credential instanceof AbstractCredentials) {
+                ((AbstractCredentials<?>) credential).processDerivedAuthParams(derivedAuthServiceName, region.getId());
             }
         }
 
         if (!endpoint.startsWith(Constants.HTTP_SCHEME)) {
-            this.endpoint = Constants.HTTPS_SCHEME + "://" + endpoint;
+            endpoint = Constants.HTTPS_SCHEME + "://" + endpoint;
         }
 
-        hcClient.withEndpoint(this.endpoint).withCredential(this.credential);
+        hcClient.withEndpoint(endpoint).withCredential(credential);
 
         T t = creator.apply(hcClient);
         ClientCustomization clientCustomization = loadClientCustomization(t);

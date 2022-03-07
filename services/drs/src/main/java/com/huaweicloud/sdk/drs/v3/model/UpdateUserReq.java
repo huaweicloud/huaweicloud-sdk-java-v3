@@ -41,6 +41,11 @@ public class UpdateUserReq {
 
     private Boolean isMigrateUser;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_sync_object_privilege")
+
+    private Boolean isSyncObjectPrivilege;
+
     public UpdateUserReq withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -169,6 +174,22 @@ public class UpdateUserReq {
         this.isMigrateUser = isMigrateUser;
     }
 
+    public UpdateUserReq withIsSyncObjectPrivilege(Boolean isSyncObjectPrivilege) {
+        this.isSyncObjectPrivilege = isSyncObjectPrivilege;
+        return this;
+    }
+
+    /** 是否同步权限，不填默认为false，PG同步使用。
+     * 
+     * @return isSyncObjectPrivilege */
+    public Boolean getIsSyncObjectPrivilege() {
+        return isSyncObjectPrivilege;
+    }
+
+    public void setIsSyncObjectPrivilege(Boolean isSyncObjectPrivilege) {
+        this.isSyncObjectPrivilege = isSyncObjectPrivilege;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -181,12 +202,13 @@ public class UpdateUserReq {
         return Objects.equals(this.jobId, updateUserReq.jobId) && Objects.equals(this.password, updateUserReq.password)
             && Objects.equals(this.list, updateUserReq.list) && Objects.equals(this.userRoles, updateUserReq.userRoles)
             && Objects.equals(this.isSetPassword, updateUserReq.isSetPassword)
-            && Objects.equals(this.isMigrateUser, updateUserReq.isMigrateUser);
+            && Objects.equals(this.isMigrateUser, updateUserReq.isMigrateUser)
+            && Objects.equals(this.isSyncObjectPrivilege, updateUserReq.isSyncObjectPrivilege);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, password, list, userRoles, isSetPassword, isMigrateUser);
+        return Objects.hash(jobId, password, list, userRoles, isSetPassword, isMigrateUser, isSyncObjectPrivilege);
     }
 
     @Override
@@ -199,6 +221,7 @@ public class UpdateUserReq {
         sb.append("    userRoles: ").append(toIndentedString(userRoles)).append("\n");
         sb.append("    isSetPassword: ").append(toIndentedString(isSetPassword)).append("\n");
         sb.append("    isMigrateUser: ").append(toIndentedString(isMigrateUser)).append("\n");
+        sb.append("    isSyncObjectPrivilege: ").append(toIndentedString(isSyncObjectPrivilege)).append("\n");
         sb.append("}");
         return sb.toString();
     }

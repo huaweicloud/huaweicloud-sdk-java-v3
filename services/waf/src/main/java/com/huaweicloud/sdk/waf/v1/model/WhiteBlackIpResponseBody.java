@@ -112,7 +112,7 @@ public class WhiteBlackIpResponseBody {
         return this;
     }
 
-    /** 规则状态
+    /** 规则状态，0：关闭，1：开启
      * 
      * @return status */
     public Integer getStatus() {

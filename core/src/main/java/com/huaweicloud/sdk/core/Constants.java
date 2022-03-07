@@ -94,6 +94,11 @@ public final class Constants {
 
     public static final String DEFAULT_IAM_ENDPOINT = "https://iam.myhuaweicloud.com";
 
+    public static final String DEFAULT_ENDPOINT_REG =
+            "^[a-z][a-z0-9-]+(\\.[a-z]{2,}-[a-z]+-\\d{1,2})?\\.(my)?(huaweicloud|myhwclouds).(com|cn)";
+
+    public static final String GLOBAL_REGION_ID = "globe";
+
     /**
      * some special status code
      */

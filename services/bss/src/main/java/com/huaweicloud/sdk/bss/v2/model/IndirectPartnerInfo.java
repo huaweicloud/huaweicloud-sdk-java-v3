@@ -149,7 +149,7 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 客户经理ID。
+    /** 客户经理登录账户名。
      * 
      * @return accountManagerId */
     public String getAccountManagerId() {

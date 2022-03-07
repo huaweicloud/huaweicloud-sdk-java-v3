@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ConfirmDeadLettersMessagesReqMessage */
-public class ConfirmDeadLettersMessagesReqMessage {
+/** ConfirmMessageEntity */
+public class ConfirmMessageEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handler")
@@ -94,7 +94,7 @@ public class ConfirmDeadLettersMessagesReqMessage {
 
     private StatusEnum status;
 
-    public ConfirmDeadLettersMessagesReqMessage withHandler(String handler) {
+    public ConfirmMessageEntity withHandler(String handler) {
         this.handler = handler;
         return this;
     }
@@ -110,7 +110,7 @@ public class ConfirmDeadLettersMessagesReqMessage {
         this.handler = handler;
     }
 
-    public ConfirmDeadLettersMessagesReqMessage withStatus(StatusEnum status) {
+    public ConfirmMessageEntity withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -134,10 +134,9 @@ public class ConfirmDeadLettersMessagesReqMessage {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ConfirmDeadLettersMessagesReqMessage confirmDeadLettersMessagesReqMessage =
-            (ConfirmDeadLettersMessagesReqMessage) o;
-        return Objects.equals(this.handler, confirmDeadLettersMessagesReqMessage.handler)
-            && Objects.equals(this.status, confirmDeadLettersMessagesReqMessage.status);
+        ConfirmMessageEntity confirmMessageEntity = (ConfirmMessageEntity) o;
+        return Objects.equals(this.handler, confirmMessageEntity.handler)
+            && Objects.equals(this.status, confirmMessageEntity.status);
     }
 
     @Override
@@ -148,7 +147,7 @@ public class ConfirmDeadLettersMessagesReqMessage {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ConfirmDeadLettersMessagesReqMessage {\n");
+        sb.append("class ConfirmMessageEntity {\n");
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");

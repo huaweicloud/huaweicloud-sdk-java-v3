@@ -51,6 +51,21 @@ public class QueryUserDetailResp {
 
     private Boolean selected;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "no_privileges")
+
+    private String noPrivileges;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parent_account")
+
+    private String parentAccount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "no_parent_account")
+
+    private String noParentAccount;
+
     public QueryUserDetailResp withId(String id) {
         this.id = id;
         return this;
@@ -211,6 +226,54 @@ public class QueryUserDetailResp {
         this.selected = selected;
     }
 
+    public QueryUserDetailResp withNoPrivileges(String noPrivileges) {
+        this.noPrivileges = noPrivileges;
+        return this;
+    }
+
+    /** 无法同步的用户权限
+     * 
+     * @return noPrivileges */
+    public String getNoPrivileges() {
+        return noPrivileges;
+    }
+
+    public void setNoPrivileges(String noPrivileges) {
+        this.noPrivileges = noPrivileges;
+    }
+
+    public QueryUserDetailResp withParentAccount(String parentAccount) {
+        this.parentAccount = parentAccount;
+        return this;
+    }
+
+    /** 父用户
+     * 
+     * @return parentAccount */
+    public String getParentAccount() {
+        return parentAccount;
+    }
+
+    public void setParentAccount(String parentAccount) {
+        this.parentAccount = parentAccount;
+    }
+
+    public QueryUserDetailResp withNoParentAccount(String noParentAccount) {
+        this.noParentAccount = noParentAccount;
+        return this;
+    }
+
+    /** 无法同步父子关系的父用户
+     * 
+     * @return noParentAccount */
+    public String getNoParentAccount() {
+        return noParentAccount;
+    }
+
+    public void setNoParentAccount(String noParentAccount) {
+        this.noParentAccount = noParentAccount;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -227,12 +290,25 @@ public class QueryUserDetailResp {
             && Objects.equals(this.privileges, queryUserDetailResp.privileges)
             && Objects.equals(this.password, queryUserDetailResp.password)
             && Objects.equals(this.roles, queryUserDetailResp.roles)
-            && Objects.equals(this.selected, queryUserDetailResp.selected);
+            && Objects.equals(this.selected, queryUserDetailResp.selected)
+            && Objects.equals(this.noPrivileges, queryUserDetailResp.noPrivileges)
+            && Objects.equals(this.parentAccount, queryUserDetailResp.parentAccount)
+            && Objects.equals(this.noParentAccount, queryUserDetailResp.noParentAccount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, account, comment, isTransfer, privileges, password, roles, selected);
+        return Objects.hash(id,
+            account,
+            comment,
+            isTransfer,
+            privileges,
+            password,
+            roles,
+            selected,
+            noPrivileges,
+            parentAccount,
+            noParentAccount);
     }
 
     @Override
@@ -247,6 +323,9 @@ public class QueryUserDetailResp {
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
         sb.append("    selected: ").append(toIndentedString(selected)).append("\n");
+        sb.append("    noPrivileges: ").append(toIndentedString(noPrivileges)).append("\n");
+        sb.append("    parentAccount: ").append(toIndentedString(parentAccount)).append("\n");
+        sb.append("    noParentAccount: ").append(toIndentedString(noParentAccount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -847,10 +847,10 @@ public class WafMeta {
             f -> f.withMarshaller(ListCertificatesRequest::getHost, (req, v) -> {
                 req.setHost(v);
             }));
-        builder.<ListCertificatesRequest.ExpStatusEnum>withRequestField("exp_status",
+        builder.<Integer>withRequestField("exp_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListCertificatesRequest.ExpStatusEnum.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCertificatesRequest::getExpStatus, (req, v) -> {
                 req.setExpStatus(v);
             }));
@@ -907,10 +907,10 @@ public class WafMeta {
             f -> f.withMarshaller(ListCompositeHostsRequest::getPolicyname, (req, v) -> {
                 req.setPolicyname(v);
             }));
-        builder.<ListCompositeHostsRequest.ProtectStatusEnum>withRequestField("protect_status",
+        builder.<Integer>withRequestField("protect_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListCompositeHostsRequest.ProtectStatusEnum.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCompositeHostsRequest::getProtectStatus, (req, v) -> {
                 req.setProtectStatus(v);
             }));
@@ -1275,10 +1275,10 @@ public class WafMeta {
             f -> f.withMarshaller(ListPremiumHostRequest::getPolicyname, (req, v) -> {
                 req.setPolicyname(v);
             }));
-        builder.<ListPremiumHostRequest.ProtectStatusEnum>withRequestField("protect_status",
+        builder.<Integer>withRequestField("protect_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPremiumHostRequest.ProtectStatusEnum.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPremiumHostRequest::getProtectStatus, (req, v) -> {
                 req.setProtectStatus(v);
             }));

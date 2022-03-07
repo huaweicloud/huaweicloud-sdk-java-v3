@@ -35,6 +35,11 @@ public class RemuxTask {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -147,6 +152,22 @@ public class RemuxTask {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public RemuxTask withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /** 任务的返回码。
+     * 
+     * @return errorCode */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
     public RemuxTask withDescription(String description) {
@@ -309,6 +330,7 @@ public class RemuxTask {
         return Objects.equals(this.taskId, remuxTask.taskId) && Objects.equals(this.status, remuxTask.status)
             && Objects.equals(this.createTime, remuxTask.createTime)
             && Objects.equals(this.startTime, remuxTask.startTime) && Objects.equals(this.endTime, remuxTask.endTime)
+            && Objects.equals(this.errorCode, remuxTask.errorCode)
             && Objects.equals(this.description, remuxTask.description)
             && Objects.equals(this.userData, remuxTask.userData) && Objects.equals(this.input, remuxTask.input)
             && Objects.equals(this.output, remuxTask.output) && Objects.equals(this.outputParam, remuxTask.outputParam)
@@ -323,6 +345,7 @@ public class RemuxTask {
             createTime,
             startTime,
             endTime,
+            errorCode,
             description,
             userData,
             input,
@@ -341,6 +364,7 @@ public class RemuxTask {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");

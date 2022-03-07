@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** 申请包周期弹性公网IP的publicip对象 */
@@ -13,10 +18,81 @@ public class CreatePrePaidPublicipOption {
 
     private String type;
 
+    /** 功能说明：弹性公网IP的版本 取值范围：4、6，分别表示创建ipv4和ipv6 约束：必须是系统具体支持的类型 不填或空字符串时，默认创建ipv4 */
+    public static final class IpVersionEnum {
+
+        /** Enum NUMBER_4 for value: 4 */
+        public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
+
+        /** Enum NUMBER_6 for value: 6 */
+        public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
+
+        private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IpVersionEnum> createStaticFields() {
+            Map<Integer, IpVersionEnum> map = new HashMap<>();
+            map.put(4, NUMBER_4);
+            map.put(6, NUMBER_6);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        IpVersionEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpVersionEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IpVersionEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new IpVersionEnum(value);
+            }
+            return result;
+        }
+
+        public static IpVersionEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IpVersionEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpVersionEnum) {
+                return this.value.equals(((IpVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
-    private Integer ipVersion;
+    private IpVersionEnum ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alias")
@@ -42,7 +118,7 @@ public class CreatePrePaidPublicipOption {
         this.type = type;
     }
 
-    public CreatePrePaidPublicipOption withIpVersion(Integer ipVersion) {
+    public CreatePrePaidPublicipOption withIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
@@ -50,11 +126,11 @@ public class CreatePrePaidPublicipOption {
     /** 功能说明：弹性公网IP的版本 取值范围：4、6，分别表示创建ipv4和ipv6 约束：必须是系统具体支持的类型 不填或空字符串时，默认创建ipv4
      * 
      * @return ipVersion */
-    public Integer getIpVersion() {
+    public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
 
-    public void setIpVersion(Integer ipVersion) {
+    public void setIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
     }
 

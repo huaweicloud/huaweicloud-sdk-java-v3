@@ -37,6 +37,11 @@ public class EditingJob {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -149,6 +154,22 @@ public class EditingJob {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public EditingJob withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /** 任务的返回码。
+     * 
+     * @return errorCode */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
     public EditingJob withDescription(String description) {
@@ -325,6 +346,7 @@ public class EditingJob {
         return Objects.equals(this.taskId, editingJob.taskId) && Objects.equals(this.status, editingJob.status)
             && Objects.equals(this.createTime, editingJob.createTime)
             && Objects.equals(this.startTime, editingJob.startTime) && Objects.equals(this.endTime, editingJob.endTime)
+            && Objects.equals(this.errorCode, editingJob.errorCode)
             && Objects.equals(this.description, editingJob.description)
             && Objects.equals(this.userData, editingJob.userData) && Objects.equals(this.jobId, editingJob.jobId)
             && Objects.equals(this.editType, editingJob.editType) && Objects.equals(this.output, editingJob.output)
@@ -339,6 +361,7 @@ public class EditingJob {
             createTime,
             startTime,
             endTime,
+            errorCode,
             description,
             userData,
             jobId,
@@ -357,6 +380,7 @@ public class EditingJob {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");

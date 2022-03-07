@@ -35,6 +35,11 @@ public class AnimatedGraphicsTask {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -137,6 +142,22 @@ public class AnimatedGraphicsTask {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public AnimatedGraphicsTask withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /** 任务的返回码。
+     * 
+     * @return errorCode */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
     public AnimatedGraphicsTask withDescription(String description) {
@@ -260,6 +281,7 @@ public class AnimatedGraphicsTask {
             && Objects.equals(this.createTime, animatedGraphicsTask.createTime)
             && Objects.equals(this.startTime, animatedGraphicsTask.startTime)
             && Objects.equals(this.endTime, animatedGraphicsTask.endTime)
+            && Objects.equals(this.errorCode, animatedGraphicsTask.errorCode)
             && Objects.equals(this.description, animatedGraphicsTask.description)
             && Objects.equals(this.userData, animatedGraphicsTask.userData)
             && Objects.equals(this.input, animatedGraphicsTask.input)
@@ -269,8 +291,17 @@ public class AnimatedGraphicsTask {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(taskId, status, createTime, startTime, endTime, description, userData, input, output, outputParam);
+        return Objects.hash(taskId,
+            status,
+            createTime,
+            startTime,
+            endTime,
+            errorCode,
+            description,
+            userData,
+            input,
+            output,
+            outputParam);
     }
 
     @Override
@@ -282,6 +313,7 @@ public class AnimatedGraphicsTask {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");

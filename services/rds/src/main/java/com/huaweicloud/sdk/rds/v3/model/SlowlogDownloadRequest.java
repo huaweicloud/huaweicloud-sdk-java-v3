@@ -9,30 +9,9 @@ import java.util.Objects;
 public class SlowlogDownloadRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
-
-    private String requestId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
 
     private String fileName;
-
-    public SlowlogDownloadRequest withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /** - 请求ID，uuid，代表此次获取慢日志的请求ID。
-     * 
-     * @return requestId */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
 
     public SlowlogDownloadRequest withFileName(String fileName) {
         this.fileName = fileName;
@@ -59,20 +38,18 @@ public class SlowlogDownloadRequest {
             return false;
         }
         SlowlogDownloadRequest slowlogDownloadRequest = (SlowlogDownloadRequest) o;
-        return Objects.equals(this.requestId, slowlogDownloadRequest.requestId)
-            && Objects.equals(this.fileName, slowlogDownloadRequest.fileName);
+        return Objects.equals(this.fileName, slowlogDownloadRequest.fileName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, fileName);
+        return Objects.hash(fileName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SlowlogDownloadRequest {\n");
-        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("}");
         return sb.toString();

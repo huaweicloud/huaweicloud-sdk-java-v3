@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /** Request Object */
@@ -38,85 +33,10 @@ public class ListCompositeHostsRequest {
 
     private String policyname;
 
-    /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测 */
-    public static final class ProtectStatusEnum {
-
-        /** Enum NUMBER_MINUS_1 for value: -1 */
-        public static final ProtectStatusEnum NUMBER_MINUS_1 = new ProtectStatusEnum(-1);
-
-        /** Enum NUMBER_0 for value: 0 */
-        public static final ProtectStatusEnum NUMBER_0 = new ProtectStatusEnum(0);
-
-        /** Enum NUMBER_1 for value: 1 */
-        public static final ProtectStatusEnum NUMBER_1 = new ProtectStatusEnum(1);
-
-        private static final Map<Integer, ProtectStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ProtectStatusEnum> createStaticFields() {
-            Map<Integer, ProtectStatusEnum> map = new HashMap<>();
-            map.put(-1, NUMBER_MINUS_1);
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ProtectStatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProtectStatusEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            ProtectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectStatusEnum(value);
-            }
-            return result;
-        }
-
-        public static ProtectStatusEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            ProtectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProtectStatusEnum) {
-                return this.value.equals(((ProtectStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
-    private ProtectStatusEnum protectStatus;
+    private Integer protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waf_type")
@@ -208,7 +128,7 @@ public class ListCompositeHostsRequest {
         this.policyname = policyname;
     }
 
-    public ListCompositeHostsRequest withProtectStatus(ProtectStatusEnum protectStatus) {
+    public ListCompositeHostsRequest withProtectStatus(Integer protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
@@ -216,11 +136,11 @@ public class ListCompositeHostsRequest {
     /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测
      * 
      * @return protectStatus */
-    public ProtectStatusEnum getProtectStatus() {
+    public Integer getProtectStatus() {
         return protectStatus;
     }
 
-    public void setProtectStatus(ProtectStatusEnum protectStatus) {
+    public void setProtectStatus(Integer protectStatus) {
         this.protectStatus = protectStatus;
     }
 

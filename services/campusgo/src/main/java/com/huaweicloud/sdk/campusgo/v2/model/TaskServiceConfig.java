@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 作业运行时指定的算法配置参数 */
+/** 作业运行时指定的算法配置参数，见园区智能体API参考文档[API参考文档](https://support.huaweicloud.com/api-campusgo/campusgo_03_0013.html) */
 public class TaskServiceConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,7 +18,7 @@ public class TaskServiceConfig {
         return this;
     }
 
-    /** 作业运行时指定的具体的算法配置项，以人流检测服务为例
+    /** 根据不同服务，填写对应的服务配置参数json结构体
      * 
      * @return common */
     public Object getCommon() {

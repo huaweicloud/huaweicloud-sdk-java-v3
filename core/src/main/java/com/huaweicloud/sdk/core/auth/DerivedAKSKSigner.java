@@ -19,17 +19,22 @@
  * under the License.
  */
 
-package com.huaweicloud.sdk.iotda.v5.auth;
+package com.huaweicloud.sdk.core.auth;
 
 import com.huaweicloud.sdk.core.Constants;
-import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.BinaryUtils;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
@@ -38,6 +43,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -50,15 +56,12 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-
 /**
  * signature certification with AK/SK
  *
  * @author HuaweiCloud_SDK
  */
-public class DerivationAKSKSigner {
+public class DerivedAKSKSigner {
     /**
      * SHA256 hash of an empty request body
      **/
@@ -73,9 +76,14 @@ public class DerivationAKSKSigner {
 
     private static final String V_11_HMAC_SHA_256 = "V11-HMAC-SHA256";
 
-    private static final String IOT_DA = "iotdm";
+    public static Map<String, String> sign(HttpRequest request, AbstractCredentials credential) {
+        if (StringUtils.isEmpty(credential.regionId)) {
+            throw new SdkException("regionId in credential is required when using derived auth");
+        }
+        if (StringUtils.isEmpty(credential.derivedAuthServiceName)) {
+            throw new SdkException("derivedAuthServiceName in credential is required when using derived auth");
+        }
 
-    public static Map<String, String> sign(HttpRequest request, AbstractCredentials credential, String regionId) {
         // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************
         // Date now = ISODateFormat.parse("20191115T033655Z"); // 设置基准时间
         // 设置基准时间
@@ -125,7 +133,8 @@ public class DerivationAKSKSigner {
         // Step 3: Create the canonical query string. In this example (a GET request),
         // request parameters are in the query string. Query string values must
         // be URL-encoded (space=%20). The parameters must be sorted by name.
-        // For this example, the query string is pre-formatted in the request_parameters variable.
+        // For this example, the query string is pre-formatted in the request_parameters
+        // variable.
         String query = url.getQuery();
         Map<String, List<String>> parameters = request.getQueryParams();
         String canonicalQueryString = buildCanonicalQueryString(query, parameters);
@@ -148,13 +157,20 @@ public class DerivationAKSKSigner {
         String payloadHash = buildPayloadHash(request);
 
         // Step 7: Combine elements to create canonical request
-        String canonicalRequest = buildCanonicalRequest(request.getMethod().name(), canonicalUri, canonicalQueryString,
-            canonicalHeaders, signedHeaderNames, payloadHash);
+        String canonicalRequest =
+            buildCanonicalRequest(
+                request.getMethod().name(),
+                canonicalUri,
+                canonicalQueryString,
+                canonicalHeaders,
+                signedHeaderNames,
+                payloadHash);
         String canonicalRequestHash = BinaryUtils.toHex(sha256(canonicalRequest));
         // ************* TASK 2: CREATE THE STRING TO SIGN*************
-        // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256 (recommended)
+        // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256
+        // (recommended)
         String dateStr = LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE);
-        String info = dateStr + "/" + regionId + "/" + IOT_DA;
+        String info = dateStr + "/" + credential.regionId + "/" + credential.derivedAuthServiceName;
         String stringToSign = getStringToSign(V_11_HMAC_SHA_256, dateTimeStamp, info, canonicalRequestHash);
 
         // ************* TASK 3: CALCULATE THE SIGNATURE *************
@@ -241,19 +257,20 @@ public class DerivationAKSKSigner {
     }
 
     /**
-     * Create the canonical headers and signed headers. Header names
-     * and value must be trimmed and lowercase, and sorted in ASCII order.
-     * Note that there is a trailing \n.
+     * Create the canonical headers and signed headers. Header names and value must
+     * be trimmed and lowercase, and sorted in ASCII order. Note that there is a
+     * trailing \n.
      *
      * @param heads
      * @return
      */
     private static String buildCanonicalHeaders(Map<String, String> heads) {
         StringBuilder sb = new StringBuilder();
-        heads.forEach((key, value) -> {
-            sb.append(key).append(":").append(value);
-            sb.append(Constants.LINE_SEPARATOR);
-        });
+        heads.forEach(
+            (key, value) -> {
+                sb.append(key).append(":").append(value);
+                sb.append(Constants.LINE_SEPARATOR);
+            });
         return sb.toString();
     }
 
@@ -273,12 +290,9 @@ public class DerivationAKSKSigner {
     }
 
     /**
-     * @param segments param1 method
-     * param2 canonicalURI
-     * param3 canonicalQueryString
-     * param4 canonicalHeaders
-     * param5 signedHeaderNames
-     * param6 payloadHash
+     * @param segments param1 method param2 canonicalURI param3 canonicalQueryString
+     *                 param4 canonicalHeaders param5 signedHeaderNames param6
+     *                 payloadHash
      * @return
      */
     private static String buildCanonicalRequest(String... segments) {
@@ -286,10 +300,8 @@ public class DerivationAKSKSigner {
     }
 
     /**
-     * @param segments param1 sdkSigningAlgorithm
-     * param2 dateTimeStamp
-     * param3 credentialScope
-     * param4 canonicalRequestHash
+     * @param segments param1 sdkSigningAlgorithm param2 dateTimeStamp param3
+     *                 credentialScope param4 canonicalRequestHash
      * @return
      */
     private static String getStringToSign(String... segments) {
@@ -316,8 +328,7 @@ public class DerivationAKSKSigner {
     }
 
     /**
-     * Hashes the string contents (assumed to be UTF-8) using the SHA-256
-     * algorithm.
+     * Hashes the string contents (assumed to be UTF-8) using the SHA-256 algorithm.
      *
      * @param text string contents
      * @return byte[]
@@ -343,4 +354,113 @@ public class DerivationAKSKSigner {
         }
     }
 
+    static class HKDF {
+        private static final String HMAC_SHA1 = "hmacsha1";
+
+        private static final String HMAC_SHA256 = "hmacsha256";
+
+        private static final int DERIVATION_KEY_LENGTH = 32;
+
+        private static final String HMAC_ALGORITHM = HMAC_SHA256;
+
+        private static final int ALGORITHM_HASH_LENGTH = getHashLen(HMAC_ALGORITHM);
+
+        private static final Charset UTF_8 = StandardCharsets.UTF_8;
+
+        private static final int EXPAND_CEIL =
+                (int) Math.ceil((double) DERIVATION_KEY_LENGTH / (double) ALGORITHM_HASH_LENGTH);
+
+        public static String getDerKeySHA256(String accessKey, String secretKey, String info) {
+            if (null == accessKey || "".equals(accessKey) || null == secretKey || "".equals(secretKey)) {
+                return null;
+            }
+            try {
+                byte[] tmpKey = extract(secretKey.getBytes(UTF_8), accessKey.getBytes(UTF_8), HMAC_ALGORITHM);
+                byte[] derSecretKey =
+                        expand(tmpKey, info.getBytes(UTF_8), HMAC_ALGORITHM, DERIVATION_KEY_LENGTH, EXPAND_CEIL);
+                if (null != derSecretKey) {
+                    return toHex(derSecretKey);
+                }
+            } catch (NoSuchAlgorithmException | InvalidKeyException | IOException e) {
+                String msg = "Failed to derive AK " + accessKey + " with info " + info + " .";
+                throw new SdkException(msg, e);
+            }
+            return null;
+        }
+
+        public static String toHex(byte[] data) {
+            StringBuilder sb = new StringBuilder(data.length * 2);
+            for (byte itemByte : data) {
+                String hex = Integer.toHexString(itemByte);
+                if (hex.length() == 1) {
+                    sb.append("0");
+                } else if (hex.length() == 8) {
+                    hex = hex.substring(6);
+                }
+                sb.append(hex);
+            }
+            return sb.toString().toLowerCase(Locale.ROOT);
+        }
+
+        private static byte[] extract(byte[] ikm, byte[] salt, String hmacAlgorithm)
+                throws NoSuchAlgorithmException, InvalidKeyException {
+            if (salt == null || salt.length == 0) {
+                salt = new byte[getHashLen(hmacAlgorithm)];
+            }
+
+            Mac mac = Mac.getInstance(hmacAlgorithm);
+            mac.init(new SecretKeySpec(salt, hmacAlgorithm));
+            return mac.doFinal(ikm);
+        }
+
+        private static byte[] expand(byte[] prk, byte[] info, String hmacAlgorithm, int okmLength, int ceil)
+                throws NoSuchAlgorithmException, InvalidKeyException, IOException {
+            Mac mac = Mac.getInstance(hmacAlgorithm);
+            mac.init(new SecretKeySpec(prk, hmacAlgorithm));
+            byte[] rawResult;
+            if (ceil == 1) {
+                rawResult = expandFirst(info, mac);
+            } else {
+                rawResult = new byte[0];
+                byte[] temp = new byte[0];
+                for (int i = 1; i <= ceil; ++i) {
+                    temp = expandOnce(info, mac, temp, i);
+
+                    ByteArrayOutputStream combineBytes = new ByteArrayOutputStream();
+                    combineBytes.write(rawResult);
+                    combineBytes.write(temp);
+                    rawResult = combineBytes.toByteArray();
+                }
+            }
+
+            return okmLength == rawResult.length
+                    ? rawResult
+                    : (okmLength < rawResult.length ? Arrays.copyOf(rawResult, okmLength) : null);
+        }
+
+        private static byte[] expandFirst(byte[] info, Mac mac) {
+            byte[] result = new byte[info.length + 1];
+            System.arraycopy(info, 0, result, 0, info.length);
+            result[info.length] = 0x01;
+            return mac.doFinal(result);
+        }
+
+        private static byte[] expandOnce(byte[] info, Mac mac, byte[] preTemp, int i) throws IOException {
+            ByteArrayOutputStream hashBytes = new ByteArrayOutputStream();
+            hashBytes.write(preTemp);
+            hashBytes.write(info);
+            hashBytes.write(i);
+            return mac.doFinal(hashBytes.toByteArray());
+        }
+
+        private static int getHashLen(String hmacAlgorithm) {
+            switch (hmacAlgorithm) {
+                case HMAC_SHA1:
+                    return 20;
+                case HMAC_SHA256:
+                default:
+                    return 32;
+            }
+        }
+    }
 }

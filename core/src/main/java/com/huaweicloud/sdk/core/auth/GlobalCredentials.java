@@ -35,6 +35,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
 
 /**
  * @author HuaweiCloud_SDK
@@ -70,31 +71,37 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     @Override
     public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
-        if (!StringUtils.isEmpty(this.domainId)) {
+        if (!StringUtils.isEmpty(domainId)) {
             return CompletableFuture.completedFuture(this);
         }
 
         // Confirm if current ak has been cached in AuthCache, key of authMap when searching domain info is ak
         String akWithName = getAk();
         if (Objects.nonNull(AuthCache.getAuth(akWithName)) && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
-            this.domainId = AuthCache.getAuth(akWithName);
+            domainId = AuthCache.getAuth(akWithName);
             return CompletableFuture.completedFuture(this);
         }
 
         String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
         HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
 
+        Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
+        setDerivedPredicate(null);
+
         KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
         KeystoneListAuthDomainsResponse response = inner.syncInvokeHttp(request,
-            InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+                InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
         if (Objects.isNull(response) || Objects.isNull(response.getDomains()) || response.getDomains().size() == 0) {
             throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
                     + "1. Manually specify domain_id when initializing the credentials.\n\t"
                     + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
                     + "3. Use AK/SK of the domain account.");
         }
-        this.domainId = response.getDomains().get(0).getId();
+        domainId = response.getDomains().get(0).getId();
         AuthCache.putAuth(akWithName, domainId);
+
+        setDerivedPredicate(derivedPredicate);
+
         return CompletableFuture.completedFuture(this);
     }
 
@@ -111,25 +118,43 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
                 builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
             }
 
-            if (Objects.nonNull(httpRequest.getContentType()) && !httpRequest.getContentType()
-                .startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+            if (Objects.nonNull(httpRequest.getContentType())
+                    && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
                 builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
             }
 
-            Map<String, String> header = AKSKSigner.sign(builder.build(), this);
-            builder.addHeaders(header);
+            Map<String, String> header = isDerivedAuth(httpRequest)
+                    ? DerivedAKSKSigner.sign(builder.build(), this)
+                    : AKSKSigner.sign(builder.build(), this);
 
+            builder.addHeaders(header);
             return builder.build();
         });
     }
 
     @Override
+    public void processDerivedAuthParams(String derivedAuthServiceName, String regionId) {
+        if (this.derivedAuthServiceName == null) {
+            this.derivedAuthServiceName = derivedAuthServiceName;
+        }
+
+        if (this.regionId == null) {
+            this.regionId = Constants.GLOBAL_REGION_ID;
+        }
+    }
+
+    @Override
     public GlobalCredentials deepClone() {
-        return new GlobalCredentials().withDomainId(this.domainId)
-            .withAk(this.getAk())
-            .withSk(this.getSk())
-            .withIamEndpoint(this.getIamEndpoint())
-            .withSecurityToken(this.getSecurityToken());
+        GlobalCredentials credentials = new GlobalCredentials()
+                .withDomainId(domainId)
+                .withAk(getAk())
+                .withSk(getSk())
+                .withDerivedPredicate(getDerivedPredicate())
+                .withIamEndpoint(getIamEndpoint())
+                .withSecurityToken(getSecurityToken());
+
+        credentials.processDerivedAuthParams(derivedAuthServiceName, regionId);
+        return credentials;
     }
 
 }

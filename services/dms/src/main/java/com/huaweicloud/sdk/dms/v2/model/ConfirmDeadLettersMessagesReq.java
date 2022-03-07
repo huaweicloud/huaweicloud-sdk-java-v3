@@ -14,14 +14,14 @@ public class ConfirmDeadLettersMessagesReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
-    private List<ConfirmDeadLettersMessagesReqMessage> message = null;
+    private List<ConfirmMessageEntity> message = null;
 
-    public ConfirmDeadLettersMessagesReq withMessage(List<ConfirmDeadLettersMessagesReqMessage> message) {
+    public ConfirmDeadLettersMessagesReq withMessage(List<ConfirmMessageEntity> message) {
         this.message = message;
         return this;
     }
 
-    public ConfirmDeadLettersMessagesReq addMessageItem(ConfirmDeadLettersMessagesReqMessage messageItem) {
+    public ConfirmDeadLettersMessagesReq addMessageItem(ConfirmMessageEntity messageItem) {
         if (this.message == null) {
             this.message = new ArrayList<>();
         }
@@ -29,8 +29,7 @@ public class ConfirmDeadLettersMessagesReq {
         return this;
     }
 
-    public ConfirmDeadLettersMessagesReq withMessage(
-        Consumer<List<ConfirmDeadLettersMessagesReqMessage>> messageSetter) {
+    public ConfirmDeadLettersMessagesReq withMessage(Consumer<List<ConfirmMessageEntity>> messageSetter) {
         if (this.message == null) {
             this.message = new ArrayList<>();
         }
@@ -41,11 +40,11 @@ public class ConfirmDeadLettersMessagesReq {
     /** 确认消息数组。
      * 
      * @return message */
-    public List<ConfirmDeadLettersMessagesReqMessage> getMessage() {
+    public List<ConfirmMessageEntity> getMessage() {
         return message;
     }
 
-    public void setMessage(List<ConfirmDeadLettersMessagesReqMessage> message) {
+    public void setMessage(List<ConfirmMessageEntity> message) {
         this.message = message;
     }
 

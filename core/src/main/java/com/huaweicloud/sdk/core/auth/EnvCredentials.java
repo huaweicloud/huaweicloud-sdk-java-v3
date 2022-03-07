@@ -21,9 +21,11 @@
 
 package com.huaweicloud.sdk.core.auth;
 
+import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Objects;
+import java.util.function.Function;
 
 /**
  * @author HuaweiCloud_SDK
@@ -47,9 +49,18 @@ public final class EnvCredentials {
     public static final String DOMAIN_ID_ENV_NAME = "HUAWEICLOUD_SDK_DOMAIN_ID";
 
     /**
-     * If iam endpoint has been set, the project id or domain id would be obtained from this host.
+     * If iam endpoint has been set, the project id or domain id would be obtained
+     * from this host.
      */
     public static final String IAM_ENDPOINT_ENV_NAME = "HUAWEICLOUD_SDK_IAM_ENDPOINT";
+
+    public static final String REGION_ID_ENV_NAME = "HUAWEICLOUD_SDK_REGION_ID";
+
+    public static final String DERIVED_AUTH_SERVICE_NAME_ENV_NAME = "HUAWEICLOUD_SDK_DERIVED_AUTH_SERVICE_NAME";
+
+    public static final String DERIVED_PREDICATE_ENV_NAME = "HUAWEICLOUD_SDK_DERIVED_PREDICATE";
+
+    public static final String DEFAULT_DERIVED_PREDICATE = "DEFAULT_DERIVED_PREDICATE";
 
     public static final String BASIC_CREDENTIAL_TYPE = "BasicCredentials";
 
@@ -60,7 +71,8 @@ public final class EnvCredentials {
     }
 
     /**
-     * Notice: Function `LoadCredentialFromEnv` is only able to load BasicCredentials and GlobalCredentials.
+     * Notice: Function `LoadCredentialFromEnv` is only able to load
+     * BasicCredentials and GlobalCredentials.
      *
      * @param defaultType default credential type from ClientBuilder
      * @return instance of ICredential
@@ -68,19 +80,28 @@ public final class EnvCredentials {
     public static ICredential loadCredentialFromEnv(String defaultType) {
         String ak = System.getenv(AK_ENV_NAME);
         String sk = System.getenv(SK_ENV_NAME);
+        String regionId = System.getenv(REGION_ID_ENV_NAME);
+        String derivedAuthServiceName = System.getenv(DERIVED_AUTH_SERVICE_NAME_ENV_NAME);
+        Function<HttpRequest, Boolean> derivedPredicate = DEFAULT_DERIVED_PREDICATE
+                .equals(System.getenv(DERIVED_PREDICATE_ENV_NAME))
+                ? AbstractCredentials.DEFAULT_DERIVED_PREDICATE : null;
 
         if (BASIC_CREDENTIAL_TYPE.equals(defaultType)) {
-            BasicCredentials credentials = new BasicCredentials().withAk(ak).withSk(sk);
+            BasicCredentials credentials = new BasicCredentials().withAk(ak).withSk(sk)
+                    .withDerivedPredicate(derivedPredicate);
+            credentials.processDerivedAuthParams(derivedAuthServiceName, regionId);
             String projectId = System.getenv(PROJECT_ID_ENV_NAME);
-            if (Objects.nonNull(projectId) && !StringUtils.isEmpty(projectId)) {
+            if (!StringUtils.isEmpty(projectId)) {
                 credentials.setProjectId(projectId);
             }
             credentials.setIamEndpoint(getIamEndpointEnvName());
             return credentials;
         } else if (GLOBAL_CREDENTIAL_TYPE.equals(defaultType)) {
-            GlobalCredentials credentials = new GlobalCredentials().withAk(ak).withSk(sk);
+            GlobalCredentials credentials = new GlobalCredentials().withAk(ak).withSk(sk)
+                    .withDerivedPredicate(derivedPredicate);
+            credentials.processDerivedAuthParams(derivedAuthServiceName, regionId);
             String domainId = System.getenv(DOMAIN_ID_ENV_NAME);
-            if (Objects.nonNull(domainId) && !StringUtils.isEmpty(domainId)) {
+            if (!StringUtils.isEmpty(domainId)) {
                 return credentials.withDomainId(domainId);
             }
             credentials.setIamEndpoint(getIamEndpointEnvName());

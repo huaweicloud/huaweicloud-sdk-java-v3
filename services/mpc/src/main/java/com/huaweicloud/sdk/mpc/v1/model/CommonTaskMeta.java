@@ -34,6 +34,11 @@ public class CommonTaskMeta {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -123,6 +128,22 @@ public class CommonTaskMeta {
         this.endTime = endTime;
     }
 
+    public CommonTaskMeta withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /** 任务的返回码。
+     * 
+     * @return errorCode */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
     public CommonTaskMeta withDescription(String description) {
         this.description = description;
         return this;
@@ -168,13 +189,14 @@ public class CommonTaskMeta {
             && Objects.equals(this.createTime, commonTaskMeta.createTime)
             && Objects.equals(this.startTime, commonTaskMeta.startTime)
             && Objects.equals(this.endTime, commonTaskMeta.endTime)
+            && Objects.equals(this.errorCode, commonTaskMeta.errorCode)
             && Objects.equals(this.description, commonTaskMeta.description)
             && Objects.equals(this.userData, commonTaskMeta.userData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, description, userData);
+        return Objects.hash(taskId, status, createTime, startTime, endTime, errorCode, description, userData);
     }
 
     @Override
@@ -186,6 +208,7 @@ public class CommonTaskMeta {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("}");

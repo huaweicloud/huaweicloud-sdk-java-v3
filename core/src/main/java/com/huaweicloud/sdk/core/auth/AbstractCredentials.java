@@ -21,12 +21,17 @@
 
 package com.huaweicloud.sdk.core.auth;
 
+import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.http.HttpRequest;
+
+import java.util.function.Function;
+
 /**
- * @param <DerivedT> derived class such as BasicCredentials and GlobalCredentials
+ * @param <DerivedT> derived class such as BasicCredentials and
+ *                   GlobalCredentials
  * @author HuaweiCloud_SDK
  */
 public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<DerivedT>> implements ICredential {
-
     private String ak;
 
     private String sk;
@@ -34,6 +39,19 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
     private String securityToken;
 
     private String iamEndpoint;
+
+    protected String regionId;
+
+    protected String derivedAuthServiceName;
+
+    private Function<HttpRequest, Boolean> derivedPredicate;
+
+    public static final Function<HttpRequest, Boolean> DEFAULT_DERIVED_PREDICATE =
+        httpRequest ->
+            !Constants.DEFAULT_ENDPOINT_REG.matches(
+                httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", ""));
+
+    public abstract void processDerivedAuthParams(String derivedAuthServiceName, String regionId);
 
     public String getAk() {
         return ak;
@@ -65,6 +83,14 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
 
     public void setIamEndpoint(String iamEndpoint) {
         this.iamEndpoint = iamEndpoint;
+    }
+
+    public Function<HttpRequest, Boolean> getDerivedPredicate() {
+        return derivedPredicate;
+    }
+
+    public void setDerivedPredicate(Function<HttpRequest, Boolean> derivedPredicate) {
+        this.derivedPredicate = derivedPredicate;
     }
 
     /**
@@ -103,4 +129,20 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
         return (DerivedT) this;
     }
 
+    /**
+     * @param derivedPredicate optional property, judge whether to use the DerivedAKSKSigner
+     * @return DerivedT with derived set
+     */
+    public DerivedT withDerivedPredicate(Function<HttpRequest, Boolean> derivedPredicate) {
+        this.derivedPredicate = derivedPredicate;
+        return (DerivedT) this;
+    }
+
+    protected boolean isDerivedAuth(HttpRequest httpRequest) {
+        if (derivedPredicate == null) {
+            return false;
+        }
+
+        return derivedPredicate.apply(httpRequest);
+    }
 }

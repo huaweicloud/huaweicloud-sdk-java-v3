@@ -23,7 +23,7 @@ public class ListTasksDetailsRequest {
 
     private String serviceVersion;
 
-    /** 目标服务作业的状态 */
+    /** 目标服务作业的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结） */
     public static final class StateEnum {
 
         /** Enum PENDING for value: "PENDING" */
@@ -171,7 +171,7 @@ public class ListTasksDetailsRequest {
 
     private Long createdUntil;
 
-    /** 展示服务作业时的排序字段和顺序 */
+    /** 展示服务作业时的排序字段和顺序，分别为name:ASC（按名称顺序排序），name:DESC（按名称倒序排序），created_at:ASC（按创建时间正序排序），created_at:DESC（按创建时间倒序排序），updated_at:ASC（按更新时间正序排序），updated_at:DESC（按更新时间倒序排序） */
     public static final class OrderEnum {
 
         /** Enum NAME_ASC for value: "name:ASC" */
@@ -310,7 +310,7 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 目标服务作业的状态
+    /** 目标服务作业的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结）
      * 
      * @return state */
     public StateEnum getState() {
@@ -390,7 +390,7 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 展示服务作业时的排序字段和顺序
+    /** 展示服务作业时的排序字段和顺序，分别为name:ASC（按名称顺序排序），name:DESC（按名称倒序排序），created_at:ASC（按创建时间正序排序），created_at:DESC（按创建时间倒序排序），updated_at:ASC（按更新时间正序排序），updated_at:DESC（按更新时间倒序排序）
      * 
      * @return order */
     public OrderEnum getOrder() {

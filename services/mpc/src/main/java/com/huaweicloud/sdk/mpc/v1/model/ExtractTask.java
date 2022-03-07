@@ -35,6 +35,11 @@ public class ExtractTask {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -137,6 +142,22 @@ public class ExtractTask {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public ExtractTask withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /** 任务的返回码。
+     * 
+     * @return errorCode */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
     public ExtractTask withDescription(String description) {
@@ -259,6 +280,7 @@ public class ExtractTask {
             && Objects.equals(this.createTime, extractTask.createTime)
             && Objects.equals(this.startTime, extractTask.startTime)
             && Objects.equals(this.endTime, extractTask.endTime)
+            && Objects.equals(this.errorCode, extractTask.errorCode)
             && Objects.equals(this.description, extractTask.description)
             && Objects.equals(this.userData, extractTask.userData) && Objects.equals(this.input, extractTask.input)
             && Objects.equals(this.output, extractTask.output) && Objects.equals(this.metadata, extractTask.metadata);
@@ -266,8 +288,17 @@ public class ExtractTask {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(taskId, status, createTime, startTime, endTime, description, userData, input, output, metadata);
+        return Objects.hash(taskId,
+            status,
+            createTime,
+            startTime,
+            endTime,
+            errorCode,
+            description,
+            userData,
+            input,
+            output,
+            metadata);
     }
 
     @Override
@@ -279,6 +310,7 @@ public class ExtractTask {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");

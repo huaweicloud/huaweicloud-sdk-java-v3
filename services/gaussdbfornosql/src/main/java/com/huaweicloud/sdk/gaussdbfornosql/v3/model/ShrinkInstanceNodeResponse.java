@@ -14,6 +14,11 @@ public class ShrinkInstanceNodeResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
     public ShrinkInstanceNodeResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -30,6 +35,22 @@ public class ShrinkInstanceNodeResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public ShrinkInstanceNodeResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /** 订单ID，仅创建包年包月实例时返回该参数。
+     * 
+     * @return orderId */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -39,12 +60,13 @@ public class ShrinkInstanceNodeResponse extends SdkResponse {
             return false;
         }
         ShrinkInstanceNodeResponse shrinkInstanceNodeResponse = (ShrinkInstanceNodeResponse) o;
-        return Objects.equals(this.jobId, shrinkInstanceNodeResponse.jobId);
+        return Objects.equals(this.jobId, shrinkInstanceNodeResponse.jobId)
+            && Objects.equals(this.orderId, shrinkInstanceNodeResponse.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, orderId);
     }
 
     @Override
@@ -52,6 +74,7 @@ public class ShrinkInstanceNodeResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShrinkInstanceNodeResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

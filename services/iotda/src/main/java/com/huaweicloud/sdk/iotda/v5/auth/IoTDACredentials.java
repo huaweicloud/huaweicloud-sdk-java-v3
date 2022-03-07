@@ -23,12 +23,13 @@ package com.huaweicloud.sdk.iotda.v5.auth;
 
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.HcClient;
-import com.huaweicloud.sdk.core.auth.AuthCache;
-import com.huaweicloud.sdk.core.auth.GlobalCredentials;
-import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.auth.AKSKSigner;
 import com.huaweicloud.sdk.core.auth.AbstractCredentials;
+import com.huaweicloud.sdk.core.auth.AuthCache;
+import com.huaweicloud.sdk.core.auth.DerivedAKSKSigner;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.internal.InnerIamMeta;
@@ -54,10 +55,7 @@ import java.util.stream.Collectors;
  * @author HuaweiCloud_SDK
  */
 public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
-
     private String projectId;
-
-    private String regionId;
 
     /**
      * 是否为默认端点
@@ -99,27 +97,27 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
 
     @Override
     public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
-        this.regionId = regionId;
-
         if (!StringUtils.isEmpty(this.projectId)) {
             return CompletableFuture.completedFuture(this);
         }
-
-        // Confirm if current ak has been cached in AuthCache, key of authMap is ak+regionId
+        // Confirm if current ak has been cached in AuthCache, key of authMap is
+        // ak+regionId
         String akWithName = getAk() + regionId;
         if (Objects.nonNull(AuthCache.getAuth(akWithName)) && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
             this.projectId = AuthCache.getAuth(akWithName);
             return CompletableFuture.completedFuture(this);
         }
 
+        Boolean tmpDefaultEndpoint = isDefaultEndpoint;
+        isDefaultEndpoint = true;
+
         String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
         HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
-
         KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
         KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
         if (Objects.isNull(response)) {
             throw new SdkException(
-                "Failed to get project id, " + "please input project id when initializing BasicCredentials");
+                    "Failed to get project id, " + "please input project id when initializing BasicCredentials");
         }
         if (response.getProjects().size() == 1) {
             this.projectId = response.getProjects().get(0).getId();
@@ -127,6 +125,9 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
             this.projectId = keystoneCreateProject(inner, regionId);
         }
         AuthCache.putAuth(akWithName, projectId);
+
+        isDefaultEndpoint = tmpDefaultEndpoint;
+
         return CompletableFuture.completedFuture(this);
     }
 
@@ -138,7 +139,6 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
         if (!supportedRegions.contains(regionId)) {
             throw new SdkException("the region input is not supported to create project automatically");
         }
-
         String domainId = getDomainId(client);
         if (StringUtils.isEmpty(domainId)) {
             throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
@@ -146,7 +146,6 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
                     + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
                     + "3. Use AK/SK of the domain account.");
         }
-
         return getCreateProjectId(client, regionId, domainId);
     }
 
@@ -157,7 +156,6 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
         if (Objects.isNull(response)) {
             throw new SdkException("failed to list all regions");
         }
-
         return response.getRegions().stream().map(region -> {
             if (publicRegionType.equals(region.getType())) {
                 return region.getId();
@@ -169,7 +167,7 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
     private String getDomainId(HcClient hcClient) {
         KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
         KeystoneListAuthDomainsResponse response = hcClient.syncInvokeHttp(request,
-            InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+                InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
         if (Objects.isNull(response)) {
             throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
                     + "1. Manually specify domain_id when initializing the credentials.\n\t"
@@ -180,18 +178,16 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
     }
 
     private String getCreateProjectId(HcClient hcClient, String regionId, String domainId) {
-        GlobalCredentials globalCredentials = new GlobalCredentials().withAk(getAk())
-            .withSk(getSk())
-            .withDomainId(domainId);
+        GlobalCredentials globalCredentials = new GlobalCredentials().withAk(getAk()).withSk(getSk())
+                .withDomainId(domainId);
         HcClient innerGlobal = hcClient.overrideCredential(globalCredentials);
-        KeystoneCreateProjectRequest request = new KeystoneCreateProjectRequest().withBody(
-            body -> body.withProject(project -> {
-                project.withName(regionId);
-                project.withDomainId(domainId);
-            }));
+        KeystoneCreateProjectRequest request = new KeystoneCreateProjectRequest()
+                .withBody(body -> body.withProject(project -> {
+                    project.withName(regionId);
+                    project.withDomainId(domainId);
+                }));
         KeystoneCreateProjectResponse response = innerGlobal.syncInvokeHttp(request,
-            InnerIamMeta.KEYSTONE_CREATE_PROJECT);
-
+                InnerIamMeta.KEYSTONE_CREATE_PROJECT);
         if (Objects.isNull(response.getProject())) {
             throw new SdkException("failed to create project");
         }
@@ -202,25 +198,20 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
     public CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
         return CompletableFuture.supplyAsync(() -> {
             HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
-
             if (Objects.nonNull(getProjectId())) {
                 builder.addHeader(Constants.X_PROJECT_ID, projectId);
             }
-
             if (Objects.nonNull(getSecurityToken())) {
                 builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
             }
-
-            if (Objects.nonNull(httpRequest.getContentType()) && !httpRequest.getContentType()
-                .startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+            if (Objects.nonNull(httpRequest.getContentType())
+                    && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
                 builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
             }
-
             Map<String, String> header = isDefaultEndpoint(httpRequest)
-                ? AKSKSigner.sign(builder.build(), this)
-                : DerivationAKSKSigner.sign(builder.build(), this, regionId);
+                    ? AKSKSigner.sign(builder.build(), this)
+                    : DerivedAKSKSigner.sign(builder.build(), this);
             builder.addHeaders(header);
-
             return builder.build();
         });
     }
@@ -230,7 +221,6 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
         if (Objects.nonNull(this.isDefaultEndpoint)) {
             return this.isDefaultEndpoint;
         }
-
         // 根据请求判断
         try {
             return Objects.equals(IoTDARegion.valueOf(regionId).getEndpoint(), httpRequest.getEndpoint());
@@ -241,11 +231,18 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
 
     @Override
     public IoTDACredentials deepClone() {
-        return new IoTDACredentials().withProjectId(this.projectId)
-            .withAk(this.getAk())
-            .withSk(this.getSk())
-            .withIamEndpoint(this.getIamEndpoint())
-            .withSecurityToken(this.getSecurityToken());
+        return new IoTDACredentials().withProjectId(this.projectId).withAk(this.getAk()).withSk(this.getSk())
+                .withIamEndpoint(this.getIamEndpoint()).withSecurityToken(this.getSecurityToken());
     }
 
+    @Override
+    public void processDerivedAuthParams(String derivedAuthServiceName, String regionId) {
+        if (this.derivedAuthServiceName == null) {
+            this.derivedAuthServiceName = derivedAuthServiceName;
+        }
+
+        if (this.regionId == null) {
+            this.regionId = regionId;
+        }
+    }
 }

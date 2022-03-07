@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 /** 作业的输入配置 */
 public class TaskInput {
 
-    /** 作业的输入类型 */
+    /** 作业的输入类型，必填。可选类型有obs（对象存储服务存储的文件），vis（视频接入服务的视频流），url（指定的文件地址或取流地址），edgecamera（绑定在IEF的边缘摄像头），edgerestful（从自定义的流媒体服务器通过Restful接口获取取流地址），vcn（VCN设备）。 */
     public static final class TypeEnum {
 
         /** Enum OBS for value: "obs" */
@@ -123,7 +123,7 @@ public class TaskInput {
         return this;
     }
 
-    /** 作业的输入类型
+    /** 作业的输入类型，必填。可选类型有obs（对象存储服务存储的文件），vis（视频接入服务的视频流），url（指定的文件地址或取流地址），edgecamera（绑定在IEF的边缘摄像头），edgerestful（从自定义的流媒体服务器通过Restful接口获取取流地址），vcn（VCN设备）。
      * 
      * @return type */
     public TypeEnum getType() {

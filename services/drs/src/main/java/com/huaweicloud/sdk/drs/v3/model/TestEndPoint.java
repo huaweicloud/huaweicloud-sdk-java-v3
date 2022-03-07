@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 测试连接信息体 */
 public class TestEndPoint {
@@ -107,12 +108,16 @@ public class TestEndPoint {
         /** Enum MONGODB for value: "mongodb" */
         public static final DbTypeEnum MONGODB = new DbTypeEnum("mongodb");
 
+        /** Enum POSTGRESQL for value: "postgresql" */
+        public static final DbTypeEnum POSTGRESQL = new DbTypeEnum("postgresql");
+
         private static final Map<String, DbTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DbTypeEnum> createStaticFields() {
             Map<String, DbTypeEnum> map = new HashMap<>();
             map.put("mysql", MYSQL);
             map.put("mongodb", MONGODB);
+            map.put("postgresql", POSTGRESQL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -325,6 +330,11 @@ public class TestEndPoint {
 
     private String dbName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_security_config")
+
+    private KafkaSecurity kafkaSecurityConfig;
+
     public TestEndPoint withId(String id) {
         this.id = id;
         return this;
@@ -474,7 +484,7 @@ public class TestEndPoint {
         return this;
     }
 
-    /** SSL证书内容，用base64加密后，源库安全连接必选。
+    /** SSL证书内容，base64加密后的值，源库安全连接必选。
      * 
      * @return sslCertKey */
     public String getSslCertKey() {
@@ -506,7 +516,7 @@ public class TestEndPoint {
         return this;
     }
 
-    /** SSL证书内容checksum值，后端校验，源库安全连接必选。
+    /** SSL证书内容checksum值，证书经过sha256加密后的值，后端校验，源库安全连接必选。
      * 
      * @return sslCertCheckSum */
     public String getSslCertCheckSum() {
@@ -629,6 +639,31 @@ public class TestEndPoint {
         this.dbName = dbName;
     }
 
+    public TestEndPoint withKafkaSecurityConfig(KafkaSecurity kafkaSecurityConfig) {
+        this.kafkaSecurityConfig = kafkaSecurityConfig;
+        return this;
+    }
+
+    public TestEndPoint withKafkaSecurityConfig(Consumer<KafkaSecurity> kafkaSecurityConfigSetter) {
+        if (this.kafkaSecurityConfig == null) {
+            this.kafkaSecurityConfig = new KafkaSecurity();
+            kafkaSecurityConfigSetter.accept(this.kafkaSecurityConfig);
+        }
+
+        return this;
+    }
+
+    /** Get kafkaSecurityConfig
+     * 
+     * @return kafkaSecurityConfig */
+    public KafkaSecurity getKafkaSecurityConfig() {
+        return kafkaSecurityConfig;
+    }
+
+    public void setKafkaSecurityConfig(KafkaSecurity kafkaSecurityConfig) {
+        this.kafkaSecurityConfig = kafkaSecurityConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -652,7 +687,8 @@ public class TestEndPoint {
             && Objects.equals(this.endPointType, testEndPoint.endPointType)
             && Objects.equals(this.region, testEndPoint.region)
             && Objects.equals(this.projectId, testEndPoint.projectId)
-            && Objects.equals(this.dbName, testEndPoint.dbName);
+            && Objects.equals(this.dbName, testEndPoint.dbName)
+            && Objects.equals(this.kafkaSecurityConfig, testEndPoint.kafkaSecurityConfig);
     }
 
     @Override
@@ -675,7 +711,8 @@ public class TestEndPoint {
             endPointType,
             region,
             projectId,
-            dbName);
+            dbName,
+            kafkaSecurityConfig);
     }
 
     @Override
@@ -701,6 +738,7 @@ public class TestEndPoint {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    dbName: ").append(toIndentedString(dbName)).append("\n");
+        sb.append("    kafkaSecurityConfig: ").append(toIndentedString(kafkaSecurityConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -78,32 +79,38 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     @Override
     public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
-        if (!StringUtils.isEmpty(this.projectId)) {
+        if (!StringUtils.isEmpty(projectId)) {
             return CompletableFuture.completedFuture(this);
         }
 
         // Confirm if current ak has been cached in AuthCache, key of authMap is ak+regionId
         String akWithName = getAk() + regionId;
         if (Objects.nonNull(AuthCache.getAuth(akWithName)) && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
-            this.projectId = AuthCache.getAuth(akWithName);
+            projectId = AuthCache.getAuth(akWithName);
             return CompletableFuture.completedFuture(this);
         }
 
         String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
         HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
 
+        Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
+        setDerivedPredicate(null);
+
         KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
         KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
         if (Objects.isNull(response)) {
             throw new SdkException(
-                "Failed to get project id, " + "please input project id when initializing BasicCredentials");
+                    "Failed to get project id, " + "please input project id when initializing BasicCredentials");
         }
         if (response.getProjects().size() == 1) {
-            this.projectId = response.getProjects().get(0).getId();
+            projectId = response.getProjects().get(0).getId();
         } else {
-            this.projectId = keystoneCreateProject(inner, regionId);
+            projectId = keystoneCreateProject(inner, regionId);
         }
         AuthCache.putAuth(akWithName, projectId);
+
+        setDerivedPredicate(derivedPredicate);
+
         return CompletableFuture.completedFuture(this);
     }
 
@@ -146,7 +153,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     private String getDomainId(HcClient hcClient) {
         KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
         KeystoneListAuthDomainsResponse response = hcClient.syncInvokeHttp(request,
-            InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+                InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
         if (Objects.isNull(response)) {
             throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
                     + "1. Manually specify domain_id when initializing the credentials.\n\t"
@@ -157,17 +164,16 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     }
 
     private String getCreateProjectId(HcClient hcClient, String regionId, String domainId) {
-        GlobalCredentials globalCredentials = new GlobalCredentials().withAk(getAk())
-            .withSk(getSk())
-            .withDomainId(domainId);
+        GlobalCredentials globalCredentials = new GlobalCredentials().withAk(getAk()).withSk(getSk())
+                .withDomainId(domainId);
         HcClient innerGlobal = hcClient.overrideCredential(globalCredentials);
-        KeystoneCreateProjectRequest request = new KeystoneCreateProjectRequest().withBody(
-            body -> body.withProject(project -> {
-                project.withName(regionId);
-                project.withDomainId(domainId);
-            }));
+        KeystoneCreateProjectRequest request = new KeystoneCreateProjectRequest()
+                .withBody(body -> body.withProject(project -> {
+                    project.withName(regionId);
+                    project.withDomainId(domainId);
+                }));
         KeystoneCreateProjectResponse response = innerGlobal.syncInvokeHttp(request,
-            InnerIamMeta.KEYSTONE_CREATE_PROJECT);
+                InnerIamMeta.KEYSTONE_CREATE_PROJECT);
 
         if (Objects.isNull(response.getProject())) {
             throw new SdkException("failed to create project");
@@ -188,25 +194,42 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                 builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
             }
 
-            if (Objects.nonNull(httpRequest.getContentType()) && !httpRequest.getContentType()
-                .startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+            if (Objects.nonNull(httpRequest.getContentType())
+                    && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
                 builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
             }
 
-            Map<String, String> header = AKSKSigner.sign(builder.build(), this);
-            builder.addHeaders(header);
+            Map<String, String> header = isDerivedAuth(httpRequest)
+                    ? DerivedAKSKSigner.sign(builder.build(), this)
+                    : AKSKSigner.sign(builder.build(), this);
 
+            builder.addHeaders(header);
             return builder.build();
         });
     }
 
     @Override
-    public BasicCredentials deepClone() {
-        return new BasicCredentials().withProjectId(this.projectId)
-            .withAk(this.getAk())
-            .withSk(this.getSk())
-            .withIamEndpoint(this.getIamEndpoint())
-            .withSecurityToken(this.getSecurityToken());
+    public void processDerivedAuthParams(String derivedAuthServiceName, String regionId) {
+        if (this.derivedAuthServiceName == null) {
+            this.derivedAuthServiceName = derivedAuthServiceName;
+        }
+
+        if (this.regionId == null) {
+            this.regionId = regionId;
+        }
     }
 
+    @Override
+    public BasicCredentials deepClone() {
+        BasicCredentials credentials = new BasicCredentials()
+                .withProjectId(projectId)
+                .withAk(getAk())
+                .withSk(getSk())
+                .withDerivedPredicate(getDerivedPredicate())
+                .withIamEndpoint(getIamEndpoint())
+                .withSecurityToken(getSecurityToken());
+
+        credentials.processDerivedAuthParams(derivedAuthServiceName, regionId);
+        return credentials;
+    }
 }

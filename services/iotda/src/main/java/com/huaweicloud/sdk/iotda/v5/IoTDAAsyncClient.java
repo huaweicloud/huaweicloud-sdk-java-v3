@@ -16,7 +16,8 @@ public class IoTDAAsyncClient {
     }
 
     public static ClientBuilder<IoTDAAsyncClient> newBuilder() {
-        return new ClientBuilder<>(IoTDAAsyncClient::new, "BasicCredentials,IoTDACredentials");
+        return new ClientBuilder<>(IoTDAAsyncClient::new, "BasicCredentials,IoTDACredentials")
+            .withDerivedAuthServiceName("iotdm");
     }
 
     /** 生成接入凭证 接入凭证是用于客户端使用AMQP等协议与平台建链的一个认证凭据。只保留一条记录，如果重复调用只会重置接入凭证，使得之前的失效。

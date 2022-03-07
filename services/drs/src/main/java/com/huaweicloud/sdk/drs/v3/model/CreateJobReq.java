@@ -111,7 +111,7 @@ public class CreateJobReq {
 
     private String description;
 
-    /** 引擎类型，mysql：迁移，同步使用；mongodb：迁移使用；cloudDataGuard-mysql：灾备使用。 */
+    /** 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用 */
     public static final class EngineTypeEnum {
 
         /** Enum MYSQL for value: "mysql" */
@@ -123,6 +123,12 @@ public class CreateJobReq {
         /** Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql" */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
 
+        /** Enum GAUSSDBV5 for value: "gaussdbv5" */
+        public static final EngineTypeEnum GAUSSDBV5 = new EngineTypeEnum("gaussdbv5");
+
+        /** Enum POSTGRESQL for value: "postgresql" */
+        public static final EngineTypeEnum POSTGRESQL = new EngineTypeEnum("postgresql");
+
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineTypeEnum> createStaticFields() {
@@ -130,6 +136,8 @@ public class CreateJobReq {
             map.put("mysql", MYSQL);
             map.put("mongodb", MONGODB);
             map.put("cloudDataGuard-mysql", CLOUDDATAGUARD_MYSQL);
+            map.put("gaussdbv5", GAUSSDBV5);
+            map.put("postgresql", POSTGRESQL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -622,7 +630,7 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 引擎类型，mysql：迁移，同步使用；mongodb：迁移使用；cloudDataGuard-mysql：灾备使用。
+    /** 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用
      * 
      * @return engineType */
     public EngineTypeEnum getEngineType() {
@@ -832,7 +840,7 @@ public class CreateJobReq {
         return this;
     }
 
-    /** drs实例所在子网ID
+    /** DRS实例所在子网ID，对应目标库相同VPC下已创建的子网（subnet）的网络ID，UUID格式。
      * 
      * @return customizeSutnetId */
     public String getCustomizeSutnetId() {
