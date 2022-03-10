@@ -71,6 +71,11 @@ public class QueryDeptResultDTO {
 
     private List<IdMarkDTO> designatedOutDeptCodes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sortLevel")
+
+    private Integer sortLevel;
+
     public QueryDeptResultDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -279,6 +284,22 @@ public class QueryDeptResultDTO {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
     }
 
+    public QueryDeptResultDTO withSortLevel(Integer sortLevel) {
+        this.sortLevel = sortLevel;
+        return this;
+    }
+
+    /** 部门排序号
+     * 
+     * @return sortLevel */
+    public Integer getSortLevel() {
+        return sortLevel;
+    }
+
+    public void setSortLevel(Integer sortLevel) {
+        this.sortLevel = sortLevel;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -299,7 +320,8 @@ public class QueryDeptResultDTO {
             && Objects.equals(this.corpId, queryDeptResultDTO.corpId)
             && Objects.equals(this.inPermission, queryDeptResultDTO.inPermission)
             && Objects.equals(this.outPermission, queryDeptResultDTO.outPermission)
-            && Objects.equals(this.designatedOutDeptCodes, queryDeptResultDTO.designatedOutDeptCodes);
+            && Objects.equals(this.designatedOutDeptCodes, queryDeptResultDTO.designatedOutDeptCodes)
+            && Objects.equals(this.sortLevel, queryDeptResultDTO.sortLevel);
     }
 
     @Override
@@ -315,7 +337,8 @@ public class QueryDeptResultDTO {
             corpId,
             inPermission,
             outPermission,
-            designatedOutDeptCodes);
+            designatedOutDeptCodes,
+            sortLevel);
     }
 
     @Override
@@ -334,6 +357,7 @@ public class QueryDeptResultDTO {
         sb.append("    inPermission: ").append(toIndentedString(inPermission)).append("\n");
         sb.append("    outPermission: ").append(toIndentedString(outPermission)).append("\n");
         sb.append("    designatedOutDeptCodes: ").append(toIndentedString(designatedOutDeptCodes)).append("\n");
+        sb.append("    sortLevel: ").append(toIndentedString(sortLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

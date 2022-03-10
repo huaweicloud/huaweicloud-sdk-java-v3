@@ -659,10 +659,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器绑定的EIP ID。示例如下： \"eips\"&#58; [ { \"eip_id\"&#58; \"e9b72a9d-4275-455e-a724-853504e4d9c6\",
-     * \"eip_address\"&#58; \"88.88.14.122\", \"ip_version\"&#58; 4 } ] 支持多值查询，查询条件格式： -
-     * eip_id作为查询条件：*eips=eip_id=xxx&eips=eip_id=xxx*。 - eip_address作为查询条件：*eips=eip_address=xxx&eips=eip_address=xxx*。
-     * - ip_version作为查询条件：*eips=ip_version=xxx&eips=ip_version=xxx*。 注：该字段与publicips字段一致。
+    /** 负载均衡器绑定的EIP ID。示例如下： \"eips\": [ { \"eip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\", \"eip_address\":
+     * \"88.88.14.122\", \"ip_version\": 4 } ] 支持多值查询，查询条件格式： - eip_id作为查询条件：*eips=eip_id=xxx&eips=eip_id=xxx*。 -
+     * eip_address作为查询条件：*eips=eip_address=xxx&eips=eip_address=xxx*。 -
+     * ip_version作为查询条件：*eips=ip_version=xxx&eips=ip_version=xxx*。 注：该字段与publicips字段一致。
      * 
      * @return eips */
     public List<String> getEips() {
@@ -694,8 +694,8 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器绑定的公网IP。示例如下： \"publicips\"&#58; [ { \"publicip_id\"&#58; \"e9b72a9d-4275-455e-a724-853504e4d9c6\",
-     * \"publicip_address\"&#58; \"88.88.14.122\", \"ip_version\"&#58; 4 } ] 支持多值查询，查询条件格式： -
+    /** 负载均衡器绑定的公网IP。示例如下： \"publicips\": [ { \"publicip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",
+     * \"publicip_address\": \"88.88.14.122\", \"ip_version\": 4 } ] 支持多值查询，查询条件格式： -
      * publicip_id作为查询条件：*publicips=publicip_id=xxx&publicips=publicip_id=xxx*。 -
      * publicip_address作为查询条件：*publicips=publicip_address=xxx&publicips=publicip_address=xxx*。 -
      * ip_version作为查询条件：*publicips=ip_version=xxx&publicips=ip_version=xxx*。 注：该字段与eips字段一致。
@@ -987,7 +987,7 @@ public class ListLoadBalancersRequest {
     }
 
     /** 负载均衡器所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。
-     * [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * 
      * @return enterpriseProjectId */
     public List<String> getEnterpriseProjectId() {

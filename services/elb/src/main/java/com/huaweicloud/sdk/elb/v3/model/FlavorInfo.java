@@ -33,6 +33,11 @@ public class FlavorInfo {
 
     private Integer lcu;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "https_cps")
+
+    private Integer httpsCps;
+
     public FlavorInfo withConnection(Integer connection) {
         this.connection = connection;
         return this;
@@ -102,7 +107,7 @@ public class FlavorInfo {
         return this;
     }
 
-    /** flavor对应的lcu数量。
+    /** 当前flavor对应的lcu数量。LCU是用来衡量独享型ELB处理性能综合指标，LCU值越大，性能越好。
      * 
      * @return lcu */
     public Integer getLcu() {
@@ -111,6 +116,22 @@ public class FlavorInfo {
 
     public void setLcu(Integer lcu) {
         this.lcu = lcu;
+    }
+
+    public FlavorInfo withHttpsCps(Integer httpsCps) {
+        this.httpsCps = httpsCps;
+        return this;
+    }
+
+    /** https新建连接数。
+     * 
+     * @return httpsCps */
+    public Integer getHttpsCps() {
+        return httpsCps;
+    }
+
+    public void setHttpsCps(Integer httpsCps) {
+        this.httpsCps = httpsCps;
     }
 
     @Override
@@ -124,12 +145,12 @@ public class FlavorInfo {
         FlavorInfo flavorInfo = (FlavorInfo) o;
         return Objects.equals(this.connection, flavorInfo.connection) && Objects.equals(this.cps, flavorInfo.cps)
             && Objects.equals(this.qps, flavorInfo.qps) && Objects.equals(this.bandwidth, flavorInfo.bandwidth)
-            && Objects.equals(this.lcu, flavorInfo.lcu);
+            && Objects.equals(this.lcu, flavorInfo.lcu) && Objects.equals(this.httpsCps, flavorInfo.httpsCps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(connection, cps, qps, bandwidth, lcu);
+        return Objects.hash(connection, cps, qps, bandwidth, lcu, httpsCps);
     }
 
     @Override
@@ -141,6 +162,7 @@ public class FlavorInfo {
         sb.append("    qps: ").append(toIndentedString(qps)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("    lcu: ").append(toIndentedString(lcu)).append("\n");
+        sb.append("    httpsCps: ").append(toIndentedString(httpsCps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

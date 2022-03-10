@@ -23,8 +23,9 @@ package com.huaweicloud.sdk.core;
 
 import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
-import com.huaweicloud.sdk.core.auth.EnvCredentials;
+import com.huaweicloud.sdk.core.auth.EnvCredentialHelper;
 import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.auth.TempCredentialHelper;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
@@ -102,8 +103,10 @@ public class ClientBuilder<T> {
 
         // If credential hasn't been assigned when initialing, SDK will try to load credential from environment variable
         if (Objects.isNull(credential)) {
-            credential = EnvCredentials.loadCredentialFromEnv(credentialType.get(0));
+            credential = EnvCredentialHelper.loadCredentialFromEnv(credentialType.get(0));
         }
+
+        credential = TempCredentialHelper.processCredential(httpClient, credentialType.get(0), credential);
 
         if (Objects.isNull(credential)) {
             throw new SdkException(

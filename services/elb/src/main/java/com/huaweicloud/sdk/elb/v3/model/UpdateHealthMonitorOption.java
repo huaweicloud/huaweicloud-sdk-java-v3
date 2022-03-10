@@ -209,7 +209,7 @@ public class UpdateHealthMonitorOption {
         return this;
     }
 
-    /** 发送健康检查请求的域名。 取值：以数字或字母开头，只能包含数字、字母、’-’、’.’。不能传空，但可传null或不传，表示使用负载均衡器的vip作为http请求的目的地址。 使用说明： - 仅当type为HTTP时生效。
+    /** 发送健康检查请求的域名。 取值：以数字或字母开头，只能包含数字、字母、'-'、'.'。不能传空，但可传null或不传，表示使用负载均衡器的vip作为http请求的目的地址。 使用说明： - 仅当type为HTTP时生效。
      * 
      * @return domainName */
     public String getDomainName() {

@@ -18,9 +18,11 @@ public class CreatePoolSessionPersistenceOption {
 
     private String cookieName;
 
-    /** 会话保持类型。 取值范围：SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 使用说明： -
+    /** 会话保持类型。 取值范围：SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 [使用说明： -
      * 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； -
-     * 当pool的protocol为HTTP、HTTPS时。如果是独享型负载均衡器的pool，则type只能为HTTP_COOKIE，其他取值会话保持失效。如果是共享型负载均衡器的pool，则type可以为HTTP_COOKIE和APP_COOKIE，其他取值会话保持失效。 */
+     * 当pool的protocol为HTTP、HTTPS时。如果是独享型负载均衡器的pool，则type只能为HTTP_COOKIE，其他取值会话保持失效。如果是共享型负载均衡器的pool，则type可以为HTTP_COOKIE和APP_COOKIE，其他取值会话保持失效。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
+     * [使用说明： - 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； -
+     * 当pool的protocol为HTTP、HTTPS时。type只能为HTTP_COOKIE，其他取值会话保持失效。](tag:hcso_dt) */
     public static final class TypeEnum {
 
         /** Enum SOURCE_IP for value: "SOURCE_IP" */
@@ -126,9 +128,11 @@ public class CreatePoolSessionPersistenceOption {
         return this;
     }
 
-    /** 会话保持类型。 取值范围：SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 使用说明： -
+    /** 会话保持类型。 取值范围：SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 [使用说明： -
      * 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； -
-     * 当pool的protocol为HTTP、HTTPS时。如果是独享型负载均衡器的pool，则type只能为HTTP_COOKIE，其他取值会话保持失效。如果是共享型负载均衡器的pool，则type可以为HTTP_COOKIE和APP_COOKIE，其他取值会话保持失效。
+     * 当pool的protocol为HTTP、HTTPS时。如果是独享型负载均衡器的pool，则type只能为HTTP_COOKIE，其他取值会话保持失效。如果是共享型负载均衡器的pool，则type可以为HTTP_COOKIE和APP_COOKIE，其他取值会话保持失效。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
+     * [使用说明： - 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； -
+     * 当pool的protocol为HTTP、HTTPS时。type只能为HTTP_COOKIE，其他取值会话保持失效。](tag:hcso_dt)
      * 
      * @return type */
     public TypeEnum getType() {

@@ -13,9 +13,30 @@ import java.util.function.Consumer;
 public class ListLogsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logs")
 
     private List<LogContents> logs = null;
+
+    public ListLogsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /** 日志条数。
+     * 
+     * @return count */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 
     public ListLogsResponse withLogs(List<LogContents> logs) {
         this.logs = logs;
@@ -58,18 +79,19 @@ public class ListLogsResponse extends SdkResponse {
             return false;
         }
         ListLogsResponse listLogsResponse = (ListLogsResponse) o;
-        return Objects.equals(this.logs, listLogsResponse.logs);
+        return Objects.equals(this.count, listLogsResponse.count) && Objects.equals(this.logs, listLogsResponse.logs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logs);
+        return Objects.hash(count, logs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListLogsResponse {\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    logs: ").append(toIndentedString(logs)).append("\n");
         sb.append("}");
         return sb.toString();

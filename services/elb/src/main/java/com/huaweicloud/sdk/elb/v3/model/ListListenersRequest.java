@@ -29,7 +29,7 @@ public class ListListenersRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_port")
 
-    private List<String> protocolPort = null;
+    private List<Integer> protocolPort = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
@@ -189,12 +189,12 @@ public class ListListenersRequest {
         this.pageReverse = pageReverse;
     }
 
-    public ListListenersRequest withProtocolPort(List<String> protocolPort) {
+    public ListListenersRequest withProtocolPort(List<Integer> protocolPort) {
         this.protocolPort = protocolPort;
         return this;
     }
 
-    public ListListenersRequest addProtocolPortItem(String protocolPortItem) {
+    public ListListenersRequest addProtocolPortItem(Integer protocolPortItem) {
         if (this.protocolPort == null) {
             this.protocolPort = new ArrayList<>();
         }
@@ -202,7 +202,7 @@ public class ListListenersRequest {
         return this;
     }
 
-    public ListListenersRequest withProtocolPort(Consumer<List<String>> protocolPortSetter) {
+    public ListListenersRequest withProtocolPort(Consumer<List<Integer>> protocolPortSetter) {
         if (this.protocolPort == null) {
             this.protocolPort = new ArrayList<>();
         }
@@ -213,11 +213,11 @@ public class ListListenersRequest {
     /** 监听器的前端监听端口。 支持多值查询，查询条件格式：*protocol_port=xxx&protocol_port=xxx*。
      * 
      * @return protocolPort */
-    public List<String> getProtocolPort() {
+    public List<Integer> getProtocolPort() {
         return protocolPort;
     }
 
-    public void setProtocolPort(List<String> protocolPort) {
+    public void setProtocolPort(List<Integer> protocolPort) {
         this.protocolPort = protocolPort;
     }
 
@@ -242,8 +242,9 @@ public class ListListenersRequest {
         return this;
     }
 
-    /** 监听器的监听协议。 取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS。 说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。
-     * 支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。
+    /** 监听器的监听协议。 [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS。
+     * 说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * [取值：TCP、UDP、HTTP、HTTPS。](tag:dt,dt_test,hcso_dt) 支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。
      * 
      * @return protocol */
     public List<String> getProtocol() {
@@ -564,9 +565,9 @@ public class ListListenersRequest {
     }
 
     /** 监听器使用的安全策略，仅对HTTPS协议类型的监听器有效。 [取值：tls-1-0-inherit, tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，tls-1-2-fs,
-     * tls-1-0-with-1-3, tls-1-2-fs-with-1-3, hybrid-policy-1-0。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
-     * [取值：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict。](tag:dt,dt_test)
-     * 支持多值查询，查询条件格式：*tls_ciphers_policy=xxx&tls_ciphers_policy=xxx*。
+     * tls-1-0-with-1-3, tls-1-2-fs-with-1-3,
+     * hybrid-policy-1-0。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [取值：tls-1-0, tls-1-1, tls-1-2,
+     * tls-1-2-strict。](tag:dt,dt_test) 支持多值查询，查询条件格式：*tls_ciphers_policy=xxx&tls_ciphers_policy=xxx*。
      * 
      * @return tlsCiphersPolicy */
     public List<String> getTlsCiphersPolicy() {
@@ -662,7 +663,8 @@ public class ListListenersRequest {
         return this;
     }
 
-    /** 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test)
+    /** 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。
+     * [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * 
      * @return enterpriseProjectId */
     public List<String> getEnterpriseProjectId() {
@@ -794,7 +796,9 @@ public class ListListenersRequest {
         return this;
     }
 
-    /** 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。仅作用于共享型LB的TCP/UDP监听器。取值：true开启，false不开启。
+    /** 是否透传客户端IP地址。
+     * [开启后客户端IP地址将透传到后端服务器。仅作用于共享型LB的TCP/UDP监听器。取值：true开启，false不开启。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
+     * [不支持该字段，请勿使用。](tag:hcso_dt)
      * 
      * @return transparentClientIpEnable */
     public Boolean getTransparentClientIpEnable() {

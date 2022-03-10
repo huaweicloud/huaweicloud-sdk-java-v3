@@ -208,6 +208,23 @@ public class ElbAsyncClient {
             ElbMeta.createLoadBalancer, hcClient);
     }
 
+    /** 创建云日志 创建云日志
+     *
+     * @param CreateLogtankRequest 请求对象
+     * @return CompletableFuture<CreateLogtankResponse> */
+    public CompletableFuture<CreateLogtankResponse> createLogtankAsync(CreateLogtankRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.createLogtank);
+    }
+
+    /** 创建云日志 创建云日志
+     *
+     * @param CreateLogtankRequest 请求对象
+     * @return AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse> */
+    public AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse> createLogtankAsyncInvoker(
+        CreateLogtankRequest request) {
+        return new AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse>(request, ElbMeta.createLogtank, hcClient);
+    }
+
     /** 创建后端服务器 创建后端服务器。
      *
      * @param CreateMemberRequest 请求对象
@@ -367,6 +384,23 @@ public class ElbAsyncClient {
             ElbMeta.deleteLoadBalancer, hcClient);
     }
 
+    /** 删除云日志 删除云日志。
+     *
+     * @param DeleteLogtankRequest 请求对象
+     * @return CompletableFuture<DeleteLogtankResponse> */
+    public CompletableFuture<DeleteLogtankResponse> deleteLogtankAsync(DeleteLogtankRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.deleteLogtank);
+    }
+
+    /** 删除云日志 删除云日志。
+     *
+     * @param DeleteLogtankRequest 请求对象
+     * @return AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse> */
+    public AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtankAsyncInvoker(
+        DeleteLogtankRequest request) {
+        return new AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>(request, ElbMeta.deleteLogtank, hcClient);
+    }
+
     /** 删除后端服务器 删除后端服务器。
      *
      * @param DeleteMemberRequest 请求对象
@@ -439,7 +473,7 @@ public class ElbAsyncClient {
 
     /** 查询可用区列表 返回租户创建LB时可使用的可用区集合列表情况。 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
      * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
-     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return CompletableFuture<ListAvailabilityZonesResponse> */
@@ -450,7 +484,7 @@ public class ElbAsyncClient {
 
     /** 查询可用区列表 返回租户创建LB时可使用的可用区集合列表情况。 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
      * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
-     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> */
@@ -579,6 +613,23 @@ public class ElbAsyncClient {
         ListLoadBalancersRequest request) {
         return new AsyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse>(request, ElbMeta.listLoadBalancers,
             hcClient);
+    }
+
+    /** 云日志列表 云日志列表
+     *
+     * @param ListLogtanksRequest 请求对象
+     * @return CompletableFuture<ListLogtanksResponse> */
+    public CompletableFuture<ListLogtanksResponse> listLogtanksAsync(ListLogtanksRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listLogtanks);
+    }
+
+    /** 云日志列表 云日志列表
+     *
+     * @param ListLogtanksRequest 请求对象
+     * @return AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse> */
+    public AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse> listLogtanksAsyncInvoker(
+        ListLogtanksRequest request) {
+        return new AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse>(request, ElbMeta.listLogtanks, hcClient);
     }
 
     /** 后端服务器列表 Pool下的后端服务器列表。
@@ -810,6 +861,22 @@ public class ElbAsyncClient {
             ElbMeta.showLoadBalancerStatus, hcClient);
     }
 
+    /** 云日志配置详情 云日志详情。
+     *
+     * @param ShowLogtankRequest 请求对象
+     * @return CompletableFuture<ShowLogtankResponse> */
+    public CompletableFuture<ShowLogtankResponse> showLogtankAsync(ShowLogtankRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.showLogtank);
+    }
+
+    /** 云日志配置详情 云日志详情。
+     *
+     * @param ShowLogtankRequest 请求对象
+     * @return AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse> */
+    public AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse> showLogtankAsyncInvoker(ShowLogtankRequest request) {
+        return new AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse>(request, ElbMeta.showLogtank, hcClient);
+    }
+
     /** 后端服务器详情 后端服务器详情。
      *
      * @param ShowMemberRequest 请求对象
@@ -983,6 +1050,23 @@ public class ElbAsyncClient {
             ElbMeta.updateLoadBalancer, hcClient);
     }
 
+    /** 更新云日志 更新云日志
+     *
+     * @param UpdateLogtankRequest 请求对象
+     * @return CompletableFuture<UpdateLogtankResponse> */
+    public CompletableFuture<UpdateLogtankResponse> updateLogtankAsync(UpdateLogtankRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.updateLogtank);
+    }
+
+    /** 更新云日志 更新云日志
+     *
+     * @param UpdateLogtankRequest 请求对象
+     * @return AsyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse> */
+    public AsyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtankAsyncInvoker(
+        UpdateLogtankRequest request) {
+        return new AsyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>(request, ElbMeta.updateLogtank, hcClient);
+    }
+
     /** 更新后端服务器 更新后端服务器。
      *
      * @param UpdateMemberRequest 请求对象
@@ -1096,7 +1180,8 @@ public class ElbAsyncClient {
     }
 
     /** 创建IP地址组
-     * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
+     * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，会只保留其中一个写入。
+     * [不支持IPv6，请勿传入IPv6地址。](tag:dt,dt_test)
      *
      * @param CreateIpGroupRequest 请求对象
      * @return CompletableFuture<CreateIpGroupResponse> */
@@ -1105,7 +1190,8 @@ public class ElbAsyncClient {
     }
 
     /** 创建IP地址组
-     * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
+     * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，会只保留其中一个写入。
+     * [不支持IPv6，请勿传入IPv6地址。](tag:dt,dt_test)
      *
      * @param CreateIpGroupRequest 请求对象
      * @return AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> */
@@ -1165,7 +1251,8 @@ public class ElbAsyncClient {
     }
 
     /** 更新IP地址组
-     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
+     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，会只保留其中一个写入。
+     * [不支持IPv6，请勿传入IPv6地址。](tag:dt,dt_test)
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return CompletableFuture<UpdateIpGroupResponse> */
@@ -1174,7 +1261,8 @@ public class ElbAsyncClient {
     }
 
     /** 更新IP地址组
-     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;0&amp;#58;1与&amp;#58;&amp;#58;1与&amp;#58;&amp;#58;1/128视为重复，会只保留其中一个写入。
+     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，会只保留其中一个写入。
+     * [不支持IPv6，请勿传入IPv6地址。](tag:dt,dt_test)
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> */

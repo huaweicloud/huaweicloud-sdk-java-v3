@@ -137,11 +137,6 @@ public class LoadBalancer {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "billing_info")
-
-    private String billingInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_flavor_id")
 
     private String l4FlavorId;
@@ -501,7 +496,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的IPv4对应的port ID。
+    /** 负载均衡器的IPv4对应的port ID。[创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。](tag:dt,dt_test,hcso_dt)
      * 
      * @return vipPortId */
     public String getVipPortId() {
@@ -725,7 +720,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 企业项目ID。 [不支持该字段，请勿使用](tag:dt,dt_test)
+    /** 企业项目ID。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -736,30 +731,12 @@ public class LoadBalancer {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public LoadBalancer withBillingInfo(String billingInfo) {
-        this.billingInfo = billingInfo;
-        return this;
-    }
-
-    /** 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费， 包周期计费billing_info字段的格式为：order_id&#58;product_id&#58;region_id&#58;project_id，如：
-     * CS2107161019CDJZZ&#58;OFFI569702121789763584&#58;eu-de&#58;057ef081eb00d2732fd1c01a9be75e6f 使用说明： -
-     * admin权限才能更新此字段。 [不支持该字段，请勿使用](tag:dt,dt_test)
-     * 
-     * @return billingInfo */
-    public String getBillingInfo() {
-        return billingInfo;
-    }
-
-    public void setBillingInfo(String billingInfo) {
-        this.billingInfo = billingInfo;
-    }
-
     public LoadBalancer withL4FlavorId(String l4FlavorId) {
         this.l4FlavorId = l4FlavorId;
         return this;
     }
 
-    /** 四层Flavor ID。 [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
+    /** 四层Flavor ID。 [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
      * 
      * @return l4FlavorId */
     public String getL4FlavorId() {
@@ -791,7 +768,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 七层Flavor ID。 [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
+    /** 七层Flavor ID。 [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
      * 
      * @return l7FlavorId */
     public String getL7FlavorId() {
@@ -871,7 +848,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 下联面子网的网络ID列表。可以通过GET https&#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。 使用说明： -
+    /** 下联面子网的网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。 使用说明： -
      * 若不指定该字段，则会在当前负载均衡器所在子网作为下联面子网。 - 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。 - 下联面子网必须属于该LB所在的VPC。 - 不支持边缘云子网。
      * 
      * @return elbVirsubnetIds */
@@ -904,7 +881,8 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 是否启用跨VPC后端转发。取值： - true：开启。 - false：不开启。 仅独享型负载均衡器支持该特性。 开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。
+    /** 是否启用跨VPC后端转发。开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。取值： - true：开启。 - false：不开启。
+     * [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
      * [不支持该字段，请勿使用。](tag:dt,dt_test)
      * 
      * @return ipTargetEnable */
@@ -963,7 +941,7 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 是否开启删除保护，取值： - false：不开启。 - true：开启。 >退场时需要先关闭所有资源的删除保护开关。 仅当前局点启用删除保护特性后才会返回该字段。
+    /** 是否开启删除保护，取值： - false：不开启。 - true：开启。 仅当前局点启用删除保护特性后才会返回该字段。 >退场时需要先关闭所有资源的删除保护开关。
      * 
      * @return deletionProtectionEnable */
     public Boolean getDeletionProtectionEnable() {
@@ -1027,7 +1005,6 @@ public class LoadBalancer {
             && Objects.equals(this.ipv6VipPortId, loadBalancer.ipv6VipPortId)
             && Objects.equals(this.availabilityZoneList, loadBalancer.availabilityZoneList)
             && Objects.equals(this.enterpriseProjectId, loadBalancer.enterpriseProjectId)
-            && Objects.equals(this.billingInfo, loadBalancer.billingInfo)
             && Objects.equals(this.l4FlavorId, loadBalancer.l4FlavorId)
             && Objects.equals(this.l4ScaleFlavorId, loadBalancer.l4ScaleFlavorId)
             && Objects.equals(this.l7FlavorId, loadBalancer.l7FlavorId)
@@ -1068,7 +1045,6 @@ public class LoadBalancer {
             ipv6VipPortId,
             availabilityZoneList,
             enterpriseProjectId,
-            billingInfo,
             l4FlavorId,
             l4ScaleFlavorId,
             l7FlavorId,
@@ -1111,7 +1087,6 @@ public class LoadBalancer {
         sb.append("    ipv6VipPortId: ").append(toIndentedString(ipv6VipPortId)).append("\n");
         sb.append("    availabilityZoneList: ").append(toIndentedString(availabilityZoneList)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    l4FlavorId: ").append(toIndentedString(l4FlavorId)).append("\n");
         sb.append("    l4ScaleFlavorId: ").append(toIndentedString(l4ScaleFlavorId)).append("\n");
         sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");

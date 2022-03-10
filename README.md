@@ -149,7 +149,11 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
     * [1.4  SSL Certification](#14-ssl-certification-top)
 * [2. Credentials Configuration](#2-credentials-configuration-top)
     * [2.1  Use Permanent AK&SK](#21-use-permanent-aksk-top)
+        * [2.1.1 Manually specify](#211-Manually-specify)
+        * [2.1.2 Environment variable](#212-Environment-variable)
     * [2.2  Use Temporary AK&SK](#22-use-temporary-aksk-top)
+        * [2.2.1 Manually specify](#221-Manually-specify)
+        * [2.2.2 Metadata](#222-Metadata)
 * [3. Client Initialization](#3-client-initialization-top)
     * [3.1  Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
     * [3.2  Initialize the client with specified Region (Recommended)](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
@@ -195,9 +199,19 @@ config.withTimeout(60);
 
 #### 1.4 SSL Certification [:top:](#user-manual-top)
 
+Skip ssl certification:
+
 ``` java
 // Skip ssl certification checking while using https protocol if needed
 config.withIgnoreSSLVerification(true);
+```
+
+Customized configuration:
+
+```java
+// Configure SSLSocketFactory and TrustManager
+config.withSSLSocketFactory(sslSocketFactory).
+    withX509TrustManager(trustManager);
 ```
 
 ### 2. Credentials Configuration [:top:](#user-manual-top)
@@ -222,6 +236,8 @@ configuration.
 
 #### 2.1 Use Permanent AK&SK [:top:](#user-manual-top)
 
+##### 2.1.1 Manually specify
+
 ``` java
 // Regional Services
     BasicCredentials basicCredentials = new BasicCredentials()
@@ -244,9 +260,15 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
   to [3.2 Initialize the client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
   .
 
+##### 2.1.2 Environment variable
+
+Load ak, sk, projectId and domainId from environment variables `HUAWEICLOUD_SDK_AK`, `HUAWEICLOUD_SDK_SK`, `HUAWEICLOUD_SDK_PROJECT_ID` and `HUAWEICLOUD_SDK_DOMAIN_ID`.
+
 #### 2.2 Use Temporary AK&SK [:top:](#user-manual-top)
 
-It's required to obtain temporary access key, security key and security token first, which could be obtained through
+##### 2.2.1 Manually specify
+
+A temporary access key and securityToken are issued by the system to IAM users, and can be valid for 15 minutes to 24 hours. After the validity period expires, you need to obtain them again. It's required to obtain temporary access key, security key and security token first, which could be obtained through
 permanent access key and security key or through an agency.
 
 Obtaining a temporary access key token through permanent access key and security key, you could refer to
@@ -272,6 +294,31 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
     .withSecurityToken(securityToken)
     .withDomainId(domainId);
 ```
+
+##### 2.2.2 Metadata
+
+Get temporary AK/SK and securitytoken from instance's metadata. Refer to the [Obtaining Metadata](https://support.huaweicloud.com/intl/en-us/usermanual-ecs/ecs_03_0166.html) for more information.
+
+In the following two cases, the credential information will be obtained from the metadata of the instance:
+
+1. BasicCredentials or GlobalCredentials were not manually specified when creating the client.
+2. AK/SK was not specified when creating BasicCredentials or GlobalCredentials.
+
+```java
+// Regional services
+BasicCredentials credentials = new BasicCredentials().withProjectId(projectId);
+
+// Global services
+GlobalCredentials credentials = new GlobalCredentials().withDomainId(domainId);
+```
+
+#### 2.3 Credential supply chain
+
+Credential is loaded in the following order when creating a client:
+
+1. [Specify manually](#211-Manually-specify) BasicCredentials or GlobalCredentials.
+2. Not specified manually, loaded from [environment variables](#212-Environment-variable).
+3. Obtain temporary authentication information from the [metadata](#222-Metadata) of the instance.
 
 ### 3. Client Initialization [:top:](#user-manual-top)
 
@@ -688,7 +735,7 @@ public class CreateImageWatermarkDemo {
         CreateImageWatermarkRequestBody body = new CreateImageWatermarkRequestBody()
                 // Fill in file parameter.
                 .withFile(fis, file.getName())
-                .withBlindWatermark("test_watermark");
+                .withBlindWatermark("test123");
         request.setBody(body);
 
         CreateImageWatermarkResponse response = client.createImageWatermark(request);

@@ -22,8 +22,12 @@
 package com.huaweicloud.sdk.core.auth;
 
 import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
+import com.huaweicloud.sdk.core.internal.model.Credential;
+import com.huaweicloud.sdk.core.utils.TimeUtils;
 
+import java.util.Objects;
 import java.util.function.Function;
 
 /**
@@ -40,6 +44,8 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
 
     private String iamEndpoint;
 
+    protected Long expiredAt;
+
     protected String regionId;
 
     protected String derivedAuthServiceName;
@@ -48,8 +54,8 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
 
     public static final Function<HttpRequest, Boolean> DEFAULT_DERIVED_PREDICATE =
         httpRequest ->
-            !Constants.DEFAULT_ENDPOINT_REG.matches(
-                httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", ""));
+                !Constants.DEFAULT_ENDPOINT_REG.matches(
+                        httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", ""));
 
     public abstract void processDerivedAuthParams(String derivedAuthServiceName, String regionId);
 
@@ -144,5 +150,18 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
         }
 
         return derivedPredicate.apply(httpRequest);
+    }
+
+    protected void updateCredential(HttpClient httpClient) {
+        Credential credential = TempCredentialHelper.getTemporaryCredential(httpClient);
+        TempCredentialHelper.updateCredential(this, credential);
+    }
+
+    protected boolean needUpdate() {
+        if (Objects.isNull(expiredAt)) {
+            return false;
+        }
+
+        return expiredAt - TimeUtils.getTimeInMillis() < 60000;
     }
 }

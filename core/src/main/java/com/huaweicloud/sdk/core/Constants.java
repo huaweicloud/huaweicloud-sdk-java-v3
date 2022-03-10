@@ -115,6 +115,15 @@ public final class Constants {
     }
 
     /**
+     * credential type
+     */
+    public static class Credentials {
+        public static final String BASIC_CREDENTIAL = "BasicCredentials";
+
+        public static final String GLOBAL_CREDENTIAL = "GlobalCredentials";
+    }
+
+    /**
      * The utility class should hide the public constructor
      */
     private Constants() {

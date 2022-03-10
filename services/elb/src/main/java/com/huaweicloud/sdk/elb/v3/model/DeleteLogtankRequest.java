@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.ces.v2.model;
+package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,27 +6,27 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /** Request Object */
-public class DeleteAlarmRequest {
+public class DeleteLogtankRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alarm_id")
+    @JsonProperty(value = "logtank_id")
 
-    private String alarmId;
+    private String logtankId;
 
-    public DeleteAlarmRequest withAlarmId(String alarmId) {
-        this.alarmId = alarmId;
+    public DeleteLogtankRequest withLogtankId(String logtankId) {
+        this.logtankId = logtankId;
         return this;
     }
 
-    /** Alarm实例ID
+    /** 云日志ID。
      * 
-     * @return alarmId */
-    public String getAlarmId() {
-        return alarmId;
+     * @return logtankId */
+    public String getLogtankId() {
+        return logtankId;
     }
 
-    public void setAlarmId(String alarmId) {
-        this.alarmId = alarmId;
+    public void setLogtankId(String logtankId) {
+        this.logtankId = logtankId;
     }
 
     @Override
@@ -37,20 +37,20 @@ public class DeleteAlarmRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DeleteAlarmRequest deleteAlarmRequest = (DeleteAlarmRequest) o;
-        return Objects.equals(this.alarmId, deleteAlarmRequest.alarmId);
+        DeleteLogtankRequest deleteLogtankRequest = (DeleteLogtankRequest) o;
+        return Objects.equals(this.logtankId, deleteLogtankRequest.logtankId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alarmId);
+        return Objects.hash(logtankId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeleteAlarmRequest {\n");
-        sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
+        sb.append("class DeleteLogtankRequest {\n");
+        sb.append("    logtankId: ").append(toIndentedString(logtankId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

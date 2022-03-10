@@ -55,7 +55,8 @@ public class CreateLoadBalancerPublicIpOption {
         return this;
     }
 
-    /** 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建
+    /** 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建。 [> 德国Region只支持5_gray.](tag:dt,dt_test) [> hcso_dt
+     * Cloud只支持5_gray.](tag:hcso_dt)
      * 
      * @return networkType */
     public String getNetworkType() {

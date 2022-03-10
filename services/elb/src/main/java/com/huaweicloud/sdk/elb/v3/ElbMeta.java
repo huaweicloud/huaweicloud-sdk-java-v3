@@ -288,6 +288,31 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateLogtankRequest, CreateLogtankResponse> createLogtank =
+        genForcreateLogtank();
+
+    private static HttpRequestDef<CreateLogtankRequest, CreateLogtankResponse> genForcreateLogtank() {
+        // basic
+        HttpRequestDef.Builder<CreateLogtankRequest, CreateLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLogtankRequest.class, CreateLogtankResponse.class)
+                .withName("CreateLogtank")
+                .withUri("/v3/{project_id}/elb/logtanks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateLogtankRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLogtankRequestBody.class),
+            f -> f.withMarshaller(CreateLogtankRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateMemberRequest, CreateMemberResponse> createMember = genForcreateMember();
 
     private static HttpRequestDef<CreateMemberRequest, CreateMemberResponse> genForcreateMember() {
@@ -517,6 +542,31 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteLoadBalancerRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtank =
+        genFordeleteLogtank();
+
+    private static HttpRequestDef<DeleteLogtankRequest, DeleteLogtankResponse> genFordeleteLogtank() {
+        // basic
+        HttpRequestDef.Builder<DeleteLogtankRequest, DeleteLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLogtankRequest.class, DeleteLogtankResponse.class)
+                .withName("DeleteLogtank")
+                .withUri("/v3/{project_id}/elb/logtanks/{logtank_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("logtank_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLogtankRequest::getLogtankId, (req, v) -> {
+                req.setLogtankId(v);
             }));
 
         // response
@@ -1307,7 +1357,7 @@ public class ElbMeta {
             f -> f.withMarshaller(ListListenersRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
             }));
-        builder.<List<String>>withRequestField("protocol_port",
+        builder.<List<Integer>>withRequestField("protocol_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
@@ -1709,6 +1759,79 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getAutoscaling, (req, v) -> {
                 req.setAutoscaling(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogtanksRequest, ListLogtanksResponse> listLogtanks = genForlistLogtanks();
+
+    private static HttpRequestDef<ListLogtanksRequest, ListLogtanksResponse> genForlistLogtanks() {
+        // basic
+        HttpRequestDef.Builder<ListLogtanksRequest, ListLogtanksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogtanksRequest.class, ListLogtanksResponse.class)
+                .withName("ListLogtanks")
+                .withUri("/v3/{project_id}/elb/logtanks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getPageReverse, (req, v) -> {
+                req.setPageReverse(v);
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<List<String>>withRequestField("loadbalancer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            }));
+        builder.<List<String>>withRequestField("log_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getLogGroupId, (req, v) -> {
+                req.setLogGroupId(v);
+            }));
+        builder.<List<String>>withRequestField("log_topic_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getLogTopicId, (req, v) -> {
+                req.setLogTopicId(v);
             }));
 
         // response
@@ -2311,6 +2434,30 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowLogtankRequest, ShowLogtankResponse> showLogtank = genForshowLogtank();
+
+    private static HttpRequestDef<ShowLogtankRequest, ShowLogtankResponse> genForshowLogtank() {
+        // basic
+        HttpRequestDef.Builder<ShowLogtankRequest, ShowLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLogtankRequest.class, ShowLogtankResponse.class)
+                .withName("ShowLogtank")
+                .withUri("/v3/{project_id}/elb/logtanks/{logtank_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("logtank_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogtankRequest::getLogtankId, (req, v) -> {
+                req.setLogtankId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMemberRequest, ShowMemberResponse> showMember = genForshowMember();
 
     private static HttpRequestDef<ShowMemberRequest, ShowMemberResponse> genForshowMember() {
@@ -2598,6 +2745,38 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLoadBalancerRequestBody.class),
             f -> f.withMarshaller(UpdateLoadBalancerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtank =
+        genForupdateLogtank();
+
+    private static HttpRequestDef<UpdateLogtankRequest, UpdateLogtankResponse> genForupdateLogtank() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogtankRequest, UpdateLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLogtankRequest.class, UpdateLogtankResponse.class)
+                .withName("UpdateLogtank")
+                .withUri("/v3/{project_id}/elb/logtanks/{logtank_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("logtank_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogtankRequest::getLogtankId, (req, v) -> {
+                req.setLogtankId(v);
+            }));
+        builder.<UpdateLogtankRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLogtankRequestBody.class),
+            f -> f.withMarshaller(UpdateLogtankRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

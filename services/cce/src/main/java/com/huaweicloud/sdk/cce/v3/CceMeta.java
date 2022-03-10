@@ -289,7 +289,7 @@ public class CceMeta {
             }));
         builder.<String>withRequestField("cluster_id",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAddonInstanceRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);

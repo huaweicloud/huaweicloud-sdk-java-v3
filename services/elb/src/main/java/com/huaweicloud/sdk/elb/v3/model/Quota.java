@@ -212,7 +212,7 @@ public class Quota {
         return this;
     }
 
-    /** IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+    /** IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * 
      * @return ipgroup */
     public Integer getIpgroup() {
@@ -228,7 +228,7 @@ public class Quota {
         return this;
     }
 
-    /** 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+    /** 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * 
      * @return securityPolicy */
     public Integer getSecurityPolicy() {

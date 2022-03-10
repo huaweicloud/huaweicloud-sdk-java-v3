@@ -343,8 +343,9 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组支持的IP版本。取值： - 共享型LB下的pool：固定为v4； -
-     * 独享型LB下的pool：dualstack、v4。当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。当协议为HTTP/HTTPS时，ip_version为v4。
+    /** 后端云服务器组支持的IP版本。[取值： [共享型：默认为v4；](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
+     * [独享型：取值范围(dualstack、v4、v6)。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
+     * [取值范围(dualstack、v4、v6)。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hcso_dt)
      * [不支持IPv6，只会返回v4。](tag:dt,dt_test)
      * 
      * @return ipVersion */

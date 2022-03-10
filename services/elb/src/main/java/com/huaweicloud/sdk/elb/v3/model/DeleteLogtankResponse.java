@@ -1,11 +1,11 @@
-package com.huaweicloud.sdk.ces.v2.model;
+package com.huaweicloud.sdk.elb.v3.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /** Response Object */
-public class AddResourceGroupsResourcesBatchResponse extends SdkResponse {
+public class DeleteLogtankResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -26,7 +26,7 @@ public class AddResourceGroupsResourcesBatchResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AddResourceGroupsResourcesBatchResponse {\n");
+        sb.append("class DeleteLogtankResponse {\n");
         sb.append("}");
         return sb.toString();
     }

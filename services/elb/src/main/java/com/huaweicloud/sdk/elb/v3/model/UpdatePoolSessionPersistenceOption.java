@@ -109,7 +109,9 @@ public class UpdatePoolSessionPersistenceOption {
         return this;
     }
 
-    /** cookie名称。 格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。 使用说明： - 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。
+    /** cookie名称。 [格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。 使用说明： -
+     * 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
+     * [不支持该字段，请勿使用。](tag:hcso_dt)
      * 
      * @return cookieName */
     public String getCookieName() {

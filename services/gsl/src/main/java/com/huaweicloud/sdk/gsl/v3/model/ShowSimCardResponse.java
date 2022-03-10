@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /** Response Object */
@@ -53,7 +54,7 @@ public class ShowSimCardResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "act_date")
 
-    private LocalDate actDate;
+    private OffsetDateTime actDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_status_date")
@@ -328,7 +329,7 @@ public class ShowSimCardResponse extends SdkResponse {
         this.deviceModel = deviceModel;
     }
 
-    public ShowSimCardResponse withActDate(LocalDate actDate) {
+    public ShowSimCardResponse withActDate(OffsetDateTime actDate) {
         this.actDate = actDate;
         return this;
     }
@@ -336,11 +337,11 @@ public class ShowSimCardResponse extends SdkResponse {
     /** 激活日期 例如2020-01-31T16:00:00.000Z
      * 
      * @return actDate */
-    public LocalDate getActDate() {
+    public OffsetDateTime getActDate() {
         return actDate;
     }
 
-    public void setActDate(LocalDate actDate) {
+    public void setActDate(OffsetDateTime actDate) {
         this.actDate = actDate;
     }
 

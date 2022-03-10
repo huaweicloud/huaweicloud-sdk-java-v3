@@ -110,6 +110,10 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
         return CompletableFuture.supplyAsync(() -> {
             HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
+            if (needUpdate()) {
+                updateCredential(httpClient);
+            }
+
             if (Objects.nonNull(getDomainId())) {
                 builder.addHeader(Constants.X_DOMAIN_ID, getDomainId());
             }

@@ -120,7 +120,7 @@ public class UpdateListenerIpGroupOption {
         return this;
     }
 
-    /** 访问控制组的状态。 True:开启访问控制； Flase：关闭访问控制； 开启访问控制的监听器，允许直接删除。
+    /** 访问控制组的状态。 True:开启访问控制； False：关闭访问控制； 开启访问控制的监听器，允许直接删除。
      * 
      * @return enableIpgroup */
     public Boolean getEnableIpgroup() {

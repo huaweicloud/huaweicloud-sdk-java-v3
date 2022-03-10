@@ -258,7 +258,7 @@ public class Member {
         return this;
     }
 
-    /** 设备所有者，取值： - 空，表示后端服务器未关联到ECS。 - compute&#58;{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。 不支持该字段，请勿使用。
+    /** 设备所有者，取值： - 空，表示后端服务器未关联到ECS。 - compute：{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。 不支持该字段，请勿使用。
      * 
      * @return deviceOwner */
     public String getDeviceOwner() {
@@ -274,7 +274,7 @@ public class Member {
         return this;
     }
 
-    /** 关联的ECS ID，为空表示后端服务器未关联到ECS。 不支持该字段，请勿使用。
+    /** 关联的ECS ID，为空表示后端服务器未关联到ECS。
      * 
      * @return deviceId */
     public String getDeviceId() {
@@ -338,7 +338,7 @@ public class Member {
         return this;
     }
 
-    /** member关联的实例ID。空表示member关联的实例为非真实设备 （如：跨VPC场景）
+    /** member关联的实例ID，空表示跨VPC场景的member。
      * 
      * @return instanceId */
     public String getInstanceId() {

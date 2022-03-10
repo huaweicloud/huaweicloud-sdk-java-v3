@@ -77,6 +77,11 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
 
     private List<QueryDeptResultDTO> childDepts = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sortLevel")
+
+    private Integer sortLevel;
+
     public ShowDeptAndChildDeptResponse withCorpId(String corpId) {
         this.corpId = corpId;
         return this;
@@ -318,6 +323,22 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         this.childDepts = childDepts;
     }
 
+    public ShowDeptAndChildDeptResponse withSortLevel(Integer sortLevel) {
+        this.sortLevel = sortLevel;
+        return this;
+    }
+
+    /** 部门排序号
+     * 
+     * @return sortLevel */
+    public Integer getSortLevel() {
+        return sortLevel;
+    }
+
+    public void setSortLevel(Integer sortLevel) {
+        this.sortLevel = sortLevel;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -339,7 +360,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
             && Objects.equals(this.inPermission, showDeptAndChildDeptResponse.inPermission)
             && Objects.equals(this.outPermission, showDeptAndChildDeptResponse.outPermission)
             && Objects.equals(this.designatedOutDeptCodes, showDeptAndChildDeptResponse.designatedOutDeptCodes)
-            && Objects.equals(this.childDepts, showDeptAndChildDeptResponse.childDepts);
+            && Objects.equals(this.childDepts, showDeptAndChildDeptResponse.childDepts)
+            && Objects.equals(this.sortLevel, showDeptAndChildDeptResponse.sortLevel);
     }
 
     @Override
@@ -356,7 +378,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
             inPermission,
             outPermission,
             designatedOutDeptCodes,
-            childDepts);
+            childDepts,
+            sortLevel);
     }
 
     @Override
@@ -376,6 +399,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         sb.append("    outPermission: ").append(toIndentedString(outPermission)).append("\n");
         sb.append("    designatedOutDeptCodes: ").append(toIndentedString(designatedOutDeptCodes)).append("\n");
         sb.append("    childDepts: ").append(toIndentedString(childDepts)).append("\n");
+        sb.append("    sortLevel: ").append(toIndentedString(sortLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -186,6 +186,10 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         return CompletableFuture.supplyAsync(() -> {
             HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
+            if (needUpdate()) {
+                updateCredential(httpClient);
+            }
+
             if (Objects.nonNull(getProjectId())) {
                 builder.addHeader(Constants.X_PROJECT_ID, projectId);
             }

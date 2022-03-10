@@ -211,6 +211,11 @@ public class DeptDTO {
 
     private List<String> designatedOutDeptCodes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sortLevel")
+
+    private Integer sortLevel;
+
     public DeptDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -340,6 +345,22 @@ public class DeptDTO {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
     }
 
+    public DeptDTO withSortLevel(Integer sortLevel) {
+        this.sortLevel = sortLevel;
+        return this;
+    }
+
+    /** 部门排序号，序号越小,部门排序越靠前 minimum: 1 maximum: 10000 minimum: 1 maximum: 10000
+     * 
+     * @return sortLevel */
+    public Integer getSortLevel() {
+        return sortLevel;
+    }
+
+    public void setSortLevel(Integer sortLevel) {
+        this.sortLevel = sortLevel;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -353,13 +374,20 @@ public class DeptDTO {
             && Objects.equals(this.parentDeptCode, deptDTO.parentDeptCode) && Objects.equals(this.note, deptDTO.note)
             && Objects.equals(this.inPermission, deptDTO.inPermission)
             && Objects.equals(this.outPermission, deptDTO.outPermission)
-            && Objects.equals(this.designatedOutDeptCodes, deptDTO.designatedOutDeptCodes);
+            && Objects.equals(this.designatedOutDeptCodes, deptDTO.designatedOutDeptCodes)
+            && Objects.equals(this.sortLevel, deptDTO.sortLevel);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(deptCode, deptName, parentDeptCode, note, inPermission, outPermission, designatedOutDeptCodes);
+        return Objects.hash(deptCode,
+            deptName,
+            parentDeptCode,
+            note,
+            inPermission,
+            outPermission,
+            designatedOutDeptCodes,
+            sortLevel);
     }
 
     @Override
@@ -373,6 +401,7 @@ public class DeptDTO {
         sb.append("    inPermission: ").append(toIndentedString(inPermission)).append("\n");
         sb.append("    outPermission: ").append(toIndentedString(outPermission)).append("\n");
         sb.append("    designatedOutDeptCodes: ").append(toIndentedString(designatedOutDeptCodes)).append("\n");
+        sb.append("    sortLevel: ").append(toIndentedString(sortLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

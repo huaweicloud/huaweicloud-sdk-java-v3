@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.ces.v2.model;
+package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,42 +7,21 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /** Request Object */
-public class AddAlarmResourcesRequest {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alarm_id")
-
-    private String alarmId;
+public class CreateLogtankRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ResourcesReqV2 body;
+    private CreateLogtankRequestBody body;
 
-    public AddAlarmResourcesRequest withAlarmId(String alarmId) {
-        this.alarmId = alarmId;
-        return this;
-    }
-
-    /** Alarm实例ID
-     * 
-     * @return alarmId */
-    public String getAlarmId() {
-        return alarmId;
-    }
-
-    public void setAlarmId(String alarmId) {
-        this.alarmId = alarmId;
-    }
-
-    public AddAlarmResourcesRequest withBody(ResourcesReqV2 body) {
+    public CreateLogtankRequest withBody(CreateLogtankRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public AddAlarmResourcesRequest withBody(Consumer<ResourcesReqV2> bodySetter) {
+    public CreateLogtankRequest withBody(Consumer<CreateLogtankRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ResourcesReqV2();
+            this.body = new CreateLogtankRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -52,11 +31,11 @@ public class AddAlarmResourcesRequest {
     /** Get body
      * 
      * @return body */
-    public ResourcesReqV2 getBody() {
+    public CreateLogtankRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ResourcesReqV2 body) {
+    public void setBody(CreateLogtankRequestBody body) {
         this.body = body;
     }
 
@@ -68,21 +47,19 @@ public class AddAlarmResourcesRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        AddAlarmResourcesRequest addAlarmResourcesRequest = (AddAlarmResourcesRequest) o;
-        return Objects.equals(this.alarmId, addAlarmResourcesRequest.alarmId)
-            && Objects.equals(this.body, addAlarmResourcesRequest.body);
+        CreateLogtankRequest createLogtankRequest = (CreateLogtankRequest) o;
+        return Objects.equals(this.body, createLogtankRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alarmId, body);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AddAlarmResourcesRequest {\n");
-        sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
+        sb.append("class CreateLogtankRequest {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -284,7 +284,7 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 表示每次查询的日志条数，不填时默认为5000，建议您设置为100。 minimum: 1 maximum: 5000
+    /** 表示每次查询的日志条数，不填时默认为50，建议您设置为100。 minimum: 1 maximum: 5000
      * 
      * @return limit */
     public Integer getLimit() {

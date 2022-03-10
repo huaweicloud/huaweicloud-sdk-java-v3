@@ -23,6 +23,7 @@ package com.huaweicloud.sdk.core.auth;
 
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.StringUtils;
+import com.huaweicloud.sdk.core.Constants.Credentials;
 
 import java.util.Objects;
 import java.util.function.Function;
@@ -30,7 +31,7 @@ import java.util.function.Function;
 /**
  * @author HuaweiCloud_SDK
  */
-public final class EnvCredentials {
+public final class EnvCredentialHelper {
     /**
      * AK & SK are common in initializing credentials.
      */
@@ -62,11 +63,7 @@ public final class EnvCredentials {
 
     public static final String DEFAULT_DERIVED_PREDICATE = "DEFAULT_DERIVED_PREDICATE";
 
-    public static final String BASIC_CREDENTIAL_TYPE = "BasicCredentials";
-
-    public static final String GLOBAL_CREDENTIAL_TYPE = "GlobalCredentials";
-
-    private EnvCredentials() {
+    private EnvCredentialHelper() {
 
     }
 
@@ -80,13 +77,17 @@ public final class EnvCredentials {
     public static ICredential loadCredentialFromEnv(String defaultType) {
         String ak = System.getenv(AK_ENV_NAME);
         String sk = System.getenv(SK_ENV_NAME);
+        if (StringUtils.isEmpty(ak) || StringUtils.isEmpty(sk)) {
+            return null;
+        }
+
         String regionId = System.getenv(REGION_ID_ENV_NAME);
         String derivedAuthServiceName = System.getenv(DERIVED_AUTH_SERVICE_NAME_ENV_NAME);
         Function<HttpRequest, Boolean> derivedPredicate = DEFAULT_DERIVED_PREDICATE
                 .equals(System.getenv(DERIVED_PREDICATE_ENV_NAME))
                 ? AbstractCredentials.DEFAULT_DERIVED_PREDICATE : null;
 
-        if (BASIC_CREDENTIAL_TYPE.equals(defaultType)) {
+        if (Credentials.BASIC_CREDENTIAL.equals(defaultType)) {
             BasicCredentials credentials = new BasicCredentials().withAk(ak).withSk(sk)
                     .withDerivedPredicate(derivedPredicate);
             credentials.processDerivedAuthParams(derivedAuthServiceName, regionId);
@@ -96,7 +97,7 @@ public final class EnvCredentials {
             }
             credentials.setIamEndpoint(getIamEndpointEnvName());
             return credentials;
-        } else if (GLOBAL_CREDENTIAL_TYPE.equals(defaultType)) {
+        } else if (Credentials.GLOBAL_CREDENTIAL.equals(defaultType)) {
             GlobalCredentials credentials = new GlobalCredentials().withAk(ak).withSk(sk)
                     .withDerivedPredicate(derivedPredicate);
             credentials.processDerivedAuthParams(derivedAuthServiceName, regionId);
@@ -106,9 +107,9 @@ public final class EnvCredentials {
             }
             credentials.setIamEndpoint(getIamEndpointEnvName());
             return credentials;
-        } else {
-            return null;
         }
+
+        return null;
     }
 
     /**

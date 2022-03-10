@@ -419,7 +419,8 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test)
+    /** 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。
+     * [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * 
      * @return enterpriseProjectId */
     public List<String> getEnterpriseProjectId() {
@@ -515,8 +516,7 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** member关联的实例ID。空表示member关联的实例为非真实设备 （如：跨VPC场景）。取值： - ip：跨VPC的member。 - instance：关联到ECS的member。
-     * 支持多值查询，查询条件格式：*member_type=xxx&member_type=xxx*。
+    /** member关联的ECS实例ID，空表示跨VPC场景的member。 支持多值查询，查询条件格式：*instance_id=xxx&instance_id=xxx*。
      * 
      * @return instanceId */
     public List<String> getInstanceId() {

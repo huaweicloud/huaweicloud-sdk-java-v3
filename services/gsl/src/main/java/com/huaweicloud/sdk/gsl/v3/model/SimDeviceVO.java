@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /** SimDeviceVO */
@@ -52,7 +53,7 @@ public class SimDeviceVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "act_date")
 
-    private LocalDate actDate;
+    private OffsetDateTime actDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_status_date")
@@ -327,7 +328,7 @@ public class SimDeviceVO {
         this.deviceModel = deviceModel;
     }
 
-    public SimDeviceVO withActDate(LocalDate actDate) {
+    public SimDeviceVO withActDate(OffsetDateTime actDate) {
         this.actDate = actDate;
         return this;
     }
@@ -335,11 +336,11 @@ public class SimDeviceVO {
     /** 激活日期 例如2020-01-31T16:00:00.000Z
      * 
      * @return actDate */
-    public LocalDate getActDate() {
+    public OffsetDateTime getActDate() {
         return actDate;
     }
 
-    public void setActDate(LocalDate actDate) {
+    public void setActDate(OffsetDateTime actDate) {
         this.actDate = actDate;
     }
 
