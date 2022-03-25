@@ -207,7 +207,7 @@ public class QuickImportImageByFileRequestBody {
 
     private ArchitectureEnum architecture;
 
-    /** 操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。 */
+    /** 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。 */
     public static final class OsTypeEnum {
 
         /** Enum LINUX for value: "Linux" */
@@ -453,7 +453,7 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。
+    /** 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。
      * 
      * @return osType */
     public OsTypeEnum getOsType() {

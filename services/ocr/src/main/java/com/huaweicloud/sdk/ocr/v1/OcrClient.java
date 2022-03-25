@@ -221,7 +221,7 @@ public class OcrClient {
             OcrMeta.recognizeHandwriting, hcClient);
     }
 
-    /** 身份证识别 识别身份证图片中的文字内容，并将识别的结果返回给用户。 说明： 身份证识别只支持中国大陆汉族身份证识别。
+    /** 身份证识别 识别身份证图片中的文字内容，并将识别的结果返回给用户。 说明： 身份证识别支持中华人民共和国居民身份证识别。
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      *
      * @param RecognizeIdCardRequest 请求对象
@@ -230,7 +230,7 @@ public class OcrClient {
         return hcClient.syncInvokeHttp(request, OcrMeta.recognizeIdCard);
     }
 
-    /** 身份证识别 识别身份证图片中的文字内容，并将识别的结果返回给用户。 说明： 身份证识别只支持中国大陆汉族身份证识别。
+    /** 身份证识别 识别身份证图片中的文字内容，并将识别的结果返回给用户。 说明： 身份证识别支持中华人民共和国居民身份证识别。
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      *
      * @param RecognizeIdCardRequest 请求对象

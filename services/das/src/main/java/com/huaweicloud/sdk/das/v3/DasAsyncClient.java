@@ -328,6 +328,24 @@ public class DasAsyncClient {
             DasMeta.showSqlExecutionPlan, hcClient);
     }
 
+    /** 查询SQL执行计划 查询SQL执行计划。 目前仅支持MySQL实例。 补充GET请求，处理超长SQL
+     *
+     * @param ShowSqlExplainRequest 请求对象
+     * @return CompletableFuture<ShowSqlExplainResponse> */
+    public CompletableFuture<ShowSqlExplainResponse> showSqlExplainAsync(ShowSqlExplainRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showSqlExplain);
+    }
+
+    /** 查询SQL执行计划 查询SQL执行计划。 目前仅支持MySQL实例。 补充GET请求，处理超长SQL
+     *
+     * @param ShowSqlExplainRequest 请求对象
+     * @return AsyncInvoker<ShowSqlExplainRequest, ShowSqlExplainResponse> */
+    public AsyncInvoker<ShowSqlExplainRequest, ShowSqlExplainResponse> showSqlExplainAsyncInvoker(
+        ShowSqlExplainRequest request) {
+        return new AsyncInvoker<ShowSqlExplainRequest, ShowSqlExplainResponse>(request, DasMeta.showSqlExplain,
+            hcClient);
+    }
+
     /** 查询全量SQL和慢SQL的开关状态。 查询DAS收集全量SQL和慢SQL的开关状态。该功能仅支持付费实例。
      *
      * @param ShowSqlSwitchStatusRequest 请求对象

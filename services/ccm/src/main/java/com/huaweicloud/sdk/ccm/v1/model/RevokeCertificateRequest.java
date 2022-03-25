@@ -24,7 +24,7 @@ public class RevokeCertificateRequest {
         return this;
     }
 
-    /** certificate_id
+    /** 所要吊销的私有证书ID。
      * 
      * @return certificateId */
     public String getCertificateId() {

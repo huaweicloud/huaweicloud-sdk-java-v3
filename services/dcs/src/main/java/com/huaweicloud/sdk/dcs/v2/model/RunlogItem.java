@@ -19,6 +19,16 @@ public class RunlogItem {
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "replication_ip")
+
+    private String replicationIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -58,6 +68,38 @@ public class RunlogItem {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public RunlogItem withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /** 分片名称
+     * 
+     * @return groupName */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public RunlogItem withReplicationIp(String replicationIp) {
+        this.replicationIp = replicationIp;
+        return this;
+    }
+
+    /** 采集运行日志所在副本的IP
+     * 
+     * @return replicationIp */
+    public String getReplicationIp() {
+        return replicationIp;
+    }
+
+    public void setReplicationIp(String replicationIp) {
+        this.replicationIp = replicationIp;
     }
 
     public RunlogItem withStatus(String status) {
@@ -102,12 +144,14 @@ public class RunlogItem {
         }
         RunlogItem runlogItem = (RunlogItem) o;
         return Objects.equals(this.id, runlogItem.id) && Objects.equals(this.fileName, runlogItem.fileName)
+            && Objects.equals(this.groupName, runlogItem.groupName)
+            && Objects.equals(this.replicationIp, runlogItem.replicationIp)
             && Objects.equals(this.status, runlogItem.status) && Objects.equals(this.time, runlogItem.time);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fileName, status, time);
+        return Objects.hash(id, fileName, groupName, replicationIp, status, time);
     }
 
     @Override
@@ -116,6 +160,8 @@ public class RunlogItem {
         sb.append("class RunlogItem {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    replicationIp: ").append(toIndentedString(replicationIp)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("}");

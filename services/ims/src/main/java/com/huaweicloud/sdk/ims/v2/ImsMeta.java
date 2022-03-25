@@ -981,6 +981,47 @@ public class ImsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListVersionsRequest, ListVersionsResponse> listVersions = genForlistVersions();
+
+    private static HttpRequestDef<ListVersionsRequest, ListVersionsResponse> genForlistVersions() {
+        // basic
+        HttpRequestDef.Builder<ListVersionsRequest, ListVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVersionsRequest.class, ListVersionsResponse.class)
+                .withName("ListVersions")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForshowVersion();
+
+    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForshowVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowVersionRequest, ShowVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVersionRequest.class, ShowVersionResponse.class)
+                .withName("ShowVersion")
+                .withUri("/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
 
     private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {

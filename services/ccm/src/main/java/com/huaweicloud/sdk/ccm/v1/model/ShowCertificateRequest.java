@@ -18,7 +18,7 @@ public class ShowCertificateRequest {
         return this;
     }
 
-    /** certificate_id
+    /** 需要查询的私有证书ID。
      * 
      * @return certificateId */
     public String getCertificateId() {

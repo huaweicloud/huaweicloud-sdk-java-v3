@@ -24,7 +24,7 @@ public class ImportCertificateAuthorityCertificateRequest {
         return this;
     }
 
-    /** ca_id
+    /** 所要导入的CA证书ID。
      * 
      * @return caId */
     public String getCaId() {

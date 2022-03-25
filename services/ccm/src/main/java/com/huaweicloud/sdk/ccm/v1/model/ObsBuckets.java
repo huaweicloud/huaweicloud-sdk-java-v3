@@ -16,14 +16,14 @@ public class ObsBuckets {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private String createTime;
+    private Long createTime;
 
     public ObsBuckets withBucketName(String bucketName) {
         this.bucketName = bucketName;
         return this;
     }
 
-    /** 桶名称
+    /** 桶名称。
      * 
      * @return bucketName */
     public String getBucketName() {
@@ -34,19 +34,19 @@ public class ObsBuckets {
         this.bucketName = bucketName;
     }
 
-    public ObsBuckets withCreateTime(String createTime) {
+    public ObsBuckets withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建时间
+    /** 创建时间,格式为时间戳（毫秒级）。
      * 
      * @return createTime */
-    public String getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 

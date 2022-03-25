@@ -1,93 +1,17 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /** Resources */
 public class Resources {
 
-    /** 配额类型。枚举值说明: - CERTIFICATE_AUTHORITY: 私有证书颁发机构 - CERTIFICATE: 证书 */
-    public static final class TypeEnum {
-
-        /** Enum CERTIFICATE_AUTHORITY for value: "CERTIFICATE_AUTHORITY" */
-        public static final TypeEnum CERTIFICATE_AUTHORITY = new TypeEnum("CERTIFICATE_AUTHORITY");
-
-        /** Enum CERTIFICATE for value: "CERTIFICATE" */
-        public static final TypeEnum CERTIFICATE = new TypeEnum("CERTIFICATE");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("CERTIFICATE_AUTHORITY", CERTIFICATE_AUTHORITY);
-            map.put("CERTIFICATE", CERTIFICATE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private TypeEnum type;
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
@@ -99,19 +23,19 @@ public class Resources {
 
     private Integer quota;
 
-    public Resources withType(TypeEnum type) {
+    public Resources withType(String type) {
         this.type = type;
         return this;
     }
 
-    /** 配额类型。枚举值说明: - CERTIFICATE_AUTHORITY: 私有证书颁发机构 - CERTIFICATE: 证书
+    /** 证书类型: - **CERTIFICATE_AUTHORITY**: CA证书； - **CERTIFICATE**: 私有证书。
      * 
      * @return type */
-    public TypeEnum getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -120,7 +44,7 @@ public class Resources {
         return this;
     }
 
-    /** 已使用配额数 minimum: 0 maximum: 10000
+    /** 已使用配额数。
      * 
      * @return used */
     public Integer getUsed() {
@@ -136,7 +60,7 @@ public class Resources {
         return this;
     }
 
-    /** 配额总数 minimum: 0 maximum: 10000
+    /** 配额总数： - **CERTIFICATE_AUTHORITY**: 当前系统指定100； - **CERTIFICATE**: 当前系统指定100000。
      * 
      * @return quota */
     public Integer getQuota() {

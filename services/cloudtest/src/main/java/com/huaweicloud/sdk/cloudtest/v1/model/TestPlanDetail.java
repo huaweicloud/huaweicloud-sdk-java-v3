@@ -51,6 +51,11 @@ public class TestPlanDetail {
     private String expireDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creator")
+
+    private TestPlanDetailCreator creator;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
     private TestPlanDetailOwner owner;
@@ -203,6 +208,31 @@ public class TestPlanDetail {
         this.expireDay = expireDay;
     }
 
+    public TestPlanDetail withCreator(TestPlanDetailCreator creator) {
+        this.creator = creator;
+        return this;
+    }
+
+    public TestPlanDetail withCreator(Consumer<TestPlanDetailCreator> creatorSetter) {
+        if (this.creator == null) {
+            this.creator = new TestPlanDetailCreator();
+            creatorSetter.accept(this.creator);
+        }
+
+        return this;
+    }
+
+    /** Get creator
+     * 
+     * @return creator */
+    public TestPlanDetailCreator getCreator() {
+        return creator;
+    }
+
+    public void setCreator(TestPlanDetailCreator creator) {
+        this.creator = creator;
+    }
+
     public TestPlanDetail withOwner(TestPlanDetailOwner owner) {
         this.owner = owner;
         return this;
@@ -344,7 +374,7 @@ public class TestPlanDetail {
             && Objects.equals(this.projectId, testPlanDetail.projectId)
             && Objects.equals(this.currentStage, testPlanDetail.currentStage)
             && Objects.equals(this.expireDay, testPlanDetail.expireDay)
-            && Objects.equals(this.owner, testPlanDetail.owner)
+            && Objects.equals(this.creator, testPlanDetail.creator) && Objects.equals(this.owner, testPlanDetail.owner)
             && Objects.equals(this.designStage, testPlanDetail.designStage)
             && Objects.equals(this.executeStage, testPlanDetail.executeStage)
             && Objects.equals(this.reportStage, testPlanDetail.reportStage)
@@ -361,6 +391,7 @@ public class TestPlanDetail {
             projectId,
             currentStage,
             expireDay,
+            creator,
             owner,
             designStage,
             executeStage,
@@ -380,6 +411,7 @@ public class TestPlanDetail {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    currentStage: ").append(toIndentedString(currentStage)).append("\n");
         sb.append("    expireDay: ").append(toIndentedString(expireDay)).append("\n");
+        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    designStage: ").append(toIndentedString(designStage)).append("\n");
         sb.append("    executeStage: ").append(toIndentedString(executeStage)).append("\n");

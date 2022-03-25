@@ -1583,4 +1583,400 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> batchDeleteWorkflows =
+        genForbatchDeleteWorkflows();
+
+    private static HttpRequestDef<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> genForbatchDeleteWorkflows() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeleteWorkflowsRequest.class, BatchDeleteWorkflowsResponse.class)
+            .withName("BatchDeleteWorkflows")
+            .withUri("/v2/{project_id}/fgs/workflows")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteWorkflowsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteWorkflowsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteWorkflowsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflow =
+        genForcreateWorkflow();
+
+    private static HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> genForcreateWorkflow() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkflowRequest, CreateWorkflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateWorkflowRequest.class, CreateWorkflowResponse.class)
+                .withName("CreateWorkflow")
+                .withUri("/v2/{project_id}/fgs/workflows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateWorkflowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateWorkflowRequestBody.class),
+            f -> f.withMarshaller(CreateWorkflowRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutions =
+        genForlistWorkflowExecutions();
+
+    private static HttpRequestDef<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> genForlistWorkflowExecutions() {
+        // basic
+        HttpRequestDef.Builder<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListWorkflowExecutionsRequest.class, ListWorkflowExecutionsResponse.class)
+            .withName("ListWorkflowExecutions")
+            .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}/executions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ListWorkflowExecutionsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWorkflowExecutionsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflows =
+        genForlistWorkflows();
+
+    private static HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> genForlistWorkflows() {
+        // basic
+        HttpRequestDef.Builder<ListWorkflowsRequest, ListWorkflowsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWorkflowsRequest.class, ListWorkflowsResponse.class)
+                .withName("ListWorkflows")
+                .withUri("/v2/{project_id}/fgs/workflows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getWorkflowName, (req, v) -> {
+                req.setWorkflowName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryWorkFlowRequest, RetryWorkFlowResponse> retryWorkFlow =
+        genForretryWorkFlow();
+
+    private static HttpRequestDef<RetryWorkFlowRequest, RetryWorkFlowResponse> genForretryWorkFlow() {
+        // basic
+        HttpRequestDef.Builder<RetryWorkFlowRequest, RetryWorkFlowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RetryWorkFlowRequest.class, RetryWorkFlowResponse.class)
+                .withName("RetryWorkFlow")
+                .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}/retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryWorkFlowRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryWorkFlowRequest::getExecutionId, (req, v) -> {
+                req.setExecutionId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTenantMetricRequest, ShowTenantMetricResponse> showTenantMetric =
+        genForshowTenantMetric();
+
+    private static HttpRequestDef<ShowTenantMetricRequest, ShowTenantMetricResponse> genForshowTenantMetric() {
+        // basic
+        HttpRequestDef.Builder<ShowTenantMetricRequest, ShowTenantMetricResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTenantMetricRequest.class, ShowTenantMetricResponse.class)
+                .withName("ShowTenantMetric")
+                .withUri("/v2/{project_id}/fgs/workflow-statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("period",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTenantMetricRequest::getPeriod, (req, v) -> {
+                req.setPeriod(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkFlowRequest, ShowWorkFlowResponse> showWorkFlow = genForshowWorkFlow();
+
+    private static HttpRequestDef<ShowWorkFlowRequest, ShowWorkFlowResponse> genForshowWorkFlow() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkFlowRequest, ShowWorkFlowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWorkFlowRequest.class, ShowWorkFlowResponse.class)
+                .withName("ShowWorkFlow")
+                .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkFlowRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> showWorkFlowMetric =
+        genForshowWorkFlowMetric();
+
+    private static HttpRequestDef<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> genForshowWorkFlowMetric() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWorkFlowMetricRequest.class, ShowWorkFlowMetricResponse.class)
+                .withName("ShowWorkFlowMetric")
+                .withUri("/v2/{project_id}/fgs/workflow-statistic/{workflow_urn}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkFlowMetricRequest::getWorkflowUrn, (req, v) -> {
+                req.setWorkflowUrn(v);
+            }));
+        builder.<String>withRequestField("period",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkFlowMetricRequest::getPeriod, (req, v) -> {
+                req.setPeriod(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> showWorkflowExecution =
+        genForshowWorkflowExecution();
+
+    private static HttpRequestDef<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> genForshowWorkflowExecution() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWorkflowExecutionRequest.class, ShowWorkflowExecutionResponse.class)
+            .withName("ShowWorkflowExecution")
+            .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionRequest::getExecutionId, (req, v) -> {
+                req.setExecutionId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> startWorkflowExecution =
+        genForstartWorkflowExecution();
+
+    private static HttpRequestDef<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> genForstartWorkflowExecution() {
+        // basic
+        HttpRequestDef.Builder<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartWorkflowExecutionRequest.class, StartWorkflowExecutionResponse.class)
+            .withName("StartWorkflowExecution")
+            .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}/executions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartWorkflowExecutionRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<String>withRequestField("X-Create-Time",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartWorkflowExecutionRequest::getXCreateTime, (req, v) -> {
+                req.setXCreateTime(v);
+            }));
+        builder.<String>withRequestField("X-WorkflowRun-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartWorkflowExecutionRequest::getXWorkflowRunID, (req, v) -> {
+                req.setXWorkflowRunID(v);
+            }));
+        builder.<StartWorkflowExecutionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartWorkflowExecutionRequestBody.class),
+            f -> f.withMarshaller(StartWorkflowExecutionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopWorkFlowRequest, StopWorkFlowResponse> stopWorkFlow = genForstopWorkFlow();
+
+    private static HttpRequestDef<StopWorkFlowRequest, StopWorkFlowResponse> genForstopWorkFlow() {
+        // basic
+        HttpRequestDef.Builder<StopWorkFlowRequest, StopWorkFlowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopWorkFlowRequest.class, StopWorkFlowResponse.class)
+                .withName("StopWorkFlow")
+                .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}/terminate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopWorkFlowRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopWorkFlowRequest::getExecutionId, (req, v) -> {
+                req.setExecutionId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWorkFlowRequest, UpdateWorkFlowResponse> updateWorkFlow =
+        genForupdateWorkFlow();
+
+    private static HttpRequestDef<UpdateWorkFlowRequest, UpdateWorkFlowResponse> genForupdateWorkFlow() {
+        // basic
+        HttpRequestDef.Builder<UpdateWorkFlowRequest, UpdateWorkFlowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkFlowRequest.class, UpdateWorkFlowResponse.class)
+                .withName("UpdateWorkFlow")
+                .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkFlowRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<UpdateWorkflowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateWorkflowRequestBody.class),
+            f -> f.withMarshaller(UpdateWorkFlowRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
 }

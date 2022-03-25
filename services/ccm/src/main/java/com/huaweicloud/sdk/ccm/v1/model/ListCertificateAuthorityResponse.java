@@ -20,14 +20,14 @@ public class ListCertificateAuthorityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_authorities")
 
-    private List<ShowCertificateAuthorityResponseBody> certificateAuthorities = null;
+    private List<CertificateAuthorities> certificateAuthorities = null;
 
     public ListCertificateAuthorityResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    /** CA总数 minimum: 0 maximum: 1000000
+    /** CA证书总数。
      * 
      * @return total */
     public Integer getTotal() {
@@ -39,13 +39,13 @@ public class ListCertificateAuthorityResponse extends SdkResponse {
     }
 
     public ListCertificateAuthorityResponse withCertificateAuthorities(
-        List<ShowCertificateAuthorityResponseBody> certificateAuthorities) {
+        List<CertificateAuthorities> certificateAuthorities) {
         this.certificateAuthorities = certificateAuthorities;
         return this;
     }
 
     public ListCertificateAuthorityResponse addCertificateAuthoritiesItem(
-        ShowCertificateAuthorityResponseBody certificateAuthoritiesItem) {
+        CertificateAuthorities certificateAuthoritiesItem) {
         if (this.certificateAuthorities == null) {
             this.certificateAuthorities = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListCertificateAuthorityResponse extends SdkResponse {
     }
 
     public ListCertificateAuthorityResponse withCertificateAuthorities(
-        Consumer<List<ShowCertificateAuthorityResponseBody>> certificateAuthoritiesSetter) {
+        Consumer<List<CertificateAuthorities>> certificateAuthoritiesSetter) {
         if (this.certificateAuthorities == null) {
             this.certificateAuthorities = new ArrayList<>();
         }
@@ -62,14 +62,14 @@ public class ListCertificateAuthorityResponse extends SdkResponse {
         return this;
     }
 
-    /** CA列表
+    /** CA列表，详情请参见**CertificateAuthorities**字段数据结构说明。
      * 
      * @return certificateAuthorities */
-    public List<ShowCertificateAuthorityResponseBody> getCertificateAuthorities() {
+    public List<CertificateAuthorities> getCertificateAuthorities() {
         return certificateAuthorities;
     }
 
-    public void setCertificateAuthorities(List<ShowCertificateAuthorityResponseBody> certificateAuthorities) {
+    public void setCertificateAuthorities(List<CertificateAuthorities> certificateAuthorities) {
         this.certificateAuthorities = certificateAuthorities;
     }
 

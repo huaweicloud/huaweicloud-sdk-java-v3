@@ -795,6 +795,45 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSqlExplainRequest, ShowSqlExplainResponse> showSqlExplain =
+        genForshowSqlExplain();
+
+    private static HttpRequestDef<ShowSqlExplainRequest, ShowSqlExplainResponse> genForshowSqlExplain() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlExplainRequest, ShowSqlExplainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowSqlExplainRequest.class, ShowSqlExplainResponse.class)
+                .withName("ShowSqlExplain")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql/explain")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlExplainRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ShowSqlExplainRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSqlExplainRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowSqlExplainRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<QuerySqlPlanBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QuerySqlPlanBody.class),
+            f -> f.withMarshaller(ShowSqlExplainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> showSqlSwitchStatus =
         genForshowSqlSwitchStatus();
 

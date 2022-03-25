@@ -96,6 +96,13 @@ public class VssMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainsRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
         builder.<ListDomainsRequest.AuthStatusEnum>withRequestField("auth_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -115,6 +122,134 @@ public class VssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDomainsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainSettingsRequest, ShowDomainSettingsResponse> showDomainSettings =
+        genForshowDomainSettings();
+
+    private static HttpRequestDef<ShowDomainSettingsRequest, ShowDomainSettingsResponse> genForshowDomainSettings() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainSettingsRequest, ShowDomainSettingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainSettingsRequest.class, ShowDomainSettingsResponse.class)
+                .withName("ShowDomainSettings")
+                .withUri("/v3/{project_id}/webscan/domains/settings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainSettingsRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> updateDomainSettings =
+        genForupdateDomainSettings();
+
+    private static HttpRequestDef<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> genForupdateDomainSettings() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateDomainSettingsRequest.class, UpdateDomainSettingsResponse.class)
+            .withName("UpdateDomainSettings")
+            .withUri("/v3/{project_id}/webscan/domains/settings")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<UpdateDomainSettingsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDomainSettingsRequestBody.class),
+            f -> f.withMarshaller(UpdateDomainSettingsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBusinessRisksRequest, ListBusinessRisksResponse> listBusinessRisks =
+        genForlistBusinessRisks();
+
+    private static HttpRequestDef<ListBusinessRisksRequest, ListBusinessRisksResponse> genForlistBusinessRisks() {
+        // basic
+        HttpRequestDef.Builder<ListBusinessRisksRequest, ListBusinessRisksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBusinessRisksRequest.class, ListBusinessRisksResponse.class)
+                .withName("ListBusinessRisks")
+                .withUri("/v3/{project_id}/webscan/results/business-risk")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBusinessRisksRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBusinessRisksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBusinessRisksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPortResultsRequest, ListPortResultsResponse> listPortResults =
+        genForlistPortResults();
+
+    private static HttpRequestDef<ListPortResultsRequest, ListPortResultsResponse> genForlistPortResults() {
+        // basic
+        HttpRequestDef.Builder<ListPortResultsRequest, ListPortResultsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPortResultsRequest.class, ListPortResultsResponse.class)
+                .withName("ListPortResults")
+                .withUri("/v3/{project_id}/webscan/results/ports")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPortResultsRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPortResultsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPortResultsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
 
@@ -161,6 +296,55 @@ public class VssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> updateFalsePositive =
+        genForupdateFalsePositive();
+
+    private static HttpRequestDef<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> genForupdateFalsePositive() {
+        // basic
+        HttpRequestDef.Builder<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateFalsePositiveRequest.class, UpdateFalsePositiveResponse.class)
+                .withName("UpdateFalsePositive")
+                .withUri("/v3/{project_id}/webscan/vulnerability/false-positive")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<UpdateFalsePositiveRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFalsePositiveRequestBody.class),
+            f -> f.withMarshaller(UpdateFalsePositiveRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelTasksRequest, CancelTasksResponse> cancelTasks = genForcancelTasks();
+
+    private static HttpRequestDef<CancelTasksRequest, CancelTasksResponse> genForcancelTasks() {
+        // basic
+        HttpRequestDef.Builder<CancelTasksRequest, CancelTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CancelTasksRequest.class, CancelTasksResponse.class)
+                .withName("CancelTasks")
+                .withUri("/v3/{project_id}/webscan/tasks")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<CancelTasksRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CancelTasksRequestBody.class),
+            f -> f.withMarshaller(CancelTasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateTasksRequest, CreateTasksResponse> createTasks = genForcreateTasks();
 
     private static HttpRequestDef<CreateTasksRequest, CreateTasksResponse> genForcreateTasks() {
@@ -185,6 +369,45 @@ public class VssMeta {
             TypeCasts.uncheckedConversion(CreateTasksRequestBody.class),
             f -> f.withMarshaller(CreateTasksRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskHistoriesRequest, ListTaskHistoriesResponse> listTaskHistories =
+        genForlistTaskHistories();
+
+    private static HttpRequestDef<ListTaskHistoriesRequest, ListTaskHistoriesResponse> genForlistTaskHistories() {
+        // basic
+        HttpRequestDef.Builder<ListTaskHistoriesRequest, ListTaskHistoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTaskHistoriesRequest.class, ListTaskHistoriesResponse.class)
+                .withName("ListTaskHistories")
+                .withUri("/v3/{project_id}/webscan/tasks/histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskHistoriesRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskHistoriesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskHistoriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

@@ -441,6 +441,38 @@ public class ImsClient {
         return new SyncInvoker<UpdateImageRequest, UpdateImageResponse>(request, ImsMeta.updateImage, hcClient);
     }
 
+    /** 查询版本列表（OpenStack原生） 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+     *
+     * @param ListVersionsRequest 请求对象
+     * @return ListVersionsResponse */
+    public ListVersionsResponse listVersions(ListVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.listVersions);
+    }
+
+    /** 查询版本列表（OpenStack原生） 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+     *
+     * @param ListVersionsRequest 请求对象
+     * @return SyncInvoker<ListVersionsRequest, ListVersionsResponse> */
+    public SyncInvoker<ListVersionsRequest, ListVersionsResponse> listVersionsInvoker(ListVersionsRequest request) {
+        return new SyncInvoker<ListVersionsRequest, ListVersionsResponse>(request, ImsMeta.listVersions, hcClient);
+    }
+
+    /** 查询版本列表（OpenStack原生） 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+     *
+     * @param ShowVersionRequest 请求对象
+     * @return ShowVersionResponse */
+    public ShowVersionResponse showVersion(ShowVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.showVersion);
+    }
+
+    /** 查询版本列表（OpenStack原生） 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+     *
+     * @param ShowVersionRequest 请求对象
+     * @return SyncInvoker<ShowVersionRequest, ShowVersionResponse> */
+    public SyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionInvoker(ShowVersionRequest request) {
+        return new SyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, ImsMeta.showVersion, hcClient);
+    }
+
     /** 查询job状态 该接口为扩展接口，主要用于查询异步接口执行情况，比如查询导出镜像任务的执行状态。
      *
      * @param ShowJobRequest 请求对象

@@ -33,6 +33,13 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
     
     private String errorMessage;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="responseStatus")
+    
+    
+    private Integer responseStatus;
+
     public DeleteserviceDiscoveryRulesResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -77,6 +84,28 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
 
     
 
+    public DeleteserviceDiscoveryRulesResponse withResponseStatus(Integer responseStatus) {
+        this.responseStatus = responseStatus;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 响应状态码。
+     * @return responseStatus
+     */
+    public Integer getResponseStatus() {
+        return responseStatus;
+    }
+
+    public void setResponseStatus(Integer responseStatus) {
+        this.responseStatus = responseStatus;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,11 +116,12 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
         }
         DeleteserviceDiscoveryRulesResponse deleteserviceDiscoveryRulesResponse = (DeleteserviceDiscoveryRulesResponse) o;
         return Objects.equals(this.errorCode, deleteserviceDiscoveryRulesResponse.errorCode) &&
-            Objects.equals(this.errorMessage, deleteserviceDiscoveryRulesResponse.errorMessage);
+            Objects.equals(this.errorMessage, deleteserviceDiscoveryRulesResponse.errorMessage) &&
+            Objects.equals(this.responseStatus, deleteserviceDiscoveryRulesResponse.responseStatus);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMessage);
+        return Objects.hash(errorCode, errorMessage, responseStatus);
     }
     @Override
     public String toString() {
@@ -99,6 +129,7 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
         sb.append("class DeleteserviceDiscoveryRulesResponse {\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    responseStatus: ").append(toIndentedString(responseStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

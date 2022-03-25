@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
@@ -59,7 +58,7 @@ public class ShowSimCardResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_status_date")
 
-    private LocalDate deviceStatusDate;
+    private OffsetDateTime deviceStatusDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
@@ -104,7 +103,7 @@ public class ShowSimCardResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
-    private LocalDate expireTime;
+    private OffsetDateTime expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_name")
@@ -345,7 +344,7 @@ public class ShowSimCardResponse extends SdkResponse {
         this.actDate = actDate;
     }
 
-    public ShowSimCardResponse withDeviceStatusDate(LocalDate deviceStatusDate) {
+    public ShowSimCardResponse withDeviceStatusDate(OffsetDateTime deviceStatusDate) {
         this.deviceStatusDate = deviceStatusDate;
         return this;
     }
@@ -353,11 +352,11 @@ public class ShowSimCardResponse extends SdkResponse {
     /** 设备状态变更时间 例如2020-01-31T16:00:00.000Z
      * 
      * @return deviceStatusDate */
-    public LocalDate getDeviceStatusDate() {
+    public OffsetDateTime getDeviceStatusDate() {
         return deviceStatusDate;
     }
 
-    public void setDeviceStatusDate(LocalDate deviceStatusDate) {
+    public void setDeviceStatusDate(OffsetDateTime deviceStatusDate) {
         this.deviceStatusDate = deviceStatusDate;
     }
 
@@ -489,7 +488,7 @@ public class ShowSimCardResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
-    public ShowSimCardResponse withExpireTime(LocalDate expireTime) {
+    public ShowSimCardResponse withExpireTime(OffsetDateTime expireTime) {
         this.expireTime = expireTime;
         return this;
     }
@@ -497,11 +496,11 @@ public class ShowSimCardResponse extends SdkResponse {
     /** 到期时间 例如2021-06-30T00:00:00.000Z
      * 
      * @return expireTime */
-    public LocalDate getExpireTime() {
+    public OffsetDateTime getExpireTime() {
         return expireTime;
     }
 
-    public void setExpireTime(LocalDate expireTime) {
+    public void setExpireTime(OffsetDateTime expireTime) {
         this.expireTime = expireTime;
     }
 

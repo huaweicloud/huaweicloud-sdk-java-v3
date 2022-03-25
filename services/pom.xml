@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.80</version>
+        <version>3.0.81</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.80</version>
+    <version>3.0.81</version>
     <packaging>pom</packaging>
     <name>Huawei Cloud SDK for Java Services</name>
     <description>Services code for Huawei Cloud SDK for Java</description>
@@ -58,6 +58,7 @@
         <module>bssintl</module>
         <module>servicestage</module>
         <module>ocr</module>
+        <module>vcm</module>
         <module>cdm</module>
         <module>drs</module>
         <module>dli</module>

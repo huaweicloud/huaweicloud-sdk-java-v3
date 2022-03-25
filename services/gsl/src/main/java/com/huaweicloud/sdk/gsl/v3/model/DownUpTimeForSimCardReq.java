@@ -3,15 +3,55 @@ package com.huaweicloud.sdk.gsl.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** DownUpTimeForSimCardReq */
 public class DownUpTimeForSimCardReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "price_plan_list")
+
+    private List<SimPricePlanInfoVO> pricePlanList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "down_up_switch")
 
     private Integer downUpSwitch;
+
+    public DownUpTimeForSimCardReq withPricePlanList(List<SimPricePlanInfoVO> pricePlanList) {
+        this.pricePlanList = pricePlanList;
+        return this;
+    }
+
+    public DownUpTimeForSimCardReq addPricePlanListItem(SimPricePlanInfoVO pricePlanListItem) {
+        if (this.pricePlanList == null) {
+            this.pricePlanList = new ArrayList<>();
+        }
+        this.pricePlanList.add(pricePlanListItem);
+        return this;
+    }
+
+    public DownUpTimeForSimCardReq withPricePlanList(Consumer<List<SimPricePlanInfoVO>> pricePlanListSetter) {
+        if (this.pricePlanList == null) {
+            this.pricePlanList = new ArrayList<>();
+        }
+        pricePlanListSetter.accept(this.pricePlanList);
+        return this;
+    }
+
+    /** 套餐列表
+     * 
+     * @return pricePlanList */
+    public List<SimPricePlanInfoVO> getPricePlanList() {
+        return pricePlanList;
+    }
+
+    public void setPricePlanList(List<SimPricePlanInfoVO> pricePlanList) {
+        this.pricePlanList = pricePlanList;
+    }
 
     public DownUpTimeForSimCardReq withDownUpSwitch(Integer downUpSwitch) {
         this.downUpSwitch = downUpSwitch;
@@ -38,18 +78,20 @@ public class DownUpTimeForSimCardReq {
             return false;
         }
         DownUpTimeForSimCardReq downUpTimeForSimCardReq = (DownUpTimeForSimCardReq) o;
-        return Objects.equals(this.downUpSwitch, downUpTimeForSimCardReq.downUpSwitch);
+        return Objects.equals(this.pricePlanList, downUpTimeForSimCardReq.pricePlanList)
+            && Objects.equals(this.downUpSwitch, downUpTimeForSimCardReq.downUpSwitch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(downUpSwitch);
+        return Objects.hash(pricePlanList, downUpSwitch);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DownUpTimeForSimCardReq {\n");
+        sb.append("    pricePlanList: ").append(toIndentedString(pricePlanList)).append("\n");
         sb.append("    downUpSwitch: ").append(toIndentedString(downUpSwitch)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -161,6 +161,11 @@ public class VatInvoiceResult {
 
     private Object confidence;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text_location")
+
+    private Object textLocation;
+
     public VatInvoiceResult withType(String type) {
         this.type = type;
         return this;
@@ -689,6 +694,22 @@ public class VatInvoiceResult {
         this.confidence = confidence;
     }
 
+    public VatInvoiceResult withTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+        return this;
+    }
+
+    /** 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。
+     * 
+     * @return textLocation */
+    public Object getTextLocation() {
+        return textLocation;
+    }
+
+    public void setTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -727,7 +748,8 @@ public class VatInvoiceResult {
             && Objects.equals(this.issuer, vatInvoiceResult.issuer)
             && Objects.equals(this.sellerSeal, vatInvoiceResult.sellerSeal)
             && Objects.equals(this.itemList, vatInvoiceResult.itemList)
-            && Objects.equals(this.confidence, vatInvoiceResult.confidence);
+            && Objects.equals(this.confidence, vatInvoiceResult.confidence)
+            && Objects.equals(this.textLocation, vatInvoiceResult.textLocation);
     }
 
     @Override
@@ -761,7 +783,8 @@ public class VatInvoiceResult {
             issuer,
             sellerSeal,
             itemList,
-            confidence);
+            confidence,
+            textLocation);
     }
 
     @Override
@@ -798,6 +821,7 @@ public class VatInvoiceResult {
         sb.append("    sellerSeal: ").append(toIndentedString(sellerSeal)).append("\n");
         sb.append("    itemList: ").append(toIndentedString(itemList)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

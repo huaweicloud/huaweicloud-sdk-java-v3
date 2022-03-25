@@ -24,7 +24,7 @@ public class IssueCertificateAuthorityCertificateRequest {
         return this;
     }
 
-    /** ca_id
+    /** 所要激活的从属CA证书ID。
      * 
      * @return caId */
     public String getCaId() {

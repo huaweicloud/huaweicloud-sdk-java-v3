@@ -129,7 +129,7 @@ public class AccountChangeRecord {
         return this;
     }
 
-    /** 变更后余额，单位 为元。
+    /** 变更后余额，单位为元。
      * 
      * @return balanceAfterChange */
     public String getBalanceAfterChange() {

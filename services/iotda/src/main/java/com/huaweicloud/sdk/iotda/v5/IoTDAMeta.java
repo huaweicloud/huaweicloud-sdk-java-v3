@@ -1446,6 +1446,45 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetFingerprintRequest, ResetFingerprintResponse> resetFingerprint =
+        genForresetFingerprint();
+
+    private static HttpRequestDef<ResetFingerprintRequest, ResetFingerprintResponse> genForresetFingerprint() {
+        // basic
+        HttpRequestDef.Builder<ResetFingerprintRequest, ResetFingerprintResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetFingerprintRequest.class, ResetFingerprintResponse.class)
+                .withName("ResetFingerprint")
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/reset-fingerprint")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetFingerprintRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetFingerprintRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ResetFingerprint>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetFingerprint.class),
+            f -> f.withMarshaller(ResetFingerprintRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> showDevice = genForshowDevice();
 
     private static HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> genForshowDevice() {

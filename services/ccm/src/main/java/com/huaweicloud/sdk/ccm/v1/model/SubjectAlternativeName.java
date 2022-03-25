@@ -23,7 +23,7 @@ public class SubjectAlternativeName {
         return this;
     }
 
-    /** 类型
+    /** 备用名称类型，当前仅支持DNS与IP。 - **DNS** - **IP**
      * 
      * @return type */
     public String getType() {
@@ -39,7 +39,7 @@ public class SubjectAlternativeName {
         return this;
     }
 
-    /** 值
+    /** 对应备用名称类型的值。 - DNS类型，长度为0~253； - IP类型，长度为0~39。
      * 
      * @return value */
     public String getValue() {

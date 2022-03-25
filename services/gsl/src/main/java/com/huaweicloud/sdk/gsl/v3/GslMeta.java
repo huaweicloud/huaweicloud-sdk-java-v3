@@ -259,12 +259,40 @@ public class GslMeta {
             f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute6, (req, v) -> {
                 req.setCustomerAttribute6(v);
             }));
+        builder.<Long>withRequestField("min_flow",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getMinFlow, (req, v) -> {
+                req.setMinFlow(v);
+            }));
+        builder.<Long>withRequestField("max_flow",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getMaxFlow, (req, v) -> {
+                req.setMaxFlow(v);
+            }));
         builder.<Boolean>withRequestField("real_named",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListSimCardsRequest::getRealNamed, (req, v) -> {
                 req.setRealNamed(v);
+            }));
+        builder.<Long>withRequestField("order_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getOrderId, (req, v) -> {
+                req.setOrderId(v);
+            }));
+        builder.<Boolean>withRequestField("filter_downtime_period",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getFilterDowntimePeriod, (req, v) -> {
+                req.setFilterDowntimePeriod(v);
             }));
 
         // response

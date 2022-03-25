@@ -23,7 +23,7 @@ public class ExportCertificateRequestBody {
         return this;
     }
 
-    /** 是否压缩
+    /** 是否压缩。 - **true** - **false**
      * 
      * @return isCompressed */
     public String getIsCompressed() {
@@ -39,7 +39,8 @@ public class ExportCertificateRequestBody {
         return this;
     }
 
-    /** 导出类型
+    /** 根据服务器类型选择下载证书的形式，支持以下五种类型： - **APACHE** : apache服务器推荐使用此参数； - **NGINX** : nginx服务器推荐使用此参数； - **IIS** :
+     * windows服务器推荐使用此参数； - **TOMCAT** : tomcat服务器推荐使用此参数； - **OTHER** : 下载PEM格式证书，推荐使用此参数。
      * 
      * @return type */
     public String getType() {

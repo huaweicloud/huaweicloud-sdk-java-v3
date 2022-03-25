@@ -18,7 +18,7 @@ public class RestoreCertificateAuthorityRequest {
         return this;
     }
 
-    /** ca_id
+    /** 所需要恢复的CA证书ID。
      * 
      * @return caId */
     public String getCaId() {

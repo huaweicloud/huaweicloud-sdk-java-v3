@@ -18,7 +18,7 @@ public class ExportCertificateAuthorityCertificateRequest {
         return this;
     }
 
-    /** ca_id
+    /** 所要导出的CA证书ID。
      * 
      * @return caId */
     public String getCaId() {

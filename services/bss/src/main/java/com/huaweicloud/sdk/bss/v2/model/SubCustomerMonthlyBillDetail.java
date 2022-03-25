@@ -235,7 +235,7 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 子客户的关联类型： 1：推荐2：垫付
+    /** 子客户的关联类型： 1：顾问销售2：代售
      * 
      * @return associationType */
     public String getAssociationType() {

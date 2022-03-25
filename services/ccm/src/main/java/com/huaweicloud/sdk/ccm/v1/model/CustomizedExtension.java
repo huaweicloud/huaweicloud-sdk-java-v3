@@ -23,7 +23,7 @@ public class CustomizedExtension {
         return this;
     }
 
-    /** 对象标识符
+    /** 对象标识符。 > 本参数需要满足ASN1规范的点分十进制符号格式的字符串，如1.3.6.1.4.1.2011.4.99。
      * 
      * @return objectIdentifier */
     public String getObjectIdentifier() {
@@ -39,7 +39,7 @@ public class CustomizedExtension {
         return this;
     }
 
-    /** 自定义属性内容
+    /** 自定义属性内容。
      * 
      * @return value */
     public String getValue() {

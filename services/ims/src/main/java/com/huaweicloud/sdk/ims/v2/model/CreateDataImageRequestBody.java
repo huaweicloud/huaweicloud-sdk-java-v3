@@ -51,7 +51,7 @@ public class CreateDataImageRequestBody {
 
     private String name;
 
-    /** 操作系统类型。只能是Windows、Linux二者之一，值区分大小写。 */
+    /** 操作系统类型。只能是Windows、Linux二者之一，默认Linux。 */
     public static final class OsTypeEnum {
 
         /** Enum WINDOWS for value: "Windows" */
@@ -265,7 +265,7 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** 操作系统类型。只能是Windows、Linux二者之一，值区分大小写。
+    /** 操作系统类型。只能是Windows、Linux二者之一，默认Linux。
      * 
      * @return osType */
     public OsTypeEnum getOsType() {

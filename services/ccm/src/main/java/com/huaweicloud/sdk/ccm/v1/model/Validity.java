@@ -9,11 +9,6 @@ import java.util.Objects;
 public class Validity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_from")
-
-    private String startFrom;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -23,28 +18,17 @@ public class Validity {
 
     private Integer value;
 
-    public Validity withStartFrom(String startFrom) {
-        this.startFrom = startFrom;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_from")
 
-    /** 起始时间
-     * 
-     * @return startFrom */
-    public String getStartFrom() {
-        return startFrom;
-    }
-
-    public void setStartFrom(String startFrom) {
-        this.startFrom = startFrom;
-    }
+    private Integer startFrom;
 
     public Validity withType(String type) {
         this.type = type;
         return this;
     }
 
-    /** 有效期类型
+    /** 有效期类型，为必填值： - **YEAR** : 年（12个月） - **MONTH** : 月（统一按31天） - **DAY** : 日 - **HOUR** : 小时
      * 
      * @return type */
     public String getType() {
@@ -60,7 +44,7 @@ public class Validity {
         return this;
     }
 
-    /** 路径长度 minimum: 0 maximum: 100000000
+    /** 证书有效期值，与type对应的类型值，换算成年需满足以下规则： - 根CA，有效期小于等于30年； - 从属CA与私有证书，有效期小于等于20年。
      * 
      * @return value */
     public Integer getValue() {
@@ -69,6 +53,22 @@ public class Validity {
 
     public void setValue(Integer value) {
         this.value = value;
+    }
+
+    public Validity withStartFrom(Integer startFrom) {
+        this.startFrom = startFrom;
+        return this;
+    }
+
+    /** 起始时间，为可选值: - 格式为时间戳（毫秒级），如1645146939688代表2022-02-18 09:15:39； - 不早于当前时间5分钟，即start_from > (current_time - 5min)。
+     * 
+     * @return startFrom */
+    public Integer getStartFrom() {
+        return startFrom;
+    }
+
+    public void setStartFrom(Integer startFrom) {
+        this.startFrom = startFrom;
     }
 
     @Override
@@ -80,22 +80,22 @@ public class Validity {
             return false;
         }
         Validity validity = (Validity) o;
-        return Objects.equals(this.startFrom, validity.startFrom) && Objects.equals(this.type, validity.type)
-            && Objects.equals(this.value, validity.value);
+        return Objects.equals(this.type, validity.type) && Objects.equals(this.value, validity.value)
+            && Objects.equals(this.startFrom, validity.startFrom);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startFrom, type, value);
+        return Objects.hash(type, value, startFrom);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Validity {\n");
-        sb.append("    startFrom: ").append(toIndentedString(startFrom)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    startFrom: ").append(toIndentedString(startFrom)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -92,11 +92,6 @@ public class PublicZoneResp {
     private List<String> masters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "routers")
-
-    private List<RouterWithStatus> routers = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -398,38 +393,6 @@ public class PublicZoneResp {
         this.masters = masters;
     }
 
-    public PublicZoneResp withRouters(List<RouterWithStatus> routers) {
-        this.routers = routers;
-        return this;
-    }
-
-    public PublicZoneResp addRoutersItem(RouterWithStatus routersItem) {
-        if (this.routers == null) {
-            this.routers = new ArrayList<>();
-        }
-        this.routers.add(routersItem);
-        return this;
-    }
-
-    public PublicZoneResp withRouters(Consumer<List<RouterWithStatus>> routersSetter) {
-        if (this.routers == null) {
-            this.routers = new ArrayList<>();
-        }
-        routersSetter.accept(this.routers);
-        return this;
-    }
-
-    /** 与该zone关联的Router(VPC)列表。
-     * 
-     * @return routers */
-    public List<RouterWithStatus> getRouters() {
-        return routers;
-    }
-
-    public void setRouters(List<RouterWithStatus> routers) {
-        this.routers = routers;
-    }
-
     public PublicZoneResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -467,7 +430,6 @@ public class PublicZoneResp {
             && Objects.equals(this.updatedAt, publicZoneResp.updatedAt)
             && Objects.equals(this.links, publicZoneResp.links) && Objects.equals(this.tags, publicZoneResp.tags)
             && Objects.equals(this.masters, publicZoneResp.masters)
-            && Objects.equals(this.routers, publicZoneResp.routers)
             && Objects.equals(this.enterpriseProjectId, publicZoneResp.enterpriseProjectId);
     }
 
@@ -489,7 +451,6 @@ public class PublicZoneResp {
             links,
             tags,
             masters,
-            routers,
             enterpriseProjectId);
     }
 
@@ -513,7 +474,6 @@ public class PublicZoneResp {
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    masters: ").append(toIndentedString(masters)).append("\n");
-        sb.append("    routers: ").append(toIndentedString(routers)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

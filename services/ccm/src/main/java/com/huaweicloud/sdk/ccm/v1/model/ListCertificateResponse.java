@@ -20,14 +20,14 @@ public class ListCertificateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificates")
 
-    private List<ShowCertificateReponseBody> certificates = null;
+    private List<Certificates> certificates = null;
 
     public ListCertificateResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    /** 证书总数 minimum: 0 maximum: 1000000
+    /** 私有证书总数。 minimum: 0 maximum: 1000000
      * 
      * @return total */
     public Integer getTotal() {
@@ -38,12 +38,12 @@ public class ListCertificateResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListCertificateResponse withCertificates(List<ShowCertificateReponseBody> certificates) {
+    public ListCertificateResponse withCertificates(List<Certificates> certificates) {
         this.certificates = certificates;
         return this;
     }
 
-    public ListCertificateResponse addCertificatesItem(ShowCertificateReponseBody certificatesItem) {
+    public ListCertificateResponse addCertificatesItem(Certificates certificatesItem) {
         if (this.certificates == null) {
             this.certificates = new ArrayList<>();
         }
@@ -51,7 +51,7 @@ public class ListCertificateResponse extends SdkResponse {
         return this;
     }
 
-    public ListCertificateResponse withCertificates(Consumer<List<ShowCertificateReponseBody>> certificatesSetter) {
+    public ListCertificateResponse withCertificates(Consumer<List<Certificates>> certificatesSetter) {
         if (this.certificates == null) {
             this.certificates = new ArrayList<>();
         }
@@ -59,14 +59,14 @@ public class ListCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书列表
+    /** 证书列表，详情请参见**Certificates**字段数据结构说明。
      * 
      * @return certificates */
-    public List<ShowCertificateReponseBody> getCertificates() {
+    public List<Certificates> getCertificates() {
         return certificates;
     }
 
-    public void setCertificates(List<ShowCertificateReponseBody> certificates) {
+    public void setCertificates(List<Certificates> certificates) {
         this.certificates = certificates;
     }
 

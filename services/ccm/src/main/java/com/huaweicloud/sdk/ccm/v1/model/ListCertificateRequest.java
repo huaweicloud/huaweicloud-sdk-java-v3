@@ -11,7 +11,7 @@ public class ListCertificateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -21,26 +21,36 @@ public class ListCertificateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
 
-    public ListCertificateRequest withLimit(String limit) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key")
+
+    private String sortKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private String sortDir;
+
+    public ListCertificateRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    /** limit
+    /** 指定查询返回记录条数，默认值10。 minimum: 0 maximum: 1000
      * 
      * @return limit */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
@@ -49,7 +59,7 @@ public class ListCertificateRequest {
         return this;
     }
 
-    /** name
+    /** 私有证书名称，返回名称带有name字段的证书集合。
      * 
      * @return name */
     public String getName() {
@@ -60,19 +70,19 @@ public class ListCertificateRequest {
         this.name = name;
     }
 
-    public ListCertificateRequest withOffset(String offset) {
+    public ListCertificateRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    /** offset
+    /** 索引位置，从offset指定的下一条数据开始查询。 minimum: 0
      * 
      * @return offset */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
@@ -81,7 +91,7 @@ public class ListCertificateRequest {
         return this;
     }
 
-    /** status
+    /** 私有证书状态，通过状态过滤证书集合。 - **ISSUED** : 已签发； - **REVOKED** : 已吊销； - **EXPIRED** : 已过期。
      * 
      * @return status */
     public String getStatus() {
@@ -90,6 +100,39 @@ public class ListCertificateRequest {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public ListCertificateRequest withSortKey(String sortKey) {
+        this.sortKey = sortKey;
+        return this;
+    }
+
+    /** 排序属性，目前支持以下属性： - **create_time** : 证书创建时间（默认） - **common_name** : 证书名称 - **issuer_name** : 签发CA名称 -
+     * **not_after** : 证书到期时间
+     * 
+     * @return sortKey */
+    public String getSortKey() {
+        return sortKey;
+    }
+
+    public void setSortKey(String sortKey) {
+        this.sortKey = sortKey;
+    }
+
+    public ListCertificateRequest withSortDir(String sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /** 排序方向，支持以下值： - **DESC** : 降序（默认） - **ASC** : 升序
+     * 
+     * @return sortDir */
+    public String getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(String sortDir) {
+        this.sortDir = sortDir;
     }
 
     @Override
@@ -104,12 +147,14 @@ public class ListCertificateRequest {
         return Objects.equals(this.limit, listCertificateRequest.limit)
             && Objects.equals(this.name, listCertificateRequest.name)
             && Objects.equals(this.offset, listCertificateRequest.offset)
-            && Objects.equals(this.status, listCertificateRequest.status);
+            && Objects.equals(this.status, listCertificateRequest.status)
+            && Objects.equals(this.sortKey, listCertificateRequest.sortKey)
+            && Objects.equals(this.sortDir, listCertificateRequest.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, name, offset, status);
+        return Objects.hash(limit, name, offset, status, sortKey, sortDir);
     }
 
     @Override
@@ -120,6 +165,8 @@ public class ListCertificateRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("}");
         return sb.toString();
     }

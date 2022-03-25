@@ -19,7 +19,7 @@ public class CreateCertificateAuthorityResponse extends SdkResponse {
         return this;
     }
 
-    /** CA ID
+    /** 当前签发的CA证书ID。
      * 
      * @return caId */
     public String getCaId() {

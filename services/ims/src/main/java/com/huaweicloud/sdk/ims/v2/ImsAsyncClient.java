@@ -447,6 +447,39 @@ public class ImsAsyncClient {
         return new AsyncInvoker<UpdateImageRequest, UpdateImageResponse>(request, ImsMeta.updateImage, hcClient);
     }
 
+    /** 查询版本列表（OpenStack原生） 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+     *
+     * @param ListVersionsRequest 请求对象
+     * @return CompletableFuture<ListVersionsResponse> */
+    public CompletableFuture<ListVersionsResponse> listVersionsAsync(ListVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.listVersions);
+    }
+
+    /** 查询版本列表（OpenStack原生） 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+     *
+     * @param ListVersionsRequest 请求对象
+     * @return AsyncInvoker<ListVersionsRequest, ListVersionsResponse> */
+    public AsyncInvoker<ListVersionsRequest, ListVersionsResponse> listVersionsAsyncInvoker(
+        ListVersionsRequest request) {
+        return new AsyncInvoker<ListVersionsRequest, ListVersionsResponse>(request, ImsMeta.listVersions, hcClient);
+    }
+
+    /** 查询版本列表（OpenStack原生） 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+     *
+     * @param ShowVersionRequest 请求对象
+     * @return CompletableFuture<ShowVersionResponse> */
+    public CompletableFuture<ShowVersionResponse> showVersionAsync(ShowVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.showVersion);
+    }
+
+    /** 查询版本列表（OpenStack原生） 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+     *
+     * @param ShowVersionRequest 请求对象
+     * @return AsyncInvoker<ShowVersionRequest, ShowVersionResponse> */
+    public AsyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionAsyncInvoker(ShowVersionRequest request) {
+        return new AsyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, ImsMeta.showVersion, hcClient);
+    }
+
     /** 查询job状态 该接口为扩展接口，主要用于查询异步接口执行情况，比如查询导出镜像任务的执行状态。
      *
      * @param ShowJobRequest 请求对象

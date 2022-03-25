@@ -13,6 +13,11 @@ import java.util.Objects;
 /** Request Object */
 public class ListDomainsRequest {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
     /** 域名的认证状态: * unauth - 未认证 * auth - 已认证 * invalid - 认证文件无效 * manual - 人工认证 * skip - 免认证 */
     public static final class AuthStatusEnum {
 
@@ -111,6 +116,22 @@ public class ListDomainsRequest {
 
     private Integer limit;
 
+    public ListDomainsRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /** 域名ID
+     * 
+     * @return domainId */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
     public ListDomainsRequest withAuthStatus(AuthStatusEnum authStatus) {
         this.authStatus = authStatus;
         return this;
@@ -168,20 +189,22 @@ public class ListDomainsRequest {
             return false;
         }
         ListDomainsRequest listDomainsRequest = (ListDomainsRequest) o;
-        return Objects.equals(this.authStatus, listDomainsRequest.authStatus)
+        return Objects.equals(this.domainId, listDomainsRequest.domainId)
+            && Objects.equals(this.authStatus, listDomainsRequest.authStatus)
             && Objects.equals(this.offset, listDomainsRequest.offset)
             && Objects.equals(this.limit, listDomainsRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authStatus, offset, limit);
+        return Objects.hash(domainId, authStatus, offset, limit);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDomainsRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    authStatus: ").append(toIndentedString(authStatus)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

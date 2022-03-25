@@ -124,7 +124,7 @@ public class ListSimCardsRequest {
 
     private OrderEnum order;
 
-    /** 排序的属性，目前支持:cid（容器ID）、flow_used（已用流量）、flow_left（剩余流量） */
+    /** 排序的属性，目前支持:cid（容器ID）、flow_used（已用流量）、flow_left（剩余流量）、act_date（激活时间）、expire_time（到期时间） */
     public static final class SortEnum {
 
         /** Enum CID for value: "cid" */
@@ -136,6 +136,12 @@ public class ListSimCardsRequest {
         /** Enum FLOW_LEFT for value: "flow_left" */
         public static final SortEnum FLOW_LEFT = new SortEnum("flow_left");
 
+        /** Enum ACT_DATE for value: "act_date" */
+        public static final SortEnum ACT_DATE = new SortEnum("act_date");
+
+        /** Enum EXPIRE_TIME for value: "expire_time" */
+        public static final SortEnum EXPIRE_TIME = new SortEnum("expire_time");
+
         private static final Map<String, SortEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SortEnum> createStaticFields() {
@@ -143,6 +149,8 @@ public class ListSimCardsRequest {
             map.put("cid", CID);
             map.put("flow_used", FLOW_USED);
             map.put("flow_left", FLOW_LEFT);
+            map.put("act_date", ACT_DATE);
+            map.put("expire_time", EXPIRE_TIME);
             return Collections.unmodifiableMap(map);
         }
 
@@ -240,9 +248,29 @@ public class ListSimCardsRequest {
     private String customerAttribute6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_flow")
+
+    private Long minFlow;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_flow")
+
+    private Long maxFlow;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_named")
 
     private Boolean realNamed;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private Long orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "filter_downtime_period")
+
+    private Boolean filterDowntimePeriod;
 
     public ListSimCardsRequest withMainSearchType(Integer mainSearchType) {
         this.mainSearchType = mainSearchType;
@@ -377,7 +405,7 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 排序的属性，目前支持:cid（容器ID）、flow_used（已用流量）、flow_left（剩余流量）
+    /** 排序的属性，目前支持:cid（容器ID）、flow_used（已用流量）、flow_left（剩余流量）、act_date（激活时间）、expire_time（到期时间）
      * 
      * @return sort */
     public SortEnum getSort() {
@@ -500,6 +528,38 @@ public class ListSimCardsRequest {
         this.customerAttribute6 = customerAttribute6;
     }
 
+    public ListSimCardsRequest withMinFlow(Long minFlow) {
+        this.minFlow = minFlow;
+        return this;
+    }
+
+    /** 最小使用流量(MB) minimum: 0 maximum: 2147483647
+     * 
+     * @return minFlow */
+    public Long getMinFlow() {
+        return minFlow;
+    }
+
+    public void setMinFlow(Long minFlow) {
+        this.minFlow = minFlow;
+    }
+
+    public ListSimCardsRequest withMaxFlow(Long maxFlow) {
+        this.maxFlow = maxFlow;
+        return this;
+    }
+
+    /** 最大使用流量(MB) minimum: 0 maximum: 2147483647
+     * 
+     * @return maxFlow */
+    public Long getMaxFlow() {
+        return maxFlow;
+    }
+
+    public void setMaxFlow(Long maxFlow) {
+        this.maxFlow = maxFlow;
+    }
+
     public ListSimCardsRequest withRealNamed(Boolean realNamed) {
         this.realNamed = realNamed;
         return this;
@@ -514,6 +574,38 @@ public class ListSimCardsRequest {
 
     public void setRealNamed(Boolean realNamed) {
         this.realNamed = realNamed;
+    }
+
+    public ListSimCardsRequest withOrderId(Long orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /** 订单号
+     * 
+     * @return orderId */
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public ListSimCardsRequest withFilterDowntimePeriod(Boolean filterDowntimePeriod) {
+        this.filterDowntimePeriod = filterDowntimePeriod;
+        return this;
+    }
+
+    /** 是否过滤停机保号的卡
+     * 
+     * @return filterDowntimePeriod */
+    public Boolean getFilterDowntimePeriod() {
+        return filterDowntimePeriod;
+    }
+
+    public void setFilterDowntimePeriod(Boolean filterDowntimePeriod) {
+        this.filterDowntimePeriod = filterDowntimePeriod;
     }
 
     @Override
@@ -541,7 +633,11 @@ public class ListSimCardsRequest {
             && Objects.equals(this.customerAttribute4, listSimCardsRequest.customerAttribute4)
             && Objects.equals(this.customerAttribute5, listSimCardsRequest.customerAttribute5)
             && Objects.equals(this.customerAttribute6, listSimCardsRequest.customerAttribute6)
-            && Objects.equals(this.realNamed, listSimCardsRequest.realNamed);
+            && Objects.equals(this.minFlow, listSimCardsRequest.minFlow)
+            && Objects.equals(this.maxFlow, listSimCardsRequest.maxFlow)
+            && Objects.equals(this.realNamed, listSimCardsRequest.realNamed)
+            && Objects.equals(this.orderId, listSimCardsRequest.orderId)
+            && Objects.equals(this.filterDowntimePeriod, listSimCardsRequest.filterDowntimePeriod);
     }
 
     @Override
@@ -562,7 +658,11 @@ public class ListSimCardsRequest {
             customerAttribute4,
             customerAttribute5,
             customerAttribute6,
-            realNamed);
+            minFlow,
+            maxFlow,
+            realNamed,
+            orderId,
+            filterDowntimePeriod);
     }
 
     @Override
@@ -585,7 +685,11 @@ public class ListSimCardsRequest {
         sb.append("    customerAttribute4: ").append(toIndentedString(customerAttribute4)).append("\n");
         sb.append("    customerAttribute5: ").append(toIndentedString(customerAttribute5)).append("\n");
         sb.append("    customerAttribute6: ").append(toIndentedString(customerAttribute6)).append("\n");
+        sb.append("    minFlow: ").append(toIndentedString(minFlow)).append("\n");
+        sb.append("    maxFlow: ").append(toIndentedString(maxFlow)).append("\n");
         sb.append("    realNamed: ").append(toIndentedString(realNamed)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    filterDowntimePeriod: ").append(toIndentedString(filterDowntimePeriod)).append("\n");
         sb.append("}");
         return sb.toString();
     }

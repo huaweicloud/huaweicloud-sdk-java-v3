@@ -21,41 +21,6 @@ public class ShowCertificateResponse extends SdkResponse {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "freeze_flag")
-
-    private Integer freezeFlag;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "gen_mode")
-
-    private String genMode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "serial_number")
-
-    private String serialNumber;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
-
-    private String createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "not_before")
-
-    private String notBefore;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "not_after")
-
-    private String notAfter;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "distinguished_name")
-
-    private DistinguishedName distinguishedName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuer_id")
 
     private String issuerId;
@@ -75,12 +40,52 @@ public class ShowCertificateResponse extends SdkResponse {
 
     private String signatureAlgorithm;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "freeze_flag")
+
+    private Integer freezeFlag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gen_mode")
+
+    private String genMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serial_number")
+
+    private String serialNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_time")
+
+    private Long deleteTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "not_before")
+
+    private Long notBefore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "not_after")
+
+    private Long notAfter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "distinguished_name")
+
+    private DistinguishedName distinguishedName;
+
     public ShowCertificateResponse withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
     }
 
-    /** 证书 ID
+    /** 私有证书ID。
      * 
      * @return certificateId */
     public String getCertificateId() {
@@ -96,7 +101,7 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书状态
+    /** 证书状态： - **ISSUED** : 已签发； - **EXPIRED** : 已过期； - **REVOKED** : 已吊销。
      * 
      * @return status */
     public String getStatus() {
@@ -107,12 +112,76 @@ public class ShowCertificateResponse extends SdkResponse {
         this.status = status;
     }
 
+    public ShowCertificateResponse withIssuerId(String issuerId) {
+        this.issuerId = issuerId;
+        return this;
+    }
+
+    /** 父CA证书ID。
+     * 
+     * @return issuerId */
+    public String getIssuerId() {
+        return issuerId;
+    }
+
+    public void setIssuerId(String issuerId) {
+        this.issuerId = issuerId;
+    }
+
+    public ShowCertificateResponse withIssuerName(String issuerName) {
+        this.issuerName = issuerName;
+        return this;
+    }
+
+    /** 父CA证书名称。
+     * 
+     * @return issuerName */
+    public String getIssuerName() {
+        return issuerName;
+    }
+
+    public void setIssuerName(String issuerName) {
+        this.issuerName = issuerName;
+    }
+
+    public ShowCertificateResponse withKeyAlgorithm(String keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm;
+        return this;
+    }
+
+    /** 密钥算法。
+     * 
+     * @return keyAlgorithm */
+    public String getKeyAlgorithm() {
+        return keyAlgorithm;
+    }
+
+    public void setKeyAlgorithm(String keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm;
+    }
+
+    public ShowCertificateResponse withSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+        return this;
+    }
+
+    /** 签名算法。
+     * 
+     * @return signatureAlgorithm */
+    public String getSignatureAlgorithm() {
+        return signatureAlgorithm;
+    }
+
+    public void setSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+    }
+
     public ShowCertificateResponse withFreezeFlag(Integer freezeFlag) {
         this.freezeFlag = freezeFlag;
         return this;
     }
 
-    /** 冻结标识 minimum: 0 maximum: 256
+    /** 冻结标识: - **0** : 非冻结状态； - **其它值** : 冻结状态，当前预留。
      * 
      * @return freezeFlag */
     public Integer getFreezeFlag() {
@@ -128,7 +197,7 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书生成方式
+    /** 证书生成方式： - **GENERATE** : PCA系统生成； - **IMPORT** : 外部导入； - **CSR** : 外部提供CSR，内部CA进行签发，即私钥不在PCA进行托管。
      * 
      * @return genMode */
     public String getGenMode() {
@@ -144,7 +213,7 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 序列号
+    /** 序列号。
      * 
      * @return serialNumber */
     public String getSerialNumber() {
@@ -155,51 +224,67 @@ public class ShowCertificateResponse extends SdkResponse {
         this.serialNumber = serialNumber;
     }
 
-    public ShowCertificateResponse withCreateTime(String createTime) {
+    public ShowCertificateResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建时间
+    /** 证书创建时间，格式为时间戳（毫秒级）。
      * 
      * @return createTime */
-    public String getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public ShowCertificateResponse withNotBefore(String notBefore) {
+    public ShowCertificateResponse withDeleteTime(Long deleteTime) {
+        this.deleteTime = deleteTime;
+        return this;
+    }
+
+    /** 证书删除时间，格式为时间戳（毫秒级）。
+     * 
+     * @return deleteTime */
+    public Long getDeleteTime() {
+        return deleteTime;
+    }
+
+    public void setDeleteTime(Long deleteTime) {
+        this.deleteTime = deleteTime;
+    }
+
+    public ShowCertificateResponse withNotBefore(Long notBefore) {
         this.notBefore = notBefore;
         return this;
     }
 
-    /** 生效时间
+    /** 证书创建时间，格式为时间戳（毫秒级）。
      * 
      * @return notBefore */
-    public String getNotBefore() {
+    public Long getNotBefore() {
         return notBefore;
     }
 
-    public void setNotBefore(String notBefore) {
+    public void setNotBefore(Long notBefore) {
         this.notBefore = notBefore;
     }
 
-    public ShowCertificateResponse withNotAfter(String notAfter) {
+    public ShowCertificateResponse withNotAfter(Long notAfter) {
         this.notAfter = notAfter;
         return this;
     }
 
-    /** 失效时间
+    /** 证书到期时间，格式为时间戳（毫秒级）。
      * 
      * @return notAfter */
-    public String getNotAfter() {
+    public Long getNotAfter() {
         return notAfter;
     }
 
-    public void setNotAfter(String notAfter) {
+    public void setNotAfter(Long notAfter) {
         this.notAfter = notAfter;
     }
 
@@ -228,70 +313,6 @@ public class ShowCertificateResponse extends SdkResponse {
         this.distinguishedName = distinguishedName;
     }
 
-    public ShowCertificateResponse withIssuerId(String issuerId) {
-        this.issuerId = issuerId;
-        return this;
-    }
-
-    /** 签发CA ID
-     * 
-     * @return issuerId */
-    public String getIssuerId() {
-        return issuerId;
-    }
-
-    public void setIssuerId(String issuerId) {
-        this.issuerId = issuerId;
-    }
-
-    public ShowCertificateResponse withIssuerName(String issuerName) {
-        this.issuerName = issuerName;
-        return this;
-    }
-
-    /** 签发CA名称
-     * 
-     * @return issuerName */
-    public String getIssuerName() {
-        return issuerName;
-    }
-
-    public void setIssuerName(String issuerName) {
-        this.issuerName = issuerName;
-    }
-
-    public ShowCertificateResponse withKeyAlgorithm(String keyAlgorithm) {
-        this.keyAlgorithm = keyAlgorithm;
-        return this;
-    }
-
-    /** 密钥算法
-     * 
-     * @return keyAlgorithm */
-    public String getKeyAlgorithm() {
-        return keyAlgorithm;
-    }
-
-    public void setKeyAlgorithm(String keyAlgorithm) {
-        this.keyAlgorithm = keyAlgorithm;
-    }
-
-    public ShowCertificateResponse withSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-        return this;
-    }
-
-    /** 签名算法
-     * 
-     * @return signatureAlgorithm */
-    public String getSignatureAlgorithm() {
-        return signatureAlgorithm;
-    }
-
-    public void setSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -303,34 +324,36 @@ public class ShowCertificateResponse extends SdkResponse {
         ShowCertificateResponse showCertificateResponse = (ShowCertificateResponse) o;
         return Objects.equals(this.certificateId, showCertificateResponse.certificateId)
             && Objects.equals(this.status, showCertificateResponse.status)
+            && Objects.equals(this.issuerId, showCertificateResponse.issuerId)
+            && Objects.equals(this.issuerName, showCertificateResponse.issuerName)
+            && Objects.equals(this.keyAlgorithm, showCertificateResponse.keyAlgorithm)
+            && Objects.equals(this.signatureAlgorithm, showCertificateResponse.signatureAlgorithm)
             && Objects.equals(this.freezeFlag, showCertificateResponse.freezeFlag)
             && Objects.equals(this.genMode, showCertificateResponse.genMode)
             && Objects.equals(this.serialNumber, showCertificateResponse.serialNumber)
             && Objects.equals(this.createTime, showCertificateResponse.createTime)
+            && Objects.equals(this.deleteTime, showCertificateResponse.deleteTime)
             && Objects.equals(this.notBefore, showCertificateResponse.notBefore)
             && Objects.equals(this.notAfter, showCertificateResponse.notAfter)
-            && Objects.equals(this.distinguishedName, showCertificateResponse.distinguishedName)
-            && Objects.equals(this.issuerId, showCertificateResponse.issuerId)
-            && Objects.equals(this.issuerName, showCertificateResponse.issuerName)
-            && Objects.equals(this.keyAlgorithm, showCertificateResponse.keyAlgorithm)
-            && Objects.equals(this.signatureAlgorithm, showCertificateResponse.signatureAlgorithm);
+            && Objects.equals(this.distinguishedName, showCertificateResponse.distinguishedName);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(certificateId,
             status,
+            issuerId,
+            issuerName,
+            keyAlgorithm,
+            signatureAlgorithm,
             freezeFlag,
             genMode,
             serialNumber,
             createTime,
+            deleteTime,
             notBefore,
             notAfter,
-            distinguishedName,
-            issuerId,
-            issuerName,
-            keyAlgorithm,
-            signatureAlgorithm);
+            distinguishedName);
     }
 
     @Override
@@ -339,17 +362,18 @@ public class ShowCertificateResponse extends SdkResponse {
         sb.append("class ShowCertificateResponse {\n");
         sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    freezeFlag: ").append(toIndentedString(freezeFlag)).append("\n");
-        sb.append("    genMode: ").append(toIndentedString(genMode)).append("\n");
-        sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
-        sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
-        sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("    issuerId: ").append(toIndentedString(issuerId)).append("\n");
         sb.append("    issuerName: ").append(toIndentedString(issuerName)).append("\n");
         sb.append("    keyAlgorithm: ").append(toIndentedString(keyAlgorithm)).append("\n");
         sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
+        sb.append("    freezeFlag: ").append(toIndentedString(freezeFlag)).append("\n");
+        sb.append("    genMode: ").append(toIndentedString(genMode)).append("\n");
+        sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    deleteTime: ").append(toIndentedString(deleteTime)).append("\n");
+        sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
+        sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
+        sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

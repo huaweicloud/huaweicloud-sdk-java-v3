@@ -18,7 +18,7 @@ public class DeleteCertificateRequest {
         return this;
     }
 
-    /** certificate_id
+    /** 所要删除的私有证书ID。
      * 
      * @return certificateId */
     public String getCertificateId() {

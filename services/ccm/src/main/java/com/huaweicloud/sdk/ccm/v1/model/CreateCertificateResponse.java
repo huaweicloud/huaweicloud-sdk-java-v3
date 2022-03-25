@@ -19,7 +19,7 @@ public class CreateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书 ID
+    /** 当前签发的证书ID。
      * 
      * @return certificateId */
     public String getCertificateId() {

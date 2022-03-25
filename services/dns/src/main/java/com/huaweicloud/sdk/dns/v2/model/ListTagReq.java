@@ -49,7 +49,7 @@ public class ListTagReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matches")
 
-    private List<Tag> matches = null;
+    private List<Match> matches = null;
 
     public ListTagReq withTags(List<TagValues> tags) {
         this.tags = tags;
@@ -228,12 +228,12 @@ public class ListTagReq {
         this.action = action;
     }
 
-    public ListTagReq withMatches(List<Tag> matches) {
+    public ListTagReq withMatches(List<Match> matches) {
         this.matches = matches;
         return this;
     }
 
-    public ListTagReq addMatchesItem(Tag matchesItem) {
+    public ListTagReq addMatchesItem(Match matchesItem) {
         if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
@@ -241,7 +241,7 @@ public class ListTagReq {
         return this;
     }
 
-    public ListTagReq withMatches(Consumer<List<Tag>> matchesSetter) {
+    public ListTagReq withMatches(Consumer<List<Match>> matchesSetter) {
         if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
@@ -252,11 +252,11 @@ public class ListTagReq {
     /** key为要匹配的字段，value为匹配的值。 如果value为空字符串则精确匹配，否则模糊匹配。
      * 
      * @return matches */
-    public List<Tag> getMatches() {
+    public List<Match> getMatches() {
         return matches;
     }
 
-    public void setMatches(List<Tag> matches) {
+    public void setMatches(List<Match> matches) {
         this.matches = matches;
     }
 

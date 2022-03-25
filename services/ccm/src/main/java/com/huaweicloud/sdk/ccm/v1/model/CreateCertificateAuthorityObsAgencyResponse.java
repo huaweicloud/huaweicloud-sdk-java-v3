@@ -19,7 +19,7 @@ public class CreateCertificateAuthorityObsAgencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权ID
+    /** 创建OBS委托，由IAM返回的授权ID。
      * 
      * @return agencyId */
     public String getAgencyId() {

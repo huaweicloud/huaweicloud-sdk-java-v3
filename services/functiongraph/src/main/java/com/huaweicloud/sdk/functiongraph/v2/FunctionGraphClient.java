@@ -881,4 +881,216 @@ public class FunctionGraphClient {
             hcClient);
     }
 
+    /** 删除工作流列表 删除工作流列表
+     *
+     * @param BatchDeleteWorkflowsRequest 请求对象
+     * @return BatchDeleteWorkflowsResponse */
+    public BatchDeleteWorkflowsResponse batchDeleteWorkflows(BatchDeleteWorkflowsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.batchDeleteWorkflows);
+    }
+
+    /** 删除工作流列表 删除工作流列表
+     *
+     * @param BatchDeleteWorkflowsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> */
+    public SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> batchDeleteWorkflowsInvoker(
+        BatchDeleteWorkflowsRequest request) {
+        return new SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>(request,
+            FunctionGraphMeta.batchDeleteWorkflows, hcClient);
+    }
+
+    /** 创建工作流列表 创建工作流列表
+     *
+     * @param CreateWorkflowRequest 请求对象
+     * @return CreateWorkflowResponse */
+    public CreateWorkflowResponse createWorkflow(CreateWorkflowRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createWorkflow);
+    }
+
+    /** 创建工作流列表 创建工作流列表
+     *
+     * @param CreateWorkflowRequest 请求对象
+     * @return SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> */
+    public SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowInvoker(
+        CreateWorkflowRequest request) {
+        return new SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, FunctionGraphMeta.createWorkflow,
+            hcClient);
+    }
+
+    /** 获取指定函数流执行实例列表 获取指定函数流执行实例列表
+     *
+     * @param ListWorkflowExecutionsRequest 请求对象
+     * @return ListWorkflowExecutionsResponse */
+    public ListWorkflowExecutionsResponse listWorkflowExecutions(ListWorkflowExecutionsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listWorkflowExecutions);
+    }
+
+    /** 获取指定函数流执行实例列表 获取指定函数流执行实例列表
+     *
+     * @param ListWorkflowExecutionsRequest 请求对象
+     * @return SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> */
+    public SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsInvoker(
+        ListWorkflowExecutionsRequest request) {
+        return new SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>(request,
+            FunctionGraphMeta.listWorkflowExecutions, hcClient);
+    }
+
+    /** 查询工作流列表 查询工作流列表
+     *
+     * @param ListWorkflowsRequest 请求对象
+     * @return ListWorkflowsResponse */
+    public ListWorkflowsResponse listWorkflows(ListWorkflowsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listWorkflows);
+    }
+
+    /** 查询工作流列表 查询工作流列表
+     *
+     * @param ListWorkflowsRequest 请求对象
+     * @return SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> */
+    public SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsInvoker(ListWorkflowsRequest request) {
+        return new SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>(request, FunctionGraphMeta.listWorkflows,
+            hcClient);
+    }
+
+    /** 重试工作流 重试工作流
+     *
+     * @param RetryWorkFlowRequest 请求对象
+     * @return RetryWorkFlowResponse */
+    public RetryWorkFlowResponse retryWorkFlow(RetryWorkFlowRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.retryWorkFlow);
+    }
+
+    /** 重试工作流 重试工作流
+     *
+     * @param RetryWorkFlowRequest 请求对象
+     * @return SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse> */
+    public SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse> retryWorkFlowInvoker(RetryWorkFlowRequest request) {
+        return new SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>(request, FunctionGraphMeta.retryWorkFlow,
+            hcClient);
+    }
+
+    /** 获取函数流指标 获取函数流指标
+     *
+     * @param ShowTenantMetricRequest 请求对象
+     * @return ShowTenantMetricResponse */
+    public ShowTenantMetricResponse showTenantMetric(ShowTenantMetricRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showTenantMetric);
+    }
+
+    /** 获取函数流指标 获取函数流指标
+     *
+     * @param ShowTenantMetricRequest 请求对象
+     * @return SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse> */
+    public SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse> showTenantMetricInvoker(
+        ShowTenantMetricRequest request) {
+        return new SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>(request,
+            FunctionGraphMeta.showTenantMetric, hcClient);
+    }
+
+    /** 获取指定函数流实例 获取指定函数流实例
+     *
+     * @param ShowWorkFlowRequest 请求对象
+     * @return ShowWorkFlowResponse */
+    public ShowWorkFlowResponse showWorkFlow(ShowWorkFlowRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showWorkFlow);
+    }
+
+    /** 获取指定函数流实例 获取指定函数流实例
+     *
+     * @param ShowWorkFlowRequest 请求对象
+     * @return SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse> */
+    public SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse> showWorkFlowInvoker(ShowWorkFlowRequest request) {
+        return new SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>(request, FunctionGraphMeta.showWorkFlow,
+            hcClient);
+    }
+
+    /** 获取指定工作流指标 获取指定工作流指标
+     *
+     * @param ShowWorkFlowMetricRequest 请求对象
+     * @return ShowWorkFlowMetricResponse */
+    public ShowWorkFlowMetricResponse showWorkFlowMetric(ShowWorkFlowMetricRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showWorkFlowMetric);
+    }
+
+    /** 获取指定工作流指标 获取指定工作流指标
+     *
+     * @param ShowWorkFlowMetricRequest 请求对象
+     * @return SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> */
+    public SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> showWorkFlowMetricInvoker(
+        ShowWorkFlowMetricRequest request) {
+        return new SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>(request,
+            FunctionGraphMeta.showWorkFlowMetric, hcClient);
+    }
+
+    /** 获取指定函数流执行实例 获取指定函数流执行实例。
+     *
+     * @param ShowWorkflowExecutionRequest 请求对象
+     * @return ShowWorkflowExecutionResponse */
+    public ShowWorkflowExecutionResponse showWorkflowExecution(ShowWorkflowExecutionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showWorkflowExecution);
+    }
+
+    /** 获取指定函数流执行实例 获取指定函数流执行实例。
+     *
+     * @param ShowWorkflowExecutionRequest 请求对象
+     * @return SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> */
+    public SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> showWorkflowExecutionInvoker(
+        ShowWorkflowExecutionRequest request) {
+        return new SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>(request,
+            FunctionGraphMeta.showWorkflowExecution, hcClient);
+    }
+
+    /** 开始执行函数流 开始执行函数流
+     *
+     * @param StartWorkflowExecutionRequest 请求对象
+     * @return StartWorkflowExecutionResponse */
+    public StartWorkflowExecutionResponse startWorkflowExecution(StartWorkflowExecutionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.startWorkflowExecution);
+    }
+
+    /** 开始执行函数流 开始执行函数流
+     *
+     * @param StartWorkflowExecutionRequest 请求对象
+     * @return SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> */
+    public SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> startWorkflowExecutionInvoker(
+        StartWorkflowExecutionRequest request) {
+        return new SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(request,
+            FunctionGraphMeta.startWorkflowExecution, hcClient);
+    }
+
+    /** 停止工作流 停止工作流
+     *
+     * @param StopWorkFlowRequest 请求对象
+     * @return StopWorkFlowResponse */
+    public StopWorkFlowResponse stopWorkFlow(StopWorkFlowRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.stopWorkFlow);
+    }
+
+    /** 停止工作流 停止工作流
+     *
+     * @param StopWorkFlowRequest 请求对象
+     * @return SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse> */
+    public SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse> stopWorkFlowInvoker(StopWorkFlowRequest request) {
+        return new SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>(request, FunctionGraphMeta.stopWorkFlow,
+            hcClient);
+    }
+
+    /** 修改指定函数流实例 修改指定函数流实例
+     *
+     * @param UpdateWorkFlowRequest 请求对象
+     * @return UpdateWorkFlowResponse */
+    public UpdateWorkFlowResponse updateWorkFlow(UpdateWorkFlowRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateWorkFlow);
+    }
+
+    /** 修改指定函数流实例 修改指定函数流实例
+     *
+     * @param UpdateWorkFlowRequest 请求对象
+     * @return SyncInvoker<UpdateWorkFlowRequest, UpdateWorkFlowResponse> */
+    public SyncInvoker<UpdateWorkFlowRequest, UpdateWorkFlowResponse> updateWorkFlowInvoker(
+        UpdateWorkFlowRequest request) {
+        return new SyncInvoker<UpdateWorkFlowRequest, UpdateWorkFlowResponse>(request, FunctionGraphMeta.updateWorkFlow,
+            hcClient);
+    }
+
 }

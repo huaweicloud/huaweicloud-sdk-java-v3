@@ -34,7 +34,7 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 签发CA ID
+    /** 父CA证书ID。
      * 
      * @return issuerId */
     public String getIssuerId() {
@@ -50,7 +50,7 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 路径长度 minimum: 0 maximum: 4
+    /** 路径长度。 minimum: 0 maximum: 6
      * 
      * @return pathLength */
     public Integer getPathLength() {
@@ -66,7 +66,7 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 签名算法
+    /** 签名哈希算法，可选值如下： - **SHA256** - **SHA384** - **SHA512**
      * 
      * @return signatureAlgorithm */
     public String getSignatureAlgorithm() {

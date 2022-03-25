@@ -83,6 +83,78 @@ public class VssClient {
         return new SyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, VssMeta.listDomains, hcClient);
     }
 
+    /** 获取域名配置 获取域名登录配置
+     *
+     * @param ShowDomainSettingsRequest 请求对象
+     * @return ShowDomainSettingsResponse */
+    public ShowDomainSettingsResponse showDomainSettings(ShowDomainSettingsRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.showDomainSettings);
+    }
+
+    /** 获取域名配置 获取域名登录配置
+     *
+     * @param ShowDomainSettingsRequest 请求对象
+     * @return SyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse> */
+    public SyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse> showDomainSettingsInvoker(
+        ShowDomainSettingsRequest request) {
+        return new SyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse>(request,
+            VssMeta.showDomainSettings, hcClient);
+    }
+
+    /** 更新域名配置 更新域名登录配置
+     *
+     * @param UpdateDomainSettingsRequest 请求对象
+     * @return UpdateDomainSettingsResponse */
+    public UpdateDomainSettingsResponse updateDomainSettings(UpdateDomainSettingsRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.updateDomainSettings);
+    }
+
+    /** 更新域名配置 更新域名登录配置
+     *
+     * @param UpdateDomainSettingsRequest 请求对象
+     * @return SyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> */
+    public SyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> updateDomainSettingsInvoker(
+        UpdateDomainSettingsRequest request) {
+        return new SyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse>(request,
+            VssMeta.updateDomainSettings, hcClient);
+    }
+
+    /** 获取业务风险扫描结果 获取域名业务风险扫描结果
+     *
+     * @param ListBusinessRisksRequest 请求对象
+     * @return ListBusinessRisksResponse */
+    public ListBusinessRisksResponse listBusinessRisks(ListBusinessRisksRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.listBusinessRisks);
+    }
+
+    /** 获取业务风险扫描结果 获取域名业务风险扫描结果
+     *
+     * @param ListBusinessRisksRequest 请求对象
+     * @return SyncInvoker<ListBusinessRisksRequest, ListBusinessRisksResponse> */
+    public SyncInvoker<ListBusinessRisksRequest, ListBusinessRisksResponse> listBusinessRisksInvoker(
+        ListBusinessRisksRequest request) {
+        return new SyncInvoker<ListBusinessRisksRequest, ListBusinessRisksResponse>(request, VssMeta.listBusinessRisks,
+            hcClient);
+    }
+
+    /** 获取端口扫描结果 获取域名端口扫描结果
+     *
+     * @param ListPortResultsRequest 请求对象
+     * @return ListPortResultsResponse */
+    public ListPortResultsResponse listPortResults(ListPortResultsRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.listPortResults);
+    }
+
+    /** 获取端口扫描结果 获取域名端口扫描结果
+     *
+     * @param ListPortResultsRequest 请求对象
+     * @return SyncInvoker<ListPortResultsRequest, ListPortResultsResponse> */
+    public SyncInvoker<ListPortResultsRequest, ListPortResultsResponse> listPortResultsInvoker(
+        ListPortResultsRequest request) {
+        return new SyncInvoker<ListPortResultsRequest, ListPortResultsResponse>(request, VssMeta.listPortResults,
+            hcClient);
+    }
+
     /** 获取扫描结果 获取域名漏洞扫描结果
      *
      * @param ShowResultsRequest 请求对象
@@ -99,6 +171,40 @@ public class VssClient {
         return new SyncInvoker<ShowResultsRequest, ShowResultsResponse>(request, VssMeta.showResults, hcClient);
     }
 
+    /** 更新漏洞的误报状态 更新域名扫描漏洞的误报状态
+     *
+     * @param UpdateFalsePositiveRequest 请求对象
+     * @return UpdateFalsePositiveResponse */
+    public UpdateFalsePositiveResponse updateFalsePositive(UpdateFalsePositiveRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.updateFalsePositive);
+    }
+
+    /** 更新漏洞的误报状态 更新域名扫描漏洞的误报状态
+     *
+     * @param UpdateFalsePositiveRequest 请求对象
+     * @return SyncInvoker<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> */
+    public SyncInvoker<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> updateFalsePositiveInvoker(
+        UpdateFalsePositiveRequest request) {
+        return new SyncInvoker<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse>(request,
+            VssMeta.updateFalsePositive, hcClient);
+    }
+
+    /** 取消或重启扫描任务 取消或重启域名漏洞扫描任务
+     *
+     * @param CancelTasksRequest 请求对象
+     * @return CancelTasksResponse */
+    public CancelTasksResponse cancelTasks(CancelTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.cancelTasks);
+    }
+
+    /** 取消或重启扫描任务 取消或重启域名漏洞扫描任务
+     *
+     * @param CancelTasksRequest 请求对象
+     * @return SyncInvoker<CancelTasksRequest, CancelTasksResponse> */
+    public SyncInvoker<CancelTasksRequest, CancelTasksResponse> cancelTasksInvoker(CancelTasksRequest request) {
+        return new SyncInvoker<CancelTasksRequest, CancelTasksResponse>(request, VssMeta.cancelTasks, hcClient);
+    }
+
     /** 创建扫描任务并启动 创建域名漏洞扫描任务并启动
      *
      * @param CreateTasksRequest 请求对象
@@ -113,6 +219,24 @@ public class VssClient {
      * @return SyncInvoker<CreateTasksRequest, CreateTasksResponse> */
     public SyncInvoker<CreateTasksRequest, CreateTasksResponse> createTasksInvoker(CreateTasksRequest request) {
         return new SyncInvoker<CreateTasksRequest, CreateTasksResponse>(request, VssMeta.createTasks, hcClient);
+    }
+
+    /** 获取域名的历史扫描任务 获取域名漏洞扫描的历史扫描任务
+     *
+     * @param ListTaskHistoriesRequest 请求对象
+     * @return ListTaskHistoriesResponse */
+    public ListTaskHistoriesResponse listTaskHistories(ListTaskHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, VssMeta.listTaskHistories);
+    }
+
+    /** 获取域名的历史扫描任务 获取域名漏洞扫描的历史扫描任务
+     *
+     * @param ListTaskHistoriesRequest 请求对象
+     * @return SyncInvoker<ListTaskHistoriesRequest, ListTaskHistoriesResponse> */
+    public SyncInvoker<ListTaskHistoriesRequest, ListTaskHistoriesResponse> listTaskHistoriesInvoker(
+        ListTaskHistoriesRequest request) {
+        return new SyncInvoker<ListTaskHistoriesRequest, ListTaskHistoriesResponse>(request, VssMeta.listTaskHistories,
+            hcClient);
     }
 
     /** 获取扫描任务详情 获取域名漏洞扫描任务详情

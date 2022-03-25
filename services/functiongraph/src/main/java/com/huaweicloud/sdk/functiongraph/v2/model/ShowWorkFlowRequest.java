@@ -1,42 +1,32 @@
-package com.huaweicloud.sdk.css.v1.model;
+package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
-/** TagList */
-public class TagList {
+/** Request Object */
+public class ShowWorkFlowRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tag")
+    @JsonProperty(value = "workflow_id")
 
-    private TagReq tag;
+    private String workflowId;
 
-    public TagList withTag(TagReq tag) {
-        this.tag = tag;
+    public ShowWorkFlowRequest withWorkflowId(String workflowId) {
+        this.workflowId = workflowId;
         return this;
     }
 
-    public TagList withTag(Consumer<TagReq> tagSetter) {
-        if (this.tag == null) {
-            this.tag = new TagReq();
-            tagSetter.accept(this.tag);
-        }
-
-        return this;
-    }
-
-    /** Get tag
+    /** 函数工作流ID
      * 
-     * @return tag */
-    public TagReq getTag() {
-        return tag;
+     * @return workflowId */
+    public String getWorkflowId() {
+        return workflowId;
     }
 
-    public void setTag(TagReq tag) {
-        this.tag = tag;
+    public void setWorkflowId(String workflowId) {
+        this.workflowId = workflowId;
     }
 
     @Override
@@ -47,20 +37,20 @@ public class TagList {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        TagList tagList = (TagList) o;
-        return Objects.equals(this.tag, tagList.tag);
+        ShowWorkFlowRequest showWorkFlowRequest = (ShowWorkFlowRequest) o;
+        return Objects.equals(this.workflowId, showWorkFlowRequest.workflowId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag);
+        return Objects.hash(workflowId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TagList {\n");
-        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("class ShowWorkFlowRequest {\n");
+        sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

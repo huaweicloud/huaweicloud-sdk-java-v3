@@ -9,19 +9,14 @@ import java.util.Objects;
 public class CrlConfiguration {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "crl_dis_point")
+    @JsonProperty(value = "enabled")
 
-    private String crlDisPoint;
+    private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crl_name")
 
     private String crlName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enabled")
-
-    private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket_name")
@@ -33,44 +28,12 @@ public class CrlConfiguration {
 
     private Integer validDays;
 
-    public CrlConfiguration withCrlDisPoint(String crlDisPoint) {
-        this.crlDisPoint = crlDisPoint;
-        return this;
-    }
-
-    /** 吊销列表分发地址
-     * 
-     * @return crlDisPoint */
-    public String getCrlDisPoint() {
-        return crlDisPoint;
-    }
-
-    public void setCrlDisPoint(String crlDisPoint) {
-        this.crlDisPoint = crlDisPoint;
-    }
-
-    public CrlConfiguration withCrlName(String crlName) {
-        this.crlName = crlName;
-        return this;
-    }
-
-    /** 吊销列表文件名称
-     * 
-     * @return crlName */
-    public String getCrlName() {
-        return crlName;
-    }
-
-    public void setCrlName(String crlName) {
-        this.crlName = crlName;
-    }
-
     public CrlConfiguration withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    /** 是否启用CRL发布功能
+    /** 是否启用CRL发布功能。 - **true** - **false**
      * 
      * @return enabled */
     public Boolean getEnabled() {
@@ -81,12 +44,29 @@ public class CrlConfiguration {
         this.enabled = enabled;
     }
 
+    public CrlConfiguration withCrlName(String crlName) {
+        this.crlName = crlName;
+        return this;
+    }
+
+    /** 吊销列表文件名称。 > 若用户不指定，系统将默认采用当前证书的父CA ID。
+     * 
+     * @return crlName */
+    public String getCrlName() {
+        return crlName;
+    }
+
+    public void setCrlName(String crlName) {
+        this.crlName = crlName;
+    }
+
     public CrlConfiguration withObsBucketName(String obsBucketName) {
         this.obsBucketName = obsBucketName;
         return this;
     }
 
-    /** OBS桶名称
+    /** OBS桶名称。 > 当需要启用CRL发布功能： > - 此参数为必填项，且用户必须已创建委托授权，授予PCA服务对OBS的相关权限，具体参见本文档：**证书吊销处理>查看是否具有委托权限**、**证书吊销处理>创建委托**；
+     * > - 指定的OBS桶必须存在，否则将报错。
      * 
      * @return obsBucketName */
     public String getObsBucketName() {
@@ -102,7 +82,7 @@ public class CrlConfiguration {
         return this;
     }
 
-    /** 更新周期 minimum: 7 maximum: 30
+    /** CRL更新周期，单位为\"天\"。当启用CRL发布功能，为必填项。 minimum: 7 maximum: 30
      * 
      * @return validDays */
     public Integer getValidDays() {
@@ -122,25 +102,23 @@ public class CrlConfiguration {
             return false;
         }
         CrlConfiguration crlConfiguration = (CrlConfiguration) o;
-        return Objects.equals(this.crlDisPoint, crlConfiguration.crlDisPoint)
+        return Objects.equals(this.enabled, crlConfiguration.enabled)
             && Objects.equals(this.crlName, crlConfiguration.crlName)
-            && Objects.equals(this.enabled, crlConfiguration.enabled)
             && Objects.equals(this.obsBucketName, crlConfiguration.obsBucketName)
             && Objects.equals(this.validDays, crlConfiguration.validDays);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(crlDisPoint, crlName, enabled, obsBucketName, validDays);
+        return Objects.hash(enabled, crlName, obsBucketName, validDays);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CrlConfiguration {\n");
-        sb.append("    crlDisPoint: ").append(toIndentedString(crlDisPoint)).append("\n");
-        sb.append("    crlName: ").append(toIndentedString(crlName)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    crlName: ").append(toIndentedString(crlName)).append("\n");
         sb.append("    obsBucketName: ").append(toIndentedString(obsBucketName)).append("\n");
         sb.append("    validDays: ").append(toIndentedString(validDays)).append("\n");
         sb.append("}");

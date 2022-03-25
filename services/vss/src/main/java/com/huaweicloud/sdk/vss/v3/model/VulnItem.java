@@ -112,7 +112,7 @@ public class VulnItem {
 
     private SeverityEnum severity;
 
-    /** 漏洞状态: * repairing - 修复中 * repaired - 已修复 * false_report - 误报 */
+    /** 漏洞状态: * repairing - 未修复 * repaired - 已修复 * false_report - 误报，已忽略 */
     public static final class VulnStatusEnum {
 
         /** Enum REPAIRING for value: "repairing" */
@@ -213,6 +213,11 @@ public class VulnItem {
     private String advice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hit_details")
+
+    private String hitDetails;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request")
 
     private String request;
@@ -306,7 +311,7 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞状态: * repairing - 修复中 * repaired - 已修复 * false_report - 误报
+    /** 漏洞状态: * repairing - 未修复 * repaired - 已修复 * false_report - 误报，已忽略
      * 
      * @return vulnStatus */
     public VulnStatusEnum getVulnStatus() {
@@ -338,7 +343,7 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞类型
+    /** 漏洞名称
      * 
      * @return vulnType */
     public String getVulnType() {
@@ -381,12 +386,28 @@ public class VulnItem {
         this.advice = advice;
     }
 
+    public VulnItem withHitDetails(String hitDetails) {
+        this.hitDetails = hitDetails;
+        return this;
+    }
+
+    /** 命中详情
+     * 
+     * @return hitDetails */
+    public String getHitDetails() {
+        return hitDetails;
+    }
+
+    public void setHitDetails(String hitDetails) {
+        this.hitDetails = hitDetails;
+    }
+
     public VulnItem withRequest(String request) {
         this.request = request;
         return this;
     }
 
-    /** 测试请求报文
+    /** 请求详情
      * 
      * @return request */
     public String getRequest() {
@@ -402,7 +423,7 @@ public class VulnItem {
         return this;
     }
 
-    /** 测试返回报文
+    /** 响应详情
      * 
      * @return response */
     public String getResponse() {
@@ -434,7 +455,7 @@ public class VulnItem {
         return this;
     }
 
-    /** 确认误报理由
+    /** 漏洞忽略理由
      * 
      * @return reason */
     public String getReason() {
@@ -475,9 +496,9 @@ public class VulnItem {
             && Objects.equals(this.vulnStatus, vulnItem.vulnStatus)
             && Objects.equals(this.vulnClass, vulnItem.vulnClass) && Objects.equals(this.vulnType, vulnItem.vulnType)
             && Objects.equals(this.description, vulnItem.description) && Objects.equals(this.advice, vulnItem.advice)
-            && Objects.equals(this.request, vulnItem.request) && Objects.equals(this.response, vulnItem.response)
-            && Objects.equals(this.provider, vulnItem.provider) && Objects.equals(this.reason, vulnItem.reason)
-            && Objects.equals(this.findTime, vulnItem.findTime);
+            && Objects.equals(this.hitDetails, vulnItem.hitDetails) && Objects.equals(this.request, vulnItem.request)
+            && Objects.equals(this.response, vulnItem.response) && Objects.equals(this.provider, vulnItem.provider)
+            && Objects.equals(this.reason, vulnItem.reason) && Objects.equals(this.findTime, vulnItem.findTime);
     }
 
     @Override
@@ -491,6 +512,7 @@ public class VulnItem {
             vulnType,
             description,
             advice,
+            hitDetails,
             request,
             response,
             provider,
@@ -511,6 +533,7 @@ public class VulnItem {
         sb.append("    vulnType: ").append(toIndentedString(vulnType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    advice: ").append(toIndentedString(advice)).append("\n");
+        sb.append("    hitDetails: ").append(toIndentedString(hitDetails)).append("\n");
         sb.append("    request: ").append(toIndentedString(request)).append("\n");
         sb.append("    response: ").append(toIndentedString(response)).append("\n");
         sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

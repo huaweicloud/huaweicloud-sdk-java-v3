@@ -175,7 +175,7 @@ public class CreateCustomerV2Req {
         return this;
     }
 
-    /** 合作类型。 1：推荐。 仅支持1，如果不传递，默认会创建成垫付模式的客户。
+    /** 合作类型。 1：顾问销售。 仅支持1，如果不传递，默认会创建成代售模式的客户。
      * 
      * @return cooperationType */
     public String getCooperationType() {

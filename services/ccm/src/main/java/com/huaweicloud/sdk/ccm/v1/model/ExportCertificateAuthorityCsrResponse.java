@@ -19,7 +19,7 @@ public class ExportCertificateAuthorityCsrResponse extends SdkResponse {
         return this;
     }
 
-    /** CSR内容
+    /** 证书签名请求内容，有以下两种情况： - 通过API请求本接口，证书签名请求中换行符已使用\"\\r\\n\"代替； - 通过console端导出证书签名请求，将得到标准的PEM格式的证书签名请求文件。
      * 
      * @return csr */
     public String getCsr() {

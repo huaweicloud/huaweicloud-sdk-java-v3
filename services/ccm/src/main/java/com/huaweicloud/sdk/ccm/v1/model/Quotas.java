@@ -37,7 +37,7 @@ public class Quotas {
         return this;
     }
 
-    /** 资源配额列表，详情请参见Resources
+    /** 资源配额列表，详情请参见**Resources**字段数据结构说明。
      * 
      * @return resources */
     public List<Resources> getResources() {

@@ -33,6 +33,13 @@ public class AddOrUpdateServiceDiscoveryRulesResponse extends SdkResponse {
     
     private String errorMessage;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="responseStatus")
+    
+    
+    private Integer responseStatus;
+
     public AddOrUpdateServiceDiscoveryRulesResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -77,6 +84,28 @@ public class AddOrUpdateServiceDiscoveryRulesResponse extends SdkResponse {
 
     
 
+    public AddOrUpdateServiceDiscoveryRulesResponse withResponseStatus(Integer responseStatus) {
+        this.responseStatus = responseStatus;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 响应状态码。
+     * @return responseStatus
+     */
+    public Integer getResponseStatus() {
+        return responseStatus;
+    }
+
+    public void setResponseStatus(Integer responseStatus) {
+        this.responseStatus = responseStatus;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,11 +116,12 @@ public class AddOrUpdateServiceDiscoveryRulesResponse extends SdkResponse {
         }
         AddOrUpdateServiceDiscoveryRulesResponse addOrUpdateServiceDiscoveryRulesResponse = (AddOrUpdateServiceDiscoveryRulesResponse) o;
         return Objects.equals(this.errorCode, addOrUpdateServiceDiscoveryRulesResponse.errorCode) &&
-            Objects.equals(this.errorMessage, addOrUpdateServiceDiscoveryRulesResponse.errorMessage);
+            Objects.equals(this.errorMessage, addOrUpdateServiceDiscoveryRulesResponse.errorMessage) &&
+            Objects.equals(this.responseStatus, addOrUpdateServiceDiscoveryRulesResponse.responseStatus);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMessage);
+        return Objects.hash(errorCode, errorMessage, responseStatus);
     }
     @Override
     public String toString() {
@@ -99,6 +129,7 @@ public class AddOrUpdateServiceDiscoveryRulesResponse extends SdkResponse {
         sb.append("class AddOrUpdateServiceDiscoveryRulesResponse {\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    responseStatus: ").append(toIndentedString(responseStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

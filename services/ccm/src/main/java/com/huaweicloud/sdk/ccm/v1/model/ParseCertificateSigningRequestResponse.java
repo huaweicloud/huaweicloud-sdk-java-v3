@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,62 +11,118 @@ import java.util.function.Consumer;
 public class ParseCertificateSigningRequestResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
+    @JsonProperty(value = "key_algorithm")
 
-    private Integer total;
+    private String keyAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "certificates")
+    @JsonProperty(value = "key_algorithm_length")
 
-    private List<ShowCertificateReponseBody> certificates = null;
+    private String keyAlgorithmLength;
 
-    public ParseCertificateSigningRequestResponse withTotal(Integer total) {
-        this.total = total;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "signature_algorithm")
+
+    private String signatureAlgorithm;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_key")
+
+    private String publicKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "distinguished_name")
+
+    private DistinguishedName distinguishedName;
+
+    public ParseCertificateSigningRequestResponse withKeyAlgorithm(String keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm;
         return this;
     }
 
-    /** 证书总数 minimum: 0 maximum: 1000000
+    /** 密钥算法。
      * 
-     * @return total */
-    public Integer getTotal() {
-        return total;
+     * @return keyAlgorithm */
+    public String getKeyAlgorithm() {
+        return keyAlgorithm;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setKeyAlgorithm(String keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm;
     }
 
-    public ParseCertificateSigningRequestResponse withCertificates(List<ShowCertificateReponseBody> certificates) {
-        this.certificates = certificates;
+    public ParseCertificateSigningRequestResponse withKeyAlgorithmLength(String keyAlgorithmLength) {
+        this.keyAlgorithmLength = keyAlgorithmLength;
         return this;
     }
 
-    public ParseCertificateSigningRequestResponse addCertificatesItem(ShowCertificateReponseBody certificatesItem) {
-        if (this.certificates == null) {
-            this.certificates = new ArrayList<>();
-        }
-        this.certificates.add(certificatesItem);
-        return this;
-    }
-
-    public ParseCertificateSigningRequestResponse withCertificates(
-        Consumer<List<ShowCertificateReponseBody>> certificatesSetter) {
-        if (this.certificates == null) {
-            this.certificates = new ArrayList<>();
-        }
-        certificatesSetter.accept(this.certificates);
-        return this;
-    }
-
-    /** 证书列表
+    /** 密钥算法长度，单位为bit。
      * 
-     * @return certificates */
-    public List<ShowCertificateReponseBody> getCertificates() {
-        return certificates;
+     * @return keyAlgorithmLength */
+    public String getKeyAlgorithmLength() {
+        return keyAlgorithmLength;
     }
 
-    public void setCertificates(List<ShowCertificateReponseBody> certificates) {
-        this.certificates = certificates;
+    public void setKeyAlgorithmLength(String keyAlgorithmLength) {
+        this.keyAlgorithmLength = keyAlgorithmLength;
+    }
+
+    public ParseCertificateSigningRequestResponse withSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+        return this;
+    }
+
+    /** 签名算法，带具体的签名与哈希算法，如\"SHA256withRSA\"。
+     * 
+     * @return signatureAlgorithm */
+    public String getSignatureAlgorithm() {
+        return signatureAlgorithm;
+    }
+
+    public void setSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+    }
+
+    public ParseCertificateSigningRequestResponse withPublicKey(String publicKey) {
+        this.publicKey = publicKey;
+        return this;
+    }
+
+    /** 公钥内容。 > 其中，换行符已被“\\r\\n”替代；
+     * 
+     * @return publicKey */
+    public String getPublicKey() {
+        return publicKey;
+    }
+
+    public void setPublicKey(String publicKey) {
+        this.publicKey = publicKey;
+    }
+
+    public ParseCertificateSigningRequestResponse withDistinguishedName(DistinguishedName distinguishedName) {
+        this.distinguishedName = distinguishedName;
+        return this;
+    }
+
+    public ParseCertificateSigningRequestResponse withDistinguishedName(
+        Consumer<DistinguishedName> distinguishedNameSetter) {
+        if (this.distinguishedName == null) {
+            this.distinguishedName = new DistinguishedName();
+            distinguishedNameSetter.accept(this.distinguishedName);
+        }
+
+        return this;
+    }
+
+    /** Get distinguishedName
+     * 
+     * @return distinguishedName */
+    public DistinguishedName getDistinguishedName() {
+        return distinguishedName;
+    }
+
+    public void setDistinguishedName(DistinguishedName distinguishedName) {
+        this.distinguishedName = distinguishedName;
     }
 
     @Override
@@ -81,21 +135,27 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
         }
         ParseCertificateSigningRequestResponse parseCertificateSigningRequestResponse =
             (ParseCertificateSigningRequestResponse) o;
-        return Objects.equals(this.total, parseCertificateSigningRequestResponse.total)
-            && Objects.equals(this.certificates, parseCertificateSigningRequestResponse.certificates);
+        return Objects.equals(this.keyAlgorithm, parseCertificateSigningRequestResponse.keyAlgorithm)
+            && Objects.equals(this.keyAlgorithmLength, parseCertificateSigningRequestResponse.keyAlgorithmLength)
+            && Objects.equals(this.signatureAlgorithm, parseCertificateSigningRequestResponse.signatureAlgorithm)
+            && Objects.equals(this.publicKey, parseCertificateSigningRequestResponse.publicKey)
+            && Objects.equals(this.distinguishedName, parseCertificateSigningRequestResponse.distinguishedName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, certificates);
+        return Objects.hash(keyAlgorithm, keyAlgorithmLength, signatureAlgorithm, publicKey, distinguishedName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ParseCertificateSigningRequestResponse {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
+        sb.append("    keyAlgorithm: ").append(toIndentedString(keyAlgorithm)).append("\n");
+        sb.append("    keyAlgorithmLength: ").append(toIndentedString(keyAlgorithmLength)).append("\n");
+        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
+        sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
+        sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

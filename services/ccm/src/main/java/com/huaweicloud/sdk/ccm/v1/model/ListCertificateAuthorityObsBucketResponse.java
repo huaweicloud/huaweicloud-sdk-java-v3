@@ -27,7 +27,7 @@ public class ListCertificateAuthorityObsBucketResponse extends SdkResponse {
         return this;
     }
 
-    /** OBS桶总数 minimum: 0 maximum: 256
+    /** OBS桶总数。
      * 
      * @return total */
     public Integer getTotal() {
@@ -59,7 +59,7 @@ public class ListCertificateAuthorityObsBucketResponse extends SdkResponse {
         return this;
     }
 
-    /** OBS桶列表，详情请参见Resources
+    /** OBS桶列表，详情请参见**ObsBuckets**字段数据结构说明。
      * 
      * @return obsBuckets */
     public List<ObsBuckets> getObsBuckets() {

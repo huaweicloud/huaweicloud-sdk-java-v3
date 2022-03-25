@@ -630,6 +630,24 @@ public class IoTDAClient {
             IoTDAMeta.resetDeviceSecret, hcClient);
     }
 
+    /** 重置设备指纹 应用服务器可调用此接口重置设备指纹。携带指定设备指纹时将之重置为指定值；不携带时将之置空，后续设备第一次接入时，该设备指纹的值将设置为第一次接入时的证书指纹。
+     *
+     * @param ResetFingerprintRequest 请求对象
+     * @return ResetFingerprintResponse */
+    public ResetFingerprintResponse resetFingerprint(ResetFingerprintRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.resetFingerprint);
+    }
+
+    /** 重置设备指纹 应用服务器可调用此接口重置设备指纹。携带指定设备指纹时将之重置为指定值；不携带时将之置空，后续设备第一次接入时，该设备指纹的值将设置为第一次接入时的证书指纹。
+     *
+     * @param ResetFingerprintRequest 请求对象
+     * @return SyncInvoker<ResetFingerprintRequest, ResetFingerprintResponse> */
+    public SyncInvoker<ResetFingerprintRequest, ResetFingerprintResponse> resetFingerprintInvoker(
+        ResetFingerprintRequest request) {
+        return new SyncInvoker<ResetFingerprintRequest, ResetFingerprintResponse>(request, IoTDAMeta.resetFingerprint,
+            hcClient);
+    }
+
     /** 查询设备 应用服务器可调用此接口查询物联网平台中指定设备的详细信息。
      *
      * @param ShowDeviceRequest 请求对象

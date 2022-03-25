@@ -18,7 +18,7 @@ public class ParseCertificateSigningRequestRequestBody {
         return this;
     }
 
-    /** 证书请求内容
+    /** 证书签名请求。请使用“\\r\\n”或“\\n”替代证书签名请求中的换行符，若通过console端请求此接口，则无需做符号转换。
      * 
      * @return csr */
     public String getCsr() {

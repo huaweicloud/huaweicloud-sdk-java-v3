@@ -750,7 +750,7 @@ public class DnsAsyncClient {
             hcClient);
     }
 
-    /** 查询内网Zone的名称服务器 查询内网Zone的列表
+    /** 查询内网Zone的名称服务器 查询内网Zone的名称服务器
      *
      * @param ShowPrivateZoneNameServerRequest 请求对象
      * @return CompletableFuture<ShowPrivateZoneNameServerResponse> */
@@ -759,7 +759,7 @@ public class DnsAsyncClient {
         return hcClient.asyncInvokeHttp(request, DnsMeta.showPrivateZoneNameServer);
     }
 
-    /** 查询内网Zone的名称服务器 查询内网Zone的列表
+    /** 查询内网Zone的名称服务器 查询内网Zone的名称服务器
      *
      * @param ShowPrivateZoneNameServerRequest 请求对象
      * @return AsyncInvoker<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> */

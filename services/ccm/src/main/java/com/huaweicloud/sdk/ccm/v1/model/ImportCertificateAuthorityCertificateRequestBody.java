@@ -23,7 +23,7 @@ public class ImportCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 证书内容
+    /** 证书内容。
      * 
      * @return certificate */
     public String getCertificate() {
@@ -39,7 +39,7 @@ public class ImportCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 证书链内容
+    /** 证书链内容。
      * 
      * @return certificateChain */
     public String getCertificateChain() {

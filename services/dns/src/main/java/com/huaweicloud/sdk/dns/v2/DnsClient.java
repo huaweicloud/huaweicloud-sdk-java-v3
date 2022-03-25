@@ -743,7 +743,7 @@ public class DnsClient {
             hcClient);
     }
 
-    /** 查询内网Zone的名称服务器 查询内网Zone的列表
+    /** 查询内网Zone的名称服务器 查询内网Zone的名称服务器
      *
      * @param ShowPrivateZoneNameServerRequest 请求对象
      * @return ShowPrivateZoneNameServerResponse */
@@ -751,7 +751,7 @@ public class DnsClient {
         return hcClient.syncInvokeHttp(request, DnsMeta.showPrivateZoneNameServer);
     }
 
-    /** 查询内网Zone的名称服务器 查询内网Zone的列表
+    /** 查询内网Zone的名称服务器 查询内网Zone的名称服务器
      *
      * @param ShowPrivateZoneNameServerRequest 请求对象
      * @return SyncInvoker<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> */

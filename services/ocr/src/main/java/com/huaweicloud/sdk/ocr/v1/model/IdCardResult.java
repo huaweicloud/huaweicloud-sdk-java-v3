@@ -61,6 +61,11 @@ public class IdCardResult {
 
     private IdcardVerificationResult verificationResult;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text_location")
+
+    private Object textLocation;
+
     public IdCardResult withName(String name) {
         this.name = name;
         return this;
@@ -194,7 +199,7 @@ public class IdCardResult {
         return this;
     }
 
-    /** 有效结束日期。 > 说明： - 身份证识别只支持中国大陆汉族身份证识别。
+    /** 有效结束日期。 > 说明： - 身份证识别支持中华人民共和国居民身份证识别。
      * 
      * @return validTo */
     public String getValidTo() {
@@ -230,6 +235,22 @@ public class IdCardResult {
         this.verificationResult = verificationResult;
     }
 
+    public IdCardResult withTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+        return this;
+    }
+
+    /** 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。
+     * 
+     * @return textLocation */
+    public Object getTextLocation() {
+        return textLocation;
+    }
+
+    public void setTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -244,13 +265,23 @@ public class IdCardResult {
             && Objects.equals(this.address, idCardResult.address) && Objects.equals(this.number, idCardResult.number)
             && Objects.equals(this.issue, idCardResult.issue) && Objects.equals(this.validFrom, idCardResult.validFrom)
             && Objects.equals(this.validTo, idCardResult.validTo)
-            && Objects.equals(this.verificationResult, idCardResult.verificationResult);
+            && Objects.equals(this.verificationResult, idCardResult.verificationResult)
+            && Objects.equals(this.textLocation, idCardResult.textLocation);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, sex, birth, ethnicity, address, number, issue, validFrom, validTo, verificationResult);
+        return Objects.hash(name,
+            sex,
+            birth,
+            ethnicity,
+            address,
+            number,
+            issue,
+            validFrom,
+            validTo,
+            verificationResult,
+            textLocation);
     }
 
     @Override
@@ -267,6 +298,7 @@ public class IdCardResult {
         sb.append("    validFrom: ").append(toIndentedString(validFrom)).append("\n");
         sb.append("    validTo: ").append(toIndentedString(validTo)).append("\n");
         sb.append("    verificationResult: ").append(toIndentedString(verificationResult)).append("\n");
+        sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

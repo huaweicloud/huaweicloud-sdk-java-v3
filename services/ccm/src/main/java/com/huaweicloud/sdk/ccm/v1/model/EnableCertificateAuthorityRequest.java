@@ -18,7 +18,7 @@ public class EnableCertificateAuthorityRequest {
         return this;
     }
 
-    /** ca_id
+    /** 所要启用的CA证书ID。
      * 
      * @return caId */
     public String getCaId() {

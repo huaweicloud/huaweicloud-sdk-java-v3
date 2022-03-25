@@ -18,7 +18,7 @@ public class DisableCertificateAuthorityRequest {
         return this;
     }
 
-    /** ca_id
+    /** 所要禁用CA证书ID。
      * 
      * @return caId */
     public String getCaId() {

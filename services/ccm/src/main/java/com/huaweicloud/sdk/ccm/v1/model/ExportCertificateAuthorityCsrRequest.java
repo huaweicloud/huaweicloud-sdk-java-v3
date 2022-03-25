@@ -18,7 +18,7 @@ public class ExportCertificateAuthorityCsrRequest {
         return this;
     }
 
-    /** ca_id
+    /** 未激活的从属CA证书ID。
      * 
      * @return caId */
     public String getCaId() {

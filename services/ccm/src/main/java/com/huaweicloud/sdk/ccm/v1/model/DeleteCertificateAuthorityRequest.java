@@ -23,7 +23,7 @@ public class DeleteCertificateAuthorityRequest {
         return this;
     }
 
-    /** ca_id
+    /** 所要计划删除的CA证书ID。
      * 
      * @return caId */
     public String getCaId() {
@@ -39,7 +39,7 @@ public class DeleteCertificateAuthorityRequest {
         return this;
     }
 
-    /** pending_days
+    /** 延迟删除时间，单位为”天“。
      * 
      * @return pendingDays */
     public String getPendingDays() {

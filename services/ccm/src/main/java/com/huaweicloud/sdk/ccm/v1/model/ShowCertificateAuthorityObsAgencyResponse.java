@@ -19,7 +19,7 @@ public class ShowCertificateAuthorityObsAgencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否已授权
+    /** OBS当前的授权结果。 - **true** - **false**
      * 
      * @return agencyGranted */
     public String getAgencyGranted() {

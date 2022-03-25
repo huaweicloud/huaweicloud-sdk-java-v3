@@ -24,7 +24,7 @@ public class ExportCertificateRequest {
         return this;
     }
 
-    /** certificate_id
+    /** 所要导出的私有证书ID。
      * 
      * @return certificateId */
     public String getCertificateId() {

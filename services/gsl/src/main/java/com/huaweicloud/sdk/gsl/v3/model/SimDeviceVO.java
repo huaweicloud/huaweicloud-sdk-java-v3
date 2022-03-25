@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.gsl.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
@@ -58,7 +57,7 @@ public class SimDeviceVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_status_date")
 
-    private LocalDate deviceStatusDate;
+    private OffsetDateTime deviceStatusDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
@@ -103,7 +102,7 @@ public class SimDeviceVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
-    private LocalDate expireTime;
+    private OffsetDateTime expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_name")
@@ -344,7 +343,7 @@ public class SimDeviceVO {
         this.actDate = actDate;
     }
 
-    public SimDeviceVO withDeviceStatusDate(LocalDate deviceStatusDate) {
+    public SimDeviceVO withDeviceStatusDate(OffsetDateTime deviceStatusDate) {
         this.deviceStatusDate = deviceStatusDate;
         return this;
     }
@@ -352,11 +351,11 @@ public class SimDeviceVO {
     /** 设备状态变更时间 例如2020-01-31T16:00:00.000Z
      * 
      * @return deviceStatusDate */
-    public LocalDate getDeviceStatusDate() {
+    public OffsetDateTime getDeviceStatusDate() {
         return deviceStatusDate;
     }
 
-    public void setDeviceStatusDate(LocalDate deviceStatusDate) {
+    public void setDeviceStatusDate(OffsetDateTime deviceStatusDate) {
         this.deviceStatusDate = deviceStatusDate;
     }
 
@@ -488,7 +487,7 @@ public class SimDeviceVO {
         this.orderId = orderId;
     }
 
-    public SimDeviceVO withExpireTime(LocalDate expireTime) {
+    public SimDeviceVO withExpireTime(OffsetDateTime expireTime) {
         this.expireTime = expireTime;
         return this;
     }
@@ -496,11 +495,11 @@ public class SimDeviceVO {
     /** 到期时间 例如2021-06-30T00:00:00.000Z
      * 
      * @return expireTime */
-    public LocalDate getExpireTime() {
+    public OffsetDateTime getExpireTime() {
         return expireTime;
     }
 
-    public void setExpireTime(LocalDate expireTime) {
+    public void setExpireTime(OffsetDateTime expireTime) {
         this.expireTime = expireTime;
     }
 

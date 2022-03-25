@@ -18,7 +18,7 @@ public class ShowCertificateAuthorityRequest {
         return this;
     }
 
-    /** ca_id
+    /** CA证书ID。
      * 
      * @return caId */
     public String getCaId() {

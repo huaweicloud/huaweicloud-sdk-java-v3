@@ -29,7 +29,7 @@ public class ExportCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 私钥内容
+    /** 私钥内容。
      * 
      * @return privateKey */
     public String getPrivateKey() {
@@ -45,7 +45,7 @@ public class ExportCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书内容
+    /** 证书内容。
      * 
      * @return certificate */
     public String getCertificate() {
@@ -61,7 +61,7 @@ public class ExportCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书链内容
+    /** 证书链内容。
      * 
      * @return certificateChain */
     public String getCertificateChain() {

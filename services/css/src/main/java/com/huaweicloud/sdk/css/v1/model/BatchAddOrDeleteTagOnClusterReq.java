@@ -19,7 +19,7 @@ public class BatchAddOrDeleteTagOnClusterReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TagList> tags = null;
+    private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sysTags")
@@ -42,12 +42,12 @@ public class BatchAddOrDeleteTagOnClusterReq {
         this.action = action;
     }
 
-    public BatchAddOrDeleteTagOnClusterReq withTags(List<TagList> tags) {
+    public BatchAddOrDeleteTagOnClusterReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public BatchAddOrDeleteTagOnClusterReq addTagsItem(TagList tagsItem) {
+    public BatchAddOrDeleteTagOnClusterReq addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -55,7 +55,7 @@ public class BatchAddOrDeleteTagOnClusterReq {
         return this;
     }
 
-    public BatchAddOrDeleteTagOnClusterReq withTags(Consumer<List<TagList>> tagsSetter) {
+    public BatchAddOrDeleteTagOnClusterReq withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class BatchAddOrDeleteTagOnClusterReq {
     /** 标签列表。
      * 
      * @return tags */
-    public List<TagList> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TagList> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

@@ -64,7 +64,7 @@ public class AccountBalanceV3 {
         return this;
     }
 
-    /** 账户类型。 1：余额2：信用5：奖励金
+    /** 账户类型。 1：余额2：信用5：奖励金7：保证金
      * 
      * @return accountType */
     public Integer getAccountType() {

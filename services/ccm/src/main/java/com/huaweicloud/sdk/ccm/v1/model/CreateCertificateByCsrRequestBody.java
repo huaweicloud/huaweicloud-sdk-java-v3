@@ -12,47 +12,41 @@ import java.util.function.Consumer;
 public class CreateCertificateByCsrRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "csr")
-
-    private String csr;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuer_id")
 
     private String issuerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subject_alternative_names")
+    @JsonProperty(value = "csr")
 
-    private List<SubjectAlternativeName> subjectAlternativeNames = null;
+    private String csr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "validity")
 
     private Validity validity;
 
-    public CreateCertificateByCsrRequestBody withCsr(String csr) {
-        this.csr = csr;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
 
-    /** 证书签名请求
-     * 
-     * @return csr */
-    public String getCsr() {
-        return csr;
-    }
+    private String type;
 
-    public void setCsr(String csr) {
-        this.csr = csr;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "path_length")
+
+    private Integer pathLength;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subject_alternative_names")
+
+    private List<SubjectAlternativeName> subjectAlternativeNames = null;
 
     public CreateCertificateByCsrRequestBody withIssuerId(String issuerId) {
         this.issuerId = issuerId;
         return this;
     }
 
-    /** 签发CA ID
+    /** 父CA证书ID。
      * 
      * @return issuerId */
     public String getIssuerId() {
@@ -63,39 +57,20 @@ public class CreateCertificateByCsrRequestBody {
         this.issuerId = issuerId;
     }
 
-    public CreateCertificateByCsrRequestBody withSubjectAlternativeNames(
-        List<SubjectAlternativeName> subjectAlternativeNames) {
-        this.subjectAlternativeNames = subjectAlternativeNames;
+    public CreateCertificateByCsrRequestBody withCsr(String csr) {
+        this.csr = csr;
         return this;
     }
 
-    public CreateCertificateByCsrRequestBody addSubjectAlternativeNamesItem(
-        SubjectAlternativeName subjectAlternativeNamesItem) {
-        if (this.subjectAlternativeNames == null) {
-            this.subjectAlternativeNames = new ArrayList<>();
-        }
-        this.subjectAlternativeNames.add(subjectAlternativeNamesItem);
-        return this;
-    }
-
-    public CreateCertificateByCsrRequestBody withSubjectAlternativeNames(
-        Consumer<List<SubjectAlternativeName>> subjectAlternativeNamesSetter) {
-        if (this.subjectAlternativeNames == null) {
-            this.subjectAlternativeNames = new ArrayList<>();
-        }
-        subjectAlternativeNamesSetter.accept(this.subjectAlternativeNames);
-        return this;
-    }
-
-    /** 主题备用名称
+    /** 证书签名请求。请使用“\\r\\n”或“\\n”替代证书签名请求中的换行符，若通过console端请求此接口，则无需做符号转换。
      * 
-     * @return subjectAlternativeNames */
-    public List<SubjectAlternativeName> getSubjectAlternativeNames() {
-        return subjectAlternativeNames;
+     * @return csr */
+    public String getCsr() {
+        return csr;
     }
 
-    public void setSubjectAlternativeNames(List<SubjectAlternativeName> subjectAlternativeNames) {
-        this.subjectAlternativeNames = subjectAlternativeNames;
+    public void setCsr(String csr) {
+        this.csr = csr;
     }
 
     public CreateCertificateByCsrRequestBody withValidity(Validity validity) {
@@ -123,6 +98,73 @@ public class CreateCertificateByCsrRequestBody {
         this.validity = validity;
     }
 
+    public CreateCertificateByCsrRequestBody withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /** 证书类型，用于区分从属CA与私有证书。 - **ENTITY_CERT** : 签发私有证书，为缺省值； - **INTERMEDIATE_CA** : 签发从属CA。
+     * 
+     * @return type */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public CreateCertificateByCsrRequestBody withPathLength(Integer pathLength) {
+        this.pathLength = pathLength;
+        return this;
+    }
+
+    /** 路径长度，仅当签发从属CA时有效。 minimum: 0 maximum: 6
+     * 
+     * @return pathLength */
+    public Integer getPathLength() {
+        return pathLength;
+    }
+
+    public void setPathLength(Integer pathLength) {
+        this.pathLength = pathLength;
+    }
+
+    public CreateCertificateByCsrRequestBody withSubjectAlternativeNames(
+        List<SubjectAlternativeName> subjectAlternativeNames) {
+        this.subjectAlternativeNames = subjectAlternativeNames;
+        return this;
+    }
+
+    public CreateCertificateByCsrRequestBody addSubjectAlternativeNamesItem(
+        SubjectAlternativeName subjectAlternativeNamesItem) {
+        if (this.subjectAlternativeNames == null) {
+            this.subjectAlternativeNames = new ArrayList<>();
+        }
+        this.subjectAlternativeNames.add(subjectAlternativeNamesItem);
+        return this;
+    }
+
+    public CreateCertificateByCsrRequestBody withSubjectAlternativeNames(
+        Consumer<List<SubjectAlternativeName>> subjectAlternativeNamesSetter) {
+        if (this.subjectAlternativeNames == null) {
+            this.subjectAlternativeNames = new ArrayList<>();
+        }
+        subjectAlternativeNamesSetter.accept(this.subjectAlternativeNames);
+        return this;
+    }
+
+    /** 主体备用名称(本接口预留参数，当前在后端被忽略)，详情请参见**SubjectAlternativeName**字段数据结构说明。
+     * 
+     * @return subjectAlternativeNames */
+    public List<SubjectAlternativeName> getSubjectAlternativeNames() {
+        return subjectAlternativeNames;
+    }
+
+    public void setSubjectAlternativeNames(List<SubjectAlternativeName> subjectAlternativeNames) {
+        this.subjectAlternativeNames = subjectAlternativeNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -132,25 +174,29 @@ public class CreateCertificateByCsrRequestBody {
             return false;
         }
         CreateCertificateByCsrRequestBody createCertificateByCsrRequestBody = (CreateCertificateByCsrRequestBody) o;
-        return Objects.equals(this.csr, createCertificateByCsrRequestBody.csr)
-            && Objects.equals(this.issuerId, createCertificateByCsrRequestBody.issuerId)
-            && Objects.equals(this.subjectAlternativeNames, createCertificateByCsrRequestBody.subjectAlternativeNames)
-            && Objects.equals(this.validity, createCertificateByCsrRequestBody.validity);
+        return Objects.equals(this.issuerId, createCertificateByCsrRequestBody.issuerId)
+            && Objects.equals(this.csr, createCertificateByCsrRequestBody.csr)
+            && Objects.equals(this.validity, createCertificateByCsrRequestBody.validity)
+            && Objects.equals(this.type, createCertificateByCsrRequestBody.type)
+            && Objects.equals(this.pathLength, createCertificateByCsrRequestBody.pathLength)
+            && Objects.equals(this.subjectAlternativeNames, createCertificateByCsrRequestBody.subjectAlternativeNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(csr, issuerId, subjectAlternativeNames, validity);
+        return Objects.hash(issuerId, csr, validity, type, pathLength, subjectAlternativeNames);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCertificateByCsrRequestBody {\n");
-        sb.append("    csr: ").append(toIndentedString(csr)).append("\n");
         sb.append("    issuerId: ").append(toIndentedString(issuerId)).append("\n");
-        sb.append("    subjectAlternativeNames: ").append(toIndentedString(subjectAlternativeNames)).append("\n");
+        sb.append("    csr: ").append(toIndentedString(csr)).append("\n");
         sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    pathLength: ").append(toIndentedString(pathLength)).append("\n");
+        sb.append("    subjectAlternativeNames: ").append(toIndentedString(subjectAlternativeNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

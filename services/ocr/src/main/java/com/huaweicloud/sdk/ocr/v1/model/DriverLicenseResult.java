@@ -73,6 +73,11 @@ public class DriverLicenseResult {
 
     private String record;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text_location")
+
+    private Object textLocation;
+
     public DriverLicenseResult withNumber(String number) {
         this.number = number;
         return this;
@@ -281,6 +286,22 @@ public class DriverLicenseResult {
         this.record = record;
     }
 
+    public DriverLicenseResult withTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+        return this;
+    }
+
+    /** 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。
+     * 
+     * @return textLocation */
+    public Object getTextLocation() {
+        return textLocation;
+    }
+
+    public void setTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -301,7 +322,8 @@ public class DriverLicenseResult {
             && Objects.equals(this.validTo, driverLicenseResult.validTo)
             && Objects.equals(this.issuingAuthority, driverLicenseResult.issuingAuthority)
             && Objects.equals(this.fileNumber, driverLicenseResult.fileNumber)
-            && Objects.equals(this.record, driverLicenseResult.record);
+            && Objects.equals(this.record, driverLicenseResult.record)
+            && Objects.equals(this.textLocation, driverLicenseResult.textLocation);
     }
 
     @Override
@@ -318,7 +340,8 @@ public class DriverLicenseResult {
             validTo,
             issuingAuthority,
             fileNumber,
-            record);
+            record,
+            textLocation);
     }
 
     @Override
@@ -338,6 +361,7 @@ public class DriverLicenseResult {
         sb.append("    issuingAuthority: ").append(toIndentedString(issuingAuthority)).append("\n");
         sb.append("    fileNumber: ").append(toIndentedString(fileNumber)).append("\n");
         sb.append("    record: ").append(toIndentedString(record)).append("\n");
+        sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

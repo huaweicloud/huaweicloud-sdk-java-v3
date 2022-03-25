@@ -31,51 +31,6 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
     private Integer pathLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "freeze_flag")
-
-    private Integer freezeFlag;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "gen_mode")
-
-    private String genMode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "serial_number")
-
-    private String serialNumber;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
-
-    private String createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "delete_time")
-
-    private String deleteTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "not_before")
-
-    private String notBefore;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "not_after")
-
-    private String notAfter;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "distinguished_name")
-
-    private DistinguishedName distinguishedName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "crl_configuration")
-
-    private CrlConfiguration crlConfiguration;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuer_id")
 
     private String issuerId;
@@ -95,12 +50,57 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
 
     private String signatureAlgorithm;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "freeze_flag")
+
+    private Integer freezeFlag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gen_mode")
+
+    private String genMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serial_number")
+
+    private String serialNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_time")
+
+    private Long deleteTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "not_before")
+
+    private Long notBefore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "not_after")
+
+    private Long notAfter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "distinguished_name")
+
+    private DistinguishedName distinguishedName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "crl_configuration")
+
+    private ListCrlConfiguration crlConfiguration;
+
     public ShowCertificateAuthorityResponse withCaId(String caId) {
         this.caId = caId;
         return this;
     }
 
-    /** CA ID
+    /** CA证书ID。
      * 
      * @return caId */
     public String getCaId() {
@@ -116,7 +116,7 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         return this;
     }
 
-    /** CA类型
+    /** CA类型: - **ROOT**: 根CA - **SUBORDINATE**: 从属CA
      * 
      * @return type */
     public String getType() {
@@ -132,7 +132,8 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书状态
+    /** CA证书状态： - **EXPIRED** : 待激活，此状态下，不可用于签发证书； - **ACTIVED** : 已激活，此状态下，可用于签发证书； - **DISABLED** : 已禁用，此状态下，不可用于签发证书；
+     * - **DELETED** : 计划删除，此状态下，不可用于签发证书； - **EXPIRED** : 已过期，此状态下，不可用于签发证书。
      * 
      * @return status */
     public String getStatus() {
@@ -148,7 +149,7 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         return this;
     }
 
-    /** 路径长度 minimum: 0 maximum: 4
+    /** CA路径长度。 > 注：生成的根CA证书，其路径长度不做限制，但本字段在数据库中统一置为7。从属CA的路径长度在创建时由用户指定，缺省值为0。 minimum: 0 maximum: 6
      * 
      * @return pathLength */
     public Integer getPathLength() {
@@ -159,12 +160,76 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         this.pathLength = pathLength;
     }
 
+    public ShowCertificateAuthorityResponse withIssuerId(String issuerId) {
+        this.issuerId = issuerId;
+        return this;
+    }
+
+    /** 父CA证书ID，即签发此证书的CA证书ID。根CA中，此参数为**null**。
+     * 
+     * @return issuerId */
+    public String getIssuerId() {
+        return issuerId;
+    }
+
+    public void setIssuerId(String issuerId) {
+        this.issuerId = issuerId;
+    }
+
+    public ShowCertificateAuthorityResponse withIssuerName(String issuerName) {
+        this.issuerName = issuerName;
+        return this;
+    }
+
+    /** 父CA证书名称。根CA中，此参数为**null**。
+     * 
+     * @return issuerName */
+    public String getIssuerName() {
+        return issuerName;
+    }
+
+    public void setIssuerName(String issuerName) {
+        this.issuerName = issuerName;
+    }
+
+    public ShowCertificateAuthorityResponse withKeyAlgorithm(String keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm;
+        return this;
+    }
+
+    /** 密钥算法。
+     * 
+     * @return keyAlgorithm */
+    public String getKeyAlgorithm() {
+        return keyAlgorithm;
+    }
+
+    public void setKeyAlgorithm(String keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm;
+    }
+
+    public ShowCertificateAuthorityResponse withSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+        return this;
+    }
+
+    /** 签名哈希算法。
+     * 
+     * @return signatureAlgorithm */
+    public String getSignatureAlgorithm() {
+        return signatureAlgorithm;
+    }
+
+    public void setSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+    }
+
     public ShowCertificateAuthorityResponse withFreezeFlag(Integer freezeFlag) {
         this.freezeFlag = freezeFlag;
         return this;
     }
 
-    /** 冻结标识 minimum: 0 maximum: 256
+    /** 冻结标识: - **0** : 非冻结状态； - **其它值** : 冻结状态，当前预留。
      * 
      * @return freezeFlag */
     public Integer getFreezeFlag() {
@@ -180,7 +245,7 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书生成方式
+    /** 证书生成方式： - **GENERATE** : PCA系统生成； - **IMPORT** : 外部导入； - **CSR** : 外部提供CSR，内部CA进行签发，即私钥不在PCA进行托管。
      * 
      * @return genMode */
     public String getGenMode() {
@@ -196,7 +261,7 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         return this;
     }
 
-    /** 序列号
+    /** 证书序列号。
      * 
      * @return serialNumber */
     public String getSerialNumber() {
@@ -207,67 +272,67 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         this.serialNumber = serialNumber;
     }
 
-    public ShowCertificateAuthorityResponse withCreateTime(String createTime) {
+    public ShowCertificateAuthorityResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    /** 创建时间
+    /** 证书创建时间，格式为时间戳（毫秒级）。
      * 
      * @return createTime */
-    public String getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public ShowCertificateAuthorityResponse withDeleteTime(String deleteTime) {
+    public ShowCertificateAuthorityResponse withDeleteTime(Long deleteTime) {
         this.deleteTime = deleteTime;
         return this;
     }
 
-    /** 删除时间
+    /** 证书删除时间，格式为时间戳（毫秒级）。
      * 
      * @return deleteTime */
-    public String getDeleteTime() {
+    public Long getDeleteTime() {
         return deleteTime;
     }
 
-    public void setDeleteTime(String deleteTime) {
+    public void setDeleteTime(Long deleteTime) {
         this.deleteTime = deleteTime;
     }
 
-    public ShowCertificateAuthorityResponse withNotBefore(String notBefore) {
+    public ShowCertificateAuthorityResponse withNotBefore(Long notBefore) {
         this.notBefore = notBefore;
         return this;
     }
 
-    /** 生效时间
+    /** 证书创建时间，格式为时间戳（毫秒级）。
      * 
      * @return notBefore */
-    public String getNotBefore() {
+    public Long getNotBefore() {
         return notBefore;
     }
 
-    public void setNotBefore(String notBefore) {
+    public void setNotBefore(Long notBefore) {
         this.notBefore = notBefore;
     }
 
-    public ShowCertificateAuthorityResponse withNotAfter(String notAfter) {
+    public ShowCertificateAuthorityResponse withNotAfter(Long notAfter) {
         this.notAfter = notAfter;
         return this;
     }
 
-    /** 失效时间
+    /** 证书到期时间，格式为时间戳（毫秒级）。
      * 
      * @return notAfter */
-    public String getNotAfter() {
+    public Long getNotAfter() {
         return notAfter;
     }
 
-    public void setNotAfter(String notAfter) {
+    public void setNotAfter(Long notAfter) {
         this.notAfter = notAfter;
     }
 
@@ -296,14 +361,15 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         this.distinguishedName = distinguishedName;
     }
 
-    public ShowCertificateAuthorityResponse withCrlConfiguration(CrlConfiguration crlConfiguration) {
+    public ShowCertificateAuthorityResponse withCrlConfiguration(ListCrlConfiguration crlConfiguration) {
         this.crlConfiguration = crlConfiguration;
         return this;
     }
 
-    public ShowCertificateAuthorityResponse withCrlConfiguration(Consumer<CrlConfiguration> crlConfigurationSetter) {
+    public ShowCertificateAuthorityResponse withCrlConfiguration(
+        Consumer<ListCrlConfiguration> crlConfigurationSetter) {
         if (this.crlConfiguration == null) {
-            this.crlConfiguration = new CrlConfiguration();
+            this.crlConfiguration = new ListCrlConfiguration();
             crlConfigurationSetter.accept(this.crlConfiguration);
         }
 
@@ -313,76 +379,12 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
     /** Get crlConfiguration
      * 
      * @return crlConfiguration */
-    public CrlConfiguration getCrlConfiguration() {
+    public ListCrlConfiguration getCrlConfiguration() {
         return crlConfiguration;
     }
 
-    public void setCrlConfiguration(CrlConfiguration crlConfiguration) {
+    public void setCrlConfiguration(ListCrlConfiguration crlConfiguration) {
         this.crlConfiguration = crlConfiguration;
-    }
-
-    public ShowCertificateAuthorityResponse withIssuerId(String issuerId) {
-        this.issuerId = issuerId;
-        return this;
-    }
-
-    /** 签发CA ID
-     * 
-     * @return issuerId */
-    public String getIssuerId() {
-        return issuerId;
-    }
-
-    public void setIssuerId(String issuerId) {
-        this.issuerId = issuerId;
-    }
-
-    public ShowCertificateAuthorityResponse withIssuerName(String issuerName) {
-        this.issuerName = issuerName;
-        return this;
-    }
-
-    /** 签发CA名称
-     * 
-     * @return issuerName */
-    public String getIssuerName() {
-        return issuerName;
-    }
-
-    public void setIssuerName(String issuerName) {
-        this.issuerName = issuerName;
-    }
-
-    public ShowCertificateAuthorityResponse withKeyAlgorithm(String keyAlgorithm) {
-        this.keyAlgorithm = keyAlgorithm;
-        return this;
-    }
-
-    /** 密钥算法
-     * 
-     * @return keyAlgorithm */
-    public String getKeyAlgorithm() {
-        return keyAlgorithm;
-    }
-
-    public void setKeyAlgorithm(String keyAlgorithm) {
-        this.keyAlgorithm = keyAlgorithm;
-    }
-
-    public ShowCertificateAuthorityResponse withSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-        return this;
-    }
-
-    /** 签名算法
-     * 
-     * @return signatureAlgorithm */
-    public String getSignatureAlgorithm() {
-        return signatureAlgorithm;
-    }
-
-    public void setSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
     }
 
     @Override
@@ -398,6 +400,10 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
             && Objects.equals(this.type, showCertificateAuthorityResponse.type)
             && Objects.equals(this.status, showCertificateAuthorityResponse.status)
             && Objects.equals(this.pathLength, showCertificateAuthorityResponse.pathLength)
+            && Objects.equals(this.issuerId, showCertificateAuthorityResponse.issuerId)
+            && Objects.equals(this.issuerName, showCertificateAuthorityResponse.issuerName)
+            && Objects.equals(this.keyAlgorithm, showCertificateAuthorityResponse.keyAlgorithm)
+            && Objects.equals(this.signatureAlgorithm, showCertificateAuthorityResponse.signatureAlgorithm)
             && Objects.equals(this.freezeFlag, showCertificateAuthorityResponse.freezeFlag)
             && Objects.equals(this.genMode, showCertificateAuthorityResponse.genMode)
             && Objects.equals(this.serialNumber, showCertificateAuthorityResponse.serialNumber)
@@ -406,11 +412,7 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
             && Objects.equals(this.notBefore, showCertificateAuthorityResponse.notBefore)
             && Objects.equals(this.notAfter, showCertificateAuthorityResponse.notAfter)
             && Objects.equals(this.distinguishedName, showCertificateAuthorityResponse.distinguishedName)
-            && Objects.equals(this.crlConfiguration, showCertificateAuthorityResponse.crlConfiguration)
-            && Objects.equals(this.issuerId, showCertificateAuthorityResponse.issuerId)
-            && Objects.equals(this.issuerName, showCertificateAuthorityResponse.issuerName)
-            && Objects.equals(this.keyAlgorithm, showCertificateAuthorityResponse.keyAlgorithm)
-            && Objects.equals(this.signatureAlgorithm, showCertificateAuthorityResponse.signatureAlgorithm);
+            && Objects.equals(this.crlConfiguration, showCertificateAuthorityResponse.crlConfiguration);
     }
 
     @Override
@@ -419,6 +421,10 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
             type,
             status,
             pathLength,
+            issuerId,
+            issuerName,
+            keyAlgorithm,
+            signatureAlgorithm,
             freezeFlag,
             genMode,
             serialNumber,
@@ -427,11 +433,7 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
             notBefore,
             notAfter,
             distinguishedName,
-            crlConfiguration,
-            issuerId,
-            issuerName,
-            keyAlgorithm,
-            signatureAlgorithm);
+            crlConfiguration);
     }
 
     @Override
@@ -442,6 +444,10 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    pathLength: ").append(toIndentedString(pathLength)).append("\n");
+        sb.append("    issuerId: ").append(toIndentedString(issuerId)).append("\n");
+        sb.append("    issuerName: ").append(toIndentedString(issuerName)).append("\n");
+        sb.append("    keyAlgorithm: ").append(toIndentedString(keyAlgorithm)).append("\n");
+        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    freezeFlag: ").append(toIndentedString(freezeFlag)).append("\n");
         sb.append("    genMode: ").append(toIndentedString(genMode)).append("\n");
         sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
@@ -451,10 +457,6 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("    crlConfiguration: ").append(toIndentedString(crlConfiguration)).append("\n");
-        sb.append("    issuerId: ").append(toIndentedString(issuerId)).append("\n");
-        sb.append("    issuerName: ").append(toIndentedString(issuerName)).append("\n");
-        sb.append("    keyAlgorithm: ").append(toIndentedString(keyAlgorithm)).append("\n");
-        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

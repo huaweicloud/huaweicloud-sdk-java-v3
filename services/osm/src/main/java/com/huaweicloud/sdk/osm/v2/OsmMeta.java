@@ -133,7 +133,7 @@ public class OsmMeta {
         HttpRequestDef.Builder<CheckVerifyCodesRequest, CheckVerifyCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckVerifyCodesRequest.class, CheckVerifyCodesResponse.class)
                 .withName("CheckVerifyCodes")
-                .withUri("/v2/servicerequest/verifycodes/")
+                .withUri("/v2/servicerequest/verifycodes")
                 .withContentType("application/json");
 
         // requests
@@ -2801,7 +2801,7 @@ public class OsmMeta {
         HttpRequestDef.Builder<SendVerifyCodesRequest, SendVerifyCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SendVerifyCodesRequest.class, SendVerifyCodesResponse.class)
                 .withName("SendVerifyCodes")
-                .withUri("/v2/servicerequest/verifycodes/")
+                .withUri("/v2/servicerequest/verifycodes")
                 .withContentType("application/json");
 
         // requests
