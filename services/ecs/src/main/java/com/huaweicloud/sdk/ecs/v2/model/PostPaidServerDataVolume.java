@@ -37,6 +37,9 @@ public class PostPaidServerDataVolume {
         /** Enum UH_L1 for value: "uh-l1" */
         public static final VolumetypeEnum UH_L1 = new VolumetypeEnum("uh-l1");
 
+        /** Enum ESSD for value: "ESSD" */
+        public static final VolumetypeEnum ESSD = new VolumetypeEnum("ESSD");
+
         private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumetypeEnum> createStaticFields() {
@@ -47,6 +50,7 @@ public class PostPaidServerDataVolume {
             map.put("GPSSD", GPSSD);
             map.put("co-p1", CO_P1);
             map.put("uh-l1", UH_L1);
+            map.put("ESSD", ESSD);
             return Collections.unmodifiableMap(map);
         }
 

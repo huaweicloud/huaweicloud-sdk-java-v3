@@ -53,6 +53,24 @@ public class DcsClient {
             DcsMeta.batchDeleteInstances, hcClient);
     }
 
+    /** 批量查询实例节点信息 批量查询指定项目所有实例的节点信息、有效实例个数及节点个数。 创建中实例不返回节点信息。 仅支持Redis4.0和Redis5.0实例查询
+     *
+     * @param BatchShowNodesInformationRequest 请求对象
+     * @return BatchShowNodesInformationResponse */
+    public BatchShowNodesInformationResponse batchShowNodesInformation(BatchShowNodesInformationRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.batchShowNodesInformation);
+    }
+
+    /** 批量查询实例节点信息 批量查询指定项目所有实例的节点信息、有效实例个数及节点个数。 创建中实例不返回节点信息。 仅支持Redis4.0和Redis5.0实例查询
+     *
+     * @param BatchShowNodesInformationRequest 请求对象
+     * @return SyncInvoker<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> */
+    public SyncInvoker<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> batchShowNodesInformationInvoker(
+        BatchShowNodesInformationRequest request) {
+        return new SyncInvoker<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse>(request,
+            DcsMeta.batchShowNodesInformation, hcClient);
+    }
+
     /** 批量停止数据迁移任务 批量停止数据迁移任务，接口响应成功，仅表示下发任务成功。查询到迁移任务状态为TERMINATED时，即停止成功。
      *
      * @param BatchStopMigrationTasksRequest 请求对象

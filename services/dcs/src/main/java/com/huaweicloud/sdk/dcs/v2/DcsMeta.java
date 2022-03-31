@@ -74,6 +74,41 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> batchShowNodesInformation =
+        genForbatchShowNodesInformation();
+
+    private static HttpRequestDef<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> genForbatchShowNodesInformation() {
+        // basic
+        HttpRequestDef.Builder<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    BatchShowNodesInformationRequest.class,
+                    BatchShowNodesInformationResponse.class)
+                .withName("BatchShowNodesInformation")
+                .withUri("/v2/{project_id}/instances-logical-nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchShowNodesInformationRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchShowNodesInformationRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> batchStopMigrationTasks =
         genForbatchStopMigrationTasks();
 

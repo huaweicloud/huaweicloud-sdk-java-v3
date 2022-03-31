@@ -103,7 +103,7 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 可用区ID。
+    /** 可用区ID，请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
      * 
      * @return availabilityZone */
     public String getAvailabilityZone() {

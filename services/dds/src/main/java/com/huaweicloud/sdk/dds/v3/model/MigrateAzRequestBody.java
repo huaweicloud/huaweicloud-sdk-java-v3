@@ -18,7 +18,7 @@ public class MigrateAzRequestBody {
         return this;
     }
 
-    /** 迁移到的目标单az或者多az。
+    /** 迁移到的目标单az或者多az，请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
      * 
      * @return targetAzs */
     public String getTargetAzs() {
