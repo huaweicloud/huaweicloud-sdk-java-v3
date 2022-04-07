@@ -48,16 +48,6 @@ public class QuerySubCustomerListReq {
 
     private String associatedOnEnd;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "customer_id")
-
-    private String customerId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "indirect_partner_id")
-
-    private String indirectPartnerId;
-
     public QuerySubCustomerListReq withAccountName(String accountName) {
         this.accountName = accountName;
         return this;
@@ -187,38 +177,6 @@ public class QuerySubCustomerListReq {
         this.associatedOnEnd = associatedOnEnd;
     }
 
-    public QuerySubCustomerListReq withCustomerId(String customerId) {
-        this.customerId = customerId;
-        return this;
-    }
-
-    /** |参数名称：子客户ID| |参数约束及描述：非必填，最大长度64|
-     * 
-     * @return customerId */
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
-    public QuerySubCustomerListReq withIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-        return this;
-    }
-
-    /** |参数名称：二级渠道商ID| |参数约束及描述：如果想查询二级渠道子客户的列表，该字段必须携带，最大长度64|
-     * 
-     * @return indirectPartnerId */
-    public String getIndirectPartnerId() {
-        return indirectPartnerId;
-    }
-
-    public void setIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -235,23 +193,13 @@ public class QuerySubCustomerListReq {
             && Objects.equals(this.label, querySubCustomerListReq.label)
             && Objects.equals(this.associationType, querySubCustomerListReq.associationType)
             && Objects.equals(this.associatedOnBegin, querySubCustomerListReq.associatedOnBegin)
-            && Objects.equals(this.associatedOnEnd, querySubCustomerListReq.associatedOnEnd)
-            && Objects.equals(this.customerId, querySubCustomerListReq.customerId)
-            && Objects.equals(this.indirectPartnerId, querySubCustomerListReq.indirectPartnerId);
+            && Objects.equals(this.associatedOnEnd, querySubCustomerListReq.associatedOnEnd);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountName,
-            customer,
-            offset,
-            limit,
-            label,
-            associationType,
-            associatedOnBegin,
-            associatedOnEnd,
-            customerId,
-            indirectPartnerId);
+        return Objects
+            .hash(accountName, customer, offset, limit, label, associationType, associatedOnBegin, associatedOnEnd);
     }
 
     @Override
@@ -266,8 +214,6 @@ public class QuerySubCustomerListReq {
         sb.append("    associationType: ").append(toIndentedString(associationType)).append("\n");
         sb.append("    associatedOnBegin: ").append(toIndentedString(associatedOnBegin)).append("\n");
         sb.append("    associatedOnEnd: ").append(toIndentedString(associatedOnEnd)).append("\n");
-        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,7 +25,7 @@ import java.util.Objects;
 public class OpenGaussHa  {
 
     /**
-     * GaussDB(for openGauss)为分布式模式，取值：enterprise(企业版) ，不区分大小写。
+     * GaussDB(for openGauss)为分布式时，取值：enterprise；为集中式时，取值：centralization_standard。不区分大小写。
      */
     public static final class ModeEnum {
 
@@ -35,12 +35,18 @@ public class OpenGaussHa  {
          */
         public static final ModeEnum ENTERPRISE = new ModeEnum("enterprise");
         
+        /**
+         * Enum CENTRALIZATION_STANDARD for value: "centralization_standard"
+         */
+        public static final ModeEnum CENTRALIZATION_STANDARD = new ModeEnum("centralization_standard");
+        
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModeEnum> createStaticFields() {
             Map<String, ModeEnum> map = new HashMap<>();
             map.put("enterprise", ENTERPRISE);
+            map.put("centralization_standard", CENTRALIZATION_STANDARD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -104,7 +110,7 @@ public class OpenGaussHa  {
     
     private ModeEnum mode;
     /**
-     * 指定实例一致性类型，取值范围：strong（强一致性） | eventual(最终一致性)，不分区大小写。
+     * 指定实例一致性类型，当创建分布式模式实例时，该字段值必传，当创建主备模式实例时，该字段值不传。取值范围：strong（强一致性） | eventual(最终一致性)，不分区大小写。
      */
     public static final class ConsistencyEnum {
 
@@ -277,7 +283,7 @@ public class OpenGaussHa  {
 
 
     /**
-     * GaussDB(for openGauss)为分布式模式，取值：enterprise(企业版) ，不区分大小写。
+     * GaussDB(for openGauss)为分布式时，取值：enterprise；为集中式时，取值：centralization_standard。不区分大小写。
      * @return mode
      */
     public ModeEnum getMode() {
@@ -299,7 +305,7 @@ public class OpenGaussHa  {
 
 
     /**
-     * 指定实例一致性类型，取值范围：strong（强一致性） | eventual(最终一致性)，不分区大小写。
+     * 指定实例一致性类型，当创建分布式模式实例时，该字段值必传，当创建主备模式实例时，该字段值不传。取值范围：strong（强一致性） | eventual(最终一致性)，不分区大小写。
      * @return consistency
      */
     public ConsistencyEnum getConsistency() {

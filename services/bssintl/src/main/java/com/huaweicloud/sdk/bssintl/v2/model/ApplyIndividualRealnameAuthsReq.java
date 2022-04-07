@@ -51,11 +51,6 @@ public class ApplyIndividualRealnameAuthsReq {
 
     private String xaccountType;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bank_card_info")
-
-    private BankCardInfoV2 bankCardInfo;
-
     public ApplyIndividualRealnameAuthsReq withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -205,31 +200,6 @@ public class ApplyIndividualRealnameAuthsReq {
         this.xaccountType = xaccountType;
     }
 
-    public ApplyIndividualRealnameAuthsReq withBankCardInfo(BankCardInfoV2 bankCardInfo) {
-        this.bankCardInfo = bankCardInfo;
-        return this;
-    }
-
-    public ApplyIndividualRealnameAuthsReq withBankCardInfo(Consumer<BankCardInfoV2> bankCardInfoSetter) {
-        if (this.bankCardInfo == null) {
-            this.bankCardInfo = new BankCardInfoV2();
-            bankCardInfoSetter.accept(this.bankCardInfo);
-        }
-
-        return this;
-    }
-
-    /** Get bankCardInfo
-     * 
-     * @return bankCardInfo */
-    public BankCardInfoV2 getBankCardInfo() {
-        return bankCardInfo;
-    }
-
-    public void setBankCardInfo(BankCardInfoV2 bankCardInfo) {
-        this.bankCardInfo = bankCardInfo;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -246,8 +216,7 @@ public class ApplyIndividualRealnameAuthsReq {
             && Objects.equals(this.name, applyIndividualRealnameAuthsReq.name)
             && Objects.equals(this.verifiedNumber, applyIndividualRealnameAuthsReq.verifiedNumber)
             && Objects.equals(this.changeType, applyIndividualRealnameAuthsReq.changeType)
-            && Objects.equals(this.xaccountType, applyIndividualRealnameAuthsReq.xaccountType)
-            && Objects.equals(this.bankCardInfo, applyIndividualRealnameAuthsReq.bankCardInfo);
+            && Objects.equals(this.xaccountType, applyIndividualRealnameAuthsReq.xaccountType);
     }
 
     @Override
@@ -259,8 +228,7 @@ public class ApplyIndividualRealnameAuthsReq {
             name,
             verifiedNumber,
             changeType,
-            xaccountType,
-            bankCardInfo);
+            xaccountType);
     }
 
     @Override
@@ -275,7 +243,6 @@ public class ApplyIndividualRealnameAuthsReq {
         sb.append("    verifiedNumber: ").append(toIndentedString(verifiedNumber)).append("\n");
         sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
         sb.append("    xaccountType: ").append(toIndentedString(xaccountType)).append("\n");
-        sb.append("    bankCardInfo: ").append(toIndentedString(bankCardInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

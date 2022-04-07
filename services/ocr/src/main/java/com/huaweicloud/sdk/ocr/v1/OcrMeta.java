@@ -759,6 +759,34 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse> recognizeWaybillElectronic =
+        genForrecognizeWaybillElectronic();
+
+    private static HttpRequestDef<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse> genForrecognizeWaybillElectronic() {
+        // basic
+        HttpRequestDef.Builder<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeWaybillElectronicRequest.class,
+                    RecognizeWaybillElectronicResponse.class)
+                .withName("RecognizeWaybillElectronic")
+                .withUri("/v2/{project_id}/ocr/waybill-electronic")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<WaybillElectronicRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WaybillElectronicRequestBody.class),
+            f -> f.withMarshaller(RecognizeWaybillElectronicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeWebImageRequest, RecognizeWebImageResponse> recognizeWebImage =
         genForrecognizeWebImage();
 

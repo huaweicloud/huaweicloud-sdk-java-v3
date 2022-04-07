@@ -22,6 +22,11 @@ public class BillSumInfoV2 {
     private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_service_type_name")
+
+    private String cloudServiceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_type")
 
     private String billType;
@@ -66,6 +71,11 @@ public class BillSumInfoV2 {
 
     private String resourceTypeCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
     public BillSumInfoV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -96,6 +106,22 @@ public class BillSumInfoV2 {
 
     public void setCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
+    }
+
+    public BillSumInfoV2 withCloudServiceTypeName(String cloudServiceTypeName) {
+        this.cloudServiceTypeName = cloudServiceTypeName;
+        return this;
+    }
+
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * 
+     * @return cloudServiceTypeName */
+    public String getCloudServiceTypeName() {
+        return cloudServiceTypeName;
+    }
+
+    public void setCloudServiceTypeName(String cloudServiceTypeName) {
+        this.cloudServiceTypeName = cloudServiceTypeName;
     }
 
     public BillSumInfoV2 withBillType(String billType) {
@@ -247,7 +273,7 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。
      * 
      * @return resourceTypeCode */
     public String getResourceTypeCode() {
@@ -256,6 +282,22 @@ public class BillSumInfoV2 {
 
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
+    }
+
+    public BillSumInfoV2 withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * 
+     * @return resourceTypeName */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
     }
 
     @Override
@@ -269,6 +311,7 @@ public class BillSumInfoV2 {
         BillSumInfoV2 billSumInfoV2 = (BillSumInfoV2) o;
         return Objects.equals(this.customerId, billSumInfoV2.customerId)
             && Objects.equals(this.cloudServiceType, billSumInfoV2.cloudServiceType)
+            && Objects.equals(this.cloudServiceTypeName, billSumInfoV2.cloudServiceTypeName)
             && Objects.equals(this.billType, billSumInfoV2.billType)
             && Objects.equals(this.chargeMode, billSumInfoV2.chargeMode)
             && Objects.equals(this.amount, billSumInfoV2.amount)
@@ -277,13 +320,15 @@ public class BillSumInfoV2 {
             && Objects.equals(this.discountAmount, billSumInfoV2.discountAmount)
             && Objects.equals(this.measureId, billSumInfoV2.measureId)
             && Objects.equals(this.accountDetails, billSumInfoV2.accountDetails)
-            && Objects.equals(this.resourceTypeCode, billSumInfoV2.resourceTypeCode);
+            && Objects.equals(this.resourceTypeCode, billSumInfoV2.resourceTypeCode)
+            && Objects.equals(this.resourceTypeName, billSumInfoV2.resourceTypeName);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(customerId,
             cloudServiceType,
+            cloudServiceTypeName,
             billType,
             chargeMode,
             amount,
@@ -292,7 +337,8 @@ public class BillSumInfoV2 {
             discountAmount,
             measureId,
             accountDetails,
-            resourceTypeCode);
+            resourceTypeCode,
+            resourceTypeName);
     }
 
     @Override
@@ -301,6 +347,7 @@ public class BillSumInfoV2 {
         sb.append("class BillSumInfoV2 {\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
+        sb.append("    cloudServiceTypeName: ").append(toIndentedString(cloudServiceTypeName)).append("\n");
         sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
@@ -310,6 +357,7 @@ public class BillSumInfoV2 {
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    accountDetails: ").append(toIndentedString(accountDetails)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

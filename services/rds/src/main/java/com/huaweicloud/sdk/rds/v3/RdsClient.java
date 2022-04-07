@@ -17,6 +17,24 @@ public class RdsClient {
         return new ClientBuilder<>(RdsClient::new);
     }
 
+    /** 应用参数模板 应用参数模板。
+     *
+     * @param ApplyConfigurationAsyncRequest 请求对象
+     * @return ApplyConfigurationAsyncResponse */
+    public ApplyConfigurationAsyncResponse applyConfigurationAsync(ApplyConfigurationAsyncRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.applyConfigurationAsync);
+    }
+
+    /** 应用参数模板 应用参数模板。
+     *
+     * @param ApplyConfigurationAsyncRequest 请求对象
+     * @return SyncInvoker<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse> */
+    public SyncInvoker<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse> applyConfigurationAsyncInvoker(
+        ApplyConfigurationAsyncRequest request) {
+        return new SyncInvoker<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse>(request,
+            RdsMeta.applyConfigurationAsync, hcClient);
+    }
+
     /** 绑定和解绑弹性公网IP 绑定和解绑弹性公网IP。
      *
      * @param AttachEipRequest 请求对象
@@ -1229,6 +1247,25 @@ public class RdsClient {
             RdsMeta.updateInstanceConfiguration, hcClient);
     }
 
+    /** 修改指定实例的参数 修改指定实例的参数。
+     *
+     * @param UpdateInstanceConfigurationAsyncRequest 请求对象
+     * @return UpdateInstanceConfigurationAsyncResponse */
+    public UpdateInstanceConfigurationAsyncResponse updateInstanceConfigurationAsync(
+        UpdateInstanceConfigurationAsyncRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateInstanceConfigurationAsync);
+    }
+
+    /** 修改指定实例的参数 修改指定实例的参数。
+     *
+     * @param UpdateInstanceConfigurationAsyncRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse> */
+    public SyncInvoker<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse> updateInstanceConfigurationAsyncInvoker(
+        UpdateInstanceConfigurationAsyncRequest request) {
+        return new SyncInvoker<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse>(
+            request, RdsMeta.updateInstanceConfigurationAsync, hcClient);
+    }
+
     /** 修改实例名称 修改实例名称。
      *
      * @param UpdateInstanceNameRequest 请求对象
@@ -1938,6 +1975,24 @@ public class RdsClient {
         DeleteSqlserverDatabaseRequest request) {
         return new SyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse>(request,
             RdsMeta.deleteSqlserverDatabase, hcClient);
+    }
+
+    /** 删除数据库 删除数据库。
+     *
+     * @param DeleteSqlserverDatabaseExRequest 请求对象
+     * @return DeleteSqlserverDatabaseExResponse */
+    public DeleteSqlserverDatabaseExResponse deleteSqlserverDatabaseEx(DeleteSqlserverDatabaseExRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deleteSqlserverDatabaseEx);
+    }
+
+    /** 删除数据库 删除数据库。
+     *
+     * @param DeleteSqlserverDatabaseExRequest 请求对象
+     * @return SyncInvoker<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse> */
+    public SyncInvoker<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse> deleteSqlserverDatabaseExInvoker(
+        DeleteSqlserverDatabaseExRequest request) {
+        return new SyncInvoker<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse>(request,
+            RdsMeta.deleteSqlserverDatabaseEx, hcClient);
     }
 
     /** 删除数据库用户 删除数据库用户。

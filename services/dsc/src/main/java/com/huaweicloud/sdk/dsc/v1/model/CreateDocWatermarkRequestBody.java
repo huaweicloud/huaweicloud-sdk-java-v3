@@ -248,7 +248,7 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 解密文件的密码， 最大支持长度256。添加水印后的文件不带密码。如果Office文档有读密码或域控的权限密码，请输入读密码，或者有读权限的域控密码。
+    /** 输入文件有密码时，读取文件的密码， 最大支持长度256。如果Office文档有读密码或域控的权限密码，请输入读密码，或者有读权限的域控密码。
      * 
      * @return filePassword */
     public String getFilePassword() {
@@ -264,7 +264,7 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 添加水印后给文件设置密码， 最大支持长度256。
+    /** 添加水印后给文件设置密码， 最大支持长度256。默认不加文档密码。
      * 
      * @return markedFilePassword */
     public String getMarkedFilePassword() {
@@ -280,7 +280,7 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 添加水印后给文件设置只读密码， 最大支持长度256。
+    /** 添加水印后给文件设置只读密码， 最大支持长度256。默认不加只读密码。
      * 
      * @return readonlyPassword */
     public String getReadonlyPassword() {

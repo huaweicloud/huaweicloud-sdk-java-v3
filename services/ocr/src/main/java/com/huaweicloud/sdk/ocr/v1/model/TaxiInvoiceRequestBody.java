@@ -20,6 +20,11 @@ public class TaxiInvoiceRequestBody {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_text_location")
+
+    private Boolean returnTextLocation;
+
     public TaxiInvoiceRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -55,6 +60,22 @@ public class TaxiInvoiceRequestBody {
         this.url = url;
     }
 
+    public TaxiInvoiceRequestBody withReturnTextLocation(Boolean returnTextLocation) {
+        this.returnTextLocation = returnTextLocation;
+        return this;
+    }
+
+    /** 识别到的文字块的区域位置信息。可选值包括： - true：返回各个文字块区域 - false：不返回各个文字块区域 如果无该参数，系统默认不返回文字块区域。如果输入参数不是Boolean类型，则会报非法参数错误。:
+     * 
+     * @return returnTextLocation */
+    public Boolean getReturnTextLocation() {
+        return returnTextLocation;
+    }
+
+    public void setReturnTextLocation(Boolean returnTextLocation) {
+        this.returnTextLocation = returnTextLocation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -65,12 +86,13 @@ public class TaxiInvoiceRequestBody {
         }
         TaxiInvoiceRequestBody taxiInvoiceRequestBody = (TaxiInvoiceRequestBody) o;
         return Objects.equals(this.image, taxiInvoiceRequestBody.image)
-            && Objects.equals(this.url, taxiInvoiceRequestBody.url);
+            && Objects.equals(this.url, taxiInvoiceRequestBody.url)
+            && Objects.equals(this.returnTextLocation, taxiInvoiceRequestBody.returnTextLocation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url);
+        return Objects.hash(image, url, returnTextLocation);
     }
 
     @Override
@@ -79,6 +101,7 @@ public class TaxiInvoiceRequestBody {
         sb.append("class TaxiInvoiceRequestBody {\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

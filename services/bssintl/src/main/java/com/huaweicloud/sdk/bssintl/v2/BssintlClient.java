@@ -369,24 +369,6 @@ public class BssintlClient {
             BssintlMeta.listOnDemandResourceRatings, hcClient);
     }
 
-    /** 查询订单可用优惠券 功能描述：客户在客户自建平台查看订单可用的优惠券列表
-     *
-     * @param ListOrderCouponsByOrderIdRequest 请求对象
-     * @return ListOrderCouponsByOrderIdResponse */
-    public ListOrderCouponsByOrderIdResponse listOrderCouponsByOrderId(ListOrderCouponsByOrderIdRequest request) {
-        return hcClient.syncInvokeHttp(request, BssintlMeta.listOrderCouponsByOrderId);
-    }
-
-    /** 查询订单可用优惠券 功能描述：客户在客户自建平台查看订单可用的优惠券列表
-     *
-     * @param ListOrderCouponsByOrderIdRequest 请求对象
-     * @return SyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> */
-    public SyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> listOrderCouponsByOrderIdInvoker(
-        ListOrderCouponsByOrderIdRequest request) {
-        return new SyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse>(request,
-            BssintlMeta.listOrderCouponsByOrderId, hcClient);
-    }
-
     /** 查询订单可用折扣 功能描述：功能介绍客户在伙伴销售平台支付待支付订单时，查询可使用的折扣。只返回商务合同折扣和伙伴授权折扣客户在客户自建平台查看订单可用的优惠券列表。
      *
      * @param ListOrderDiscountsRequest 请求对象
@@ -460,7 +442,7 @@ public class BssintlClient {
             BssintlMeta.listRateOnPeriodDetail, hcClient);
     }
 
-    /** 查询资源类型列表 功能描述：客户在客户自建平台查询资源类型的列表。
+    /** 查询资源类型列表(新) 功能描述：客户在客户自建平台查询资源类型的列表。
      *
      * @param ListResourceTypesRequest 请求对象
      * @return ListResourceTypesResponse */
@@ -468,7 +450,7 @@ public class BssintlClient {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listResourceTypes);
     }
 
-    /** 查询资源类型列表 功能描述：客户在客户自建平台查询资源类型的列表。
+    /** 查询资源类型列表(新) 功能描述：客户在客户自建平台查询资源类型的列表。
      *
      * @param ListResourceTypesRequest 请求对象
      * @return SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse> */
@@ -496,7 +478,7 @@ public class BssintlClient {
             BssintlMeta.listServiceResources, hcClient);
     }
 
-    /** 查询云服务类型列表 功能描述：伙伴在伙伴销售平台查询云服务类型的列表。
+    /** 查询云服务类型列表(新) 功能描述：伙伴在伙伴销售平台查询云服务类型的列表。
      *
      * @param ListServiceTypesRequest 请求对象
      * @return ListServiceTypesResponse */
@@ -504,7 +486,7 @@ public class BssintlClient {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listServiceTypes);
     }
 
-    /** 查询云服务类型列表 功能描述：伙伴在伙伴销售平台查询云服务类型的列表。
+    /** 查询云服务类型列表(新) 功能描述：伙伴在伙伴销售平台查询云服务类型的列表。
      *
      * @param ListServiceTypesRequest 请求对象
      * @return SyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse> */

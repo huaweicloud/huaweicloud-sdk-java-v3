@@ -14,16 +14,21 @@ public class ListResourceTypesRequest {
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_type_code")
+    @JsonProperty(value = "limit")
 
-    private String resourceTypeCode;
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
 
     public ListResourceTypesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    /** |忽略大小写，默认 zh_cn：中文 en_us：英文|
+    /** |语言 zh_CN：中文 en_US：英文|
      * 
      * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,20 +41,36 @@ public class ListResourceTypesRequest {
         this.xLanguage = xLanguage;
     }
 
-    public ListResourceTypesRequest withResourceTypeCode(String resourceTypeCode) {
-        this.resourceTypeCode = resourceTypeCode;
+    public ListResourceTypesRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
-    /** |参数名称：资源类型编码| |参数的约束及描述：云服务类型编码,最大长度64|
+    /** |参数名称：每次查询的数量。默认值为10。| |参数的约束及描述：每页大小，缺省为1000。| minimum: 1 maximum: 1000
      * 
-     * @return resourceTypeCode */
-    public String getResourceTypeCode() {
-        return resourceTypeCode;
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setResourceTypeCode(String resourceTypeCode) {
-        this.resourceTypeCode = resourceTypeCode;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListResourceTypesRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** |参数名称：页数，从0开始。默认值为0。| |参数的约束及描述：从0开始。默认值为0。| minimum: 0 maximum: 2147483647
+     * 
+     * @return offset */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     @Override
@@ -62,12 +83,13 @@ public class ListResourceTypesRequest {
         }
         ListResourceTypesRequest listResourceTypesRequest = (ListResourceTypesRequest) o;
         return Objects.equals(this.xLanguage, listResourceTypesRequest.xLanguage)
-            && Objects.equals(this.resourceTypeCode, listResourceTypesRequest.resourceTypeCode);
+            && Objects.equals(this.limit, listResourceTypesRequest.limit)
+            && Objects.equals(this.offset, listResourceTypesRequest.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, resourceTypeCode);
+        return Objects.hash(xLanguage, limit, offset);
     }
 
     @Override
@@ -75,7 +97,8 @@ public class ListResourceTypesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourceTypesRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
-        sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

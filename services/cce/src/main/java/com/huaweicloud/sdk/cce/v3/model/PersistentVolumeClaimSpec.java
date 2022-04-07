@@ -131,7 +131,7 @@ public class PersistentVolumeClaimSpec {
         return this;
     }
 
-    /** 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS[、SFS-Turbo](tag:hws)，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
+    /** 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS、SFS-Turbo，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
      * 
      * @return volumeID */
     public String getVolumeID() {
@@ -147,14 +147,8 @@ public class PersistentVolumeClaimSpec {
         return this;
     }
 
-    /** 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。 -
-     * bs：EVS云存储，详情可参见[[使用云硬盘存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html)](tag:hws)[[使用云硬盘存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0044.html)](tag:hws_hk)
-     * 。 -
-     * nfs：SFS弹性文件存储，详情可参见[[使用文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html)](tag:hws)[[使用文件存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0111.html)](tag:hws_hk)
-     * 。 -
-     * obs：OBS对象存储，详情可参见[[使用对象存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html)](tag:hws)[[使用对象存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0160.html)](tag:hws_hk)
-     * 。 [- efs：SFS
-     * Turbo极速文件存储，详情可参见[使用极速文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html)。](tag:hws)
+    /** 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。 - bs：EVS云存储 - nfs：SFS弹性文件存储 - obs：OBS对象存储 - efs：SFS
+     * Turbo极速文件存储
      * 
      * @return storageType */
     public String getStorageType() {

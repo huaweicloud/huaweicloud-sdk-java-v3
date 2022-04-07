@@ -380,7 +380,7 @@ public class ConferenceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "picDisplay")
 
-    private Object picDisplay;
+    private MultiPicDisplayDO picDisplay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subConfs")
@@ -1134,19 +1134,28 @@ public class ConferenceInfo {
         this.concurrentParticipants = concurrentParticipants;
     }
 
-    public ConferenceInfo withPicDisplay(Object picDisplay) {
+    public ConferenceInfo withPicDisplay(MultiPicDisplayDO picDisplay) {
         this.picDisplay = picDisplay;
         return this;
     }
 
-    /** 当前多画面信息。
+    public ConferenceInfo withPicDisplay(Consumer<MultiPicDisplayDO> picDisplaySetter) {
+        if (this.picDisplay == null) {
+            this.picDisplay = new MultiPicDisplayDO();
+            picDisplaySetter.accept(this.picDisplay);
+        }
+
+        return this;
+    }
+
+    /** Get picDisplay
      * 
      * @return picDisplay */
-    public Object getPicDisplay() {
+    public MultiPicDisplayDO getPicDisplay() {
         return picDisplay;
     }
 
-    public void setPicDisplay(Object picDisplay) {
+    public void setPicDisplay(MultiPicDisplayDO picDisplay) {
         this.picDisplay = picDisplay;
     }
 

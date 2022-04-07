@@ -568,6 +568,24 @@ public class OcrClient {
             OcrMeta.recognizeVehicleLicense, hcClient);
     }
 
+    /** 电子面单识别 识别用户上传的韵达电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
+     *
+     * @param RecognizeWaybillElectronicRequest 请求对象
+     * @return RecognizeWaybillElectronicResponse */
+    public RecognizeWaybillElectronicResponse recognizeWaybillElectronic(RecognizeWaybillElectronicRequest request) {
+        return hcClient.syncInvokeHttp(request, OcrMeta.recognizeWaybillElectronic);
+    }
+
+    /** 电子面单识别 识别用户上传的韵达电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
+     *
+     * @param RecognizeWaybillElectronicRequest 请求对象
+     * @return SyncInvoker<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse> */
+    public SyncInvoker<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse> recognizeWaybillElectronicInvoker(
+        RecognizeWaybillElectronicRequest request) {
+        return new SyncInvoker<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse>(request,
+            OcrMeta.recognizeWaybillElectronic, hcClient);
+    }
+
     /** 网络图片识别 识别网络图片中的文字内容，并返回识别的结构化结果。
      *
      * @param RecognizeWebImageRequest 请求对象

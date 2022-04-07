@@ -19,7 +19,7 @@ public class GaussDBforopenGaussClient {
 
     /**
      * 创建数据库实例
-     * 创建数据库实例
+     * 创建数据库企业版和集中式实例
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
@@ -30,7 +30,7 @@ public class GaussDBforopenGaussClient {
 
     /**
      * 创建数据库实例
-     * 创建数据库实例
+     * 创建数据库企业版和集中式实例
      *
      * @param CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -62,6 +62,72 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 获取参数模板列表
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
+     * @param ListConfigurationsRequest 请求对象
+     * @return ListConfigurationsResponse
+     */
+    public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listConfigurations);
+    }
+
+    /**
+     * 获取参数模板列表
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
+     * @param ListConfigurationsRequest 请求对象
+     * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
+     */
+    public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(ListConfigurationsRequest request) {
+        return new SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request, GaussDBforopenGaussMeta.listConfigurations, hcClient);
+    }
+
+    /**
+     * 查询数据库引擎的版本
+     * 查询指定数据库引擎对应的版本信息。
+     *
+     * @param ListDatastoresRequest 请求对象
+     * @return ListDatastoresResponse
+     */
+    public ListDatastoresResponse listDatastores(ListDatastoresRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDatastores);
+    }
+
+    /**
+     * 查询数据库引擎的版本
+     * 查询指定数据库引擎对应的版本信息。
+     *
+     * @param ListDatastoresRequest 请求对象
+     * @return SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
+     */
+    public SyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresInvoker(ListDatastoresRequest request) {
+        return new SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request, GaussDBforopenGaussMeta.listDatastores, hcClient);
+    }
+
+    /**
+     * 查询数据库规格
+     * 查询指定数据库引擎对应的规格信息。
+     *
+     * @param ListFlavorsRequest 请求对象
+     * @return ListFlavorsResponse
+     */
+    public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listFlavors);
+    }
+
+    /**
+     * 查询数据库规格
+     * 查询指定数据库引擎对应的规格信息。
+     *
+     * @param ListFlavorsRequest 请求对象
+     * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
+     */
+    public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
+        return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, GaussDBforopenGaussMeta.listFlavors, hcClient);
+    }
+
+    /**
      * 查询数据库实例列表/查询实例详情
      * 查询数据库实例列表/查询实例详情
      *
@@ -81,6 +147,28 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
         return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, GaussDBforopenGaussMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 查询数据库磁盘类型
+     * 查询指定数据库引擎对应的磁盘类型。
+     *
+     * @param ListStorageTypesRequest 请求对象
+     * @return ListStorageTypesResponse
+     */
+    public ListStorageTypesResponse listStorageTypes(ListStorageTypesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listStorageTypes);
+    }
+
+    /**
+     * 查询数据库磁盘类型
+     * 查询指定数据库引擎对应的磁盘类型。
+     *
+     * @param ListStorageTypesRequest 请求对象
+     * @return SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>
+     */
+    public SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesInvoker(ListStorageTypesRequest request) {
+        return new SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>(request, GaussDBforopenGaussMeta.listStorageTypes, hcClient);
     }
 
     /**

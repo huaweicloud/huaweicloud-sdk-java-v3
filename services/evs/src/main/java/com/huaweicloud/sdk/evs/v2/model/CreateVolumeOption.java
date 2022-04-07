@@ -69,8 +69,9 @@ public class CreateVolumeOption {
 
     private String snapshotId;
 
-    /** 云硬盘类型。 目前支持“SSD”，“GPSSD”，“SAS”三种 “SSD”为超高IO云硬盘 \"GPSSD\"为通用型SSD云硬盘 “SAS”为高IO云硬盘
-     * 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见
+    /** 云硬盘类型。 目前支持\"SATA\"，\"SAS\"，\"GPSSD\"，\"SSD\"和\"ESSD\"五种。 - \"SATA\"为普通IO云硬盘(已售罄) - \"SAS\"为高IO云硬盘 -
+     * \"GPSSD\"为通用型SSD云硬盘 - \"SSD\"为超高IO云硬盘 - \"ESSD\"为极速IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明：
+     * 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见
      * [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
      * 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=EVS&api=CinderListVolumeTypes) */
     public static final class VolumeTypeEnum {
@@ -87,6 +88,9 @@ public class CreateVolumeOption {
         /** Enum SATA for value: "SATA" */
         public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
 
+        /** Enum ESSD for value: "ESSD" */
+        public static final VolumeTypeEnum ESSD = new VolumeTypeEnum("ESSD");
+
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumeTypeEnum> createStaticFields() {
@@ -95,6 +99,7 @@ public class CreateVolumeOption {
             map.put("GPSSD", GPSSD);
             map.put("SAS", SAS);
             map.put("SATA", SATA);
+            map.put("ESSD", ESSD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -368,8 +373,9 @@ public class CreateVolumeOption {
         return this;
     }
 
-    /** 云硬盘类型。 目前支持“SSD”，“GPSSD”，“SAS”三种 “SSD”为超高IO云硬盘 \"GPSSD\"为通用型SSD云硬盘 “SAS”为高IO云硬盘
-     * 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见
+    /** 云硬盘类型。 目前支持\"SATA\"，\"SAS\"，\"GPSSD\"，\"SSD\"和\"ESSD\"五种。 - \"SATA\"为普通IO云硬盘(已售罄) - \"SAS\"为高IO云硬盘 -
+     * \"GPSSD\"为通用型SSD云硬盘 - \"SSD\"为超高IO云硬盘 - \"ESSD\"为极速IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明：
+     * 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见
      * [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
      * 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=EVS&api=CinderListVolumeTypes)
      * 

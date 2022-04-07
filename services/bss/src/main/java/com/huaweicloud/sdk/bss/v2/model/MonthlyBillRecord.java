@@ -29,6 +29,16 @@ public class MonthlyBillRecord {
     private String resourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_code")
 
     private String regionCode;
@@ -206,6 +216,38 @@ public class MonthlyBillRecord {
 
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
+    }
+
+    public MonthlyBillRecord withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+    }
+
+    public MonthlyBillRecord withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * 
+     * @return resourceTypeName */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
     }
 
     public MonthlyBillRecord withRegionCode(String regionCode) {
@@ -590,6 +632,8 @@ public class MonthlyBillRecord {
             && Objects.equals(this.customerId, monthlyBillRecord.customerId)
             && Objects.equals(this.serviceTypeCode, monthlyBillRecord.serviceTypeCode)
             && Objects.equals(this.resourceTypeCode, monthlyBillRecord.resourceTypeCode)
+            && Objects.equals(this.serviceTypeName, monthlyBillRecord.serviceTypeName)
+            && Objects.equals(this.resourceTypeName, monthlyBillRecord.resourceTypeName)
             && Objects.equals(this.regionCode, monthlyBillRecord.regionCode)
             && Objects.equals(this.enterpriseProjectId, monthlyBillRecord.enterpriseProjectId)
             && Objects.equals(this.enterpriseProjectName, monthlyBillRecord.enterpriseProjectName)
@@ -621,6 +665,8 @@ public class MonthlyBillRecord {
             customerId,
             serviceTypeCode,
             resourceTypeCode,
+            serviceTypeName,
+            resourceTypeName,
             regionCode,
             enterpriseProjectId,
             enterpriseProjectName,
@@ -654,6 +700,8 @@ public class MonthlyBillRecord {
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
         sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");

@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListHa  {
 
     /**
-     * 数据库一致性类型。取值为“strong”、“eventual”，分别表示强一致性、最终一致性。
+     * 数据库一致性类型，分布式模式实例仅有。取值为“strong”、“eventual”，分别表示强一致性、最终一致性。
      */
     public static final class ConsistencyEnum {
 
@@ -122,7 +122,7 @@ public class ListHa  {
 
 
     /**
-     * 数据库一致性类型。取值为“strong”、“eventual”，分别表示强一致性、最终一致性。
+     * 数据库一致性类型，分布式模式实例仅有。取值为“strong”、“eventual”，分别表示强一致性、最终一致性。
      * @return consistency
      */
     public ConsistencyEnum getConsistency() {

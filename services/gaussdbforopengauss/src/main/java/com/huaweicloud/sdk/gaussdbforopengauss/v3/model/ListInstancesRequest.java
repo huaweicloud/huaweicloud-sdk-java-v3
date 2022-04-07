@@ -56,12 +56,18 @@ public class ListInstancesRequest  {
          */
         public static final TypeEnum ENTERPRISE = new TypeEnum("Enterprise");
         
+        /**
+         * Enum HA for value: "Ha"
+         */
+        public static final TypeEnum HA = new TypeEnum("Ha");
+        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("Enterprise", ENTERPRISE);
+            map.put("Ha", HA);
             return Collections.unmodifiableMap(map);
         }
 

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云硬盘个数，键值对，包含：reserved（预留）、allocated（预留）、limit（最大）和in_use（已使用）。 */
+/** 云硬盘个数，键值对，包含：reserved（预留）、limit（最大）和in_use（已使用）。 */
 public class QuotaDetailVolumes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,11 +22,6 @@ public class QuotaDetailVolumes {
     @JsonProperty(value = "reserved")
 
     private Integer reserved;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "allocated")
-
-    private Integer allocated;
 
     public QuotaDetailVolumes withInUse(Integer inUse) {
         this.inUse = inUse;
@@ -76,22 +71,6 @@ public class QuotaDetailVolumes {
         this.reserved = reserved;
     }
 
-    public QuotaDetailVolumes withAllocated(Integer allocated) {
-        this.allocated = allocated;
-        return this;
-    }
-
-    /** 预留属性。
-     * 
-     * @return allocated */
-    public Integer getAllocated() {
-        return allocated;
-    }
-
-    public void setAllocated(Integer allocated) {
-        this.allocated = allocated;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -103,13 +82,12 @@ public class QuotaDetailVolumes {
         QuotaDetailVolumes quotaDetailVolumes = (QuotaDetailVolumes) o;
         return Objects.equals(this.inUse, quotaDetailVolumes.inUse)
             && Objects.equals(this.limit, quotaDetailVolumes.limit)
-            && Objects.equals(this.reserved, quotaDetailVolumes.reserved)
-            && Objects.equals(this.allocated, quotaDetailVolumes.allocated);
+            && Objects.equals(this.reserved, quotaDetailVolumes.reserved);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(inUse, limit, reserved, allocated);
+        return Objects.hash(inUse, limit, reserved);
     }
 
     @Override
@@ -119,7 +97,6 @@ public class QuotaDetailVolumes {
         sb.append("    inUse: ").append(toIndentedString(inUse)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    reserved: ").append(toIndentedString(reserved)).append("\n");
-        sb.append("    allocated: ").append(toIndentedString(allocated)).append("\n");
         sb.append("}");
         return sb.toString();
     }

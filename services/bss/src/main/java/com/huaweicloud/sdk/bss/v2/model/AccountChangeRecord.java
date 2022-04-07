@@ -48,7 +48,7 @@ public class AccountChangeRecord {
         return this;
     }
 
-    /** |参数名称：收支明细流水号| |参数约束及描述：数据表主键|
+    /** 收支明细流水号
      * 
      * @return accountChangeId */
     public String getAccountChangeId() {

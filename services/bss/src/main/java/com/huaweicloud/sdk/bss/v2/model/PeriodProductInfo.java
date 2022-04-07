@@ -157,7 +157,7 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** 可用区标识。
+    /** 可用区标识，例如：“cn-north-1a”。具体请参见地区和终端节点可用分区的“可用分区名称”列的值。
      * 
      * @return availableZone */
     public String getAvailableZone() {

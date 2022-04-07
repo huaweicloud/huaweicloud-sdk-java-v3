@@ -24,6 +24,16 @@ public class BillSumRecordInfoV2 {
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
     private Integer chargingMode;
@@ -144,6 +154,38 @@ public class BillSumRecordInfoV2 {
 
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
+    }
+
+    public BillSumRecordInfoV2 withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+    }
+
+    public BillSumRecordInfoV2 withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * 
+     * @return resourceTypeName */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
     }
 
     public BillSumRecordInfoV2 withChargingMode(Integer chargingMode) {
@@ -399,6 +441,8 @@ public class BillSumRecordInfoV2 {
         return Objects.equals(this.billCycle, billSumRecordInfoV2.billCycle)
             && Objects.equals(this.resourceTypeCode, billSumRecordInfoV2.resourceTypeCode)
             && Objects.equals(this.serviceTypeCode, billSumRecordInfoV2.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, billSumRecordInfoV2.serviceTypeName)
+            && Objects.equals(this.resourceTypeName, billSumRecordInfoV2.resourceTypeName)
             && Objects.equals(this.chargingMode, billSumRecordInfoV2.chargingMode)
             && Objects.equals(this.officialAmount, billSumRecordInfoV2.officialAmount)
             && Objects.equals(this.officialDiscountAmount, billSumRecordInfoV2.officialDiscountAmount)
@@ -421,6 +465,8 @@ public class BillSumRecordInfoV2 {
         return Objects.hash(billCycle,
             resourceTypeCode,
             serviceTypeCode,
+            serviceTypeName,
+            resourceTypeName,
             chargingMode,
             officialAmount,
             officialDiscountAmount,
@@ -445,6 +491,8 @@ public class BillSumRecordInfoV2 {
         sb.append("    billCycle: ").append(toIndentedString(billCycle)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    officialAmount: ").append(toIndentedString(officialAmount)).append("\n");
         sb.append("    officialDiscountAmount: ").append(toIndentedString(officialDiscountAmount)).append("\n");

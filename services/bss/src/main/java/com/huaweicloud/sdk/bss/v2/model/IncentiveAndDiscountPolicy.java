@@ -14,6 +14,11 @@ public class IncentiveAndDiscountPolicy {
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incentive_policy")
 
     private String incentivePolicy;
@@ -37,6 +42,22 @@ public class IncentiveAndDiscountPolicy {
 
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
+    }
+
+    public IncentiveAndDiscountPolicy withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
     }
 
     public IncentiveAndDiscountPolicy withIncentivePolicy(String incentivePolicy) {
@@ -81,13 +102,14 @@ public class IncentiveAndDiscountPolicy {
         }
         IncentiveAndDiscountPolicy incentiveAndDiscountPolicy = (IncentiveAndDiscountPolicy) o;
         return Objects.equals(this.serviceTypeCode, incentiveAndDiscountPolicy.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, incentiveAndDiscountPolicy.serviceTypeName)
             && Objects.equals(this.incentivePolicy, incentiveAndDiscountPolicy.incentivePolicy)
             && Objects.equals(this.allowDiscount, incentiveAndDiscountPolicy.allowDiscount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceTypeCode, incentivePolicy, allowDiscount);
+        return Objects.hash(serviceTypeCode, serviceTypeName, incentivePolicy, allowDiscount);
     }
 
     @Override
@@ -95,6 +117,7 @@ public class IncentiveAndDiscountPolicy {
         StringBuilder sb = new StringBuilder();
         sb.append("class IncentiveAndDiscountPolicy {\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
         sb.append("    incentivePolicy: ").append(toIndentedString(incentivePolicy)).append("\n");
         sb.append("    allowDiscount: ").append(toIndentedString(allowDiscount)).append("\n");
         sb.append("}");

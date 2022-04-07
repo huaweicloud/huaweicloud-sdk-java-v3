@@ -20,6 +20,11 @@ public class OrderLineItemEntityV2 {
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
     private String productId;
@@ -119,6 +124,22 @@ public class OrderLineItemEntityV2 {
 
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
+    }
+
+    public OrderLineItemEntityV2 withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
     }
 
     public OrderLineItemEntityV2 withProductId(String productId) {
@@ -365,6 +386,7 @@ public class OrderLineItemEntityV2 {
         OrderLineItemEntityV2 orderLineItemEntityV2 = (OrderLineItemEntityV2) o;
         return Objects.equals(this.orderLineItemId, orderLineItemEntityV2.orderLineItemId)
             && Objects.equals(this.serviceTypeCode, orderLineItemEntityV2.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, orderLineItemEntityV2.serviceTypeName)
             && Objects.equals(this.productId, orderLineItemEntityV2.productId)
             && Objects.equals(this.productSpecDesc, orderLineItemEntityV2.productSpecDesc)
             && Objects.equals(this.periodType, orderLineItemEntityV2.periodType)
@@ -385,6 +407,7 @@ public class OrderLineItemEntityV2 {
     public int hashCode() {
         return Objects.hash(orderLineItemId,
             serviceTypeCode,
+            serviceTypeName,
             productId,
             productSpecDesc,
             periodType,
@@ -407,6 +430,7 @@ public class OrderLineItemEntityV2 {
         sb.append("class OrderLineItemEntityV2 {\n");
         sb.append("    orderLineItemId: ").append(toIndentedString(orderLineItemId)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    productSpecDesc: ").append(toIndentedString(productSpecDesc)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");

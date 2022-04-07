@@ -49,7 +49,7 @@ public class ListIncentiveDiscountPoliciesRequest {
         return this;
     }
 
-    /** 云服务类型列表。获取方法请参见查询云服务类型列表。
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {

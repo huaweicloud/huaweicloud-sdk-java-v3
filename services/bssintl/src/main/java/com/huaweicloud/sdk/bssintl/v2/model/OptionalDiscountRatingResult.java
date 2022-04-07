@@ -57,26 +57,6 @@ public class OptionalDiscountRatingResult {
 
     private List<PeriodProductRatingResult> productRatingResults = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "installment_official_website_amount")
-
-    private String installmentOfficialWebsiteAmount;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "installment_official_discount_amount")
-
-    private String installmentOfficialDiscountAmount;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "installment_amount")
-
-    private String installmentAmount;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "installment_period_type")
-
-    private Integer installmentPeriodType;
-
     public OptionalDiscountRatingResult withDiscountId(String discountId) {
         this.discountId = discountId;
         return this;
@@ -240,72 +220,6 @@ public class OptionalDiscountRatingResult {
         this.productRatingResults = productRatingResults;
     }
 
-    public OptionalDiscountRatingResult withInstallmentOfficialWebsiteAmount(String installmentOfficialWebsiteAmount) {
-        this.installmentOfficialWebsiteAmount = installmentOfficialWebsiteAmount;
-        return this;
-    }
-
-    /** |参数名称：分期金额的官网价| |参数约束及描述：分期金额的官网价|
-     * 
-     * @return installmentOfficialWebsiteAmount */
-    public String getInstallmentOfficialWebsiteAmount() {
-        return installmentOfficialWebsiteAmount;
-    }
-
-    public void setInstallmentOfficialWebsiteAmount(String installmentOfficialWebsiteAmount) {
-        this.installmentOfficialWebsiteAmount = installmentOfficialWebsiteAmount;
-    }
-
-    public OptionalDiscountRatingResult withInstallmentOfficialDiscountAmount(
-        String installmentOfficialDiscountAmount) {
-        this.installmentOfficialDiscountAmount = installmentOfficialDiscountAmount;
-        return this;
-    }
-
-    /** |参数名称：分期金额的折扣价| |参数约束及描述：分期金额的折扣价|
-     * 
-     * @return installmentOfficialDiscountAmount */
-    public String getInstallmentOfficialDiscountAmount() {
-        return installmentOfficialDiscountAmount;
-    }
-
-    public void setInstallmentOfficialDiscountAmount(String installmentOfficialDiscountAmount) {
-        this.installmentOfficialDiscountAmount = installmentOfficialDiscountAmount;
-    }
-
-    public OptionalDiscountRatingResult withInstallmentAmount(String installmentAmount) {
-        this.installmentAmount = installmentAmount;
-        return this;
-    }
-
-    /** |参数名称：分期金额的成交价|
-     * |参数约束及描述：分期金额的成交价,installment_amount=installment_official_website_amount-installment_discount_amount|
-     * 
-     * @return installmentAmount */
-    public String getInstallmentAmount() {
-        return installmentAmount;
-    }
-
-    public void setInstallmentAmount(String installmentAmount) {
-        this.installmentAmount = installmentAmount;
-    }
-
-    public OptionalDiscountRatingResult withInstallmentPeriodType(Integer installmentPeriodType) {
-        this.installmentPeriodType = installmentPeriodType;
-        return this;
-    }
-
-    /** |参数名称：分期付款的周期类型| |参数约束及描述：2：月|
-     * 
-     * @return installmentPeriodType */
-    public Integer getInstallmentPeriodType() {
-        return installmentPeriodType;
-    }
-
-    public void setInstallmentPeriodType(Integer installmentPeriodType) {
-        this.installmentPeriodType = installmentPeriodType;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -323,13 +237,7 @@ public class OptionalDiscountRatingResult {
             && Objects.equals(this.discountType, optionalDiscountRatingResult.discountType)
             && Objects.equals(this.discountName, optionalDiscountRatingResult.discountName)
             && Objects.equals(this.bestOffer, optionalDiscountRatingResult.bestOffer)
-            && Objects.equals(this.productRatingResults, optionalDiscountRatingResult.productRatingResults)
-            && Objects.equals(this.installmentOfficialWebsiteAmount,
-                optionalDiscountRatingResult.installmentOfficialWebsiteAmount)
-            && Objects.equals(this.installmentOfficialDiscountAmount,
-                optionalDiscountRatingResult.installmentOfficialDiscountAmount)
-            && Objects.equals(this.installmentAmount, optionalDiscountRatingResult.installmentAmount)
-            && Objects.equals(this.installmentPeriodType, optionalDiscountRatingResult.installmentPeriodType);
+            && Objects.equals(this.productRatingResults, optionalDiscountRatingResult.productRatingResults);
     }
 
     @Override
@@ -342,11 +250,7 @@ public class OptionalDiscountRatingResult {
             discountType,
             discountName,
             bestOffer,
-            productRatingResults,
-            installmentOfficialWebsiteAmount,
-            installmentOfficialDiscountAmount,
-            installmentAmount,
-            installmentPeriodType);
+            productRatingResults);
     }
 
     @Override
@@ -362,14 +266,6 @@ public class OptionalDiscountRatingResult {
         sb.append("    discountName: ").append(toIndentedString(discountName)).append("\n");
         sb.append("    bestOffer: ").append(toIndentedString(bestOffer)).append("\n");
         sb.append("    productRatingResults: ").append(toIndentedString(productRatingResults)).append("\n");
-        sb.append("    installmentOfficialWebsiteAmount: ")
-            .append(toIndentedString(installmentOfficialWebsiteAmount))
-            .append("\n");
-        sb.append("    installmentOfficialDiscountAmount: ")
-            .append(toIndentedString(installmentOfficialDiscountAmount))
-            .append("\n");
-        sb.append("    installmentAmount: ").append(toIndentedString(installmentAmount)).append("\n");
-        sb.append("    installmentPeriodType: ").append(toIndentedString(installmentPeriodType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

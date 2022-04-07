@@ -62,7 +62,7 @@ public class OpenGaussBackupStrategy  {
 
 
     /**
-     * 指定备份文件的可保存天数。  取值范围：1～732。该参数缺省时，默认填写为7天。
+     * 指定备份文件的可保存天数。  取值范围：1～732。该参数缺省或为0时，默认填写为7天。
      * @return keepDays
      */
     public Integer getKeepDays() {

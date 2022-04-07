@@ -13,16 +13,37 @@ import java.util.function.Consumer;
 public class ListServiceTypesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_types")
 
-    private List<ServiceType> serviceTypes = null;
+    private List<ServiceTypes> serviceTypes = null;
 
-    public ListServiceTypesResponse withServiceTypes(List<ServiceType> serviceTypes) {
+    public ListServiceTypesResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /** |参数名称：总记录数| |参数约束以及描述：总记录数|
+     * 
+     * @return totalCount */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public ListServiceTypesResponse withServiceTypes(List<ServiceTypes> serviceTypes) {
         this.serviceTypes = serviceTypes;
         return this;
     }
 
-    public ListServiceTypesResponse addServiceTypesItem(ServiceType serviceTypesItem) {
+    public ListServiceTypesResponse addServiceTypesItem(ServiceTypes serviceTypesItem) {
         if (this.serviceTypes == null) {
             this.serviceTypes = new ArrayList<>();
         }
@@ -30,7 +51,7 @@ public class ListServiceTypesResponse extends SdkResponse {
         return this;
     }
 
-    public ListServiceTypesResponse withServiceTypes(Consumer<List<ServiceType>> serviceTypesSetter) {
+    public ListServiceTypesResponse withServiceTypes(Consumer<List<ServiceTypes>> serviceTypesSetter) {
         if (this.serviceTypes == null) {
             this.serviceTypes = new ArrayList<>();
         }
@@ -38,14 +59,14 @@ public class ListServiceTypesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：返回数据| |参数约束以及描述：返回数据|
+    /** |参数名称：返回的云服务类型信息| |参数约束以及描述：返回的云服务类型信息|
      * 
      * @return serviceTypes */
-    public List<ServiceType> getServiceTypes() {
+    public List<ServiceTypes> getServiceTypes() {
         return serviceTypes;
     }
 
-    public void setServiceTypes(List<ServiceType> serviceTypes) {
+    public void setServiceTypes(List<ServiceTypes> serviceTypes) {
         this.serviceTypes = serviceTypes;
     }
 
@@ -58,18 +79,20 @@ public class ListServiceTypesResponse extends SdkResponse {
             return false;
         }
         ListServiceTypesResponse listServiceTypesResponse = (ListServiceTypesResponse) o;
-        return Objects.equals(this.serviceTypes, listServiceTypesResponse.serviceTypes);
+        return Objects.equals(this.totalCount, listServiceTypesResponse.totalCount)
+            && Objects.equals(this.serviceTypes, listServiceTypesResponse.serviceTypes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceTypes);
+        return Objects.hash(totalCount, serviceTypes);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListServiceTypesResponse {\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    serviceTypes: ").append(toIndentedString(serviceTypes)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -25,6 +25,11 @@ public class CustomerOrderV3 {
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_type")
 
     private Integer sourceType;
@@ -131,6 +136,22 @@ public class CustomerOrderV3 {
 
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
+    }
+
+    public CustomerOrderV3 withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** |参数名称：服务类型编码名称| |参数约束及描述：服务类型编码名称|
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
     }
 
     public CustomerOrderV3 withSourceType(Integer sourceType) {
@@ -349,6 +370,7 @@ public class CustomerOrderV3 {
         return Objects.equals(this.orderId, customerOrderV3.orderId)
             && Objects.equals(this.customerId, customerOrderV3.customerId)
             && Objects.equals(this.serviceTypeCode, customerOrderV3.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, customerOrderV3.serviceTypeName)
             && Objects.equals(this.sourceType, customerOrderV3.sourceType)
             && Objects.equals(this.status, customerOrderV3.status)
             && Objects.equals(this.orderType, customerOrderV3.orderType)
@@ -368,6 +390,7 @@ public class CustomerOrderV3 {
         return Objects.hash(orderId,
             customerId,
             serviceTypeCode,
+            serviceTypeName,
             sourceType,
             status,
             orderType,
@@ -389,6 +412,7 @@ public class CustomerOrderV3 {
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
         sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    orderType: ").append(toIndentedString(orderType)).append("\n");

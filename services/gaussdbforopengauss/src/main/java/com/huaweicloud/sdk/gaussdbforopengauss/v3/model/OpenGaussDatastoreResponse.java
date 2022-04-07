@@ -16,12 +16,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 数据库信息。
+ * 数据库版本。不填时，默认为当前最新版本。  数据库支持版本可根据查询数据库引擎版本接口获取
  */
 public class OpenGaussDatastoreResponse  {
 
     /**
-     * 数据库引擎，返回值如下：  GaussDB(for openGauss)
+     * 数据库引擎，不区分大小写，取值如下：  GaussDB(for openGauss)
      */
     public static final class TypeEnum {
 
@@ -116,7 +116,7 @@ public class OpenGaussDatastoreResponse  {
 
 
     /**
-     * 数据库引擎，返回值如下：  GaussDB(for openGauss)
+     * 数据库引擎，不区分大小写，取值如下：  GaussDB(for openGauss)
      * @return type
      */
     public TypeEnum getType() {

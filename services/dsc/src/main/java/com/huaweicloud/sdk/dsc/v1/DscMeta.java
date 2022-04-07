@@ -85,6 +85,34 @@ public class DscMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse> createDocWatermarkByAddress =
+        genForcreateDocWatermarkByAddress();
+
+    private static HttpRequestDef<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse> genForcreateDocWatermarkByAddress() {
+        // basic
+        HttpRequestDef.Builder<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDocWatermarkByAddressRequest.class,
+                    CreateDocWatermarkByAddressResponse.class)
+                .withName("CreateDocWatermarkByAddress")
+                .withUri("/v1/{project_id}/doc-address/watermark/embed")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateDocWatermarkByAddressRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDocWatermarkByAddressRequestBody.class),
+            f -> f.withMarshaller(CreateDocWatermarkByAddressRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateImageWatermarkRequest, CreateImageWatermarkResponse> createImageWatermark =
         genForcreateImageWatermark();
 
@@ -102,6 +130,34 @@ public class DscMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateImageWatermarkRequestBody.class),
             f -> f.withMarshaller(CreateImageWatermarkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse> createImageWatermarkByAddress =
+        genForcreateImageWatermarkByAddress();
+
+    private static HttpRequestDef<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse> genForcreateImageWatermarkByAddress() {
+        // basic
+        HttpRequestDef.Builder<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateImageWatermarkByAddressRequest.class,
+                    CreateImageWatermarkByAddressResponse.class)
+                .withName("CreateImageWatermarkByAddress")
+                .withUri("/v1/{project_id}/image-address/watermark/embed")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateImageWatermarkByAddressRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateImageWatermarkByAddressRequestBody.class),
+            f -> f.withMarshaller(CreateImageWatermarkByAddressRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -160,6 +216,34 @@ public class DscMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse> showDocWatermarkByAddress =
+        genForshowDocWatermarkByAddress();
+
+    private static HttpRequestDef<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse> genForshowDocWatermarkByAddress() {
+        // basic
+        HttpRequestDef.Builder<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowDocWatermarkByAddressRequest.class,
+                    ShowDocWatermarkByAddressResponse.class)
+                .withName("ShowDocWatermarkByAddress")
+                .withUri("/v1/{project_id}/doc-address/watermark/extract")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowDocWatermarkByAddressRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowDocWatermarkByAddressRequestBody.class),
+            f -> f.withMarshaller(ShowDocWatermarkByAddressRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowImageWatermarkRequest, ShowImageWatermarkResponse> showImageWatermark =
         genForshowImageWatermark();
 
@@ -177,6 +261,90 @@ public class DscMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowImageWatermarkRequestBody.class),
             f -> f.withMarshaller(ShowImageWatermarkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse> showImageWatermarkByAddress =
+        genForshowImageWatermarkByAddress();
+
+    private static HttpRequestDef<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse> genForshowImageWatermarkByAddress() {
+        // basic
+        HttpRequestDef.Builder<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowImageWatermarkByAddressRequest.class,
+                    ShowImageWatermarkByAddressResponse.class)
+                .withName("ShowImageWatermarkByAddress")
+                .withUri("/v1/{project_id}/image-address/watermark/extract")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowImageWatermarkByAddressRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowImageWatermarkByAddressRequestBody.class),
+            f -> f.withMarshaller(ShowImageWatermarkByAddressRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse> showImageWatermarkWithImage =
+        genForshowImageWatermarkWithImage();
+
+    private static HttpRequestDef<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse> genForshowImageWatermarkWithImage() {
+        // basic
+        HttpRequestDef.Builder<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowImageWatermarkWithImageRequest.class,
+                    ShowImageWatermarkWithImageResponse.class)
+                .withName("ShowImageWatermarkWithImage")
+                .withUri("/v1/{project_id}/image/watermark/extract-image")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<ShowImageWatermarkWithImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowImageWatermarkWithImageRequestBody.class),
+            f -> f.withMarshaller(ShowImageWatermarkWithImageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse> showImageWatermarkWithImageByAddress =
+        genForshowImageWatermarkWithImageByAddress();
+
+    private static HttpRequestDef<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse> genForshowImageWatermarkWithImageByAddress() {
+        // basic
+        HttpRequestDef.Builder<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowImageWatermarkWithImageByAddressRequest.class,
+                    ShowImageWatermarkWithImageByAddressResponse.class)
+                .withName("ShowImageWatermarkWithImageByAddress")
+                .withUri("/v1/{project_id}/image-address/watermark/extract-image")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowImageWatermarkWithImageByAddressRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowImageWatermarkWithImageByAddressRequestBody.class),
+            f -> f.withMarshaller(ShowImageWatermarkWithImageByAddressRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

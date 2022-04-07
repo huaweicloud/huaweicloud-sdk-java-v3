@@ -21,7 +21,7 @@ import java.util.Objects;
 public class OpenGaussVolumeResponse  {
 
     /**
-     * 磁盘类型。  取值如下，区分大小写：  - ULTRAHIGH，表示SSD。
+     * 磁盘类型。  取值如下，区分大小写：  - ULTRAHIGH，表示SSD。 - ESSD，表示急速云盘
      */
     public static final class TypeEnum {
 
@@ -31,12 +31,18 @@ public class OpenGaussVolumeResponse  {
          */
         public static final TypeEnum ULTRAHIGH = new TypeEnum("ULTRAHIGH");
         
+        /**
+         * Enum ESSD for value: "ESSD"
+         */
+        public static final TypeEnum ESSD = new TypeEnum("ESSD");
+        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("ULTRAHIGH", ULTRAHIGH);
+            map.put("ESSD", ESSD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -116,7 +122,7 @@ public class OpenGaussVolumeResponse  {
 
 
     /**
-     * 磁盘类型。  取值如下，区分大小写：  - ULTRAHIGH，表示SSD。
+     * 磁盘类型。  取值如下，区分大小写：  - ULTRAHIGH，表示SSD。 - ESSD，表示急速云盘
      * @return type
      */
     public TypeEnum getType() {

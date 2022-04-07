@@ -2348,6 +2348,23 @@ public class MeetingAsyncClient {
         return new AsyncInvoker<ShowWebinarRequest, ShowWebinarResponse>(request, MeetingMeta.showWebinar, hcClient);
     }
 
+    /** 通过会议ID和密码激活会议 终端到会管进行鉴权并激活会议，先通过该接口获取会议所在Region信息，该接口需要携带会议主席密码，在会议未召开的情况下，该接口会拉起会议。如果已存在会议，则直接返回在线会议所在Region信息
+     *
+     * @param StartMeetingRequest 请求对象
+     * @return CompletableFuture<StartMeetingResponse> */
+    public CompletableFuture<StartMeetingResponse> startMeetingAsync(StartMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.startMeeting);
+    }
+
+    /** 通过会议ID和密码激活会议 终端到会管进行鉴权并激活会议，先通过该接口获取会议所在Region信息，该接口需要携带会议主席密码，在会议未召开的情况下，该接口会拉起会议。如果已存在会议，则直接返回在线会议所在Region信息
+     *
+     * @param StartMeetingRequest 请求对象
+     * @return AsyncInvoker<StartMeetingRequest, StartMeetingResponse> */
+    public AsyncInvoker<StartMeetingRequest, StartMeetingResponse> startMeetingAsyncInvoker(
+        StartMeetingRequest request) {
+        return new AsyncInvoker<StartMeetingRequest, StartMeetingResponse>(request, MeetingMeta.startMeeting, hcClient);
+    }
+
     /** 结束会议 结束会议。
      *
      * @param StopMeetingRequest 请求对象

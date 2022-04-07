@@ -22,15 +22,14 @@ public class UpdateNodePoolRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private NodePool body;
+    private NodePoolUpdate body;
 
     public UpdateNodePoolRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
-    /** 集群
-     * ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
+    /** 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
      * 
      * @return clusterId */
     public String getClusterId() {
@@ -57,14 +56,14 @@ public class UpdateNodePoolRequest {
         this.nodepoolId = nodepoolId;
     }
 
-    public UpdateNodePoolRequest withBody(NodePool body) {
+    public UpdateNodePoolRequest withBody(NodePoolUpdate body) {
         this.body = body;
         return this;
     }
 
-    public UpdateNodePoolRequest withBody(Consumer<NodePool> bodySetter) {
+    public UpdateNodePoolRequest withBody(Consumer<NodePoolUpdate> bodySetter) {
         if (this.body == null) {
-            this.body = new NodePool();
+            this.body = new NodePoolUpdate();
             bodySetter.accept(this.body);
         }
 
@@ -74,11 +73,11 @@ public class UpdateNodePoolRequest {
     /** Get body
      * 
      * @return body */
-    public NodePool getBody() {
+    public NodePoolUpdate getBody() {
         return body;
     }
 
-    public void setBody(NodePool body) {
+    public void setBody(NodePoolUpdate body) {
         this.body = body;
     }
 

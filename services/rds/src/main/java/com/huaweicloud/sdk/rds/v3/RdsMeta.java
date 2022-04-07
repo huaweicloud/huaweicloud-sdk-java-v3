@@ -10,6 +10,45 @@ import com.huaweicloud.sdk.rds.v3.model.*;
 @SuppressWarnings("unchecked")
 public class RdsMeta {
 
+    public static final HttpRequestDef<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse> applyConfigurationAsync =
+        genForapplyConfigurationAsync();
+
+    private static HttpRequestDef<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse> genForapplyConfigurationAsync() {
+        // basic
+        HttpRequestDef.Builder<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ApplyConfigurationAsyncRequest.class, ApplyConfigurationAsyncResponse.class)
+            .withName("ApplyConfigurationAsync")
+            .withUri("/v3.1/{project_id}/configurations/{config_id}/apply")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ApplyConfigurationAsyncRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ApplyConfigurationAsyncRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ApplyConfigurationRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApplyConfigurationRequest.class),
+            f -> f.withMarshaller(ApplyConfigurationAsyncRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AttachEipRequest, AttachEipResponse> attachEip = genForattachEip();
 
     private static HttpRequestDef<AttachEipRequest, AttachEipResponse> genForattachEip() {
@@ -2809,6 +2848,48 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse> updateInstanceConfigurationAsync =
+        genForupdateInstanceConfigurationAsync();
+
+    private static HttpRequestDef<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse> genForupdateInstanceConfigurationAsync() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateInstanceConfigurationAsyncRequest.class,
+                    UpdateInstanceConfigurationAsyncResponse.class)
+                .withName("UpdateInstanceConfigurationAsync")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceConfigurationAsyncRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceConfigurationAsyncRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<UpdateInstanceConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstanceConfigurationRequestBody.class),
+            f -> f.withMarshaller(UpdateInstanceConfigurationAsyncRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceName =
         genForupdateInstanceName();
 
@@ -4383,6 +4464,55 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DropDatabaseV3Req.class),
             f -> f.withMarshaller(DeleteSqlserverDatabaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse> deleteSqlserverDatabaseEx =
+        genFordeleteSqlserverDatabaseEx();
+
+    private static HttpRequestDef<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse> genFordeleteSqlserverDatabaseEx() {
+        // basic
+        HttpRequestDef.Builder<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteSqlserverDatabaseExRequest.class,
+                    DeleteSqlserverDatabaseExResponse.class)
+                .withName("DeleteSqlserverDatabaseEx")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/database/{db_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSqlserverDatabaseExRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSqlserverDatabaseExRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSqlserverDatabaseExRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<DropDatabaseV3Req>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DropDatabaseV3Req.class),
+            f -> f.withMarshaller(DeleteSqlserverDatabaseExRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

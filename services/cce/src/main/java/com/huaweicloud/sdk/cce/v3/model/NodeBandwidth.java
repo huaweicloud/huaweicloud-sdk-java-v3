@@ -48,8 +48,9 @@ public class NodeBandwidth {
         return this;
     }
 
-    /** 带宽大小，取值请参见“[[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0167957246.html)](tag:hws)[[创建云服务器](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0167957246.html)](tag:hws_hk)
-     * > bandwidth字段数据结构说明”表中“size”参数的描述。
+    /** 带宽大小，取值请参见取值请参见申请EIP接口中bandwidth.size说明。
+     * [链接请参见[申请EIP](https://support.huaweicloud.com/api-eip/eip_api_0001.html)](tag:hws)
+     * [链接请参见[申请EIP](https://support.huaweicloud.com/intl/zh-cn/api-eip/eip_api_0001.html)](tag:hws_hk)
      * 
      * @return size */
     public Integer getSize() {
@@ -65,8 +66,7 @@ public class NodeBandwidth {
         return this;
     }
 
-    /** 带宽的共享类型，取值请参见“[[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0167957246.html)](tag:hws)[[创建云服务器](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0167957246.html)](tag:hws_hk)
-     * > bandwidth字段数据结构说明”表中“sharetype”参数的描述。
+    /** 带宽的共享类型，共享类型枚举：PER，表示独享。WHOLE，表示共享。
      * 
      * @return sharetype */
     public String getSharetype() {

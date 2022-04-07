@@ -88,13 +88,10 @@ public class CceClient {
             request, CceMeta.createCloudPersistentVolumeClaims, hcClient);
     }
 
-    /** 创建集群
-     * 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[[创建节点](https://support.huaweicloud.com/api-cce/cce_02_0242.html)](tag:hws)[[创建节点](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0242.html)](tag:hws_hk)添加节点。
-     * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。 &gt; -
+    /** 创建集群 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[创建节点](cce_02_0242.xml)添加节点。 &gt; -
+     * 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。 &gt; -
      * 调用该接口创建集群时，默认不安装ICAgent，若需安装ICAgent，可在请求Body参数的annotations中加入\&quot;cluster.install.addons.external/install\&quot;:
-     * \&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的集群注解，将在创建集群时自动安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。若需安装ICAgent，请参照[[安装ICAgent](https://support.huaweicloud.com/usermanual-apm/apm_02_0013.html)](tag:hws)[[安装ICAgent](https://support.huaweicloud.com/intl/zh-cn/usermanual-apm/apm_02_0013.html)](tag:hws_hk)。
-     * &gt; -
-     * 默认情况下，一个帐户只能创建5个集群（每个Region下），如果您需要创建更多的集群，请[[提交工单](https://console.huaweicloud.com/console/#/quota)](tag:hws)[[提交工单](https://console-intl.huaweicloud.com/console/?locale&#x3D;zh-cn#/quota)](tag:hws_hk)申请增加配额。
+     * \&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的集群注解，将在创建集群时自动安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。
      *
      * @param CreateClusterRequest 请求对象
      * @return CreateClusterResponse */
@@ -102,13 +99,10 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.createCluster);
     }
 
-    /** 创建集群
-     * 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[[创建节点](https://support.huaweicloud.com/api-cce/cce_02_0242.html)](tag:hws)[[创建节点](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0242.html)](tag:hws_hk)添加节点。
-     * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。 &gt; -
+    /** 创建集群 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[创建节点](cce_02_0242.xml)添加节点。 &gt; -
+     * 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。 &gt; -
      * 调用该接口创建集群时，默认不安装ICAgent，若需安装ICAgent，可在请求Body参数的annotations中加入\&quot;cluster.install.addons.external/install\&quot;:
-     * \&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的集群注解，将在创建集群时自动安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。若需安装ICAgent，请参照[[安装ICAgent](https://support.huaweicloud.com/usermanual-apm/apm_02_0013.html)](tag:hws)[[安装ICAgent](https://support.huaweicloud.com/intl/zh-cn/usermanual-apm/apm_02_0013.html)](tag:hws_hk)。
-     * &gt; -
-     * 默认情况下，一个帐户只能创建5个集群（每个Region下），如果您需要创建更多的集群，请[[提交工单](https://console.huaweicloud.com/console/#/quota)](tag:hws)[[提交工单](https://console-intl.huaweicloud.com/console/?locale&#x3D;zh-cn#/quota)](tag:hws_hk)申请增加配额。
+     * \&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的集群注解，将在创建集群时自动安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。
      *
      * @param CreateClusterRequest 请求对象
      * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse> */
@@ -134,9 +128,8 @@ public class CceClient {
             CceMeta.createKubernetesClusterCert, hcClient);
     }
 
-    /** 创建节点 该API用于在指定集群下创建节点。 &gt; -
-     * 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。
-     * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 创建节点 该API用于在指定集群下创建节点。 &gt; - 若无集群，请先[创建集群](cce_02_0236.xml)。 &gt; -
+     * 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param CreateNodeRequest 请求对象
      * @return CreateNodeResponse */
@@ -144,9 +137,8 @@ public class CceClient {
         return hcClient.syncInvokeHttp(request, CceMeta.createNode);
     }
 
-    /** 创建节点 该API用于在指定集群下创建节点。 &gt; -
-     * 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。
-     * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    /** 创建节点 该API用于在指定集群下创建节点。 &gt; - 若无集群，请先[创建集群](cce_02_0236.xml)。 &gt; -
+     * 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param CreateNodeRequest 请求对象
      * @return SyncInvoker<CreateNodeRequest, CreateNodeResponse> */
@@ -156,9 +148,7 @@ public class CceClient {
 
     /** 创建节点池
      * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。1.21版本的集群创建节点池时支持绑定安全组，每个节点池最多绑定五个安全组。更新节点池的安全组后，只针对新创的pod生效，建议驱逐节点上原有的pod。
-     * &gt;
-     * 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。
-     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+     * &gt; 若无集群，请先[创建集群](cce_02_0236.xml)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      *
      * @param CreateNodePoolRequest 请求对象
      * @return CreateNodePoolResponse */
@@ -168,9 +158,7 @@ public class CceClient {
 
     /** 创建节点池
      * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。1.21版本的集群创建节点池时支持绑定安全组，每个节点池最多绑定五个安全组。更新节点池的安全组后，只针对新创的pod生效，建议驱逐节点上原有的pod。
-     * &gt;
-     * 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。
-     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+     * &gt; 若无集群，请先[创建集群](cce_02_0236.xml)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      *
      * @param CreateNodePoolRequest 请求对象
      * @return SyncInvoker<CreateNodePoolRequest, CreateNodePoolResponse> */
@@ -574,7 +562,7 @@ public class CceClient {
     }
 
     /** 更新指定节点池 该API用于更新指定的节点池。仅支持集群在处于可用、扩容、缩容状态时调用。 &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径 &gt;
-     * - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags， taints，login，userTags与节点池的扩缩容配置相关字段。
+     * - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags， taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
      *
      * @param UpdateNodePoolRequest 请求对象
      * @return UpdateNodePoolResponse */
@@ -583,7 +571,7 @@ public class CceClient {
     }
 
     /** 更新指定节点池 该API用于更新指定的节点池。仅支持集群在处于可用、扩容、缩容状态时调用。 &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径 &gt;
-     * - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags， taints，login，userTags与节点池的扩缩容配置相关字段。
+     * - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags， taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
      *
      * @param UpdateNodePoolRequest 请求对象
      * @return SyncInvoker<UpdateNodePoolRequest, UpdateNodePoolResponse> */

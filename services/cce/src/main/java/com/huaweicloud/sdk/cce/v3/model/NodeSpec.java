@@ -108,7 +108,7 @@ public class NodeSpec {
         return this;
     }
 
-    /** 节点的规格，CCE支持的节点规格请参考[[节点规格说明](https://support.huaweicloud.com/api-cce/cce_02_0368.html)](tag:hws)[[节点规格说明](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0368.html)](tag:hws_hk)获取。
+    /** 节点的规格，CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。
      * 
      * @return flavor */
     public String getFlavor() {
@@ -124,7 +124,8 @@ public class NodeSpec {
         return this;
     }
 
-    /** 待创建节点所在的可用区，需要指定可用区（AZ）的名称。CCE支持的可用区请参考[[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)](tag:hws)[[地区和终端节点](https://developer.huaweicloud.com/intl/zh-cn/endpoint?CCE)](tag:hws_hk)获取。
+    /** 待创建节点所在的可用区，需要指定可用区（AZ）的名称。 [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)](tag:hws)
+     * [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/intl/zh-cn/endpoint?CCE)](tag:hws_hk)
      * 
      * @return az */
     public String getAz() {
@@ -465,7 +466,7 @@ public class NodeSpec {
         return this;
     }
 
-    /** 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为5个。
+    /** 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。
      * 
      * @return userTags */
     public List<UserTag> getUserTags() {

@@ -45,6 +45,16 @@ public class ResFeeRecordV2 {
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_service_type_name")
+
+    private String cloudServiceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time")
 
     private String effectiveTime;
@@ -355,6 +365,38 @@ public class ResFeeRecordV2 {
 
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
+    }
+
+    public ResFeeRecordV2 withCloudServiceTypeName(String cloudServiceTypeName) {
+        this.cloudServiceTypeName = cloudServiceTypeName;
+        return this;
+    }
+
+    /** |参数名称：服务类型编码名称| |参数约束及描述：资源类型编码名称|
+     * 
+     * @return cloudServiceTypeName */
+    public String getCloudServiceTypeName() {
+        return cloudServiceTypeName;
+    }
+
+    public void setCloudServiceTypeName(String cloudServiceTypeName) {
+        this.cloudServiceTypeName = cloudServiceTypeName;
+    }
+
+    public ResFeeRecordV2 withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /** |参数名称：资源类型编码名称| |参数约束及描述：服务类型编码名称|
+     * 
+     * @return resourceTypeName */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
     }
 
     public ResFeeRecordV2 withEffectiveTime(String effectiveTime) {
@@ -997,6 +1039,8 @@ public class ResFeeRecordV2 {
             && Objects.equals(this.regionName, resFeeRecordV2.regionName)
             && Objects.equals(this.cloudServiceType, resFeeRecordV2.cloudServiceType)
             && Objects.equals(this.resourceType, resFeeRecordV2.resourceType)
+            && Objects.equals(this.cloudServiceTypeName, resFeeRecordV2.cloudServiceTypeName)
+            && Objects.equals(this.resourceTypeName, resFeeRecordV2.resourceTypeName)
             && Objects.equals(this.effectiveTime, resFeeRecordV2.effectiveTime)
             && Objects.equals(this.expireTime, resFeeRecordV2.expireTime)
             && Objects.equals(this.resourceId, resFeeRecordV2.resourceId)
@@ -1047,6 +1091,8 @@ public class ResFeeRecordV2 {
             regionName,
             cloudServiceType,
             resourceType,
+            cloudServiceTypeName,
+            resourceTypeName,
             effectiveTime,
             expireTime,
             resourceId,
@@ -1099,6 +1145,8 @@ public class ResFeeRecordV2 {
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    cloudServiceTypeName: ").append(toIndentedString(cloudServiceTypeName)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
         sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");

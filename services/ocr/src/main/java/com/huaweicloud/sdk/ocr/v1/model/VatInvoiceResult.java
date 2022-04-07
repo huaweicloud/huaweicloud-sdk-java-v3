@@ -37,6 +37,11 @@ public class VatInvoiceResult {
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "print_code")
+
+    private String printCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_number")
 
     private String machineNumber;
@@ -260,6 +265,22 @@ public class VatInvoiceResult {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public VatInvoiceResult withPrintCode(String printCode) {
+        this.printCode = printCode;
+        return this;
+    }
+
+    /** 打印发票代码。普通发票和专用发票在右上角，电子发票、通行费发票、卷票无此字段。
+     * 
+     * @return printCode */
+    public String getPrintCode() {
+        return printCode;
+    }
+
+    public void setPrintCode(String printCode) {
+        this.printCode = printCode;
     }
 
     public VatInvoiceResult withMachineNumber(String machineNumber) {
@@ -724,6 +745,7 @@ public class VatInvoiceResult {
             && Objects.equals(this.attribution, vatInvoiceResult.attribution)
             && Objects.equals(this.supervisionSeal, vatInvoiceResult.supervisionSeal)
             && Objects.equals(this.code, vatInvoiceResult.code)
+            && Objects.equals(this.printCode, vatInvoiceResult.printCode)
             && Objects.equals(this.machineNumber, vatInvoiceResult.machineNumber)
             && Objects.equals(this.printNumber, vatInvoiceResult.printNumber)
             && Objects.equals(this.checkCode, vatInvoiceResult.checkCode)
@@ -759,6 +781,7 @@ public class VatInvoiceResult {
             attribution,
             supervisionSeal,
             code,
+            printCode,
             machineNumber,
             printNumber,
             checkCode,
@@ -796,6 +819,7 @@ public class VatInvoiceResult {
         sb.append("    attribution: ").append(toIndentedString(attribution)).append("\n");
         sb.append("    supervisionSeal: ").append(toIndentedString(supervisionSeal)).append("\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    printCode: ").append(toIndentedString(printCode)).append("\n");
         sb.append("    machineNumber: ").append(toIndentedString(machineNumber)).append("\n");
         sb.append("    printNumber: ").append(toIndentedString(printNumber)).append("\n");
         sb.append("    checkCode: ").append(toIndentedString(checkCode)).append("\n");

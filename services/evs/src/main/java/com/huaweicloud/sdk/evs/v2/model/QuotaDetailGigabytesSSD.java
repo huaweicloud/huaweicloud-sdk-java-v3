@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SSD类型云硬盘预留的size大小，单位为GB，键值对，包含：reserved（预留）、allocated（预留）、limit（最大）和in_use（已使用）。 */
+/** SSD类型云硬盘预留的size大小，单位为GB，键值对，包含：reserved（预留）、limit（最大）和in_use（已使用）。 */
 public class QuotaDetailGigabytesSSD {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,11 +22,6 @@ public class QuotaDetailGigabytesSSD {
     @JsonProperty(value = "reserved")
 
     private Integer reserved;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "allocated")
-
-    private Integer allocated;
 
     public QuotaDetailGigabytesSSD withInUse(Integer inUse) {
         this.inUse = inUse;
@@ -76,22 +71,6 @@ public class QuotaDetailGigabytesSSD {
         this.reserved = reserved;
     }
 
-    public QuotaDetailGigabytesSSD withAllocated(Integer allocated) {
-        this.allocated = allocated;
-        return this;
-    }
-
-    /** 预留属性。
-     * 
-     * @return allocated */
-    public Integer getAllocated() {
-        return allocated;
-    }
-
-    public void setAllocated(Integer allocated) {
-        this.allocated = allocated;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -103,13 +82,12 @@ public class QuotaDetailGigabytesSSD {
         QuotaDetailGigabytesSSD quotaDetailGigabytesSSD = (QuotaDetailGigabytesSSD) o;
         return Objects.equals(this.inUse, quotaDetailGigabytesSSD.inUse)
             && Objects.equals(this.limit, quotaDetailGigabytesSSD.limit)
-            && Objects.equals(this.reserved, quotaDetailGigabytesSSD.reserved)
-            && Objects.equals(this.allocated, quotaDetailGigabytesSSD.allocated);
+            && Objects.equals(this.reserved, quotaDetailGigabytesSSD.reserved);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(inUse, limit, reserved, allocated);
+        return Objects.hash(inUse, limit, reserved);
     }
 
     @Override
@@ -119,7 +97,6 @@ public class QuotaDetailGigabytesSSD {
         sb.append("    inUse: ").append(toIndentedString(inUse)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    reserved: ").append(toIndentedString(reserved)).append("\n");
-        sb.append("    allocated: ").append(toIndentedString(allocated)).append("\n");
         sb.append("}");
         return sb.toString();
     }

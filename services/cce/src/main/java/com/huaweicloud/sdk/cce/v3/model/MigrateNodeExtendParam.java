@@ -108,7 +108,6 @@ public class MigrateNodeExtendParam {
     }
 
     /** 指定待切换目标操作系统所使用的用户镜像ID。 当指定“alpha.cce/NodeImageID”参数时，“os”参数必须和用户自定义镜像的操作系统一致。
-     * 镜像需满足条件：[使用私有镜像制作工作节点镜像（公测）](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00026.html)或[使用私有镜像制作Turbo集群共池裸机工作节点镜像](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0134.html)
      * 
      * @return alphaCceNodeImageID */
     public String getAlphaCceNodeImageID() {

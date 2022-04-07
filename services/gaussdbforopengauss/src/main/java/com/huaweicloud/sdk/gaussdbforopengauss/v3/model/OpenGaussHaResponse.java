@@ -25,7 +25,7 @@ import java.util.Objects;
 public class OpenGaussHaResponse  {
 
     /**
-     * GaussDB(for openGauss)仅支持分布式模式，返回值为：Enterprise（企业版）。
+     * GaussDB(for openGauss) 分布式模式，返回值为：Enterprise（企业版）；主备版，返回值为：Ha(主备版)。
      */
     public static final class ModeEnum {
 
@@ -35,12 +35,18 @@ public class OpenGaussHaResponse  {
          */
         public static final ModeEnum ENTERPRISE = new ModeEnum("Enterprise");
         
+        /**
+         * Enum HA for value: "Ha"
+         */
+        public static final ModeEnum HA = new ModeEnum("Ha");
+        
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModeEnum> createStaticFields() {
             Map<String, ModeEnum> map = new HashMap<>();
             map.put("Enterprise", ENTERPRISE);
+            map.put("Ha", HA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -277,7 +283,7 @@ public class OpenGaussHaResponse  {
 
 
     /**
-     * GaussDB(for openGauss)仅支持分布式模式，返回值为：Enterprise（企业版）。
+     * GaussDB(for openGauss) 分布式模式，返回值为：Enterprise（企业版）；主备版，返回值为：Ha(主备版)。
      * @return mode
      */
     public ModeEnum getMode() {

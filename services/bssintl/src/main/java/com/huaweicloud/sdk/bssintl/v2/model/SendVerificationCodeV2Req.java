@@ -28,16 +28,6 @@ public class SendVerificationCodeV2Req {
 
     private String lang;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scene")
-
-    private Integer scene;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "customer_id")
-
-    private String customerId;
-
     public SendVerificationCodeV2Req withReceiverType(Integer receiverType) {
         this.receiverType = receiverType;
         return this;
@@ -104,38 +94,6 @@ public class SendVerificationCodeV2Req {
         this.lang = lang;
     }
 
-    public SendVerificationCodeV2Req withScene(Integer scene) {
-        this.scene = scene;
-        return this;
-    }
-
-    /** |参数名称：场景| |参数的约束及描述：该参数非必填，29：注册；18：实名认证个人银行卡认证；不填写默认为29| minimum: 18 maximum: 29
-     * 
-     * @return scene */
-    public Integer getScene() {
-        return scene;
-    }
-
-    public void setScene(Integer scene) {
-        this.scene = scene;
-    }
-
-    public SendVerificationCodeV2Req withCustomerId(String customerId) {
-        this.customerId = customerId;
-        return this;
-    }
-
-    /** |参数名称：客户ID，如果scene=18的时候必填。| |参数约束及描述：客户ID，如果scene=18的时候必填。|
-     * 
-     * @return customerId */
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -148,14 +106,12 @@ public class SendVerificationCodeV2Req {
         return Objects.equals(this.receiverType, sendVerificationCodeV2Req.receiverType)
             && Objects.equals(this.timeout, sendVerificationCodeV2Req.timeout)
             && Objects.equals(this.email, sendVerificationCodeV2Req.email)
-            && Objects.equals(this.lang, sendVerificationCodeV2Req.lang)
-            && Objects.equals(this.scene, sendVerificationCodeV2Req.scene)
-            && Objects.equals(this.customerId, sendVerificationCodeV2Req.customerId);
+            && Objects.equals(this.lang, sendVerificationCodeV2Req.lang);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(receiverType, timeout, email, lang, scene, customerId);
+        return Objects.hash(receiverType, timeout, email, lang);
     }
 
     @Override
@@ -166,8 +122,6 @@ public class SendVerificationCodeV2Req {
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
-        sb.append("    scene: ").append(toIndentedString(scene)).append("\n");
-        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

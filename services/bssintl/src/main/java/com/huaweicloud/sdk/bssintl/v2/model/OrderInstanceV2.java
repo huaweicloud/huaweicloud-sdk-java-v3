@@ -39,6 +39,16 @@ public class OrderInstanceV2 {
     private String resourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_spec_code")
 
     private String resourceSpecCode;
@@ -179,6 +189,38 @@ public class OrderInstanceV2 {
 
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
+    }
+
+    public OrderInstanceV2 withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /** |参数名称：资源类型编码名称| |参数约束及描述：资源类型编码名称|
+     * 
+     * @return resourceTypeName */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+    }
+
+    public OrderInstanceV2 withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** |参数名称：服务类型编码名称| |参数约束及描述：服务类型编码名称|
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
     }
 
     public OrderInstanceV2 withResourceSpecCode(String resourceSpecCode) {
@@ -345,6 +387,8 @@ public class OrderInstanceV2 {
             && Objects.equals(this.regionCode, orderInstanceV2.regionCode)
             && Objects.equals(this.serviceTypeCode, orderInstanceV2.serviceTypeCode)
             && Objects.equals(this.resourceTypeCode, orderInstanceV2.resourceTypeCode)
+            && Objects.equals(this.resourceTypeName, orderInstanceV2.resourceTypeName)
+            && Objects.equals(this.serviceTypeName, orderInstanceV2.serviceTypeName)
             && Objects.equals(this.resourceSpecCode, orderInstanceV2.resourceSpecCode)
             && Objects.equals(this.projectId, orderInstanceV2.projectId)
             && Objects.equals(this.productId, orderInstanceV2.productId)
@@ -364,6 +408,8 @@ public class OrderInstanceV2 {
             regionCode,
             serviceTypeCode,
             resourceTypeCode,
+            resourceTypeName,
+            serviceTypeName,
             resourceSpecCode,
             projectId,
             productId,
@@ -385,6 +431,8 @@ public class OrderInstanceV2 {
         sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");

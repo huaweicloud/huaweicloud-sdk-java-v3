@@ -50,6 +50,16 @@ public class MonthlyBillRes {
     private String resourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_service_type_name")
+
+    private String cloudServiceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "res_instance_id")
 
     private String resInstanceId;
@@ -143,6 +153,11 @@ public class MonthlyBillRes {
     @JsonProperty(value = "measure_id")
 
     private Integer measureId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_type")
+
+    private Integer periodType;
 
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
@@ -272,6 +287,38 @@ public class MonthlyBillRes {
 
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
+    }
+
+    public MonthlyBillRes withCloudServiceTypeName(String cloudServiceTypeName) {
+        this.cloudServiceTypeName = cloudServiceTypeName;
+        return this;
+    }
+
+    /** |参数名称：服务类型编码名称| |参数约束及描述：资源类型编码名称|
+     * 
+     * @return cloudServiceTypeName */
+    public String getCloudServiceTypeName() {
+        return cloudServiceTypeName;
+    }
+
+    public void setCloudServiceTypeName(String cloudServiceTypeName) {
+        this.cloudServiceTypeName = cloudServiceTypeName;
+    }
+
+    public MonthlyBillRes withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /** |参数名称：资源类型编码名称| |参数约束及描述：服务类型编码名称|
+     * 
+     * @return resourceTypeName */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
     }
 
     public MonthlyBillRes withResInstanceId(String resInstanceId) {
@@ -578,6 +625,22 @@ public class MonthlyBillRes {
         this.measureId = measureId;
     }
 
+    public MonthlyBillRes withPeriodType(Integer periodType) {
+        this.periodType = periodType;
+        return this;
+    }
+
+    /** |参数名称：周期类型：19：年 20：月 24：天 25：小时 5：一次性| |参数的约束及描述：该参数非必填|
+     * 
+     * @return periodType */
+    public Integer getPeriodType() {
+        return periodType;
+    }
+
+    public void setPeriodType(Integer periodType) {
+        this.periodType = periodType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -595,6 +658,8 @@ public class MonthlyBillRes {
             && Objects.equals(this.regionName, monthlyBillRes.regionName)
             && Objects.equals(this.cloudServiceType, monthlyBillRes.cloudServiceType)
             && Objects.equals(this.resourceTypeCode, monthlyBillRes.resourceTypeCode)
+            && Objects.equals(this.cloudServiceTypeName, monthlyBillRes.cloudServiceTypeName)
+            && Objects.equals(this.resourceTypeName, monthlyBillRes.resourceTypeName)
             && Objects.equals(this.resInstanceId, monthlyBillRes.resInstanceId)
             && Objects.equals(this.resourceName, monthlyBillRes.resourceName)
             && Objects.equals(this.resourceTag, monthlyBillRes.resourceTag)
@@ -613,7 +678,8 @@ public class MonthlyBillRes {
             && Objects.equals(this.adjustmentAmount, monthlyBillRes.adjustmentAmount)
             && Objects.equals(this.officialAmount, monthlyBillRes.officialAmount)
             && Objects.equals(this.discountAmount, monthlyBillRes.discountAmount)
-            && Objects.equals(this.measureId, monthlyBillRes.measureId);
+            && Objects.equals(this.measureId, monthlyBillRes.measureId)
+            && Objects.equals(this.periodType, monthlyBillRes.periodType);
     }
 
     @Override
@@ -626,6 +692,8 @@ public class MonthlyBillRes {
             regionName,
             cloudServiceType,
             resourceTypeCode,
+            cloudServiceTypeName,
+            resourceTypeName,
             resInstanceId,
             resourceName,
             resourceTag,
@@ -644,7 +712,8 @@ public class MonthlyBillRes {
             adjustmentAmount,
             officialAmount,
             discountAmount,
-            measureId);
+            measureId,
+            periodType);
     }
 
     @Override
@@ -659,6 +728,8 @@ public class MonthlyBillRes {
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
+        sb.append("    cloudServiceTypeName: ").append(toIndentedString(cloudServiceTypeName)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
         sb.append("    resInstanceId: ").append(toIndentedString(resInstanceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceTag: ").append(toIndentedString(resourceTag)).append("\n");
@@ -678,6 +749,7 @@ public class MonthlyBillRes {
         sb.append("    officialAmount: ").append(toIndentedString(officialAmount)).append("\n");
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

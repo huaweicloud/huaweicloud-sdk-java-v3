@@ -21,7 +21,7 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 创建数据库实例
-     * 创建数据库实例
+     * 创建数据库企业版和集中式实例
      *
      * @param CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
@@ -32,7 +32,7 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 创建数据库实例
-     * 创建数据库实例
+     * 创建数据库企业版和集中式实例
      *
      * @param CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -64,6 +64,72 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 获取参数模板列表
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
+     * @param ListConfigurationsRequest 请求对象
+     * @return CompletableFuture<ListConfigurationsResponse>
+     */
+    public CompletableFuture<ListConfigurationsResponse> listConfigurationsAsync(ListConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listConfigurations);
+    }
+
+    /**
+     * 获取参数模板列表
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
+     * @param ListConfigurationsRequest 请求对象
+     * @return AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
+     */
+    public AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsAsyncInvoker(ListConfigurationsRequest request) {
+        return new AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request, GaussDBforopenGaussMeta.listConfigurations, hcClient);
+    }
+
+    /**
+     * 查询数据库引擎的版本
+     * 查询指定数据库引擎对应的版本信息。
+     *
+     * @param ListDatastoresRequest 请求对象
+     * @return CompletableFuture<ListDatastoresResponse>
+     */
+    public CompletableFuture<ListDatastoresResponse> listDatastoresAsync(ListDatastoresRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listDatastores);
+    }
+
+    /**
+     * 查询数据库引擎的版本
+     * 查询指定数据库引擎对应的版本信息。
+     *
+     * @param ListDatastoresRequest 请求对象
+     * @return AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
+     */
+    public AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresAsyncInvoker(ListDatastoresRequest request) {
+        return new AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request, GaussDBforopenGaussMeta.listDatastores, hcClient);
+    }
+
+    /**
+     * 查询数据库规格
+     * 查询指定数据库引擎对应的规格信息。
+     *
+     * @param ListFlavorsRequest 请求对象
+     * @return CompletableFuture<ListFlavorsResponse>
+     */
+    public CompletableFuture<ListFlavorsResponse> listFlavorsAsync(ListFlavorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listFlavors);
+    }
+
+    /**
+     * 查询数据库规格
+     * 查询指定数据库引擎对应的规格信息。
+     *
+     * @param ListFlavorsRequest 请求对象
+     * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
+     */
+    public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
+        return new AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, GaussDBforopenGaussMeta.listFlavors, hcClient);
+    }
+
+    /**
      * 查询数据库实例列表/查询实例详情
      * 查询数据库实例列表/查询实例详情
      *
@@ -83,6 +149,28 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(ListInstancesRequest request) {
         return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, GaussDBforopenGaussMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 查询数据库磁盘类型
+     * 查询指定数据库引擎对应的磁盘类型。
+     *
+     * @param ListStorageTypesRequest 请求对象
+     * @return CompletableFuture<ListStorageTypesResponse>
+     */
+    public CompletableFuture<ListStorageTypesResponse> listStorageTypesAsync(ListStorageTypesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listStorageTypes);
+    }
+
+    /**
+     * 查询数据库磁盘类型
+     * 查询指定数据库引擎对应的磁盘类型。
+     *
+     * @param ListStorageTypesRequest 请求对象
+     * @return AsyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>
+     */
+    public AsyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesAsyncInvoker(ListStorageTypesRequest request) {
+        return new AsyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>(request, GaussDBforopenGaussMeta.listStorageTypes, hcClient);
     }
 
     /**

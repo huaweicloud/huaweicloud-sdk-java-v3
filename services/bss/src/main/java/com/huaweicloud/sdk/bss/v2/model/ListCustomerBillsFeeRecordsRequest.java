@@ -88,6 +88,16 @@ public class ListCustomerBillsFeeRecordsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bill_date_begin")
+
+    private String billDateBegin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bill_date_end")
+
+    private String billDateEnd;
+
     public ListCustomerBillsFeeRecordsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -349,6 +359,40 @@ public class ListCustomerBillsFeeRecordsRequest {
         this.limit = limit;
     }
 
+    public ListCustomerBillsFeeRecordsRequest withBillDateBegin(String billDateBegin) {
+        this.billDateBegin = billDateBegin;
+        return this;
+    }
+
+    /** 查询的流水账单的开始日期，格式为YYYY-MM-DD。 说明：
+     * 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
+     * 
+     * @return billDateBegin */
+    public String getBillDateBegin() {
+        return billDateBegin;
+    }
+
+    public void setBillDateBegin(String billDateBegin) {
+        this.billDateBegin = billDateBegin;
+    }
+
+    public ListCustomerBillsFeeRecordsRequest withBillDateEnd(String billDateEnd) {
+        this.billDateEnd = billDateEnd;
+        return this;
+    }
+
+    /** 查询的流水账单的结束日期，格式为YYYY-MM-DD。 说明：
+     * 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
+     * 
+     * @return billDateEnd */
+    public String getBillDateEnd() {
+        return billDateEnd;
+    }
+
+    public void setBillDateEnd(String billDateEnd) {
+        this.billDateEnd = billDateEnd;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -373,7 +417,9 @@ public class ListCustomerBillsFeeRecordsRequest {
             && Objects.equals(this.method, listCustomerBillsFeeRecordsRequest.method)
             && Objects.equals(this.subCustomerId, listCustomerBillsFeeRecordsRequest.subCustomerId)
             && Objects.equals(this.offset, listCustomerBillsFeeRecordsRequest.offset)
-            && Objects.equals(this.limit, listCustomerBillsFeeRecordsRequest.limit);
+            && Objects.equals(this.limit, listCustomerBillsFeeRecordsRequest.limit)
+            && Objects.equals(this.billDateBegin, listCustomerBillsFeeRecordsRequest.billDateBegin)
+            && Objects.equals(this.billDateEnd, listCustomerBillsFeeRecordsRequest.billDateEnd);
     }
 
     @Override
@@ -393,7 +439,9 @@ public class ListCustomerBillsFeeRecordsRequest {
             method,
             subCustomerId,
             offset,
-            limit);
+            limit,
+            billDateBegin,
+            billDateEnd);
     }
 
     @Override
@@ -416,6 +464,8 @@ public class ListCustomerBillsFeeRecordsRequest {
         sb.append("    subCustomerId: ").append(toIndentedString(subCustomerId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    billDateBegin: ").append(toIndentedString(billDateBegin)).append("\n");
+        sb.append("    billDateEnd: ").append(toIndentedString(billDateEnd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

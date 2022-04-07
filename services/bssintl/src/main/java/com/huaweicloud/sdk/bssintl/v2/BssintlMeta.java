@@ -729,34 +729,6 @@ public class BssintlMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> listOrderCouponsByOrderId =
-        genForlistOrderCouponsByOrderId();
-
-    private static HttpRequestDef<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> genForlistOrderCouponsByOrderId() {
-        // basic
-        HttpRequestDef.Builder<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListOrderCouponsByOrderIdRequest.class,
-                    ListOrderCouponsByOrderIdResponse.class)
-                .withName("ListOrderCouponsByOrderId")
-                .withUri("/v2/orders/customer-orders/order-coupons")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("order_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderCouponsByOrderIdRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> listOrderDiscounts =
         genForlistOrderDiscounts();
 
@@ -868,16 +840,23 @@ public class BssintlMeta {
         HttpRequestDef.Builder<ListResourceTypesRequest, ListResourceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceTypesRequest.class, ListResourceTypesResponse.class)
                 .withName("ListResourceTypes")
-                .withUri("/v2/bases/resource-types")
+                .withUri("/v2/products/resource-types")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("resource_type_code",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceTypesRequest::getResourceTypeCode, (req, v) -> {
-                req.setResourceTypeCode(v);
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceTypesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceTypesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
@@ -946,16 +925,23 @@ public class BssintlMeta {
         HttpRequestDef.Builder<ListServiceTypesRequest, ListServiceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServiceTypesRequest.class, ListServiceTypesResponse.class)
                 .withName("ListServiceTypes")
-                .withUri("/v2/bases/service-types")
+                .withUri("/v2/products/service-types")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("service_type_code",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceTypesRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServiceTypesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServiceTypesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,

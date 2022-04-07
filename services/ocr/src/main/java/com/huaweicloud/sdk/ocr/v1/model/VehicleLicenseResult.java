@@ -113,6 +113,11 @@ public class VehicleLicenseResult {
 
     private String codeNumber;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text_location")
+
+    private Object textLocation;
+
     public VehicleLicenseResult withNumber(String number) {
         this.number = number;
         return this;
@@ -449,6 +454,22 @@ public class VehicleLicenseResult {
         this.codeNumber = codeNumber;
     }
 
+    public VehicleLicenseResult withTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+        return this;
+    }
+
+    /** 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。 当“return_text_location”设置为“true”时才返回。
+     * 
+     * @return textLocation */
+    public Object getTextLocation() {
+        return textLocation;
+    }
+
+    public void setTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -478,7 +499,8 @@ public class VehicleLicenseResult {
             && Objects.equals(this.tractionMass, vehicleLicenseResult.tractionMass)
             && Objects.equals(this.remarks, vehicleLicenseResult.remarks)
             && Objects.equals(this.inspectionRecord, vehicleLicenseResult.inspectionRecord)
-            && Objects.equals(this.codeNumber, vehicleLicenseResult.codeNumber);
+            && Objects.equals(this.codeNumber, vehicleLicenseResult.codeNumber)
+            && Objects.equals(this.textLocation, vehicleLicenseResult.textLocation);
     }
 
     @Override
@@ -503,7 +525,8 @@ public class VehicleLicenseResult {
             tractionMass,
             remarks,
             inspectionRecord,
-            codeNumber);
+            codeNumber,
+            textLocation);
     }
 
     @Override
@@ -531,6 +554,7 @@ public class VehicleLicenseResult {
         sb.append("    remarks: ").append(toIndentedString(remarks)).append("\n");
         sb.append("    inspectionRecord: ").append(toIndentedString(inspectionRecord)).append("\n");
         sb.append("    codeNumber: ").append(toIndentedString(codeNumber)).append("\n");
+        sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

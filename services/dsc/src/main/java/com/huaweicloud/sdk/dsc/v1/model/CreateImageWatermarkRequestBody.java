@@ -23,6 +23,10 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
 
     private String blindWatermark;
 
+    @JsonProperty(value = "image_watermark", access = JsonProperty.Access.WRITE_ONLY)
+
+    private FormDataFilePart imageWatermark;
+
     public CreateImageWatermarkRequestBody withFile(FormDataFilePart file) {
         this.file = file;
         return this;
@@ -44,7 +48,7 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 嵌入暗水印的内容，长度不超过32个字符。当前仅支持数字及英文大小写。
+    /** 待嵌入的文字暗水印内容，长度不超过32个字符。当前仅支持数字及英文大小写。与图片暗水印image_watermark二选一填充。
      * 
      * @return blindWatermark */
     public String getBlindWatermark() {
@@ -53,6 +57,22 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
 
     public void setBlindWatermark(String blindWatermark) {
         this.blindWatermark = blindWatermark;
+    }
+
+    public CreateImageWatermarkRequestBody withImageWatermark(FormDataFilePart imageWatermark) {
+        this.imageWatermark = imageWatermark;
+        return this;
+    }
+
+    /** 待嵌入的图片暗水印文件，与文字暗水印 blind_watermark 二选一填充。
+     * 
+     * @return imageWatermark */
+    public FormDataFilePart getImageWatermark() {
+        return imageWatermark;
+    }
+
+    public void setImageWatermark(FormDataFilePart imageWatermark) {
+        this.imageWatermark = imageWatermark;
     }
 
     public CreateImageWatermarkRequestBody withFile(InputStream inputStream, String fileName, String contentType) {
@@ -71,13 +91,35 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
+    public CreateImageWatermarkRequestBody withImageWatermark(InputStream inputStream, String fileName,
+        String contentType) {
+        this.imageWatermark = new FormDataFilePart(inputStream, fileName).withContentType(contentType);
+        return this;
+    }
+
+    public CreateImageWatermarkRequestBody withImageWatermark(InputStream inputStream, String fileName) {
+        this.imageWatermark = new FormDataFilePart(inputStream, fileName);
+        return this;
+    }
+
+    public CreateImageWatermarkRequestBody withImageWatermark(InputStream inputStream, String fileName,
+        Map<String, String> headers) {
+        this.imageWatermark = new FormDataFilePart(inputStream, fileName).withHeaders(headers);
+        return this;
+    }
+
     @Override
     public Map<String, FormDataPart> buildFormData() {
         return new LinkedHashMap<String, FormDataPart>() {
 
             {
                 put("file", file);
-                put("blind_watermark", new FormDataPart<>(blindWatermark));
+                if (blindWatermark != null) {
+                    put("blind_watermark", new FormDataPart<>(blindWatermark));
+                }
+                if (imageWatermark != null) {
+                    put("image_watermark", imageWatermark);
+                }
             }
         };
     }
@@ -92,12 +134,13 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
         }
         CreateImageWatermarkRequestBody createImageWatermarkRequestBody = (CreateImageWatermarkRequestBody) o;
         return Objects.equals(this.file, createImageWatermarkRequestBody.file)
-            && Objects.equals(this.blindWatermark, createImageWatermarkRequestBody.blindWatermark);
+            && Objects.equals(this.blindWatermark, createImageWatermarkRequestBody.blindWatermark)
+            && Objects.equals(this.imageWatermark, createImageWatermarkRequestBody.imageWatermark);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(file, blindWatermark);
+        return Objects.hash(file, blindWatermark, imageWatermark);
     }
 
     @Override
@@ -106,6 +149,7 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
         sb.append("class CreateImageWatermarkRequestBody {\n");
         sb.append("    file: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
         sb.append("    blindWatermark: ").append(toIndentedString(blindWatermark)).append("\n");
+        sb.append("    imageWatermark: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
         sb.append("}");
         return sb.toString();
     }

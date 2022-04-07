@@ -28,6 +28,16 @@ public class UsageType {
 
     private String serviceTypeCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
     public UsageType withCode(String code) {
         this.code = code;
         return this;
@@ -92,6 +102,38 @@ public class UsageType {
         this.serviceTypeCode = serviceTypeCode;
     }
 
+    public UsageType withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * 
+     * @return resourceTypeName */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+    }
+
+    public UsageType withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -103,12 +145,14 @@ public class UsageType {
         UsageType usageType = (UsageType) o;
         return Objects.equals(this.code, usageType.code) && Objects.equals(this.name, usageType.name)
             && Objects.equals(this.resourceTypeCode, usageType.resourceTypeCode)
-            && Objects.equals(this.serviceTypeCode, usageType.serviceTypeCode);
+            && Objects.equals(this.serviceTypeCode, usageType.serviceTypeCode)
+            && Objects.equals(this.resourceTypeName, usageType.resourceTypeName)
+            && Objects.equals(this.serviceTypeName, usageType.serviceTypeName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, name, resourceTypeCode, serviceTypeCode);
+        return Objects.hash(code, name, resourceTypeCode, serviceTypeCode, resourceTypeName, serviceTypeName);
     }
 
     @Override
@@ -119,6 +163,8 @@ public class UsageType {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

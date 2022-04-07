@@ -34,6 +34,16 @@ public class CustomerOnDemandResource {
     private String resourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
@@ -151,6 +161,38 @@ public class CustomerOnDemandResource {
 
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
+    }
+
+    public CustomerOnDemandResource withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+    }
+
+    public CustomerOnDemandResource withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * 
+     * @return resourceTypeName */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
     }
 
     public CustomerOnDemandResource withResourceId(String resourceId) {
@@ -295,6 +337,8 @@ public class CustomerOnDemandResource {
             && Objects.equals(this.availabilityZoneCode, customerOnDemandResource.availabilityZoneCode)
             && Objects.equals(this.serviceTypeCode, customerOnDemandResource.serviceTypeCode)
             && Objects.equals(this.resourceTypeCode, customerOnDemandResource.resourceTypeCode)
+            && Objects.equals(this.serviceTypeName, customerOnDemandResource.serviceTypeName)
+            && Objects.equals(this.resourceTypeName, customerOnDemandResource.resourceTypeName)
             && Objects.equals(this.resourceId, customerOnDemandResource.resourceId)
             && Objects.equals(this.resourceName, customerOnDemandResource.resourceName)
             && Objects.equals(this.effectiveTime, customerOnDemandResource.effectiveTime)
@@ -312,6 +356,8 @@ public class CustomerOnDemandResource {
             availabilityZoneCode,
             serviceTypeCode,
             resourceTypeCode,
+            serviceTypeName,
+            resourceTypeName,
             resourceId,
             resourceName,
             effectiveTime,
@@ -331,6 +377,8 @@ public class CustomerOnDemandResource {
         sb.append("    availabilityZoneCode: ").append(toIndentedString(availabilityZoneCode)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");

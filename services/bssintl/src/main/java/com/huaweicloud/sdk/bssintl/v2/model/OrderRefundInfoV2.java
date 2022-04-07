@@ -40,6 +40,16 @@ public class OrderRefundInfoV2 {
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_code")
 
     private String regionCode;
@@ -136,7 +146,7 @@ public class OrderRefundInfoV2 {
     }
 
     /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
-     * |参数约束及描述：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+     * |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -145,6 +155,38 @@ public class OrderRefundInfoV2 {
 
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
+    }
+
+    public OrderRefundInfoV2 withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /** |参数名称：资源类型编码名称| |参数约束及描述：资源类型编码名称|
+     * 
+     * @return resourceTypeName */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+    }
+
+    public OrderRefundInfoV2 withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** |参数名称：服务类型编码名称| |参数约束及描述：服务类型编码名称|
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
     }
 
     public OrderRefundInfoV2 withRegionCode(String regionCode) {
@@ -194,14 +236,24 @@ public class OrderRefundInfoV2 {
             && Objects.equals(this.customerId, orderRefundInfoV2.customerId)
             && Objects.equals(this.resourceTypeCode, orderRefundInfoV2.resourceTypeCode)
             && Objects.equals(this.serviceTypeCode, orderRefundInfoV2.serviceTypeCode)
+            && Objects.equals(this.resourceTypeName, orderRefundInfoV2.resourceTypeName)
+            && Objects.equals(this.serviceTypeName, orderRefundInfoV2.serviceTypeName)
             && Objects.equals(this.regionCode, orderRefundInfoV2.regionCode)
             && Objects.equals(this.baseOrderId, orderRefundInfoV2.baseOrderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, amount, measureId, customerId, resourceTypeCode, serviceTypeCode, regionCode, baseOrderId);
+        return Objects.hash(id,
+            amount,
+            measureId,
+            customerId,
+            resourceTypeCode,
+            serviceTypeCode,
+            resourceTypeName,
+            serviceTypeName,
+            regionCode,
+            baseOrderId);
     }
 
     @Override
@@ -214,6 +266,8 @@ public class OrderRefundInfoV2 {
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
         sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
         sb.append("    baseOrderId: ").append(toIndentedString(baseOrderId)).append("\n");
         sb.append("}");

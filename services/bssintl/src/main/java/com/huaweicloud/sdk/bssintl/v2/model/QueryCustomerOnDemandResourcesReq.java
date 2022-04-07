@@ -56,11 +56,6 @@ public class QueryCustomerOnDemandResourcesReq {
 
     private Integer status;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "indirect_partner_id")
-
-    private String indirectPartnerId;
-
     public QueryCustomerOnDemandResourcesReq withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -226,23 +221,6 @@ public class QueryCustomerOnDemandResourcesReq {
         this.status = status;
     }
 
-    public QueryCustomerOnDemandResourcesReq withIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-        return this;
-    }
-
-    /** |参数名称：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源|
-     * |参数约束及描述：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源|
-     * 
-     * @return indirectPartnerId */
-    public String getIndirectPartnerId() {
-        return indirectPartnerId;
-    }
-
-    public void setIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -260,8 +238,7 @@ public class QueryCustomerOnDemandResourcesReq {
             && Objects.equals(this.effectiveTimeEnd, queryCustomerOnDemandResourcesReq.effectiveTimeEnd)
             && Objects.equals(this.offset, queryCustomerOnDemandResourcesReq.offset)
             && Objects.equals(this.limit, queryCustomerOnDemandResourcesReq.limit)
-            && Objects.equals(this.status, queryCustomerOnDemandResourcesReq.status)
-            && Objects.equals(this.indirectPartnerId, queryCustomerOnDemandResourcesReq.indirectPartnerId);
+            && Objects.equals(this.status, queryCustomerOnDemandResourcesReq.status);
     }
 
     @Override
@@ -274,8 +251,7 @@ public class QueryCustomerOnDemandResourcesReq {
             effectiveTimeEnd,
             offset,
             limit,
-            status,
-            indirectPartnerId);
+            status);
     }
 
     @Override
@@ -291,7 +267,6 @@ public class QueryCustomerOnDemandResourcesReq {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

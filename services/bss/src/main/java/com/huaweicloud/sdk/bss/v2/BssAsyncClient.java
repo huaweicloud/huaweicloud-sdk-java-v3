@@ -50,29 +50,6 @@ public class BssAsyncClient {
             BssMeta.autoRenewalResources, hcClient);
     }
 
-    /** 设置伙伴折扣 合作伙伴可以为客户设置产品折扣，可指定有效期。被授予折扣后，客户在购买华为云产品（特殊产品除外）时，可享受伙伴授予折扣。
-     * 伙伴登录合作伙伴中心为客户设置折扣请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072335153.html)。
-     * &gt;![](public_sys-resources/icon-note.gif) **说明：** &gt;- 精英服务商（二级经销商）也可以通过该接口给子客户设置折扣。 &gt;- 暂不支持设置产品分类折扣。
-     *
-     * @param BatchSetSubCustomerDiscountRequest 请求对象
-     * @return CompletableFuture<BatchSetSubCustomerDiscountResponse> */
-    public CompletableFuture<BatchSetSubCustomerDiscountResponse> batchSetSubCustomerDiscountAsync(
-        BatchSetSubCustomerDiscountRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssMeta.batchSetSubCustomerDiscount);
-    }
-
-    /** 设置伙伴折扣 合作伙伴可以为客户设置产品折扣，可指定有效期。被授予折扣后，客户在购买华为云产品（特殊产品除外）时，可享受伙伴授予折扣。
-     * 伙伴登录合作伙伴中心为客户设置折扣请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072335153.html)。
-     * &gt;![](public_sys-resources/icon-note.gif) **说明：** &gt;- 精英服务商（二级经销商）也可以通过该接口给子客户设置折扣。 &gt;- 暂不支持设置产品分类折扣。
-     *
-     * @param BatchSetSubCustomerDiscountRequest 请求对象
-     * @return AsyncInvoker<BatchSetSubCustomerDiscountRequest, BatchSetSubCustomerDiscountResponse> */
-    public AsyncInvoker<BatchSetSubCustomerDiscountRequest, BatchSetSubCustomerDiscountResponse> batchSetSubCustomerDiscountAsyncInvoker(
-        BatchSetSubCustomerDiscountRequest request) {
-        return new AsyncInvoker<BatchSetSubCustomerDiscountRequest, BatchSetSubCustomerDiscountResponse>(request,
-            BssMeta.batchSetSubCustomerDiscount, hcClient);
-    }
-
     /** 取消包年/包月资源自动续费 客户设置自动续费后，还可以执行取消自动续费的操作。关闭自动续费后，资源到期将不会被自动续费。
      * 客户在费用中心取消包年/包月资源自动续费请参见[这里](https://support.huaweicloud.com/usermanual-billing/renewals_topic_20000005.html)。
      * &gt;![](public_sys-resources/icon-note.gif) **说明：** &gt;-
@@ -464,7 +441,12 @@ public class BssAsyncClient {
             BssMeta.listCustomerBillsFeeRecords, hcClient);
     }
 
-    /** 查询月度成本 功能描述：查询月度成本
+    /** 查询月度成本
+     * 客户可以查询指定月份的月度摊销成本。当前仅支持查询近18个月的摊销成本。摊销成本计算规则请参见[成本摊销规则](https://support.huaweicloud.com/usermanual-cost/costcenter_000002_01.html)。
+     * 客户可查询的数据范围同成本中心提供的[数据范围](https://support.huaweicloud.com/usermanual-cost/costcenter_0000004.html)一致。
+     * 客户登录成本中心导出成本明细请参见[导出成本明细数据](https://support.huaweicloud.com/usermanual-cost/costcenter_000002_03.html)。
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：**
+     * &gt;该接口仅面向已开通成本中心的客户开放。如何开启成本中心请参见[这里](https://support.huaweicloud.com/usermanual-cost/costcenter_000004.html)。
      *
      * @param ListCustomerBillsMonthlyBreakDownRequest 请求对象
      * @return CompletableFuture<ListCustomerBillsMonthlyBreakDownResponse> */
@@ -473,7 +455,12 @@ public class BssAsyncClient {
         return hcClient.asyncInvokeHttp(request, BssMeta.listCustomerBillsMonthlyBreakDown);
     }
 
-    /** 查询月度成本 功能描述：查询月度成本
+    /** 查询月度成本
+     * 客户可以查询指定月份的月度摊销成本。当前仅支持查询近18个月的摊销成本。摊销成本计算规则请参见[成本摊销规则](https://support.huaweicloud.com/usermanual-cost/costcenter_000002_01.html)。
+     * 客户可查询的数据范围同成本中心提供的[数据范围](https://support.huaweicloud.com/usermanual-cost/costcenter_0000004.html)一致。
+     * 客户登录成本中心导出成本明细请参见[导出成本明细数据](https://support.huaweicloud.com/usermanual-cost/costcenter_000002_03.html)。
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：**
+     * &gt;该接口仅面向已开通成本中心的客户开放。如何开启成本中心请参见[这里](https://support.huaweicloud.com/usermanual-cost/costcenter_000004.html)。
      *
      * @param ListCustomerBillsMonthlyBreakDownRequest 请求对象
      * @return AsyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> */
@@ -1051,7 +1038,7 @@ public class BssAsyncClient {
             hcClient);
     }
 
-    /** 查询95计费资源用量明细 客户在自建平台查询自己的资源使用量明细。 &gt;![](public_sys-resources/icon-caution.gif) **注意：**
+    /** 查询95计费资源用量明细 客户在自建平台查询自己的资源使用量明细。 &gt;![](public_sys-resources/icon-note.gif) **说明：**
      * &gt;当前仅支持查询CDN和OBS两种云服务类型的资源用量明细，仅针对95计费场景。
      *
      * @param ListResourceUsageRequest 请求对象
@@ -1060,7 +1047,7 @@ public class BssAsyncClient {
         return hcClient.asyncInvokeHttp(request, BssMeta.listResourceUsage);
     }
 
-    /** 查询95计费资源用量明细 客户在自建平台查询自己的资源使用量明细。 &gt;![](public_sys-resources/icon-caution.gif) **注意：**
+    /** 查询95计费资源用量明细 客户在自建平台查询自己的资源使用量明细。 &gt;![](public_sys-resources/icon-note.gif) **说明：**
      * &gt;当前仅支持查询CDN和OBS两种云服务类型的资源用量明细，仅针对95计费场景。
      *
      * @param ListResourceUsageRequest 请求对象
@@ -1071,7 +1058,7 @@ public class BssAsyncClient {
             hcClient);
     }
 
-    /** 查询95计费资源用量汇总 客户在自建平台查询自己的资源使用量汇总。 &gt;![](public_sys-resources/icon-caution.gif) **注意：** &gt;-
+    /** 查询95计费资源用量汇总 客户在自建平台查询自己的资源使用量汇总。 &gt;![](public_sys-resources/icon-note.gif) **说明：** &gt;-
      * 当前仅支持查询CDN和OBS两种云服务类型的资源用量汇总，仅针对95计费场景。 &gt;-
      * 使用量汇总列表只包含月汇总金额和资源ID，若要查询具体某个资源的用量明细，请调用[查询资源用量明细](查询95计费资源用量明细.md)接口获取。
      *
@@ -1082,7 +1069,7 @@ public class BssAsyncClient {
         return hcClient.asyncInvokeHttp(request, BssMeta.listResourceUsageSummary);
     }
 
-    /** 查询95计费资源用量汇总 客户在自建平台查询自己的资源使用量汇总。 &gt;![](public_sys-resources/icon-caution.gif) **注意：** &gt;-
+    /** 查询95计费资源用量汇总 客户在自建平台查询自己的资源使用量汇总。 &gt;![](public_sys-resources/icon-note.gif) **说明：** &gt;-
      * 当前仅支持查询CDN和OBS两种云服务类型的资源用量汇总，仅针对95计费场景。 &gt;-
      * 使用量汇总列表只包含月汇总金额和资源ID，若要查询具体某个资源的用量明细，请调用[查询资源用量明细](查询95计费资源用量明细.md)接口获取。
      *
@@ -1131,6 +1118,25 @@ public class BssAsyncClient {
             hcClient);
     }
 
+    /** 查询储值卡列表 客户可以查看自己已经购买的储值卡列表。
+     *
+     * @param ListStoredValueCardsRequest 请求对象
+     * @return CompletableFuture<ListStoredValueCardsResponse> */
+    public CompletableFuture<ListStoredValueCardsResponse> listStoredValueCardsAsync(
+        ListStoredValueCardsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listStoredValueCards);
+    }
+
+    /** 查询储值卡列表 客户可以查看自己已经购买的储值卡列表。
+     *
+     * @param ListStoredValueCardsRequest 请求对象
+     * @return AsyncInvoker<ListStoredValueCardsRequest, ListStoredValueCardsResponse> */
+    public AsyncInvoker<ListStoredValueCardsRequest, ListStoredValueCardsResponse> listStoredValueCardsAsyncInvoker(
+        ListStoredValueCardsRequest request) {
+        return new AsyncInvoker<ListStoredValueCardsRequest, ListStoredValueCardsResponse>(request,
+            BssMeta.listStoredValueCards, hcClient);
+    }
+
     /** 查询客户消费记录 伙伴在伙伴销售平台可实时查询子客户的消费记录，了解客户的资源消耗情况。
      * 伙伴在伙伴中心查询客户消费明细请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072435155.html)。
      * &gt;![](public_sys-resources/icon-note.gif) **说明：** &gt;- 消费记录支持查询18个月内的记录。 &gt;-
@@ -1175,29 +1181,6 @@ public class BssAsyncClient {
         ListSubCustomerCouponsRequest request) {
         return new AsyncInvoker<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse>(request,
             BssMeta.listSubCustomerCoupons, hcClient);
-    }
-
-    /** 查询伙伴折扣 合作伙伴可以查看为客户设置的折扣，每次查询一个客户。如果该客户没有设置折扣，返回null。精英服务商（二级经销商）也可以通过该接口查询子客户的折扣。
-     * 伙伴登录合作伙伴中心查看为客户设置折扣请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072335153.html)。
-     * &gt;![](public_sys-resources/icon-note.gif) **说明：** &gt;目前通过该接口只能查询统一折扣信息。 &gt;暂不支持查询产品分类折扣。
-     *
-     * @param ListSubCustomerDiscountsRequest 请求对象
-     * @return CompletableFuture<ListSubCustomerDiscountsResponse> */
-    public CompletableFuture<ListSubCustomerDiscountsResponse> listSubCustomerDiscountsAsync(
-        ListSubCustomerDiscountsRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssMeta.listSubCustomerDiscounts);
-    }
-
-    /** 查询伙伴折扣 合作伙伴可以查看为客户设置的折扣，每次查询一个客户。如果该客户没有设置折扣，返回null。精英服务商（二级经销商）也可以通过该接口查询子客户的折扣。
-     * 伙伴登录合作伙伴中心查看为客户设置折扣请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072335153.html)。
-     * &gt;![](public_sys-resources/icon-note.gif) **说明：** &gt;目前通过该接口只能查询统一折扣信息。 &gt;暂不支持查询产品分类折扣。
-     *
-     * @param ListSubCustomerDiscountsRequest 请求对象
-     * @return AsyncInvoker<ListSubCustomerDiscountsRequest, ListSubCustomerDiscountsResponse> */
-    public AsyncInvoker<ListSubCustomerDiscountsRequest, ListSubCustomerDiscountsResponse> listSubCustomerDiscountsAsyncInvoker(
-        ListSubCustomerDiscountsRequest request) {
-        return new AsyncInvoker<ListSubCustomerDiscountsRequest, ListSubCustomerDiscountsResponse>(request,
-            BssMeta.listSubCustomerDiscounts, hcClient);
     }
 
     /** 查询客户列表 伙伴可以查询合作伙伴的客户信息列表。

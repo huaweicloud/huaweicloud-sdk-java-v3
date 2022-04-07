@@ -6132,6 +6132,30 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StartMeetingRequest, StartMeetingResponse> startMeeting = genForstartMeeting();
+
+    private static HttpRequestDef<StartMeetingRequest, StartMeetingResponse> genForstartMeeting() {
+        // basic
+        HttpRequestDef.Builder<StartMeetingRequest, StartMeetingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartMeetingRequest.class, StartMeetingResponse.class)
+                .withName("StartMeeting")
+                .withUri("/v1/mmc/management/conferences/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<StartRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartRequest.class),
+            f -> f.withMarshaller(StartMeetingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StopMeetingRequest, StopMeetingResponse> stopMeeting = genForstopMeeting();
 
     private static HttpRequestDef<StopMeetingRequest, StopMeetingResponse> genForstopMeeting() {

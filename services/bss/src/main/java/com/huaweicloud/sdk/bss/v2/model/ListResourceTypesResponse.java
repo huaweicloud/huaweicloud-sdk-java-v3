@@ -13,16 +13,37 @@ import java.util.function.Consumer;
 public class ListResourceTypesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_types")
 
-    private List<ResourceType> resourceTypes = null;
+    private List<ResourceTypes> resourceTypes = null;
 
-    public ListResourceTypesResponse withResourceTypes(List<ResourceType> resourceTypes) {
+    public ListResourceTypesResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /** 总数。
+     * 
+     * @return totalCount */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public ListResourceTypesResponse withResourceTypes(List<ResourceTypes> resourceTypes) {
         this.resourceTypes = resourceTypes;
         return this;
     }
 
-    public ListResourceTypesResponse addResourceTypesItem(ResourceType resourceTypesItem) {
+    public ListResourceTypesResponse addResourceTypesItem(ResourceTypes resourceTypesItem) {
         if (this.resourceTypes == null) {
             this.resourceTypes = new ArrayList<>();
         }
@@ -30,7 +51,7 @@ public class ListResourceTypesResponse extends SdkResponse {
         return this;
     }
 
-    public ListResourceTypesResponse withResourceTypes(Consumer<List<ResourceType>> resourceTypesSetter) {
+    public ListResourceTypesResponse withResourceTypes(Consumer<List<ResourceTypes>> resourceTypesSetter) {
         if (this.resourceTypes == null) {
             this.resourceTypes = new ArrayList<>();
         }
@@ -38,14 +59,14 @@ public class ListResourceTypesResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源类型信息，具体参见表3。
+    /** 资源类型信息列表，具体请参见表3。
      * 
      * @return resourceTypes */
-    public List<ResourceType> getResourceTypes() {
+    public List<ResourceTypes> getResourceTypes() {
         return resourceTypes;
     }
 
-    public void setResourceTypes(List<ResourceType> resourceTypes) {
+    public void setResourceTypes(List<ResourceTypes> resourceTypes) {
         this.resourceTypes = resourceTypes;
     }
 
@@ -58,18 +79,20 @@ public class ListResourceTypesResponse extends SdkResponse {
             return false;
         }
         ListResourceTypesResponse listResourceTypesResponse = (ListResourceTypesResponse) o;
-        return Objects.equals(this.resourceTypes, listResourceTypesResponse.resourceTypes);
+        return Objects.equals(this.totalCount, listResourceTypesResponse.totalCount)
+            && Objects.equals(this.resourceTypes, listResourceTypesResponse.resourceTypes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceTypes);
+        return Objects.hash(totalCount, resourceTypes);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourceTypesResponse {\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    resourceTypes: ").append(toIndentedString(resourceTypes)).append("\n");
         sb.append("}");
         return sb.toString();

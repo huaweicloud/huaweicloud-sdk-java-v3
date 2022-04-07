@@ -1079,10 +1079,10 @@ public class CceMeta {
             f -> f.withMarshaller(UpdateNodePoolRequest::getNodepoolId, (req, v) -> {
                 req.setNodepoolId(v);
             }));
-        builder.<NodePool>withRequestField("body",
+        builder.<NodePoolUpdate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(NodePool.class),
+            TypeCasts.uncheckedConversion(NodePoolUpdate.class),
             f -> f.withMarshaller(UpdateNodePoolRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

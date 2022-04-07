@@ -3,10 +3,18 @@ package com.huaweicloud.sdk.ocr.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** DriverLicenseResult */
 public class DriverLicenseResult {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
@@ -74,9 +82,45 @@ public class DriverLicenseResult {
     private String record;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "accumulated_scores")
+
+    private String accumulatedScores;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private List<DriverLicenseResultStatus> status = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "generation_date")
+
+    private String generationDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "current_time")
+
+    private String currentTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_location")
 
     private Object textLocation;
+
+    public DriverLicenseResult withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /** 驾驶证类型。 normal：纸质驾驶证 electronic：电子驾驶证
+     * 
+     * @return type */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public DriverLicenseResult withNumber(String number) {
         this.number = number;
@@ -286,12 +330,92 @@ public class DriverLicenseResult {
         this.record = record;
     }
 
+    public DriverLicenseResult withAccumulatedScores(String accumulatedScores) {
+        this.accumulatedScores = accumulatedScores;
+        return this;
+    }
+
+    /** 累积记分。
+     * 
+     * @return accumulatedScores */
+    public String getAccumulatedScores() {
+        return accumulatedScores;
+    }
+
+    public void setAccumulatedScores(String accumulatedScores) {
+        this.accumulatedScores = accumulatedScores;
+    }
+
+    public DriverLicenseResult withStatus(List<DriverLicenseResultStatus> status) {
+        this.status = status;
+        return this;
+    }
+
+    public DriverLicenseResult addStatusItem(DriverLicenseResultStatus statusItem) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        this.status.add(statusItem);
+        return this;
+    }
+
+    public DriverLicenseResult withStatus(Consumer<List<DriverLicenseResultStatus>> statusSetter) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        statusSetter.accept(this.status);
+        return this;
+    }
+
+    /** 状态。
+     * 
+     * @return status */
+    public List<DriverLicenseResultStatus> getStatus() {
+        return status;
+    }
+
+    public void setStatus(List<DriverLicenseResultStatus> status) {
+        this.status = status;
+    }
+
+    public DriverLicenseResult withGenerationDate(String generationDate) {
+        this.generationDate = generationDate;
+        return this;
+    }
+
+    /** 生成时间。
+     * 
+     * @return generationDate */
+    public String getGenerationDate() {
+        return generationDate;
+    }
+
+    public void setGenerationDate(String generationDate) {
+        this.generationDate = generationDate;
+    }
+
+    public DriverLicenseResult withCurrentTime(String currentTime) {
+        this.currentTime = currentTime;
+        return this;
+    }
+
+    /** 当前时间。
+     * 
+     * @return currentTime */
+    public String getCurrentTime() {
+        return currentTime;
+    }
+
+    public void setCurrentTime(String currentTime) {
+        this.currentTime = currentTime;
+    }
+
     public DriverLicenseResult withTextLocation(Object textLocation) {
         this.textLocation = textLocation;
         return this;
     }
 
-    /** 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。
+    /** 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
      * 
      * @return textLocation */
     public Object getTextLocation() {
@@ -311,7 +435,8 @@ public class DriverLicenseResult {
             return false;
         }
         DriverLicenseResult driverLicenseResult = (DriverLicenseResult) o;
-        return Objects.equals(this.number, driverLicenseResult.number)
+        return Objects.equals(this.type, driverLicenseResult.type)
+            && Objects.equals(this.number, driverLicenseResult.number)
             && Objects.equals(this.name, driverLicenseResult.name) && Objects.equals(this.sex, driverLicenseResult.sex)
             && Objects.equals(this.nationality, driverLicenseResult.nationality)
             && Objects.equals(this.address, driverLicenseResult.address)
@@ -323,12 +448,17 @@ public class DriverLicenseResult {
             && Objects.equals(this.issuingAuthority, driverLicenseResult.issuingAuthority)
             && Objects.equals(this.fileNumber, driverLicenseResult.fileNumber)
             && Objects.equals(this.record, driverLicenseResult.record)
+            && Objects.equals(this.accumulatedScores, driverLicenseResult.accumulatedScores)
+            && Objects.equals(this.status, driverLicenseResult.status)
+            && Objects.equals(this.generationDate, driverLicenseResult.generationDate)
+            && Objects.equals(this.currentTime, driverLicenseResult.currentTime)
             && Objects.equals(this.textLocation, driverLicenseResult.textLocation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number,
+        return Objects.hash(type,
+            number,
             name,
             sex,
             nationality,
@@ -341,6 +471,10 @@ public class DriverLicenseResult {
             issuingAuthority,
             fileNumber,
             record,
+            accumulatedScores,
+            status,
+            generationDate,
+            currentTime,
             textLocation);
     }
 
@@ -348,6 +482,7 @@ public class DriverLicenseResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DriverLicenseResult {\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    number: ").append(toIndentedString(number)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
@@ -361,6 +496,10 @@ public class DriverLicenseResult {
         sb.append("    issuingAuthority: ").append(toIndentedString(issuingAuthority)).append("\n");
         sb.append("    fileNumber: ").append(toIndentedString(fileNumber)).append("\n");
         sb.append("    record: ").append(toIndentedString(record)).append("\n");
+        sb.append("    accumulatedScores: ").append(toIndentedString(accumulatedScores)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    generationDate: ").append(toIndentedString(generationDate)).append("\n");
+        sb.append("    currentTime: ").append(toIndentedString(currentTime)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("}");
         return sb.toString();

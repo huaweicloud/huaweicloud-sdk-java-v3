@@ -40,6 +40,11 @@ public class BankcardResult {
 
     private Object confidence;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text_location")
+
+    private Object textLocation;
+
     public BankcardResult withBankName(String bankName) {
         this.bankName = bankName;
         return this;
@@ -136,6 +141,22 @@ public class BankcardResult {
         this.confidence = confidence;
     }
 
+    public BankcardResult withTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+        return this;
+    }
+
+    /** 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
+     * 
+     * @return textLocation */
+    public Object getTextLocation() {
+        return textLocation;
+    }
+
+    public void setTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -150,12 +171,13 @@ public class BankcardResult {
             && Objects.equals(this.issueDate, bankcardResult.issueDate)
             && Objects.equals(this.expiryDate, bankcardResult.expiryDate)
             && Objects.equals(this.type, bankcardResult.type)
-            && Objects.equals(this.confidence, bankcardResult.confidence);
+            && Objects.equals(this.confidence, bankcardResult.confidence)
+            && Objects.equals(this.textLocation, bankcardResult.textLocation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bankName, cardNumber, issueDate, expiryDate, type, confidence);
+        return Objects.hash(bankName, cardNumber, issueDate, expiryDate, type, confidence, textLocation);
     }
 
     @Override
@@ -168,6 +190,7 @@ public class BankcardResult {
         sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

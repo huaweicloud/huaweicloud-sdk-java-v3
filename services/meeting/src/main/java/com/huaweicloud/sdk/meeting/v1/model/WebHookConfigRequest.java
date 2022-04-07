@@ -102,7 +102,7 @@ public class WebHookConfigRequest {
         return this;
     }
 
-    /** 订阅url
+    /** 订阅url，建议使用HTTPS
      * 
      * @return url */
     public String getUrl() {

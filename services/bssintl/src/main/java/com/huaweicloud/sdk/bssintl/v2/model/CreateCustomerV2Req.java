@@ -49,11 +49,6 @@ public class CreateCustomerV2Req {
     private String isCloseMarketMs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "indirect_partner_id")
-
-    private String indirectPartnerId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "include_association_result")
 
     private Boolean includeAssociationResult;
@@ -187,22 +182,6 @@ public class CreateCustomerV2Req {
         this.isCloseMarketMs = isCloseMarketMs;
     }
 
-    public CreateCustomerV2Req withIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-        return this;
-    }
-
-    /** |参数名称：二级渠道ID| |参数的约束及描述：该参数非必填，二级渠道ID，最大长度64|
-     * 
-     * @return indirectPartnerId */
-    public String getIndirectPartnerId() {
-        return indirectPartnerId;
-    }
-
-    public void setIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-    }
-
     public CreateCustomerV2Req withIncludeAssociationResult(Boolean includeAssociationResult) {
         this.includeAssociationResult = includeAssociationResult;
         return this;
@@ -236,7 +215,6 @@ public class CreateCustomerV2Req {
             && Objects.equals(this.xaccountType, createCustomerV2Req.xaccountType)
             && Objects.equals(this.password, createCustomerV2Req.password)
             && Objects.equals(this.isCloseMarketMs, createCustomerV2Req.isCloseMarketMs)
-            && Objects.equals(this.indirectPartnerId, createCustomerV2Req.indirectPartnerId)
             && Objects.equals(this.includeAssociationResult, createCustomerV2Req.includeAssociationResult);
     }
 
@@ -250,7 +228,6 @@ public class CreateCustomerV2Req {
             xaccountType,
             password,
             isCloseMarketMs,
-            indirectPartnerId,
             includeAssociationResult);
     }
 
@@ -266,7 +243,6 @@ public class CreateCustomerV2Req {
         sb.append("    xaccountType: ").append(toIndentedString(xaccountType)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    isCloseMarketMs: ").append(toIndentedString(isCloseMarketMs)).append("\n");
-        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("    includeAssociationResult: ").append(toIndentedString(includeAssociationResult)).append("\n");
         sb.append("}");
         return sb.toString();

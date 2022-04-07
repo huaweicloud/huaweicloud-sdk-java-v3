@@ -20,6 +20,11 @@ public class BankcardRequestBody {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_text_location")
+
+    private Boolean returnTextLocation;
+
     public BankcardRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -55,6 +60,22 @@ public class BankcardRequestBody {
         this.url = url;
     }
 
+    public BankcardRequestBody withReturnTextLocation(Boolean returnTextLocation) {
+        this.returnTextLocation = returnTextLocation;
+        return this;
+    }
+
+    /** 返回文本块坐标及单元格坐标信息，可选值包括： - true：返回文本块和单元格坐标; - false：不返回。 > 说明： - 未传入该参数时默认为false，即不返回。
+     * 
+     * @return returnTextLocation */
+    public Boolean getReturnTextLocation() {
+        return returnTextLocation;
+    }
+
+    public void setReturnTextLocation(Boolean returnTextLocation) {
+        this.returnTextLocation = returnTextLocation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -65,12 +86,13 @@ public class BankcardRequestBody {
         }
         BankcardRequestBody bankcardRequestBody = (BankcardRequestBody) o;
         return Objects.equals(this.image, bankcardRequestBody.image)
-            && Objects.equals(this.url, bankcardRequestBody.url);
+            && Objects.equals(this.url, bankcardRequestBody.url)
+            && Objects.equals(this.returnTextLocation, bankcardRequestBody.returnTextLocation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url);
+        return Objects.hash(image, url, returnTextLocation);
     }
 
     @Override
@@ -79,6 +101,7 @@ public class BankcardRequestBody {
         sb.append("class BankcardRequestBody {\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

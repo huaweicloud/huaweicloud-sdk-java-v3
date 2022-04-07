@@ -62,6 +62,11 @@ public class FreeResourcePackageV3 {
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_code")
 
     private String regionCode;
@@ -246,6 +251,22 @@ public class FreeResourcePackageV3 {
         this.serviceTypeCode = serviceTypeCode;
     }
 
+    public FreeResourcePackageV3 withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * 
+     * @return serviceTypeName */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+    }
+
     public FreeResourcePackageV3 withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
@@ -362,6 +383,7 @@ public class FreeResourcePackageV3 {
             && Objects.equals(this.expireTime, freeResourcePackageV3.expireTime)
             && Objects.equals(this.status, freeResourcePackageV3.status)
             && Objects.equals(this.serviceTypeCode, freeResourcePackageV3.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, freeResourcePackageV3.serviceTypeName)
             && Objects.equals(this.regionCode, freeResourcePackageV3.regionCode)
             && Objects.equals(this.sourceType, freeResourcePackageV3.sourceType)
             && Objects.equals(this.bundleType, freeResourcePackageV3.bundleType)
@@ -381,6 +403,7 @@ public class FreeResourcePackageV3 {
             expireTime,
             status,
             serviceTypeCode,
+            serviceTypeName,
             regionCode,
             sourceType,
             bundleType,
@@ -402,6 +425,7 @@ public class FreeResourcePackageV3 {
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
         sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
         sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
         sb.append("    bundleType: ").append(toIndentedString(bundleType)).append("\n");

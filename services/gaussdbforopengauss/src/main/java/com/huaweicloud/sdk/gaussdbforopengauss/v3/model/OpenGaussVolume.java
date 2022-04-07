@@ -21,7 +21,7 @@ import java.util.Objects;
 public class OpenGaussVolume  {
 
     /**
-     * 磁盘类型。  仅支持ULTRAHIGH，区分大小写，表示SSD。
+     * 磁盘类型。  仅支持ULTRAHIGH和ESSD，区分大小写，分别表示SSD和急速云盘。
      */
     public static final class TypeEnum {
 
@@ -31,12 +31,18 @@ public class OpenGaussVolume  {
          */
         public static final TypeEnum ULTRAHIGH = new TypeEnum("ULTRAHIGH");
         
+        /**
+         * Enum ESSD for value: "ESSD"
+         */
+        public static final TypeEnum ESSD = new TypeEnum("ESSD");
+        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("ULTRAHIGH", ULTRAHIGH);
+            map.put("ESSD", ESSD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -116,7 +122,7 @@ public class OpenGaussVolume  {
 
 
     /**
-     * 磁盘类型。  仅支持ULTRAHIGH，区分大小写，表示SSD。
+     * 磁盘类型。  仅支持ULTRAHIGH和ESSD，区分大小写，分别表示SSD和急速云盘。
      * @return type
      */
     public TypeEnum getType() {

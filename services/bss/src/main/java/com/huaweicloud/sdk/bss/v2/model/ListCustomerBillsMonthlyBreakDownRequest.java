@@ -19,11 +19,6 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     private String sharedMonth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "charging_mode")
-
-    private Integer chargingMode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_code")
 
     private String serviceTypeCode;
@@ -37,6 +32,11 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     @JsonProperty(value = "region_code")
 
     private String regionCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charging_mode")
+
+    private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_type")
@@ -112,22 +112,6 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         this.sharedMonth = sharedMonth;
     }
 
-    public ListCustomerBillsMonthlyBreakDownRequest withChargingMode(Integer chargingMode) {
-        this.chargingMode = chargingMode;
-        return this;
-    }
-
-    /** 计费模式。1：包年/包月3：按需10：预留实例 minimum: 0 maximum: 10
-     * 
-     * @return chargingMode */
-    public Integer getChargingMode() {
-        return chargingMode;
-    }
-
-    public void setChargingMode(Integer chargingMode) {
-        this.chargingMode = chargingMode;
-    }
-
     public ListCustomerBillsMonthlyBreakDownRequest withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -174,6 +158,22 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
 
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
+    }
+
+    public ListCustomerBillsMonthlyBreakDownRequest withChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
+        return this;
+    }
+
+    /** 计费模式。1：包年/包月3：按需10：预留实例 minimum: 0 maximum: 10
+     * 
+     * @return chargingMode */
+    public Integer getChargingMode() {
+        return chargingMode;
+    }
+
+    public void setChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
     }
 
     public ListCustomerBillsMonthlyBreakDownRequest withBillType(Integer billType) {
@@ -319,10 +319,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
             (ListCustomerBillsMonthlyBreakDownRequest) o;
         return Objects.equals(this.xLanguage, listCustomerBillsMonthlyBreakDownRequest.xLanguage)
             && Objects.equals(this.sharedMonth, listCustomerBillsMonthlyBreakDownRequest.sharedMonth)
-            && Objects.equals(this.chargingMode, listCustomerBillsMonthlyBreakDownRequest.chargingMode)
             && Objects.equals(this.serviceTypeCode, listCustomerBillsMonthlyBreakDownRequest.serviceTypeCode)
             && Objects.equals(this.resourceTypeCode, listCustomerBillsMonthlyBreakDownRequest.resourceTypeCode)
             && Objects.equals(this.regionCode, listCustomerBillsMonthlyBreakDownRequest.regionCode)
+            && Objects.equals(this.chargingMode, listCustomerBillsMonthlyBreakDownRequest.chargingMode)
             && Objects.equals(this.billType, listCustomerBillsMonthlyBreakDownRequest.billType)
             && Objects.equals(this.offset, listCustomerBillsMonthlyBreakDownRequest.offset)
             && Objects.equals(this.limit, listCustomerBillsMonthlyBreakDownRequest.limit)
@@ -337,10 +337,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     public int hashCode() {
         return Objects.hash(xLanguage,
             sharedMonth,
-            chargingMode,
             serviceTypeCode,
             resourceTypeCode,
             regionCode,
+            chargingMode,
             billType,
             offset,
             limit,
@@ -357,10 +357,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         sb.append("class ListCustomerBillsMonthlyBreakDownRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    sharedMonth: ").append(toIndentedString(sharedMonth)).append("\n");
-        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
         sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

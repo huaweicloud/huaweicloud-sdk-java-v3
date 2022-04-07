@@ -446,7 +446,8 @@ public class VolumeDetail {
         return this;
     }
 
-    /** 云硬盘类型。 目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
+    /** 云硬盘类型。 目前支持\"SATA\"，\"SAS\"，\"GPSSD\"，\"SSD\"和\"ESSD\"五种。 - \"SATA\"为普通IO云硬盘 - \"SAS\"为高IO云硬盘 -
+     * \"GPSSD\"为通用型SSD云硬盘 - \"SSD\"为超高IO云硬盘 - \"ESSD\"为极速IO云硬盘
      * 
      * @return volumeType */
     public String getVolumeType() {
