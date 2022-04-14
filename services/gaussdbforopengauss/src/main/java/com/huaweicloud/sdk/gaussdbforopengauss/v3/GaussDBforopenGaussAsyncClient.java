@@ -109,7 +109,7 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库规格
-     * 查询指定数据库引擎对应的规格信息。
+     * 查询数据库的规格信息。
      *
      * @param ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
@@ -120,7 +120,7 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库规格
-     * 查询指定数据库引擎对应的规格信息。
+     * 查询数据库的规格信息。
      *
      * @param ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -196,6 +196,28 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 重启数据库实例
+     * 重启数据库实例。
+     *
+     * @param RestartInstanceRequest 请求对象
+     * @return CompletableFuture<RestartInstanceResponse>
+     */
+    public CompletableFuture<RestartInstanceResponse> restartInstanceAsync(RestartInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.restartInstance);
+    }
+
+    /**
+     * 重启数据库实例
+     * 重启数据库实例。
+     *
+     * @param RestartInstanceRequest 请求对象
+     * @return AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
+     */
+    public AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceAsyncInvoker(RestartInstanceRequest request) {
+        return new AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>(request, GaussDBforopenGaussMeta.restartInstance, hcClient);
+    }
+
+    /**
      * CN横向扩容/DN分片扩容/磁盘扩容
      * CN横向扩容/DN分片扩容/磁盘扩容
      *
@@ -237,6 +259,28 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyAsyncInvoker(SetBackupPolicyRequest request) {
         return new AsyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request, GaussDBforopenGaussMeta.setBackupPolicy, hcClient);
+    }
+
+    /**
+     * 获取指定实例的参数模板
+     * 获取指定实例的参数模板。
+     *
+     * @param ShowInstanceConfigurationRequest 请求对象
+     * @return CompletableFuture<ShowInstanceConfigurationResponse>
+     */
+    public CompletableFuture<ShowInstanceConfigurationResponse> showInstanceConfigurationAsync(ShowInstanceConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceConfiguration);
+    }
+
+    /**
+     * 获取指定实例的参数模板
+     * 获取指定实例的参数模板。
+     *
+     * @param ShowInstanceConfigurationRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
+     */
+    public AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationAsyncInvoker(ShowInstanceConfigurationRequest request) {
+        return new AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>(request, GaussDBforopenGaussMeta.showInstanceConfiguration, hcClient);
     }
 
     /**

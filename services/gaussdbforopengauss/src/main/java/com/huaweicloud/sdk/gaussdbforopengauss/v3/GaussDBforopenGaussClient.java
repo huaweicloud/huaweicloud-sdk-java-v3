@@ -107,7 +107,7 @@ public class GaussDBforopenGaussClient {
 
     /**
      * 查询数据库规格
-     * 查询指定数据库引擎对应的规格信息。
+     * 查询数据库的规格信息。
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
@@ -118,7 +118,7 @@ public class GaussDBforopenGaussClient {
 
     /**
      * 查询数据库规格
-     * 查询指定数据库引擎对应的规格信息。
+     * 查询数据库的规格信息。
      *
      * @param ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -194,6 +194,28 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 重启数据库实例
+     * 重启数据库实例。
+     *
+     * @param RestartInstanceRequest 请求对象
+     * @return RestartInstanceResponse
+     */
+    public RestartInstanceResponse restartInstance(RestartInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.restartInstance);
+    }
+
+    /**
+     * 重启数据库实例
+     * 重启数据库实例。
+     *
+     * @param RestartInstanceRequest 请求对象
+     * @return SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
+     */
+    public SyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceInvoker(RestartInstanceRequest request) {
+        return new SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>(request, GaussDBforopenGaussMeta.restartInstance, hcClient);
+    }
+
+    /**
      * CN横向扩容/DN分片扩容/磁盘扩容
      * CN横向扩容/DN分片扩容/磁盘扩容
      *
@@ -235,6 +257,28 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyInvoker(SetBackupPolicyRequest request) {
         return new SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request, GaussDBforopenGaussMeta.setBackupPolicy, hcClient);
+    }
+
+    /**
+     * 获取指定实例的参数模板
+     * 获取指定实例的参数模板。
+     *
+     * @param ShowInstanceConfigurationRequest 请求对象
+     * @return ShowInstanceConfigurationResponse
+     */
+    public ShowInstanceConfigurationResponse showInstanceConfiguration(ShowInstanceConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceConfiguration);
+    }
+
+    /**
+     * 获取指定实例的参数模板
+     * 获取指定实例的参数模板。
+     *
+     * @param ShowInstanceConfigurationRequest 请求对象
+     * @return SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
+     */
+    public SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationInvoker(ShowInstanceConfigurationRequest request) {
+        return new SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>(request, GaussDBforopenGaussMeta.showInstanceConfiguration, hcClient);
     }
 
     /**

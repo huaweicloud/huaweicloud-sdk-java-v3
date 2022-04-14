@@ -29,6 +29,11 @@ public class ProtectableResult {
 
     private VaultGet vault;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
     public ProtectableResult withCode(String code) {
         this.code = code;
         return this;
@@ -102,6 +107,22 @@ public class ProtectableResult {
         this.vault = vault;
     }
 
+    public ProtectableResult withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /** 资源不可备份的原因信息，当资源可保护性检验失败时才有该字段。
+     * 
+     * @return message */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -114,12 +135,13 @@ public class ProtectableResult {
         return Objects.equals(this.code, protectableResult.code)
             && Objects.equals(this.reason, protectableResult.reason)
             && Objects.equals(this.result, protectableResult.result)
-            && Objects.equals(this.vault, protectableResult.vault);
+            && Objects.equals(this.vault, protectableResult.vault)
+            && Objects.equals(this.message, protectableResult.message);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, reason, result, vault);
+        return Objects.hash(code, reason, result, vault, message);
     }
 
     @Override
@@ -130,6 +152,7 @@ public class ProtectableResult {
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    vault: ").append(toIndentedString(vault)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /** SimPricePlanVO */
@@ -47,17 +47,17 @@ public class SimPricePlanVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private LocalDate createTime;
+    private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_time")
 
-    private LocalDate activeTime;
+    private OffsetDateTime activeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stop_time")
 
-    private LocalDate stopTime;
+    private OffsetDateTime stopTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_total")
@@ -231,7 +231,7 @@ public class SimPricePlanVO {
         this.orderId = orderId;
     }
 
-    public SimPricePlanVO withCreateTime(LocalDate createTime) {
+    public SimPricePlanVO withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -239,15 +239,15 @@ public class SimPricePlanVO {
     /** 创建时间 例如2020-08-24T07:57:56.000Z
      * 
      * @return createTime */
-    public LocalDate getCreateTime() {
+    public OffsetDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDate createTime) {
+    public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
 
-    public SimPricePlanVO withActiveTime(LocalDate activeTime) {
+    public SimPricePlanVO withActiveTime(OffsetDateTime activeTime) {
         this.activeTime = activeTime;
         return this;
     }
@@ -255,15 +255,15 @@ public class SimPricePlanVO {
     /** 激活时间 例如2020-10-31T16:00:00.000Z
      * 
      * @return activeTime */
-    public LocalDate getActiveTime() {
+    public OffsetDateTime getActiveTime() {
         return activeTime;
     }
 
-    public void setActiveTime(LocalDate activeTime) {
+    public void setActiveTime(OffsetDateTime activeTime) {
         this.activeTime = activeTime;
     }
 
-    public SimPricePlanVO withStopTime(LocalDate stopTime) {
+    public SimPricePlanVO withStopTime(OffsetDateTime stopTime) {
         this.stopTime = stopTime;
         return this;
     }
@@ -271,11 +271,11 @@ public class SimPricePlanVO {
     /** 停用时间 2021-10-31T16:00:00.000Z
      * 
      * @return stopTime */
-    public LocalDate getStopTime() {
+    public OffsetDateTime getStopTime() {
         return stopTime;
     }
 
-    public void setStopTime(LocalDate stopTime) {
+    public void setStopTime(OffsetDateTime stopTime) {
         this.stopTime = stopTime;
     }
 

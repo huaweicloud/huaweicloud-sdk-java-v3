@@ -16,7 +16,7 @@ public class ChildrenJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_tag")
 
-    private String billingTag;
+    private Boolean billingTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -376,7 +376,7 @@ public class ChildrenJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_newFramework")
 
-    private String nodeNewFramework;
+    private Boolean nodeNewFramework;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -463,7 +463,7 @@ public class ChildrenJobInfo {
 
     private TaskTypeEnum taskType;
 
-    public ChildrenJobInfo withBillingTag(String billingTag) {
+    public ChildrenJobInfo withBillingTag(Boolean billingTag) {
         this.billingTag = billingTag;
         return this;
     }
@@ -471,11 +471,11 @@ public class ChildrenJobInfo {
     /** 计费字段
      * 
      * @return billingTag */
-    public String getBillingTag() {
+    public Boolean getBillingTag() {
         return billingTag;
     }
 
-    public void setBillingTag(String billingTag) {
+    public void setBillingTag(Boolean billingTag) {
         this.billingTag = billingTag;
     }
 
@@ -623,7 +623,7 @@ public class ChildrenJobInfo {
         this.netType = netType;
     }
 
-    public ChildrenJobInfo withNodeNewFramework(String nodeNewFramework) {
+    public ChildrenJobInfo withNodeNewFramework(Boolean nodeNewFramework) {
         this.nodeNewFramework = nodeNewFramework;
         return this;
     }
@@ -631,11 +631,11 @@ public class ChildrenJobInfo {
     /** 新框架
      * 
      * @return nodeNewFramework */
-    public String getNodeNewFramework() {
+    public Boolean getNodeNewFramework() {
         return nodeNewFramework;
     }
 
-    public void setNodeNewFramework(String nodeNewFramework) {
+    public void setNodeNewFramework(Boolean nodeNewFramework) {
         this.nodeNewFramework = nodeNewFramework;
     }
 

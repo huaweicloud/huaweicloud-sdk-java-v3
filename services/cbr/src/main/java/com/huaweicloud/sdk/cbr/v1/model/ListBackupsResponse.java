@@ -22,6 +22,16 @@ public class ListBackupsResponse extends SdkResponse {
 
     private Integer count;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListBackupsResponse withBackups(List<BackupResp> backups) {
         this.backups = backups;
         return this;
@@ -70,6 +80,38 @@ public class ListBackupsResponse extends SdkResponse {
         this.count = count;
     }
 
+    public ListBackupsResponse withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** 偏移量，表示从此偏移量开始查询 minimum: 0
+     * 
+     * @return offset */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListBackupsResponse withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量 minimum: 1 maximum: 1000
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -80,12 +122,14 @@ public class ListBackupsResponse extends SdkResponse {
         }
         ListBackupsResponse listBackupsResponse = (ListBackupsResponse) o;
         return Objects.equals(this.backups, listBackupsResponse.backups)
-            && Objects.equals(this.count, listBackupsResponse.count);
+            && Objects.equals(this.count, listBackupsResponse.count)
+            && Objects.equals(this.offset, listBackupsResponse.offset)
+            && Objects.equals(this.limit, listBackupsResponse.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(backups, count);
+        return Objects.hash(backups, count, offset, limit);
     }
 
     @Override
@@ -94,6 +138,8 @@ public class ListBackupsResponse extends SdkResponse {
         sb.append("class ListBackupsResponse {\n");
         sb.append("    backups: ").append(toIndentedString(backups)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

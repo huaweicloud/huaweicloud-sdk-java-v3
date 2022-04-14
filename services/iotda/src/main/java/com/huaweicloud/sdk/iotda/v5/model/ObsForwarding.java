@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /** 服务配置信息 */
 public class ObsForwarding {
@@ -32,6 +33,11 @@ public class ObsForwarding {
     @JsonProperty(value = "file_path")
 
     private String filePath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_mapping")
+
+    private FileMapping fileMapping;
 
     public ObsForwarding withRegionName(String regionName) {
         this.regionName = regionName;
@@ -104,7 +110,7 @@ public class ObsForwarding {
 
     /** **参数说明**：OBS服务中存储通道文件的自定义目录,多级目录可用(/)进行分隔，不可以斜杠(/)开头或结尾，不能包含两个以上相邻的斜杠(/) **取值范围**:
      * 英文字母(a-zA-Z)、数字(0-9)、下划线(_)、中划线(-)、斜杠(/)和大括号({})，最大字符长度256个字符。其中大括号只能用于对应模板参数。 **模板参数**: - \\{YYYY\\} 年 -
-     * \\{MM\\} 月 - \\{DD\\} 日 - \\{HH\\} 小时
+     * \\{MM\\} 月 - \\{DD\\} 日 - \\{HH\\} 小时 - \\{appId\\} 应用ID - \\{deviceId\\} 设备ID
      * 例如:自定义目录结构为\\{YYYY\\}/\\{MM\\}/\\{DD\\}/\\{HH\\},则会在转发数据时，根据当前时间往对应的目录结构2021>08>11>09下生成对应的数据。
      * 
      * @return filePath */
@@ -114,6 +120,31 @@ public class ObsForwarding {
 
     public void setFilePath(String filePath) {
         this.filePath = filePath;
+    }
+
+    public ObsForwarding withFileMapping(FileMapping fileMapping) {
+        this.fileMapping = fileMapping;
+        return this;
+    }
+
+    public ObsForwarding withFileMapping(Consumer<FileMapping> fileMappingSetter) {
+        if (this.fileMapping == null) {
+            this.fileMapping = new FileMapping();
+            fileMappingSetter.accept(this.fileMapping);
+        }
+
+        return this;
+    }
+
+    /** Get fileMapping
+     * 
+     * @return fileMapping */
+    public FileMapping getFileMapping() {
+        return fileMapping;
+    }
+
+    public void setFileMapping(FileMapping fileMapping) {
+        this.fileMapping = fileMapping;
     }
 
     @Override
@@ -129,12 +160,13 @@ public class ObsForwarding {
             && Objects.equals(this.projectId, obsForwarding.projectId)
             && Objects.equals(this.bucketName, obsForwarding.bucketName)
             && Objects.equals(this.location, obsForwarding.location)
-            && Objects.equals(this.filePath, obsForwarding.filePath);
+            && Objects.equals(this.filePath, obsForwarding.filePath)
+            && Objects.equals(this.fileMapping, obsForwarding.fileMapping);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionName, projectId, bucketName, location, filePath);
+        return Objects.hash(regionName, projectId, bucketName, location, filePath, fileMapping);
     }
 
     @Override
@@ -146,6 +178,7 @@ public class ObsForwarding {
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
+        sb.append("    fileMapping: ").append(toIndentedString(fileMapping)).append("\n");
         sb.append("}");
         return sb.toString();
     }

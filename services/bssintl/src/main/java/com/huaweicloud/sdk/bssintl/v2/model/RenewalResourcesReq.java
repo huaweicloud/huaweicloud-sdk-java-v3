@@ -57,8 +57,7 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** |参数名称：资源ID列表。只支持传入主资源ID，最多100个资源ID。哪些资源是主资源请根据“2.1-查询客户包周期资源列表”接口响应参数中的“is_main_resource”来标识。|
-     * |参数约束以及描述：资源ID列表。只支持传入主资源ID，最多100个资源ID。哪些资源是主资源请根据“2.1-查询客户包周期资源列表”接口响应参数中的“is_main_resource”来标识。|
+    /** 资源ID列表。 只支持传入主资源ID，最多100个资源ID。 哪些资源是主资源请根据“查询客户包年/包月资源列表”接口响应参数中的“is_main_resource”来标识。
      * 
      * @return resourceIds */
     public List<String> getResourceIds() {
@@ -74,7 +73,7 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** |参数名称：周期类型：2：月；3：年| |参数的约束及描述：周期类型：2：月；3：年| minimum: 2 maximum: 3
+    /** 周期类型： 2：月3：年 minimum: 2 maximum: 3
      * 
      * @return periodType */
     public Integer getPeriodType() {
@@ -90,7 +89,7 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** |参数名称：周期数目：如果是月，目前支持1-11；如果是年，目前支持1-3| |参数的约束及描述：周期数目：如果是月，目前支持1-11；如果是年，目前支持1-3| minimum: 1 maximum: 11
+    /** 周期数目： 如果是月，目前支持1-11如果是年，目前支持1-3 minimum: 1 maximum: 11
      * 
      * @return periodNum */
     public Integer getPeriodNum() {
@@ -106,7 +105,7 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** |参数名称：到期策略：0：进入宽限期1：转按需2：自动退订3：自动续订| |参数的约束及描述：到期策略：0：进入宽限期1：转按需2：自动退订3：自动续订| minimum: 0 maximum: 3
+    /** 到期策略： 0：进入宽限期/保留期1：转按需2：自动退订3：自动续订 minimum: 0 maximum: 3
      * 
      * @return expirePolicy */
     public Integer getExpirePolicy() {
@@ -122,7 +121,7 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** |参数名称：是否自动支付。0：否1：是不填写的话，默认值是0，不自动支付。| |参数的约束及描述：是否自动支付。0：否1：是不填写的话，默认值是0，不自动支付。| minimum: 0 maximum: 1
+    /** 是否自动支付。 0：否1：是 不填写的话，默认值是0，不自动支付。 minimum: 0 maximum: 1
      * 
      * @return isAutoPay */
     public Integer getIsAutoPay() {

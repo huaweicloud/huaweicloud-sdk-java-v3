@@ -104,6 +104,24 @@ public class CloudBuildClient {
             hcClient);
     }
 
+    /** 根据开始时间和结束时间查看构建任务的构建成功率 根据开始时间和结束时间查看构建任务的构建成功率
+     *
+     * @param ShowJobSuccessRatioRequest 请求对象
+     * @return ShowJobSuccessRatioResponse */
+    public ShowJobSuccessRatioResponse showJobSuccessRatio(ShowJobSuccessRatioRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudBuildMeta.showJobSuccessRatio);
+    }
+
+    /** 根据开始时间和结束时间查看构建任务的构建成功率 根据开始时间和结束时间查看构建任务的构建成功率
+     *
+     * @param ShowJobSuccessRatioRequest 请求对象
+     * @return SyncInvoker<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> */
+    public SyncInvoker<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> showJobSuccessRatioInvoker(
+        ShowJobSuccessRatioRequest request) {
+        return new SyncInvoker<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse>(request,
+            CloudBuildMeta.showJobSuccessRatio, hcClient);
+    }
+
     /** 查询指定代码仓库最近一次成功的构建历史 查询指定代码仓库最近一次成功的构建历史
      *
      * @param ShowLastHistoryRequest 请求对象

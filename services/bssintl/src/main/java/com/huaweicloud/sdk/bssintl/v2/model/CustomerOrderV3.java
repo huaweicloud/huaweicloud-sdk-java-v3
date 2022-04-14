@@ -94,7 +94,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：订单ID。| |参数约束及描述：订单ID。|
+    /** 订单ID。
      * 
      * @return orderId */
     public String getOrderId() {
@@ -110,7 +110,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：客户ID。| |参数约束及描述：客户ID。|
+    /** 客户账号ID。
      * 
      * @return customerId */
     public String getCustomerId() {
@@ -126,8 +126,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
-     * |参数约束及描述：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+    /** 云服务类型编码。例如OBS的云服务类型编码为“hws.service.type.obs”。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -143,7 +142,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：服务类型编码名称| |参数约束及描述：服务类型编码名称|
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
      * 
      * @return serviceTypeName */
     public String getServiceTypeName() {
@@ -159,7 +158,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：客户订单订单来源类型：1：客户2：代理3：合同4：分销商| |参数的约束及描述：客户订单订单来源类型：1：客户2：代理3：合同4：分销商|
+    /** 客户订单来源类型： 1：客户2：代理3：合同4：分销商
      * 
      * @return sourceType */
     public Integer getSourceType() {
@@ -175,7 +174,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：订单状态：1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认| |参数的约束及描述：订单状态：1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认|
+    /** 订单状态。 1：待审核3：处理中4：已取消5：已完成6：待付款9：待确认
      * 
      * @return status */
     public Integer getStatus() {
@@ -191,8 +190,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：订单类型：1：开通2：续订3：变更4：退订10：包周期转按需11：按需转包周期12：赠送13：试用14：转商用15：费用调整|
-     * |参数的约束及描述：订单类型：1：开通2：续订3：变更4：退订10：包周期转按需11：按需转包周期12：赠送13：试用14：转商用15：费用调整|
+    /** 订单类型。 1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整
      * 
      * @return orderType */
     public Integer getOrderType() {
@@ -208,7 +206,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：订单优惠后金额（不含券不含卡的实付价格）。| |参数的约束及描述：订单优惠后金额（不含券不含卡的实付价格）。|
+    /** 订单优惠后金额（实付价格，不含券不含卡）。
      * 
      * @return amountAfterDiscount */
     public Double getAmountAfterDiscount() {
@@ -224,7 +222,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：订单金额（官网价）。退订订单中，该金额等于amount。| |参数的约束及描述：订单金额（官网价）。退订订单中，该金额等于amount。|
+    /** 订单金额（官网价）。 退订订单中，该金额等于currencyAfterDiscount。
      * 
      * @return officialAmount */
     public Double getOfficialAmount() {
@@ -240,7 +238,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：订单金额度量单位：1：元| |参数的约束及描述：订单金额度量单位：1：元|
+    /** 订单金额度量单位。 1：元
      * 
      * @return measureId */
     public Integer getMeasureId() {
@@ -256,8 +254,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：创建时间 。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：创建时间
-     * 。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+    /** 创建时间 。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return createTime */
     public String getCreateTime() {
@@ -273,8 +270,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：支付时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
-     * |参数约束及描述：支付时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+    /** 支付时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return paymentTime */
     public String getPaymentTime() {
@@ -290,7 +286,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：货币编码。| |参数约束及描述：货币编码。如CNY|
+    /** 货币编码。
      * 
      * @return currency */
     public String getCurrency() {
@@ -306,7 +302,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：合同ID。| |参数约束及描述：合同ID。|
+    /** 合同ID。
      * 
      * @return contractId */
     public String getContractId() {
@@ -347,7 +343,7 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** |参数名称：订单创建者名称。| |参数约束及描述：如果是客户自己下单，则这个地方填写是下单的操作员的登录名称; 如果是运营人员从后台下单，则此处返回“运营人员”; 如果是运营系统自动触发下单，则此处返回“运营系统”|
+    /** 订单创建者名称。 如果是客户自己下单，则此处返回下单操作员的登录名称；如果是运营人员从后台下单，则此处返回“运营人员”；如果是运营系统自动触发下单，则此处返回“运营系统”。
      * 
      * @return userName */
     public String getUserName() {

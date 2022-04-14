@@ -53,6 +53,25 @@ public class CodeCheckAsyncClient {
         return new AsyncInvoker<CheckRecordRequest, CheckRecordResponse>(request, CodeCheckMeta.checkRecord, hcClient);
     }
 
+    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+     *
+     * @param CheckRulesetParametersRequest 请求对象
+     * @return CompletableFuture<CheckRulesetParametersResponse> */
+    public CompletableFuture<CheckRulesetParametersResponse> checkRulesetParametersAsync(
+        CheckRulesetParametersRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.checkRulesetParameters);
+    }
+
+    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+     *
+     * @param CheckRulesetParametersRequest 请求对象
+     * @return AsyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse> */
+    public AsyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse> checkRulesetParametersAsyncInvoker(
+        CheckRulesetParametersRequest request) {
+        return new AsyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse>(request,
+            CodeCheckMeta.checkRulesetParameters, hcClient);
+    }
+
     /** 创建自定义规则集 可根据需求灵活的组合规则。
      *
      * @param CreateRulesetRequest 请求对象
@@ -367,6 +386,24 @@ public class CodeCheckAsyncClient {
      * @return AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse> */
     public AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse> showTasklogAsyncInvoker(ShowTasklogRequest request) {
         return new AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse>(request, CodeCheckMeta.showTasklog, hcClient);
+    }
+
+    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+     *
+     * @param ShowTasksRulesetsRequest 请求对象
+     * @return CompletableFuture<ShowTasksRulesetsResponse> */
+    public CompletableFuture<ShowTasksRulesetsResponse> showTasksRulesetsAsync(ShowTasksRulesetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.showTasksRulesets);
+    }
+
+    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+     *
+     * @param ShowTasksRulesetsRequest 请求对象
+     * @return AsyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> */
+    public AsyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> showTasksRulesetsAsyncInvoker(
+        ShowTasksRulesetsRequest request) {
+        return new AsyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse>(request,
+            CodeCheckMeta.showTasksRulesets, hcClient);
     }
 
     /** 终止检查任务 根据任务ID终止检查任务。

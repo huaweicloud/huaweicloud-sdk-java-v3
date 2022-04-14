@@ -178,9 +178,19 @@ public class UpdateTaskSpeedReq {
     private Long totalsize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_trace")
+
+    private String processTrace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_speed")
 
     private Double migrateSpeed;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compress_rate")
+
+    private Double compressRate;
 
     public UpdateTaskSpeedReq withSubtaskName(SubtaskNameEnum subtaskName) {
         this.subtaskName = subtaskName;
@@ -251,6 +261,22 @@ public class UpdateTaskSpeedReq {
         this.totalsize = totalsize;
     }
 
+    public UpdateTaskSpeedReq withProcessTrace(String processTrace) {
+        this.processTrace = processTrace;
+        return this;
+    }
+
+    /** 迁移或同步时，具体的迁移详情
+     * 
+     * @return processTrace */
+    public String getProcessTrace() {
+        return processTrace;
+    }
+
+    public void setProcessTrace(String processTrace) {
+        this.processTrace = processTrace;
+    }
+
     public UpdateTaskSpeedReq withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
@@ -267,6 +293,22 @@ public class UpdateTaskSpeedReq {
         this.migrateSpeed = migrateSpeed;
     }
 
+    public UpdateTaskSpeedReq withCompressRate(Double compressRate) {
+        this.compressRate = compressRate;
+        return this;
+    }
+
+    /** 实施文件压缩率
+     * 
+     * @return compressRate */
+    public Double getCompressRate() {
+        return compressRate;
+    }
+
+    public void setCompressRate(Double compressRate) {
+        this.compressRate = compressRate;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -280,12 +322,14 @@ public class UpdateTaskSpeedReq {
             && Objects.equals(this.progress, updateTaskSpeedReq.progress)
             && Objects.equals(this.replicatesize, updateTaskSpeedReq.replicatesize)
             && Objects.equals(this.totalsize, updateTaskSpeedReq.totalsize)
-            && Objects.equals(this.migrateSpeed, updateTaskSpeedReq.migrateSpeed);
+            && Objects.equals(this.processTrace, updateTaskSpeedReq.processTrace)
+            && Objects.equals(this.migrateSpeed, updateTaskSpeedReq.migrateSpeed)
+            && Objects.equals(this.compressRate, updateTaskSpeedReq.compressRate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subtaskName, progress, replicatesize, totalsize, migrateSpeed);
+        return Objects.hash(subtaskName, progress, replicatesize, totalsize, processTrace, migrateSpeed, compressRate);
     }
 
     @Override
@@ -296,7 +340,9 @@ public class UpdateTaskSpeedReq {
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    replicatesize: ").append(toIndentedString(replicatesize)).append("\n");
         sb.append("    totalsize: ").append(toIndentedString(totalsize)).append("\n");
+        sb.append("    processTrace: ").append(toIndentedString(processTrace)).append("\n");
         sb.append("    migrateSpeed: ").append(toIndentedString(migrateSpeed)).append("\n");
+        sb.append("    compressRate: ").append(toIndentedString(compressRate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

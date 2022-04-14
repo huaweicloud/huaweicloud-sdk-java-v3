@@ -29,6 +29,11 @@ public class ImportCertificateRequestBody {
     private String privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enc_certificate")
 
     private String encCertificate;
@@ -102,6 +107,24 @@ public class ImportCertificateRequestBody {
         this.privateKey = privateKey;
     }
 
+    public ImportCertificateRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。
+     * 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件. 取值为“all” 取值为“0”
+     * 满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ImportCertificateRequestBody withEncCertificate(String encCertificate) {
         this.encCertificate = encCertificate;
         return this;
@@ -147,13 +170,15 @@ public class ImportCertificateRequestBody {
             && Objects.equals(this.certificate, importCertificateRequestBody.certificate)
             && Objects.equals(this.certificateChain, importCertificateRequestBody.certificateChain)
             && Objects.equals(this.privateKey, importCertificateRequestBody.privateKey)
+            && Objects.equals(this.enterpriseProjectId, importCertificateRequestBody.enterpriseProjectId)
             && Objects.equals(this.encCertificate, importCertificateRequestBody.encCertificate)
             && Objects.equals(this.encPrivateKey, importCertificateRequestBody.encPrivateKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, certificate, certificateChain, privateKey, encCertificate, encPrivateKey);
+        return Objects
+            .hash(name, certificate, certificateChain, privateKey, enterpriseProjectId, encCertificate, encPrivateKey);
     }
 
     @Override
@@ -164,6 +189,7 @@ public class ImportCertificateRequestBody {
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    certificateChain: ").append(toIndentedString(certificateChain)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
         sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("}");

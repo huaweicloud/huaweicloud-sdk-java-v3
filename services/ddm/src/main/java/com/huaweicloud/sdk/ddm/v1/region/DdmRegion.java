@@ -25,6 +25,13 @@ public class DdmRegion {
 
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://ddm.cn-south-1.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_1 =
+        new Region("ap-southeast-1", "https://ddm.ap-southeast-1.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://ddm.la-north-2.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://ddm.sa-brazil-1.myhuaweicloud.com");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -36,6 +43,9 @@ public class DdmRegion {
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-south-1", CN_SOUTH_1);
+        map.put("ap-southeast-1", AP_SOUTHEAST_1);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
         return Collections.unmodifiableMap(map);
     }
 

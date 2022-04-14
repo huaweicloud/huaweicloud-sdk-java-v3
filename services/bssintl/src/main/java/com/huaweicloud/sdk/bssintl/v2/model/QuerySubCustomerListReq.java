@@ -53,8 +53,7 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** |参数名称：客户登录名称（如果客户创建了子用户，此处需要填写主账号登录名称。关于主账号和子用户的具体介绍请参见身份管理身份管理中“账号”和“IAM用户”的描述）。支持模糊查询。|
-     * |参数约束及描述：客户登录名称（如果客户创建了子用户，此处需要填写主账号登录名称。关于主账号和子用户的具体介绍请参见身份管理身份管理中“账号”和“IAM用户”的描述）。支持模糊查询。|
+    /** 客户登录名称（如果客户创建了IAM用户，此处需要填写主账号登录名称。关于主账号和IAM用户的具体介绍请参见身份管理中“账号”和“IAM用户”的描述）。 支持模糊查询。
      * 
      * @return accountName */
     public String getAccountName() {
@@ -70,7 +69,7 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** |参数名称：实名认证名称。支持模糊查询。| |参数约束及描述：实名认证名称。支持模糊查询。|
+    /** 客户的实名认证名称，支持模糊查询。
      * 
      * @return customer */
     public String getCustomer() {
@@ -86,7 +85,8 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** |参数名称：偏移量，从0开始| |参数约束及描述： 偏移量，从0开始| minimum: 0 maximum: 2147483647
+    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。
+     * 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum: 2147483647
      * 
      * @return offset */
     public Integer getOffset() {
@@ -102,7 +102,7 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** |参数名称：每次查询的数量。默认10，最多100。| |参数约束及描述： 每次查询的数量。默认10，最多100。| minimum: 1 maximum: 100
+    /** 每次查询的客户数量。默认值为10。 minimum: 1 maximum: 100
      * 
      * @return limit */
     public Integer getLimit() {
@@ -118,7 +118,7 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** |参数名称：标签，支持模糊查找。| |参数约束及描述：非必填，最大长度64|
+    /** 标签，支持模糊查找。
      * 
      * @return label */
     public String getLabel() {
@@ -134,7 +134,7 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** |参数名称：关联类型1.推荐，2.垫付，3.转售| |参数约束及描述：非必填，最大长度2|
+    /** 关联类型： 1：顾问销售3：转售
      * 
      * @return associationType */
     public String getAssociationType() {
@@ -150,7 +150,7 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** |参数名称：关联时间区间段开始，UTC时间。| |参数约束及描述：格式为：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+    /** 关联时间区间段开始，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。
      * 
      * @return associatedOnBegin */
     public String getAssociatedOnBegin() {
@@ -166,7 +166,7 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** |参数名称：关联时间区间段结束，UTC时间| |参数约束及描述：格式为：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+    /** 关联时间区间段结束，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。
      * 
      * @return associatedOnEnd */
     public String getAssociatedOnEnd() {

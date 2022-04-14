@@ -27,7 +27,7 @@ public class ListServiceTypesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：总记录数| |参数约束以及描述：总记录数|
+    /** 总数。
      * 
      * @return totalCount */
     public Integer getTotalCount() {
@@ -59,7 +59,7 @@ public class ListServiceTypesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：返回的云服务类型信息| |参数约束以及描述：返回的云服务类型信息|
+    /** 云服务类型信息列表，具体请参见表3。
      * 
      * @return serviceTypes */
     public List<ServiceTypes> getServiceTypes() {

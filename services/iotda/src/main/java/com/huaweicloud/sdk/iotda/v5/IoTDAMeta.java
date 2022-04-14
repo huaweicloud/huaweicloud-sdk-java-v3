@@ -351,6 +351,13 @@ public class IoTDAMeta {
             f -> f.withMarshaller(CreateAsyncCommandRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
             }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAsyncCommandRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -396,6 +403,13 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getCommandId, (req, v) -> {
                 req.setCommandId(v);
+            }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
             }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
@@ -856,6 +870,13 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateCommandRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCommandRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
             }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
@@ -2012,6 +2033,13 @@ public class IoTDAMeta {
             f -> f.withMarshaller(ListPropertiesRequest::getServiceId, (req, v) -> {
                 req.setServiceId(v);
             }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPropertiesRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2043,6 +2071,13 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePropertiesRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePropertiesRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
             }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,

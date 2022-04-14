@@ -61,7 +61,7 @@ public class QueryCustomerOnDemandResourcesReq {
         return this;
     }
 
-    /** |参数名称：所属的客户ID。| |参数约束及描述：所属的客户ID。|
+    /** 客户账号ID。 您可以调用查询客户列表接口获取customer_id。
      * 
      * @return customerId */
     public String getCustomerId() {
@@ -77,8 +77,7 @@ public class QueryCustomerOnDemandResourcesReq {
         return this;
     }
 
-    /** |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
-     * |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
+    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return regionCode */
     public String getRegionCode() {
@@ -94,8 +93,7 @@ public class QueryCustomerOnDemandResourcesReq {
         return this;
     }
 
-    /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
-     * |参数约束及描述：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -127,7 +125,7 @@ public class QueryCustomerOnDemandResourcesReq {
         return this;
     }
 
-    /** |参数名称：资源ID批量查询| |参数约束以及描述：用于查询指定资源ID对应的资源。最多支持同时传递50个Id的列表。|
+    /** 资源ID批量查询。 用于查询指定资源ID对应的资源。 最多支持同时传递50个ID的列表。
      * 
      * @return resourceIds */
     public List<String> getResourceIds() {
@@ -143,8 +141,7 @@ public class QueryCustomerOnDemandResourcesReq {
         return this;
     }
 
-    /** |参数名称：生效时间的开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
-     * |参数约束及描述：生效时间的开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+    /** 生效时间的开始时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return effectiveTimeBegin */
     public String getEffectiveTimeBegin() {
@@ -160,8 +157,7 @@ public class QueryCustomerOnDemandResourcesReq {
         return this;
     }
 
-    /** |参数名称：生效时间的结束时间UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
-     * |参数约束及描述：生效时间的结束时间UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+    /** 生效时间的结束时间 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return effectiveTimeEnd */
     public String getEffectiveTimeEnd() {
@@ -177,7 +173,8 @@ public class QueryCustomerOnDemandResourcesReq {
         return this;
     }
 
-    /** |参数名称：偏移量，从0开始。默认值：0| |参数的约束及描述：偏移量，从0开始。默认值：0| minimum: 0 maximum: 2147483647
+    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。
+     * 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum: 2147483647
      * 
      * @return offset */
     public Integer getOffset() {
@@ -193,7 +190,7 @@ public class QueryCustomerOnDemandResourcesReq {
         return this;
     }
 
-    /** |参数名称：一次查询的条数，默认10条。| |参数的约束及描述：一次查询的条数，默认10条。| minimum: 1 maximum: 100
+    /** 一次查询的条数，默认值为10。 minimum: 1 maximum: 100
      * 
      * @return limit */
     public Integer getLimit() {
@@ -209,8 +206,7 @@ public class QueryCustomerOnDemandResourcesReq {
         return this;
     }
 
-    /** |参数名称：资源状态：1：正常（已开通）；2：宽限期；3：冻结中；4：变更中；5：正在关闭；6：已关闭。| |参数的约束及描述：资源状态：1：正常（已开通）；2：宽限期；3：冻结中；4：变更中；5：正在关闭；6：已关闭。|
-     * minimum: 1 maximum: 6
+    /** 资源状态： 1：正常（已开通）2：宽限期3：冻结中4：变更中5：正在关闭6：已关闭 minimum: 1 maximum: 6
      * 
      * @return status */
     public Integer getStatus() {

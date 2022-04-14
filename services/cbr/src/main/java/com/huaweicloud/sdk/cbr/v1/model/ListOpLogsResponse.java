@@ -22,6 +22,16 @@ public class ListOpLogsResponse extends SdkResponse {
 
     private Integer count;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListOpLogsResponse withOperationLogs(List<OperationLog> operationLogs) {
         this.operationLogs = operationLogs;
         return this;
@@ -70,6 +80,38 @@ public class ListOpLogsResponse extends SdkResponse {
         this.count = count;
     }
 
+    public ListOpLogsResponse withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量 minimum: 1 maximum: 1000
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListOpLogsResponse withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** 偏移量，表示从此偏移量开始查询 minimum: 0
+     * 
+     * @return offset */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -80,12 +122,14 @@ public class ListOpLogsResponse extends SdkResponse {
         }
         ListOpLogsResponse listOpLogsResponse = (ListOpLogsResponse) o;
         return Objects.equals(this.operationLogs, listOpLogsResponse.operationLogs)
-            && Objects.equals(this.count, listOpLogsResponse.count);
+            && Objects.equals(this.count, listOpLogsResponse.count)
+            && Objects.equals(this.limit, listOpLogsResponse.limit)
+            && Objects.equals(this.offset, listOpLogsResponse.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operationLogs, count);
+        return Objects.hash(operationLogs, count, limit, offset);
     }
 
     @Override
@@ -94,6 +138,8 @@ public class ListOpLogsResponse extends SdkResponse {
         sb.append("class ListOpLogsResponse {\n");
         sb.append("    operationLogs: ").append(toIndentedString(operationLogs)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

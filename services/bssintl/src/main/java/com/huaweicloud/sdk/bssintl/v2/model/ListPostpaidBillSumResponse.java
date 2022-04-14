@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** Response Object */
@@ -18,27 +17,27 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initial_amount_due")
 
-    private BigDecimal initialAmountDue;
+    private Double initialAmountDue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_amount")
 
-    private BigDecimal consumeAmount;
+    private Double consumeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refunds")
 
-    private BigDecimal refunds;
+    private Double refunds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adjustments")
 
-    private BigDecimal adjustments;
+    private Double adjustments;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tax_amount")
 
-    private BigDecimal taxAmount;
+    private Double taxAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
@@ -50,7 +49,7 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：结算周期，只有成功才返回这个参数。表示某年某月的账单汇总。格式：YYYY-MM| |参数约束及描述：结算周期，只有成功才返回这个参数。表示某年某月的账单汇总。格式：YYYY-MM|
+    /** 账单所归属的月份。只有成功才返回这个参数。 格式：YYYY-MM
      * 
      * @return billCycle */
     public String getBillCycle() {
@@ -61,83 +60,83 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.billCycle = billCycle;
     }
 
-    public ListPostpaidBillSumResponse withInitialAmountDue(BigDecimal initialAmountDue) {
+    public ListPostpaidBillSumResponse withInitialAmountDue(Double initialAmountDue) {
         this.initialAmountDue = initialAmountDue;
         return this;
     }
 
-    /** |参数名称：初始应还金额（含税）| |参数的约束及描述：初始应还金额（含税）|
+    /** 账单中的应还金额（含税）。 应还金额（包含销项税）=消费金额+退款金额+调账金额
      * 
      * @return initialAmountDue */
-    public BigDecimal getInitialAmountDue() {
+    public Double getInitialAmountDue() {
         return initialAmountDue;
     }
 
-    public void setInitialAmountDue(BigDecimal initialAmountDue) {
+    public void setInitialAmountDue(Double initialAmountDue) {
         this.initialAmountDue = initialAmountDue;
     }
 
-    public ListPostpaidBillSumResponse withConsumeAmount(BigDecimal consumeAmount) {
+    public ListPostpaidBillSumResponse withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
 
-    /** |参数名称：消费金额| |参数的约束及描述：消费金额|
+    /** 账单中的消费金额。
      * 
      * @return consumeAmount */
-    public BigDecimal getConsumeAmount() {
+    public Double getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(BigDecimal consumeAmount) {
+    public void setConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
-    public ListPostpaidBillSumResponse withRefunds(BigDecimal refunds) {
+    public ListPostpaidBillSumResponse withRefunds(Double refunds) {
         this.refunds = refunds;
         return this;
     }
 
-    /** |参数名称：退款| |参数的约束及描述：退款|
+    /** 账单中的退款金额。
      * 
      * @return refunds */
-    public BigDecimal getRefunds() {
+    public Double getRefunds() {
         return refunds;
     }
 
-    public void setRefunds(BigDecimal refunds) {
+    public void setRefunds(Double refunds) {
         this.refunds = refunds;
     }
 
-    public ListPostpaidBillSumResponse withAdjustments(BigDecimal adjustments) {
+    public ListPostpaidBillSumResponse withAdjustments(Double adjustments) {
         this.adjustments = adjustments;
         return this;
     }
 
-    /** |参数名称：调账| |参数的约束及描述：调账|
+    /** 账单中的调账金额，即伙伴在账期内的调账信息如：欠款核销金额等。
      * 
      * @return adjustments */
-    public BigDecimal getAdjustments() {
+    public Double getAdjustments() {
         return adjustments;
     }
 
-    public void setAdjustments(BigDecimal adjustments) {
+    public void setAdjustments(Double adjustments) {
         this.adjustments = adjustments;
     }
 
-    public ListPostpaidBillSumResponse withTaxAmount(BigDecimal taxAmount) {
+    public ListPostpaidBillSumResponse withTaxAmount(Double taxAmount) {
         this.taxAmount = taxAmount;
         return this;
     }
 
-    /** |参数名称：销项税金额| |参数的约束及描述：销项税金额|
+    /** 账单中的销项税金额，销项税不计入应还金额。
      * 
      * @return taxAmount */
-    public BigDecimal getTaxAmount() {
+    public Double getTaxAmount() {
         return taxAmount;
     }
 
-    public void setTaxAmount(BigDecimal taxAmount) {
+    public void setTaxAmount(Double taxAmount) {
         this.taxAmount = taxAmount;
     }
 
@@ -146,7 +145,7 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：只有成功才返回这个参数。人民币：CNY美金：USD| |参数约束及描述：只有成功才返回这个参数。人民币：CNY美金：USD|
+    /** 只有成功才返回这个参数。 美金：USD
      * 
      * @return currency */
     public String getCurrency() {

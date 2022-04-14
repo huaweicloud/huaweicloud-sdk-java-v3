@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** PeriodProductRatingResult */
@@ -22,29 +21,34 @@ public class PeriodProductRatingResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private BigDecimal amount;
+    private Double amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_website_amount")
 
-    private BigDecimal officialWebsiteAmount;
+    private Double officialWebsiteAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private BigDecimal discountAmount;
+    private Double discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
 
     private Integer measureId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public PeriodProductRatingResult withId(String id) {
         this.id = id;
         return this;
     }
 
-    /** |参数名称：ID标识| |参数约束及描述：ID标识，来源于请求中的ID|
+    /** ID标识，来源于请求中的ID。
      * 
      * @return id */
     public String getId() {
@@ -60,7 +64,7 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** |参数名称：产品ID| |参数约束及描述：产品ID|
+    /** 包年/包月产品的ID。
      * 
      * @return productId */
     public String getProductId() {
@@ -71,51 +75,51 @@ public class PeriodProductRatingResult {
         this.productId = productId;
     }
 
-    public PeriodProductRatingResult withAmount(BigDecimal amount) {
+    public PeriodProductRatingResult withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    /** |参数名称：总额| |参数约束及描述：即最终优惠的金额|
+    /** 总额，即最终优惠后的金额。 amount= official_website_amount - discountAmount。
      * 
      * @return amount */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public PeriodProductRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public PeriodProductRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
 
-    /** |参数名称：官网价| |参数约束及描述：官网价|
+    /** 包年/包月产品的官网价。
      * 
      * @return officialWebsiteAmount */
-    public BigDecimal getOfficialWebsiteAmount() {
+    public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
-    public PeriodProductRatingResult withDiscountAmount(BigDecimal discountAmount) {
+    public PeriodProductRatingResult withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
 
-    /** |参数名称：优惠额（官网价和总价的差）| |参数约束及描述：优惠额（官网价和总价的差）|
+    /** 可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额。
      * 
      * @return discountAmount */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
@@ -124,7 +128,7 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** |参数名称：度量单位标识| |参数约束及描述：1：元|
+    /** 价格度量单位标识。 1：元 minimum: 1 maximum: 2147483647
      * 
      * @return measureId */
     public Integer getMeasureId() {
@@ -133,6 +137,22 @@ public class PeriodProductRatingResult {
 
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
+    }
+
+    public PeriodProductRatingResult withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** |参数名称：每页数量| |参数的约束及描述：该参数非必填，且只允许1-100数字，默认10，最多100| minimum: 1 maximum: 100
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     @Override
@@ -149,12 +169,13 @@ public class PeriodProductRatingResult {
             && Objects.equals(this.amount, periodProductRatingResult.amount)
             && Objects.equals(this.officialWebsiteAmount, periodProductRatingResult.officialWebsiteAmount)
             && Objects.equals(this.discountAmount, periodProductRatingResult.discountAmount)
-            && Objects.equals(this.measureId, periodProductRatingResult.measureId);
+            && Objects.equals(this.measureId, periodProductRatingResult.measureId)
+            && Objects.equals(this.limit, periodProductRatingResult.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, productId, amount, officialWebsiteAmount, discountAmount, measureId);
+        return Objects.hash(id, productId, amount, officialWebsiteAmount, discountAmount, measureId, limit);
     }
 
     @Override
@@ -167,6 +188,7 @@ public class PeriodProductRatingResult {
         sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

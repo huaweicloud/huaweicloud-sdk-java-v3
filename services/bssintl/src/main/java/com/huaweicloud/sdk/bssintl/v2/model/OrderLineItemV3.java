@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,12 +24,12 @@ public class OrderLineItemV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private BigDecimal discountAmount;
+    private Double discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_ratio")
 
-    private BigDecimal discountRatio;
+    private Double discountRatio;
 
     public OrderLineItemV3 withOrderLineItemIds(List<String> orderLineItemIds) {
         this.orderLineItemIds = orderLineItemIds;
@@ -53,8 +52,7 @@ public class OrderLineItemV3 {
         return this;
     }
 
-    /** |参数名称：用于合并的订单项列表，会将相同产品、相同规格（对于线性产品）、相同最终价格（例如，严选产品改价）的进行合并|
-     * |参数约束以及描述：用于合并的订单项列表，会将相同产品、相同规格（对于线性产品）、相同最终价格（例如，严选产品改价）的进行合并|
+    /** 可使用相同折扣的订单项合并后的订单项ID列表。 相同产品、相同规格（对于线性产品）、相同最终价格（例如，严选产品改价）的订单项将进行合并。
      * 
      * @return orderLineItemIds */
     public List<String> getOrderLineItemIds() {
@@ -70,7 +68,7 @@ public class OrderLineItemV3 {
         return this;
     }
 
-    /** |参数名称：折扣模式 0：折扣 1：一口价 2：满减| |参数的约束及描述：折扣模式 0：折扣 1：一口价 2：满减|
+    /** 订单可用折扣的模式 。 0：折扣1：一口价2：满减
      * 
      * @return discountMode */
     public Integer getDiscountMode() {
@@ -81,35 +79,35 @@ public class OrderLineItemV3 {
         this.discountMode = discountMode;
     }
 
-    public OrderLineItemV3 withDiscountAmount(BigDecimal discountAmount) {
+    public OrderLineItemV3 withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
 
-    /** |参数名称：折扣额（减免金额）| |参数的约束及描述：折扣额（减免金额）|
+    /** 订单可用的折扣金额（即减免金额）。
      * 
      * @return discountAmount */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
-    public OrderLineItemV3 withDiscountRatio(BigDecimal discountRatio) {
+    public OrderLineItemV3 withDiscountRatio(Double discountRatio) {
         this.discountRatio = discountRatio;
         return this;
     }
 
-    /** |参数名称：折扣比例，折扣为| |参数的约束及描述：折扣比例，折扣为|
+    /** 订单可用的折扣比例。
      * 
      * @return discountRatio */
-    public BigDecimal getDiscountRatio() {
+    public Double getDiscountRatio() {
         return discountRatio;
     }
 
-    public void setDiscountRatio(BigDecimal discountRatio) {
+    public void setDiscountRatio(Double discountRatio) {
         this.discountRatio = discountRatio;
     }
 

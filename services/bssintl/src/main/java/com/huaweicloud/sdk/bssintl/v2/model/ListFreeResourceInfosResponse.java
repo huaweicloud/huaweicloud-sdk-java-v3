@@ -44,7 +44,7 @@ public class ListFreeResourceInfosResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：调账记录列表| |参数约束以及描述：调账记录列表|
+    /** 资源包信息列表，具体参见表2。
      * 
      * @return freeResourcePackages */
     public List<FreeResourcePackageV3> getFreeResourcePackages() {
@@ -60,7 +60,7 @@ public class ListFreeResourceInfosResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：总条数| |参数的约束及描述：总条数|
+    /** 总条数。
      * 
      * @return totalCount */
     public Integer getTotalCount() {

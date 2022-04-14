@@ -33,6 +33,24 @@ public class IecClient {
         return new SyncInvoker<AddNicsRequest, AddNicsResponse>(request, IecMeta.addNics, hcClient);
     }
 
+    /** 路由表关联子网 路由表关联子网
+     *
+     * @param AssociateSubnetRequest 请求对象
+     * @return AssociateSubnetResponse */
+    public AssociateSubnetResponse associateSubnet(AssociateSubnetRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.associateSubnet);
+    }
+
+    /** 路由表关联子网 路由表关联子网
+     *
+     * @param AssociateSubnetRequest 请求对象
+     * @return SyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse> */
+    public SyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse> associateSubnetInvoker(
+        AssociateSubnetRequest request) {
+        return new SyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse>(request, IecMeta.associateSubnet,
+            hcClient);
+    }
+
     /** 批量重启边缘实例 批量重启边缘实例。
      *
      * @param BatchRebootInstanceRequest 请求对象
@@ -157,6 +175,40 @@ public class IecClient {
         return new SyncInvoker<CreatePortRequest, CreatePortResponse>(request, IecMeta.createPort, hcClient);
     }
 
+    /** 创建路由 创建路由
+     *
+     * @param CreateRoutesRequest 请求对象
+     * @return CreateRoutesResponse */
+    public CreateRoutesResponse createRoutes(CreateRoutesRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.createRoutes);
+    }
+
+    /** 创建路由 创建路由
+     *
+     * @param CreateRoutesRequest 请求对象
+     * @return SyncInvoker<CreateRoutesRequest, CreateRoutesResponse> */
+    public SyncInvoker<CreateRoutesRequest, CreateRoutesResponse> createRoutesInvoker(CreateRoutesRequest request) {
+        return new SyncInvoker<CreateRoutesRequest, CreateRoutesResponse>(request, IecMeta.createRoutes, hcClient);
+    }
+
+    /** 创建路由表 创建路由表
+     *
+     * @param CreateRoutetableRequest 请求对象
+     * @return CreateRoutetableResponse */
+    public CreateRoutetableResponse createRoutetable(CreateRoutetableRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.createRoutetable);
+    }
+
+    /** 创建路由表 创建路由表
+     *
+     * @param CreateRoutetableRequest 请求对象
+     * @return SyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse> */
+    public SyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse> createRoutetableInvoker(
+        CreateRoutetableRequest request) {
+        return new SyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse>(request, IecMeta.createRoutetable,
+            hcClient);
+    }
+
     /** 创建边缘安全组 根据用户的请求内容，创建对应的安全组。
      *
      * @param CreateSecurityGroupRequest 请求对象
@@ -227,7 +279,7 @@ public class IecClient {
             hcClient);
     }
 
-    /** 删除边缘业务 删除边缘业务以及其下边缘实例。
+    /** 删除边缘业务 删除边缘业务。
      *
      * @param DeleteEdgeCloudRequest 请求对象
      * @return DeleteEdgeCloudResponse */
@@ -235,7 +287,7 @@ public class IecClient {
         return hcClient.syncInvokeHttp(request, IecMeta.deleteEdgeCloud);
     }
 
-    /** 删除边缘业务 删除边缘业务以及其下边缘实例。
+    /** 删除边缘业务 删除边缘业务。
      *
      * @param DeleteEdgeCloudRequest 请求对象
      * @return SyncInvoker<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse> */
@@ -311,6 +363,40 @@ public class IecClient {
         return new SyncInvoker<DeletePortRequest, DeletePortResponse>(request, IecMeta.deletePort, hcClient);
     }
 
+    /** 删除路由 删除路由
+     *
+     * @param DeleteRoutesRequest 请求对象
+     * @return DeleteRoutesResponse */
+    public DeleteRoutesResponse deleteRoutes(DeleteRoutesRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.deleteRoutes);
+    }
+
+    /** 删除路由 删除路由
+     *
+     * @param DeleteRoutesRequest 请求对象
+     * @return SyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse> */
+    public SyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse> deleteRoutesInvoker(DeleteRoutesRequest request) {
+        return new SyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse>(request, IecMeta.deleteRoutes, hcClient);
+    }
+
+    /** 删除路由表 删除路由表
+     *
+     * @param DeleteRoutetableRequest 请求对象
+     * @return DeleteRoutetableResponse */
+    public DeleteRoutetableResponse deleteRoutetable(DeleteRoutetableRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.deleteRoutetable);
+    }
+
+    /** 删除路由表 删除路由表
+     *
+     * @param DeleteRoutetableRequest 请求对象
+     * @return SyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse> */
+    public SyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse> deleteRoutetableInvoker(
+        DeleteRoutetableRequest request) {
+        return new SyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse>(request, IecMeta.deleteRoutetable,
+            hcClient);
+    }
+
     /** 删除安全组 根据安全组的ID，删除对应的安全组。
      *
      * @param DeleteSecurityGroupRequest 请求对象
@@ -377,6 +463,24 @@ public class IecClient {
      * @return SyncInvoker<DeleteVpcRequest, DeleteVpcResponse> */
     public SyncInvoker<DeleteVpcRequest, DeleteVpcResponse> deleteVpcInvoker(DeleteVpcRequest request) {
         return new SyncInvoker<DeleteVpcRequest, DeleteVpcResponse>(request, IecMeta.deleteVpc, hcClient);
+    }
+
+    /** 路由表解关联子网 路由表解关联子网
+     *
+     * @param DisassociateSubnetRequest 请求对象
+     * @return DisassociateSubnetResponse */
+    public DisassociateSubnetResponse disassociateSubnet(DisassociateSubnetRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.disassociateSubnet);
+    }
+
+    /** 路由表解关联子网 路由表解关联子网
+     *
+     * @param DisassociateSubnetRequest 请求对象
+     * @return SyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse> */
+    public SyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse> disassociateSubnetInvoker(
+        DisassociateSubnetRequest request) {
+        return new SyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse>(request,
+            IecMeta.disassociateSubnet, hcClient);
     }
 
     /** 执行部署计划 执行部署计划，创建一个边缘业务。单租户默认可创建10个边缘业务。
@@ -563,6 +667,58 @@ public class IecClient {
         return new SyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, IecMeta.listQuota, hcClient);
     }
 
+    /** 查询子网关联的路由表 查询子网关联的路由表。
+     *
+     * @param ListRelatedRoutetablesRequest 请求对象
+     * @return ListRelatedRoutetablesResponse */
+    public ListRelatedRoutetablesResponse listRelatedRoutetables(ListRelatedRoutetablesRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.listRelatedRoutetables);
+    }
+
+    /** 查询子网关联的路由表 查询子网关联的路由表。
+     *
+     * @param ListRelatedRoutetablesRequest 请求对象
+     * @return SyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse> */
+    public SyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse> listRelatedRoutetablesInvoker(
+        ListRelatedRoutetablesRequest request) {
+        return new SyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse>(request,
+            IecMeta.listRelatedRoutetables, hcClient);
+    }
+
+    /** 查询路由列表 查询路由列表
+     *
+     * @param ListRoutesRequest 请求对象
+     * @return ListRoutesResponse */
+    public ListRoutesResponse listRoutes(ListRoutesRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.listRoutes);
+    }
+
+    /** 查询路由列表 查询路由列表
+     *
+     * @param ListRoutesRequest 请求对象
+     * @return SyncInvoker<ListRoutesRequest, ListRoutesResponse> */
+    public SyncInvoker<ListRoutesRequest, ListRoutesResponse> listRoutesInvoker(ListRoutesRequest request) {
+        return new SyncInvoker<ListRoutesRequest, ListRoutesResponse>(request, IecMeta.listRoutes, hcClient);
+    }
+
+    /** 查询路由表列表 查询路由列表
+     *
+     * @param ListRoutetablesRequest 请求对象
+     * @return ListRoutetablesResponse */
+    public ListRoutetablesResponse listRoutetables(ListRoutetablesRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.listRoutetables);
+    }
+
+    /** 查询路由表列表 查询路由列表
+     *
+     * @param ListRoutetablesRequest 请求对象
+     * @return SyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse> */
+    public SyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse> listRoutetablesInvoker(
+        ListRoutetablesRequest request) {
+        return new SyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse>(request, IecMeta.listRoutetables,
+            hcClient);
+    }
+
     /** 查询安全组规则列表 根据用户的查询条件，获取安全组规则的列表信息。
      *
      * @param ListSecurityGroupRulesRequest 请求对象
@@ -747,6 +903,24 @@ public class IecClient {
         return new SyncInvoker<ShowPortRequest, ShowPortResponse>(request, IecMeta.showPort, hcClient);
     }
 
+    /** 查询路由表详情 查询路由表详情
+     *
+     * @param ShowRoutetableRequest 请求对象
+     * @return ShowRoutetableResponse */
+    public ShowRoutetableResponse showRoutetable(ShowRoutetableRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.showRoutetable);
+    }
+
+    /** 查询路由表详情 查询路由表详情
+     *
+     * @param ShowRoutetableRequest 请求对象
+     * @return SyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse> */
+    public SyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse> showRoutetableInvoker(
+        ShowRoutetableRequest request) {
+        return new SyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse>(request, IecMeta.showRoutetable,
+            hcClient);
+    }
+
     /** 查询安全组详情 根据安全组的ID，获取特定安全组的详细信息。
      *
      * @param ShowSecurityGroupRequest 请求对象
@@ -863,6 +1037,40 @@ public class IecClient {
      * @return SyncInvoker<UpdatePortRequest, UpdatePortResponse> */
     public SyncInvoker<UpdatePortRequest, UpdatePortResponse> updatePortInvoker(UpdatePortRequest request) {
         return new SyncInvoker<UpdatePortRequest, UpdatePortResponse>(request, IecMeta.updatePort, hcClient);
+    }
+
+    /** 更新路由 更新路由信息
+     *
+     * @param UpdateRoutesRequest 请求对象
+     * @return UpdateRoutesResponse */
+    public UpdateRoutesResponse updateRoutes(UpdateRoutesRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.updateRoutes);
+    }
+
+    /** 更新路由 更新路由信息
+     *
+     * @param UpdateRoutesRequest 请求对象
+     * @return SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> */
+    public SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutesInvoker(UpdateRoutesRequest request) {
+        return new SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>(request, IecMeta.updateRoutes, hcClient);
+    }
+
+    /** 更新路由表 更新路由表基本信息
+     *
+     * @param UpdateRoutetableRequest 请求对象
+     * @return UpdateRoutetableResponse */
+    public UpdateRoutetableResponse updateRoutetable(UpdateRoutetableRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.updateRoutetable);
+    }
+
+    /** 更新路由表 更新路由表基本信息
+     *
+     * @param UpdateRoutetableRequest 请求对象
+     * @return SyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse> */
+    public SyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse> updateRoutetableInvoker(
+        UpdateRoutetableRequest request) {
+        return new SyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse>(request, IecMeta.updateRoutetable,
+            hcClient);
     }
 
     /** 更新子网 更新子网的基本信息。

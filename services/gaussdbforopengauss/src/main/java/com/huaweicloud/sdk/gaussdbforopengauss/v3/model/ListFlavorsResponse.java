@@ -29,6 +29,13 @@ public class ListFlavorsResponse extends SdkResponse {
     
     private List<Flavor> flavors = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total")
+    
+    
+    private Integer total;
+
     public ListFlavorsResponse withFlavors(List<Flavor> flavors) {
         this.flavors = flavors;
         return this;
@@ -65,6 +72,28 @@ public class ListFlavorsResponse extends SdkResponse {
 
     
 
+    public ListFlavorsResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 查询的记录总数
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,17 +103,19 @@ public class ListFlavorsResponse extends SdkResponse {
             return false;
         }
         ListFlavorsResponse listFlavorsResponse = (ListFlavorsResponse) o;
-        return Objects.equals(this.flavors, listFlavorsResponse.flavors);
+        return Objects.equals(this.flavors, listFlavorsResponse.flavors) &&
+            Objects.equals(this.total, listFlavorsResponse.total);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(flavors);
+        return Objects.hash(flavors, total);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFlavorsResponse {\n");
         sb.append("    flavors: ").append(toIndentedString(flavors)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,21 +19,21 @@ public class ListServiceResourcesRequest {
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
 
     public ListServiceResourcesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    /** |忽略大小写，默认 zh_cn：中文 en_us：英文|
+    /** 语言。中文：zh_CN英文：en_US缺省为zh_CN。
      * 
      * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,7 +51,7 @@ public class ListServiceResourcesRequest {
         return this;
     }
 
-    /** |参数名称：云服务类型编码| |参数的约束及描述：|
+    /** 云服务类型编码。例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -62,28 +62,14 @@ public class ListServiceResourcesRequest {
         this.serviceTypeCode = serviceTypeCode;
     }
 
-    public ListServiceResourcesRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /** |参数名称：每次查询的数量| |参数的约束及描述：| minimum: 1 maximum: 100
-     * 
-     * @return limit */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
     public ListServiceResourcesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    /** |参数名称：偏移量| |参数的约束及描述：| minimum: 0 maximum: 2147483647
+    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
+     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
+     * 2147483647
      * 
      * @return offset */
     public Integer getOffset() {
@@ -92,6 +78,22 @@ public class ListServiceResourcesRequest {
 
     public void setOffset(Integer offset) {
         this.offset = offset;
+    }
+
+    public ListServiceResourcesRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每次查询的数量，默认值为10。 minimum: 1 maximum: 100
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     @Override
@@ -105,13 +107,13 @@ public class ListServiceResourcesRequest {
         ListServiceResourcesRequest listServiceResourcesRequest = (ListServiceResourcesRequest) o;
         return Objects.equals(this.xLanguage, listServiceResourcesRequest.xLanguage)
             && Objects.equals(this.serviceTypeCode, listServiceResourcesRequest.serviceTypeCode)
-            && Objects.equals(this.limit, listServiceResourcesRequest.limit)
-            && Objects.equals(this.offset, listServiceResourcesRequest.offset);
+            && Objects.equals(this.offset, listServiceResourcesRequest.offset)
+            && Objects.equals(this.limit, listServiceResourcesRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, serviceTypeCode, limit, offset);
+        return Objects.hash(xLanguage, serviceTypeCode, offset, limit);
     }
 
     @Override
@@ -120,8 +122,8 @@ public class ListServiceResourcesRequest {
         sb.append("class ListServiceResourcesRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

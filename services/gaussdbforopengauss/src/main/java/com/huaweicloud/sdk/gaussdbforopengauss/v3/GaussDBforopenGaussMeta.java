@@ -405,6 +405,41 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance = genForrestartInstance();
+
+    private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForrestartInstance() {
+        // basic
+        HttpRequestDef.Builder<RestartInstanceRequest, RestartInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestartInstanceRequest.class, RestartInstanceResponse.class)
+                .withName("RestartInstance")
+                .withUri("/v3/{project_id}/instances/{instance_id}/restart")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<RestartInstanceRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RestartInstanceRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(RestartInstanceRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunInstanceActionRequest, RunInstanceActionResponse> runInstanceAction = genForrunInstanceAction();
 
     private static HttpRequestDef<RunInstanceActionRequest, RunInstanceActionResponse> genForrunInstanceAction() {
@@ -481,6 +516,41 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(SetBackupPolicyRequestBody.class),
             f -> f.withMarshaller(SetBackupPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfiguration = genForshowInstanceConfiguration();
+
+    private static HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> genForshowInstanceConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceConfigurationRequest.class, ShowInstanceConfigurationResponse.class)
+                .withName("ShowInstanceConfiguration")
+                .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceConfigurationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceConfigurationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             })
         );
 

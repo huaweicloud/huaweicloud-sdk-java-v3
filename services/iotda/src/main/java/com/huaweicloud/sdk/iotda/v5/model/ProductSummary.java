@@ -148,7 +148,7 @@ public class ProductSummary {
         return this;
     }
 
-    /** 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF， OPC-UA，OPC-DA。
+    /** 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF， OPC-UA，OPC-DA，Other。
      * 
      * @return protocolType */
     public String getProtocolType() {

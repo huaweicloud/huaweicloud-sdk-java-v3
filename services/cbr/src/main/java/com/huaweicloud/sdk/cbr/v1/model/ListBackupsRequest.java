@@ -225,7 +225,7 @@ public class ListBackupsRequest {
 
     private String startTime;
 
-    /** 状态 */
+    /** 状态。 调用API时，支持通过传多个status值进行过滤。例如：status=available&status=error */
     public static final class StatusEnum {
 
         /** Enum AVAILABLE for value: "available" */
@@ -421,19 +421,19 @@ public class ListBackupsRequest {
         /** Enum PENDING for value: "pending" */
         public static final MemberStatusEnum PENDING = new MemberStatusEnum("pending");
 
-        /** Enum ACCEPT for value: "accept" */
-        public static final MemberStatusEnum ACCEPT = new MemberStatusEnum("accept");
+        /** Enum ACCEPTED for value: "accepted" */
+        public static final MemberStatusEnum ACCEPTED = new MemberStatusEnum("accepted");
 
-        /** Enum REJECT for value: "reject" */
-        public static final MemberStatusEnum REJECT = new MemberStatusEnum("reject");
+        /** Enum REJECTED for value: "rejected" */
+        public static final MemberStatusEnum REJECTED = new MemberStatusEnum("rejected");
 
         private static final Map<String, MemberStatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, MemberStatusEnum> createStaticFields() {
             Map<String, MemberStatusEnum> map = new HashMap<>();
             map.put("pending", PENDING);
-            map.put("accept", ACCEPT);
-            map.put("reject", REJECT);
+            map.put("accepted", ACCEPTED);
+            map.put("rejected", REJECTED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -504,6 +504,11 @@ public class ListBackupsRequest {
     @JsonProperty(value = "used_percent")
 
     private String usedPercent;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "show_replication")
+
+    private Boolean showReplication;
 
     public ListBackupsRequest withCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
@@ -735,7 +740,7 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 状态
+    /** 状态。 调用API时，支持通过传多个status值进行过滤。例如：status=available&status=error
      * 
      * @return status */
     public StatusEnum getStatus() {
@@ -842,6 +847,22 @@ public class ListBackupsRequest {
         this.usedPercent = usedPercent;
     }
 
+    public ListBackupsRequest withShowReplication(Boolean showReplication) {
+        this.showReplication = showReplication;
+        return this;
+    }
+
+    /** 是否返回复制记录
+     * 
+     * @return showReplication */
+    public Boolean getShowReplication() {
+        return showReplication;
+    }
+
+    public void setShowReplication(Boolean showReplication) {
+        this.showReplication = showReplication;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -871,7 +892,8 @@ public class ListBackupsRequest {
             && Objects.equals(this.ownType, listBackupsRequest.ownType)
             && Objects.equals(this.memberStatus, listBackupsRequest.memberStatus)
             && Objects.equals(this.parentId, listBackupsRequest.parentId)
-            && Objects.equals(this.usedPercent, listBackupsRequest.usedPercent);
+            && Objects.equals(this.usedPercent, listBackupsRequest.usedPercent)
+            && Objects.equals(this.showReplication, listBackupsRequest.showReplication);
     }
 
     @Override
@@ -896,7 +918,8 @@ public class ListBackupsRequest {
             ownType,
             memberStatus,
             parentId,
-            usedPercent);
+            usedPercent,
+            showReplication);
     }
 
     @Override
@@ -924,6 +947,7 @@ public class ListBackupsRequest {
         sb.append("    memberStatus: ").append(toIndentedString(memberStatus)).append("\n");
         sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
         sb.append("    usedPercent: ").append(toIndentedString(usedPercent)).append("\n");
+        sb.append("    showReplication: ").append(toIndentedString(showReplication)).append("\n");
         sb.append("}");
         return sb.toString();
     }

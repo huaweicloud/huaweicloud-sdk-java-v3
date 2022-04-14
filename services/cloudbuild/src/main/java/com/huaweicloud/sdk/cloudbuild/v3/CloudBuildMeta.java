@@ -162,6 +162,45 @@ public class CloudBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> showJobSuccessRatio =
+        genForshowJobSuccessRatio();
+
+    private static HttpRequestDef<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> genForshowJobSuccessRatio() {
+        // basic
+        HttpRequestDef.Builder<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobSuccessRatioRequest.class, ShowJobSuccessRatioResponse.class)
+                .withName("ShowJobSuccessRatio")
+                .withUri("/v3/jobs/{job_id}/success-ratio")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobSuccessRatioRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobSuccessRatioRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobSuccessRatioRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowLastHistoryRequest, ShowLastHistoryResponse> showLastHistory =
         genForshowLastHistory();
 

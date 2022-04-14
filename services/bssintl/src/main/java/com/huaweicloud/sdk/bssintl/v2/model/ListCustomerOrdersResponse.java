@@ -27,7 +27,7 @@ public class ListCustomerOrdersResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：符合条件的记录总数。| |参数的约束及描述：符合条件的记录总数。|
+    /** 大于等于0的整数。 符合条件的记录总数。
      * 
      * @return totalCount */
     public Integer getTotalCount() {
@@ -59,7 +59,7 @@ public class ListCustomerOrdersResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：客户订单详情信息。具体请参见表 CustomerOrderV2| |参数约束以及描述：客户订单详情信息。具体请参见表 CustomerOrderV2|
+    /** - 客户订单详情信息。 具体请参见表2
      * 
      * @return orderInfos */
     public List<CustomerOrderV2> getOrderInfos() {

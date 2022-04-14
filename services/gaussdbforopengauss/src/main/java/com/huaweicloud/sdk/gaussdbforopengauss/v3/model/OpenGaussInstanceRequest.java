@@ -258,13 +258,6 @@ public class OpenGaussInstanceRequest  {
     
     private Boolean enableForceSwitch;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="solution")
-    
-    
-    private String solution;
-
     public OpenGaussInstanceRequest withName(String name) {
         this.name = name;
         return this;
@@ -705,7 +698,7 @@ public class OpenGaussInstanceRequest  {
 
 
     /**
-     * 分片数量，取值范围1~9。
+     * 仅分布式形态需要填写该参数。分片数量，取值范围1~9。
      * @return shardingNum
      */
     public Integer getShardingNum() {
@@ -727,7 +720,7 @@ public class OpenGaussInstanceRequest  {
 
 
     /**
-     * 协调节点数量，取值范围1~9。CN数量必须小于或等于两倍的分片数。
+     * 仅分布式形态需要填写该参数。协调节点数量，取值范围1~9。CN数量必须小于或等于两倍的分片数。
      * @return coordinatorNum
      */
     public Integer getCoordinatorNum() {
@@ -784,28 +777,6 @@ public class OpenGaussInstanceRequest  {
 
     
 
-    public OpenGaussInstanceRequest withSolution(String solution) {
-        this.solution = solution;
-        return this;
-    }
-
-    
-
-
-    /**
-     * GaussDB(for openGauss)支持的部署模式，当前可选的有triset。
-     * @return solution
-     */
-    public String getSolution() {
-        return solution;
-    }
-
-    public void setSolution(String solution) {
-        this.solution = solution;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -836,12 +807,11 @@ public class OpenGaussInstanceRequest  {
             Objects.equals(this.shardingNum, openGaussInstanceRequest.shardingNum) &&
             Objects.equals(this.coordinatorNum, openGaussInstanceRequest.coordinatorNum) &&
             Objects.equals(this.replicaNum, openGaussInstanceRequest.replicaNum) &&
-            Objects.equals(this.enableForceSwitch, openGaussInstanceRequest.enableForceSwitch) &&
-            Objects.equals(this.solution, openGaussInstanceRequest.solution);
+            Objects.equals(this.enableForceSwitch, openGaussInstanceRequest.enableForceSwitch);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, datastore, ha, configurationId, port, password, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, volume, region, availabilityZone, vpcId, subnetId, securityGroupId, chargeInfo, timeZone, shardingNum, coordinatorNum, replicaNum, enableForceSwitch, solution);
+        return Objects.hash(name, datastore, ha, configurationId, port, password, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, volume, region, availabilityZone, vpcId, subnetId, securityGroupId, chargeInfo, timeZone, shardingNum, coordinatorNum, replicaNum, enableForceSwitch);
     }
     @Override
     public String toString() {
@@ -869,7 +839,6 @@ public class OpenGaussInstanceRequest  {
         sb.append("    coordinatorNum: ").append(toIndentedString(coordinatorNum)).append("\n");
         sb.append("    replicaNum: ").append(toIndentedString(replicaNum)).append("\n");
         sb.append("    enableForceSwitch: ").append(toIndentedString(enableForceSwitch)).append("\n");
-        sb.append("    solution: ").append(toIndentedString(solution)).append("\n");
         sb.append("}");
         return sb.toString();
     }

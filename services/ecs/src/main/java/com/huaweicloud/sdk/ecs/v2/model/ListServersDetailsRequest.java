@@ -58,6 +58,11 @@ public class ListServersDetailsRequest {
 
     private String tags;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_eq")
+
+    private String ipEq;
+
     public ListServersDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -221,6 +226,22 @@ public class ListServersDetailsRequest {
         this.tags = tags;
     }
 
+    public ListServersDetailsRequest withIpEq(String ipEq) {
+        this.ipEq = ipEq;
+        return this;
+    }
+
+    /** IPv4地址过滤结果，匹配规则为精确匹配。
+     * 
+     * @return ipEq */
+    public String getIpEq() {
+        return ipEq;
+    }
+
+    public void setIpEq(String ipEq) {
+        this.ipEq = ipEq;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -239,12 +260,14 @@ public class ListServersDetailsRequest {
             && Objects.equals(this.offset, listServersDetailsRequest.offset)
             && Objects.equals(this.reservationId, listServersDetailsRequest.reservationId)
             && Objects.equals(this.status, listServersDetailsRequest.status)
-            && Objects.equals(this.tags, listServersDetailsRequest.tags);
+            && Objects.equals(this.tags, listServersDetailsRequest.tags)
+            && Objects.equals(this.ipEq, listServersDetailsRequest.ipEq);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, flavor, ip, limit, name, notTags, offset, reservationId, status, tags);
+        return Objects
+            .hash(enterpriseProjectId, flavor, ip, limit, name, notTags, offset, reservationId, status, tags, ipEq);
     }
 
     @Override
@@ -261,6 +284,7 @@ public class ListServersDetailsRequest {
         sb.append("    reservationId: ").append(toIndentedString(reservationId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    ipEq: ").append(toIndentedString(ipEq)).append("\n");
         sb.append("}");
         return sb.toString();
     }

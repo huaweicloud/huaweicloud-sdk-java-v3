@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.ces.v2.model;
+package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,56 +10,56 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /** Response Object */
-public class ListAlarmsResponse extends SdkResponse {
+public class BatchSetSmnResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alarms")
+    @JsonProperty(value = "results")
 
-    private List<ListAlarmResponseBodyAlarms> alarms = null;
+    private List<ImportSmnResp> results = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ListAlarmsResponse withAlarms(List<ListAlarmResponseBodyAlarms> alarms) {
-        this.alarms = alarms;
+    public BatchSetSmnResponse withResults(List<ImportSmnResp> results) {
+        this.results = results;
         return this;
     }
 
-    public ListAlarmsResponse addAlarmsItem(ListAlarmResponseBodyAlarms alarmsItem) {
-        if (this.alarms == null) {
-            this.alarms = new ArrayList<>();
+    public BatchSetSmnResponse addResultsItem(ImportSmnResp resultsItem) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
         }
-        this.alarms.add(alarmsItem);
+        this.results.add(resultsItem);
         return this;
     }
 
-    public ListAlarmsResponse withAlarms(Consumer<List<ListAlarmResponseBodyAlarms>> alarmsSetter) {
-        if (this.alarms == null) {
-            this.alarms = new ArrayList<>();
+    public BatchSetSmnResponse withResults(Consumer<List<ImportSmnResp>> resultsSetter) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
         }
-        alarmsSetter.accept(this.alarms);
+        resultsSetter.accept(this.results);
         return this;
     }
 
-    /** 告警详情
+    /** Get results
      * 
-     * @return alarms */
-    public List<ListAlarmResponseBodyAlarms> getAlarms() {
-        return alarms;
+     * @return results */
+    public List<ImportSmnResp> getResults() {
+        return results;
     }
 
-    public void setAlarms(List<ListAlarmResponseBodyAlarms> alarms) {
-        this.alarms = alarms;
+    public void setResults(List<ImportSmnResp> results) {
+        this.results = results;
     }
 
-    public ListAlarmsResponse withCount(Integer count) {
+    public BatchSetSmnResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    /** 告警列表总数
+    /** Get count
      * 
      * @return count */
     public Integer getCount() {
@@ -78,21 +78,21 @@ public class ListAlarmsResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListAlarmsResponse listAlarmsResponse = (ListAlarmsResponse) o;
-        return Objects.equals(this.alarms, listAlarmsResponse.alarms)
-            && Objects.equals(this.count, listAlarmsResponse.count);
+        BatchSetSmnResponse batchSetSmnResponse = (BatchSetSmnResponse) o;
+        return Objects.equals(this.results, batchSetSmnResponse.results)
+            && Objects.equals(this.count, batchSetSmnResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alarms, count);
+        return Objects.hash(results, count);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListAlarmsResponse {\n");
-        sb.append("    alarms: ").append(toIndentedString(alarms)).append("\n");
+        sb.append("class BatchSetSmnResponse {\n");
+        sb.append("    results: ").append(toIndentedString(results)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();

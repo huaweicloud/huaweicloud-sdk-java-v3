@@ -42,7 +42,7 @@ public class FreezeSubCustomersReq {
         return this;
     }
 
-    /** |参数名称：需要冻结的客户ID列表。| |参数约束以及描述：需要冻结的客户ID列表。|
+    /** 需要冻结的客户账号ID列表。 您可以调用查询客户列表接口获取customer_id。
      * 
      * @return customerIds */
     public List<String> getCustomerIds() {
@@ -58,7 +58,7 @@ public class FreezeSubCustomersReq {
         return this;
     }
 
-    /** |参数名称：冻结原因。| |参数约束及描述：冻结原因。|
+    /** 冻结原因。
      * 
      * @return reason */
     public String getReason() {

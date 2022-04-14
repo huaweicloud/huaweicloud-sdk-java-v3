@@ -68,17 +68,12 @@ public class ListCustomerOrdersRequest {
 
     private String paymentTimeEnd;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "indirect_partner_id")
-
-    private String indirectPartnerId;
-
     public ListCustomerOrdersRequest withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    /** |参数名称：订单ID。| |参数的约束及描述：|
+    /** 订单ID。 说明： 使用特殊字符进行查询的时候，请注意进行URL编码转换，如“%”的转码应为“%25”。
      * 
      * @return orderId */
     public String getOrderId() {
@@ -94,7 +89,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：客户账号ID。| |参数的约束及描述：|
+    /** 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/intl/zh-cn/api-bpconsole/mc_00021.html)接口获取customer_id。
      * 
      * @return customerId */
     public String getCustomerId() {
@@ -110,7 +105,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：订单创建开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2020-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数的约束及描述：|
+    /** 订单创建开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return createTimeBegin */
     public String getCreateTimeBegin() {
@@ -126,7 +121,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：订单创建结束时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2020-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数的约束及描述：|
+    /** 订单创建结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return createTimeEnd */
     public String getCreateTimeEnd() {
@@ -142,7 +137,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数的约束及描述：|
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -158,7 +153,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：订单状态。1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认| |参数的约束及描述：| minimum: 1 maximum: 9
+    /** 订单状态：1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认 minimum: 1 maximum: 9
      * 
      * @return status */
     public Integer getStatus() {
@@ -174,7 +169,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：订单类型。1：开通2：续订3：变更4：退订10：包周期转按需11：按需转包周期12：赠送13：试用14：转商用15：费用调整| |参数的约束及描述：|
+    /** 订单类型：1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整
      * 
      * @return orderType */
     public String getOrderType() {
@@ -190,7 +185,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：每次查询的大小，默认为10| |参数的约束及描述：最大值100| minimum: 1 maximum: 100
+    /** 每次查询的订单数量，默认值为10。 minimum: 1 maximum: 100
      * 
      * @return limit */
     public Integer getLimit() {
@@ -206,7 +201,9 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：偏移量，从0开始，默认为0| |参数的约束及描述：| minimum: 0 maximum: 2147483647
+    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
+     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
+     * 2147483647
      * 
      * @return offset */
     public Integer getOffset() {
@@ -222,7 +219,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：查询的订单列表排序。支持3中多个响应参数进行排序，但每次只能用一个。缺省或者带+为升序，带-表示倒序。例如：按照创建时间升序排序表示为+createTime| |参数的约束及描述：|
+    /** 查询的订单列表排序。支持按照创建时间进行排序，带-表示倒序。创建时间：升序为createTime，倒序为-createTime。
      * 
      * @return orderBy */
     public String getOrderBy() {
@@ -238,7 +235,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：订单支付开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数的约束及描述：|
+    /** 订单支付开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return paymentTimeBegin */
     public String getPaymentTimeBegin() {
@@ -254,7 +251,7 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** |参数名称：订单支付结束时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数的约束及描述：|
+    /** 订单支付结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return paymentTimeEnd */
     public String getPaymentTimeEnd() {
@@ -263,22 +260,6 @@ public class ListCustomerOrdersRequest {
 
     public void setPaymentTimeEnd(String paymentTimeEnd) {
         this.paymentTimeEnd = paymentTimeEnd;
-    }
-
-    public ListCustomerOrdersRequest withIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-        return this;
-    }
-
-    /** |参数名称：二级经销商ID，只有伙伴用自身token调用的时候，该字段才有含义。| |参数的约束及描述：|
-     * 
-     * @return indirectPartnerId */
-    public String getIndirectPartnerId() {
-        return indirectPartnerId;
-    }
-
-    public void setIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
     }
 
     @Override
@@ -301,8 +282,7 @@ public class ListCustomerOrdersRequest {
             && Objects.equals(this.offset, listCustomerOrdersRequest.offset)
             && Objects.equals(this.orderBy, listCustomerOrdersRequest.orderBy)
             && Objects.equals(this.paymentTimeBegin, listCustomerOrdersRequest.paymentTimeBegin)
-            && Objects.equals(this.paymentTimeEnd, listCustomerOrdersRequest.paymentTimeEnd)
-            && Objects.equals(this.indirectPartnerId, listCustomerOrdersRequest.indirectPartnerId);
+            && Objects.equals(this.paymentTimeEnd, listCustomerOrdersRequest.paymentTimeEnd);
     }
 
     @Override
@@ -318,8 +298,7 @@ public class ListCustomerOrdersRequest {
             offset,
             orderBy,
             paymentTimeBegin,
-            paymentTimeEnd,
-            indirectPartnerId);
+            paymentTimeEnd);
     }
 
     @Override
@@ -338,7 +317,6 @@ public class ListCustomerOrdersRequest {
         sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
         sb.append("    paymentTimeBegin: ").append(toIndentedString(paymentTimeBegin)).append("\n");
         sb.append("    paymentTimeEnd: ").append(toIndentedString(paymentTimeEnd)).append("\n");
-        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

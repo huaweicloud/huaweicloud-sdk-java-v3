@@ -124,6 +124,31 @@ public class ModerationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunModerationAudioRequest, RunModerationAudioResponse> runModerationAudio =
+        genForrunModerationAudio();
+
+    private static HttpRequestDef<RunModerationAudioRequest, RunModerationAudioResponse> genForrunModerationAudio() {
+        // basic
+        HttpRequestDef.Builder<RunModerationAudioRequest, RunModerationAudioResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunModerationAudioRequest.class, RunModerationAudioResponse.class)
+                .withName("RunModerationAudio")
+                .withUri("/v2/{project_id}/moderation/voice")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<RunModerationAudioRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunModerationAudioRequestBody.class),
+            f -> f.withMarshaller(RunModerationAudioRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunTaskSumbitRequest, RunTaskSumbitResponse> runTaskSumbit =
         genForrunTaskSumbit();
 

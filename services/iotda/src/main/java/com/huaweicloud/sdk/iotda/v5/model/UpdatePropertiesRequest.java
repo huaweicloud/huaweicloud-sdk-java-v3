@@ -15,6 +15,11 @@ public class UpdatePropertiesRequest {
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Sp-Auth-Token")
+
+    private String spAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Instance-Id")
 
     private String instanceId;
@@ -38,6 +43,22 @@ public class UpdatePropertiesRequest {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
+    }
+
+    public UpdatePropertiesRequest withSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+        return this;
+    }
+
+    /** Sp用户Token。通过调用IoBPS服务获取SP用户Token
+     * 
+     * @return spAuthToken */
+    public String getSpAuthToken() {
+        return spAuthToken;
+    }
+
+    public void setSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
     }
 
     public UpdatePropertiesRequest withInstanceId(String instanceId) {
@@ -91,13 +112,14 @@ public class UpdatePropertiesRequest {
         }
         UpdatePropertiesRequest updatePropertiesRequest = (UpdatePropertiesRequest) o;
         return Objects.equals(this.deviceId, updatePropertiesRequest.deviceId)
+            && Objects.equals(this.spAuthToken, updatePropertiesRequest.spAuthToken)
             && Objects.equals(this.instanceId, updatePropertiesRequest.instanceId)
             && Objects.equals(this.body, updatePropertiesRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, instanceId, body);
+        return Objects.hash(deviceId, spAuthToken, instanceId, body);
     }
 
     @Override
@@ -105,6 +127,7 @@ public class UpdatePropertiesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePropertiesRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+        sb.append("    spAuthToken: ").append(toIndentedString(spAuthToken)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

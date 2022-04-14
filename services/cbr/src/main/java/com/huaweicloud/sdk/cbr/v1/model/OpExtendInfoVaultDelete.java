@@ -23,7 +23,7 @@ public class OpExtendInfoVaultDelete {
         return this;
     }
 
-    /** 删除失败的资源数量
+    /** 本次任务删除失败的资源数量
      * 
      * @return failCount */
     public Integer getFailCount() {
@@ -39,7 +39,7 @@ public class OpExtendInfoVaultDelete {
         return this;
     }
 
-    /** 删除的备份数量
+    /** 本次任务删除的备份总数
      * 
      * @return totalCount */
     public Integer getTotalCount() {

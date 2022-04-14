@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** Response Object */
@@ -13,12 +12,12 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "budget_amount")
 
-    private BigDecimal budgetAmount;
+    private Double budgetAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_amount")
 
-    private BigDecimal usedAmount;
+    private Double usedAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -30,35 +29,35 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
 
     private String currency;
 
-    public ShowSubCustomerBudgetResponse withBudgetAmount(BigDecimal budgetAmount) {
+    public ShowSubCustomerBudgetResponse withBudgetAmount(Double budgetAmount) {
         this.budgetAmount = budgetAmount;
         return this;
     }
 
-    /** |参数名称：预算金额。| |参数的约束及描述：预算金额。|
+    /** 初始预算金额。
      * 
      * @return budgetAmount */
-    public BigDecimal getBudgetAmount() {
+    public Double getBudgetAmount() {
         return budgetAmount;
     }
 
-    public void setBudgetAmount(BigDecimal budgetAmount) {
+    public void setBudgetAmount(Double budgetAmount) {
         this.budgetAmount = budgetAmount;
     }
 
-    public ShowSubCustomerBudgetResponse withUsedAmount(BigDecimal usedAmount) {
+    public ShowSubCustomerBudgetResponse withUsedAmount(Double usedAmount) {
         this.usedAmount = usedAmount;
         return this;
     }
 
-    /** |参数名称：已经使用的预算。该预算存在一定的时延和误差。| |参数的约束及描述：已经使用的预算。该预算存在一定的时延和误差。|
+    /** 已经使用的预算。该预算存在一定的时延和误差。
      * 
      * @return usedAmount */
-    public BigDecimal getUsedAmount() {
+    public Double getUsedAmount() {
         return usedAmount;
     }
 
-    public void setUsedAmount(BigDecimal usedAmount) {
+    public void setUsedAmount(Double usedAmount) {
         this.usedAmount = usedAmount;
     }
 
@@ -67,7 +66,7 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：金额单位。1：元| |参数的约束及描述：金额单位。1：元|
+    /** 金额单位。 1：元
      * 
      * @return measureId */
     public Integer getMeasureId() {
@@ -83,7 +82,7 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：公司名称币种。CNY：人民币USD：美金| |参数约束及描述：公司名称币种。CNY：人民币USD：美金|
+    /** 币种。 USD：美金
      * 
      * @return currency */
     public String getCurrency() {

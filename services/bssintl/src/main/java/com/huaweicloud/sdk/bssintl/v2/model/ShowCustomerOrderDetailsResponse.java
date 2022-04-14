@@ -32,7 +32,7 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：符合条件的记录总数。| |参数的约束及描述：符合条件的记录总数。|
+    /** 订单项个数。
      * 
      * @return totalCount */
     public Integer getTotalCount() {
@@ -90,7 +90,7 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：订单对应的订单项。具体请参见表 OrderLineItemEntityV2。| |参数约束及描述： 订单对应的订单项。具体请参见表 OrderLineItemEntityV2。|
+    /** 订单对应的订单项。 具体请参见表5。
      * 
      * @return orderLineItems */
     public List<OrderLineItemEntityV2> getOrderLineItems() {

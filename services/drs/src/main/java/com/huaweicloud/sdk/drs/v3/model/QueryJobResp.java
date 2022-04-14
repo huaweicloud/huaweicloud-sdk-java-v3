@@ -13,9 +13,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/**
- * 
- */
+/** QueryJobResp */
 public class QueryJobResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -853,7 +851,7 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_notify")
 
-    private String alarmNotify;
+    private QuerySmnInfoResp alarmNotify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incre_start_position")
@@ -1657,19 +1655,28 @@ public class QueryJobResp {
         this.gtid = gtid;
     }
 
-    public QueryJobResp withAlarmNotify(String alarmNotify) {
+    public QueryJobResp withAlarmNotify(QuerySmnInfoResp alarmNotify) {
         this.alarmNotify = alarmNotify;
         return this;
     }
 
-    /** 获取异常通知设置信息。
+    public QueryJobResp withAlarmNotify(Consumer<QuerySmnInfoResp> alarmNotifySetter) {
+        if (this.alarmNotify == null) {
+            this.alarmNotify = new QuerySmnInfoResp();
+            alarmNotifySetter.accept(this.alarmNotify);
+        }
+
+        return this;
+    }
+
+    /** Get alarmNotify
      * 
      * @return alarmNotify */
-    public String getAlarmNotify() {
+    public QuerySmnInfoResp getAlarmNotify() {
         return alarmNotify;
     }
 
-    public void setAlarmNotify(String alarmNotify) {
+    public void setAlarmNotify(QuerySmnInfoResp alarmNotify) {
         this.alarmNotify = alarmNotify;
     }
 

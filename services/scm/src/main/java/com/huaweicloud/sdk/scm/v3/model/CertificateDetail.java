@@ -83,6 +83,11 @@ public class CertificateDetail {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CertificateDetail withId(String id) {
         this.id = id;
         return this;
@@ -325,6 +330,22 @@ public class CertificateDetail {
         this.description = description;
     }
 
+    public CertificateDetail withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目ID，默认为“0”。 对于开通企业项目的用户，表示资源处于默认企业项目下。 对于未开通企业项目的用户，表示资源未处于企业项目下。
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -346,7 +367,8 @@ public class CertificateDetail {
             && Objects.equals(this.status, certificateDetail.status)
             && Objects.equals(this.domainCount, certificateDetail.domainCount)
             && Objects.equals(this.wildcardCount, certificateDetail.wildcardCount)
-            && Objects.equals(this.description, certificateDetail.description);
+            && Objects.equals(this.description, certificateDetail.description)
+            && Objects.equals(this.enterpriseProjectId, certificateDetail.enterpriseProjectId);
     }
 
     @Override
@@ -365,7 +387,8 @@ public class CertificateDetail {
             status,
             domainCount,
             wildcardCount,
-            description);
+            description,
+            enterpriseProjectId);
     }
 
     @Override
@@ -387,6 +410,7 @@ public class CertificateDetail {
         sb.append("    domainCount: ").append(toIndentedString(domainCount)).append("\n");
         sb.append("    wildcardCount: ").append(toIndentedString(wildcardCount)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

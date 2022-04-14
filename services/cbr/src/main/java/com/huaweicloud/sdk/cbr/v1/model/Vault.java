@@ -67,6 +67,16 @@ public class Vault {
     private VaultBindRules bindRules;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_id")
+
+    private String userId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_expand")
 
     private Boolean autoExpand;
@@ -80,16 +90,6 @@ public class Vault {
     @JsonProperty(value = "threshold")
 
     private Integer threshold;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_id")
-
-    private String userId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "created_at")
-
-    private String createdAt;
 
     public Vault withBilling(Billing billing) {
         this.billing = billing;
@@ -137,7 +137,7 @@ public class Vault {
         return this;
     }
 
-    /** 保管库ID
+    /** 存储库ID
      * 
      * @return id */
     public String getId() {
@@ -153,7 +153,7 @@ public class Vault {
         return this;
     }
 
-    /** 保管库名称
+    /** 存储库名称
      * 
      * @return name */
     public String getName() {
@@ -185,7 +185,7 @@ public class Vault {
         return this;
     }
 
-    /** 保管库资源类型id
+    /** 存储库资源类型id
      * 
      * @return providerId */
     public String getProviderId() {
@@ -317,6 +317,38 @@ public class Vault {
         this.bindRules = bindRules;
     }
 
+    public Vault withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    /** 用户id
+     * 
+     * @return userId */
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public Vault withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /** 创建时间,例如:\"2020-02-05T10:38:34.209782\"
+     * 
+     * @return createdAt */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public Vault withAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
         return this;
@@ -365,38 +397,6 @@ public class Vault {
         this.threshold = threshold;
     }
 
-    public Vault withUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-
-    /** 用户id
-     * 
-     * @return userId */
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public Vault withCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    /** 创建时间
-     * 
-     * @return createdAt */
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -412,9 +412,9 @@ public class Vault {
             && Objects.equals(this.resources, vault.resources) && Objects.equals(this.tags, vault.tags)
             && Objects.equals(this.enterpriseProjectId, vault.enterpriseProjectId)
             && Objects.equals(this.autoBind, vault.autoBind) && Objects.equals(this.bindRules, vault.bindRules)
+            && Objects.equals(this.userId, vault.userId) && Objects.equals(this.createdAt, vault.createdAt)
             && Objects.equals(this.autoExpand, vault.autoExpand) && Objects.equals(this.smnNotify, vault.smnNotify)
-            && Objects.equals(this.threshold, vault.threshold) && Objects.equals(this.userId, vault.userId)
-            && Objects.equals(this.createdAt, vault.createdAt);
+            && Objects.equals(this.threshold, vault.threshold);
     }
 
     @Override
@@ -430,11 +430,11 @@ public class Vault {
             enterpriseProjectId,
             autoBind,
             bindRules,
+            userId,
+            createdAt,
             autoExpand,
             smnNotify,
-            threshold,
-            userId,
-            createdAt);
+            threshold);
     }
 
     @Override
@@ -452,11 +452,11 @@ public class Vault {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    autoBind: ").append(toIndentedString(autoBind)).append("\n");
         sb.append("    bindRules: ").append(toIndentedString(bindRules)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
         sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
-        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

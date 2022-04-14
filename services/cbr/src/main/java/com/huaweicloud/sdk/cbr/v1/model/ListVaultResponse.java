@@ -22,6 +22,16 @@ public class ListVaultResponse extends SdkResponse {
 
     private Integer count;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListVaultResponse withVaults(List<Vault> vaults) {
         this.vaults = vaults;
         return this;
@@ -70,6 +80,38 @@ public class ListVaultResponse extends SdkResponse {
         this.count = count;
     }
 
+    public ListVaultResponse withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /** 每页显示的条目数量 minimum: 1 maximum: 1000
+     * 
+     * @return limit */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListVaultResponse withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /** 偏移量，表示从此偏移量开始查询 minimum: 0
+     * 
+     * @return offset */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -80,12 +122,14 @@ public class ListVaultResponse extends SdkResponse {
         }
         ListVaultResponse listVaultResponse = (ListVaultResponse) o;
         return Objects.equals(this.vaults, listVaultResponse.vaults)
-            && Objects.equals(this.count, listVaultResponse.count);
+            && Objects.equals(this.count, listVaultResponse.count)
+            && Objects.equals(this.limit, listVaultResponse.limit)
+            && Objects.equals(this.offset, listVaultResponse.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vaults, count);
+        return Objects.hash(vaults, count, limit, offset);
     }
 
     @Override
@@ -94,6 +138,8 @@ public class ListVaultResponse extends SdkResponse {
         sb.append("class ListVaultResponse {\n");
         sb.append("    vaults: ").append(toIndentedString(vaults)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

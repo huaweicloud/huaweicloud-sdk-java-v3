@@ -41,7 +41,7 @@ public class SysTag {
         return this;
     }
 
-    /** 值。 目前仅会用到企业项目ID，其中默 认的企业项目ID为“0”。
+    /** 值。 目前仅会用到企业项目ID，其中默认的企业项目ID为“0”。
      * 
      * @return value */
     public String getValue() {

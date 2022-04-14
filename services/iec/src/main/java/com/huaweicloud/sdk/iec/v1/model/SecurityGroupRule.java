@@ -201,6 +201,16 @@ public class SecurityGroupRule {
 
     private String remoteIpPrefix;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private String action;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
     public SecurityGroupRule withId(String id) {
         this.id = id;
         return this;
@@ -361,6 +371,38 @@ public class SecurityGroupRule {
         this.remoteIpPrefix = remoteIpPrefix;
     }
 
+    public SecurityGroupRule withAction(String action) {
+        this.action = action;
+        return this;
+    }
+
+    /** 安全组规则生效策略 取值范围：allow 允许，deny 拒绝 约束：默认值为allow
+     * 
+     * @return action */
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public SecurityGroupRule withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /** 规则在安全组中的优先级 取值范围：1~100，1代表最高优先级 约束：默认值为1
+     * 
+     * @return priority */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -379,7 +421,9 @@ public class SecurityGroupRule {
             && Objects.equals(this.portRangeMin, securityGroupRule.portRangeMin)
             && Objects.equals(this.portRangeMax, securityGroupRule.portRangeMax)
             && Objects.equals(this.remoteGroupId, securityGroupRule.remoteGroupId)
-            && Objects.equals(this.remoteIpPrefix, securityGroupRule.remoteIpPrefix);
+            && Objects.equals(this.remoteIpPrefix, securityGroupRule.remoteIpPrefix)
+            && Objects.equals(this.action, securityGroupRule.action)
+            && Objects.equals(this.priority, securityGroupRule.priority);
     }
 
     @Override
@@ -393,7 +437,9 @@ public class SecurityGroupRule {
             portRangeMin,
             portRangeMax,
             remoteGroupId,
-            remoteIpPrefix);
+            remoteIpPrefix,
+            action,
+            priority);
     }
 
     @Override
@@ -410,6 +456,8 @@ public class SecurityGroupRule {
         sb.append("    portRangeMax: ").append(toIndentedString(portRangeMax)).append("\n");
         sb.append("    remoteGroupId: ").append(toIndentedString(remoteGroupId)).append("\n");
         sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

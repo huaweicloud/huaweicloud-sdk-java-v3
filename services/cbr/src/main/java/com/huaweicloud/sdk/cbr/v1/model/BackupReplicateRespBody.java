@@ -135,7 +135,7 @@ public class BackupReplicateRespBody {
         return this;
     }
 
-    /** 备份提供商ID，用于区分备份对象.
+    /** 资源类型id
      * 
      * @return providerId */
     public String getProviderId() {

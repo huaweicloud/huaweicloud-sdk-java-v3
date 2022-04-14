@@ -38,7 +38,7 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：退订资源生成的订单ID的列表。| |参数约束以及描述：续订资源生成的订单ID的列表。|
+    /** 客户退订订单ID的列表信息。
      * 
      * @return orderIds */
     public List<String> getOrderIds() {

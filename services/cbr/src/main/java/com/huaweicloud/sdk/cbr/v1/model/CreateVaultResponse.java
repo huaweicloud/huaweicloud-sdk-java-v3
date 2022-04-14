@@ -13,16 +13,16 @@ public class CreateVaultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault")
 
-    private Vault vault;
+    private VaultCreateResource vault;
 
-    public CreateVaultResponse withVault(Vault vault) {
+    public CreateVaultResponse withVault(VaultCreateResource vault) {
         this.vault = vault;
         return this;
     }
 
-    public CreateVaultResponse withVault(Consumer<Vault> vaultSetter) {
+    public CreateVaultResponse withVault(Consumer<VaultCreateResource> vaultSetter) {
         if (this.vault == null) {
-            this.vault = new Vault();
+            this.vault = new VaultCreateResource();
             vaultSetter.accept(this.vault);
         }
 
@@ -32,11 +32,11 @@ public class CreateVaultResponse extends SdkResponse {
     /** Get vault
      * 
      * @return vault */
-    public Vault getVault() {
+    public VaultCreateResource getVault() {
         return vault;
     }
 
-    public void setVault(Vault vault) {
+    public void setVault(VaultCreateResource vault) {
         this.vault = vault;
     }
 

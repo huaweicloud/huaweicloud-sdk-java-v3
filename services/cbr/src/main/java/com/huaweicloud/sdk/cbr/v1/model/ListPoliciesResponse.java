@@ -57,7 +57,9 @@ public class ListPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    /** @return count */
+    /** 策略总数
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }

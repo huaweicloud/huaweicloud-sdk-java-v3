@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -48,7 +49,7 @@ public class ReplicationRecordGet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_info")
 
-    private String extraInfo;
+    private ReplicationRecordsExtraInfo extraInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -264,19 +265,28 @@ public class ReplicationRecordGet {
         this.destinationVaultId = destinationVaultId;
     }
 
-    public ReplicationRecordGet withExtraInfo(String extraInfo) {
+    public ReplicationRecordGet withExtraInfo(ReplicationRecordsExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
         return this;
     }
 
-    /** 复制附加信息
+    public ReplicationRecordGet withExtraInfo(Consumer<ReplicationRecordsExtraInfo> extraInfoSetter) {
+        if (this.extraInfo == null) {
+            this.extraInfo = new ReplicationRecordsExtraInfo();
+            extraInfoSetter.accept(this.extraInfo);
+        }
+
+        return this;
+    }
+
+    /** Get extraInfo
      * 
      * @return extraInfo */
-    public String getExtraInfo() {
+    public ReplicationRecordsExtraInfo getExtraInfo() {
         return extraInfo;
     }
 
-    public void setExtraInfo(String extraInfo) {
+    public void setExtraInfo(ReplicationRecordsExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
     }
 

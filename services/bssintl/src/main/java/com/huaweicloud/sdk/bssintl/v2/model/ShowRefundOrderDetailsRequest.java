@@ -18,7 +18,7 @@ public class ShowRefundOrderDetailsRequest {
         return this;
     }
 
-    /** |参数名称：订单ID。| |参数的约束及描述：|
+    /** 退订订单或者降配订单的ID。
      * 
      * @return orderId */
     public String getOrderId() {

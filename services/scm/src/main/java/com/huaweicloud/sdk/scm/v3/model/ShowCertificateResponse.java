@@ -108,6 +108,11 @@ public class ShowCertificateResponse extends SdkResponse {
     private Integer wildcardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentification")
 
     private List<Authentification> authentification = null;
@@ -418,6 +423,22 @@ public class ShowCertificateResponse extends SdkResponse {
         this.wildcardCount = wildcardCount;
     }
 
+    public ShowCertificateResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业项目ID，默认为“0”。 对于开通企业项目的用户，表示资源处于默认企业项目下。 对于未开通企业项目的用户，表示资源未处于企业项目下。
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ShowCertificateResponse withAuthentification(List<Authentification> authentification) {
         this.authentification = authentification;
         return this;
@@ -478,6 +499,7 @@ public class ShowCertificateResponse extends SdkResponse {
             && Objects.equals(this.sans, showCertificateResponse.sans)
             && Objects.equals(this.domainCount, showCertificateResponse.domainCount)
             && Objects.equals(this.wildcardCount, showCertificateResponse.wildcardCount)
+            && Objects.equals(this.enterpriseProjectId, showCertificateResponse.enterpriseProjectId)
             && Objects.equals(this.authentification, showCertificateResponse.authentification);
     }
 
@@ -502,6 +524,7 @@ public class ShowCertificateResponse extends SdkResponse {
             sans,
             domainCount,
             wildcardCount,
+            enterpriseProjectId,
             authentification);
     }
 
@@ -528,6 +551,7 @@ public class ShowCertificateResponse extends SdkResponse {
         sb.append("    sans: ").append(toIndentedString(sans)).append("\n");
         sb.append("    domainCount: ").append(toIndentedString(domainCount)).append("\n");
         sb.append("    wildcardCount: ").append(toIndentedString(wildcardCount)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    authentification: ").append(toIndentedString(authentification)).append("\n");
         sb.append("}");
         return sb.toString();

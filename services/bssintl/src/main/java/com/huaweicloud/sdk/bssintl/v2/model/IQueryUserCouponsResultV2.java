@@ -156,7 +156,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：优惠券实例ID。| |参数约束及描述：优惠券实例ID。|
+    /** 优惠券实例ID。
      * 
      * @return couponId */
     public String getCouponId() {
@@ -172,7 +172,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：优惠券编码。| |参数约束及描述：优惠券编码。|
+    /** 优惠券编码。
      * 
      * @return couponCode */
     public String getCouponCode() {
@@ -188,7 +188,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：优惠券状态：1：未激活；2：待使用；3：已使用；4：已过期。| |参数的约束及描述：优惠券状态：1：未激活；2：待使用；3：已使用；4：已过期。|
+    /** 优惠券状态： 1：未激活2：待使用3：已使用4：已过期5：已回收
      * 
      * @return status */
     public Integer getStatus() {
@@ -204,7 +204,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：客户ID| |参数约束及描述：客户ID|
+    /** 客户账号ID。
      * 
      * @return customerId */
     public String getCustomerId() {
@@ -220,7 +220,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：优惠券类型：1：代金券；2：折扣券；3：产品券；4：现金券。| |参数的约束及描述：优惠券类型：1：代金券；2：折扣券；3：产品券；4：现金券。|
+    /** 优惠券类型： 1：代金券2：折扣券（预留）3：产品券（预留）4：现金券（预留）
      * 
      * @return couponType */
     public Integer getCouponType() {
@@ -236,7 +236,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：度量单位。1：元| |参数的约束及描述：度量单位。1：元|
+    /** 度量单位。 1：元
      * 
      * @return measureId */
     public Integer getMeasureId() {
@@ -252,7 +252,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：优惠券金额。| |参数的约束及描述：优惠券金额。|
+    /** 优惠券金额。
      * 
      * @return faceValue */
     public Double getFaceValue() {
@@ -268,7 +268,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+    /** 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * 
      * @return validTime */
     public String getValidTime() {
@@ -284,7 +284,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+    /** 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * 
      * @return expireTime */
     public String getExpireTime() {
@@ -300,7 +300,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：订单ID。| |参数约束及描述：订单ID。|
+    /** 订单ID。
      * 
      * @return orderId */
     public String getOrderId() {
@@ -316,7 +316,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：促销计划ID。| |参数约束及描述：促销计划ID。|
+    /** 促销计划ID。
      * 
      * @return promotionPlanId */
     public String getPromotionPlanId() {
@@ -332,7 +332,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：促销计划名称。| |参数约束及描述：促销计划名称。|
+    /** 促销计划名称。
      * 
      * @return planName */
     public String getPlanName() {
@@ -348,7 +348,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：促销计划描述。| |参数约束及描述：促销计划描述。|
+    /** 促销计划描述。
      * 
      * @return planDesc */
     public String getPlanDesc() {
@@ -364,7 +364,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：介质类型。| |参数的约束及描述：介质类型。|
+    /** 介质类型。 1：电子券2：纸质券
      * 
      * @return mediaType */
     public Integer getMediaType() {
@@ -380,7 +380,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：获取方式：1：线上领取；2：线上兑换；3：线上发放；4：线下获取；5：事件赠送。| |参数的约束及描述：获取方式：1：线上领取；2：线上兑换；3：线上发放；4：线下获取；5：事件赠送。|
+    /** 获取方式： 1：线上领取2：线上兑换3：线上发放4：线下获取5：事件赠送
      * 
      * @return fetchMethod */
     public Integer getFetchMethod() {
@@ -412,7 +412,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：优惠券使用限制。具体请参见表 ICouponUseLimitInfo。| |参数约束以及描述：优惠券使用限制。具体请参见表 ICouponUseLimitInfo。|
+    /** 优惠券使用限制。 具体请参见表3。
      * 
      * @return useLimits */
     public List<ICouponUseLimitInfoV2> getUseLimits() {
@@ -428,7 +428,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+    /** 激活时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * 
      * @return activeTime */
     public String getActiveTime() {
@@ -444,7 +444,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：使用时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：使用时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+    /** 使用时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * 
      * @return reserveTime */
     public String getReserveTime() {
@@ -460,7 +460,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：促销ID。| |参数约束及描述：促销ID。|
+    /** 促销ID。
      * 
      * @return promotionId */
     public String getPromotionId() {
@@ -476,7 +476,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+    /** 创建时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * 
      * @return createTime */
     public String getCreateTime() {
@@ -492,7 +492,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：优惠券版本：1：老版本，老版本优惠券只能使用一次；2：新版本，新版本优惠券可以反复使用。| |参数的约束及描述：优惠券版本：1：老版本，老版本优惠券只能使用一次；2：新版本，新版本优惠券可以反复使用。|
+    /** 优惠券版本： 1：老版本，老版本优惠券只能使用一次2：新版本，新版本优惠券可以反复使用
      * 
      * @return couponVersion */
     public Integer getCouponVersion() {
@@ -508,7 +508,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：余额。如果为老版本优惠券，该值为空| |参数的约束及描述：余额。如果为老版本优惠券，该值为空|
+    /** 优惠券余额。单位：元。 如果为老版本优惠券，该值为空。
      * 
      * @return balance */
     public Double getBalance() {
@@ -524,7 +524,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：锁定优惠券的订单ID。如果为老版本优惠券，该值为空。| |参数约束及描述：锁定优惠券的订单ID。如果为老版本优惠券，该值为空。|
+    /** 锁定优惠券的订单ID。 如果为老版本优惠券，该值为空。
      * 
      * @return lockOrderId */
     public String getLockOrderId() {
@@ -540,7 +540,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：优惠券用途。| |参数约束及描述：优惠券用途。|
+    /** 优惠券用途。
      * 
      * @return couponUsage */
     public String getCouponUsage() {
@@ -556,7 +556,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：优惠券是否冻结：0：否1：是可用优惠券接口返回时不包括冻结状态的优惠券。| |参数约束及描述：优惠券是否冻结：0：否1：是可用优惠券接口返回时不包括冻结状态的优惠券。|
+    /** 优惠券是否冻结： 0：否1：是
      * 
      * @return isFrozen */
     public String getIsFrozen() {
@@ -572,7 +572,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：币种。| |参数约束及描述：币种。|
+    /** 币种。 USD：美元
      * 
      * @return currency */
     public String getCurrency() {
@@ -588,7 +588,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：扩展字段。| |参数约束及描述：扩展字段。|
+    /** 扩展字段。
      * 
      * @return extendParam1 */
     public String getExtendParam1() {
@@ -604,8 +604,7 @@ public class IQueryUserCouponsResultV2 {
         return this;
     }
 
-    /** |参数名称：发放人标识| |参数约束及描述：用于标识优惠券唯一的发放人； 云豆兑换优惠券时sourceId填写云豆计划Id； 累计送优惠券时sourceId填写累计送计划Id；
-     * 抽奖送优惠券时sourceId填写抽奖计划Id； 事件送优惠券时sourceId填写事件计划Id； 定制优惠券时sourceId填写创建人Id；|
+    /** 发券来源。 如果是合作伙伴发送的券，此处为伙伴ID。如果是活动发券，此处为活动ID：云豆兑换优惠券：云豆计划ID累计送优惠券：累计送计划ID抽奖送优惠券：抽奖计划ID事件送优惠券：事件计划ID定制优惠券：创建人ID
      * 
      * @return sourceId */
     public String getSourceId() {

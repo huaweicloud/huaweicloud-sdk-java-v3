@@ -180,8 +180,8 @@ public class SyncPolicyReq {
 
     private Boolean indexTrans;
 
-    /** 同步Topic策略，目标库为kafka时必填，取值： - 0：集中投递到一个Topic - 1：按库名-schema自动生成Topic名字 - 2：按库名自动生成Topic名字 -
-     * 3：按库名-schema-表名自动生成Topic名字 */
+    /** 同步Topic策略，目标库为kafka时必填，取值： - 0：集中投递到一个Topic - 1：按库名-schema-表名自动生成Topic名字 - 2：按库名自动生成Topic名字 -
+     * 3：按库名-schema自动生成Topic名字 */
     public static final class TopicPolicyEnum {
 
         /** Enum _0 for value: "0" */
@@ -272,7 +272,7 @@ public class SyncPolicyReq {
 
     /** 同步到kafka partition策略，取值： - 0：按库名.schema.表名的hash值投递到不同Partition - 1：全部投递到Partition 0 - 2：按主键的hash值投递到不同Partition
      * - 3：按库名.schema的hash值投递到不同Partition
-     * **当topic_policy取0时，可以取0,1,2,3；当topic_policy取1时，可以取0,1；当topic_policy取2时，可以取0,1,3；当topic_policy取3时，可以取1,2；** */
+     * **当topic_policy取0时，可以取0,1,2,3；当topic_policy取1时，可以取1,2；当topic_policy取2时，可以取0,1,3；当topic_policy取3时，可以取0,1；** */
     public static final class PartitionPolicyEnum {
 
         /** Enum _0 for value: "0" */
@@ -455,7 +455,7 @@ public class SyncPolicyReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "export_snapshot")
 
-    private String exportSnapshot;
+    private Boolean exportSnapshot;
 
     public SyncPolicyReq withJobId(String jobId) {
         this.jobId = jobId;
@@ -542,8 +542,8 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 同步Topic策略，目标库为kafka时必填，取值： - 0：集中投递到一个Topic - 1：按库名-schema自动生成Topic名字 - 2：按库名自动生成Topic名字 -
-     * 3：按库名-schema-表名自动生成Topic名字
+    /** 同步Topic策略，目标库为kafka时必填，取值： - 0：集中投递到一个Topic - 1：按库名-schema-表名自动生成Topic名字 - 2：按库名自动生成Topic名字 -
+     * 3：按库名-schema自动生成Topic名字
      * 
      * @return topicPolicy */
     public TopicPolicyEnum getTopicPolicy() {
@@ -577,7 +577,7 @@ public class SyncPolicyReq {
 
     /** 同步到kafka partition策略，取值： - 0：按库名.schema.表名的hash值投递到不同Partition - 1：全部投递到Partition 0 - 2：按主键的hash值投递到不同Partition
      * - 3：按库名.schema的hash值投递到不同Partition
-     * **当topic_policy取0时，可以取0,1,2,3；当topic_policy取1时，可以取0,1；当topic_policy取2时，可以取0,1,3；当topic_policy取3时，可以取1,2；**
+     * **当topic_policy取0时，可以取0,1,2,3；当topic_policy取1时，可以取1,2；当topic_policy取2时，可以取0,1,3；当topic_policy取3时，可以取0,1；**
      * 
      * @return partitionPolicy */
     public PartitionPolicyEnum getPartitionPolicy() {
@@ -671,7 +671,7 @@ public class SyncPolicyReq {
         this.isFillMaterializedView = isFillMaterializedView;
     }
 
-    public SyncPolicyReq withExportSnapshot(String exportSnapshot) {
+    public SyncPolicyReq withExportSnapshot(Boolean exportSnapshot) {
         this.exportSnapshot = exportSnapshot;
         return this;
     }
@@ -679,11 +679,11 @@ public class SyncPolicyReq {
     /** PostgreSQL同步全量阶段是否使用快照模式导出，不填默认为false
      * 
      * @return exportSnapshot */
-    public String getExportSnapshot() {
+    public Boolean getExportSnapshot() {
         return exportSnapshot;
     }
 
-    public void setExportSnapshot(String exportSnapshot) {
+    public void setExportSnapshot(Boolean exportSnapshot) {
         this.exportSnapshot = exportSnapshot;
     }
 

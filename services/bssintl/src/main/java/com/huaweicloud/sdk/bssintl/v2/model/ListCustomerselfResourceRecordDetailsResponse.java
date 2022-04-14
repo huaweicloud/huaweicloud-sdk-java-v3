@@ -49,7 +49,7 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：资源费用记录数据| |参数的约束及描述：该参数非必填|
+    /** 资源详单数据记录。 具体请参见表1。
      * 
      * @return monthlyRecords */
     public List<MonthlyBillRes> getMonthlyRecords() {
@@ -65,7 +65,7 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：结果集数量| |参数的约束及描述：该参数非必填，且只允许数字，只有成功才返回这个参数。|
+    /** 结果集数量，只有成功才返回这个参数。
      * 
      * @return totalCount */
     public Integer getTotalCount() {
@@ -81,7 +81,7 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：货币单位代码| |参数的约束及描述：该参数非必填，最大长度3，CNY：人民币；USD：美元|
+    /** 货币单位代码： USD：美元
      * 
      * @return currency */
     public String getCurrency() {

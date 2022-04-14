@@ -51,6 +51,24 @@ public class CodeCheckClient {
         return new SyncInvoker<CheckRecordRequest, CheckRecordResponse>(request, CodeCheckMeta.checkRecord, hcClient);
     }
 
+    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+     *
+     * @param CheckRulesetParametersRequest 请求对象
+     * @return CheckRulesetParametersResponse */
+    public CheckRulesetParametersResponse checkRulesetParameters(CheckRulesetParametersRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.checkRulesetParameters);
+    }
+
+    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+     *
+     * @param CheckRulesetParametersRequest 请求对象
+     * @return SyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse> */
+    public SyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse> checkRulesetParametersInvoker(
+        CheckRulesetParametersRequest request) {
+        return new SyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse>(request,
+            CodeCheckMeta.checkRulesetParameters, hcClient);
+    }
+
     /** 创建自定义规则集 可根据需求灵活的组合规则。
      *
      * @param CreateRulesetRequest 请求对象
@@ -360,6 +378,24 @@ public class CodeCheckClient {
      * @return SyncInvoker<ShowTasklogRequest, ShowTasklogResponse> */
     public SyncInvoker<ShowTasklogRequest, ShowTasklogResponse> showTasklogInvoker(ShowTasklogRequest request) {
         return new SyncInvoker<ShowTasklogRequest, ShowTasklogResponse>(request, CodeCheckMeta.showTasklog, hcClient);
+    }
+
+    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+     *
+     * @param ShowTasksRulesetsRequest 请求对象
+     * @return ShowTasksRulesetsResponse */
+    public ShowTasksRulesetsResponse showTasksRulesets(ShowTasksRulesetsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTasksRulesets);
+    }
+
+    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+     *
+     * @param ShowTasksRulesetsRequest 请求对象
+     * @return SyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> */
+    public SyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> showTasksRulesetsInvoker(
+        ShowTasksRulesetsRequest request) {
+        return new SyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse>(request,
+            CodeCheckMeta.showTasksRulesets, hcClient);
     }
 
     /** 终止检查任务 根据任务ID终止检查任务。

@@ -132,6 +132,20 @@ public class ScmMeta {
             f -> f.withMarshaller(ListCertificatesRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Boolean>withRequestField("deploy_support",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getDeploySupport, (req, v) -> {
+                req.setDeploySupport(v);
+            }));
 
         // response
 

@@ -38,7 +38,7 @@ public class ListOrderDiscountsResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：可用的优惠券列表。具体请参见表1-30。| |参数约束以及描述：可用的优惠券列表。具体请参见表1-30。|
+    /** 可用的折扣列表。 具体请参见表2。
      * 
      * @return discounts */
     public List<DiscountInfoV3> getDiscounts() {

@@ -185,7 +185,7 @@ public class BssintlClient {
             BssintlMeta.createSubCustomer, hcClient);
     }
 
-    /** 冻结伙伴子客户 功能描述：冻结伙伴子客户
+    /** 冻结客户账号 功能描述：冻结伙伴子客户
      *
      * @param FreezeSubCustomersRequest 请求对象
      * @return FreezeSubCustomersResponse */
@@ -193,7 +193,7 @@ public class BssintlClient {
         return hcClient.syncInvokeHttp(request, BssintlMeta.freezeSubCustomers);
     }
 
-    /** 冻结伙伴子客户 功能描述：冻结伙伴子客户
+    /** 冻结客户账号 功能描述：冻结伙伴子客户
      *
      * @param FreezeSubCustomersRequest 请求对象
      * @return SyncInvoker<FreezeSubCustomersRequest, FreezeSubCustomersResponse> */
@@ -333,6 +333,22 @@ public class BssintlClient {
             BssintlMeta.listFreeResourceUsages, hcClient);
     }
 
+    /** 查询发票列表 功能描述：查询发票列表
+     *
+     * @param ListInvoicesRequest 请求对象
+     * @return ListInvoicesResponse */
+    public ListInvoicesResponse listInvoices(ListInvoicesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listInvoices);
+    }
+
+    /** 查询发票列表 功能描述：查询发票列表
+     *
+     * @param ListInvoicesRequest 请求对象
+     * @return SyncInvoker<ListInvoicesRequest, ListInvoicesResponse> */
+    public SyncInvoker<ListInvoicesRequest, ListInvoicesResponse> listInvoicesInvoker(ListInvoicesRequest request) {
+        return new SyncInvoker<ListInvoicesRequest, ListInvoicesResponse>(request, BssintlMeta.listInvoices, hcClient);
+    }
+
     /** 查询使用量单位列表 功能描述：伙伴在伙伴销售平台上查询资源使用量的度量单位及名称，度量单位类型等。
      *
      * @param ListMeasureUnitsRequest 请求对象
@@ -349,6 +365,24 @@ public class BssintlClient {
         ListMeasureUnitsRequest request) {
         return new SyncInvoker<ListMeasureUnitsRequest, ListMeasureUnitsResponse>(request, BssintlMeta.listMeasureUnits,
             hcClient);
+    }
+
+    /** 查询消费汇总(客户) 功能描述：客户可以查询自身的消费汇总单的功能，消费按月汇总。
+     *
+     * @param ListMonthlyExpendituresRequest 请求对象
+     * @return ListMonthlyExpendituresResponse */
+    public ListMonthlyExpendituresResponse listMonthlyExpenditures(ListMonthlyExpendituresRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listMonthlyExpenditures);
+    }
+
+    /** 查询消费汇总(客户) 功能描述：客户可以查询自身的消费汇总单的功能，消费按月汇总。
+     *
+     * @param ListMonthlyExpendituresRequest 请求对象
+     * @return SyncInvoker<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> */
+    public SyncInvoker<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> listMonthlyExpendituresInvoker(
+        ListMonthlyExpendituresRequest request) {
+        return new SyncInvoker<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse>(request,
+            BssintlMeta.listMonthlyExpenditures, hcClient);
     }
 
     /** 查询按需产品价格 功能描述：按需资源询价
@@ -442,7 +476,7 @@ public class BssintlClient {
             BssintlMeta.listRateOnPeriodDetail, hcClient);
     }
 
-    /** 查询资源类型列表(新) 功能描述：客户在客户自建平台查询资源类型的列表。
+    /** 查询资源类型列表 伙伴在伙伴销售平台查询资源类型的列表。
      *
      * @param ListResourceTypesRequest 请求对象
      * @return ListResourceTypesResponse */
@@ -450,7 +484,7 @@ public class BssintlClient {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listResourceTypes);
     }
 
-    /** 查询资源类型列表(新) 功能描述：客户在客户自建平台查询资源类型的列表。
+    /** 查询资源类型列表 伙伴在伙伴销售平台查询资源类型的列表。
      *
      * @param ListResourceTypesRequest 请求对象
      * @return SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse> */
@@ -478,7 +512,7 @@ public class BssintlClient {
             BssintlMeta.listServiceResources, hcClient);
     }
 
-    /** 查询云服务类型列表(新) 功能描述：伙伴在伙伴销售平台查询云服务类型的列表。
+    /** 查询云服务类型列表 伙伴在伙伴销售平台查询云服务类型的列表。
      *
      * @param ListServiceTypesRequest 请求对象
      * @return ListServiceTypesResponse */
@@ -486,7 +520,7 @@ public class BssintlClient {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listServiceTypes);
     }
 
-    /** 查询云服务类型列表(新) 功能描述：伙伴在伙伴销售平台查询云服务类型的列表。
+    /** 查询云服务类型列表 伙伴在伙伴销售平台查询云服务类型的列表。
      *
      * @param ListServiceTypesRequest 请求对象
      * @return SyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse> */
@@ -496,7 +530,7 @@ public class BssintlClient {
             hcClient);
     }
 
-    /** 查询优惠券列表 功能描述：伙伴可以查询自身的优惠券信息。
+    /** 查询优惠券列表 功能描述：伙伴/客户可以查询自身的优惠券信息。
      *
      * @param ListSubCustomerCouponsRequest 请求对象
      * @return ListSubCustomerCouponsResponse */
@@ -504,7 +538,7 @@ public class BssintlClient {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listSubCustomerCoupons);
     }
 
-    /** 查询优惠券列表 功能描述：伙伴可以查询自身的优惠券信息。
+    /** 查询优惠券列表 功能描述：伙伴/客户可以查询自身的优惠券信息。
      *
      * @param ListSubCustomerCouponsRequest 请求对象
      * @return SyncInvoker<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse> */
@@ -584,7 +618,7 @@ public class BssintlClient {
             hcClient);
     }
 
-    /** 发送验证码 功能描述：客户注册时，如果填写了手机号，可以向对应的手机发送注册验证码，校验信息的正确性。使用个人银行卡方式进行实名认证时，通过该接口向指定的手机发送验证码。
+    /** 发送验证码 功能描述：客户注册时，如果填写了邮箱，可以向对应的邮箱发送注册验证码，校验信息的正确性。
      *
      * @param SendVerificationMessageCodeRequest 请求对象
      * @return SendVerificationMessageCodeResponse */
@@ -592,7 +626,7 @@ public class BssintlClient {
         return hcClient.syncInvokeHttp(request, BssintlMeta.sendVerificationMessageCode);
     }
 
-    /** 发送验证码 功能描述：客户注册时，如果填写了手机号，可以向对应的手机发送注册验证码，校验信息的正确性。使用个人银行卡方式进行实名认证时，通过该接口向指定的手机发送验证码。
+    /** 发送验证码 功能描述：客户注册时，如果填写了邮箱，可以向对应的邮箱发送注册验证码，校验信息的正确性。
      *
      * @param SendVerificationMessageCodeRequest 请求对象
      * @return SyncInvoker<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse> */
@@ -602,7 +636,7 @@ public class BssintlClient {
             BssintlMeta.sendVerificationMessageCode, hcClient);
     }
 
-    /** 查询账户余额 功能描述：查询账户余额
+    /** 查询账户余额 功能描述：客户可以查询自身的账户余额。
      *
      * @param ShowCustomerAccountBalancesRequest 请求对象
      * @return ShowCustomerAccountBalancesResponse */
@@ -610,7 +644,7 @@ public class BssintlClient {
         return hcClient.syncInvokeHttp(request, BssintlMeta.showCustomerAccountBalances);
     }
 
-    /** 查询账户余额 功能描述：查询账户余额
+    /** 查询账户余额 功能描述：客户可以查询自身的账户余额。
      *
      * @param ShowCustomerAccountBalancesRequest 请求对象
      * @return SyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> */
@@ -618,24 +652,6 @@ public class BssintlClient {
         ShowCustomerAccountBalancesRequest request) {
         return new SyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse>(request,
             BssintlMeta.showCustomerAccountBalances, hcClient);
-    }
-
-    /** 查询汇总账单 功能描述：客户在客户自建平台查询自身的消费汇总账单，此账单按月汇总消费数据。
-     *
-     * @param ShowCustomerMonthlySumRequest 请求对象
-     * @return ShowCustomerMonthlySumResponse */
-    public ShowCustomerMonthlySumResponse showCustomerMonthlySum(ShowCustomerMonthlySumRequest request) {
-        return hcClient.syncInvokeHttp(request, BssintlMeta.showCustomerMonthlySum);
-    }
-
-    /** 查询汇总账单 功能描述：客户在客户自建平台查询自身的消费汇总账单，此账单按月汇总消费数据。
-     *
-     * @param ShowCustomerMonthlySumRequest 请求对象
-     * @return SyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> */
-    public SyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> showCustomerMonthlySumInvoker(
-        ShowCustomerMonthlySumRequest request) {
-        return new SyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse>(request,
-            BssintlMeta.showCustomerMonthlySum, hcClient);
     }
 
     /** 查询订单详情 功能描述：客户可以查看订单详情
@@ -712,7 +728,7 @@ public class BssintlClient {
             BssintlMeta.showSubCustomerBudget, hcClient);
     }
 
-    /** 解冻伙伴子客户 功能描述：解冻伙伴子客户
+    /** 解冻客户账号 功能描述：解冻伙伴子客户
      *
      * @param UnfreezeSubCustomersRequest 请求对象
      * @return UnfreezeSubCustomersResponse */
@@ -720,7 +736,7 @@ public class BssintlClient {
         return hcClient.syncInvokeHttp(request, BssintlMeta.unfreezeSubCustomers);
     }
 
-    /** 解冻伙伴子客户 功能描述：解冻伙伴子客户
+    /** 解冻客户账号 功能描述：解冻伙伴子客户
      *
      * @param UnfreezeSubCustomersRequest 请求对象
      * @return SyncInvoker<UnfreezeSubCustomersRequest, UnfreezeSubCustomersResponse> */

@@ -712,7 +712,8 @@ public class IoTDAAsyncClient {
     /** 查询设备影子数据 应用服务器可调用此接口查询指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）。 设备影子介绍：
      * 设备影子是一个用于存储和检索设备当前状态信息的JSON文档。 - 每个设备有且只有一个设备影子，由设备ID唯一标识 - 设备影子仅保存最近一次设备的上报数据和预期数据 -
      * 无论该设备是否在线，都可以通过该影子获取和设置设备的属性 -
-     * 设备上线或者设备上报属性时，如果desired区和reported区存在差异，则将差异部分下发给设备，配置的预期属性需在产品模型中定义且method具有可写属性“W”才可下发
+     * 设备上线或者设备上报属性时，如果desired区和reported区存在差异，则将差异部分下发给设备，配置的预期属性需在产品模型中定义且method具有可写属性“W”才可下发 限制：
+     * 设备影子JSON文档中的key不允许特殊字符：点(.)、dollar符号($)、空char(十六进制的ASCII码为00)。如果包含了以上特殊字符则无法正常刷新影子文档。
      *
      * @param ShowDeviceShadowRequest 请求对象
      * @return CompletableFuture<ShowDeviceShadowResponse> */
@@ -723,7 +724,8 @@ public class IoTDAAsyncClient {
     /** 查询设备影子数据 应用服务器可调用此接口查询指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）。 设备影子介绍：
      * 设备影子是一个用于存储和检索设备当前状态信息的JSON文档。 - 每个设备有且只有一个设备影子，由设备ID唯一标识 - 设备影子仅保存最近一次设备的上报数据和预期数据 -
      * 无论该设备是否在线，都可以通过该影子获取和设置设备的属性 -
-     * 设备上线或者设备上报属性时，如果desired区和reported区存在差异，则将差异部分下发给设备，配置的预期属性需在产品模型中定义且method具有可写属性“W”才可下发
+     * 设备上线或者设备上报属性时，如果desired区和reported区存在差异，则将差异部分下发给设备，配置的预期属性需在产品模型中定义且method具有可写属性“W”才可下发 限制：
+     * 设备影子JSON文档中的key不允许特殊字符：点(.)、dollar符号($)、空char(十六进制的ASCII码为00)。如果包含了以上特殊字符则无法正常刷新影子文档。
      *
      * @param ShowDeviceShadowRequest 请求对象
      * @return AsyncInvoker<ShowDeviceShadowRequest, ShowDeviceShadowResponse> */
@@ -735,7 +737,8 @@ public class IoTDAAsyncClient {
 
     /** 配置设备影子预期数据 应用服务器可调用此接口配置设备影子的预期属性（desired区），当设备上线或者设备上报属性时把属性下发给设备。 设备影子介绍： 设备影子是一个用于存储和检索设备当前状态信息的JSON文档。 -
      * 每个设备有且只有一个设备影子，由设备ID唯一标识 - 设备影子仅保存最近一次设备的上报数据和预期数据 - 无论该设备是否在线，都可以通过该影子获取和设置设备的属性 -
-     * 设备上线或者设备上报属性时，如果desired区和reported区存在差异，则将差异部分下发给设备，配置的预期属性需在产品模型中定义且method具有可写属性“W”才可下发
+     * 设备上线或者设备上报属性时，如果desired区和reported区存在差异，则将差异部分下发给设备，配置的预期属性需在产品模型中定义且method具有可写属性“W”才可下发 限制：
+     * 设备影子JSON文档中的key不允许特殊字符：点(.)、dollar符号($)、空char(十六进制的ASCII码为00)。如果包含了以上特殊字符则无法正常刷新影子文档。
      *
      * @param UpdateDeviceShadowDesiredDataRequest 请求对象
      * @return CompletableFuture<UpdateDeviceShadowDesiredDataResponse> */
@@ -746,7 +749,8 @@ public class IoTDAAsyncClient {
 
     /** 配置设备影子预期数据 应用服务器可调用此接口配置设备影子的预期属性（desired区），当设备上线或者设备上报属性时把属性下发给设备。 设备影子介绍： 设备影子是一个用于存储和检索设备当前状态信息的JSON文档。 -
      * 每个设备有且只有一个设备影子，由设备ID唯一标识 - 设备影子仅保存最近一次设备的上报数据和预期数据 - 无论该设备是否在线，都可以通过该影子获取和设置设备的属性 -
-     * 设备上线或者设备上报属性时，如果desired区和reported区存在差异，则将差异部分下发给设备，配置的预期属性需在产品模型中定义且method具有可写属性“W”才可下发
+     * 设备上线或者设备上报属性时，如果desired区和reported区存在差异，则将差异部分下发给设备，配置的预期属性需在产品模型中定义且method具有可写属性“W”才可下发 限制：
+     * 设备影子JSON文档中的key不允许特殊字符：点(.)、dollar符号($)、空char(十六进制的ASCII码为00)。如果包含了以上特殊字符则无法正常刷新影子文档。
      *
      * @param UpdateDeviceShadowDesiredDataRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse> */
@@ -776,7 +780,7 @@ public class IoTDAAsyncClient {
             hcClient);
     }
 
-    /** 查询设备消息 物联网平台可查询指定设备下发的消息，平台为每个设备默认最多保存20条消息，超过20条后， 后续的消息会替换下发最早的消息。
+    /** 查询设备消息 应用服务器可调用此接口查询平台下发给设备的消息，平台为每个设备默认最多保存20条消息，超过20条后， 后续的消息会替换下发最早的消息。
      *
      * @param ListDeviceMessagesRequest 请求对象
      * @return CompletableFuture<ListDeviceMessagesResponse> */
@@ -784,7 +788,7 @@ public class IoTDAAsyncClient {
         return hcClient.asyncInvokeHttp(request, IoTDAMeta.listDeviceMessages);
     }
 
-    /** 查询设备消息 物联网平台可查询指定设备下发的消息，平台为每个设备默认最多保存20条消息，超过20条后， 后续的消息会替换下发最早的消息。
+    /** 查询设备消息 应用服务器可调用此接口查询平台下发给设备的消息，平台为每个设备默认最多保存20条消息，超过20条后， 后续的消息会替换下发最早的消息。
      *
      * @param ListDeviceMessagesRequest 请求对象
      * @return AsyncInvoker<ListDeviceMessagesRequest, ListDeviceMessagesResponse> */
@@ -794,7 +798,7 @@ public class IoTDAAsyncClient {
             IoTDAMeta.listDeviceMessages, hcClient);
     }
 
-    /** 查询指定消息id的消息 物联网平台可查询设备下发的指定消息id的消息。
+    /** 查询指定消息id的消息 应用服务器可调用此接口查询平台下发给设备的指定消息id的消息。
      *
      * @param ShowDeviceMessageRequest 请求对象
      * @return CompletableFuture<ShowDeviceMessageResponse> */
@@ -802,7 +806,7 @@ public class IoTDAAsyncClient {
         return hcClient.asyncInvokeHttp(request, IoTDAMeta.showDeviceMessage);
     }
 
-    /** 查询指定消息id的消息 物联网平台可查询设备下发的指定消息id的消息。
+    /** 查询指定消息id的消息 应用服务器可调用此接口查询平台下发给设备的指定消息id的消息。
      *
      * @param ShowDeviceMessageRequest 请求对象
      * @return AsyncInvoker<ShowDeviceMessageRequest, ShowDeviceMessageResponse> */

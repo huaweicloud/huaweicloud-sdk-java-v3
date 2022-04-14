@@ -25,6 +25,11 @@ public class ModifyInstanceBody {
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rename_commands")
+
+    private RenameCommandResp renameCommands;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
 
     private String maintainBegin;
@@ -92,6 +97,31 @@ public class ModifyInstanceBody {
 
     public void setPort(Integer port) {
         this.port = port;
+    }
+
+    public ModifyInstanceBody withRenameCommands(RenameCommandResp renameCommands) {
+        this.renameCommands = renameCommands;
+        return this;
+    }
+
+    public ModifyInstanceBody withRenameCommands(Consumer<RenameCommandResp> renameCommandsSetter) {
+        if (this.renameCommands == null) {
+            this.renameCommands = new RenameCommandResp();
+            renameCommandsSetter.accept(this.renameCommands);
+        }
+
+        return this;
+    }
+
+    /** Get renameCommands
+     * 
+     * @return renameCommands */
+    public RenameCommandResp getRenameCommands() {
+        return renameCommands;
+    }
+
+    public void setRenameCommands(RenameCommandResp renameCommands) {
+        this.renameCommands = renameCommands;
     }
 
     public ModifyInstanceBody withMaintainBegin(String maintainBegin) {
@@ -183,6 +213,7 @@ public class ModifyInstanceBody {
         return Objects.equals(this.name, modifyInstanceBody.name)
             && Objects.equals(this.description, modifyInstanceBody.description)
             && Objects.equals(this.port, modifyInstanceBody.port)
+            && Objects.equals(this.renameCommands, modifyInstanceBody.renameCommands)
             && Objects.equals(this.maintainBegin, modifyInstanceBody.maintainBegin)
             && Objects.equals(this.maintainEnd, modifyInstanceBody.maintainEnd)
             && Objects.equals(this.securityGroupId, modifyInstanceBody.securityGroupId)
@@ -191,7 +222,14 @@ public class ModifyInstanceBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, port, maintainBegin, maintainEnd, securityGroupId, instanceBackupPolicy);
+        return Objects.hash(name,
+            description,
+            port,
+            renameCommands,
+            maintainBegin,
+            maintainEnd,
+            securityGroupId,
+            instanceBackupPolicy);
     }
 
     @Override
@@ -201,6 +239,7 @@ public class ModifyInstanceBody {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    renameCommands: ").append(toIndentedString(renameCommands)).append("\n");
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");

@@ -7,14 +7,14 @@
     <packaging>pom</packaging>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk</artifactId>
-    <version>3.0.83</version>
+    <version>3.0.84</version>
     <name>Huawei Cloud SDK for Java Parent</name>
     <description>Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
     <developers>
@@ -50,8 +50,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <revision>3.0.83</revision>
-        <jackson.version>2.11.1</jackson.version>
+        <revision>3.0.84</revision>
+        <jackson.version>2.13.2</jackson.version>
         <okhttp.version>3.14.2</okhttp.version>
         <junit.version>4.13.1</junit.version>
         <slf4j.version>1.7.32</slf4j.version>

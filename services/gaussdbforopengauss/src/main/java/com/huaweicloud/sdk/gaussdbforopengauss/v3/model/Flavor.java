@@ -224,7 +224,7 @@ public class Flavor  {
 
 
     /**
-     * 数组形式版本号
+     * 该规格支持的数据库版本号
      * @return version
      */
     public String getVersion() {
@@ -246,7 +246,7 @@ public class Flavor  {
 
 
     /**
-     * 数组库引擎版本
+     * 数组库引擎名称
      * @return name
      */
     public String getName() {

@@ -39,7 +39,7 @@ public class ShowMemberDetailRequest {
         return this;
     }
 
-    /** 成员id
+    /** 成员id，为接收方的project_id
      * 
      * @return memberId */
     public String getMemberId() {

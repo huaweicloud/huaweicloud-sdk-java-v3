@@ -53,7 +53,7 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** |参数名称：云服务区编码，例如：“cn-north-1”。| |参数约束及描述：云服务区编码，例如：“cn-north-1”。|
+    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return regionCode */
     public String getRegionCode() {
@@ -69,7 +69,7 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** |参数名称：订单ID。| |参数约束及描述：订单ID。|
+    /** 订单ID。
      * 
      * @return orderId */
     public String getOrderId() {
@@ -85,7 +85,7 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** |参数名称：产品ID，即资源包ID。| |参数约束及描述：产品ID，即资源包ID。|
+    /** 产品ID，即资源包ID。
      * 
      * @return productId */
     public String getProductId() {
@@ -101,7 +101,7 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** |参数名称：产品名称，即资源包名称。| |参数约束及描述：产品名称，即资源包名称。|
+    /** 产品名称，即资源包名称。
      * 
      * @return productName */
     public String getProductName() {
@@ -117,7 +117,7 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** |参数名称：企业项目ID。| |参数约束及描述：企业项目ID。|
+    /** 企业项目ID。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -133,7 +133,7 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** |参数名称：状态：0：未生效1：生效中2：已用完3：已失效4：已退订| |参数的约束及描述：状态：0：未生效1：生效中2：已用完3：已失效4：已退订| minimum: 0 maximum: 4
+    /** 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订 minimum: 0 maximum: 4
      * 
      * @return status */
     public Integer getStatus() {
@@ -149,7 +149,8 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** |参数名称：偏移量，从0开始。默认值为0。| |参数的约束及描述：偏移量，从0开始。默认值为0。| minimum: 0 maximum: 999999
+    /** 偏移量，从0开始，默认为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。
+     * 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum: 999999
      * 
      * @return offset */
     public Integer getOffset() {
@@ -165,7 +166,7 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** |参数名称：每次查询的数量限制。默认值为10。| |参数的约束及描述：每次查询的数量限制。默认值为10。| minimum: 1 maximum: 1000
+    /** 每次查询的记录数，默认为10。 minimum: 1 maximum: 1000
      * 
      * @return limit */
     public Integer getLimit() {

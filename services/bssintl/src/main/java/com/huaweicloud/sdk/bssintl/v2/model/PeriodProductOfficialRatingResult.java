@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** PeriodProductOfficialRatingResult */
@@ -22,7 +21,7 @@ public class PeriodProductOfficialRatingResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_website_amount")
 
-    private BigDecimal officialWebsiteAmount;
+    private Double officialWebsiteAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -34,7 +33,7 @@ public class PeriodProductOfficialRatingResult {
         return this;
     }
 
-    /** |参数名称：ID标识，来源于请求中的ID| |参数约束及描述：ID标识，来源于请求中的ID|
+    /** ID标识，来源于请求中的ID。
      * 
      * @return id */
     public String getId() {
@@ -50,7 +49,7 @@ public class PeriodProductOfficialRatingResult {
         return this;
     }
 
-    /** |参数名称：产品ID| |参数约束及描述：产品ID|
+    /** 包年/包月产品的ID。
      * 
      * @return productId */
     public String getProductId() {
@@ -61,19 +60,19 @@ public class PeriodProductOfficialRatingResult {
         this.productId = productId;
     }
 
-    public PeriodProductOfficialRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public PeriodProductOfficialRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
 
-    /** |参数名称：官网价| |参数约束及描述：官网价|
+    /** 包年/包月产品的官网价。
      * 
      * @return officialWebsiteAmount */
-    public BigDecimal getOfficialWebsiteAmount() {
+    public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
@@ -82,7 +81,7 @@ public class PeriodProductOfficialRatingResult {
         return this;
     }
 
-    /** |参数名称：度量单位标识1：元|
+    /** 价格度量单位标识。 1：元
      * 
      * @return measureId */
     public Integer getMeasureId() {

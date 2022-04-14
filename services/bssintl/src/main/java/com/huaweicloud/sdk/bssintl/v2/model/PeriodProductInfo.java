@@ -68,7 +68,7 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：ID标识| |参数约束及描述：同一次询价中不能重复，用于标识返回询价结果和请求的映射关系|
+    /** ID标识，同一次询价中不能重复，用于标识返回询价结果和请求的映射关系。
      * 
      * @return id */
     public String getId() {
@@ -84,7 +84,7 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：用户购买云服务产品的云服务类型| |参数约束及描述：例如EC2，云服务类型为hws.service.type.ec2|
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return cloudServiceType */
     public String getCloudServiceType() {
@@ -100,8 +100,8 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：用户购买云服务产品的资源类型|
-     * |参数约束及描述：例如EC2中的VM，资源类型为hws.resource.type.vm。ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供|
+    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供。
      * 
      * @return resourceType */
     public String getResourceType() {
@@ -117,7 +117,10 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：用户购买云服务产品的资源规格| |参数约束及描述：例如VM的小型规格，资源规格为m1.tiny|
+    /** 云服务类型的资源规格，部分云服务类型和资源规格举例如下：
+     * 弹性云服务器：根据操作系统类型在云服务器规格的ID后添加“.win”或“.linux”，例如“s2.small.1.linux”。云服务器规格的ID字段，您可以调用查询规格详情和规格扩展信息列表接口获取。
+     * 带宽：12_bgp：动态BGP按流量计费带宽12_sbgp：静态BGP按流量计费带宽19_bgp：动态BGP按带宽计费带宽19_sbgp：静态BGP按带宽计费带宽19_share：按带宽计费共享带宽
+     * IP：5_bgp：动态BGP公网IP5_sbgp：静态BGP公网IP 云数据库：云数据库的资源规格信息，您可以调用查询数据库规格接口获取。 分布式缓存服务：分布式缓存服务的资源规格信息，您可以调用查询产品规格列表接口获取。
      * 
      * @return resourceSpec */
     public String getResourceSpec() {
@@ -133,7 +136,7 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：云服务区编码| |参数约束及描述：云服务区编码|
+    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return region */
     public String getRegion() {
@@ -149,7 +152,7 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：可用区标识| |参数约束及描述：可用区标识|
+    /** 可用区标识，例如：“cn-north-1a”。具体请参见地区和终端节点可用分区的“可用分区名称”列的值。
      * 
      * @return availableZone */
     public String getAvailableZone() {
@@ -165,7 +168,8 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：资源容量大小| |参数约束及描述：例如购买的卷大小或带宽大小，只有线性产品才有这个字段| minimum: 1 maximum: 214783647
+    /** 资源容量大小，例如购买的卷大小或带宽大小。 线性产品时该参数不能为空。线性产品为包括硬盘，带宽等在订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小。 minimum: 1 maximum:
+     * 214783647
      * 
      * @return resourceSize */
     public Integer getResourceSize() {
@@ -181,7 +185,7 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：资源容量度量标识| |参数约束及描述：枚举值如下：15：Mbps（购买带宽时使用）17：GB（购买云硬盘时使用）14：个只有线性产品才有这个字段|
+    /** 资源容量度量标识。 15：Mbps（购买带宽时使用）17：GB（购买云硬盘时使用）14：个 线性产品时该参数不能为空。线性产品为包括硬盘，带宽等在订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小。
      * 
      * @return sizeMeasureId */
     public Integer getSizeMeasureId() {
@@ -197,7 +201,7 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：订购周期类型| |参数约束及描述：0：天；1：周；2：月；3：年；4：小时；| minimum: 0 maximum: 4
+    /** 订购包年/包月产品的周期类型。 0：天2：月3：年4：小时 minimum: 0 maximum: 4
      * 
      * @return periodType */
     public Integer getPeriodType() {
@@ -213,7 +217,7 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：订购周期数| |参数约束及描述： 订购周期数| minimum: 1 maximum: 214783647
+    /** 订购包年/包月产品的周期数。 minimum: 1 maximum: 214783647
      * 
      * @return periodNum */
     public Integer getPeriodNum() {
@@ -229,7 +233,7 @@ public class PeriodProductInfo {
         return this;
     }
 
-    /** |参数名称：订购数量| |参数约束及描述：订购数量,有值时不能小于0| minimum: 1 maximum: 10000
+    /** 订购包年/包月产品的数量。 minimum: 1 maximum: 10000
      * 
      * @return subscriptionNum */
     public Integer getSubscriptionNum() {

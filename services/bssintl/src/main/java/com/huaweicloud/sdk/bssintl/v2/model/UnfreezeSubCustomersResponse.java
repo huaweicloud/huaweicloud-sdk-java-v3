@@ -38,8 +38,7 @@ public class UnfreezeSubCustomersResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：错误原因，部分成功部分失败的时候会返回失败的客户列表和错误原因。注意这个结构体在HTTP 200的时候返回|
-     * |参数约束以及描述：错误原因，部分成功部分失败的时候会返回失败的客户列表和错误原因。注意这个结构体在HTTP 200的时候返回|
+    /** 错误原因，只有部分失败的时候才返回。 具体请参见表1。
      * 
      * @return errorDetails */
     public List<CustomerErrorDetail> getErrorDetails() {

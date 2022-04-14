@@ -28,7 +28,7 @@ public class CheckpointResourceResp {
 
     private String name;
 
-    /** 保护状态 */
+    /** 保护状态。available（可用），error（错误），protecting（备份中），restoring（恢复中），removing（删除中）。 */
     public static final class ProtectStatusEnum {
 
         /** Enum AVAILABLE for value: "available" */
@@ -189,7 +189,7 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** 保护状态
+    /** 保护状态。available（可用），error（错误），protecting（备份中），restoring（恢复中），removing（删除中）。
      * 
      * @return protectStatus */
     public ProtectStatusEnum getProtectStatus() {
@@ -221,7 +221,9 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** @return type */
+    /** 待备份资源的类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Native::Server, OS::Sfs::Turbo
+     * 
+     * @return type */
     public String getType() {
         return type;
     }

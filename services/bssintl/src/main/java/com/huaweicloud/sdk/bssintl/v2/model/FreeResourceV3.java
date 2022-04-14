@@ -38,7 +38,7 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** |参数名称：资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。| |参数约束及描述：资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。|
+    /** 资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。
      * 
      * @return freeResourceId */
     public String getFreeResourceId() {
@@ -54,7 +54,7 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** |参数名称：使用量类型名称。| |参数约束及描述：使用量类型名称。|
+    /** 使用量类型名称。
      * 
      * @return usageTypeName */
     public String getUsageTypeName() {
@@ -70,7 +70,7 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** |参数名称：资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。| |参数约束及描述：资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。|
+    /** 资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。
      * 
      * @return amount */
     public String getAmount() {
@@ -86,7 +86,7 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** |参数名称：资源原始额度，针对可重置资源包，是指每个重置周期内的总量。| |参数约束及描述：资源原始额度，针对可重置资源包，是指每个重置周期内的总量。|
+    /** 资源原始额度，针对可重置资源包，是指每个重置周期内的总量。
      * 
      * @return originalAmount */
     public String getOriginalAmount() {
@@ -102,7 +102,7 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** |参数名称：度量单位，免费资源套餐额度度量单位。| |参数的约束及描述：度量单位，免费资源套餐额度度量单位。|
+    /** 度量单位，免费资源套餐额度度量单位。您可以调用查询度量单位列表接口获取。
      * 
      * @return measureId */
     public Integer getMeasureId() {

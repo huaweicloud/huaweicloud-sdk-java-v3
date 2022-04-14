@@ -154,6 +154,7 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
     * [2.2  Use Temporary AK&SK](#22-use-temporary-aksk-top)
         * [2.2.1 Manually specify](#221-Manually-specify)
         * [2.2.2 Metadata](#222-Metadata)
+    * [2.3 Credential supply chain](#23-credential-supply-chain)
 * [3. Client Initialization](#3-client-initialization-top)
     * [3.1  Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
     * [3.2  Initialize the client with specified Region (Recommended)](#32-initialize-the-serviceclient-with-specified-region-recommended-top)

@@ -43,6 +43,38 @@ public class IecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociateSubnetRequest, AssociateSubnetResponse> associateSubnet =
+        genForassociateSubnet();
+
+    private static HttpRequestDef<AssociateSubnetRequest, AssociateSubnetResponse> genForassociateSubnet() {
+        // basic
+        HttpRequestDef.Builder<AssociateSubnetRequest, AssociateSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociateSubnetRequest.class, AssociateSubnetResponse.class)
+                .withName("AssociateSubnet")
+                .withUri("/v1/routetables/{routetable_id}/associate-subnets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateSubnetRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+        builder.<AssociateSubnetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateSubnetRequestBody.class),
+            f -> f.withMarshaller(AssociateSubnetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchRebootInstanceRequest, BatchRebootInstanceResponse> batchRebootInstance =
         genForbatchRebootInstance();
 
@@ -215,6 +247,62 @@ public class IecMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePortRequestBody.class),
             f -> f.withMarshaller(CreatePortRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRoutesRequest, CreateRoutesResponse> createRoutes = genForcreateRoutes();
+
+    private static HttpRequestDef<CreateRoutesRequest, CreateRoutesResponse> genForcreateRoutes() {
+        // basic
+        HttpRequestDef.Builder<CreateRoutesRequest, CreateRoutesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRoutesRequest.class, CreateRoutesResponse.class)
+                .withName("CreateRoutes")
+                .withUri("/v1/routetables/{routetable_id}/add-routes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRoutesRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+        builder.<CreateRoutesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRoutesRequestBody.class),
+            f -> f.withMarshaller(CreateRoutesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRoutetableRequest, CreateRoutetableResponse> createRoutetable =
+        genForcreateRoutetable();
+
+    private static HttpRequestDef<CreateRoutetableRequest, CreateRoutetableResponse> genForcreateRoutetable() {
+        // basic
+        HttpRequestDef.Builder<CreateRoutetableRequest, CreateRoutetableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRoutetableRequest.class, CreateRoutetableResponse.class)
+                .withName("CreateRoutetable")
+                .withUri("/v1/routetables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateRoutetableRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRoutetableRequestBody.class),
+            f -> f.withMarshaller(CreateRoutetableRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -452,6 +540,62 @@ public class IecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteRoutesRequest, DeleteRoutesResponse> deleteRoutes = genFordeleteRoutes();
+
+    private static HttpRequestDef<DeleteRoutesRequest, DeleteRoutesResponse> genFordeleteRoutes() {
+        // basic
+        HttpRequestDef.Builder<DeleteRoutesRequest, DeleteRoutesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteRoutesRequest.class, DeleteRoutesResponse.class)
+                .withName("DeleteRoutes")
+                .withUri("/v1/routetables/{routetable_id}/delete-routes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoutesRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+        builder.<DeleteRoutesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteRoutesRequestBody.class),
+            f -> f.withMarshaller(DeleteRoutesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRoutetableRequest, DeleteRoutetableResponse> deleteRoutetable =
+        genFordeleteRoutetable();
+
+    private static HttpRequestDef<DeleteRoutetableRequest, DeleteRoutetableResponse> genFordeleteRoutetable() {
+        // basic
+        HttpRequestDef.Builder<DeleteRoutetableRequest, DeleteRoutetableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRoutetableRequest.class, DeleteRoutetableResponse.class)
+                .withName("DeleteRoutetable")
+                .withUri("/v1/routetables/{routetable_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoutetableRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroup =
         genFordeleteSecurityGroup();
 
@@ -543,6 +687,38 @@ public class IecMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateSubnetRequest, DisassociateSubnetResponse> disassociateSubnet =
+        genFordisassociateSubnet();
+
+    private static HttpRequestDef<DisassociateSubnetRequest, DisassociateSubnetResponse> genFordisassociateSubnet() {
+        // basic
+        HttpRequestDef.Builder<DisassociateSubnetRequest, DisassociateSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisassociateSubnetRequest.class, DisassociateSubnetResponse.class)
+                .withName("DisassociateSubnet")
+                .withUri("/v1/routetables/{routetable_id}/disassociate-subnets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateSubnetRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+        builder.<DisassociateSubnetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisassociateSubnetRequestBody.class),
+            f -> f.withMarshaller(DisassociateSubnetRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1213,6 +1389,108 @@ public class IecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse> listRelatedRoutetables =
+        genForlistRelatedRoutetables();
+
+    private static HttpRequestDef<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse> genForlistRelatedRoutetables() {
+        // basic
+        HttpRequestDef.Builder<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRelatedRoutetablesRequest.class, ListRelatedRoutetablesResponse.class)
+            .withName("ListRelatedRoutetables")
+            .withUri("/v1/subnets/{subnet_id}/routetables")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRelatedRoutetablesRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRoutesRequest, ListRoutesResponse> listRoutes = genForlistRoutes();
+
+    private static HttpRequestDef<ListRoutesRequest, ListRoutesResponse> genForlistRoutes() {
+        // basic
+        HttpRequestDef.Builder<ListRoutesRequest, ListRoutesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRoutesRequest.class, ListRoutesResponse.class)
+                .withName("ListRoutes")
+                .withUri("/v1/routetables/{routetable_id}/routes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutesRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRoutetablesRequest, ListRoutetablesResponse> listRoutetables =
+        genForlistRoutetables();
+
+    private static HttpRequestDef<ListRoutetablesRequest, ListRoutetablesResponse> genForlistRoutetables() {
+        // basic
+        HttpRequestDef.Builder<ListRoutetablesRequest, ListRoutetablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRoutetablesRequest.class, ListRoutetablesResponse.class)
+                .withName("ListRoutetables")
+                .withUri("/v1/routetables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutetablesRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRoutetablesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutetablesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRoutetablesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutetablesRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> listSecurityGroupRules =
         genForlistSecurityGroupRules();
 
@@ -1593,6 +1871,31 @@ public class IecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRoutetableRequest, ShowRoutetableResponse> showRoutetable =
+        genForshowRoutetable();
+
+    private static HttpRequestDef<ShowRoutetableRequest, ShowRoutetableResponse> genForshowRoutetable() {
+        // basic
+        HttpRequestDef.Builder<ShowRoutetableRequest, ShowRoutetableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRoutetableRequest.class, ShowRoutetableResponse.class)
+                .withName("ShowRoutetable")
+                .withUri("/v1/routetables/{routetable_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoutetableRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroup =
         genForshowSecurityGroup();
 
@@ -1770,6 +2073,69 @@ public class IecMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePortRequestBody.class),
             f -> f.withMarshaller(UpdatePortRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutes = genForupdateRoutes();
+
+    private static HttpRequestDef<UpdateRoutesRequest, UpdateRoutesResponse> genForupdateRoutes() {
+        // basic
+        HttpRequestDef.Builder<UpdateRoutesRequest, UpdateRoutesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateRoutesRequest.class, UpdateRoutesResponse.class)
+                .withName("UpdateRoutes")
+                .withUri("/v1/routetables/{routetable_id}/update-routes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoutesRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+        builder.<UpdateRoutesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRoutesRequestBody.class),
+            f -> f.withMarshaller(UpdateRoutesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRoutetableRequest, UpdateRoutetableResponse> updateRoutetable =
+        genForupdateRoutetable();
+
+    private static HttpRequestDef<UpdateRoutetableRequest, UpdateRoutetableResponse> genForupdateRoutetable() {
+        // basic
+        HttpRequestDef.Builder<UpdateRoutetableRequest, UpdateRoutetableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRoutetableRequest.class, UpdateRoutetableResponse.class)
+                .withName("UpdateRoutetable")
+                .withUri("/v1/routetables/{routetable_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoutetableRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+        builder.<UpdateRoutetableRequesBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRoutetableRequesBody.class),
+            f -> f.withMarshaller(UpdateRoutetableRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

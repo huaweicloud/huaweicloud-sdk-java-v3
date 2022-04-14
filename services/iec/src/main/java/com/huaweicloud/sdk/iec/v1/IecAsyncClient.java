@@ -35,6 +35,24 @@ public class IecAsyncClient {
         return new AsyncInvoker<AddNicsRequest, AddNicsResponse>(request, IecMeta.addNics, hcClient);
     }
 
+    /** 路由表关联子网 路由表关联子网
+     *
+     * @param AssociateSubnetRequest 请求对象
+     * @return CompletableFuture<AssociateSubnetResponse> */
+    public CompletableFuture<AssociateSubnetResponse> associateSubnetAsync(AssociateSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.associateSubnet);
+    }
+
+    /** 路由表关联子网 路由表关联子网
+     *
+     * @param AssociateSubnetRequest 请求对象
+     * @return AsyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse> */
+    public AsyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse> associateSubnetAsyncInvoker(
+        AssociateSubnetRequest request) {
+        return new AsyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse>(request, IecMeta.associateSubnet,
+            hcClient);
+    }
+
     /** 批量重启边缘实例 批量重启边缘实例。
      *
      * @param BatchRebootInstanceRequest 请求对象
@@ -160,6 +178,41 @@ public class IecAsyncClient {
         return new AsyncInvoker<CreatePortRequest, CreatePortResponse>(request, IecMeta.createPort, hcClient);
     }
 
+    /** 创建路由 创建路由
+     *
+     * @param CreateRoutesRequest 请求对象
+     * @return CompletableFuture<CreateRoutesResponse> */
+    public CompletableFuture<CreateRoutesResponse> createRoutesAsync(CreateRoutesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.createRoutes);
+    }
+
+    /** 创建路由 创建路由
+     *
+     * @param CreateRoutesRequest 请求对象
+     * @return AsyncInvoker<CreateRoutesRequest, CreateRoutesResponse> */
+    public AsyncInvoker<CreateRoutesRequest, CreateRoutesResponse> createRoutesAsyncInvoker(
+        CreateRoutesRequest request) {
+        return new AsyncInvoker<CreateRoutesRequest, CreateRoutesResponse>(request, IecMeta.createRoutes, hcClient);
+    }
+
+    /** 创建路由表 创建路由表
+     *
+     * @param CreateRoutetableRequest 请求对象
+     * @return CompletableFuture<CreateRoutetableResponse> */
+    public CompletableFuture<CreateRoutetableResponse> createRoutetableAsync(CreateRoutetableRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.createRoutetable);
+    }
+
+    /** 创建路由表 创建路由表
+     *
+     * @param CreateRoutetableRequest 请求对象
+     * @return AsyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse> */
+    public AsyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse> createRoutetableAsyncInvoker(
+        CreateRoutetableRequest request) {
+        return new AsyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse>(request, IecMeta.createRoutetable,
+            hcClient);
+    }
+
     /** 创建边缘安全组 根据用户的请求内容，创建对应的安全组。
      *
      * @param CreateSecurityGroupRequest 请求对象
@@ -231,7 +284,7 @@ public class IecAsyncClient {
             hcClient);
     }
 
-    /** 删除边缘业务 删除边缘业务以及其下边缘实例。
+    /** 删除边缘业务 删除边缘业务。
      *
      * @param DeleteEdgeCloudRequest 请求对象
      * @return CompletableFuture<DeleteEdgeCloudResponse> */
@@ -239,7 +292,7 @@ public class IecAsyncClient {
         return hcClient.asyncInvokeHttp(request, IecMeta.deleteEdgeCloud);
     }
 
-    /** 删除边缘业务 删除边缘业务以及其下边缘实例。
+    /** 删除边缘业务 删除边缘业务。
      *
      * @param DeleteEdgeCloudRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse> */
@@ -316,6 +369,41 @@ public class IecAsyncClient {
         return new AsyncInvoker<DeletePortRequest, DeletePortResponse>(request, IecMeta.deletePort, hcClient);
     }
 
+    /** 删除路由 删除路由
+     *
+     * @param DeleteRoutesRequest 请求对象
+     * @return CompletableFuture<DeleteRoutesResponse> */
+    public CompletableFuture<DeleteRoutesResponse> deleteRoutesAsync(DeleteRoutesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.deleteRoutes);
+    }
+
+    /** 删除路由 删除路由
+     *
+     * @param DeleteRoutesRequest 请求对象
+     * @return AsyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse> */
+    public AsyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse> deleteRoutesAsyncInvoker(
+        DeleteRoutesRequest request) {
+        return new AsyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse>(request, IecMeta.deleteRoutes, hcClient);
+    }
+
+    /** 删除路由表 删除路由表
+     *
+     * @param DeleteRoutetableRequest 请求对象
+     * @return CompletableFuture<DeleteRoutetableResponse> */
+    public CompletableFuture<DeleteRoutetableResponse> deleteRoutetableAsync(DeleteRoutetableRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.deleteRoutetable);
+    }
+
+    /** 删除路由表 删除路由表
+     *
+     * @param DeleteRoutetableRequest 请求对象
+     * @return AsyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse> */
+    public AsyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse> deleteRoutetableAsyncInvoker(
+        DeleteRoutetableRequest request) {
+        return new AsyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse>(request, IecMeta.deleteRoutetable,
+            hcClient);
+    }
+
     /** 删除安全组 根据安全组的ID，删除对应的安全组。
      *
      * @param DeleteSecurityGroupRequest 请求对象
@@ -384,6 +472,24 @@ public class IecAsyncClient {
      * @return AsyncInvoker<DeleteVpcRequest, DeleteVpcResponse> */
     public AsyncInvoker<DeleteVpcRequest, DeleteVpcResponse> deleteVpcAsyncInvoker(DeleteVpcRequest request) {
         return new AsyncInvoker<DeleteVpcRequest, DeleteVpcResponse>(request, IecMeta.deleteVpc, hcClient);
+    }
+
+    /** 路由表解关联子网 路由表解关联子网
+     *
+     * @param DisassociateSubnetRequest 请求对象
+     * @return CompletableFuture<DisassociateSubnetResponse> */
+    public CompletableFuture<DisassociateSubnetResponse> disassociateSubnetAsync(DisassociateSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.disassociateSubnet);
+    }
+
+    /** 路由表解关联子网 路由表解关联子网
+     *
+     * @param DisassociateSubnetRequest 请求对象
+     * @return AsyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse> */
+    public AsyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse> disassociateSubnetAsyncInvoker(
+        DisassociateSubnetRequest request) {
+        return new AsyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse>(request,
+            IecMeta.disassociateSubnet, hcClient);
     }
 
     /** 执行部署计划 执行部署计划，创建一个边缘业务。单租户默认可创建10个边缘业务。
@@ -571,6 +677,59 @@ public class IecAsyncClient {
      * @return AsyncInvoker<ListQuotaRequest, ListQuotaResponse> */
     public AsyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaAsyncInvoker(ListQuotaRequest request) {
         return new AsyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, IecMeta.listQuota, hcClient);
+    }
+
+    /** 查询子网关联的路由表 查询子网关联的路由表。
+     *
+     * @param ListRelatedRoutetablesRequest 请求对象
+     * @return CompletableFuture<ListRelatedRoutetablesResponse> */
+    public CompletableFuture<ListRelatedRoutetablesResponse> listRelatedRoutetablesAsync(
+        ListRelatedRoutetablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.listRelatedRoutetables);
+    }
+
+    /** 查询子网关联的路由表 查询子网关联的路由表。
+     *
+     * @param ListRelatedRoutetablesRequest 请求对象
+     * @return AsyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse> */
+    public AsyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse> listRelatedRoutetablesAsyncInvoker(
+        ListRelatedRoutetablesRequest request) {
+        return new AsyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse>(request,
+            IecMeta.listRelatedRoutetables, hcClient);
+    }
+
+    /** 查询路由列表 查询路由列表
+     *
+     * @param ListRoutesRequest 请求对象
+     * @return CompletableFuture<ListRoutesResponse> */
+    public CompletableFuture<ListRoutesResponse> listRoutesAsync(ListRoutesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.listRoutes);
+    }
+
+    /** 查询路由列表 查询路由列表
+     *
+     * @param ListRoutesRequest 请求对象
+     * @return AsyncInvoker<ListRoutesRequest, ListRoutesResponse> */
+    public AsyncInvoker<ListRoutesRequest, ListRoutesResponse> listRoutesAsyncInvoker(ListRoutesRequest request) {
+        return new AsyncInvoker<ListRoutesRequest, ListRoutesResponse>(request, IecMeta.listRoutes, hcClient);
+    }
+
+    /** 查询路由表列表 查询路由列表
+     *
+     * @param ListRoutetablesRequest 请求对象
+     * @return CompletableFuture<ListRoutetablesResponse> */
+    public CompletableFuture<ListRoutetablesResponse> listRoutetablesAsync(ListRoutetablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.listRoutetables);
+    }
+
+    /** 查询路由表列表 查询路由列表
+     *
+     * @param ListRoutetablesRequest 请求对象
+     * @return AsyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse> */
+    public AsyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse> listRoutetablesAsyncInvoker(
+        ListRoutetablesRequest request) {
+        return new AsyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse>(request, IecMeta.listRoutetables,
+            hcClient);
     }
 
     /** 查询安全组规则列表 根据用户的查询条件，获取安全组规则的列表信息。
@@ -761,6 +920,24 @@ public class IecAsyncClient {
         return new AsyncInvoker<ShowPortRequest, ShowPortResponse>(request, IecMeta.showPort, hcClient);
     }
 
+    /** 查询路由表详情 查询路由表详情
+     *
+     * @param ShowRoutetableRequest 请求对象
+     * @return CompletableFuture<ShowRoutetableResponse> */
+    public CompletableFuture<ShowRoutetableResponse> showRoutetableAsync(ShowRoutetableRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.showRoutetable);
+    }
+
+    /** 查询路由表详情 查询路由表详情
+     *
+     * @param ShowRoutetableRequest 请求对象
+     * @return AsyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse> */
+    public AsyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse> showRoutetableAsyncInvoker(
+        ShowRoutetableRequest request) {
+        return new AsyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse>(request, IecMeta.showRoutetable,
+            hcClient);
+    }
+
     /** 查询安全组详情 根据安全组的ID，获取特定安全组的详细信息。
      *
      * @param ShowSecurityGroupRequest 请求对象
@@ -878,6 +1055,41 @@ public class IecAsyncClient {
      * @return AsyncInvoker<UpdatePortRequest, UpdatePortResponse> */
     public AsyncInvoker<UpdatePortRequest, UpdatePortResponse> updatePortAsyncInvoker(UpdatePortRequest request) {
         return new AsyncInvoker<UpdatePortRequest, UpdatePortResponse>(request, IecMeta.updatePort, hcClient);
+    }
+
+    /** 更新路由 更新路由信息
+     *
+     * @param UpdateRoutesRequest 请求对象
+     * @return CompletableFuture<UpdateRoutesResponse> */
+    public CompletableFuture<UpdateRoutesResponse> updateRoutesAsync(UpdateRoutesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.updateRoutes);
+    }
+
+    /** 更新路由 更新路由信息
+     *
+     * @param UpdateRoutesRequest 请求对象
+     * @return AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> */
+    public AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutesAsyncInvoker(
+        UpdateRoutesRequest request) {
+        return new AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>(request, IecMeta.updateRoutes, hcClient);
+    }
+
+    /** 更新路由表 更新路由表基本信息
+     *
+     * @param UpdateRoutetableRequest 请求对象
+     * @return CompletableFuture<UpdateRoutetableResponse> */
+    public CompletableFuture<UpdateRoutetableResponse> updateRoutetableAsync(UpdateRoutetableRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.updateRoutetable);
+    }
+
+    /** 更新路由表 更新路由表基本信息
+     *
+     * @param UpdateRoutetableRequest 请求对象
+     * @return AsyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse> */
+    public AsyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse> updateRoutetableAsyncInvoker(
+        UpdateRoutetableRequest request) {
+        return new AsyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse>(request, IecMeta.updateRoutetable,
+            hcClient);
     }
 
     /** 更新子网 更新子网的基本信息。

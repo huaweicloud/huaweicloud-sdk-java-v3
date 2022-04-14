@@ -93,7 +93,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：语言| |参数的约束及描述：中文：zh_CN 英文：en_US。缺省为zh_CN|
+    /** 语言：中文：zh_CN 英文：en_US。缺省为zh_CN
      * 
      * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,7 +111,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：开始时间，格式：yyyy-MM| |参数的约束及描述：|
+    /** 查询的资源消费记录所在账期，格式：YYYY-MM。
      * 
      * @return cycle */
     public String getCycle() {
@@ -127,7 +127,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数的约束及描述：|
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return cloudServiceType */
     public String getCloudServiceType() {
@@ -143,7 +143,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数的约束及描述：|
+    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return region */
     public String getRegion() {
@@ -159,7 +159,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：支付方式。1 : 包周期；3: 按需。10: 预留实例。| |参数的约束及描述：|
+    /** 计费模式。1：包年/包月3：按需10：预留实例
      * 
      * @return chargeMode */
     public String getChargeMode() {
@@ -175,8 +175,9 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费 15消费-税金
-     * 16：调账-扣费 17：消费-保底差额 100：退款-退订税金 101：调账-补偿税金 102：调账-扣费税金| |参数的约束及描述：| minimum: 0 maximum: 127
+    /** 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额 说明：
+     * 保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴顾问销售类子客户，且为后付费用户。20：退款-变更100：退款-退订税金101：调账-补偿税金102：调账-扣费税金 minimum:
+     * 0 maximum: 127
      * 
      * @return billType */
     public Integer getBillType() {
@@ -192,7 +193,9 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：偏移量，从0开始| |参数的约束及描述：| minimum: 0 maximum: 2147483647
+    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
+     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
+     * 2147483647
      * 
      * @return offset */
     public Integer getOffset() {
@@ -208,7 +211,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：每次查询的限制| |参数的约束及描述：| minimum: 1 maximum: 1000
+    /** 每次查询的数量限制。默认值为10。 minimum: 1 maximum: 1000
      * 
      * @return limit */
     public Integer getLimit() {
@@ -224,7 +227,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：资源ID。| |参数的约束及描述：|
+    /** 资源ID。
      * 
      * @return resourceId */
     public String getResourceId() {
@@ -240,7 +243,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：企业项目ID。| |参数的约束及描述：|
+    /** 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -256,7 +259,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：返回是否包含应付金额为0的记录。| |参数的约束及描述：|
+    /** 返回是否包含应付金额为0的记录。true：包含false：不包含
      * 
      * @return includeZeroRecord */
     public Boolean getIncludeZeroRecord() {
@@ -272,7 +275,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：查询方式。oneself：自身sub_customer: 企业子客户all:自己和企业子客户| |参数的约束及描述：oneself：自身sub_customer: 企业子客户all:自己和企业子客户|
+    /** 查询资源消费记录的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的资源消费记录。
      * 
      * @return method */
     public String getMethod() {
@@ -288,7 +291,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：企业子账号ID。| |参数的约束及描述：注意：method不等于sub_customer的时候，该参数无效，如果method等于sub_customer，该参数不能为空|
+    /** 企业子账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
      * 
      * @return subCustomerId */
     public String getSubCustomerId() {
@@ -304,7 +307,7 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：订单ID 或 交易ID1，2，3，4，8时为订单ID，其它场景下为： 交易ID(非月末扣费：应收ID；月末扣费：账单ID)，扣费维度的唯一标识| |参数的约束及描述：|
+    /** 订单ID或交易ID。账单类型为1、2、3、4和8时此处为订单ID。账单类型为其它场景时此处为交易ID，为扣费维度的唯一标识。例如非月末扣费时为应收ID；月末扣费时为账单ID。
      * 
      * @return tradeId */
     public String getTradeId() {
@@ -320,7 +323,8 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：计费日期，格式为YYYY-MM-DD| |参数的约束及描述：必须和cycle，即资源的消费账期在同一个月。|
+    /** 查询的资源消费记录的开始日期，格式为YYYY-MM-DD。 说明：
+     * 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。
      * 
      * @return billDateBegin */
     public String getBillDateBegin() {
@@ -336,7 +340,8 @@ public class ListCustomerselfResourceRecordsRequest {
         return this;
     }
 
-    /** |参数名称：计费日期，格式为YYYY-MM-DD| |参数的约束及描述：必须和cycle，即资源的消费账期在同一个月。 begin和end必须同时出现，否则忽略这两个参数。仅仅按照cycle进行查询。|
+    /** 查询的资源消费记录的结束日期，格式为YYYY-MM-DD。 说明：
+     * 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。
      * 
      * @return billDateEnd */
     public String getBillDateEnd() {

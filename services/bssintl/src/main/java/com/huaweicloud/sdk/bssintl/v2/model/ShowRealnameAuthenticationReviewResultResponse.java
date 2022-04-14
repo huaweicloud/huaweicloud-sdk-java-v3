@@ -24,8 +24,7 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
         return this;
     }
 
-    /** |参数名称：实名认证审核结果，只有状态码为200并且已经提交过实名认证请求才返回：0：审核中1：不通过2：通过|
-     * |参数的约束及描述：实名认证审核结果，只有状态码为200并且已经提交过实名认证请求才返回：0：审核中1：不通过2：通过|
+    /** 实名认证审核结果，只有状态码为200并且已经提交过实名认证请求才返回： 0：审核中1：不通过2：通过
      * 
      * @return reviewResult */
     public Integer getReviewResult() {
@@ -41,7 +40,7 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
         return this;
     }
 
-    /** |参数名称：审批意见，只有状态码为200并且审核不通过才返回。| |参数约束及描述：审批意见，只有状态码为200并且审核不通过才返回。|
+    /** 审批意见，只有状态码为200并且审核不通过才返回。
      * 
      * @return opinion */
     public String getOpinion() {

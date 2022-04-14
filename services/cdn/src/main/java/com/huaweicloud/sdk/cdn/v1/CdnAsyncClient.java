@@ -213,7 +213,7 @@ public class CdnAsyncClient {
             hcClient);
     }
 
-    /** 查询域名配置接口 查询域名配置接口，支持配置回源请求头、http header配置、url鉴权
+    /** 查询域名全量配置 查询域名全量配置接口，支持配置回源请求头、http header配置、url鉴权、证书设置等
      *
      * @param ShowDomainFullConfigRequest 请求对象
      * @return CompletableFuture<ShowDomainFullConfigResponse> */
@@ -222,7 +222,7 @@ public class CdnAsyncClient {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainFullConfig);
     }
 
-    /** 查询域名配置接口 查询域名配置接口，支持配置回源请求头、http header配置、url鉴权
+    /** 查询域名全量配置 查询域名全量配置接口，支持配置回源请求头、http header配置、url鉴权、证书设置等
      *
      * @param ShowDomainFullConfigRequest 请求对象
      * @return AsyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> */
@@ -542,7 +542,7 @@ public class CdnAsyncClient {
             hcClient);
     }
 
-    /** 修改域名全量配置接口 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权
+    /** 修改域名全量配置 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权、证书设置等
      *
      * @param UpdateDomainFullConfigRequest 请求对象
      * @return CompletableFuture<UpdateDomainFullConfigResponse> */
@@ -551,7 +551,7 @@ public class CdnAsyncClient {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateDomainFullConfig);
     }
 
-    /** 修改域名全量配置接口 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权
+    /** 修改域名全量配置 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权、证书设置等
      *
      * @param UpdateDomainFullConfigRequest 请求对象
      * @return AsyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> */

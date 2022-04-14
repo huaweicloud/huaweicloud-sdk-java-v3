@@ -67,6 +67,16 @@ public class VaultGet {
     private VaultBindRules bindRules;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_id")
+
+    private String userId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_expand")
 
     private Boolean autoExpand;
@@ -80,16 +90,6 @@ public class VaultGet {
     @JsonProperty(value = "threshold")
 
     private Integer threshold;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_id")
-
-    private String userId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "created_at")
-
-    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
@@ -131,7 +131,7 @@ public class VaultGet {
         return this;
     }
 
-    /** 描述
+    /** 存储库自定义描述信息。
      * 
      * @return description */
     public String getDescription() {
@@ -147,7 +147,7 @@ public class VaultGet {
         return this;
     }
 
-    /** 保管库id
+    /** 存储库ID
      * 
      * @return id */
     public String getId() {
@@ -163,7 +163,7 @@ public class VaultGet {
         return this;
     }
 
-    /** 保管库名称
+    /** 存储库名称
      * 
      * @return name */
     public String getName() {
@@ -179,7 +179,7 @@ public class VaultGet {
         return this;
     }
 
-    /** 项目id
+    /** 项目ID
      * 
      * @return projectId */
     public String getProjectId() {
@@ -195,7 +195,9 @@ public class VaultGet {
         return this;
     }
 
-    /** @return providerId */
+    /** 存储库资源类型id
+     * 
+     * @return providerId */
     public String getProviderId() {
         return providerId;
     }
@@ -273,7 +275,7 @@ public class VaultGet {
         return this;
     }
 
-    /** 企业项目id
+    /** 企业项目id，默认为‘0’。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -325,6 +327,38 @@ public class VaultGet {
         this.bindRules = bindRules;
     }
 
+    public VaultGet withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    /** 用户id
+     * 
+     * @return userId */
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public VaultGet withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /** 创建时间,例如:\"2020-02-05T10:38:34.209782\"
+     * 
+     * @return createdAt */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public VaultGet withAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
         return this;
@@ -371,38 +405,6 @@ public class VaultGet {
 
     public void setThreshold(Integer threshold) {
         this.threshold = threshold;
-    }
-
-    public VaultGet withUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-
-    /** 用户id
-     * 
-     * @return userId */
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public VaultGet withCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    /** 创建时间,例如:\"2020-02-05T10:38:34.209782\"
-     * 
-     * @return createdAt */
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
     }
 
     public VaultGet withUpdatedAt(String updatedAt) {
@@ -453,9 +455,9 @@ public class VaultGet {
             && Objects.equals(this.resources, vaultGet.resources) && Objects.equals(this.tags, vaultGet.tags)
             && Objects.equals(this.enterpriseProjectId, vaultGet.enterpriseProjectId)
             && Objects.equals(this.autoBind, vaultGet.autoBind) && Objects.equals(this.bindRules, vaultGet.bindRules)
+            && Objects.equals(this.userId, vaultGet.userId) && Objects.equals(this.createdAt, vaultGet.createdAt)
             && Objects.equals(this.autoExpand, vaultGet.autoExpand)
             && Objects.equals(this.smnNotify, vaultGet.smnNotify) && Objects.equals(this.threshold, vaultGet.threshold)
-            && Objects.equals(this.userId, vaultGet.userId) && Objects.equals(this.createdAt, vaultGet.createdAt)
             && Objects.equals(this.updatedAt, vaultGet.updatedAt) && Objects.equals(this.version, vaultGet.version);
     }
 
@@ -472,11 +474,11 @@ public class VaultGet {
             enterpriseProjectId,
             autoBind,
             bindRules,
+            userId,
+            createdAt,
             autoExpand,
             smnNotify,
             threshold,
-            userId,
-            createdAt,
             updatedAt,
             version);
     }
@@ -496,11 +498,11 @@ public class VaultGet {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    autoBind: ").append(toIndentedString(autoBind)).append("\n");
         sb.append("    bindRules: ").append(toIndentedString(bindRules)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
         sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
-        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");

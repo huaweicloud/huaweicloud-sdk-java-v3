@@ -302,7 +302,7 @@ public class CbrAsyncClient {
             CbrMeta.disassociateVaultPolicy, hcClient);
     }
 
-    /** 同步备份 同步备份副本
+    /** 同步备份 同步线下混合云VMware备份副本
      *
      * @param ImportBackupRequest 请求对象
      * @return CompletableFuture<ImportBackupResponse> */
@@ -310,7 +310,7 @@ public class CbrAsyncClient {
         return hcClient.asyncInvokeHttp(request, CbrMeta.importBackup);
     }
 
-    /** 同步备份 同步备份副本
+    /** 同步备份 同步线下混合云VMware备份副本
      *
      * @param ImportBackupRequest 请求对象
      * @return AsyncInvoker<ImportBackupRequest, ImportBackupResponse> */

@@ -1,12 +1,12 @@
-package com.huaweicloud.sdk.ces.v2.model;
+package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 指标维度 */
-public class MetricDimension {
+/** 更新路由表 */
+public class UpdateRoutetableOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -14,16 +14,16 @@ public class MetricDimension {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
+    @JsonProperty(value = "description")
 
-    private String value;
+    private String description;
 
-    public MetricDimension withName(String name) {
+    public UpdateRoutetableOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    /** Get name
+    /** 路由表名称 取值范围：0-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
      * 
      * @return name */
     public String getName() {
@@ -34,20 +34,20 @@ public class MetricDimension {
         this.name = name;
     }
 
-    public MetricDimension withValue(String value) {
-        this.value = value;
+    public UpdateRoutetableOption withDescription(String description) {
+        this.description = description;
         return this;
     }
 
-    /** Get value
+    /** 路由表描述信息 取值范围：0-255个字符，不能包含“<”和“>”
      * 
-     * @return value */
-    public String getValue() {
-        return value;
+     * @return description */
+    public String getDescription() {
+        return description;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -58,21 +58,22 @@ public class MetricDimension {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        MetricDimension metricDimension = (MetricDimension) o;
-        return Objects.equals(this.name, metricDimension.name) && Objects.equals(this.value, metricDimension.value);
+        UpdateRoutetableOption updateRoutetableOption = (UpdateRoutetableOption) o;
+        return Objects.equals(this.name, updateRoutetableOption.name)
+            && Objects.equals(this.description, updateRoutetableOption.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, value);
+        return Objects.hash(name, description);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class MetricDimension {\n");
+        sb.append("class UpdateRoutetableOption {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

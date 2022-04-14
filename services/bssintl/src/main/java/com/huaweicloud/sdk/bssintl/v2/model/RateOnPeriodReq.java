@@ -26,7 +26,8 @@ public class RateOnPeriodReq {
         return this;
     }
 
-    /** |参数名称：项目ID| |参数约束及描述：如果使用客户AK/SK或者Token，可以调用“通过assume_role方式获取用户token”接口获取“regionId”取值对应的project id。|
+    /** 项目ID。 说明： 获取方法：
+     * 步骤1：调用IAM获取委托Token接口，获取客户Token。步骤2：参见如何将合作伙伴Token置换为客户Token的步骤2，获取项目ID。IAM子用户调用此接口，需要IAM主账号授权，具体请参考创建用户组并授权。
      * 
      * @return projectId */
     public String getProjectId() {
@@ -58,7 +59,7 @@ public class RateOnPeriodReq {
         return this;
     }
 
-    /** |参数名称：产品信息列表| |参数的约束及描述：询价时要询价产品的信息的列表|
+    /** 产品信息列表，询价时要询价产品的信息的列表，具体参见表1。
      * 
      * @return productInfos */
     public List<PeriodProductInfo> getProductInfos() {

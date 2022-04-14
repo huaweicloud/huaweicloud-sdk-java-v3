@@ -9,6 +9,11 @@ import java.util.Objects;
 public class RuleListItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_set")
+
+    private String ruleSet;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
     private String ruleId;
@@ -52,6 +57,22 @@ public class RuleListItem {
     @JsonProperty(value = "rule_desc")
 
     private String ruleDesc;
+
+    public RuleListItem withRuleSet(String ruleSet) {
+        this.ruleSet = ruleSet;
+        return this;
+    }
+
+    /** 规则集规范分类
+     * 
+     * @return ruleSet */
+    public String getRuleSet() {
+        return ruleSet;
+    }
+
+    public void setRuleSet(String ruleSet) {
+        this.ruleSet = ruleSet;
+    }
 
     public RuleListItem withRuleId(String ruleId) {
         this.ruleId = ruleId;
@@ -206,7 +227,7 @@ public class RuleListItem {
             return false;
         }
         RuleListItem ruleListItem = (RuleListItem) o;
-        return Objects.equals(this.ruleId, ruleListItem.ruleId)
+        return Objects.equals(this.ruleSet, ruleListItem.ruleSet) && Objects.equals(this.ruleId, ruleListItem.ruleId)
             && Objects.equals(this.ruleLanguage, ruleListItem.ruleLanguage)
             && Objects.equals(this.ruleName, ruleListItem.ruleName)
             && Objects.equals(this.ruleSeverity, ruleListItem.ruleSeverity)
@@ -219,7 +240,8 @@ public class RuleListItem {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ruleId,
+        return Objects.hash(ruleSet,
+            ruleId,
             ruleLanguage,
             ruleName,
             ruleSeverity,
@@ -234,6 +256,7 @@ public class RuleListItem {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RuleListItem {\n");
+        sb.append("    ruleSet: ").append(toIndentedString(ruleSet)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    ruleLanguage: ").append(toIndentedString(ruleLanguage)).append("\n");
         sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");

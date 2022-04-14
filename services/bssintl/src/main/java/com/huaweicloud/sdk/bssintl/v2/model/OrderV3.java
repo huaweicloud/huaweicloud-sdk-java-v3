@@ -26,7 +26,7 @@ public class OrderV3 {
         return this;
     }
 
-    /** |参数名称：订单标识| |参数约束及描述：订单标识|
+    /** 可使用折扣的订单ID。
      * 
      * @return orderId */
     public String getOrderId() {
@@ -58,7 +58,7 @@ public class OrderV3 {
         return this;
     }
 
-    /** |参数名称：订单行列表| |参数约束以及描述：订单行列表|
+    /** 可使用折扣的订单项列表，具体参见表4。
      * 
      * @return orderLineItems */
     public List<OrderLineItemV3> getOrderLineItems() {

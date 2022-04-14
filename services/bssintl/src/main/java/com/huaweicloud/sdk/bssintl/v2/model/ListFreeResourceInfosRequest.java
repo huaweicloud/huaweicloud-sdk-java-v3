@@ -24,7 +24,7 @@ public class ListFreeResourceInfosRequest {
         return this;
     }
 
-    /** |语言。中文：zh_CN英文：en_US，缺省为zh_CN。|
+    /** 语言。中文：zh_CN英文：en_US缺省为zh_CN。
      * 
      * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)

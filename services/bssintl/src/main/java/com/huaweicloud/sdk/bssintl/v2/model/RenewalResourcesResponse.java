@@ -38,7 +38,7 @@ public class RenewalResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：续订资源生成的订单ID的列表。| |参数约束以及描述：续订资源生成的订单ID的列表。|
+    /** 续订资源生成的订单ID的列表。
      * 
      * @return orderIds */
     public List<String> getOrderIds() {

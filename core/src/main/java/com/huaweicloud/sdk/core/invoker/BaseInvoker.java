@@ -57,11 +57,13 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
 
     Map<String, String> extraHeader;
 
-    int maxRetryTimes;
+    int retryTimes;
 
     BiFunction<ResT, SdkException, Boolean> func;
 
     BackoffStrategy backoffStrategy;
+
+    public static final int MAX_RETRY_TIME = 30;
 
     /**
      * The default constructor for BaseInvoker.
@@ -128,25 +130,25 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
     /**
      * The user could use .withRetry() method to set retry infos.
      *
-     * @param maxRetryTimes the max times could be retried
+     * @param retryTimes the max times could be retried
      * @param func retry condition
      * @return DerivedT
      */
-    public DerivedT withRetry(int maxRetryTimes, BiFunction<ResT, SdkException, Boolean> func) {
-        return this.withRetry(maxRetryTimes, func, backoffStrategy);
+    public DerivedT withRetry(int retryTimes, BiFunction<ResT, SdkException, Boolean> func) {
+        return this.withRetry(retryTimes, func, backoffStrategy);
     }
 
     /**
      * The user could use .withRetry() method to set retry infos.
      *
-     * @param maxRetryTimes the max times could be retried
+     * @param retryTimes the max times could be retried
      * @param func retry condition
      * @param backoffStrategy strategy to be backoff
      * @return DerivedT
      */
-    public DerivedT withRetry(int maxRetryTimes, BiFunction<ResT, SdkException, Boolean> func,
+    public DerivedT withRetry(int retryTimes, BiFunction<ResT, SdkException, Boolean> func,
         BackoffStrategy backoffStrategy) {
-        this.maxRetryTimes = ValidationUtils.assertIntIsPositive(maxRetryTimes, "maxRetryTimes");
+        this.retryTimes = ValidationUtils.assertIntIsInRange(retryTimes, 0, MAX_RETRY_TIME, "retryTimes");
         this.func = func;
         this.initBackoffStrategy(backoffStrategy);
         return (DerivedT) this;
@@ -155,11 +157,11 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
     /**
      * Set max retry times separately.
      *
-     * @param maxRetryTimes the max times could be retried
+     * @param retryTimes the max times could be retried
      * @return DerivedT
      */
-    public DerivedT retryTimes(int maxRetryTimes) {
-        this.maxRetryTimes = ValidationUtils.assertIntIsPositive(maxRetryTimes, "maxRetryTimes");
+    public DerivedT retryTimes(int retryTimes) {
+        this.retryTimes = ValidationUtils.assertIntIsInRange(retryTimes, 0, MAX_RETRY_TIME, "retryTimes");
         return (DerivedT) this;
     }
 
@@ -221,7 +223,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
     CompletableFuture<ResT> retry(Supplier<CompletableFuture<ResT>> work) {
         CompletableFuture<ResT> future = new CompletableFuture<>();
         initBackoffStrategy(backoffStrategy);
-        RetryRecord<ResT> record = new RetryRecord<>(maxRetryTimes, func, backoffStrategy);
+        RetryRecord<ResT> record = new RetryRecord<>(retryTimes, func, backoffStrategy);
         record.setFuture(future);
         record.setWorkSupplier(work);
         // start the first call of the interface

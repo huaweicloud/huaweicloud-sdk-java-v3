@@ -98,7 +98,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：标识要开通资源的内部ID，资源开通以后生成的ID为resource_id。对应订购关系ID。| |参数约束及描述：标识要开通资源的内部ID，资源开通以后生成的ID为resource_id。对应订购关系ID。|
+    /** 标识要开通资源的内部ID，资源开通以后生成的ID为resource_id。
      * 
      * @return id */
     public String getId() {
@@ -114,7 +114,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：资源实例ID。| |参数约束及描述：资源实例ID。|
+    /** 资源ID。
      * 
      * @return resourceId */
     public String getResourceId() {
@@ -130,7 +130,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：资源实例名。| |参数约束及描述：资源实例名。|
+    /** 资源实例名。
      * 
      * @return resourceName */
     public String getResourceName() {
@@ -146,7 +146,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：云服务资源池区域编码。| |参数约束及描述：云服务资源池区域编码。|
+    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return regionCode */
     public String getRegionCode() {
@@ -162,8 +162,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
-     * |参数约束及描述：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -179,8 +178,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。|
-     * |参数约束及描述：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。|
+    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * 
      * @return resourceTypeCode */
     public String getResourceTypeCode() {
@@ -196,7 +194,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：资源类型编码名称| |参数约束及描述：资源类型编码名称|
+    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
      * 
      * @return resourceTypeName */
     public String getResourceTypeName() {
@@ -212,7 +210,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：服务类型编码名称| |参数约束及描述：服务类型编码名称|
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
      * 
      * @return serviceTypeName */
     public String getServiceTypeName() {
@@ -228,8 +226,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：云服务产品的资源规格，例如VM的资源规格举例为“s2.small.1.linux”。具体请参见对应云服务的相关介绍。|
-     * |参数约束及描述：云服务产品的资源规格，例如VM的资源规格举例为“s2.small.1.linux”。具体请参见对应云服务的相关介绍。|
+    /** 云服务产品的资源规格。如果是VM的资源规格，则需要在规格后面添加“.win”或“.linux”，例如“s2.small.1.linux”。
      * 
      * @return resourceSpecCode */
     public String getResourceSpecCode() {
@@ -245,7 +242,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：资源项目ID。| |参数约束及描述：资源项目ID。|
+    /** 资源项目ID。
      * 
      * @return projectId */
     public String getProjectId() {
@@ -261,7 +258,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：产品ID。| |参数约束及描述：产品ID。|
+    /** 产品ID。
      * 
      * @return productId */
     public String getProductId() {
@@ -277,7 +274,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：父资源实例ID。| |参数约束及描述：父资源实例ID。|
+    /** 父资源ID。
      * 
      * @return parentResourceId */
     public String getParentResourceId() {
@@ -293,7 +290,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：是否是主资源。0：非主资源1：主资源| |参数的约束及描述：是否是主资源。0：非主资源1：主资源|
+    /** 是否是主资源。 0：非主资源1：主资源
      * 
      * @return isMainResource */
     public Integer getIsMainResource() {
@@ -309,8 +306,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：资源状态：1：初始化2：已生效3：已过期4：已冻结5：宽限期6：冻结中7：冻结恢复中（预留，未启用）8：正在关闭|
-     * |参数的约束及描述：资源状态：1：初始化2：已生效3：已过期4：已冻结5：宽限期6：冻结中7：冻结恢复中（预留，未启用）8：正在关闭|
+    /** 资源状态。 2：使用中3：已关闭（页面不展示这个状态）4：已冻结5：已过期
      * 
      * @return status */
     public Integer getStatus() {
@@ -326,8 +322,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：资源生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
-     * |参数约束及描述：资源生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+    /** 资源生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * 
      * @return effectiveTime */
     public String getEffectiveTime() {
@@ -343,8 +338,7 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：资源过期时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
-     * |参数约束及描述：资源过期时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+    /** 资源过期时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * 
      * @return expireTime */
     public String getExpireTime() {
@@ -360,8 +354,8 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** |参数名称：到期策略：0：到期进入宽限期1：到期转按需2：到期后自动删除（从生效中直接删除）3：到期后自动续费4：到期后冻结5：到期后删除（从保留期删除）|
-     * |参数的约束及描述：到期策略：0：到期进入宽限期1：到期转按需2：到期后自动删除（从生效中直接删除）3：到期后自动续费4：到期后冻结5：到期后删除（从保留期删除）|
+    /** 资源到期后的扣费策略： 0：到期进入宽限期1：到期转按需2：到期后自动删除（从生效中直接删除）3：到期后自动续费4：到期后冻结5：到期后删除（从保留期删除） 说明：
+     * 只有“3”表示该资源是自动续订，其他情况下，都是非自动续订下的到期策略。
      * 
      * @return expirePolicy */
     public Integer getExpirePolicy() {

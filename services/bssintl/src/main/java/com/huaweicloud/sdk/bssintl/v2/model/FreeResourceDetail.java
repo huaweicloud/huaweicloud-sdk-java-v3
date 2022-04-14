@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** FreeResourceDetail */
@@ -47,12 +46,12 @@ public class FreeResourceDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private BigDecimal amount;
+    private Double amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_amount")
 
-    private BigDecimal originalAmount;
+    private Double originalAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -64,7 +63,7 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** |参数名称：套餐包ID| |参数约束及描述：套餐包ID|
+    /** 资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。
      * 
      * @return freeResourceId */
     public String getFreeResourceId() {
@@ -80,7 +79,7 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** |参数名称：免费资源类型名称| |参数约束及描述：免费资源类型名称|
+    /** 资源项类型名称。
      * 
      * @return freeResourceTypeName */
     public String getFreeResourceTypeName() {
@@ -96,7 +95,7 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** |参数名称：重用周期| |参数的约束及描述：重用周期|
+    /** 重置周期，只有quota_reuse_mode为可重置，该字段才有意义。 1：小时2：天3：周4：月5：年
      * 
      * @return quotaReuseCycle */
     public Integer getQuotaReuseCycle() {
@@ -112,7 +111,8 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** |参数名称：重置周期类别| |参数的约束及描述：重置周期类别|
+    /** 重置周期类别，只有quota_reuse_mode为可重置，该字段才有意义。 1：按自然周期重置是指重置周期是按照自然月/年来重置，例如如果周期是月，按自然周期重置，表示每个月的1号重置。
+     * 2：按订购周期重置。是指重置周期是按照订购时间来重置，例如如果周期是月，按订购周期重置，15号订购了该套餐，表示每个月的15号重置。
      * 
      * @return quotaReuseCycleType */
     public Integer getQuotaReuseCycleType() {
@@ -128,7 +128,7 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** |参数名称：使用量类型名称| |参数约束及描述：使用量类型名称|
+    /** 使用量类型名称。
      * 
      * @return usageTypeName */
     public String getUsageTypeName() {
@@ -144,7 +144,7 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** |参数名称：开始时间| |参数约束及描述：开始时间|
+    /** 开始时间，格式UTC。 如果quota_reuse_mode为可重置，则此时间为当前时间所在的重置周期的开始时间。如果quota_reuse_mode为不可重置，则此时间为订购实例的生效时间。
      * 
      * @return startTime */
     public String getStartTime() {
@@ -160,7 +160,7 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** |参数名称：结束时间| |参数约束及描述：结束时间|
+    /** 结束时间，格式UTC。 如果quota_reuse_mode为可重置，则此时间为当前时间所在的重置周期的结束时间。如果quota_reuse_mode为不可重置，则此时间为订购实例的失效时间。
      * 
      * @return endTime */
     public String getEndTime() {
@@ -171,35 +171,35 @@ public class FreeResourceDetail {
         this.endTime = endTime;
     }
 
-    public FreeResourceDetail withAmount(BigDecimal amount) {
+    public FreeResourceDetail withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    /** |参数名称：免费资源剩余额度| |参数的约束及描述：免费资源剩余额度|
+    /** 资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。
      * 
      * @return amount */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public FreeResourceDetail withOriginalAmount(BigDecimal originalAmount) {
+    public FreeResourceDetail withOriginalAmount(Double originalAmount) {
         this.originalAmount = originalAmount;
         return this;
     }
 
-    /** |参数名称：免费资源原始额度| |参数的约束及描述：免费资源原始额度|
+    /** 资源原始额度，针对可重置资源包，是指每个重置周期内的总量。
      * 
      * @return originalAmount */
-    public BigDecimal getOriginalAmount() {
+    public Double getOriginalAmount() {
         return originalAmount;
     }
 
-    public void setOriginalAmount(BigDecimal originalAmount) {
+    public void setOriginalAmount(Double originalAmount) {
         this.originalAmount = originalAmount;
     }
 
@@ -208,7 +208,7 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** |参数名称：度量单位| |参数的约束及描述：度量单位|
+    /** 度量单位，免费资源套餐额度度量单位。您可以调用查询度量单位列表接口获取。
      * 
      * @return measureId */
     public Integer getMeasureId() {

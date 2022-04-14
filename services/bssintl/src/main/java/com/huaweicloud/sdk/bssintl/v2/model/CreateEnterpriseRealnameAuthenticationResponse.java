@@ -19,7 +19,7 @@ public class CreateEnterpriseRealnameAuthenticationResponse extends SdkResponse 
         return this;
     }
 
-    /** |参数名称：是否需要转人工审核，只有状态码为200才返回该参数：0：不需要1：需要| |参数的约束及描述：是否需要转人工审核，只有状态码为200才返回该参数：0：不需要1：需要|
+    /** 是否需要转人工审核，只有状态码为200才返回该参数。 0：不需要1：需要
      * 
      * @return isReview */
     public Integer getIsReview() {

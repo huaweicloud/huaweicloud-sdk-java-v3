@@ -77,15 +77,15 @@ public class RetryRecord<ResT> {
 
     boolean shouldRetry = false;
 
-    int maxRetryTimes;
+    int retryTimes;
 
     BiFunction<ResT, SdkException, Boolean> func;
 
     BackoffStrategy backoffStrategy;
 
-    public RetryRecord(int maxRetryTimes, BiFunction<ResT, SdkException, Boolean> func,
+    public RetryRecord(int retryTimes, BiFunction<ResT, SdkException, Boolean> func,
         BackoffStrategy backoffStrategy) {
-        this.maxRetryTimes = maxRetryTimes;
+        this.retryTimes = retryTimes;
         this.func = func;
         this.backoffStrategy = backoffStrategy;
     }
@@ -106,12 +106,10 @@ public class RetryRecord<ResT> {
                 future.completeExceptionally(new IllegalArgumentException("The response and exception of the "
                     + "request are both Null, please check the request or contact customer service"));
             }
+            handleThrowable(throwable);
 
-            if (Objects.nonNull(throwable)) {
-                handleThrowable(throwable);
-            }
-            shouldRetry = shouldRetry || Objects.nonNull(func) && func.apply(resp, currException);
-            if (currRetriesAttempted <= maxRetryTimes && shouldRetry) {
+            shouldRetry = Objects.nonNull(func) && func.apply(resp, currException);
+            if (shouldRetry && currRetriesAttempted <= retryTimes) {
                 int statusCode = getStatusCodeFromResult(resp, currException);
                 RetryContext<ResT> context = buildContext(resp, currException, statusCode, currRetriesAttempted);
                 long delayBeforeNextRetry = backoffStrategy.computeDelayBeforeNextRetry(context);
@@ -126,6 +124,10 @@ public class RetryRecord<ResT> {
     }
 
     private void handleThrowable(Throwable throwable) {
+        if (Objects.isNull(throwable)) {
+            currException = null;
+            return;
+        }
         // In asynchronous cases, all throwable in retry would be thrown in CompletionException,
         // if this exception is thrown to the main thread, it could change to ExecutionException.
         if (CompletionException.class.isAssignableFrom(throwable.getClass())) {
@@ -271,7 +273,7 @@ public class RetryRecord<ResT> {
      */
     public void printRetryLog(int retriesAttempted, long waitBeforeNextRetry) {
         RetryLog.get()
-            .info("After waiting for {} milliseconds, the request will retry for the {}th times, "
-                + "and the max retry times is {}.", waitBeforeNextRetry, retriesAttempted, maxRetryTimes);
+            .info("The request will retry for the {} time after {} milliseconds, "
+                + "and the max retry times is {}.", retriesAttempted, waitBeforeNextRetry, retryTimes);
     }
 }

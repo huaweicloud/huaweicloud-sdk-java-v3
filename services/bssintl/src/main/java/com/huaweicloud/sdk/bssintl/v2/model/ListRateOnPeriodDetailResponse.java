@@ -78,7 +78,7 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果| |参数的约束及描述：存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果|
+    /** 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果，具体参见表4。
      * 
      * @return optionalDiscountRatingResults */
     public List<OptionalDiscountRatingResult> getOptionalDiscountRatingResults() {
@@ -94,7 +94,7 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：币种| |参数约束及描述：比如CNY|
+    /** 币种。 USD：美元。 值为空代表美元。
      * 
      * @return currency */
     public String getCurrency() {

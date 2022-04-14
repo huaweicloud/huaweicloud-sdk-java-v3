@@ -29,6 +29,16 @@ public class RuleCondition {
 
     private DailyTimerType dailyTimerCondition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_message_condition")
+
+    private DeviceMessageCondition deviceMessageCondition;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_status_condition")
+
+    private DeviceStatusCondition deviceStatusCondition;
+
     public RuleCondition withType(String type) {
         this.type = type;
         return this;
@@ -121,6 +131,56 @@ public class RuleCondition {
         this.dailyTimerCondition = dailyTimerCondition;
     }
 
+    public RuleCondition withDeviceMessageCondition(DeviceMessageCondition deviceMessageCondition) {
+        this.deviceMessageCondition = deviceMessageCondition;
+        return this;
+    }
+
+    public RuleCondition withDeviceMessageCondition(Consumer<DeviceMessageCondition> deviceMessageConditionSetter) {
+        if (this.deviceMessageCondition == null) {
+            this.deviceMessageCondition = new DeviceMessageCondition();
+            deviceMessageConditionSetter.accept(this.deviceMessageCondition);
+        }
+
+        return this;
+    }
+
+    /** Get deviceMessageCondition
+     * 
+     * @return deviceMessageCondition */
+    public DeviceMessageCondition getDeviceMessageCondition() {
+        return deviceMessageCondition;
+    }
+
+    public void setDeviceMessageCondition(DeviceMessageCondition deviceMessageCondition) {
+        this.deviceMessageCondition = deviceMessageCondition;
+    }
+
+    public RuleCondition withDeviceStatusCondition(DeviceStatusCondition deviceStatusCondition) {
+        this.deviceStatusCondition = deviceStatusCondition;
+        return this;
+    }
+
+    public RuleCondition withDeviceStatusCondition(Consumer<DeviceStatusCondition> deviceStatusConditionSetter) {
+        if (this.deviceStatusCondition == null) {
+            this.deviceStatusCondition = new DeviceStatusCondition();
+            deviceStatusConditionSetter.accept(this.deviceStatusCondition);
+        }
+
+        return this;
+    }
+
+    /** Get deviceStatusCondition
+     * 
+     * @return deviceStatusCondition */
+    public DeviceStatusCondition getDeviceStatusCondition() {
+        return deviceStatusCondition;
+    }
+
+    public void setDeviceStatusCondition(DeviceStatusCondition deviceStatusCondition) {
+        this.deviceStatusCondition = deviceStatusCondition;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +193,19 @@ public class RuleCondition {
         return Objects.equals(this.type, ruleCondition.type)
             && Objects.equals(this.devicePropertyCondition, ruleCondition.devicePropertyCondition)
             && Objects.equals(this.simpleTimerCondition, ruleCondition.simpleTimerCondition)
-            && Objects.equals(this.dailyTimerCondition, ruleCondition.dailyTimerCondition);
+            && Objects.equals(this.dailyTimerCondition, ruleCondition.dailyTimerCondition)
+            && Objects.equals(this.deviceMessageCondition, ruleCondition.deviceMessageCondition)
+            && Objects.equals(this.deviceStatusCondition, ruleCondition.deviceStatusCondition);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, devicePropertyCondition, simpleTimerCondition, dailyTimerCondition);
+        return Objects.hash(type,
+            devicePropertyCondition,
+            simpleTimerCondition,
+            dailyTimerCondition,
+            deviceMessageCondition,
+            deviceStatusCondition);
     }
 
     @Override
@@ -149,6 +216,8 @@ public class RuleCondition {
         sb.append("    devicePropertyCondition: ").append(toIndentedString(devicePropertyCondition)).append("\n");
         sb.append("    simpleTimerCondition: ").append(toIndentedString(simpleTimerCondition)).append("\n");
         sb.append("    dailyTimerCondition: ").append(toIndentedString(dailyTimerCondition)).append("\n");
+        sb.append("    deviceMessageCondition: ").append(toIndentedString(deviceMessageCondition)).append("\n");
+        sb.append("    deviceStatusCondition: ").append(toIndentedString(deviceStatusCondition)).append("\n");
         sb.append("}");
         return sb.toString();
     }

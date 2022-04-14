@@ -35,7 +35,7 @@ public class ListStorageTypesRequest  {
     
     private String version;
     /**
-     * 实例类型： enterprise(企业版)， ha(主备版)，不区分大小写。
+     * 实例类型： enterprise(企业版)， centralization_standard(主备版)，不区分大小写。
      */
     public static final class HaModeEnum {
 
@@ -46,9 +46,9 @@ public class ListStorageTypesRequest  {
         public static final HaModeEnum ENTERPRISE = new HaModeEnum("enterprise");
         
         /**
-         * Enum HA for value: "ha"
+         * Enum CENTRALIZATION_STANDARD for value: "centralization_standard"
          */
-        public static final HaModeEnum HA = new HaModeEnum("ha");
+        public static final HaModeEnum CENTRALIZATION_STANDARD = new HaModeEnum("centralization_standard");
         
 
         private static final Map<String, HaModeEnum> STATIC_FIELDS = createStaticFields();
@@ -56,7 +56,7 @@ public class ListStorageTypesRequest  {
         private static Map<String, HaModeEnum> createStaticFields() {
             Map<String, HaModeEnum> map = new HashMap<>();
             map.put("enterprise", ENTERPRISE);
-            map.put("ha", HA);
+            map.put("centralization_standard", CENTRALIZATION_STANDARD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -175,7 +175,7 @@ public class ListStorageTypesRequest  {
 
 
     /**
-     * 实例类型： enterprise(企业版)， ha(主备版)，不区分大小写。
+     * 实例类型： enterprise(企业版)， centralization_standard(主备版)，不区分大小写。
      * @return haMode
      */
     public HaModeEnum getHaMode() {

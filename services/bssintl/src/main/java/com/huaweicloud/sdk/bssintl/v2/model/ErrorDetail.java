@@ -28,7 +28,7 @@ public class ErrorDetail {
         return this;
     }
 
-    /** |参数名称：返回码| |参数的约束及描述：该参数非必填，最大长度16|
+    /** 状态码。
      * 
      * @return errorCode */
     public String getErrorCode() {
@@ -44,7 +44,7 @@ public class ErrorDetail {
         return this;
     }
 
-    /** |参数名称：返回码描述| |参数的约束及描述：该参数非必填，最大长度1024|
+    /** 错误描述信息。
      * 
      * @return errorMsg */
     public String getErrorMsg() {
@@ -60,7 +60,7 @@ public class ErrorDetail {
         return this;
     }
 
-    /** |参数名称：标示ID| |参数的约束及描述：该参数非必填，最大长度256|
+    /** 出现错误的客户ID或批量处理消息的ID。
      * 
      * @return id */
     public String getId() {

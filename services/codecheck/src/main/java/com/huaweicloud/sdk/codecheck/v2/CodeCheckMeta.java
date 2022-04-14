@@ -125,6 +125,66 @@ public class CodeCheckMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckRulesetParametersRequest, CheckRulesetParametersResponse> checkRulesetParameters =
+        genForcheckRulesetParameters();
+
+    private static HttpRequestDef<CheckRulesetParametersRequest, CheckRulesetParametersResponse> genForcheckRulesetParameters() {
+        // basic
+        HttpRequestDef.Builder<CheckRulesetParametersRequest, CheckRulesetParametersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CheckRulesetParametersRequest.class, CheckRulesetParametersResponse.class)
+            .withName("CheckRulesetParameters")
+            .withUri("/v3/{project_id}/tasks/{task_id}/ruleset/{ruleset_id}/check-parameters")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRulesetParametersRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRulesetParametersRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("ruleset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRulesetParametersRequest::getRulesetId, (req, v) -> {
+                req.setRulesetId(v);
+            }));
+        builder.<String>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRulesetParametersRequest::getLanguage, (req, v) -> {
+                req.setLanguage(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CheckRulesetParametersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CheckRulesetParametersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRulesetRequest, CreateRulesetResponse> createRuleset =
         genForcreateRuleset();
 
@@ -774,6 +834,52 @@ public class CodeCheckMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTasklogRequest::getExecuteId, (req, v) -> {
                 req.setExecuteId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> showTasksRulesets =
+        genForshowTasksRulesets();
+
+    private static HttpRequestDef<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> genForshowTasksRulesets() {
+        // basic
+        HttpRequestDef.Builder<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTasksRulesetsRequest.class, ShowTasksRulesetsResponse.class)
+                .withName("ShowTasksRulesets")
+                .withUri("/v3/{project_id}/tasks/{task_id}/rulesets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksRulesetsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksRulesetsRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTasksRulesetsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTasksRulesetsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

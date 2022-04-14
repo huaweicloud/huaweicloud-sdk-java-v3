@@ -28,7 +28,7 @@ public class KafkaSecurity {
 
     private String trustStorePassword;
 
-    /** 认证类型，PLAINTEXT为无认证： */
+    /** 认证类型，PLAINTEXT为无认证，，使用安全认证时必填。 */
     public static final class TypeEnum {
 
         /** Enum PLAINTEXT for value: "PLAINTEXT" */
@@ -109,7 +109,7 @@ public class KafkaSecurity {
         return this;
     }
 
-    /** 证书名称。
+    /** 证书名称，使用安全认证时必填。
      * 
      * @return trustStoreKeyName */
     public String getTrustStoreKeyName() {
@@ -125,7 +125,7 @@ public class KafkaSecurity {
         return this;
     }
 
-    /** 安全证书base64转码后的值。
+    /** 安全证书base64转码后的值，使用安全认证时必填。
      * 
      * @return trustStoreKey */
     public String getTrustStoreKey() {
@@ -141,7 +141,7 @@ public class KafkaSecurity {
         return this;
     }
 
-    /** 证书密码。
+    /** 证书密码，使用安全认证时必填。
      * 
      * @return trustStorePassword */
     public String getTrustStorePassword() {
@@ -157,7 +157,7 @@ public class KafkaSecurity {
         return this;
     }
 
-    /** 认证类型，PLAINTEXT为无认证：
+    /** 认证类型，PLAINTEXT为无认证，，使用安全认证时必填。
      * 
      * @return type */
     public TypeEnum getType() {

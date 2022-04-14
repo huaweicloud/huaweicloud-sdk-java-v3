@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,17 +24,17 @@ public class DemandProductRatingResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private BigDecimal amount;
+    private Double amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private BigDecimal discountAmount;
+    private Double discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_website_amount")
 
-    private BigDecimal officialWebsiteAmount;
+    private Double officialWebsiteAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -52,7 +51,7 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** |参数名称：ID标识| |参数约束及描述：同一次询价中不能重复，用于标识返回询价结果和请求的映射关系|
+    /** 同一次询价中不能重复，用于标识返回询价结果和请求的映射关系。
      * 
      * @return id */
     public String getId() {
@@ -68,7 +67,7 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** |参数名称：寻到的产品ID| |参数约束及描述：寻到的产品ID|
+    /** 按需产品的ID。
      * 
      * @return productId */
     public String getProductId() {
@@ -79,51 +78,51 @@ public class DemandProductRatingResult {
         this.productId = productId;
     }
 
-    public DemandProductRatingResult withAmount(BigDecimal amount) {
+    public DemandProductRatingResult withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    /** |参数名称：总额| |参数约束及描述：即最终优惠的金额|
+    /** 折扣的金额。
      * 
      * @return amount */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public DemandProductRatingResult withDiscountAmount(BigDecimal discountAmount) {
+    public DemandProductRatingResult withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
 
-    /** |参数名称：优惠额（官网价和总价的差）| |参数约束及描述：优惠额（官网价和总价的差）|
+    /** 优惠额（官网价和总价的差）。
      * 
      * @return discountAmount */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
-    public DemandProductRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public DemandProductRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
 
-    /** |参数名称：官网价| |参数约束及描述：官网价|
+    /** 按需产品的官网价。
      * 
      * @return officialWebsiteAmount */
-    public BigDecimal getOfficialWebsiteAmount() {
+    public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
@@ -132,7 +131,7 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** |参数名称：度量单位标识| |参数约束及描述：1：元|
+    /** 度量单位标识。 1：元
      * 
      * @return measureId */
     public Integer getMeasureId() {
@@ -166,7 +165,7 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** |参数名称：折扣优惠明细| |参数的约束及描述：包含产品本身的促销信息，同时包含商务或者伙伴折扣的优惠信息|
+    /** 折扣优惠明细，包含产品本身的促销信息，同时包含商务或者伙伴折扣的优惠信息，具体参见表3。
      * 
      * @return discountRatingResults */
     public List<DemandDiscountRatingResult> getDiscountRatingResults() {

@@ -38,7 +38,7 @@ public class ListFreeResourceUsagesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：免费资源套餐信息列表（按订单、产品等信息汇总）| |参数约束以及描述：免费资源套餐信息列表（按订单、产品等信息汇总）|
+    /** 资源套餐内的资源项信息（资源项ID级的详情），具体参见表2。
      * 
      * @return freeResources */
     public List<FreeResourceDetail> getFreeResources() {

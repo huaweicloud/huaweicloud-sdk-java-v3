@@ -18,7 +18,9 @@ public class ImageData {
         return this;
     }
 
-    /** @return imageId */
+    /** 镜像ID
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }

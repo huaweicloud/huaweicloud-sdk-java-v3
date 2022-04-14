@@ -88,7 +88,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：所属的客户ID。| |参数约束及描述：所属的客户ID。|
+    /** 客户账号ID。
      * 
      * @return customerId */
     public String getCustomerId() {
@@ -104,8 +104,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
-     * |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
+    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return regionCode */
     public String getRegionCode() {
@@ -121,7 +120,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：所属的AZ的编码。| |参数约束及描述：所属的AZ的编码。|
+    /** 所属可用区的编码。
      * 
      * @return availabilityZoneCode */
     public String getAvailabilityZoneCode() {
@@ -137,8 +136,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
-     * |参数约束及描述：云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return serviceTypeCode */
     public String getServiceTypeCode() {
@@ -154,8 +152,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。|
-     * |参数约束及描述：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。|
+    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * 
      * @return resourceTypeCode */
     public String getResourceTypeCode() {
@@ -171,7 +168,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：服务类型编码名称| |参数约束及描述：服务类型编码名称|
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
      * 
      * @return serviceTypeName */
     public String getServiceTypeName() {
@@ -187,7 +184,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：资源类型编码名称| |参数约束及描述：资源类型编码名称|
+    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
      * 
      * @return resourceTypeName */
     public String getResourceTypeName() {
@@ -203,7 +200,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：具体资源的ID。| |参数约束及描述：具体资源的ID。|
+    /** 资源ID。
      * 
      * @return resourceId */
     public String getResourceId() {
@@ -219,7 +216,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：资源实例的名称。| |参数约束及描述：资源实例的名称。|
+    /** 资源实例名称。
      * 
      * @return resourceName */
     public String getResourceName() {
@@ -235,8 +232,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
-     * |参数约束及描述：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+    /** 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return effectiveTime */
     public String getEffectiveTime() {
@@ -252,8 +248,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
-     * |参数约束及描述：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+    /** 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return expireTime */
     public String getExpireTime() {
@@ -269,7 +264,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：资源状态：1：正常（已开通）；2：宽限期；3：冻结中；4：变更中；5：正在关闭；6：已关闭。| |参数的约束及描述：资源状态：1：正常（已开通）；2：宽限期；3：冻结中；4：变更中；5：正在关闭；6：已关闭。|
+    /** 资源状态： 1：正常（已开通）2：宽限期3：冻结中4：变更中5：正在关闭6：已关闭
      * 
      * @return status */
     public Integer getStatus() {
@@ -285,7 +280,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：按需资源规格编码。| |参数约束及描述：按需资源规格编码。|
+    /** 云服务产品的资源规格。如果是VM的资源规格，则需要在规格后面添加“.win”或“.linux”，例如“s2.small.1.linux”。
      * 
      * @return resourceSpecCode */
     public String getResourceSpecCode() {
@@ -301,7 +296,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：资源容量大小。格式如| |参数约束及描述：资源容量大小。格式如：\"resourceInfo\": \"{\\\"specSize\\\":40.0}\"|
+    /** 按需资源的容量大小。 格式如：\"resourceInfo\": \"{\\\"specSize\\\":40.0}\"
      * 
      * @return resourceInfo */
     public String getResourceInfo() {
@@ -317,7 +312,7 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** |参数名称：产品规格描述| |参数约束及描述：譬如虚拟机为：\"通用计算增强型|c6.2xlarge.4|8vCPUs|32GB|linux\"，硬盘为：\"云硬盘_SATA_LXH01|40.0GB\"|
+    /** 产品规格描述。例如： 虚拟机：“通用计算增强型|c6.2xlarge.4|8vCPUs|32GB|linux”硬盘：“云硬盘_SATA_LXH01|40.0GB”
      * 
      * @return productSpecDesc */
     public String getProductSpecDesc() {

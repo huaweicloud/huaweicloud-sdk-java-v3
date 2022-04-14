@@ -33,6 +33,11 @@ public class SubTaskAssociatedWithTask {
 
     private Long endDate;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_trace")
+
+    private String processTrace;
+
     public SubTaskAssociatedWithTask withId(Long id) {
         this.id = id;
         return this;
@@ -113,6 +118,22 @@ public class SubTaskAssociatedWithTask {
         this.endDate = endDate;
     }
 
+    public SubTaskAssociatedWithTask withProcessTrace(String processTrace) {
+        this.processTrace = processTrace;
+        return this;
+    }
+
+    /** 迁移或同步时，具体的迁移详情
+     * 
+     * @return processTrace */
+    public String getProcessTrace() {
+        return processTrace;
+    }
+
+    public void setProcessTrace(String processTrace) {
+        this.processTrace = processTrace;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -126,12 +147,13 @@ public class SubTaskAssociatedWithTask {
             && Objects.equals(this.name, subTaskAssociatedWithTask.name)
             && Objects.equals(this.progress, subTaskAssociatedWithTask.progress)
             && Objects.equals(this.startDate, subTaskAssociatedWithTask.startDate)
-            && Objects.equals(this.endDate, subTaskAssociatedWithTask.endDate);
+            && Objects.equals(this.endDate, subTaskAssociatedWithTask.endDate)
+            && Objects.equals(this.processTrace, subTaskAssociatedWithTask.processTrace);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, progress, startDate, endDate);
+        return Objects.hash(id, name, progress, startDate, endDate, processTrace);
     }
 
     @Override
@@ -143,6 +165,7 @@ public class SubTaskAssociatedWithTask {
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
         sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+        sb.append("    processTrace: ").append(toIndentedString(processTrace)).append("\n");
         sb.append("}");
         return sb.toString();
     }

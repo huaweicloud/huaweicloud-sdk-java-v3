@@ -58,17 +58,12 @@ public class ListSubCustomerCouponsRequest {
 
     private String sourceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "indirect_partner_id")
-
-    private String indirectPartnerId;
-
     public ListSubCustomerCouponsRequest withCouponId(String couponId) {
         this.couponId = couponId;
         return this;
     }
 
-    /** |参数名称：优惠券ID。| |参数的约束及描述：优惠券ID。|
+    /** 优惠券ID。
      * 
      * @return couponId */
     public String getCouponId() {
@@ -84,7 +79,7 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** |参数名称：订单ID。| |参数的约束及描述：订单ID。|
+    /** 订单ID。
      * 
      * @return orderId */
     public String getOrderId() {
@@ -100,7 +95,7 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** |参数名称：促销计划ID。| |参数的约束及描述：促销计划ID。|
+    /** 促销计划ID。
      * 
      * @return promotionPlanId */
     public String getPromotionPlanId() {
@@ -116,7 +111,7 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** |参数名称：优惠券类型：1：代金券；2：折扣券；3：产品券；4：现金券。| |参数的约束及描述：优惠券类型：1：代金券；2：折扣券；3：产品券；4：现金券。| minimum: 1 maximum: 4
+    /** 优惠券类型：1：代金券2：折扣券（预留）3：产品券（预留）4：现金券（预留） minimum: 1 maximum: 4
      * 
      * @return couponType */
     public Integer getCouponType() {
@@ -132,7 +127,7 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** |参数名称：客户优惠券实例状态：1：未激活；2：待使用；3：已使用；4：已过期。| |参数的约束及描述：客户优惠券实例状态：1：未激活；2：待使用；3：已使用；4：已过期。| minimum: 1 maximum: 4
+    /** 客户优惠券实例状态：1：未激活2：待使用3：已使用4：已过期 minimum: 1 maximum: 4
      * 
      * @return status */
     public Integer getStatus() {
@@ -148,7 +143,7 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** |参数名称：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数的约束及描述：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+    /** 激活时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return activeStartTime */
     public String getActiveStartTime() {
@@ -164,7 +159,7 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** |参数名称：结束时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数的约束及描述：结束时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+    /** 结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * 
      * @return activeEndTime */
     public String getActiveEndTime() {
@@ -180,7 +175,9 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** |参数名称：偏移量，默认为0| |参数的约束及描述：偏移量，默认为0| minimum: 0 maximum: 2147483647
+    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
+     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
+     * 2147483647
      * 
      * @return offset */
     public Integer getOffset() {
@@ -196,7 +193,7 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** |参数名称：每页数量，默认10。| |参数的约束及描述：每页数量，默认10。| minimum: 1 maximum: 100
+    /** 查询的优惠券数量，默认值为10。 minimum: 1 maximum: 100
      * 
      * @return limit */
     public Integer getLimit() {
@@ -212,7 +209,7 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** |参数名称：发券来源| |参数的约束及描述：如果是合作伙伴发送的券，这个地方是伙伴ID。 如果想查询某个伙伴发放的券，可以在这里输入伙伴ID|
+    /** 发券来源，如果是合作伙伴发送的券，此处为伙伴ID。如果需要查询某个伙伴发放的券，可以在此处输入该伙伴ID。
      * 
      * @return sourceId */
     public String getSourceId() {
@@ -221,23 +218,6 @@ public class ListSubCustomerCouponsRequest {
 
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
-    }
-
-    public ListSubCustomerCouponsRequest withIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-        return this;
-    }
-
-    /** |参数名称：经营服务商（二级经销商）ID，如果要查询二级经销商名下的券，要传递该字段，否则查询的就是一级经销商自己的券列表。|
-     * |参数的约束及描述：经营服务商（二级经销商）ID，如果要查询二级经销商名下的券，要传递该字段，否则查询的就是一级经销商自己的券列表。|
-     * 
-     * @return indirectPartnerId */
-    public String getIndirectPartnerId() {
-        return indirectPartnerId;
-    }
-
-    public void setIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
     }
 
     @Override
@@ -258,8 +238,7 @@ public class ListSubCustomerCouponsRequest {
             && Objects.equals(this.activeEndTime, listSubCustomerCouponsRequest.activeEndTime)
             && Objects.equals(this.offset, listSubCustomerCouponsRequest.offset)
             && Objects.equals(this.limit, listSubCustomerCouponsRequest.limit)
-            && Objects.equals(this.sourceId, listSubCustomerCouponsRequest.sourceId)
-            && Objects.equals(this.indirectPartnerId, listSubCustomerCouponsRequest.indirectPartnerId);
+            && Objects.equals(this.sourceId, listSubCustomerCouponsRequest.sourceId);
     }
 
     @Override
@@ -273,8 +252,7 @@ public class ListSubCustomerCouponsRequest {
             activeEndTime,
             offset,
             limit,
-            sourceId,
-            indirectPartnerId);
+            sourceId);
     }
 
     @Override
@@ -291,7 +269,6 @@ public class ListSubCustomerCouponsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
-        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

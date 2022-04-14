@@ -37,20 +37,4 @@ public class CesAsyncClient {
             CesMeta.listAlarmHistories, hcClient);
     }
 
-    /** 查询告警列表 查询告警列表,实际上内部对应的是v3的版本号
-     *
-     * @param ListAlarmsRequest 请求对象
-     * @return CompletableFuture<ListAlarmsResponse> */
-    public CompletableFuture<ListAlarmsResponse> listAlarmsAsync(ListAlarmsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CesMeta.listAlarms);
-    }
-
-    /** 查询告警列表 查询告警列表,实际上内部对应的是v3的版本号
-     *
-     * @param ListAlarmsRequest 请求对象
-     * @return AsyncInvoker<ListAlarmsRequest, ListAlarmsResponse> */
-    public AsyncInvoker<ListAlarmsRequest, ListAlarmsResponse> listAlarmsAsyncInvoker(ListAlarmsRequest request) {
-        return new AsyncInvoker<ListAlarmsRequest, ListAlarmsResponse>(request, CesMeta.listAlarms, hcClient);
-    }
-
 }

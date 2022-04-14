@@ -35,20 +35,4 @@ public class CesClient {
             CesMeta.listAlarmHistories, hcClient);
     }
 
-    /** 查询告警列表 查询告警列表,实际上内部对应的是v3的版本号
-     *
-     * @param ListAlarmsRequest 请求对象
-     * @return ListAlarmsResponse */
-    public ListAlarmsResponse listAlarms(ListAlarmsRequest request) {
-        return hcClient.syncInvokeHttp(request, CesMeta.listAlarms);
-    }
-
-    /** 查询告警列表 查询告警列表,实际上内部对应的是v3的版本号
-     *
-     * @param ListAlarmsRequest 请求对象
-     * @return SyncInvoker<ListAlarmsRequest, ListAlarmsResponse> */
-    public SyncInvoker<ListAlarmsRequest, ListAlarmsResponse> listAlarmsInvoker(ListAlarmsRequest request) {
-        return new SyncInvoker<ListAlarmsRequest, ListAlarmsResponse>(request, CesMeta.listAlarms, hcClient);
-    }
-
 }

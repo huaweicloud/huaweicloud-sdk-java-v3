@@ -43,7 +43,7 @@ public class ListPayPerUseCustomerResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：资源列表。具体请参见表2 OrderInstanceV2。| |参数约束以及描述：资源列表。具体请参见表2 OrderInstanceV2。|
+    /** 资源列表。 具体请参见表2。
      * 
      * @return data */
     public List<OrderInstanceV2> getData() {
@@ -59,7 +59,7 @@ public class ListPayPerUseCustomerResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：总记录数。| |参数的约束及描述：总记录数。|
+    /** 总记录数。
      * 
      * @return totalCount */
     public Integer getTotalCount() {

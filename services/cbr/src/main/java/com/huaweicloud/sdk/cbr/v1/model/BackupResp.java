@@ -24,11 +24,6 @@ public class BackupResp {
     private String checkpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "provider_id")
-
-    private String providerId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -365,6 +360,11 @@ public class BackupResp {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "provider_id")
+
+    private String providerId;
+
     public BackupResp withCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
         return this;
@@ -379,23 +379,6 @@ public class BackupResp {
 
     public void setCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
-    }
-
-    public BackupResp withProviderId(String providerId) {
-        this.providerId = providerId;
-        return this;
-    }
-
-    /** 备份提供商ID，用于区分备份对象。当前取值包含：0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，
-     * 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。
-     * 
-     * @return providerId */
-    public String getProviderId() {
-        return providerId;
-    }
-
-    public void setProviderId(String providerId) {
-        this.providerId = providerId;
     }
 
     public BackupResp withCreatedAt(OffsetDateTime createdAt) {
@@ -743,6 +726,24 @@ public class BackupResp {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public BackupResp withProviderId(String providerId) {
+        this.providerId = providerId;
+        return this;
+    }
+
+    /** 备份提供商ID，用于区分备份对象。当前取值包含
+     * 0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，
+     * 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。
+     * 
+     * @return providerId */
+    public String getProviderId() {
+        return providerId;
+    }
+
+    public void setProviderId(String providerId) {
+        this.providerId = providerId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -753,7 +754,6 @@ public class BackupResp {
         }
         BackupResp backupResp = (BackupResp) o;
         return Objects.equals(this.checkpointId, backupResp.checkpointId)
-            && Objects.equals(this.providerId, backupResp.providerId)
             && Objects.equals(this.createdAt, backupResp.createdAt)
             && Objects.equals(this.description, backupResp.description)
             && Objects.equals(this.expiredAt, backupResp.expiredAt)
@@ -770,13 +770,13 @@ public class BackupResp {
             && Objects.equals(this.status, backupResp.status) && Objects.equals(this.updatedAt, backupResp.updatedAt)
             && Objects.equals(this.vaultId, backupResp.vaultId)
             && Objects.equals(this.replicationRecords, backupResp.replicationRecords)
-            && Objects.equals(this.enterpriseProjectId, backupResp.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, backupResp.enterpriseProjectId)
+            && Objects.equals(this.providerId, backupResp.providerId);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(checkpointId,
-            providerId,
             createdAt,
             description,
             expiredAt,
@@ -796,7 +796,8 @@ public class BackupResp {
             updatedAt,
             vaultId,
             replicationRecords,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            providerId);
     }
 
     @Override
@@ -804,7 +805,6 @@ public class BackupResp {
         StringBuilder sb = new StringBuilder();
         sb.append("class BackupResp {\n");
         sb.append("    checkpointId: ").append(toIndentedString(checkpointId)).append("\n");
-        sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    expiredAt: ").append(toIndentedString(expiredAt)).append("\n");
@@ -825,6 +825,7 @@ public class BackupResp {
         sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
         sb.append("    replicationRecords: ").append(toIndentedString(replicationRecords)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

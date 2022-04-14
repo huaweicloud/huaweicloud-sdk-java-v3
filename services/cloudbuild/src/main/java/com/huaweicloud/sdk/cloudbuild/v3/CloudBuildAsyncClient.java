@@ -108,6 +108,24 @@ public class CloudBuildAsyncClient {
             hcClient);
     }
 
+    /** 根据开始时间和结束时间查看构建任务的构建成功率 根据开始时间和结束时间查看构建任务的构建成功率
+     *
+     * @param ShowJobSuccessRatioRequest 请求对象
+     * @return CompletableFuture<ShowJobSuccessRatioResponse> */
+    public CompletableFuture<ShowJobSuccessRatioResponse> showJobSuccessRatioAsync(ShowJobSuccessRatioRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudBuildMeta.showJobSuccessRatio);
+    }
+
+    /** 根据开始时间和结束时间查看构建任务的构建成功率 根据开始时间和结束时间查看构建任务的构建成功率
+     *
+     * @param ShowJobSuccessRatioRequest 请求对象
+     * @return AsyncInvoker<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> */
+    public AsyncInvoker<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> showJobSuccessRatioAsyncInvoker(
+        ShowJobSuccessRatioRequest request) {
+        return new AsyncInvoker<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse>(request,
+            CloudBuildMeta.showJobSuccessRatio, hcClient);
+    }
+
     /** 查询指定代码仓库最近一次成功的构建历史 查询指定代码仓库最近一次成功的构建历史
      *
      * @param ShowLastHistoryRequest 请求对象

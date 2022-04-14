@@ -59,7 +59,9 @@ public class AddMemberResponse extends SdkResponse {
         return this;
     }
 
-    /** @return count */
+    /** 备份共享成员数量
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }

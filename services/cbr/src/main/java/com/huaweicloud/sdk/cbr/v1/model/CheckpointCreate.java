@@ -29,7 +29,7 @@ public class CheckpointCreate {
 
     private String projectId;
 
-    /** 状态 */
+    /** 状态:available,deleting,protecting,deleted,error-deleting,error */
     public static final class StatusEnum {
 
         /** Enum AVAILABLE for value: "available" */
@@ -38,11 +38,14 @@ public class CheckpointCreate {
         /** Enum DELETING for value: "deleting" */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
-        /** Enum CREATING for value: "creating" */
-        public static final StatusEnum CREATING = new StatusEnum("creating");
+        /** Enum PROTECTING for value: "protecting" */
+        public static final StatusEnum PROTECTING = new StatusEnum("protecting");
 
-        /** Enum RESTORING for value: "restoring" */
-        public static final StatusEnum RESTORING = new StatusEnum("restoring");
+        /** Enum DELETED for value: "deleted" */
+        public static final StatusEnum DELETED = new StatusEnum("deleted");
+
+        /** Enum ERROR_DELETING for value: "error-deleting" */
+        public static final StatusEnum ERROR_DELETING = new StatusEnum("error-deleting");
 
         /** Enum ERROR for value: "error" */
         public static final StatusEnum ERROR = new StatusEnum("error");
@@ -53,8 +56,9 @@ public class CheckpointCreate {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("available", AVAILABLE);
             map.put("deleting", DELETING);
-            map.put("creating", CREATING);
-            map.put("restoring", RESTORING);
+            map.put("protecting", PROTECTING);
+            map.put("deleted", DELETED);
+            map.put("error-deleting", ERROR_DELETING);
             map.put("error", ERROR);
             return Collections.unmodifiableMap(map);
         }
@@ -180,7 +184,7 @@ public class CheckpointCreate {
         return this;
     }
 
-    /** 状态
+    /** 状态:available,deleting,protecting,deleted,error-deleting,error
      * 
      * @return status */
     public StatusEnum getStatus() {

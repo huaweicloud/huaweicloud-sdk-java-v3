@@ -13,14 +13,46 @@ import java.util.function.Consumer;
 public class BatchResetPasswordResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "results")
+
+    private List<ModifyDbPwdResp> results = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "results")
+    public BatchResetPasswordResponse withResults(List<ModifyDbPwdResp> results) {
+        this.results = results;
+        return this;
+    }
 
-    private List<ModifyJobResp> results = null;
+    public BatchResetPasswordResponse addResultsItem(ModifyDbPwdResp resultsItem) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
+        }
+        this.results.add(resultsItem);
+        return this;
+    }
+
+    public BatchResetPasswordResponse withResults(Consumer<List<ModifyDbPwdResp>> resultsSetter) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
+        }
+        resultsSetter.accept(this.results);
+        return this;
+    }
+
+    /** Get results
+     * 
+     * @return results */
+    public List<ModifyDbPwdResp> getResults() {
+        return results;
+    }
+
+    public void setResults(List<ModifyDbPwdResp> results) {
+        this.results = results;
+    }
 
     public BatchResetPasswordResponse withCount(Integer count) {
         this.count = count;
@@ -38,38 +70,6 @@ public class BatchResetPasswordResponse extends SdkResponse {
         this.count = count;
     }
 
-    public BatchResetPasswordResponse withResults(List<ModifyJobResp> results) {
-        this.results = results;
-        return this;
-    }
-
-    public BatchResetPasswordResponse addResultsItem(ModifyJobResp resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
-        this.results.add(resultsItem);
-        return this;
-    }
-
-    public BatchResetPasswordResponse withResults(Consumer<List<ModifyJobResp>> resultsSetter) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
-        resultsSetter.accept(this.results);
-        return this;
-    }
-
-    /** 批量修改任务返回列表
-     * 
-     * @return results */
-    public List<ModifyJobResp> getResults() {
-        return results;
-    }
-
-    public void setResults(List<ModifyJobResp> results) {
-        this.results = results;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -79,21 +79,21 @@ public class BatchResetPasswordResponse extends SdkResponse {
             return false;
         }
         BatchResetPasswordResponse batchResetPasswordResponse = (BatchResetPasswordResponse) o;
-        return Objects.equals(this.count, batchResetPasswordResponse.count)
-            && Objects.equals(this.results, batchResetPasswordResponse.results);
+        return Objects.equals(this.results, batchResetPasswordResponse.results)
+            && Objects.equals(this.count, batchResetPasswordResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, results);
+        return Objects.hash(results, count);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchResetPasswordResponse {\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    results: ").append(toIndentedString(results)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,6 +31,26 @@ public class Configs {
 
     private HttpPutBody https;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sources")
+
+    private List<SourcesConfig> sources = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_protocol")
+
+    private String originProtocol;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force_redirect")
+
+    private ForceRedirectConfig forceRedirect;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compress")
+
+    private Compress compress;
+
     public Configs withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
         this.originRequestHeader = originRequestHeader;
         return this;
@@ -52,7 +72,7 @@ public class Configs {
         return this;
     }
 
-    /** 回源请求头配置
+    /** 回源请求头配置。
      * 
      * @return originRequestHeader */
     public List<OriginRequestHeader> getOriginRequestHeader() {
@@ -84,7 +104,7 @@ public class Configs {
         return this;
     }
 
-    /** http header配置
+    /** http header配置。
      * 
      * @return httpResponseHeader */
     public List<HttpResponseHeader> getHttpResponseHeader() {
@@ -145,6 +165,104 @@ public class Configs {
         this.https = https;
     }
 
+    public Configs withSources(List<SourcesConfig> sources) {
+        this.sources = sources;
+        return this;
+    }
+
+    public Configs addSourcesItem(SourcesConfig sourcesItem) {
+        if (this.sources == null) {
+            this.sources = new ArrayList<>();
+        }
+        this.sources.add(sourcesItem);
+        return this;
+    }
+
+    public Configs withSources(Consumer<List<SourcesConfig>> sourcesSetter) {
+        if (this.sources == null) {
+            this.sources = new ArrayList<>();
+        }
+        sourcesSetter.accept(this.sources);
+        return this;
+    }
+
+    /** 源站配置。
+     * 
+     * @return sources */
+    public List<SourcesConfig> getSources() {
+        return sources;
+    }
+
+    public void setSources(List<SourcesConfig> sources) {
+        this.sources = sources;
+    }
+
+    public Configs withOriginProtocol(String originProtocol) {
+        this.originProtocol = originProtocol;
+        return this;
+    }
+
+    /** 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
+     * 
+     * @return originProtocol */
+    public String getOriginProtocol() {
+        return originProtocol;
+    }
+
+    public void setOriginProtocol(String originProtocol) {
+        this.originProtocol = originProtocol;
+    }
+
+    public Configs withForceRedirect(ForceRedirectConfig forceRedirect) {
+        this.forceRedirect = forceRedirect;
+        return this;
+    }
+
+    public Configs withForceRedirect(Consumer<ForceRedirectConfig> forceRedirectSetter) {
+        if (this.forceRedirect == null) {
+            this.forceRedirect = new ForceRedirectConfig();
+            forceRedirectSetter.accept(this.forceRedirect);
+        }
+
+        return this;
+    }
+
+    /** Get forceRedirect
+     * 
+     * @return forceRedirect */
+    public ForceRedirectConfig getForceRedirect() {
+        return forceRedirect;
+    }
+
+    public void setForceRedirect(ForceRedirectConfig forceRedirect) {
+        this.forceRedirect = forceRedirect;
+    }
+
+    public Configs withCompress(Compress compress) {
+        this.compress = compress;
+        return this;
+    }
+
+    public Configs withCompress(Consumer<Compress> compressSetter) {
+        if (this.compress == null) {
+            this.compress = new Compress();
+            compressSetter.accept(this.compress);
+        }
+
+        return this;
+    }
+
+    /** Get compress
+     * 
+     * @return compress */
+    public Compress getCompress() {
+        return compress;
+    }
+
+    public void setCompress(Compress compress) {
+        this.compress = compress;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -156,12 +274,23 @@ public class Configs {
         Configs configs = (Configs) o;
         return Objects.equals(this.originRequestHeader, configs.originRequestHeader)
             && Objects.equals(this.httpResponseHeader, configs.httpResponseHeader)
-            && Objects.equals(this.urlAuth, configs.urlAuth) && Objects.equals(this.https, configs.https);
+            && Objects.equals(this.urlAuth, configs.urlAuth) && Objects.equals(this.https, configs.https)
+            && Objects.equals(this.sources, configs.sources)
+            && Objects.equals(this.originProtocol, configs.originProtocol)
+            && Objects.equals(this.forceRedirect, configs.forceRedirect)
+            && Objects.equals(this.compress, configs.compress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(originRequestHeader, httpResponseHeader, urlAuth, https);
+        return Objects.hash(originRequestHeader,
+            httpResponseHeader,
+            urlAuth,
+            https,
+            sources,
+            originProtocol,
+            forceRedirect,
+            compress);
     }
 
     @Override
@@ -172,6 +301,10 @@ public class Configs {
         sb.append("    httpResponseHeader: ").append(toIndentedString(httpResponseHeader)).append("\n");
         sb.append("    urlAuth: ").append(toIndentedString(urlAuth)).append("\n");
         sb.append("    https: ").append(toIndentedString(https)).append("\n");
+        sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
+        sb.append("    originProtocol: ").append(toIndentedString(originProtocol)).append("\n");
+        sb.append("    forceRedirect: ").append(toIndentedString(forceRedirect)).append("\n");
+        sb.append("    compress: ").append(toIndentedString(compress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

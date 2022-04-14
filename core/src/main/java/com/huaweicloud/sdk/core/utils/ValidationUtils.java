@@ -28,4 +28,12 @@ public final class ValidationUtils {
         }
         return value;
     }
+
+    public static int assertIntIsInRange(int value, int min, int max, String name) {
+        if (value < min || value > max) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT,
+                    "%s(%d) must be between %d and %d!", name, value, min, max));
+        }
+        return value;
+    }
 }

@@ -27,7 +27,7 @@ public class ListServiceResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：总数| |参数的约束及描述：总数|
+    /** 总数。
      * 
      * @return totalCount */
     public Integer getTotalCount() {
@@ -59,7 +59,7 @@ public class ListServiceResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：资源基本信息列表| |参数约束以及描述：资源基本信息列表|
+    /** 资源基本信息列表，具体请参见表3。
      * 
      * @return infos */
     public List<ServiceResourceInfo> getInfos() {

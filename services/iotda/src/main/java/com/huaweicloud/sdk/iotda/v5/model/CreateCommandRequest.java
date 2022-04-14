@@ -15,6 +15,11 @@ public class CreateCommandRequest {
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Sp-Auth-Token")
+
+    private String spAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Instance-Id")
 
     private String instanceId;
@@ -29,7 +34,7 @@ public class CreateCommandRequest {
         return this;
     }
 
-    /** **参数说明**：下发消息的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获。
+    /** **参数说明**：下发消息的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * 
      * @return deviceId */
     public String getDeviceId() {
@@ -38,6 +43,22 @@ public class CreateCommandRequest {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
+    }
+
+    public CreateCommandRequest withSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+        return this;
+    }
+
+    /** Sp用户Token。通过调用IoBPS服务获取SP用户Token
+     * 
+     * @return spAuthToken */
+    public String getSpAuthToken() {
+        return spAuthToken;
+    }
+
+    public void setSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
     }
 
     public CreateCommandRequest withInstanceId(String instanceId) {
@@ -91,13 +112,14 @@ public class CreateCommandRequest {
         }
         CreateCommandRequest createCommandRequest = (CreateCommandRequest) o;
         return Objects.equals(this.deviceId, createCommandRequest.deviceId)
+            && Objects.equals(this.spAuthToken, createCommandRequest.spAuthToken)
             && Objects.equals(this.instanceId, createCommandRequest.instanceId)
             && Objects.equals(this.body, createCommandRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, instanceId, body);
+        return Objects.hash(deviceId, spAuthToken, instanceId, body);
     }
 
     @Override
@@ -105,6 +127,7 @@ public class CreateCommandRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCommandRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+        sb.append("    spAuthToken: ").append(toIndentedString(spAuthToken)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

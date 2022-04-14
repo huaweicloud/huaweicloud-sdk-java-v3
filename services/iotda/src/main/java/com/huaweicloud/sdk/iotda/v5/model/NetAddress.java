@@ -44,7 +44,7 @@ public class NetAddress {
         return this;
     }
 
-    /** **参数说明**：服务对应端口 minimum: 0 maximum: 65535
+    /** **参数说明**：服务对应端口 maximum: 65535
      * 
      * @return port */
     public Integer getPort() {

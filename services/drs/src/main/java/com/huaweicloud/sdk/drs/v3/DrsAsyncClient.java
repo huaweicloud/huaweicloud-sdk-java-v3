@@ -294,7 +294,7 @@ public class DrsAsyncClient {
             hcClient);
     }
 
-    /** 批量设置同步策略 批量设置MySQL同步策略，包括冲突策略、过滤DROP Datase、对象同步范围。
+    /** 批量设置同步策略 - 批量设置同步策略，包括冲突策略、过滤DROP Datase、对象同步范围。 - 设置kafka同步策略
      *
      * @param BatchSetPolicyRequest 请求对象
      * @return CompletableFuture<BatchSetPolicyResponse> */
@@ -302,7 +302,7 @@ public class DrsAsyncClient {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchSetPolicy);
     }
 
-    /** 批量设置同步策略 批量设置MySQL同步策略，包括冲突策略、过滤DROP Datase、对象同步范围。
+    /** 批量设置同步策略 - 批量设置同步策略，包括冲突策略、过滤DROP Datase、对象同步范围。 - 设置kafka同步策略
      *
      * @param BatchSetPolicyRequest 请求对象
      * @return AsyncInvoker<BatchSetPolicyRequest, BatchSetPolicyResponse> */
@@ -310,6 +310,22 @@ public class DrsAsyncClient {
         BatchSetPolicyRequest request) {
         return new AsyncInvoker<BatchSetPolicyRequest, BatchSetPolicyResponse>(request, DrsMeta.batchSetPolicy,
             hcClient);
+    }
+
+    /** 批量配置异常通知 批量设置告警信息，已结束的任务不支持设置。 - 支持选择已有的SMN主题和手动输入手机号、邮箱两种方式，具体根据自己使用情况选择
+     *
+     * @param BatchSetSmnRequest 请求对象
+     * @return CompletableFuture<BatchSetSmnResponse> */
+    public CompletableFuture<BatchSetSmnResponse> batchSetSmnAsync(BatchSetSmnRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.batchSetSmn);
+    }
+
+    /** 批量配置异常通知 批量设置告警信息，已结束的任务不支持设置。 - 支持选择已有的SMN主题和手动输入手机号、邮箱两种方式，具体根据自己使用情况选择
+     *
+     * @param BatchSetSmnRequest 请求对象
+     * @return AsyncInvoker<BatchSetSmnRequest, BatchSetSmnResponse> */
+    public AsyncInvoker<BatchSetSmnRequest, BatchSetSmnResponse> batchSetSmnAsyncInvoker(BatchSetSmnRequest request) {
+        return new AsyncInvoker<BatchSetSmnRequest, BatchSetSmnResponse>(request, DrsMeta.batchSetSmn, hcClient);
     }
 
     /** 批量设置任务限速 批量设置任务限速，任务创建成功后默认不限速。 - 限速：自定义的最大迁移速度，迁移过程中的迁移速度将不会超过该速度。 -

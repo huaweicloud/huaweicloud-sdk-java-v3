@@ -24,7 +24,7 @@ public class CreateSubCustomerResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：客户ID| |参数的约束及描述：只有成功或客户向伙伴授权发生异常（CBC.5025）时才会返回，且只允许最大长度64的字符串|
+    /** 客户ID。 只有成功或者错误码在CBC.99000050时才会返回。
      * 
      * @return domainId */
     public String getDomainId() {
@@ -40,7 +40,7 @@ public class CreateSubCustomerResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：用户登录名| |参数的约束及描述：只有成功的时候才会返回，且只允许最大长度64的字符串|
+    /** 客户的华为云账号名。 若请求参数中传递了此参数值，此处返回的响应值与请求参数中取值一致。若请求参数中未传递此参数值，此处返回的响应值为系统随机生成的32位字符串。 只有成功时或者错误码在CBC.99000050时才会返回。
      * 
      * @return domainName */
     public String getDomainName() {

@@ -26,7 +26,7 @@ public class HttpGetBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_source")
 
-    private String certificateSource;
+    private Integer certificateSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_status")
@@ -81,7 +81,7 @@ public class HttpGetBody {
         this.certificateValue = certificateValue;
     }
 
-    public HttpGetBody withCertificateSource(String certificateSource) {
+    public HttpGetBody withCertificateSource(Integer certificateSource) {
         this.certificateSource = certificateSource;
         return this;
     }
@@ -89,11 +89,11 @@ public class HttpGetBody {
     /** 证书来源。1：代表华为云托管证书；0：表示自有证书。 默认值0。当证书开启时必返回该字段。
      * 
      * @return certificateSource */
-    public String getCertificateSource() {
+    public Integer getCertificateSource() {
         return certificateSource;
     }
 
-    public void setCertificateSource(String certificateSource) {
+    public void setCertificateSource(Integer certificateSource) {
         this.certificateSource = certificateSource;
     }
 

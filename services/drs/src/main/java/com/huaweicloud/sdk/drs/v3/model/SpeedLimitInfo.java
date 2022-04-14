@@ -23,6 +23,11 @@ public class SpeedLimitInfo {
 
     private String speed;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_utc")
+
+    private Boolean isUtc;
+
     public SpeedLimitInfo withBegin(String begin) {
         this.begin = begin;
         return this;
@@ -71,6 +76,22 @@ public class SpeedLimitInfo {
         this.speed = speed;
     }
 
+    public SpeedLimitInfo withIsUtc(Boolean isUtc) {
+        this.isUtc = isUtc;
+        return this;
+    }
+
+    /** 是否为UTC时间
+     * 
+     * @return isUtc */
+    public Boolean getIsUtc() {
+        return isUtc;
+    }
+
+    public void setIsUtc(Boolean isUtc) {
+        this.isUtc = isUtc;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -81,12 +102,12 @@ public class SpeedLimitInfo {
         }
         SpeedLimitInfo speedLimitInfo = (SpeedLimitInfo) o;
         return Objects.equals(this.begin, speedLimitInfo.begin) && Objects.equals(this.end, speedLimitInfo.end)
-            && Objects.equals(this.speed, speedLimitInfo.speed);
+            && Objects.equals(this.speed, speedLimitInfo.speed) && Objects.equals(this.isUtc, speedLimitInfo.isUtc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(begin, end, speed);
+        return Objects.hash(begin, end, speed, isUtc);
     }
 
     @Override
@@ -96,6 +117,7 @@ public class SpeedLimitInfo {
         sb.append("    begin: ").append(toIndentedString(begin)).append("\n");
         sb.append("    end: ").append(toIndentedString(end)).append("\n");
         sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
+        sb.append("    isUtc: ").append(toIndentedString(isUtc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

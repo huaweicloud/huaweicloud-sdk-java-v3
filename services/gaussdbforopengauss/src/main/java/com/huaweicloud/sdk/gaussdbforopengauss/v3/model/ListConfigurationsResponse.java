@@ -24,11 +24,40 @@ public class ListConfigurationsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="count")
+    
+    
+    private Integer count;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configurations")
     
     
     private List<ConfigurationSummary> configurations = null;
     
+    public ListConfigurationsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get count
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    
+
     public ListConfigurationsResponse withConfigurations(List<ConfigurationSummary> configurations) {
         this.configurations = configurations;
         return this;
@@ -74,16 +103,18 @@ public class ListConfigurationsResponse extends SdkResponse {
             return false;
         }
         ListConfigurationsResponse listConfigurationsResponse = (ListConfigurationsResponse) o;
-        return Objects.equals(this.configurations, listConfigurationsResponse.configurations);
+        return Objects.equals(this.count, listConfigurationsResponse.count) &&
+            Objects.equals(this.configurations, listConfigurationsResponse.configurations);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(configurations);
+        return Objects.hash(count, configurations);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListConfigurationsResponse {\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
         sb.append("}");
         return sb.toString();

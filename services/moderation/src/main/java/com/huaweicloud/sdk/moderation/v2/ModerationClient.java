@@ -89,6 +89,24 @@ public class ModerationClient {
             ModerationMeta.runImageModeration, hcClient);
     }
 
+    /** 语音内容审核 分析并识别用户上传的语音内容是否有敏感内容（如色情、政治等），并将识别结果 返回给用户。
+     *
+     * @param RunModerationAudioRequest 请求对象
+     * @return RunModerationAudioResponse */
+    public RunModerationAudioResponse runModerationAudio(RunModerationAudioRequest request) {
+        return hcClient.syncInvokeHttp(request, ModerationMeta.runModerationAudio);
+    }
+
+    /** 语音内容审核 分析并识别用户上传的语音内容是否有敏感内容（如色情、政治等），并将识别结果 返回给用户。
+     *
+     * @param RunModerationAudioRequest 请求对象
+     * @return SyncInvoker<RunModerationAudioRequest, RunModerationAudioResponse> */
+    public SyncInvoker<RunModerationAudioRequest, RunModerationAudioResponse> runModerationAudioInvoker(
+        RunModerationAudioRequest request) {
+        return new SyncInvoker<RunModerationAudioRequest, RunModerationAudioResponse>(request,
+            ModerationMeta.runModerationAudio, hcClient);
+    }
+
     /** 任务提交 提交批量图像内容审核任务，返回任务标识，任务标识可用于查询任务结果。此接口为异步接口，相对于批量接口，支持更大图片列表批次。
      *
      * @param RunTaskSumbitRequest 请求对象

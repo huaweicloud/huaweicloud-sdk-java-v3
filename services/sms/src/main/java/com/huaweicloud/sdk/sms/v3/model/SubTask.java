@@ -38,6 +38,11 @@ public class SubTask {
 
     private String userOp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_trace")
+
+    private String processTrace;
+
     public SubTask withName(String name) {
         this.name = name;
         return this;
@@ -134,6 +139,22 @@ public class SubTask {
         this.userOp = userOp;
     }
 
+    public SubTask withProcessTrace(String processTrace) {
+        this.processTrace = processTrace;
+        return this;
+    }
+
+    /** 迁移或同步时，具体的迁移详情
+     * 
+     * @return processTrace */
+    public String getProcessTrace() {
+        return processTrace;
+    }
+
+    public void setProcessTrace(String processTrace) {
+        this.processTrace = processTrace;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -145,12 +166,13 @@ public class SubTask {
         SubTask subTask = (SubTask) o;
         return Objects.equals(this.name, subTask.name) && Objects.equals(this.progress, subTask.progress)
             && Objects.equals(this.startDate, subTask.startDate) && Objects.equals(this.endDate, subTask.endDate)
-            && Objects.equals(this.migrateSpeed, subTask.migrateSpeed) && Objects.equals(this.userOp, subTask.userOp);
+            && Objects.equals(this.migrateSpeed, subTask.migrateSpeed) && Objects.equals(this.userOp, subTask.userOp)
+            && Objects.equals(this.processTrace, subTask.processTrace);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, progress, startDate, endDate, migrateSpeed, userOp);
+        return Objects.hash(name, progress, startDate, endDate, migrateSpeed, userOp, processTrace);
     }
 
     @Override
@@ -163,6 +185,7 @@ public class SubTask {
         sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
         sb.append("    migrateSpeed: ").append(toIndentedString(migrateSpeed)).append("\n");
         sb.append("    userOp: ").append(toIndentedString(userOp)).append("\n");
+        sb.append("    processTrace: ").append(toIndentedString(processTrace)).append("\n");
         sb.append("}");
         return sb.toString();
     }

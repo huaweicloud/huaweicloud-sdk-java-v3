@@ -18,7 +18,7 @@ public class AccountManager {
         return this;
     }
 
-    /** |参数名称：客户经理登录名称。| |参数约束及描述：客户经理登录名称。最大长度128，必填|
+    /** 客户经理登录名称。
      * 
      * @return accountName */
     public String getAccountName() {

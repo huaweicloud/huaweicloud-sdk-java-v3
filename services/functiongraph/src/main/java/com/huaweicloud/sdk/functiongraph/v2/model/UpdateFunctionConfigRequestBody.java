@@ -176,6 +176,11 @@ public class UpdateFunctionConfigRequestBody {
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encrypted_user_data")
+
+    private String encryptedUserData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xrole")
 
     private String xrole;
@@ -328,6 +333,22 @@ public class UpdateFunctionConfigRequestBody {
 
     public void setUserData(String userData) {
         this.userData = userData;
+    }
+
+    public UpdateFunctionConfigRequestBody withEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
+        return this;
+    }
+
+    /** 用户自定义的name/value信息，用于需要加密的配置。
+     * 
+     * @return encryptedUserData */
+    public String getEncryptedUserData() {
+        return encryptedUserData;
+    }
+
+    public void setEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
     }
 
     public UpdateFunctionConfigRequestBody withXrole(String xrole) {
@@ -548,6 +569,7 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.handler, updateFunctionConfigRequestBody.handler)
             && Objects.equals(this.memorySize, updateFunctionConfigRequestBody.memorySize)
             && Objects.equals(this.userData, updateFunctionConfigRequestBody.userData)
+            && Objects.equals(this.encryptedUserData, updateFunctionConfigRequestBody.encryptedUserData)
             && Objects.equals(this.xrole, updateFunctionConfigRequestBody.xrole)
             && Objects.equals(this.appXrole, updateFunctionConfigRequestBody.appXrole)
             && Objects.equals(this.description, updateFunctionConfigRequestBody.description)
@@ -569,6 +591,7 @@ public class UpdateFunctionConfigRequestBody {
             handler,
             memorySize,
             userData,
+            encryptedUserData,
             xrole,
             appXrole,
             description,
@@ -592,6 +615,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    encryptedUserData: ").append(toIndentedString(encryptedUserData)).append("\n");
         sb.append("    xrole: ").append(toIndentedString(xrole)).append("\n");
         sb.append("    appXrole: ").append(toIndentedString(appXrole)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

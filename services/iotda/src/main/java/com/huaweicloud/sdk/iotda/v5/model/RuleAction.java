@@ -29,6 +29,31 @@ public class RuleAction {
 
     private ActionDeviceCommand deviceCommand;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dis_forwarding")
+
+    private ActionDisForwarding disForwarding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_forwarding")
+
+    private ActionObsForwarding obsForwarding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roma_forwarding")
+
+    private ActionRomaForwarding romaForwarding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iota_forwarding")
+
+    private ActionIoTAForwarding iotaForwarding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_forwarding")
+
+    private ActionKafkaForwarding kafkaForwarding;
+
     public RuleAction withType(String type) {
         this.type = type;
         return this;
@@ -123,6 +148,131 @@ public class RuleAction {
         this.deviceCommand = deviceCommand;
     }
 
+    public RuleAction withDisForwarding(ActionDisForwarding disForwarding) {
+        this.disForwarding = disForwarding;
+        return this;
+    }
+
+    public RuleAction withDisForwarding(Consumer<ActionDisForwarding> disForwardingSetter) {
+        if (this.disForwarding == null) {
+            this.disForwarding = new ActionDisForwarding();
+            disForwardingSetter.accept(this.disForwarding);
+        }
+
+        return this;
+    }
+
+    /** Get disForwarding
+     * 
+     * @return disForwarding */
+    public ActionDisForwarding getDisForwarding() {
+        return disForwarding;
+    }
+
+    public void setDisForwarding(ActionDisForwarding disForwarding) {
+        this.disForwarding = disForwarding;
+    }
+
+    public RuleAction withObsForwarding(ActionObsForwarding obsForwarding) {
+        this.obsForwarding = obsForwarding;
+        return this;
+    }
+
+    public RuleAction withObsForwarding(Consumer<ActionObsForwarding> obsForwardingSetter) {
+        if (this.obsForwarding == null) {
+            this.obsForwarding = new ActionObsForwarding();
+            obsForwardingSetter.accept(this.obsForwarding);
+        }
+
+        return this;
+    }
+
+    /** Get obsForwarding
+     * 
+     * @return obsForwarding */
+    public ActionObsForwarding getObsForwarding() {
+        return obsForwarding;
+    }
+
+    public void setObsForwarding(ActionObsForwarding obsForwarding) {
+        this.obsForwarding = obsForwarding;
+    }
+
+    public RuleAction withRomaForwarding(ActionRomaForwarding romaForwarding) {
+        this.romaForwarding = romaForwarding;
+        return this;
+    }
+
+    public RuleAction withRomaForwarding(Consumer<ActionRomaForwarding> romaForwardingSetter) {
+        if (this.romaForwarding == null) {
+            this.romaForwarding = new ActionRomaForwarding();
+            romaForwardingSetter.accept(this.romaForwarding);
+        }
+
+        return this;
+    }
+
+    /** Get romaForwarding
+     * 
+     * @return romaForwarding */
+    public ActionRomaForwarding getRomaForwarding() {
+        return romaForwarding;
+    }
+
+    public void setRomaForwarding(ActionRomaForwarding romaForwarding) {
+        this.romaForwarding = romaForwarding;
+    }
+
+    public RuleAction withIotaForwarding(ActionIoTAForwarding iotaForwarding) {
+        this.iotaForwarding = iotaForwarding;
+        return this;
+    }
+
+    public RuleAction withIotaForwarding(Consumer<ActionIoTAForwarding> iotaForwardingSetter) {
+        if (this.iotaForwarding == null) {
+            this.iotaForwarding = new ActionIoTAForwarding();
+            iotaForwardingSetter.accept(this.iotaForwarding);
+        }
+
+        return this;
+    }
+
+    /** Get iotaForwarding
+     * 
+     * @return iotaForwarding */
+    public ActionIoTAForwarding getIotaForwarding() {
+        return iotaForwarding;
+    }
+
+    public void setIotaForwarding(ActionIoTAForwarding iotaForwarding) {
+        this.iotaForwarding = iotaForwarding;
+    }
+
+    public RuleAction withKafkaForwarding(ActionKafkaForwarding kafkaForwarding) {
+        this.kafkaForwarding = kafkaForwarding;
+        return this;
+    }
+
+    public RuleAction withKafkaForwarding(Consumer<ActionKafkaForwarding> kafkaForwardingSetter) {
+        if (this.kafkaForwarding == null) {
+            this.kafkaForwarding = new ActionKafkaForwarding();
+            kafkaForwardingSetter.accept(this.kafkaForwarding);
+        }
+
+        return this;
+    }
+
+    /** Get kafkaForwarding
+     * 
+     * @return kafkaForwarding */
+    public ActionKafkaForwarding getKafkaForwarding() {
+        return kafkaForwarding;
+    }
+
+    public void setKafkaForwarding(ActionKafkaForwarding kafkaForwarding) {
+        this.kafkaForwarding = kafkaForwarding;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -135,12 +285,25 @@ public class RuleAction {
         return Objects.equals(this.type, ruleAction.type)
             && Objects.equals(this.smnForwarding, ruleAction.smnForwarding)
             && Objects.equals(this.deviceAlarm, ruleAction.deviceAlarm)
-            && Objects.equals(this.deviceCommand, ruleAction.deviceCommand);
+            && Objects.equals(this.deviceCommand, ruleAction.deviceCommand)
+            && Objects.equals(this.disForwarding, ruleAction.disForwarding)
+            && Objects.equals(this.obsForwarding, ruleAction.obsForwarding)
+            && Objects.equals(this.romaForwarding, ruleAction.romaForwarding)
+            && Objects.equals(this.iotaForwarding, ruleAction.iotaForwarding)
+            && Objects.equals(this.kafkaForwarding, ruleAction.kafkaForwarding);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, smnForwarding, deviceAlarm, deviceCommand);
+        return Objects.hash(type,
+            smnForwarding,
+            deviceAlarm,
+            deviceCommand,
+            disForwarding,
+            obsForwarding,
+            romaForwarding,
+            iotaForwarding,
+            kafkaForwarding);
     }
 
     @Override
@@ -151,6 +314,11 @@ public class RuleAction {
         sb.append("    smnForwarding: ").append(toIndentedString(smnForwarding)).append("\n");
         sb.append("    deviceAlarm: ").append(toIndentedString(deviceAlarm)).append("\n");
         sb.append("    deviceCommand: ").append(toIndentedString(deviceCommand)).append("\n");
+        sb.append("    disForwarding: ").append(toIndentedString(disForwarding)).append("\n");
+        sb.append("    obsForwarding: ").append(toIndentedString(obsForwarding)).append("\n");
+        sb.append("    romaForwarding: ").append(toIndentedString(romaForwarding)).append("\n");
+        sb.append("    iotaForwarding: ").append(toIndentedString(iotaForwarding)).append("\n");
+        sb.append("    kafkaForwarding: ").append(toIndentedString(kafkaForwarding)).append("\n");
         sb.append("}");
         return sb.toString();
     }

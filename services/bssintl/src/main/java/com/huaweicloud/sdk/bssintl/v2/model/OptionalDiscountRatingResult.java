@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -20,17 +19,17 @@ public class OptionalDiscountRatingResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private BigDecimal amount;
+    private Double amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_website_amount")
 
-    private BigDecimal officialWebsiteAmount;
+    private Double officialWebsiteAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private BigDecimal discountAmount;
+    private Double discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -62,7 +61,7 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** |参数名称：折扣优惠Id| |参数约束及描述：折扣优惠Id|
+    /** 折扣优惠ID。
      * 
      * @return discountId */
     public String getDiscountId() {
@@ -73,51 +72,51 @@ public class OptionalDiscountRatingResult {
         this.discountId = discountId;
     }
 
-    public OptionalDiscountRatingResult withAmount(BigDecimal amount) {
+    public OptionalDiscountRatingResult withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    /** |参数名称：总额，即最终优惠后的金额，amount= official_website_amount - discountAmount|
+    /** 总额，即最终优惠后的金额。 amount= official_website_amount - discountAmount。
      * 
      * @return amount */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public OptionalDiscountRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public OptionalDiscountRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
 
-    /** |参数名称：官网价| |参数约束及描述：官网价|
+    /** 包年/包月产品的官网价。
      * 
      * @return officialWebsiteAmount */
-    public BigDecimal getOfficialWebsiteAmount() {
+    public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
-    public OptionalDiscountRatingResult withDiscountAmount(BigDecimal discountAmount) {
+    public OptionalDiscountRatingResult withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
 
-    /** |参数名称：优惠额| |参数约束及描述：（官网价和总价的差）|
+    /** 可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额。
      * 
      * @return discountAmount */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
@@ -126,7 +125,7 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** |参数名称：度量单位标识| |参数约束及描述：1：元|
+    /** 价格度量单位标识。 1：元
      * 
      * @return measureId */
     public Integer getMeasureId() {
@@ -142,7 +141,7 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** |参数名称：折扣优惠类型：合同商务折扣：605(华为云BE场景下的合同商务折扣)、606(分销商BE场景下的合同商务折扣)伙伴授予折扣：607|
+    /** 折扣优惠类型。 合同商务折扣：605：华为云BE场景下的合同商务折扣606：分销商BE场景下的合同商务折扣 伙伴授予折扣：607：合作伙伴授予折扣-折扣率
      * 
      * @return discountType */
     public Integer getDiscountType() {
@@ -158,7 +157,7 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** |参数名称：折扣名称| |参数约束及描述：折扣名称|
+    /** 折扣名称。
      * 
      * @return discountName */
     public String getDiscountName() {
@@ -174,8 +173,7 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** |参数名称：是否为最优折扣|
-     * |参数约束及描述：0：不是最优折扣；为缺省值。1：是最优折扣；最优折扣：在商务折扣、伙伴折扣中选择（优惠金额最大的折扣为最优，优惠金额相等则按此顺序排优先级），促销折扣，折扣券不参与最优折扣的计算|
+    /** 是否为最优折扣。 0：不是最优折扣，为缺省值。1：是最优折扣最优折扣：在商务折扣、伙伴折扣中选择（优惠金额最大的折扣为最优，优惠金额相等则按此顺序排优先级），促销折扣，折扣券不参与最优折扣的计算。
      * 
      * @return bestOffer */
     public Integer getBestOffer() {
@@ -209,7 +207,7 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** |参数名称：产品询价结果| |参数的约束及描述：产品询价结果|
+    /** 产品询价结果，具体参见表5。
      * 
      * @return productRatingResults */
     public List<PeriodProductRatingResult> getProductRatingResults() {

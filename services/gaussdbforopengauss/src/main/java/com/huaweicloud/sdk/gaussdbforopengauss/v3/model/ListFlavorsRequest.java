@@ -158,7 +158,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * 查询记录数。
+     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
      * @return limit
      */
     public Integer getLimit() {
@@ -180,7 +180,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * 偏移量。
+     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
      * @return offset
      */
     public Integer getOffset() {

@@ -38,7 +38,7 @@ public class UrlAuth {
         return this;
     }
 
-    /** A/B/C类防盗链开关（\"off\"/\"on\"）。
+    /** A/B/C类防盗链开关（on：开启，off：关闭）。
      * 
      * @return status */
     public String getStatus() {

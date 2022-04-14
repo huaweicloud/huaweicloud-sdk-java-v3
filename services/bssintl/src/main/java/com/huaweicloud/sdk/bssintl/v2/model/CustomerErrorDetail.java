@@ -28,7 +28,7 @@ public class CustomerErrorDetail {
         return this;
     }
 
-    /** |参数名称：返回码。具体请参见表 未命名。注意，这个时候的状态码全部是200| |参数约束及描述：返回码。具体请参见表 未命名。注意，这个时候的状态码全部是200|
+    /** 返回码。具体请参见状态码。 注意，此时返回的状态码全部为200。
      * 
      * @return errorCode */
     public String getErrorCode() {
@@ -44,7 +44,7 @@ public class CustomerErrorDetail {
         return this;
     }
 
-    /** |参数名称：返回码的描述信息。| |参数约束及描述：返回码的描述信息。|
+    /** 返回码的描述信息。
      * 
      * @return errorMsg */
     public String getErrorMsg() {
@@ -60,7 +60,7 @@ public class CustomerErrorDetail {
         return this;
     }
 
-    /** |参数名称：标示ID。该接口对应的是customerId。| |参数约束及描述：标示ID。该接口对应的是customerId。|
+    /** 标识ID。该参数对应的是customer_ids。
      * 
      * @return id */
     public String getId() {

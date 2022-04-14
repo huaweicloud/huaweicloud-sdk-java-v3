@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /** MonthlyBillRes */
@@ -97,57 +96,57 @@ public class MonthlyBillRes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_amount")
 
-    private BigDecimal consumeAmount;
+    private Double consumeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cash_amount")
 
-    private BigDecimal cashAmount;
+    private Double cashAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
 
-    private BigDecimal creditAmount;
+    private Double creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_amount")
 
-    private BigDecimal couponAmount;
+    private Double couponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flexipurchase_coupon_amount")
 
-    private BigDecimal flexipurchaseCouponAmount;
+    private Double flexipurchaseCouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stored_card_amount")
 
-    private BigDecimal storedCardAmount;
+    private Double storedCardAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bonus_amount")
 
-    private BigDecimal bonusAmount;
+    private Double bonusAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    private BigDecimal debtAmount;
+    private Double debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adjustment_amount")
 
-    private BigDecimal adjustmentAmount;
+    private Double adjustmentAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_amount")
 
-    private BigDecimal officialAmount;
+    private Double officialAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private BigDecimal discountAmount;
+    private Double discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -164,7 +163,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：资源详单数据所在账期| |参数的约束及描述：格式为YYYY-MM|
+    /** 资源详单数据所在账期，格式为YYYY-MM。 例如2020-01。
      * 
      * @return cycle */
     public String getCycle() {
@@ -180,7 +179,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：消费日期| |参数的约束及描述：消费日期，格式为：YYYY-MM-DD|
+    /** 消费日期，格式为YYYY-MM-DD。 说明： 当statistic_type=2时该字段才有值，否则返回null。
      * 
      * @return billDate */
     public String getBillDate() {
@@ -196,8 +195,8 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：账单类型| |参数的约束及描述：该参数非必填，1：消费-新购；2：消费-续订；3：消费-变更；4：退款-退订；5：消费-使用；8：消费-自动续订；9：调账-补偿；12：消费-按时计费；13：消费-退订手续费；
-     * 15消费-税金；14：消费-服务支持计划月末扣费；16：调账-扣费 100：退款-退订税金 101：调账-补偿税金 102：调账-扣费税金|
+    /** 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额 说明：
+     * 保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴顾问销售类子客户，且为后付费用户。 20：退款-变更100：退款-退订税金101：调账-补偿税金102：调账-扣费税金
      * 
      * @return billType */
     public Integer getBillType() {
@@ -213,8 +212,8 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：消费的客户账号ID。| |参数约束及描述：如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID;
-     * 如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。|
+    /** 消费的客户账号ID。
+     * 如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。
      * 
      * @return customerId */
     public String getCustomerId() {
@@ -230,7 +229,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：云服务区编码| |参数的约束及描述：该参数非必填，例如：“cn-north-1”。|
+    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * 
      * @return region */
     public String getRegion() {
@@ -246,7 +245,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：云服务区名称| |参数的约束及描述：云服务区名称|
+    /** 云服务区名称，例如：“中国-香港”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
      * 
      * @return regionName */
     public String getRegionName() {
@@ -262,7 +261,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：云服务类型编码| |参数的约束及描述：该参数非必填,，例如OBS的云服务类型编码为“hws.service.type.obs”|
+    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
      * 
      * @return cloudServiceType */
     public String getCloudServiceType() {
@@ -278,7 +277,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：资源类型编码| |参数的约束及描述：该参数非必填，例如ECS的VM为“hws.resource.type.vm”。|
+    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * 
      * @return resourceTypeCode */
     public String getResourceTypeCode() {
@@ -294,7 +293,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：服务类型编码名称| |参数约束及描述：资源类型编码名称|
+    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
      * 
      * @return cloudServiceTypeName */
     public String getCloudServiceTypeName() {
@@ -310,7 +309,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：资源类型编码名称| |参数约束及描述：服务类型编码名称|
+    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
      * 
      * @return resourceTypeName */
     public String getResourceTypeName() {
@@ -326,7 +325,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：资源实例ID| |参数的约束及描述：该参数非必填|
+    /** 资源实例ID。
      * 
      * @return resInstanceId */
     public String getResInstanceId() {
@@ -342,7 +341,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：资源名称| |参数的约束及描述：客户在创建资源的时候，可以输入资源名称，有些资源也可以在管理资源时，修改资源名称|
+    /** 资源名称。客户在创建资源的时候，可以输入资源名称，有些资源也可以在管理资源时，修改资源名称。
      * 
      * @return resourceName */
     public String getResourceName() {
@@ -358,7 +357,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：资源标签| |参数的约束及描述：客户在创建资源的时候，可以输入资源名称，有些资源也可以在管理资源时，修改资源名称|
+    /** 资源标签。客户在管理资源的时候，可以设置资源标签。
      * 
      * @return resourceTag */
     public String getResourceTag() {
@@ -374,7 +373,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：SKU编码| |参数的约束及描述：SKU（Stock Keeping Unit，库存量单元）编码，产品下的SKU分类属性|
+    /** SKU编码，在账单中唯一标识一个资源的规格。
      * 
      * @return skuCode */
     public String getSkuCode() {
@@ -390,7 +389,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：企业项目ID| |参数的约束及描述：该参数非必填|
+    /** 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
      * 
      * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
@@ -406,7 +405,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：企业项目名称| |参数的约束及描述：该参数非必填|
+    /** 企业项目名称。
      * 
      * @return enterpriseProjectName */
     public String getEnterpriseProjectName() {
@@ -422,7 +421,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：计费模式| |参数的约束及描述：1 : 包年/包月；3: 按需。10: 预留实例|
+    /** 计费模式。 1 : 包年/包月3：按需10：预留实例
      * 
      * @return chargeMode */
     public Integer getChargeMode() {
@@ -433,179 +432,180 @@ public class MonthlyBillRes {
         this.chargeMode = chargeMode;
     }
 
-    public MonthlyBillRes withConsumeAmount(BigDecimal consumeAmount) {
+    public MonthlyBillRes withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
 
-    /** |参数名称：客户购买云服务类型的消费金额| |参数的约束及描述：该参数非必填，包含代金券，大陆站还包含现金券，大陆站精确到小数点后8位，国际站精确到小数点后2位。|
+    /** 客户购买云服务类型的消费金额，包含代金券、现金券，精确到小数点后8位。 说明：
+     * consume_amount的值等于cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_card_amount，bonus_amount，debt_amount，adjustment_amount的总和。
      * 
      * @return consumeAmount */
-    public BigDecimal getConsumeAmount() {
+    public Double getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(BigDecimal consumeAmount) {
+    public void setConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
-    public MonthlyBillRes withCashAmount(BigDecimal cashAmount) {
+    public MonthlyBillRes withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
 
-    /** |参数名称：现金支付金额| |参数的约束及描述：该参数非必填|
+    /** 现金支付金额。
      * 
      * @return cashAmount */
-    public BigDecimal getCashAmount() {
+    public Double getCashAmount() {
         return cashAmount;
     }
 
-    public void setCashAmount(BigDecimal cashAmount) {
+    public void setCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
     }
 
-    public MonthlyBillRes withCreditAmount(BigDecimal creditAmount) {
+    public MonthlyBillRes withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
 
-    /** |参数名称：信用额度支付金额| |参数的约束及描述：该参数非必填|
+    /** 信用额度支付金额。
      * 
      * @return creditAmount */
-    public BigDecimal getCreditAmount() {
+    public Double getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(BigDecimal creditAmount) {
+    public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
 
-    public MonthlyBillRes withCouponAmount(BigDecimal couponAmount) {
+    public MonthlyBillRes withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
 
-    /** |参数名称：代金券支付金额| |参数的约束及描述：该参数非必填。|
+    /** 代金券支付金额。
      * 
      * @return couponAmount */
-    public BigDecimal getCouponAmount() {
+    public Double getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(BigDecimal couponAmount) {
+    public void setCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public MonthlyBillRes withFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public MonthlyBillRes withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
 
-    /** |参数名称：现金券支付金额| |参数的约束及描述：该参数非必填。|
+    /** 现金券支付金额。
      * 
      * @return flexipurchaseCouponAmount */
-    public BigDecimal getFlexipurchaseCouponAmount() {
+    public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
 
-    public void setFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    public MonthlyBillRes withStoredCardAmount(BigDecimal storedCardAmount) {
+    public MonthlyBillRes withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
         return this;
     }
 
-    /** |参数名称：储值卡支付金额| |参数的约束及描述：该参数非必填。|
+    /** 储值卡支付金额。
      * 
      * @return storedCardAmount */
-    public BigDecimal getStoredCardAmount() {
+    public Double getStoredCardAmount() {
         return storedCardAmount;
     }
 
-    public void setStoredCardAmount(BigDecimal storedCardAmount) {
+    public void setStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
     }
 
-    public MonthlyBillRes withBonusAmount(BigDecimal bonusAmount) {
+    public MonthlyBillRes withBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
         return this;
     }
 
-    /** |参数名称：奖励金支付金额（用于现网未清干净的奖励金）| |参数的约束及描述：该参数非必填。|
+    /** 奖励金支付金额（用于现网客户未使用完的奖励金）。
      * 
      * @return bonusAmount */
-    public BigDecimal getBonusAmount() {
+    public Double getBonusAmount() {
         return bonusAmount;
     }
 
-    public void setBonusAmount(BigDecimal bonusAmount) {
+    public void setBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
     }
 
-    public MonthlyBillRes withDebtAmount(BigDecimal debtAmount) {
+    public MonthlyBillRes withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
 
-    /** |参数名称：欠费金额| |参数的约束及描述：该参数非必填。|
+    /** 欠费金额。
      * 
      * @return debtAmount */
-    public BigDecimal getDebtAmount() {
+    public Double getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(BigDecimal debtAmount) {
+    public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public MonthlyBillRes withAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public MonthlyBillRes withAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
         return this;
     }
 
-    /** |参数名称：欠费核销金额| |参数的约束及描述：该参数非必填。|
+    /** 欠费核销金额。
      * 
      * @return adjustmentAmount */
-    public BigDecimal getAdjustmentAmount() {
+    public Double getAdjustmentAmount() {
         return adjustmentAmount;
     }
 
-    public void setAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public void setAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
     }
 
-    public MonthlyBillRes withOfficialAmount(BigDecimal officialAmount) {
+    public MonthlyBillRes withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
 
-    /** |参数名称：官网价| |参数的约束及描述：该参数非必填。|
+    /** 官网价。
      * 
      * @return officialAmount */
-    public BigDecimal getOfficialAmount() {
+    public Double getOfficialAmount() {
         return officialAmount;
     }
 
-    public void setOfficialAmount(BigDecimal officialAmount) {
+    public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
 
-    public MonthlyBillRes withDiscountAmount(BigDecimal discountAmount) {
+    public MonthlyBillRes withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
 
-    /** |参数名称：对应官网价折扣金额| |参数的约束及描述：该参数非必填。|
+    /** 对应官网价折扣金额。
      * 
      * @return discountAmount */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
@@ -614,7 +614,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：金额单位。1: 元| |参数的约束及描述：该参数非必填|
+    /** 金额单位。 1：元
      * 
      * @return measureId */
     public Integer getMeasureId() {
@@ -630,7 +630,7 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** |参数名称：周期类型：19：年 20：月 24：天 25：小时 5：一次性| |参数的约束及描述：该参数非必填|
+    /** 周期类型： 19：年20：月24：天25：小时5：一次性
      * 
      * @return periodType */
     public Integer getPeriodType() {

@@ -650,6 +650,13 @@ public class CbrMeta {
             f -> f.withMarshaller(ListBackupsRequest::getUsedPercent, (req, v) -> {
                 req.setUsedPercent(v);
             }));
+        builder.<Boolean>withRequestField("show_replication",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListBackupsRequest::getShowReplication, (req, v) -> {
+                req.setShowReplication(v);
+            }));
 
         // response
 
@@ -1374,7 +1381,7 @@ public class CbrMeta {
         // requests
         builder.<VaultResourceInstancesReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultResourceInstancesReq.class),
             f -> f.withMarshaller(ShowVaultResourceInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);

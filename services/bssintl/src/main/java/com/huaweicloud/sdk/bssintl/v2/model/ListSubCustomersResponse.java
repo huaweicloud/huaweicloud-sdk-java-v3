@@ -43,7 +43,7 @@ public class ListSubCustomersResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：客户信息列表。具体请参见表 CustomerInfo| |参数约束以及描述：客户信息列表。具体请参见表 CustomerInfo|
+    /** 客户信息列表。 具体请参见表1。
      * 
      * @return customerInfos */
     public List<CustomerInformation> getCustomerInfos() {
@@ -59,7 +59,7 @@ public class ListSubCustomersResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：总记录数。| |参数的约束及描述：总记录数。|
+    /** 总记录数。
      * 
      * @return count */
     public Integer getCount() {

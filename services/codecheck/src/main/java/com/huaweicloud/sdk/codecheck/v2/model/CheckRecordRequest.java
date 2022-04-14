@@ -91,7 +91,7 @@ public class CheckRecordRequest {
         return this;
     }
 
-    /** 每页显示的数量,每页最多显示100条 minimum: 1 maximum: 100
+    /** 每页显示的数量,每页最多显示1000条 minimum: 1 maximum: 1000
      * 
      * @return limit */
     public Integer getLimit() {
@@ -107,7 +107,7 @@ public class CheckRecordRequest {
         return this;
     }
 
-    /** 开始时间
+    /** 过滤开始时间,根据任务检查开始时间过滤
      * 
      * @return startTime */
     public String getStartTime() {
@@ -123,7 +123,7 @@ public class CheckRecordRequest {
         return this;
     }
 
-    /** 结束时间
+    /** 过滤结束时间,根据任务检查开始时间过滤
      * 
      * @return endTime */
     public String getEndTime() {

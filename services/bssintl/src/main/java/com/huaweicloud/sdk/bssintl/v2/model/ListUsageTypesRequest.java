@@ -33,7 +33,7 @@ public class ListUsageTypesRequest {
         return this;
     }
 
-    /** |忽略大小写，默认 zh_cn：中文 en_us：英文|
+    /** 语言。中文：zh_CN英文：en_US缺省为zh_CN。
      * 
      * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,7 +51,7 @@ public class ListUsageTypesRequest {
         return this;
     }
 
-    /** |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。| |参数的约束及描述：|
+    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * 
      * @return resourceTypeCode */
     public String getResourceTypeCode() {
@@ -67,7 +67,9 @@ public class ListUsageTypesRequest {
         return this;
     }
 
-    /** |参数名称：偏移量，从0开始。默认值为0。| |参数的约束及描述：偏移量，从0开始。默认值为0。| minimum: 0 maximum: 2147483647
+    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
+     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
+     * 2147483647
      * 
      * @return offset */
     public Integer getOffset() {
@@ -83,7 +85,7 @@ public class ListUsageTypesRequest {
         return this;
     }
 
-    /** |参数名称：每次查询的数量。默认值为10。| |参数的约束及描述：每次查询的数量。默认值为10。| minimum: 1 maximum: 100
+    /** 每次查询的数量，默认值为10。 minimum: 1 maximum: 100
      * 
      * @return limit */
     public Integer getLimit() {

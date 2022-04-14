@@ -438,13 +438,6 @@ public class BssintlMeta {
             f -> f.withMarshaller(ListCustomerOrdersRequest::getPaymentTimeEnd, (req, v) -> {
                 req.setPaymentTimeEnd(v);
             }));
-        builder.<String>withRequestField("indirect_partner_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
 
         // response
 
@@ -676,6 +669,51 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInvoicesRequest, ListInvoicesResponse> listInvoices = genForlistInvoices();
+
+    private static HttpRequestDef<ListInvoicesRequest, ListInvoicesResponse> genForlistInvoices() {
+        // basic
+        HttpRequestDef.Builder<ListInvoicesRequest, ListInvoicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInvoicesRequest.class, ListInvoicesResponse.class)
+                .withName("ListInvoices")
+                .withUri("/v1.0/{domain_id}/payments/intl-invoices")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInvoicesRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInvoicesRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInvoicesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInvoicesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> listMeasureUnits =
         genForlistMeasureUnits();
 
@@ -694,6 +732,52 @@ public class BssintlMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMeasureUnitsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> listMonthlyExpenditures =
+        genForlistMonthlyExpenditures();
+
+    private static HttpRequestDef<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> genForlistMonthlyExpenditures() {
+        // basic
+        HttpRequestDef.Builder<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMonthlyExpendituresRequest.class, ListMonthlyExpendituresResponse.class)
+            .withName("ListMonthlyExpenditures")
+            .withUri("/v1.0/{domain_id}/customer/account-mgr/bill/monthly-sum")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonthlyExpendituresRequest::getCycle, (req, v) -> {
+                req.setCycle(v);
+            }));
+        builder.<String>withRequestField("cloud_service_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonthlyExpendituresRequest::getCloudServiceTypeCode, (req, v) -> {
+                req.setCloudServiceTypeCode(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonthlyExpendituresRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("enterpriseProjectId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonthlyExpendituresRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response
@@ -844,19 +928,19 @@ public class BssintlMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceTypesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListResourceTypesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceTypesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
@@ -890,19 +974,19 @@ public class BssintlMeta {
             f -> f.withMarshaller(ListServiceResourcesRequest::getServiceTypeCode, (req, v) -> {
                 req.setServiceTypeCode(v);
             }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServiceResourcesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServiceResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
@@ -929,19 +1013,19 @@ public class BssintlMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceTypesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServiceTypesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServiceTypesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
@@ -1037,13 +1121,6 @@ public class BssintlMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubCustomerCouponsRequest::getSourceId, (req, v) -> {
                 req.setSourceId(v);
-            }));
-        builder.<String>withRequestField("indirect_partner_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
             }));
 
         // response
@@ -1220,73 +1297,6 @@ public class BssintlMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> showCustomerMonthlySum =
-        genForshowCustomerMonthlySum();
-
-    private static HttpRequestDef<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> genForshowCustomerMonthlySum() {
-        // basic
-        HttpRequestDef.Builder<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowCustomerMonthlySumRequest.class, ShowCustomerMonthlySumResponse.class)
-            .withName("ShowCustomerMonthlySum")
-            .withUri("/v2/bills/customer-bills/monthly-sum")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("bill_cycle",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getBillCycle, (req, v) -> {
-                req.setBillCycle(v);
-            }));
-        builder.<String>withRequestField("service_type_code",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<String>withRequestField("method",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getMethod, (req, v) -> {
-                req.setMethod(v);
-            }));
-        builder.<String>withRequestField("sub_customer_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> showCustomerOrderDetails =
         genForshowCustomerOrderDetails();
 
@@ -1320,13 +1330,6 @@ public class BssintlMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            }));
-        builder.<String>withRequestField("indirect_partner_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,

@@ -18,7 +18,7 @@ public class AddApplication {
         return this;
     }
 
-    /** **参数说明**：资源空间名称。 **取值范围**：长度不超过64，只允许字母、数字、下划线（_）、连接符（-）的组合。
+    /** **参数说明**：资源空间名称。 **取值范围**：长度不超过64，允许中文、字母、数字、下划线（_）、连接符（-）等一些特殊字符的组合。
      * 
      * @return appName */
     public String getAppName() {

@@ -33,6 +33,16 @@ public class ListCertificatesRequest {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_support")
+
+    private Boolean deploySupport;
+
     public ListCertificatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -115,6 +125,40 @@ public class ListCertificatesRequest {
         this.status = status;
     }
 
+    public ListCertificatesRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /** 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。
+     * 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件. 取值为“all” 取值为“0”
+     * 满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
+     * 
+     * @return enterpriseProjectId */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListCertificatesRequest withDeploySupport(Boolean deploySupport) {
+        this.deploySupport = deploySupport;
+        return this;
+    }
+
+    /** 是否支持部署。
+     * 
+     * @return deploySupport */
+    public Boolean getDeploySupport() {
+        return deploySupport;
+    }
+
+    public void setDeploySupport(Boolean deploySupport) {
+        this.deploySupport = deploySupport;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -128,12 +172,14 @@ public class ListCertificatesRequest {
             && Objects.equals(this.offset, listCertificatesRequest.offset)
             && Objects.equals(this.sortDir, listCertificatesRequest.sortDir)
             && Objects.equals(this.sortKey, listCertificatesRequest.sortKey)
-            && Objects.equals(this.status, listCertificatesRequest.status);
+            && Objects.equals(this.status, listCertificatesRequest.status)
+            && Objects.equals(this.enterpriseProjectId, listCertificatesRequest.enterpriseProjectId)
+            && Objects.equals(this.deploySupport, listCertificatesRequest.deploySupport);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, sortDir, sortKey, status);
+        return Objects.hash(limit, offset, sortDir, sortKey, status, enterpriseProjectId, deploySupport);
     }
 
     @Override
@@ -145,6 +191,8 @@ public class ListCertificatesRequest {
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    deploySupport: ").append(toIndentedString(deploySupport)).append("\n");
         sb.append("}");
         return sb.toString();
     }

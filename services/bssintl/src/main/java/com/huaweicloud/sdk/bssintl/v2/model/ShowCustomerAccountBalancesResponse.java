@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -21,7 +20,7 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    private BigDecimal debtAmount;
+    private Double debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -55,7 +54,7 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：账户余额列表。具体请参见表 AccountBalanceV3| |参数约束以及描述：账户余额列表。具体请参见表 AccountBalanceV3|
+    /** 账户余额列表。 具体请参见表1。
      * 
      * @return accountBalances */
     public List<AccountBalanceV3> getAccountBalances() {
@@ -66,19 +65,19 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         this.accountBalances = accountBalances;
     }
 
-    public ShowCustomerAccountBalancesResponse withDebtAmount(BigDecimal debtAmount) {
+    public ShowCustomerAccountBalancesResponse withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
 
-    /** |参数名称：欠款总金额。| |参数的约束及描述：欠款总金额。|
+    /** 欠款总金额。
      * 
      * @return debtAmount */
-    public BigDecimal getDebtAmount() {
+    public Double getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(BigDecimal debtAmount) {
+    public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
 
@@ -87,7 +86,7 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：度量单位：1：元2：角3：分| |参数的约束及描述：度量单位：1：元2：角3：分|
+    /** 度量单位。 1：元
      * 
      * @return measureId */
     public Integer getMeasureId() {
@@ -103,7 +102,7 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         return this;
     }
 
-    /** |参数名称：币种。CNY：人民币。USD：美元。| |参数约束及描述：币种。CNY：人民币。USD：美元。|
+    /** 币种。 USD：美元。
      * 
      * @return currency */
     public String getCurrency() {
